@@ -1,0 +1,49 @@
+{
+    "name": "apie-lib/apie-lib-monorepo",
+    "authors": [
+        {
+            "name": "Pieter Jordaan",
+            "email": "pieter_jordaan@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Apie\\CommonValueObjects\\": "packages/common-value-objects/src/",
+            "Apie\\CompositeValueObjects\\": "packages/composite-value-objects/src/",
+            "Apie\\Core\\": "packages/core/src/",
+            "Apie\\OpenapiSchema\\": "packages/openapi-schema/src/",
+            "Apie\\ValueObjects\\": "packages/value-objects/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Apie\\Tests\\CommonValueObjects\\": "packages/common-value-objects/tests/",
+            "Apie\\Tests\\CompositeValueObjects\\": "packages/composite-value-objects/tests/",
+            "Apie\\Tests\\Core\\": "packages/core/tests/",
+            "Apie\\Tests\\OpenapiSchema\\": "packages/openapi-schema/tests/",
+            "Apie\\Tests\\ValueObjects\\": "packages/value-objects/tests/"
+        }
+    },
+    "replace": {
+        "apie/common-value-objects": "self.version",
+        "apie/composite-value-objects": "self.version",
+        "apie/core": "self.version",
+        "apie/openapi-schema": "self.version",
+        "apie/value-objects": "self.version"
+    },
+    "description": "Monorepo of the Apie library",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "phpdocumentor/reflection-docblock": "4.*|5.*",
+        "symfony/http-kernel": "4.*|5.*",
+        "symfony/polyfill-php80": "1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "symfony/phpunit-bridge": "4.*|5.*",
+        "symplify/monorepo-builder": "^9.0"
+    }
+}
