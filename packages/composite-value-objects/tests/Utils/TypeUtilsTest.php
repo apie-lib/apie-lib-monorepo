@@ -82,5 +82,6 @@ class TypeUtilsTest extends TestCase
     public function typeProvider()
     {
         yield [new StringLiteral('fieldName'), new String_()];
+        yield [new Integer('fieldName'), new \phpDocumentor\Reflection\Types\Integer()];
     }
 }
