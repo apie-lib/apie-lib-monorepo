@@ -3,9 +3,7 @@
 namespace Apie\Tests\CompositeValueObjects\Utils;
 
     use Apie\CompositeValueObjects\Exceptions\MissingValueException;
-    use Apie\CompositeValueObjects\Utils\FloatingPoint;
-    use Apie\CompositeValueObjects\Utils\Integer;
-    use Apie\CompositeValueObjects\Utils\Mixed;
+    use Apie\CompositeValueObjects\Utils\MixedTypehint;
     use Apie\Tests\CompositeValueObjects\Mocks\ExampleWithMixedTypehint;
     use PHPUnit\Framework\TestCase;
 
@@ -16,7 +14,7 @@ class MixedTest extends TestCase
      */
     public function testFromNative($expected, $input)
     {
-        $testItem = new Mixed('fieldName');
+        $testItem = new MixedTypehint('fieldName');
         $actual = $testItem->fromNative($input);
         $this->assertEquals($expected, $actual);
     }
@@ -41,7 +39,7 @@ class MixedTest extends TestCase
      */
     public function testSupportsFromNative($expected, $input)
     {
-        $testItem = new Mixed('fieldName');
+        $testItem = new MixedTypehint('fieldName');
         $this->assertEquals($expected, $testItem->supportsFromNative($input));
         $this->assertEquals($expected, $testItem->supportsToNative($input));
     }
@@ -66,7 +64,7 @@ class MixedTest extends TestCase
      */
     public function testToNative($expected, $input)
     {
-        $testItem = new Mixed('fieldName');
+        $testItem = new MixedTypehint('fieldName');
         $this->assertEquals($expected, $testItem->toNative($input));
     }
 
@@ -90,7 +88,7 @@ class MixedTest extends TestCase
      */
     public function testSupports($expected, $input)
     {
-        $testItem = new Mixed('fieldName');
+        $testItem = new MixedTypehint('fieldName');
         $this->assertEquals($expected, $testItem->supports($input));
     }
 
@@ -112,14 +110,14 @@ class MixedTest extends TestCase
 
     public function testFromMissingValue()
     {
-        $testItem = new Mixed('fieldName');
+        $testItem = new MixedTypehint('fieldName');
         $this->expectException(MissingValueException::class);
         $testItem->fromMissingValue();
     }
 
     public function testToString()
     {
-        $testItem = new Mixed('fieldName');
+        $testItem = new MixedTypehint('fieldName');
         $this->assertEquals('mixed', $testItem->__toString());
     }
 

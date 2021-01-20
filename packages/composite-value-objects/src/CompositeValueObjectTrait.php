@@ -4,7 +4,7 @@
 namespace Apie\CompositeValueObjects;
 
 use Apie\CompositeValueObjects\Utils\Compound;
-use Apie\CompositeValueObjects\Utils\Mixed;
+use Apie\CompositeValueObjects\Utils\MixedTypehint;
 use Apie\CompositeValueObjects\Utils\NullObject;
 use Apie\CompositeValueObjects\Utils\TypeUtilInterface;
 use Apie\CompositeValueObjects\Utils\TypeUtils;
@@ -42,7 +42,7 @@ trait CompositeValueObjectTrait
                     }
                 }
             } else {
-                $result[$property->name] = new Compound($property->name, new Mixed($property->name), new NullObject());
+                $result[$property->name] = new Compound($property->name, new MixedTypehint($property->name), new NullObject());
             }
         }
         return $result;

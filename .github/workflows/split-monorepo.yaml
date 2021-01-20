@@ -57,7 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
           package-directory: 'packages/${{ matrix.package }}'
-          split-repository-organization: 'apie'
+          split-repository-organization: 'apie-lib'
           split-repository-name: '${{ matrix.package }}'
           user-name: "Pieter Jordaan (Apie Maintainer)"
           user-email: "pieter_jordaan@hotmail.com"

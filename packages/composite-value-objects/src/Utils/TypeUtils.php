@@ -82,7 +82,7 @@ class TypeUtils
             return new Integer($fieldName);
         }
         if ($type instanceof Types\Mixed_) {
-            return new Mixed($fieldName);
+            return new MixedTypehint($fieldName);
         }
         if ($type instanceof Types\Null_) {
             return new NullObject();

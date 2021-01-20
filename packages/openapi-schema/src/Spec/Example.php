@@ -5,7 +5,7 @@ namespace Apie\OpenapiSchema\Spec;
 
 
 use Apie\CommonValueObjects\Url;
-use Apie\CompositeValueObjects\Utils\Mixed;
+use Apie\CompositeValueObjects\Utils\MixedTypehint;
 use Apie\OpenapiSchema\ValueObjects\SpecificationExtension;
 use Apie\ValueObjects\ValueObjectInterface;
 use LogicException;
@@ -49,7 +49,7 @@ class Example implements ValueObjectInterface
         }
         $res = new Example();
         if (isset($value['value'])) {
-            $res->value = (new Mixed('value'))->fromNative($value['value']);
+            $res->value = (new MixedTypehint('value'))->fromNative($value['value']);
         }
         if (isset($value['externalValue'])) {
             $res->externalValue = Url::fromNative($value['externalValue']);

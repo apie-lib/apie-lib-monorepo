@@ -6,7 +6,7 @@ namespace Apie\CompositeValueObjects\Utils;
 use Apie\CompositeValueObjects\Exceptions\MissingValueException;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class Mixed extends Compound
+class MixedTypehint extends Compound
 {
     private $fieldName;
 
