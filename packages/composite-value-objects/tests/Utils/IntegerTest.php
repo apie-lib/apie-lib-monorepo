@@ -3,7 +3,6 @@
 namespace Apie\Tests\CompositeValueObjects\Utils;
 
 use Apie\CompositeValueObjects\Exceptions\MissingValueException;
-use Apie\CompositeValueObjects\Utils\FloatingPoint;
 use Apie\CompositeValueObjects\Utils\Integer;
 use Apie\Tests\CompositeValueObjects\Mocks\ExampleWithMixedTypehint;
 use PHPUnit\Framework\TestCase;

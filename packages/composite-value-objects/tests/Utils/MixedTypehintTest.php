@@ -7,7 +7,7 @@ namespace Apie\Tests\CompositeValueObjects\Utils;
     use Apie\Tests\CompositeValueObjects\Mocks\ExampleWithMixedTypehint;
     use PHPUnit\Framework\TestCase;
 
-class MixedTest extends TestCase
+class MixedTypehintTest extends TestCase
 {
     /**
      * @dataProvider fromNativeProvider
