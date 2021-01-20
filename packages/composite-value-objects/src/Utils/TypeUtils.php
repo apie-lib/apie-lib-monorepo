@@ -81,6 +81,9 @@ class TypeUtils
         if ($type instanceof Types\Integer) {
             return new Integer($fieldName);
         }
+        if ($type instanceof Types\String_) {
+            return new StringLiteral($fieldName);
+        }
         if ($type instanceof Types\Mixed_) {
             return new MixedTypehint($fieldName);
         }

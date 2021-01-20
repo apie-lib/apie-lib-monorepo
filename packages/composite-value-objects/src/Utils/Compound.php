@@ -35,7 +35,7 @@ class Compound implements TypeUtilInterface
                 return $subType->fromNative($input);
             }
         }
-        throw new \RuntimeException('Input not supported');
+        throw new InvalidInputException($this->fieldName, $this, $input);
     }
 
     public function toNative($input)

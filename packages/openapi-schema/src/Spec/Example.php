@@ -45,7 +45,7 @@ class Example implements ValueObjectInterface
     public static function fromNative($value)
     {
         if (isset($value['value']) && isset($value['externalValue'])) {
-            throw new LogicException('An example can only have a value or an external value')
+            throw new LogicException('An example can only have a value or an external value');
         }
         $res = new Example();
         if (isset($value['value'])) {

@@ -32,9 +32,9 @@ class StringLiteral implements TypeUtilInterface
     public function toNative($input)
     {
         if ($input instanceof ValueObjectInterface) {
-            return (string) $input->toNative();
+            return $this->toNative($input->toNative());
         }
-        return (string) $input;
+        return is_array($input) ? 'array' : (string) $input;
     }
 
     public function supports($input): bool

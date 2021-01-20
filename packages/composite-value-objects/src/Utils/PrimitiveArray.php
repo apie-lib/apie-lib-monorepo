@@ -5,6 +5,7 @@ namespace Apie\CompositeValueObjects\Utils;
 
 
 use Apie\CompositeValueObjects\Exceptions\MissingValueException;
+use Apie\ValueObjects\ValueObjectInterface;
 
 class PrimitiveArray implements TypeUtilInterface
 {
@@ -20,7 +21,11 @@ class PrimitiveArray implements TypeUtilInterface
 
     public function fromNative($input)
     {
+        if ($input instanceof ValueObjectInterface) {
+            return $this->fromNative($input->toNative());
+        }
         $res = [];
+        assert(is_iterable($input));
         foreach ($input as $key => $value) {
             assert(TypeUtils::fromObjectToTypeUtilInterface($key, $value));
             $res[$key] = $value;
@@ -30,6 +35,9 @@ class PrimitiveArray implements TypeUtilInterface
 
     public function toNative($input)
     {
+        if ($input instanceof ValueObjectInterface) {
+            return $this->toNative($input->toNative());
+        }
         return (array) $input;
     }
 
@@ -40,6 +48,9 @@ class PrimitiveArray implements TypeUtilInterface
 
     public function supports($input): bool
     {
+        if ($input instanceof ValueObjectInterface) {
+            return $this->supports($input->toNative());
+        }
         return is_iterable($input);
     }
 
