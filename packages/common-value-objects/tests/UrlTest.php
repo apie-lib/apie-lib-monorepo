@@ -37,6 +37,6 @@ class UrlTest extends TestCase
     public function invalidProvider()
     {
         yield ['test.me'];
-        yield [' http://www.space-before-urlpis-not-valid.nl'];
+        yield [' http://www.space-before-url-is-not-valid.nl'];
     }
 }

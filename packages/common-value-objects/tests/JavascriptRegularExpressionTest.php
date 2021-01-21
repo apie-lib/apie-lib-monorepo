@@ -45,4 +45,14 @@ class JavascriptRegularExpressionTest extends TestCase
         yield ['[a-'];
         yield ['\1 does not exist!'];
     }
+
+    public function it_can_test_the_regex_on_a_string()
+    {
+        $testItem = new JavascriptRegularExpression('[a-z]+');
+        $this->assertTrue($testItem->test('aaaa'));
+        $this->assertEquals(null, $testItem->matchOnce('12'));
+        $this->assertEquals(['This'], $testItem->matchOnce('This is sparta!'));
+        $this->assertEquals([], $testItem->matchAll('12'));
+        $this->assertEquals(['This', 'is', 'sparta'], $testItem->matchAll('This is sparta!'));
+    }
 }

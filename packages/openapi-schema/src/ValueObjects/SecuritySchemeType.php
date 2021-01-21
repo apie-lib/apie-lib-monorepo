@@ -14,9 +14,9 @@ class SecuritySchemeType implements ValueObjectInterface
 {
     use StringEnumTrait;
 
-    const API_KEY='apiKey';
+    const API_KEY = 'apiKey';
 
-    const HTTP='http';
+    const HTTP = 'http';
 
     const OAUTH2 = 'oauth2';
 

@@ -14,9 +14,9 @@ class ParameterIn implements ValueObjectInterface
 {
     use StringEnumTrait;
 
-    const HEADER='header';
+    const HEADER = 'header';
 
-    const PATH='path';
+    const PATH = 'path';
 
-    const COOKIE='cookie';
+    const COOKIE = 'cookie';
 }

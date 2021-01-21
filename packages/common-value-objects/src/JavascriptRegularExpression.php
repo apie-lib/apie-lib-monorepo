@@ -35,4 +35,38 @@ class JavascriptRegularExpression implements ValueObjectInterface
     {
         return $value;
     }
+
+    public function test(string $value): bool
+    {
+        return preg_match(
+            '/' . str_replace('/', '\\/', $this->toNative()) . '/',
+            $value
+        ) ? true : false;
+    }
+
+    public function matchOnce(string $value): ?array
+    {
+        $matches = [];
+        if (!preg_match(
+            '/' . str_replace('/', '\\/', $this->toNative()) . '/',
+            $value,
+            $matches
+        )) {
+            return null;
+        }
+        return $matches;
+    }
+
+    public function matchAll(string $value): array
+    {
+        $matches = [];
+        if (!preg_match_all(
+            '/' . str_replace('/', '\\/', $this->toNative()) . '/',
+            $value,
+            $matches
+        )) {
+            return [];
+        }
+        return $matches;
+    }
 }

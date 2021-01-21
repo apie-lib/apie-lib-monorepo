@@ -9,6 +9,7 @@ use Apie\ValueObjects\ValueObjectInterface;
 
 /**
  * Enum for all allowed types in a schema.
+ * @TODO: add more
  */
 class SchemaTypes implements ValueObjectInterface
 {
