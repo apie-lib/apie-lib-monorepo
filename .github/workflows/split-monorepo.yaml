@@ -61,3 +61,4 @@ jobs:
           split-repository-name: '${{ matrix.package }}'
           user-name: "Pieter Jordaan (Apie Maintainer)"
           user-email: "pieter_jordaan@hotmail.com"
+          branch: main
