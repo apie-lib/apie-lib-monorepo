@@ -35,8 +35,8 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": ">=7.3",
         "ext-json": "*",
+        "php": ">=7.3",
         "phpdocumentor/reflection-docblock": "4.*|5.*",
         "symfony/http-kernel": "4.*|5.*",
         "symfony/polyfill-php80": "1.*"

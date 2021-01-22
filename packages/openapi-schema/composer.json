@@ -22,9 +22,9 @@
     "require": {
         "php": ">=7.3",
         "ext-json": "*",
-        "apie/common-value-objects": "self.version|dev-main",
-        "apie/composite-value-objects": "self.version|dev-main",
-        "apie/value-objects": "self.version|dev-main"
+        "apie/common-value-objects": "dev-main",
+        "apie/composite-value-objects": "dev-main",
+        "apie/value-objects": "dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
