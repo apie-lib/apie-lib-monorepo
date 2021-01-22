@@ -38,15 +38,4 @@ trait StringTrait
     {
         return $this->toNative();
     }
-
-    final static public function toSchema(): SchemaContract
-    {
-        if (!class_exists(SchemaContract::class)) {
-            throw new LogicException('To use toSchema(), you require to include apie/openapi-schema');
-        }
-        $refl = new ReflectionClass(__CLASS__);
-        return SchemaFactory::createStringSchema(
-            strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $refl->getShortName()))
-        );
-    }
 }

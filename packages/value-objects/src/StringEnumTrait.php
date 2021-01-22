@@ -8,7 +8,7 @@ use ReflectionClass;
 
 trait StringEnumTrait
 {
-    use StringTrait { toSchema as private internalToSchema; }
+    use StringTrait;
 
     final protected function validValue(string $value): bool
     {
@@ -30,12 +30,5 @@ trait StringEnumTrait
     {
         $reflectionClass = new ReflectionClass(__CLASS__);
         return $reflectionClass->getConstants();
-    }
-
-    final static public function toSchema(): SchemaContract
-    {
-        $schema = self::internalToSchema();
-        $schema->enum = array_values(self::getValidValues());
-        return $schema;
     }
 }
