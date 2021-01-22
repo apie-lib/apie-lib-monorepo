@@ -1,0 +1,29 @@
+{
+  "name": "apie/{package}",
+  "description": "{description}",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\{namespace}\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\{namespace}\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "apie/core": "self.version"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}

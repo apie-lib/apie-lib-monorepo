@@ -3,4 +3,5 @@ parameters:
     data_to_append:
         require-dev:
             symfony/phpunit-bridge: "4.*|5.*"
+            symfony/finder: "4.*|5.*"
             symplify/monorepo-builder: '<version>'

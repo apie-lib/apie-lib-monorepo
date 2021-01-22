@@ -28,6 +28,6 @@
         "phpunit/phpunit": "^9.5"
     },
     "suggest": {
-        "apie-lib/openapi-schema": "Add OpenAPI schema support to value objects."
+        "apie/openapi-schema": "Add OpenAPI schema support to value objects."
     }
 }

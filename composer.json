@@ -1,5 +1,5 @@
 {
-    "name": "apie-lib/apie-lib-monorepo",
+    "name": "apie/apie-lib",
     "authors": [
         {
             "name": "Pieter Jordaan",
@@ -43,6 +43,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
+        "symfony/finder": "4.*|5.*",
         "symfony/phpunit-bridge": "4.*|5.*",
         "symplify/monorepo-builder": "^9.0"
     }

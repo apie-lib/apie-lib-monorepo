@@ -1,12 +1,10 @@
-# openapi-schema
+# core
 
 This package is part of the [https://github.com/apie-lib](Apie) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
-Creates OpenAPI schema's
+Apie core classes
 
 ## Documentation
-
-TODO
-
+This package is used internally in Apie or no documentation is available right now
 
