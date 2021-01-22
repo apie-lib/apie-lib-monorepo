@@ -22,7 +22,7 @@
     "require": {
         "php": ">=7.3",
         "ext-json": "*",
-        "apie/core": "self.version"
+        "apie/core": "self.version|dev-main"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"

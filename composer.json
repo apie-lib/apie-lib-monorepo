@@ -25,11 +25,11 @@
         }
     },
     "replace": {
-        "apie/common-value-objects": "self.version",
-        "apie/composite-value-objects": "self.version",
-        "apie/core": "self.version",
-        "apie/openapi-schema": "self.version",
-        "apie/value-objects": "self.version"
+        "apie/common-value-objects": "*",
+        "apie/composite-value-objects": "*",
+        "apie/core": "*",
+        "apie/openapi-schema": "*",
+        "apie/value-objects": "*"
     },
     "description": "Monorepo of the Apie library",
     "type": "project",
