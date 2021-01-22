@@ -1,6 +1,6 @@
 {
     "name": "apie/common-value-objects",
-    "description": "Common value objects",
+    "description": "Contains a series of commonly used value objects suitable for Apie, like URL's, enums, etc.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -20,7 +20,7 @@
         }
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.3",
         "apie/value-objects": "self.version"
     },
     "require-dev": {

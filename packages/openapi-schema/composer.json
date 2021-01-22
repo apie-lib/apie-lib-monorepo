@@ -1,6 +1,6 @@
 {
     "name": "apie/openapi-schema",
-    "description": "Creates OpenAPI schema's",
+    "description": "Collection of value objects to make an OpenAPI schema according the OpenAPI specs.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -20,7 +20,7 @@
         }
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.3",
         "ext-json": "*",
         "apie/common-value-objects": "self.version",
         "apie/composite-value-objects": "self.version",
