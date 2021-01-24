@@ -9,7 +9,7 @@ use Apie\OpenapiSchema\Map\ParameterList;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class LinkObject implements ValueObjectCompareInterface, ValueObjectInterface
+class LinkObject implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

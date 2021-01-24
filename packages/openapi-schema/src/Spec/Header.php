@@ -11,7 +11,7 @@ use Apie\OpenapiSchema\ValueObjects\ParameterIn;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class Header implements ValueObjectInterface, ValueObjectCompareInterface
+class Header implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
     /**

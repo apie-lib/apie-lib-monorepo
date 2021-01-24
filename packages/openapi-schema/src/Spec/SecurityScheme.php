@@ -11,7 +11,7 @@ use Apie\OpenapiSchema\ValueObjects\SecuritySchemeType;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class SecurityScheme implements ValueObjectInterface, ValueObjectCompareInterface
+class SecurityScheme implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

@@ -13,7 +13,7 @@ use Apie\OpenapiSchema\ValueObjects\OpenApiVersion;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-final class Document implements ValueObjectInterface, ValueObjectCompareInterface
+final class Document implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

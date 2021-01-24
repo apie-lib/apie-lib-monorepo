@@ -10,7 +10,7 @@ use Apie\OpenapiSchema\Map\ScopesMap;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class OAuthFlow implements ValueObjectCompareInterface, ValueObjectInterface
+class OAuthFlow implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

@@ -9,7 +9,7 @@ use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class Xml implements ValueObjectCompareInterface, ValueObjectInterface
+class Xml implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

@@ -13,7 +13,7 @@ use Apie\OpenapiSchema\Map\TagList;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class Operation implements ValueObjectInterface, ValueObjectCompareInterface
+class Operation implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

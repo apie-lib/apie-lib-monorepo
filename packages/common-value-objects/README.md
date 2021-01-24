@@ -10,4 +10,9 @@ The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](
 Contains a series of commonly used value objects suitable for Apie, like URL's, enums, etc.
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+This package contains a series of common value objects found in many applications.
+
+- AuthenticationSchema: Authentication header type enum
+- Date: Dates without time and timezones
+- JavascriptRegularExpression: A regular expression value object.
+- Url: A full url

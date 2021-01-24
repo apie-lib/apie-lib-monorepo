@@ -3,10 +3,6 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
-use Apie\CompositeValueObjects\CompositeValueObjectTrait;
-use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
 class Reference implements ValueObjectInterface

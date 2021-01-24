@@ -9,7 +9,7 @@ use Apie\OpenapiSchema\Map\MediaTypeMap;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class RequestBody implements ValueObjectInterface, ValueObjectCompareInterface
+class RequestBody implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

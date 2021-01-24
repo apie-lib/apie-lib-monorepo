@@ -10,7 +10,7 @@ use Apie\OpenapiSchema\Map\ServerList;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class PathItem implements ValueObjectCompareInterface, ValueObjectInterface
+class PathItem implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

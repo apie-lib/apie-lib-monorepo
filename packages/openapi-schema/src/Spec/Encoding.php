@@ -9,7 +9,7 @@ use Apie\OpenapiSchema\Map\HeaderMap;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class Encoding implements ValueObjectInterface, ValueObjectCompareInterface
+class Encoding implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

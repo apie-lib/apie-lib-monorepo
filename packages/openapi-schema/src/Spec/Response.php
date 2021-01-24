@@ -11,7 +11,7 @@ use Apie\OpenapiSchema\Map\MediaTypeMap;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class Response implements ValueObjectInterface, ValueObjectCompareInterface
+class Response implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

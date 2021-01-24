@@ -4,7 +4,7 @@
 namespace Apie\ValueObjects;
 
 
-interface ValueObjectCompareInterface
+interface ValueObjectCompareInterface extends ValueObjectInterface
 {
-    public function isEqualTo(ValueObjectCompareInterface $to);
+    public function isEqualTo(ValueObjectCompareInterface $to): int;
 }

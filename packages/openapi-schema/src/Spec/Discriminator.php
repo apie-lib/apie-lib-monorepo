@@ -8,7 +8,7 @@ use Apie\OpenapiSchema\Map\DiscriminatorMapping;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class Discriminator implements ValueObjectInterface, ValueObjectCompareInterface
+class Discriminator implements ValueObjectInterface
 {
     use CompositeValueObjectTrait;
 

@@ -8,7 +8,7 @@ use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class Tag implements ValueObjectInterface, ValueObjectCompareInterface
+class Tag implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

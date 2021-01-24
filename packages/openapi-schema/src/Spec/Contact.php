@@ -3,13 +3,11 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Contract\ContactContract;
 use Apie\ValueObjects\ValueObjectCompareInterface;
-use Apie\ValueObjects\ValueObjectInterface;
 
-class Contact implements ValueObjectInterface, ValueObjectCompareInterface, ContactContract
+class Contact implements ValueObjectInterface, ContactContract
 {
     use CompositeValueObjectWithExtension;
 

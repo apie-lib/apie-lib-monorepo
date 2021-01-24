@@ -8,7 +8,7 @@ use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class OAuthFlows implements ValueObjectInterface, ValueObjectCompareInterface
+class OAuthFlows implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

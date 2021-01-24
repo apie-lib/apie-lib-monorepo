@@ -11,7 +11,7 @@ use Apie\OpenapiSchema\Contract\LicenseContract;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-final class Info implements InfoContract, ValueObjectInterface, ValueObjectCompareInterface
+final class Info implements InfoContract, ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

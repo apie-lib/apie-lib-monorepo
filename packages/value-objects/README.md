@@ -22,6 +22,10 @@ Next to this interface we have two traits to make simple value objects for strin
 Interface to implement a value object for Apie. fromNative converts primitive to a value object and toNative converts
 a value object to a primitive.
 
+### ValueObjectCompareInterface
+Interface to add a method to compare for equality where $object->toNative() === $object2->toNative() is false, but the
+objects value objects are the same.
+
 ### StringTrait
 Used to make value objects that are represented as a string. It implements all methods on ValueObjectInterface,
 but you require to make 2 methods to make it work: one for validating the input and one for sanitizing the input.

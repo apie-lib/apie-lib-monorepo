@@ -4,15 +4,13 @@
 namespace Apie\OpenapiSchema\Spec;
 
 use Apie\CommonValueObjects\JavascriptRegularExpression;
-use Apie\CompositeValueObjects\CompositeValueObjectTrait;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Map\SchemaList;
 use Apie\OpenapiSchema\Map\SchemaMap;
 use Apie\OpenapiSchema\ValueObjects\SchemaTypes;
 use Apie\ValueObjects\ValueObjectCompareInterface;
-use Apie\ValueObjects\ValueObjectInterface;
 
-class Schema implements ValueObjectInterface, ValueObjectCompareInterface
+class Schema implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 

@@ -10,7 +10,7 @@ use Apie\OpenapiSchema\Contract\LicenseContract;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
-class License implements ValueObjectCompareInterface, ValueObjectInterface, LicenseContract
+class License implements ValueObjectInterface, LicenseContract
 {
     use CompositeValueObjectWithExtension;
 
