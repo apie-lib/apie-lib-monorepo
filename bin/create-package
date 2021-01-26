@@ -23,3 +23,5 @@ $package->createFile('phpunit.xml', true);
 $package->createFile('README.md', true);
 $package->createFile('src/ExampleClass.php', true);
 $package->createFile('tests/ExampleClassTest.php', true);
+
+ComposerTools::runUpdate();

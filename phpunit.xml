@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/bin/.phpunit/phpunit.xsd"
-         backupGlobals="false"
-         colors="true"
-         bootstrap="vendor/autoload.php"
->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/bin/.phpunit/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="vendor/autoload.php">
     <php>
         <ini name="error_reporting" value="-1"/>
         <server name="APP_ENV" value="test" force="true"/>
@@ -16,15 +10,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="All packages">
-            <directory>packages/common-value-objects/tests</directory>
-            <directory>packages/composite-value-objects/tests</directory>
-            <directory>packages/core/tests</directory>
-            <directory>packages/normalizers/tests</directory>
-            <directory>packages/object-access-normalizer/tests</directory>
-            <directory>packages/openapi-schema/tests</directory>
-            <directory>packages/value-objects/tests</directory>
-        </testsuite>
+        <testsuite name="All packages"><directory>packages/composite-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/normalizers/tests</directory><directory>packages/value-objects/tests</directory><directory>packages/core/tests</directory><directory>packages/openapi-schema/tests</directory><directory>packages/object-access-normalizer/tests</directory></testsuite>
     </testsuites>
 
     <filter>

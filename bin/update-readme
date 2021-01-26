@@ -13,3 +13,5 @@ foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0)
     $package->createFile('phpunit.xml', true);
     $package->createFile('README.md', true);
 }
+
+ComposerTools::runUpdate();

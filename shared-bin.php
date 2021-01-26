@@ -74,4 +74,16 @@ class Package {
         );
         file_put_contents($target, $source);
     }
+
+    public function getTestFolder(): string
+    {
+        return 'packages/' . $this->package . '/tests';
+    }
+}
+
+class ComposerTools {
+    public static function runUpdate()
+    {
+        `vendor/bin/monorepo-builder merge && composer update`;
+    }
 }
