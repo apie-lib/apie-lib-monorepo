@@ -1,0 +1,35 @@
+{
+  "name": "apie/object-access-normalizer",
+  "description": "Object Access + Symfony normalizers to map setters/getters to an object.",
+  "require": {
+    "php": ">=7.3",
+    "phpdocumentor/reflection-docblock": "^4.3|5.*",
+    "symfony/http-kernel": "^4.3|^5.0",
+    "symfony/property-info": "^4.3|^5.0",
+    "symfony/serializer": "^4.3|^5.0",
+    "psr/cache": "^1.0"
+  },
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\ObjectAccessNormalizer\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\ObjectAccessNormalizer\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "doctrine/annotations": "^1.6",
+    "phpstan/phpstan": "^0.12.3",
+    "phpunit/phpunit": "^9.5",
+    "symfony/cache": "^4.3|5.*",
+    "ramsey/uuid": "^3.8"
+  }
+}

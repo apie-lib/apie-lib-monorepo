@@ -11,15 +11,18 @@
             "Apie\\CommonValueObjects\\": "packages/common-value-objects/src/",
             "Apie\\CompositeValueObjects\\": "packages/composite-value-objects/src/",
             "Apie\\Core\\": "packages/core/src/",
+            "Apie\\ObjectAccessNormalizer\\": "packages/object-access-normalizer/src/",
             "Apie\\OpenapiSchema\\": "packages/openapi-schema/src/",
             "Apie\\ValueObjects\\": "packages/value-objects/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
+            "Apie\\Tests\\ApieObjectAccessNormalizer\\": "packages/object-access-normalizer/tests/",
             "Apie\\Tests\\CommonValueObjects\\": "packages/common-value-objects/tests/",
             "Apie\\Tests\\CompositeValueObjects\\": "packages/composite-value-objects/tests/",
             "Apie\\Tests\\Core\\": "packages/core/tests/",
+            "Apie\\Tests\\ObjectAccessNormalizer\\": "packages/object-access-normalizer/tests/",
             "Apie\\Tests\\OpenapiSchema\\": "packages/openapi-schema/tests/",
             "Apie\\Tests\\ValueObjects\\": "packages/value-objects/tests/"
         }
@@ -28,6 +31,7 @@
         "apie/common-value-objects": "*",
         "apie/composite-value-objects": "*",
         "apie/core": "*",
+        "apie/object-access-normalizer": "self.version",
         "apie/openapi-schema": "*",
         "apie/value-objects": "*"
     },
@@ -37,14 +41,23 @@
     "require": {
         "ext-json": "*",
         "php": ">=7.3",
-        "phpdocumentor/reflection-docblock": "4.*|5.*",
-        "symfony/http-kernel": "4.*|5.*",
-        "symfony/polyfill-php80": "1.*"
+        "phpdocumentor/reflection-docblock": "^4.3|5.*",
+        "psr/cache": "^1.0",
+        "symfony/http-kernel": "^4.3|^5.0",
+        "symfony/polyfill-php80": "1.*",
+        "symfony/property-info": "^4.3|^5.0",
+        "symfony/serializer": "^4.3|^5.0"
     },
     "require-dev": {
+        "doctrine/annotations": "^1.6",
+        "phpstan/phpstan": "^0.12.3",
         "phpunit/phpunit": "^9.5",
+        "ramsey/uuid": "^3.8",
+        "symfony/cache": "^4.3|5.*",
         "symfony/finder": "4.*|5.*",
         "symfony/phpunit-bridge": "4.*|5.*",
         "symplify/monorepo-builder": "^9.0"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
