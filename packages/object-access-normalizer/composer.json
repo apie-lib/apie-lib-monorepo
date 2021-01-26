@@ -27,10 +27,13 @@
   },
   "require-dev": {
     "apie/uuid-plugin": "dev-main",
+    "apie/value-object-plugin": "dev-main",
     "doctrine/annotations": "^1.6",
     "phpstan/phpstan": "^0.12.3",
     "phpunit/phpunit": "^9.5",
     "symfony/cache": "^4.3|5.*",
     "ramsey/uuid": "^3.8"
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
