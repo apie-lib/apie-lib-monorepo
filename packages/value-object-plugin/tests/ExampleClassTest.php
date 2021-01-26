@@ -1,7 +1,7 @@
 <?php
-namespace Apie\Tests\Normalizers;
+namespace Apie\Tests\ValueObjectPlugin;
 
-use Apie\Normalizers\ExampleClass;
+use Apie\ValueObjectPlugin\ExampleClass;
 use PHPUnit\Framework\TestCase;
 
 class ExampleClassTest extends TestCase

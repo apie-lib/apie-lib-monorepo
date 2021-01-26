@@ -14,6 +14,8 @@
             "Apie\\Normalizers\\": "packages/normalizers/src/",
             "Apie\\ObjectAccessNormalizer\\": "packages/object-access-normalizer/src/",
             "Apie\\OpenapiSchema\\": "packages/openapi-schema/src/",
+            "Apie\\UuidPlugin\\": "packages/uuid-plugin/src/",
+            "Apie\\ValueObjectPlugin\\": "packages/value-object-plugin/src/",
             "Apie\\ValueObjects\\": "packages/value-objects/src/"
         }
     },
@@ -26,6 +28,8 @@
             "Apie\\Tests\\Normalizers\\": "packages/normalizers/tests/",
             "Apie\\Tests\\ObjectAccessNormalizer\\": "packages/object-access-normalizer/tests/",
             "Apie\\Tests\\OpenapiSchema\\": "packages/openapi-schema/tests/",
+            "Apie\\Tests\\UuidPlugin\\": "packages/uuid-plugin/tests/",
+            "Apie\\Tests\\ValueObjectPlugin\\": "packages/value-object-plugin/tests/",
             "Apie\\Tests\\ValueObjects\\": "packages/value-objects/tests/"
         }
     },
@@ -36,6 +40,8 @@
         "apie/normalizers": "self.version",
         "apie/object-access-normalizer": "self.version",
         "apie/openapi-schema": "*",
+        "apie/uuid-plugin": "self.version",
+        "apie/value-object-plugin": "self.version",
         "apie/value-objects": "*"
     },
     "description": "Monorepo of the Apie library",
@@ -46,6 +52,7 @@
         "php": ">=7.3",
         "phpdocumentor/reflection-docblock": "^4.3|5.*",
         "psr/cache": "^1.0",
+        "ramsey/uuid": "^3.8",
         "symfony/http-kernel": "^4.3|^5.0",
         "symfony/polyfill-php80": "1.*",
         "symfony/property-info": "^4.3|^5.0",

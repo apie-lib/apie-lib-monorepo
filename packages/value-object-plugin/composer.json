@@ -1,6 +1,6 @@
 {
-  "name": "apie/normalizers",
-  "description": "Composer package of the apie library: normalizers",
+  "name": "apie/value-object-plugin",
+  "description": "Composer package of the apie library: value object plugin",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -11,12 +11,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Apie\\Normalizers\\": "src/"
+      "Apie\\ValueObjectPlugin\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Apie\\Tests\\Normalizers\\": "tests/"
+      "Apie\\Tests\\ValueObjectPlugin\\": "tests/"
     }
   },
   "require": {

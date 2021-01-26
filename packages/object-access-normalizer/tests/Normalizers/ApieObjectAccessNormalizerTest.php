@@ -2,6 +2,8 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Normalizers;
 
+use Apie\UuidPlugin\Normalizers\UuidNormalizer;
+use Apie\ValueObjectPlugin\Normalizers\ValueObjectNormalizer;
 use DateTimeImmutable;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
@@ -15,8 +17,6 @@ use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use W2w\Lib\Apie\Plugins\Uuid\Normalizers\UuidNormalizer;
-use W2w\Lib\Apie\Plugins\ValueObject\Normalizers\ValueObjectNormalizer;
 use Apie\ObjectAccessNormalizer\Exceptions\ValidationException;
 use Apie\ObjectAccessNormalizer\Normalizers\ApieObjectAccessNormalizer;
 use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessInterface;

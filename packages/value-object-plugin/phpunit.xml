@@ -6,7 +6,7 @@
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="normalizers unit tests">
+    <testsuite name="value-object-plugin unit tests">
       <directory suffix="Test.php">./tests</directory>
     </testsuite>
   </testsuites>
