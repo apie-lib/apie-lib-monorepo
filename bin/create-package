@@ -1,0 +1,25 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../shared-bin.php';
+
+if ($argc < 2) {
+    echo "Usage " . $argv[0] . ' <packagename>';
+    return 1;
+}
+if (!preg_match('/^[a-z]+(-[a-z]+)*$/', $argv[1])) {
+    echo "Package name " . $argv[1] . " is not valid";
+    return 1;
+}
+
+$packageFolder = __DIR__ . '/../packages/'. $argv[1];
+@mkdir($packageFolder);
+@mkdir($packageFolder . '/src');
+@mkdir($packageFolder . '/tests');
+$package = new Package($packageFolder);
+$package->createFile('composer.json', false);
+$package->createFile('LICENSE', true);
+$package->createFile('phpunit.xml', true);
+$package->createFile('README.md', true);
+$package->createFile('src/ExampleClass.php', true);
+$package->createFile('tests/ExampleClassTest.php', true);

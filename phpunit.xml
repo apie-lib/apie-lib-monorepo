@@ -20,6 +20,7 @@
             <directory>packages/common-value-objects/tests</directory>
             <directory>packages/composite-value-objects/tests</directory>
             <directory>packages/core/tests</directory>
+            <directory>packages/normalizers/tests</directory>
             <directory>packages/object-access-normalizer/tests</directory>
             <directory>packages/openapi-schema/tests</directory>
             <directory>packages/value-objects/tests</directory>
