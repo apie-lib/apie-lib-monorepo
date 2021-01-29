@@ -4,27 +4,36 @@
 namespace Apie\OpenapiSchema\Spec;
 
 
-use Apie\CompositeValueObjects\CompositeValueObjectTrait;
+use Apie\CommonValueObjects\KebabCaseString;
+use Apie\CommonValueObjects\Url;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
-use Apie\ValueObjects\ValueObjectCompareInterface;
+use Apie\OpenapiSchema\ValueObjects\SpecificationExtension;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#xml-object
+ */
 class Xml implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 
+    public function __construct()
+    {
+        $this->specificationExtension = new SpecificationExtension([]);
+    }
+
     /**
-     * @var string|null
+     * @var KebabCaseString|null
      */
     private $name;
 
     /**
-     * @var string|null
+     * @var Url|null
      */
     private $namespace;
 
     /**
-     * @var string|null
+     * @var KebabCaseString|null
      */
     private $prefix;
 
@@ -37,4 +46,44 @@ class Xml implements ValueObjectInterface
      * @var bool|null
      */
     private $wrapped;
+
+    /**
+     * @return KebabCaseString|null
+     */
+    public function getName(): ?KebabCaseString
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return Url|null
+     */
+    public function getNamespace(): ?Url
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * @return KebabCaseString|null
+     */
+    public function getPrefix(): ?KebabCaseString
+    {
+        return $this->prefix;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAttribute(): bool
+    {
+        return $this->attribute ?? false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isWrapped(): bool
+    {
+        return $this->wrapped ?? false;
+    }
 }

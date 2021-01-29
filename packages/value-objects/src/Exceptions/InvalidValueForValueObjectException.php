@@ -28,9 +28,13 @@ class InvalidValueForValueObjectException extends ApieException implements Local
         $refl = new ReflectionClass($valueObject);
         $this->name = strtolower((string) preg_replace('/(?<!^)[A-Z]/', '_$0', $refl->getShortName()));
         $this->value = $value;
+        $displayValue = $value;
+        if (is_object($displayValue)) {
+            $displayValue = 'Object ' . get_class($displayValue);
+        }
         parent::__construct(
             422,
-            '"' . $value . '" is not a valid value for value object ' . $this->name
+            '"' . $displayValue . '" is not a valid value for value object ' . $this->name
         );
     }
 

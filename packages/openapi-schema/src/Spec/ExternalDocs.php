@@ -6,7 +6,7 @@ namespace Apie\OpenapiSchema\Spec;
 
 use Apie\CommonValueObjects\Url;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
-use Apie\ValueObjects\ValueObjectCompareInterface;
+use Apie\OpenapiSchema\ValueObjects\SpecificationExtension;
 use Apie\ValueObjects\ValueObjectInterface;
 
 class ExternalDocs implements ValueObjectInterface
@@ -27,5 +27,6 @@ class ExternalDocs implements ValueObjectInterface
     {
         $this->url = $url;
         $this->description = $description;
+        $this->specificationExtension = new SpecificationExtension([]);
     }
 }

@@ -3,28 +3,24 @@
 
 namespace Apie\OpenapiSchema\Map;
 
+use Apie\CompositeValueObjects\Factory\ReflectionTypeFactory;
+use Apie\CompositeValueObjects\ValueObjectHashmapTrait;
+use Apie\CompositeValueObjects\ValueObjectListInterface;
 use Apie\OpenapiSchema\Constants;
 use Apie\OpenapiSchema\Spec\ServerVariable;
+use ReflectionType;
 
-final class ServerVariableObjectList extends \ArrayObject implements \JsonSerializable
+final class ServerVariableObjectList implements ValueObjectListInterface
 {
-    public function offsetSet($index, $newval) {
-        $index = (string) $index;
-        if (!preg_match(Constants::VALID_KEY_REGEX, $index)) {
-            throw new \InvalidArgumentException('Index is not a valid key name for a ServerVariableObjectList');
-        }
-        if (!$newval instanceof ServerVariable) {
-            throw new \InvalidArgumentException('Argument should be an instance of ServerVariableObject');
-        }
-        parent::offsetSet($index, $newval);
+    use ValueObjectHashmapTrait;
+
+    protected static function getWantedType(): ReflectionType
+    {
+        return ReflectionTypeFactory::createForClass(ServerVariable::class);
     }
 
-    public function jsonSerialize()
+    protected function isValidKey(string $key): bool
     {
-        $list = $this->getArrayCopy();
-        if (empty($list)) {
-            return new \stdClass();
-        }
-        return $list;
+        return preg_match(Constants::VALID_KEY_REGEX, $key) ? true : false;
     }
 }

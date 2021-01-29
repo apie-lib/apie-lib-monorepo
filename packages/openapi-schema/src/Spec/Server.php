@@ -5,17 +5,21 @@ namespace Apie\OpenapiSchema\Spec;
 
 use Apie\CommonValueObjects\Url;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
+use Apie\OpenapiSchema\Exceptions\MissingPlaceholderVariables;
 use Apie\OpenapiSchema\Map\ServerVariableObjectList;
+use Apie\OpenapiSchema\ValueObjects\UrlsWithPlaceholders;
 use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#server-object
+ */
 class Server implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 
     /**
-     * @TODO: does it allow placeholders properly or do we need a different value object here?
-     * @var Url
+     * @var UrlsWithPlaceholders
      */
     private $url;
 
@@ -29,15 +33,13 @@ class Server implements ValueObjectInterface
      */
     private $variables;
 
-    public function __construct(Url $url)
+    public function __construct(UrlsWithPlaceholders $url)
     {
         $this->url = $url;
+        $this->validateProperties();
     }
 
-    /**
-     * @return Url
-     */
-    public function getUrl(): Url
+    public function getUrl(): UrlsWithPlaceholders
     {
         return $this->url;
     }
@@ -56,5 +58,22 @@ class Server implements ValueObjectInterface
     public function getVariables(): ?ServerVariableObjectList
     {
         return $this->variables;
+    }
+
+    protected function validateProperties(): void
+    {
+        $placeholders = $this->url->getPlaceholders();
+        if (!$this->variables && $placeholders) {
+            throw new MissingPlaceholderVariables($placeholders);
+        }
+        $missing = [];
+        foreach ($placeholders as $placeholder) {
+            if (!isset($this->variables[$placeholder])) {
+                $missing[] = $placeholder;
+            }
+        }
+        if (!empty($missing)) {
+            throw new MissingPlaceholderVariables($missing);
+        }
     }
 }

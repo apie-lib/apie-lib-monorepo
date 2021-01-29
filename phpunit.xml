@@ -10,7 +10,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="All packages"><directory>packages/uuid-plugin/tests</directory><directory>packages/composite-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/value-objects/tests</directory><directory>packages/core/tests</directory><directory>packages/openapi-schema/tests</directory><directory>packages/object-access-normalizer/tests</directory></testsuite>
+        <testsuite name="All packages"><directory>packages/uuid-plugin/tests</directory><directory>packages/composite-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/value-objects/tests</directory><directory>packages/core/tests</directory><directory>packages/openapi-schema/tests</directory><directory>packages/object-access-normalizer/tests</directory><directory>packages/value-object-plugin/tests</directory></testsuite>
     </testsuites>
 
     <filter>
