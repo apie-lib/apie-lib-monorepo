@@ -4,7 +4,6 @@
 namespace Apie\CommonValueObjects;
 
 use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;
-use Apie\ValueObjects\StringTrait;
 use Apie\ValueObjects\ValueObjectInterface;
 use DateTimeImmutable;
 use DateTimeInterface;

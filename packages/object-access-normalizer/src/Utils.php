@@ -2,8 +2,8 @@
 
 namespace Apie\ObjectAccessNormalizer;
 
-use ReflectionClass;
 use Apie\ObjectAccessNormalizer\Exceptions\CouldNotConvertException;
+use ReflectionClass;
 
 class Utils
 {
@@ -33,6 +33,7 @@ class Utils
                     break;
                 }
                 $input = (string) $input;
+                // no break
             case 'string':
                 if (!preg_match('/^\s*[1-9][0-9]*(\.0+){0,1}\s*$/', $input)) {
                     $displayValue = $input;
@@ -65,6 +66,7 @@ class Utils
                     break;
                 }
                 $input = (string) $input;
+                // no break
             case 'string':
                 if (!preg_match('/^\s*[0-9]/', $input)) {
                     $displayValue = $input;

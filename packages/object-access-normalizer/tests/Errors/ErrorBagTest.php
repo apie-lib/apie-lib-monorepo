@@ -1,15 +1,15 @@
 <?php
 namespace Apie\Tests\ObjectAccessNormalizer\Errors;
 
-use PHPUnit\Framework\TestCase;
-use RuntimeException;
-use Throwable;
 use Apie\ObjectAccessNormalizer\Errors\ErrorBag;
 use Apie\ObjectAccessNormalizer\Exceptions\ValidationException;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\TestCase1\ValidationException as ValidationExceptionCase1;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\TestCase2\ValidationException as ValidationExceptionCase2;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\TestCase3\ValidationException as ValidationExceptionCase3;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\TestCase4\ValidationException as ValidationExceptionCase4;
+use PHPUnit\Framework\TestCase;
+use RuntimeException;
+use Throwable;
 
 class ErrorBagTest extends TestCase
 {

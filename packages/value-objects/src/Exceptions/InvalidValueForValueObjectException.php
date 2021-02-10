@@ -32,6 +32,9 @@ class InvalidValueForValueObjectException extends ApieException implements Local
         if (is_object($displayValue)) {
             $displayValue = 'Object ' . get_class($displayValue);
         }
+        if (is_array($value)) {
+            $displayValue = 'array '. json_encode($value);
+        }
         parent::__construct(
             422,
             '"' . $displayValue . '" is not a valid value for value object ' . $this->name

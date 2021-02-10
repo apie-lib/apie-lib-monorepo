@@ -3,8 +3,8 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Exceptions;
 
-use PHPUnit\Framework\TestCase;
 use Apie\ObjectAccessNormalizer\Exceptions\LocalizationInfo;
+use PHPUnit\Framework\TestCase;
 
 class LocalizationInfoTest extends TestCase
 {

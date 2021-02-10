@@ -3,10 +3,11 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
-use Apie\OpenapiSchema\ValueObjects\SecuritySchemeType;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#security-requirement-object
+ */
 class SecurityRequirement implements ValueObjectInterface
 {
     /**
@@ -16,7 +17,7 @@ class SecurityRequirement implements ValueObjectInterface
 
     public static function fromNative($value)
     {
-        return new SecuritySchemeType($value);
+        return new SecurityRequirement($value);
     }
 
     public function toNative()
@@ -30,7 +31,7 @@ class SecurityRequirement implements ValueObjectInterface
         foreach ($value as $name => $securityRequirements) {
             $list = [];
             foreach ($securityRequirements as $securityRequirement) {
-                $list[] = $securityRequirement;
+                $list[] = (string) $securityRequirement;
             }
             $this->securityRequirementArray[$name] = $list;
         }

@@ -3,12 +3,12 @@
 
 namespace Apie\ObjectAccessNormalizer\Errors;
 
-use Closure;
-use ReflectionClass;
-use Throwable;
 use Apie\ObjectAccessNormalizer\Exceptions\ErrorBagAwareException;
 use Apie\ObjectAccessNormalizer\Exceptions\LocalizationableException;
 use Apie\ObjectAccessNormalizer\Normalizers\ApieObjectAccessNormalizer;
+use Closure;
+use ReflectionClass;
+use Throwable;
 
 /**
  * Maps all found exceptions to an error map.

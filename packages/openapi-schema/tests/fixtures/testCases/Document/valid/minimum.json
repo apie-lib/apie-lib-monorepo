@@ -1,0 +1,10 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Title is required",
+    "version": "1.0"
+  },
+  "paths": {
+    "/me": {}
+  }
+}

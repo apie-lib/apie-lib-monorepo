@@ -3,7 +3,6 @@
 
 namespace Apie\Tests\ValueObjectPlugin\Normalizers;
 
-
 use Apie\Tests\ValueObjects\Mocks\StringTraitExample;
 use Apie\ValueObjectPlugin\Normalizers\ValueObjectNormalizer;
 use PHPUnit\Framework\TestCase;

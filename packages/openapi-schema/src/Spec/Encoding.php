@@ -3,12 +3,13 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Map\HeaderMap;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#encoding-object
+ */
 class Encoding implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;

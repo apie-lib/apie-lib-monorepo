@@ -2,9 +2,9 @@
 
 namespace Apie\ObjectAccessNormalizer\Setters;
 
+use Apie\ObjectAccessNormalizer\TypeUtils;
 use ReflectionProperty;
 use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\TypeUtils;
 
 class ReflectionPropertySetter implements SetterInterface
 {

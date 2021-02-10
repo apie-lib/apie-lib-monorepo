@@ -3,7 +3,8 @@
 
 namespace Apie\OpenapiSchema\Contract;
 
+use Apie\ValueObjects\ValueObjectInterface;
 
-interface SchemaContract extends \JsonSerializable
+interface SchemaContract extends ValueObjectInterface
 {
 }

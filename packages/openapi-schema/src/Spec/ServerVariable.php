@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\CompositeValueObjects\ValueObjects\StringList;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Exceptions\DefaultValueNotInEnum;

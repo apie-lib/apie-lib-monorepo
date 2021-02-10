@@ -3,7 +3,6 @@
 
 namespace Apie\ObjectAccessNormalizer\Exceptions;
 
-
 final class LocalizationInfo
 {
     /**

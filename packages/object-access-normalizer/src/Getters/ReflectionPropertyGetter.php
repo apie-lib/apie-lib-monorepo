@@ -3,9 +3,9 @@
 
 namespace Apie\ObjectAccessNormalizer\Getters;
 
+use Apie\ObjectAccessNormalizer\TypeUtils;
 use ReflectionProperty;
 use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\TypeUtils;
 
 class ReflectionPropertyGetter implements GetterInterface
 {

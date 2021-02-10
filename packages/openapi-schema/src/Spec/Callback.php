@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\OpenapiSchema\ValueObjects\SpecificationExtension;
 use Apie\ValueObjects\ValueObjectInterface;
 
@@ -38,6 +37,10 @@ class Callback implements ValueObjectInterface
 
     public function toNative()
     {
-        // TODO: Implement toNative() method.
+        $res = $this->specificationExtension->toNative();
+        foreach ($this->paths as $key => $pathItem) {
+            $res[$key] = $pathItem->toNative();
+        }
+        return $res;
     }
 }

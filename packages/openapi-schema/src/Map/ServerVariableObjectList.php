@@ -3,24 +3,23 @@
 
 namespace Apie\OpenapiSchema\Map;
 
-use Apie\CompositeValueObjects\Factory\ReflectionTypeFactory;
+use Apie\CompositeValueObjects\Exceptions\InvalidKeyException;
 use Apie\CompositeValueObjects\ValueObjectHashmapTrait;
 use Apie\CompositeValueObjects\ValueObjectListInterface;
 use Apie\OpenapiSchema\Constants;
 use Apie\OpenapiSchema\Spec\ServerVariable;
-use ReflectionType;
+use Apie\TypeJuggling\AnotherValueObject;
+use Apie\TypeJuggling\TypeUtilInterface;
 
 final class ServerVariableObjectList implements ValueObjectListInterface
 {
     use ValueObjectHashmapTrait;
 
-    protected static function getWantedType(): ReflectionType
+    protected static function getWantedType(string $fieldName): TypeUtilInterface
     {
-        return ReflectionTypeFactory::createForClass(ServerVariable::class);
-    }
-
-    protected function isValidKey(string $key): bool
-    {
-        return preg_match(Constants::VALID_KEY_REGEX, $key) ? true : false;
+        if (!preg_match(Constants::VALID_KEY_REGEX, $fieldName)) {
+            throw new InvalidKeyException($fieldName, null);
+        }
+        return new AnotherValueObject($fieldName, ServerVariable::class);
     }
 }

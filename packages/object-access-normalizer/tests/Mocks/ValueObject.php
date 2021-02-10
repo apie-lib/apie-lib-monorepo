@@ -3,12 +3,13 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Mocks;
 
-use RuntimeException;
 use Apie\ObjectAccessNormalizer\Utils;
+use RuntimeException;
 
 class ValueObject
 {
-    public function __construct($value) {
+    public function __construct($value)
+    {
         throw new RuntimeException(Utils::toString($value));
     }
 }

@@ -2,6 +2,14 @@
 
 namespace Apie\ObjectAccessNormalizer\Normalizers;
 
+use Apie\ObjectAccessNormalizer\Errors\ErrorBag;
+use Apie\ObjectAccessNormalizer\Exceptions\CouldNotConvertException;
+use Apie\ObjectAccessNormalizer\Exceptions\ValidationException;
+use Apie\ObjectAccessNormalizer\NameConverters\NullNameConverter;
+use Apie\ObjectAccessNormalizer\ObjectAccess\FilteredObjectAccess;
+use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccess;
+use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessInterface;
+use Apie\ObjectAccessNormalizer\Utils;
 use ReflectionClass;
 use stdClass;
 use Symfony\Component\PropertyInfo\Type;
@@ -15,14 +23,6 @@ use Symfony\Component\Serializer\SerializerAwareInterface;
 use Symfony\Component\Serializer\SerializerAwareTrait;
 use Throwable;
 use Traversable;
-use Apie\ObjectAccessNormalizer\Errors\ErrorBag;
-use Apie\ObjectAccessNormalizer\Exceptions\CouldNotConvertException;
-use Apie\ObjectAccessNormalizer\Exceptions\ValidationException;
-use Apie\ObjectAccessNormalizer\NameConverters\NullNameConverter;
-use Apie\ObjectAccessNormalizer\ObjectAccess\FilteredObjectAccess;
-use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccess;
-use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessInterface;
-use Apie\ObjectAccessNormalizer\Utils;
 
 /**
  * Normalizes any classes to arrays and viceversa using a class implementing ObjectAccessInterface.
@@ -222,7 +222,6 @@ class ApieObjectAccessNormalizer implements NormalizerInterface, DenormalizerInt
                     $parsedArguments[] = $this->denormalizeType($data, $denormalizedFieldName, $fieldName, $argumentType, $format, $context);
                 } else {
                     $parsedArguments[] = $data[$fieldName];
-
                 }
             } catch (Throwable $throwable) {
                 $errors->addThrowable($denormalizedFieldName, $throwable);

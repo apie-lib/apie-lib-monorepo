@@ -4,9 +4,9 @@
 namespace Apie\Tests\OpenapiSchema\Spec;
 
 use Apie\CommonValueObjects\Url;
-use Apie\CompositeValueObjects\Exceptions\MissingValueException;
 use Apie\OpenapiSchema\Spec\ExternalDocs;
 use Apie\OpenapiSchema\Spec\Tag;
+use Apie\TypeJuggling\Exceptions\MissingValueException;
 use PHPUnit\Framework\TestCase;
 
 /**

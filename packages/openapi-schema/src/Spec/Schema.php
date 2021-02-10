@@ -4,18 +4,44 @@
 namespace Apie\OpenapiSchema\Spec;
 
 use Apie\CommonValueObjects\JavascriptRegularExpression;
+use Apie\CompositeValueObjects\Exceptions\FieldMissingException;
+use Apie\CompositeValueObjects\Exceptions\IgnoredKeysException;
+use Apie\CompositeValueObjects\ValueObjects\StringList;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
+use Apie\OpenapiSchema\Contract\SchemaContract;
 use Apie\OpenapiSchema\Map\SchemaList;
 use Apie\OpenapiSchema\Map\SchemaMap;
 use Apie\OpenapiSchema\ValueObjects\SchemaTypes;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 
-class Schema implements ValueObjectInterface
+/**
+ * @see https://swagger.io/specification/#schema-object
+ */
+class Schema implements SchemaContract
 {
     use CompositeValueObjectWithExtension;
 
     private function __construct()
     {
+    }
+
+    protected function validateProperties(): void
+    {
+        if ($this->type) {
+            foreach ($this->type->getRequiredFields() as $requiredField) {
+                if ($this->$requiredField === null) {
+                    throw new FieldMissingException($requiredField, $this);
+                }
+            }
+            $ignoredKeys = [];
+            foreach ($this->type->getConflictedFields() as $conflictedField) {
+                if ($this->$conflictedField !== null) {
+                    $ignoredKeys[] = $conflictedField;
+                }
+            }
+            if ($ignoredKeys) {
+                throw new IgnoredKeysException($ignoredKeys, $this->type->getRequiredFields());
+            }
+        }
     }
 
     /**
@@ -34,17 +60,17 @@ class Schema implements ValueObjectInterface
     /**
      * @var float|int|null
      */
-private $maximum;
+    private $maximum;
     /**
-     * @var float|int|null
+     * @var float|int|bool|null
      */
-private $exclusiveMaximum;
+    private $exclusiveMaximum;
     /**
      * @var float|int|null
      */
     private $minimum;
     /**
-     * @var float|int|null
+     * @var float|int|bool|null
      */
     private $exclusiveMinimum;
     /**
@@ -80,41 +106,41 @@ private $exclusiveMaximum;
      */
     private $minProperties;
     /**
-     * @var bool|null
+     * @var StringList|null
      */
     private $required;
     /**
-     * @var array
+     * @var array|null
      */
     private $enum;
 
     /**
-     * @var Schema|Reference|null
+     * @var SchemaList|null
      */
     private $allOf;
 
     /**
-     * @var Schema|Reference|null
+     * @var SchemaList|null
      */
     private $anyOf;
 
     /**
-     * @var Schema|Reference|null
+     * @var SchemaList|null
      */
     private $oneOf;
 
     /**
-     * @var Schema|Reference|null
+     * @var SchemaList|null
      */
     private $not;
 
     /**
-     * @var SchemaList|null
+     * @var SchemaContract|Schema|Reference|null
      */
     private $items;
 
     /**
-     * @var bool|Schema|Reference|null
+     * @var bool|SchemaContract|Schema|Reference|null
      */
     private $additionalProperties;
 
@@ -134,7 +160,7 @@ private $exclusiveMaximum;
     private $format;
 
     /**
-     * @var mixed
+     * @var mixed|null
      */
     private $default;
 
@@ -168,7 +194,7 @@ private $exclusiveMaximum;
     private $externalDocs;
 
     /**
-     * @var mixed
+     * @var mixed|null
      */
     private $example;
 

@@ -3,10 +3,6 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Exceptions;
 
-use PHPUnit\Framework\TestCase;
-use ReflectionMethod;
-use RuntimeException;
-use Apie\ObjectAccessNormalizer\Errors\ErrorBag;
 use Apie\ObjectAccessNormalizer\Exceptions\CouldNotConvertException;
 use Apie\ObjectAccessNormalizer\Exceptions\NameNotFoundException;
 use Apie\ObjectAccessNormalizer\Exceptions\ObjectAccessException;
@@ -14,6 +10,9 @@ use Apie\ObjectAccessNormalizer\Exceptions\ObjectWriteException;
 use Apie\ObjectAccessNormalizer\Exceptions\ValidationException;
 use Apie\ObjectAccessNormalizer\Getters\ReflectionMethodGetter;
 use Apie\ObjectAccessNormalizer\Setters\ReflectionMethodSetter;
+use PHPUnit\Framework\TestCase;
+use ReflectionMethod;
+use RuntimeException;
 
 class LocalizationableExceptionTest extends TestCase
 {

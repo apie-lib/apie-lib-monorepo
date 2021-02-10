@@ -3,16 +3,17 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-use Apie\CompositeValueObjects\CompositeValueObjectTrait;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Contract\InfoContract;
 use Apie\OpenapiSchema\Map\SecurityRequirementList;
 use Apie\OpenapiSchema\Map\ServerList;
 use Apie\OpenapiSchema\Map\TagList;
 use Apie\OpenapiSchema\ValueObjects\OpenApiVersion;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#openapi-object
+ */
 final class Document implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;

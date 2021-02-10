@@ -3,7 +3,6 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Mocks;
 
-
 class ClassWithTypedArrayTypehint
 {
     /**

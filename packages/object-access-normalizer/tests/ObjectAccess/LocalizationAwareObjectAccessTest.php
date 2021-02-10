@@ -2,20 +2,18 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\ObjectAccess;
 
+use Apie\ObjectAccessNormalizer\Interfaces\LocalizationAwareInterface;
+use Apie\ObjectAccessNormalizer\ObjectAccess\SimpleLocalizationObjectAccess;
+use Apie\Tests\ObjectAccessNormalizer\Mocks\LocalizationAwareClass;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\Interfaces\LocalizationAwareInterface;
-use Apie\ObjectAccessNormalizer\ObjectAccess\LocalizationAwareObjectAccess;
-use Apie\ObjectAccessNormalizer\ObjectAccess\SimpleLocalizationObjectAccess;
-use Apie\Tests\ObjectAccessNormalizer\Mocks\LocalizationAwareClass;
 
 class LocalizationAwareObjectAccessTest extends TestCase
 {
     public function testGetters()
     {
-        $localizationAware = new class implements LocalizationAwareInterface
-        {
+        $localizationAware = new class implements LocalizationAwareInterface {
             public $acceptLanguage = 'nl';
 
             public $contentLanguage = 'de';

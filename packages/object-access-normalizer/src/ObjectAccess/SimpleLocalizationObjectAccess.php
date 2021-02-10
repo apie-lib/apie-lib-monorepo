@@ -3,7 +3,6 @@
 
 namespace Apie\ObjectAccessNormalizer\ObjectAccess;
 
-
 use Apie\ObjectAccessNormalizer\Interfaces\LocalizationAwareInterface;
 
 class SimpleLocalizationObjectAccess extends LocalizationAwareObjectAccess

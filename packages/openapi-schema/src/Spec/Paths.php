@@ -2,39 +2,48 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-use Apie\OpenapiSchema\ValueObjects\SpecificationExtension;
+use Apie\CompositeValueObjects\Exceptions\InvalidKeyException;
+use Apie\CompositeValueObjects\ValueObjectHashmapTrait;
+use Apie\CompositeValueObjects\ValueObjectListInterface;
+use Apie\TypeJuggling\AnotherValueObject;
+use Apie\TypeJuggling\Compound;
+use Apie\TypeJuggling\MixedTypehint;
+use Apie\TypeJuggling\TypeUtilInterface;
+use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;
 
-class Paths extends \ArrayObject
+/**
+ * @see https://swagger.io/specification/#paths-object
+ */
+class Paths implements ValueObjectListInterface
 {
-    private $extensions;
+    use ValueObjectHashmapTrait;
 
-    public function __construct($input = array())
+    private function __construct()
     {
-        $this->extensions = new SpecificationExtension([]);
-        parent::__construct([]);
-        foreach ($input as $key => $value) {
-            $this[$key] = $value;
-        }
     }
 
-    public function offsetSet($index, $newval) {
-        $index = (string) $index;
-        if (substr($index, 0, 1) === '/') {
-            if (!$newval instanceof PathItem) {
-                throw new \InvalidArgumentException('Argument should be an instance of PathItemObject');
+    protected function sanitizeValue(): void
+    {
+        foreach (array_keys($this->list) as $key) {
+            if (substr($key, 0, 1) === '/') {
+                return;
             }
-            parent::offsetSet($index, $newval);
-            return;
         }
-        $this->extensions = $this->extensions->withField($index, $newval);
+        throw new InvalidValueForValueObjectException($this->list, $this);
     }
 
-    public function jsonSerialize()
+    protected static function getWantedType(string $fieldName): TypeUtilInterface
     {
-        $copy = array_merge($this->getArrayCopy(), $this->extensions->toNative());
-        if (empty($copy)) {
-            return new \stdClass();
+        if (stripos($fieldName, 'x-') === 0) {
+            return new MixedTypehint($fieldName);
         }
-        return $copy;
+        if (substr($fieldName, 0, 1) === '/') {
+            return new Compound(
+                $fieldName,
+                new AnotherValueObject($fieldName, Reference::class),
+                new AnotherValueObject($fieldName, PathItem::class)
+            );
+        }
+        throw new InvalidKeyException($fieldName, new Paths());
     }
 }

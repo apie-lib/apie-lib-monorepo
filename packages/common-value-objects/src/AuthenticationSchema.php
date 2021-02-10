@@ -2,7 +2,7 @@
 
 namespace Apie\CommonValueObjects;
 
-use Apie\ValueObjects\StringEnumTrait;
+use Apie\ValueObjects\StringCaseInsensitiveEnumTrait;
 use Apie\ValueObjects\ValueObjectInterface;
 
 /**
@@ -12,7 +12,7 @@ use Apie\ValueObjects\ValueObjectInterface;
  */
 final class AuthenticationSchema implements ValueObjectInterface
 {
-    use StringEnumTrait;
+    use StringCaseInsensitiveEnumTrait;
 
     const BASIC = 'Basic';
 

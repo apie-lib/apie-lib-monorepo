@@ -1,7 +1,9 @@
 <?php
 namespace Apie\OpenapiSchema\Contract;
 
-interface InfoContract
+use Apie\ValueObjects\ValueObjectInterface;
+
+interface InfoContract extends ValueObjectInterface
 {
     public function getTitle(): string;
 

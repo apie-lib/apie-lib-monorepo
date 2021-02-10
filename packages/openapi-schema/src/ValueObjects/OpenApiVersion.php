@@ -3,8 +3,6 @@
 
 namespace Apie\OpenapiSchema\ValueObjects;
 
-
-use Apie\OpenapiSchema\Constants;
 use Apie\ValueObjects\StringTrait;
 use Apie\ValueObjects\ValueObjectInterface;
 
@@ -17,11 +15,11 @@ final class OpenApiVersion implements ValueObjectInterface
 
     protected function validValue(string $value): bool
     {
-        return $value === Constants::OPENAPI_VERSION;
+        return preg_match('/^3\.[01]\.\d+$/', $value) ? true : false;
     }
 
     protected function sanitizeValue(string $value): string
     {
-        return Constants::OPENAPI_VERSION;
+        return $value;
     }
 }

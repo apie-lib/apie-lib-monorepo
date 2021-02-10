@@ -3,9 +3,9 @@
 
 namespace Apie\ObjectAccessNormalizer\Getters;
 
+use Apie\ObjectAccessNormalizer\TypeUtils;
 use ReflectionMethod;
 use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\TypeUtils;
 
 /**
  * Wrapper around a getter method.

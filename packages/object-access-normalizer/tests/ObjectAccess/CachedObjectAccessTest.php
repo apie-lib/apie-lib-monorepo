@@ -2,16 +2,16 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\ObjectAccess;
 
+use Apie\ObjectAccessNormalizer\ObjectAccess\CachedObjectAccess;
+use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccess;
+use Apie\Tests\ObjectAccessNormalizer\Mocks\FullRestObject;
+use Apie\Tests\ObjectAccessNormalizer\Mocks\SumExample;
 use PHPUnit\Framework\TestCase;
 use Psr\Cache\CacheItemInterface;
 use ReflectionClass;
 use RuntimeException;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\ObjectAccess\CachedObjectAccess;
-use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccess;
-use Apie\Tests\ObjectAccessNormalizer\Mocks\FullRestObject;
-use Apie\Tests\ObjectAccessNormalizer\Mocks\SumExample;
 
 class CachedObjectAccessTest extends TestCase
 {

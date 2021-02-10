@@ -3,9 +3,7 @@
 
 namespace Apie\Tests\CommonValueObjects;
 
-
 use Apie\CommonValueObjects\JavascriptRegularExpression;
-use Apie\CommonValueObjects\Url;
 use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;
 use PHPUnit\Framework\TestCase;
 

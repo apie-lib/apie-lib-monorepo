@@ -3,16 +3,16 @@
 
 namespace Apie\ObjectAccessNormalizer\Normalizers;
 
+use Apie\ObjectAccessNormalizer\Errors\ErrorBag;
+use Apie\ObjectAccessNormalizer\Exceptions\ValidationException;
+use Apie\ObjectAccessNormalizer\NameConverters\NullNameConverter;
+use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessInterface;
 use ReflectionClass;
 use ReflectionMethod;
 use stdClass;
 use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
 use Symfony\Component\Serializer\Normalizer\ContextAwareDenormalizerInterface;
 use Throwable;
-use Apie\ObjectAccessNormalizer\Errors\ErrorBag;
-use Apie\ObjectAccessNormalizer\Exceptions\ValidationException;
-use Apie\ObjectAccessNormalizer\NameConverters\NullNameConverter;
-use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessInterface;
 
 /**
  * Special denormalizer to call a reflection method and return the value back.
@@ -89,7 +89,12 @@ class MethodCallDenormalizer implements ContextAwareDenormalizerInterface
             }
             try {
                 $returnObject[$fieldName] = $this->normalizer->denormalizeType(
-                    $data, $denormalizedFieldName, $fieldName, $typeHint, $format, $context
+                    $data,
+                    $denormalizedFieldName,
+                    $fieldName,
+                    $typeHint,
+                    $format,
+                    $context
                 );
             } catch (Throwable $throwable) {
                 $errorBag->addThrowable($fieldName, $throwable);

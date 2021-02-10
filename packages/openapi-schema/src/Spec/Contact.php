@@ -3,10 +3,15 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
+use Apie\CommonValueObjects\Email;
+use Apie\CommonValueObjects\Url;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Contract\ContactContract;
-use Apie\ValueObjects\ValueObjectCompareInterface;
+use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#contact-object
+ */
 class Contact implements ValueObjectInterface, ContactContract
 {
     use CompositeValueObjectWithExtension;
@@ -17,12 +22,12 @@ class Contact implements ValueObjectInterface, ContactContract
     private $name;
 
     /**
-     * @var string|null
+     * @var Url|null
      */
     private $url;
 
     /**
-     * @var string|null
+     * @var Email|null
      */
     private $email;
 

@@ -3,30 +3,46 @@
 
 namespace Apie\ValueObjects;
 
-use Apie\OpenapiSchema\Contract\SchemaContract;
 use ReflectionClass;
 
 trait StringEnumTrait
 {
     use StringTrait;
 
+    /**
+     * @var string[]
+     */
+    private static $lookupTable;
+
     final protected function validValue(string $value): bool
     {
-        $values = self::getValidValues();
-        return isset($values[$value]) || false !== array_search($value, $values, true);
+        $values = self::getLookupTable();
+        return isset($values[$value]);
     }
 
     final protected function sanitizeValue(string $value): string
     {
-        $values = self::getValidValues();
-        if (isset($values[$value])) {
-            return $values[$value];
-        }
-        return $value;
+        $values = self::getLookupTable();
+        assert(isset($values[$value]));
+        return $values[$value];
     }
 
+    private static function getLookupTable(): array
+    {
+        if (!self::$lookupTable) {
+            $values = self::getValidValues();
+            self::$lookupTable = [];
+            foreach ($values as $value) {
+                self::$lookupTable[$value] = $value;
+            }
+            foreach ($values as $key => $value) {
+                self::$lookupTable[$key] = $value;
+            }
+        }
+        return self::$lookupTable;
+    }
 
-    final public static function getValidValues()
+    final public static function getValidValues(): array
     {
         $reflectionClass = new ReflectionClass(__CLASS__);
         return $reflectionClass->getConstants();

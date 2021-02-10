@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\CommonValueObjects\Url;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\ValueObjects\SpecificationExtension;

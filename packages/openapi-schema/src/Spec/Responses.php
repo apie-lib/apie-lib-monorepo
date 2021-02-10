@@ -4,6 +4,7 @@
 namespace Apie\OpenapiSchema\Spec;
 
 use Apie\OpenapiSchema\ValueObjects\SpecificationExtension;
+use Apie\TypeJuggling\PrimitiveArray;
 use Apie\ValueObjects\ValueObjectInterface;
 
 class Responses implements ValueObjectInterface
@@ -34,15 +35,24 @@ class Responses implements ValueObjectInterface
         $extension = [];
         foreach ($value as $key => $itemValue) {
             if ($key === 'default') {
-                $result->default = Response::fromNative($itemValue);
+                $result->default = self::responseFromNative($itemValue);
             } elseif (preg_match('/^\d+$/', $key)) {
-                $result->statusCodeResponses = Response::fromNative($itemValue);
+                $result->statusCodeResponses[$key] = self::responseFromNative($itemValue, $key);
             } else {
                 $extension[$key] = $itemValue;
             }
         }
         $result->specificationExtension = new SpecificationExtension($extension);
         return $result;
+    }
+
+    private static function responseFromNative($itemValue, string $key = 'default')
+    {
+        $itemValue = (new PrimitiveArray($key))->toNative($itemValue);
+        if (isset($itemValue['$ref'])) {
+            return Reference::fromNative($itemValue);
+        }
+        return Response::fromNative($itemValue);
     }
 
     public function toNative()

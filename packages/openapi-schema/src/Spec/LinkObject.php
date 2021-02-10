@@ -3,10 +3,8 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Map\ParameterList;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
 class LinkObject implements ValueObjectInterface

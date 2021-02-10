@@ -7,7 +7,6 @@ use Closure;
 use Psr\Cache\CacheItemPoolInterface;
 use ReflectionClass;
 use ReflectionMethod;
-use Symfony\Component\PropertyInfo\Type;
 
 class CachedObjectAccess implements ObjectAccessSupportedInterface
 {

@@ -2,10 +2,6 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\ObjectAccess;
 
-use PHPUnit\Framework\TestCase;
-use Ramsey\Uuid\Uuid;
-use ReflectionClass;
-use Symfony\Component\PropertyInfo\Type;
 use Apie\ObjectAccessNormalizer\Exceptions\NameNotFoundException;
 use Apie\ObjectAccessNormalizer\Exceptions\ObjectAccessException;
 use Apie\ObjectAccessNormalizer\Exceptions\ObjectWriteException;
@@ -24,6 +20,10 @@ use Apie\Tests\ObjectAccessNormalizer\Mocks\FullRestObject;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\SimplePopo;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\SumExample;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\ValueObject;
+use PHPUnit\Framework\TestCase;
+use Ramsey\Uuid\Uuid;
+use ReflectionClass;
+use Symfony\Component\PropertyInfo\Type;
 
 class ObjectAccessTest extends TestCase
 {

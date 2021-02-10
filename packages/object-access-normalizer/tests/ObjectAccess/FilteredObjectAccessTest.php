@@ -3,14 +3,14 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\ObjectAccess;
 
-use PHPUnit\Framework\TestCase;
-use ReflectionClass;
-use Symfony\Component\PropertyInfo\Type;
 use Apie\ObjectAccessNormalizer\Exceptions\NameNotFoundException;
 use Apie\ObjectAccessNormalizer\ObjectAccess\FilteredObjectAccess;
 use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccess;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\ClassWithSerializationGroup;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\FullRestObject;
+use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use Symfony\Component\PropertyInfo\Type;
 
 class FilteredObjectAccessTest extends TestCase
 {

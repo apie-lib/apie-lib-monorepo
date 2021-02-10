@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\CommonValueObjects\KebabCaseString;
 use Apie\CommonValueObjects\Url;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;

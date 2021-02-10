@@ -5,7 +5,6 @@ namespace Apie\ObjectAccessNormalizer\ObjectAccess;
 
 use ReflectionClass;
 use ReflectionMethod;
-use Symfony\Component\PropertyInfo\Type;
 
 class GroupedObjectAccess implements ObjectAccessSupportedInterface
 {

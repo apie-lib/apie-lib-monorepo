@@ -3,12 +3,9 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
-use Apie\CompositeValueObjects\CompositeValueObjectTrait;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Map\ExampleMap;
 use Apie\OpenapiSchema\ValueObjects\ParameterIn;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
 class Header implements ValueObjectInterface
@@ -55,7 +52,7 @@ class Header implements ValueObjectInterface
     private $schema;
 
     /**
-     * @var mixed
+     * @var mixed|null
      */
     private $example;
 

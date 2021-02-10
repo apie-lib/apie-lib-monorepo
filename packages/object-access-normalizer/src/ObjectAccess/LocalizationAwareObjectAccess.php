@@ -3,12 +3,12 @@
 
 namespace Apie\ObjectAccessNormalizer\ObjectAccess;
 
-use ReflectionClass;
 use Apie\ObjectAccessNormalizer\Getters\GetterInterface;
 use Apie\ObjectAccessNormalizer\Getters\ReflectionLocalizedGetterMethod;
 use Apie\ObjectAccessNormalizer\Interfaces\LocalizationAwareInterface;
 use Apie\ObjectAccessNormalizer\Setters\ReflectionLocalizedSetterMethod;
 use Apie\ObjectAccessNormalizer\Setters\SetterInterface;
+use ReflectionClass;
 
 class LocalizationAwareObjectAccess extends ObjectAccess
 {

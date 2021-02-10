@@ -2,9 +2,9 @@
 
 namespace Apie\ObjectAccessNormalizer\Exceptions;
 
-use Throwable;
 use Apie\ObjectAccessNormalizer\Errors\ErrorBag;
 use Apie\ObjectAccessNormalizer\Normalizers\ApieObjectAccessNormalizer;
+use Throwable;
 
 /**
  * Exception thrown if the constructor could not be called or if a setter threw an error.

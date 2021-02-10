@@ -3,11 +3,10 @@
 
 namespace Apie\Tests\OpenapiSchema\Spec;
 
-use Apie\CompositeValueObjects\Exceptions\MissingValueException;
 use Apie\CompositeValueObjects\ValueObjects\StringHashmap;
 use Apie\OpenapiSchema\Exceptions\InvalidReferenceValue;
 use Apie\OpenapiSchema\Spec\Reference;
-use Apie\Tests\ValueObjects\Mocks\StringTraitExample;
+use Apie\TypeJuggling\Exceptions\MissingValueException;
 use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;
 use Apie\ValueObjects\StringTrait;
 use Apie\ValueObjects\ValueObjectInterface;
@@ -38,8 +37,7 @@ class ReferenceTest extends TestCase
             ['$ref' => '#/components/schemas/ExampleSchema'],
             StringHashmap::fromNative(['$ref' => '#/components/schemas/ExampleSchema']),
         ];
-        $stringValueObject = new class('#/components/schemas/ExampleSchema') implements ValueObjectInterface
-        {
+        $stringValueObject = new class('#/components/schemas/ExampleSchema') implements ValueObjectInterface {
             use StringTrait;
 
             protected function validValue(string $value): bool

@@ -2,10 +2,8 @@
 
 namespace Apie\ObjectAccessNormalizer\Exceptions;
 
-use ReflectionMethod;
-use ReflectionProperty;
-use Throwable;
 use Apie\ObjectAccessNormalizer\Setters\SetterInterface;
+use Throwable;
 
 /**
  * Exception thrown when a value could not be set.

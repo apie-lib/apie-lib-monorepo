@@ -3,10 +3,9 @@
 
 namespace Apie\ObjectAccessNormalizer\ObjectAccess;
 
+use Apie\ObjectAccessNormalizer\Exceptions\NameNotFoundException;
 use ReflectionClass;
 use ReflectionMethod;
-use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\Exceptions\NameNotFoundException;
 
 /**
  * Decorator around an Object Access to filter the properties that are accessible.

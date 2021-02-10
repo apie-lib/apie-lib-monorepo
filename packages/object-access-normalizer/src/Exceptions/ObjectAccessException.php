@@ -2,10 +2,8 @@
 
 namespace Apie\ObjectAccessNormalizer\Exceptions;
 
-use ReflectionMethod;
-use ReflectionProperty;
-use Throwable;
 use Apie\ObjectAccessNormalizer\Getters\GetterInterface;
+use Throwable;
 
 /**
  * Exception thrown when trying to get a property value.

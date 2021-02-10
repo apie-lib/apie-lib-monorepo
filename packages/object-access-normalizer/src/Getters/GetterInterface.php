@@ -3,8 +3,8 @@
 
 namespace Apie\ObjectAccessNormalizer\Getters;
 
-use Symfony\Component\PropertyInfo\Type;
 use Apie\ObjectAccessNormalizer\Interfaces\PriorityAwareInterface;
+use Symfony\Component\PropertyInfo\Type;
 
 interface GetterInterface extends PriorityAwareInterface
 {

@@ -3,10 +3,9 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-use Apie\CompositeValueObjects\Exceptions\MissingValueException;
-use Apie\CompositeValueObjects\Utils\PrimitiveArray;
-use Apie\CompositeValueObjects\Utils\StringLiteral;
 use Apie\OpenapiSchema\Exceptions\InvalidReferenceValue;
+use Apie\TypeJuggling\Exceptions\MissingValueException;
+use Apie\TypeJuggling\StringLiteral;
 use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;
 use Apie\ValueObjects\ValueObjectInterface;
 
@@ -46,6 +45,17 @@ class Reference implements ValueObjectInterface
             throw new MissingValueException('$ref');
         }
         return new Reference($literal->toNative($value['$ref']));
+    }
+
+    public static function supportsFromNative($value): bool
+    {
+        if ($value instanceof ValueObjectInterface) {
+            $value = $value->toNative();
+        }
+        if (!is_array($value)) {
+            return false;
+        }
+        return isset($value['$ref']) && (new StringLiteral('$ref'))->supportsFromNative($value['$ref']);
     }
 
     public function toNative()

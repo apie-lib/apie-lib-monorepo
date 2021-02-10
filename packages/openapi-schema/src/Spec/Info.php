@@ -3,15 +3,12 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-use Apie\CompositeValueObjects\CompositeValueObjectTrait;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Contract\ContactContract;
 use Apie\OpenapiSchema\Contract\InfoContract;
 use Apie\OpenapiSchema\Contract\LicenseContract;
-use Apie\ValueObjects\ValueObjectCompareInterface;
-use Apie\ValueObjects\ValueObjectInterface;
 
-final class Info implements InfoContract, ValueObjectInterface
+final class Info implements InfoContract
 {
     use CompositeValueObjectWithExtension;
 

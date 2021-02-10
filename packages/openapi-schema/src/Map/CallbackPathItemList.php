@@ -3,30 +3,27 @@
 
 namespace Apie\OpenapiSchema\Map;
 
-
+use Apie\CompositeValueObjects\Exceptions\InvalidKeyException;
+use Apie\CompositeValueObjects\ValueObjectListInterface;
+use Apie\CompositeValueObjects\ValueObjectListTrait;
 use Apie\OpenapiSchema\Constants;
-use Apie\OpenapiSchema\Spec\PathItem;
+use Apie\OpenapiSchema\Spec\Callback;
+use Apie\TypeJuggling\AnotherValueObject;
+use Apie\TypeJuggling\TypeUtilInterface;
 
-final class CallbackPathItemList extends \ArrayObject implements \JsonSerializable
+final class CallbackPathItemList implements ValueObjectListInterface
 {
-    public function offsetSet($index, $newval)
+    use ValueObjectListTrait;
+
+    private function __construct()
     {
-        $index = (string) $index;
-        if (!preg_match(Constants::VALID_EXPRESSION_REGEX, $index)) {
-            throw new \InvalidArgumentException('Index is not a valid key name for a CallbackPathItemList');
-        }
-        if (!$newval instanceof PathItem) {
-            throw new \InvalidArgumentException('Argument should be an instance of PathItem');
-        }
-        parent::offsetSet($index, $newval);
     }
 
-    public function jsonSerialize()
+    protected static function getWantedType(string $key): TypeUtilInterface
     {
-        $list = $this->getArrayCopy();
-        if (empty($list)) {
-            return new \stdClass();
+        if (!preg_match(Constants::VALID_KEY_REGEX, $key)) {
+            throw new InvalidKeyException($key, new CallbackPathItemList());
         }
-        return $list;
+        return new AnotherValueObject($key, Callback::class);
     }
 }

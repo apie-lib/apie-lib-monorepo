@@ -3,9 +3,9 @@
 
 namespace Apie\Tests\OpenapiSchema\Spec;
 
-use Apie\CompositeValueObjects\Exceptions\MissingValueException;
 use Apie\OpenapiSchema\Exceptions\DefaultValueNotInEnum;
 use Apie\OpenapiSchema\Spec\ServerVariable;
+use Apie\TypeJuggling\Exceptions\MissingValueException;
 use PHPUnit\Framework\TestCase;
 
 class ServerVariableTest extends TestCase

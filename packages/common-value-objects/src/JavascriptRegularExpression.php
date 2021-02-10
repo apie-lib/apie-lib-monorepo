@@ -3,7 +3,6 @@
 
 namespace Apie\CommonValueObjects;
 
-
 use Apie\ValueObjects\StringTrait;
 use Apie\ValueObjects\ValueObjectInterface;
 

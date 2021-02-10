@@ -3,7 +3,12 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Normalizers;
 
-
+use Apie\ObjectAccessNormalizer\Normalizers\ApieObjectAccessNormalizer;
+use Apie\ObjectAccessNormalizer\Normalizers\MethodCallDenormalizer;
+use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccess;
+use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessInterface;
+use Apie\Tests\ObjectAccessNormalizer\Mocks\ClassWithConflictingTypehints;
+use Apie\Tests\ObjectAccessNormalizer\Mocks\SumExample;
 use Apie\UuidPlugin\Normalizers\UuidNormalizer;
 use Apie\ValueObjectPlugin\Normalizers\ValueObjectNormalizer;
 use Doctrine\Common\Annotations\AnnotationReader;
@@ -15,13 +20,6 @@ use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use Apie\ObjectAccessNormalizer\Normalizers\ApieObjectAccessNormalizer;
-use Apie\ObjectAccessNormalizer\Normalizers\MethodCallDenormalizer;
-use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccess;
-use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessInterface;
-use Apie\Tests\ObjectAccessNormalizer\Mocks\ClassWithConflictingTypehints;
-use Apie\Tests\ObjectAccessNormalizer\Mocks\SimplePopo;
-use Apie\Tests\ObjectAccessNormalizer\Mocks\SumExample;
 
 class MethodCallDenormalizerTest extends TestCase
 {

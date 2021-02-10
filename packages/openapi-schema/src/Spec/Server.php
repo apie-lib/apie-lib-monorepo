@@ -3,12 +3,10 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-use Apie\CommonValueObjects\Url;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Exceptions\MissingPlaceholderVariables;
 use Apie\OpenapiSchema\Map\ServerVariableObjectList;
 use Apie\OpenapiSchema\ValueObjects\UrlsWithPlaceholders;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
 /**

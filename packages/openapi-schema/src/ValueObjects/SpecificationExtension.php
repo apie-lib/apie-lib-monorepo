@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\ValueObjects;
 
-
 use Apie\ValueObjects\ValueObjectInterface;
 
 class SpecificationExtension implements ValueObjectInterface

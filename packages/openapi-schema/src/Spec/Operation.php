@@ -3,22 +3,23 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
+use Apie\CompositeValueObjects\ValueObjects\StringList;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Map\CallbackPathItemList;
 use Apie\OpenapiSchema\Map\ParameterList;
 use Apie\OpenapiSchema\Map\SecurityRequirementList;
 use Apie\OpenapiSchema\Map\ServerList;
-use Apie\OpenapiSchema\Map\TagList;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#operation-object
+ */
 class Operation implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
 
     /**
-     * @var TagList|null
+     * @var StringList|null
      */
     private $tags;
 
@@ -58,7 +59,7 @@ class Operation implements ValueObjectInterface
     private $responses;
 
     /**
-     * @var CallbackPathItemList|nulls
+     * @var CallbackPathItemList|null
      */
     private $callbacks;
 

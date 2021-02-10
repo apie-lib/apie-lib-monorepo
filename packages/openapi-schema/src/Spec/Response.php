@@ -3,14 +3,15 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Map\HeaderMap;
 use Apie\OpenapiSchema\Map\LinkObjectMap;
 use Apie\OpenapiSchema\Map\MediaTypeMap;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#response-object
+ */
 class Response implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;

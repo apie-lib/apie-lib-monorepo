@@ -3,7 +3,6 @@
 
 namespace Apie\Tests\OpenapiSchema\Spec;
 
-
 use Apie\CommonValueObjects\KebabCaseString;
 use Apie\OpenapiSchema\Spec\Xml;
 use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;

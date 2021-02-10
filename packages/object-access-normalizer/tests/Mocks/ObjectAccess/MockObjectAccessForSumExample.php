@@ -1,10 +1,10 @@
 <?php
 namespace Apie\Tests\ObjectAccessNormalizer\Mocks\ObjectAccess;
 
-use ReflectionClass;
 use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccess;
 use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessSupportedInterface;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\SumExample;
+use ReflectionClass;
 
 class MockObjectAccessForSumExample extends ObjectAccess implements ObjectAccessSupportedInterface
 {

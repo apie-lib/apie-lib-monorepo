@@ -3,10 +3,7 @@
 
 namespace Apie\ValueObjects;
 
-use Apie\OpenapiSchema\Contract\SchemaContract;
 use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;
-use LogicException;
-use ReflectionClass;
 
 trait StringTrait
 {
@@ -14,13 +11,19 @@ trait StringTrait
 
     final public static function fromNative($value)
     {
+        if ($value instanceof ValueObjectInterface) {
+            $value = $value->toNative();
+        }
+        if (is_array($value)) {
+            throw new InvalidValueForValueObjectException($value, static::class);
+        }
         return new self((string) $value);
     }
 
     final public function __construct(string $value)
     {
         if (!$this->validValue($value)) {
-            throw new InvalidValueForValueObjectException($value, __CLASS__);
+            throw new InvalidValueForValueObjectException($value, static::class);
         }
         $this->value = $this->sanitizeValue($value);
     }

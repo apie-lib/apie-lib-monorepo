@@ -5,9 +5,11 @@ namespace Apie\OpenapiSchema\Spec;
 
 use Apie\CompositeValueObjects\CompositeValueObjectTrait;
 use Apie\OpenapiSchema\Map\DiscriminatorMapping;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#discriminator-object
+ */
 class Discriminator implements ValueObjectInterface
 {
     use CompositeValueObjectTrait;
@@ -18,7 +20,7 @@ class Discriminator implements ValueObjectInterface
     private $propertyName;
 
     /**
-     * @var DiscriminatorMapping|null
+     * @var null|DiscriminatorMapping
      */
     private $mapping;
 

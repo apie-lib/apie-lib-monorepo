@@ -3,7 +3,6 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Mocks;
 
-
 use RuntimeException;
 
 class ClassWithGetterWithErrorAndNoConstructor

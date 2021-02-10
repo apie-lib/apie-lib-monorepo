@@ -3,10 +3,9 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Mocks;
 
-
+use Apie\ObjectAccessNormalizer\ObjectAccess\SelfObjectAccessInterface;
 use InvalidArgumentException;
 use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\ObjectAccess\SelfObjectAccessInterface;
 
 class ClassWithSelfObjectAccess implements SelfObjectAccessInterface
 {

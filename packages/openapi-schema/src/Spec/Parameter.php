@@ -3,14 +3,15 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
-use Apie\CompositeValueObjects\CompositeValueObjectTrait;
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
+use Apie\OpenapiSchema\Contract\SchemaContract;
 use Apie\OpenapiSchema\Map\ExampleMap;
 use Apie\OpenapiSchema\ValueObjects\ParameterIn;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
+/**
+ * @see https://swagger.io/specification/#parameter-object
+ */
 class Parameter implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
@@ -61,12 +62,12 @@ class Parameter implements ValueObjectInterface
     private $allowReserved;
 
     /**
-     * @var Schema|null
+     * @var SchemaContract|Schema|Reference|null
      */
     private $schema;
 
     /**
-     * @var mixed
+     * @var mixed|null
      */
     private $example;
 
@@ -84,5 +85,21 @@ class Parameter implements ValueObjectInterface
     {
         $this->name = $name;
         $this->in = $in;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return ParameterIn
+     */
+    public function getIn(): ParameterIn
+    {
+        return $this->in;
     }
 }

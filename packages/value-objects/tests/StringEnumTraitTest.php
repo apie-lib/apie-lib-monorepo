@@ -3,10 +3,8 @@
 
 namespace Apie\Tests\ValueObjects;
 
-
 use Apie\Tests\ValueObjects\Mocks\StringEnumTraitExample;
 use Apie\Tests\ValueObjects\Mocks\StringEnumTraitExampleWithDuplicateValue;
-use Apie\ValueObjects\StringEnumTrait;
 use PHPUnit\Framework\TestCase;
 
 class StringEnumTraitTest extends TestCase

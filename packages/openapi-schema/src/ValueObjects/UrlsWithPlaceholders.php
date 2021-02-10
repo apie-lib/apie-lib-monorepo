@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\ValueObjects;
 
-
 use Apie\CommonValueObjects\Url;
 use Apie\ValueObjects\StringTrait;
 use Apie\ValueObjects\ValueObjectInterface;

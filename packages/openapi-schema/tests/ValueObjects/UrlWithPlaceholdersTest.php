@@ -3,7 +3,6 @@
 
 namespace Apie\Tests\OpenapiSchema\ValueObjects;
 
-
 use Apie\OpenapiSchema\ValueObjects\UrlsWithPlaceholders;
 use PHPUnit\Framework\TestCase;
 

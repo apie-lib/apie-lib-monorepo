@@ -3,12 +3,12 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\ObjectAccess;
 
+use Apie\ObjectAccessNormalizer\ObjectAccess\SelfObjectAccess;
+use Apie\Tests\ObjectAccessNormalizer\Mocks\ClassWithSelfObjectAccess;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\ObjectAccess\SelfObjectAccess;
-use Apie\Tests\ObjectAccessNormalizer\Mocks\ClassWithSelfObjectAccess;
 
 class SelfObjectAccessTest extends TestCase
 {

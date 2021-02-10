@@ -3,8 +3,8 @@
 
 namespace Apie\ObjectAccessNormalizer\Setters;
 
-use Symfony\Component\PropertyInfo\Type;
 use Apie\ObjectAccessNormalizer\Interfaces\PriorityAwareInterface;
+use Symfony\Component\PropertyInfo\Type;
 
 interface SetterInterface extends PriorityAwareInterface
 {

@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\Exceptions;
 
-
 use Apie\Core\Exceptions\ApieException;
 
 class InvalidReferenceValue extends ApieException

@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\Contract;
 
-
 use Apie\OpenapiSchema\Spec\ServerVariableObjectList;
 
 interface ServerContract extends \JsonSerializable

@@ -2,10 +2,10 @@
 
 namespace Apie\ObjectAccessNormalizer\Setters;
 
-use ReflectionMethod;
-use Symfony\Component\PropertyInfo\Type;
 use Apie\ObjectAccessNormalizer\Interfaces\LocalizationAwareInterface;
 use Apie\ObjectAccessNormalizer\TypeUtils;
+use ReflectionMethod;
+use Symfony\Component\PropertyInfo\Type;
 
 final class ReflectionLocalizedSetterMethod implements SetterInterface
 {

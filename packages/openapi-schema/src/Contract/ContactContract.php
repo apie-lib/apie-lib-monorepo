@@ -3,8 +3,9 @@
 
 namespace Apie\OpenapiSchema\Contract;
 
+use Apie\ValueObjects\ValueObjectInterface;
 
-interface ContactContract
+interface ContactContract extends ValueObjectInterface
 {
     public function getName(): ?string;
 

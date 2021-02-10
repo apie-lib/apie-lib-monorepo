@@ -79,6 +79,14 @@ class Package {
     {
         return 'packages/' . $this->package . '/tests';
     }
+
+    /**
+     * @return string
+     */
+    public function getPackage(): string
+    {
+        return $this->package;
+    }
 }
 
 class ComposerTools {

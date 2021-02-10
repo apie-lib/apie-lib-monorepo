@@ -3,7 +3,6 @@
 
 namespace Apie\Tests\OpenapiSchema\ValueObjects;
 
-
 use Apie\OpenapiSchema\Constants;
 use Apie\OpenapiSchema\ValueObjects\OpenApiVersion;
 use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;
@@ -23,6 +22,8 @@ class OpenApiVersionTest extends TestCase
     public function validProvider()
     {
         yield [Constants::OPENAPI_VERSION];
+        yield ['3.0.1'];
+        yield ['3.0.0'];
     }
 
     /**

@@ -3,8 +3,8 @@
 
 namespace Apie\ObjectAccessNormalizer\Errors;
 
-use Throwable;
 use Apie\ObjectAccessNormalizer\Exceptions\LocalizationInfo;
+use Throwable;
 
 final class ErrorBagField
 {

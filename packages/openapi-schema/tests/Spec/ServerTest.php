@@ -3,9 +3,9 @@
 
 namespace Apie\Tests\OpenapiSchema\Spec;
 
-use Apie\CompositeValueObjects\Exceptions\MissingValueException;
 use Apie\OpenapiSchema\Exceptions\MissingPlaceholderVariables;
 use Apie\OpenapiSchema\Spec\Server;
+use Apie\TypeJuggling\Exceptions\MissingValueException;
 use PHPUnit\Framework\TestCase;
 
 class ServerTest extends TestCase

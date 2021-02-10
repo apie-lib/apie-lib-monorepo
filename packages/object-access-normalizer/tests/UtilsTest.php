@@ -1,9 +1,9 @@
 <?php
 namespace Apie\Tests\ObjectAccessNormalizer;
 
-use PHPUnit\Framework\TestCase;
 use Apie\ObjectAccessNormalizer\Exceptions\CouldNotConvertException;
 use Apie\ObjectAccessNormalizer\Utils;
+use PHPUnit\Framework\TestCase;
 
 class UtilsTest extends TestCase
 {

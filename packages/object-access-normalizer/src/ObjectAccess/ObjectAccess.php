@@ -2,15 +2,6 @@
 
 namespace Apie\ObjectAccessNormalizer\ObjectAccess;
 
-use ReflectionClass;
-use ReflectionMethod;
-use ReflectionParameter;
-use ReflectionProperty;
-use ReflectionType;
-use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
-use Symfony\Component\PropertyInfo\Type;
-use Throwable;
-use Apie\ObjectAccessNormalizer\Exceptions\CouldNotConvertException;
 use Apie\ObjectAccessNormalizer\Exceptions\NameNotFoundException;
 use Apie\ObjectAccessNormalizer\Exceptions\ObjectAccessException;
 use Apie\ObjectAccessNormalizer\Exceptions\ObjectWriteException;
@@ -22,6 +13,13 @@ use Apie\ObjectAccessNormalizer\Setters\ReflectionMethodSetter;
 use Apie\ObjectAccessNormalizer\Setters\ReflectionPropertySetter;
 use Apie\ObjectAccessNormalizer\Setters\SetterInterface;
 use Apie\ObjectAccessNormalizer\TypeUtils;
+use ReflectionClass;
+use ReflectionMethod;
+use ReflectionParameter;
+use ReflectionProperty;
+use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
+use Symfony\Component\PropertyInfo\Type;
+use Throwable;
 
 /**
  * Class that informs about object access and able to access instances of the object in setting/getting values.
@@ -255,7 +253,6 @@ class ObjectAccess implements ObjectAccessInterface
         foreach ($input as $type) {
             $key = $this->key($type);
             $res[$key] = $type;
-
         }
         return array_values($res);
     }

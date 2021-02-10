@@ -3,8 +3,8 @@
 
 namespace Apie\OpenapiSchema\Contract;
 
+use Apie\ValueObjects\ValueObjectInterface;
 
-interface LicenseContract
+interface LicenseContract extends ValueObjectInterface
 {
-
 }

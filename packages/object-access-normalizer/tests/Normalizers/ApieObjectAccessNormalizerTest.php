@@ -2,21 +2,6 @@
 
 namespace Apie\Tests\ObjectAccessNormalizer\Normalizers;
 
-use Apie\UuidPlugin\Normalizers\UuidNormalizer;
-use Apie\ValueObjectPlugin\Normalizers\ValueObjectNormalizer;
-use DateTimeImmutable;
-use Doctrine\Common\Annotations\AnnotationReader;
-use Doctrine\Common\Annotations\AnnotationRegistry;
-use PHPUnit\Framework\TestCase;
-use Ramsey\Uuid\Uuid;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
-use Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader;
-use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
-use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
-use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
-use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
-use Symfony\Component\Serializer\Serializer;
 use Apie\ObjectAccessNormalizer\Exceptions\ValidationException;
 use Apie\ObjectAccessNormalizer\Normalizers\ApieObjectAccessNormalizer;
 use Apie\ObjectAccessNormalizer\ObjectAccess\ObjectAccessInterface;
@@ -33,6 +18,21 @@ use Apie\Tests\ObjectAccessNormalizer\Mocks\ClassWithValueObject;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\FullRestObject;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\RecursiveObject;
 use Apie\Tests\ObjectAccessNormalizer\Mocks\SumExample;
+use Apie\UuidPlugin\Normalizers\UuidNormalizer;
+use Apie\ValueObjectPlugin\Normalizers\ValueObjectNormalizer;
+use DateTimeImmutable;
+use Doctrine\Common\Annotations\AnnotationReader;
+use Doctrine\Common\Annotations\AnnotationRegistry;
+use PHPUnit\Framework\TestCase;
+use Ramsey\Uuid\Uuid;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
+use Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader;
+use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
+use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class ApieObjectAccessNormalizerTest extends TestCase
 {
@@ -412,9 +412,13 @@ class ApieObjectAccessNormalizerTest extends TestCase
                 'no_typehint'      => 'pizza',
             ];
             $this->assertEquals(
-                $expected, $serializer->denormalize(
-                $input, ClassWithNoTypehints::class, null, ['groups' => ['missing']]
-            )
+                $expected,
+                $serializer->denormalize(
+                    $input,
+                    ClassWithNoTypehints::class,
+                    null,
+                    ['groups' => ['missing']]
+                )
             );
 
             $input = [
@@ -431,9 +435,13 @@ class ApieObjectAccessNormalizerTest extends TestCase
             $expected->value1 = new ClassWithSerializationGroup();
             $expected->value2 = [new ClassWithNoTypehints('pizza')];
             $this->assertEquals(
-                $expected, $serializer->denormalize(
-                $input, ClassWithSerializationGroup::class, null, ['groups' => ['missing']]
-            )
+                $expected,
+                $serializer->denormalize(
+                    $input,
+                    ClassWithSerializationGroup::class,
+                    null,
+                    ['groups' => ['missing']]
+                )
             );
         } catch (ValidationException $validationException) {
             $this->fail('Did not expect a validation error, got: ' . json_encode($validationException->getErrors()));

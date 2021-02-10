@@ -3,21 +3,14 @@
 
 namespace Apie\OpenapiSchema\Spec;
 
-
 use Apie\OpenapiSchema\Concerns\CompositeValueObjectWithExtension;
 use Apie\OpenapiSchema\Map\ParameterList;
 use Apie\OpenapiSchema\Map\ServerList;
-use Apie\ValueObjects\ValueObjectCompareInterface;
 use Apie\ValueObjects\ValueObjectInterface;
 
 class PathItem implements ValueObjectInterface
 {
     use CompositeValueObjectWithExtension;
-
-    /**
-     * @var string|null
-     */
-    private $ref;
 
     /**
      * @var string|null
@@ -78,5 +71,4 @@ class PathItem implements ValueObjectInterface
      * @var ParameterList|null
      */
     private $parameters;
-
 }

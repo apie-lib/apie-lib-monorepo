@@ -3,7 +3,6 @@
 
 namespace Apie\OpenapiSchema\ValueObjects;
 
-
 use Apie\ValueObjects\StringEnumTrait;
 use Apie\ValueObjects\ValueObjectInterface;
 

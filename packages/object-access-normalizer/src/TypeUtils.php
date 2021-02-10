@@ -3,11 +3,11 @@
 
 namespace Apie\ObjectAccessNormalizer;
 
+use Apie\ObjectAccessNormalizer\Getters\GetterInterface;
+use Apie\ObjectAccessNormalizer\Setters\SetterInterface;
 use ReflectionMethod;
 use ReflectionProperty;
 use Symfony\Component\PropertyInfo\Type;
-use Apie\ObjectAccessNormalizer\Getters\GetterInterface;
-use Apie\ObjectAccessNormalizer\Setters\SetterInterface;
 
 class TypeUtils
 {

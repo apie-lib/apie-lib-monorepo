@@ -3,7 +3,6 @@
 
 namespace Apie\ObjectAccessNormalizer\Interfaces;
 
-
 interface LocalizationAwareInterface
 {
     public function getAcceptLanguage(): ?string;
