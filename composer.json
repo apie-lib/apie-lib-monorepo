@@ -99,7 +99,7 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "beberlei/composer-monorepo-plugin": "0.15",
+        "beberlei/composer-monorepo-plugin": "0.15|v0.16.5",
         "doctrine/common": "^2.6",
         "ext-json": "*",
         "friendsofphp/php-cs-fixer": "^2.18",
