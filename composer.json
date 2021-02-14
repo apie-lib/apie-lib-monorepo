@@ -121,6 +121,7 @@
     "require-dev": {
         "doctrine/annotations": "^1.6",
         "guzzlehttp/guzzle": "^6.3",
+        "phpspec/prophecy-phpunit": "^2.0",
         "phpstan/phpstan": "^0.12.3",
         "phpunit/phpunit": "^9.5",
         "symfony/cache": "^4.3|5.*",

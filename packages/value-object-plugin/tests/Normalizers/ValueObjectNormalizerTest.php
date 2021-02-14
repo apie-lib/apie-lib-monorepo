@@ -3,7 +3,8 @@
 
 namespace Apie\Tests\ValueObjectPlugin\Normalizers;
 
-use Apie\Tests\ValueObjects\Mocks\StringTraitExample;
+use Apie\MockObjects\ValueObject;
+use Apie\MockObjects\ValueObjects\MockValueObjectWithStringTrait;
 use Apie\ValueObjectPlugin\Normalizers\ValueObjectNormalizer;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Encoder\JsonDecode;
@@ -24,15 +25,15 @@ class ValueObjectNormalizerTest extends TestCase
 
     public function testNormalize()
     {
-        $actual = $this->serializer->serialize(new StringTraitExample('test'), 'json');
+        $actual = $this->serializer->serialize(new ValueObject('test'), 'json');
         $expected = '"test"';
         $this->assertEquals($expected, $actual);
     }
 
     public function testDenormalize()
     {
-        $actual = $this->serializer->deserialize('"test"', StringTraitExample::class, 'json');
-        $expected = new StringTraitExample('test');
+        $actual = $this->serializer->deserialize('"test"', ValueObject::class, 'json');
+        $expected = new ValueObject('test');
         $this->assertEquals($expected, $actual);
     }
 }

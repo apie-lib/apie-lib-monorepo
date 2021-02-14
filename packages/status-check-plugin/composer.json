@@ -26,6 +26,7 @@
   },
   "require-dev": {
     "guzzlehttp/guzzle": "^6.3",
+    "phpspec/prophecy-phpunit": "^2.0",
     "phpunit/phpunit": "^9.5"
   },
   "minimum-stability": "dev",

@@ -21,7 +21,7 @@
   },
   "require": {
     "php": ">=7.3",
-    "apie/application-plugin": "dev-main",
+    "apie/application-info-plugin": "dev-main",
     "apie/core": "dev-main",
     "apie/date-time-plugin": "dev-main",
     "apie/pagination-plugin": "dev-main",
