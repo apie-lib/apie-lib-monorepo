@@ -92,6 +92,6 @@ class Package {
 class ComposerTools {
     public static function runUpdate()
     {
-        `vendor/bin/monorepo-builder merge && composer update`;
+        `vendor/bin/monorepo-builder merge -vvv && composer update`;
     }
 }

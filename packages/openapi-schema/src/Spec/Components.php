@@ -63,4 +63,12 @@ class Components implements ValueObjectInterface
      * @var CallbackMap|null
      */
     private $callbacks;
+
+    /**
+     * @return HeaderMap|null
+     */
+    public function getHeaders(): ?HeaderMap
+    {
+        return $this->headers;
+    }
 }

@@ -64,4 +64,20 @@ final class Document implements ValueObjectInterface
         $this->info = $info;
         $this->paths = $paths;
     }
+
+    /**
+     * @return Paths
+     */
+    public function getPaths(): Paths
+    {
+        return $this->paths;
+    }
+
+    /**
+     * @return Components|null
+     */
+    public function getComponents(): ?Components
+    {
+        return $this->components;
+    }
 }

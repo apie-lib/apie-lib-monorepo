@@ -77,4 +77,12 @@ class Operation implements ValueObjectInterface
      * @var ServerList|null
      */
     private $servers;
+
+    /**
+     * @return Responses|null
+     */
+    public function getResponses(): ?Responses
+    {
+        return $this->responses;
+    }
 }

@@ -3,6 +3,9 @@
 
 namespace Apie\CommonValueObjects;
 
+use Apie\Core\Interfaces\HasSchemaInformationContract;
+use Apie\OpenapiSchema\Contract\SchemaContract;
+use Apie\OpenapiSchema\Factories\SchemaFactory;
 use Apie\ValueObjects\StringTrait;
 use Apie\ValueObjects\ValueObjectInterface;
 
@@ -11,7 +14,7 @@ use Apie\ValueObjects\ValueObjectInterface;
  *
  * @see https://www.ecma-international.org/ecma-262/5.1/#sec-15.10.1
  */
-class JavascriptRegularExpression implements ValueObjectInterface
+class JavascriptRegularExpression implements ValueObjectInterface, HasSchemaInformationContract
 {
     use StringTrait;
 
@@ -67,5 +70,10 @@ class JavascriptRegularExpression implements ValueObjectInterface
             return [];
         }
         return $matches;
+    }
+
+    public static function toSchema(): SchemaContract
+    {
+        return SchemaFactory::createStringSchema('regex');
     }
 }

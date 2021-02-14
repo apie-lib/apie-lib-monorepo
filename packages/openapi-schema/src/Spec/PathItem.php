@@ -71,4 +71,12 @@ class PathItem implements ValueObjectInterface
      * @var ParameterList|null
      */
     private $parameters;
+
+    /**
+     * @return Operation|null
+     */
+    public function getGet(): ?Operation
+    {
+        return $this->get;
+    }
 }

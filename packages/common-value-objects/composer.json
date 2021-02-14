@@ -21,6 +21,7 @@
     },
     "require": {
         "php": ">=7.3",
+        "apie/openapi-schema": "dev-main",
         "apie/value-objects": "dev-main"
     },
     "require-dev": {

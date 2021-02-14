@@ -4,6 +4,7 @@ namespace Apie\Tests\TypeJuggling;
 
 use Apie\TypeJuggling\Compound;
 use Apie\TypeJuggling\Exceptions\UnimplementedPhpDocBlockException;
+use Apie\TypeJuggling\Factory\ReflectionTypeFactory;
 use Apie\TypeJuggling\FloatingPoint;
 use Apie\TypeJuggling\Integer;
 use Apie\TypeJuggling\NullObject;

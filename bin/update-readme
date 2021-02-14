@@ -5,13 +5,39 @@ require __DIR__ . '/../shared-bin.php';
 
 use Symfony\Component\Finder\Finder;
 
+$readme = '# apie-lib-monorepo' . PHP_EOL;
+$counter = 0;
+$block = file_get_contents(__DIR__ . '/../resources/block.md');
+
 foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0) as $packageFolder) {
     $package = new Package($packageFolder);
     var_dump($package);
+    $blockDoc = str_replace(['{package}'], [$package->getPackage()], $block);
+    switch ($counter) {
+        case 0:
+            $readme .= '| ' . $blockDoc . ' | ';
+            break;
+        case 1:
+            $readme .= $blockDoc . ' | ';
+            break;
+        case 2:
+            $readme .= $blockDoc . ' | ' . PHP_EOL;
+            break;
+    }
+    $counter++;
+    $counter = $counter % 3;
     $package->createFile('composer.json', false);
     $package->createFile('LICENSE', true);
     $package->createFile('phpunit.xml', true);
     $package->createFile('README.md', true);
 }
+switch ($counter) {
+case 1:
+    $readme .= '. | . | ' . PHP_EOL;
+    break;
+case 2:
+    $readme .= '. | ' . PHP_EOL;
+}
+file_put_contents(__DIR__ . '/../README.md', $readme);
 
 ComposerTools::runUpdate();

@@ -1,0 +1,33 @@
+{
+  "name": "apie/status-check-plugin",
+  "description": "Composer package of the apie library: status check plugin",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\StatusCheckPlugin\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\StatusCheckPlugin\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=7.3",
+    "apie/core": "dev-main",
+    "jeroen/rewindable-generator": "^1.2"
+  },
+  "require-dev": {
+    "guzzlehttp/guzzle": "^6.3",
+    "phpunit/phpunit": "^9.5"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

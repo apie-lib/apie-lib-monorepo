@@ -3,13 +3,17 @@
 
 namespace Apie\CommonValueObjects;
 
+use Apie\Core\Interfaces\HasSchemaInformationContract;
+use Apie\OpenapiSchema\Contract\SchemaContract;
+use Apie\OpenapiSchema\Factories\SchemaFactory;
 use Apie\ValueObjects\Exceptions\InvalidValueForValueObjectException;
 use Apie\ValueObjects\ValueObjectInterface;
+use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 
-class Date implements ValueObjectInterface
+class Date implements ValueObjectInterface, HasSchemaInformationContract
 {
     private static $format = 'Y-m-d';
 
@@ -52,5 +56,11 @@ class Date implements ValueObjectInterface
     public function toNative()
     {
         return $this->date->format(self::$format);
+    }
+
+    public static function toSchema(): SchemaContract
+    {
+        return SchemaFactory::createStringSchema('date')
+            ->with('example', (new DateTime('1984-01-28'))->format(self::getFormat()));
     }
 }

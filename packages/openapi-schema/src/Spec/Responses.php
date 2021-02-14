@@ -6,8 +6,12 @@ namespace Apie\OpenapiSchema\Spec;
 use Apie\OpenapiSchema\ValueObjects\SpecificationExtension;
 use Apie\TypeJuggling\PrimitiveArray;
 use Apie\ValueObjects\ValueObjectInterface;
+use ArrayIterator;
+use Exception;
+use IteratorAggregate;
+use Traversable;
 
-class Responses implements ValueObjectInterface
+class Responses implements ValueObjectInterface, IteratorAggregate
 {
     /**
      * @var Response|null
@@ -65,5 +69,14 @@ class Responses implements ValueObjectInterface
             $result[$statusCode] = $response->toNative();
         }
         return $result;
+    }
+
+    public function getIterator()
+    {
+        $list = $this->default ? ['default' => $this->default] : [];
+        if ($this->statusCodeResponses) {
+            $list = array_merge($list, $this->statusCodeResponses);
+        }
+        return new ArrayIterator($list);
     }
 }
