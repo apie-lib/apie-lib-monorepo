@@ -2,6 +2,15 @@
 
 namespace Apie\CommonApie;
 
+use Apie\ApplicationInfoPlugin\ApplicationInfoPlugin;
+use Apie\CarbonPlugin\CarbonPlugin;
+use Apie\Core\Apie;
+use Apie\DateTimePlugin\DateTimePlugin;
+use Apie\PaginationPlugin\PaginationPlugin;
+use Apie\StatusCheckPlugin\StatusCheckPlugin;
+use Apie\UuidPlugin\UuidPlugin;
+use Apie\ValueObjectPlugin\ValueObjectPlugin;
+
 /**
  * Helper class to make a general Apie instance with common plugins active.
  */

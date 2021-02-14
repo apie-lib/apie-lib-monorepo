@@ -22,6 +22,7 @@
   "require": {
     "php": ">=7.3",
     "apie/core": "dev-main",
+    "apie/openapi-schema": "dev-main",
     "ramsey/uuid": "^3.8",
     "symfony/serializer": "^4.3|^5.0"
   },

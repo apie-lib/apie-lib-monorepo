@@ -1,11 +1,12 @@
 <?php
 
-namespace W2w\Lib\Apie\Plugins\ValueObject;
+namespace Apie\ValueObjectPlugin;
 
-use W2w\Lib\Apie\Interfaces\ValueObjectInterface;
-use W2w\Lib\Apie\PluginInterfaces\NormalizerProviderInterface;
-use W2w\Lib\Apie\PluginInterfaces\SchemaProviderInterface;
-use W2w\Lib\Apie\Plugins\ValueObject\Normalizers\ValueObjectNormalizer;
+
+use Apie\Core\PluginInterfaces\NormalizerProviderInterface;
+use Apie\Core\PluginInterfaces\SchemaProviderInterface;
+use Apie\ValueObjectPlugin\Normalizers\ValueObjectNormalizer;
+use Apie\ValueObjects\ValueObjectInterface;
 use W2w\Lib\Apie\Plugins\ValueObject\Schema\ValueObjectSchemaBuilder;
 
 class ValueObjectPlugin implements NormalizerProviderInterface, SchemaProviderInterface

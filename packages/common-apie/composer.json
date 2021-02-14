@@ -21,9 +21,16 @@
   },
   "require": {
     "php": ">=7.3",
-    "apie/core": "dev-main"
+    "apie/application-plugin": "dev-main",
+    "apie/core": "dev-main",
+    "apie/date-time-plugin": "dev-main",
+    "apie/pagination-plugin": "dev-main",
+    "apie/status-check-plugin": "dev-main",
+    "apie/uuid-plugin": "dev-main",
+    "apie/value-object-plugin": "dev-main"
   },
   "require-dev": {
+    "apie/mock-objects": "dev-main",
     "phpunit/phpunit": "^9.5"
   },
   "minimum-stability": "dev",
