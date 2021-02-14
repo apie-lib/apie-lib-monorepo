@@ -6,6 +6,9 @@ require __DIR__ . '/../shared-bin.php';
 use Symfony\Component\Finder\Finder;
 
 $readme = '# apie-lib-monorepo' . PHP_EOL;
+$readme .= PHP_EOL;
+$readme .= '| . | . | . | ' . PHP_EOL;
+$readme .= '| --- | --- | --- | ' . PHP_EOL;
 $counter = 0;
 $block = file_get_contents(__DIR__ . '/../resources/block.md');
 
