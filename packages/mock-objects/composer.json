@@ -22,7 +22,6 @@
   "require": {
     "php": ">=7.3",
     "apie/core": "dev-main",
-    "apie/core-plugin": "dev-main",
     "ramsey/uuid": "^3.8"
   },
   "require-dev": {

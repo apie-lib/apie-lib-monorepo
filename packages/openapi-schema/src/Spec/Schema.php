@@ -202,4 +202,11 @@ class Schema implements SchemaContract
      * @var bool|null
      */
     private $deprecated;
+
+    public function withProperty(string $key, $propertySchema): SchemaContract
+    {
+        $properties = $this->properties ?? [];
+        $properties[$key] = $propertySchema;
+        return $this->with('properties', $properties);
+    }
 }
