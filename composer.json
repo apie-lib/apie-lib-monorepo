@@ -6,128 +6,33 @@
             "email": "pieter_jordaan@hotmail.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Apie\\ApplicationInfoPlugin\\": "packages/application-info-plugin/src/",
-            "Apie\\AutoResourceLoaderPlugin\\": "packages/auto-resource-loader-plugin/src/",
-            "Apie\\CarbonPlugin\\": "packages/carbon-plugin/src/",
-            "Apie\\CommonApie\\": "packages/common-apie/src/",
-            "Apie\\CommonValueObjects\\": "packages/common-value-objects/src/",
-            "Apie\\CompositeValueObjects\\": "packages/composite-value-objects/src/",
-            "Apie\\CorePlugin\\": "packages/core-plugin/src/",
-            "Apie\\Core\\": "packages/core/src/",
-            "Apie\\DateTimePlugin\\": "packages/date-time-plugin/src/",
-            "Apie\\FakeAnnotationsPlugin\\": "packages/fake-annotations-plugin/src/",
-            "Apie\\FileStoragePlugin\\": "packages/file-storage-plugin/src/",
-            "Apie\\MockObjects\\": "packages/mock-objects/src/",
-            "Apie\\MockPlugin\\": "packages/mock-plugin/src/",
-            "Apie\\Normalizers\\": "packages/normalizers/src/",
-            "Apie\\ObjectAccessNormalizer\\": "packages/object-access-normalizer/src/",
-            "Apie\\OpenapiSchema\\": "packages/openapi-schema/src/",
-            "Apie\\PaginationPlugin\\": "packages/pagination-plugin/src/",
-            "Apie\\PrimaryKeyPlugin\\": "packages/primary-key-plugin/src/",
-            "Apie\\SchemaGenerator\\": "packages/schema-generator/src/",
-            "Apie\\StaticConfigPlugin\\": "packages/static-config-plugin/src/",
-            "Apie\\StaticResourcesPlugin\\": "packages/static-resources-plugin/src/",
-            "Apie\\StatusCheckPlugin\\": "packages/status-check-plugin/src/",
-            "Apie\\TypeJuggling\\": "packages/type-juggling/src/",
-            "Apie\\UuidPlugin\\": "packages/uuid-plugin/src/",
-            "Apie\\ValueObjectPlugin\\": "packages/value-object-plugin/src/",
-            "Apie\\ValueObjects\\": "packages/value-objects/src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Apie\\Tests\\ApieObjectAccessNormalizer\\": "packages/object-access-normalizer/tests/",
-            "Apie\\Tests\\ApplicationInfoPlugin\\": "packages/application-info-plugin/tests/",
-            "Apie\\Tests\\AutoResourceLoaderPlugin\\": "packages/auto-resource-loader-plugin/tests/",
-            "Apie\\Tests\\CarbonPlugin\\": "packages/carbon-plugin/tests/",
-            "Apie\\Tests\\CommonApie\\": "packages/common-apie/tests/",
-            "Apie\\Tests\\CommonValueObjects\\": "packages/common-value-objects/tests/",
-            "Apie\\Tests\\CompositeValueObjects\\": "packages/composite-value-objects/tests/",
-            "Apie\\Tests\\CorePlugin\\": "packages/core-plugin/tests/",
-            "Apie\\Tests\\Core\\": "packages/core/tests/",
-            "Apie\\Tests\\DateTimePlugin\\": "packages/date-time-plugin/tests/",
-            "Apie\\Tests\\FakeAnnotationsPlugin\\": "packages/fake-annotations-plugin/tests/",
-            "Apie\\Tests\\FileStoragePlugin\\": "packages/file-storage-plugin/tests/",
-            "Apie\\Tests\\MockObjects\\": "packages/mock-objects/tests/",
-            "Apie\\Tests\\MockPlugin\\": "packages/mock-plugin/tests/",
-            "Apie\\Tests\\Normalizers\\": "packages/normalizers/tests/",
-            "Apie\\Tests\\ObjectAccessNormalizer\\": "packages/object-access-normalizer/tests/",
-            "Apie\\Tests\\OpenapiSchema\\": "packages/openapi-schema/tests/",
-            "Apie\\Tests\\PaginationPlugin\\": "packages/pagination-plugin/tests/",
-            "Apie\\Tests\\PrimaryKeyPlugin\\": "packages/primary-key-plugin/tests/",
-            "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/",
-            "Apie\\Tests\\StaticConfigPlugin\\": "packages/static-config-plugin/tests/",
-            "Apie\\Tests\\StaticResourcesPlugin\\": "packages/static-resources-plugin/tests/",
-            "Apie\\Tests\\StatusCheckPlugin\\": "packages/status-check-plugin/tests/",
-            "Apie\\Tests\\TypeJuggling\\": "packages/type-juggling/tests/",
-            "Apie\\Tests\\UuidPlugin\\": "packages/uuid-plugin/tests/",
-            "Apie\\Tests\\ValueObjectPlugin\\": "packages/value-object-plugin/tests/",
-            "Apie\\Tests\\ValueObjects\\": "packages/value-objects/tests/"
-        }
-    },
-    "replace": {
-        "apie/application-info-plugin": "self.version",
-        "apie/auto-resource-loader-plugin": "self.version",
-        "apie/carbon-plugin": "self.version",
-        "apie/common-apie": "self.version",
-        "apie/common-value-objects": "*",
-        "apie/composite-value-objects": "*",
-        "apie/core": "*",
-        "apie/core-plugin": "self.version",
-        "apie/date-time-plugin": "self.version",
-        "apie/fake-annotations-plugin": "self.version",
-        "apie/file-storage-plugin": "self.version",
-        "apie/mock-objects": "self.version",
-        "apie/mock-plugin": "self.version",
-        "apie/normalizers": "self.version",
-        "apie/object-access-normalizer": "self.version",
-        "apie/openapi-schema": "*",
-        "apie/pagination-plugin": "self.version",
-        "apie/primary-key-plugin": "self.version",
-        "apie/schema-generator": "self.version",
-        "apie/static-config-plugin": "self.version",
-        "apie/static-resources-plugin": "self.version",
-        "apie/status-check-plugin": "self.version",
-        "apie/type-juggling": "self.version",
-        "apie/uuid-plugin": "self.version",
-        "apie/value-object-plugin": "self.version",
-        "apie/value-objects": "*"
-    },
     "description": "Monorepo of the Apie library",
     "type": "project",
     "license": "MIT",
     "require": {
-        "beberlei/composer-monorepo-plugin": "0.15|v0.16.5",
-        "doctrine/common": "^2.6",
-        "ext-json": "*",
-        "friendsofphp/php-cs-fixer": "^2.18",
-        "haydenpierce/class-finder": "^0.4.0",
-        "jeroen/rewindable-generator": "^1.2",
-        "laminas/laminas-diactoros": "^2.1",
-        "nesbot/carbon": "*",
-        "pagerfanta/pagerfanta": "^2.4",
-        "php": ">=7.3",
-        "phpdocumentor/reflection-docblock": "^4.3|5.*",
-        "psr/cache": "^1.0",
-        "psr/http-message": "^1.0",
-        "ramsey/uuid": "^3.8",
-        "symfony/http-kernel": "^4.3|^5.0",
-        "symfony/polyfill-php80": "1.*",
-        "symfony/property-info": "^4.3|^5.0",
-        "symfony/serializer": "^4.3|^5.0"
+        "php": ">=8.1"
     },
     "require-dev": {
-        "doctrine/annotations": "^1.6",
-        "guzzlehttp/guzzle": "^6.3",
+        "friendsofphp/php-cs-fixer": "^3.8",
         "phpspec/prophecy-phpunit": "^2.0",
         "phpstan/phpstan": "^0.12.3",
         "phpunit/phpunit": "^9.5",
-        "symfony/cache": "^4.3|5.*",
-        "symfony/finder": "4.*|5.*",
-        "symfony/phpunit-bridge": "4.*|5.*",
-        "symplify/monorepo-builder": "^9.0"
+        "symfony/finder": "6.*",
+        "symfony/phpunit-bridge": "6.*",
+        "symplify/monorepo-builder": "<version>"
+    },
+    "autoload": {
+        "psr-4": {
+            "Apie\\Core\\": "packages/core/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Apie\\Tests\\Core\\": "packages/core/tests/"
+        }
+    },
+    "replace": {
+        "apie/core": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

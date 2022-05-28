@@ -1,11 +1,9 @@
 <?php
 namespace Apie\Core\Exceptions;
 
-use Symfony\Component\HttpKernel\Exception\HttpException;
+use RuntimeException;
 
-/**
- * Base class that is extended by all Apie exception classes.
- */
-abstract class ApieException extends HttpException
+abstract class ApieException extends RuntimeException
 {
+
 }

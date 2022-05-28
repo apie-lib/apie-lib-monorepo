@@ -5,10 +5,10 @@ require __DIR__ . '/../shared-bin.php';
 
 use Symfony\Component\Finder\Finder;
 
-`vendor/bin/php-cs-fixer fix bin --allow-risky=true --rules=@PSR2,@PSR1,no_unused_imports,ordered_imports`;
+`vendor/bin/php-cs-fixer fix bin --allow-risky=yes --rules=@PSR2,@PSR1,no_unused_imports,ordered_imports`;
 
 foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0) as $packageFolder) {
     $package = new Package($packageFolder);
     echo($package->getPackage() . PHP_EOL);
-    `vendor/bin/php-cs-fixer fix $packageFolder --allow-risky=true --rules=@PSR2,@PSR1,no_unused_imports,ordered_imports`;
+    `vendor/bin/php-cs-fixer fix $packageFolder --allow-risky=yes --rules=@PSR2,@PSR1,no_unused_imports,ordered_imports`;
 }
