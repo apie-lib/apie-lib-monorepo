@@ -19,7 +19,7 @@
         "phpunit/phpunit": "^9.5",
         "symfony/finder": "6.*",
         "symfony/phpunit-bridge": "6.*",
-        "symplify/monorepo-builder": "<version>"
+        "symplify/monorepo-builder": "10.2.7"
     },
     "autoload": {
         "psr-4": {

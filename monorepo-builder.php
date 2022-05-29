@@ -22,7 +22,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             'friendsofphp/php-cs-fixer' =>  "^3.8",
             'symfony/phpunit-bridge' =>  "6.*",
             'symfony/finder' =>  "6.*",
-            'symplify/monorepo-builder' =>  '<version>',
+            'symplify/monorepo-builder' =>  '10.2.7',
         ],
     ]);
 };
