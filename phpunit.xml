@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/bin/.phpunit/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="vendor/autoload.php">
-    <php>
-        <ini name="error_reporting" value="-1"/>
-        <server name="APP_ENV" value="test" force="true"/>
-        <server name="SHELL_VERBOSITY" value="-1"/>
-        <server name="SYMFONY_PHPUNIT_REMOVE" value=""/>
-        <server name="SYMFONY_PHPUNIT_VERSION" value="9.5"/>
-    </php>
-
-    <testsuites>
-        <testsuite name="All packages"><directory>packages/uuid-plugin/tests</directory><directory>packages/composite-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/mock-objects/tests</directory><directory>packages/core-plugin/tests</directory><directory>packages/mock-plugin/tests</directory><directory>packages/pagination-plugin/tests</directory><directory>packages/date-time-plugin/tests</directory><directory>packages/common-apie/tests</directory><directory>packages/fake-annotations-plugin/tests</directory><directory>packages/schema-generator/tests</directory><directory>packages/application-info-plugin/tests</directory><directory>packages/static-config-plugin/tests</directory><directory>packages/type-juggling/tests</directory><directory>packages/value-objects/tests</directory><directory>packages/file-storage-plugin/tests</directory><directory>packages/core/tests</directory><directory>packages/openapi-schema/tests</directory><directory>packages/object-access-normalizer/tests</directory><directory>packages/auto-resource-loader-plugin/tests</directory><directory>packages/primary-key-plugin/tests</directory><directory>packages/static-resources-plugin/tests</directory><directory>packages/status-check-plugin/tests</directory><directory>packages/carbon-plugin/tests</directory><directory>packages/value-object-plugin/tests</directory></testsuite>
-    </testsuites>
-
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./packages</directory>
-            <exclude>
-                <directory suffix=".php">vendor</directory>
-            </exclude>
-        </whitelist>
-    </filter>
-
-    <listeners>
-        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
-    </listeners>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="vendor/autoload.php">
+  <coverage processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">./packages</directory>
+    </include>
+    <exclude>
+      <directory suffix=".php">vendor</directory>
+    </exclude>
+  </coverage>
+  <php>
+    <ini name="error_reporting" value="-1"/>
+    <server name="APP_ENV" value="test" force="true"/>
+    <server name="SHELL_VERBOSITY" value="-1"/>
+    <server name="SYMFONY_PHPUNIT_REMOVE" value=""/>
+    <server name="SYMFONY_PHPUNIT_VERSION" value="9.5"/>
+  </php>
+  <testsuites>
+    <testsuite name="All packages">
+      <directory>packages/core/tests</directory>
+      <directory>packages/date-value-objects/tests</directory>
+    </testsuite>
+  </testsuites>
+  <listeners>
+    <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
+  </listeners>
 </phpunit>

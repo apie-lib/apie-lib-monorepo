@@ -12,6 +12,9 @@
     "require": {
         "php": ">=8.1"
     },
+    "config": {
+        "lock": false
+    },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
         "phpspec/prophecy-phpunit": "^2.0",
@@ -23,16 +26,19 @@
     },
     "autoload": {
         "psr-4": {
-            "Apie\\Core\\": "packages/core/src/"
+            "Apie\\Core\\": "packages/core/src/",
+            "Apie\\DateValueObjects\\": "packages/date-value-objects/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Apie\\Tests\\Core\\": "packages/core/tests/"
+            "Apie\\Tests\\Core\\": "packages/core/tests/",
+            "Apie\\Tests\\DateValueObjects\\": "packages/date-value-objects/tests/"
         }
     },
     "replace": {
-        "apie/core": "*"
+        "apie/core": "*",
+        "apie/date-value-objects": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

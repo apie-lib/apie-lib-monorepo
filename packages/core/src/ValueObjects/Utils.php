@@ -1,15 +1,22 @@
 <?php
 namespace Apie\Core\ValueObjects;
 
-class Utils {
+use ReflectionClass;
+
+class Utils
+{
     private function __construct()
     {
     }
 
     public static function getDisplayNameForValueObject(ValueObjectInterface|ReflectionClass $class): string
     {
-        $className = (new ReflectionClass($class))->getShortName();
-        if (strcasecmp($className, 'Abstract') === 0) {
+        if ($class instanceof ReflectionClass) {
+            $className = $class->getShortName();
+        } else {
+            $className = (new ReflectionClass($class))->getShortName();
+        }
+        if (strcasecmp($className, 'Abstract') === 0 || strcasecmp($className, 'AbstractInterface') === 0) {
             return 'Abstract';
         }
         return preg_replace(

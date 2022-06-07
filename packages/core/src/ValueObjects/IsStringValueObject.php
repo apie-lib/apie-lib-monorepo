@@ -1,7 +1,15 @@
 <?php
 namespace Apie\Core\ValueObjects;
 
-trait IsStringValueObject {
+use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use DateTime;
+use DateTimeInterface;
+use ReflectionClass;
+use Stringable;
+use UnitEnum;
+
+trait IsStringValueObject
+{
     private string $internal;
     public function __construct(string|int|float|bool|Stringable $input)
     {
@@ -10,12 +18,27 @@ trait IsStringValueObject {
         $this->internal = $input;
     }
 
-    public static function fromNative(array|string|int|float|bool|ValueObjectInterface $input): self
+    public static function fromNative(mixed $input): self
     {
+        if (gettype($input) == 'boolean') {
+            $input = $input ? 'true' : 'false';
+        }
         if ($input instanceof ValueObjectInterface) {
             $input = $input->toNative();
         }
-        return new self($input);
+        if ($input instanceof DateTimeInterface) {
+            $input = $input->format(DateTime::ATOM);
+        }
+        if ($input instanceof UnitEnum) {
+            $input = $input->value;
+        }
+        if (is_array($input)) {
+            throw new InvalidStringForValueObjectException(get_debug_type($input), new ReflectionClass(self::class));
+        }
+        if (is_object($input) && !$input instanceof Stringable) {
+            throw new InvalidStringForValueObjectException(get_debug_type($input), new ReflectionClass(self::class));
+        }
+        return new self((string) $input);
     }
     public function toNative(): string
     {
@@ -31,5 +54,8 @@ trait IsStringValueObject {
     {
     }
 
-    abstract protected function convert(string $input): string;
+    protected function convert(string $input): string
+    {
+        return $input;
+    }
 }

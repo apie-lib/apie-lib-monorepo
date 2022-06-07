@@ -5,5 +5,4 @@ use RuntimeException;
 
 abstract class ApieException extends RuntimeException
 {
-
 }

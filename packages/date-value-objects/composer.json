@@ -1,6 +1,6 @@
 {
-  "name": "apie/{package}",
-  "description": "{description}",
+  "name": "apie/date-value-objects",
+  "description": "Composer package of the apie library: date value objects",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -11,12 +11,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Apie\\{namespace}\\": "src/"
+      "Apie\\DateValueObjects\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Apie\\Tests\\{namespace}\\": "tests/"
+      "Apie\\Tests\\DateValueObjects\\": "tests/"
     }
   },
   "require": {
