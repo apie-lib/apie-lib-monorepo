@@ -15,6 +15,7 @@
     <server name="SHELL_VERBOSITY" value="-1"/>
     <server name="SYMFONY_PHPUNIT_REMOVE" value=""/>
     <server name="SYMFONY_PHPUNIT_VERSION" value="9.5"/>
+    <server name="SYMFONY_DEPRECATIONS_HELPER" value="max[total]=999999&amp;max[self]=0"/>
   </php>
   <testsuites>
     <testsuite name="All packages"><directory>packages/date-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/faker/tests</directory><directory>packages/core/tests</directory></testsuite>

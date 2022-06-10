@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Tests\Faker;
 
+use Apie\CommonValueObjects\Ranges\DateTimeRange;
 use Apie\CommonValueObjects\Enums\Gender;
 use Apie\CommonValueObjects\Identifiers\KebabCaseSlug;
 use Apie\CommonValueObjects\Identifiers\PascalCaseSlug;
@@ -52,6 +53,24 @@ class ApieObjectFakerTest extends TestCase
         foreach (Finder::create()->files()->name('*.php')->depth(0)->in($path) as $file) {
             yield ['Apie\\DateValueObjects\\' . $file->getBasename('.php')];
         }
+    }
+
+    /**
+     * @test
+     * @dataProvider compositeValueObjectProvider
+     */
+    public function it_can_fake_composite_value_objects(string $classToTest)
+    {
+        $faker = $this->givenAFakerWithApieObjectFaker();
+        for ($i = 0; $i < 1000; $i++) {
+            $result = $faker->fakeClass($classToTest);
+            $this->assertInstanceOf($classToTest, $result);
+        }
+    }
+
+    public function compositeValueObjectProvider(): iterable
+    {
+        yield [DateTimeRange::class];
     }
 
     /**
