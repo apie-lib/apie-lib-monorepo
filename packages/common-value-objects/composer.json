@@ -1,32 +1,34 @@
 {
-    "name": "apie/common-value-objects",
-    "description": "Contains a series of commonly used value objects suitable for Apie, like URL's, enums, etc.",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Pieter Jordaan",
-            "email": "pieter_jordaan@hotmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Apie\\CommonValueObjects\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Apie\\Tests\\CommonValueObjects\\": "tests/"
-        }
-    },
-    "require": {
-        "php": ">=7.3",
-        "apie/openapi-schema": "dev-main",
-        "apie/value-objects": "dev-main"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9.5"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "apie/common-value-objects",
+  "description": "Composer package of the apie library: common value objects",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\CommonValueObjects\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\CommonValueObjects\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.1",
+    "apie/core": "self.version",
+    "apie/composite-value-objects": "self.version",
+    "apie/date-value-objects": "self.version"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "phpspec/prophecy-phpunit": "^2.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

@@ -1,9 +1,13 @@
-name: Split Monorepo Dev-Master
+name: Split Monorepo
+
+env:
+    PAT: ${{ secrets.ACCESS_TOKEN }}
 
 on:
   push:
     branches:
       - main
+      - feature/complete-rewrite
 
     # see https://github.community/t/how-to-run-github-actions-workflow-only-for-new-tags/16075/10?u=tomasvotruba
     tags:
@@ -22,7 +26,7 @@ jobs:
       # required for matrix of packages set
       -   uses: shivammathur/setup-php@v2
           with:
-            php-version: 7.4
+            php-version: 8.1
             coverage: none
 
       -   uses: "ramsey/composer-install@v1"
@@ -49,16 +53,28 @@ jobs:
       -
         uses: actions/checkout@v2
 
+      # no tag
       -
-        # Uses an action in the root directory
-        name: Monorepo Split of ${{ matrix.package }}
-        uses: symplify/github-action-monorepo-split@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        name: Monorepo Split of ${{ matrix.package }} (no tag)
+        if: "!startsWith(github.ref, 'refs/tags/')"
+        uses: "symplify/monorepo-split-github-action@2.1"
         with:
-          package-directory: 'packages/${{ matrix.package }}'
-          split-repository-organization: 'apie-lib'
-          split-repository-name: '${{ matrix.package }}'
-          user-name: "Pieter Jordaan (Apie Maintainer)"
-          user-email: "pieter_jordaan@hotmail.com"
-          branch: main
+          package_directory: 'packages/${{ matrix.package }}'
+          repository_organization: 'apie-lib'
+          repository_name: '${{ matrix.package }}'
+          user_name: "Pieter Jordaan"
+          user_email: "pieter_jordaan@hotmail.com"
+
+      # with tag
+      -
+        name: Monorepo Split of ${{ matrix.package }} (tag)
+        if: "startsWith(github.ref, 'refs/tags/')"
+        uses: "symplify/monorepo-split-github-action@2.1"
+        with:
+          tag: ${GITHUB_REF#refs/tags/}
+          package_directory: 'packages/${{ matrix.package }}'
+          repository_organization: 'apie-lib'
+          repository_name: '${{ matrix.package }}'
+          user_name: "Pieter Jordaan"
+          user_email: "pieter_jordaan@hotmail.com"
+
