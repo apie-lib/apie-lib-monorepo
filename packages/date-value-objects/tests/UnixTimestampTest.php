@@ -2,73 +2,104 @@
 namespace Apie\Tests\DateValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\DateValueObjects\LocalDate;
+use Apie\DateValueObjects\UnixTimestamp;
 use Apie\Tests\DateValueObjects\Concerns\TestsDay;
 use Apie\Tests\DateValueObjects\Concerns\TestsMonth;
+use Apie\Tests\DateValueObjects\Concerns\TestsTime;
 use Apie\Tests\DateValueObjects\Concerns\TestsYear;
+use DateTime;
 use PHPUnit\Framework\TestCase;
 
-class LocalDateTest extends TestCase
+class UnixTimestampTest extends TestCase
 {
     use TestsDay;
     use TestsMonth;
     use TestsYear;
+    use TestsTime;
 
-    protected function createValueObject(mixed $input): LocalDate
+    protected function createValueObject(mixed $input): UnixTimestamp
     {
-        return LocalDate::fromNative($input);
+        return UnixTimestamp::fromNative($input);
+    }
+
+    private function toTimestamp(string $input): int
+    {
+        return DateTime::createFromFormat(DateTime::ATOM, $input)->getTimestamp();
     }
 
     protected function dayMethodsProvider(): iterable
     {
         yield [
-            'tomorrow' => '2022-01-02',
-            'yesterday' => '2021-12-31',
-            'modified' => '2022-01-27',
-            'native' => '2022-01-01',
-            'input' => '2022-01-01',
+            'tomorrow' => $this->toTimestamp('2005-08-16T15:52:01+00:00'),
+            'yesterday' => $this->toTimestamp('2005-08-14T15:52:01+00:00'),
+            'modified' => $this->toTimestamp('2005-08-27T15:52:01+00:00'),
+            'native' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+            'input' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
         ];
     }
 
     protected function monthMethodsProvider(): iterable
     {
         yield [
-            'nextMonth' => '2022-02-01',
-            'previousMonth' => '2021-12-01',
-            'modified' => '2022-12-01',
-            'native' => '2022-01-01',
-            'input' => '2022-01-01',
-        ];
-    }
-
-    protected function previousMonthProvider(): iterable
-    {
-        yield [
-            'input' => '2023-04-30',
-            'month1' => '2023-03-30',
-            'month2' => '2023-02-28',
-            'month3' => '2023-01-30',
-        ];
-    }
-
-    protected function nextMonthProvider(): iterable
-    {
-        yield [
-            'input' => '2022-12-31',
-            'month1' => '2023-01-31',
-            'month2' => '2023-02-28',
-            'month3' => '2023-03-31',
+            'nextMonth' => $this->toTimestamp('2005-09-15T15:52:01+00:00'),
+            'previousMonth' => $this->toTimestamp('2005-07-15T15:52:01+00:00'),
+            'modified' => $this->toTimestamp('2005-12-15T15:52:01+00:00'),
+            'native' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+            'input' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
         ];
     }
 
     protected function yearMethodsProvider(): iterable
     {
         yield [
-            'nextYear' => '2023-01-01',
-            'previousYear' => '2021-01-01',
-            'modified' => '2011-01-01',
-            'native' => '2022-01-01',
-            'input' => '2022-01-01',
+            'nextYear' => $this->toTimestamp('2006-08-15T15:52:01+00:00'),
+            'previousYear' => $this->toTimestamp('2004-08-15T15:52:01+00:00'),
+            'modified' => $this->toTimestamp('2011-08-15T15:52:01+00:00'),
+            'native' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+            'input' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+        ];
+    }
+
+    protected function previousMonthProvider(): iterable
+    {
+        yield [
+            'input' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+            'month1' => $this->toTimestamp('2005-07-15T15:52:01+00:00'),
+            'month2' => $this->toTimestamp('2005-06-15T15:52:01+00:00'),
+            'month3' => $this->toTimestamp('2005-05-15T15:52:01+00:00'),
+        ];
+    }
+
+    protected function nextMonthProvider(): iterable
+    {
+        yield [
+            'input' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+            'month1' => $this->toTimestamp('2005-09-15T15:52:01+00:00'),
+            'month2' => $this->toTimestamp('2005-10-15T15:52:01+00:00'),
+            'month3' => $this->toTimestamp('2005-11-15T15:52:01+00:00'),
+        ];
+    }
+
+    protected function timeMethodsProvider(): iterable
+    {
+        yield [
+            'nextSecond' => $this->toTimestamp('2005-08-15T15:52:02+00:00'),
+            'previousSecond' => $this->toTimestamp('2005-08-15T15:52:00+00:00'),
+            'nextMinute' => $this->toTimestamp('2005-08-15T15:53:01+00:00'),
+            'previousMinute' => $this->toTimestamp('2005-08-15T15:51:01+00:00'),
+            'nextHour' => $this->toTimestamp('2005-08-15T16:52:01+00:00'),
+            'previousHour' => $this->toTimestamp('2005-08-15T14:52:01+00:00'),
+            'native' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+            'input' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+        ];
+    }
+
+    protected function changeTimeMethodsProvider(): iterable
+    {
+        yield [
+            'expected' => $this->toTimestamp('2005-08-15T05:06:07+00:00'),
+            'native' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
+            'input' => $this->toTimestamp('2005-08-15T15:52:01+00:00'),
         ];
     }
 
@@ -79,7 +110,7 @@ class LocalDateTest extends TestCase
     public function it_validates_invalid_input(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        LocalDate::fromNative($input);
+        UnixTimestamp::fromNative($input);
     }
 
     public function invalidInput()

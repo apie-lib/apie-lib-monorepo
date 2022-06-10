@@ -17,10 +17,7 @@
     <server name="SYMFONY_PHPUNIT_VERSION" value="9.5"/>
   </php>
   <testsuites>
-    <testsuite name="All packages">
-      <directory>packages/core/tests</directory>
-      <directory>packages/date-value-objects/tests</directory>
-    </testsuite>
+    <testsuite name="All packages"><directory>packages/date-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/faker/tests</directory><directory>packages/core/tests</directory></testsuite>
   </testsuites>
   <listeners>
     <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>

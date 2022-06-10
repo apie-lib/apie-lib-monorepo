@@ -22,6 +22,8 @@ By using these value objects over the PHP datetime objects we can tell if the da
 
 **Time:*** contains a timestamp with only hours, minutes and seconds.
 
+**UnixTimestamp:** contains a Unix timestamp.
+
 ### Interfaces
 ***WorksWithDays:***
 contains a list of methods to work with days.
