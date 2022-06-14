@@ -2,7 +2,6 @@
 namespace Apie\CommonValueObjects\Identifiers;
 
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
-use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 
 class PascalCaseSlug implements HasRegexValueObjectInterface

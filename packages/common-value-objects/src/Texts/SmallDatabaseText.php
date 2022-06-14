@@ -2,7 +2,6 @@
 namespace Apie\CommonValueObjects\Texts;
 
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
-use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 
 class SmallDatabaseText implements HasRegexValueObjectInterface
