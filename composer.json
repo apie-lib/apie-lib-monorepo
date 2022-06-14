@@ -10,9 +10,11 @@
     "type": "project",
     "license": "MIT",
     "require": {
+        "cebe/php-openapi": "^1.7",
         "fakerphp/faker": "1.19",
         "niklongstone/regex-reverse": "^0.4.0",
-        "php": ">=8.1"
+        "php": ">=8.1",
+        "ramsey/uuid": "^4.3.1"
     },
     "config": {
         "lock": false
@@ -33,7 +35,9 @@
             "Apie\\CompositeValueObjects\\": "packages/composite-value-objects/src/",
             "Apie\\Core\\": "packages/core/src/",
             "Apie\\DateValueObjects\\": "packages/date-value-objects/src/",
-            "Apie\\Faker\\": "packages/faker/src/"
+            "Apie\\Faker\\": "packages/faker/src/",
+            "Apie\\Fixtures\\": "packages/fixtures/src/",
+            "Apie\\SchemaGenerator\\": "packages/schema-generator/src/"
         }
     },
     "autoload-dev": {
@@ -43,7 +47,9 @@
             "Apie\\Tests\\CompositeValueObjects\\": "packages/composite-value-objects/tests/",
             "Apie\\Tests\\Core\\": "packages/core/tests/",
             "Apie\\Tests\\DateValueObjects\\": "packages/date-value-objects/tests/",
-            "Apie\\Tests\\Faker\\": "packages/faker/tests/"
+            "Apie\\Tests\\Faker\\": "packages/faker/tests/",
+            "Apie\\Tests\\Fixtures\\": "packages/fixtures/tests/",
+            "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/"
         }
     },
     "replace": {
@@ -52,7 +58,9 @@
         "apie/composite-value-objects": "self.version",
         "apie/core": "*",
         "apie/date-value-objects": "self.version",
-        "apie/faker": "self.version"
+        "apie/faker": "self.version",
+        "apie/fixtures": "self.version",
+        "apie/schema-generator": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

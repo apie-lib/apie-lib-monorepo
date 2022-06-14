@@ -1,10 +1,11 @@
 <?php
 namespace Apie\CommonValueObjects\Names;
 
+use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
+use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
-use Apie\Core\ValueObjects\ValueObjectInterface;
 
-class FirstName implements ValueObjectInterface
+class FirstName implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
 

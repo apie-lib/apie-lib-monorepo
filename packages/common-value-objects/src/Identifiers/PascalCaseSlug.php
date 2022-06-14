@@ -1,10 +1,11 @@
 <?php
 namespace Apie\CommonValueObjects\Identifiers;
 
+use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
+use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
-use Apie\Core\ValueObjects\ValueObjectInterface;
 
-class PascalCaseSlug implements ValueObjectInterface
+class PascalCaseSlug implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
 

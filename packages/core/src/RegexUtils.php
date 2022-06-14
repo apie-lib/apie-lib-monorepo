@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Faker\Utils;
+namespace Apie\Core;
 
 final class RegexUtils
 {

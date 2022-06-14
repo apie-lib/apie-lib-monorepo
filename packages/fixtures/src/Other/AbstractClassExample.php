@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Tests\Core\Fixtures;
+namespace Apie\Fixtures\Other;
 
 class AbstractClassExample
 {

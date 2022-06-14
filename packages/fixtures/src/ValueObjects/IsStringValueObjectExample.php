@@ -1,9 +1,9 @@
 <?php
-namespace Apie\Tests\Core\Fixtures;
+namespace Apie\Fixtures\ValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
-use Apie\Core\ValueObjects\ValueObjectInterface;
 use ReflectionClass;
 
 class IsStringValueObjectExample implements ValueObjectInterface
