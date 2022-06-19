@@ -1,6 +1,6 @@
 {
-  "name": "apie/composite-value-objects",
-  "description": "Composer package of the apie library: composite value objects",
+  "name": "apie/dateformat-to-regex",
+  "description": "Composer package of the apie library: dateformat to regex",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -11,12 +11,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Apie\\CompositeValueObjects\\": "src/"
+      "Apie\\DateformatToRegex\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Apie\\Tests\\CompositeValueObjects\\": "tests/"
+      "Apie\\Tests\\DateformatToRegex\\": "tests/"
     }
   },
   "require": {
@@ -24,7 +24,6 @@
     "apie/core": "self.version"
   },
   "require-dev": {
-    "apie/fixtures": "self.version",
     "phpunit/phpunit": "^9.5",
     "phpspec/prophecy-phpunit": "^2.0"
   },

@@ -35,6 +35,7 @@
             "Apie\\CompositeValueObjects\\": "packages/composite-value-objects/src/",
             "Apie\\Core\\": "packages/core/src/",
             "Apie\\DateValueObjects\\": "packages/date-value-objects/src/",
+            "Apie\\DateformatToRegex\\": "packages/dateformat-to-regex/src/",
             "Apie\\Faker\\": "packages/faker/src/",
             "Apie\\Fixtures\\": "packages/fixtures/src/",
             "Apie\\SchemaGenerator\\": "packages/schema-generator/src/"
@@ -47,6 +48,7 @@
             "Apie\\Tests\\CompositeValueObjects\\": "packages/composite-value-objects/tests/",
             "Apie\\Tests\\Core\\": "packages/core/tests/",
             "Apie\\Tests\\DateValueObjects\\": "packages/date-value-objects/tests/",
+            "Apie\\Tests\\DateformatToRegex\\": "packages/dateformat-to-regex/tests/",
             "Apie\\Tests\\Faker\\": "packages/faker/tests/",
             "Apie\\Tests\\Fixtures\\": "packages/fixtures/tests/",
             "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/"
@@ -58,6 +60,7 @@
         "apie/composite-value-objects": "self.version",
         "apie/core": "*",
         "apie/date-value-objects": "self.version",
+        "apie/dateformat-to-regex": "self.version",
         "apie/faker": "self.version",
         "apie/fixtures": "self.version",
         "apie/schema-generator": "self.version"

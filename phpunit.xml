@@ -18,7 +18,7 @@
     <server name="SYMFONY_DEPRECATIONS_HELPER" value="max[total]=999999&amp;max[self]=0"/>
   </php>
   <testsuites>
-    <testsuite name="All packages"><directory>packages/composite-value-objects/tests</directory><directory>packages/date-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/fixtures/tests</directory><directory>packages/faker/tests</directory><directory>packages/schema-generator/tests</directory><directory>packages/core/tests</directory></testsuite>
+    <testsuite name="All packages"><directory>packages/composite-value-objects/tests</directory><directory>packages/date-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/dateformat-to-regex/tests</directory><directory>packages/faker/tests</directory><directory>packages/schema-generator/tests</directory><directory>packages/core/tests</directory></testsuite>
   </testsuites>
   <listeners>
     <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>

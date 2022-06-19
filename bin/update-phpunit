@@ -12,6 +12,9 @@ $testFolders = [];
 
 foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0) as $packageFolder) {
     $package = new Package($packageFolder);
+    if ($package->getPackage() === 'fixtures') {
+        continue;
+    }
     $testFolders[] = $package->getTestFolder();
 }
 
