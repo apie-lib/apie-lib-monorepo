@@ -2,7 +2,6 @@
 namespace Apie\Tests\DateformatToRegex;
 
 use Apie\DateformatToRegex\DateFormatToRegex;
-use Apie\DateformatToRegex\ExampleClass;
 use DateTime;
 use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
@@ -65,8 +64,8 @@ class DateFormatToRegexTest extends TestCase
         yield ['p'];
         yield ['Z'];
         yield ['U'];
-        // yield ['c']; // TODO
-        // yield ['r']; //TODO
+        yield ['c'];
+        yield ['r'];
         yield ['e'];
         yield ['T'];
     }

@@ -6,7 +6,8 @@ use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\Attributes\Internal;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 
-class AddressWithZipcodeCheck implements ValueObjectInterface {
+class AddressWithZipcodeCheck implements ValueObjectInterface
+{
     use CompositeValueObject;
 
     private DatabaseText $street;

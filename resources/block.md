@@ -1,1 +1,1 @@
-[{package}](https://github.com/apie-lib/{package}) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/apie-lib/{package}/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/apie-lib/{package}/?branch=main)[![Build Status](https://scrutinizer-ci.com/g/apie-lib/{package}/badges/build.png?b=main)](https://scrutinizer-ci.com/g/apie-lib/{package}/build-status/main)
+[{package}](https://github.com/apie-lib/{package})

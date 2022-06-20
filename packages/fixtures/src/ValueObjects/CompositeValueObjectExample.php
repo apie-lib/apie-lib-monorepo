@@ -5,7 +5,8 @@ use Apie\CommonValueObjects\Enums\Gender;
 use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 
-class CompositeValueObjectExample  implements ValueObjectInterface {
+class CompositeValueObjectExample implements ValueObjectInterface
+{
     use CompositeValueObject;
 
     private string $string;

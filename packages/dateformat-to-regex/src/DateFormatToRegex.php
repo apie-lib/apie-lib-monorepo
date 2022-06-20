@@ -1,6 +1,7 @@
 <?php
 namespace Apie\DateformatToRegex;
 
+use DateTime;
 use DateTimeZone;
 
 final class DateFormatToRegex
@@ -19,7 +20,7 @@ final class DateFormatToRegex
         'F' => '(January|February|March|April|May|June|July|August|September|October|November|December)', // january-december
         'M' => '(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)', //jan-dec
         'm' => '((0[1-9])|(1[0-2]))', // months 01=>12
-        'n' => '([1-9]|1[0-2])', // months 1-12 
+        'n' => '([1-9]|1[0-2])', // months 1-12
         't' => '(28|29|30|31)',  //number of days in month
         'L' => '[01]', // is leap year
         'o' => '((|\-)[0-9]{4})', // year of current week
@@ -28,7 +29,7 @@ final class DateFormatToRegex
         'a' => '(am|pm)', // am|pm
         'A' => '(AM|PM)', // AM|PM
         'B' => '[0-9]{3}', // swatch digit time
-        'g' => '([1-9]|1[0-2])', // hours 1-12 
+        'g' => '([1-9]|1[0-2])', // hours 1-12
         'h' => '((0[1-9])|(1[0-2]))', // hours 01-12
         'G' => '([0-9]|1[0-9]|2[0-3])', // hours 0-23
         'H' => '(([01][0-9])|(2[0-3]))', // hours 00-23
@@ -47,8 +48,15 @@ final class DateFormatToRegex
 
     public static function formatToRegex(string $formatString, string $delimiter = '/'): string
     {
-        $regex = '';
+        $regex = self::createRegex($formatString, $delimiter);
+        
+        return $delimiter . '^' . $regex . '$' . $delimiter;
+    }
+
+    private static function createRegex(string $formatString, string $delimiter = '/'): string
+    {
         $nextIsLiteral = false;
+        $regex = '';
         foreach (str_split($formatString) as $character) {
             if ($nextIsLiteral) {
                 $regex .= preg_quote($character, $delimiter);
@@ -60,12 +68,15 @@ final class DateFormatToRegex
                 continue;
             }
             if ($character === 'c') {
-                // TODO ISO 8601 date
+                // https://www.php.net/manual/en/class.datetime.php#111532
+                $regex .= self::createRegex('Y-m-d\TH:i:sP');
+                continue;
             }
             if ($character === 'r') {
-                // TODO RFCC 2822
+                $regex .= self::createRegex(DateTime::RFC2822);
+                continue;
             }
-            if ($character === 'e') { // timezone identifiers 
+            if ($character === 'e') { // timezone identifiers
                 $regex .= self::createTimezoneIdentifierRegex($delimiter);
                 continue;
             }
@@ -75,7 +86,7 @@ final class DateFormatToRegex
                 $regex .= preg_quote($character, $delimiter);
             }
         }
-        return $delimiter . '^' . $regex . '$' . $delimiter;
+        return $regex;
     }
 
     public static function createTimezoneIdentifierRegex(string $delimiter = '/')

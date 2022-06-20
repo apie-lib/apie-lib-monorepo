@@ -1,8 +1,8 @@
 <?php
 namespace Apie\Fixtures\Identifiers;
 
-use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\CommonValueObjects\Identifiers\UuidV4;
+use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Fixtures\Entities\UserWithAddress;
 use ReflectionClass;
 

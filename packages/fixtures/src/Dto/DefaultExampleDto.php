@@ -4,7 +4,8 @@ namespace Apie\Fixtures\Dto;
 use Apie\CommonValueObjects\Enums\Gender;
 use Apie\Core\Dto\DtoInterface;
 
-class DefaultExampleDto implements DtoInterface {
+class DefaultExampleDto implements DtoInterface
+{
     public string $string = 'default value';
 
     public int $integer = 42;

@@ -72,6 +72,7 @@ class Package {
             ],
             $source
         );
+        @mkdir(dirname($target), 0755, true);
         file_put_contents($target, $source);
     }
 
