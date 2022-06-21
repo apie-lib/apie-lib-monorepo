@@ -1,4 +1,7 @@
 # dateformat-to-regex
+
+ [![Latest Stable Version](http://poser.pugx.org/apie/dateformat-to-regex/v)](https://packagist.org/packages/apie/dateformat-to-regex) [![Total Downloads](http://poser.pugx.org/apie/dateformat-to-regex/downloads)](https://packagist.org/packages/apie/dateformat-to-regex) [![Latest Unstable Version](http://poser.pugx.org/apie/dateformat-to-regex/v/unstable)](https://packagist.org/packages/apie/dateformat-to-regex) [![License](http://poser.pugx.org/apie/dateformat-to-regex/license)](https://packagist.org/packages/apie/dateformat-to-regex) [![PHP Version Require](http://poser.pugx.org/apie/dateformat-to-regex/require/php)](https://packagist.org/packages/apie/dateformat-to-regex) 
+
 [![PHP Composer](https://github.com/apie-lib/dateformat-to-regex/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/dateformat-to-regex/actions/workflows/php.yml)
 
 This package is part of the [Apie](https://github.com/apie-lib) library.

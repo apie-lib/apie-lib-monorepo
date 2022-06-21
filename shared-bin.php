@@ -63,12 +63,14 @@ class Package {
                 '{description}',
                 '{docs}',
                 '{namespace}',
+                '{badges}',
             ],
             [
                 $this->package,
                 $this->description,
                 $this->docs,
-                $this->namespace
+                $this->namespace,
+                str_replace(PHP_EOL, ' ', ComposerTools::renderBadges($this->package)),
             ],
             $source
         );
@@ -94,5 +96,16 @@ class ComposerTools {
     public static function runUpdate()
     {
         `vendor/bin/monorepo-builder merge -vvv && composer update`;
+    }
+
+    public static function renderBadges($package)
+    {
+        return "
+[![Latest Stable Version](http://poser.pugx.org/apie/$package/v)](https://packagist.org/packages/apie/$package)
+[![Total Downloads](http://poser.pugx.org/apie/$package/downloads)](https://packagist.org/packages/apie/$package)
+[![Latest Unstable Version](http://poser.pugx.org/apie/$package/v/unstable)](https://packagist.org/packages/apie/$package)
+[![License](http://poser.pugx.org/apie/$package/license)](https://packagist.org/packages/apie/$package)
+[![PHP Version Require](http://poser.pugx.org/apie/$package/require/php)](https://packagist.org/packages/apie/$package)
+";
     }
 }

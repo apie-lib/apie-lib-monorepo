@@ -1,4 +1,7 @@
 # {package}
+
+{badges}
+
 [![PHP Composer](https://github.com/apie-lib/{package}/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/{package}/actions/workflows/php.yml)
 
 This package is part of the [Apie](https://github.com/apie-lib) library.
