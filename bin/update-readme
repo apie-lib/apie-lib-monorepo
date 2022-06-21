@@ -16,7 +16,11 @@ $block = file_get_contents(__DIR__ . '/../resources/block.md');
 foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0)->sortByName(true) as $packageFolder) {
     $package = new Package($packageFolder);
     var_dump($package);
-    $blockDoc = str_replace(['{package}'], [$package->getPackage()], $block);
+    $blockDoc = str_replace(
+        ['{package}', '{badges}'],
+        [$package->getPackage(), ComposerTools::renderBadges($package->getPackage())],
+        $block
+    );
     switch ($counter) {
         case 0:
             $readme .= '| ' . $blockDoc . ' | ';
