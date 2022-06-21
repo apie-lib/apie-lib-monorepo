@@ -8,7 +8,6 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-
 A set of common value object classes that can be used right away or can be used as examples how to make common value objects.
 
 ### Enums
@@ -94,7 +93,7 @@ Ranges often have a restriction related that for example the start should always
 At first these value objects seem redundant as you wonder why you should not just use string, but the problem with using string is that it has no restriction on the length of a text. The value object will also mean you can tell an application it requires a non-empty text for example.
 
 | Class | Description |
+| --- | --- |
 | DatabaseText | A string that fits into a database text field (65535 characters). The text will be trimmed and can be empty. |
 | NonEmptyString | Any string as long it is not empty. The text will be trimmed. |
 | SmallDatabaseText | A string that fits into a database varchar field (255 characters). The text will be trimmed and can be empty.
- 
