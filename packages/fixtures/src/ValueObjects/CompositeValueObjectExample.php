@@ -1,9 +1,9 @@
 <?php
 namespace Apie\Fixtures\ValueObjects;
 
-use Apie\CommonValueObjects\Enums\Gender;
 use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
+use Apie\Fixtures\Enums\ColorEnum;
 
 class CompositeValueObjectExample implements ValueObjectInterface
 {
@@ -19,7 +19,7 @@ class CompositeValueObjectExample implements ValueObjectInterface
 
     private mixed $mixed;
 
-    private Gender $gender;
+    private ColorEnum $color;
 
     public function getString(): string
     {
@@ -46,8 +46,8 @@ class CompositeValueObjectExample implements ValueObjectInterface
         return $this->mixed;
     }
 
-    public function getGender(): Gender
+    public function getColor(): ColorEnum
     {
-        return $this->gender;
+        return $this->color;
     }
 }
