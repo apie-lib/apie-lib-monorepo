@@ -8,12 +8,15 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
+
 A set of common value object classes that can be used right away or can be used as examples how to make common value objects.
 
 ### Enums
+
 enums are just PHP 8.1 enums with common values. They are fully supported by Apie.
+
 | Enums | Description |
------------------------
+| --- | --- |
 | Gender | Indicate male or female |
 
 ### Identifiers
@@ -55,7 +58,7 @@ class User implements EntityInterface
 ```
 
 | Class | Description |
------------------------
+| --- | --- |
 | KebabCaseSlug | Slug in the shape of "example-slug" |
 | PascalCaseSlug | Slug in the shape of "example_slug" | 
 | Slug | Slug in the shape of "exampleslug" |
@@ -68,23 +71,26 @@ class User implements EntityInterface
 | UuidV6 | Uuid in version 6 format |
 
 ### Name value objects
+
 Contains value objects related to names. They are very tolerant what is written
 in them and support unicode characters to avoid wrong assumptions about
 what is a valid first and last name.
 
 | Class | Description |
------------------------
+| --- | --- |
 | FirstName | First name |
 | LastName | Last name |
 
 ### Range value objects
+
 Ranges often have a restriction related that for example the start should always be lower than the end. They are often a composite of 2 values.
 
 | Class | Description |
------------------------
+| --- | --- |
 | DateTimeRange | A range between dates. The first date should always be lower than the last date |
 
 ### Text value objects
+
 At first these value objects seem redundant as you wonder why you should not just use string, but the problem with using string is that it has no restriction on the length of a text. The value object will also mean you can tell an application it requires a non-empty text for example.
 
 | Class | Description |
