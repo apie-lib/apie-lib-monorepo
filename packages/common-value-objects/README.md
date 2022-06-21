@@ -96,4 +96,4 @@ At first these value objects seem redundant as you wonder why you should not jus
 | --- | --- |
 | DatabaseText | A string that fits into a database text field (65535 characters). The text will be trimmed and can be empty. |
 | NonEmptyString | Any string as long it is not empty. The text will be trimmed. |
-| SmallDatabaseText | A string that fits into a database varchar field (255 characters). The text will be trimmed and can be empty.
+| SmallDatabaseText | A string that fits into a database varchar field (255 characters). The text will be trimmed and can be empty. |

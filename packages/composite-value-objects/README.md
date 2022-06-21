@@ -103,3 +103,36 @@ final class StreetAddress implements ValueObjectInterface
     private DatabaseText $streetNumberSuffix;
 }
 ```
+
+
+### Union typehints
+The composite value object trait supports union typehints. To avoid accidental casting and that the reflection API of PHP
+will always return typehints in the same order we check specific types first.
+
+The order is objects+other types, floating point, number, and strings as lowest priority.
+
+```php
+<?php
+use Apie\CommonValueObjects\Texts\DatabaseText;
+use Apie\CompositeValueObjects\CompositeValueObject;
+use Apie\Core\Attributes\Optional;
+
+final class Example implements ValueObjectInterface
+{
+    use CompositeValueObject;
+
+    private function __construct()
+    {
+        // this enforces other programers to use fromNative
+    }
+
+    private string|int $value;
+
+    public function getValue(): string|int
+    {
+        return $this->value;
+    }
+}
+// getValue() returns 12 as '12' can be cast to a integer.
+Example::fromNative(['value' => '12'])->getValue();
+```
