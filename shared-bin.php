@@ -106,7 +106,7 @@ class ComposerTools {
 [![Latest Unstable Version](http://poser.pugx.org/apie/$package/v/unstable)](https://packagist.org/packages/apie/$package)
 [![License](http://poser.pugx.org/apie/$package/license)](https://packagist.org/packages/apie/$package)
 [![PHP Version Require](http://poser.pugx.org/apie/$package/require/php)](https://packagist.org/packages/apie/$package)
-[![Code coverage](https://raw.githubusercontent.com/apie-lib/$package/main/coverage_badge.svg)]
+![Code coverage](https://raw.githubusercontent.com/apie-lib/$package/main/coverage_badge.svg)
 ");
     }
 }
