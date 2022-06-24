@@ -6,7 +6,7 @@ require __DIR__ . '/../shared-bin.php';
 use Symfony\Component\Finder\Finder;
 
 $readme = '# apie-lib-monorepo' . PHP_EOL;
-$readme = ComposerTools::renderBadges('apie-lib');
+$readme = ComposerTools::renderBadges('apie-lib', 'apie-lib-monorepo');
 $readme .= PHP_EOL;
 $readme .= '| . | . | . | ' . PHP_EOL;
 $readme .= '| --- | --- | --- | ' . PHP_EOL;
