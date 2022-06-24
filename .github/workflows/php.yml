@@ -39,3 +39,13 @@ jobs:
 
     - name: Run test suite
       run: vendor/bin/simple-phpunit --coverage-clover=coverage.xml --coverage-html=coverage
+      
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Code coverage (HTML)
+        path: coverage
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Code coverage (Clover xml)
+        path: coverage.xml

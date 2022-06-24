@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHPUnit
 
 env:
   COMPOSER_ROOT_TOKEN: dev-main
