@@ -40,7 +40,7 @@ final class DateTimeRange implements ValueObjectInterface
         );
     }
 
-    private function validateState()
+    private function validateState(): void
     {
         if ($this->start->toDate() > $this->end->toDate()) {
             throw new RangeMismatchException($this->start->toDate(), $this->end->toDate());
