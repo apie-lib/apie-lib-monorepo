@@ -27,6 +27,7 @@
     "ramsey/uuid": "^4.3.1"
   },
   "require-dev": {
+    "apie/fixtures": "self.version",
     "phpunit/phpunit": "^9.5",
     "phpspec/prophecy-phpunit": "^2.0"
   },

@@ -11,7 +11,7 @@
     "license": "MIT",
     "require": {
         "cebe/php-openapi": "^1.7",
-        "fakerphp/faker": "1.19",
+        "fakerphp/faker": "^1.19",
         "niklongstone/regex-reverse": "^0.4.0",
         "php": ">=8.1",
         "ramsey/uuid": "^4.3.1"
