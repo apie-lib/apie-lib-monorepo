@@ -5,14 +5,16 @@ use Apie\Faker\ApieObjectFaker;
 use Faker\Factory;
 use Faker\Generator;
 
-trait TestWithFaker {
+trait TestWithFaker
+{
     public function runFakerTest(string $classToTest, ?callable $testCase = null, ?Generator $generator = null)
     {
         if (!class_exists(ApieObjectFaker::class)) {
             $this->markTestIncomplete('Faker library not loaded, so skipping test');
             return;
         }
-        $testCase ??= function () {};
+        $testCase ??= function () {
+        };
         if (!$generator) {
             $generator = Factory::create();
             $generator->addProvider(ApieObjectFaker::createWithDefaultFakers($generator));

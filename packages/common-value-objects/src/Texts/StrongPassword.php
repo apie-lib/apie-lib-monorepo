@@ -4,7 +4,7 @@ namespace Apie\CommonValueObjects\Texts;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsPasswordValueObject;
 
-class StrongPasswordField implements HasRegexValueObjectInterface
+class StrongPassword implements HasRegexValueObjectInterface
 {
     use IsPasswordValueObject;
 
@@ -41,5 +41,10 @@ class StrongPasswordField implements HasRegexValueObjectInterface
     public static function getMinUppercase(): int
     {
         return 1;
+    }
+
+    protected function convert(string $input): string
+    {
+        return trim($input);
     }
 }
