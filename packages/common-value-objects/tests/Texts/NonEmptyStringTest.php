@@ -3,7 +3,7 @@ namespace Apie\Tests\CommonValueObjects\Texts;
 
 use Apie\CommonValueObjects\Texts\NonEmptyString;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\Fixtures\TestsHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use PHPUnit\Framework\TestCase;
 
 class NonEmptyStringTest extends TestCase

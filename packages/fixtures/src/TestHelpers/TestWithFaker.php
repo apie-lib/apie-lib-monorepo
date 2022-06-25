@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Fixtures\TestsHelpers;
+namespace Apie\Fixtures\TestHelpers;
 
 use Apie\Faker\ApieObjectFaker;
 use Faker\Factory;
