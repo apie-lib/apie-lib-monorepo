@@ -28,6 +28,23 @@ foreach ($nodeList as $element) {
         $element->appendChild($child);
     }
 }
+
+$nodeList = $phpunitXml->getElementsByTagName('exclude');
+foreach ($nodeList as $element) {
+    while ($element->hasChildNodes()) {
+        $element->removeChild($element->firstChild);
+    }
+    $child = $element->ownerDocument->createElement('directory', 'vendor');
+    $child->setAttribute('suffix', '.php');
+    $element->appendChild($child);
+    foreach ($testFolders as $testFolder) {
+        $child = $element->ownerDocument->createElement('directory', $testFolder);
+        $child->setAttribute('suffix', '.php');
+        $element->appendChild($child);
+    }
+}
+
+
 $phpunitXml->save(__DIR__ . '/../phpunit.xml');
 
 ComposerTools::runUpdate();

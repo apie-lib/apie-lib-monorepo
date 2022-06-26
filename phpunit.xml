@@ -5,10 +5,7 @@
     <include>
       <directory suffix=".php">./packages</directory>
     </include>
-    <exclude>
-      <directory suffix=".php">vendor</directory>
-      <directory suffix=".php">tests</directory>
-    </exclude>
+    <exclude><directory suffix=".php">vendor</directory><directory suffix=".php">packages/composite-value-objects/tests</directory><directory suffix=".php">packages/date-value-objects/tests</directory><directory suffix=".php">packages/common-value-objects/tests</directory><directory suffix=".php">packages/dateformat-to-regex/tests</directory><directory suffix=".php">packages/faker/tests</directory><directory suffix=".php">packages/schema-generator/tests</directory><directory suffix=".php">packages/core/tests</directory></exclude>
   </coverage>
   <php>
     <ini name="error_reporting" value="-1"/>
