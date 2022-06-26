@@ -10,6 +10,6 @@ class KebabCaseSlug implements HasRegexValueObjectInterface
 
     public static function getRegularExpression(): string
     {
-        return '/^[a-z][a-z0-9]*(\-[a-z][a-z0-9]+)$/';
+        return '/^[a-z0-9]+(\-[a-z0-9]+)*$/';
     }
 }

@@ -4,7 +4,7 @@ namespace Apie\CommonValueObjects\Identifiers;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 
-class Slug implements HasRegexValueObjectInterface
+class Identifier implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
 

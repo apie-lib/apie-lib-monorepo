@@ -10,6 +10,11 @@ class FirstName implements HasRegexValueObjectInterface
 
     public static function getRegularExpression(): string
     {
-        return '/^\w[\w\-\s\'"‘’“”‟]*$/u';
+        return '/^\w[\w\-\s\'`"‘’“”‟]*$/u';
+    }
+
+    protected function convert(string $input): string
+    {
+        return trim($input);
     }
 }

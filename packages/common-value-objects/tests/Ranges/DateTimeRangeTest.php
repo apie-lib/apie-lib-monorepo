@@ -4,7 +4,6 @@ namespace Apie\Tests\CommonValueObjects\Ranges;
 use Apie\CommonValueObjects\Exceptions\RangeMismatchException;
 use Apie\CommonValueObjects\Ranges\DateTimeRange;
 use Apie\Core\Exceptions\InvalidTypeException;
-use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\DateValueObjects\DateWithTimezone;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use PHPUnit\Framework\TestCase;

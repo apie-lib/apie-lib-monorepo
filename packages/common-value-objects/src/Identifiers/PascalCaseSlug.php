@@ -10,6 +10,6 @@ class PascalCaseSlug implements HasRegexValueObjectInterface
 
     public static function getRegularExpression(): string
     {
-        return '/^[a-z][a-z0-9]*(_[a-z][a-z0-9]+)$/';
+        return '/^[a-z0-9]+(_[a-z0-9]+)*$/';
     }
 }
