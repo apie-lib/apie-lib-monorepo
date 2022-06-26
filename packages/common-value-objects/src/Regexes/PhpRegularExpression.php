@@ -23,12 +23,12 @@ class PhpRegularExpression implements StringValueObjectInterface
     {
         $parts = ['[A-Z]', '[a-z]', '\d', '(yes|no)'];
         $repeats = ['{1,2}', '*', '+', ''];
-        $count = $generator->random_int(1, 8);
+        $count = $generator->numberBetween(1, 8);
         $content = [];
         for ($i = 0; $i < $count; $i++) {
             $content[] = $generator->randomElement($parts);
             $content[] = $generator->randomElement($repeats);
         }
-        return new self('/' . implode('', $content) . '/' . $generator->randomElement(['i', 'u', 'n']));
+        return new self('/' . implode('', $content) . '/' . $generator->randomElement(['i', 'u', '']));
     }
 }
