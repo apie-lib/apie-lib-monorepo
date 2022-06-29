@@ -26,28 +26,16 @@ class UserWithAddress implements DtoInterface
     {
         $instance = new self();
 
-        Utils::setProperty(
-            $instance,
-            new \ReflectionProperty('Apie\\Fixtures\\Entities\\UserWithAddress', 'id'),
-            MixedType::fromCode($input)
-        );
-        Utils::setProperty(
-            $instance,
-            new \ReflectionProperty('Apie\\Fixtures\\Entities\\UserWithAddress', 'password'),
-            MixedType::fromCode($input)
-        );
-        Utils::setProperty(
-            $instance,
-            new \ReflectionProperty('Apie\\Fixtures\\Entities\\UserWithAddress', 'address'),
-            MixedType::fromCode($input)
-        );
+        $instance->id = MixedType::createFrom(Utils::getProperty($input, new \ReflectionProperty(OriginalDomainObject::class, 'id')));
+        $instance->password = MixedType::createFrom(Utils::getProperty($input, new \ReflectionProperty(OriginalDomainObject::class, 'password')));
+        $instance->address = MixedType::createFrom(Utils::getProperty($input, new \ReflectionProperty(OriginalDomainObject::class, 'address')));
         return $instance;
     }
 
     public function inject(OriginalDomainObject $instance, \ReflectionProperty $property): void
     {
-        $this->id->inject($instance, new \ReflectionProperty('Apie\\Fixtures\\Entities\\UserWithAddress', 'id'));
-        $this->password->inject($instance, new \ReflectionProperty('Apie\\Fixtures\\Entities\\UserWithAddress', 'password'));
-        $this->address->inject($instance, new \ReflectionProperty('Apie\\Fixtures\\Entities\\UserWithAddress', 'address'));
+        Utils::setProperty($instance, new \ReflectionProperty(OriginalDomainObject::class, 'id'), $this->id->toDomainObject());
+        Utils::setProperty($instance, new \ReflectionProperty(OriginalDomainObject::class, 'password'), $this->password->toDomainObject());
+        Utils::setProperty($instance, new \ReflectionProperty(OriginalDomainObject::class, 'address'), $this->address->toDomainObject());
     }
 }

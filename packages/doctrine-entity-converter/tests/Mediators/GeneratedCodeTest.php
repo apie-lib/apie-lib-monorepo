@@ -11,8 +11,8 @@ class GeneratedCodeTest extends TestCase
     public function testCodeGeneration()
     {
         $testItem = new GeneratedCode('Generated\Example', 'Example', EmptyDto::class);
-        $fixture = __DIR__ . '/../../fixtures/Example.php';
-        // file_put_contents($fixture, $testItem->toCode());
+        $fixture = __DIR__ . '/../../fixtures/Example.phpinc';
+         file_put_contents($fixture, $testItem->toCode());
         $this->assertEquals(file_get_contents($fixture), $testItem->toCode());
 
         $testItem->addInjectCode('$instance->test = "example";');
@@ -22,8 +22,8 @@ class GeneratedCodeTest extends TestCase
         $testItem->addProperty('string', 'example')
             ->addAttribute(Column::class, ['name' => 'Example']);
 
-        $fixture = __DIR__ . '/../../fixtures/Example2.php';
-        // file_put_contents($fixture, $testItem->toCode());
+        $fixture = __DIR__ . '/../../fixtures/Example2.phpinc';
+         file_put_contents($fixture, $testItem->toCode());
         $this->assertEquals(file_get_contents($fixture), $testItem->toCode());
     }
 }

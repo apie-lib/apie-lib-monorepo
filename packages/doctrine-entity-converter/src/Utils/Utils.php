@@ -3,7 +3,7 @@ namespace Apie\DoctrineEntityConverter\Utils;
 
 use ReflectionProperty;
 
-class Utils
+final class Utils
 {
     private function __construct()
     {
@@ -13,5 +13,11 @@ class Utils
     {
         $property->setAccessible(true);
         $property->setValue($instance, $value);
+    }
+
+    public static function getProperty(mixed $instance, ReflectionProperty $property): mixed
+    {
+        $property->setAccessible(true);
+        return $property->getValue($instance);
     }
 }

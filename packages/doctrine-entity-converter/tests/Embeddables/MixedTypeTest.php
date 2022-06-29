@@ -8,8 +8,6 @@ use ReflectionProperty;
 
 class MixedTypeTest extends TestCase
 {
-    private mixed $testProperty;
-
     /**
      * @test
      * @dataProvider mixedProvider
@@ -17,9 +15,7 @@ class MixedTypeTest extends TestCase
     public function it_can_store_and_restore_anything(mixed $input)
     {
         $object = MixedType::createFrom($input);
-        $refl = new ReflectionProperty(__CLASS__, 'testProperty');
-        $object->inject($this, $refl);
-        $this->assertEquals($this->testProperty, $input);
+        $this->assertEquals($input, $object->toDomainObject());
     }
 
     public function mixedProvider(): iterable

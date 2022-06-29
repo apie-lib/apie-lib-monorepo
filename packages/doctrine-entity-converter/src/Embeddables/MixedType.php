@@ -1,6 +1,7 @@
 <?php
 namespace Apie\DoctrineEntityConverter\Embeddables;
 
+use Apie\DoctrineEntityConverter\Exceptions\ContentsCouldNotBeDeserialized;
 use Doctrine\ORM\Mapping\Column;
 use ReflectionProperty;
 
@@ -12,6 +13,9 @@ class MixedType
     #[Column(['type' => 'text'])]
     private ?string $serializedString = null;
 
+    #[Column(['type' => 'string'])]
+    private ?string $originalClass = null;
+
     private function __construct()
     {
     }
@@ -20,12 +24,16 @@ class MixedType
     {
         $instance = new self();
         $instance->serializedString = serialize($input);
+        $instance->originalClass = get_debug_type($input);
         return $instance;
     }
 
-    public function inject(object $instance, ReflectionProperty $property): void
+    public function toDomainObject(): mixed
     {
-        $property->setAccessible(true);
-        $property->setValue($instance, unserialize($this->serializedString));
+        $result = unserialize($this->serializedString);
+        if (get_debug_type($result) !== $this->originalClass) {
+            throw new ContentsCouldNotBeDeserialized($result, $this->originalClass);
+        }
+        return $result;
     }
 }

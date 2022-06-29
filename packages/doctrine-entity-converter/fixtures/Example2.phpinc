@@ -2,6 +2,7 @@
 namespace Generated\Example;
 
 use Apie\Core\Dto\DtoInterface;
+use Apie\DoctrineEntityConverter\Utils\Utils;
 use Apie\Fixtures\Dto\EmptyDto as OriginalDomainObject;
 use Doctrine\ORM\Mapping as ORM;
 

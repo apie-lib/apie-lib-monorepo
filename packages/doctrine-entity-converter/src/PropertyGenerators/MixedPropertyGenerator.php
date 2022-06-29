@@ -28,24 +28,28 @@ class MixedPropertyGenerator implements PropertyGeneratorInterface
 
     protected function generateFromCode(ReflectionClass $class, ReflectionProperty $property): string
     {
+        $declaringClass = 'OriginalDomainObject';
+        if ($property->getDeclaringClass()->name !== $class->name) {
+            $declaringClass = '\\' . $property->getDeclaringClass()->name;
+        }
         return sprintf(
-            'Utils::setProperty(
-    $instance,
-    new \ReflectionProperty(%s, %s),
-    MixedType::fromCode($input)
-);',
-            var_export($property->getDeclaringClass()->name, true),
-            var_export($property->name, true),
-            MixedType::class,
+            '$instance->%s = MixedType::createFrom(Utils::getProperty($input, new \ReflectionProperty(%s::class, %s)));',
+            $property->name,
+            $declaringClass,
+            var_export($property->name, true)
         );
     }
     public function generateInject(ReflectionClass $class, ReflectionProperty $property): string
     {
+        $declaringClass = 'OriginalDomainObject';
+        if ($property->getDeclaringClass()->name !== $class->name) {
+            $declaringClass = '\\' . $property->getDeclaringClass()->name;
+        }
         return sprintf(
-            '$this->%s->inject($instance, new \ReflectionProperty(%s, %s));',
-            $property->name,
-            var_export($property->getDeclaringClass()->name, true),
-            var_export($property->name, true)
+            'Utils::setProperty($instance, new \ReflectionProperty(%s::class, %s), $this->%s->toDomainObject());',
+            $declaringClass,
+            var_export($property->name, true),
+            $property->name
         );
     }
 }
