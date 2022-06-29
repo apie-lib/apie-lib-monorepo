@@ -26,7 +26,7 @@ class EntityBuilderTest extends TestCase
         $testItem = $this->givenAEntityBuilder('Test\RenderOnly');
         $code = $testItem->createCodeFor(new ReflectionClass(UserWithAddress::class));
         $fixtureFile = __DIR__ . '/../fixtures/UserWithAddress.php';
-        file_put_contents($fixtureFile, $code);
+        // file_put_contents($fixtureFile, $code);
         $this->assertEquals(file_get_contents($fixtureFile), $code);
     }
 }
