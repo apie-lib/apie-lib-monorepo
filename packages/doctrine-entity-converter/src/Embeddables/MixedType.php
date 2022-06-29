@@ -5,9 +5,10 @@ use Doctrine\ORM\Mapping\Column;
 use ReflectionProperty;
 
 /**
- * Maps any type to a doctrine column. To allow any type, we basically store 
+ * Maps any type to a doctrine column. To allow any type, we basically store
  */
-class MixedType {
+class MixedType
+{
     #[Column(['type' => 'text'])]
     private ?string $serializedString = null;
 

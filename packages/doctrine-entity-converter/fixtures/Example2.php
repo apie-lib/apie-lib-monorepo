@@ -3,9 +3,13 @@ namespace Generated\Example;
 
 use Apie\Core\Dto\DtoInterface;
 use Apie\Fixtures\Dto\EmptyDto as OriginalDomainObject;
+use Doctrine\ORM\Mapping as ORM;
 
 class Example implements DtoInterface
 {
+    #[ORM\Column(name: 'Example')]
+    public string $example;
+
     private function __construct()
     {
     }
@@ -18,5 +22,7 @@ class Example implements DtoInterface
 
     public function inject(OriginalDomainObject $instance, \ReflectionProperty $property): void
     {
+        $instance->test = "example";
+        $this->addCreateFromCode = "example";
     }
 }

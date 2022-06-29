@@ -3,13 +3,27 @@ namespace Apie\Tests\DoctrineEntityConverter\Mediators;
 
 use Apie\DoctrineEntityConverter\Mediators\GeneratedCode;
 use Apie\Fixtures\Dto\EmptyDto;
+use Doctrine\ORM\Mapping\Column;
 use PHPUnit\Framework\TestCase;
 
 class GeneratedCodeTest extends TestCase
 {
-    public function testCodeGeneration() 
+    public function testCodeGeneration()
     {
-        $testItem = new GeneratedCode('Example', EmptyDto::class);
-        $this->assertEquals(file_get_contents(__DIR__ . '/../../fixtures/Example.php'), $testItem->toCode());
+        $testItem = new GeneratedCode('Generated\Example', 'Example', EmptyDto::class);
+        $fixture = __DIR__ . '/../../fixtures/Example.php';
+        // file_put_contents($fixture, $testItem->toCode());
+        $this->assertEquals(file_get_contents($fixture), $testItem->toCode());
+
+        $testItem->addInjectCode('$instance->test = "example";');
+
+        $testItem->addInjectCode('$this->addCreateFromCode = "example";');
+
+        $testItem->addProperty('string', 'example')
+            ->addAttribute(Column::class, ['name' => 'Example']);
+
+        $fixture = __DIR__ . '/../../fixtures/Example2.php';
+        // file_put_contents($fixture, $testItem->toCode());
+        $this->assertEquals(file_get_contents($fixture), $testItem->toCode());
     }
 }
