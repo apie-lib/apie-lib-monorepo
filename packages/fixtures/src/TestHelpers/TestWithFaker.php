@@ -5,6 +5,7 @@ use Apie\Faker\ApieObjectFaker;
 use Faker\Factory;
 use Faker\Generator;
 
+/** @codeCoverageIgnore */
 trait TestWithFaker
 {
     public function runFakerTest(string $classToTest, ?callable $testCase = null, ?Generator $generator = null)
