@@ -27,6 +27,7 @@
         "phpspec/prophecy-phpunit": "^2.0",
         "phpstan/phpstan": "^0.12.3",
         "phpunit/phpunit": "^9.5",
+        "symfony/cache": "^6.0",
         "symfony/finder": "6.*",
         "symfony/phpunit-bridge": "6.*",
         "symplify/monorepo-builder": "10.2.7"
