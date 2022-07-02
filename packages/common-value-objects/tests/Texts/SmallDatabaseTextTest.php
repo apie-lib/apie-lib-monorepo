@@ -4,10 +4,13 @@ namespace Apie\Tests\CommonValueObjects\Texts;
 use Apie\CommonValueObjects\Texts\SmallDatabaseText;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class SmallDatabaseTextTest extends TestCase
 {
+    use TestWithOpenapiSchema;
     use TestWithFaker;
     /**
      * @test
@@ -60,6 +63,22 @@ class SmallDatabaseTextTest extends TestCase
     public function invalidProvider()
     {
         yield [str_repeat('1', '300')];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            SmallDatabaseText::class,
+            'SmallDatabaseText-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'smalldatabasetext',
+                'pattern' => true,
+            ])
+        );
     }
 
     /**

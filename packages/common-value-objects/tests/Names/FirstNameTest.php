@@ -4,11 +4,15 @@ namespace Apie\Tests\CommonValueObjects\Names;
 use Apie\CommonValueObjects\Names\FirstName;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class FirstNameTest extends TestCase
 {
     use TestWithFaker;
+    use TestWithOpenapiSchema;
+
     /**
      * @test
      * @dataProvider inputProvider
@@ -61,6 +65,22 @@ class FirstNameTest extends TestCase
         yield [''];
         yield [' '];
         yield ["          \t\n\r\n"];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            FirstName::class,
+            'FirstName-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'firstname',
+                'pattern' => true,
+            ])
+        );
     }
 
     /**

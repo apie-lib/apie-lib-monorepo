@@ -4,11 +4,15 @@ namespace Apie\Tests\CommonValueObjects\Identifiers;
 use Apie\CommonValueObjects\Identifiers\Uuid;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class UuidTest extends TestCase
 {
     use TestWithFaker;
+    use TestWithOpenapiSchema;
+
     /**
      * @test
      * @dataProvider inputProvider
@@ -67,5 +71,21 @@ class UuidTest extends TestCase
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(Uuid::class);
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            Uuid::class,
+            'Uuid-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'uuid',
+                'pattern' => true,
+            ])
+        );
     }
 }

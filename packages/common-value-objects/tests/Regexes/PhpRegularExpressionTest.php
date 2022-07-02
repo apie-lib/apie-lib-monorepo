@@ -4,11 +4,15 @@ namespace Apie\Tests\CommonValueObjects\Regexes;
 use Apie\CommonValueObjects\Exceptions\InvalidPhpRegularExpression;
 use Apie\CommonValueObjects\Regexes\PhpRegularExpression;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class PhpRegularExpressionTest extends TestCase
 {
     use TestWithFaker;
+    use TestWithOpenapiSchema;
+
     /**
      * @test
      * @dataProvider inputProvider
@@ -51,6 +55,21 @@ class PhpRegularExpressionTest extends TestCase
         //yield ['[a-z]'];
         yield ["/[a-z]"];
         yield ['/[a-z]/0'];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            PhpRegularExpression::class,
+            'PhpRegularExpression-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'phpregularexpression'
+            ])
+        );
     }
 
     /**

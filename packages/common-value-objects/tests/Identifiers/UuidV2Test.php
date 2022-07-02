@@ -4,11 +4,15 @@ namespace Apie\Tests\CommonValueObjects\Identifiers;
 use Apie\CommonValueObjects\Identifiers\UuidV2;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class UuidV2Test extends TestCase
 {
     use TestWithFaker;
+    use TestWithOpenapiSchema;
+
     /**
      * @test
      * @dataProvider inputProvider
@@ -59,6 +63,22 @@ class UuidV2Test extends TestCase
         yield ['pascal_case_slug'];
         yield ['123e4567-g89b-12d3-a456-426614179000'];
         yield ['123e4567-e89b-12d3-a456-4266141740001'];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            UuidV2::class,
+            'UuidV2-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'uuidv2',
+                'pattern' => true,
+            ])
+        );
     }
 
     /**

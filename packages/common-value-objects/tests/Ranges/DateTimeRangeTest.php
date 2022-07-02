@@ -6,11 +6,16 @@ use Apie\CommonValueObjects\Ranges\DateTimeRange;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\DateValueObjects\DateWithTimezone;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Reference;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class DateTimeRangeTest extends TestCase
 {
     use TestWithFaker;
+    use TestWithOpenapiSchema;
+
     /**
      * @test
      * @dataProvider inputProvider
@@ -89,6 +94,25 @@ class DateTimeRangeTest extends TestCase
             InvalidTypeException::class,
             ['end' => '2005-08-15T15:52:01+00:00']
         ];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            DateTimeRange::class,
+            'DateTimeRange-post',
+            new Schema([
+                'type' => 'object',
+                'properties' => [
+                    'start' => new Reference(['$ref' => 'DateWithTimezone-post']),
+                    'end' => new Reference(['$ref' => 'DateWithTimezone-post']),
+                ],
+                'required' => ['start', 'end'],
+            ])
+        );
     }
 
     /**

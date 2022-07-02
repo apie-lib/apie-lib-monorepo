@@ -4,10 +4,13 @@ namespace Apie\Tests\CommonValueObjects\Texts;
 use Apie\CommonValueObjects\Texts\StrongPassword;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class StrongPasswordTest extends TestCase
 {
+    use TestWithOpenapiSchema;
     use TestWithFaker;
     /**
      * @test
@@ -57,8 +60,24 @@ class StrongPasswordTest extends TestCase
 
     public function invalidProvider()
     {
-        yield [str_repeat('1', '300')];
+        yield [str_repeat('1', 300)];
         yield [''];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            StrongPassword::class,
+            'StrongPassword-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'password',
+                'pattern' => StrongPassword::getRegularExpression(),
+            ])
+        );
     }
 
     /**

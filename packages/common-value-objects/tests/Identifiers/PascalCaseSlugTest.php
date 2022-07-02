@@ -4,11 +4,15 @@ namespace Apie\Tests\CommonValueObjects\Identifiers;
 use Apie\CommonValueObjects\Identifiers\PascalCaseSlug;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class PascalCaseSlugTest extends TestCase
 {
     use TestWithFaker;
+    use TestWithOpenapiSchema;
+
     /**
      * @test
      * @dataProvider inputProvider
@@ -61,6 +65,22 @@ class PascalCaseSlugTest extends TestCase
         yield ['kebab-case-slug'];
         yield ['Capital_start'];
         yield ["capital_Start"];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            PascalCaseSlug::class,
+            'PascalCaseSlug-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'pascalcaseslug',
+                'pattern' => true,
+            ])
+        );
     }
 
     /**

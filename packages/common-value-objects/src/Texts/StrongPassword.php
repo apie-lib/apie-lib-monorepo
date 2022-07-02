@@ -1,9 +1,11 @@
 <?php
 namespace Apie\CommonValueObjects\Texts;
 
+use Apie\Core\Attributes\SchemaMethod;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsPasswordValueObject;
 
+#[SchemaMethod("getOpenapiSchema")]
 class StrongPassword implements HasRegexValueObjectInterface
 {
     use IsPasswordValueObject;
@@ -46,5 +48,14 @@ class StrongPassword implements HasRegexValueObjectInterface
     protected function convert(string $input): string
     {
         return trim($input);
+    }
+
+    public static function getOpenapiSchema(): array
+    {
+        return [
+            'type' => 'string',
+            'format' => 'password',
+            'pattern' => StrongPassword::getRegularExpression(),
+        ];
     }
 }

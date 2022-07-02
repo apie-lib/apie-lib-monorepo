@@ -4,11 +4,14 @@ namespace Apie\Tests\CommonValueObjects\Texts;
 use Apie\CommonValueObjects\Texts\NonEmptyString;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class NonEmptyStringTest extends TestCase
 {
     use TestWithFaker;
+    use TestWithOpenapiSchema;
     /**
      * @test
      * @dataProvider inputProvider
@@ -60,6 +63,22 @@ class NonEmptyStringTest extends TestCase
         yield [''];
         yield [' '];
         yield ["          \t\n\r\n"];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            NonEmptyString::class,
+            'NonEmptyString-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'nonemptystring',
+                'pattern' => true,
+            ])
+        );
     }
 
     /**

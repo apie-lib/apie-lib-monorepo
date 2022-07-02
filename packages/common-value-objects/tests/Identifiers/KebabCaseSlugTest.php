@@ -4,11 +4,14 @@ namespace Apie\Tests\CommonValueObjects\Identifiers;
 use Apie\CommonValueObjects\Identifiers\KebabCaseSlug;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
+use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class KebabCaseSlugTest extends TestCase
 {
     use TestWithFaker;
+    use TestWithOpenapiSchema;
     /**
      * @test
      * @dataProvider inputProvider
@@ -69,5 +72,21 @@ class KebabCaseSlugTest extends TestCase
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(KebabCaseSlug::class);
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_schema_generator()
+    {
+        $this->runOpenapiSchemaTestForCreation(
+            KebabCaseSlug::class,
+            'KebabCaseSlug-post',
+            new Schema([
+                'type' => 'string',
+                'format' => 'kebabcaseslug',
+                'pattern' => true,
+            ])
+        );
     }
 }
