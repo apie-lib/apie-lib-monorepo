@@ -5,7 +5,6 @@ use Apie\CommonValueObjects\Identifiers\PascalCaseSlug;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
-use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class PascalCaseSlugTest extends TestCase
@@ -75,11 +74,11 @@ class PascalCaseSlugTest extends TestCase
         $this->runOpenapiSchemaTestForCreation(
             PascalCaseSlug::class,
             'PascalCaseSlug-post',
-            new Schema([
+            [
                 'type' => 'string',
                 'format' => 'pascalcaseslug',
                 'pattern' => true,
-            ])
+            ]
         );
     }
 

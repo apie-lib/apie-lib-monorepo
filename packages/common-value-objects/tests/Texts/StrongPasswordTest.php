@@ -5,7 +5,6 @@ use Apie\CommonValueObjects\Texts\StrongPassword;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
-use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class StrongPasswordTest extends TestCase
@@ -72,11 +71,11 @@ class StrongPasswordTest extends TestCase
         $this->runOpenapiSchemaTestForCreation(
             StrongPassword::class,
             'StrongPassword-post',
-            new Schema([
+            [
                 'type' => 'string',
                 'format' => 'password',
                 'pattern' => StrongPassword::getRegularExpression(),
-            ])
+            ]
         );
     }
 

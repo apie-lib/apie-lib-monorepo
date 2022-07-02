@@ -5,7 +5,6 @@ use Apie\CommonValueObjects\Identifiers\Identifier;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
-use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class IdentifierTest extends TestCase
@@ -83,11 +82,11 @@ class IdentifierTest extends TestCase
         $this->runOpenapiSchemaTestForCreation(
             Identifier::class,
             'Identifier-post',
-            new Schema([
+            [
                 'type' => 'string',
                 'format' => 'identifier',
                 'pattern' => true,
-            ])
+            ]
         );
     }
 }

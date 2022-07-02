@@ -5,7 +5,6 @@ use Apie\CommonValueObjects\Texts\NonEmptyString;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
-use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class NonEmptyStringTest extends TestCase
@@ -73,11 +72,11 @@ class NonEmptyStringTest extends TestCase
         $this->runOpenapiSchemaTestForCreation(
             NonEmptyString::class,
             'NonEmptyString-post',
-            new Schema([
+            [
                 'type' => 'string',
                 'format' => 'nonemptystring',
                 'pattern' => true,
-            ])
+            ]
         );
     }
 

@@ -5,7 +5,6 @@ use Apie\CommonValueObjects\Identifiers\UuidV2;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
-use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class UuidV2Test extends TestCase
@@ -73,11 +72,11 @@ class UuidV2Test extends TestCase
         $this->runOpenapiSchemaTestForCreation(
             UuidV2::class,
             'UuidV2-post',
-            new Schema([
+            [
                 'type' => 'string',
                 'format' => 'uuidv2',
                 'pattern' => true,
-            ])
+            ]
         );
     }
 

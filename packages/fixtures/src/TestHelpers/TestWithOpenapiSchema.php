@@ -7,7 +7,7 @@ use cebe\openapi\spec\Schema;
 /** @codeCoverageIgnore */
 trait TestWithOpenapiSchema
 {
-    public function runOpenapiSchemaTestForCreation(string $classToTest, string $expectedKey, Schema $expected, ?callable $testCase = null, ?ComponentsBuilderFactory $factory = null)
+    public function runOpenapiSchemaTestForCreation(string $classToTest, string $expectedKey, array|Schema $expected, ?callable $testCase = null, ?ComponentsBuilderFactory $factory = null)
     {
         if (!class_exists(ComponentsBuilderFactory::class)) {
             $this->markTestIncomplete('Schema generator library not loaded, so skipping test');
@@ -15,6 +15,9 @@ trait TestWithOpenapiSchema
         }
         $testCase ??= function () {
         };
+        if (is_array($expected)) {
+            $expected = new Schema($expected);
+        }
         if (!$factory) {
             $factory = ComponentsBuilderFactory::createComponentsBuilderFactory();
         }

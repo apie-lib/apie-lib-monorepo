@@ -8,7 +8,6 @@ use Apie\DateValueObjects\DateWithTimezone;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use cebe\openapi\spec\Reference;
-use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class DateTimeRangeTest extends TestCase
@@ -104,14 +103,14 @@ class DateTimeRangeTest extends TestCase
         $this->runOpenapiSchemaTestForCreation(
             DateTimeRange::class,
             'DateTimeRange-post',
-            new Schema([
+            [
                 'type' => 'object',
                 'properties' => [
                     'start' => new Reference(['$ref' => 'DateWithTimezone-post']),
                     'end' => new Reference(['$ref' => 'DateWithTimezone-post']),
                 ],
                 'required' => ['start', 'end'],
-            ])
+            ]
         );
     }
 

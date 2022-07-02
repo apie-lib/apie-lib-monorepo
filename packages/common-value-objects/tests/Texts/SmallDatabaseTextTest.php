@@ -5,7 +5,6 @@ use Apie\CommonValueObjects\Texts\SmallDatabaseText;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
-use cebe\openapi\spec\Schema;
 use PHPUnit\Framework\TestCase;
 
 class SmallDatabaseTextTest extends TestCase
@@ -73,11 +72,11 @@ class SmallDatabaseTextTest extends TestCase
         $this->runOpenapiSchemaTestForCreation(
             SmallDatabaseText::class,
             'SmallDatabaseText-post',
-            new Schema([
+            [
                 'type' => 'string',
                 'format' => 'smalldatabasetext',
                 'pattern' => true,
-            ])
+            ]
         );
     }
 
