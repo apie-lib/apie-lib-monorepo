@@ -1,6 +1,7 @@
 <?php
-namespace Apie\Core\Exceptions;
+namespace Apie\Faker\Exceptions;
 
+use Apie\Core\Exceptions\ApieException;
 use ReflectionClass;
 
 class ClassCanNotBeFakedException extends ApieException

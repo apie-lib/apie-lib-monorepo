@@ -48,3 +48,12 @@ echo json_encode($instance); // prints '"15"'
 IsStringValueObjectExample::fromNative('  '); // throws error...
 IsStringValueObjectExample::fromNative([]); // throws error...
 ```
+
+## Composite value objects
+TODO
+
+## Time related value objects
+
+## Identifiers
+
+## Password value objects

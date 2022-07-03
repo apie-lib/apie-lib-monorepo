@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Faker\Exceptions;
+namespace Apie\Core\Exceptions;
 
 use Apie\Core\Exceptions\ApieException;
 use ReflectionMethod;
