@@ -1,6 +1,6 @@
 <?php
 namespace Apie\Fixtures\Entities\Polymorphic;
 
-class Fish extends Animal {
-    
+class Fish extends Animal
+{
 }
