@@ -22,6 +22,7 @@ abstract class Animal implements PolymorphicEntityInterface
     final public static function getDiscriminatorMapping(): DiscriminatorMapping
     {
         return new DiscriminatorMapping(
+            'animalType',
             new DiscriminatorConfig('cow', Cow::class),
             new DiscriminatorConfig('elephant', Elephant::class),
             new DiscriminatorConfig('fish', Fish::class)
