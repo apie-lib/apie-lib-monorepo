@@ -46,9 +46,6 @@ jobs:
         push_badge: true
         repo_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: add jekyll ignore file for github pages
-      run: touch coverage/.nojekyll
-
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
