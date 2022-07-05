@@ -43,7 +43,8 @@
             "Apie\\DoctrineEntityConverter\\": "packages/doctrine-entity-converter/src/",
             "Apie\\Faker\\": "packages/faker/src/",
             "Apie\\Fixtures\\": "packages/fixtures/src/",
-            "Apie\\SchemaGenerator\\": "packages/schema-generator/src/"
+            "Apie\\SchemaGenerator\\": "packages/schema-generator/src/",
+            "Apie\\Serializer\\": "packages/serializer/src/"
         }
     },
     "autoload-dev": {
@@ -57,7 +58,8 @@
             "Apie\\Tests\\DoctrineEntityConverter\\": "packages/doctrine-entity-converter/tests/",
             "Apie\\Tests\\Faker\\": "packages/faker/tests/",
             "Apie\\Tests\\Fixtures\\": "packages/fixtures/tests/",
-            "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/"
+            "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/",
+            "Apie\\Tests\\Serializer\\": "packages/serializer/tests/"
         }
     },
     "replace": {
@@ -70,7 +72,8 @@
         "apie/doctrine-entity-converter": "self.version",
         "apie/faker": "self.version",
         "apie/fixtures": "self.version",
-        "apie/schema-generator": "self.version"
+        "apie/schema-generator": "self.version",
+        "apie/serializer": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
