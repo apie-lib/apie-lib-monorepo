@@ -4,9 +4,11 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../shared-bin.php';
 
 use Symfony\Component\Finder\Finder;
-
-$readme = '# apie-lib-monorepo' . PHP_EOL;
-$readme = ComposerTools::renderBadges('apie-lib', 'apie-lib-monorepo');
+$readme = '<img src="/docs/apie-logo.svg" width="100px" align="left" />' . PHP_EOL;
+$readme .= '<h1>Apie Lib</h1>' . PHP_EOL . PHP_EOL . PHP_EOL . PHP_EOL . PHP_EOL;
+$readme .= ComposerTools::renderBadges('apie-lib', 'apie-lib-monorepo') . PHP_EOL;
+$readme .= PHP_EOL;
+$readme .= file_get_contents(__DIR__ . '/../resources/contents-readme.md');
 $readme .= PHP_EOL;
 $readme .= '| . | . | . | ' . PHP_EOL;
 $readme .= '| --- | --- | --- | ' . PHP_EOL;
@@ -47,7 +49,6 @@ case 2:
     $readme .= '. | ' . PHP_EOL;
 }
 
-$readme .= PHP_EOL . file_get_contents(__DIR__ . '/../resources/contents-readme.md');
 file_put_contents(__DIR__ . '/../README.md', $readme);
 
 ComposerTools::runUpdate();
