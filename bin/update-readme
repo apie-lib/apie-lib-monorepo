@@ -7,6 +7,7 @@ use Symfony\Component\Finder\Finder;
 
 $readme = '# apie-lib-monorepo' . PHP_EOL;
 $readme = ComposerTools::renderBadges('apie-lib', 'apie-lib-monorepo');
+$readme .= file_get_contents(__DIR__ . '/../resources/contents-readme.md');
 $readme .= PHP_EOL;
 $readme .= '| . | . | . | ' . PHP_EOL;
 $readme .= '| --- | --- | --- | ' . PHP_EOL;
@@ -47,7 +48,6 @@ case 2:
     $readme .= '. | ' . PHP_EOL;
 }
 
-$readme .= PHP_EOL . file_get_contents(__DIR__ . '/../resources/contents-readme.md');
 file_put_contents(__DIR__ . '/../README.md', $readme);
 
 ComposerTools::runUpdate();
