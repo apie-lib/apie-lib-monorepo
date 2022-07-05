@@ -8,8 +8,8 @@
 
 Apie is a suite of composer packages to work with domain objects. It tries to aim to follow a Domain-objects-first approach and not a database first approach that you find in many PHP frameworks nowadays.
 
-Apie is very opionated what a domain object is but following this opinion leads to some easy
-tooling in processing domain objects in a automated way.
+Apie is very opinionated what a domain object is but following this opinion leads to some easy
+tooling in processing domain objects in a automated way instead of giving the programmer too many options.
 
 Also since PHP 8.1 everything should be typehinted, which means a lot more can be automated.
 
