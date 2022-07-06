@@ -43,8 +43,7 @@ jobs:
     - name: phpunit-coverage-badge
       uses: timkrase/phpunit-coverage-badge@v1.2.0
       with:
-        push_badge: true
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        coverage_badge_path: coverage/coverage_badge.svg
 
     - name: Pushes test file
       uses: dmnemec/copy_file_to_another_repo_action@main
@@ -53,7 +52,7 @@ jobs:
       with:
         source_file: 'coverage'
         destination_repo: 'apie-lib/apie-lib.github.io'
-        destination_folder: 'code_coverage'
+        destination_folder: '.'
         user_email: 'pieter_jordaan@Hotmail.com'
         user_name: 'pjordaan'
         commit_message: 'Update code coverage'
