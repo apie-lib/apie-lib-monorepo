@@ -1,4 +1,10 @@
-# {package}
+<img src="/docs/apie-logo.svg" width="100px" align="left" />
+<h1>{package}</h1>
+
+
+
+
+
 
 {badges}
 
