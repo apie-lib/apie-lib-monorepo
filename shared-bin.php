@@ -101,13 +101,17 @@ class ComposerTools {
     public static function renderBadges(string $package, ?string $repoName = null)
     {
         $repoName ??= $package;
+        $coverageBadge = "![Code coverage](https://raw.githubusercontent.com/apie-lib/$repoName/main/coverage_badge.svg)";
+        if ($repoName === 'apie-lib-monorepo') {
+            $coverageBadge = '[![Code coverage](https://apie-lib.github.io/coverage/coverage_badge.svg)](https://apie-lib.github.io/coverage/)';
+        }
         return str_replace(PHP_EOL, ' ', "
 [![Latest Stable Version](http://poser.pugx.org/apie/$package/v)](https://packagist.org/packages/apie/$package)
 [![Total Downloads](http://poser.pugx.org/apie/$package/downloads)](https://packagist.org/packages/apie/$package)
 [![Latest Unstable Version](http://poser.pugx.org/apie/$package/v/unstable)](https://packagist.org/packages/apie/$package)
 [![License](http://poser.pugx.org/apie/$package/license)](https://packagist.org/packages/apie/$package)
 [![PHP Version Require](http://poser.pugx.org/apie/$package/require/php)](https://packagist.org/packages/apie/$package)
-![Code coverage](https://raw.githubusercontent.com/apie-lib/$repoName/main/coverage_badge.svg)
+$coverageBadge
 ");
     }
 }
