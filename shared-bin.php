@@ -101,7 +101,7 @@ class ComposerTools {
     public static function renderBadges(string $package, ?string $repoName = null)
     {
         $repoName ??= $package;
-        $coverageBadge = "![Code coverage](https://raw.githubusercontent.com/apie-lib/$repoName/main/coverage_badge.svg)";
+        $coverageBadge = "[![Code coverage](https://raw.githubusercontent.com/apie-lib/$repoName/main/coverage_badge.svg)](https://apie-lib.github.io/coverage/$package/index.html)";
         if ($repoName === 'apie-lib-monorepo') {
             $coverageBadge = '[![Code coverage](https://apie-lib.github.io/coverage/coverage_badge.svg)](https://apie-lib.github.io/coverage/)';
         }
