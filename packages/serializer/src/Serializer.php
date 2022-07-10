@@ -6,7 +6,9 @@ use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
 use Apie\Serializer\Context\ApieSerializerContext;
 use Apie\Serializer\Lists\NormalizerList;
+use Apie\Serializer\Normalizers\BooleanNormalizer;
 use Apie\Serializer\Normalizers\EnumNormalizer;
+use Apie\Serializer\Normalizers\StringNormalizer;
 use Apie\Serializer\Normalizers\ValueObjectNormalizer;
 use ReflectionClass;
 use ReflectionProperty;
@@ -19,7 +21,12 @@ class Serializer
 
     public static function create(): self
     {
-        return new self(new NormalizerList([new EnumNormalizer(), new ValueObjectNormalizer()]));
+        return new self(new NormalizerList([
+            new EnumNormalizer(),
+            new ValueObjectNormalizer(),
+            new StringNormalizer(),
+            new BooleanNormalizer(),
+        ]));
     }
 
     public function normalize(mixed $object, ApieContext $apieContext): string|int|float|bool|ItemList|ItemHashmap|null
