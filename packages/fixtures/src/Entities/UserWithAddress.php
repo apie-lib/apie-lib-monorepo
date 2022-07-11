@@ -12,9 +12,9 @@ class UserWithAddress implements EntityInterface
 
     private ?Password $password = null;
 
-    public function __construct(private AddressWithZipcodeCheck $address)
+    public function __construct(private AddressWithZipcodeCheck $address, ?UserWithAddressIdentifier $id = null)
     {
-        $this->id = UserWithAddressIdentifier::createRandom();
+        $this->id = $id ?? UserWithAddressIdentifier::createRandom();
     }
 
     public function getId(): UserWithAddressIdentifier
