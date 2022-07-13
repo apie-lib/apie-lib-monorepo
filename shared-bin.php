@@ -101,8 +101,10 @@ class ComposerTools {
     public static function renderBadges(string $package, ?string $repoName = null)
     {
         $repoName ??= $package;
+        $donateBadge = '';
         $coverageBadge = "[![Code coverage](https://raw.githubusercontent.com/apie-lib/$repoName/main/coverage_badge.svg)](https://apie-lib.github.io/coverage/$package/index.html)";
         if ($repoName === 'apie-lib-monorepo') {
+            $donateBadge = '[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=J4CAFUAW7VTAY)';
             $coverageBadge = '[![Code coverage](https://apie-lib.github.io/coverage/coverage_badge.svg)](https://apie-lib.github.io/coverage/)';
         }
         return str_replace(PHP_EOL, ' ', "
@@ -112,7 +114,7 @@ class ComposerTools {
 [![License](http://poser.pugx.org/apie/$package/license)](https://packagist.org/packages/apie/$package)
 [![PHP Version Require](http://poser.pugx.org/apie/$package/require/php)](https://packagist.org/packages/apie/$package)
 $coverageBadge
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=J4CAFUAW7VTAY)
+$donateBadge
 ");
     }
 }
