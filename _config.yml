@@ -1,1 +1,7 @@
 theme: jekyll-theme-architect
+title: Apie library
+author: Pieter Jordaan
+avatar: "/assets/img/apie-logo.png"
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
