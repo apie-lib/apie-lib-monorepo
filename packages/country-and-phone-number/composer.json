@@ -1,5 +1,5 @@
 {
-  "name": "apie/country-and-phonenumber",
+  "name": "apie/country-and-phone-number",
   "description": "Composer package of the apie library: country and phonenumber",
   "type": "library",
   "license": "MIT",
@@ -11,12 +11,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Apie\\CountryAndPhonenumber\\": "src/"
+      "Apie\\CountryAndPhoneNumber\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Apie\\Tests\\CountryAndPhonenumber\\": "tests/"
+      "Apie\\Tests\\CountryAndPhoneNumber\\": "tests/"
     }
   },
   "require": {

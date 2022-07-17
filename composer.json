@@ -74,7 +74,6 @@
         "apie/composite-value-objects": "self.version",
         "apie/core": "*",
         "apie/country-and-phone-number": "self.version",
-        "apie/country-and-phonenumber": "self.version",
         "apie/date-value-objects": "self.version",
         "apie/dateformat-to-regex": "self.version",
         "apie/doctrine-entity-converter": "self.version",
