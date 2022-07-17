@@ -2,9 +2,9 @@
 namespace Apie\Tests\CountryAndPhoneNumber;
 
 use Apie\CountryAndPhoneNumber\CountryAndPhoneNumber;
-use Apie\CountryAndPhonenumber\Exceptions\PhoneNumberAndCountryMismatch;
+use Apie\CountryAndPhoneNumber\Exceptions\PhoneNumberAndCountryMismatch;
 use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
-use Apie\CountryAndPhonenumber\InternationalPhoneNumber;
+use Apie\CountryAndPhoneNumber\InternationalPhoneNumber;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use cebe\openapi\spec\Reference;
