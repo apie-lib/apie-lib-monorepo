@@ -3,9 +3,11 @@ namespace Apie\CountryAndPhonenumber\Fields;
 
 use Apie\CompositeValueObjects\Fields\FieldInterface;
 use Apie\Core\Exceptions\InvalidTypeException;
+use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\Core\ValueObjects\Utils;
 use Apie\CountryAndPhonenumber\CountryAndPhonenumber;
+use Apie\CountryAndPhonenumber\Exceptions\PhoneNumberAndCountryMismatch;
 use Apie\CountryAndPhonenumber\Factories\PhoneNumberFactory;
 use Apie\CountryAndPhonenumber\PhoneNumber;
 use ReflectionProperty;
@@ -36,7 +38,12 @@ final class DynamicPhoneNumberProperty implements FieldInterface
     public function fromNative(ValueObjectInterface $instance, mixed $value)
     {
         $country = $this->countryProperty->getValue($instance);
-        self::fillField($instance, PhoneNumberFactory::createFrom($value, $country));
+        try {
+            $phoneNumber = PhoneNumberFactory::createFrom($value, $country);
+        } catch (InvalidStringForValueObjectException $error) {
+            throw new PhoneNumberAndCountryMismatch($country, null, $error);
+        }
+        self::fillField($instance, $phoneNumber);
     }
 
     public function fillField(ValueObjectInterface $instance, mixed $value)

@@ -38,7 +38,11 @@ final class InternationalPhoneNumber implements StringValueObjectInterface
     public function toPhoneNumber(): PhoneNumber
     {
         $phoneUtil = PhoneNumberUtil::getInstance();
-        return PhoneNumberFactory::createFrom($this->internal, $phoneUtil->getRegionCodeForNumber());
+        $phone = $phoneUtil->parse($this->internal);
+        return PhoneNumberFactory::createFrom(
+            $this->internal,
+            ISO3166_1_Alpha_2::from($phoneUtil->getRegionCodeForNumber($phone))
+        );
     }
 
     public static function createRandom(Generator $generator): self

@@ -1,6 +1,8 @@
 <?php
 namespace Apie\Tests\CountryAndPhonenumber;
 
+use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\CountryAndPhonenumber\GermanPhoneNumber;
 use Apie\CountryAndPhonenumber\PhoneNumber;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
@@ -24,6 +26,15 @@ class PhoneNumberTest extends TestCase
                 'format' => 'phonenumber',
             ]
         );
+    }
+
+    /**
+     * @test
+     */
+    public function it_throws_error_on_incorrect_country()
+    {
+        $this->expectException(InvalidStringForValueObjectException::class);
+        new GermanPhoneNumber('+3161234567');
     }
 
     /**
