@@ -1,11 +1,11 @@
 <?php
-namespace Apie\CountryAndPhonenumber;
+namespace Apie\CountryAndPhoneNumber;
 
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
-use Apie\CountryAndPhonenumber\Factories\PhoneNumberFactory;
+use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
 use Faker\Generator;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;

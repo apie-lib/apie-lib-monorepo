@@ -1,5 +1,5 @@
 <?php
-namespace Apie\CountryAndPhonenumber\Exceptions;
+namespace Apie\CountryAndPhoneNumber\Exceptions;
 
 use Apie\Core\Exceptions\ApieException;
 

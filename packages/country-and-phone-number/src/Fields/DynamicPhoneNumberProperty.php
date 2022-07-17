@@ -1,15 +1,15 @@
 <?php
-namespace Apie\CountryAndPhonenumber\Fields;
+namespace Apie\CountryAndPhoneNumber\Fields;
 
 use Apie\CompositeValueObjects\Fields\FieldInterface;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\Core\ValueObjects\Utils;
-use Apie\CountryAndPhonenumber\CountryAndPhonenumber;
-use Apie\CountryAndPhonenumber\Exceptions\PhoneNumberAndCountryMismatch;
-use Apie\CountryAndPhonenumber\Factories\PhoneNumberFactory;
-use Apie\CountryAndPhonenumber\PhoneNumber;
+use Apie\CountryAndPhoneNumber\CountryAndPhoneNumber;
+use Apie\CountryAndPhoneNumber\Exceptions\PhoneNumberAndCountryMismatch;
+use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
+use Apie\CountryAndPhoneNumber\PhoneNumber;
 use ReflectionProperty;
 
 final class DynamicPhoneNumberProperty implements FieldInterface
@@ -19,8 +19,8 @@ final class DynamicPhoneNumberProperty implements FieldInterface
 
     public function __construct()
     {
-        $this->property = new ReflectionProperty(CountryAndPhonenumber::class, 'phoneNumber');
-        $this->countryProperty = new ReflectionProperty(CountryAndPhonenumber::class, 'country');
+        $this->property = new ReflectionProperty(CountryAndPhoneNumber::class, 'phoneNumber');
+        $this->countryProperty = new ReflectionProperty(CountryAndPhoneNumber::class, 'country');
         $this->property->setAccessible(true);
         $this->countryProperty->setAccessible(true);
     }

@@ -1,7 +1,7 @@
 <?php
 namespace Apie\Tests\CountryAndPhoneNumber;
 
-use Apie\CountryAndPhonenumber\InternationalPhoneNumber;
+use Apie\CountryAndPhoneNumber\InternationalPhoneNumber;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use PHPUnit\Framework\TestCase;

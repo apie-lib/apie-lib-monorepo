@@ -1,5 +1,5 @@
 <?php
-namespace Apie\CountryAndPhonenumber\Exceptions;
+namespace Apie\CountryAndPhoneNumber\Exceptions;
 
 use Apie\Core\Exceptions\ApieException;
 use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;

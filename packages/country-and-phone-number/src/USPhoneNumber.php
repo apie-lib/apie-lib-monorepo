@@ -1,5 +1,5 @@
 <?php
-namespace Apie\CountryAndPhonenumber;
+namespace Apie\CountryAndPhoneNumber;
 
 use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
 

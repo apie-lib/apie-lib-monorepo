@@ -1,13 +1,13 @@
 <?php
-namespace Apie\CountryAndPhonenumber;
+namespace Apie\CountryAndPhoneNumber;
 
 use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\CompositeValueObjects\Fields\FromProperty;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
-use Apie\CountryAndPhonenumber\Exceptions\PhoneNumberAndCountryMismatch;
-use Apie\CountryAndPhonenumber\Factories\PhoneNumberFactory;
-use Apie\CountryAndPhonenumber\Fields\DynamicPhoneNumberProperty;
+use Apie\CountryAndPhoneNumber\Exceptions\PhoneNumberAndCountryMismatch;
+use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
+use Apie\CountryAndPhoneNumber\Fields\DynamicPhoneNumberProperty;
 use Faker\Generator;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
@@ -27,7 +27,7 @@ final class CountryAndPhoneNumber implements ValueObjectInterface
     public static function getFields(): array
     {
         return [
-            'country' => new FromProperty(new ReflectionProperty(CountryAndPhonenumber::class, 'country')),
+            'country' => new FromProperty(new ReflectionProperty(CountryAndPhoneNumber::class, 'country')),
             'phoneNumber' => new DynamicPhoneNumberProperty(),
         ];
     }

@@ -1,18 +1,18 @@
 <?php
-namespace Apie\CountryAndPhonenumber\Factories;
+namespace Apie\CountryAndPhoneNumber\Factories;
 
 use Apie\Core\Exceptions\InvalidTypeException;
-use Apie\CountryAndPhonenumber\BritishPhoneNumber;
-use Apie\CountryAndPhonenumber\CanadianPhoneNumber;
-use Apie\CountryAndPhonenumber\ChinesePhoneNumber;
-use Apie\CountryAndPhonenumber\DutchPhoneNumber;
-use Apie\CountryAndPhonenumber\Exceptions\CountryAlreadyRegistered;
-use Apie\CountryAndPhonenumber\FrenchPhoneNumber;
-use Apie\CountryAndPhonenumber\GermanPhoneNumber;
-use Apie\CountryAndPhonenumber\JapanesePhoneNumber;
-use Apie\CountryAndPhonenumber\MexicanPhoneNumber;
-use Apie\CountryAndPhonenumber\PhoneNumber;
-use Apie\CountryAndPhonenumber\USPhoneNumber;
+use Apie\CountryAndPhoneNumber\BritishPhoneNumber;
+use Apie\CountryAndPhoneNumber\CanadianPhoneNumber;
+use Apie\CountryAndPhoneNumber\ChinesePhoneNumber;
+use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
+use Apie\CountryAndPhoneNumber\Exceptions\CountryAlreadyRegistered;
+use Apie\CountryAndPhoneNumber\FrenchPhoneNumber;
+use Apie\CountryAndPhoneNumber\GermanPhoneNumber;
+use Apie\CountryAndPhoneNumber\JapanesePhoneNumber;
+use Apie\CountryAndPhoneNumber\MexicanPhoneNumber;
+use Apie\CountryAndPhoneNumber\PhoneNumber;
+use Apie\CountryAndPhoneNumber\USPhoneNumber;
 use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
 
 final class PhoneNumberFactory
@@ -41,7 +41,7 @@ final class PhoneNumberFactory
         $country = $countryEnum->value;
         if (!isset(self::$instantiatedClasses[$country])) {
             // this code is evil....
-            $class = eval('return new class("", $countryEnum) extends \Apie\CountryAndPhonenumber\PhoneNumber {
+            $class = eval('return new class("", $countryEnum) extends \Apie\CountryAndPhoneNumber\PhoneNumber {
                 static private \PrinsFrank\Standards\Country\ISO3166_1_Alpha_2 $country;
                 static private bool $ignored = true;
 
