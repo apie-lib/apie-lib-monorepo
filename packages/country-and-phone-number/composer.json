@@ -1,0 +1,36 @@
+{
+  "name": "apie/country-and-phonenumber",
+  "description": "Composer package of the apie library: country and phonenumber",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\CountryAndPhonenumber\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\CountryAndPhonenumber\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.1",
+    "apie/core": "self.version",
+    "apie/composite-value-objects": "self.version",
+    "giggsey/libphonenumber-for-php": "^8.0",
+    "prinsfrank/standards": "^1.0.0"
+  },
+  "require-dev": {
+    "cebe/php-openapi": "^1.7",
+    "phpunit/phpunit": "^9.5",
+    "phpspec/prophecy-phpunit": "^2.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
