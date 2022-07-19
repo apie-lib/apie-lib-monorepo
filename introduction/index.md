@@ -2,8 +2,8 @@
 Apie is built with the idea that a programmer should only be focused on writing good domain objects and should not care about any other detail of the application. It gets a lot of inspiration from solutions like [Restful objects](https://en.wikipedia.org/wiki/Restful_Objects) and [Naked Objects](https://en.wikipedia.org/wiki/Naked_objects), but it does not follow their specs 1 on 1.
 
 We separate objects in several types and several subtypes. All of them resort to typehints and interfaces to tell Apie what type of object it is.
-* **enums:** enums are natively supported in PHP 8.1 and are fully supported in Apie.
-* **entities:** entities have an id as reference and are mutable. Entities should never be in an invalid state.
+* [**enums:**](./enums/enums.md) enums are natively supported in PHP 8.1 and are fully supported in Apie.
+* [**entities:**](./entities/entities.md) entities have an id as reference and are mutable. Entities should never be in an invalid state.
 * **root agregates:** a special type of entity that maintains the state of child entities. For example an order consists of many order lines.
 * **polymorphic entities:** entities that consist of multiple classes with a shared base class.
 * **value objects:** object that share business logic for one type of data. They often can be represented as some native type, for example an Email value object can be converted in a string. Value obejcts are immutable.
