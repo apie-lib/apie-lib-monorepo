@@ -1,10 +1,10 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Regexes;
+namespace Apie\Tests\RegexValueObjects;
 
-use Apie\CommonValueObjects\Exceptions\InvalidPhpRegularExpression;
-use Apie\CommonValueObjects\Regexes\PhpRegularExpression;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use Apie\RegexValueObjects\Exceptions\InvalidPhpRegularExpression;
+use Apie\RegexValueObjects\PhpRegularExpression;
 use PHPUnit\Framework\TestCase;
 
 class PhpRegularExpressionTest extends TestCase
@@ -16,16 +16,18 @@ class PhpRegularExpressionTest extends TestCase
      * @test
      * @dataProvider inputProvider
      */
-    public function it_allows_valid_regular_expressions(string $expected, string $input)
+    public function it_allows_valid_regular_expressions(string $expected, string $expectedDelimiter, string $expectedModifier, string $input)
     {
         $testItem = new PhpRegularExpression($input);
+        $this->assertEquals($expectedDelimiter, $testItem->getDelimiter());
+        $this->assertEquals($expectedModifier, $testItem->getModifiers());
         $this->assertEquals($expected, $testItem->toNative());
     }
 
     public function inputProvider()
     {
-        yield ['/test/i', '/test/i'];
-        yield ['/test/', '/test/'];
+        yield ['/test/i', '/', 'i', '/test/i'];
+        yield ['/test/', '/', '', '/test/'];
     }
 
     /**

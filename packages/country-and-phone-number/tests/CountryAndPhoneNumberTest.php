@@ -67,7 +67,7 @@ class CountryAndPhoneNumberTest extends TestCase
      * @test
      * @dataProvider incorrectProvider
      */
-    public function  it_throws_errors_on_incorrect_combinations_with_constructor(string $expectedClass, array $input)
+    public function it_throws_errors_on_incorrect_combinations_with_constructor(string $expectedClass, array $input)
     {
         $country = ISO3166_1_Alpha_2::from($input['country']);
         $phoneNumber = (new InternationalPhoneNumber($input['phoneNumber']))->toPhoneNumber();

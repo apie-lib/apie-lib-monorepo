@@ -1,10 +1,10 @@
 <?php
-namespace Apie\CommonValueObjects\Regexes;
+namespace Apie\RegexValueObjects;
 
-use Apie\CommonValueObjects\Exceptions\InvalidPhpRegularExpression;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
+use Apie\RegexValueObjects\Exceptions\InvalidPhpRegularExpression;
 use Faker\Generator;
 
 #[FakeMethod("createRandom")]
@@ -17,6 +17,18 @@ class PhpRegularExpression implements StringValueObjectInterface
         if (false === @preg_match($input, '')) {
             throw new InvalidPhpRegularExpression($input, preg_last_error_msg());
         }
+    }
+
+    public function getDelimiter(): string
+    {
+        return substr($this->internal, 0, 1);
+    }
+
+    public function getModifiers(): string
+    {
+        $delimiter = $this->getDelimiter();
+        //return strrchr($this->internal, $delimiter);
+        return substr($this->internal, 1 + strrpos($this->internal, $delimiter));
     }
 
     public static function createRandom(Generator $generator): self

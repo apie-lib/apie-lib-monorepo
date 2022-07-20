@@ -1,5 +1,5 @@
 <?php
-namespace Apie\CommonValueObjects\Exceptions;
+namespace Apie\RegexValueObjects\Exceptions;
 
 use Apie\Core\Exceptions\ApieException;
 use Apie\Core\ValueObjects\Utils;
