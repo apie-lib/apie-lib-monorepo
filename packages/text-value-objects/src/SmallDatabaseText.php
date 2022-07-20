@@ -1,9 +1,12 @@
 <?php
-namespace Apie\CommonValueObjects\Texts;
+namespace Apie\TextValueObjects;
 
+use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
+use Faker\Generator;
 
+#[FakeMethod('createRandom')]
 class SmallDatabaseText implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
@@ -16,5 +19,10 @@ class SmallDatabaseText implements HasRegexValueObjectInterface
     protected function convert(string $input): string
     {
         return trim($input);
+    }
+
+    public static function createRandom(Generator $generator): self
+    {
+        return new SmallDatabaseText($generator->realText(80));
     }
 }

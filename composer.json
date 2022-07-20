@@ -48,7 +48,8 @@
             "Apie\\Fixtures\\": "packages/fixtures/src/",
             "Apie\\RegexValueObjects\\": "packages/regex-value-objects/src/",
             "Apie\\SchemaGenerator\\": "packages/schema-generator/src/",
-            "Apie\\Serializer\\": "packages/serializer/src/"
+            "Apie\\Serializer\\": "packages/serializer/src/",
+            "Apie\\TextValueObjects\\": "packages/text-value-objects/src/"
         }
     },
     "autoload-dev": {
@@ -65,7 +66,8 @@
             "Apie\\Tests\\Fixtures\\": "packages/fixtures/tests/",
             "Apie\\Tests\\RegexValueObjects\\": "packages/regex-value-objects/tests/",
             "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/",
-            "Apie\\Tests\\Serializer\\": "packages/serializer/tests/"
+            "Apie\\Tests\\Serializer\\": "packages/serializer/tests/",
+            "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/"
         }
     },
     "replace": {
@@ -81,7 +83,8 @@
         "apie/fixtures": "self.version",
         "apie/regex-value-objects": "self.version",
         "apie/schema-generator": "self.version",
-        "apie/serializer": "self.version"
+        "apie/serializer": "self.version",
+        "apie/text-value-objects": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

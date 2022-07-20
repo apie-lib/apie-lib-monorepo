@@ -1,10 +1,10 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Texts;
+namespace Apie\Tests\TextValueObjects;
 
-use Apie\CommonValueObjects\Texts\SmallDatabaseText;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use Apie\TextValueObjects\SmallDatabaseText;
 use PHPUnit\Framework\TestCase;
 
 class SmallDatabaseTextTest extends TestCase

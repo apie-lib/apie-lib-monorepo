@@ -1,5 +1,5 @@
 <?php
-namespace Apie\CommonValueObjects\Texts;
+namespace Apie\TextValueObjects;
 
 use Apie\Core\Attributes\SchemaMethod;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;

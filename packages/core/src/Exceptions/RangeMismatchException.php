@@ -1,7 +1,6 @@
 <?php
-namespace Apie\CommonValueObjects\Exceptions;
+namespace Apie\Core\Exceptions;
 
-use Apie\Core\Exceptions\ApieException;
 use Apie\Core\ValueObjects\Utils;
 
 class RangeMismatchException extends ApieException

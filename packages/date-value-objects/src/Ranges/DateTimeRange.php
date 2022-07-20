@@ -1,9 +1,9 @@
 <?php
-namespace Apie\CommonValueObjects\Ranges;
+namespace Apie\DateValueObjects\Ranges;
 
-use Apie\CommonValueObjects\Exceptions\RangeMismatchException;
 use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\Attributes\FakeMethod;
+use Apie\Core\Exceptions\RangeMismatchException;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\DateValueObjects\DateWithTimezone;
 use DateTime;

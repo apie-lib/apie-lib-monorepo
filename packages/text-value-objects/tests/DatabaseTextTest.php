@@ -1,23 +1,24 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Texts;
+namespace Apie\Tests\TextValueObjects;
 
-use Apie\CommonValueObjects\Texts\NonEmptyString;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use Apie\TextValueObjects\DatabaseText;
 use PHPUnit\Framework\TestCase;
 
-class NonEmptyStringTest extends TestCase
+class DatabaseTextTest extends TestCase
 {
     use TestWithFaker;
     use TestWithOpenapiSchema;
+
     /**
      * @test
      * @dataProvider inputProvider
      */
-    public function fromNative_allows_all_strings_that_are_not_empty(string $expected, string $input)
+    public function fromNative_allows_all_strings_that_are_not_too_long(string $expected, string $input)
     {
-        $testItem = NonEmptyString::fromNative($input);
+        $testItem = DatabaseText::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
@@ -25,14 +26,16 @@ class NonEmptyStringTest extends TestCase
      * @test
      * @dataProvider inputProvider
      */
-    public function it_allows_all_strings_that_are_not_empty(string $expected, string $input)
+    public function it_allows_all_strings_that_are_not_too_long(string $expected, string $input)
     {
-        $testItem = new NonEmptyString($input);
+        $testItem = new DatabaseText($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
     public function inputProvider()
     {
+        yield ['', '    '];
+        yield ['', str_repeat(' ', 70000)];
         yield ['test', 'test'];
         yield ['trimmed', '   trimmed   '];
     }
@@ -41,27 +44,25 @@ class NonEmptyStringTest extends TestCase
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_empty_strings(string $input)
+    public function it_refuses_strings_that_are_too_long(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        new NonEmptyString($input);
+        new DatabaseText($input);
     }
 
     /**
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_empty_strings_with_fromNative(string $input)
+    public function it_refuses_strings_that_are_too_long_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        NonEmptyString::fromNative($input);
+        DatabaseText::fromNative($input);
     }
 
     public function invalidProvider()
     {
-        yield [''];
-        yield [' '];
-        yield ["          \t\n\r\n"];
+        yield [str_repeat('1', '70000')];
     }
 
     /**
@@ -70,11 +71,11 @@ class NonEmptyStringTest extends TestCase
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
-            NonEmptyString::class,
-            'NonEmptyString-post',
+            DatabaseText::class,
+            'DatabaseText-post',
             [
                 'type' => 'string',
-                'format' => 'nonemptystring',
+                'format' => 'databasetext',
                 'pattern' => true,
             ]
         );
@@ -85,6 +86,6 @@ class NonEmptyStringTest extends TestCase
      */
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(NonEmptyString::class);
+        $this->runFakerTest(DatabaseText::class);
     }
 }

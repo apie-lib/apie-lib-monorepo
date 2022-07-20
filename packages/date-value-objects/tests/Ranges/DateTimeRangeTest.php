@@ -1,10 +1,10 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Ranges;
+namespace Apie\Tests\DateValueObjects\Ranges;
 
-use Apie\CommonValueObjects\Exceptions\RangeMismatchException;
-use Apie\CommonValueObjects\Ranges\DateTimeRange;
 use Apie\Core\Exceptions\InvalidTypeException;
+use Apie\Core\Exceptions\RangeMismatchException;
 use Apie\DateValueObjects\DateWithTimezone;
+use Apie\DateValueObjects\Ranges\DateTimeRange;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use cebe\openapi\spec\Reference;

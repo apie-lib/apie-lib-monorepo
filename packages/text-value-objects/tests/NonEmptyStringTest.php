@@ -1,23 +1,23 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Texts;
+namespace Apie\Tests\TextValueObjects;
 
-use Apie\CommonValueObjects\Texts\StrongPassword;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use Apie\TextValueObjects\NonEmptyString;
 use PHPUnit\Framework\TestCase;
 
-class StrongPasswordTest extends TestCase
+class NonEmptyStringTest extends TestCase
 {
-    use TestWithOpenapiSchema;
     use TestWithFaker;
+    use TestWithOpenapiSchema;
     /**
      * @test
      * @dataProvider inputProvider
      */
-    public function fromNative_allows_all_strings_that_are_not_too_long(string $expected, string $input)
+    public function fromNative_allows_all_strings_that_are_not_empty(string $expected, string $input)
     {
-        $testItem = StrongPassword::fromNative($input);
+        $testItem = NonEmptyString::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
@@ -25,42 +25,43 @@ class StrongPasswordTest extends TestCase
      * @test
      * @dataProvider inputProvider
      */
-    public function it_allows_all_strings_that_are_not_too_long(string $expected, string $input)
+    public function it_allows_all_strings_that_are_not_empty(string $expected, string $input)
     {
-        $testItem = new StrongPassword($input);
+        $testItem = new NonEmptyString($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
     public function inputProvider()
     {
-        yield ['&#12azAZ', '&#12azAZ'];
-        yield ['&#12azAZ', '   &#12azAZ   '];
+        yield ['test', 'test'];
+        yield ['trimmed', '   trimmed   '];
     }
 
     /**
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_strings_that_are_not_strong_passwords(string $input)
+    public function it_refuses_empty_strings(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        new StrongPassword($input);
+        new NonEmptyString($input);
     }
 
     /**
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_strings_that_are_not_strong_passwords_with_fromNative(string $input)
+    public function it_refuses_empty_strings_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        StrongPassword::fromNative($input);
+        NonEmptyString::fromNative($input);
     }
 
     public function invalidProvider()
     {
-        yield [str_repeat('1', 300)];
         yield [''];
+        yield [' '];
+        yield ["          \t\n\r\n"];
     }
 
     /**
@@ -69,12 +70,12 @@ class StrongPasswordTest extends TestCase
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
-            StrongPassword::class,
-            'StrongPassword-post',
+            NonEmptyString::class,
+            'NonEmptyString-post',
             [
                 'type' => 'string',
-                'format' => 'password',
-                'pattern' => StrongPassword::getRegularExpression(),
+                'format' => 'nonemptystring',
+                'pattern' => true,
             ]
         );
     }
@@ -84,6 +85,6 @@ class StrongPasswordTest extends TestCase
      */
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(StrongPassword::class);
+        $this->runFakerTest(NonEmptyString::class);
     }
 }
