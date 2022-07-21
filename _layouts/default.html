@@ -52,16 +52,30 @@
           <div id="sitemap">
           </div>
           <script>
-// TODO: make XSS-free?
+const translations = {
+  introduction: "Introduction",
+  dtos: "Data Transfer Objects",
+  dto: "DTO",
+  entities: "Entities",
+  enums: "Enums",
+  lists: "Lists and hashmaps",
+  "value-objects": "Value objects",
+}
+function translate(text) {
+  if (translations[text]) {
+    return translations[text];
+  }
+  return text;
+}
 function renderSitemap(object, text) {
     if (typeof object === 'string') {
         text = String(text).replace(/\.html$/, '') 
         if (!text) {
             return '';
         }
-        return '<a href="https://apie-lib.github.io/apie-lib-monorepo' + object + '">' + text + '</a>';
+        return '<a href="https://apie-lib.github.io/apie-lib-monorepo' + object + '">' + translate(text) + '</a>';
     }
-    let contents = (text || '') + '<ul>';
+    let contents = translate(text || '') + '<ul>';
     for (const [key, value] of Object.entries(object)) {
         contents += '<li>' + renderSitemap(value, key) + '</li>';
     }
@@ -91,7 +105,7 @@ function renderSitemap(object, text) {
         previous[lastKey] = url;
     }
   }
-  document.querySelector('#sitemap').innerHTML = renderSitemap(object, 'Sitemap');
+  document.querySelector('#sitemap').innerHTML = renderSitemap(object, '');
 })();
           </script>
 
