@@ -1,5 +1,5 @@
 <?php
-namespace Apie\CommonValueObjects\Enums;
+namespace Apie\Fixtures\Enums;
 
 enum Gender: string
 {

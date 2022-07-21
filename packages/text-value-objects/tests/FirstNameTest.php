@@ -1,13 +1,13 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Names;
+namespace Apie\Tests\TextValueObjects;
 
-use Apie\CommonValueObjects\Names\LastName;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use Apie\TextValueObjects\FirstName;
 use PHPUnit\Framework\TestCase;
 
-class LastNameTest extends TestCase
+class FirstNameTest extends TestCase
 {
     use TestWithFaker;
     use TestWithOpenapiSchema;
@@ -18,7 +18,7 @@ class LastNameTest extends TestCase
      */
     public function fromNative_allows_many_names(string $expected, string $input)
     {
-        $testItem = LastName::fromNative($input);
+        $testItem = FirstName::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
@@ -28,15 +28,15 @@ class LastNameTest extends TestCase
      */
     public function it_allows_many_names(string $expected, string $input)
     {
-        $testItem = new LastName($input);
+        $testItem = new FirstName($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
     public function inputProvider()
     {
-        yield ['Jordan', 'Jordan'];
-        yield ['van Oranje Nassouwe', '   van Oranje Nassouwe   '];
-        yield ['d`Ancona', 'd`Ancona'];
+        yield ['George', 'George'];
+        yield ['Albert', '   Albert   '];
+        yield ['McDonalds', 'McDonalds'];
     }
 
     /**
@@ -46,7 +46,7 @@ class LastNameTest extends TestCase
     public function it_refuses_empty_strings(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        new LastName($input);
+        new FirstName($input);
     }
 
     /**
@@ -56,7 +56,7 @@ class LastNameTest extends TestCase
     public function it_refuses_empty_strings_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        LastName::fromNative($input);
+        FirstName::fromNative($input);
     }
 
     public function invalidProvider()
@@ -64,8 +64,6 @@ class LastNameTest extends TestCase
         yield [''];
         yield [' '];
         yield ["          \t\n\r\n"];
-        yield ['van 
-        Newline'];
     }
 
     /**
@@ -74,11 +72,11 @@ class LastNameTest extends TestCase
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
-            LastName::class,
-            'LastName-post',
+            FirstName::class,
+            'FirstName-post',
             [
                 'type' => 'string',
-                'format' => 'lastname',
+                'format' => 'firstname',
                 'pattern' => true,
             ]
         );
@@ -89,6 +87,6 @@ class LastNameTest extends TestCase
      */
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(LastName::class);
+        $this->runFakerTest(FirstName::class);
     }
 }
