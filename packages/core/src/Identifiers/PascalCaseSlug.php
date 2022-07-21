@@ -1,15 +1,15 @@
 <?php
-namespace Apie\CommonValueObjects\Identifiers;
+namespace Apie\Core\Identifiers;
 
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 
-class Identifier implements HasRegexValueObjectInterface
+class PascalCaseSlug implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
 
     public static function getRegularExpression(): string
     {
-        return '/^[a-z][a-z0-9]*$/';
+        return '/^[a-z0-9]+(_[a-z0-9]+)*$/';
     }
 }

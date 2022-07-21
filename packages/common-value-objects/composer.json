@@ -26,14 +26,12 @@
     "apie/country-and-phone-number": "self.version",
     "apie/date-value-objects": "self.version",
     "apie/regex-value-objects": "self.version",
-    "apie/test-value-objects": "self.version",
-    "ramsey/uuid": "^4.3.1"
+    "apie/text-value-objects": "self.version",
+    "cebe/php-openapi": "^1.7"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "cebe/php-openapi": "^1.7",
-    "phpunit/phpunit": "^9.5",
-    "phpspec/prophecy-phpunit": "^2.0"
+    "phpunit/phpunit": "^9.5"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

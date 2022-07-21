@@ -1,13 +1,13 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Identifiers;
+namespace Apie\Tests\Core\Identifiers;
 
-use Apie\CommonValueObjects\Identifiers\Uuid;
+use Apie\Core\Identifiers\UuidV2;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use PHPUnit\Framework\TestCase;
 
-class UuidTest extends TestCase
+class UuidV2Test extends TestCase
 {
     use TestWithFaker;
     use TestWithOpenapiSchema;
@@ -18,7 +18,7 @@ class UuidTest extends TestCase
      */
     public function fromNative_allows_many_names(string $expected, string $input)
     {
-        $testItem = Uuid::fromNative($input);
+        $testItem = UuidV2::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
@@ -28,7 +28,7 @@ class UuidTest extends TestCase
      */
     public function it_allows_many_names(string $expected, string $input)
     {
-        $testItem = new Uuid($input);
+        $testItem = new UuidV2($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
@@ -41,20 +41,20 @@ class UuidTest extends TestCase
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_non_uuid_strings(string $input)
+    public function it_refuses_non_uuidV2_strings(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        new Uuid($input);
+        new UuidV2($input);
     }
 
     /**
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_non_uuid_strings_with_fromNative(string $input)
+    public function it_refuses_non_uuidV2_strings_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        Uuid::fromNative($input);
+        UuidV2::fromNative($input);
     }
 
     public function invalidProvider()
@@ -67,24 +67,24 @@ class UuidTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_apie_faker()
+    public function it_works_with_schema_generator()
     {
-        $this->runFakerTest(Uuid::class);
+        $this->runOpenapiSchemaTestForCreation(
+            UuidV2::class,
+            'UuidV2-post',
+            [
+                'type' => 'string',
+                'format' => 'uuidv2',
+                'pattern' => true,
+            ]
+        );
     }
 
     /**
      * @test
      */
-    public function it_works_with_schema_generator()
+    public function it_works_with_apie_faker()
     {
-        $this->runOpenapiSchemaTestForCreation(
-            Uuid::class,
-            'Uuid-post',
-            [
-                'type' => 'string',
-                'format' => 'uuid',
-                'pattern' => true,
-            ]
-        );
+        $this->runFakerTest(UuidV2::class);
     }
 }

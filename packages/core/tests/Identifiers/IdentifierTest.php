@@ -1,23 +1,24 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Identifiers;
+namespace Apie\Tests\Core\Identifiers;
 
-use Apie\CommonValueObjects\Identifiers\KebabCaseSlug;
+use Apie\Core\Identifiers\Identifier;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use PHPUnit\Framework\TestCase;
 
-class KebabCaseSlugTest extends TestCase
+class IdentifierTest extends TestCase
 {
-    use TestWithFaker;
     use TestWithOpenapiSchema;
+    use TestWithFaker;
+
     /**
      * @test
      * @dataProvider inputProvider
      */
     public function fromNative_allows_many_names(string $expected, string $input)
     {
-        $testItem = KebabCaseSlug::fromNative($input);
+        $testItem = Identifier::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
@@ -27,42 +28,42 @@ class KebabCaseSlugTest extends TestCase
      */
     public function it_allows_many_names(string $expected, string $input)
     {
-        $testItem = new KebabCaseSlug($input);
+        $testItem = new Identifier($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
     public function inputProvider()
     {
-        yield ['slug-example', 'slug-example'];
+        yield ['slug', 'slug'];
         yield ['short', 'short'];
-        yield ['example-3-example3', 'example-3-example3'];
+        yield ['answer42', 'answer42'];
     }
 
     /**
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_non_kebab_case_strings(string $input)
+    public function it_refuses_invalid_identfiers(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        new KebabCaseSlug($input);
+        new Identifier($input);
     }
 
     /**
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_non_kebab_case_strings_with_fromNative(string $input)
+    public function it_refuses_invalid_identiifiers_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        KebabCaseSlug::fromNative($input);
+        Identifier::fromNative($input);
     }
 
     public function invalidProvider()
     {
+        yield ['kebab-case-slug'];
         yield ['pascal_case_slug'];
-        yield ['Capital-start'];
-        yield ["capital-Start"];
+        yield ['21jumpstreet'];
     }
 
     /**
@@ -70,7 +71,7 @@ class KebabCaseSlugTest extends TestCase
      */
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(KebabCaseSlug::class);
+        $this->runFakerTest(Identifier::class);
     }
 
     /**
@@ -79,11 +80,11 @@ class KebabCaseSlugTest extends TestCase
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
-            KebabCaseSlug::class,
-            'KebabCaseSlug-post',
+            Identifier::class,
+            'Identifier-post',
             [
                 'type' => 'string',
-                'format' => 'kebabcaseslug',
+                'format' => 'identifier',
                 'pattern' => true,
             ]
         );

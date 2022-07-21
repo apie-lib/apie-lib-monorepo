@@ -1,15 +1,15 @@
 <?php
-namespace Apie\CommonValueObjects\Identifiers;
+namespace Apie\Core\Identifiers;
 
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 
-class KebabCaseSlug implements HasRegexValueObjectInterface
+class Uuid implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
 
     public static function getRegularExpression(): string
     {
-        return '/^[a-z0-9]+(\-[a-z0-9]+)*$/';
+        return '/^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$/';
     }
 }

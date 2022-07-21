@@ -1,24 +1,23 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Identifiers;
+namespace Apie\Tests\Core\Identifiers;
 
-use Apie\CommonValueObjects\Identifiers\PascalCaseSlug;
+use Apie\Core\Identifiers\KebabCaseSlug;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use PHPUnit\Framework\TestCase;
 
-class PascalCaseSlugTest extends TestCase
+class KebabCaseSlugTest extends TestCase
 {
     use TestWithFaker;
     use TestWithOpenapiSchema;
-
     /**
      * @test
      * @dataProvider inputProvider
      */
     public function fromNative_allows_many_names(string $expected, string $input)
     {
-        $testItem = PascalCaseSlug::fromNative($input);
+        $testItem = KebabCaseSlug::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
@@ -28,15 +27,15 @@ class PascalCaseSlugTest extends TestCase
      */
     public function it_allows_many_names(string $expected, string $input)
     {
-        $testItem = new PascalCaseSlug($input);
+        $testItem = new KebabCaseSlug($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
     public function inputProvider()
     {
-        yield ['slug_example', 'slug_example'];
+        yield ['slug-example', 'slug-example'];
         yield ['short', 'short'];
-        yield ['example_3_example3', 'example_3_example3'];
+        yield ['example-3-example3', 'example-3-example3'];
     }
 
     /**
@@ -46,7 +45,7 @@ class PascalCaseSlugTest extends TestCase
     public function it_refuses_non_kebab_case_strings(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        new PascalCaseSlug($input);
+        new KebabCaseSlug($input);
     }
 
     /**
@@ -56,14 +55,22 @@ class PascalCaseSlugTest extends TestCase
     public function it_refuses_non_kebab_case_strings_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        PascalCaseSlug::fromNative($input);
+        KebabCaseSlug::fromNative($input);
     }
 
     public function invalidProvider()
     {
-        yield ['kebab-case-slug'];
-        yield ['Capital_start'];
-        yield ["capital_Start"];
+        yield ['pascal_case_slug'];
+        yield ['Capital-start'];
+        yield ["capital-Start"];
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(KebabCaseSlug::class);
     }
 
     /**
@@ -72,21 +79,13 @@ class PascalCaseSlugTest extends TestCase
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
-            PascalCaseSlug::class,
-            'PascalCaseSlug-post',
+            KebabCaseSlug::class,
+            'KebabCaseSlug-post',
             [
                 'type' => 'string',
-                'format' => 'pascalcaseslug',
+                'format' => 'kebabcaseslug',
                 'pattern' => true,
             ]
         );
-    }
-
-    /**
-     * @test
-     */
-    public function it_works_with_apie_faker()
-    {
-        $this->runFakerTest(PascalCaseSlug::class);
     }
 }

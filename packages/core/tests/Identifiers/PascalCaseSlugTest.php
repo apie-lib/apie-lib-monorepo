@@ -1,13 +1,13 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Identifiers;
+namespace Apie\Tests\Core\Identifiers;
 
-use Apie\CommonValueObjects\Identifiers\UuidV4;
+use Apie\Core\Identifiers\PascalCaseSlug;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use PHPUnit\Framework\TestCase;
 
-class UuidV4Test extends TestCase
+class PascalCaseSlugTest extends TestCase
 {
     use TestWithFaker;
     use TestWithOpenapiSchema;
@@ -18,7 +18,7 @@ class UuidV4Test extends TestCase
      */
     public function fromNative_allows_many_names(string $expected, string $input)
     {
-        $testItem = UuidV4::fromNative($input);
+        $testItem = PascalCaseSlug::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
@@ -28,40 +28,42 @@ class UuidV4Test extends TestCase
      */
     public function it_allows_many_names(string $expected, string $input)
     {
-        $testItem = new UuidV4($input);
+        $testItem = new PascalCaseSlug($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
     public function inputProvider()
     {
-        yield ['123e4567-e89b-12d3-a456-426614174000', '123e4567-e89b-12d3-a456-426614174000'];
+        yield ['slug_example', 'slug_example'];
+        yield ['short', 'short'];
+        yield ['example_3_example3', 'example_3_example3'];
     }
 
     /**
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_non_uuidV4_strings(string $input)
+    public function it_refuses_non_kebab_case_strings(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        new UuidV4($input);
+        new PascalCaseSlug($input);
     }
 
     /**
      * @test
      * @dataProvider invalidProvider
      */
-    public function it_refuses_non_uuidV4_strings_with_fromNative(string $input)
+    public function it_refuses_non_kebab_case_strings_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        UuidV4::fromNative($input);
+        PascalCaseSlug::fromNative($input);
     }
 
     public function invalidProvider()
     {
-        yield ['pascal_case_slug'];
-        yield ['123e4567-g89b-12d3-a456-426614179000'];
-        yield ['123e4567-e89b-12d3-a456-4266141740001'];
+        yield ['kebab-case-slug'];
+        yield ['Capital_start'];
+        yield ["capital_Start"];
     }
 
     /**
@@ -70,11 +72,11 @@ class UuidV4Test extends TestCase
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
-            UuidV4::class,
-            'UuidV4-post',
+            PascalCaseSlug::class,
+            'PascalCaseSlug-post',
             [
                 'type' => 'string',
-                'format' => 'uuidv4',
+                'format' => 'pascalcaseslug',
                 'pattern' => true,
             ]
         );
@@ -85,6 +87,6 @@ class UuidV4Test extends TestCase
      */
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(UuidV4::class);
+        $this->runFakerTest(PascalCaseSlug::class);
     }
 }

@@ -1,8 +1,8 @@
 <?php
 namespace Apie\Fixtures\Entities\Polymorphic;
 
-use Apie\CommonValueObjects\Identifiers\UuidV4;
 use Apie\Core\Identifiers\IdentifierInterface;
+use Apie\Core\Identifiers\UuidV4;
 use ReflectionClass;
 
 class AnimalIdentifier extends UuidV4 implements IdentifierInterface

@@ -1,9 +1,9 @@
 <?php
 namespace Apie\Fixtures\Dto;
 
-use Apie\CommonValueObjects\Enums\Gender;
 use Apie\Core\Attributes\Optional;
 use Apie\Core\Dto\DtoInterface;
+use Apie\Fixtures\Enums\Gender;
 
 class OptionalExampleDto implements DtoInterface
 {

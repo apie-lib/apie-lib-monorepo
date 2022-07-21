@@ -1,7 +1,7 @@
 <?php
-namespace Apie\Tests\CommonValueObjects\Identifiers;
+namespace Apie\Tests\Core\Identifiers;
 
-use Apie\CommonValueObjects\Identifiers\UuidV1;
+use Apie\Core\Identifiers\UuidV1;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;

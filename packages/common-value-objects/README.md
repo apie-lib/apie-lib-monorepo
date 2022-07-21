@@ -30,7 +30,7 @@ Identifiers are used by Apie entities to tell the id of an entity. To use these 
 Example:
 ```php
 <?php
-use Apie\CommonValueObjects\Identifiers\UuidV4;
+use Apie\Core\Identifiers\UuidV4;
 use Apie\Core\Identifiers\IdentifierInterface;
 
 class UserIdentifier extends UuidV4 implements IdentifierInterface

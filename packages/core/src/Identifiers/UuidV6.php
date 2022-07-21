@@ -1,14 +1,14 @@
 <?php
-namespace Apie\CommonValueObjects\Identifiers;
+namespace Apie\Core\Identifiers;
 
 use Apie\Core\Attributes\FakeMethod;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
 #[FakeMethod("createRandom")]
-class UuidV4 extends Uuid
+class UuidV6 extends Uuid
 {
     public static function createRandom(): self
     {
-        return new static(RamseyUuid::uuid4()->toString());
+        return new self(RamseyUuid::uuid6()->toString());
     }
 }

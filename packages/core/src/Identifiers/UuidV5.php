@@ -1,5 +1,5 @@
 <?php
-namespace Apie\CommonValueObjects\Identifiers;
+namespace Apie\Core\Identifiers;
 
 use Apie\Core\Attributes\FakeMethod;
 use Faker\Generator;
