@@ -52,13 +52,14 @@
           <div id="sitemap">
           </div>
           <script>
+// TODO: make XSS-free?
 function renderSitemap(object, text) {
     if (typeof object === 'string') {
         return '<a href="https://apie-lib.github.io/apie-lib-monorepo' + object + '">' + (text || '#') + '</a>';
     }
     let contents = '<ul>';
     for (const [key, value] of Object.entries(object)) {
-        contents += '<li>' + renderSitemap(value, key) + '</li>';
+        contents += '<li>' + (text || '') + '/' + renderSitemap(value, key) + '</li>';
     }
     return contents + '</ul>';
 }
