@@ -4,3 +4,4 @@ author: Pieter Jordaan
 avatar: "/assets/img/apie-logo.png"
 plugins:
   - jekyll-sitemap
+  - jekyll-minifier
