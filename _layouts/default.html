@@ -55,14 +55,15 @@
 // TODO: make XSS-free?
 function renderSitemap(object, text) {
     if (typeof object === 'string') {
+        text = String(text).replace(/\.html$/, '') 
         if (!text) {
             return '';
         }
         return '<a href="https://apie-lib.github.io/apie-lib-monorepo' + object + '">' + text + '</a>';
     }
-    let contents = '<ul>';
+    let contents = (text || '') + '<ul>';
     for (const [key, value] of Object.entries(object)) {
-        contents += '<li>' + (text || '') + renderSitemap(value, key) + '</li>';
+        contents += '<li>' + renderSitemap(value, key) + '</li>';
     }
     return contents + '</ul>';
 }
