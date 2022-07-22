@@ -24,6 +24,7 @@
     "apie/core": "self.version",
     "apie/schema-generator": "self.version",
     "apie/serializer": "self.version",
+    "cebe/php-openapi": "^1.7",
     "nyholm/psr7": "^1.5"
   },
   "require-dev": {

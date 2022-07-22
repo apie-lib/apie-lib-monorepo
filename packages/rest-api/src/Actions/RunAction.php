@@ -1,6 +1,7 @@
 <?php
 namespace Apie\RestApi\Actions;
 
+use Apie\Core\Actions\ActionInterface;
 use Apie\Core\Actions\HasRouteDefinition;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Enums\RequestMethod;
@@ -10,7 +11,7 @@ use Apie\Serializer\Serializer;
 use ReflectionMethod;
 use ReflectionType;
 
-class RunAction implements CreateObjectAction, HasRouteDefinition
+class RunAction implements ActionInterface, HasRouteDefinition
 {
     use ConvertsResourceToResponse;
 
