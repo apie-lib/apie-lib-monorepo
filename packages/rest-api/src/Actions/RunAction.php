@@ -44,7 +44,7 @@ class RunAction implements ActionInterface, HasRouteDefinition
 
     public function getMethod(): RequestMethod
     {
-        return RequestMethod::GET;
+        return empty($this->method->getParameters()) ? RequestMethod::GET : RequestMethod::POST;
     }
 
     public function getUrl(): UrlRouteDefinition
