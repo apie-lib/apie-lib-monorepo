@@ -17,6 +17,7 @@
         "nette/php-generator": "^4.0.1",
         "nikic/php-parser": "^4.14",
         "niklongstone/regex-reverse": "^0.4.0",
+        "nyholm/psr7": "^1.5",
         "php": ">=8.1",
         "prinsfrank/standards": "^1.0.0",
         "psr/http-message": "^1.0",
@@ -48,6 +49,7 @@
             "Apie\\Faker\\": "packages/faker/src/",
             "Apie\\Fixtures\\": "packages/fixtures/src/",
             "Apie\\RegexValueObjects\\": "packages/regex-value-objects/src/",
+            "Apie\\RestApi\\": "packages/rest-api/src/",
             "Apie\\SchemaGenerator\\": "packages/schema-generator/src/",
             "Apie\\Serializer\\": "packages/serializer/src/",
             "Apie\\TextValueObjects\\": "packages/text-value-objects/src/"
@@ -66,6 +68,7 @@
             "Apie\\Tests\\Faker\\": "packages/faker/tests/",
             "Apie\\Tests\\Fixtures\\": "packages/fixtures/tests/",
             "Apie\\Tests\\RegexValueObjects\\": "packages/regex-value-objects/tests/",
+            "Apie\\Tests\\RestApi\\": "packages/rest-api/tests/",
             "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/",
             "Apie\\Tests\\Serializer\\": "packages/serializer/tests/",
             "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/"
@@ -83,6 +86,7 @@
         "apie/faker": "self.version",
         "apie/fixtures": "self.version",
         "apie/regex-value-objects": "self.version",
+        "apie/rest-api": "self.version",
         "apie/schema-generator": "self.version",
         "apie/serializer": "self.version",
         "apie/text-value-objects": "self.version"
