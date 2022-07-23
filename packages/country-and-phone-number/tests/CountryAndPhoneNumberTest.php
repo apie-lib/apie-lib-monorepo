@@ -97,8 +97,8 @@ class CountryAndPhoneNumberTest extends TestCase
                 'type' => 'object',
                 'required' => ['country', 'phoneNumber'],
                 'properties' => [
-                    'country' => new Reference(['$ref' => 'ISO3166_1_Alpha_2-post']),
-                    'phoneNumber' => new Reference(['$ref' => 'PhoneNumber-post'])
+                    'country' => new Reference(['$ref' => '#/components/schemas/ISO3166_1_Alpha_2-post']),
+                    'phoneNumber' => new Reference(['$ref' => '#/components/schemas/PhoneNumber-post'])
                 ],
             ]
         );

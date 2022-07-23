@@ -3,11 +3,11 @@ namespace Apie\RestApi\Actions;
 
 use Apie\Core\Actions\ActionInterface;
 use Apie\Core\Actions\HasRouteDefinition;
+use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextBuilders\ContextBuilderInterface;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
-use Apie\RestApi\Concerns\ConvertsResourceToResponse;
 use Apie\RestApi\OpenApi\OpenApiGenerator;
 use cebe\openapi\spec\OpenApi;
 use cebe\openapi\Writer;
@@ -36,7 +36,10 @@ class OpenApiDocumentation implements ActionInterface, HasRouteDefinition
 
     public function process(ApieContext $context): ApieContext
     {
-        return $context->withContext(ContextBuilderInterface::RESOURCE, $this->openApiGenerator->create());
+        return $context->withContext(
+            ContextBuilderInterface::RESOURCE,
+            $this->openApiGenerator->create($context->getContext(BoundedContext::class))
+        );
     }
 
     public function getValue(ApieContext $context): OpenApi
@@ -61,6 +64,6 @@ class OpenApiDocumentation implements ActionInterface, HasRouteDefinition
         $responseBody = $psr17Factory->createStream(Writer::writeToYaml($resource));
         return $psr17Factory->createResponse(201)
             ->withBody($responseBody)
-            ->withHeader('Content-Type', 'application/vnd.open-api+yaml');
+            ->withHeader('Content-Type', 'application/openapi+yaml');
     }
 }

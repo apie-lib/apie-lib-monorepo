@@ -1,8 +1,11 @@
 <?php
 namespace Apie\Tests\RestApi\Actions;
 
+use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
 use Apie\Core\Controllers\ApieController;
+use Apie\Core\Lists\ReflectionClassList;
+use Apie\Core\Lists\ReflectionMethodList;
 use Apie\Fixtures\Entities\UserWithAddress;
 use Apie\Fixtures\Identifiers\UserWithAddressIdentifier;
 use Apie\RestApi\Actions\CreateObjectAction;
@@ -18,7 +21,8 @@ class CreateObjectActionTest extends TestCase
     {
         return new ApieController(
             new CreateObjectAction($class, Serializer::create()),
-            ContextBuilderFactory::create()
+            ContextBuilderFactory::create(),
+            new BoundedContext(new ReflectionClassList(), new ReflectionMethodList())
         );
     }
 

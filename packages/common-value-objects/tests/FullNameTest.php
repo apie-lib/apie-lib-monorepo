@@ -23,9 +23,9 @@ class FullNameTest extends TestCase
             [
                 'type' => 'object',
                 'properties' => [
-                    'gender' => new Reference(['$ref' => 'Gender-post']),
-                    'firstName' => new Reference(['$ref' => 'FirstName-post']),
-                    'lastName' => new Reference(['$ref' => 'LastName-post']),
+                    'gender' => new Reference(['$ref' => '#/components/schemas/Gender-post']),
+                    'firstName' => new Reference(['$ref' => '#/components/schemas/FirstName-post']),
+                    'lastName' => new Reference(['$ref' => '#/components/schemas/LastName-post']),
                 ],
                 'required' => ['gender', 'firstName', 'lastName']
             ]
