@@ -1,22 +1,26 @@
 <?php
 namespace Apie\RestApi\Actions;
 
-use Apie\Core\Actions\ActionInterface;
-use Apie\Core\Actions\HasRouteDefinition;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
 use Apie\RestApi\Concerns\ConvertsResourceToResponse;
+use Apie\RestApi\Interfaces\RestApiRouteDefinition;
 use Apie\Serializer\Serializer;
 use ReflectionMethod;
 use ReflectionType;
 
-class RunAction implements ActionInterface, HasRouteDefinition
+class RunAction implements RestApiRouteDefinition
 {
     use ConvertsResourceToResponse;
 
     public function __construct(private ReflectionMethod $method, private Serializer $serializer)
     {
+    }
+
+    public function getResourceName(): string
+    {
+        return $this->method->getName();
     }
 
     public function getInputType(): ReflectionMethod

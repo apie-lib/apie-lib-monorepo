@@ -3,8 +3,11 @@ info:
   title: 'Apie-lib generated OpenAPI spec'
   version: 1.0.0
 paths:
-  /UserWithAddress/:
+  /UserWithAddress:
     post:
+      tags:
+        -
+          name: UserWithAddress
       description: 'Create resource of type UserWithAddress'
       operationId: post-UserWithAddress
       requestBody:
@@ -12,10 +15,11 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UserWithAddress-post'
-      tags:
-        '0': UserWithAddress
-  /UserWithAutoincrementKey/:
+  /UserWithAutoincrementKey:
     post:
+      tags:
+        -
+          name: UserWithAutoincrementKey
       description: 'Create resource of type UserWithAutoincrementKey'
       operationId: post-UserWithAutoincrementKey
       requestBody:
@@ -23,8 +27,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UserWithAutoincrementKey-post'
+  /secretCode/:
+    get:
       tags:
-        '0': UserWithAutoincrementKey
+        -
+          name: secretCode
+      description: 'Create resource of type secretCode'
+      operationId: post-secretCode
+      requestBody:
+        content:
+          application/json:
+            schema: null
 components:
   schemas:
     mixed:

@@ -1,20 +1,19 @@
 <?php
 namespace Apie\RestApi\Actions;
 
-use Apie\Core\Actions\ActionInterface;
-use Apie\Core\Actions\HasRouteDefinition;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextBuilders\ContextBuilderInterface;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
 use Apie\RestApi\Concerns\ConvertsResourceToResponse;
+use Apie\RestApi\Interfaces\RestApiRouteDefinition;
 use Apie\Serializer\Serializer;
 use ReflectionClass;
 
 /**
  * Action to create a new object.
  */
-class CreateObjectAction implements ActionInterface, HasRouteDefinition
+class CreateObjectAction implements RestApiRouteDefinition
 {
     use ConvertsResourceToResponse;
     
@@ -30,6 +29,11 @@ class CreateObjectAction implements ActionInterface, HasRouteDefinition
     public function getOutputType(): ReflectionClass
     {
         return $this->class;
+    }
+
+    public function getResourceName(): string
+    {
+        return $this->class->getShortName();
     }
 
     public function process(ApieContext $context): ApieContext
@@ -51,6 +55,6 @@ class CreateObjectAction implements ActionInterface, HasRouteDefinition
 
     public function getUrl(): UrlRouteDefinition
     {
-        return new UrlRouteDefinition($this->class->getShortName() . '/');
+        return new UrlRouteDefinition($this->class->getShortName());
     }
 }

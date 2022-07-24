@@ -6,26 +6,33 @@ use Apie\Core\ContextBuilders\ContextBuilderFactory;
 use Apie\Core\Controllers\ApieController;
 use Apie\Core\Lists\ReflectionClassList;
 use Apie\Core\Lists\ReflectionMethodList;
+use Apie\Fixtures\Actions\StaticActionExample;
 use Apie\Fixtures\Entities\UserWithAddress;
 use Apie\Fixtures\Entities\UserWithAutoincrementKey;
 use Apie\RestApi\Actions\OpenApiDocumentation;
 use Apie\RestApi\OpenApi\OpenApiGenerator;
+use Apie\RestApi\RouteDefinitions\RestApiRouteDefinitionProvider;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
+use Apie\Serializer\Serializer;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use ReflectionClass;
+use ReflectionMethod;
 
 class OpenApiDocumentationTest extends TestCase
 {
     protected function givenAControllerToProvideOpenApiDocumentation(): ApieController
     {
+        $contextBuilder = ContextBuilderFactory::create();
         return new ApieController(
             new OpenApiDocumentation(new OpenApiGenerator(
-                ContextBuilderFactory::create(),
-                ComponentsBuilderFactory::createComponentsBuilderFactory()
+                $contextBuilder,
+                ComponentsBuilderFactory::createComponentsBuilderFactory(),
+                new RestApiRouteDefinitionProvider(),
+                Serializer::create()
             )),
-            ContextBuilderFactory::create(),
+            $contextBuilder,
             $this->givenABoundedContext()
         );
     }
@@ -44,7 +51,9 @@ class OpenApiDocumentationTest extends TestCase
                 new ReflectionClass(UserWithAddress::class),
                 new ReflectionClass(UserWithAutoincrementKey::class)
             ]),
-            new ReflectionMethodList([]),
+            new ReflectionMethodList([
+                new ReflectionMethod(StaticActionExample::class, 'secretCode')
+            ])
         );
     }
 
