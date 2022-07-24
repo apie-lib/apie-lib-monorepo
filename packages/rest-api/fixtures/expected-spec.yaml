@@ -6,9 +6,9 @@ paths:
   /UserWithAddress:
     post:
       tags:
-        -
-          name: UserWithAddress
-      description: 'Create resource of type UserWithAddress'
+        - UserWithAddress
+        - create
+      description: 'Creates an instance of UserWithAddress'
       operationId: post-UserWithAddress
       requestBody:
         content:
@@ -18,9 +18,9 @@ paths:
   /UserWithAutoincrementKey:
     post:
       tags:
-        -
-          name: UserWithAutoincrementKey
-      description: 'Create resource of type UserWithAutoincrementKey'
+        - UserWithAutoincrementKey
+        - create
+      description: 'Creates an instance of UserWithAutoincrementKey'
       operationId: post-UserWithAutoincrementKey
       requestBody:
         content:
@@ -30,14 +30,10 @@ paths:
   /secretCode/:
     get:
       tags:
-        -
-          name: secretCode
-      description: 'Create resource of type secretCode'
-      operationId: post-secretCode
-      requestBody:
-        content:
-          application/json:
-            schema: null
+        - StaticActionExample
+        - methodCall
+      description: 'Calls method secretCode and returns return value.'
+      operationId: call-method-StaticActionExample-secretCode
 components:
   schemas:
     mixed:

@@ -7,6 +7,7 @@ use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
 use Apie\RestApi\Concerns\ConvertsResourceToResponse;
 use Apie\RestApi\Interfaces\RestApiRouteDefinition;
+use Apie\RestApi\Lists\StringList;
 use Apie\Serializer\Serializer;
 use ReflectionClass;
 
@@ -34,6 +35,19 @@ class CreateObjectAction implements RestApiRouteDefinition
     public function getResourceName(): string
     {
         return $this->class->getShortName();
+    }
+
+    public function getDescription(): string
+    {
+        return 'Creates an instance of ' . $this->class->getShortName();
+    }
+    public function getOperationId(): string
+    {
+        return 'post-' . $this->class->getShortName();
+    }
+    public function getTags(): StringList
+    {
+        return new StringList([$this->class->getShortName(), 'create']);
     }
 
     public function process(ApieContext $context): ApieContext

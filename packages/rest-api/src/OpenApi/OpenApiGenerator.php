@@ -80,15 +80,17 @@ class OpenApiGenerator
         }
         // TODO fill in response
         $operation = new Operation([
-            'tags' => [new Tag(['name' => $routeDefinition->getResourceName()])],
-            'description' => 'Create resource of type ' . $routeDefinition->getResourceName(),
-            'operationId' => 'post-' . $routeDefinition->getResourceName(),
-            'requestBody' => new RequestBody([
+            'tags' => $routeDefinition->getTags()->toArray(),
+            'description' => $routeDefinition->getDescription(),
+            'operationId' => $routeDefinition->getOperationId(),
+        ]);
+        if ($schema) {
+            $operation->requestBody = new RequestBody([
                 'content' => [
                     'application/json' => new MediaType(['schema' => $schema])
                 ]
-            ]),
-        ]);
+            ]);
+        }
         $prop = strtolower($routeDefinition->getMethod()->value);
         $pathItem->{$prop} = $operation;
     }

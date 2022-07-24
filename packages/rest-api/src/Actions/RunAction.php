@@ -6,6 +6,7 @@ use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
 use Apie\RestApi\Concerns\ConvertsResourceToResponse;
 use Apie\RestApi\Interfaces\RestApiRouteDefinition;
+use Apie\RestApi\Lists\StringList;
 use Apie\Serializer\Serializer;
 use ReflectionMethod;
 use ReflectionType;
@@ -21,6 +22,19 @@ class RunAction implements RestApiRouteDefinition
     public function getResourceName(): string
     {
         return $this->method->getName();
+    }
+
+    public function getDescription(): string
+    {
+        return 'Calls method ' . $this->method->getName() . ' and returns return value.';
+    }
+    public function getOperationId(): string
+    {
+        return 'call-method-' . $this->method->getDeclaringClass()->getShortName() . '-' . $this->method->getName();
+    }
+    public function getTags(): StringList
+    {
+        return new StringList([$this->method->getDeclaringClass()->getShortName(), 'methodCall']);
     }
 
     public function getInputType(): ReflectionMethod

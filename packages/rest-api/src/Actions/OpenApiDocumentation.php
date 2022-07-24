@@ -16,7 +16,7 @@ use Psr\Http\Message\ResponseInterface;
 use ReflectionClass;
 
 /**
- * Action to create a new object.
+ * Add an OpenAPI specification in yaml format.
  */
 class OpenApiDocumentation implements ActionInterface, HasRouteDefinition
 {
