@@ -75,8 +75,9 @@ class DatabaseTextTest extends TestCase
             'DatabaseText-post',
             [
                 'type' => 'string',
-                'format' => 'databasetext',
-                'pattern' => true,
+                'minLength' => 0,
+                'maxLength' => 65535,
+                'example' => 'Lorem Ipsum',
             ]
         );
     }

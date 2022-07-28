@@ -9,7 +9,7 @@ final class StaticActionExample
     {
     }
 
-    public function secretCode(): ImmutableStringOrIntList
+    public static function secretCode(): ImmutableStringOrIntList
     {
         return new ImmutableStringOrIntList([1, 'A', '4251', '42', 42, 'This is a text']);
     }
