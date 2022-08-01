@@ -34,7 +34,7 @@ class ApieBundleTestingKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load(function(ContainerBuilder $container) {
+        $loader->load(function (ContainerBuilder $container) {
             $container->loadFromExtension('apie', $this->apieConfig);
             $container->loadFromExtension('framework', ['http_method_override' => false, 'router' => ['resource' => '.', 'type' => 'apie']]);
         });

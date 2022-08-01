@@ -8,8 +8,11 @@ use Apie\Core\RouteDefinitions\RouteDefinitionProviderInterface;
 /**
  * This is basically a work around around !tagged_iterators support with variadic arguments.
  */
-final class GeneralServiceFactory {
-    private function __construct() {}
+final class GeneralServiceFactory
+{
+    private function __construct()
+    {
+    }
     public static function createContextBuilderFactory(iterable $contextBuilders): ContextBuilderFactory
     {
         return new ContextBuilderFactory(...$contextBuilders);

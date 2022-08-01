@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Tests\ApieBundle;
 
-use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Tests\ApieBundle\BoundedContext\Entities\User;
 use PHPUnit\Framework\TestCase;

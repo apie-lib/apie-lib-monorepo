@@ -1,20 +1,10 @@
 <?php
 namespace Apie\ApieBundle\DependencyInjection;
 
-use Apie\ApieBundle\ValueObjects\EntityNamespace;
-use Apie\Core\BoundedContext\BoundedContext;
-use Apie\Core\BoundedContext\BoundedContextHashmap;
-use Apie\Core\BoundedContext\BoundedContextId;
-use Apie\Core\Lists\ReflectionClassList;
-use Apie\Core\Lists\ReflectionMethodList;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\Config\Resource\GlobResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\Finder\Finder;
 
 class ApieExtension extends Extension
 {
