@@ -2,6 +2,7 @@
 namespace Apie\TextValueObjects;
 
 use Apie\Core\Attributes\SchemaMethod;
+use Apie\Core\RegexUtils;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsPasswordValueObject;
 
@@ -55,7 +56,7 @@ class StrongPassword implements HasRegexValueObjectInterface
         return [
             'type' => 'string',
             'format' => 'password',
-            'pattern' => StrongPassword::getRegularExpression(),
+            'pattern' => RegexUtils::removeDelimiters(StrongPassword::getRegularExpression()),
         ];
     }
 }

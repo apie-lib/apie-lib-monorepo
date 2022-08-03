@@ -39,7 +39,7 @@ abstract class PhoneNumber implements StringValueObjectInterface
         try {
             $this->phoneNumber = $phoneNumberUtil->parse($input, static::fromCountry()->value);
         } catch (NumberParseException $error) {
-            throw new InvalidStringForValueObjectException($input, new ReflectionClass(__CLASS__), $error);
+            throw new InvalidStringForValueObjectException($input, new ReflectionClass(static::class), $error);
         }
         return $phoneNumberUtil->format($this->phoneNumber, PhoneNumberFormat::E164);
     }
@@ -50,7 +50,7 @@ abstract class PhoneNumber implements StringValueObjectInterface
         try {
             $phoneNumber = $phoneNumberUtil->parse($input, static::fromCountry()->value);
         } catch (NumberParseException $error) {
-            throw new InvalidStringForValueObjectException($input, new ReflectionClass(__CLASS__), $error);
+            throw new InvalidStringForValueObjectException($input, new ReflectionClass(static::class), $error);
         }
         if (!$phoneNumberUtil->isValidNumberForRegion($phoneNumber, static::fromCountry()->value)) {
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(static::class));
