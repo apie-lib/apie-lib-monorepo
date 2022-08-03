@@ -51,6 +51,9 @@ class StrongPassword implements HasRegexValueObjectInterface
         return trim($input);
     }
 
+    /**
+     * @return array<string, string>
+     */
     public static function getOpenapiSchema(): array
     {
         return [

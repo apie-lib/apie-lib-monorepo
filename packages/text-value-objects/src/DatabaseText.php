@@ -31,6 +31,8 @@ class DatabaseText implements HasRegexValueObjectInterface
     /**
      * Provide OpenAPI schema. This is overwritten as some libraries will try to generate strings of 65535 characters
      * all the time for example strings resulting in terrible performance.
+     *
+     * @return array<string, string|int>
      */
     public static function createSchema(): array
     {

@@ -2,6 +2,7 @@
 namespace Apie\CountryAndPhoneNumber;
 
 use Apie\CompositeValueObjects\CompositeValueObject;
+use Apie\CompositeValueObjects\Fields\FieldInterface;
 use Apie\CompositeValueObjects\Fields\FromProperty;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
@@ -24,6 +25,9 @@ final class CountryAndPhoneNumber implements ValueObjectInterface
         $this->validateState();
     }
 
+    /**
+     * @return array<string, FieldInterface>
+     */
     public static function getFields(): array
     {
         return [

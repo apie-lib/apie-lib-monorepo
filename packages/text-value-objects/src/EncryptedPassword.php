@@ -12,7 +12,7 @@ final class EncryptedPassword implements StringValueObjectInterface
 {
     use IsStringValueObject;
 
-    public static function fromUnencryptedPassword(Stringable|string $password)
+    public static function fromUnencryptedPassword(Stringable|string $password): self
     {
         $password = (string) $password;
         return new self(password_hash($password, null));

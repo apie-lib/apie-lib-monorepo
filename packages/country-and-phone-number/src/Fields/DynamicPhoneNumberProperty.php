@@ -35,7 +35,7 @@ final class DynamicPhoneNumberProperty implements FieldInterface
         return false;
     }
 
-    public function fromNative(ValueObjectInterface $instance, mixed $value)
+    public function fromNative(ValueObjectInterface $instance, mixed $value): void
     {
         $country = $this->countryProperty->getValue($instance);
         try {
@@ -46,12 +46,12 @@ final class DynamicPhoneNumberProperty implements FieldInterface
         self::fillField($instance, $phoneNumber);
     }
 
-    public function fillField(ValueObjectInterface $instance, mixed $value)
+    public function fillField(ValueObjectInterface $instance, mixed $value): void
     {
         $this->property->setValue($instance, $value);
     }
 
-    public function fillMissingField(ValueObjectInterface $instance)
+    public function fillMissingField(ValueObjectInterface $instance): void
     {
         throw new InvalidTypeException('(missing value)', $this->getTypehint());
     }

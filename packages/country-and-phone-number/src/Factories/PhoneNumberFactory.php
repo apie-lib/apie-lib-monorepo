@@ -17,6 +17,9 @@ use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
 
 final class PhoneNumberFactory
 {
+    /**
+     * @var array<string, class-string<PhoneNumber>>
+     */
     private static array $instantiatedClasses = [
         'CA' => CanadianPhoneNumber::class,
         'CN' => ChinesePhoneNumber::class,
@@ -64,7 +67,7 @@ final class PhoneNumberFactory
         return self::$instantiatedClasses[$country];
     }
 
-    public static function register(string $class)
+    public static function register(string $class): void
     {
         if (!is_a($class, PhoneNumber::class, true)) {
             throw new InvalidTypeException($class, PhoneNumber::class);

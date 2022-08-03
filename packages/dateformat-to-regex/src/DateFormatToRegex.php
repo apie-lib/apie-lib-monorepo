@@ -89,7 +89,7 @@ final class DateFormatToRegex
         return $regex;
     }
 
-    public static function createTimezoneIdentifierRegex(string $delimiter = '/')
+    public static function createTimezoneIdentifierRegex(string $delimiter = '/'): string
     {
         $regexes = [
             '(\+\d{2}:\d{2})',

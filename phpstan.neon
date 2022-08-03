@@ -1,0 +1,77 @@
+parameters:
+    level: 6
+    paths:
+        - packages/apie-bundle/src
+        - packages/common-value-objects/src
+        - packages/composite-value-objects/src
+        - packages/core/src
+        - packages/country-and-phone-number/src
+        - packages/date-value-objects/src
+        - packages/dateformat-to-regex/src
+        - packages/doctrine-entity-converter/src
+        - packages/faker/src
+        - packages/regex-value-objects/src
+        - packages/rest-api/src
+        - packages/schema-generator/src
+        - packages/serializer/src
+        - packages/text-value-objects/src
+    ignoreErrors:
+        - '#Call to an undefined method Faker\\Generator#'
+        - 
+            message: '#iterable type array#'
+            path: packages/serializer/src/
+            count: 7
+        -
+            message: '#method UnitEnum::from#'
+            path: packages/serializer/src/Normalizers/EnumNormalizer.php
+            count: 1
+        -
+            message: '#ValueObjectInterface::getRegularExpression#'
+            path: packages/schema-generator/src/SchemaProviders/
+            count: 2
+
+        -
+            message: '#ValueObjectInterface::getFields#'
+            path: packages/schema-generator/src/SchemaProviders/CompositeValueObjectSchemaProvider.php
+            count: 2
+
+        -
+            message: '#constructor expects Apie\\SchemaGenerator\\Interfaces\\SchemaProvider\<object\>#'
+            path: packages/schema-generator/src/ComponentsBuilderFactory.php
+            count: 10
+
+        -
+            message: '#Negated boolean expression is always false#'
+            path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
+            count: 1
+
+        -
+            message: '#PathItem::\$connect#'
+            path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
+            count: 1
+
+        -
+            message: '#Operation::\$responses#'
+            path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
+            count: 1
+
+        -
+            message: '#type Apie\\Core\\ValueObjects\\IsPasswordValueObject#'
+            path: packages/faker/src/Fakers/PasswordValueObjectFaker.php
+            count: 2
+        
+        -
+            message: '#constructor expects Apie\\Faker\\Interfaces\\ApieClassFaker<object>,#'
+            path: packages/faker/src/ApieObjectFaker.php
+            count: 5
+
+        -
+            message: '#Unable to resolve the template type T in call to method#'
+            path: packages/faker/src/ApieObjectFaker.php
+            count: 1
+
+        -
+            message: '#If condition is always true#'
+            path: packages/country-and-phone-number/src/
+            count: 3
+
