@@ -47,6 +47,7 @@
     "autoload": {
         "psr-4": {
             "Apie\\ApieBundle\\": "packages/apie-bundle/src/",
+            "Apie\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/src/",
             "Apie\\CommonValueObjects\\": "packages/common-value-objects/src/",
             "Apie\\CompositeValueObject\\": "packages/composite-value-object/src/",
             "Apie\\CompositeValueObjects\\": "packages/composite-value-objects/src/",
@@ -67,6 +68,7 @@
     "autoload-dev": {
         "psr-4": {
             "Apie\\Tests\\ApieBundle\\": "packages/apie-bundle/tests/",
+            "Apie\\Tests\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/tests/",
             "Apie\\Tests\\CommonValueObjects\\": "packages/common-value-objects/tests/",
             "Apie\\Tests\\CompositeValueObject\\": "packages/composite-value-object/tests/",
             "Apie\\Tests\\CompositeValueObjects\\": "packages/composite-value-objects/tests/",
@@ -86,6 +88,7 @@
     },
     "replace": {
         "apie/apie-bundle": "self.version",
+        "apie/apie-phpstan-rules": "self.version",
         "apie/common-value-objects": "self.version",
         "apie/composite-value-object": "self.version",
         "apie/composite-value-objects": "self.version",

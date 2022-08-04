@@ -1,3 +1,5 @@
+includes:
+    - packages/apie-phpstan-rules/apie-phpstan-rules.neon
 parameters:
     level: 6
     paths:
@@ -17,6 +19,7 @@ parameters:
         - packages/text-value-objects/src
     ignoreErrors:
         - '#Call to an undefined method Faker\\Generator#'
+        - '#Access to an undefined property UnitEnum::\$value#'
         - 
             message: '#iterable type array#'
             path: packages/serializer/src/

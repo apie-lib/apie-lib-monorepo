@@ -18,7 +18,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::DATA_TO_APPEND, [
         ComposerJsonSection::REQUIRE_DEV => [
             "phpspec/prophecy-phpunit" => "^2.0",
-            "phpstan/phpstan" => "^0.12.3",
+            "phpstan/phpstan" => "^1.8.2",
             'friendsofphp/php-cs-fixer' =>  "^3.8",
             'symfony/phpunit-bridge' =>  "6.*",
             'symfony/finder' =>  "6.*",
