@@ -20,6 +20,10 @@ parameters:
     ignoreErrors:
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
+        -
+            message: '#NodeDefinition::children#'
+            path: packages/apie-bundle/src/DependencyInjection/Configuration.php
+            count: 1
         - 
             message: '#iterable type array#'
             path: packages/serializer/src/
