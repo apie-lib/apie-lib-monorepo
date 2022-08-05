@@ -5,6 +5,7 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
+use Apie\RestApi\Actions\CreateObjectAction;
 use Apie\RestApi\Controllers\CreateResourceController;
 use Apie\RestApi\Interfaces\RestApiRouteDefinition;
 use Apie\RestApi\Lists\StringList;
@@ -84,11 +85,17 @@ class CreateResourceRouteDefinition implements RestApiRouteDefinition
         return CreateResourceController::class;
     }
 
+    public function getAction(): string
+    {
+        return CreateObjectAction::class;
+    }
+
     public function getRouteAttributes(): array
     {
         return [
             'boundedContextId' => $this->boundedContextId->toNative(),
             'resourceName' => $this->className->name,
+            'operationId' => $this->getOperationId(),
         ];
     }
 }

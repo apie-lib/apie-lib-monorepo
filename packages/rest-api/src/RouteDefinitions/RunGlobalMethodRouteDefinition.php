@@ -4,6 +4,7 @@ namespace Apie\RestApi\RouteDefinitions;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
+use Apie\RestApi\Actions\RunAction;
 use Apie\RestApi\Controllers\RunGlobalMethodController;
 use Apie\RestApi\Interfaces\RestApiRouteDefinition;
 use Apie\RestApi\Lists\StringList;
@@ -45,12 +46,18 @@ class RunGlobalMethodRouteDefinition implements RestApiRouteDefinition
         return RunGlobalMethodController::class;
     }
 
+    public function getAction(): string
+    {
+        return RunAction::class;
+    }
+
     public function getRouteAttributes(): array
     {
         return [
             'boundedContextId' => $this->boundedContextId->toNative(),
             'class' => $this->method->getDeclaringClass()->name,
             'methodName' => $this->method->getName(),
+            'operationId' => $this->getOperationId(),
         ];
     }
 
