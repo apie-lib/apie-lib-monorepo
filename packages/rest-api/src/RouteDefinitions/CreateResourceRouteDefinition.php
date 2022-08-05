@@ -7,6 +7,7 @@ use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
 use Apie\RestApi\Actions\CreateObjectAction;
 use Apie\RestApi\Controllers\CreateResourceController;
+use Apie\RestApi\Controllers\RestApiController;
 use Apie\RestApi\Interfaces\RestApiRouteDefinition;
 use Apie\RestApi\Lists\StringList;
 use ReflectionClass;
@@ -82,7 +83,7 @@ class CreateResourceRouteDefinition implements RestApiRouteDefinition
 
     public function getController(): string
     {
-        return CreateResourceController::class;
+        return RestApiController::class;
     }
 
     public function getAction(): string

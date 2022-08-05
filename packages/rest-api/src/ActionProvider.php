@@ -22,12 +22,12 @@ final class ActionProvider {
     {
         $boundedContext = $this->boundedContextHashmap[$boundedContextId];
         $actions = $this->routeDefinitionProvider->getActionsForBoundedContext($boundedContext, $apieContext);
-        foreach ($actions of $action) {
-            if ($action instanceof RestApiRouteDefinition && $action->getActionId() === $operationId) {
-                return $this->createAction($actions[$actionId]->getAction());
+        foreach ($actions as $action) {
+            if ($action instanceof RestApiRouteDefinition && $action->getOperationId() === $operationId) {
+                return $this->createAction($action->getAction());
             }
         }
-        throw new LogicException(sprintf('"%s" action id not found!', $actionId));
+        throw new LogicException(sprintf('"%s" action id not found!', $operationId));
     }
 
     /**

@@ -4,6 +4,7 @@ namespace Apie\RestApi\Controllers;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
+use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\RestApi\ActionProvider;
 use Apie\RestApi\Actions\CreateObjectAction;
 use Apie\RestApi\Exceptions\InvalidContentTypeException;
@@ -40,7 +41,10 @@ class RestApiController
             throw new InvalidContentTypeException($contentType);
         }
         $decoder = $this->decoderHashmap[$contentType];
-        $rawContents = $decoder->decode((string) $request->getBody());
+        $rawContents = $request->getMethod() === 'GET' ? [] : $decoder->decode((string) $request->getBody());
+        if (!is_array($rawContents)) {
+            throw new InvalidTypeException($rawContents, 'array');
+        }
 
         $context = $this->contextBuilderFactory->createFromRequest(
             $request,
