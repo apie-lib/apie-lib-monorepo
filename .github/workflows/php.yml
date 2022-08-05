@@ -66,3 +66,6 @@ jobs:
       with:
         name: Code coverage (Clover xml)
         path: clover.xml
+
+    - name: Run static code analysis
+      run: vendor/bin/phpstan
