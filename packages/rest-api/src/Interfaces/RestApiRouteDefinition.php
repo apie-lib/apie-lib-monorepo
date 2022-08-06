@@ -6,6 +6,7 @@ use Apie\Core\Actions\HasRouteDefinition;
 use Apie\Core\ContextBuilders\ContextBuilderInterface;
 use Apie\RestApi\Controllers\RestApiController;
 use Apie\RestApi\Lists\StringList;
+use Apie\RestApi\RouteDefinitions\ListOf;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionType;
@@ -19,18 +20,19 @@ interface RestApiRouteDefinition extends HasRouteDefinition
     public const METHOD_NAME = 'methodName';
 
     public const OPENAPI_POST = 'openapi_post';
+    public const OPENAPI_ALL = 'openapi_post';
     public const OPENAPI_ACTION = 'openapi_action';
     public const RAW_CONTENTS = ContextBuilderInterface::RAW_CONTENTS;
 
     /**
-     * @return ReflectionClass<object>|ReflectionMethod|ReflectionType
+     * @return ReflectionClass<object>|ReflectionMethod|ReflectionType|ListOf
      */
-    public function getInputType(): ReflectionClass|ReflectionMethod|ReflectionType;
+    public function getInputType(): ReflectionClass|ReflectionMethod|ReflectionType|ListOf;
 
     /**
-     * @return ReflectionClass<object>|ReflectionMethod|ReflectionType
+     * @return ReflectionClass<object>|ReflectionMethod|ReflectionType|ListOf
      */
-    public function getOutputType(): ReflectionClass|ReflectionMethod|ReflectionType;
+    public function getOutputType(): ReflectionClass|ReflectionMethod|ReflectionType|ListOf;
 
     /**
      * @return class-string<RestApiController>

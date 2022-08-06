@@ -6,7 +6,8 @@ use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Repositories\Lists\LazyLoadedList;
 use ReflectionClass;
 
-interface ApieRepository {
+interface ApieRepository
+{
     /**
      * @template T of EntityInterface
      * @param ReflectionClass<T> $class
@@ -16,9 +17,8 @@ interface ApieRepository {
 
     /**
      * @template T of EntityInterface
-     * @param ReflectionClass<T> $class
      * @param IdentifierInterface<T> $identifier
      * @return T
      */
-    public function find(ReflectionClass $class, IdentifierInterface $identifier): EntityInterface;
+    public function find(IdentifierInterface $identifier): EntityInterface;
 }

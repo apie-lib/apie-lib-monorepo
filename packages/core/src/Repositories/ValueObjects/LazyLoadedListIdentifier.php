@@ -2,8 +2,8 @@
 namespace Apie\Core\Repositories\ValueObjects;
 
 use Apie\Core\BoundedContext\BoundedContextId;
-use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Repositories\Lists\LazyLoadedList;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Utils;
@@ -33,7 +33,7 @@ final class LazyLoadedListIdentifier implements IdentifierInterface
             $this->boundedContextId = new BoundedContextId($split[0]);
             $this->class = new ReflectionClass($split[1]);
         } catch (Throwable $throwable) {
-            throw new InvalidStringForValueObjectException($input, $this, $throwable); 
+            throw new InvalidStringForValueObjectException($input, $this, $throwable);
         }
     }
 

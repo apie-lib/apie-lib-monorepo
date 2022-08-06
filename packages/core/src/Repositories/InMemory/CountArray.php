@@ -4,7 +4,8 @@ namespace Apie\Core\Repositorie\InMemory;
 use Apie\Core\Repositories\Interfaces\CountItems;
 use Apie\Core\Repositories\Search\QuerySearch;
 
-class CountArray implements CountItems {
+class CountArray implements CountItems
+{
     /**
      * @param array<int, mixed> $array
      */

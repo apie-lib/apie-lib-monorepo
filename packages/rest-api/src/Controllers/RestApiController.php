@@ -69,7 +69,7 @@ class RestApiController
     }
 
     private function createResponse(ServerRequestInterface $request, mixed $output): ResponseInterface
-    {        
+    {
         $contentType = $this->encoderHashmap->getAcceptedContentTypeForRequest($request);
         $encoder = $this->encoderHashmap[$contentType];
         

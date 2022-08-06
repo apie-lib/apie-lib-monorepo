@@ -22,6 +22,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAddress-get'
+    get:
+      tags:
+        - UserWithAddress
+        - all
+      description: 'Gets a list of resource that are an instance of UserWithAddress'
+      operationId: get-all-UserWithAddress
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserWithAddress-get'
   /UserWithAutoincrementKey:
     post:
       tags:
@@ -41,6 +56,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAutoincrementKey-get'
+    get:
+      tags:
+        - UserWithAutoincrementKey
+        - all
+      description: 'Gets a list of resource that are an instance of UserWithAutoincrementKey'
+      operationId: get-all-UserWithAutoincrementKey
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserWithAutoincrementKey-get'
   /StaticActionExample/secretCode:
     get:
       tags:

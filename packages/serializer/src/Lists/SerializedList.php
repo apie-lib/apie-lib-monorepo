@@ -6,7 +6,7 @@ use Apie\Serializer\Normalizers\ItemListNormalizer;
 
 /**
  * A list of items that is already serialized and does not need to be serialized again.
- * 
+ *
  * @see ItemListNormalizer
  */
 final class SerializedList extends ItemList

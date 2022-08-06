@@ -7,7 +7,8 @@ use Apie\Core\Repositories\Search\QuerySearch;
 /**
  * @template T of EntityInterface
  */
-interface GetItem {
+interface GetItem
+{
     /**
      * @return T
      */

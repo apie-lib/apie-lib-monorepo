@@ -3,7 +3,8 @@ namespace Apie\Core\Repositories\Search;
 
 use Apie\Core\Lists\StringHashmap;
 
-final class QuerySearch {
+final class QuerySearch
+{
     private ?string $textSearch;
 
     private StringHashmap $searches;

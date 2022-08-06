@@ -2,15 +2,16 @@
 namespace Apie\Core\Repositories\Lists;
 
 use Apie\Core\Entities\EntityInterface;
-use Apie\Core\Repositories\Interfaces\GetItem;
 use Apie\Core\Repositories\Interfaces\CountItems;
+use Apie\Core\Repositories\Interfaces\GetItem;
 use Apie\Core\Repositories\Search\QuerySearch;
 use Apie\Core\Repositories\ValueObjects\LazyLoadedListIdentifier;
 
 /**
  * @template T of EntityInterface
  */
-final class LazyLoadedList implements EntityInterface {
+final class LazyLoadedList implements EntityInterface
+{
     /**
      * @param LazyLoadedListIdentifier<T> $id
      * @param GetItem<T> $getItem
