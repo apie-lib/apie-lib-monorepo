@@ -9,7 +9,7 @@
             "post": {
                 "tags": [
                     "User",
-                    "create"
+                    "resource"
                 ],
                 "description": "Creates an instance of User",
                 "operationId": "post-User",
@@ -38,7 +38,7 @@
             "get": {
                 "tags": [
                     "User",
-                    "all"
+                    "resource"
                 ],
                 "description": "Gets a list of resource that are an instance of User",
                 "operationId": "get-all-User",
@@ -48,9 +48,39 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/User-get"
+                                    "required": [
+                                        "totalCount",
+                                        "first",
+                                        "last",
+                                        "list"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "totalCount": {
+                                            "type": "integer"
+                                        },
+                                        "first": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "last": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "prev": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "next": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/User-get"
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -63,7 +93,7 @@
             "get": {
                 "tags": [
                     "ApplicationInfo",
-                    "methodCall"
+                    "action"
                 ],
                 "description": "Calls method ApplicationInfo and returns return value.",
                 "operationId": "call-method-ApplicationInfo",
@@ -85,7 +115,7 @@
             "post": {
                 "tags": [
                     "ApplicationInfo",
-                    "methodCall"
+                    "action"
                 ],
                 "description": "Calls method powerOf2 and returns return value.",
                 "operationId": "call-method-ApplicationInfo-powerOf2",

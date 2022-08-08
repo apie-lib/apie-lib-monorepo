@@ -1,13 +1,14 @@
 <?php
-namespace Apie\Core\Repositorie\InMemory;
+namespace Apie\Core\Repositories\InMemory;
 
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Exceptions\EntityAlreadyPersisted;
 use Apie\Core\Exceptions\EntityNotFoundException;
 use Apie\Core\Exceptions\UnknownExistingEntityError;
 use Apie\Core\Identifiers\AutoIncrementInteger;
 use Apie\Core\Identifiers\IdentifierInterface;
-use Apie\Core\PersisterInterface\PersisterInterface;
+use Apie\Core\Persistence\PersisterInterface;
 use Apie\Core\Repositories\ApieRepository;
 use Apie\Core\Repositories\Lists\LazyLoadedList;
 use Apie\Core\Repositories\ValueObjects\LazyLoadedListIdentifier;
@@ -43,6 +44,7 @@ class InMemoryRepository implements ApieRepository, PersisterInterface
             $this->alreadyLoadedLists[$className] = new LazyLoadedList(
                 LazyLoadedListIdentifier::createFrom($this->boundedContextId, $class),
                 new GetFromArray($this->stored[$className]),
+                new TakeFromArray($this->stored[$className]),
                 new CountArray($this->stored[$className])
             );
         }
@@ -64,7 +66,14 @@ class InMemoryRepository implements ApieRepository, PersisterInterface
         $reflProperty->setAccessible(true);
         $reflProperty->setValue($entity, $id);
         $className = $id::getReferenceFor()->name;
-        $this->alreadyLoadedLists[$className][] = $entity;
+        $id = $entity->getId()->toNative();
+        $className = $entity->getId()::getReferenceFor()->name;
+        foreach ($this->stored[$className] ?? [] as $key => $entityInList) {
+            if ($entityInList->getId()->toNative() === $id) {
+                throw new EntityAlreadyPersisted($entity);
+            }
+        }
+        $this->stored[$className][] = $entity;
         return $entity;
     }
 
@@ -78,9 +87,9 @@ class InMemoryRepository implements ApieRepository, PersisterInterface
         $className = get_class($entity);
         $id = $entity->getId()->toNative();
         $className = $entity->getId()::getReferenceFor()->name;
-        foreach ($this->alreadyLoadedLists[$className] as $key => $entityInList) {
+        foreach ($this->stored[$className] ?? [] as $key => $entityInList) {
             if ($entityInList->getId()->toNative() === $id) {
-                $this->alreadyLoadedLists[$className][$key] = $entity;
+                $this->stored[$className][$key] = $entity;
                 return $entity;
             }
         }
@@ -91,7 +100,7 @@ class InMemoryRepository implements ApieRepository, PersisterInterface
     {
         $className = $identifier::getReferenceFor()->name;
         $id = $identifier->toNative();
-        foreach ($this->alreadyLoadedLists[$className] as $key => $entityInList) {
+        foreach ($this->stored[$className] as $entityInList) {
             if ($entityInList->getId()->toNative() === $id) {
                 return $entityInList;
             }

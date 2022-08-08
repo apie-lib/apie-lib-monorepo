@@ -73,6 +73,11 @@ final class LazyLoadedListIdentifier implements IdentifierInterface
         return $this->boundedContextId . ',' . $this->class->name;
     }
 
+    public function asUrl(): string
+    {
+        return '/' . $this->boundedContextId . '/' . $this->class->getShortName();
+    }
+
     /**
      * @return ReflectionClass<LazyLoadedList<T>>
      */

@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Core\PersisterInterface;
+namespace Apie\Core\Persistence;
 
 use Apie\Core\Entities\EntityInterface;
 

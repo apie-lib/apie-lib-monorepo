@@ -7,7 +7,7 @@ paths:
     post:
       tags:
         - UserWithAddress
-        - create
+        - resource
       description: 'Creates an instance of UserWithAddress'
       operationId: post-UserWithAddress
       requestBody:
@@ -25,7 +25,7 @@ paths:
     get:
       tags:
         - UserWithAddress
-        - all
+        - resource
       description: 'Gets a list of resource that are an instance of UserWithAddress'
       operationId: get-all-UserWithAddress
       responses:
@@ -34,14 +34,36 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/UserWithAddress-get'
+                required:
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/UserWithAddress-get'
   /UserWithAutoincrementKey:
     post:
       tags:
         - UserWithAutoincrementKey
-        - create
+        - resource
       description: 'Creates an instance of UserWithAutoincrementKey'
       operationId: post-UserWithAutoincrementKey
       requestBody:
@@ -59,7 +81,7 @@ paths:
     get:
       tags:
         - UserWithAutoincrementKey
-        - all
+        - resource
       description: 'Gets a list of resource that are an instance of UserWithAutoincrementKey'
       operationId: get-all-UserWithAutoincrementKey
       responses:
@@ -68,14 +90,36 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/UserWithAutoincrementKey-get'
+                required:
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/UserWithAutoincrementKey-get'
   /StaticActionExample/secretCode:
     get:
       tags:
         - StaticActionExample
-        - methodCall
+        - action
       description: 'Calls method secretCode and returns return value.'
       operationId: call-method-StaticActionExample-secretCode
       responses:

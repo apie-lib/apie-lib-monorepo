@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Core\Repositorie\InMemory;
+namespace Apie\Core\Repositories\InMemory;
 
 use Apie\Core\Repositories\Interfaces\CountItems;
 use Apie\Core\Repositories\Search\QuerySearch;

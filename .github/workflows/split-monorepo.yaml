@@ -57,6 +57,7 @@ jobs:
           repository_name: '${{ matrix.package }}'
           user_name: "Pieter Jordaan"
           user_email: "pieter_jordaan@hotmail.com"
+          branch: '${{ github.ref_name }}'
 
       # with tag
       -

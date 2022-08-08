@@ -125,8 +125,24 @@ class OpenApiGenerator
         $input = $routeDefinition->getOutputType();
         if ($input instanceof ListOf) {
             return new Schema([
-                'type' => 'array',
-                'items' => $this->doSchemaForOutput($input->type, $componentsBuilder),
+                'type' => 'object',
+                'required' => [
+                    'totalCount',
+                    'first',
+                    'last',
+                    'list',
+                ],
+                'properties' => [
+                    'totalCount' => ['type' => 'integer'],
+                    'first' => ['type' => 'string', 'format' => 'uri'],
+                    'last' => ['type' => 'string', 'format' => 'uri'],
+                    'prev' => ['type' => 'string', 'format' => 'uri'],
+                    'next' => ['type' => 'string', 'format' => 'uri'],
+                    'list' => [
+                        'type' => 'array',
+                        'items' => $this->doSchemaForOutput($input->type, $componentsBuilder),
+                    ]
+                ]
             ]);
         }
         return $this->doSchemaForOutput($input, $componentsBuilder);

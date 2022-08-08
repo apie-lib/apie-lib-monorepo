@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Serializer\Lists;
 
+use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
 use Apie\Serializer\Normalizers\ItemListNormalizer;
 
@@ -16,7 +17,7 @@ final class SerializedList extends ItemList
     /**
      * @return mixed[]|string|int|float|bool
      */
-    public function offsetGet(mixed $offset): array|string|int|float|bool
+    public function offsetGet(mixed $offset): array|string|int|float|bool|SerializedList|ItemHashmap
     {
         return parent::offsetGet($offset);
     }

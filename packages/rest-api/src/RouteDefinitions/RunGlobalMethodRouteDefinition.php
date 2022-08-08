@@ -76,7 +76,7 @@ class RunGlobalMethodRouteDefinition implements RestApiRouteDefinition
 
     public function getTags(): StringList
     {
-        return new StringList([$this->method->getDeclaringClass()->getShortName(), 'methodCall']);
+        return new StringList([$this->method->getDeclaringClass()->getShortName(), 'action']);
     }
 
     public function getInputType(): ReflectionMethod

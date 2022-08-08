@@ -3,13 +3,14 @@ namespace Apie\Core\Repositories\InMemory;
 
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Repositories\Interfaces\GetItem;
+use Apie\Core\Repositories\Interfaces\TakeItem;
 use Apie\Core\Repositories\Search\QuerySearch;
 
 /**
  * @template T of EntityInterface
- * @implements GetItem<T>
+ * @implements TakeItem<T>
  */
-class GetFromArray implements GetItem
+class TakeFromArray implements TakeItem
 {
     /**
      * @param array<int, T> $array
@@ -18,8 +19,8 @@ class GetFromArray implements GetItem
     {
     }
 
-    public function __invoke(int $index, QuerySearch $search): EntityInterface
+    public function __invoke(int $index, int $count, QuerySearch $search): array
     {
-        return $this->array[$index];
+        return array_slice($this->array, $index, $count);
     }
 }

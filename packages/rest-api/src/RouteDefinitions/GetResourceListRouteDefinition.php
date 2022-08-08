@@ -68,7 +68,7 @@ class GetResourceListRouteDefinition implements RestApiRouteDefinition
     
     public function getTags(): StringList
     {
-        return new StringList([$this->className->getShortName(), 'all']);
+        return new StringList([$this->className->getShortName(), 'resource']);
     }
 
     public function getMethod(): RequestMethod
