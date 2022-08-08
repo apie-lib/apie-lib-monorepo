@@ -39,7 +39,7 @@ class RestApiController
             throw new InvalidContentTypeException($contentType);
         }
         $decoder = $this->decoderHashmap[$contentType];
-        $rawContents = $request->getMethod() === 'GET' ? [] : $decoder->decode((string) $request->getBody());
+        $rawContents = $request->getMethod() === 'GET' ? $request->getQueryParams() : $decoder->decode((string) $request->getBody());
         if (!is_array($rawContents)) {
             throw new InvalidTypeException($rawContents, 'array');
         }

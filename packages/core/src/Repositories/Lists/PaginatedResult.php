@@ -8,7 +8,8 @@ use Apie\Core\Repositories\ValueObjects\LazyLoadedListIdentifier;
 /**
  * @template T of EntityInterface
  */
-final class PaginatedResult {
+final class PaginatedResult
+{
     /**
      * @Param ItemList<T> $list
      */

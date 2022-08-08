@@ -209,7 +209,7 @@ class SerializerTest extends TestCase
                                 'zipcode' => '131313',
                                 'city' => 'Springfield',
                             ]),
-                            'password' => null,    
+                            'password' => null,
                         ]),
                     ]
                 ),

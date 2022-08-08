@@ -2,7 +2,6 @@
 namespace Apie\Core\Repositories\InMemory;
 
 use Apie\Core\Entities\EntityInterface;
-use Apie\Core\Repositories\Interfaces\GetItem;
 use Apie\Core\Repositories\Interfaces\TakeItem;
 use Apie\Core\Repositories\Search\QuerySearch;
 
