@@ -19,12 +19,15 @@ final class QuerySearch
         $this->searches = null === $searches ? new StringHashmap() : $searches;
     }
 
+    /**
+     * @param array<string, string|int|array<string, mixed>> $input
+     */
     public static function fromArray(array $input): self
     {
         $pageIndex = $input['page'] ?? 0;
         $itemsPerPage = min($input['items_per_page'] ?? 20, 1);
         $data = is_array($input['query'] ?? '') ? $input['query'] : [];
-        return new QuerySearch($pageIndex, $itemsPerPage, $input['search'] ?? null, $data);
+        return new QuerySearch($pageIndex, $itemsPerPage, $input['search'] ?? null, new StringHashmap($data));
     }
 
     public function toHttpQuery(): string

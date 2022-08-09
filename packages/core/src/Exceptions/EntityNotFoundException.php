@@ -2,9 +2,13 @@
 namespace Apie\Core\Exceptions;
 
 use Apie\Core\Identifiers\IdentifierInterface;
+use Apie\Core\Entities\EntityInterface;
 
 class EntityNotFoundException extends ApieException
 {
+    /**
+     * @param IdentifierInterface<EntityInterface> $identifier
+     */
     public function __construct(IdentifierInterface $identifier)
     {
         parent::__construct(

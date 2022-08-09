@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Core\Repositories\Lists;
 
+use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Lists\ItemList;
 use Apie\Core\Repositories\Search\QuerySearch;
 use Apie\Core\Repositories\ValueObjects\LazyLoadedListIdentifier;
@@ -11,7 +12,8 @@ use Apie\Core\Repositories\ValueObjects\LazyLoadedListIdentifier;
 final class PaginatedResult
 {
     /**
-     * @Param ItemList<T> $list
+     * @param LazyLoadedListIdentifier<T> $id
+     * @param ItemList<T> $list
      */
     public function __construct(
         public LazyLoadedListIdentifier $id,

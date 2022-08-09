@@ -2,6 +2,7 @@
 namespace Apie\Serializer\Normalizers;
 
 use Apie\Core\Lists\ItemHashmap;
+use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Repositories\Lists\PaginatedResult;
 use Apie\Serializer\Context\ApieSerializerContext;
 use Apie\Serializer\Interfaces\NormalizerInterface;
@@ -15,7 +16,7 @@ class PaginatedResultNormalizer implements NormalizerInterface
     }
 
     /**
-     * @var PaginatedResult $object
+     * @param PaginatedResult<EntityInterface> $object
      */
     public function normalize(mixed $object, ApieSerializerContext $apieSerializerContext): ItemHashmap
     {
@@ -34,20 +35,29 @@ class PaginatedResultNormalizer implements NormalizerInterface
         ]));
     }
 
+    /**
+     * @param PaginatedResult<EntityInterface> $object
+     */
     private function renderFirst(string $uri, PaginatedResult $object): string
     {
         return $uri . $object->querySearch->withPageIndex(0)->toHttpQuery();
     }
 
+    /**
+     * @param PaginatedResult<EntityInterface> $object
+     */
     private function renderLast(string $uri, PaginatedResult $object): string
     {
         $pageIndex = 1 + floor($object->totalCount / $object->pageSize);
         if ($pageIndex * $object->pageSize > $object->totalCount) {
             $pageIndex--;
         }
-        return $uri . $object->querySearch->withPageIndex($pageIndex)->toHttpQuery();
+        return $uri . $object->querySearch->withPageIndex((int) $pageIndex)->toHttpQuery();
     }
 
+    /**
+     * @param PaginatedResult<EntityInterface> $object
+     */
     private function renderPrev(string $uri, PaginatedResult $object): ?string
     {
         if ($object->pageNumber > 0) {
@@ -57,6 +67,9 @@ class PaginatedResultNormalizer implements NormalizerInterface
         return null;
     }
 
+    /**
+     * @param PaginatedResult<EntityInterface> $object
+     */
     private function renderNext(string $uri, PaginatedResult $object): ?string
     {
         $pageIndex = 1 + floor($object->totalCount / $object->pageSize);
@@ -64,7 +77,7 @@ class PaginatedResultNormalizer implements NormalizerInterface
             $pageIndex--;
         }
         if ($object->pageNumber < $pageIndex) {
-            return $uri . $object->querySearch->withPageIndex($pageIndex)->toHttpQuery();
+            return $uri . $object->querySearch->withPageIndex((int) $pageIndex)->toHttpQuery();
         }
         return null;
     }

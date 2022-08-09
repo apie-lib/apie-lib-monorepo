@@ -93,6 +93,10 @@ class OpenApiGenerator
         
         return $this->doSchemaForInput($input, $componentsBuilder);
     }
+
+    /**
+     * @param ReflectionClass<object>|ReflectionMethod|ReflectionType $input
+     */
     private function doSchemaForInput(ReflectionClass|ReflectionMethod|ReflectionType $input, ComponentsBuilder $componentsBuilder): Schema|Reference
     {
         if ($input instanceof ReflectionClass) {
@@ -109,6 +113,9 @@ class OpenApiGenerator
         return $componentsBuilder->getSchemaForType($input);
     }
 
+    /**
+     * @param ReflectionClass<object>|ReflectionMethod|ReflectionType $output
+     */
     private function doSchemaForOutput(ReflectionClass|ReflectionMethod|ReflectionType $output, ComponentsBuilder $componentsBuilder): Schema|Reference
     {
         if ($output instanceof ReflectionClass) {

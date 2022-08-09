@@ -82,3 +82,7 @@ parameters:
             path: packages/country-and-phone-number/src/
             count: 3
 
+        -
+            message: '#Unable to resolve the template type T in call to method#'
+            path: packages/rest-api/src/Actions/GetListAction.php
+            count: 1

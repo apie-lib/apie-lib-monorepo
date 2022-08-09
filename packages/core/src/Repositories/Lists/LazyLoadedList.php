@@ -34,6 +34,9 @@ final class LazyLoadedList implements EntityInterface
         return $this->id;
     }
 
+    /**
+     * @return PaginatedResult<T>
+     */
     public function toPaginatedResult(QuerySearch $search): PaginatedResult
     {
         $index = $search->getPageIndex();
