@@ -4,6 +4,7 @@ services:
     factory: ['Apie\ApieBundle\Wrappers\GeneralServiceFactory', 'createRoutedDefinitionProvider']
     arguments:
       - !tagged apie.core.route_definition
+
   Apie\Core\BoundedContext\BoundedContextHashmap:
     factory: ["@apie.bounded_context.hashmap_factory", "create"]
 
@@ -14,3 +15,6 @@ services:
   apie.context.factory:
     alias: Apie\Core\ContextBuilders\ContextBuilderFactory
     public: true
+
+  Apie\Core\Repositories\ApieRepository:
+    alias: Apie\ApieBundle\Wrappers\RequestAwareInMemoryRepository

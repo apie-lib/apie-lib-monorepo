@@ -7,6 +7,7 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
 use Apie\Core\Lists\ReflectionClassList;
 use Apie\Core\Lists\ReflectionMethodList;
+use Apie\Core\Repositories\InMemory\InMemoryRepository;
 use Apie\Core\RouteDefinitions\ActionHashmap;
 use Apie\Core\RouteDefinitions\RouteDefinitionsProviderList;
 use Apie\Fixtures\Actions\StaticActionExample;
@@ -43,7 +44,8 @@ class RestApiControllerTest extends TestCase
                     )
                 ),
                 $boundedContextHashmap,
-                Serializer::create()
+                Serializer::create(),
+                new InMemoryRepository($boundedContext->getId())
             ),
             EncoderHashmap::create(),
             DecoderHashmap::create()

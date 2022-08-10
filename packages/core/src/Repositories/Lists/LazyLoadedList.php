@@ -2,6 +2,7 @@
 namespace Apie\Core\Repositories\Lists;
 
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Lists\ItemList;
 use Apie\Core\Repositories\Interfaces\CountItems;
 use Apie\Core\Repositories\Interfaces\GetItem;
 use Apie\Core\Repositories\Interfaces\TakeItem;
@@ -41,7 +42,7 @@ final class LazyLoadedList implements EntityInterface
     {
         $index = $search->getPageIndex();
         $count = $search->getItemsPerPage();
-        return new PaginatedResult($this->id, $this->totalCount(), $this->take($index, $count), $index, $count, $search);
+        return new PaginatedResult($this->id, $this->totalCount(), new ItemList($this->take($index, $count)), $index, $count, $search);
     }
 
     /**
