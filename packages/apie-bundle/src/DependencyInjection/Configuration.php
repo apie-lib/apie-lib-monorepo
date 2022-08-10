@@ -21,6 +21,7 @@ class Configuration implements ConfigurationInterface
                     ->scalarNode('base_url')->defaultValue('/api')->end()
                 ->end()
             ->end()
+            ->booleanNode('enable_core')->defaultValue(true)->end()
             ->booleanNode('enable_faker')->defaultValue(class_exists(ApieObjectFaker::class))->end()
             ->booleanNode('enable_rest_api')->defaultValue(class_exists(CreateObjectAction::class))->end()
             ->arrayNode('bounded_contexts')

@@ -12,6 +12,9 @@ class ApieExtension extends Extension
      * @var array<string, array<int, string>>
      */
     private array $dependencies = [
+        'enable_core' => [
+            'core.yaml',
+        ],
         'enable_rest_api' => [
             'rest_api.yaml',
             'schema_generator.yaml',

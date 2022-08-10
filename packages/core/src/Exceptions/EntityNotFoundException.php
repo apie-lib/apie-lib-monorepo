@@ -1,8 +1,8 @@
 <?php
 namespace Apie\Core\Exceptions;
 
-use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Identifiers\IdentifierInterface;
 
 class EntityNotFoundException extends ApieException
 {

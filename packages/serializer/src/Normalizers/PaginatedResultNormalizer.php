@@ -1,8 +1,8 @@
 <?php
 namespace Apie\Serializer\Normalizers;
 
-use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Repositories\Lists\PaginatedResult;
 use Apie\Serializer\Context\ApieSerializerContext;
 use Apie\Serializer\Interfaces\NormalizerInterface;

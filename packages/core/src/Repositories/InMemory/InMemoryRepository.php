@@ -100,7 +100,7 @@ class InMemoryRepository implements ApieRepository, PersisterInterface
     {
         $className = $identifier::getReferenceFor()->name;
         $id = $identifier->toNative();
-        foreach ($this->stored[$className] as $entityInList) {
+        foreach ($this->stored[$className] ?? [] as $entityInList) {
             if ($entityInList->getId()->toNative() === $id) {
                 return $entityInList;
             }
