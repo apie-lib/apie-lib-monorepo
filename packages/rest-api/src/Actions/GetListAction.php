@@ -29,7 +29,8 @@ class GetListAction implements ActionInterface
         if (!is_a($resourceClass, EntityInterface::class, true)) {
             throw new InvalidTypeException($resourceClass, 'EntityInterface');
         }
-        return $this->serializer->normalize($this->apieRepository->all(new ReflectionClass($resourceClass))
-            ->toPaginatedResult(QuerySearch::fromArray($rawContents)), $context);
+        $result = $this->apieRepository->all(new ReflectionClass($resourceClass))
+            ->toPaginatedResult(QuerySearch::fromArray($rawContents));
+        return $this->serializer->normalize($result, $context);
     }
 }

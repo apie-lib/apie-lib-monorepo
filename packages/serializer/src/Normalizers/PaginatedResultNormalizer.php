@@ -25,14 +25,19 @@ class PaginatedResultNormalizer implements NormalizerInterface
         if ($context->hasContext(ServerRequestInterface::class)) {
             // TODO extract URI from request.
         }
-        return new ItemHashmap(array_filter([
-            'totalCount' => $object->totalCount,
-            'list' => $apieSerializerContext->normalizeAgain($object->list),
-            'first' => $this->renderFirst($uri, $object),
-            'last' => $this->renderLast($uri, $object),
-            'prev' => $this->renderPrev($uri, $object),
-            'next' => $this->renderNext($uri, $object),
-        ]));
+        return new ItemHashmap(array_filter(
+            [
+                'totalCount' => $object->totalCount,
+                'list' => $apieSerializerContext->normalizeAgain($object->list),
+                'first' => $this->renderFirst($uri, $object),
+                'last' => $this->renderLast($uri, $object),
+                'prev' => $this->renderPrev($uri, $object),
+                'next' => $this->renderNext($uri, $object),
+            ],
+            function (mixed $value) {
+                return $value !== null;
+            }
+        ));
     }
 
     /**
