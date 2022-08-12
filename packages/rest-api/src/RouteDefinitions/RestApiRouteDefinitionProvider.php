@@ -17,6 +17,8 @@ class RestApiRouteDefinitionProvider implements RouteDefinitionProviderInterface
         $map[$definition->getOperationId()] = $definition;
         $definition = new OpenApiDocumentationRouteDefinition(false, $boundedContext->getId());
         $map[$definition->getOperationId()] = $definition;
+        $definition = new SwaggerUIRouteDefinition($boundedContext->getId());
+        $map[$definition->getOperationId()] = $definition;
 
         $postContext = $apieContext->withContext(RequestMethod::class, RequestMethod::POST)
             ->withContext(RestApiRouteDefinition::OPENAPI_POST, true)
