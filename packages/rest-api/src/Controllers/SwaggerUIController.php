@@ -11,7 +11,6 @@ class SwaggerUIController
     private readonly string $htmlPath;
 
     public function __construct(
-        private readonly BoundedContextHashmap $boundedContextHashmap,
         private readonly string $baseUrl,
         ?string $htmlPath = null
     ) {

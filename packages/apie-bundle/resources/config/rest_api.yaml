@@ -29,7 +29,6 @@ services:
 
   Apie\RestApi\Controllers\SwaggerUIController:
     arguments:
-      - '@Apie\Core\BoundedContext\BoundedContextHashmap'
       - '%apie.rest_api.base_url%'
     tags: ['controller.service_arguments']
 
