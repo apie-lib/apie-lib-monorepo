@@ -4,7 +4,7 @@ namespace Apie\Core\Exceptions;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\IdentifierInterface;
 
-class EntityNotFoundException extends ApieException
+final class EntityNotFoundException extends ApieException
 {
     /**
      * @param IdentifierInterface<EntityInterface> $identifier

@@ -4,7 +4,7 @@ namespace Apie\Core\Exceptions;
 use Apie\Core\Entities\EntityInterface;
 use ReflectionClass;
 
-class EntityAlreadyPersisted extends ApieException implements HttpStatusCodeException
+final class EntityAlreadyPersisted extends ApieException implements HttpStatusCodeException
 {
     public function __construct(EntityInterface $entity)
     {

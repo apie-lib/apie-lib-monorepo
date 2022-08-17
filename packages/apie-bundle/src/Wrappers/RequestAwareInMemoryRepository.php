@@ -9,14 +9,14 @@ use Apie\Core\Repositories\InMemory\InMemoryRepository;
 use Apie\Core\Repositories\Lists\LazyLoadedList;
 use ReflectionClass;
 
-class RequestAwareInMemoryRepository implements ApieRepository
+final class RequestAwareInMemoryRepository implements ApieRepository
 {
     /**
      * @var array<string, InMemoryRepository>
      */
     private array $createdRepositories = [];
     public function __construct(
-        private BoundedContextSelected $boundedContextSelected
+        private readonly BoundedContextSelected $boundedContextSelected
     ) {
     }
 
@@ -36,13 +36,10 @@ class RequestAwareInMemoryRepository implements ApieRepository
     private function getRepository(ReflectionClass $class): InMemoryRepository
     {
         $boundedContext = $this->boundedContextSelected->getBoundedContextFromRequest();
-        if ($boundedContext) {
-            $id = $boundedContext->getId();
-        } else {
+        if (!$boundedContext) {
             $boundedContext = $this->boundedContextSelected->getBoundedContextFromClassName($class->name);
-
-            $id = $boundedContext ? $boundedContext->getId() : new BoundedContextId('unknown');
         }
+        $id = $boundedContext ? $boundedContext->getId() : new BoundedContextId('unknown');
         if (!isset($this->createdRepositories[$id->toNative()])) {
             $this->createdRepositories[$id->toNative()] = new InMemoryRepository($id);
         }

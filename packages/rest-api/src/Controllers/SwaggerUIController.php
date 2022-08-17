@@ -1,7 +1,6 @@
 <?php
 namespace Apie\RestApi\Controllers;
 
-use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

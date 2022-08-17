@@ -1,10 +1,11 @@
 <?php
 namespace Apie\RestApi\RouteDefinitions;
 
+use Apie\Common\Actions\RunAction;
+use Apie\Common\ContextConstants;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
-use Apie\RestApi\Actions\RunAction;
 use Apie\RestApi\Controllers\RestApiController;
 use Apie\RestApi\Interfaces\RestApiRouteDefinition;
 use Apie\RestApi\Lists\StringList;
@@ -55,10 +56,10 @@ class RunGlobalMethodRouteDefinition implements RestApiRouteDefinition
     {
         return [
             RestApiRouteDefinition::OPENAPI_ACTION => true,
-            RestApiRouteDefinition::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
-            RestApiRouteDefinition::SERVICE_CLASS => $this->method->getDeclaringClass()->name,
-            RestApiRouteDefinition::METHOD_NAME => $this->method->getName(),
-            RestApiRouteDefinition::OPERATION_ID => $this->getOperationId(),
+            ContextConstants::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
+            ContextConstants::SERVICE_CLASS => $this->method->getDeclaringClass()->name,
+            ContextConstants::METHOD_NAME => $this->method->getName(),
+            ContextConstants::OPERATION_ID => $this->getOperationId(),
         ];
     }
 

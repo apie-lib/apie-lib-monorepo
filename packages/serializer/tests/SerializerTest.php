@@ -88,7 +88,6 @@ class SerializerTest extends TestCase
                     'zipcode' => '131313',
                     'city' => 'Springfield',
                 ],
-                'password' => null,
             ],
             UserWithAddress::class,
             new ApieContext()
@@ -178,7 +177,6 @@ class SerializerTest extends TestCase
                     'zipcode' => '131313',
                     'city' => 'Springfield',
                 ]),
-                'password' => null,
             ]),
             $entity,
             new ApieContext()
@@ -209,7 +207,6 @@ class SerializerTest extends TestCase
                                 'zipcode' => '131313',
                                 'city' => 'Springfield',
                             ]),
-                            'password' => null,
                         ]),
                     ]
                 ),

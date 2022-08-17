@@ -9,6 +9,9 @@ use Apie\TextValueObjects\LastName;
 use Faker\Generator;
 use Stringable;
 
+/**
+ * Represents a full name: gender + first name + last name.
+ */
 #[FakeMethod('createRandom')]
 class FullName implements ValueObjectInterface, Stringable
 {

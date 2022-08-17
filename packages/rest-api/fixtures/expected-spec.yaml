@@ -206,8 +206,6 @@ components:
           $ref: '#/components/schemas/UserWithAddressIdentifier-get'
         address:
           $ref: '#/components/schemas/AddressWithZipcodeCheck-get'
-        password:
-          $ref: '#/components/schemas/Password-get'
     UserWithAddress-post:
       required:
         - address

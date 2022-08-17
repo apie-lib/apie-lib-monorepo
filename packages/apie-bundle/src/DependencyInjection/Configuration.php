@@ -2,14 +2,14 @@
 namespace Apie\ApieBundle\DependencyInjection;
 
 use Apie\Faker\ApieObjectFaker;
-use Apie\RestApi\Actions\CreateObjectAction;
+use Apie\RestApi\OpenApi\OpenApiGenerator;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
  * Configuration
  */
-class Configuration implements ConfigurationInterface
+final class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
@@ -23,7 +23,7 @@ class Configuration implements ConfigurationInterface
             ->end()
             ->booleanNode('enable_core')->defaultValue(true)->end()
             ->booleanNode('enable_faker')->defaultValue(class_exists(ApieObjectFaker::class))->end()
-            ->booleanNode('enable_rest_api')->defaultValue(class_exists(CreateObjectAction::class))->end()
+            ->booleanNode('enable_rest_api')->defaultValue(class_exists(OpenApiGenerator::class))->end()
             ->arrayNode('bounded_contexts')
                 ->useAttributeAsKey('name')
                 ->arrayPrototype()

@@ -1,16 +1,20 @@
 <?php
 namespace Apie\RestApi\RouteDefinitions;
 
+use Apie\Common\Actions\GetListAction;
+use Apie\Common\ContextConstants;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
-use Apie\RestApi\Actions\GetListAction;
 use Apie\RestApi\Controllers\RestApiController;
 use Apie\RestApi\Interfaces\RestApiRouteDefinition;
 use Apie\RestApi\Lists\StringList;
 use ReflectionClass;
 
+/**
+ * Route definition for getting a list of resources.
+ */
 class GetResourceListRouteDefinition implements RestApiRouteDefinition
 {
     /**
@@ -96,9 +100,9 @@ class GetResourceListRouteDefinition implements RestApiRouteDefinition
         return
         [
             RestApiRouteDefinition::OPENAPI_ALL => true,
-            RestApiRouteDefinition::RESOURCE_NAME => $this->className->name,
-            RestApiRouteDefinition::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
-            RestApiRouteDefinition::OPERATION_ID => $this->getOperationId(),
+            ContextConstants::RESOURCE_NAME => $this->className->name,
+            ContextConstants::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
+            ContextConstants::OPERATION_ID => $this->getOperationId(),
         ];
     }
 }

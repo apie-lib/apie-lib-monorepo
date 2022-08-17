@@ -1,6 +1,7 @@
 <?php
 namespace Apie\RestApi\RouteDefinitions;
 
+use Apie\Common\ContextConstants;
 use Apie\Core\Actions\HasRouteDefinition;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Enums\RequestMethod;
@@ -54,7 +55,7 @@ class SwaggerUIRedirectRouteDefinition implements HasRouteDefinition
     public function getRouteAttributes(): array
     {
         return [
-            'boundedContextId' => $this->boundedContextId->toNative(),
+            ContextConstants::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
         ];
     }
 }
