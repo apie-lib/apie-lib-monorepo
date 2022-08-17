@@ -7,22 +7,19 @@ on:
   push:
     branches:
       - main
+      - 1.0.0
 
-    # see https://github.community/t/how-to-run-github-actions-workflow-only-for-new-tags/16075/10?u=tomasvotruba
     tags:
       - '*'
 
 jobs:
   provide_packages_json:
-    # see json juggling: https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#example-6
-    # see https://stackoverflow.com/a/62953566/1348344
     runs-on: ubuntu-latest
 
     steps:
       -
         uses: actions/checkout@v2
 
-      # required for matrix of packages set
       -   uses: shivammathur/setup-php@v2
           with:
             php-version: 8.1
@@ -30,12 +27,10 @@ jobs:
 
       -   uses: "ramsey/composer-install@v1"
 
-      # get package json list
       -
         id: output_data
         run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json)"
 
-    # this step is needed, so the output gets to the next defined job
     outputs:
       matrix: ${{ steps.output_data.outputs.matrix }}
 
@@ -63,6 +58,7 @@ jobs:
           repository_name: '${{ matrix.package }}'
           user_name: "Pieter Jordaan"
           user_email: "pieter_jordaan@hotmail.com"
+          branch: '${{ github.ref_name }}'
 
       # with tag
       -

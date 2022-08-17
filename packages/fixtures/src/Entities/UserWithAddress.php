@@ -5,12 +5,13 @@ use Apie\Core\Entities\EntityInterface;
 use Apie\Fixtures\Identifiers\UserWithAddressIdentifier;
 use Apie\Fixtures\ValueObjects\AddressWithZipcodeCheck;
 use Apie\Fixtures\ValueObjects\Password;
+use Apie\TextValueObjects\EncryptedPassword;
 
 class UserWithAddress implements EntityInterface
 {
     private UserWithAddressIdentifier $id;
 
-    private ?Password $password = null;
+    private ?EncryptedPassword $password = null;
 
     public function __construct(private AddressWithZipcodeCheck $address, ?UserWithAddressIdentifier $id = null)
     {
@@ -29,11 +30,11 @@ class UserWithAddress implements EntityInterface
 
     public function setPassword(Password $password)
     {
-        $this->password = $password;
+        $this->password = EncryptedPassword::fromUnencryptedPassword($password);
     }
 
-    public function getPassword(): ?Password
+    public function verify(string $password): bool
     {
-        return $this->password;
+        return $this->password->verifyUnencryptedPassword($password);
     }
 }

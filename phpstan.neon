@@ -81,4 +81,3 @@ parameters:
             message: '#If condition is always true#'
             path: packages/country-and-phone-number/src/
             count: 3
-
