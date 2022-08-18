@@ -33,8 +33,8 @@ class UserWithAddress implements EntityInterface
         $this->password = EncryptedPassword::fromUnencryptedPassword($password);
     }
 
-    public function verify(string $password): bool
+    public function verifyAuthentication(string $username, string $password): bool
     {
-        return $this->password->verifyUnencryptedPassword($password);
+        return $this->id->toNative() === $username && $this->password->verifyUnencryptedPassword($password);
     }
 }
