@@ -141,7 +141,7 @@ final class ApieContext
     {
         $list = [];
         foreach ($class->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
-            if (!preg_match('/^(__|set|get|has|is).+$/i', $method->name) && $this->appliesToContext($method)) {
+            if (!preg_match('/^(__|create|set|get|has|is).+$/i', $method->name) && $this->appliesToContext($method)) {
                 $list[$method->name] = $method;
             }
         }
