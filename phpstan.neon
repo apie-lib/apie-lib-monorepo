@@ -20,6 +20,7 @@ parameters:
     ignoreErrors:
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
+        - '#::(all|find|persistNew|persistExisting)\(\) invoked with 2 parameters, 1 required#'
         -
             message: '#NodeDefinition::children#'
             path: packages/apie-bundle/src/DependencyInjection/Configuration.php

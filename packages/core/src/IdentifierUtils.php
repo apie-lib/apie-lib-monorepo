@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Common;
+namespace Apie\Core;
 
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Exceptions\InvalidTypeException;
@@ -7,7 +7,7 @@ use Apie\Core\Identifiers\IdentifierInterface;
 use ReflectionClass;
 use ReflectionNamedType;
 
-final class Utils
+final class IdentifierUtils
 {
     private function __construct()
     {
@@ -15,7 +15,7 @@ final class Utils
 
     /**
      * @template T of EntityInterface
-     * @param ReflectionClass<IdentifierInterface<T>>|IdentifierInterface<T>
+     * @param ReflectionClass<IdentifierInterface<T>>|IdentifierInterface<T> $identifier
      * @return ReflectionClass<T>
      */
     public static function identifierToEntityClass(ReflectionClass|IdentifierInterface $identifier): ReflectionClass
@@ -28,7 +28,7 @@ final class Utils
 
     /**
      * @template T of EntityInterface
-     * @param ReflectionClass<T>|T
+     * @param ReflectionClass<T>|T $identifier
      * @return ReflectionClass<IdentifierInterface<T>>
      */
     public static function entityClassToIdentifier(ReflectionClass|EntityInterface $identifier): ReflectionClass
