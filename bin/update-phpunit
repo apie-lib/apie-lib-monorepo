@@ -37,6 +37,7 @@ foreach ($nodeList as $element) {
     $child = $element->ownerDocument->createElement('directory', 'vendor');
     $child->setAttribute('suffix', '.php');
     $element->appendChild($child);
+    sort($testFolders);
     foreach ($testFolders as $testFolder) {
         $child = $element->ownerDocument->createElement('directory', $testFolder);
         $child->setAttribute('suffix', '.php');

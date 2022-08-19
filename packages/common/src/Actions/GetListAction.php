@@ -18,6 +18,7 @@ final class GetListAction implements ApieFacadeAction
     public function __construct(private readonly ApieFacade $apieFacade)
     {
     }
+
     /**
      * @param array<string|int, mixed> $rawContents
      */

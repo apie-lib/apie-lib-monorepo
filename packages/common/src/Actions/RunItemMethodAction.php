@@ -4,11 +4,10 @@ namespace Apie\Common\Actions;
 use Apie\Common\ApieFacade;
 use Apie\Common\ApieFacadeAction;
 use Apie\Common\ContextConstants;
-use Apie\Common\Utils;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Exceptions\InvalidTypeException;
-use Apie\Core\Lists\ItemHashmap;
+use Apie\Core\IdentifierUtils;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionNamedType;
@@ -24,7 +23,7 @@ final class RunItemMethodAction implements ApieFacadeAction
     /**
      * @param array<string|int, mixed> $rawContents
      */
-    public function __invoke(ApieContext $context, array $rawContents): ItemHashmap
+    public function __invoke(ApieContext $context, array $rawContents): mixed
     {
         $resourceClass = new ReflectionClass($context->getContext(ContextConstants::RESOURCE_NAME));
         if (!$resourceClass->implementsInterface(EntityInterface::class)) {
@@ -38,11 +37,11 @@ final class RunItemMethodAction implements ApieFacadeAction
             $resource = null;
         } else {
             $id = $context->getContext(ContextConstants::RESOURCE_ID);
-            $resource = $this->apieFacade->find(Utils::entityClassToIdentifier($resourceClass)->newInstance($id));
+            $resource = $this->apieFacade->find(IdentifierUtils::entityClassToIdentifier($resourceClass)->newInstance($id));
         }
-        
+
         $result = $this->apieFacade->denormalizeOnMethodCall(
-            $context->getContext(ContextConstants::RAW_CONTENTS),
+            $rawContents,
             $resource,
             $method,
             $context
