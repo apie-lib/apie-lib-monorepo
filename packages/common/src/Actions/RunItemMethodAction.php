@@ -47,7 +47,9 @@ final class RunItemMethodAction implements ApieFacadeAction
             $method,
             $context
         );
-        // TODO: persist $resource
+        if ($resource !== null) {
+            $resource = $this->apieFacade->persistExisting($resource);
+        }
         if (self::shouldReturnResource($method)) {
             $result = $resource;
         }
