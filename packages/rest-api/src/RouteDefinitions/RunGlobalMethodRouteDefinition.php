@@ -60,6 +60,7 @@ class RunGlobalMethodRouteDefinition implements RestApiRouteDefinition
             ContextConstants::SERVICE_CLASS => $this->method->getDeclaringClass()->name,
             ContextConstants::METHOD_NAME => $this->method->getName(),
             ContextConstants::OPERATION_ID => $this->getOperationId(),
+            ContextConstants::APIE_ACTION => $this->getAction(),
         ];
     }
 

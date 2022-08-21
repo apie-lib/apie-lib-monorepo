@@ -25,26 +25,6 @@ class CreateResourceRouteDefinition implements RestApiRouteDefinition
     }
 
     /**
-     * @return array<string, mixed>
-     */
-    public function __serialize(): array
-    {
-        return [
-            'className' => $this->className->name,
-            'boundedContextId' => $this->boundedContextId->toNative(),
-        ];
-    }
-
-    /**
-     * @param array<string, mixed> $data
-     */
-    public function __unserialize(array $data): void
-    {
-        $this->className = new ReflectionClass($data['className']);
-        $this->boundedContextId = new BoundedContextId($data['boundedContextId']);
-    }
-
-    /**
      * @return ReflectionClass<EntityInterface>
      */
     public function getInputType(): ReflectionClass
@@ -102,6 +82,7 @@ class CreateResourceRouteDefinition implements RestApiRouteDefinition
             ContextConstants::RESOURCE_NAME => $this->className->name,
             ContextConstants::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
             ContextConstants::OPERATION_ID => $this->getOperationId(),
+            ContextConstants::APIE_ACTION => $this->getAction(),
         ];
     }
 }

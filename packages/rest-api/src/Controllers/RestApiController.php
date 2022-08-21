@@ -3,6 +3,7 @@ namespace Apie\RestApi\Controllers;
 
 use Apie\Common\ApieFacade;
 use Apie\Common\ContextConstants;
+use Apie\Core\Actions\ActionResponse;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
@@ -71,13 +72,13 @@ class RestApiController
         return $this->createResponse($request, $data);
     }
 
-    private function createResponse(ServerRequestInterface $request, mixed $output): ResponseInterface
+    private function createResponse(ServerRequestInterface $request, ActionResponse $output): ResponseInterface
     {
         $contentType = $this->encoderHashmap->getAcceptedContentTypeForRequest($request);
         $encoder = $this->encoderHashmap[$contentType];
         
         $psr17Factory = new Psr17Factory();
-        $responseBody = $psr17Factory->createStream($encoder->encode($output));
+        $responseBody = $psr17Factory->createStream($encoder->encode($output->getResultAsNativeData()));
 
         return $psr17Factory->createResponse(201)
             ->withBody($responseBody)

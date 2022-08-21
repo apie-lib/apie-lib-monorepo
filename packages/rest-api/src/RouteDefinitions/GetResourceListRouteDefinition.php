@@ -103,6 +103,7 @@ class GetResourceListRouteDefinition implements RestApiRouteDefinition
             ContextConstants::RESOURCE_NAME => $this->className->name,
             ContextConstants::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
             ContextConstants::OPERATION_ID => $this->getOperationId(),
+            ContextConstants::APIE_ACTION => $this->getAction(),
         ];
     }
 }

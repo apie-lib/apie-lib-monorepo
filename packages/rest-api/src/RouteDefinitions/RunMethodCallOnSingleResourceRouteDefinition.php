@@ -107,6 +107,7 @@ class RunMethodCallOnSingleResourceRouteDefinition implements RestApiRouteDefini
             ContextConstants::METHOD_NAME => $this->method->name,
             ContextConstants::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
             ContextConstants::OPERATION_ID => $this->getOperationId(),
+            ContextConstants::APIE_ACTION => $this->getAction(),
         ];
     }
 }
