@@ -3,6 +3,8 @@ namespace Apie\RestApi\RouteDefinitions;
 
 use Apie\Common\Actions\GetItemAction;
 use Apie\Common\ContextConstants;
+use Apie\Core\Actions\ActionResponseStatus;
+use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Enums\RequestMethod;
@@ -58,6 +60,14 @@ class GetSingleResourceRouteDefinition implements RestApiRouteDefinition
     public function getOutputType(): ReflectionClass
     {
         return $this->className;
+    }
+
+    public function getPossibleActionResponseStatuses(): ActionResponseStatusList
+    {
+        return new ActionResponseStatusList([
+            ActionResponseStatus::SUCCESS,
+            ActionResponseStatus::NOT_FOUND
+        ]);
     }
 
     public function getDescription(): string

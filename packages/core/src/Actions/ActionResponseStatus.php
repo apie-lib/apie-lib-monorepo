@@ -24,6 +24,11 @@ enum ActionResponseStatus: string
     case CLIENT_ERROR = 'client_error';
 
     /**
+     * {id} placeholder in route could not be found.
+     */
+    case NOT_FOUND = 'not_found';
+
+    /**
      * There is something wrong with storing the entity.
      *
      * For example: database error, unique constraints, etc.

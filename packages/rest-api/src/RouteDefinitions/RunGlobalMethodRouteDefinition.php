@@ -3,6 +3,8 @@ namespace Apie\RestApi\RouteDefinitions;
 
 use Apie\Common\Actions\RunAction;
 use Apie\Common\ContextConstants;
+use Apie\Core\Actions\ActionResponseStatus;
+use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
@@ -89,5 +91,18 @@ class RunGlobalMethodRouteDefinition implements RestApiRouteDefinition
     public function getOutputType(): ReflectionType
     {
         return $this->method->getReturnType();
+    }
+
+    public function getPossibleActionResponseStatuses(): ActionResponseStatusList
+    {
+        if (empty($this->method->getParameters())) {
+            return new ActionResponseStatusList([
+                ActionResponseStatus::SUCCESS,
+            ]);
+        }
+        return new ActionResponseStatusList([
+            ActionResponseStatus::CLIENT_ERROR,
+            ActionResponseStatus::SUCCESS
+        ]);
     }
 }

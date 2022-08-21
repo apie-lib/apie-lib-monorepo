@@ -3,12 +3,15 @@ namespace Apie\Core\Actions;
 
 use Apie\Common\ApieFacade;
 use Apie\Core\Context\ApieContext;
+use Throwable;
 
 final class ActionResponse
 {
     public readonly mixed $result;
 
     public readonly mixed $resource;
+    
+    public readonly Throwable $error;
 
     private mixed $nativeData;
 
@@ -30,6 +33,22 @@ final class ActionResponse
         $res->result = $result;
         $res->resource = $resource;
         return $res;
+    }
+
+    /**
+     * Returns HTTP status code that should be returned if you create a response.
+     */
+    public function getStatusCode(): int
+    {
+        return match ($this->status) {
+            ActionResponseStatus::CLIENT_ERROR => 400,
+            ActionResponseStatus::CREATED => 201,
+            ActionResponseStatus::SUCCESS => 200,
+            ActionResponseStatus::DELETED => 204,
+            ActionResponseStatus::NOT_FOUND => 404,
+            ActionResponseStatus::PERISTENCE_ERROR => 409,
+            default => 500,
+        };
     }
 
     public function getResultAsNativeData(): mixed

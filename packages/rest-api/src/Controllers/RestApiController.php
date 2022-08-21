@@ -78,9 +78,11 @@ class RestApiController
         $encoder = $this->encoderHashmap[$contentType];
         
         $psr17Factory = new Psr17Factory();
-        $responseBody = $psr17Factory->createStream($encoder->encode($output->getResultAsNativeData()));
+        $statusCode = $output->getStatusCode();
 
-        return $psr17Factory->createResponse(201)
+        $responseBody = $psr17Factory->createStream($statusCode === 204 ? '' : $encoder->encode($output->getResultAsNativeData()));
+
+        return $psr17Factory->createResponse($statusCode)
             ->withBody($responseBody)
             ->withHeader('Content-Type', $contentType);
     }
