@@ -82,3 +82,8 @@ parameters:
             message: '#If condition is always true#'
             path: packages/country-and-phone-number/src/
             count: 3
+
+        -
+            message: '#the constructor#'
+            path: packages/core/src/Actions/ActionResponse.php
+            count: 6
