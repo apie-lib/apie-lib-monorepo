@@ -6,12 +6,12 @@ use Apie\CountryAndPhoneNumber\Concerns\CanCreateRandomPhoneNumber;
 use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
 
 #[FakeMethod('createRandomInstance')]
-class FrenchPhoneNumber extends PhoneNumber
+class BelgianPhoneNumber extends PhoneNumber
 {
     use CanCreateRandomPhoneNumber;
 
     public static function fromCountry(): ISO3166_1_Alpha_2
     {
-        return ISO3166_1_Alpha_2::France;
+        return ISO3166_1_Alpha_2::Belgium;
     }
 }

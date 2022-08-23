@@ -46,7 +46,7 @@ parameters:
         -
             message: '#constructor expects Apie\\SchemaGenerator\\Interfaces\\SchemaProvider\<object\>#'
             path: packages/schema-generator/src/ComponentsBuilderFactory.php
-            count: 10
+            count: 11
 
         -
             message: '#Negated boolean expression is always false#'
@@ -81,9 +81,14 @@ parameters:
         -
             message: '#If condition is always true#'
             path: packages/country-and-phone-number/src/
-            count: 3
+            count: 13
+
+        -
+            message: '#Unreachable statement - code above always terminates#'
+            path: packages/country-and-phone-number/src/
+            count: 10
 
         -
             message: '#the constructor#'
             path: packages/core/src/Actions/ActionResponse.php
-            count: 6
+            count: 7

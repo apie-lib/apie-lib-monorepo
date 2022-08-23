@@ -2,10 +2,20 @@
 namespace Apie\Tests\CountryAndPhoneNumber;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\CountryAndPhoneNumber\BelgianPhoneNumber;
+use Apie\CountryAndPhoneNumber\BritishPhoneNumber;
+use Apie\CountryAndPhoneNumber\CanadianPhoneNumber;
+use Apie\CountryAndPhoneNumber\ChinesePhoneNumber;
+use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
+use Apie\CountryAndPhoneNumber\FrenchPhoneNumber;
 use Apie\CountryAndPhoneNumber\GermanPhoneNumber;
+use Apie\CountryAndPhoneNumber\JapanesePhoneNumber;
+use Apie\CountryAndPhoneNumber\MexicanPhoneNumber;
 use Apie\CountryAndPhoneNumber\PhoneNumber;
+use Apie\CountryAndPhoneNumber\USPhoneNumber;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use Generator;
 use PHPUnit\Framework\TestCase;
 
 class PhoneNumberTest extends TestCase
@@ -38,10 +48,27 @@ class PhoneNumberTest extends TestCase
     }
 
     /**
+     * @param class-string<PhoneNumber> $className
+     * @dataProvider phoneNumberClassProvider
      * @test
      */
-    public function it_works_with_apie_faker()
+    public function it_works_with_apie_faker(string $className)
     {
-        $this->runFakerTest(PhoneNumber::class);
+        $this->runFakerTest($className);
+    }
+
+    public function phoneNumberClassProvider(): Generator
+    {
+        yield [PhoneNumber::class];
+        yield [BelgianPhoneNumber::class];
+        yield [BritishPhoneNumber::class];
+        yield [CanadianPhoneNumber::class];
+        yield [ChinesePhoneNumber::class];
+        yield [DutchPhoneNumber::class];
+        yield [FrenchPhoneNumber::class];
+        yield [GermanPhoneNumber::class];
+        yield [JapanesePhoneNumber::class];
+        yield [MexicanPhoneNumber::class];
+        yield [USPhoneNumber::class];
     }
 }
