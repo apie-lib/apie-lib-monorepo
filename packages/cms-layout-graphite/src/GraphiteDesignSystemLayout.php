@@ -1,17 +1,20 @@
 <?php
 namespace Apie\CmsLayoutGraphite;
 
-/**
- * This is a stub class
- */
+use Apie\HtmlBuilders\Assets\AssetManager;
+
 final class GraphiteDesignSystemLayout
 {
     private function __construct()
     {
     }
 
-    public static function createRenderer(): TwigRenderer
+    public static function createRenderer(?AssetManager $assetManager = null): TwigRenderer
     {
-        return new TwigRenderer(__DIR__ . '/resources');
+        $assetManager ??= new AssetManager();
+        return new TwigRenderer(
+            __DIR__ . '/../resources/templates',
+            $assetManager->withAddedPath(__DIR__ . '/../resources/assets')
+        );
     }
 }

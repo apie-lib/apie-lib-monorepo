@@ -1,6 +1,8 @@
 <?php
 namespace Apie\HtmlBuilders\Components;
 
+use Apie\Core\BoundedContext\BoundedContextHashmap;
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Lists\ReflectionMethodList;
 use Apie\HtmlBuilders\Components\Dashboard\RawContents;
 use Apie\HtmlBuilders\Components\Layout\TopBar;
@@ -13,6 +15,8 @@ class Layout extends BaseComponent
         string $browserTitle,
         ReflectionMethodList $authenticationMethods,
         bool $shouldDisplayBoundedContextSelect,
+        BoundedContextId $boundedContextId,
+        BoundedContextHashmap $boundedContextHashmap,
         ComponentInterface $contents
     ) {
         parent::__construct(
@@ -20,7 +24,7 @@ class Layout extends BaseComponent
                 'title' => $browserTitle,
             ],
             new ComponentHashmap([
-                'top' => new TopBar($authenticationMethods, $shouldDisplayBoundedContextSelect),
+                'top' => new TopBar($authenticationMethods, $shouldDisplayBoundedContextSelect, $boundedContextId, $boundedContextHashmap),
                 'menu' => new RawContents(''),
                 'content' => $contents,
             ])

@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>{{ property('title') }}</title>
+        <style>
+            {{ assetContent('main.css') }}
+        </style>
         <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@graphiteds/core@1.9.4/css/graphite.bundle.css"
@@ -15,8 +18,9 @@
 ></script>
     </head>
     <body>
+      <div class="layout">
         <nav>
-          {{ component('topbar') }}
+          {{ component('top') }}
         </nav>
         <div>
           {{ component('menu') }}
@@ -24,5 +28,6 @@
         <div>
           {{ component('content') }}
         </div>
+      </div>
     </body>
 </html>
