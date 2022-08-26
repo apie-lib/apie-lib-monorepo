@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>{{ component.title }}</title>
+        <title>{{ property('title') }}</title>
         <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@graphiteds/core@1.9.4/css/graphite.bundle.css"
@@ -15,6 +15,14 @@
 ></script>
     </head>
     <body>
-        <gr-button>Click me</gr-button>
+        <nav>
+          {{ component('topbar') }}
+        </nav>
+        <div>
+          {{ component('menu') }}
+        </div>
+        <div>
+          {{ component('content') }}
+        </div>
     </body>
 </html>
