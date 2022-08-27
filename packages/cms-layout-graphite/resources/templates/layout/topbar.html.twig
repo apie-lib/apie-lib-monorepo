@@ -1,19 +1,11 @@
 <div style="width: 100%; padding: 1rem; display: table;">
     <div style="display: table-cell; width: 20%;vertical-align: middle">
-        <img src="{{ assetUrl('apie-logo-color.png') }}" height="60">
+        {{ component('logo') }}
     </div>
     <div style="display: table-cell; width: 60%;vertical-align: middle">
-        {% if (property('shouldDisplayBoundedContextSelect')) %}
-            <gr-select {% if property('boundedContextHashmap').count() == 1 %}disabled {% endif %}label="Bounded context" value="{{ property('selectedBoundedContextId') }}">
-                {% for boundedContext in property('boundedContextHashmap') %}
-                    <gr-menu-item value="{{ boundedContext.getId() }}">{{ boundedContext.getId() }}</gr-menu-item>
-                {% endfor %}
-            </gr-select>
-        {% else %}
-            &nbsp;
-        {% endif %}
+        {{ component('middle') }}
     </div>
     <div style="display: table-cell; width: 20%;vertical-align: middle">
-        TODO login options
+        {{ component('login') }}
     </div>
 </div>

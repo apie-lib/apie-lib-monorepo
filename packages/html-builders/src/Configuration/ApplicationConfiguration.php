@@ -1,6 +1,10 @@
 <?php
 namespace Apie\HtmlBuilders\Configuration;
 
+use Apie\Core\BoundedContext\BoundedContextHashmap;
+use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Context\ApieContext;
+
 class ApplicationConfiguration {
     private array $config;
 
@@ -9,13 +13,11 @@ class ApplicationConfiguration {
         $this->config = $config;
     }
 
-    public function getBrowserTitle(string $pageTitle): string
-    {
-        return sprintf((string) ($this->config['head']['title-format'] ?? 'Apie CMS - %s'), $pageTitle);
-    }
-
-    public function shouldDisplayBoundedContextSelect(): bool
-    {
-        return filter_var($this->config['application']['bounded-context-select'] ?? true, FILTER_VALIDATE_BOOL);
+    public function createConfiguration(
+        ApieContext $context,
+        BoundedContextHashmap $boundedContextHashmap,
+        ?BoundedContextId $selected
+    ): CurrentConfiguration {
+        return new CurrentConfiguration($this->config, $context, $boundedContextHashmap, $selected);
     }
 }

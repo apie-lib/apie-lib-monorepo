@@ -4,6 +4,7 @@ namespace Apie\HtmlBuilders\Factories;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Context\ApieContext;
 use Apie\Core\Lists\ReflectionMethodList;
 use Apie\HtmlBuilders\Components\Dashboard\RawContents;
 use Apie\HtmlBuilders\Components\Layout;
@@ -24,16 +25,12 @@ class ComponentFactory {
         return new RawContents($dashboardContents);
     }
 
-    public function createWrapLayout(string $pageTitle, ?BoundedContextId $boundedContextId, ComponentInterface $contents): ComponentInterface
+    public function createWrapLayout(string $pageTitle, ?BoundedContextId $boundedContextId, ApieContext $context, ComponentInterface $contents): ComponentInterface
     {
-        $authenticationMethods = new ReflectionMethodList();
-        if ($boundedContextId && isset($boundedContextHashmap[$boundedContextId])) {
-            // TODO $authenticationMethods = $boundedContextHashmap[$boundedContextId]
-        }
+        $configuration = $this->applicationConfiguration->createConfiguration($context, $this->boundedContextHashmap, $boundedContextId);
         return new Layout(
-            $this->applicationConfiguration->getBrowserTitle($pageTitle),
-            $authenticationMethods,
-            $this->applicationConfiguration->shouldDisplayBoundedContextSelect(),
+            $pageTitle,
+            $configuration,
             $contents
         );
     }
