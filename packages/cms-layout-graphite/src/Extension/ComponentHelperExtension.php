@@ -4,9 +4,7 @@ namespace Apie\CmsLayoutGraphite\Extension;
 use Apie\CmsLayoutGraphite\TwigRenderer;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use LogicException;
-use Twig\Environment;
 use Twig\Extension\AbstractExtension;
-use Twig\Extension\ExtensionInterface;
 use Twig\TwigFunction;
 
 class ComponentHelperExtension extends AbstractExtension
@@ -23,7 +21,8 @@ class ComponentHelperExtension extends AbstractExtension
         $this->componentsHandled[] = $component;
     }
 
-    public function deselectComponent(ComponentInterface $component) {
+    public function deselectComponent(ComponentInterface $component)
+    {
         if (end($this->componentsHandled) !== $component) {
             throw new LogicException('Last component is not the one being deselected');
         }

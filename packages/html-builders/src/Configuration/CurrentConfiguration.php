@@ -6,13 +6,14 @@ use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 
-final class CurrentConfiguration {
+final class CurrentConfiguration
+{
     private ApieContext $apieContext;
 
     private ?BoundedContextId $selected;
 
     public function __construct(
-        private readonly array $config = [],
+        private readonly array $config,
         ApieContext $apieContext,
         private BoundedContextHashmap $boundedContextHashmap,
         ?BoundedContextId $selected = null

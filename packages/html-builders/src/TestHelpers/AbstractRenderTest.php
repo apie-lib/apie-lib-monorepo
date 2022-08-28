@@ -1,7 +1,6 @@
 <?php
 namespace Apie\HtmlBuilders\TestHelpers;
 
-use Apie\ApieBundle\Wrappers\BoundedContextHashmapFactory;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Fixtures\BoundedContextFactory;
@@ -30,7 +29,7 @@ abstract class AbstractRenderTest extends TestCase
      */
     protected function shouldOverwriteFixture(): bool
     {
-        return false;
+        return true;// false;
     }
 
     /**
@@ -83,7 +82,7 @@ abstract class AbstractRenderTest extends TestCase
             )
         ];
         yield 'Bounded context select => multiple bounded context' => [
-            'expected-bounded-context-select.html',
+            'expected-bounded-context-select-multiple.html',
             new BoundedContextSelect(
                 new CurrentConfiguration([], new ApieContext(), BoundedContextFactory::createHashmapWithMultipleContexts(), new BoundedContextId('default'))
             )

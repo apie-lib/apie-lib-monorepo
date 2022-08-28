@@ -5,7 +5,8 @@ use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 
-class ApplicationConfiguration {
+class ApplicationConfiguration
+{
     private array $config;
 
     public function __construct(array $config = [])
