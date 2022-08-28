@@ -25,6 +25,18 @@ final class BoundedContextFactory
         ]);
     }
 
+    public static function createHashmapWithMultipleContexts(): BoundedContextHashmap
+    {
+        return new BoundedContextHashmap([
+            'default' => self::createExample(),
+            'other' => new BoundedContext(
+                new BoundedContextId('other'),
+                new ReflectionClassList(),
+                new ReflectionMethodList(),
+            )
+        ]);
+    }
+
     public static function createExample(): BoundedContext
     {
         return new BoundedContext(

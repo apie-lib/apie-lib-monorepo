@@ -1,0 +1,7 @@
+{% if property('loginOptions') %}
+    <gr-select label="Login">
+        {% for loginOption in property('loginOptions') %}
+            <gr-menu-item value="{{ loginOption['value'] }}">{{ loginOption['name'] }}</gr-menu-item>
+        {% endfor %}
+    </gr-select>
+{% endif %}

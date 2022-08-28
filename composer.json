@@ -28,8 +28,10 @@
         "symfony/finder": "6.*",
         "symfony/http-foundation": "^6.1",
         "symfony/http-kernel": "6.*",
+        "symfony/mime": "6.*",
         "symfony/psr-http-message-bridge": "2.*",
-        "symfony/routing": "6.*"
+        "symfony/routing": "6.*",
+        "twig/twig": "^3.4.2"
     },
     "config": {
         "lock": false
@@ -43,12 +45,15 @@
         "symfony/cache": "^6.0",
         "symfony/framework-bundle": "6.*",
         "symfony/phpunit-bridge": "6.*",
+        "symfony/twig-bundle": "6.*",
         "symplify/monorepo-builder": "10.2.7"
     },
     "autoload": {
         "psr-4": {
             "Apie\\ApieBundle\\": "packages/apie-bundle/src/",
             "Apie\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/src/",
+            "Apie\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/src/",
+            "Apie\\Cms\\": "packages/cms/src/",
             "Apie\\CommonValueObjects\\": "packages/common-value-objects/src/",
             "Apie\\Common\\": "packages/common/src/",
             "Apie\\CompositeValueObject\\": "packages/composite-value-object/src/",
@@ -61,6 +66,7 @@
             "Apie\\DoctrineEntityConverter\\": "packages/doctrine-entity-converter/src/",
             "Apie\\Faker\\": "packages/faker/src/",
             "Apie\\Fixtures\\": "packages/fixtures/src/",
+            "Apie\\HtmlBuilders\\": "packages/html-builders/src/",
             "Apie\\RegexValueObjects\\": "packages/regex-value-objects/src/",
             "Apie\\RestApi\\": "packages/rest-api/src/",
             "Apie\\SchemaGenerator\\": "packages/schema-generator/src/",
@@ -72,6 +78,8 @@
         "psr-4": {
             "Apie\\Tests\\ApieBundle\\": "packages/apie-bundle/tests/",
             "Apie\\Tests\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/tests/",
+            "Apie\\Tests\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/tests/",
+            "Apie\\Tests\\Cms\\": "packages/cms/tests/",
             "Apie\\Tests\\CommonValueObjects\\": "packages/common-value-objects/tests/",
             "Apie\\Tests\\Common\\": "packages/common/tests/",
             "Apie\\Tests\\CompositeValueObject\\": "packages/composite-value-object/tests/",
@@ -84,6 +92,7 @@
             "Apie\\Tests\\DoctrineEntityConverter\\": "packages/doctrine-entity-converter/tests/",
             "Apie\\Tests\\Faker\\": "packages/faker/tests/",
             "Apie\\Tests\\Fixtures\\": "packages/fixtures/tests/",
+            "Apie\\Tests\\HtmlBuilders\\": "packages/html-builders/tests/",
             "Apie\\Tests\\RegexValueObjects\\": "packages/regex-value-objects/tests/",
             "Apie\\Tests\\RestApi\\": "packages/rest-api/tests/",
             "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/",
@@ -94,6 +103,8 @@
     "replace": {
         "apie/apie-bundle": "self.version",
         "apie/apie-phpstan-rules": "self.version",
+        "apie/cms": "self.version",
+        "apie/cms-layout-graphite": "self.version",
         "apie/common": "self.version",
         "apie/common-value-objects": "self.version",
         "apie/composite-value-object": "self.version",
@@ -106,6 +117,7 @@
         "apie/doctrine-entity-converter": "self.version",
         "apie/faker": "self.version",
         "apie/fixtures": "self.version",
+        "apie/html-builders": "self.version",
         "apie/regex-value-objects": "self.version",
         "apie/rest-api": "self.version",
         "apie/schema-generator": "self.version",

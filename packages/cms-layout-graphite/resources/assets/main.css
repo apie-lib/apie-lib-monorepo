@@ -1,0 +1,11 @@
+body {
+    background-color: #EEEEEE;
+    padding: 0;
+    margin: 0;
+}
+body .layout {
+    padding-top: 8rem;
+}
+nav {
+    z-index: 40; position: fixed;top: 0;left: 0;width: 100%; border-bottom-width: 1px; background-color: white
+}
