@@ -1,5 +1,5 @@
 {% if property('loginOptions') %}
-    <gr-select label="Login">
+    <gr-select label="Login" placeholder="Login" gr-change="console.log($event)">
         {% for loginOption in property('loginOptions') %}
             <gr-menu-item value="{{ loginOption['value'] }}">{{ loginOption['name'] }}</gr-menu-item>
         {% endfor %}
