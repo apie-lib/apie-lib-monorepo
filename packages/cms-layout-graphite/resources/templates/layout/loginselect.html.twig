@@ -5,13 +5,13 @@
         {% endfor %}
     </gr-select>
     <script>
-        const select = document.querySelector('gr-select.login-select');
-
-        [...select.querySelectorAll('gr-menu-item')].map((item) => {
-            item.addEventListener('click', () => {
-                location.href = item.value;
+        (function (select) {
+            [...select.querySelectorAll('gr-menu-item')].map((item) => {
+                item.addEventListener('click', () => {
+                    location.href = item.value;
+                });
             });
-        });
-        select.classList.remove('login-select');
+            select.classList.remove('login-select');
+        })(document.querySelector('gr-select.login-select'));
     </script>
 {% endif %}

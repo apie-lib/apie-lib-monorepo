@@ -13,6 +13,15 @@ class CmsRouteDefinitionProvider implements RouteDefinitionProviderInterface
         $actions = [];
         $definition = new DashboardRouteDefinition($boundedContext->getId());
         $actions[$definition->getOperationId()] = $definition;
+
+        $getAllContext = $apieContext->withContext(RequestMethod::class, RequestMethod::GET)
+            /*->withContext(RestApiRouteDefinition::OPENAPI_ALL, true)*/
+            ->registerInstance($boundedContext);
+        foreach ($boundedContext->resources->filterOnApieContext($getAllContext) as $resource) {
+            $definition = new DisplayResourceOverviewRouteDefinition($resource, $boundedContext->getId());
+            $map[$definition->getOperationId()] = $definition;
+        }
+
         return new ActionHashmap($actions);
     }
 }
