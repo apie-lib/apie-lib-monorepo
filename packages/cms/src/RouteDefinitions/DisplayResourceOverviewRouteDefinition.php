@@ -2,12 +2,14 @@
 namespace Apie\Cms\RouteDefinitions;
 
 use Apie\Cms\Controllers\DashboardController;
+use Apie\Common\Actions\GetListAction;
 use Apie\Common\ContextConstants;
 use Apie\Core\Actions\HasRouteDefinition;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
 use Apie\Core\Actions\HasActionDefinition;
+use ReflectionClass;
 
 class DisplayResourceOverviewRouteDefinition implements HasRouteDefinition, HasActionDefinition
 {
@@ -44,6 +46,12 @@ class DisplayResourceOverviewRouteDefinition implements HasRouteDefinition, HasA
             ContextConstants::APIE_ACTION => $this->getAction(),
         ];
     }
+
+    public function getAction(): string
+    {
+        return GetListAction::class;
+    }
+
     public function getOperationId(): string
     {
         return 'apie.cms.dashboard.' . $this->id;

@@ -3,6 +3,7 @@ namespace Apie\Cms\RouteDefinitions;
 
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
+use Apie\Core\Enums\RequestMethod;
 use Apie\Core\RouteDefinitions\ActionHashmap;
 use Apie\Core\RouteDefinitions\RouteDefinitionProviderInterface;
 
