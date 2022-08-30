@@ -106,9 +106,14 @@ abstract class AbstractRenderTest extends TestCase
             new Layout\Menu($defaultConfiguration),
         ];
 
-        yield 'Resoure overview' => [
+        yield 'Resource overview' => [
             'expected-resource-overview.html',
             new Overview([['id' => 12, 'name' => 'Pizza']], ['id', 'name'])
+        ];
+
+        yield 'Resource overview large list' => [
+            'expected-resource-overview-large-list.html',
+            new Overview(array_fill(0, 100, ['id' => 12, 'name' => 'Pizza']), ['id', 'name'])
         ];
     }
 }
