@@ -3,6 +3,7 @@ namespace Apie\Cms\Controllers;
 
 use Apie\Common\ApieFacade;
 use Apie\Common\ContextConstants;
+use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
 use Apie\Core\Datalayers\Lists\PaginatedResult;
@@ -21,8 +22,9 @@ class GetResourceListController
     public function __construct(
         private readonly ApieFacade $apieFacade,
         private readonly ComponentFactory $componentFactory,
-        private readonly ContextBuilderFactory $contextBuilder,
-        private readonly ComponentRendererInterface $renderer
+        private readonly ContextBuilderFactory $contextBuilderFactory,
+        private readonly ComponentRendererInterface $renderer,
+        private readonly BoundedContextHashmap $boundedContextHashmap
     ) {
     }
 

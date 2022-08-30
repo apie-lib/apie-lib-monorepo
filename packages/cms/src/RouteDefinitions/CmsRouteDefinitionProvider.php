@@ -20,7 +20,7 @@ class CmsRouteDefinitionProvider implements RouteDefinitionProviderInterface
             ->registerInstance($boundedContext);
         foreach ($boundedContext->resources->filterOnApieContext($getAllContext) as $resource) {
             $definition = new DisplayResourceOverviewRouteDefinition($resource, $boundedContext->getId());
-            $map[$definition->getOperationId()] = $definition;
+            $actions[$definition->getOperationId()] = $definition;
         }
 
         return new ActionHashmap($actions);

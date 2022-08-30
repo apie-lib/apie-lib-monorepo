@@ -2,6 +2,7 @@
 namespace Apie\Cms\RouteDefinitions;
 
 use Apie\Cms\Controllers\DashboardController;
+use Apie\Cms\Controllers\GetResourceListController;
 use Apie\Common\Actions\GetListAction;
 use Apie\Common\ContextConstants;
 use Apie\Core\Actions\HasRouteDefinition;
@@ -13,7 +14,7 @@ use ReflectionClass;
 
 class DisplayResourceOverviewRouteDefinition implements HasRouteDefinition, HasActionDefinition
 {
-    public function __construct(private readonly ReflectionClass $class, private readonly BoundedContextId $id)
+    public function __construct(private readonly ReflectionClass $className, private readonly BoundedContextId $id)
     {
     }
 
@@ -24,7 +25,7 @@ class DisplayResourceOverviewRouteDefinition implements HasRouteDefinition, HasA
 
     public function getUrl(): UrlRouteDefinition
     {
-        return new UrlRouteDefinition('/'. $this->id . '/resource/' . $this->class->getShortName());
+        return new UrlRouteDefinition('/resource/' . $this->className->getShortName());
     }
     /**
      * @return class-string<object>
@@ -41,7 +42,7 @@ class DisplayResourceOverviewRouteDefinition implements HasRouteDefinition, HasA
         return [
             /*RestApiRouteDefinition::OPENAPI_ALL => true,*/
             ContextConstants::RESOURCE_NAME => $this->className->name,
-            ContextConstants::BOUNDED_CONTEXT_ID => $this->boundedContextId->toNative(),
+            ContextConstants::BOUNDED_CONTEXT_ID => $this->id->toNative(),
             ContextConstants::OPERATION_ID => $this->getOperationId(),
             ContextConstants::APIE_ACTION => $this->getAction(),
         ];
@@ -54,6 +55,6 @@ class DisplayResourceOverviewRouteDefinition implements HasRouteDefinition, HasA
 
     public function getOperationId(): string
     {
-        return 'apie.cms.dashboard.' . $this->id;
+        return 'apie.cms.' . $this->id . '.resource.' . $this->className->getShortName();
     }
 }
