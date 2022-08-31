@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Core\Actions;
+namespace Apie\Common\Interfaces;
 
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;

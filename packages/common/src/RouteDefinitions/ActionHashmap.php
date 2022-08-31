@@ -1,7 +1,7 @@
 <?php
-namespace Apie\Core\RouteDefinitions;
+namespace Apie\Common\RouteDefinitions;
 
-use Apie\Core\Actions\HasRouteDefinition;
+use Apie\Common\Interfaces\HasRouteDefinition;
 use Apie\Core\Lists\ItemHashmap;
 
 final class ActionHashmap extends ItemHashmap

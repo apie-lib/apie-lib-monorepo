@@ -49,8 +49,7 @@ class ComponentFactory
         ?BoundedContextId $boundedContextId,
         ApieContext $context,
         ComponentInterface $contents
-    ): ComponentInterface
-    {
+    ): ComponentInterface {
         $configuration = $this->applicationConfiguration->createConfiguration($context, $this->boundedContextHashmap, $boundedContextId);
         return new Layout(
             $pageTitle,

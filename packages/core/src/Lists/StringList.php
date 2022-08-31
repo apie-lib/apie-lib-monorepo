@@ -1,5 +1,5 @@
 <?php
-namespace Apie\RestApi\Lists;
+namespace Apie\Core\Lists;
 
 use Apie\Core\Lists\ItemList;
 

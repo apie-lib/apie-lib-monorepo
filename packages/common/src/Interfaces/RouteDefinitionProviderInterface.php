@@ -1,6 +1,7 @@
 <?php
-namespace Apie\Core\RouteDefinitions;
+namespace Apie\Common\Interfaces;
 
+use Apie\Common\RouteDefinitions\ActionHashmap;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
 

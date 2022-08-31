@@ -6,7 +6,6 @@ use Apie\Common\ContextConstants;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
-use Apie\Core\Datalayers\Lists\PaginatedResult;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\HtmlBuilders\Factories\ComponentFactory;
 use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
@@ -15,7 +14,6 @@ use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use ReflectionClass;
-use Stringable;
 
 class GetResourceListController
 {
