@@ -44,10 +44,15 @@ interface ApieFacadeInterface
 
     public function normalize(mixed $object, ApieContext $apieContext): string|int|float|bool|ItemList|ItemHashmap|null;
 
+    /**
+     * @param string|int|float|bool|ItemList<mixed>|ItemHashmap<mixed>|array<string, mixed>|null $object
+     */
     public function denormalizeNewObject(string|int|float|bool|ItemList|ItemHashmap|array|null $object, string $desiredType, ApieContext $apieContext): mixed;
 
+    /**
+     * @param string|int|float|bool|ItemList<mixed>|ItemHashmap<mixed>|array<string, mixed>|null $input
+     */
     public function denormalizeOnMethodCall(string|int|float|bool|ItemList|ItemHashmap|array|null $input, ?object $object, ReflectionMethod $method, ApieContext $apieContext): mixed;
 
     public function createAction(ApieContext $apieContext): ActionInterface;
-    
 }

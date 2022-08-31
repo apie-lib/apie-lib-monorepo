@@ -1,8 +1,6 @@
 <?php
 namespace Apie\Core\Lists;
 
-use Apie\Core\Lists\ItemList;
-
 class StringList extends ItemList
 {
     protected bool $mutable = false;

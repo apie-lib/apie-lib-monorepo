@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Console\Commands;
 
-use Apie\Common\ApieFacadeAction;
 use Apie\Common\ContextConstants;
 use Apie\Core\Actions\ActionInterface;
 use Apie\Core\BoundedContext\BoundedContext;

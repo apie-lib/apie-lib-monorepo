@@ -88,12 +88,6 @@ class OpenApiGenerator
     private function createSchemaForInput(ComponentsBuilder $componentsBuilder, RestApiRouteDefinition $routeDefinition): Schema|Reference
     {
         $input = $routeDefinition->getInputType();
-        if ($input instanceof ListOf) {
-            return new Schema([
-                'type' => 'array',
-                'items' => $this->doSchemaForInput($input->type, $componentsBuilder),
-            ]);
-        }
         
         return $this->doSchemaForInput($input, $componentsBuilder);
     }

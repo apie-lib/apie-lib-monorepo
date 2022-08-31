@@ -14,6 +14,9 @@ use ReflectionType;
 
 abstract class AbstractRestApiRouteDefinition implements RestApiRouteDefinition
 {
+    /**
+     * @param ReflectionClass<object> $class
+     */
     public function __construct(
         protected readonly ReflectionClass $class,
         protected readonly ?BoundedContextId $boundedContextId = null,

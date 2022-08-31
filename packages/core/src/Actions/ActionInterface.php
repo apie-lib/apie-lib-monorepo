@@ -3,6 +3,7 @@ namespace Apie\Core\Actions;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Dto\ListOf;
+use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Lists\StringList;
 use ReflectionClass;
 use ReflectionMethod;
@@ -22,7 +23,7 @@ interface ActionInterface
 
     /**
      * Gets input type of action, for example it should create the object on POST or do a method call.
-     * 
+     *
      * @template T of EntityInterface
      * @param ReflectionClass<T> $class
      * @return ReflectionClass<T>|ReflectionMethod|ReflectionType
@@ -31,7 +32,7 @@ interface ActionInterface
 
     /**
      * Returns output type of response, for example the resource being updated or the result of the method call.
-     * 
+     *
      * @template T of EntityInterface
      * @param ReflectionClass<T> $class
      * @return ReflectionClass<T>|ReflectionMethod|ReflectionType|ListOf
@@ -45,20 +46,20 @@ interface ActionInterface
 
     /**
      * Returns description of action.
-     * 
+     *
      * @param ReflectionClass<EntityInterface> $class
      */
     public static function getDescription(ReflectionClass $class): string;
 
     /**
      * Returns tags of an action so a tool can combine these.
-     * 
+     *
      * @param ReflectionClass<EntityInterface> $class
      */
     public static function getTags(ReflectionClass $class): StringList;
 
     /**
-     * @param ReflectionClass<EntityInterface>
+     * @param ReflectionClass<EntityInterface> $class
      * @return array<string, mixed>
      */
     public static function getRouteAttributes(ReflectionClass $class): array;

@@ -6,7 +6,6 @@ use Apie\Core\Lists\ItemList;
 use Apie\Faker\Interfaces\ApieClassFaker;
 use Faker\Generator;
 use ReflectionClass;
-use UnitEnum;
 
 /** @implements ApieClassFaker<ItemList> */
 class ItemListFaker implements ApieClassFaker

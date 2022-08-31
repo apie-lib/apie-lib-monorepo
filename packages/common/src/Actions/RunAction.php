@@ -2,11 +2,9 @@
 namespace Apie\Common\Actions;
 
 use Apie\Common\ContextConstants;
-use Apie\Core\Actions\ActionInterface;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
-use Apie\Core\Actions\ApieFacadeAction;
 use Apie\Core\Actions\ApieFacadeInterface;
 use Apie\Core\Actions\MethodActionInterface;
 use Apie\Core\Context\ApieContext;
