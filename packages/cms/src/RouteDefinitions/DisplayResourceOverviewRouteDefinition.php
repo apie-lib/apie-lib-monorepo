@@ -55,6 +55,6 @@ class DisplayResourceOverviewRouteDefinition implements HasRouteDefinition, HasA
 
     public function getOperationId(): string
     {
-        return 'apie.cms.' . $this->id . '.resource.' . $this->className->getShortName();
+        return 'cms.resource.' . $this->className->getShortName();
     }
 }
