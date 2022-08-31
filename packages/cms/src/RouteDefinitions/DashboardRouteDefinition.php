@@ -41,7 +41,7 @@ class DashboardRouteDefinition implements HasRouteDefinition
     }
     public function getOperationId(): string
     {
-        return 'apie.cms.dashboard.' . $this->id;
+        return 'apie.cms.dashboard';
     }
 
     public function getAction(): string
