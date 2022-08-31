@@ -34,7 +34,7 @@ class ComponentFactory
         ?BoundedContextId $boundedContextId
     ): ComponentInterface {
         assert($actionResponse->result instanceof PaginatedResult);
-        $listData = Utils::toArray($actionResponse->getResultAsNativeData());
+        $listData = Utils::toArray($actionResponse->getResultAsNativeData()['list']);
         $columns = array_keys($actionResponse->apieContext->getApplicableGetters($className)->toArray());
         return $this->createWrapLayout(
             $className->getShortName() . ' overview',
