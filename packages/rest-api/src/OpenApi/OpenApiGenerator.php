@@ -1,13 +1,13 @@
 <?php
 namespace Apie\RestApi\OpenApi;
 
+use Apie\Common\Interfaces\RouteDefinitionProviderInterface;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
+use Apie\Core\Dto\ListOf;
 use Apie\Core\Enums\RequestMethod;
-use Apie\Core\RouteDefinitions\RouteDefinitionProviderInterface;
 use Apie\RestApi\Interfaces\RestApiRouteDefinition;
-use Apie\RestApi\RouteDefinitions\ListOf;
 use Apie\SchemaGenerator\Builders\ComponentsBuilder;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
 use Apie\Serializer\Serializer;

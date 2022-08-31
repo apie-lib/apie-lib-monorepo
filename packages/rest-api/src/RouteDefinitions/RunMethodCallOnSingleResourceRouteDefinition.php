@@ -9,9 +9,6 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
-use Apie\RestApi\Controllers\RestApiController;
-use Apie\RestApi\Interfaces\RestApiRouteDefinition;
-use Apie\RestApi\Lists\StringList;
 use ReflectionClass;
 use ReflectionMethod;
 
@@ -30,7 +27,7 @@ class RunMethodCallOnSingleResourceRouteDefinition extends AbstractRestApiRouteD
 
     public function getOperationId(): string
     {
-        return 'get-single-' . $this->className->getShortName() . '-run-' . $this->method->name;
+        return 'get-single-' . $this->class->getShortName() . '-run-' . $this->method->name;
     }
     
     public function getMethod(): RequestMethod
@@ -46,7 +43,7 @@ class RunMethodCallOnSingleResourceRouteDefinition extends AbstractRestApiRouteD
 
     public function getUrl(): UrlRouteDefinition
     {
-        $url = $this->className->getShortName();
+        $url = $this->class->getShortName();
         $url .= ($this->method->isStatic()) ? '/' : ('/{' . ContextConstants::RESOURCE_ID . '}/');
         $url .= RunItemMethodAction::getDisplayNameForMethod($this->method);
         return new UrlRouteDefinition($url);

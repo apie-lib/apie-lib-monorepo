@@ -29,7 +29,7 @@ class GetSingleResourceRouteDefinition extends AbstractRestApiRouteDefinition
 
     public function getOperationId(): string
     {
-        return 'get-single-' . $this->className->getShortName();
+        return 'get-single-' . $this->class->getShortName();
     }
 
     public function getMethod(): RequestMethod
@@ -39,7 +39,7 @@ class GetSingleResourceRouteDefinition extends AbstractRestApiRouteDefinition
 
     public function getUrl(): UrlRouteDefinition
     {
-        return new UrlRouteDefinition($this->className->getShortName() . '/{' . ContextConstants::RESOURCE_ID . '}');
+        return new UrlRouteDefinition($this->class->getShortName() . '/{' . ContextConstants::RESOURCE_ID . '}');
     }
 
     public function getAction(): string

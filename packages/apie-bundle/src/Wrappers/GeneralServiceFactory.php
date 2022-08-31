@@ -1,10 +1,10 @@
 <?php
 namespace Apie\ApieBundle\Wrappers;
 
+use Apie\Common\Interfaces\RouteDefinitionProviderInterface;
+use Apie\Common\RouteDefinitions\ChainedRouteDefinitionsProvider;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
 use Apie\Core\ContextBuilders\ContextBuilderInterface;
-use Apie\Core\RouteDefinitions\ChainedRouteDefinitionsProvider;
-use Apie\Core\RouteDefinitions\RouteDefinitionProviderInterface;
 use Apie\Faker\ApieObjectFaker;
 use Apie\Faker\Interfaces\ApieClassFaker;
 use Faker\Factory;

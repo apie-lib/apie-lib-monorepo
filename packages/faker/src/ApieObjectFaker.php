@@ -116,6 +116,7 @@ final class ApieObjectFaker extends Base
             'null' => null,
             'bool' => $this->generator->randomElement([true, false]),
             'float' => $this->generator->randomFloat(),
+            'string' => $this->generator->randomAscii(),
             'int' => $this->generator->numberBetween(PHP_INT_MIN, PHP_INT_MAX),
             'mixed' => null,
             default => $this->fakeClass($type->getName()),
