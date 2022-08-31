@@ -1,7 +1,17 @@
 {% if property('loginOptions') %}
-    <gr-select label="Login" placeholder="Login" gr-change="console.log($event)">
+    <gr-select label="Login" placeholder="Login" class="login-select">
         {% for loginOption in property('loginOptions') %}
             <gr-menu-item value="{{ loginOption['value'] }}">{{ loginOption['name'] }}</gr-menu-item>
         {% endfor %}
     </gr-select>
+    <script>
+        (function (select) {
+            [...select.querySelectorAll('gr-menu-item')].map((item) => {
+                item.addEventListener('click', () => {
+                    location.href = item.value;
+                });
+            });
+            select.classList.remove('login-select');
+        })(document.querySelector('gr-select.login-select'));
+    </script>
 {% endif %}

@@ -16,6 +16,7 @@
   integrity="sha256-q5Jy9Y8HgOTpcoKEX2Z4uve7lucflCGuaxcMQezTtog="
   crossorigin="anonymous"
 ></script>
+<script src="https://cdn.jsdelivr.net/npm/@revolist/revogrid@3.2.11/dist/revo-grid/revo-grid.js"></script>
     </head>
     <body>
       <div class="layout">
@@ -25,7 +26,7 @@
         <aside style="background-color: white; z-index: 30; position: fixed; left: 0; top: 0;bottom: 0; width: 20%">
           {{ component('menu') }}
         </aside>
-        <div style="padding-left: 21%">
+        <div style="padding-left: 21%; width: 79%;">
           {{ component('content') }}
         </div>
       </div>

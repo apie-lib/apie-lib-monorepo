@@ -1,0 +1,22 @@
+<div>
+  <revo-grid style="max-height: 80%"/>
+  <script>
+  (function(grid) {
+    function renderCell(createElement, props) {
+      return createElement('div', {}, props.model[props.prop] || '');
+    }
+    const columns = ["id","name"]
+        .map(function (name) {
+          return {
+            prop: name,
+            name: name,
+            cellTemplate: renderCell,
+          }
+        });
+    const rows = [{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"},{"id":12,"name":"Pizza"}];
+
+    grid.columns = columns;
+    grid.source = rows;
+  })(document.querySelector('revo-grid'))
+  </script>
+</div>
