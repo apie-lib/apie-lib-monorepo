@@ -71,6 +71,16 @@ final class ContextConstants
      */
     public const OPENAPI = 'openapi';
 
+    /**
+     * Added if a REST API call is done.
+     */
+    public const REST_API='rest';
+
+    /**
+     * Added if CMS request is done.
+     */
+    public const CMS='cms';
+
     public const CREATE_OBJECT = 'create';
 
     public const EDIT_OBJECT = 'edit';

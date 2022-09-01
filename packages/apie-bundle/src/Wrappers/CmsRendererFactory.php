@@ -6,7 +6,8 @@ use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
 
-final class CmsRendererFactory {
+final class CmsRendererFactory
+{
     private function __construct()
     {
     }

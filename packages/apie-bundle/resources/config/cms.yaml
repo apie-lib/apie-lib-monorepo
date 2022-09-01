@@ -16,7 +16,6 @@ services:
       - '@Apie\HtmlBuilders\Factories\ComponentFactory'
       - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
       - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
-      - '@Apie\Core\BoundedContext\BoundedContextHashmap'
     tags: ['controller.service_arguments']
 
   Apie\HtmlBuilders\Interfaces\ComponentRendererInterface:
