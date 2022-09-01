@@ -1,7 +1,5 @@
 <?php
-namespace Apie\RestApi\Lists;
-
-use Apie\Core\Lists\ItemList;
+namespace Apie\Core\Lists;
 
 class StringList extends ItemList
 {

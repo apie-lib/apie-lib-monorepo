@@ -1,7 +1,7 @@
 <?php
-namespace Apie\RestApi\RouteDefinitions;
+namespace Apie\Core\Dto;
 
-use Apie\RestApi\Interfaces\RestApiRouteDefinition;
+use Apie\Core\Actions\ActionInterface;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionType;
@@ -9,8 +9,8 @@ use ReflectionType;
 /**
  * Used internally to indicate a paginated result of some object.
  *
- * @see RestApiRouteDefinition::getInputType()
- * @see RestApiRouteDefinition::getOutputType()
+ * @see ActionInterface::getInputType()
+ * @see ActionInterface::getOutputType()
  */
 final class ListOf
 {
