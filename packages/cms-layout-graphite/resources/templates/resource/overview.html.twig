@@ -4,7 +4,7 @@
   (function(grid) {
     function renderCell(createElement, props) {
       const value = props.model[props.prop];
-      if (value === undefined) {
+      if (value === undefined || value === null) {
         return createElement('ion-icon', { name: 'remove-outline' });
       }
       if (value === true) {
