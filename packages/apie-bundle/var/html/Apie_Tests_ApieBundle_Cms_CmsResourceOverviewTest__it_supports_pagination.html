@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Apie CMS - Title</title>
+        <title>Apie CMS - ManyColumns overview</title>
         <style>
             body {
     background-color: #EEEEEE;
@@ -51,17 +51,68 @@ nav {
         <aside style="background-color: white; z-index: 30; position: fixed; left: 0; top: 0;bottom: 0; width: 20%">
           <div style="max-height: calc(100vh - 7rem);overflow-y: auto;">
 <nav style="top: 7rem; flex: 1 1 0%;width: 20%">
-            <a href="/default/resource/UserWithAddress" style="align-items: center; color: var(--gr-color-dark); display: flex; font-weight: var(--gr-font-weight-normal); margin-left: 0.5rem; padding: 0.5rem;"/>
-            UserWithAddress
+            <a href="/cms/default/resource/ManyColumns" style="align-items: center; color: var(--gr-color-dark); display: flex; font-weight: var(--gr-font-weight-normal); margin-left: 0.5rem; padding: 0.5rem;"/>
+            ManyColumns
         </a>
-            <a href="/default/resource/Order" style="align-items: center; color: var(--gr-color-dark); display: flex; font-weight: var(--gr-font-weight-normal); margin-left: 0.5rem; padding: 0.5rem;"/>
-            Order
+            <a href="/cms/default/resource/User" style="align-items: center; color: var(--gr-color-dark); display: flex; font-weight: var(--gr-font-weight-normal); margin-left: 0.5rem; padding: 0.5rem;"/>
+            User
         </a>
     </nav>
 </div>
         </aside>
         <div style="padding-left: 21%; width: 79%;">
-          <marquee>Hello world</marquee>
+          <div>
+  <revo-grid style="max-height: 80%"/>
+  <script>
+  (function(grid) {
+    function renderCell(createElement, props) {
+      const value = props.model[props.prop];
+      if (value === undefined) {
+        return createElement('ion-icon', { name: 'remove-outline' });
+      }
+      if (value === true) {
+        return createElement('ion-icon', { name: 'checkmark-outline' });
+      }
+      if (value === false) {
+        return createElement('ion-icon', { name: 'close-outline'});
+      }
+      if (value === 0) {
+        return createElement('div', {}, 0);
+      }
+      if (typeof value === 'number') {
+        if (value !== parseInt(value, 10)) {
+          return createElement('div', { title: value }, value.toFixed(4));
+        }
+      }
+      return createElement('div', {}, value || '');
+    }
+    const columns = ["stringValue","intValue","booleanValue","floatValue","nullableStringValue","nullableIntValue","nullableBooleanValue","nullableFloatValue","id"]
+        .map(function (name) {
+          return {
+            prop: name,
+            name: name,
+            cellTemplate: renderCell,
+          }
+        });
+    const rows = [{"stringValue":"This is text 40","intValue":1600,"booleanValue":false,"floatValue":0.024390243902439025,"nullableStringValue":"This is text 40","nullableIntValue":1600,"nullableBooleanValue":false,"nullableFloatValue":0.023809523809523808,"id":41},{"stringValue":"This is text 41","intValue":1681,"booleanValue":true,"floatValue":0.023809523809523808,"nullableStringValue":"This is text 41","nullableIntValue":1681,"nullableBooleanValue":true,"nullableFloatValue":0.023255813953488372,"id":42},{"stringValue":"This is text 42","intValue":1764,"booleanValue":false,"floatValue":0.023255813953488372,"nullableStringValue":"This is text 42","nullableIntValue":1764,"nullableBooleanValue":false,"nullableFloatValue":0.022727272727272728,"id":43},{"stringValue":"This is text 43","intValue":1849,"booleanValue":true,"floatValue":0.022727272727272728,"nullableStringValue":"This is text 43","nullableIntValue":1849,"nullableBooleanValue":true,"nullableFloatValue":0.022222222222222223,"id":44},{"stringValue":"This is text 44","intValue":1936,"booleanValue":false,"floatValue":0.022222222222222223,"nullableStringValue":"This is text 44","nullableIntValue":1936,"nullableBooleanValue":false,"nullableFloatValue":0.021739130434782608,"id":45},{"stringValue":"This is text 45","intValue":2025,"booleanValue":true,"floatValue":0.021739130434782608,"nullableStringValue":"This is text 45","nullableIntValue":2025,"nullableBooleanValue":true,"nullableFloatValue":0.02127659574468085,"id":46},{"stringValue":"This is text 46","intValue":2116,"booleanValue":false,"floatValue":0.02127659574468085,"nullableStringValue":"This is text 46","nullableIntValue":2116,"nullableBooleanValue":false,"nullableFloatValue":0.020833333333333332,"id":47},{"stringValue":"This is text 47","intValue":2209,"booleanValue":true,"floatValue":0.020833333333333332,"nullableStringValue":"This is text 47","nullableIntValue":2209,"nullableBooleanValue":true,"nullableFloatValue":0.02040816326530612,"id":48},{"stringValue":"This is text 48","intValue":2304,"booleanValue":false,"floatValue":0.02040816326530612,"nullableStringValue":"This is text 48","nullableIntValue":2304,"nullableBooleanValue":false,"nullableFloatValue":0.02,"id":49},{"stringValue":"This is text 49","intValue":2401,"booleanValue":true,"floatValue":0.02,"nullableStringValue":"This is text 49","nullableIntValue":2401,"nullableBooleanValue":true,"nullableFloatValue":0.0196078431372549,"id":50},{"stringValue":"This is text 50","intValue":2500,"booleanValue":false,"floatValue":0.0196078431372549,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":51},{"stringValue":"This is text 51","intValue":2601,"booleanValue":true,"floatValue":0.019230769230769232,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":52},{"stringValue":"This is text 52","intValue":2704,"booleanValue":false,"floatValue":0.018867924528301886,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":53},{"stringValue":"This is text 53","intValue":2809,"booleanValue":true,"floatValue":0.018518518518518517,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":54},{"stringValue":"This is text 54","intValue":2916,"booleanValue":false,"floatValue":0.01818181818181818,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":55},{"stringValue":"This is text 55","intValue":3025,"booleanValue":true,"floatValue":0.017857142857142856,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":56},{"stringValue":"This is text 56","intValue":3136,"booleanValue":false,"floatValue":0.017543859649122806,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":57},{"stringValue":"This is text 57","intValue":3249,"booleanValue":true,"floatValue":0.017241379310344827,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":58},{"stringValue":"This is text 58","intValue":3364,"booleanValue":false,"floatValue":0.01694915254237288,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":59},{"stringValue":"This is text 59","intValue":3481,"booleanValue":true,"floatValue":0.016666666666666666,"nullableStringValue":null,"nullableIntValue":null,"nullableBooleanValue":null,"nullableFloatValue":null,"id":60}];
+    // grid.theme = 'material';
+    grid.columns = columns;
+    grid.source = rows;
+  })(document.querySelector('revo-grid'))
+  </script>
+  <div>
+    <div>
+        Shown 20 of 100
+    </div>
+    <div>
+                    <gr-button onclick="alert(&quot;&quot;)" size="small">1</gr-button>
+                    <gr-button onclick="alert(&quot;?page=1&quot;)" size="small">2</gr-button>
+                    <gr-button onclick="alert(&quot;?page=2&quot;)" size="small">3</gr-button>
+                    <gr-button onclick="alert(&quot;?page=3&quot;)" size="small">4</gr-button>
+                    <gr-button onclick="alert(&quot;?page=4&quot;)" size="small">5</gr-button>
+            </div>
+</div>
+</div>
         </div>
       </div>
     </body>

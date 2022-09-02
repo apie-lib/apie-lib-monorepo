@@ -3,7 +3,25 @@
   <script>
   (function(grid) {
     function renderCell(createElement, props) {
-      return createElement('div', {}, props.model[props.prop] || '');
+      const value = props.model[props.prop];
+      if (value === undefined) {
+        return createElement('ion-icon', { name: 'remove-outline' });
+      }
+      if (value === true) {
+        return createElement('ion-icon', { name: 'checkmark-outline' });
+      }
+      if (value === false) {
+        return createElement('ion-icon', { name: 'close-outline'});
+      }
+      if (value === 0) {
+        return createElement('div', {}, 0);
+      }
+      if (typeof value === 'number') {
+        if (value !== parseInt(value, 10)) {
+          return createElement('div', { title: value }, value.toFixed(4));
+        }
+      }
+      return createElement('div', {}, value || '');
     }
     const columns = ["id","name"]
         .map(function (name) {
@@ -14,9 +32,10 @@
           }
         });
     const rows = [{"id":12,"name":"Pizza"}];
-
+    // grid.theme = 'material';
     grid.columns = columns;
     grid.source = rows;
   })(document.querySelector('revo-grid'))
   </script>
+  
 </div>
