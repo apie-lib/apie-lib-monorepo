@@ -50,7 +50,7 @@ parameters:
         -
             message: '#constructor expects Apie\\SchemaGenerator\\Interfaces\\SchemaProvider\<object\>#'
             path: packages/schema-generator/src/ComponentsBuilderFactory.php
-            count: 11
+            count: 12
 
         -
             message: '#Negated boolean expression is always false#'
@@ -68,14 +68,14 @@ parameters:
             count: 1
 
         -
-            message: '#type Apie\\Core\\ValueObjects\\IsPasswordValueObject#'
+            message: '#Call to an undefined static method \*NEVER\*::#'
             path: packages/faker/src/Fakers/PasswordValueObjectFaker.php
-            count: 2
+            count: 8
         
         -
             message: '#constructor expects Apie\\Faker\\Interfaces\\ApieClassFaker<object>,#'
             path: packages/faker/src/ApieObjectFaker.php
-            count: 6
+            count: 5
 
         -
             message: '#Unable to resolve the template type T in call to method#'
