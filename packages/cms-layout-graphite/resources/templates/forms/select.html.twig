@@ -1,0 +1,5 @@
+<gr-select label="{{ property('name') }}" name="{{ property('name') }}" value="{{ property('value') }}">
+  {% for option in property('options') %}
+    <gr-menu-item value="{{ option.value }}">{{ option.display }}</gr-menu-item>
+  {% endfor %}
+</gr-select>
