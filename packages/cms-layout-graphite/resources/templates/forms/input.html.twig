@@ -1,2 +1,9 @@
-<gr-input label="{{ property('name') }}" name="{{ property('name') }}" value="{{ property('value') }}" type="{{ property('type') }}">
+<gr-input
+    label="{{ property('name') }}"
+    name="{{ property('name') }}"
+    value="{{ property('value') }}"
+    type="{{ property('type') }}"
+    {% for value, key in property('additionalAttributes') %}
+    {{ key }}="{{ value }}"
+    {% endfor %}>
 </gr-input>
