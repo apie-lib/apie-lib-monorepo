@@ -27,8 +27,19 @@ class UnionTypehintComponentProvider implements FormComponentProviderInterface
         $formComponentFactory = $context->getContext(FormComponentFactory::class);
         $components = [];
         foreach ($type->getTypes() as $subType) {
-            $components[(string) $subType] = $formComponentFactory->createFromType($context, $subType, $prefix, $filledIn);
+            $key = $this->getSafePanelName($subType);
+            $components[$key] = $formComponentFactory->createFromType($context, $subType, $prefix, $filledIn);
         }
         return new TabSplit(Utils::toFormName($prefix), $filledIn[end($prefix)] ?? '', new ComponentHashmap($components));
+    }
+
+    public function getSafePanelName(ReflectionType $type): string
+    {
+        $type = (string) $type;
+        $pos = strrpos($type, '\\');
+        if ($pos !== false) {
+            $type = substr($type, $pos + 1);
+        }
+        return preg_replace('/[^A-Za-z0-9]/', '_', $type);
     }
 }
