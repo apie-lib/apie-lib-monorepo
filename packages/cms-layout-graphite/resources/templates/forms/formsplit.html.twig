@@ -1,0 +1,23 @@
+<div style="margin: 2%">
+  <gr-select name="{{ property('internalTypeName') }}" class="unhandled-tab-split" label="Type for {{ property('name') }}">
+    {% for tab in property('tabs') %}
+      <gr-menu-item value="{{ tab }}">{{ tab }}</gr-menu-item>
+    {% endfor %}
+  </gr-select>
+  <div>
+    {{ component(property('tabs')|first) }}
+  </div>
+</div>
+<script>
+(function(element){
+  element.classList.remove('unhandled-tab-split');
+  const templates = {};
+  {% for tab in property('tabs') %}
+    templates[{{ tab|e|json_encode|raw }}] = {{ component(tab)|json_encode|raw }};
+  {% endfor %}
+  element.addEventListener('gr-change', function (event) {
+    const target = event.target || element;
+    target.nextSibling.nextSibling.innerHTML = templates[target.value];
+  })
+})(document.querySelector('.unhandled-tab-split'));
+</script>

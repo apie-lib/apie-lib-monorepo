@@ -3,7 +3,7 @@
     name="{{ property('name') }}"
     value="{{ property('value') }}"
     type="{{ property('type') }}"
-    {% for value, key in property('additionalAttributes') %}
+    {% for key, value in property('additionalAttributes') %}
     {{ key }}="{{ value }}"
     {% endfor %}>
 </gr-input>
