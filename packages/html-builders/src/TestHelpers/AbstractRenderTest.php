@@ -8,6 +8,7 @@ use Apie\Fixtures\BoundedContextFactory;
 use Apie\HtmlBuilders\Components\Dashboard\RawContents;
 use Apie\HtmlBuilders\Components\Forms\Form;
 use Apie\HtmlBuilders\Components\Forms\FormSplit;
+use Apie\HtmlBuilders\Components\Forms\HiddenField;
 use Apie\HtmlBuilders\Components\Forms\Input;
 use Apie\HtmlBuilders\Components\Layout;
 use Apie\HtmlBuilders\Components\Layout\BoundedContextSelect;
@@ -132,6 +133,10 @@ abstract class AbstractRenderTest extends TestCase
         yield 'Simple password field' => [
             'expected-input-password.html',
             new Input('name', 'value', 'password')
+        ];
+        yield 'Hidden field' => [
+            'expected-hidden-field.html',
+            new HiddenField('name', 'value')
         ];
 
         yield 'Union type' => [

@@ -3,7 +3,6 @@ namespace Apie\HtmlBuilders\Factories\Concrete;
 
 use Apie\Core\Context\ApieContext;
 use Apie\HtmlBuilders\Components\Forms\FormSplit;
-use Apie\HtmlBuilders\Components\Forms\TabSplit;
 use Apie\HtmlBuilders\Factories\FormComponentFactory;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\Interfaces\FormComponentProviderInterface;
