@@ -70,6 +70,9 @@ class Serializer
         }
         $returnValue = [];
         foreach ($apieContext->getApplicableGetters(new ReflectionClass($object)) as $name => $getter) {
+            if ($getter->isStatic()) {
+                continue;
+            }
             if ($getter instanceof ReflectionProperty) {
                 $returnValue[$name] = $serializerContext->normalizeChildElement($name, $getter->getValue($object));
                 continue;
