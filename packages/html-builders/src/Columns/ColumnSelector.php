@@ -6,20 +6,32 @@ use Apie\Core\Entities\PolymorphicEntityInterface;
 use Generator;
 use ReflectionClass;
 
-final class ColumnSelector {
+final class ColumnSelector
+{
     /**
      * @return array<int, string>
      */
     public function getColumns(ReflectionClass $class, ApieContext $context): array
     {
+        $done = [];
+        return $this->getInternalColumns($class, $context, $done);
+    }
+
+    public function getInternalColumns(ReflectionClass $class, ApieContext $context, array& $internalDone): array
+    {
+        if (isset($internalDone[$class->name])) {
+            return [];
+        }
+        $internalDone[$class->name] = true;
         $columns = $this->getFromSingleClass($class, $context);
         usort($columns, [$this, 'sortCallback']);
         if ($class->implementsInterface(PolymorphicEntityInterface::class)) {
-            $discriminatorColumns = $this->getPolymorphicColumns($class);
+            $done = [];
+            $discriminatorColumns = $this->getPolymorphicColumns($class, $done);
             $columns = [...array_slice($columns, 0, 1), ...$discriminatorColumns, ...array_slice($columns, 1)];
             $done = [];
             foreach ($this->iterateOverChildClasses($class, $done) as $childClass) {
-                $columns = [...$columns, $this->getColumns($childClass, $context)];
+                $columns = [...$columns, ...$this->getInternalColumns($childClass, $context, $internalDone)];
             }
             $columns = array_values(array_unique($columns));
         }
@@ -36,6 +48,7 @@ final class ColumnSelector {
             $method = $class->getMethod('getDiscriminatorMapping');
             if ($method->getDeclaringClass()->name === $class->name && !$method->isAbstract()) {
                 yield $method->invoke(null);
+            }
             $class = $class->getParentClass();
         }
     }
@@ -47,7 +60,7 @@ final class ColumnSelector {
     {
         $method = $class->getMethod('getDiscriminatorMapping');
         $declaredClass = $method->getDeclaringClass()->name;
-        if (in_array($declaredClass, $done)) {
+        if (in_array($declaredClass, $done) || $class->name !== $declaredClass) {
             return;
         }
         $done[] = $declaredClass;
@@ -62,13 +75,17 @@ final class ColumnSelector {
     /**
      * @return array<int, string>
      */
-    public function getPolymorphicColumns(ReflectionClass $class): array
+    public function getPolymorphicColumns(ReflectionClass $class, array& $done): array
     {
+        if (isset($done[$class->name])) {
+            return [];
+        }
+        $done[$class->name] = true;
         $list = [];
         foreach ($this->iterateOverDiscriminatorMappings($class) as $mapping) {
-            $list[] = $mapping->getPropertyMapping();
+            $list[] = $mapping->getPropertyName();
             foreach ($mapping->getConfigs() as $config) {
-                array_push($list, ...$this->getPolymorphicColumns(new ReflectionClass($config->getClassName())));
+                array_push($list, ...$this->getPolymorphicColumns(new ReflectionClass($config->getClassName()), $done));
             }
         }
         
@@ -85,25 +102,27 @@ final class ColumnSelector {
         return $columns;
     }
 
-    private function sortCallback(string $input1, string $input2): int {
-            $rating1 = $this->rating($input1);
-            $rating2 = $this->rating($input2);
-            if ($rating1 === $rating2) {
-                return $input1 <=> $input2;
-            }
-            return $rating1 <=> $rating2;
+    private function sortCallback(string $input1, string $input2): int
+    {
+        $rating1 = $this->rating($input1);
+        $rating2 = $this->rating($input2);
+
+        if ($rating1 === $rating2) {
+            return $input1 <=> $input2;
+        }
+        return $rating1 <=> $rating2;
     }
 
     private function rating(string $input): int
     {
-        if (stripos('status', $input) !== false) {
-            return 150;
+        if (stripos($input, 'status') !== false) {
+            return -150;
         }
         $ratings = [
-            'id' => 300,
-            'name' => 250,
-            'email' => 200,
-            'description' => -100,
+            'id' => -300,
+            'name' => -250,
+            'email' => -200,
+            'description' => 100,
         ];
         return $ratings[$input] ?? 0;
     }

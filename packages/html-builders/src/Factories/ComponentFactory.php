@@ -9,6 +9,7 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\Datalayers\Lists\PaginatedResult;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\Utils;
+use Apie\HtmlBuilders\Columns\ColumnSelector;
 use Apie\HtmlBuilders\Components\Dashboard\RawContents;
 use Apie\HtmlBuilders\Components\Forms\Form;
 use Apie\HtmlBuilders\Components\Layout;

@@ -1,38 +1,40 @@
 <?php
 namespace Apie\Tests\HtmlBuilders\Columns;
 
+use Apie\Core\Context\ApieContext;
 use Apie\Fixtures\Entities\Order;
 use Apie\Fixtures\Entities\Polymorphic\Animal;
 use Apie\Fixtures\Entities\Polymorphic\Cow;
 use Apie\HtmlBuilders\Columns\ColumnSelector;
+use Generator;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 class ColumnSelectorTest extends TestCase
 {
     /**
      * @test
+     * @dataProvider classProvider
      */
-    public function it_can_retrieve_columns_from_an_entity()
+    public function it_can_retrieve_columns_from_an_entity(array $expected, string $class)
     {
         $testItem = new ColumnSelector();
-        $this->assertEquals(['id', 'orderStatus', 'orderLines'], $testItem->getColumns(Order::class));
+        $this->assertEquals($expected, $testItem->getColumns(new ReflectionClass($class), new ApieContext()));
     }
 
-    /**
-     * @test
-     */
-    public function it_can_retrieve_columns_from_polymorphic_entity_base_class()
+    public function classProvider(): Generator
     {
-        $testItem = new ColumnSelector();
-        $this->assertEquals(['id', 'orderStatus', 'orderLines'], $testItem->getColumns(Animal::class));
-    }
-
-    /**
-     * @test
-     */
-    public function it_can_retrieve_columns_from_polymorphic_entity_instance_class()
-    {
-        $testItem = new ColumnSelector();
-        $this->assertEquals(['id', 'orderStatus', 'orderLines'], $testItem->getColumns(Cow::class));
+        yield 'Regular entity' => [
+            ['id', 'orderStatus', 'orderLines'],
+            Order::class
+        ];
+        yield 'Polymorphic entity base class' => [
+            ['id', 'animalType', 'hasMilk', 'starving', 'poisonous'],
+            Animal::class
+        ];
+        yield 'Polymorphic entity child class' => [
+            ['id', 'animalType', 'hasMilk'],
+            Cow::class
+        ];
     }
 }
