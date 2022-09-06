@@ -22,11 +22,15 @@ use Stringable;
 
 class ComponentFactory
 {
+    private ColumnSelector $columnSelector;
+
     public function __construct(
         private readonly ApplicationConfiguration $applicationConfiguration,
         private readonly BoundedContextHashmap $boundedContextHashmap,
-        private readonly FormComponentFactory $formComponentFactory
+        private readonly FormComponentFactory $formComponentFactory,
+        ?ColumnSelector $columnSelector = null
     ) {
+        $this->columnSelector = $columnSelector ?? new ColumnSelector();
     }
 
     public function createRawContents(Stringable|string $dashboardContents): ComponentInterface
@@ -41,7 +45,7 @@ class ComponentFactory
     ): ComponentInterface {
         assert($actionResponse->result instanceof PaginatedResult);
         $listData = Utils::toArray($actionResponse->getResultAsNativeData()['list']);
-        $columns = array_keys($actionResponse->apieContext->getApplicableGetters($className)->toArray());
+        $columns = $this->columnSelector->getColumns($className, $actionResponse->apieContext);
         $pagination = $this->createRawContents('');
         if ($actionResponse->result->totalCount > $actionResponse->result->pageSize) {
             $pagination = new Pagination($actionResponse->result);
