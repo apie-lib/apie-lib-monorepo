@@ -50,15 +50,15 @@ jobs:
       # no tag
       - name: Pushes to apie-lib/${{ matrix.package }}, branch '${{ github.ref_name }}'
         if: "!startsWith(github.ref, 'refs/tags/')"
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
+        uses: andstor/copycat-action@3.2.4
         with:
-          source_file: 'packages/${{ matrix.package }}'
-          destination_repo: 'apie-lib/${{ matrix.package }}'
-          destination_branch: '${{ github.ref_name }}'
-          user_email: 'pieter_jordaan@hotmail.com'
-          user_name: 'pjordaan'
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          src_path: 'packages/${{ matrix.package }}'
+          dst_path: .
+          dst_owner: apie-lib
+          dst_repo_name: '${{ matrix.package }}'
+          dst_branch: '${{ github.ref_name }}'
+          clean: true
 
       # with tag
       -
