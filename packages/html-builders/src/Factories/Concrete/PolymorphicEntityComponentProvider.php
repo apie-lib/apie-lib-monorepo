@@ -39,7 +39,8 @@ class PolymorphicEntityComponentProvider implements FormComponentProviderInterfa
         $mapping = $method->invoke(null);
         $propertyName = $mapping->getPropertyName();
         $configs = $mapping->getConfigs();
-        $value = $filledIn[$propertyName] ?? reset($configs);
+        $configKeys = array_keys($configs);
+        $value = $filledIn[$propertyName] ?? reset($configs)->getDiscriminator();
         $components = [];
         foreach ($configs as $config) {
             $components[$config->getDiscriminator()] = $formComponentFactory->createFromClass(

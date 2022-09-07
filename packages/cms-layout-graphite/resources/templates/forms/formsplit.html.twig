@@ -5,7 +5,6 @@
     {% endfor %}
   </gr-select>
   <div>
-    {{ component(property('tabs')|first) }}
   </div>
 </div>
 <script>
@@ -17,7 +16,8 @@
   {% endfor %}
   element.addEventListener('gr-change', function (event) {
     const target = event.target || element;
-    target.nextSibling.nextSibling.innerHTML = templates[target.value];
+    setInnerHtml(target.nextElementSibling, templates[target.value])
   })
+  setInnerHtml(element.nextElementSibling, templates[element.value])
 })(document.querySelector('.unhandled-tab-split'));
 </script>

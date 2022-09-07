@@ -36,7 +36,7 @@ class ComponentHelperExtension extends AbstractExtension
             new TwigFunction('component', [$this, 'component'], ['is_safe' => ['all']]),
             new TwigFunction('property', [$this, 'property'], []),
             new TwigFunction('assetUrl', [$this, 'assetUrl'], []),
-            new TwigFunction('assetContent', [$this, 'assetContent'], []),
+            new TwigFunction('assetContent', [$this, 'assetContent'], ['is_safe' => ['all']]),
         ];
     }
 
