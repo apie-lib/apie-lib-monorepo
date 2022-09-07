@@ -55,7 +55,7 @@ jobs:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           src_branch: '${{ github.ref_name }}'
           src_path: 'packages/${{ matrix.package }}'
-          dst_path: ..
+          dst_path: /.
           dst_owner: apie-lib
           dst_repo_name: '${{ matrix.package }}'
           dst_branch: '${{ github.ref_name }}'
