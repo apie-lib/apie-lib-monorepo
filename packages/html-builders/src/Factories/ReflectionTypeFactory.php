@@ -23,7 +23,7 @@ final class ReflectionTypeFactory {
                 'return new class { public function method(): ' . $typehint . '{} };'
             );
             $refl = new ReflectionClass($fakeClass);
-            self::$alreadyCreated[$typehint] = $refl->getMethod()->getReturnType();
+            self::$alreadyCreated[$typehint] = $refl->getMethod('method')->getReturnType();
         }
         return self::$alreadyCreated[$typehint];
     }
