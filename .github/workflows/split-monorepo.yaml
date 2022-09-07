@@ -57,7 +57,7 @@ jobs:
           source_file: 'packages/${{ matrix.package }}'
           destination_repo: 'apie-lib/${{ matrix.package }}'
           destination_folder: '.'
-          destination_branch: '${{ github.ref_name }}'
+          destination_branch_create: '${{ github.ref_name }}'
           user_email: 'pieter_jordaan@hotmail.com'
           user_name: 'pjordaan'
 
