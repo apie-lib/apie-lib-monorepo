@@ -72,14 +72,16 @@ final class FormComponentFactory
             return $this->createFromType($context, $typehint, $prefix, $filledIn);
         }
 
-        public function createFromClass(ApieContext $context, ReflectionClass $class, array $prefix, array $filledIn): ComponentInterface
+        public function createFromClass(ApieContext $context, ReflectionClass $class, array $prefix, array $filledIn, bool $providerCheck = true): ComponentInterface
         {
             $components = [];
-            $typehint = ReflectionTypeFactory::createReflectionType($class->name);
-            $context = $context->withContext(FormComponentFactory::class, $this);
-            foreach ($this->formComponentProviders as $formComponentProvider) {
-                if ($formComponentProvider->supports($typehint, $context)) {
-                    return $formComponentProvider->createComponentFor($typehint, $context, $prefix, $filledIn);
+            if ($providerCheck) {
+                $typehint = ReflectionTypeFactory::createReflectionType($class->name);
+                $context = $context->withContext(FormComponentFactory::class, $this);
+                foreach ($this->formComponentProviders as $formComponentProvider) {
+                    if ($formComponentProvider->supports($typehint, $context)) {
+                        return $formComponentProvider->createComponentFor($typehint, $context, $prefix, $filledIn);
+                    }
                 }
             }
 
@@ -100,7 +102,6 @@ final class FormComponentFactory
                     $components[] = $this->createFromType($context, $setter->getType(), $componentPrefix, $filledIn[$key] ?? []);
                 }
             }
-
             return new FormGroup(
                 Utils::toFormName($prefix),
                 ...$components
