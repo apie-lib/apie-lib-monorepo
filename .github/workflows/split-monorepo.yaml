@@ -50,16 +50,16 @@ jobs:
       # no tag
       - name: Pushes to apie-lib/${{ matrix.package }}, branch '${{ github.ref_name }}'
         if: "!startsWith(github.ref, 'refs/tags/')"
-        uses: cpina/github-action-push-to-another-repository@main
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
         with:
-          source-directory: 'packages/${{ matrix.package }}'
-          destination-github-username: 'apie-lib'
-          destination-repository-name: '${{ matrix.package }}'
-          user-email: pieter_jordaan@hotmail.com
-          user-name: "Pieter Jordaan"
-          target-branch: '${{ github.ref_name }}'
+          source_file: 'packages/${{ matrix.package }}'
+          destination_repo: 'apie-lib/${{ matrix.package }}'
+          destination_folder: '.'
+          destination_branch: '${{ github.ref_name }}'
+          user_email: 'pieter_jordaan@hotmail.com'
+          user_name: 'pjordaan'
 
       # with tag
       -
