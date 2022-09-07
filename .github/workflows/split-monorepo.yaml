@@ -48,21 +48,22 @@ jobs:
         uses: actions/checkout@v2
 
       # no tag
-      -
-        name: Monorepo Split of ${{ matrix.package }} (no tag)
+      - name: Pushes to apie-lib/${{ matrix.package }}, branch '${{ github.ref_name }}'
         if: "!startsWith(github.ref, 'refs/tags/')"
-        uses: "symplify/monorepo-split-github-action@2.1"
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
         with:
-          package_directory: 'packages/${{ matrix.package }}'
-          repository_organization: 'apie-lib'
-          repository_name: '${{ matrix.package }}'
-          user_name: "Pieter Jordaan"
-          user_email: "pieter_jordaan@hotmail.com"
-          branch: '${{ github.ref_name }}'
+          source-directory: 'packages/${{ matrix.package }}'
+          destination-github-username: 'apie-lib'
+          destination-repository-name: '${{ matrix.package }}'
+          user-email: pieter_jordaan@hotmail.com
+          user-name: "Pieter Jordaan"
+          target-branch: '${{ github.ref_name }}'
 
       # with tag
       -
-        name: Monorepo Split of ${{ matrix.package }} (tag)
+        name: Pushes tag to apie-lib/${{ matrix.package }}
         if: "startsWith(github.ref, 'refs/tags/')"
         uses: "symplify/monorepo-split-github-action@2.1"
         with:
