@@ -50,7 +50,7 @@ jobs:
       # no tag
       - name: Pushes to apie-lib/${{ matrix.package }}, branch '${{ github.ref_name }}'
         if: "!startsWith(github.ref, 'refs/tags/')"
-        uses: andstor/copycat-action@3.2.4
+        uses: andstor/copycat-action@v3.2.4
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           src_path: 'packages/${{ matrix.package }}'
