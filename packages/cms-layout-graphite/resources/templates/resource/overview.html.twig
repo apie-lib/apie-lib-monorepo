@@ -5,9 +5,9 @@
     const importantNameColumns = ['displayName', 'name', 'internalName', 'shortDescription', 'description', 'productDescription', 'id'];
     function renderCell(createElement, props) {
       const value = props.model[props.prop];
-      return renderValue(value);
+      return renderValue(createElement, value);
     }
-    function renderValue(value) {
+    function renderValue(createElement, value) {
       if (value === undefined || value === null) {
         return createElement('ion-icon', { name: 'remove-outline' });
       }
