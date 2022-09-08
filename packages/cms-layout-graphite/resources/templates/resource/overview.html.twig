@@ -2,8 +2,12 @@
   <revo-grid style="max-height: 80%"></revo-grid>
   <script>
   (function(grid) {
+    const importantNameColumns = ['displayName', 'name', 'internalName', 'shortDescription', 'description', 'productDescription', 'id'];
     function renderCell(createElement, props) {
       const value = props.model[props.prop];
+      return renderValue(value);
+    }
+    function renderValue(value) {
       if (value === undefined || value === null) {
         return createElement('ion-icon', { name: 'remove-outline' });
       }
@@ -20,6 +24,21 @@
         if (value !== parseInt(value, 10)) {
           return createElement('div', { title: value }, value.toFixed(4));
         }
+      }
+      if (Array.isArray(value)) {
+        let components = [];
+        for (val of value) {
+          components.push(createElement('gr-tag', { size: 'small' }, renderValue(createElement, val)))
+        }
+        return createElement('div', { }, components);
+      }
+      if (typeof value === 'object') {
+        for (column of importantNameColumns) {
+          if (value[column]) {
+            return renderValue(createElement, value[column]);
+          }
+        }
+        return renderValue(createElement, value[Object.keys(value)[0]]);
       }
       return createElement('div', {}, value || '');
     }
