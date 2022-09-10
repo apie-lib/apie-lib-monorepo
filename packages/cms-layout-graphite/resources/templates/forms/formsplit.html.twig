@@ -1,5 +1,5 @@
 <div style="margin: 2%">
-  <gr-select name="{{ property('internalTypeName') }}" class="unhandled-tab-split" label="Type for {{ property('name') }}">
+  <gr-select name="{{ property('name').getTypehintName() }}" class="unhandled-tab-split" label="Type for {{ property('name') }}">
     {% for tab in property('tabs') %}
       <gr-menu-item value="{{ tab }}">{{ tab }}</gr-menu-item>
     {% endfor %}

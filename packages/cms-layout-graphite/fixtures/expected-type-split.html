@@ -1,16 +1,9 @@
 <div style="margin: 2%">
-  <gr-select name="_apie[form][name]" class="unhandled-tab-split" label="Type for form[name]">
+  <gr-select name="_apie[typehint][name]" class="unhandled-tab-split" label="Type for form[name]">
           <gr-menu-item value="input">input</gr-menu-item>
           <gr-menu-item value="password">password</gr-menu-item>
       </gr-select>
   <div>
-    <gr-input
-    label="name"
-    name="name"
-    value="value"
-    type="text"
-    >
-</gr-input>
   </div>
 </div>
 <script>
@@ -21,7 +14,8 @@
       templates["password"] = "<gr-input\n    label=\"name\"\n    name=\"name\"\n    value=\"value\"\n    type=\"password\"\n    >\n<\/gr-input>";
     element.addEventListener('gr-change', function (event) {
     const target = event.target || element;
-    target.nextSibling.nextSibling.innerHTML = templates[target.value];
+    setInnerHtml(target.nextElementSibling, templates[target.value])
   })
+  setInnerHtml(element.nextElementSibling, templates[element.value])
 })(document.querySelector('.unhandled-tab-split'));
 </script>

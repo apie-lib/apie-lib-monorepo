@@ -8,3 +8,10 @@ function setInnerHtml(elm, html) {
         oldScript.parentNode.replaceChild(newScript, oldScript);
     });
 }
+
+const provideId = (function () {
+    let counter = 1;
+    return function () {
+        return 'form-component-' + (counter++);
+    };
+}());
