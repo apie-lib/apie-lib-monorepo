@@ -10,7 +10,6 @@
     const id = provideId();
     const inputField = element.nextElementSibling;
     inputField.addEventListener('gr-change', function (event) {
-      console.log(event.target.value);
       const value = String(event.target.value);
       element.disabled = !/^[a-zA-Z0-9]+$/.test(value) || document.querySelector('.form-list-item' + id + '.key-' + value);
     })
