@@ -1,4 +1,4 @@
-<gr-field-group label="{{ property('groupName') }}">
+<gr-field-group label="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
   {% for key in property('keys') %}
     {{ component(key) }}
   {% endfor %}

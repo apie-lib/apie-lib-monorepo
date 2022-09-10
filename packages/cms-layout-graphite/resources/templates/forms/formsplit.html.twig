@@ -1,4 +1,4 @@
-<div style="margin: 2%">
+<div style="margin: 2%" style="box-shadow: var(--gr-shadow-x-large); width: 100%">
   <gr-select name="{{ property('name').getTypehintName() }}" class="unhandled-tab-split" label="Type for {{ property('name') }}">
     {% for tab in property('tabs') %}
       <gr-menu-item value="{{ tab }}">{{ tab }}</gr-menu-item>
