@@ -12,6 +12,7 @@
     "require": {
         "cebe/php-openapi": "^1.7",
         "doctrine/orm": "^2.12",
+        "egulias/email-validator": "^3.2.1",
         "fakerphp/faker": "^1.19",
         "giggsey/libphonenumber-for-php": "^8.0",
         "nette/php-generator": "^4.0.1",

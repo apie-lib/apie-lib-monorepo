@@ -27,7 +27,8 @@
     "apie/date-value-objects": "self.version",
     "apie/regex-value-objects": "self.version",
     "apie/text-value-objects": "self.version",
-    "cebe/php-openapi": "^1.7"
+    "cebe/php-openapi": "^1.7",
+    "egulias/email-validator": "^3.2.1"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
