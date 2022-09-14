@@ -1,4 +1,13 @@
-<gr-select label="Bounded context" value="default">
+<gr-select class="unhandled-bounded-select" label="Bounded context" value="default">
             <gr-menu-item value="default">default</gr-menu-item>
             <gr-menu-item value="other">other</gr-menu-item>
     </gr-select>
+<script>
+(function (element) {
+    element.addEventListener('gr-select', function (event) {
+        const elm = event.target || element;
+        location.href = "\/default\/..\/" + elm.value;
+    })
+    element.classList.remove('unhandled-bounded-select');
+}(document.querySelector('.unhandled-bounded-select')));
+</script>

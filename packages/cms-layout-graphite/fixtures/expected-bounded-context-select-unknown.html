@@ -1,3 +1,12 @@
-<gr-select disabled label="Bounded context" value="unknown">
+<gr-select class="unhandled-bounded-select" disabled label="Bounded context" value="unknown">
             <gr-menu-item value="default">default</gr-menu-item>
     </gr-select>
+<script>
+(function (element) {
+    element.addEventListener('gr-select', function (event) {
+        const elm = event.target || element;
+        location.href = "\/unknown\/..\/" + elm.value;
+    })
+    element.classList.remove('unhandled-bounded-select');
+}(document.querySelector('.unhandled-bounded-select')));
+</script>

@@ -1,19 +1,14 @@
 <?php
 namespace Apie\CommonValueObjects;
 
-use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
-use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
-use Apie\TextValueObjects\FirstName;
-use Apie\TextValueObjects\LastName;
 use Egulias\EmailValidator\EmailValidator;
 use Egulias\EmailValidator\Validation\RFCValidation;
 use Faker\Generator;
 use ReflectionClass;
-use Stringable;
 
 /**
  * Represents a full name: gender + first name + last name.

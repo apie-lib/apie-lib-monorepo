@@ -46,6 +46,7 @@
         "symfony/cache": "^6.0",
         "symfony/framework-bundle": "6.*",
         "symfony/phpunit-bridge": "6.*",
+        "symfony/security-bundle": "6.*",
         "symfony/twig-bundle": "6.*",
         "symplify/monorepo-builder": "10.2.7"
     },
