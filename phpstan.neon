@@ -25,6 +25,7 @@ parameters:
             message: '#ActionInterface::#'
             path: packages/rest-api/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
+        -   '#generic class Apie\\ApieBundle\\Security\\ValueObjects\\ApieUserDecoratorIdentifier#'
         -
             message: '#NodeDefinition::children#'
             path: packages/apie-bundle/src/DependencyInjection/Configuration.php
