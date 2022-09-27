@@ -21,7 +21,7 @@ class Email implements StringValueObjectInterface
 
     public static function createRandom(Generator $generator): self
     {
-        return new Email($generator->email());
+        return new static($generator->email());
     }
 
     protected function convert(string $input): string

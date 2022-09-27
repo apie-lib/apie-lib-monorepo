@@ -8,7 +8,7 @@ use Apie\RegexValueObjects\Exceptions\InvalidPhpRegularExpression;
 use Faker\Generator;
 
 #[FakeMethod("createRandom")]
-class PhpRegularExpression implements StringValueObjectInterface
+final class PhpRegularExpression implements StringValueObjectInterface
 {
     use IsStringValueObject;
 

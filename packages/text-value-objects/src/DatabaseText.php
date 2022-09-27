@@ -9,7 +9,7 @@ use Faker\Generator;
 
 #[FakeMethod('createRandom')]
 #[SchemaMethod('createSchema')]
-class DatabaseText implements HasRegexValueObjectInterface
+final class DatabaseText implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
 

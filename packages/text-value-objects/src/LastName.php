@@ -23,6 +23,6 @@ class LastName implements HasRegexValueObjectInterface
 
     public static function createRandom(Generator $generator): self
     {
-        return new self($generator->lastName());
+        return new static($generator->lastName());
     }
 }
