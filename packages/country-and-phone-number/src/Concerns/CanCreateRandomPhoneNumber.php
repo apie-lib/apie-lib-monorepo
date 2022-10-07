@@ -5,6 +5,7 @@ use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
 use LogicException;
 use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use RegRev\RegRev;
 
 trait CanCreateRandomPhoneNumber
 {
@@ -15,6 +16,14 @@ trait CanCreateRandomPhoneNumber
     {
         $phoneNumberUtil = self::getUtil();
         $country = self::fromCountry();
+
+        $metadata = $phoneNumberUtil->getMetadataForRegion($country->value);
+        if ($metadata) {
+            $pattern = $metadata->getFixedLine()->getNationalNumberPattern();
+            if ($pattern) {
+                return new static(RegRev::generate('^' . str_replace('?:', '', $pattern) . '$'));
+            }
+        }
 
         $phoneNumberObject = $phoneNumberUtil->getExampleNumber($country->value);
         if ($phoneNumberObject) {
