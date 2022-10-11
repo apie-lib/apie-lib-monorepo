@@ -1,6 +1,6 @@
 <gr-select class="unhandled-bounded-select" {% if property('boundedContextHashmap').count() == 1 %}disabled {% endif %}label="Bounded context" value="{{ property('selectedBoundedContextId') }}">
     {% for boundedContext in property('boundedContextHashmap') %}
-        <gr-menu-item value="{{ boundedContext.getId() }}">{{ boundedContext.getId() }}</gr-menu-item>
+        <gr-menu-item value="{{ boundedContext.getId() }}/">{{ boundedContext.getId() }}</gr-menu-item>
     {% endfor %}
 </gr-select>
 <script>
