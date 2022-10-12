@@ -5,7 +5,7 @@
 (function (element) {
     element.addEventListener('gr-select', function (event) {
         const elm = event.target || element;
-        location.href = "\/unknown\/..\/" + elm.value;
+        location.href = "\/unknown\/..\/" + elm.value + '/';
     })
     element.classList.remove('unhandled-bounded-select');
 }(document.querySelector('.unhandled-bounded-select')));
