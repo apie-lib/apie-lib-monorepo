@@ -54,6 +54,8 @@
     // grid.theme = 'material';
     grid.columns = columns;
     grid.source = rows;
+    grid.readonly = true;
+    grid.autoresize = true;
   })(document.querySelector('revo-grid'))
   </script>
   {{ component('pagination') }}

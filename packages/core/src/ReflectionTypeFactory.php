@@ -1,5 +1,5 @@
 <?php
-namespace Apie\HtmlBuilders\Factories;
+namespace Apie\Core;
 
 use LogicException;
 use ReflectionClass;
