@@ -35,6 +35,14 @@ parameters:
             path: packages/serializer/src/
             count: 8
         -
+            message:  '#ReflectionTypeFactory::dummy#'
+            path: packages/core/src/ReflectionTypeFactory.php
+            count: 3
+        -
+            message:  '#undefined method ReflectionType::getTypes#'
+            path: packages/core/src/ReflectionTypeFactory.php
+            count: 3
+        -
             message: '#method UnitEnum::from#'
             path: packages/serializer/src/Normalizers/EnumNormalizer.php
             count: 1
