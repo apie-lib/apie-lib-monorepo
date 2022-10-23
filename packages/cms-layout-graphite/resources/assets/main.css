@@ -9,3 +9,6 @@ body .layout {
 nav {
     z-index: 40; position: fixed;top: 0;left: 0;width: 100%; border-bottom-width: 1px; background-color: white
 }
+.hide-bullets li {
+    list-style: none;
+}
