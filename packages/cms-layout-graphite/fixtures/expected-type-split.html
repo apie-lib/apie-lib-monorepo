@@ -10,7 +10,7 @@
 (function(element){
   element.classList.remove('unhandled-tab-split');
   const templates = {};
-      templates["input"] = "<gr-input\n    label=\"name\"\n    name=\"name\"\n    value=\"value\"\n    type=\"password\"\n    >\n<\/gr-input>";
+      templates["input"] = "<gr-input\n    label=\"name\"\n    name=\"name\"\n    value=\"value\"\n    type=\"text\"\n    >\n<\/gr-input>";
       templates["password"] = "<gr-input\n    label=\"name\"\n    name=\"name\"\n    value=\"value\"\n    type=\"password\"\n    >\n<\/gr-input>";
     element.addEventListener('gr-change', function (event) {
     const target = event.target || element;
