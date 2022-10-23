@@ -4,14 +4,20 @@ parameters:
     level: 6
     paths:
         - packages/apie-bundle/src
+        - packages/apie-phpstan-rules/src
+        - packages/cms/src
+        - packages/cms-layout-graphite/src
+        - packages/common/src
         - packages/common-value-objects/src
         - packages/composite-value-objects/src
+        - packages/console/src
         - packages/core/src
         - packages/country-and-phone-number/src
         - packages/date-value-objects/src
         - packages/dateformat-to-regex/src
         - packages/doctrine-entity-converter/src
         - packages/faker/src
+        - packages/html-builders/src
         - packages/regex-value-objects/src
         - packages/rest-api/src
         - packages/schema-generator/src
@@ -21,6 +27,10 @@ parameters:
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
         - '#::(all|find|persistNew|persistExisting)\(\) invoked with 2 parameters, 1 required#'
+        - '#template type T in call to method static method Apie\\Core\\Actions\\ActionInterface::getInputType#'
+        - '#::getInputType|getRouteAttributes\(\) invoked with 2 parameters, 1 required#'
+        - '#template type T in call to method static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'
+        - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
         - 
             message: '#ActionInterface::#'
             path: packages/rest-api/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
@@ -105,3 +115,12 @@ parameters:
             message: '#the constructor#'
             path: packages/core/src/Actions/ActionResponse.php
             count: 7
+        -
+            message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'
+            path: packages/html-builders/src/Components/Forms/Password.php
+            count: 8
+
+        -
+            message: '#ParametersAcceptor::getNativeReturnType#'
+            path: packages/apie-phpstan-rules/src/ValueObjectWithArrayShouldBeComposite.php
+            count: 1
