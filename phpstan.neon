@@ -40,10 +40,6 @@ parameters:
             message: '#NodeDefinition::children#'
             path: packages/apie-bundle/src/DependencyInjection/Configuration.php
             count: 1
-        -
-            message: '#::isSupported\(\) has parameter \$instance#'
-            path: packages/core/src/Datalayers/ApieDatalayerWithSupport.php
-            count: 2
         - 
             message: '#iterable type array#'
             path: packages/serializer/src/
