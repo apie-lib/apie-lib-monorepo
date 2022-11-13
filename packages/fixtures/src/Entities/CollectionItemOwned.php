@@ -25,8 +25,7 @@ class CollectionItemOwned implements EntityInterface
         #[Context('authenticated')]
         UserWithAddress $user,
         bool $owned
-    ): void
-    {
+    ): void {
         if ($user->getId()->toNative() === $this->createdBy->toNative()) {
             $this->owned = $owned;
         }
