@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Tests\Common\Actions;
 
-use Apie\Common\Actions\CreateObjectAction;
 use Apie\Common\Actions\ModifyObjectAction;
 use Apie\Common\ContextConstants;
 use Apie\Common\Tests\Concerns\ProvidesApieFacade;
