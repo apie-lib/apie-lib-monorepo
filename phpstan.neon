@@ -31,6 +31,7 @@ parameters:
         - '#::getInputType|getRouteAttributes\(\) invoked with 2 parameters, 1 required#'
         - '#template type T in call to method static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'
         - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
+        - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
         - 
             message: '#ActionInterface::#'
             path: packages/rest-api/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
@@ -62,14 +63,9 @@ parameters:
             count: 2
 
         -
-            message: '#ValueObjectInterface::getFields#'
-            path: packages/schema-generator/src/SchemaProviders/CompositeValueObjectSchemaProvider.php
-            count: 2
-
-        -
             message: '#constructor expects Apie\\SchemaGenerator\\Interfaces\\SchemaProvider\<object\>#'
             path: packages/schema-generator/src/ComponentsBuilderFactory.php
-            count: 12
+            count: 8
 
         -
             message: '#Negated boolean expression is always false#'
