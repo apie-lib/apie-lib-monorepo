@@ -44,7 +44,7 @@ parameters:
         - 
             message: '#iterable type array#'
             path: packages/serializer/src/
-            count: 8
+            count: 9
         -
             message:  '#ReflectionTypeFactory::dummy#'
             path: packages/core/src/ReflectionTypeFactory.php
