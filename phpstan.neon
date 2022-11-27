@@ -44,7 +44,7 @@ parameters:
         - 
             message: '#iterable type array#'
             path: packages/serializer/src/
-            count: 9
+            count: 10
         -
             message:  '#ReflectionTypeFactory::dummy#'
             path: packages/core/src/ReflectionTypeFactory.php
@@ -118,5 +118,5 @@ parameters:
 
         -
             message: '#ParametersAcceptor::getNativeReturnType#'
-            path: packages/apie-phpstan-rules/src/ValueObjectWithArrayShouldBeComposite.php
-            count: 1
+            path: packages/apie-phpstan-rules/src/
+            count: 2
