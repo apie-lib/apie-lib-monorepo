@@ -65,7 +65,7 @@ parameters:
         -
             message: '#constructor expects Apie\\SchemaGenerator\\Interfaces\\SchemaProvider\<object\>#'
             path: packages/schema-generator/src/ComponentsBuilderFactory.php
-            count: 8
+            count: 7
 
         -
             message: '#Negated boolean expression is always false#'
@@ -110,7 +110,7 @@ parameters:
         -
             message: '#the constructor#'
             path: packages/core/src/Actions/ActionResponse.php
-            count: 7
+            count: 9
         -
             message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'
             path: packages/html-builders/src/Components/Forms/Password.php
