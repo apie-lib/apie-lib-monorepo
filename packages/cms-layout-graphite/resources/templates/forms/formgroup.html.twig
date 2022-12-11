@@ -1,4 +1,9 @@
 <gr-field-group label="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
+  {%- if property('validationError') -%}
+  <div class="form-control-invalid-text">
+    <div class="text">{{ property('validationError') }}</div>
+  </div>
+  {%- endif -%}
   {% for key in property('keys') %}
     {{ component(key) }}
   {% endfor %}
