@@ -5,5 +5,9 @@
     type="{{ property('type') }}"
     {% for key, value in property('additionalAttributes') %}
     {{ key }}="{{ value }}"
-    {% endfor %}>
+    {% endfor %}
+    {%- if (property('validationError')) -%}
+    invalid invalid-text="{{ property('validationError') }}"
+    {%- endif -%}
+    >
 </gr-input>
