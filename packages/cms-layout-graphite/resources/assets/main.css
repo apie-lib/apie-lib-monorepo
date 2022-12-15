@@ -12,3 +12,8 @@ nav {
 .hide-bullets li {
     list-style: none;
 }
+gr-field-group > .form-control-invalid-text {
+    font-size: var(--gr-form-element-invalid-text-font-size-medium);
+    color: var(--gr-form-element-invalid-text-color);
+    line-height: var(--gr-line-height-normal);
+}
