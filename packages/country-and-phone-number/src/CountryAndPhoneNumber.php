@@ -2,13 +2,14 @@
 namespace Apie\CountryAndPhoneNumber;
 
 use Apie\CompositeValueObjects\CompositeValueObject;
+use Apie\CompositeValueObjects\CompositeWithOwnValidation;
 use Apie\CompositeValueObjects\Fields\FieldInterface;
 use Apie\CompositeValueObjects\Fields\FromProperty;
 use Apie\Core\Attributes\FakeMethod;
-use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\CountryAndPhoneNumber\Exceptions\PhoneNumberAndCountryMismatch;
 use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
 use Apie\CountryAndPhoneNumber\Fields\DynamicPhoneNumberProperty;
+use Apie\Serializer\Exceptions\ValidationException;
 use Faker\Generator;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
@@ -16,7 +17,7 @@ use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
 use ReflectionProperty;
 
 #[FakeMethod('createRandom')]
-final class CountryAndPhoneNumber implements ValueObjectInterface
+final class CountryAndPhoneNumber implements CompositeWithOwnValidation
 {
     use CompositeValueObject;
 
@@ -39,9 +40,13 @@ final class CountryAndPhoneNumber implements ValueObjectInterface
     private function validateState(): void
     {
         if ($this->country !== $this->phoneNumber->fromCountry()) {
-            throw new PhoneNumberAndCountryMismatch(
-                $this->country,
-                $this->phoneNumber->fromCountry()
+            throw ValidationException::createFromArray(
+                [
+                    'phoneNumber'  => new PhoneNumberAndCountryMismatch(
+                        $this->country,
+                        $this->phoneNumber->fromCountry()
+                    )
+                ]
             );
         }
     }

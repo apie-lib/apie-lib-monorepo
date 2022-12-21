@@ -9,7 +9,9 @@ use Apie\Core\ValueObjects\Utils;
 use Apie\CountryAndPhoneNumber\CountryAndPhoneNumber;
 use Apie\CountryAndPhoneNumber\Exceptions\PhoneNumberAndCountryMismatch;
 use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
+use Apie\CountryAndPhoneNumber\InternationalPhoneNumber;
 use Apie\CountryAndPhoneNumber\PhoneNumber;
+use Exception;
 use ReflectionProperty;
 
 final class DynamicPhoneNumberProperty implements FieldInterface
@@ -37,11 +39,22 @@ final class DynamicPhoneNumberProperty implements FieldInterface
 
     public function fromNative(ValueObjectInterface $instance, mixed $value): void
     {
+        // validation of country property is hit, ignore this error
+        if (!$this->countryProperty->isInitialized($instance)) {
+            return;
+        }
         $country = $this->countryProperty->getValue($instance);
         try {
             $phoneNumber = PhoneNumberFactory::createFrom($value, $country);
         } catch (InvalidStringForValueObjectException $error) {
-            throw new PhoneNumberAndCountryMismatch($country, null, $error);
+            $phoneNumberCountry = null;
+            try {
+                $phoneNumberCountry = InternationalPhoneNumber::fromNative($value)->toPhoneNumber()->fromCountry();
+            } catch (Exception $ignored) {
+                // fallthrough
+            }
+
+            throw new PhoneNumberAndCountryMismatch($country, $phoneNumberCountry, $error);
         }
         self::fillField($instance, $phoneNumber);
     }

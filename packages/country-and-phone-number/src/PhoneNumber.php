@@ -48,7 +48,7 @@ abstract class PhoneNumber implements StringValueObjectInterface
     {
         $phoneNumberUtil = self::getUtil();
         try {
-            $phoneNumber = $phoneNumberUtil->parse($input, static::fromCountry()->value);
+            $phoneNumber = $phoneNumberUtil->parse($input, static::class === PhoneNumber::class ? null : static::fromCountry()->value);
         } catch (NumberParseException $error) {
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(static::class), $error);
         }
