@@ -51,6 +51,7 @@
         "psr-4": {
             "Apie\\ApieBundle\\": "packages/apie-bundle/src/",
             "Apie\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/src/",
+            "Apie\\CmsApiDropdownOption\\": "packages/cms-api-dropdown-option/src/",
             "Apie\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/src/",
             "Apie\\Cms\\": "packages/cms/src/",
             "Apie\\CommonValueObjects\\": "packages/common-value-objects/src/",
@@ -76,6 +77,7 @@
         "psr-4": {
             "Apie\\Tests\\ApieBundle\\": "packages/apie-bundle/tests/",
             "Apie\\Tests\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/tests/",
+            "Apie\\Tests\\CmsApiDropdownOption\\": "packages/cms-api-dropdown-option/tests/",
             "Apie\\Tests\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/tests/",
             "Apie\\Tests\\Cms\\": "packages/cms/tests/",
             "Apie\\Tests\\CommonValueObjects\\": "packages/common-value-objects/tests/",
@@ -104,6 +106,7 @@
         "apie/apie-bundle": "self.version",
         "apie/apie-phpstan-rules": "self.version",
         "apie/cms": "self.version",
+        "apie/cms-api-dropdown-option": "self.version",
         "apie/cms-layout-graphite": "self.version",
         "apie/common": "self.version",
         "apie/common-value-objects": "self.version",

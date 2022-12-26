@@ -1,6 +1,6 @@
 {
-  "name": "apie/cms",
-  "description": "Composer package of the apie library: cms",
+  "name": "apie/cms-api-dropdown-option",
+  "description": "Composer package of the apie library: cms api dropdown option",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -11,28 +11,23 @@
   ],
   "autoload": {
     "psr-4": {
-      "Apie\\Cms\\": "src/"
+      "Apie\\CmsApiDropdownOption\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Apie\\Tests\\Cms\\": "tests/"
+      "Apie\\Tests\\CmsApiDropdownOption\\": "tests/"
     }
   },
   "require": {
     "php": ">=8.1",
-    "apie/common": "self.version",
     "apie/core": "self.version",
-    "apie/html-builders": "self.version",
-    "nyholm/psr7": "^1.5"
+    "apie/cms": "self.version",
+    "apie/rest-api": "self.version"
   },
   "require-dev": {
-    "apie/fixtures": "self.version",
     "phpunit/phpunit": "^9.5",
     "phpspec/prophecy-phpunit": "^2.0"
-  },
-  "suggest": {
-    "apie/cms-api-dropdown-option": "for having dropdowns for relations"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
