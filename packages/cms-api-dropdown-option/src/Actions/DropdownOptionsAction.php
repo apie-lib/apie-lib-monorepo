@@ -26,7 +26,7 @@ class DropdownOptionsAction implements ActionInterface
     public function __invoke(ApieContext $context, array $rawContents): ActionResponse
     {
         return ActionResponse::createRunSuccess(
-            $this->ApieFacade,
+            $this->apieFacade,
             $context,
             [],
             []
