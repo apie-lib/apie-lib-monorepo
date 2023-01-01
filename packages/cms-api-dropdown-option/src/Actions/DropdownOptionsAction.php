@@ -2,6 +2,7 @@
 namespace Apie\CmsApiDropdownOption\Actions;
 
 use Apie\CmsApiDropdownOption\Dtos\DropdownOption;
+use Apie\CmsApiDropdownOption\Dtos\PartialInput;
 use Apie\Common\ApieFacade;
 use Apie\Common\ContextConstants;
 use Apie\Core\Actions\ActionInterface;
@@ -32,9 +33,9 @@ class DropdownOptionsAction implements ActionInterface
         );
     }
 
-    public static function getInputType(ReflectionClass $class): ReflectionType
+    public static function getInputType(ReflectionClass $class): ReflectionClass
     {
-        return ReflectionTypeFactory::createReflectionType('string');
+        return new ReflectionClass(PartialInput::class);
     }
 
     public static function getOutputType(ReflectionClass $class): ListOf
