@@ -34,7 +34,7 @@ parameters:
         - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
         - 
             message: '#ActionInterface::#'
-            path: packages/rest-api/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
+            path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
         -   '#generic class Apie\\ApieBundle\\Security\\ValueObjects\\ApieUserDecoratorIdentifier#'
         -
