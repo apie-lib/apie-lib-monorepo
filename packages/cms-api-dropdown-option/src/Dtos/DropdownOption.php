@@ -5,7 +5,9 @@ use Apie\Core\Dto\DtoInterface;
 
 final class DropdownOption implements DtoInterface
 {
-    public string $value;
-
-    public string $displayValue;
+    public function __construct(
+        public string $value,
+        public string $displayValue
+    ) {
+    }
 }

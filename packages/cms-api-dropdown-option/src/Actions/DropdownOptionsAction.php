@@ -1,9 +1,8 @@
 <?php
 namespace Apie\CmsApiDropdownOption\Actions;
 
-use Apie\CmsApiDropdownOption\Dtos\DropdownOption;
 use Apie\CmsApiDropdownOption\Dtos\PartialInput;
-use Apie\Common\ApieFacade;
+use Apie\CmsApiDropdownOption\Lists\DropdownOptionList;
 use Apie\Common\ContextConstants;
 use Apie\Core\Actions\ActionInterface;
 use Apie\Core\Actions\ActionResponse;
@@ -11,11 +10,8 @@ use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
 use Apie\Core\Context\ApieContext;
-use Apie\Core\Dto\ListOf;
 use Apie\Core\Lists\StringList;
-use Apie\Core\ReflectionTypeFactory;
 use ReflectionClass;
-use ReflectionType;
 
 class DropdownOptionsAction implements ActionInterface
 {
@@ -38,9 +34,9 @@ class DropdownOptionsAction implements ActionInterface
         return new ReflectionClass(PartialInput::class);
     }
 
-    public static function getOutputType(ReflectionClass $class): ListOf
+    public static function getOutputType(ReflectionClass $class): ReflectionClass
     {
-        return new ListOf(new ReflectionClass(DropdownOption::class));
+        return new ReflectionClass(DropdownOptionList::class);
     }
 
     public static function getPossibleActionResponseStatuses(): ActionResponseStatusList

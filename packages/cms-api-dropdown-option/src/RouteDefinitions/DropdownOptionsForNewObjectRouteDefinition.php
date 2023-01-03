@@ -9,8 +9,8 @@ use Apie\Common\RouteDefinitions\AbstractRestApiRouteDefinition;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\ValueObjects\UrlRouteDefinition;
 
- class DropdownOptionsForNewObjectRouteDefinition extends AbstractRestApiRouteDefinition
- {
+class DropdownOptionsForNewObjectRouteDefinition extends AbstractRestApiRouteDefinition
+{
     public function getMethod(): RequestMethod
     {
         return RequestMethod::POST;
@@ -40,4 +40,4 @@ use Apie\Core\ValueObjects\UrlRouteDefinition;
     {
         return new UrlPrefixList([UrlPrefix::CMS, UrlPrefix::API]);
     }
- }
+}
