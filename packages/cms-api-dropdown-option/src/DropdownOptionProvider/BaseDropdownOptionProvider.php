@@ -6,22 +6,13 @@ use Apie\Common\ContextConstants;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Metadata\Fields\FieldInterface;
 use Apie\Core\Metadata\MetadataFactory;
-use Apie\Core\Metadata\MetadataInterface;
 use ReflectionClass;
 
 abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInterface
 {
-    /**
-     * @param ReflectionClass<object> $class
-     */
-    abstract protected function supportsClass(ReflectionClass $class, ApieContext $apieContext): bool;
+    abstract protected function supportsField(FieldInterface $fieldMetadata, ApieContext $apieContext): bool;
 
-    /**
-     * @param ReflectionClass<object> $class
-     */
     abstract protected function createDropdownList(
-        ReflectionClass $class,
-        MetadataInterface $metadata,
         string $property,
         FieldInterface $fieldMetadata,
         string $searchTerm,
@@ -42,12 +33,12 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
         }
 
         $refl = new ReflectionClass($resourceName);
-        if (!$this->supportsClass($refl, $apieContext)) {
-            return false;
-        }
         $metadata = $this->getMetadata($refl, $apieContext);
         $hashmap = $metadata->getHashmap();
-        return isset($hashmap[$property]);
+        if (!isset($hashmap[$property])) {
+            return false;
+        }
+        return $this->supportsField($hashmap[$property], $apieContext);
     }
 
     final protected function getMetadata(ReflectionClass $class, ApieContext $apieContext)
@@ -66,6 +57,6 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
         $hashmap = $metadata->getHashmap();
         $fieldMetadata = $hashmap[$property];
 
-        return $this->createDropdownList($refl, $metadata, $property, $fieldMetadata, $searchTerm, $apieContext);
+        return $this->createDropdownList($property, $fieldMetadata, $searchTerm, $apieContext);
     }
 }

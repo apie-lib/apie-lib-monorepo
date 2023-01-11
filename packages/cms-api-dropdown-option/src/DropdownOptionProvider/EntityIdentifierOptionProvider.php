@@ -4,18 +4,19 @@ namespace Apie\CmsApiDropdownOption\DropdownOptionProvider;
 use Apie\CmsApiDropdownOption\Dtos\DropdownOption;
 use Apie\CmsApiDropdownOption\Lists\DropdownOptionList;
 use Apie\Common\ContextConstants;
-use Apie\CompositeValueObjects\Fields\FieldInterface;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Datalayers\Search\QuerySearch;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Identifiers\IdentifierInterface;
-use Apie\Core\Metadata\MetadataInterface;
+use Apie\Core\Metadata\Fields\FieldInterface;
 use Apie\Core\ValueObjects\Utils;
 use ReflectionClass;
+use ReflectionNamedType;
 
 final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
 {
@@ -25,30 +26,38 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
     ) {
     }
 
-    protected function supportsClass(ReflectionClass $class, ApieContext $apieContext): bool
+    protected function supportsField(FieldInterface $fieldMetadata, ApieContext $apieContext): bool
     {
-        return $class->implementsInterface(IdentifierInterface::class)
-            && null !== $this->getBoundedContext($class, $apieContext);
+        return null !== $this->getBoundedContext($fieldMetadata, $apieContext);
     }
 
-    private function getBoundedContext(ReflectionClass $class, ApieContext $apieContext): ?BoundedContext
+    private function getBoundedContext(FieldInterface $fieldMetadata, ApieContext $apieContext): ?BoundedContext
     {
+        $typehint = $fieldMetadata->getTypehint();
+        if (!$typehint instanceof ReflectionNamedType || $typehint->isBuiltin()) {
+            return null;
+        }
+        $class = new ReflectionClass($typehint->getName());
+        if (!$class->implementsInterface(IdentifierInterface::class)) {
+            return null;
+        }
         $boundedContextId = $apieContext->hasContext(ContextConstants::BOUNDED_CONTEXT_ID)
             ? $apieContext->getContext(ContextConstants::BOUNDED_CONTEXT_ID)
             : null;
-        return $this->boundedContextHashmap->getBoundedContextFromClassName($class, $boundedContextId);
+        return $this->boundedContextHashmap->getBoundedContextFromClassName($class, new BoundedContextId($boundedContextId));
     }
 
     protected function createDropdownList(
-        ReflectionClass $class,
-        MetadataInterface $metadata,
         string $property,
         FieldInterface $fieldMetadata,
         string $searchTerm,
         ApieContext $apieContext
     ): DropdownOptionList {
-        $boundedContext = $this->getBoundedContext($class, $apieContext);
+        $boundedContext = $this->getBoundedContext($fieldMetadata, $apieContext);
         assert($boundedContext instanceof BoundedContext);
+        $typehint = $fieldMetadata->getTypehint();
+        assert($typehint instanceof ReflectionNamedType);
+        $class = new ReflectionClass($typehint->getName());
         $result = $this->apieDatalayer->all($class)->toPaginatedResult(new QuerySearch(0, 20, $searchTerm));
         $list = [];
         foreach ($result as $entity) {
@@ -60,7 +69,7 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
 
     private function determineDisplayValue(EntityInterface $entity): string
     {
-        $methods = ['__toString', 'getName', 'getDescription', 'getId'];
+        $methods = ['getName', 'getDescription', '__toString', 'getId'];
         foreach ($methods as $method) {
             if (is_callable([$entity, $method])) {
                 return Utils::toString($entity->$method());

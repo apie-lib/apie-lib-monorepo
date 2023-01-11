@@ -1,0 +1,56 @@
+<gr-input
+    label="{{ property('name') }}"
+    name="{{ property('name') }}"
+    value="{{ property('value') }}"
+    type="{{ property('type') }}"
+    {% for key, value in property('additionalAttributes') %}
+    {{ key }}="{{ value }}"
+    {% endfor %}
+    {%- if (property('validationError')) -%}
+    invalid invalid-text="{{ property('validationError') }}"
+    {%- endif -%}
+    >
+</gr-input>
+<div class="autocomplete-list"></div>
+<script>
+  (function (element) {
+    const autocompleteList = element.nextElementSibling;
+
+    function displayOptions(options) {
+        autocompleteList.innerHTML = '';
+
+        options.forEach((option) => {
+            var listItem = document.createElement('div');
+            listItem.innerHTML = option.displayValue;
+            listItem.addEventListener('click', function() {
+                autocompleteList.value = option.value;
+                autocompleteList.innerHTML = '';
+            });
+            autocompleteList.appendChild(listItem);
+        })
+    }
+
+    const update = debounce(
+        (newValue) => {
+            fetch(
+                element.dataset.ajaxUrl,
+                {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        input: newValue
+                    }),
+                    headers: {
+                    'Content-Type': 'application/json'
+                    }
+                }
+            ).then((response) => response.json())
+            .then(displayOptions);
+        },
+        250
+    );
+    element.addEventListener('gr-change', function (event) {
+      update(String(event.target.value));
+    })
+    element.classList.remove('unhandled-input-with-autocomplete');
+  }(document.querySelector('.unhandled-input-with-autocomplete')));
+  </script>

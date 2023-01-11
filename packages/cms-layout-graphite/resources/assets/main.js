@@ -9,6 +9,16 @@ function setInnerHtml(elm, html) {
     });
 }
 
+function debounce (callback, wait) {
+    let timeoutId = null;
+    return (...args) => {
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => {
+        callback.apply(null, args);
+      }, wait);
+    };
+}
+
 const provideId = (function () {
     let counter = 1;
     return function () {

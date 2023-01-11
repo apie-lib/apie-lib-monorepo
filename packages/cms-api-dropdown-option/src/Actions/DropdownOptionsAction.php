@@ -1,6 +1,7 @@
 <?php
 namespace Apie\CmsApiDropdownOption\Actions;
 
+use Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface;
 use Apie\CmsApiDropdownOption\Dtos\PartialInput;
 use Apie\CmsApiDropdownOption\Lists\DropdownOptionList;
 use Apie\Common\ContextConstants;
@@ -21,11 +22,14 @@ class DropdownOptionsAction implements ActionInterface
 
     public function __invoke(ApieContext $context, array $rawContents): ActionResponse
     {
+        $dropdownOptionProvider = $context->getContext(DropdownOptionProviderInterface::class);
+        assert($dropdownOptionProvider instanceof DropdownOptionProviderInterface);
+        $result = $dropdownOptionProvider->getList($context, $rawContents['input'] ?? '');
         return ActionResponse::createRunSuccess(
             $this->apieFacade,
             $context,
-            [],
-            []
+            $result,
+            $result
         );
     }
 

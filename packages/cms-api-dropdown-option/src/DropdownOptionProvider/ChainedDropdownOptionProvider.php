@@ -16,6 +16,14 @@ final class ChainedDropdownOptionProvider implements DropdownOptionProviderInter
         $this->providers = $providers;
     }
 
+    /**
+     * @param iterable<int, DropdownOptionProviderInterface> $providers
+     */
+    public static function create(iterable $providers): self
+    {
+        return new self(...$providers);
+    }
+
     public function supports(ApieContext $apieContext): bool
     {
         foreach ($this->providers as $provider) {
