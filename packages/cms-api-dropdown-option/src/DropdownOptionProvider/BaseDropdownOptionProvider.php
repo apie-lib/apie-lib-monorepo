@@ -6,6 +6,8 @@ use Apie\Common\ContextConstants;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Metadata\Fields\FieldInterface;
 use Apie\Core\Metadata\MetadataFactory;
+use Apie\Core\PropertyToFieldMetadataUtil;
+use Apie\Core\ValueObjects\Utils;
 use ReflectionClass;
 
 abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInterface
@@ -26,13 +28,16 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
             return false;
         }
 
-        $property = $apieContext->getContext('property');
+        $property = Utils::toString($apieContext->getContext('property'));
         $resourceName = $apieContext->getContext(ContextConstants::RESOURCE_NAME);
         if (!class_exists($resourceName) || $property === 'id') {
             return false;
         }
 
         $refl = new ReflectionClass($resourceName);
+        $fieldMetadata = PropertyToFieldMetadataUtil::fromPropertyStringToFieldMetadata($refl, $apieContext, $property);
+
+        
         $metadata = $this->getMetadata($refl, $apieContext);
         $hashmap = $metadata->getHashmap();
         if (!isset($hashmap[$property])) {
