@@ -41,7 +41,7 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
             $property
         );
 
-        return $this->supportsField($fieldMetadata, $apieContext);
+        return $fieldMetadata instanceof FieldInterface && $this->supportsField($fieldMetadata, $apieContext);
     }
 
     final protected function getMetadata(ReflectionClass $class, ApieContext $apieContext)
