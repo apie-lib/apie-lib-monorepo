@@ -42,9 +42,9 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
             return null;
         }
         $boundedContextId = $apieContext->hasContext(ContextConstants::BOUNDED_CONTEXT_ID)
-            ? $apieContext->getContext(ContextConstants::BOUNDED_CONTEXT_ID)
+            ? new BoundedContextId($apieContext->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
             : null;
-        return $this->boundedContextHashmap->getBoundedContextFromClassName($class, new BoundedContextId($boundedContextId));
+        return $this->boundedContextHashmap->getBoundedContextFromClassName($class, $boundedContextId);
     }
 
     protected function createDropdownList(
