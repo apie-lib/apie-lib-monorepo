@@ -11,7 +11,7 @@ class Order implements RootAggregate
 {
     private OrderStatus $orderStatus;
 
-    public function __construct(private OrderIdentifier $id, private OrderLineList $orderLineList)
+    public function __construct(private OrderIdentifier $id, private OrderLineList $orderLines)
     {
         $this->orderStatus = OrderStatus::DRAFT;
     }
@@ -28,25 +28,25 @@ class Order implements RootAggregate
 
     public function getOrderLines(): OrderLineList
     {
-        return $this->orderLineList;
+        return $this->orderLines;
     }
 
     public function addOrderLine(OrderLine... $orderLines): int
     {
         $this->orderStatus->ensureDraft();
         foreach ($orderLines as $orderLine) {
-            $this->orderLineList[] = clone $orderLine;
+            $this->orderLines[] = clone $orderLine;
         }
-        return count($this->orderLineList);
+        return count($this->orderLines);
     }
 
     public function removeOrderLine(OrderLineIdentifier $id): ?int
     {
         $this->orderStatus->ensureDraft();
         $id = $id->toNative();
-        foreach ($this->orderLineList as $key => $orderLine) {
+        foreach ($this->orderLines as $key => $orderLine) {
             if ($orderLine->getId()->toNative() === $id) {
-                unset($this->orderLineList[$key]);
+                unset($this->orderLines[$key]);
                 return $key;
             }
         }
