@@ -35,15 +35,13 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
         }
 
         $refl = new ReflectionClass($resourceName);
-        $fieldMetadata = PropertyToFieldMetadataUtil::fromPropertyStringToFieldMetadata($refl, $apieContext, $property);
+        $fieldMetadata = PropertyToFieldMetadataUtil::fromPropertyStringToFieldMetadata(
+            $refl,
+            $apieContext,
+            $property
+        );
 
-        
-        $metadata = $this->getMetadata($refl, $apieContext);
-        $hashmap = $metadata->getHashmap();
-        if (!isset($hashmap[$property])) {
-            return false;
-        }
-        return $this->supportsField($hashmap[$property], $apieContext);
+        return $this->supportsField($fieldMetadata, $apieContext);
     }
 
     final protected function getMetadata(ReflectionClass $class, ApieContext $apieContext)
@@ -56,11 +54,13 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
     final public function getList(ApieContext $apieContext, string $searchTerm): DropdownOptionList
     {
         $resourceName = $apieContext->getContext(ContextConstants::RESOURCE_NAME);
+        $property = Utils::toString($apieContext->getContext('property'));
         $refl = new ReflectionClass($resourceName);
-        $property = $apieContext->getContext('property');
-        $metadata = $this->getMetadata($refl, $apieContext);
-        $hashmap = $metadata->getHashmap();
-        $fieldMetadata = $hashmap[$property];
+        $fieldMetadata = PropertyToFieldMetadataUtil::fromPropertyStringToFieldMetadata(
+            $refl,
+            $apieContext,
+            $property
+        );
 
         return $this->createDropdownList($property, $fieldMetadata, $searchTerm, $apieContext);
     }
