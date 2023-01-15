@@ -33,17 +33,23 @@
     const update = debounce(
         (newValue) => {
             fetch(
-                element.dataset.ajaxUrl,
+                element.dataset.ajaxUrl ?? element.dataset.ajaxurl,
                 {
                     method: 'POST',
                     body: JSON.stringify({
                         input: newValue
                     }),
                     headers: {
-                    'Content-Type': 'application/json'
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json'
                     }
                 }
-            ).then((response) => response.json())
+            ).then((response) => {
+                if (response.ok) {
+                    return response.json()
+                }
+                throw new Error('Got error response ' . response.json().details);
+            })
             .then(displayOptions);
         },
         250
