@@ -21,6 +21,31 @@ gr-field-group > .form-control-invalid-text {
     color: var(--gr-form-element-invalid-text-color);
     line-height: var(--gr-line-height-normal);
 }
+.autocomplete-container {
+    display: flex;
+    position: relative;
+  }
+.autocomplete-list {
+    position: absolute;
+    background-color: white;
+    border: 1px solid gray;
+    z-index: 1;
+    width: 100%;
+}
+.autocomplete-list .highlighted {
+    background-color: lightgray;
+    color: white;
+    font-weight: bold;
+  }
+  
+.autocomplete-list div {
+    padding: 0.5em;
+    cursor: pointer;
+}
+  
+.autocomplete-list div:hover {
+    background-color: lightgray;
+}
         </style>
         <link
   rel="stylesheet"
