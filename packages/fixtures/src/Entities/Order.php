@@ -1,12 +1,15 @@
 <?php
 namespace Apie\Fixtures\Entities;
 
+use APie\Core\Attributes\Internal;
+use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\Entities\RootAggregate;
 use Apie\Fixtures\Enums\OrderStatus;
 use Apie\Fixtures\Identifiers\OrderIdentifier;
 use Apie\Fixtures\Identifiers\OrderLineIdentifier;
 use Apie\Fixtures\Lists\OrderLineList;
 
+#[ProvideIndex('provideIndex')]
 class Order implements RootAggregate
 {
     private OrderStatus $orderStatus;
@@ -19,6 +22,17 @@ class Order implements RootAggregate
     public function getOrderStatus(): OrderStatus
     {
         return $this->orderStatus;
+    }
+
+    #[Internal()]
+    public function provideIndex(): array
+    {
+        $result = [];
+        $result[$this->id->toNative()] = 2;
+        foreach ($this->orderLines as $orderLine) {
+            $result[$orderLine->getId()->toNative()] = 1;
+        }
+        return $result;
     }
 
     public function getId(): OrderIdentifier
