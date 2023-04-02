@@ -1,0 +1,27 @@
+# start with the official Composer image and name it
+FROM composer:2.5.5 AS composer
+# start with the official Composer image and name it
+FROM php:8.1-cli
+
+RUN apt-get clean
+RUN apt-get update
+
+#install some basic tools
+RUN apt-get install -y \
+        git \
+        tree \
+        vim \
+        wget \
+        unzip
+
+#install some base extensions
+#RUN apt-get install -y \
+#        zlib1g-dev \
+#        zip
+#RUN pecl install zip
+#RUN docker-php-ext-install zip
+
+# copy the Composer PHAR from the Composer image into the PHP image
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+# show that both Composer and PHP run as expected
+RUN composer --version && php -v
