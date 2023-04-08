@@ -9,7 +9,12 @@ services:
       - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
       - '@Apie\ApieBundle\Wrappers\DashboardContents'
     tags: ['controller.service_arguments']
+
+  apie.cms.dashboard_content:
+    alias: Apie\Cms\EmptyDashboard
   
+  Apie\Cms\EmptyDashboard:
+
   Apie\Cms\Controllers\GetResourceListController:
     arguments:
       - '@Apie\Common\ApieFacade'
@@ -50,26 +55,8 @@ services:
       - '@Apie\Core\BoundedContext\BoundedContextHashmap'
     tags: ['controller.service_arguments']
 
-  Apie\HtmlBuilders\Interfaces\ComponentRendererInterface:
-    factory:
-      - 'Apie\ApieBundle\Wrappers\CmsRendererFactory'
-      - createRenderer
-    arguments:
-      - '@Apie\HtmlBuilders\Assets\AssetManager'
-
   cms.layout.graphite_design_system:
     class: Apie\CmsLayoutGraphite\TwigRenderer
     factory:
       -  Apie\CmsLayoutGraphite\GraphiteDesignSystemLayout
       - 'createRenderer'
-
-  Apie\ApieBundle\Twig\ComponentExtension:
-    arguments:
-      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
-    tags:
-      - { name: twig.extension }
-
-  Apie\ApieBundle\Wrappers\DashboardContents:
-    arguments:
-      - '@?Twig\Environment'
-      - '%apie.cms.dashboard_template%'
