@@ -8,7 +8,7 @@ use Apie\Core\Metadata\Fields\DiscriminatorColumn;
 use Apie\Core\Metadata\Fields\SetterMethod;
 use Apie\Core\Metadata\MetadataFactory;
 use Apie\Core\Metadata\MetadataInterface;
-use Apie\Core\ReflectionTypeFactory;
+use Apie\TypeConverter\ReflectionTypeFactory;
 use Apie\HtmlBuilders\Components\Forms\FormGroup;
 use Apie\HtmlBuilders\Components\Forms\FormPrototypeList;
 use Apie\HtmlBuilders\Components\Forms\Input;

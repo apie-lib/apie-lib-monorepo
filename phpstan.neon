@@ -50,14 +50,6 @@ parameters:
             path: packages/serializer/src/
             count: 10
         -
-            message:  '#ReflectionTypeFactory::dummy#'
-            path: packages/core/src/ReflectionTypeFactory.php
-            count: 3
-        -
-            message:  '#undefined method ReflectionType::getTypes#'
-            path: packages/core/src/ReflectionTypeFactory.php
-            count: 3
-        -
             message: '#ValueObjectInterface::getRegularExpression#'
             path: packages/schema-generator/src/SchemaProviders/
             count: 2
