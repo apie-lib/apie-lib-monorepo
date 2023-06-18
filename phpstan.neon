@@ -107,8 +107,11 @@ parameters:
             message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'
             path: packages/html-builders/src/Components/Forms/Password.php
             count: 8
-
         -
-            message: '#ParametersAcceptor::getNativeReturnType#'
-            path: packages/apie-phpstan-rules/src/
-            count: 2
+            message: '# with type callable is not subtype of native type array\|object\|string#'
+            path: packages/core/src/Datalayers/Lists/Filtered/FilteredItem.php
+            count: 1
+        -
+            message: '#filterFn type has no value type specified in iterable type array#'
+            path: packages/core/src/Datalayers/Lists/Filtered/FilteredItem.php
+            count: 1

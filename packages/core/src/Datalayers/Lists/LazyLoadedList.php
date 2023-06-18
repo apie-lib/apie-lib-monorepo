@@ -43,7 +43,7 @@ final class LazyLoadedList implements EntityInterface, IteratorAggregate
     }
 
     /**
-     * @template T
+     * @param LazyLoadedListIdentifier<T> $id
      * @param array<int, T> $input
      * @return LazyLoadedList<T>
      */
@@ -101,6 +101,7 @@ final class LazyLoadedList implements EntityInterface, IteratorAggregate
 
     /**
      * @param callable(T): bool $filterFn
+     * @return LazyLoadedList<T>
      */
     public function filterList(callable $filterFn): self
     {
