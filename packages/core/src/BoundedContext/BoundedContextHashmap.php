@@ -1,9 +1,11 @@
 <?php
 namespace Apie\Core\BoundedContext;
 
+use Apie\Core\Actions\BoundedContextHashmapIterator;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Lists\ItemHashmap;
+use IteratorAggregate;
 use ReflectionClass;
 
 /**
@@ -16,6 +18,11 @@ final class BoundedContextHashmap extends ItemHashmap
     public function offsetGet(mixed $offset): BoundedContext
     {
         return parent::offsetGet($offset);
+    }
+
+    public function getTupleIterator(): BoundedContextHashmapIterator
+    {
+        return new BoundedContextHashmapIterator($this);
     }
 
     /**
