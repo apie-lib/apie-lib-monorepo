@@ -13,7 +13,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
 {
     use UseGeneratedMethods;
 
-    function register()
+    public function register()
     {
         $this->app->singleton(
             \Apie\CmsApiDropdownOption\Controllers\DropdownOptionController::class,
@@ -30,7 +30,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
             \Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class,
             function ($app) {
                 return \Apie\CmsApiDropdownOption\DropdownOptionProvider\ChainedDropdownOptionProvider::create(
-                        $this->getTaggedServicesIterator(\Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class)
+                    $this->getTaggedServicesIterator(\Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class)
                 );
                 
             }

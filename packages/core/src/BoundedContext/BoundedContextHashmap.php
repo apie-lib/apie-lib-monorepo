@@ -5,7 +5,6 @@ use Apie\Core\Actions\BoundedContextHashmapIterator;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Lists\ItemHashmap;
-use IteratorAggregate;
 use ReflectionClass;
 
 /**

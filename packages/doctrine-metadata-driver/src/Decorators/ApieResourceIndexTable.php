@@ -1,11 +1,9 @@
 <?php
 namespace Apie\DoctrineMetadataDriver\Decorators;
 
-use Apie\Core\Actions\BoundedContextEntityTuple;
 use Apie\Core\BoundedContext\BoundedContext;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping\ClassMetadata;
-use Doctrine\ORM\Mapping\DefaultTypedFieldMapper;
 
 class ApieResourceIndexTable extends ClassMetadata
 {

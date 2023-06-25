@@ -13,7 +13,7 @@ class FakerServiceProvider extends ServiceProvider
 {
     use UseGeneratedMethods;
 
-    function register()
+    public function register()
     {
         $this->app->singleton(
             \Faker\Generator::class,

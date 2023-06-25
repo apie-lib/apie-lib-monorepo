@@ -1,11 +1,9 @@
 <?php
 namespace Apie\DoctrineMetadataDriver;
 
-use Apie\Common\ApieFacade;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
-use Apie\Core\BoundedContext\BoundedContextId;
-use Apie\DoctrineMetadataDriver\Decorators\ApieResourceMetadata;
 use Apie\DoctrineMetadataDriver\Builder\ApieMetadataBuilder;
+use Apie\DoctrineMetadataDriver\Decorators\ApieResourceMetadata;
 use Doctrine\Persistence\Mapping\ClassMetadata;
 use Doctrine\Persistence\Mapping\Driver\MappingDriver;
 

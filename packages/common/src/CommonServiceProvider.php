@@ -13,7 +13,7 @@ class CommonServiceProvider extends ServiceProvider
 {
     use UseGeneratedMethods;
 
-    function register()
+    public function register()
     {
         $this->app->singleton(
             \Apie\Common\ApieFacade::class,

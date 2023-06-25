@@ -13,14 +13,13 @@ class SchemaGeneratorServiceProvider extends ServiceProvider
 {
     use UseGeneratedMethods;
 
-    function register()
+    public function register()
     {
         $this->app->singleton(
             \Apie\SchemaGenerator\ComponentsBuilderFactory::class,
             function ($app) {
                 return call_user_func(
                     'Apie\\SchemaGenerator\\ComponentsBuilderFactory::createComponentsBuilderFactory'
-                
                 );
                 
             }

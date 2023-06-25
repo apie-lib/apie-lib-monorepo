@@ -9,7 +9,6 @@ use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
-use IteratorAggregate;
 use ReflectionClass;
 use ReflectionMethod;
 

@@ -13,7 +13,7 @@ class SerializerServiceProvider extends ServiceProvider
 {
     use UseGeneratedMethods;
 
-    function register()
+    public function register()
     {
         $this->app->singleton(
             \Apie\Serializer\Serializer::class,

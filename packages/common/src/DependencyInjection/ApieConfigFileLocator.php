@@ -11,7 +11,6 @@ use Apie\HtmlBuilders\FormBuildContext;
 use Apie\RestApi\OpenApi\OpenApiGenerator;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
 use Apie\Serializer\Serializer;
-use Apie\ServiceProviderGenerator\ServiceProviderGenerator;
 use ReflectionClass;
 use ReflectionException;
 use Symfony\Component\Config\FileLocator;

@@ -25,7 +25,8 @@ class BoundedContextHashmapIterator implements Iterator
      */
     private array $entityTodo = [];
 
-    public function __construct(private readonly BoundedContextHashmap $boundedContextHashmap) {
+    public function __construct(private readonly BoundedContextHashmap $boundedContextHashmap)
+    {
     }
     public function current(): ?BoundedContextEntityTuple
     {

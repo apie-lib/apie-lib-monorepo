@@ -13,13 +13,13 @@ class CoreServiceProvider extends ServiceProvider
 {
     use UseGeneratedMethods;
 
-    function register()
+    public function register()
     {
         $this->app->singleton(
             'apie.route_definitions.provider',
             function ($app) {
                 return \Apie\ApieBundle\Wrappers\GeneralServiceFactory::createRoutedDefinitionProvider(
-                        $this->getTaggedServicesIterator('apie.core.route_definition')
+                    $this->getTaggedServicesIterator('apie.core.route_definition')
                 );
                 
             }
@@ -41,9 +41,9 @@ class CoreServiceProvider extends ServiceProvider
             \Apie\Core\ContextBuilders\ContextBuilderFactory::class,
             function ($app) {
                 return \Apie\ApieBundle\Wrappers\GeneralServiceFactory::createContextBuilderFactory(
-                        $app->make(\Apie\Core\BoundedContext\BoundedContextHashmap::class),
-                        $app->bound(\Apie\Serializer\DecoderHashmap::class) ? $app->make(\Apie\Serializer\DecoderHashmap::class) : null,
-                        $this->getTaggedServicesIterator('apie.core.context_builder')
+                    $app->make(\Apie\Core\BoundedContext\BoundedContextHashmap::class),
+                    $app->bound(\Apie\Serializer\DecoderHashmap::class) ? $app->make(\Apie\Serializer\DecoderHashmap::class) : null,
+                    $this->getTaggedServicesIterator('apie.core.context_builder')
                 );
                 
             }
@@ -85,8 +85,8 @@ class CoreServiceProvider extends ServiceProvider
             \Apie\Core\Datalayers\Grouped\DataLayerByBoundedContext::class,
             function ($app) {
                 return \Apie\ApieBundle\Wrappers\GeneralServiceFactory::createDataLayerMap(
-                        $this->parseArgument('%apie.datalayers%'),
-                        $this->getTaggedServicesServiceLocator('apie.datalayer')
+                    $this->parseArgument('%apie.datalayers%'),
+                    $this->getTaggedServicesServiceLocator('apie.datalayer')
                 );
                 
             }

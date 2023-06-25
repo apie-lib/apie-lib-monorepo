@@ -2,7 +2,6 @@
 namespace Apie\DoctrineMetadataDriver\Decorators;
 
 use Apie\Core\Actions\BoundedContextEntityTuple;
-use Apie\Core\BoundedContext\BoundedContext;
 use Doctrine\ORM\Mapping\ClassMetadata;
 
 /**

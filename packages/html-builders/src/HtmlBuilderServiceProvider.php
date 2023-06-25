@@ -13,7 +13,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
 {
     use UseGeneratedMethods;
 
-    function register()
+    public function register()
     {
         $this->app->singleton(
             \Apie\HtmlBuilders\Factories\ComponentFactory::class,
@@ -29,7 +29,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
             \Apie\HtmlBuilders\Factories\FormComponentFactory::class,
             function ($app) {
                 return \Apie\HtmlBuilders\Factories\FormComponentFactory::create(
-                        $this->getTaggedServicesIterator(\Apie\HtmlBuilders\Interfaces\FormComponentProviderInterface::class)
+                    $this->getTaggedServicesIterator(\Apie\HtmlBuilders\Interfaces\FormComponentProviderInterface::class)
                 );
                 
             }
@@ -47,7 +47,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
             \Apie\HtmlBuilders\Configuration\ApplicationConfiguration::class,
             function ($app) {
                 return new \Apie\HtmlBuilders\Configuration\ApplicationConfiguration(
-                    array (
+                    array(
                   'base_url' => '%apie.cms.base_url%',
                 )
                 );
@@ -57,7 +57,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
             \Apie\HtmlBuilders\Assets\AssetManager::class,
             function ($app) {
                 return \Apie\HtmlBuilders\Assets\AssetManager::create(
-                        $this->parseArgument('%apie.cms.asset_folders%')
+                    $this->parseArgument('%apie.cms.asset_folders%')
                 );
                 
             }
