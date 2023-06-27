@@ -47,7 +47,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
             \Apie\HtmlBuilders\Configuration\ApplicationConfiguration::class,
             function ($app) {
                 return new \Apie\HtmlBuilders\Configuration\ApplicationConfiguration(
-                    array(
+                    array (
                   'base_url' => '%apie.cms.base_url%',
                 )
                 );
@@ -58,6 +58,15 @@ class HtmlBuilderServiceProvider extends ServiceProvider
             function ($app) {
                 return \Apie\HtmlBuilders\Assets\AssetManager::create(
                     $this->parseArgument('%apie.cms.asset_folders%')
+                );
+                
+            }
+        );
+        $this->app->singleton(
+            \Apie\HtmlBuilders\Interfaces\ComponentRendererInterface::class,
+            function ($app) {
+                return \Apie\Common\Wrappers\CmsRendererFactory::createRenderer(
+                    $app->make(\Apie\HtmlBuilders\Assets\AssetManager::class)
                 );
                 
             }

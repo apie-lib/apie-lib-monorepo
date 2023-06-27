@@ -1,5 +1,5 @@
 <?php
-namespace Apie\ApieBundle\Wrappers;
+namespace Apie\Common\Wrappers;
 
 use Apie\CmsLayoutGraphite\GraphiteDesignSystemLayout;
 use Apie\HtmlBuilders\Assets\AssetManager;
