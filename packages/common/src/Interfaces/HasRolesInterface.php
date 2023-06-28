@@ -1,6 +1,6 @@
 <?php
 
-namespace Apie\ApieBundle\Security\Interfaces;
+namespace Apie\Common\Interfaces;
 
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Lists\StringList;

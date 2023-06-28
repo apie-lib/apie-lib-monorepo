@@ -1,5 +1,5 @@
 <?php
-namespace Apie\ApieBundle\Security\Interfaces;
+namespace Apie\Common\Interfaces;
 
 /**
  * If an entity adds this interface, we do extra checks on existing sessions to see if you are still allowed to be logged

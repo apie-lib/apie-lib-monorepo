@@ -1,13 +1,13 @@
 <?php
 namespace Apie\LaravelApie;
 
-use Apie\LaravelApie\Providers\CmsServiceProvider;
 use Apie\CmsDropdown\CmsDropdownServiceProvider;
 use Apie\Common\CommonServiceProvider;
 use Apie\Console\ConsoleServiceProvider;
 use Apie\Core\CoreServiceProvider;
 use Apie\Faker\FakerServiceProvider;
 use Apie\HtmlBuilders\HtmlBuilderServiceProvider;
+use Apie\LaravelApie\Providers\CmsServiceProvider;
 use Apie\LaravelApie\Providers\SecurityServiceProvider;
 use Apie\RestApi\RestApiServiceProvider;
 use Apie\SchemaGenerator\SchemaGeneratorServiceProvider;

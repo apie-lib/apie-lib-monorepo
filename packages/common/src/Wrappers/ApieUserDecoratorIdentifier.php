@@ -1,6 +1,6 @@
 <?php
 
-namespace Apie\ApieBundle\Security\ValueObjects;
+namespace Apie\Common\Wrappers;
 
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
@@ -20,6 +20,8 @@ use ReflectionNamedType;
  */
 final class ApieUserDecoratorIdentifier implements StringValueObjectInterface
 {
+    use IsStringValueObject;
+
     /**
      * @var ReflectionClass<T>
      */
@@ -31,8 +33,6 @@ final class ApieUserDecoratorIdentifier implements StringValueObjectInterface
      * @var IdentifierInterface<T>
      */
     private IdentifierInterface $identifier;
-
-    use IsStringValueObject;
 
     /**
      * @return array<string, mixed>

@@ -41,6 +41,7 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
         "league/openapi-psr7-validator": "0.18",
+        "orchestra/testbench": "^8.5",
         "phpspec/prophecy-phpunit": "^2.0",
         "phpstan/phpstan": "^1.8.2",
         "phpunit/phpunit": "^9.5",
@@ -67,7 +68,6 @@
             "Apie\\DateValueObjects\\": "packages/date-value-objects/src/",
             "Apie\\DateformatToRegex\\": "packages/dateformat-to-regex/src/",
             "Apie\\DoctrineEntityConverter\\": "packages/doctrine-entity-converter/src/",
-            "Apie\\DoctrineMetadataDriver\\": "packages/doctrine-metadata-driver/src/",
             "Apie\\Faker\\": "packages/faker/src/",
             "Apie\\Fixtures\\": "packages/fixtures/src/",
             "Apie\\HtmlBuilders\\": "packages/html-builders/src/",
@@ -95,7 +95,6 @@
             "Apie\\Tests\\DateValueObjects\\": "packages/date-value-objects/tests/",
             "Apie\\Tests\\DateformatToRegex\\": "packages/dateformat-to-regex/tests/",
             "Apie\\Tests\\DoctrineEntityConverter\\": "packages/doctrine-entity-converter/tests/",
-            "Apie\\Tests\\DoctrineMetadataDriver\\": "packages/doctrine-metadata-driver/tests/",
             "Apie\\Tests\\Faker\\": "packages/faker/tests/",
             "Apie\\Tests\\Fixtures\\": "packages/fixtures/tests/",
             "Apie\\Tests\\HtmlBuilders\\": "packages/html-builders/tests/",
