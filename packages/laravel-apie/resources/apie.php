@@ -3,8 +3,8 @@
 
 use Apie\Cms\RouteDefinitions\CmsRouteDefinitionProvider;
 use Apie\CmsApiDropdownOption\RouteDefinitions\DropdownOptionsForExistingObjectRouteDefinition;
+use Apie\Common\Wrappers\RequestAwareInMemoryDatalayer;
 use Apie\Console\ConsoleCommandFactory;
-use Apie\Core\Datalayers\InMemory\InMemoryDatalayer;
 use Apie\Faker\ApieObjectFaker;
 use Apie\RestApi\OpenApi\OpenApiGenerator;
 
@@ -21,7 +21,7 @@ return [
         'base_url' => '/api',
     ],
     'datalayers' => [
-        'default_datalayer' => InMemoryDatalayer::class,
+        'default_datalayer' => RequestAwareInMemoryDatalayer::class,
         'context_mapping' => [
             // 'bounded context id' => [
             //  'default_datalayer' => DataLayer::class,
@@ -33,9 +33,9 @@ return [
     ],
     'bounded_contexts' => [
         'default' => [
-            'entities_folder' => project_path('src/Apie/Entities'),
+            'entities_folder' => app_path('Apie/Entities'),
             'entities_namespace' => 'App\\Apie\\Entities\\',
-            'actions_folder' => project_path('src/Apie/Actions'),
+            'actions_folder' => app_path('Apie/Actions'),
             'actions_namespace' => 'App\\Apie\\Actions\\',
         ]
     ],

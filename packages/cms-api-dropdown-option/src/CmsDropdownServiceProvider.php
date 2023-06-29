@@ -1,5 +1,5 @@
 <?php
-namespace Apie\CmsDropdown;
+namespace Apie\CmsApiDropdownOption;
 
 use Apie\ServiceProviderGenerator\UseGeneratedMethods;
 use Illuminate\Support\ServiceProvider;
@@ -25,6 +25,13 @@ class CmsDropdownServiceProvider extends ServiceProvider
                 );
             }
         );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\CmsApiDropdownOption\Controllers\DropdownOptionController::class,
+            array(
+              0 => 'controller.service_arguments',
+            )
+        );
         $this->app->tag([\Apie\CmsApiDropdownOption\Controllers\DropdownOptionController::class], 'controller.service_arguments');
         $this->app->singleton(
             \Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class,
@@ -34,6 +41,13 @@ class CmsDropdownServiceProvider extends ServiceProvider
                 );
                 
             }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class,
+            array(
+              0 => 'apie.context',
+            )
         );
         $this->app->tag([\Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class], 'apie.context');
         $this->app->singleton(
@@ -45,6 +59,13 @@ class CmsDropdownServiceProvider extends ServiceProvider
                     $app->make(\Apie\Core\Datalayers\Search\LazyLoadedListFilterer::class)
                 );
             }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\CmsApiDropdownOption\DropdownOptionProvider\EntityIdentifierOptionProvider::class,
+            array(
+              0 => 'Apie\\CmsApiDropdownOption\\DropdownOptionProvider\\DropdownOptionProviderInterface',
+            )
         );
         $this->app->tag([\Apie\CmsApiDropdownOption\DropdownOptionProvider\EntityIdentifierOptionProvider::class], \Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class);
         

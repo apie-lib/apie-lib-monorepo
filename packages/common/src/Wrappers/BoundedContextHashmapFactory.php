@@ -1,8 +1,8 @@
 <?php
-namespace Apie\ApieBundle\Wrappers;
+namespace Apie\Common\Wrappers;
 
 use Apie\ApieBundle\DependencyInjection\Configuration;
-use Apie\ApieBundle\ValueObjects\EntityNamespace;
+use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
@@ -10,7 +10,8 @@ use Apie\Core\BoundedContext\BoundedContextId;
 /**
  * Creates a BoundedContextHashmap instance from the ApieBundle configuration.
  *
- * @see Configuration
+ * @see Configuration in apie/apie-bundle for Symfony
+ * @see config.php in apie/laravel-apie for Laravel
  */
 final class BoundedContextHashmapFactory
 {

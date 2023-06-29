@@ -1,5 +1,5 @@
 <?php
-namespace Apie\ApieBundle\ValueObjects;
+namespace Apie\Common\ValueObjects;
 
 use Apie\Core\Lists\ReflectionClassList;
 use Apie\Core\Lists\ReflectionMethodList;

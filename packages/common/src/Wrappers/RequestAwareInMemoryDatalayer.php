@@ -1,6 +1,7 @@
 <?php
-namespace Apie\ApieBundle\Wrappers;
+namespace Apie\Common\Wrappers;
 
+use Apie\Common\Interfaces\BoundedContextSelection;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Datalayers\ApieDatalayerWithSupport;
@@ -19,7 +20,7 @@ final class RequestAwareInMemoryDatalayer implements BoundedContextAwareApieData
     private array $createdRepositories = [];
 
     public function __construct(
-        private readonly BoundedContextSelected $boundedContextSelected
+        private readonly BoundedContextSelection $boundedContextSelected
     ) {
     }
 

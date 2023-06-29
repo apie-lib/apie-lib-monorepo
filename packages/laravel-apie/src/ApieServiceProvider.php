@@ -1,14 +1,16 @@
 <?php
 namespace Apie\LaravelApie;
 
-use Apie\CmsDropdown\CmsDropdownServiceProvider;
+use Apie\CmsApiDropdownOption\CmsDropdownServiceProvider;
 use Apie\Common\CommonServiceProvider;
+use Apie\Common\Interfaces\BoundedContextSelection;
 use Apie\Console\ConsoleServiceProvider;
 use Apie\Core\CoreServiceProvider;
 use Apie\Faker\FakerServiceProvider;
 use Apie\HtmlBuilders\HtmlBuilderServiceProvider;
 use Apie\LaravelApie\Providers\CmsServiceProvider;
 use Apie\LaravelApie\Providers\SecurityServiceProvider;
+use Apie\LaravelApie\Wrappers\Core\BoundedContextSelected;
 use Apie\RestApi\RestApiServiceProvider;
 use Apie\SchemaGenerator\SchemaGeneratorServiceProvider;
 use Apie\Serializer\SerializerServiceProvider;
@@ -77,7 +79,8 @@ class ApieServiceProvider extends ServiceProvider
             }
         );
 
-
+        $this->app->bind(BoundedContextSelection::class, BoundedContextSelected::class);
+        
         $alreadyRegistered = [];
         foreach ($this->dependencies as $configKey => $dependencies) {
             if (config('apie.' . $configKey, false)) {

@@ -1,5 +1,5 @@
 <?php
-namespace Apie\ApieBundle\Wrappers;
+namespace Apie\Common\Wrappers;
 
 use Apie\Common\ContextBuilderFactory as CommonContextBuilderFactory;
 use Apie\Common\ContextBuilders\BoundedContextProviderContextBuilder;
