@@ -7,7 +7,6 @@ use Illuminate\Support\ServiceProvider;
 /**
  * This file is generated with apie/service-provider-generator from file: cms_dropdown.yaml
  * @codecoverageIgnore
- * @phpstan-ignore
  */
 class CmsDropdownServiceProvider extends ServiceProvider
 {

@@ -28,6 +28,7 @@
     "symfony/psr-http-message-bridge": "2.*"
   },
   "require-dev": {
+    "apie/rest-api": "self.version",
     "phpunit/phpunit": "^9.5",
     "phpspec/prophecy-phpunit": "^2.0"
   },

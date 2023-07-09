@@ -7,7 +7,6 @@ use Illuminate\Support\ServiceProvider;
 /**
  * This file is generated with apie/service-provider-generator from file: services.yaml
  * @codecoverageIgnore
- * @phpstan-ignore
  */
 class ApieServicesServiceProvider extends ServiceProvider
 {
@@ -21,8 +20,7 @@ class ApieServicesServiceProvider extends ServiceProvider
                 return new \Apie\ApieBundle\Routing\ApieRouteLoader(
                     $app->make('apie.route_definitions.provider'),
                     $app->make('apie.bounded_context.hashmap'),
-                    $this->parseArgument('%apie.cms.base_url%'),
-                    $this->parseArgument('%apie.rest_api.base_url%')
+                    $app->make(\Apie\Common\RouteDefinitions\PossibleRoutePrefixProvider::class)
                 );
             }
         );

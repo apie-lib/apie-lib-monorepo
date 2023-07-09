@@ -24,6 +24,7 @@ parameters:
         - packages/serializer/src
         - packages/text-value-objects/src
     ignoreErrors:
+        - '#ReflectionException is never thrown in the try block#'
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
         - '#::(all|find|persistNew|persistExisting)\(\) invoked with 2 parameters, 1 required#'
@@ -36,7 +37,7 @@ parameters:
             message: '#ActionInterface::#'
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
-        -   '#generic class Apie\\ApieBundle\\Security\\ValueObjects\\ApieUserDecoratorIdentifier#'
+        -   '#generic class Apie\\Common\\Wrappers\\ApieUserDecoratorIdentifier#'
         -
             message: '#NodeDefinition::children#'
             path: packages/apie-bundle/src/DependencyInjection/Configuration.php
@@ -114,4 +115,8 @@ parameters:
         -
             message: '#filterFn type has no value type specified in iterable type array#'
             path: packages/core/src/Datalayers/Lists/Filtered/FilteredItem.php
+            count: 1
+        -
+            message: "#Class 'PossibleRoutePrefixes' is a value object that returns an array, but it does not use CompositeValueObject trait#"
+            path: packages/common/src/ValueObjects/PossibleRoutePrefixes.php
             count: 1
