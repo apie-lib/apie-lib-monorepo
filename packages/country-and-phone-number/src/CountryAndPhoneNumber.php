@@ -1,11 +1,11 @@
 <?php
 namespace Apie\CountryAndPhoneNumber;
 
-use Apie\CompositeValueObjects\CompositeValueObject;
-use Apie\CompositeValueObjects\CompositeWithOwnValidation;
-use Apie\CompositeValueObjects\Fields\FieldInterface;
-use Apie\CompositeValueObjects\Fields\FromProperty;
 use Apie\Core\Attributes\FakeMethod;
+use Apie\Core\ValueObjects\CompositeValueObject;
+use Apie\Core\ValueObjects\CompositeWithOwnValidation;
+use Apie\Core\ValueObjects\Fields\FieldInterface;
+use Apie\Core\ValueObjects\Fields\FromProperty;
 use Apie\CountryAndPhoneNumber\Exceptions\PhoneNumberAndCountryMismatch;
 use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
 use Apie\CountryAndPhoneNumber\Fields\DynamicPhoneNumberProperty;

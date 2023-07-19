@@ -15,12 +15,5 @@ foreach ($locator->getAllPaths() as $foundPath) {
     $sourceCode = $generator->generateClass($foundPath[1], $foundPath[0]);
     file_put_contents($targetPath, $sourceCode);
 }
-file_put_contents(
-    __DIR__ . '/../packages/laravel-apie/src/Providers/ApieServicesServiceProvider.php',
-    $generator->generateClass(
-        'Apie\\LaravelApie\\Providers\\ApieServicesServiceProvider',
-        __DIR__ . '/../packages/apie-bundle/resources/config/services.yaml'
-    )
-);
 
 ComposerTools::runUpdate();

@@ -1,9 +1,9 @@
 <?php
 namespace Apie\CountryAndPhoneNumber\Fields;
 
-use Apie\CompositeValueObjects\Fields\FieldInterface;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Core\ValueObjects\Fields\FieldInterface;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\Core\ValueObjects\Utils;
 use Apie\CountryAndPhoneNumber\CountryAndPhoneNumber;

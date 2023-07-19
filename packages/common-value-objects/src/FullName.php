@@ -1,8 +1,8 @@
 <?php
 namespace Apie\CommonValueObjects;
 
-use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\Attributes\FakeMethod;
+use Apie\Core\ValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\TextValueObjects\FirstName;
 use Apie\TextValueObjects\LastName;

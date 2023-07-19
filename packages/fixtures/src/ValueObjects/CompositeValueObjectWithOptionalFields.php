@@ -1,9 +1,9 @@
 <?php
 namespace Apie\Fixtures\ValueObjects;
 
-use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\Attributes\Internal;
 use Apie\Core\Attributes\Optional;
+use Apie\Core\ValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 
 class CompositeValueObjectWithOptionalFields implements ValueObjectInterface

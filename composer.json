@@ -76,7 +76,8 @@
             "Apie\\RestApi\\": "packages/rest-api/src/",
             "Apie\\SchemaGenerator\\": "packages/schema-generator/src/",
             "Apie\\Serializer\\": "packages/serializer/src/",
-            "Apie\\TextValueObjects\\": "packages/text-value-objects/src/"
+            "Apie\\TextValueObjects\\": "packages/text-value-objects/src/",
+            "Apie\\Tools\\": "tools/"
         }
     },
     "autoload-dev": {

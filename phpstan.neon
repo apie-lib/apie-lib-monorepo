@@ -37,6 +37,10 @@ parameters:
             message: '#ActionInterface::#'
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
+        -   
+            message: '#Call to an undefined method ReflectionType::getName#'
+            path: packages/core/src/Utils/EnumUtils.php
+            count: 2
         -   '#generic class Apie\\Common\\Wrappers\\ApieUserDecoratorIdentifier#'
         -
             message: '#NodeDefinition::children#'
