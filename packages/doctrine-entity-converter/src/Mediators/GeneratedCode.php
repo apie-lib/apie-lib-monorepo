@@ -31,7 +31,6 @@ class GeneratedCode
         $this->classType = $this->namespace->addClass($className);
         $this->classType->addImplement(DtoInterface::class);
         $this->classType->addAttribute(Entity::class);
-        $this->classType->addMethod('__construct')->setPrivate();
 
         $this->createFrom = $this->classType->addMethod('createFrom')->setStatic(true)->setPublic();
         $this->createFrom->addParameter('input')->setType($originalClassName);
