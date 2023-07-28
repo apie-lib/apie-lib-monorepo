@@ -70,7 +70,11 @@ abstract class AbstractPropertyGenerator implements PropertyGeneratorInterface
         $code->addCreateFromCode($fromCode);
         $inject = $this->generateInject($table, $field);
         $code->addInjectCode($inject);
-        $this->lastGeneratedProperty = $code->addProperty($this->getTypeForProperty($table, $field), $field->getName());
+        $type = $this->getTypeForProperty($table, $field);
+        if (str_starts_with($type, 'apie_')) {
+            $type = $code->getNamespace() . '\\' . $type;
+        }
+        $this->lastGeneratedProperty = $code->addProperty($type, $field->getName());
         $this->lastGeneratedProperty->addAttribute($this->getDoctrineAttribute($table, $field), $this->getDoctrineAttributeValue($table, $field));
     }
 

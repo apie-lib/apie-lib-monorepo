@@ -23,7 +23,6 @@ final class OrmBuilder
     {
         $parser = (new ParserFactory)->create(ParserFactory::ONLY_PHP7);
         try {
-            var_dump($phpCode);
             $parser->parse($phpCode);
         } catch (Error $error) {
             throw new RuntimeException(

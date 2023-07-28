@@ -42,6 +42,11 @@ class GeneratedCode
         $this->inject->addParameter('instance')->setType($originalClassName);
     }
 
+    public function getNamespace(): string
+    {
+        return $this->namespace->getName();
+    }
+
     public function addUse(string $typehint): self
     {
         $this->namespace->addUse($typehint);
