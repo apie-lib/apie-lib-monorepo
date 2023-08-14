@@ -41,6 +41,7 @@ parameters:
             message: '#Call to an undefined method ReflectionType::getName#'
             path: packages/core/src/Utils/EnumUtils.php
             count: 2
+        - '#Unable to resolve the template type T in call to method static method Apie\\Core\\Utils\\ConverterUtils::toReflectionClass\(\)#'
         -   '#generic class Apie\\Common\\Wrappers\\ApieUserDecoratorIdentifier#'
         -
             message: '#NodeDefinition::children#'

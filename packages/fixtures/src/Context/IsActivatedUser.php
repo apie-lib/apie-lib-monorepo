@@ -15,7 +15,6 @@ class IsActivatedUser implements ApieContextAttribute
             return false;
         }
         $user = $context->getContext('authenticated');
-        var_dump($user);
         if ($user instanceof UserWithAddress) {
             return $user->hasPassword();
         }
