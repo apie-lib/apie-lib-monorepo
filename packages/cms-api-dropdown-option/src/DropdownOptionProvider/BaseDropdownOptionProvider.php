@@ -6,6 +6,7 @@ use Apie\Common\ContextConstants;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Metadata\Fields\FieldInterface;
 use Apie\Core\Metadata\MetadataFactory;
+use Apie\Core\Metadata\MetadataInterface;
 use Apie\Core\PropertyToFieldMetadataUtil;
 use Apie\Core\ValueObjects\Utils;
 use ReflectionClass;
@@ -44,7 +45,10 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
         return $fieldMetadata instanceof FieldInterface && $this->supportsField($fieldMetadata, $apieContext);
     }
 
-    final protected function getMetadata(ReflectionClass $class, ApieContext $apieContext)
+    /**
+     * @param ReflectionClass<object> $class
+     */
+    final protected function getMetadata(ReflectionClass $class, ApieContext $apieContext): MetadataInterface
     {
         return $apieContext->hasContext('id')
             ? MetadataFactory::getModificationMetadata($class, $apieContext)

@@ -6,6 +6,7 @@ parameters:
         - packages/apie-bundle/src
         - packages/apie-phpstan-rules/src
         - packages/cms/src
+        - packages/cms-api-dropdown-option/src
         - packages/cms-layout-graphite/src
         - packages/common/src
         - packages/common-value-objects/src
@@ -16,8 +17,10 @@ parameters:
         - packages/date-value-objects/src
         - packages/dateformat-to-regex/src
         - packages/doctrine-entity-converter/src
+        - packages/doctrine-entity-datalayer/src
         - packages/faker/src
         - packages/html-builders/src
+        - packages/laravel-apie/src
         - packages/regex-value-objects/src
         - packages/rest-api/src
         - packages/schema-generator/src
@@ -37,6 +40,14 @@ parameters:
             message: '#ActionInterface::#'
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
+        -
+            message: '#Unable to resolve the template type T in call to method Apie\\Core\\Datalayers\\ApieDatalayer::all#'
+            path: packages/cms-api-dropdown-option/src/DropdownOptionProvider/EntityIdentifierOptionProvider.php
+            count: 1
+        -
+            message: '#View to string#'
+            path: packages/laravel-apie/src/Wrappers/Cms/DashboardContents.php
+            count: 1
         -   
             message: '#Call to an undefined method ReflectionType::getName#'
             path: packages/core/src/Utils/EnumUtils.php

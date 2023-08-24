@@ -38,6 +38,9 @@ class DropdownOptionsAction implements ActionInterface
         return new ReflectionClass(PartialInput::class);
     }
 
+    /**
+     * @return ReflectionClass<DropdownOptionList>
+     */
     public static function getOutputType(ReflectionClass $class): ReflectionClass
     {
         return new ReflectionClass(DropdownOptionList::class);

@@ -13,6 +13,7 @@
         "apie/service-provider-generator": "dev-main",
         "apie/type-converter": "^1.0.2",
         "cebe/php-openapi": "^1.7",
+        "doctrine/common": "^3.4.3",
         "doctrine/orm": "^2.12",
         "doctrine/persistence": "^2.4",
         "egulias/email-validator": "^3.2.1",
