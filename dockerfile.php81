@@ -12,16 +12,17 @@ RUN apt-get install -y \
         tree \
         vim \
         wget \
-        unzip
-
-#install some base extensions
-#RUN apt-get install -y \
-#        zlib1g-dev \
-#        zip
-#RUN pecl install zip
-#RUN docker-php-ext-install zip
+        unzip \
+        libssh2-1-dev \
+        zlib1g-dev \
+        zip
 
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+RUN docker-php-ext-install opcache
+RUN pecl install pcov \
+    && docker-php-ext-enable pcov
+
 # show that both Composer and PHP run as expected
-RUN composer --version && php -v
+RUN composer --version && php -v && php -m
