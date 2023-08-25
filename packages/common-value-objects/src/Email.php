@@ -32,7 +32,7 @@ class Email implements StringValueObjectInterface
     public static function validate(string $input): void
     {
         $validator = new EmailValidator();
-        if (!$validator->isValid("example@example.com", new RFCValidation())) {
+        if (!$validator->isValid($input, new RFCValidation())) {
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(__CLASS__));
         }
     }
