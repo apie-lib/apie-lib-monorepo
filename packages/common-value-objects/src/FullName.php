@@ -18,9 +18,9 @@ class FullName implements ValueObjectInterface, Stringable
     use CompositeValueObject;
 
     public function __construct(
-        private readonly Gender $gender,
-        private readonly FirstName $firstName,
-        private readonly LastName $lastName
+        private Gender $gender,
+        private FirstName $firstName,
+        private LastName $lastName
     ) {
     }
 
