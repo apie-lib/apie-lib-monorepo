@@ -40,6 +40,7 @@
         "twig/twig": "^3.4.2"
     },
     "require-dev": {
+        "doctrine/doctrine-bundle": "*",
         "friendsofphp/php-cs-fixer": "^3.8",
         "league/openapi-psr7-validator": "0.18",
         "orchestra/testbench": "^8.5",
