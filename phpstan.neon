@@ -12,6 +12,7 @@ parameters:
         - packages/common-value-objects/src
         - packages/composite-value-objects/src
         - packages/console/src
+        - packages/count-words/src
         - packages/core/src
         - packages/country-and-phone-number/src
         - packages/date-value-objects/src

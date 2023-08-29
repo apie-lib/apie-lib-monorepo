@@ -29,7 +29,7 @@ final class EncryptedPassword implements StringValueObjectInterface
     /**
      * @return array<string, int>
      */
-    public static function getIndex(): array
+    public static function getIndexes(): array
     {
         return [];
     }

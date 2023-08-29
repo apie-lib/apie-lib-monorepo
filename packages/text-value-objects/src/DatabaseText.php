@@ -2,15 +2,19 @@
 namespace Apie\TextValueObjects;
 
 use Apie\Core\Attributes\FakeMethod;
+use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\Attributes\SchemaMethod;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
+use Apie\TextValueObjects\Concerns\IndexesWords;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]
 #[SchemaMethod('createSchema')]
+#[ProvideIndex('getIndexes')]
 final class DatabaseText implements HasRegexValueObjectInterface
 {
+    use IndexesWords;
     use IsStringWithRegexValueObject;
 
     public static function getRegularExpression(): string
