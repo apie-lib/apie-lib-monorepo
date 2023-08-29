@@ -41,6 +41,10 @@ parameters:
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
         -
+            count: 2
+            path: packages/doctrine-entity-datalayer/src/DoctrineEntityDatalayer.php
+            message: '#undefined property Apie\\DoctrineEntityConverter\\Interfaces\\GeneratedDoctrineEntityInterface::\$#'
+        -
             message: '#Unable to resolve the template type T in call to method Apie\\Core\\Datalayers\\ApieDatalayer::all#'
             path: packages/cms-api-dropdown-option/src/DropdownOptionProvider/EntityIdentifierOptionProvider.php
             count: 1
