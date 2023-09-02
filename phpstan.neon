@@ -129,14 +129,6 @@ parameters:
             path: packages/html-builders/src/Components/Forms/Password.php
             count: 8
         -
-            message: '# with type callable is not subtype of native type array\|object\|string#'
-            path: packages/core/src/Datalayers/Lists/Filtered/FilteredItem.php
-            count: 1
-        -
-            message: '#filterFn type has no value type specified in iterable type array#'
-            path: packages/core/src/Datalayers/Lists/Filtered/FilteredItem.php
-            count: 1
-        -
             message: "#Class 'PossibleRoutePrefixes' is a value object that returns an array, but it does not use CompositeValueObject trait#"
             path: packages/common/src/ValueObjects/PossibleRoutePrefixes.php
             count: 1
