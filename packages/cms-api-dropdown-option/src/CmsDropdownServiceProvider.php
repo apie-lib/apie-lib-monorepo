@@ -54,8 +54,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
             function ($app) {
                 return new \Apie\CmsApiDropdownOption\DropdownOptionProvider\EntityIdentifierOptionProvider(
                     $app->make(\Apie\Core\BoundedContext\BoundedContextHashmap::class),
-                    $app->make(\Apie\Core\Datalayers\ApieDatalayer::class),
-                    $app->make(\Apie\Core\Datalayers\Search\LazyLoadedListFilterer::class)
+                    $app->make(\Apie\Core\Datalayers\ApieDatalayer::class)
                 );
             }
         );

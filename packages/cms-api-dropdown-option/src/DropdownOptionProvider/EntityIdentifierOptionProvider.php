@@ -9,7 +9,6 @@ use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Datalayers\ApieDatalayer;
-use Apie\Core\Datalayers\Search\LazyLoadedListFilterer;
 use Apie\Core\Datalayers\Search\QuerySearch;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Exceptions\InvalidTypeException;
@@ -23,8 +22,7 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
 {
     public function __construct(
         private readonly BoundedContextHashmap $boundedContextHashmap,
-        private readonly ApieDatalayer $apieDatalayer,
-        private readonly LazyLoadedListFilterer $filterer
+        private readonly ApieDatalayer $apieDatalayer
     ) {
     }
 
@@ -63,8 +61,8 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
         if ($class->implementsInterface(IdentifierInterface::class)) {
             $class = $class->getMethod('getReferenceFor')->invoke(null);
         }
-        $list = $this->apieDatalayer->all($class, $boundedContext);
-        $result = $this->filterer->filterList($list, $apieContext, new QuerySearch(0, textSearch: $searchTerm), true);
+        $list = $this->apieDatalayer->all($class, $boundedContext)
+            ->toPaginatedResult(new QuerySearch(0, textSearch: $searchTerm), $apieContext);
         $list = [];
         foreach ($result as $entity) {
             $list[] = new DropdownOption($entity->getId(), $this->determineDisplayValue($entity));

@@ -17,7 +17,6 @@ services:
     arguments:
       - '@Apie\Core\BoundedContext\BoundedContextHashmap'
       - '@Apie\Core\Datalayers\ApieDatalayer'
-      - '@Apie\Core\Datalayers\Search\LazyLoadedListFilterer'
     tags: ['Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface']
 
 
