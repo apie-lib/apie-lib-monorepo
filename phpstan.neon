@@ -42,6 +42,10 @@ parameters:
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
         -
+            message: '#Variable \$parameters on left side#'
+            path: packages/rest-api/src/EventListeners/OpenApiOperationAddedEventSubscriber.php
+            count: 1
+        -
             path: packages/doctrine-entity-datalayer/src/EntityReindexer.php
             message: '#undefined property Apie\\DoctrineEntityConverter\\Interfaces\\GeneratedDoctrineEntityInterface::\$#'
         -
