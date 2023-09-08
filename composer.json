@@ -10,6 +10,7 @@
     "type": "project",
     "license": "MIT",
     "require": {
+        "apie/phpunit-matrix-data-provider": "^1.0.0",
         "apie/service-provider-generator": "dev-main",
         "apie/type-converter": "^1.0.2",
         "cebe/php-openapi": "^1.7",
@@ -77,6 +78,7 @@
             "Apie\\Faker\\": "packages/faker/src/",
             "Apie\\Fixtures\\": "packages/fixtures/src/",
             "Apie\\HtmlBuilders\\": "packages/html-builders/src/",
+            "Apie\\IntegrationTests\\": "packages/integration-tests/src/",
             "Apie\\LaravelApie\\": "packages/laravel-apie/src/",
             "Apie\\RegexValueObjects\\": "packages/regex-value-objects/src/",
             "Apie\\RestApi\\": "packages/rest-api/src/",

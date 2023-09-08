@@ -20,6 +20,7 @@ parameters:
         - packages/doctrine-entity-converter/src
         - packages/doctrine-entity-datalayer/src
         - packages/faker/src
+        - packages/integration-tests/src
         - packages/html-builders/src
         - packages/laravel-apie/src
         - packages/regex-value-objects/src
