@@ -33,6 +33,7 @@ class SymfonyTestApplication implements TestApplicationInterface
                     'default_datalayer' => $this->applicationConfig->getDatalayerImplementation()->name,
                 ],
                 'enable_doctrine_bundle_connection' => false,
+                'enable_security' => $this->applicationConfig->doesIncludeSecurity(),
                 'doctrine' => [
                     'run_migrations' => true,
                     'connection_params' => [
