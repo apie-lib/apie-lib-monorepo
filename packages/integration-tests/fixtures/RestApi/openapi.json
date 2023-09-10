@@ -1,0 +1,804 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Apie-lib generated OpenAPI spec",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/User/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.User",
+                "parameters": [
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PartialInput-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/User/{id}/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.existing.User",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PartialInput-post"
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PartialInput-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/User": {
+            "post": {
+                "tags": [
+                    "User",
+                    "resource"
+                ],
+                "description": "Creates an instance of User",
+                "operationId": "post-User",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "User",
+                    "resource"
+                ],
+                "description": "Gets a list of resource that are an instance of User",
+                "operationId": "get-all-User",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "required": [
+                                        "totalCount",
+                                        "first",
+                                        "last",
+                                        "list"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "totalCount": {
+                                            "type": "integer"
+                                        },
+                                        "first": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "last": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "prev": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "next": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/User-get"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/User/{id}": {
+            "get": {
+                "tags": [
+                    "User",
+                    "resource"
+                ],
+                "description": "Gets a resource of User with a specific id",
+                "operationId": "get-single-User",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of User",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UserIdentifier-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "User",
+                    "resource"
+                ],
+                "description": "Modifies an instance of User",
+                "operationId": "patch-single-User",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of User",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UserIdentifier-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User-patch"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/User/{id}/block": {
+            "get": {
+                "tags": [
+                    "User",
+                    "action"
+                ],
+                "description": "Runs method block on a User with a specific id",
+                "operationId": "get-single-User-run-block",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of User",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UserIdentifier-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/User/{id}/unblock": {
+            "get": {
+                "tags": [
+                    "User",
+                    "action"
+                ],
+                "description": "Runs method unblock on a User with a specific id",
+                "operationId": "get-single-User-run-unblock",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of User",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UserIdentifier-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/User/{id}/activate": {
+            "post": {
+                "tags": [
+                    "User",
+                    "action"
+                ],
+                "description": "Runs method activate on a User with a specific id",
+                "operationId": "get-single-User-run-activate",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of User",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UserIdentifier-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "activationToken",
+                                    "newPassword",
+                                    "repeat"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "activationToken": {
+                                        "type": "string"
+                                    },
+                                    "newPassword": {
+                                        "$ref": "#/components/schemas/StrongPassword-post"
+                                    },
+                                    "repeat": {
+                                        "$ref": "#/components/schemas/StrongPassword-post"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/User/{id}/verify": {
+            "post": {
+                "tags": [
+                    "User",
+                    "action"
+                ],
+                "description": "Runs method verify on a User with a specific id",
+                "operationId": "get-single-User-run-verify",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of User",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UserIdentifier-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "password"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "/api/types"
+        },
+        {
+            "url": "http://localhost//api/types"
+        }
+    ],
+    "components": {
+        "schemas": {
+            "DropdownOption-post": {
+                "type": "object",
+                "required": [
+                    "value",
+                    "displayValue"
+                ],
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "displayValue": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
+            "DropdownOptionList-get": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/DropdownOption-post"
+                }
+            },
+            "DutchPhoneNumber-get": {
+                "type": "string",
+                "format": "dutchphonenumber"
+            },
+            "DutchPhoneNumber-post": {
+                "type": "string",
+                "format": "dutchphonenumber"
+            },
+            "PartialInput-post": {
+                "type": "object",
+                "required": [
+                    "input"
+                ],
+                "properties": {
+                    "input": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
+            "StrongPassword-post": {
+                "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
+                "type": "string",
+                "format": "password"
+            },
+            "Throwable-get": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "code": {
+                        "$ref": "#/components/schemas/mixed"
+                    }
+                }
+            },
+            "User-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "blocked",
+                    "phoneNumber"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/UserIdentifier-get"
+                    },
+                    "blocked": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "phoneNumber": {
+                        "$ref": "#/components/schemas/DutchPhoneNumber-get"
+                    }
+                }
+            },
+            "User-patch": {
+                "type": "object",
+                "properties": {
+                    "phoneNumber": {
+                        "$ref": "#/components/schemas/DutchPhoneNumber-post"
+                    }
+                }
+            },
+            "User-post": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/UserIdentifier-post"
+                    },
+                    "phoneNumber": {
+                        "$ref": "#/components/schemas/DutchPhoneNumber-post"
+                    }
+                }
+            },
+            "UserIdentifier-get": {
+                "type": "string",
+                "format": "useridentifier"
+            },
+            "UserIdentifier-post": {
+                "type": "string",
+                "format": "useridentifier"
+            },
+            "ValidationException-get": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "errors": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "mixed": {
+                "nullable": true
+            }
+        }
+    }
+}

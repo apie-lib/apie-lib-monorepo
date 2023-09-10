@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Tests\ApieBundle;
+namespace Apie\IntegrationTests\Applications\Symfony;
 
 use Apie\ApieBundle\ApieBundle;
 use Apie\ApieBundle\Security\ApieUserProvider;
@@ -10,19 +10,19 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
 
-class ApieBundleTestingKernel extends Kernel
+class SymfonyTestingKernel extends Kernel
 {
-    private readonly array $apieConfig;
-
+    /**
+     * @param array<string, mixed> $apieConfig
+     */
     public function __construct(
-        array $apieConfig = [],
+        private readonly array $apieConfig = [],
         private readonly bool $includeTwigBundle = false,
         private readonly bool $includeSecurityBundle = true
     ) {
         if (!$this->includeSecurityBundle) {
             $apieConfig['enable_security'] = false;
         }
-        $this->apieConfig = $apieConfig;
         parent::__construct('test', true);
     }
 
@@ -48,7 +48,6 @@ class ApieBundleTestingKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
-        $loader->load(__DIR__ . '/../fixtures/services.yaml');
         $loader->load(function (ContainerBuilder $container) {
             $container->loadFromExtension('apie', $this->apieConfig);
             $container->loadFromExtension(
