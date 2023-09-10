@@ -11,7 +11,7 @@
     "license": "MIT",
     "require": {
         "apie/phpunit-matrix-data-provider": "^1.0.0",
-        "apie/service-provider-generator": "0.9.2",
+        "apie/service-provider-generator": "0.9.3",
         "apie/type-converter": "^1.0.2",
         "cebe/php-openapi": "^1.7",
         "doctrine/common": "^3.4.3",

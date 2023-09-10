@@ -27,7 +27,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
         \Apie\ServiceProviderGenerator\TagMap::register(
             $this->app,
             \Apie\CmsApiDropdownOption\Controllers\DropdownOptionController::class,
-            array(
+            array (
               0 => 'controller.service_arguments',
             )
         );
@@ -44,7 +44,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
         \Apie\ServiceProviderGenerator\TagMap::register(
             $this->app,
             \Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class,
-            array(
+            array (
               0 => 'apie.context',
             )
         );
@@ -61,7 +61,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
         \Apie\ServiceProviderGenerator\TagMap::register(
             $this->app,
             \Apie\CmsApiDropdownOption\DropdownOptionProvider\EntityIdentifierOptionProvider::class,
-            array(
+            array (
               0 => 'Apie\\CmsApiDropdownOption\\DropdownOptionProvider\\DropdownOptionProviderInterface',
             )
         );

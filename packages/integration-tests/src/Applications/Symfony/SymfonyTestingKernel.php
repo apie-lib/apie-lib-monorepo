@@ -20,9 +20,7 @@ class SymfonyTestingKernel extends Kernel
         private readonly bool $includeTwigBundle = false,
         private readonly bool $includeSecurityBundle = true
     ) {
-        if (!$this->includeSecurityBundle) {
-            $apieConfig['enable_security'] = false;
-        }
+        $apieConfig['enable_security'] ??= $this->includeSecurityBundle;
         parent::__construct('test', true);
     }
 
