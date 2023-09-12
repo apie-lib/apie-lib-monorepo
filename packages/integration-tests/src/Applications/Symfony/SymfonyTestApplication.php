@@ -20,6 +20,11 @@ class SymfonyTestApplication implements TestApplicationInterface
     ) {
     }
 
+    public function getApplicationConfig(): ApplicationConfig
+    {
+        return $this->applicationConfig;
+    }
+
     public function bootApplication(): void
     {
         if ($this->kernel) {

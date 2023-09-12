@@ -3,6 +3,8 @@ namespace Apie\IntegrationTests;
 
 use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer;
+use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Concerns\CreatesApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -12,12 +14,29 @@ final class IntegrationTestHelper
 {
     use CreatesApplications;
 
-    public function createFullFrameworkCOnfig(): ApplicationConfig
+    public function createDbLayerImplementation(): ?DatalayerImplementation
+    {
+        return class_exists(DoctrineEntityDatalayer::class) ? DatalayerImplementation::DB_DATALAYER : null;
+        ;
+    }
+
+    public function createFakerLayerImplementation(): ?DatalayerImplementation
+    {
+        return class_exists(FakerDatalayer::class) ? DatalayerImplementation::FAKER : null;
+        ;
+    }
+
+    public function createInMemoryLayerImplementation(): DatalayerImplementation
+    {
+        return DatalayerImplementation::IN_MEMORY;
+    }
+
+    public function createFullFrameworkConfig(DatalayerImplementation $datalayerImplementation): ApplicationConfig
     {
         return new ApplicationConfig(
             true,
             true,
-            DatalayerImplementation::DB_DATALAYER
+            $datalayerImplementation
         );
     }
 
@@ -26,7 +45,7 @@ final class IntegrationTestHelper
         return new ApplicationConfig(
             false,
             false,
-            DatalayerImplementation::DB_DATALAYER
+            DatalayerImplementation::IN_MEMORY
         );
     }
 

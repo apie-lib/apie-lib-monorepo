@@ -1,6 +1,7 @@
 <?php
 namespace Apie\IntegrationTests\Interfaces;
 
+use Apie\IntegrationTests\Config\ApplicationConfig;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -20,6 +21,11 @@ interface TestApplicationInterface
      * Cleans up application. Should be called at the end of the test.
      */
     public function cleanApplication(): void;
+
+    /**
+     * Gets used Application config
+     */
+    public function getApplicationConfig(): ApplicationConfig;
 
     /**
      * Does a HTTP request on the application and returns the response.

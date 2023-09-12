@@ -3,6 +3,32 @@ info:
   title: 'Apie-lib generated OpenAPI spec'
   version: 1.0.0
 paths:
+  '/PrimitiveOnly/dropdown-options/{property}':
+    post:
+      tags:
+        - PrimitiveOnly
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.PrimitiveOnly
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PartialInput-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
   '/User/dropdown-options/{property}':
     post:
       tags:
@@ -10,6 +36,39 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.User
       parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PartialInput-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/PrimitiveOnly/{id}/dropdown-options/{property}':
+    post:
+      tags:
+        - PrimitiveOnly
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.existing.PrimitiveOnly
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PartialInput-post'
         -
           name: property
           in: path
@@ -62,6 +121,92 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+  /PrimitiveOnly:
+    post:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Creates an instance of PrimitiveOnly'
+      operationId: post-PrimitiveOnly
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrimitiveOnly-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrimitiveOnly-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    get:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Gets a list of resource that are an instance of PrimitiveOnly'
+      operationId: get-all-PrimitiveOnly
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PrimitiveOnly-get'
   /User:
     post:
       tags:
@@ -148,40 +293,90 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/User-get'
+  '/PrimitiveOnly/{id}':
+    get:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Gets a resource of PrimitiveOnly with a specific id'
+      operationId: get-single-PrimitiveOnly
       parameters:
         -
-          name: search
-          in: query
+          name: id
+          in: path
+          description: 'id of instance of PrimitiveOnly'
+          required: true
           schema:
-            minLength: 1
-            type: string
+            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrimitiveOnly-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    patch:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Modifies an instance of PrimitiveOnly'
+      operationId: patch-single-PrimitiveOnly
+      parameters:
         -
-          name: 'query[password]'
-          in: query
+          name: id
+          in: path
+          description: 'id of instance of PrimitiveOnly'
+          required: true
           schema:
-            minLength: 1
-            type: string
-        -
-          name: 'query[blocked]'
-          in: query
-          schema:
-            type: boolean
-        -
-          name: 'query[activationToken]'
-          in: query
-          schema:
-            minLength: 1
-            type: string
-        -
-          name: 'query[phoneNumber]'
-          in: query
-          schema:
-            $ref: '#/components/schemas/DutchPhoneNumber-get'
-        -
-          name: 'query[id]'
-          in: query
-          schema:
-            $ref: '#/components/schemas/UserIdentifier-get'
+            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrimitiveOnly-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrimitiveOnly-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
   '/User/{id}':
     get:
       tags:
@@ -267,7 +462,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
   '/User/{id}/block':
-    get:
+    post:
       tags:
         - User
         - action
@@ -281,6 +476,16 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/UserIdentifier-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - blockedReason
+              type: object
+              properties:
+                blockedReason:
+                  $ref: '#/components/schemas/DatabaseText-post'
       responses:
         '200':
           description: OK
@@ -288,6 +493,30 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
         '404':
           description: 'Resource not found'
           content:
@@ -459,6 +688,16 @@ servers:
     url: 'http://localhost//api/types'
 components:
   schemas:
+    DatabaseText-get:
+      maxLength: 65535
+      minLength: 0
+      type: string
+      example: 'Lorem Ipsum'
+    DatabaseText-post:
+      maxLength: 65535
+      minLength: 0
+      type: string
+      example: 'Lorem Ipsum'
     DropdownOption-post:
       type: object
       required:
@@ -489,6 +728,67 @@ components:
         input:
           type: string
           nullable: false
+    PrimitiveOnly-get:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/PrimitiveOnlyIdentifier-get'
+        stringField:
+          type: string
+          nullable: true
+        integerField:
+          type: integer
+          nullable: true
+        floatingPoint:
+          type: number
+          nullable: true
+        booleanField:
+          type: boolean
+          nullable: true
+    PrimitiveOnly-patch:
+      type: object
+      properties:
+        stringField:
+          type: string
+          nullable: true
+        integerField:
+          type: integer
+          nullable: true
+        floatingPoint:
+          type: number
+          nullable: true
+        booleanField:
+          type: boolean
+          nullable: true
+    PrimitiveOnly-post:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+        stringField:
+          type: string
+          nullable: true
+        integerField:
+          type: integer
+          nullable: true
+        floatingPoint:
+          type: number
+          nullable: true
+        booleanField:
+          type: boolean
+          nullable: true
+    PrimitiveOnlyIdentifier-get:
+      type: string
+      format: primitiveonlyidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    PrimitiveOnlyIdentifier-post:
+      type: string
+      format: primitiveonlyidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
     StrongPassword-post:
       pattern: '^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\!@#\$%\^&\*\(\)\-_\+\.]){1,})[a-zA-Z0-9\!@#\$%\^&\*\(\)\-_\+\.]{6,42}$'
       type: string
@@ -509,6 +809,7 @@ components:
       required:
         - id
         - blocked
+        - blockedReason
         - phoneNumber
       properties:
         id:
@@ -516,6 +817,8 @@ components:
         blocked:
           type: boolean
           nullable: false
+        blockedReason:
+          $ref: '#/components/schemas/DatabaseText-get'
         phoneNumber:
           $ref: '#/components/schemas/DutchPhoneNumber-get'
     User-patch:

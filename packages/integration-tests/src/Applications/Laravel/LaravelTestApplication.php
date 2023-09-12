@@ -20,6 +20,11 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
     ) {
     }
 
+    public function getApplicationConfig(): ApplicationConfig
+    {
+        return $this->applicationConfig;
+    }
+
     protected function defineEnvironment($app)
     {
         tap($app->make('config'), function (Repository $config) {

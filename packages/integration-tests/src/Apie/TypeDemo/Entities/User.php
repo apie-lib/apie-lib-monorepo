@@ -5,6 +5,7 @@ use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\UuidV4;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
+use Apie\TextValueObjects\DatabaseText;
 use Apie\TextValueObjects\EncryptedPassword;
 use Apie\TextValueObjects\StrongPassword;
 use LogicException;
@@ -13,11 +14,11 @@ final class User implements EntityInterface
 {
     private ?EncryptedPassword $password = null;
 
-    private bool $blocked = false;
-
     private UuidV4 $activationToken;
 
     private ?DutchPhoneNumber $phoneNumber = null;
+
+    private ?DatabaseText $blockedReason = null;
 
     public function __construct(
         private readonly UserIdentifier $id
@@ -32,23 +33,28 @@ final class User implements EntityInterface
 
     public function isBlocked(): bool
     {
-        return $this->blocked;
+        return $this->blockedReason !== null;
     }
 
-    public function block(): void
+    public function getBlockedReason(): ?DatabaseText
     {
-        if ($this->blocked) {
+        return $this->blockedReason;
+    }
+
+    public function block(DatabaseText $blockedReason): void
+    {
+        if ($this->blockedReason !== null) {
             throw new LogicException("User is already blocked!");
         }
-        $this->blocked = true;
+        $this->blockedReason = $blockedReason;
     }
 
     public function unblock(): void
     {
-        if (!$this->blocked) {
+        if ($this->blockedReason === null) {
             throw new LogicException("User is not blocked!");
         }
-        $this->blocked = false;
+        $this->blockedReason = null;
     }
 
     public function setPhoneNumber(?DutchPhoneNumber $phoneNumber): void
@@ -69,7 +75,7 @@ final class User implements EntityInterface
         if ($activationToken !== $this->activationToken->toNative()) {
             throw new LogicException('Activation token is incorrect');
         }
-        if ($this->blocked) {
+        if ($this->isBlocked()) {
             throw new LogicException('User is blocked and can not be activated');
         }
         $this->password = EncryptedPassword::fromUnencryptedPassword($newPassword);
@@ -81,6 +87,9 @@ final class User implements EntityInterface
             throw new LogicException(
                 'User is not activated yet'
             );
+        }
+        if ($this->isBlocked()) {
+            throw new LogicException('User is blocked');
         }
         return $this->password->verifyUnencryptedPassword($password);
     }
