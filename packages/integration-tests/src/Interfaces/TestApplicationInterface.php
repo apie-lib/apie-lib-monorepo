@@ -2,6 +2,7 @@
 namespace Apie\IntegrationTests\Interfaces;
 
 use Apie\IntegrationTests\Config\ApplicationConfig;
+use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -28,7 +29,12 @@ interface TestApplicationInterface
     public function getApplicationConfig(): ApplicationConfig;
 
     /**
-     * Does a HTTP request on the application and returns the response.
+     * Does a GET HTTP request on the application and returns the response.
      */
     public function httpRequestGet(string $uri): ResponseInterface;
+
+    /**
+     * Does a HTTP request on the application and returns the response.
+     */
+    public function httpRequest(TestRequestInterface $testRequest): ResponseInterface;
 }

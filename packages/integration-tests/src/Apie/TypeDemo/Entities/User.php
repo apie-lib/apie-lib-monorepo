@@ -21,7 +21,7 @@ final class User implements EntityInterface
     private ?DatabaseText $blockedReason = null;
 
     public function __construct(
-        private readonly UserIdentifier $id
+        private UserIdentifier $id
     ) {
         $this->activationToken = UuidV4::createRandom();
     }
@@ -62,7 +62,7 @@ final class User implements EntityInterface
         $this->phoneNumber = $phoneNumber;
     }
 
-    public function getPhoneNumber(): DutchPhoneNumber
+    public function getPhoneNumber(): ?DutchPhoneNumber
     {
         return $this->phoneNumber;
     }

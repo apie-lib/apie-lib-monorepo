@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Tests\IntegrationTests\RestApi;
 
+use Apie\IntegrationTests\FixtureUtils;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
@@ -39,7 +40,8 @@ class OpenapiDocumentationTest extends TestCase
         $response = $testApplication->httpRequestGet('/api/types/openapi.json');
         $this->assertEquals(200, $response->getStatusCode());
         $body = (string) $response->getBody();
-        $fixtureFile = __DIR__ . '/../../fixtures/RestApi/openapi' . $testApplication->getApplicationConfig()->getDatalayerImplementation()->getShortName() . '.json';
+        $fixtureFile = FixtureUtils::getOpenapiFixtureFile($testApplication);
+
         // TODO: laravel misses query params?
         file_put_contents($fixtureFile, $body);
         $expected = file_get_contents($fixtureFile);
@@ -60,7 +62,8 @@ class OpenapiDocumentationTest extends TestCase
         );
         $this->assertEquals(200, $response->getStatusCode());
         $body = (string) $response->getBody();
-        $fixtureFile = __DIR__ . '/../../fixtures/RestApi/openapi' . $testApplication->getApplicationConfig()->getDatalayerImplementation()->getShortName() . '.yaml';
+        $fixtureFile = FixtureUtils::getOpenapiFixtureFile($testApplication, false);
+
         // TODO: laravel misses query params?
         file_put_contents($fixtureFile, $body);
         $expected = file_get_contents($fixtureFile);

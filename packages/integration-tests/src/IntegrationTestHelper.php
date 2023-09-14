@@ -5,10 +5,15 @@ use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer;
 use Apie\Faker\Datalayers\FakerDatalayer;
+use Apie\IntegrationTests\Apie\TypeDemo\Entities\User;
 use Apie\IntegrationTests\Concerns\CreatesApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Config\Enums\DatalayerImplementation;
+use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
+use Apie\IntegrationTests\Requests\JsonFields\GetAndSetPrimitiveField;
+use Apie\IntegrationTests\Requests\TestRequestInterface;
+use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
 
 final class IntegrationTestHelper
 {
@@ -17,13 +22,11 @@ final class IntegrationTestHelper
     public function createDbLayerImplementation(): ?DatalayerImplementation
     {
         return class_exists(DoctrineEntityDatalayer::class) ? DatalayerImplementation::DB_DATALAYER : null;
-        ;
     }
 
     public function createFakerLayerImplementation(): ?DatalayerImplementation
     {
         return class_exists(FakerDatalayer::class) ? DatalayerImplementation::FAKER : null;
-        ;
     }
 
     public function createInMemoryLayerImplementation(): DatalayerImplementation
@@ -46,6 +49,18 @@ final class IntegrationTestHelper
             false,
             false,
             DatalayerImplementation::IN_MEMORY
+        );
+    }
+
+    public function createPostUserTestRequest(): TestRequestInterface
+    {
+        return new ValidCreateResourceApiCall(
+            new BoundedContextId('types'),
+            User::class,
+            new GetAndSetObjectField('',
+                new GetAndSetPrimitiveField('id', 'test@example.com'),
+                new GetAndSetPrimitiveField('phoneNumber', ' 0611223344 ', '+31611223344'),
+            ),
         );
     }
 
