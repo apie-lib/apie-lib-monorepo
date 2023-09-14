@@ -27,8 +27,8 @@ final class BoundedContextConfig
         EntityNamespace $entityNamespace
     ): self {
         return $this->addRawConfig($boundedContextId, [
-            'entities_folder' => $path . DIRECTORY_SEPARATOR . 'Entities',
-            'entities_namespace' => $entityNamespace . 'Entities',
+            'entities_folder' => $path . DIRECTORY_SEPARATOR . 'Resources',
+            'entities_namespace' => $entityNamespace . 'Resources',
             'actions_folder' => $path . DIRECTORY_SEPARATOR . 'Actions',
             'actions_namespace' => $entityNamespace . 'Actions',
         ]);

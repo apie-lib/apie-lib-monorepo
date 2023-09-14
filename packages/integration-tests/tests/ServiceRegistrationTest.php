@@ -50,17 +50,13 @@ class ServiceRegistrationTest extends TestCase
      * @dataProvider it_registers_an_error_render_provider
      * @test
      */
-    public function it_registers_an_error_render(TestApplicationInterface $testApplication)
+    public function it_registers_an_error_render(LaravelTestApplication $testApplication)
     {
-        if ($testApplication instanceof LaravelTestApplication) {
-            $testApplication->bootApplication();
-            $errorRenderer = $testApplication->getServiceContainer()->get(ApieErrorRenderer::class);
-            $this->assertInstanceOf(ApieErrorRenderer::class, $errorRenderer);
-            $this->assertInstanceOf(Response::class, $errorRenderer->createCmsResponse(new Request(), new Exception('hi everybody!')));
-            $this->assertInstanceOf(Response::class, $errorRenderer->createApiResponse(new Exception('hi dr. Nick!')));
-            $testApplication->cleanApplication();
-        } else {
-            $this->markTestSkipped('Only Laravel has a ApieErrorRenderer service');
-        }
+        $testApplication->bootApplication();
+        $errorRenderer = $testApplication->getServiceContainer()->get(ApieErrorRenderer::class);
+        $this->assertInstanceOf(ApieErrorRenderer::class, $errorRenderer);
+        $this->assertInstanceOf(Response::class, $errorRenderer->createCmsResponse(new Request(), new Exception('hi everybody!')));
+        $this->assertInstanceOf(Response::class, $errorRenderer->createApiResponse(new Exception('hi dr. Nick!')));
+        $testApplication->cleanApplication();
     }
 }

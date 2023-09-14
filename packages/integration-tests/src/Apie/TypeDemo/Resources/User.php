@@ -1,5 +1,5 @@
 <?php
-namespace Apie\IntegrationTests\Apie\TypeDemo\Entities;
+namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\UuidV4;

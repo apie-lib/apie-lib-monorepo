@@ -28,7 +28,6 @@ class CmsRenderErrorTest extends TestCase
     public function it_renders_an_error_page(
         TestApplicationInterface $testApplication
     ) {
-        $this->markTestIncomplete('this test still has issues');
         $testApplication->bootApplication();
         $response = $testApplication->httpRequestGet('/cms/does-not-exist/');
         $this->assertEquals(404, $response->getStatusCode());

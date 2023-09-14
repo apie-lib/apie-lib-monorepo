@@ -16,6 +16,20 @@ trait CreatesApplications
 
     public function createTestLaravelApplication(ApplicationConfig $applicationConfig, BoundedContextConfig $boundedContextConfig): ?TestApplicationInterface
     {
+        // you can not disable templating in Laravel
+        if (!$applicationConfig->doesIncludeTemplating()) {
+            return null;
+        }
         return new LaravelTestApplication($applicationConfig, $boundedContextConfig);
+    }
+
+    public function onlyLaravelApplication(TestApplicationInterface $application): ?LaravelTestApplication
+    {
+        return $application instanceof LaravelTestApplication ? $application : null;
+    }
+
+    public function onlySymfonyApplication(TestApplicationInterface $application): ?SymfonyTestApplication
+    {
+        return $application instanceof SymfonyTestApplication ? $application : null;
     }
 }

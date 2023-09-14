@@ -3,7 +3,7 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Identifiers;
 
 use Apie\CommonValueObjects\Email;
 use Apie\Core\Identifiers\IdentifierInterface;
-use Apie\IntegrationTests\Apie\TypeDemo\Entities\User;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use ReflectionClass;
 
 /**

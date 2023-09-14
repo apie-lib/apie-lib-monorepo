@@ -46,7 +46,6 @@ final class TwigRenderer implements ComponentRendererInterface
         self::$extension->selectComponent($this, $component);
         try {
             $templatePath = str_replace('\\', '/', strtolower(substr($className, strlen(self::NAMESPACE)))) . '.html.twig';
-
             return $this->twigEnvironment->render($templatePath);
         } finally {
             self::$extension->deselectComponent($component);

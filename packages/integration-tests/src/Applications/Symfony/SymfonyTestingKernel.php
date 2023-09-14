@@ -16,11 +16,15 @@ class SymfonyTestingKernel extends Kernel
      * @param array<string, mixed> $apieConfig
      */
     public function __construct(
-        private readonly array $apieConfig = [],
+        private array $apieConfig = [],
         private readonly bool $includeTwigBundle = false,
         private readonly bool $includeSecurityBundle = true
     ) {
-        $apieConfig['enable_security'] ??= $this->includeSecurityBundle;
+        $this->apieConfig['enable_security'] ??= $this->includeSecurityBundle;
+        if (!$this->includeTwigBundle) {
+            $this->apieConfig['cms'] ??= [];
+            $this->apieConfig['cms']['error_template'] = __DIR__ . '/../../../fixtures/symfony/templates/error.html';
+        }
         parent::__construct('test', true);
     }
 
@@ -44,6 +48,11 @@ class SymfonyTestingKernel extends Kernel
         return $res;
     }
 
+    private function getDefaultTwigTemplate(): string
+    {
+        return __DIR__ . '/../../../fixtures/symfony/templates';
+    }
+
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
         $loader->load(function (ContainerBuilder $container) {
@@ -58,6 +67,14 @@ class SymfonyTestingKernel extends Kernel
                     'csrf_protection' => false,
                 ]
             );
+            if ($this->includeTwigBundle) {
+                $container->loadFromExtension(
+                    'twig',
+                    [
+                        'default_path' => $this->getDefaultTwigTemplate(),
+                    ]
+                );
+            }
             if ($this->includeSecurityBundle) {
                 $container->loadFromExtension(
                     'security',
