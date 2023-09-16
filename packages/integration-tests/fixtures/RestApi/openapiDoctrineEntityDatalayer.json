@@ -318,7 +318,52 @@
                             }
                         }
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[stringField]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[integerField]",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "query[floatingPoint]",
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "query[booleanField]",
+                        "in": "query",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-get"
+                        }
+                    }
+                ]
             }
         },
         "/User": {
@@ -452,7 +497,54 @@
                             }
                         }
                     }
-                }
+                },
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[password]",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[activationToken]",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[phoneNumber]",
+                        "in": "query",
+                        "schema": {
+                            "$ref": "#/components/schemas/DutchPhoneNumber-get"
+                        }
+                    },
+                    {
+                        "name": "query[blockedReason]",
+                        "in": "query",
+                        "schema": {
+                            "$ref": "#/components/schemas/DatabaseText-get"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "$ref": "#/components/schemas/UserIdentifier-get"
+                        }
+                    }
+                ]
             }
         },
         "/PrimitiveOnly/{id}": {
