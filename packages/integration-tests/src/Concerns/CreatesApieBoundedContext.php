@@ -3,6 +3,7 @@ namespace Apie\IntegrationTests\Concerns;
 
 use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -39,6 +40,23 @@ trait CreatesApieBoundedContext
                 new GetAndSetPrimitiveField('integerField', '42', 42),
                 new GetAndSetPrimitiveField('floatingPoint', 1.5, 1.5),
                 new GetPrimitiveField('booleanField', null),
+            ),
+        );
+    }
+
+    public function createPostAnimalTestRequest(): TestRequestInterface
+    {
+        return new ValidCreateResourceApiCall(
+            new BoundedContextId('types'),
+            Animal::class,
+            new GetAndSetObjectField(
+                '',
+                new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440000'),
+                new GetAndSetPrimitiveField('animalName', 'George', 'George'),
+                new GetAndSetPrimitiveField('type', 'mammal'),
+                new GetAndSetPrimitiveField('name', 'human'),
+                new GetPrimitiveField('capableOfLayingEggs', false),
+                new GetAndSetPrimitiveField('lastName', 'Pig'),
             ),
         );
     }

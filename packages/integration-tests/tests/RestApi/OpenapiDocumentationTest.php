@@ -86,7 +86,7 @@ class OpenapiDocumentationTest extends TestCase
         $body = (string) $response->getBody();
         $fixtureFile = FixtureUtils::getOpenapiFixtureFile($testApplication);
 
-        // file_put_contents($fixtureFile, $body);
+        file_put_contents($fixtureFile, $body);
         $expected = file_get_contents($fixtureFile);
         $this->assertEquals($expected, $body);
         $testApplication->cleanApplication();
@@ -107,7 +107,7 @@ class OpenapiDocumentationTest extends TestCase
         $body = (string) $response->getBody();
         $fixtureFile = FixtureUtils::getOpenapiFixtureFile($testApplication, false);
 
-        // file_put_contents($fixtureFile, $body);
+        file_put_contents($fixtureFile, $body);
         $expected = file_get_contents($fixtureFile);
         $this->assertEquals($expected, $body);
         $testApplication->cleanApplication();

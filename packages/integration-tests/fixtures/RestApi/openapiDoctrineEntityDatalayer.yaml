@@ -3,6 +3,32 @@ info:
   title: 'Apie-lib generated OpenAPI spec'
   version: 1.0.0
 paths:
+  '/Animal/dropdown-options/{property}':
+    post:
+      tags:
+        - Animal
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.Animal
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PartialInput-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
   '/PrimitiveOnly/dropdown-options/{property}':
     post:
       tags:
@@ -36,6 +62,39 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.User
       parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PartialInput-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/Animal/{id}/dropdown-options/{property}':
+    post:
+      tags:
+        - Animal
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.existing.Animal
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PartialInput-post'
         -
           name: property
           in: path
@@ -121,6 +180,109 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+  /Animal:
+    post:
+      tags:
+        - Animal
+        - resource
+      description: 'Creates an instance of Animal'
+      operationId: post-Animal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    get:
+      tags:
+        - Animal
+        - resource
+      description: 'Gets a list of resource that are an instance of Animal'
+      operationId: get-all-Animal
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Animal-get'
+      parameters:
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: 'query[id]'
+          in: query
+          schema:
+            $ref: '#/components/schemas/AnimalIdentifier-get'
+        -
+          name: 'query[animalName]'
+          in: query
+          schema:
+            $ref: '#/components/schemas/FirstName-get'
   /PrimitiveOnly:
     post:
       tags:
@@ -359,6 +521,90 @@ paths:
           in: query
           schema:
             $ref: '#/components/schemas/UserIdentifier-get'
+  '/Animal/{id}':
+    get:
+      tags:
+        - Animal
+        - resource
+      description: 'Gets a resource of Animal with a specific id'
+      operationId: get-single-Animal
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of Animal'
+          required: true
+          schema:
+            $ref: '#/components/schemas/AnimalIdentifier-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    patch:
+      tags:
+        - Animal
+        - resource
+      description: 'Modifies an instance of Animal'
+      operationId: patch-single-Animal
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of Animal'
+          required: true
+          schema:
+            $ref: '#/components/schemas/AnimalIdentifier-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
   '/PrimitiveOnly/{id}':
     get:
       tags:
@@ -754,6 +1000,83 @@ servers:
     url: 'http://localhost//api/types'
 components:
   schemas:
+    Animal-get:
+      type: object
+      oneOf:
+        -
+          $ref: '#/components/schemas/Mammal-get'
+        -
+          $ref: '#/components/schemas/Bird-get'
+        -
+          $ref: '#/components/schemas/Fish-get'
+      discriminator:
+        propertyName: type
+        mapping:
+          mammal:
+            $ref: '#/components/schemas/Mammal-get'
+          bird:
+            $ref: '#/components/schemas/Bird-get'
+          fish:
+            $ref: '#/components/schemas/Fish-get'
+    Animal-patch:
+      type: object
+      properties:
+        animalName:
+          $ref: '#/components/schemas/FirstName-post'
+    Animal-post:
+      type: object
+      oneOf:
+        -
+          $ref: '#/components/schemas/Mammal-post'
+        -
+          $ref: '#/components/schemas/Bird-post'
+        -
+          $ref: '#/components/schemas/Fish-post'
+      discriminator:
+        propertyName: type
+        mapping:
+          mammal:
+            $ref: '#/components/schemas/Mammal-post'
+          bird:
+            $ref: '#/components/schemas/Bird-post'
+          fish:
+            $ref: '#/components/schemas/Fish-post'
+    AnimalIdentifier-get:
+      type: string
+      format: animalidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    AnimalIdentifier-post:
+      type: string
+      format: animalidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    Bird-get:
+      type: object
+      oneOf:
+        -
+          $ref: '#/components/schemas/Ostrich-get'
+        -
+          $ref: '#/components/schemas/Seagull-get'
+      discriminator:
+        propertyName: name
+        mapping:
+          ostrich:
+            $ref: '#/components/schemas/Ostrich-get'
+          seagull:
+            $ref: '#/components/schemas/Seagull-get'
+    Bird-post:
+      type: object
+      oneOf:
+        -
+          $ref: '#/components/schemas/Ostrich-post'
+        -
+          $ref: '#/components/schemas/Seagull-post'
+      discriminator:
+        propertyName: name
+        mapping:
+          ostrich:
+            $ref: '#/components/schemas/Ostrich-post'
+          seagull:
+            $ref: '#/components/schemas/Seagull-post'
     DatabaseText-get:
       maxLength: 65535
       minLength: 0
@@ -786,12 +1109,298 @@ components:
     DutchPhoneNumber-post:
       type: string
       format: dutchphonenumber
+    Elephant-get:
+      type: object
+      required:
+        - name
+        - id
+        - capableOfLayingEggs
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-get'
+        capableOfLayingEggs:
+          type: boolean
+          nullable: false
+        animalName:
+          $ref: '#/components/schemas/FirstName-get'
+        type:
+          type: string
+          nullable: false
+    Elephant-post:
+      type: object
+      required:
+        - name
+        - id
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-post'
+        animalName:
+          $ref: '#/components/schemas/FirstName-post'
+        type:
+          type: string
+          nullable: false
+    FirstName-get:
+      type: string
+      format: firstname
+      pattern: '^\w[\w\-\s''`"‘’“”‟]*$'
+    FirstName-post:
+      type: string
+      format: firstname
+      pattern: '^\w[\w\-\s''`"‘’“”‟]*$'
+    Fish-get:
+      type: object
+      oneOf:
+        -
+          $ref: '#/components/schemas/Shark-get'
+        -
+          $ref: '#/components/schemas/Lungfish-get'
+      discriminator:
+        propertyName: name
+        mapping:
+          shark:
+            $ref: '#/components/schemas/Shark-get'
+          lungfish:
+            $ref: '#/components/schemas/Lungfish-get'
+    Fish-post:
+      type: object
+      oneOf:
+        -
+          $ref: '#/components/schemas/Shark-post'
+        -
+          $ref: '#/components/schemas/Lungfish-post'
+      discriminator:
+        propertyName: name
+        mapping:
+          shark:
+            $ref: '#/components/schemas/Shark-post'
+          lungfish:
+            $ref: '#/components/schemas/Lungfish-post'
+    Human-get:
+      type: object
+      required:
+        - name
+        - id
+        - lastName
+        - capableOfLayingEggs
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-get'
+        lastName:
+          $ref: '#/components/schemas/LastName-get'
+        capableOfLayingEggs:
+          type: boolean
+          nullable: false
+        animalName:
+          $ref: '#/components/schemas/FirstName-get'
+        type:
+          type: string
+          nullable: false
+    Human-post:
+      type: object
+      required:
+        - name
+        - id
+        - animalName
+        - lastName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-post'
+        animalName:
+          $ref: '#/components/schemas/FirstName-post'
+        lastName:
+          $ref: '#/components/schemas/LastName-post'
+        type:
+          type: string
+          nullable: false
+    LastName-get:
+      type: string
+      format: lastname
+      pattern: '^\w(\w|\-|[^\S\r\n]|''|`|"|‘|’|“|”|‟)*$'
+    LastName-post:
+      type: string
+      format: lastname
+      pattern: '^\w(\w|\-|[^\S\r\n]|''|`|"|‘|’|“|”|‟)*$'
+    Lungfish-get:
+      type: object
+      required:
+        - name
+        - id
+        - capableOfWalkingOnWater
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-get'
+        capableOfWalkingOnWater:
+          type: boolean
+          nullable: false
+        animalName:
+          $ref: '#/components/schemas/FirstName-get'
+        type:
+          type: string
+          nullable: false
+    Lungfish-post:
+      type: object
+      required:
+        - name
+        - id
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-post'
+        animalName:
+          $ref: '#/components/schemas/FirstName-post'
+        type:
+          type: string
+          nullable: false
+    Mammal-get:
+      type: object
+      oneOf:
+        -
+          $ref: '#/components/schemas/Elephant-get'
+        -
+          $ref: '#/components/schemas/Platypus-get'
+        -
+          $ref: '#/components/schemas/Human-get'
+      discriminator:
+        propertyName: name
+        mapping:
+          elephant:
+            $ref: '#/components/schemas/Elephant-get'
+          platypus:
+            $ref: '#/components/schemas/Platypus-get'
+          human:
+            $ref: '#/components/schemas/Human-get'
+    Mammal-post:
+      type: object
+      oneOf:
+        -
+          $ref: '#/components/schemas/Elephant-post'
+        -
+          $ref: '#/components/schemas/Platypus-post'
+        -
+          $ref: '#/components/schemas/Human-post'
+      discriminator:
+        propertyName: name
+        mapping:
+          elephant:
+            $ref: '#/components/schemas/Elephant-post'
+          platypus:
+            $ref: '#/components/schemas/Platypus-post'
+          human:
+            $ref: '#/components/schemas/Human-post'
+    Ostrich-get:
+      type: object
+      required:
+        - name
+        - id
+        - capableOfFlying
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-get'
+        capableOfFlying:
+          type: boolean
+          nullable: false
+        animalName:
+          $ref: '#/components/schemas/FirstName-get'
+        type:
+          type: string
+          nullable: false
+    Ostrich-post:
+      type: object
+      required:
+        - name
+        - id
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-post'
+        animalName:
+          $ref: '#/components/schemas/FirstName-post'
+        type:
+          type: string
+          nullable: false
     PartialInput-post:
       type: object
       required:
         - input
       properties:
         input:
+          type: string
+          nullable: false
+    Platypus-get:
+      type: object
+      required:
+        - name
+        - id
+        - capableOfLayingEggs
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-get'
+        capableOfLayingEggs:
+          type: boolean
+          nullable: false
+        animalName:
+          $ref: '#/components/schemas/FirstName-get'
+        type:
+          type: string
+          nullable: false
+    Platypus-post:
+      type: object
+      required:
+        - name
+        - id
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-post'
+        animalName:
+          $ref: '#/components/schemas/FirstName-post'
+        type:
           type: string
           nullable: false
     PrimitiveOnly-get:
@@ -855,6 +1464,86 @@ components:
       type: string
       format: primitiveonlyidentifier
       pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    Seagull-get:
+      type: object
+      required:
+        - name
+        - id
+        - capableOfFlying
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-get'
+        capableOfFlying:
+          type: boolean
+          nullable: false
+        animalName:
+          $ref: '#/components/schemas/FirstName-get'
+        type:
+          type: string
+          nullable: false
+    Seagull-post:
+      type: object
+      required:
+        - name
+        - id
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-post'
+        animalName:
+          $ref: '#/components/schemas/FirstName-post'
+        type:
+          type: string
+          nullable: false
+    Shark-get:
+      type: object
+      required:
+        - name
+        - id
+        - capableOfWalkingOnWater
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-get'
+        capableOfWalkingOnWater:
+          type: boolean
+          nullable: false
+        animalName:
+          $ref: '#/components/schemas/FirstName-get'
+        type:
+          type: string
+          nullable: false
+    Shark-post:
+      type: object
+      required:
+        - name
+        - id
+        - animalName
+        - type
+      properties:
+        name:
+          type: string
+          nullable: false
+        id:
+          $ref: '#/components/schemas/AnimalIdentifier-post'
+        animalName:
+          $ref: '#/components/schemas/FirstName-post'
+        type:
+          type: string
+          nullable: false
     StrongPassword-post:
       pattern: '^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\!@#\$%\^&\*\(\)\-_\+\.]){1,})[a-zA-Z0-9\!@#\$%\^&\*\(\)\-_\+\.]{6,42}$'
       type: string

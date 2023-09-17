@@ -8,6 +8,47 @@ use PHPUnit\Framework\TestCase;
 
 class DateFormatToRegexTest extends TestCase
 {
+    private const FORMAT_CONSTANTS = [
+        'd',
+        'j',
+        'D',
+        'l',
+        'N',
+        'w',
+        'S',
+        'z',
+        'W',
+        'F',
+        'M',
+        'm',
+        'n',
+        't',
+        'L',
+        'o',
+        'Y',
+        'y',
+        'a',
+        'A',
+        'B',
+        'g',
+        'h',
+        'G',
+        'H',
+        'i',
+        's',
+        'u',
+        'v',
+        'I',
+        'O',
+        'P',
+        'p',
+        'Z',
+        'U',
+        'c',
+        'r',
+        'e',
+        'T',
+    ];
     /**
      * @dataProvider formatProvider
      */
@@ -24,49 +65,14 @@ class DateFormatToRegexTest extends TestCase
 
     public function formatProvider()
     {
-        yield [DateTime::ATOM];
-        yield [DateTime::COOKIE];
-        yield [DateTime::ISO8601];
-        yield [DateTime::RFC1036];
-        yield [DateTime::RFC3339_EXTENDED];
-        yield ['d'];
-        yield ['j'];
-        yield ['D'];
-        yield ['l'];
-        yield ['N'];
-        yield ['w'];
-        yield ['S'];
-        yield ['z'];
-        yield ['W'];
-        yield ['F'];
-        yield ['M'];
-        yield ['m'];
-        yield ['n'];
-        yield ['t'];
-        yield ['L'];
-        yield ['o'];
-        yield ['Y'];
-        yield ['y'];
-        yield ['a'];
-        yield ['A'];
-        yield ['B'];
-        yield ['g'];
-        yield ['h'];
-        yield ['G'];
-        yield ['H'];
-        yield ['i'];
-        yield ['s'];
-        yield ['u'];
-        yield ['v'];
-        yield ['I'];
-        yield ['O'];
-        yield ['P'];
-        yield ['p'];
-        yield ['Z'];
-        yield ['U'];
-        yield ['c'];
-        yield ['r'];
-        yield ['e'];
-        yield ['T'];
+        yield 'ATOM format' => [DateTime::ATOM];
+        yield 'Cookie format' => [DateTime::COOKIE];
+        yield 'ISO8601 format' => [DateTime::ISO8601];
+        yield 'RFC1036 format' => [DateTime::RFC1036];
+        yield 'RFC1036 extended format' => [DateTime::RFC3339_EXTENDED];
+        foreach (self::FORMAT_CONSTANTS as $constant) {
+            $key = 'format "' . $constant . '"';
+            yield $key => [$constant];
+        }
     }
 }

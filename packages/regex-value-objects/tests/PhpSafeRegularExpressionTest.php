@@ -28,8 +28,8 @@ class PhpSafeRegularExpressionTest extends TestCase
 
     public function inputProvider()
     {
-        yield ['/test/i', '/', 'i', '/test/i'];
-        yield ['/test/', '/', '', '/test/'];
+        yield 'regular expression with modifier' => ['/test/i', '/', 'i', '/test/i'];
+        yield 'regular expression without modifier' => ['/test/', '/', '', '/test/'];
     }
 
     /**
@@ -54,17 +54,17 @@ class PhpSafeRegularExpressionTest extends TestCase
 
     public function invalidProvider()
     {
-        yield [InvalidPhpRegularExpression::class, ''];
+        yield 'empty string' => [InvalidPhpRegularExpression::class, ''];
         //yield ['[a-z]'];
-        yield [InvalidPhpRegularExpression::class, "/[a-z]"];
-        yield [InvalidPhpRegularExpression::class, '/[a-z]/0'];
-        yield [ExpressionContainsLookAheads::class, '/^[a-z]+(?=\d)/'];
-        yield [InvalidPhpRegularExpression::class, '/^[a-z]+{2,}/'];
-        yield [ExpressionContainsLookAheads::class, '/[a-z]+(?<!\d)/'];
-        yield [ExpressionContainsLookAheads::class, '/(?<!\d)[a-z]+/'];
-        yield [ExpressionContainsRepeatsInRepeats::class, '/^([a-z]{3,}){2,}$/'];
-        yield [ExpressionContainsRepeatsInRepeats::class, '/([a-z]+)*/'];
-        yield [ExpressionContainsLookAheads::class, '/^\d+(?:,\d+)+$/'];
+        yield 'missing ending delimiter' => [InvalidPhpRegularExpression::class, "/[a-z]"];
+        yield 'unknown modifier' => [InvalidPhpRegularExpression::class, '/[a-z]/0'];
+        yield 'contains look aheads' => [ExpressionContainsLookAheads::class, '/^[a-z]+(?=\d)/'];
+        yield '2 repeats after each other' => [InvalidPhpRegularExpression::class, '/^[a-z]+{2,}/'];
+        yield 'contains look ahead at end of string' => [ExpressionContainsLookAheads::class, '/[a-z]+(?<!\d)/'];
+        yield 'contains look ahead at start of string' => [ExpressionContainsLookAheads::class, '/(?<!\d)[a-z]+/'];
+        yield 'repeat in repeat' => [ExpressionContainsRepeatsInRepeats::class, '/^([a-z]{3,}){2,}$/'];
+        yield '+ inside * repeat' => [ExpressionContainsRepeatsInRepeats::class, '/([a-z]+)*/'];
+        yield 'contains look aheads and repeat in repeat' => [ExpressionContainsLookAheads::class, '/^\d+(?:,\d+)+$/'];
     }
 
     /**

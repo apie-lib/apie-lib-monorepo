@@ -26,8 +26,8 @@ class PhpRegularExpressionTest extends TestCase
 
     public function inputProvider()
     {
-        yield ['/test/i', '/', 'i', '/test/i'];
-        yield ['/test/', '/', '', '/test/'];
+        yield 'regular expression with modifier' => ['/test/i', '/', 'i', '/test/i'];
+        yield 'regular expression without modifier' => ['/test/', '/', '', '/test/'];
     }
 
     /**
@@ -52,10 +52,10 @@ class PhpRegularExpressionTest extends TestCase
 
     public function invalidProvider()
     {
-        yield [''];
+        yield 'empty string' => [''];
         //yield ['[a-z]'];
-        yield ["/[a-z]"];
-        yield ['/[a-z]/0'];
+        yield 'missing ending delimiter' => ["/[a-z]"];
+        yield 'unknown modifier' => ['/[a-z]/0'];
     }
 
     /**
