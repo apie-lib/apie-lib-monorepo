@@ -13,7 +13,7 @@ use Apie\TextValueObjects\FirstName;
 abstract class Animal implements PolymorphicEntityInterface
 {
     public function __construct(
-        private AnimalIdentifier $id,
+        protected AnimalIdentifier $id,
         private FirstName $animalName,
     ) {
     }
