@@ -57,9 +57,11 @@ final class User implements EntityInterface
         $this->blockedReason = null;
     }
 
-    public function setPhoneNumber(?DutchPhoneNumber $phoneNumber): void
+    public function setPhoneNumber(?DutchPhoneNumber $phoneNumber): self
     {
         $this->phoneNumber = $phoneNumber;
+
+        return $this;
     }
 
     public function getPhoneNumber(): ?DutchPhoneNumber

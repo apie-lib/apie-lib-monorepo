@@ -3,10 +3,13 @@ namespace Apie\IntegrationTests\Concerns;
 
 use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
+use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
+use Apie\IntegrationTests\Requests\GetResourceApiCall;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
@@ -23,8 +26,29 @@ trait CreatesApieBoundedContext
             new GetAndSetObjectField(
                 '',
                 new GetAndSetPrimitiveField('id', 'test@example.com'),
+                new GetPrimitiveField('blocked', false),
+                new GetPrimitiveField('blockedReason', null),
                 new GetAndSetPrimitiveField('phoneNumber', ' 0611223344 ', '+31611223344'),
             ),
+        );
+    }
+
+    public function createGetUserTestRequest(): TestRequestInterface
+    {
+        // @phpstan-ignore-next-line
+        $user = (new User(UserIdentifier::fromNative('test@example.com')))->setPhoneNumber(DutchPhoneNumber::fromNative('0611223344'));
+        return new GetResourceApiCall(
+            new BoundedContextId('types'),
+            User::class,
+            'test@example.com',
+            [$user],
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('id', 'test@example.com'),
+                new GetPrimitiveField('blocked', false),
+                new GetPrimitiveField('blockedReason', null),
+                new GetPrimitiveField('phoneNumber', '+31611223344'),
+            )
         );
     }
 

@@ -5,6 +5,7 @@ namespace Apie\Tests\IntegrationTests\RestApi;
 use Apie\IntegrationTests\FixtureUtils;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
+use Apie\IntegrationTests\Requests\BootstrapRequestInterface;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Generator;
@@ -37,6 +38,9 @@ class DoApiCallTest extends TestCase
         TestRequestInterface $testRequest
     ) {
         $testApplication->bootApplication();
+        if ($testRequest instanceof BootstrapRequestInterface) {
+            $testRequest->bootstrap($testApplication);
+        }
         $response = $testApplication->httpRequest($testRequest);
         $testRequest->verifyValidResponse($response);
         // This goes wrong with nullable string value objects

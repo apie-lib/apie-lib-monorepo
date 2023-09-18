@@ -37,9 +37,22 @@ class GetAndSetObjectField implements JsonSetFieldInterface, JsonGetFieldInterfa
     public function assertResponseValue(mixed $responseValue): void
     {
         TestCase::assertIsArray($responseValue);
+        $testedFields = [];
         foreach ($this->fields as $field) {
             if ($field instanceof JsonSetFieldInterface) {
-                $field->assertResponseValue($responseValue[$field->getName()]);
+                $fieldName = $field->getName();
+                $testedFields[$fieldName] = $fieldName;
+                if (!array_key_exists($fieldName, $responseValue)) {
+                    TestCase::fail(
+                        'field ' . $fieldName . ' is defined, but not found in the response, found: ' . implode(', ', array_keys($responseValue))
+                    );
+                }
+                $field->assertResponseValue($responseValue[$fieldName]);
+            }
+        }
+        foreach (array_keys($responseValue) as $foundFieldname) {
+            if (!isset($testedFields[$foundFieldname])) {
+                TestCase::fail('Field ' . $foundFieldname . ' is found, but no assertions were added!');
             }
         }
     }
