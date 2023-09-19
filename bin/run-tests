@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+composer install && php -m && php -d memory_limit=-1 -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit --coverage-clover=coverage/php82.xml --coverage-text --coverage-html=coverage/php82
