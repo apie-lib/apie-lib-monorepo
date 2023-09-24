@@ -6,9 +6,7 @@ use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\LaravelApie\ApieServiceProvider;
-use Apie\LaravelApie\ErrorHandler\Handler;
 use Illuminate\Contracts\Config\Repository;
-use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
 use Nyholm\Psr7\Factory\Psr17Factory as NyholmPsr17Factory;
@@ -91,14 +89,6 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         $psrFactory = new NyholmPsr17Factory();
         $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);
         return $factory->createResponse($laravelResponse);
-    }
-
-    protected function resolveApplicationExceptionHandler($app): void
-    {
-        $app->singleton(
-            ExceptionHandler::class,
-            Handler::class
-        );
     }
 
     protected function getPackageProviders($app)
