@@ -30,6 +30,8 @@
         "prinsfrank/standards": "^1.0.0",
         "psr/http-message": "^1.0",
         "ramsey/uuid": "^4.3.1",
+        "spatie/ignition": "1.*",
+        "symfony/cache": "^6.0",
         "symfony/config": "6.*",
         "symfony/console": "6.*",
         "symfony/dependency-injection": "6.*",
@@ -50,7 +52,6 @@
         "phpspec/prophecy-phpunit": "^2.0",
         "phpstan/phpstan": "^1.8.2",
         "phpunit/phpunit": "^9.5",
-        "symfony/cache": "^6.0",
         "symfony/framework-bundle": "6.*",
         "symfony/phpunit-bridge": "6.*",
         "symfony/security-bundle": "6.*",
@@ -121,6 +122,13 @@
             "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/",
             "Apie\\Tests\\Serializer\\": "packages/serializer/tests/",
             "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Apie\\LaravelApie\\ApieServiceProvider"
+            ]
         }
     },
     "config": {
