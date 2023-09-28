@@ -37,7 +37,6 @@ parameters:
         - '#::getInputType|getRouteAttributes\(\) invoked with 2 parameters, 1 required#'
         - '#template type T in call to method static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'
         - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
-        - '#IdentifierInterface<static\(Apie\\Core\\Entities\\EntityInterface\)>#'
         - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
         - 
             message: '#ActionInterface::#'
