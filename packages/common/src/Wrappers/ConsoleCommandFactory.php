@@ -1,5 +1,5 @@
 <?php
-namespace Apie\ApieBundle\Wrappers;
+namespace Apie\Common\Wrappers;
 
 use Apie\Console\ConsoleCommandFactory as ConsoleConsoleCommandFactory;
 use Apie\Core\BoundedContext\BoundedContext;
