@@ -6,6 +6,9 @@ body {
 body .layout {
     padding-top: 8rem;
 }
+body.scrollbar-lg .layout {
+    padding: 0;
+}
 nav {
     z-index: 40; position: fixed;top: 0;left: 0;width: 100%; border-bottom-width: 1px; background-color: white
 }
