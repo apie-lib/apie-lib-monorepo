@@ -10,6 +10,8 @@ use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
+use Symfony\Bundle\FrameworkBundle\Console\Application as ConsoleApplication;
+use Symfony\Component\Console\Application;
 use Symfony\Component\HttpFoundation\Request;
 
 class SymfonyTestApplication implements TestApplicationInterface
@@ -25,6 +27,13 @@ class SymfonyTestApplication implements TestApplicationInterface
     public function getApplicationConfig(): ApplicationConfig
     {
         return $this->applicationConfig;
+    }
+
+    public function getConsoleApplication(): Application
+    {
+        $application = new ConsoleApplication($this->kernel);
+        $application->setAutoExit(false);
+        return $application;
     }
 
     public function bootApplication(): void

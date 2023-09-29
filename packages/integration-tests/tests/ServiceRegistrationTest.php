@@ -27,6 +27,7 @@ class ServiceRegistrationTest extends TestCase
     }
 
     /**
+     * @runInSeparateProcess
      * @dataProvider it_registers_an_apie_service_provider
      * @test
      */

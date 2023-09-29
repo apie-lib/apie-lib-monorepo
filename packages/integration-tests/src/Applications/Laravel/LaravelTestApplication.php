@@ -15,6 +15,8 @@ use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
+use Symfony\Bundle\FrameworkBundle\Console\Application as ConsoleApplication;
+use Symfony\Component\Console\Application;
 
 class LaravelTestApplication extends TestCase implements TestApplicationInterface
 {
@@ -22,6 +24,16 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         private readonly ApplicationConfig $applicationConfig,
         private readonly BoundedContextConfig $boundedContextConfig
     ) {
+    }
+
+    public function getConsoleApplication(): Application
+    {
+        $application = new \Illuminate\Console\Application(
+            $this->getServiceContainer(),
+            $this->getServiceContainer()->get(\Illuminate\Contracts\Events\Dispatcher::class),
+            'test'
+        );
+        return $application;
     }
 
     public function getApplicationConfig(): ApplicationConfig
