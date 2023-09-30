@@ -137,3 +137,11 @@ parameters:
             message: "#Class 'PossibleRoutePrefixes' is a value object that returns an array, but it does not use CompositeValueObject trait#"
             path: packages/common/src/ValueObjects/PossibleRoutePrefixes.php
             count: 1
+        -
+            message: '/Parameter #1 \$fakeProviders/'
+            path: packages/faker/src/Command/ApieSeedCommand
+            count: 1
+        -
+            message: '/constructor expects Illuminate\\Contracts\\Container\\Container/'
+            path: packages/integration-tests/src/Applications/Laravel/LaravelTestApplication
+            count: 1

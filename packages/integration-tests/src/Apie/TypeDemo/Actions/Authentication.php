@@ -15,7 +15,9 @@ class Authentication
     public function verifyAuthentication(string $username, string $password): ?User
     {
         try {
-            $user = $this->apieDatalayer->find(UserIdentifier::fromNative($username), new BoundedContextId('types'));
+            /** @var UserIdentifier @userId */
+            $userId = UserIdentifier::fromNative($username);
+            $user = $this->apieDatalayer->find($userId, new BoundedContextId('types'));
         } catch (Exception) {
             return null;
         }
