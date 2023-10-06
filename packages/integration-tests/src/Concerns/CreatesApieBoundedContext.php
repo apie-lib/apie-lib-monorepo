@@ -9,6 +9,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
+use Apie\IntegrationTests\Requests\CmsFormSubmitRequest;
 use Apie\IntegrationTests\Requests\GetResourceApiCall;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetPrimitiveField;
@@ -82,6 +83,23 @@ trait CreatesApieBoundedContext
                 new GetPrimitiveField('capableOfLayingEggs', false),
                 new GetAndSetPrimitiveField('lastName', 'Pig'),
             ),
+        );
+    }
+
+    public function createBlockUserFormSubmit(): CmsFormSubmitRequest
+    {
+        return new CmsFormSubmitRequest(
+            new BoundedContextId('types'),
+            User::class,
+            'test@example.com',
+            'block',
+            [
+                new User(new UserIdentifier('test@example.com'))
+            ],
+            [
+                '_csrf' => 'string',
+                'form[blockedReason]' => 'This is a test'
+            ]
         );
     }
 

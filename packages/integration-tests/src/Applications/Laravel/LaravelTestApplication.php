@@ -16,6 +16,7 @@ use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Component\Console\Application;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class LaravelTestApplication extends TestCase implements TestApplicationInterface
 {
@@ -23,6 +24,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         private readonly ApplicationConfig $applicationConfig,
         private readonly BoundedContextConfig $boundedContextConfig
     ) {
+        parent::__construct();
     }
 
     public function getConsoleApplication(): Application
@@ -43,6 +45,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
     protected function defineEnvironment($app)
     {
         tap($app->make('config'), function (Repository $config) {
+            $config->set('app.key', 'base64:/aNEFWQbsYwDslb4Xw1RKKj9oCdZdbNhvcyUpVgXPz4=');
             $config->set(
                 'apie.bounded_contexts',
                 $this->boundedContextConfig->toArray()
@@ -72,6 +75,11 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
     public function bootApplication(): void
     {
         $this->setUp();
+        if (getenv('PHPUNIT_LOG_INTEGRATION_OUTPUT')) {
+            $this->withoutExceptionHandling([
+                NotFoundHttpException::class
+            ]);
+        }
     }
 
     /**
