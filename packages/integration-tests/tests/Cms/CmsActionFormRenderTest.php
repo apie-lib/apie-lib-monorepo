@@ -34,4 +34,19 @@ class CmsActionFormRenderTest extends TestCase
         
         $this->assertStringContainsString('form[username]', (string) $response->getBody());
     }
+
+    /**
+     * @runInSeparateProcess
+     * @dataProvider it_renders_an_action_form_page_provider
+     * @test
+     */
+    public function it_refuses_invalid_csrf_tokens(
+        TestApplicationInterface $testApplication
+    ) {
+        $testApplication->bootApplication();
+        $response = $testApplication->httpRequestGet('/cms/types/action/Authentication/verifyAuthentication');
+        $this->assertEquals(200, $response->getStatusCode());
+        
+        $this->assertStringContainsString('form[username]', (string) $response->getBody());
+    }
 }
