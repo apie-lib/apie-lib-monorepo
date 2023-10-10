@@ -1,10 +1,10 @@
 <?php
 namespace Apie\IntegrationTests\Requests;
 
+use Apie\Common\Interfaces\ApieFacadeInterface;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\IdentifierInterface;
-use Apie\Common\Interfaces\ApieFacadeInterface;
 use Apie\Core\IdentifierUtils;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;

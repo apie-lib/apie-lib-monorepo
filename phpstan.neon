@@ -32,7 +32,7 @@ parameters:
         - '#ReflectionException is never thrown in the try block#'
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
-        - '#::(all|find|persistNew|persistExisting)\(\) invoked with 2 parameters, 1 required#'
+        - '#::(all|find|persistNew|persistExisting|removeExisting)\(\) invoked with 2 parameters, 1 required#'
         - '#template type T in call to method static method Apie\\Core\\Actions\\ActionInterface::getInputType#'
         - '#::getInputType|getRouteAttributes\(\) invoked with 2 parameters, 1 required#'
         - '#template type T in call to method static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'

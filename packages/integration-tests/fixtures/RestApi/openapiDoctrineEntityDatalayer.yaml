@@ -689,6 +689,53 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+    delete:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Modifies an instance of PrimitiveOnly'
+      operationId: remove-single-PrimitiveOnly
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of PrimitiveOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+      responses:
+        '204':
+          description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
   '/User/{id}':
     get:
       tags:
