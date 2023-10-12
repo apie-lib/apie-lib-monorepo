@@ -1,5 +1,5 @@
-<div>
+<div style="padding: 15PX; float: right">
 {% for action in property('actions') %}
-  <gr-button onclick="">{{ action.name }}</gr-button>
+  <gr-button variant="primary" onclick="location.href = {{ action.getUrl(property('config')) | json_encode}}">{{ action.name }}</gr-button>
 {% endfor %}
 </div>
