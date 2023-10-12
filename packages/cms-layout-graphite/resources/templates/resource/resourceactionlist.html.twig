@@ -1,4 +1,8 @@
 <div style="padding: 15PX; float: right">
+<form>
+  <gr-input name="text" type="search" value="{{ property('textSearch') }}"/>
+  <gr-button variant="secondary" type="submit" large expand="block">Search</gr-button>
+</form>
 {% for action in property('actions') %}
   <gr-button variant="primary" onclick="location.href = {{ action.getUrl(property('config')) | json_encode}}">{{ action.name }}</gr-button>
 {% endfor %}
