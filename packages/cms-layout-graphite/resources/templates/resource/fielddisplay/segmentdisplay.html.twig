@@ -1,0 +1,14 @@
+{% if property('componentNames')|length %}
+    <table>
+    {% for componentName in property('componentNames') %}
+        <tr>
+            <th>{{ componentName }}</th>
+            <td>
+                {{ component(componentName) }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    no details found.
+{% endif %}
