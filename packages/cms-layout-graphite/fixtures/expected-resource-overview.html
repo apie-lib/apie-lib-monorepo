@@ -23,7 +23,13 @@
     const importantNameColumns = ['displayName', 'name', 'internalName', 'shortDescription', 'description', 'productDescription', 'id'];
     function renderCell(createElement, props) {
       const value = props.model[props.prop];
-      return renderValue(createElement, value);
+      const element = renderValue(createElement, value);
+      element.$attrs$.onClick = () => {
+        if (Object.hasOwnProperty.call(props.model, 'id')) {
+          location.href = location.protocol + '//' + location.host + location.pathname + '/' + props.model.id;
+        }
+      };
+      return element;
     }
     function renderValue(createElement, value) {
       if (value === undefined || value === null) {
