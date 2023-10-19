@@ -7,6 +7,7 @@ use Apie\IntegrationTests\Concerns\CreatesApieBoundedContext;
 use Apie\IntegrationTests\Concerns\CreatesApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\Enums\DatalayerImplementation;
+use Apie\IntegrationTests\SearchTerm;
 
 final class IntegrationTestHelper
 {
@@ -44,5 +45,25 @@ final class IntegrationTestHelper
             false,
             DatalayerImplementation::IN_MEMORY
         );
+    }
+
+    public function createEmptySearch(): SearchTerm
+    {
+        return new SearchTerm('');
+    }
+
+    public function createSpacebarSearch(): SearchTerm
+    {
+        return new SearchTerm(' ');
+    }
+
+    public function createRegularSearch(): SearchTerm
+    {
+        return new SearchTerm('search');
+    }
+
+    public function createLikeSearch(): SearchTerm
+    {
+        return new SearchTerm('%');
     }
 }

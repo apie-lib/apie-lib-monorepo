@@ -75,7 +75,12 @@ class SymfonyTestApplication implements TestApplicationInterface
 
     public function httpRequestGet(string $uri): ResponseInterface
     {
-        $sfResponse = $this->kernel->handle(Request::create($uri));
+        $parameters = [];
+        $parameterRaw = parse_url($uri, PHP_URL_QUERY);
+        if ($parameterRaw) {
+            parse_str($parameterRaw, $parameters);
+        }
+        $sfResponse = $this->kernel->handle(Request::create($uri, parameters: $parameters));
         $psrFactory = new NyholmPsr17Factory();
         $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);
         return $factory->createResponse($sfResponse);

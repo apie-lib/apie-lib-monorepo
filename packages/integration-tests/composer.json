@@ -23,6 +23,7 @@
     "php": ">=8.1",
     "apie/common-value-objects": "self.version",
     "apie/core": "self.version",
+    "apie/count-words": "self.version",
     "apie/phpunit-matrix-data-provider": "^1.0.2",
     "nyholm/psr7": "^1.5",
     "orchestra/testbench": "5.*|6.*|7.*|8.*",
