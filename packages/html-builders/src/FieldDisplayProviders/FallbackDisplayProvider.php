@@ -16,6 +16,6 @@ class FallbackDisplayProvider implements FieldDisplayComponentProviderInterface
 
     public function createComponentFor(mixed $object, FieldDisplayBuildContext $context): ComponentInterface
     {
-        return new RawContents(htmlspecialchars(Utils::toString($object)));
+        return new RawContents('<div style="white-space: pre-wrap">' . htmlspecialchars(Utils::toString($object)) . '</div>');
     }
 }
