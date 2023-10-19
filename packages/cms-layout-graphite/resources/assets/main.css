@@ -45,3 +45,46 @@ gr-field-group > .form-control-invalid-text {
 .autocomplete-list div:hover {
     background-color: lightgray;
 }
+
+table.detail-table {
+    margin: 10px auto;
+    margin-right: 10px;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+  
+table.detail-table th {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+  
+table.detail-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+  
+table.detail-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+  
+table.detail-table table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+  
+table.detail-table table th {
+    background-color: #e0e0e0;
+    font-weight: normal;
+}
+  
+table.detail-table table td {
+    border: 1px solid #ccc;
+}
+
+table.detail-table td, table.detail-table th {
+    margin: 0;
+}
