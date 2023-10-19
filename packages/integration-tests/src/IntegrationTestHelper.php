@@ -7,7 +7,6 @@ use Apie\IntegrationTests\Concerns\CreatesApieBoundedContext;
 use Apie\IntegrationTests\Concerns\CreatesApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\Enums\DatalayerImplementation;
-use Apie\IntegrationTests\SearchTerm;
 
 final class IntegrationTestHelper
 {
