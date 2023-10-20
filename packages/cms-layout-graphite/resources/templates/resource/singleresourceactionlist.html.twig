@@ -1,0 +1,5 @@
+<div style="display: table-cell; vertical-align: middle">
+  {% for action in property('actions') %}
+    <gr-button variant="primary" onclick="location.href = {{ action.getUrl(property('config')) | json_encode}}">{{ action.name }}</gr-button>
+  {% endfor %}
+</div>
