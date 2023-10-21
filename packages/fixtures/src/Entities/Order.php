@@ -3,14 +3,16 @@ namespace Apie\Fixtures\Entities;
 
 use APie\Core\Attributes\Internal;
 use Apie\Core\Attributes\ProvideIndex;
+use Apie\Core\Entities\EntityWithStatesInterface;
 use Apie\Core\Entities\RootAggregate;
+use Apie\Core\Lists\StringList;
 use Apie\Fixtures\Enums\OrderStatus;
 use Apie\Fixtures\Identifiers\OrderIdentifier;
 use Apie\Fixtures\Identifiers\OrderLineIdentifier;
 use Apie\Fixtures\Lists\OrderLineList;
 
 #[ProvideIndex('provideIndex')]
-class Order implements RootAggregate
+class Order implements RootAggregate, EntityWithStatesInterface
 {
     private OrderStatus $orderStatus;
 
@@ -65,6 +67,19 @@ class Order implements RootAggregate
             }
         }
         return null;
+    }
+
+    public function provideAllowedMethods(): StringList
+    {
+        if ($this->orderStatus === OrderStatus::DRAFT) {
+            return new StringList([
+                'addOrderLine',
+                'removeOrderLine',
+                'acceptOrder'
+            ]);
+        }
+
+        return new StringList([]);
     }
 
     public function acceptOrder(): void

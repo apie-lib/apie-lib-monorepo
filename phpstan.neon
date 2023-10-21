@@ -29,6 +29,7 @@ parameters:
         - packages/serializer/src
         - packages/text-value-objects/src
     ignoreErrors:
+        - '#Order constructor expects Apie\\Fixtures\\Identifiers\\OrderIdentifier, Apie\\Core\\Identifiers\\Uuid#'
         - '#ReflectionException is never thrown in the try block#'
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
