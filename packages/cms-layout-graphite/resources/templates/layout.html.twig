@@ -17,6 +17,7 @@
   crossorigin="anonymous"
 ></script>
 <script src="https://cdn.jsdelivr.net/npm/@revolist/revogrid@3.2.11/dist/revo-grid/revo-grid.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/msc-sidebar@1.0.2/mjs/wc-msc-sidebar.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script>{{ assetContent('main.js') }}</script>
@@ -33,5 +34,9 @@
           {{ component('content') }}
         </div>
       </div>
+      <msc-sidebar side="right">
+        <nav slot="content">
+        </nav>
+      </msc-sidebar>
     </body>
 </html>
