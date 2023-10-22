@@ -13,9 +13,9 @@
       </tbody>
     </table>
   </form>
-  <div style="display: table-cell; vertical-align: middle">
+  <div style="display: table-cell; vertical-align: middle" class="resource-actions resource-actions-unprocessed">
     {% for action in property('actions') %}
-      <gr-button variant="primary" onclick="location.href = {{ action.getUrl(property('config')) | json_encode}}">{{ action.name }}</gr-button>
+      <gr-button variant="{{ action.getVariant().value }}" data-small-page="{{ action.isSmallPage() | json_encode }}" onclick="location.href = {{ action.getUrl(property('config')) | json_encode}}">{{ action.name }}</gr-button>
     {% endfor %}
   </div>
 </div>
