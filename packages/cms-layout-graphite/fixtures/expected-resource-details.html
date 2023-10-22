@@ -3,6 +3,17 @@
       <h1 style="display: table-cell; vertical-align: middle">Details of 35eadea7-b93b-4031-acaf-c9759886627d</h1>
       <div style="display: table-cell; vertical-align: middle" class="resource-actions resource-actions-unprocessed">
   </div>
+<script>(function (resourceActionListElm) {
+    for (const button of resourceActionListElm.querySelectorAll("*[data-url]")) {
+        button.addEventListener('click', function () {
+            const dataUrl = button.dataset.url;
+            const dataSmallPage = button.dataset.smallPage;
+            //console.log(button, dataUrl, dataSmallPage);
+            location.href = dataUrl;
+        }); 
+    }
+    resourceActionListElm.classList.remove('resource-actions-unprocessed');
+}(document.querySelector('.resource-actions-unprocessed')));</script>
     </div>
         <table class="detail-table">
             <tr>

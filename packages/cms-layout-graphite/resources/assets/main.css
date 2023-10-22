@@ -89,3 +89,11 @@ table.detail-table table td {
 table.detail-table td, table.detail-table th {
     margin: 0;
 }
+
+msc-sidebar {
+    --msc-sidebar-z-index: 1000;
+    --msc-sidebar-background: rgba(255, 255, 255, 0.8);
+    --msc-sidebar-overlay: rgba(0,0,0,.5);
+    --msc-sidebar-timing-function: rgba(255, 255, 255, 0.8);
+    --msc-sidebar-duration: 233ms;
+}

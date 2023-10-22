@@ -1,6 +1,4 @@
-<div style="display: table-cell; vertical-align: middle" class="resource-actions resource-actions-unprocessed">
-  </div>
-<script>(function (resourceActionListElm) {
+(function (resourceActionListElm) {
     for (const button of resourceActionListElm.querySelectorAll("*[data-url]")) {
         button.addEventListener('click', function () {
             const dataUrl = button.dataset.url;
@@ -10,4 +8,4 @@
         }); 
     }
     resourceActionListElm.classList.remove('resource-actions-unprocessed');
-}(document.querySelector('.resource-actions-unprocessed')));</script>
+}(document.querySelector('.resource-actions-unprocessed')));
