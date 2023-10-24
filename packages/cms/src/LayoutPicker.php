@@ -1,7 +1,7 @@
 <?php
 namespace Apie\Cms;
 
-use Apie\Cms\Enums\LayoutEnum;
+use Apie\HtmlBuilders\Enums\LayoutEnum;
 use Psr\Http\Message\ServerRequestInterface;
 
 final class LayoutPicker

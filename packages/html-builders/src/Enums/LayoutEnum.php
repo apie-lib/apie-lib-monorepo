@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Cms\Enums;
+namespace Apie\HtmlBuilders\Enums;
 
 enum LayoutEnum:string
 {
