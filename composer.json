@@ -22,7 +22,7 @@
         "ext-mbstring": "*",
         "fakerphp/faker": "^1.19",
         "giggsey/libphonenumber-for-php": "^8.0",
-        "laravel/laravel": "7.*|8.*|9.*|10.*",
+        "laravel/framework": "7.*|8.*|9.*|10.*",
         "nette/php-generator": "^4.0.1",
         "nikic/php-parser": "^4.14",
         "niklongstone/regex-reverse": "^0.4.0",

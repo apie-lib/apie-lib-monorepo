@@ -3,6 +3,7 @@ namespace Apie\LaravelApie;
 
 use Apie\CmsApiDropdownOption\CmsDropdownServiceProvider;
 use Apie\Common\CommonServiceProvider;
+use Apie\Common\Wrappers\BoundedContextHashmapFactory;
 use Apie\Common\Interfaces\BoundedContextSelection;
 use Apie\Common\Interfaces\DashboardContentFactoryInterface;
 use Apie\Common\Wrappers\ConsoleCommandFactory as CommonConsoleCommandFactory;
@@ -15,6 +16,7 @@ use Apie\Faker\FakerServiceProvider;
 use Apie\HtmlBuilders\ErrorHandler\CmsErrorRenderer;
 use Apie\HtmlBuilders\HtmlBuilderServiceProvider;
 use Apie\LaravelApie\ContextBuilders\CsrfTokenContextBuilder;
+use Apie\LaravelApie\ContextBuilders\RegisterBoundedContextActionContextBuilder;
 use Apie\LaravelApie\ErrorHandler\ApieErrorRenderer;
 use Apie\LaravelApie\ErrorHandler\Handler;
 use Apie\LaravelApie\Providers\CmsServiceProvider;
@@ -40,8 +42,8 @@ class ApieServiceProvider extends ServiceProvider
     private array $dependencies = [
         'enable_cms' => [
             CommonServiceProvider::class,
+            HtmlBuilderServiceProvider::class, // it's important that this loads before CmsServiceProvider!!!
             CmsServiceProvider::class,
-            HtmlBuilderServiceProvider::class,
             SerializerServiceProvider::class,
         ],
         'enable_cms_dropdown' => [
@@ -81,8 +83,30 @@ class ApieServiceProvider extends ServiceProvider
         ],
     ];
 
+    private function autoTagHashmapActions(): void
+    {
+        $boundedContextConfig = config('apie.bounded_contexts');
+        $factory = new BoundedContextHashmapFactory($boundedContextConfig);
+        $hashmap = $factory->create();
+        foreach ($hashmap as $boundedContext) {
+            foreach ($boundedContext->actions as $action) {
+                $class = $action->getDeclaringClass();
+                if (!$class->isInstantiable()) {
+                    continue;
+                }
+                $className = $class->name;
+                \Apie\ServiceProviderGenerator\TagMap::register(
+                    $this->app,
+                    $className,
+                    ['apie.context']
+                );
+            }
+        }
+    }
+
     public function boot(): void
     {
+        $this->autoTagHashmapActions();
         $this->loadViewsFrom(__DIR__ . '/../templates', 'apie');
         $this->loadRoutesFrom(__DIR__.'/../resources/routes.php');
         TagMap::registerEvents($this->app);
@@ -164,5 +188,7 @@ class ApieServiceProvider extends ServiceProvider
         //$this->app->bind(CsrfTokenProvider::class, CsrfTokenContextBuilder::class);
         TagMap::register($this->app, CsrfTokenContextBuilder::class, ['apie.core.context_builder']);
         $this->app->tag(CsrfTokenContextBuilder::class, ['apie.core.context_builder']);
+        TagMap::register($this->app, RegisterBoundedContextActionContextBuilder::class, ['apie.core.context_builder']);
+        $this->app->tag(RegisterBoundedContextActionContextBuilder::class, ['apie.core.context_builder']);
     }
 }

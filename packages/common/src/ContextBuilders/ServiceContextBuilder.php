@@ -1,5 +1,5 @@
 <?php
-namespace Apie\ApieBundle\ContextBuilders;
+namespace Apie\Common\ContextBuilders;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextBuilders\ContextBuilderInterface;
