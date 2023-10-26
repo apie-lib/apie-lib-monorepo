@@ -89,11 +89,19 @@ table.detail-table table td {
 table.detail-table td, table.detail-table th {
     margin: 0;
 }
+.apie-sidebar {
+    width: 450px;
+    background-color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    right: -500px;
+    height: 100%;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 90;
+}
 
-msc-sidebar {
-    --msc-sidebar-z-index: 1000;
-    --msc-sidebar-background: rgba(255, 255, 255, 0.8);
-    --msc-sidebar-overlay: rgba(0,0,0,.5);
-    --msc-sidebar-timing-function: rgba(255, 255, 255, 0.8);
-    --msc-sidebar-duration: 233ms;
+.apie-sidebar.active {
+    right: 0; /* Slide in from the right when active */
 }
