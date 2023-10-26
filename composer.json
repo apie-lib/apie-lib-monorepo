@@ -9,6 +9,9 @@
     "description": "Monorepo of the Apie library",
     "type": "project",
     "license": "MIT",
+    "conflict": {
+        "laravel/framework": "^10.29"
+    },
     "require": {
         "apie/phpunit-matrix-data-provider": "^1.0.2",
         "apie/service-provider-generator": "0.11.1",
