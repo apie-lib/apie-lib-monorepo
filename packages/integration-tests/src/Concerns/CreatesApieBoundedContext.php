@@ -4,6 +4,9 @@ namespace Apie\IntegrationTests\Concerns;
 use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
+use Apie\IntegrationTests\Apie\TypeDemo\Entities\Human;
+use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
+use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
@@ -16,6 +19,8 @@ use Apie\IntegrationTests\Requests\JsonFields\GetAndSetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
+use Apie\TextValueObjects\FirstName;
+use Apie\TextValueObjects\LastName;
 
 trait CreatesApieBoundedContext
 {
@@ -52,6 +57,27 @@ trait CreatesApieBoundedContext
             )
         );
     }
+
+    public function createGetAnimalTestRequest(): TestRequestInterface
+    {
+        // @phpstan-ignore-next-line
+        $animal = new Ostrich(AnimalIdentifier::createRandom(), new FirstName('Albert'));
+        return new GetResourceApiCall(
+            new BoundedContextId('types'),
+            Animal::class,
+            $animal->getId()->toNative(),
+            [$animal],
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('id', $animal->getId()->toNative()),
+                new GetPrimitiveField('name', 'ostrich'),
+                new GetPrimitiveField('animalName', 'Albert'),
+                new GetPrimitiveField('capableOfFlying', false),
+                new GetPrimitiveField('type', 'bird')
+            )
+        );
+    }
+
 
     public function createPostPrimitiveOnlyTestRequest(): TestRequestInterface
     {
