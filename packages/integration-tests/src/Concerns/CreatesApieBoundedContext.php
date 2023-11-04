@@ -4,7 +4,6 @@ namespace Apie\IntegrationTests\Concerns;
 use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
-use Apie\IntegrationTests\Apie\TypeDemo\Entities\Human;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
@@ -20,7 +19,6 @@ use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
 use Apie\TextValueObjects\FirstName;
-use Apie\TextValueObjects\LastName;
 
 trait CreatesApieBoundedContext
 {

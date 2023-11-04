@@ -15,7 +15,7 @@
     "require": {
         "apie/phpunit-matrix-data-provider": "^1.0.2",
         "apie/service-provider-generator": "0.11.1",
-        "apie/type-converter": "^1.0.3",
+        "apie/type-converter": "^1.0.4",
         "cebe/php-openapi": "^1.7",
         "chillerlan/php-qrcode": "^5.0",
         "doctrine/common": "^3.4.3",
@@ -95,6 +95,7 @@
             "Apie\\RestApi\\": "packages/rest-api/src/",
             "Apie\\SchemaGenerator\\": "packages/schema-generator/src/",
             "Apie\\Serializer\\": "packages/serializer/src/",
+            "Apie\\StorageMetadata\\": "packages/storage-metadata/src/",
             "Apie\\TextValueObjects\\": "packages/text-value-objects/src/",
             "Apie\\Tools\\": "tools/"
         }
@@ -129,6 +130,7 @@
             "Apie\\Tests\\RestApi\\": "packages/rest-api/tests/",
             "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/",
             "Apie\\Tests\\Serializer\\": "packages/serializer/tests/",
+            "Apie\\Tests\\StorageMetadata\\": "packages/storage-metadata/tests/",
             "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/"
         }
     },
@@ -173,6 +175,7 @@
         "apie/rest-api": "self.version",
         "apie/schema-generator": "self.version",
         "apie/serializer": "self.version",
+        "apie/storage-metadata": "self.version",
         "apie/text-value-objects": "self.version"
     },
     "minimum-stability": "dev",

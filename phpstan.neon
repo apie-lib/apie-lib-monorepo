@@ -27,8 +27,10 @@ parameters:
         - packages/rest-api/src
         - packages/schema-generator/src
         - packages/serializer/src
+        - packages/storage-metadata/src
         - packages/text-value-objects/src
     ignoreErrors:
+        - '#isInitialized\(\) on a separate line has no effect#'
         - '#Order constructor expects Apie\\Fixtures\\Identifiers\\OrderIdentifier, Apie\\Core\\Identifiers\\Uuid#'
         - '#ReflectionException is never thrown in the try block#'
         - '#Call to an undefined method Faker\\Generator#'
@@ -146,3 +148,10 @@ parameters:
             message: '/constructor expects Illuminate\\Contracts\\Container\\Container/'
             path: packages/integration-tests/src/Applications/Laravel/LaravelTestApplication
             count: 1
+        -
+            message: '# has an uninitialized readonly property#'
+            path: packages/storage-metadata/src/Mediators/DomainToStorageContext.php
+            count: 1
+        -
+            message: '#Unable to resolve the template type T#'
+            path: packages/storage-metadata/src/PropertyConverters/OneToManyAttributeConverter.php
