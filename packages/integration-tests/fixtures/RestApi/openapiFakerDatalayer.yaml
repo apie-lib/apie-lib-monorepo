@@ -1102,12 +1102,9 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          mammal:
-            $ref: '#/components/schemas/Mammal-get'
-          bird:
-            $ref: '#/components/schemas/Bird-get'
-          fish:
-            $ref: '#/components/schemas/Fish-get'
+          mammal: '#/components/schemas/Mammal-get'
+          bird: '#/components/schemas/Bird-get'
+          fish: '#/components/schemas/Fish-get'
     Animal-patch:
       type: object
       properties:
@@ -1125,12 +1122,9 @@ components:
       discriminator:
         propertyName: type
         mapping:
-          mammal:
-            $ref: '#/components/schemas/Mammal-post'
-          bird:
-            $ref: '#/components/schemas/Bird-post'
-          fish:
-            $ref: '#/components/schemas/Fish-post'
+          mammal: '#/components/schemas/Mammal-post'
+          bird: '#/components/schemas/Bird-post'
+          fish: '#/components/schemas/Fish-post'
     AnimalIdentifier-get:
       type: string
       format: animalidentifier
@@ -1149,10 +1143,8 @@ components:
       discriminator:
         propertyName: name
         mapping:
-          ostrich:
-            $ref: '#/components/schemas/Ostrich-get'
-          seagull:
-            $ref: '#/components/schemas/Seagull-get'
+          ostrich: '#/components/schemas/Ostrich-get'
+          seagull: '#/components/schemas/Seagull-get'
       properties:
         type:
           enum:
@@ -1169,10 +1161,8 @@ components:
       discriminator:
         propertyName: name
         mapping:
-          ostrich:
-            $ref: '#/components/schemas/Ostrich-post'
-          seagull:
-            $ref: '#/components/schemas/Seagull-post'
+          ostrich: '#/components/schemas/Ostrich-post'
+          seagull: '#/components/schemas/Seagull-post'
       properties:
         type:
           enum:
@@ -1276,10 +1266,8 @@ components:
       discriminator:
         propertyName: name
         mapping:
-          shark:
-            $ref: '#/components/schemas/Shark-get'
-          lungfish:
-            $ref: '#/components/schemas/Lungfish-get'
+          shark: '#/components/schemas/Shark-get'
+          lungfish: '#/components/schemas/Lungfish-get'
       properties:
         type:
           enum:
@@ -1296,10 +1284,8 @@ components:
       discriminator:
         propertyName: name
         mapping:
-          shark:
-            $ref: '#/components/schemas/Shark-post'
-          lungfish:
-            $ref: '#/components/schemas/Lungfish-post'
+          shark: '#/components/schemas/Shark-post'
+          lungfish: '#/components/schemas/Lungfish-post'
       properties:
         type:
           enum:
@@ -1420,12 +1406,9 @@ components:
       discriminator:
         propertyName: name
         mapping:
-          elephant:
-            $ref: '#/components/schemas/Elephant-get'
-          platypus:
-            $ref: '#/components/schemas/Platypus-get'
-          human:
-            $ref: '#/components/schemas/Human-get'
+          elephant: '#/components/schemas/Elephant-get'
+          platypus: '#/components/schemas/Platypus-get'
+          human: '#/components/schemas/Human-get'
       properties:
         type:
           enum:
@@ -1444,12 +1427,9 @@ components:
       discriminator:
         propertyName: name
         mapping:
-          elephant:
-            $ref: '#/components/schemas/Elephant-post'
-          platypus:
-            $ref: '#/components/schemas/Platypus-post'
-          human:
-            $ref: '#/components/schemas/Human-post'
+          elephant: '#/components/schemas/Elephant-post'
+          platypus: '#/components/schemas/Platypus-post'
+          human: '#/components/schemas/Human-post'
       properties:
         type:
           enum:
