@@ -35,6 +35,16 @@ class CmsFormSubmitRequest implements TestRequestInterface, BootstrapRequestInte
     ) {
     }
 
+    public function shouldDoRequestValidation(): bool
+    {
+        return true;
+    }
+
+    public function shouldDoResponseValidation(): bool
+    {
+        return true;
+    }
+
     public function bootstrap(TestApplicationInterface $testApplication): void
     {
         $this->apieFacade = $testApplication->getServiceContainer()->get('apie');

@@ -90,6 +90,7 @@ trait CreatesApieBoundedContext
                 new GetAndSetPrimitiveField('floatingPoint', 1.5, 1.5),
                 new GetPrimitiveField('booleanField', null),
             ),
+            discardRequestValidation: true
         );
     }
 

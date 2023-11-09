@@ -10,4 +10,8 @@ interface TestRequestInterface
     public function getRequest(): ServerRequestInterface;
 
     public function verifyValidResponse(ResponseInterface $response): void;
+
+    public function shouldDoRequestValidation(): bool;
+
+    public function shouldDoResponseValidation(): bool;
 }

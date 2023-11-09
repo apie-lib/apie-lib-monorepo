@@ -43,24 +43,37 @@ class DoApiCallTest extends TestCase
         }
         $response = $testApplication->httpRequest($testRequest);
         $testRequest->verifyValidResponse($response);
-        // This goes wrong with nullable string value objects
-        //$this->validateOpenApiSpec($testApplication, $testRequest->getRequest(), $response);
+        $this->validateOpenApiSpec(
+            $testApplication,
+            $testRequest->getRequest(),
+            $response,
+            $testRequest->shouldDoRequestValidation(),
+            $testRequest->shouldDoResponseValidation()
+        );
     }
 
     private function validateOpenApiSpec(
         TestApplicationInterface $testApplication,
         RequestInterface $psrRequest,
-        ResponseInterface $psrResponse
+        ResponseInterface $psrResponse,
+        bool $doRequestValidation,
+        bool $doResponseValidation
     ) {
         $validatorBuilder = (new ValidatorBuilder)
             ->fromJsonFile(FixtureUtils::getOpenapiFixtureFile($testApplication));
         $requestValidator = $validatorBuilder->getRequestValidator();
         $responseValidator = $validatorBuilder->getResponseValidator();
-        if ($psrResponse->getStatusCode() < 300) {
-            $requestValidator->validate($psrRequest);
+
+        if ($doResponseValidation) {
+            $operation = new OperationAddress(
+                $psrRequest->getUri()->getPath(),
+                strtolower($psrRequest->getMethod())
+            );
+            $responseValidator->validate($operation, $psrResponse);
         }
 
-        $operation = new OperationAddress($psrRequest->getUri()->getPath(), strtolower($psrRequest->getMethod()));
-        $responseValidator->validate($operation, $psrResponse);
+        if ($psrResponse->getStatusCode() < 300 && $doRequestValidation) {
+            $requestValidator->validate($psrRequest);
+        }
     }
 }

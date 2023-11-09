@@ -20,8 +20,20 @@ class ValidCreateResourceApiCall implements TestRequestInterface
     public function __construct(
         private readonly BoundedContextId $boundedContextId,
         private readonly string $resourceName,
-        private readonly JsonGetFieldInterface&JsonSetFieldInterface $inputOutput
+        private readonly JsonGetFieldInterface&JsonSetFieldInterface $inputOutput,
+        private readonly bool $discardRequestValidation = false,
+        private readonly bool $discardResponseValidation = false
     ) {
+    }
+
+    public function shouldDoRequestValidation(): bool
+    {
+        return !$this->discardRequestValidation;
+    }
+
+    public function shouldDoResponseValidation(): bool
+    {
+        return !$this->discardResponseValidation;
     }
 
     public function getRequest(): ServerRequestInterface

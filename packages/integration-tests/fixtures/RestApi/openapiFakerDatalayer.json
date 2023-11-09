@@ -581,28 +581,32 @@
                         "name": "query[stringField]",
                         "in": "query",
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "nullable": true
                         }
                     },
                     {
                         "name": "query[integerField]",
                         "in": "query",
                         "schema": {
-                            "type": "integer"
+                            "type": "integer",
+                            "nullable": true
                         }
                     },
                     {
                         "name": "query[floatingPoint]",
                         "in": "query",
                         "schema": {
-                            "type": "number"
+                            "type": "number",
+                            "nullable": true
                         }
                     },
                     {
                         "name": "query[booleanField]",
                         "in": "query",
                         "schema": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "nullable": true
                         }
                     },
                     {
@@ -760,14 +764,14 @@
                         "name": "query[phoneNumber]",
                         "in": "query",
                         "schema": {
-                            "$ref": "#/components/schemas/DutchPhoneNumber-get"
+                            "$ref": "#/components/schemas/DutchPhoneNumber-nullable-get"
                         }
                     },
                     {
                         "name": "query[blockedReason]",
                         "in": "query",
                         "schema": {
-                            "$ref": "#/components/schemas/DatabaseText-get"
+                            "$ref": "#/components/schemas/DatabaseText-nullable-get"
                         }
                     },
                     {
@@ -1328,7 +1332,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/User-get"
+                                    "$ref": "#/components/schemas/User-nullable-get"
                                 }
                             }
                         }
@@ -1792,6 +1796,15 @@
                             "$ref": "#/components/schemas/Seagull-get"
                         }
                     }
+                },
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "bird"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
                 }
             },
             "Bird-post": {
@@ -1814,13 +1827,23 @@
                             "$ref": "#/components/schemas/Seagull-post"
                         }
                     }
+                },
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "bird"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
                 }
             },
-            "DatabaseText-get": {
+            "DatabaseText-nullable-get": {
                 "maxLength": 65535,
                 "minLength": 0,
                 "type": "string",
-                "example": "Lorem Ipsum"
+                "example": "Lorem Ipsum",
+                "nullable": true
             },
             "DatabaseText-post": {
                 "maxLength": 65535,
@@ -1851,13 +1874,15 @@
                     "$ref": "#/components/schemas/DropdownOption-post"
                 }
             },
-            "DutchPhoneNumber-get": {
+            "DutchPhoneNumber-nullable-get": {
                 "type": "string",
-                "format": "dutchphonenumber"
+                "format": "dutchphonenumber",
+                "nullable": true
             },
-            "DutchPhoneNumber-post": {
+            "DutchPhoneNumber-nullable-post": {
                 "type": "string",
-                "format": "dutchphonenumber"
+                "format": "dutchphonenumber",
+                "nullable": true
             },
             "Elephant-get": {
                 "type": "object",
@@ -1870,6 +1895,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "elephant"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -1899,6 +1927,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "elephant"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -1944,6 +1975,15 @@
                             "$ref": "#/components/schemas/Lungfish-get"
                         }
                     }
+                },
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "fish"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
                 }
             },
             "Fish-post": {
@@ -1966,6 +2006,15 @@
                             "$ref": "#/components/schemas/Lungfish-post"
                         }
                     }
+                },
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "fish"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
                 }
             },
             "Human-get": {
@@ -1980,6 +2029,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "human"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2013,6 +2065,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "human"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2052,6 +2107,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "lungfish"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2081,6 +2139,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "lungfish"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2122,6 +2183,15 @@
                             "$ref": "#/components/schemas/Human-get"
                         }
                     }
+                },
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "mammal"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
                 }
             },
             "Mammal-post": {
@@ -2150,6 +2220,15 @@
                             "$ref": "#/components/schemas/Human-post"
                         }
                     }
+                },
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "mammal"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
                 }
             },
             "Ostrich-get": {
@@ -2163,6 +2242,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "ostrich"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2192,6 +2274,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "ostrich"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2230,6 +2315,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "platypus"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2259,6 +2347,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "platypus"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2370,6 +2461,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "seagull"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2399,6 +2493,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "seagull"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2425,6 +2522,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "shark"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2454,6 +2554,9 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "shark"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -2507,10 +2610,35 @@
                         "nullable": false
                     },
                     "blockedReason": {
-                        "$ref": "#/components/schemas/DatabaseText-get"
+                        "$ref": "#/components/schemas/DatabaseText-nullable-get"
                     },
                     "phoneNumber": {
-                        "$ref": "#/components/schemas/DutchPhoneNumber-get"
+                        "$ref": "#/components/schemas/DutchPhoneNumber-nullable-get"
+                    }
+                }
+            },
+            "User-nullable-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "blocked",
+                    "blockedReason",
+                    "phoneNumber"
+                ],
+                "nullable": true,
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/UserIdentifier-get"
+                    },
+                    "blocked": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "blockedReason": {
+                        "$ref": "#/components/schemas/DatabaseText-nullable-get"
+                    },
+                    "phoneNumber": {
+                        "$ref": "#/components/schemas/DutchPhoneNumber-nullable-get"
                     }
                 }
             },
@@ -2518,7 +2646,7 @@
                 "type": "object",
                 "properties": {
                     "phoneNumber": {
-                        "$ref": "#/components/schemas/DutchPhoneNumber-post"
+                        "$ref": "#/components/schemas/DutchPhoneNumber-nullable-post"
                     }
                 }
             },
@@ -2532,7 +2660,7 @@
                         "$ref": "#/components/schemas/UserIdentifier-post"
                     },
                     "phoneNumber": {
-                        "$ref": "#/components/schemas/DutchPhoneNumber-post"
+                        "$ref": "#/components/schemas/DutchPhoneNumber-nullable-post"
                     }
                 }
             },

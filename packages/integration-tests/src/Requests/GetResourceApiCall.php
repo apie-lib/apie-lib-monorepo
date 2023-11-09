@@ -30,6 +30,16 @@ class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterf
     ) {
     }
 
+    public function shouldDoRequestValidation(): bool
+    {
+        return true;
+    }
+
+    public function shouldDoResponseValidation(): bool
+    {
+        return true;
+    }
+
     public function bootstrap(TestApplicationInterface $testApplication): void
     {
         /** @var ApieFacadeInterface $apieFacade */

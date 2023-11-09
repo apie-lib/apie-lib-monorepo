@@ -381,21 +381,25 @@ paths:
           in: query
           schema:
             type: string
+            nullable: true
         -
           name: 'query[integerField]'
           in: query
           schema:
             type: integer
+            nullable: true
         -
           name: 'query[floatingPoint]'
           in: query
           schema:
             type: number
+            nullable: true
         -
           name: 'query[booleanField]'
           in: query
           schema:
             type: boolean
+            nullable: true
         -
           name: 'query[id]'
           in: query
@@ -498,12 +502,12 @@ paths:
           name: 'query[phoneNumber]'
           in: query
           schema:
-            $ref: '#/components/schemas/DutchPhoneNumber-get'
+            $ref: '#/components/schemas/DutchPhoneNumber-nullable-get'
         -
           name: 'query[blockedReason]'
           in: query
           schema:
-            $ref: '#/components/schemas/DatabaseText-get'
+            $ref: '#/components/schemas/DatabaseText-nullable-get'
         -
           name: 'query[id]'
           in: query
@@ -858,7 +862,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User-get'
+                $ref: '#/components/schemas/User-nullable-get'
   '/User/{id}/block':
     post:
       tags:
@@ -1149,6 +1153,12 @@ components:
             $ref: '#/components/schemas/Ostrich-get'
           seagull:
             $ref: '#/components/schemas/Seagull-get'
+      properties:
+        type:
+          enum:
+            - bird
+          type: string
+          nullable: false
     Bird-post:
       type: object
       oneOf:
@@ -1163,11 +1173,18 @@ components:
             $ref: '#/components/schemas/Ostrich-post'
           seagull:
             $ref: '#/components/schemas/Seagull-post'
-    DatabaseText-get:
+      properties:
+        type:
+          enum:
+            - bird
+          type: string
+          nullable: false
+    DatabaseText-nullable-get:
       maxLength: 65535
       minLength: 0
       type: string
       example: 'Lorem Ipsum'
+      nullable: true
     DatabaseText-post:
       maxLength: 65535
       minLength: 0
@@ -1189,12 +1206,14 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/DropdownOption-post'
-    DutchPhoneNumber-get:
+    DutchPhoneNumber-nullable-get:
       type: string
       format: dutchphonenumber
-    DutchPhoneNumber-post:
+      nullable: true
+    DutchPhoneNumber-nullable-post:
       type: string
       format: dutchphonenumber
+      nullable: true
     Elephant-get:
       type: object
       required:
@@ -1205,6 +1224,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - elephant
           type: string
           nullable: false
         id:
@@ -1226,6 +1247,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - elephant
           type: string
           nullable: false
         id:
@@ -1257,6 +1280,12 @@ components:
             $ref: '#/components/schemas/Shark-get'
           lungfish:
             $ref: '#/components/schemas/Lungfish-get'
+      properties:
+        type:
+          enum:
+            - fish
+          type: string
+          nullable: false
     Fish-post:
       type: object
       oneOf:
@@ -1271,6 +1300,12 @@ components:
             $ref: '#/components/schemas/Shark-post'
           lungfish:
             $ref: '#/components/schemas/Lungfish-post'
+      properties:
+        type:
+          enum:
+            - fish
+          type: string
+          nullable: false
     Human-get:
       type: object
       required:
@@ -1282,6 +1317,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - human
           type: string
           nullable: false
         id:
@@ -1306,6 +1343,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - human
           type: string
           nullable: false
         id:
@@ -1335,6 +1374,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - lungfish
           type: string
           nullable: false
         id:
@@ -1356,6 +1397,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - lungfish
           type: string
           nullable: false
         id:
@@ -1383,6 +1426,12 @@ components:
             $ref: '#/components/schemas/Platypus-get'
           human:
             $ref: '#/components/schemas/Human-get'
+      properties:
+        type:
+          enum:
+            - mammal
+          type: string
+          nullable: false
     Mammal-post:
       type: object
       oneOf:
@@ -1401,6 +1450,12 @@ components:
             $ref: '#/components/schemas/Platypus-post'
           human:
             $ref: '#/components/schemas/Human-post'
+      properties:
+        type:
+          enum:
+            - mammal
+          type: string
+          nullable: false
     Ostrich-get:
       type: object
       required:
@@ -1411,6 +1466,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - ostrich
           type: string
           nullable: false
         id:
@@ -1432,6 +1489,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - ostrich
           type: string
           nullable: false
         id:
@@ -1459,6 +1518,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - platypus
           type: string
           nullable: false
         id:
@@ -1480,6 +1541,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - platypus
           type: string
           nullable: false
         id:
@@ -1560,6 +1623,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - seagull
           type: string
           nullable: false
         id:
@@ -1581,6 +1646,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - seagull
           type: string
           nullable: false
         id:
@@ -1600,6 +1667,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - shark
           type: string
           nullable: false
         id:
@@ -1621,6 +1690,8 @@ components:
         - type
       properties:
         name:
+          enum:
+            - shark
           type: string
           nullable: false
         id:
@@ -1659,14 +1730,32 @@ components:
           type: boolean
           nullable: false
         blockedReason:
-          $ref: '#/components/schemas/DatabaseText-get'
+          $ref: '#/components/schemas/DatabaseText-nullable-get'
         phoneNumber:
-          $ref: '#/components/schemas/DutchPhoneNumber-get'
+          $ref: '#/components/schemas/DutchPhoneNumber-nullable-get'
+    User-nullable-get:
+      type: object
+      required:
+        - id
+        - blocked
+        - blockedReason
+        - phoneNumber
+      nullable: true
+      properties:
+        id:
+          $ref: '#/components/schemas/UserIdentifier-get'
+        blocked:
+          type: boolean
+          nullable: false
+        blockedReason:
+          $ref: '#/components/schemas/DatabaseText-nullable-get'
+        phoneNumber:
+          $ref: '#/components/schemas/DutchPhoneNumber-nullable-get'
     User-patch:
       type: object
       properties:
         phoneNumber:
-          $ref: '#/components/schemas/DutchPhoneNumber-post'
+          $ref: '#/components/schemas/DutchPhoneNumber-nullable-post'
     User-post:
       type: object
       required:
@@ -1675,7 +1764,7 @@ components:
         id:
           $ref: '#/components/schemas/UserIdentifier-post'
         phoneNumber:
-          $ref: '#/components/schemas/DutchPhoneNumber-post'
+          $ref: '#/components/schemas/DutchPhoneNumber-nullable-post'
     UserIdentifier-get:
       type: string
       format: useridentifier
