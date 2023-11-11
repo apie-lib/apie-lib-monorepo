@@ -31,10 +31,31 @@ class ConsoleServiceProvider extends ServiceProvider
             function ($app) {
                 return new \Apie\Console\ConsoleCommandFactory(
                     $app->make(\Apie\Common\ApieFacade::class),
-                    $app->make(\Apie\Common\ActionDefinitionProvider::class)
+                    $app->make(\Apie\Common\ActionDefinitionProvider::class),
+                    $app->make(\Apie\Console\ApieInputHelper::class)
                 );
             }
         );
+        $this->app->singleton(
+            \Apie\Console\ApieInputHelper::class,
+            function ($app) {
+                return \Apie\Console\ApieInputHelper::create(
+                    $this->getTaggedServicesIterator(\Apie\Console\Helpers\InputInteractorInterface::class)
+                );
+                
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Console\ApieInputHelper::class,
+            array(
+              0 =>
+              array(
+                'name' => 'console.helper',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\Console\ApieInputHelper::class], 'console.helper');
         
     }
 }
