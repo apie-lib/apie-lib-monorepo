@@ -685,7 +685,7 @@ paths:
       tags:
         - PrimitiveOnly
         - resource
-      description: 'Modifies an instance of PrimitiveOnly'
+      description: 'Removes an instance of PrimitiveOnly'
       operationId: remove-single-PrimitiveOnly
       parameters:
         -
