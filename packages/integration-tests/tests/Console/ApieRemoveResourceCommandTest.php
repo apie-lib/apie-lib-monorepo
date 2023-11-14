@@ -76,4 +76,27 @@ class ApieRemoveResourceCommandTest extends TestCase
         }
         $testApplication->cleanApplication();
     }
+
+    /**
+     * @runInSeparateProcess
+     * @dataProvider it_can_remove_a_resource_provider
+     * @test
+     */
+    public function it_can_remove_a_resource_with_interaction(TestApplicationInterface $testApplication)
+    {
+        $testApplication->bootApplication();
+        /** @var ApieFacadeInterface $apie */
+        $apie = $testApplication->getServiceContainer()->get('apie');
+        $entity = new PrimitiveOnly(PrimitiveOnlyIdentifier::fromNative('075433c9-ca1f-435c-be81-61bae3009521'));
+        $apie->persistNew($entity, new BoundedContextId('types'));
+
+        $tester = new ApplicationTester($testApplication->getConsoleApplication());
+        $exitCode = $tester->run(['apie:types:remove-PrimitiveOnly', 'id' => '075433c9-ca1f-435c-be81-61bae3009521', '--interactive' => true], ['interactive' => true]);
+        $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
+        $this->assertGreaterThanOrEqual(
+            0,
+            $testApplication->getServiceContainer()->get('apie')->all(PrimitiveOnly::class, new BoundedContextId('types'))->getTotalCount()
+        );
+        $testApplication->cleanApplication();
+    }
 }
