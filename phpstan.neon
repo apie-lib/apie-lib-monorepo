@@ -131,7 +131,6 @@ parameters:
         -
             message: '#the constructor#'
             path: packages/core/src/Actions/ActionResponse.php
-            count: 9
         -
             message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'
             path: packages/html-builders/src/Components/Forms/Password.php
