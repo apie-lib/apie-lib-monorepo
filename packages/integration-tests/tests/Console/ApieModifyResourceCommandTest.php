@@ -1,12 +1,11 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Console;
 
-use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Common\Interfaces\ApieFacadeInterface;
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
-use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
@@ -41,7 +40,11 @@ class ApieModifyResourceCommandTest extends TestCase
         $entity = new PrimitiveOnly(PrimitiveOnlyIdentifier::fromNative('075433c9-ca1f-435c-be81-61bae3009521'));
         $apie->persistNew($entity, new BoundedContextId('types'));
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
-        $exitCode = $tester->run(['apie:types:modify-PrimitiveOnly', 'id' => '075433c9-ca1f-435c-be81-61bae3009521', '--input-stringField' => 'string']);
+        $exitCode = $tester->run([
+            'apie:types:modify-PrimitiveOnly',
+            'id' => '075433c9-ca1f-435c-be81-61bae3009521',
+            '--input-stringField' => 'string'
+        ]);
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name !== FakerDatalayer::class) {
             $this->assertEquals(
@@ -49,6 +52,34 @@ class ApieModifyResourceCommandTest extends TestCase
                 $apie->find($entity->getId(), new BoundedContextId('types'))->stringField
             );
 
+        }
+        $testApplication->cleanApplication();
+    }
+
+    /**
+     * @runInSeparateProcess
+     * @dataProvider it_can_modify_a_resource_provider
+     * @test
+     */
+    public function it_returns_an_error_on_invalid_id(TestApplicationInterface $testApplication)
+    {
+        $invalidIds = [
+            '075433c9-ca1f-435c-be81-61bae3009521',
+            'invalid'
+        ];
+        if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name === FakerDatalayer::class) {
+            array_shift($invalidIds);
+        }
+        $testApplication->bootApplication();
+        $tester = new ApplicationTester($testApplication->getConsoleApplication());
+
+        foreach ($invalidIds as $invalidId) {
+            $exitCode = $tester->run([
+                'apie:types:modify-PrimitiveOnly',
+                'id' => $invalidId,
+                '--input-stringField' => 'string'
+            ]);
+            $this->assertEquals(Command::FAILURE, $exitCode, 'console command gave me ' . $tester->getDisplay());
         }
         $testApplication->cleanApplication();
     }

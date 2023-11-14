@@ -1,12 +1,11 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Console;
 
-use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Common\Interfaces\ApieFacadeInterface;
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
-use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
@@ -48,6 +47,32 @@ class ApieRemoveResourceCommandTest extends TestCase
                 0,
                 $apie->all(PrimitiveOnly::class, new BoundedContextId('types'))->getTotalCount()
             );
+        }
+        $testApplication->cleanApplication();
+    }
+
+    /**
+     * @runInSeparateProcess
+     * @dataProvider it_can_remove_a_resource_provider
+     * @test
+     */
+    public function it_returns_an_error_on_invalid_id(TestApplicationInterface $testApplication)
+    {
+        $invalidIds = [
+            '075433c9-ca1f-435c-be81-61bae3009521',
+            'invalid'
+        ];
+        if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name === FakerDatalayer::class) {
+            array_shift($invalidIds);
+        }
+        $testApplication->bootApplication();
+        $tester = new ApplicationTester($testApplication->getConsoleApplication());
+        foreach ($invalidIds as $invalidId) {
+            $exitCode = $tester->run([
+                'apie:types:remove-PrimitiveOnly',
+                'id' => $invalidId
+            ]);
+            $this->assertEquals(Command::FAILURE, $exitCode, 'console command gave me ' . $tester->getDisplay());
         }
         $testApplication->cleanApplication();
     }
