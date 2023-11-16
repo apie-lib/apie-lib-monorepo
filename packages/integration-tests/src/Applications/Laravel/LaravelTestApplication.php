@@ -75,6 +75,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
     public function bootApplication(): void
     {
         $this->setUp();
+        $this->session([]);
         if (getenv('PHPUNIT_LOG_INTEGRATION_OUTPUT')) {
             $this->withoutExceptionHandling([
                 NotFoundHttpException::class
@@ -121,6 +122,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         $factory = new HttpFoundationFactory();
         $sfRequest = $factory->createRequest($psrRequest);
         $laravelRequest = Request::createFromBase($sfRequest);
+        $laravelRequest->setLaravelSession($this->app['session']);
         $laravelResponse = $this->app->make(HttpKernel::class)->handle($laravelRequest);
         $psrFactory = new NyholmPsr17Factory();
         $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);

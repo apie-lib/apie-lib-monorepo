@@ -44,7 +44,7 @@ class ApieModifyResourceCommandTest extends TestCase
         $apie->persistNew($entity, new BoundedContextId('types'));
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
         $exitCode = $tester->run([
-            'apie:types:modify-PrimitiveOnly',
+            'apie:types:primitive-only:modify',
             'id' => '075433c9-ca1f-435c-be81-61bae3009521',
             '--input-stringField' => 'string'
         ]);
@@ -78,7 +78,7 @@ class ApieModifyResourceCommandTest extends TestCase
 
         foreach ($invalidIds as $invalidId) {
             $exitCode = $tester->run([
-                'apie:types:modify-PrimitiveOnly',
+                'apie:types:primitive-only:modify',
                 'id' => $invalidId,
                 '--input-stringField' => 'string'
             ]);
@@ -112,7 +112,7 @@ class ApieModifyResourceCommandTest extends TestCase
             $inputs = [...$inputs, ...$inputPerField[$key]];
         }
         $tester->setInputs($inputs);
-        $exitCode = $tester->run(['apie:types:modify-PrimitiveOnly', 'id' => '075433c9-ca1f-435c-be81-61bae3009521', '--interactive' => true], ['interactive' => true]);
+        $exitCode = $tester->run(['apie:types:primitive-only:modify', 'id' => '075433c9-ca1f-435c-be81-61bae3009521', '--interactive' => true], ['interactive' => true]);
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         $this->assertGreaterThanOrEqual(
             1,

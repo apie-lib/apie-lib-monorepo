@@ -40,7 +40,7 @@ class ApieRemoveResourceCommandTest extends TestCase
         $entity = new PrimitiveOnly(PrimitiveOnlyIdentifier::fromNative('075433c9-ca1f-435c-be81-61bae3009521'));
         $apie->persistNew($entity, new BoundedContextId('types'));
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
-        $exitCode = $tester->run(['apie:types:remove-PrimitiveOnly', 'id' => '075433c9-ca1f-435c-be81-61bae3009521']);
+        $exitCode = $tester->run(['apie:types:primitive-only:remove', 'id' => '075433c9-ca1f-435c-be81-61bae3009521']);
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name !== FakerDatalayer::class) {
             $this->assertEquals(
@@ -69,7 +69,7 @@ class ApieRemoveResourceCommandTest extends TestCase
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
         foreach ($invalidIds as $invalidId) {
             $exitCode = $tester->run([
-                'apie:types:remove-PrimitiveOnly',
+                'apie:types:primitive-only:remove',
                 'id' => $invalidId
             ]);
             $this->assertEquals(Command::FAILURE, $exitCode, 'console command gave me ' . $tester->getDisplay());
@@ -91,7 +91,7 @@ class ApieRemoveResourceCommandTest extends TestCase
         $apie->persistNew($entity, new BoundedContextId('types'));
 
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
-        $exitCode = $tester->run(['apie:types:remove-PrimitiveOnly', 'id' => '075433c9-ca1f-435c-be81-61bae3009521', '--interactive' => true], ['interactive' => true]);
+        $exitCode = $tester->run(['apie:types:primitive-only:remove', 'id' => '075433c9-ca1f-435c-be81-61bae3009521', '--interactive' => true], ['interactive' => true]);
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         $this->assertGreaterThanOrEqual(
             0,

@@ -43,7 +43,7 @@ class ApieRunResourceMethodCommandTest extends TestCase
         $apie->persistNew($entity, new BoundedContextId('types'));
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
         $exitCode = $tester->run([
-            'apie:types:run-User-block',
+            'apie:types:user:run:block',
             'id' => 'info@example.com',
             '--input-blockedReason' => 'string'
         ]);
@@ -76,7 +76,7 @@ class ApieRunResourceMethodCommandTest extends TestCase
 
         foreach ($invalidIds as $invalidId) {
             $exitCode = $tester->run([
-                'apie:types:run-User-block',
+                'apie:types:user:run:block',
                 'id' => $invalidId,
                 '--input-blockedReason' => 'string'
             ]);
@@ -107,7 +107,7 @@ class ApieRunResourceMethodCommandTest extends TestCase
             $inputs = [...$inputs, ...$inputPerField[$key]];
         }
         $tester->setInputs($inputs);
-        $exitCode = $tester->run(['apie:types:run-User-block', 'id' => 'info@example.com', '--interactive' => true], ['interactive' => true]);
+        $exitCode = $tester->run(['apie:types:user:run:block', 'id' => 'info@example.com', '--interactive' => true], ['interactive' => true]);
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name !== FakerDatalayer::class) {
             $this->assertTrue(

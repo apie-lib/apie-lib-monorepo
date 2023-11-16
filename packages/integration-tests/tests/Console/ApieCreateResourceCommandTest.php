@@ -36,7 +36,7 @@ class ApieCreateResourceCommandTest extends TestCase
     {
         $testApplication->bootApplication();
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
-        $exitCode = $tester->run(['apie:types:create-PrimitiveOnly', '--input-id' => '075433c9-ca1f-435c-be81-61bae3009521']);
+        $exitCode = $tester->run(['apie:types:primitive-only:create', '--input-id' => '075433c9-ca1f-435c-be81-61bae3009521']);
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         $this->assertGreaterThanOrEqual(
             1,
@@ -67,7 +67,7 @@ class ApieCreateResourceCommandTest extends TestCase
             $inputs = [...$inputs, ...$inputPerField[$key]];
         }
         $tester->setInputs($inputs);
-        $exitCode = $tester->run(['apie:types:create-PrimitiveOnly', '--interactive' => true], ['interactive' => true]);
+        $exitCode = $tester->run(['apie:types:primitive-only:create', '--interactive' => true], ['interactive' => true]);
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         $this->assertGreaterThanOrEqual(
             1,
