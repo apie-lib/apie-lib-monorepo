@@ -67,5 +67,9 @@ class CmsResourceActionFormRenderTest extends TestCase
         $cmsFormSubmitRequest->bootstrap($testApplication);
         $response = $testApplication->httpRequest($cmsFormSubmitRequest);
         $cmsFormSubmitRequest->verifyValidResponse($response);
+        $location = $response->getHeaderLine('location');
+        if ($location) {
+            $testApplication->httpRequestGet($location);
+        }
     }
 }
