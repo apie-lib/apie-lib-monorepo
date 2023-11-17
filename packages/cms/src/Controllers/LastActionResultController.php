@@ -2,15 +2,14 @@
 namespace Apie\Cms\Controllers;
 
 use Apie\Common\ContextConstants;
-use Apie\Core\Actions\ActionResponse;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
 use Apie\HtmlBuilders\Factories\ComponentFactory;
+use Apie\HtmlBuilders\Factories\FieldDisplayComponentFactory;
 use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use ReflectionClass;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class LastActionResultController
@@ -18,28 +17,25 @@ class LastActionResultController
     public function __construct(
         private readonly ComponentFactory $componentFactory,
         private readonly ContextBuilderFactory $contextBuilder,
-        private readonly ComponentRendererInterface $renderer
+        private readonly ComponentRendererInterface $renderer,
+        private readonly FieldDisplayComponentFactory $fieldDisplayComponentFactory
     ) {
     }
 
     public function __invoke(ServerRequestInterface $request): ResponseInterface
     {
-        $context = $this->contextBuilder->createGeneralContext([]);
+        $context = $this->contextBuilder->createFromRequest($request, [ContextConstants::CMS => true]);
         $boundedContextId = new BoundedContextId($request->getAttribute('boundedContextId'));
         $id = $request->getAttribute('id');
         $session = $context->getContext(SessionInterface::class);
         $actionResults = $session->get('_output_results', []);
         $psr17Factory = new Psr17Factory();
-        if (($actionResults[$id] ?? null) instanceof ActionResponse) {
+        if (array_key_exists($id, $actionResults)) {
             $component = $this->componentFactory->createWrapLayout(
                 'Action result',
                 $boundedContextId,
                 $context,
-                $this->componentFactory->createResource(
-                    $actionResults[$id],
-                    new ReflectionClass($request->getAttribute(ContextConstants::RESOURCE_NAME)),
-                    new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
-                )
+                $this->fieldDisplayComponentFactory->createDisplayFor($actionResults[$id], $context)
             );
             $html = $this->renderer->render($component);
             
