@@ -122,7 +122,6 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         $factory = new HttpFoundationFactory();
         $sfRequest = $factory->createRequest($psrRequest);
         $laravelRequest = Request::createFromBase($sfRequest);
-        $laravelRequest->setLaravelSession($this->app['session']);
         $laravelResponse = $this->app->make(HttpKernel::class)->handle($laravelRequest);
         $psrFactory = new NyholmPsr17Factory();
         $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);
