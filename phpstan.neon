@@ -41,6 +41,7 @@ parameters:
         - '#template type T in call to method static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'
         - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
         - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
+        - '#ReflectionEnumUnitCase::getBackingValue#'
         - 
             message: '#ActionInterface::#'
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
@@ -150,7 +151,6 @@ parameters:
         -
             message: '# has an uninitialized readonly property#'
             path: packages/storage-metadata/src/Mediators/DomainToStorageContext.php
-            count: 1
         -
             message: '#Unable to resolve the template type T#'
             path: packages/storage-metadata/src/PropertyConverters/OneToManyAttributeConverter.php
