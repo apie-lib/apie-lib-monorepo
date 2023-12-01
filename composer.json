@@ -95,6 +95,7 @@
             "Apie\\RestApi\\": "packages/rest-api/src/",
             "Apie\\SchemaGenerator\\": "packages/schema-generator/src/",
             "Apie\\Serializer\\": "packages/serializer/src/",
+            "Apie\\StorageMetadataBuilder\\": "packages/storage-metadata-builder/src/",
             "Apie\\StorageMetadata\\": "packages/storage-metadata/src/",
             "Apie\\TextValueObjects\\": "packages/text-value-objects/src/",
             "Apie\\Tools\\": "tools/"
@@ -130,6 +131,7 @@
             "Apie\\Tests\\RestApi\\": "packages/rest-api/tests/",
             "Apie\\Tests\\SchemaGenerator\\": "packages/schema-generator/tests/",
             "Apie\\Tests\\Serializer\\": "packages/serializer/tests/",
+            "Apie\\Tests\\StorageMetadataBuilder\\": "packages/storage-metadata-builder/tests/",
             "Apie\\Tests\\StorageMetadata\\": "packages/storage-metadata/tests/",
             "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/"
         }
@@ -176,6 +178,7 @@
         "apie/schema-generator": "self.version",
         "apie/serializer": "self.version",
         "apie/storage-metadata": "self.version",
+        "apie/storage-metadata-builder": "self.version",
         "apie/text-value-objects": "self.version"
     },
     "minimum-stability": "dev",
