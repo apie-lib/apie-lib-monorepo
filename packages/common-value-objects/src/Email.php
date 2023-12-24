@@ -10,9 +10,6 @@ use Egulias\EmailValidator\Validation\RFCValidation;
 use Faker\Generator;
 use ReflectionClass;
 
-/**
- * Represents a full name: gender + first name + last name.
- */
 #[FakeMethod('createRandom')]
 class Email implements StringValueObjectInterface
 {

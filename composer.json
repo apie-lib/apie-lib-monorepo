@@ -12,10 +12,19 @@
     "conflict": {
         "laravel/framework": "^10.29"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/pjordaan/regex-reverse",
+            "only": [
+                "niklongstone/regex-reverse"
+            ]
+        }
+    ],
     "require": {
         "apie/phpunit-matrix-data-provider": "^1.0.2",
         "apie/service-provider-generator": "0.11.1",
-        "apie/type-converter": "^1.0.4",
+        "apie/type-converter": "^1.0.5",
         "cebe/php-openapi": "^1.7",
         "chillerlan/php-qrcode": "^5.0",
         "doctrine/common": "^3.4.3",
@@ -28,7 +37,7 @@
         "laravel/framework": "7.*|8.*|9.*|10.*",
         "nette/php-generator": "^4.0.1",
         "nikic/php-parser": "^4.14",
-        "niklongstone/regex-reverse": "^0.4.0",
+        "niklongstone/regex-reverse": "^0.4.0|^0.5.0",
         "nyholm/psr7": "^1.5",
         "php": ">=8.1",
         "pragmarx/google2fa-qrcode": "^3.0",

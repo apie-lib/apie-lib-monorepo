@@ -7,11 +7,11 @@ use Apie\TypeConverter\ConverterInterface;
 use ReflectionType;
 
 /**
- * @implements ConverterInterface<string, ValueObjectInterface>
+ * @implements ConverterInterface<string|null, ValueObjectInterface>
  */
 class StringToValueObject implements ConverterInterface
 {
-    public function convert(string $input, ?ReflectionType $wantedType): ValueObjectInterface
+    public function convert(?string $input, ?ReflectionType $wantedType): ValueObjectInterface
     {
         $class = ConverterUtils::toReflectionClass($wantedType);
         assert(null !== $class);

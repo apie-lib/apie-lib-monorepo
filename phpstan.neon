@@ -31,7 +31,6 @@ parameters:
         - packages/text-value-objects/src
     ignoreErrors:
         - '#isInitialized\(\) on a separate line has no effect#'
-        - '#Order constructor expects Apie\\Fixtures\\Identifiers\\OrderIdentifier, Apie\\Core\\Identifiers\\Uuid#'
         - '#ReflectionException is never thrown in the try block#'
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
@@ -51,9 +50,6 @@ parameters:
             path: packages/rest-api/src/EventListeners/OpenApiOperationAddedEventSubscriber.php
             count: 1
         -
-            path: packages/doctrine-entity-datalayer/src/EntityReindexer.php
-            message: '#undefined property Apie\\DoctrineEntityConverter\\Interfaces\\GeneratedDoctrineEntityInterface::\$#'
-        -
             message: '#Unable to resolve the template type T in call to method Apie\\Core\\Datalayers\\ApieDatalayer::all#'
             path: packages/cms-api-dropdown-option/src/DropdownOptionProvider/EntityIdentifierOptionProvider.php
             count: 1
@@ -66,7 +62,6 @@ parameters:
             path: packages/core/src/Utils/EnumUtils.php
             count: 2
         - '#Unable to resolve the template type T in call to method static method Apie\\Core\\Utils\\ConverterUtils::toReflectionClass\(\)#'
-        -   '#generic class Apie\\Common\\Wrappers\\ApieUserDecoratorIdentifier#'
         -
             message: '#NodeDefinition::children#'
             path: packages/apie-bundle/src/DependencyInjection/Configuration.php

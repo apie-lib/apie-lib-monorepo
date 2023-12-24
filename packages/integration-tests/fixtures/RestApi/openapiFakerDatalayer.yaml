@@ -277,12 +277,12 @@ paths:
           name: 'query[id]'
           in: query
           schema:
-            $ref: '#/components/schemas/AnimalIdentifier-get'
+            type: string
         -
           name: 'query[animalName]'
           in: query
           schema:
-            $ref: '#/components/schemas/FirstName-get'
+            type: string
   /PrimitiveOnly:
     post:
       tags:
@@ -386,25 +386,25 @@ paths:
           name: 'query[integerField]'
           in: query
           schema:
-            type: integer
+            type: string
             nullable: true
         -
           name: 'query[floatingPoint]'
           in: query
           schema:
-            type: number
+            type: string
             nullable: true
         -
           name: 'query[booleanField]'
           in: query
           schema:
-            type: boolean
+            type: string
             nullable: true
         -
           name: 'query[id]'
           in: query
           schema:
-            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-get'
+            type: string
   /User:
     post:
       tags:
@@ -502,17 +502,19 @@ paths:
           name: 'query[phoneNumber]'
           in: query
           schema:
-            $ref: '#/components/schemas/DutchPhoneNumber-nullable-get'
+            type: string
+            nullable: true
         -
           name: 'query[blockedReason]'
           in: query
           schema:
-            $ref: '#/components/schemas/DatabaseText-nullable-get'
+            type: string
+            nullable: true
         -
           name: 'query[id]'
           in: query
           schema:
-            $ref: '#/components/schemas/UserIdentifier-get'
+            type: string
   '/Animal/{id}':
     get:
       tags:

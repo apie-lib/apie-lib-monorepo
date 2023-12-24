@@ -418,20 +418,6 @@
                             "minLength": 1,
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "$ref": "#/components/schemas/AnimalIdentifier-get"
-                        }
-                    },
-                    {
-                        "name": "query[animalName]",
-                        "in": "query",
-                        "schema": {
-                            "$ref": "#/components/schemas/FirstName-get"
-                        }
                     }
                 ]
             }
@@ -578,6 +564,13 @@
                         }
                     },
                     {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "query[stringField]",
                         "in": "query",
                         "schema": {
@@ -589,7 +582,7 @@
                         "name": "query[integerField]",
                         "in": "query",
                         "schema": {
-                            "type": "integer",
+                            "type": "string",
                             "nullable": true
                         }
                     },
@@ -597,7 +590,7 @@
                         "name": "query[floatingPoint]",
                         "in": "query",
                         "schema": {
-                            "type": "number",
+                            "type": "string",
                             "nullable": true
                         }
                     },
@@ -605,15 +598,8 @@
                         "name": "query[booleanField]",
                         "in": "query",
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "nullable": true
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-get"
                         }
                     }
                 ]
@@ -761,40 +747,33 @@
                         }
                     },
                     {
-                        "name": "query[password]",
+                        "name": "query[id]",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
                             "type": "string"
                         }
                     },
                     {
-                        "name": "query[activationToken]",
+                        "name": "query[blocked]",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
                             "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[phoneNumber]",
-                        "in": "query",
-                        "schema": {
-                            "$ref": "#/components/schemas/DutchPhoneNumber-nullable-get"
                         }
                     },
                     {
                         "name": "query[blockedReason]",
                         "in": "query",
                         "schema": {
-                            "$ref": "#/components/schemas/DatabaseText-nullable-get"
+                            "type": "string",
+                            "nullable": true
                         }
                     },
                     {
-                        "name": "query[id]",
+                        "name": "query[phoneNumber]",
                         "in": "query",
                         "schema": {
-                            "$ref": "#/components/schemas/UserIdentifier-get"
+                            "type": "string",
+                            "nullable": true
                         }
                     }
                 ]
