@@ -15,12 +15,13 @@ trait HasIndexes
      */
     public function replaceIndexes(array $indexes): void
     {
-        $current = isset($this->_index) ? Utils::toArray($this->_index) : [];
+        $current = isset($this->_indexes) ? Utils::toArray($this->_indexes) : [];
         $offset = 0;
+        $refProperty = 'ref_' . (new ReflectionClass($this))->getShortName();
         foreach ($indexes as $search => $priority) {
             if (isset($current[$offset])) {
-                if ($current[$offset]->search !== $search || $current[$offset]->priority !== $priority) {
-                    $current[$offset]->search = $search;
+                if ($current[$offset]->text !== $search || $current[$offset]->priority !== $priority) {
+                    $current[$offset]->text = $search;
                     $current[$offset]->priority = $priority;
                     $current[$offset]->idf = 1;
                     $current[$offset]->tdf = 1;
@@ -28,9 +29,12 @@ trait HasIndexes
             } else {
                 $current[$offset] = $this->getIndexTable()->newInstance($search, $priority);
             }
-            $ref = 'ref_' . (new ReflectionClass($this))->getShortName();
-            $current[$offset]->$ref = $this;
+            
+            $current[$offset]->$refProperty = $this;
             $offset++;
+        }
+        for (;$offset < count($current);$offset++) {
+            $current[$offset]->$refProperty = null;
         }
         $current = array_slice($current, 0, $offset);
         $this->_indexes = ConverterUtils::dynamicCast($current, (new ReflectionProperty($this, '_indexes'))->getType());
