@@ -3,9 +3,9 @@ namespace Apie\Tests\CmsLayoutGraphite;
 
 use Apie\CmsLayoutGraphite\GraphiteDesignSystemLayout;
 use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
-use Apie\HtmlBuilders\TestHelpers\AbstractRenderTest;
+use Apie\HtmlBuilders\TestHelpers\AbstractRenderTestCase;
 
-class GraphiteDesignSystemLayoutTest extends AbstractRenderTest
+class GraphiteDesignSystemLayoutTest extends AbstractRenderTestCase
 {
     public function getRenderer(): ComponentRendererInterface
     {
