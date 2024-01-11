@@ -5,23 +5,31 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
+use Apie\Core\Metadata\Concerns\UseContextKey;
+use Apie\Core\Metadata\MetadataFactory;
+use Apie\Core\ValueObjects\Utils;
 use Apie\Serializer\Context\ApieSerializerContext;
+use Apie\Serializer\Context\NormalizeChildGroup;
 use Apie\Serializer\Lists\NormalizerList;
 use Apie\Serializer\Normalizers\BooleanNormalizer;
 use Apie\Serializer\Normalizers\EnumNormalizer;
 use Apie\Serializer\Normalizers\FloatNormalizer;
+use Apie\Serializer\Normalizers\IdentifierNormalizer;
 use Apie\Serializer\Normalizers\IntegerNormalizer;
 use Apie\Serializer\Normalizers\ItemListNormalizer;
 use Apie\Serializer\Normalizers\PaginatedResultNormalizer;
-use Apie\Serializer\Normalizers\PolymorphicEntityNormalizer;
+use Apie\Serializer\Normalizers\PolymorphicObjectNormalizer;
+use Apie\Serializer\Normalizers\ReflectionTypeNormalizer;
+use Apie\Serializer\Normalizers\StringableCompositeValueObjectNormalizer;
 use Apie\Serializer\Normalizers\StringNormalizer;
 use Apie\Serializer\Normalizers\ValueObjectNormalizer;
 use ReflectionClass;
 use ReflectionMethod;
-use ReflectionProperty;
 
 class Serializer
 {
+    use UseContextKey;
+
     public function __construct(private NormalizerList $normalizers)
     {
     }
@@ -30,7 +38,9 @@ class Serializer
     {
         return new self(new NormalizerList([
             new PaginatedResultNormalizer(),
-            new PolymorphicEntityNormalizer(),
+            new IdentifierNormalizer(),
+            new StringableCompositeValueObjectNormalizer(),
+            new PolymorphicObjectNormalizer(),
             new EnumNormalizer(),
             new ValueObjectNormalizer(),
             new StringNormalizer(),
@@ -38,6 +48,7 @@ class Serializer
             new FloatNormalizer(),
             new BooleanNormalizer(),
             new ItemListNormalizer(),
+            new ReflectionTypeNormalizer(),
         ]));
     }
 
@@ -68,17 +79,16 @@ class Serializer
         if (!is_object($object)) {
             return $object;
         }
+        $metadata = MetadataFactory::getResultMetadata(new ReflectionClass($object), $apieContext);
         $returnValue = [];
-        foreach ($apieContext->getApplicableGetters(new ReflectionClass($object)) as $name => $getter) {
-            if ($getter->isStatic()) {
-                continue;
+
+        foreach ($metadata->getHashmap()->filterOnContext($apieContext, getters: true) as $fieldName => $metadata) {
+            if ($metadata->isField()) {
+                $returnValue[$fieldName] = $serializerContext->normalizeChildElement(
+                    $fieldName,
+                    $metadata->getValue($object, $apieContext)
+                );
             }
-            if ($getter instanceof ReflectionProperty) {
-                $returnValue[$name] = $serializerContext->normalizeChildElement($name, $getter->getValue($object));
-                continue;
-            }
-            // todo run getters with extra arguments for context
-            $returnValue[$name] = $serializerContext->normalizeChildElement($name, $getter->invoke($object));
         }
         return new ItemHashmap($returnValue);
     }
@@ -93,7 +103,20 @@ class Serializer
     public function denormalizeNewObject(string|int|float|bool|ItemList|ItemHashmap|array|null $object, string $desiredType, ApieContext $apieContext): mixed
     {
         if (is_array($object)) {
-            $object = new ItemHashmap($object);
+            $isList = false;
+            if ($desiredType === 'mixed') {
+                $isList = true;
+                $count = 0;
+                foreach (array_keys($object) as $key) {
+                    if ($key === $count) {
+                        $count++;
+                    } else {
+                        $isList = false;
+                        break;
+                    }
+                }
+            }
+            $object = $isList ? new ItemList($object) : new ItemHashmap($object);
         }
         if ($desiredType === 'mixed') {
             return $object;
@@ -108,29 +131,35 @@ class Serializer
         if (!$refl->isInstantiable()) {
             throw new InvalidTypeException($desiredType, 'a instantiable object');
         }
-        $constructor = $refl->getConstructor();
-        $arguments = [];
-        if ($constructor) {
-            $arguments = $serializerContext->denormalizeFromMethod($object, $constructor);
-        }
-        $createdObject = new $desiredType(...$arguments);
-        return $this->denormalizeOnExistingObject($object, $createdObject, $apieContext);
+        $metadata = MetadataFactory::getCreationMetadata(
+            $refl,
+            $apieContext
+        );
+        $group = new NormalizeChildGroup(
+            $serializerContext,
+            $metadata
+        );
+        $normalizedData = $group->buildNormalizedData($refl, Utils::toArray($object));
+        return $normalizedData->createNewObject();
     }
 
     public function denormalizeOnExistingObject(ItemHashmap $object, object $existingObject, ApieContext $apieContext): mixed
     {
+        $refl = new ReflectionClass($existingObject);
+        $metadata = MetadataFactory::getCreationMetadata(
+            $refl,
+            $apieContext
+        );
         $serializerContext = new ApieSerializerContext($this, $apieContext);
-        foreach ($apieContext->getApplicableSetters(new ReflectionClass($existingObject)) as $name => $setter) {
-            if (!isset($object[$name])) {
-                continue;
-            }
-            if ($setter instanceof ReflectionProperty) {
-                $setter->setValue($existingObject, $serializerContext->denormalizeFromTypehint($object[$name], $setter->getType()));
-                continue;
-            }
-            // todo run setters with extra arguments for context
-            //$returnValue[$name] = $serializerContext->normalizeChildElement($name, $setter->invoke($object));
-        }
-        return $existingObject;
+        $metadata = MetadataFactory::getModificationMetadata(
+            $refl,
+            $apieContext
+        );
+        $group = new NormalizeChildGroup(
+            $serializerContext,
+            $metadata
+        );
+        $normalizedData = $group->buildNormalizedData($refl, Utils::toArray($object));
+        return $normalizedData->modifyExistingObject($existingObject);
     }
 }

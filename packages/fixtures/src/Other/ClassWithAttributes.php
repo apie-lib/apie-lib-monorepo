@@ -3,16 +3,17 @@ namespace Apie\Fixtures\Other;
 
 use Apie\Core\Attributes\Not;
 use Apie\Core\Attributes\Requires;
+use Apie\Core\Attributes\RuntimeCheck;
 
 class ClassWithAttributes
 {
-    #[Requires('test')]
+    #[RuntimeCheck(new Requires('test'))]
     public string $property;
 
-    #[Requires('test')]
-    #[Requires('test2')]
+    #[RuntimeCheck(new Requires('test'))]
+    #[RuntimeCheck(new Requires('test2'))]
     public string $property2;
 
-    #[Not(new Requires('test'))]
+    #[RuntimeCheck(new Not(new Requires('test')))]
     public string $property3;
 }

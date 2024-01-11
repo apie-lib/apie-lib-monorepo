@@ -4,7 +4,7 @@
     </div>
     <div>
         {% for i in range(1, property('totalCount') / property('pageSize')) %}
-            <gr-button onclick="alert({{ property('querySearch').withPageIndex(i - 1).toHttpQuery() | json_encode }})" size="small">{{ i }}</gr-button>
+            <gr-button onclick="location.href = location.protocol + '//' + location.host + location.pathname + {{ property('querySearch').withPageIndex(i - 1).toHttpQuery() | json_encode }};" size="small">{{ i }}</gr-button>
         {% endfor %}
     </div>
 </div>

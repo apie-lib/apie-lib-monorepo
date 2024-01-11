@@ -1,0 +1,104 @@
+services:
+  Apie\Cms\RouteDefinitions\CmsRouteDefinitionProvider:
+    arguments:
+      - '@Apie\Common\ActionDefinitionProvider'
+      - '@Psr\Log\LoggerInterface'
+    tags: 
+      - name: apie.common.route_definition
+  Apie\Cms\Controllers\DashboardController:
+    arguments:
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+      - '@apie.cms.dashboard_content'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\LayoutPicker:
+
+  apie.cms.dashboard_content:
+    alias: Apie\Cms\EmptyDashboard
+  
+  Apie\Cms\EmptyDashboard:
+
+  Apie\Cms\Controllers\LastActionResultController:
+    arguments:
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+      - '@Apie\HtmlBuilders\Factories\FieldDisplayComponentFactory'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\Controllers\GetResourceController:
+    arguments:
+      - '@Apie\Common\ApieFacade'
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\Controllers\GetResourceListController:
+    arguments:
+      - '@Apie\Common\ApieFacade'
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\Controllers\RunGlobalMethodFormController:
+    arguments:
+      - '@Apie\Common\ApieFacade'
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+      - '@Apie\Cms\LayoutPicker'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\Controllers\RunMethodCallOnSingleResourceFormController:
+    arguments:
+      - '@Apie\Common\ApieFacade'
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+      - '@Apie\Cms\LayoutPicker'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\Controllers\CreateResourceFormController:
+    arguments:
+      - '@Apie\Common\ApieFacade'
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+      - '@Apie\Cms\LayoutPicker'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\Controllers\ModifyResourceFormController:
+    arguments:
+      - '@Apie\Common\ApieFacade'
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+      - '@Apie\Cms\LayoutPicker'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\Controllers\RemoveResourceFormController:
+    arguments:
+      - '@Apie\Common\ApieFacade'
+      - '@Apie\HtmlBuilders\Factories\ComponentFactory'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\HtmlBuilders\Interfaces\ComponentRendererInterface'
+      - '@Apie\Cms\LayoutPicker'
+    tags: ['controller.service_arguments']
+
+  Apie\Cms\Controllers\FormCommitController:
+    arguments:
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '@Apie\Common\ApieFacade'
+      - '@Apie\HtmlBuilders\Configuration\ApplicationConfiguration'
+      - '@Apie\Core\BoundedContext\BoundedContextHashmap'
+    tags: ['controller.service_arguments']
+
+  cms.layout.graphite_design_system:
+    class: Apie\CmsLayoutGraphite\TwigRenderer
+    factory:
+      -  Apie\CmsLayoutGraphite\GraphiteDesignSystemLayout
+      - 'createRenderer'

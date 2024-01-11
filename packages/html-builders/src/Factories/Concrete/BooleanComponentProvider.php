@@ -1,26 +1,37 @@
 <?php
 namespace Apie\HtmlBuilders\Factories\Concrete;
 
-use Apie\Core\Context\ApieContext;
+use Apie\Core\Enums\ScalarType;
+use Apie\Core\Metadata\MetadataFactory;
+use Apie\Core\ValueObjects\Utils;
 use Apie\HtmlBuilders\Components\Forms\Checkbox;
+use Apie\HtmlBuilders\FormBuildContext;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\Interfaces\FormComponentProviderInterface;
-use Apie\HtmlBuilders\Utils;
-use ReflectionNamedType;
 use ReflectionType;
 
+/**
+ * Creates a form field for a boolean.
+ */
 class BooleanComponentProvider implements FormComponentProviderInterface
 {
-    public function supports(ReflectionType $type, ApieContext $context): bool
+    public function supports(ReflectionType $type, FormBuildContext $context): bool
     {
-        return $type instanceof ReflectionNamedType && $type->isBuiltin() && $type->getName() === 'bool';
+        $metadata = MetadataFactory::getCreationMetadata($type, $context->getApieContext());
+        return $metadata->toScalarType() === ScalarType::BOOLEAN;
     }
-    public function createComponentFor(ReflectionType $type, ApieContext $context, array $prefix, array $filledIn): ComponentInterface
+
+    public function createComponentFor(ReflectionType $type, FormBuildContext $context): ComponentInterface
     {
-        // TODO dropdown if nullable boolean
+        $value = $context->getFilledInValue($type->allowsNull() ? null : false);
+        if ($value !== null) {
+            $value = Utils::toBoolean($value);
+        }
         return new Checkbox(
-            Utils::toFormName($prefix),
-            $filledIn[end($prefix)] ?? false
+            $context->getFormName(),
+            $value,
+            $type->allowsNull(),
+            $context->getValidationError()
         );
     }
 }

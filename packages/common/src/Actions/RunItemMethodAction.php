@@ -2,6 +2,7 @@
 namespace Apie\Common\Actions;
 
 use Apie\Common\ContextConstants;
+use Apie\Common\IntegrationTestLogger;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
@@ -10,9 +11,11 @@ use Apie\Core\Actions\MethodActionInterface;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Exceptions\EntityNotFoundException;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\IdentifierUtils;
 use Apie\Core\Lists\StringList;
+use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionNamedType;
@@ -43,10 +46,15 @@ final class RunItemMethodAction implements MethodActionInterface
             $resource = null;
         } else {
             $id = $context->getContext(ContextConstants::RESOURCE_ID);
-            $resource = $this->apieFacade->find(
-                IdentifierUtils::entityClassToIdentifier($resourceClass)->newInstance($id),
-                new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
-            );
+            try {
+                $resource = $this->apieFacade->find(
+                    IdentifierUtils::entityClassToIdentifier($resourceClass)->newInstance($id),
+                    new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
+                );
+            } catch (InvalidStringForValueObjectException|EntityNotFoundException $error) {
+                IntegrationTestLogger::logException($error);
+                return ActionResponse::createClientError($this->apieFacade, $context, $error);
+            }
         }
 
         $result = $this->apieFacade->denormalizeOnMethodCall(
@@ -102,12 +110,14 @@ final class RunItemMethodAction implements MethodActionInterface
         return $method->name;
     }
 
+    /** @param ReflectionClass<object> $class */
     public static function getInputType(ReflectionClass $class, ?ReflectionMethod $method = null): ReflectionMethod
     {
         assert($method instanceof ReflectionMethod);
         return $method;
     }
 
+    /** @param ReflectionClass<object> $class */
     public static function getOutputType(ReflectionClass $class, ?ReflectionMethod $method = null): ReflectionMethod|ReflectionClass
     {
         assert($method instanceof ReflectionMethod);
@@ -131,6 +141,9 @@ final class RunItemMethodAction implements MethodActionInterface
         return new ActionResponseStatusList($list);
     }
 
+    /**
+     * @param ReflectionClass<object> $class
+     */
     public static function getDescription(ReflectionClass $class, ?ReflectionMethod $method = null): string
     {
         assert($method instanceof ReflectionMethod);
@@ -143,12 +156,10 @@ final class RunItemMethodAction implements MethodActionInterface
         }
         return 'Runs method ' . $name . ' on a ' . $class->getShortName() . ' with a specific id';
     }
-
-    public function getOperationId(): string
-    {
-        return 'get-single-' . $this->className->getShortName() . '-run-' . $this->method->name;
-    }
     
+    /**
+     * @param ReflectionClass<object> $class
+     */
     public static function getTags(ReflectionClass $class, ?ReflectionMethod $method = null): StringList
     {
         $className = $class->getShortName();
@@ -159,6 +170,9 @@ final class RunItemMethodAction implements MethodActionInterface
         return new StringList([$className, 'action']);
     }
 
+    /**
+     * @param ReflectionClass<object> $class
+     */
     public static function getRouteAttributes(ReflectionClass $class, ?ReflectionMethod $method = null): array
     {
         return
@@ -168,6 +182,7 @@ final class RunItemMethodAction implements MethodActionInterface
             ContextConstants::RESOURCE_NAME => $class->name,
             ContextConstants::METHOD_CLASS => $method->getDeclaringClass()->name,
             ContextConstants::METHOD_NAME => $method->name,
+            ContextConstants::DISPLAY_FORM => true,
         ];
     }
 }

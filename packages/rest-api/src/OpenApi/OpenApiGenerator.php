@@ -1,6 +1,8 @@
 <?php
 namespace Apie\RestApi\OpenApi;
 
+use Apie\Common\Enums\UrlPrefix;
+use Apie\Common\Interfaces\RestApiRouteDefinition;
 use Apie\Common\Interfaces\RouteDefinitionProviderInterface;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\BoundedContext\BoundedContext;
@@ -8,9 +10,10 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
 use Apie\Core\Dto\ListOf;
 use Apie\Core\Enums\RequestMethod;
-use Apie\RestApi\Interfaces\RestApiRouteDefinition;
+use Apie\RestApi\Events\OpenApiOperationAddedEvent;
 use Apie\SchemaGenerator\Builders\ComponentsBuilder;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
+use Apie\Serializer\Exceptions\ValidationException;
 use Apie\Serializer\Serializer;
 use cebe\openapi\Reader;
 use cebe\openapi\ReferenceContext;
@@ -25,6 +28,7 @@ use cebe\openapi\spec\RequestBody;
 use cebe\openapi\spec\Response;
 use cebe\openapi\spec\Schema;
 use cebe\openapi\spec\Server;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionNamedType;
@@ -42,6 +46,7 @@ class OpenApiGenerator
         private ComponentsBuilderFactory $componentsFactory,
         private RouteDefinitionProviderInterface $routeDefinitionProvider,
         private Serializer $serializer,
+        private EventDispatcherInterface $dispatcher,
         private string $baseUrl = '',
         ?OpenApi $baseSpec = null
     ) {
@@ -77,6 +82,9 @@ class OpenApiGenerator
         );
         foreach ($this->routeDefinitionProvider->getActionsForBoundedContext($boundedContext, $context) as $routeDefinition) {
             if ($routeDefinition instanceof RestApiRouteDefinition) {
+                if (!in_array(UrlPrefix::API, $routeDefinition->getUrlPrefixes()->toArray())) {
+                    continue;
+                }
                 $path = $routeDefinition->getUrl()->toNative();
                 if ($spec->paths->hasPath($path)) {
                     $pathItem = $spec->paths->getPath($path);
@@ -97,15 +105,18 @@ class OpenApiGenerator
     {
         $input = $routeDefinition->getInputType();
         
-        return $this->doSchemaForInput($input, $componentsBuilder);
+        return $this->doSchemaForInput($input, $componentsBuilder, $routeDefinition->getMethod());
     }
 
     /**
      * @param ReflectionClass<object>|ReflectionMethod|ReflectionType $input
      */
-    private function doSchemaForInput(ReflectionClass|ReflectionMethod|ReflectionType $input, ComponentsBuilder $componentsBuilder): Schema|Reference
+    private function doSchemaForInput(ReflectionClass|ReflectionMethod|ReflectionType $input, ComponentsBuilder $componentsBuilder, RequestMethod $method = RequestMethod::GET): Schema|Reference
     {
         if ($input instanceof ReflectionClass) {
+            if ($method === RequestMethod::PATCH) {
+                return $componentsBuilder->addModificationSchemaFor($input->name);
+            }
             return $componentsBuilder->addCreationSchemaFor($input->name);
         }
         if ($input instanceof ReflectionMethod) {
@@ -116,7 +127,7 @@ class OpenApiGenerator
                 'required' => $info->required,
             ]);
         }
-        return $componentsBuilder->getSchemaForType($input);
+        return $componentsBuilder->getSchemaForType($input, nullable: $input->allowsNull());
     }
 
     /**
@@ -130,7 +141,7 @@ class OpenApiGenerator
         if ($output instanceof ReflectionMethod) {
             $output = $output->getReturnType();
         }
-        return $componentsBuilder->getSchemaForType($output, false, true);
+        return $componentsBuilder->getSchemaForType($output, false, true, $output->allowsNull());
     }
 
     private function createSchemaForOutput(ComponentsBuilder $componentsBuilder, RestApiRouteDefinition $routeDefinition): Schema|Reference
@@ -281,7 +292,12 @@ class OpenApiGenerator
                             ]
                         ]);
                     }
-                    // TODO: validation error
+                    $responses[422] = new Response([
+                        'description' => 'A validation error occurred',
+                        'content' => [
+                            'application/json' => new MediaType(['schema' => $componentsBuilder->addDisplaySchemaFor(ValidationException::class)]),
+                        ]
+                    ]);
                     break;
                 case ActionResponseStatus::DELETED:
                     $responses[204] = new Response(['description' => 'Resource was deleted']);
@@ -314,5 +330,12 @@ class OpenApiGenerator
         $operation->responses = $responses;
         $prop = strtolower($method->value);
         $pathItem->{$prop} = $operation;
+        $this->dispatcher->dispatch(
+            new OpenApiOperationAddedEvent(
+                $componentsBuilder,
+                $operation,
+                $routeDefinition
+            )
+        );
     }
 }

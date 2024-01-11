@@ -11,7 +11,7 @@ class PhoneNumberAndCountryMismatch extends ApieException
     {
         parent::__construct(
             sprintf(
-                'Phone number and country are not from the same country. Country is "%s", phone country is "%s"',
+                'Phone number and country are not from the same country. Country is "%s", phone number is "%s"',
                 $country->value,
                 $phoneCountry ? $phoneCountry->value : '(unknown)'
             ),

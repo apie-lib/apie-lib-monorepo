@@ -30,6 +30,11 @@ final class ContextConstants
     public const RESOURCE_ID = 'id';
 
     /**
+     * Resource retrieved that we can apply actions to.
+     */
+    public const RESOURCE = 'resource';
+
+    /**
      * Internal operation id of action used.
      *
      * @see HasRouteDefinition::getOperationId()
@@ -67,6 +72,11 @@ final class ContextConstants
     public const RAW_CONTENTS = 'raw-contents';
 
     /**
+     * Last validation errors
+     */
+    public const VALIDATION_ERRORS = 'validation-errors';
+
+    /**
      * Added if an OpenAPI spec is generated.
      */
     public const OPENAPI = 'openapi';
@@ -83,6 +93,8 @@ final class ContextConstants
 
     public const CREATE_OBJECT = 'create';
 
+    public const REPLACE_OBJECT = 'replace';
+
     public const EDIT_OBJECT = 'edit';
 
     public const REMOVE_OBJECT = 'remove';
@@ -94,4 +106,9 @@ final class ContextConstants
     public const RESOURCE_METHOD = 'resource-call';
 
     public const GLOBAL_METHOD = 'method-call';
+
+    /**
+     * Displays a form on this page.
+     */
+    public const DISPLAY_FORM = 'display-form';
 }

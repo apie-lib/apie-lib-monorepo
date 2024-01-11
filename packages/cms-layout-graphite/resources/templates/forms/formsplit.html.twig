@@ -1,11 +1,10 @@
-<div style="margin: 2%">
-  <gr-select name="{{ property('internalTypeName') }}" class="unhandled-tab-split" label="Type for {{ property('name') }}">
+<div style="margin: 2%" style="box-shadow: var(--gr-shadow-x-large); width: 100%">
+  <gr-select name="{{ property('name').getTypehintName() }}" class="unhandled-tab-split" label="Type for {{ property('name') }}">
     {% for tab in property('tabs') %}
       <gr-menu-item value="{{ tab }}">{{ tab }}</gr-menu-item>
     {% endfor %}
   </gr-select>
   <div>
-    {{ component(property('tabs')|first) }}
   </div>
 </div>
 <script>
@@ -17,7 +16,8 @@
   {% endfor %}
   element.addEventListener('gr-change', function (event) {
     const target = event.target || element;
-    target.nextSibling.nextSibling.innerHTML = templates[target.value];
+    setInnerHtml(target.nextElementSibling, templates[target.value])
   })
+  setInnerHtml(element.nextElementSibling, templates[element.value])
 })(document.querySelector('.unhandled-tab-split'));
 </script>

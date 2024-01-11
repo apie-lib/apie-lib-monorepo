@@ -15,13 +15,13 @@ class ComponentHelperExtension extends AbstractExtension
     /** @var TwigRenderer[] */
     private array $renderers = [];
 
-    public function selectComponent(TwigRenderer $renderer, ComponentInterface $component)
+    public function selectComponent(TwigRenderer $renderer, ComponentInterface $component): void
     {
         $this->renderers[] = $renderer;
         $this->componentsHandled[] = $component;
     }
 
-    public function deselectComponent(ComponentInterface $component)
+    public function deselectComponent(ComponentInterface $component): void
     {
         if (end($this->componentsHandled) !== $component) {
             throw new LogicException('Last component is not the one being deselected');
@@ -36,7 +36,7 @@ class ComponentHelperExtension extends AbstractExtension
             new TwigFunction('component', [$this, 'component'], ['is_safe' => ['all']]),
             new TwigFunction('property', [$this, 'property'], []),
             new TwigFunction('assetUrl', [$this, 'assetUrl'], []),
-            new TwigFunction('assetContent', [$this, 'assetContent'], []),
+            new TwigFunction('assetContent', [$this, 'assetContent'], ['is_safe' => ['all']]),
         ];
     }
 

@@ -9,8 +9,14 @@ class Input extends BaseComponent
     /**
      * @param array<string, string|int> $additionalAttributes
      */
-    public function __construct(string $name, string $value, string $type = 'text', array $additionalAttributes = [])
-    {
+    public function __construct(
+        string $name,
+        ?string $value,
+        string $type = 'text',
+        array $additionalAttributes = [],
+        bool $nullable = false,
+        ?string $validationError = null
+    ) {
         if ($type === 'hidden') {
             throw new LogicException(
                 'Do not use class ' . __CLASS__ . ' for hidden input fields, use ' . HiddenField::class . ' instead.'
@@ -20,8 +26,10 @@ class Input extends BaseComponent
             [
                 'name' => $name,
                 'value' => $value,
-                'type' => $type,
+                'type' => ($type !== 'text' || strpos($name, 'password') === false) ? $type : 'password',
+                'nullable' => $nullable,
                 'additionalAttributes' => $additionalAttributes,
+                'validationError' => $validationError,
             ]
         );
     }

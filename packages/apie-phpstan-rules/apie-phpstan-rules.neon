@@ -1,8 +1,22 @@
 rules:
     - Apie\ApiePhpstanRules\ValueObjectHasNoConstructor
+    - Apie\ApiePhpstanRules\ObjectShouldNotImplementMultipleInterfaces
+    - Apie\ApiePhpstanRules\ValueObjectWithArrayShouldBeComposite
+    - Apie\ApiePhpstanRules\EntityGetIdShouldBeSpecific
 parameters:
     ignoreErrors:
+        # fromNative inheritance could give some trouble with return type of fromNative
+        -
+            message: '#fromNative\(\) should return static\([^\)]+\) but returns#'
+            reportUnmatched: false
         # you do not have to specify subtype of ItemList or Itemhashmap.
-        - '#generic class Apie\\Core\\Lists\\Item(List|Hashmap) (but |)does not specify its types: T#'
+        -
+            message: '#generic class Apie\\Core\\Lists\\Item(List|Hashmap) (but |)does not specify its types: T#'
+            reportUnmatched: false
         # issue with dependency identifier and entity and generics.
-        - '# of Apie\\Core\\Entities\\EntityInterface>#'
+        -
+            message: '# of Apie\\Core\\Entities\\EntityInterface>#'
+            reportUnmatched: false
+        -
+            message: '#\(Apie\\Core\\Identifiers\\IdentifierInterface<static#'
+            reportUnmatched: false

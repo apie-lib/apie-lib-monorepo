@@ -1,8 +1,8 @@
 <?php
 namespace Apie\Fixtures\Incorrect\ValueObjects;
 
-use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\ValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 
 /**

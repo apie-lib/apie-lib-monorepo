@@ -10,7 +10,7 @@ use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Datalayers\ApieDatalayer;
-use Apie\Core\Datalayers\Lists\LazyLoadedList;
+use Apie\Core\Datalayers\Lists\EntityListInterface;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Lists\ItemHashmap;
@@ -41,9 +41,9 @@ final class ApieFacade implements ApieFacadeInterface
     /**
      * @template T of EntityInterface
      * @param class-string<T>|ReflectionClass<T> $class
-     * @return LazyLoadedList<T>
+     * @return EntityListInterface<T>
      */
-    public function all(string|ReflectionClass $class, BoundedContext|BoundedContextId $boundedContext): LazyLoadedList
+    public function all(string|ReflectionClass $class, BoundedContext|BoundedContextId $boundedContext): EntityListInterface
     {
         if (is_string($class)) {
             $class = new ReflectionClass($class);
@@ -60,6 +60,11 @@ final class ApieFacade implements ApieFacadeInterface
     public function find(IdentifierInterface $identifier, BoundedContext|BoundedContextId $boundedContext): EntityInterface
     {
         return $this->apieDatalayer->find($identifier, $this->getBoundedContext($boundedContext));
+    }
+
+    public function removeExisting(EntityInterface $entity, BoundedContext|BoundedContextId $boundedContext): void
+    {
+        $this->apieDatalayer->removeExisting($entity, $this->getBoundedContext($boundedContext));
     }
 
     /**
@@ -90,6 +95,11 @@ final class ApieFacade implements ApieFacadeInterface
     public function denormalizeNewObject(string|int|float|bool|ItemList|ItemHashmap|array|null $object, string $desiredType, ApieContext $apieContext): mixed
     {
         return $this->serializer->denormalizeNewObject($object, $desiredType, $apieContext);
+    }
+
+    public function denormalizeOnExistingObject(ItemHashmap $object, object $existingObject, ApieContext $apieContext): mixed
+    {
+        return $this->serializer->denormalizeOnExistingObject($object, $existingObject, $apieContext);
     }
 
     public function denormalizeOnMethodCall(string|int|float|bool|ItemList|ItemHashmap|array|null $input, ?object $object, ReflectionMethod $method, ApieContext $apieContext): mixed

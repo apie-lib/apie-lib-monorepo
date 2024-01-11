@@ -1,7 +1,7 @@
 <?php
 namespace Apie\Fixtures\ValueObjects;
 
-use Apie\CompositeValueObjects\CompositeValueObject;
+use Apie\Core\ValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 
 class CompositeValueObjectWithUnionType implements ValueObjectInterface

@@ -3,6 +3,7 @@ namespace Apie\Tests\Serializer;
 
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
+use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Datalayers\Lists\PaginatedResult;
 use Apie\Core\Datalayers\Search\QuerySearch;
 use Apie\Core\Datalayers\ValueObjects\LazyLoadedListIdentifier;
@@ -11,6 +12,8 @@ use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
 use Apie\Fixtures\Dto\DefaultExampleDto;
 use Apie\Fixtures\Dto\ExampleDto;
+use Apie\Fixtures\Entities\CollectionItemOwned;
+use Apie\Fixtures\Entities\Order;
 use Apie\Fixtures\Entities\Polymorphic\AnimalIdentifier;
 use Apie\Fixtures\Entities\Polymorphic\Cow;
 use Apie\Fixtures\Entities\UserWithAddress;
@@ -20,16 +23,23 @@ use Apie\Fixtures\Enums\Gender;
 use Apie\Fixtures\Enums\IntEnum;
 use Apie\Fixtures\Enums\NoValueEnum;
 use Apie\Fixtures\Enums\RestrictedEnum;
+use Apie\Fixtures\Identifiers\CollectionItemOwnedIdentifier;
+use Apie\Fixtures\Identifiers\OrderIdentifier;
 use Apie\Fixtures\Identifiers\UserWithAddressIdentifier;
+use Apie\Fixtures\Lists\OrderLineList;
 use Apie\Fixtures\ValueObjects\AddressWithZipcodeCheck;
 use Apie\Serializer\Exceptions\ItemCanNotBeNormalizedInCurrentContext;
+use Apie\Serializer\Lists\SerializedHashmap;
 use Apie\Serializer\Lists\SerializedList;
 use Apie\Serializer\Serializer;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use ReflectionClass;
 
 class SerializerTest extends TestCase
 {
+    use ProphecyTrait;
+
     public function givenASerializer(): Serializer
     {
         return Serializer::create();
@@ -120,6 +130,7 @@ class SerializerTest extends TestCase
         $dto->floatingPoint = -42.5;
         $dto->trueOrFalse = true;
         $dto->mixed = 48;
+        $dto->noType = new ItemList([1, 2, 3]);
         $dto->gender = Gender::MALE;
         yield 'Simple DTO, no default arguments' => [
             $dto,
@@ -129,10 +140,36 @@ class SerializerTest extends TestCase
                 'floatingPoint' => -42.5,
                 'trueOrFalse' => true,
                 'mixed' => 48,
+                'noType' => [1, 2, 3],
                 'gender' => 'M',
             ],
             ExampleDto::class,
             new ApieContext()
+        ];
+
+        $id = AnimalIdentifier::createRandom();
+        yield 'Polymorphic entity, specific' => [
+            new Cow($id),
+            [
+                'animalType' => 'cow',
+                'id' => $id->toNative(),
+            ],
+            Cow::class,
+            new ApieContext()
+        ];
+
+        $orderIdentifier = OrderIdentifier::createRandom();
+        $order = new Order($orderIdentifier, new OrderLineList([]));
+        $dataLayer = $this->prophesize(ApieDatalayer::class);
+        $dataLayer->find($orderIdentifier)->willReturn($order);
+
+        yield 'Identifier with data layer check' => [
+            $orderIdentifier,
+            $orderIdentifier->toNative(),
+            OrderIdentifier::class,
+            new ApieContext([
+                ApieDatalayer::class => $dataLayer,
+            ])
         ];
     }
 
@@ -140,7 +177,7 @@ class SerializerTest extends TestCase
      * @test
      * @dataProvider normalizeProvider
      */
-    public function it_can_normalize_objects(string|int|ItemHashmap $expected, object $input, ApieContext $apieContext)
+    public function it_can_normalize_objects(string|int|ItemHashmap|ItemList $expected, object $input, ApieContext $apieContext)
     {
         $serializer = $this->givenASerializer();
         $actual = $serializer->normalize($input, $apieContext);
@@ -183,6 +220,15 @@ class SerializerTest extends TestCase
             $entity,
             new ApieContext()
         ];
+        $objectId = CollectionItemOwnedIdentifier::createRandom();
+        yield 'Entity with context' => [
+            new ItemHashmap([
+                'id' => $objectId->toNative(),
+                'owned' => true,
+            ]),
+            new CollectionItemOwned($objectId, $entity, true),
+            new ApieContext()
+        ];
         yield 'Simple DTO' => [
             new ItemHashmap([
                 'string' => 'default value',
@@ -205,6 +251,16 @@ class SerializerTest extends TestCase
             ]),
             new Cow($animalId),
             new ApieContext()
+        ];
+        yield 'Generic hashmap' => [
+            new SerializedHashmap(['a' => 2, 'b' => 'pizza']),
+            new ItemHashmap(['a' => 2, 'b' => 'pizza']),
+            new ApieContext(),
+        ];
+        yield 'Generic list' => [
+            new SerializedList([2, 'pizza']),
+            new ItemList([2, 'pizza']),
+            new ApieContext(),
         ];
         yield 'Pagination result' => [
             new ItemHashmap([

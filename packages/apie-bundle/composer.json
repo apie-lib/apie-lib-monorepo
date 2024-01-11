@@ -19,6 +19,9 @@
       "Apie\\Tests\\ApieBundle\\": "tests/"
     }
   },
+  "suggest": {
+    "apie/doctrine-entity-datalayer": "Store domain objects by using generated doctrine entities internally"
+  },
   "require": {
     "php": ">=8.1",
     "apie/common": "self.version",
@@ -35,14 +38,17 @@
     "phpspec/prophecy-phpunit": "^2.0",
     "apie/cms": "self.version",
     "apie/cms-layout-graphite": "self.version",
+    "apie/composite-value-objects": "self.version",
     "apie/console": "self.version",
     "apie/country-and-phone-number": "self.version",
     "apie/faker": "self.version",
     "apie/fixtures": "self.version",
     "apie/text-value-objects": "self.version",
     "apie/rest-api": "self.version",
+    "doctrine/persistence": "^3.2",
     "league/openapi-psr7-validator": "0.18",
     "symfony/framework-bundle": "6.*",
+    "symfony/security-bundle": "6.*",
     "symfony/twig-bundle": "6.*"
   },
   "minimum-stability": "dev",

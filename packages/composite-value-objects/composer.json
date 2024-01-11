@@ -3,6 +3,7 @@
   "description": "Composer package of the apie library: composite value objects",
   "type": "library",
   "license": "MIT",
+  "abandoned": "Code is available in apie/core now",
   "authors": [
     {
       "name": "Pieter Jordaan",
@@ -21,7 +22,8 @@
   },
   "require": {
     "php": ">=8.1",
-    "apie/core": "self.version"
+    "apie/core": "self.version",
+    "apie/serializer": "self.version"
   },
   "require-dev": {
     "apie/fixtures": "self.version",

@@ -1,11 +1,15 @@
 <?php
 namespace Apie\Serializer\Context;
 
+use Apie\Common\ContextConstants;
+use Apie\Core\Attributes\Context;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Exceptions\IndexNotFoundException;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
+use Apie\Core\Metadata\Concerns\UseContextKey;
+use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Serializer\Serializer;
 use Exception;
 use ReflectionIntersectionType;
@@ -18,12 +22,17 @@ use RuntimeException;
 
 final class ApieSerializerContext
 {
+    use UseContextKey;
+
     public function __construct(private Serializer $serializer, private ApieContext $apieContext)
     {
     }
 
     public function denormalizeFromTypehint(mixed $input, ReflectionType|null $typehint): mixed
     {
+        if ($input === null && (!$typehint || $typehint->allowsNull())) {
+            return null;
+        }
         if ($typehint instanceof ReflectionIntersectionType) {
             throw new InvalidTypeException($typehint, 'ReflectionNamedType|ReflectionUnionType|null');
         }
@@ -39,6 +48,14 @@ final class ApieSerializerContext
             throw $lastException;
         }
         if ($typehint instanceof ReflectionNamedType) {
+            // edge case, should probably work differently then this
+            if ($input === '' && $typehint->allowsNull() && $this->apieContext->hasContext(ContextConstants::CMS)) {
+                try {
+                    $this->serializer->denormalizeNewObject($input, $typehint->getName(), $this->apieContext);
+                } catch (InvalidStringForValueObjectException) {
+                    return null;
+                }
+            }
             return $this->serializer->denormalizeNewObject($input, $typehint->getName(), $this->apieContext);
         }
         return $this->serializer->denormalizeNewObject($input, 'mixed', $this->apieContext);
@@ -48,6 +65,10 @@ final class ApieSerializerContext
     {
         $key = $parameter->getName();
         $type = $parameter->getType();
+        if ($parameter->getAttributes(Context::class)) {
+            $contextKey = $this->getContextKey($this->apieContext, $parameter, false);
+            return $this->apieContext->getContext($contextKey);
+        }
         if (!$parameter->isOptional() && !isset($input[$key])) {
             throw new IndexNotFoundException($key);
         }
