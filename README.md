@@ -13,6 +13,11 @@ tooling in processing domain objects in a automated way instead of giving the pr
 
 Also since PHP 8.1 everything should be typehinted, which means a lot more can be automated.
 
+# Roadmap
+The roadmap is visible on Github at https://github.com/orgs/apie-lib/projects/1/views/1. I try to get a stable 1.0 release. You are now displaying the main branch, which contains a very old version
+
+# Tooling examples
+
 Some tooling possible with APIE:
 
 | . | . | 
