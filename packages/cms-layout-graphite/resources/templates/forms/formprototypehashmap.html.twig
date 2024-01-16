@@ -20,7 +20,7 @@
       const keyName = inputField.value;
       div.classList.add('form-list-item' + id);
       div.classList.add('key-' + keyName);
-      setInnerHtml(div, target.dataset.template.replace(/{{ property('name').getPrototypeName() }}/g, keyName));
+      setInnerHtml(div, target.dataset.template.replace(/{{ property('name').getPrototypeName() }}|__PROTO__/g, keyName));
       target.disabled = true;
       listContainer.appendChild(div);
     })

@@ -19,7 +19,7 @@
       var div = document.createElement('div');
       div.classList.add('form-list-item' + id);
       const keyName = document.querySelectorAll('.form-list-item' + id).length;
-      setInnerHtml(div, target.dataset.template.replace(/__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e/g, keyName));
+      setInnerHtml(div, target.dataset.template.replace(/__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e|__PROTO__/g, keyName));
       listContainer.appendChild(div);
     })
     element.classList.remove('unhandled-add-to-list-button');

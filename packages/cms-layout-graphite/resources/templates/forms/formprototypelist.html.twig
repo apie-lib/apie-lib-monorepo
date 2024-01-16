@@ -13,7 +13,7 @@
       var div = document.createElement('div');
       div.classList.add('form-list-item' + id);
       const keyName = document.querySelectorAll('.form-list-item' + id).length;
-      setInnerHtml(div, target.dataset.template.replace(/{{ property('name').getPrototypeName() }}/g, keyName));
+      setInnerHtml(div, target.dataset.template.replace(/{{ property('name').getPrototypeName() }}|__PROTO__/g, keyName));
       listContainer.appendChild(div);
     })
     element.classList.remove('unhandled-add-to-list-button');
