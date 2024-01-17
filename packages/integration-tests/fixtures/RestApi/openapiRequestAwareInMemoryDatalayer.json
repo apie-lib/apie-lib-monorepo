@@ -5,6 +5,47 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/Order/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.Order",
+                "parameters": [
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PartialInput-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Animal/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -276,6 +317,164 @@
                         }
                     }
                 }
+            }
+        },
+        "/Order": {
+            "post": {
+                "tags": [
+                    "Order",
+                    "resource"
+                ],
+                "description": "Creates an instance of Order",
+                "operationId": "post-Order",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Order-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Order-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Order",
+                    "resource"
+                ],
+                "description": "Gets a list of resource that are an instance of Order",
+                "operationId": "get-all-Order",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "required": [
+                                        "totalCount",
+                                        "first",
+                                        "last",
+                                        "list"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "totalCount": {
+                                            "type": "integer"
+                                        },
+                                        "first": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "last": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "prev": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "next": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Order-get"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[orderLineList]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ]
             }
         },
         "/Animal": {
@@ -919,6 +1118,123 @@
                 }
             }
         },
+        "/Order/{id}": {
+            "get": {
+                "tags": [
+                    "Order",
+                    "resource"
+                ],
+                "description": "Gets a resource of Order with a specific id",
+                "operationId": "get-single-Order",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of Order",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/OrderIdentifier-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Order-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Order",
+                    "resource"
+                ],
+                "description": "Removes an instance of Order",
+                "operationId": "remove-single-Order",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of Order",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/OrderIdentifier-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Resource was deleted"
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/PrimitiveOnly/{id}": {
             "get": {
                 "tags": [
@@ -1335,6 +1651,106 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User-nullable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Order/{id}/orderLine": {
+            "post": {
+                "tags": [
+                    "Order",
+                    "action"
+                ],
+                "description": "Adds orderLine to Order",
+                "operationId": "get-single-Order-run-addOrderLine",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of Order",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/OrderIdentifier-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "orderLine"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "orderLine": {
+                                        "$ref": "#/components/schemas/OrderLine-post"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Order-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
                                 }
                             }
                         }
@@ -2191,6 +2607,68 @@
                         "type": "string",
                         "nullable": false
                     }
+                }
+            },
+            "NonEmptyString-post": {
+                "type": "string",
+                "format": "nonemptystring",
+                "pattern": "^.+$"
+            },
+            "Order-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "orderLineList"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/OrderIdentifier-get"
+                    },
+                    "orderLineList": {
+                        "$ref": "#/components/schemas/OrderLineList-get"
+                    }
+                }
+            },
+            "Order-post": {
+                "type": "object",
+                "required": [
+                    "orderLineList"
+                ],
+                "properties": {
+                    "orderLineList": {
+                        "$ref": "#/components/schemas/OrderLineList-post"
+                    }
+                }
+            },
+            "OrderIdentifier-get": {
+                "type": "integer",
+                "nullable": true
+            },
+            "OrderIdentifier-post": {
+                "type": "integer",
+                "nullable": true
+            },
+            "OrderLine-post": {
+                "type": "object",
+                "required": [
+                    "description"
+                ],
+                "properties": {
+                    "description": {
+                        "$ref": "#/components/schemas/NonEmptyString-post"
+                    }
+                }
+            },
+            "OrderLineList-get": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/OrderLine-post"
+                }
+            },
+            "OrderLineList-post": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/OrderLine-post"
                 }
             },
             "Ostrich-get": {

@@ -8,6 +8,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\Order;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -16,6 +17,7 @@ use Apie\IntegrationTests\Requests\GetResourceApiCall;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
+use Apie\IntegrationTests\Requests\JsonFields\GetUuidField;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
 use Apie\TextValueObjects\FirstName;
@@ -90,7 +92,7 @@ trait CreatesApieBoundedContext
                 new GetAndSetPrimitiveField('floatingPoint', 1.5, 1.5),
                 new GetPrimitiveField('booleanField', null),
             ),
-            discardRequestValidation: true
+            discardRequestValidation: true //casting string to int is not documented in OpenAPI spec.
         );
     }
 
@@ -107,6 +109,31 @@ trait CreatesApieBoundedContext
                 new GetAndSetPrimitiveField('name', 'human'),
                 new GetPrimitiveField('capableOfLayingEggs', false),
                 new GetAndSetPrimitiveField('lastName', 'Pig'),
+            ),
+        );
+    }
+
+    public function createPostOrderTestRequest(): TestRequestInterface
+    {
+        return new ValidCreateResourceApiCall(
+            new BoundedContextId('types'),
+            Order::class,
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('id', 1),
+                new GetAndSetObjectField(
+                    'orderLineList',
+                    new GetAndSetObjectField(
+                        '0',
+                        new GetAndSetPrimitiveField('description', 'First order line'),
+                        new GetUuidField('id'),
+                    ),
+                    new GetAndSetObjectField(
+                        '1',
+                        new GetAndSetPrimitiveField('description', 'Second order line'),
+                        new GetUuidField('id'),
+                    )
+                ),
             ),
         );
     }
