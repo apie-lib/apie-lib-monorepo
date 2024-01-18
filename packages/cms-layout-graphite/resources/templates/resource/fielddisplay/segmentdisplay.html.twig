@@ -1,8 +1,8 @@
 {% if property('componentNames')|length %}
     <table class="detail-table">
     {% for componentName in property('componentNames') %}
-        <tr>
-            <th>{{ componentName }}</th>
+        <tr>{% if property('showKeys') %}
+            <th>{{ componentName }}</th>{% endif %}
             <td>
                 {{ component(componentName) }}
             </td>
