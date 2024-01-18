@@ -115,6 +115,7 @@
             prop: name,
             name: name,
             cellTemplate: renderCell,
+            autoSize: true,
           }
         });
     const rows = [{"id":12,"name":"Pizza"}];
@@ -123,6 +124,9 @@
     grid.source = rows;
     grid.readonly = true;
     grid.autoresize = true;
+    grid.autoSizeColumn = {
+      mode: 'autoSizeOnTextOverlap'
+    };
   })(document.querySelector('revo-grid'))
   </script>
   

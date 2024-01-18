@@ -1018,6 +1018,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+  /me:
+    get:
+      tags:
+        - Authentication
+        - action
+      description: 'Calls method currentUser and returns return value.'
+      operationId: call-method-Authentication-currentUser
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity-get'
   /Authentication/verifyAuthentication:
     post:
       tags:
@@ -1516,6 +1554,13 @@ components:
         type:
           type: string
           nullable: false
+    Entity-get:
+      type: object
+      properties: {  }
+    Entity-nullable-post:
+      type: object
+      nullable: true
+      properties: {  }
     FirstName-get:
       type: string
       format: firstname
