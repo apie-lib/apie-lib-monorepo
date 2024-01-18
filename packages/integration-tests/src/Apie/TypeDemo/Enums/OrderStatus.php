@@ -3,7 +3,8 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Enums;
 
 use LogicException;
 
-enum OrderStatus: string {
+enum OrderStatus: string
+{
     case DRAFT = 'draft';
     case ACCEPTED = 'accepted';
     case DELIVERED = 'delivered';

@@ -2,14 +2,9 @@
 
 namespace Apie\IntegrationTests\Apie\TypeDemo\Entities;
 
-use Apie\Core\Attributes\RemovalCheck;
-use Apie\Core\Attributes\Requires;
-use Apie\Core\Attributes\RuntimeCheck;
-use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\OrderLineIdentifier;
 use Apie\TextValueObjects\NonEmptyString;
-use App\Apie\Example\Identifiers\OrderLineId;
 
 class OrderLine implements EntityInterface
 {
