@@ -1,17 +1,11 @@
 <div>
-  <revo-grid style="max-height: 80%"></revo-grid>
+  <revo-grid class="unprocessed-grid" style="min-height: 170px;max-height: 80%"></revo-grid>
   <script>
   (function(grid) {
     const importantNameColumns = ['displayName', 'name', 'internalName', 'shortDescription', 'description', 'productDescription', 'id'];
     function renderCell(createElement, props) {
       const value = props.model[props.prop];
-      const element = renderValue(createElement, value);
-      element.$attrs$.onClick = () => {
-        if (Object.hasOwnProperty.call(props.model, 'id')) {
-          location.href = location.protocol + '//' + location.host + location.pathname + '/' + props.model.id;
-        }
-      };
-      return element;
+      return renderValue(createElement, value);
     }
     function renderValue(createElement, value) {
       if (value === undefined || value === null) {
@@ -57,11 +51,16 @@
           }
         });
     const rows = [{"id":1,"description":"Description of 1"},{"id":2,"description":"Description of 2","extra":"extra field"}];
-    // grid.theme = 'material';
+    grid.classList.remove('unprocessed-grid');
+    grid.theme = 'material';
     grid.columns = columns;
     grid.source = rows;
     grid.readonly = true;
-    grid.autoresize = true;
-  })(document.querySelector('revo-grid'))
+    grid.resize = true;
+    grid.autoSize = true;
+    grid.autoSizeColumn = {
+      mode: 'autoSizeOnTextOverlap'
+    };
+  })(document.querySelector('revo-grid.unprocessed-grid'))
   </script>
 </div>
