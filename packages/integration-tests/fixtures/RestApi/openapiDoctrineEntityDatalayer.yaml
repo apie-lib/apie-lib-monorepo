@@ -1013,6 +1013,65 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+  '/calc/{numberOne}/plus/{numberTwo}':
+    post:
+      tags:
+        - Calculator
+        - action
+      description: 'Calls method add and returns return value.'
+      operationId: call-method-Calculator-add
+      parameters:
+        -
+          name: numberOne
+          in: path
+          description: 'numberOne of instance of add'
+          required: true
+          schema:
+            type: number
+        -
+          name: numberTwo
+          in: path
+          description: 'numberTwo of instance of add'
+          required: true
+          schema:
+            type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {  }
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
   /me:
     get:
       tags:
@@ -1051,6 +1110,65 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Entity-get'
+  '/calc/{numberOne}/times/{numberTwo}':
+    post:
+      tags:
+        - Calculator
+        - action
+      description: 'Calls method multiply and returns return value.'
+      operationId: call-method-Calculator-multiply
+      parameters:
+        -
+          name: numberOne
+          in: path
+          description: 'numberOne of instance of multiply'
+          required: true
+          schema:
+            type: number
+        -
+          name: numberTwo
+          in: path
+          description: 'numberTwo of instance of multiply'
+          required: true
+          schema:
+            type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {  }
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
   /Authentication/verifyAuthentication:
     post:
       tags:
@@ -1551,10 +1669,6 @@ components:
           nullable: false
     Entity-get:
       type: object
-      properties: {  }
-    Entity-nullable-post:
-      type: object
-      nullable: true
       properties: {  }
     FirstName-get:
       type: string

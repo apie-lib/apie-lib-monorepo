@@ -12,6 +12,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Resources\Order;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
+use Apie\IntegrationTests\Requests\ActionMethodApiCall;
 use Apie\IntegrationTests\Requests\CmsFormSubmitRequest;
 use Apie\IntegrationTests\Requests\GetResourceApiCall;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
@@ -152,6 +153,15 @@ trait CreatesApieBoundedContext
                 '_csrf' => 'string',
                 'form[blockedReason]' => 'This is a test'
             ]
+        );
+    }
+
+    public function createCustomActionRequest(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'calc/1/plus/12',
+            new GetPrimitiveField('', 13)
         );
     }
 
