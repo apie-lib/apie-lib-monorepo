@@ -20,6 +20,44 @@ gr-field-group > .form-control-invalid-text {
     color: var(--gr-form-element-invalid-text-color);
     line-height: var(--gr-line-height-normal);
 }
+.topbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+  }
+
+  .user-profile {
+    position: relative;
+    cursor: pointer;
+    float: right;
+  }
+
+  .user-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  .user-info {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1;
+  }
+
+  .user-profile:hover .user-info {
+    display: block;
+  }
+.profile-picture:hover .shown-on-hover{
+    display: block;
+}
 .autocomplete-container {
     display: flex;
     position: relative;
