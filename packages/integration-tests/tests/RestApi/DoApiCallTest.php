@@ -2,10 +2,13 @@
 
 namespace Apie\Tests\IntegrationTests\RestApi;
 
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\IntegrationTests\FixtureUtils;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
+use Apie\IntegrationTests\Requests\ActionMethodApiCall;
 use Apie\IntegrationTests\Requests\BootstrapRequestInterface;
+use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Generator;
@@ -50,6 +53,7 @@ class DoApiCallTest extends TestCase
             $testRequest->shouldDoRequestValidation(),
             $testRequest->shouldDoResponseValidation()
         );
+        $testApplication->cleanApplication();
     }
 
     private function validateOpenApiSpec(
@@ -75,5 +79,39 @@ class DoApiCallTest extends TestCase
         if ($psrResponse->getStatusCode() < 300 && $doRequestValidation) {
             $requestValidator->validate($psrRequest);
         }
+    }
+
+    public function it_throws_validation_error_on_invalid_route_placeholders_provider(): Generator
+    {
+        yield from $this->createDataProviderFrom(
+            new ReflectionMethod($this, 'it_throws_validation_error_on_invalid_route_placeholders'),
+            new IntegrationTestHelper()
+        );
+    }
+
+    /**
+     * @runInSeparateProcess
+     * @dataProvider it_throws_validation_error_on_invalid_route_placeholders_provider
+     * @test
+     */
+    public function it_throws_validation_error_on_invalid_route_placeholders(
+        TestApplicationInterface $testApplication
+    ) {
+        $testRequest = new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'calc/not-valid/plus/12',
+            new GetPrimitiveField('', 13)
+        );
+        $testApplication->bootApplication();
+        $response = $testApplication->httpRequest($testRequest);
+        $this->assertEquals(422, $response->getStatusCode());
+        $this->validateOpenApiSpec(
+            $testApplication,
+            $testRequest->getRequest(),
+            $response,
+            false,
+            $testRequest->shouldDoResponseValidation()
+        );
+        $testApplication->cleanApplication();
     }
 }

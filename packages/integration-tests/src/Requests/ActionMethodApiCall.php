@@ -3,7 +3,6 @@
 namespace Apie\IntegrationTests\Requests;
 
 use Apie\Core\BoundedContext\BoundedContextId;
-use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Requests\JsonFields\JsonGetFieldInterface;
 use Apie\IntegrationTests\Requests\JsonFields\JsonSetFieldInterface;
 use Nyholm\Psr7\ServerRequest;
@@ -13,9 +12,6 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class ActionMethodApiCall implements TestRequestInterface
 {
-    /**
-     * @param class-string<EntityInterface> $resourceName
-     */
     public function __construct(
         private readonly BoundedContextId $boundedContextId,
         private readonly string $url,

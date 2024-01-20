@@ -25,6 +25,9 @@ use Apie\TextValueObjects\FirstName;
 
 trait CreatesApieBoundedContext
 {
+    /**
+     * For testing POST /user
+     */
     public function createPostUserTestRequest(): TestRequestInterface
     {
         return new ValidCreateResourceApiCall(
@@ -40,6 +43,9 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * For testing GET /user/{id}
+     */
     public function createGetUserTestRequest(): TestRequestInterface
     {
         // @phpstan-ignore-next-line
@@ -59,6 +65,9 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * For testing GET /animal/{id}
+     */
     public function createGetAnimalTestRequest(): TestRequestInterface
     {
         // @phpstan-ignore-next-line
@@ -79,7 +88,9 @@ trait CreatesApieBoundedContext
         );
     }
 
-
+    /**
+     * For testing POST/primitiveOnly
+     */
     public function createPostPrimitiveOnlyTestRequest(): TestRequestInterface
     {
         return new ValidCreateResourceApiCall(
@@ -97,6 +108,9 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * For testing POST /animal
+     */
     public function createPostAnimalTestRequest(): TestRequestInterface
     {
         return new ValidCreateResourceApiCall(
@@ -114,6 +128,9 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * For testing POST /Order
+     */
     public function createPostOrderTestRequest(): TestRequestInterface
     {
         return new ValidCreateResourceApiCall(
@@ -139,6 +156,9 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * For cms action /usr/{id}/block
+     */
     public function createBlockUserFormSubmit(): CmsFormSubmitRequest
     {
         return new CmsFormSubmitRequest(
@@ -156,6 +176,9 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * For testing /calc/1/plus/12
+     */
     public function createCustomActionRequest(): TestRequestInterface
     {
         return new ActionMethodApiCall(
