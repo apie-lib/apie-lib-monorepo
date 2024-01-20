@@ -4,7 +4,7 @@
   </a>
   <span class="user-info">
     {% for fieldName in property('fieldNames') %}
-      <strong>{{ fieldName }}</strong>{{ property('fields')[fieldName] }}
+      <strong>{{ fieldName }}:</strong>&nbsp;&nbsp;{{ property('fields')[fieldName] }}
     {% endfor %}
   </span>
 </div>
