@@ -1,5 +1,6 @@
 <div style="max-width: 130vw">
-  <revo-grid class="unprocessed-grid" style="min-height: {{ 50 * (property('list') | length) + 70 }}px;max-height: 80%"></revo-grid>
+  {% if property('list')|length %}
+  <revo-grid class="unprocessed-grid" style="min-height: {{ 48 * (property('list') | length) + 70 }}px;max-height: 80%"></revo-grid>
   <script>
   (function(grid) {
     const importantNameColumns = ['displayName', 'name', 'internalName', 'shortDescription', 'description', 'productDescription', 'id'];
@@ -63,4 +64,7 @@
     };
   })(document.querySelector('revo-grid.unprocessed-grid'))
   </script>
+  {% else %}
+    List is empty.
+  {% endif %}
 </div>
