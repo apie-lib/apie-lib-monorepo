@@ -13,7 +13,7 @@
                   elm.classList.remove('unprocessed-filter');
                   elm.filterNames = {{ property('filters') | json_encode | raw }};
                   elm.filters = {{ property('currentFilter') | json_encode | raw }};
-                }(document.querySelector('apie-filter-overview.unprocess-filter')));
+                }(document.querySelector('apie-filter-overview.unprocessed-filter')));
                 </script>
             </td>
           {% endif %}
