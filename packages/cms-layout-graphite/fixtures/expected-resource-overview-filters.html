@@ -3,7 +3,7 @@
       <tbody>
         <tr>
           <td>
-            <gr-input label="text search" name="search" type="search" value="text search"></gr-input>
+            <gr-input name="search" type="search" value="text search"></gr-input>
           </td>
                       <td>
                 <apie-filter-overview class="unprocessed-filter"></apie-filter-overview>
@@ -14,14 +14,6 @@
                   elm.filters = {"description":"test"};
                 }(document.querySelector('apie-filter-overview.unprocess-filter')));
                 </script>
-                <div style="display: flex">
-                                    <div>
-                        <gr-input label="id" name="query[id]" type="text" value=""></gr-input>
-                    </div>
-                                    <div>
-                        <gr-input label="description" name="query[description]" type="text" value="test"></gr-input>
-                    </div>
-                                </div>
             </td>
                     <td>
             <gr-button variant="secondary" type="submit" large expand="block">Search</gr-button>

@@ -3,7 +3,7 @@
       <tbody>
         <tr>
           <td>
-            <gr-input label="text search" name="search" type="search" value="{{ property('textSearch') }}"></gr-input>
+            <gr-input name="search" type="search" value="{{ property('textSearch') }}"></gr-input>
           </td>
           {% if property('filters')|length %}
             <td>
@@ -15,13 +15,6 @@
                   elm.filters = {{ property('currentFilter') | json_encode | raw }};
                 }(document.querySelector('apie-filter-overview.unprocess-filter')));
                 </script>
-                <div style="display: flex">
-                {% for filterName in property('filters')%}
-                    <div>
-                        <gr-input label="{{ filterName }}" name="query[{{ filterName }}]" type="text" value="{{ property('currentFilter')[filterName] | default('') }}"></gr-input>
-                    </div>
-                {% endfor %}
-                </div>
             </td>
           {% endif %}
           <td>
