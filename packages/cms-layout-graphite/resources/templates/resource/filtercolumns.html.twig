@@ -7,6 +7,14 @@
           </td>
           {% if property('filters')|length %}
             <td>
+                <apie-filter-overview class="unprocessed-filter"></apie-filter-overview>
+                <script>
+                (function (elm) {
+                  elm.classList.remove('unprocessed-filter');
+                  elm.filterNames = {{ property('filters') | json_encode | raw }};
+                  elm.filters = {{ property('currentFilter') | json_encode | raw }};
+                }(document.querySelector('apie-filter-overview.unprocess-filter')));
+                </script>
                 <div style="display: flex">
                 {% for filterName in property('filters')%}
                     <div>

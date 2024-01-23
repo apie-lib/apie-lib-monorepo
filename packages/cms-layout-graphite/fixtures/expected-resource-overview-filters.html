@@ -6,6 +6,14 @@
             <gr-input label="text search" name="search" type="search" value="text search"></gr-input>
           </td>
                       <td>
+                <apie-filter-overview class="unprocessed-filter"></apie-filter-overview>
+                <script>
+                (function (elm) {
+                  elm.classList.remove('unprocessed-filter');
+                  elm.filterNames = ["id","description"];
+                  elm.filters = {"description":"test"};
+                }(document.querySelector('apie-filter-overview.unprocess-filter')));
+                </script>
                 <div style="display: flex">
                                     <div>
                         <gr-input label="id" name="query[id]" type="text" value=""></gr-input>
