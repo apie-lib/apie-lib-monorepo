@@ -10,6 +10,7 @@ use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\SearchTerm;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
+use Apie\Tests\ApieBundle\HtmlOutput;
 use Generator;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
@@ -78,7 +79,7 @@ class CmsResourceOverviewRenderTest extends TestCase
         );
         $response = $testApplication->httpRequestGet('/cms/types/resource/User?search=' . $searchTerm);
         $this->assertEquals(200, $response->getStatusCode());
-        
+        HtmlOutput::writeHtml(__METHOD__, (string) $response->getBody());
         $this->assertNotSame(
             false,
             strpos((string) $response->getBody(), 'value="' . (string) $searchTerm . '"'),
