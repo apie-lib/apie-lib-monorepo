@@ -1,6 +1,7 @@
 <?php
 namespace Apie\IntegrationTests\Applications\Laravel;
 
+use Apie\Common\IntegrationTestLogger;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
@@ -74,6 +75,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
      */
     public function bootApplication(): void
     {
+        IntegrationTestLogger::resetLoggedException();
         $this->setUp();
         $this->session([]);
         if (getenv('PHPUNIT_LOG_INTEGRATION_OUTPUT')) {

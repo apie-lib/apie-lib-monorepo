@@ -2,6 +2,7 @@
 
 namespace Apie\IntegrationTests\Requests;
 
+use Apie\Common\IntegrationTestLogger;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Requests\JsonFields\JsonGetFieldInterface;
@@ -54,6 +55,9 @@ class ValidCreateResourceApiCall implements TestRequestInterface
     {
         $body = (string) $response->getBody();
         $statusCode = $response->getStatusCode();
+        if ($statusCode === 500) {
+            TestCase::fail('Failed request, got status 500, logged exception: ' . IntegrationTestLogger::getLoggedException()?->getMessage());
+        }
         TestCase::assertEquals(201, $statusCode, 'Expect object created, got: ' . $body);
         $data = json_decode($body, true);
         $this->inputOutput->assertResponseValue($data);

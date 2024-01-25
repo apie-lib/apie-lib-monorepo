@@ -1,6 +1,7 @@
 <?php
 namespace Apie\IntegrationTests\Applications\Symfony;
 
+use Apie\Common\IntegrationTestLogger;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
@@ -38,6 +39,7 @@ class SymfonyTestApplication implements TestApplicationInterface
 
     public function bootApplication(): void
     {
+        IntegrationTestLogger::resetLoggedException();
         if ($this->kernel) {
             return;
         }
