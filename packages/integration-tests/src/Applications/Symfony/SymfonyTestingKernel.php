@@ -8,6 +8,8 @@ use Symfony\Bundle\SecurityBundle\SecurityBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler;
 use Symfony\Component\HttpKernel\Kernel;
 
 class SymfonyTestingKernel extends Kernel
@@ -56,14 +58,25 @@ class SymfonyTestingKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
         $loader->load(function (ContainerBuilder $container) {
+            $container->addDefinitions([
+                InMemoryPersistentSessionStorageFactory::class => new Definition(InMemoryPersistentSessionStorageFactory::class),
+            ]);
             $container->loadFromExtension('apie', $this->apieConfig);
             $container->loadFromExtension(
                 'framework',
                 [
                     'http_method_override' => false,
                     'secret' => '123456',
-                    'session' => ['storage_factory_id' => 'session.storage.factory.mock_file'],
-                    'router' => ['resource' => '.', 'type' => 'apie'],
+                    'session' => [
+                        'enabled' => true,
+                        'storage_factory_id' => InMemoryPersistentSessionStorageFactory::class,
+                        'handler_id' => 'session.handler.native_file',
+                        'use_cookies' => true,
+                    ],
+                    'router' => [
+                        'resource' => '.',
+                        'type' => 'apie'
+                    ],
                     'csrf_protection' => false,
                 ]
             );

@@ -56,7 +56,7 @@ class ValidCreateResourceApiCall implements TestRequestInterface
         $body = (string) $response->getBody();
         $statusCode = $response->getStatusCode();
         if ($statusCode === 500) {
-            TestCase::fail('Failed request, got status 500, logged exception: ' . IntegrationTestLogger::getLoggedException()?->getMessage());
+            IntegrationTestLogger::failTestShowError();
         }
         TestCase::assertEquals(201, $statusCode, 'Expect object created, got: ' . $body);
         $data = json_decode($body, true);

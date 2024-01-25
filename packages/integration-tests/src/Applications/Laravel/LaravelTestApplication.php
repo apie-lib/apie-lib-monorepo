@@ -2,6 +2,7 @@
 namespace Apie\IntegrationTests\Applications\Laravel;
 
 use Apie\Common\IntegrationTestLogger;
+use Apie\IntegrationTests\Concerns\RunApplicationTest;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
@@ -21,6 +22,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class LaravelTestApplication extends TestCase implements TestApplicationInterface
 {
+    use RunApplicationTest;
+
     public function __construct(
         private readonly ApplicationConfig $applicationConfig,
         private readonly BoundedContextConfig $boundedContextConfig

@@ -2,6 +2,7 @@
 namespace Apie\IntegrationTests\Applications\Symfony;
 
 use Apie\Common\IntegrationTestLogger;
+use Apie\IntegrationTests\Concerns\RunApplicationTest;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
@@ -17,6 +18,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class SymfonyTestApplication implements TestApplicationInterface
 {
+    use RunApplicationTest;
+
     private ?SymfonyTestingKernel $kernel = null;
 
     public function __construct(

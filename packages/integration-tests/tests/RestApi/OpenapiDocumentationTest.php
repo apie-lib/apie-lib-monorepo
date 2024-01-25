@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Tests\IntegrationTests\RestApi;
 
+use Apie\Common\IntegrationTestLogger;
 use Apie\IntegrationTests\FixtureUtils;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
@@ -82,6 +83,9 @@ class OpenapiDocumentationTest extends TestCase
     {
         $testApplication->bootApplication();
         $response = $testApplication->httpRequestGet('/api/types/openapi.json');
+        if ($response->getStatusCode() === 500) {
+            IntegrationTestLogger::failTestShowError();
+        }
         $this->assertEquals(200, $response->getStatusCode());
         $body = (string) $response->getBody();
         $fixtureFile = FixtureUtils::getOpenapiFixtureFile($testApplication);
@@ -103,6 +107,9 @@ class OpenapiDocumentationTest extends TestCase
         $response = $testApplication->httpRequestGet(
             '/api/types/openapi.yaml'
         );
+        if ($response->getStatusCode() === 500) {
+            IntegrationTestLogger::failTestShowError();
+        }
         $this->assertEquals(200, $response->getStatusCode());
         $body = (string) $response->getBody();
         $fixtureFile = FixtureUtils::getOpenapiFixtureFile($testApplication, false);
