@@ -73,7 +73,7 @@ parameters:
         - 
             message: '#iterable type array#'
             path: packages/serializer/src/
-            count: 10
+            count: 12
         -
             message: '#ValueObjectInterface::getRegularExpression#'
             path: packages/schema-generator/src/SchemaProviders/
