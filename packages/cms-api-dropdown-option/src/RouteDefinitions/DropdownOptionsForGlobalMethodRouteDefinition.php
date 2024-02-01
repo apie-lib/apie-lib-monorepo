@@ -18,7 +18,7 @@ class DropdownOptionsForGlobalMethodRouteDefinition extends AbstractRestApiRoute
 
     public function getUrl(): UrlRouteDefinition
     {
-        return new UrlRouteDefinition('action/{class}/{resourceMethod}/dropdown-options/{property}');
+        return new UrlRouteDefinition('action/' . $this->class->getShortName() . '/' . $this->method->getName() . '/dropdown-options/{property}');
     }
 
     public function getController(): string
