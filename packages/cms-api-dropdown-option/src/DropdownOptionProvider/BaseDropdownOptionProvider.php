@@ -4,12 +4,15 @@ namespace Apie\CmsApiDropdownOption\DropdownOptionProvider;
 use Apie\CmsApiDropdownOption\Lists\DropdownOptionList;
 use Apie\Common\ContextConstants;
 use Apie\Core\Context\ApieContext;
+use Apie\Core\Metadata\Fields\ConstructorParameter;
 use Apie\Core\Metadata\Fields\FieldInterface;
 use Apie\Core\Metadata\MetadataFactory;
 use Apie\Core\Metadata\MetadataInterface;
 use Apie\Core\PropertyToFieldMetadataUtil;
 use Apie\Core\ValueObjects\Utils;
+use Apie\TypeConverter\ReflectionTypeFactory;
 use ReflectionClass;
+use ReflectionMethod;
 
 abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInterface
 {
@@ -24,47 +27,62 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
 
     final public function supports(ApieContext $apieContext): bool
     {
-        if (!$apieContext->hasContext(ContextConstants::RESOURCE_NAME)
-            || !$apieContext->hasContext('property')) {
+        if (!$apieContext->hasContext('property')) {
             return false;
         }
-
         $property = Utils::toString($apieContext->getContext('property'));
-        $resourceName = $apieContext->getContext(ContextConstants::RESOURCE_NAME);
-        if (!class_exists($resourceName) || $property === 'id') {
-            return false;
+        if ($apieContext->hasContext(ContextConstants::RESOURCE_NAME)) {
+            $resourceName = $apieContext->getContext(ContextConstants::RESOURCE_NAME);
+            if (!class_exists($resourceName) || $property === 'id') {
+                return false;
+            }
+            $refl = new ReflectionClass($resourceName);
+            $fieldMetadata = PropertyToFieldMetadataUtil::fromPropertyStringToFieldMetadata(
+                $refl,
+                $apieContext,
+                $property
+            );
+            return $fieldMetadata instanceof FieldInterface && $this->supportsField($fieldMetadata, $apieContext);
         }
-
-        $refl = new ReflectionClass($resourceName);
-        $fieldMetadata = PropertyToFieldMetadataUtil::fromPropertyStringToFieldMetadata(
-            $refl,
-            $apieContext,
-            $property
-        );
-
-        return $fieldMetadata instanceof FieldInterface && $this->supportsField($fieldMetadata, $apieContext);
-    }
-
-    /**
-     * @param ReflectionClass<object> $class
-     */
-    final protected function getMetadata(ReflectionClass $class, ApieContext $apieContext): MetadataInterface
-    {
-        return $apieContext->hasContext('id')
-            ? MetadataFactory::getModificationMetadata($class, $apieContext)
-            : MetadataFactory::getCreationMetadata($class, $apieContext);
+        if ($apieContext->hasContext(ContextConstants::SERVICE_CLASS) && $apieContext->hasContext(ContextConstants::METHOD_NAME)) {
+            $refl = new ReflectionMethod(
+                $apieContext->getContext(ContextConstants::SERVICE_CLASS),
+                $apieContext->getContext(ContextConstants::METHOD_NAME)
+            );
+            foreach ($refl->getParameters() as $parameter) {
+                if ($parameter->getName() === $property) {
+                    $fieldMetadata = new ConstructorParameter($parameter);
+                    return $this->supportsField($fieldMetadata, $apieContext);
+                }
+            }
+        }
+        return false;
     }
 
     final public function getList(ApieContext $apieContext, string $searchTerm): DropdownOptionList
     {
-        $resourceName = $apieContext->getContext(ContextConstants::RESOURCE_NAME);
         $property = Utils::toString($apieContext->getContext('property'));
-        $refl = new ReflectionClass($resourceName);
-        $fieldMetadata = PropertyToFieldMetadataUtil::fromPropertyStringToFieldMetadata(
-            $refl,
-            $apieContext,
-            $property
-        );
+        if ($apieContext->hasContext(ContextConstants::RESOURCE_NAME)) {
+            $resourceName = $apieContext->getContext(ContextConstants::RESOURCE_NAME);
+            $refl = new ReflectionClass($resourceName);
+            $fieldMetadata = PropertyToFieldMetadataUtil::fromPropertyStringToFieldMetadata(
+                $refl,
+                $apieContext,
+                $property
+            );
+        } else {
+            assert($apieContext->hasContext());
+            $refl = new ReflectionMethod(
+                $apieContext->getContext(ContextConstants::SERVICE_CLASS),
+                $apieContext->getContext(ContextConstants::METHOD_NAME)
+            );
+            foreach ($refl->getParameters() as $parameter) {
+                if ($parameter->getName() === $property) {
+                    $fieldMetadata = new ConstructorParameter($parameter);
+                    break;
+                }
+            }
+        }
 
         return $this->createDropdownList($property, $fieldMetadata, $searchTerm, $apieContext);
     }
