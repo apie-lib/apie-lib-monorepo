@@ -1,0 +1,15 @@
+<?php
+
+namespace Apie\Tests\Maker\Fixtures\Identifiers;
+
+use Apie\CommonValueObjects\Email;
+use Apie\Core\Identifiers\IdentifierInterface;
+use ReflectionClass;
+
+class AlreadyExistingResourceIdentifier extends Email implements IdentifierInterface
+{
+    public static function getReferenceFor(): ReflectionClass
+    {
+        return new ReflectionClass(AlreadyExistingResource::class);
+    }
+}

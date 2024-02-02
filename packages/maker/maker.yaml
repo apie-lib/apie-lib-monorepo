@@ -1,0 +1,10 @@
+services:
+    Apie\Maker\CodeGenerators\CreateDomainObject:
+      arguments:
+        - '%apie.bounded_contexts%'
+    Apie\Maker\Command\ApieCreateDomainCommand:
+      arguments:
+        - '@Apie\Core\BoundedContext\BoundedContextHashmap'
+        - '@Apie\Maker\CodeGenerators\CreateDomainObject'
+      tags:
+          - name: console.command

@@ -1,0 +1,15 @@
+<?php
+
+namespace Test\NamespaceExample\Identifiers;
+
+use Apie\Core\Identifiers\Identifier;
+use Apie\Core\Identifiers\IdentifierInterface;
+use ReflectionClass;
+
+class ExampleIdentifier extends Identifier implements IdentifierInterface
+{
+    public static function getReferenceFor(): ReflectionClass
+    {
+        return new ReflectionClass(Example::class);
+    }
+}

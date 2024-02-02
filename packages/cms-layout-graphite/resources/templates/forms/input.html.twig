@@ -10,4 +10,7 @@
     invalid invalid-text="{{ property('validationError') }}"
     {%- endif -%}
     >
+    {%- if (property('validationError')) -%}
+    <span slot="invalid-text" style="white-space:pre">{{ property('validationError') }}</span>
+    {%- endif -%}
 </gr-input>

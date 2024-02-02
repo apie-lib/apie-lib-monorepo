@@ -4,10 +4,8 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Actions;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\Route;
 use Apie\Core\BoundedContext\BoundedContext;
-use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Entities\EntityInterface;
-use Apie\Core\Enums\RequestMethod;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Exception;
@@ -20,7 +18,7 @@ class Authentication
         #[Context()] BoundedContext $boundedContext,
         string $username,
         string $password
-    ): ?User  {
+    ): ?User {
         try {
             /** @var UserIdentifier @userId */
             $userId = UserIdentifier::fromNative($username);

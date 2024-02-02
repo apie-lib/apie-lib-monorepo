@@ -1,0 +1,18 @@
+<?php
+
+namespace Apie\Tests\Maker\Fixtures\Resources;
+
+use Apie\Tests\Maker\Fixtures\Identifiers\AlreadyExistingResourceIdentifier;
+
+class AlreadyExistingResource implements \Apie\Core\Entities\EntityInterface
+{
+    public function __construct(
+        private AlreadyExistingResourceIdentifier $id,
+    ) {
+    }
+
+    public function getId(): AlreadyExistingResourceIdentifier
+    {
+        return $id;
+    }
+}
