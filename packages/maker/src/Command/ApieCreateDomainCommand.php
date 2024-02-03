@@ -47,7 +47,7 @@ class ApieCreateDomainCommand extends Command
         );
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $object = new DomainObjectDto(
             new PascalCaseSlug($input->getArgument('name')),
@@ -71,5 +71,6 @@ class ApieCreateDomainCommand extends Command
             $this->createDomainObject->generateDomainObjectCode($object)
         );
         $output->writeln('Done!');
+        return Command::SUCCESS;
     }
 }
