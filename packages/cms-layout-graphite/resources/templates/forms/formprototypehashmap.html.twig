@@ -4,6 +4,9 @@
   </gr-button>
   <gr-input placeholder="record to add" pattern="^[a-zA-Z0-9]+$" name="internal-{{ property('name') }}" ></gr-input>
   <div style="margin-left: 10%; width: 86%; padding: 2%">
+    {% for componentName in property('alreadyRendered') %}
+      {{ component(componentName) }}
+    {% endfor %}
   </div>
   <script>
   (function (element) {
