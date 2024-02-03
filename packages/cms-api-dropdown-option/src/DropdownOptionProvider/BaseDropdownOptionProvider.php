@@ -6,11 +6,8 @@ use Apie\Common\ContextConstants;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Metadata\Fields\ConstructorParameter;
 use Apie\Core\Metadata\Fields\FieldInterface;
-use Apie\Core\Metadata\MetadataFactory;
-use Apie\Core\Metadata\MetadataInterface;
 use Apie\Core\PropertyToFieldMetadataUtil;
 use Apie\Core\ValueObjects\Utils;
-use Apie\TypeConverter\ReflectionTypeFactory;
 use ReflectionClass;
 use ReflectionMethod;
 

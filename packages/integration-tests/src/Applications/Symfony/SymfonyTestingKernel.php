@@ -3,6 +3,8 @@ namespace Apie\IntegrationTests\Applications\Symfony;
 
 use Apie\ApieBundle\ApieBundle;
 use Apie\ApieBundle\Security\ApieUserProvider;
+use Apie\Core\Other\FileWriterInterface;
+use Apie\Core\Other\MockFileWriter;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\SecurityBundle\SecurityBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
@@ -59,6 +61,7 @@ class SymfonyTestingKernel extends Kernel
         $loader->load(function (ContainerBuilder $container) {
             $container->addDefinitions([
                 InMemoryPersistentSessionStorageFactory::class => new Definition(InMemoryPersistentSessionStorageFactory::class),
+                FileWriterInterface::class => (new Definition(MockFileWriter::class))->setPublic(true),
             ]);
             $container->loadFromExtension('apie', $this->apieConfig);
             $container->loadFromExtension(

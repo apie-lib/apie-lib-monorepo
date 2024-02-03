@@ -27,7 +27,8 @@ class MakerServiceProvider extends ServiceProvider
             function ($app) {
                 return new \Apie\Maker\Command\ApieCreateDomainCommand(
                     $app->make(\Apie\Core\BoundedContext\BoundedContextHashmap::class),
-                    $app->make(\Apie\Maker\CodeGenerators\CreateDomainObject::class)
+                    $app->make(\Apie\Maker\CodeGenerators\CreateDomainObject::class),
+                    $app->make(\Apie\Core\Other\FileWriterInterface::class)
                 );
             }
         );

@@ -4,6 +4,8 @@ namespace Apie\Maker\Command;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Identifiers\PascalCaseSlug;
+use Apie\Core\Other\ActualFileWriter;
+use Apie\Core\Other\FileWriterInterface;
 use Apie\Maker\CodeGenerators\CreateDomainObject;
 use Apie\Maker\Dtos\DomainObjectDto;
 use Apie\Maker\Enums\IdType;
@@ -19,7 +21,8 @@ class ApieCreateDomainCommand extends Command
 {
     public function __construct(
         private readonly BoundedContextHashmap $boundedContextHashmap,
-        private readonly CreateDomainObject $createDomainObject
+        private readonly CreateDomainObject $createDomainObject,
+        private readonly FileWriterInterface $fileWriter = new ActualFileWriter(),
     ) {
         parent::__construct();
     }
@@ -52,13 +55,13 @@ class ApieCreateDomainCommand extends Command
         $object = new DomainObjectDto(
             new PascalCaseSlug($input->getArgument('name')),
             new BoundedContextId($input->getOption('bounded-context')),
-            IdType::from($input->getOption('id-type')),
+            IdType::tryFromName($input->getOption('id-type')),
             true
         );
         
         $identifierPath = $this->createDomainObject->getIdentifierPath($object);
         $output->writeln(sprintf('Creating "%s"', $identifierPath));
-        file_put_contents(
+        $this->fileWriter->writeFile(
             $identifierPath,
             $this->createDomainObject->generateDomainIdentifierCode($object)
         );
@@ -66,7 +69,7 @@ class ApieCreateDomainCommand extends Command
 
         $domainObjectPath = $this->createDomainObject->getDomainObjectPath($object);
         $output->writeln(sprintf('Creating "%s"', $domainObjectPath));
-        file_put_contents(
+        $this->fileWriter->writeFile(
             $domainObjectPath,
             $this->createDomainObject->generateDomainObjectCode($object)
         );

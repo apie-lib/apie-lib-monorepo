@@ -6,5 +6,6 @@ services:
       arguments:
         - '@Apie\Core\BoundedContext\BoundedContextHashmap'
         - '@Apie\Maker\CodeGenerators\CreateDomainObject'
+        - '@Apie\Core\Other\FileWriterInterface'
       tags:
           - name: console.command

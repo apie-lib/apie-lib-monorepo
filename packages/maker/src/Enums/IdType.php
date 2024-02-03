@@ -12,4 +12,15 @@ enum IdType: string
     case Slug = Identifier::class;
     case Email = Email::class;
     case Integer = AutoIncrementInteger::class;
+
+    public static function tryFromName(string $name): ?static
+    {
+        foreach (self::cases() as $case) {
+            if ($case->name === $name || $case->value === $name) {
+                return $case;
+            }
+        }
+
+        return null;
+    }
 }

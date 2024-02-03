@@ -1,4 +1,4 @@
-test: test-8.1 test-8.2
+test: test-8.1 test-8.2 test-8.3
 
 test-8.1:
 	docker build --file dockerfile.php81 . -t apie-php81

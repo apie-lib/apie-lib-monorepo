@@ -2,6 +2,8 @@
 namespace Apie\IntegrationTests\Applications\Laravel;
 
 use Apie\Common\IntegrationTestLogger;
+use Apie\Core\Other\FileWriterInterface;
+use Apie\Core\Other\MockFileWriter;
 use Apie\IntegrationTests\Concerns\RunApplicationTest;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -86,6 +88,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                 NotFoundHttpException::class
             ]);
         }
+        $this->app->instance(FileWriterInterface::class, new MockFileWriter());
     }
 
     /**
