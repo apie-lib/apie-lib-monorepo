@@ -41,7 +41,7 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
             );
             return $fieldMetadata instanceof FieldInterface && $this->supportsField($fieldMetadata, $apieContext);
         }
-        if ($apieContext->hasContext(ContextConstants::SERVICE_CLASS) && $apieContext->hasContext(ContextConstants::METHOD_NAME)) {
+        if (false && -$apieContext->hasContext(ContextConstants::SERVICE_CLASS) && $apieContext->hasContext(ContextConstants::METHOD_NAME)) {
             $refl = new ReflectionMethod(
                 $apieContext->getContext(ContextConstants::SERVICE_CLASS),
                 $apieContext->getContext(ContextConstants::METHOD_NAME)
