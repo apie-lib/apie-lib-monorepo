@@ -13,6 +13,6 @@ class AlreadyExistingResource implements \Apie\Core\Entities\EntityInterface
 
     public function getId(): AlreadyExistingResourceIdentifier
     {
-        return $id;
+        return $this->id;
     }
 }

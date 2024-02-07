@@ -104,7 +104,7 @@ class CreateDomainObject
                 ->addBody('$this->id = new ' . $domainObjectDto->name . 'Identifier(null);');
         }
         if (!$classType->hasMethod('getId')) {
-            $classType->addMethod('getId')->setBody('return $id;')->setReturnType($idClass);
+            $classType->addMethod('getId')->setBody('return $this->id;')->setReturnType($idClass);
         }
         $printer = new PsrPrinter();
         return $printer->printFile($file);

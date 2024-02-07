@@ -13,6 +13,6 @@ class Example implements \Apie\Core\Entities\EntityInterface
 
     public function getId(): ExampleIdentifier
     {
-        return $id;
+        return $this->id;
     }
 }
