@@ -94,14 +94,19 @@ class CreateDomainObject
             $classType->addImplement(EntityInterface::class);
         }
         $shouldInitConstructor = !$classType->hasMethod('__construct') && $domainObjectDto->idType === IdType::Integer;
-        $idProperty = Utils::searchOrAddProperty($classType, 'id', $domainObjectDto->idType === IdType::Integer, $domainObjectDto->idType === IdType::Uuid);
+        $idProperty = Utils::searchOrAddProperty(
+            $classType,
+            'id',
+            $domainObjectDto->idType === IdType::Integer || $domainObjectDto->idType === IdType::Uuid,
+            $domainObjectDto->idType === IdType::Uuid
+        );
         $idClass = $idNamespace . $domainObjectDto->name . 'Identifier';
         Utils::addUseStatements($code, $idClass);
-        $idProperty->setType($idClass);
+        $idProperty->setType(($domainObjectDto->idType === IdType::Uuid ? '?' : '') . $idClass);
         if ($shouldInitConstructor && !$idProperty instanceof PromotedParameter) {
             // constructor is created in Utils::searchOrAddProperty....
             $classType->getMethod('__construct')
-                ->addBody('$this->id = new ' . $domainObjectDto->name . 'Identifier(null);');
+                ->addBody('$this->id = $id ?? new ' . $domainObjectDto->name . 'Identifier(null);');
         }
         if (!$classType->hasMethod('getId')) {
             $classType->addMethod('getId')->setBody('return $this->id;')->setReturnType($idClass);
