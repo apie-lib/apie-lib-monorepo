@@ -94,7 +94,7 @@ class CreateDomainObject
             $classType->addImplement(EntityInterface::class);
         }
         $shouldInitConstructor = !$classType->hasMethod('__construct') && $domainObjectDto->idType === IdType::Integer;
-        $idProperty = Utils::searchOrAddProperty($classType, 'id', $domainObjectDto->idType === IdType::Integer);
+        $idProperty = Utils::searchOrAddProperty($classType, 'id', $domainObjectDto->idType === IdType::Integer, $domainObjectDto->idType === IdType::Uuid);
         $idClass = $idNamespace . $domainObjectDto->name . 'Identifier';
         Utils::addUseStatements($code, $idClass);
         $idProperty->setType($idClass);

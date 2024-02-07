@@ -34,7 +34,7 @@ final class Utils
         }
     }
 
-    public static function searchOrAddProperty(ClassType $classType, string $propertyName, bool $noPromotion): Property|PromotedParameter
+    public static function searchOrAddProperty(ClassType $classType, string $propertyName, bool $noPromotion, bool $nullDefault = false): Property|PromotedParameter
     {
         if ($classType->hasProperty($propertyName)) {
             return $classType->getProperty($propertyName);
@@ -53,6 +53,10 @@ final class Utils
         if ($noPromotion) {
             return $classType->addProperty($propertyName)->setPrivate();
         }
-        return $method->addPromotedParameter($propertyName)->setPrivate();
+        $prop = $method->addPromotedParameter($propertyName)->setPrivate();
+        if ($nullDefault) {
+            $prop->setDefaultValue(null);
+        }
+        return $prop;
     }
 }
