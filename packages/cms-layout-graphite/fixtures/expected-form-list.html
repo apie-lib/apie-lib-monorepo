@@ -1,28 +1,14 @@
-<gr-field-group label="form[name]" style="box-shadow: var(--gr-shadow-x-large); width: 100%">
-  <gr-button class="unhandled-add-to-list-button" variant="secondary" data-template="&lt;gr-input
+<template id="tmpl__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e">&lt;gr-input
     label=&quot;__NAME__&quot;
     name=&quot;__NAME__&quot;
     value=&quot;value&quot;
     type=&quot;tel&quot;
-    &gt;&lt;/gr-input&gt;">
-    <ion-icon name="add-circle-outline"></ion-icon> Add
-  </gr-button>
-  <div style="margin-left: 10%; width: 86%; padding: 2%">
-      </div>
-  <script>
-  (function (element) {
-    const id = provideId();
-    element.addEventListener('click', function (event) {
-      const target = event.target || element;
-      const listContainer = target.nextElementSibling;
-      var div = document.createElement('div');
-      div.classList.add('form-list-item' + id);
-      const keyName = document.querySelectorAll('.form-list-item' + id).length;
-      setInnerHtml(div, target.dataset.template.replace(/__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e|__PROTO__/g, keyName));
-      listContainer.appendChild(div);
-    })
-    element.classList.remove('unhandled-add-to-list-button');
-  }(document.querySelector('.unhandled-add-to-list-button')));
-  </script>
-</gr-field-group>
+    &gt;&lt;/gr-input&gt;</template>
+<apie-form-list class="unhandled-list" replace-string="__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e" name="form[name]" template-id="tmpl__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e"></apie-form-list>
 <input type="hidden" name="_apie[typehint][name]" value="array"/>
+<apie-script>
+(function (elm) {
+  elm.classList.remove('unhandled-list');
+  elm.value = [];
+}(document.querySelector('apie-form-list.unhandled-list')));
+</apie-script>

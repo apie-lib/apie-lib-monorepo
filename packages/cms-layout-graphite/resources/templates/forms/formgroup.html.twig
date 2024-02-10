@@ -1,5 +1,5 @@
-<gr-field-group label="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
-  {%- if property('validationError') -%}
+<apie-form-group class="unhandled-form-group" name="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
+{%- if property('validationError') -%}
   <div class="form-control-invalid-text">
     <div class="text">{{ property('validationError') }}</div>
   </div>
@@ -13,4 +13,4 @@
   {% for key in property('keys') %}
     {{ component(key) }}
   {% endfor %}
-</gr-field-group>
+</apie-form-group>

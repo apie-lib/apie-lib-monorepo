@@ -12,7 +12,7 @@
     <input name="form[name]" type="hidden" value="value"/>
     <div class="autocomplete-list" style="display: none"></div>
 </div>
-<script>
+<apie-script>
   (async function (element) {
     const actualField = element.nextElementSibling;
     let currentValue = element.value;
@@ -118,4 +118,4 @@
         element.disabled = false;
     }
   }(document.querySelector('.unhandled-input-with-autocomplete')));
-  </script>
+  </apie-script>

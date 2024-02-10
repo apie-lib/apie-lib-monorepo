@@ -1,37 +1,14 @@
-<gr-field-group label="form[name]" style="box-shadow: var(--gr-shadow-x-large); width: 100%">
-  <gr-button disabled class="unhandled-add-to-list-button" variant="secondary" data-template="&lt;gr-input
+<template id="tmpl__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e">&lt;gr-input
     label=&quot;__NAME__&quot;
     name=&quot;__NAME__&quot;
     value=&quot;value&quot;
     type=&quot;tel&quot;
-    &gt;&lt;/gr-input&gt;">
-    <ion-icon name="add-circle-outline"></ion-icon> Add
-  </gr-button>
-  <gr-input placeholder="record to add" pattern="^[a-zA-Z0-9]+$" name="internal-form[name]" ></gr-input>
-  <div style="margin-left: 10%; width: 86%; padding: 2%">
-      </div>
-  <script>
-  (function (element) {
-    const id = provideId();
-    const inputField = element.nextElementSibling;
-    inputField.addEventListener('gr-change', function (event) {
-      const value = String(event.target.value);
-      element.disabled = !/^[a-zA-Z0-9]+$/.test(value) || document.querySelector('.form-list-item' + id + '.key-' + value);
-    })
-    element.addEventListener('click', function (event) {
-      const target = event.target || element;
-      const listContainer = target.nextElementSibling.nextElementSibling;
-      var div = document.createElement('div');
-      const keyName = inputField.value;
-      div.classList.add('form-list-item' + id);
-      div.classList.add('key-' + keyName);
-      setInnerHtml(div, target.dataset.template.replace(/__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e|__PROTO__/g, keyName));
-      target.disabled = true;
-      listContainer.appendChild(div);
-    })
-    element.classList.remove('unhandled-add-to-list-button');
-  }(document.querySelector('.unhandled-add-to-list-button')));
-  </script>
-</gr-field-group>
-
+    &gt;&lt;/gr-input&gt;</template>
+<apie-form-hashmap class="unhandled-hashmap" replace-string="__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e" name="form[name]" template-id="tmpl__FORM__NAME____fd9aafcc17084f4e4a56ebd62a6d237e"></apie-form-list>
 <input type="hidden" name="_apie[typehint][name]" value="object"/>
+<apie-script>
+(function (elm) {
+  elm.classList.remove('unhandled-hashmap');
+  elm.value = {&quot;first&quot;:&quot;0611223344&quot;,&quot;second&quot;:&quot;0123456789&quot;};
+}(document.querySelector('apie-form-hashmap.unhandled-hashmap')));
+</apie-script>

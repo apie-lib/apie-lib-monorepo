@@ -143,3 +143,6 @@ table.detail-table td, table.detail-table th {
 .apie-sidebar.active {
     right: 0; /* Slide in from the right when active */
 }
+apie-script {
+    display: none!important;
+}
