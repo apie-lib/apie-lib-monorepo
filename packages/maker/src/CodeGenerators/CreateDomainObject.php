@@ -59,7 +59,7 @@ class CreateDomainObject
         }
 
         $code = Utils::addOrGetNamespace($file, $idNamespace);
-        Utils::addUseStatements($code, IdentifierInterface::class, $domainObjectDto->name, $domainObjectDto->idType->value, ReflectionClass::class);
+        Utils::addUseStatements($code, IdentifierInterface::class, $resourceNamespace . $domainObjectDto->name, $domainObjectDto->idType->value, ReflectionClass::class);
         $classType = $code->getClasses()[$domainObjectDto->name . 'Identifier'] ?? $code->addClass($domainObjectDto->name . 'Identifier');
         $classType->setExtends($domainObjectDto->idType->value);
         if (!in_array(IdentifierInterface::class, $classType->getImplements())) {

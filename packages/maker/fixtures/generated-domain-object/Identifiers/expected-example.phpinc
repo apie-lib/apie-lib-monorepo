@@ -5,6 +5,7 @@ namespace Test\NamespaceExample\Identifiers;
 use Apie\Core\Identifiers\Identifier;
 use Apie\Core\Identifiers\IdentifierInterface;
 use ReflectionClass;
+use Test\NamespaceExample\Resources\Example;
 
 class ExampleIdentifier extends Identifier implements IdentifierInterface
 {
