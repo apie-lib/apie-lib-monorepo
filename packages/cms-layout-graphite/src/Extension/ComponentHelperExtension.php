@@ -2,8 +2,10 @@
 namespace Apie\CmsLayoutGraphite\Extension;
 
 use Apie\CmsLayoutGraphite\TwigRenderer;
+use Apie\Core\ApieLib;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use LogicException;
+use ReflectionClass;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -30,10 +32,17 @@ class ComponentHelperExtension extends AbstractExtension
         array_pop($this->renderers);
     }
 
+    public function apieConstant(string $constantName)
+    {
+        $refl = new ReflectionClass(ApieLib::class);
+        return $refl->getConstant($constantName);
+    }
+
     public function getFunctions(): array
     {
         return [
             new TwigFunction('component', [$this, 'component'], ['is_safe' => ['all']]),
+            new TwigFunction('apieConstant', [$this, 'apieConstant']),
             new TwigFunction('property', [$this, 'property'], []),
             new TwigFunction('assetUrl', [$this, 'assetUrl'], []),
             new TwigFunction('assetContent', [$this, 'assetContent'], ['is_safe' => ['all']]),

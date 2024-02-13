@@ -4,6 +4,7 @@
 <apie-script>
 (function (elm) {
   elm.classList.remove('unhandled-hashmap');
-  elm.value = {{ property('value') | json_encode }};
+  elm.value = {{ property('value') | json_encode | replace({'<': '&lt;'}) | raw }};
+  elm.validationErrors = {{ property('validationErrors') | json_encode | replace({'<': '&lt;'}) | raw }};
 }(document.querySelector('apie-form-hashmap.unhandled-hashmap')));
 </apie-script>

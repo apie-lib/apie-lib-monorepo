@@ -1,7 +1,9 @@
 <form method="POST">
-  <apie-form-group class="unhandled-form-group" name="form[]" style="box-shadow: var(--gr-shadow-small); width: 100%"><div class="form-control-invalid-text">
+  <apie-form-group name="form" style="box-shadow: var(--gr-shadow-small); width: 100%"><div class="form-control-invalid-text">
         <div class="text">unknown field</div>
-      </div>    test
+      </div>    <apie-scalar-element name="form[0]">
+    test
+    </apie-scalar-element>
   </apie-form-group>
   <gr-button style="padding: 15PX" variant="primary" type="submit" large expand="block">Submit</gr-button>
 </form>

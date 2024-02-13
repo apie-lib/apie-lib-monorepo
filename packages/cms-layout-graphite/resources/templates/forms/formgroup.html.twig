@@ -1,8 +1,8 @@
-<apie-form-group class="unhandled-form-group" name="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
-{%- if property('validationError') -%}
-  <div class="form-control-invalid-text">
-    <div class="text">{{ property('validationError') }}</div>
-  </div>
+<apie-form-group name="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
+  {%- if property('validationError') -%}
+    <div class="form-control-invalid-text">
+      <div class="text">{{ property('validationError') }}</div>
+    </div>
   {%- else -%}
     {%- for key,description in property('missingValidationErrors') -%}
       <div class="form-control-invalid-text">
@@ -11,6 +11,8 @@
     {%- endfor -%}
   {%- endif -%}
   {% for key in property('keys') %}
+    <apie-scalar-element name="{{ property('groupName') }}[{{ key }}]">
     {{ component(key) }}
+    </apie-scalar-element>
   {% endfor %}
 </apie-form-group>
