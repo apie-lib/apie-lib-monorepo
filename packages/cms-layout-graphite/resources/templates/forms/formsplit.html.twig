@@ -12,7 +12,7 @@
   element.classList.remove('unhandled-tab-split');
   const templates = {};
   {% for tab in property('tabs') %}
-    templates[{{ tab|e|json_encode|raw }}] = {{ component(tab)|json_encode|raw }};
+    templates[{{ tab|e|json_encode|raw }}] = {{ component(tab) | json_encode | replace({'<': '&lt;'}) | raw }};
   {% endfor %}
   element.addEventListener('gr-change', function (event) {
     const target = event.target || element;
