@@ -1,23 +1,20 @@
+{% for tab in property('tabs') %}
+<template id="{{ property('tmpl') }}{{ tab }}">{{ component(tab) | e }}</template>
+{% endfor %}
 <div style="margin: 2%" style="box-shadow: var(--gr-shadow-x-large); width: 100%">
-  <gr-select name="{{ property('name').getTypehintName() }}" class="unhandled-tab-split" label="Type for {{ property('name') }}">
-    {% for tab in property('tabs') %}
-      <gr-menu-item value="{{ tab }}">{{ tab }}</gr-menu-item>
-    {% endfor %}
-  </gr-select>
-  <div>
-  </div>
+  <apie-form-select name="{{ property('name') }}" class="unhandled-tab-split">
 </div>
 <apie-script>
 (function(element){
   element.classList.remove('unhandled-tab-split');
   const templates = {};
   {% for tab in property('tabs') %}
-    templates[{{ tab|e|json_encode|raw }}] = {{ component(tab) | json_encode | replace({'<': '&lt;'}) | raw }};
+    templates[{{ tab|e|json_encode|raw }}] = {
+      label: {{ tab|e|json_encode|raw }},
+      templateId: {{ (property('tmpl') ~ tab) |e|json_encode|raw }},
+      value: {{ property('valuePerType')[tab]|default(null)|e|json_encode|raw }},
+    };
   {% endfor %}
-  element.addEventListener('gr-change', function (event) {
-    const target = event.target || element;
-    setInnerHtml(target.nextElementSibling, templates[target.value])
-  })
-  setInnerHtml(element.nextElementSibling, templates[element.value])
+  element.options = templates;
 })(document.querySelector('.unhandled-tab-split'));
 </apie-script>
