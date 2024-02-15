@@ -1,4 +1,14 @@
 <apie-form-group name="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
+  {% for key in property('keys') %}
+    {% if property('wrapScalar') %}
+      <apie-scalar-element name="{{ property('groupName') }}[{{ key }}]">
+      {{ component(key) }}
+      </apie-scalar-element>
+    {% else %}
+      {{ component(key) }}
+    {% endif %}
+  {% endfor %}
+</apie-form-group>
   {%- if property('validationError') -%}
     <div class="form-control-invalid-text">
       <div class="text">{{ property('validationError') }}</div>
@@ -10,9 +20,3 @@
       </div>
     {%- endfor -%}
   {%- endif -%}
-  {% for key in property('keys') %}
-    <apie-scalar-element name="{{ property('groupName') }}[{{ key }}]">
-    {{ component(key) }}
-    </apie-scalar-element>
-  {% endfor %}
-</apie-form-group>
