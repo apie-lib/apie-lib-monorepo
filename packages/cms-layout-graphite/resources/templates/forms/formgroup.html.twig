@@ -1,7 +1,7 @@
 <apie-form-group name="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
   {% for key in property('keys') %}
-    {% if property('wrapScalar') %}
-      <apie-scalar-element name="{{ property('groupName') }}[{{ key }}]">
+    {% if property('wrapScalar') and property('names')[key] %}
+      <apie-scalar-element name="{{ property('names')[key] }}">
       {{ component(key) }}
       </apie-scalar-element>
     {% else %}
