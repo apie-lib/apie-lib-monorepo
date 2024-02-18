@@ -2,3 +2,9 @@
   {{ component('formElements') }}
   <gr-button style="padding: 15PX" variant="primary" type="submit" large expand="block">Submit</gr-button>
 </form>
+<apie-script>
+(function (elm) {
+  elm.classList.remove('unhandled-form-group');
+  elm.value = {{ property('value') | json_encode | raw}};
+}(document.querySelector('apie-form-group.unhandled-form-group')));
+</apie-script>

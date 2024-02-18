@@ -1,30 +1,12 @@
-<apie-form-group class="unhandled_group" name="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
+<apie-form-group class="{{ property('extraClass') | default('child-form-group') }}" name="{{ property('groupName') }}" style="box-shadow: var(--gr-shadow-small); width: 100%">
   {% for key in property('keys') %}
-    {% if property('wrapScalar') and property('names')[key] %}
-      <apie-scalar-element name="{{ property('names')[key] }}">
-      {{ component(key) }}
-      </apie-scalar-element>
-    {% else %}
-      {{ component(key) }}
-    {% endif %}
+    {{ component(key) }}
   {% endfor %}
 </apie-form-group>
-<apie-script>
-(function (elm) {
-  elm.classList.remove('unhandled_group');
-{% if property('wrapScalar') %}
-  elm.value = {{ property('value') | json_encode | raw}};
-{% endif %}
-}(document.querySelector('apie-form-group.unhandled_group')));
-</apie-script>
-  {%- if property('validationError') -%}
-    <div class="form-control-invalid-text">
-      <div class="text">{{ property('validationError') }}</div>
-    </div>
-  {%- else -%}
-    {%- for key,description in property('missingValidationErrors') -%}
-      <div class="form-control-invalid-text">
-        <div class="text">{{ description }}</div>
-      </div>
-    {%- endfor -%}
-  {%- endif -%}
+{%- if property('validationError') -%}
+  <apie-validation-error>{{ property('validationError') }}</apie-validation-error>
+{%- else -%}
+  {%- for key,description in property('validationErrors') -%}
+    <apie-validation-error>{{ description }}</apie-validation-error>
+  {%- endfor -%}
+{%- endif -%}

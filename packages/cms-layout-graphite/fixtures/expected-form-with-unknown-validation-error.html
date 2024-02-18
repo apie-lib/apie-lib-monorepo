@@ -1,13 +1,12 @@
 <form method="POST">
-  <apie-form-group class="unhandled_group" name="form" style="box-shadow: var(--gr-shadow-small); width: 100%">
-            test
-      </apie-form-group>
-<apie-script>
-(function (elm) {
-  elm.classList.remove('unhandled_group');
-}(document.querySelector('apie-form-group.unhandled_group')));
-</apie-script><div class="form-control-invalid-text">
-        <div class="text">unknown field</div>
-      </div>
+  <apie-form-group class="unhandled-form-group" name="form" style="box-shadow: var(--gr-shadow-small); width: 100%">
+      test
+  </apie-form-group><apie-validation-error>unknown field</apie-validation-error>
   <gr-button style="padding: 15PX" variant="primary" type="submit" large expand="block">Submit</gr-button>
 </form>
+<apie-script>
+(function (elm) {
+  elm.classList.remove('unhandled-form-group');
+  elm.value = [];
+}(document.querySelector('apie-form-group.unhandled-form-group')));
+</apie-script>
