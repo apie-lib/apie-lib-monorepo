@@ -1,5 +1,9 @@
-<gr-select label="{{ property('name') }}" name="{{ property('name') }}" value="{{ property('value') }}">
-  {% for option in property('options') %}
-    <gr-menu-item value="{{ option.value }}">{{ option.display }}</gr-menu-item>
-  {% endfor %}
-</gr-select>
+<apie-scalar-element name="{{ property('name') }}" value="{{ property('value') }}">
+  <apie-listen-other-event name="form[test]" event-name="gr-change">      
+    <gr-select class="unhandled-select" label="{{ property('name') }}" name="{{ property('name') }}" value="{{ property('value') }}">
+    {% for option in property('options') %}
+      <gr-menu-item value="{{ option.value }}">{{ option.display }}</gr-menu-item>
+    {% endfor %}
+    </gr-select>
+  </apie-listen-other-event>
+</apie-scalar-element>

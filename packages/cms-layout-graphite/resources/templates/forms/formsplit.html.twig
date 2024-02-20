@@ -2,7 +2,7 @@
 <template id="{{ property('tmpl') }}{{ tab }}">{{ component(tab) | e }}</template>
 {% endfor %}
 <div style="margin: 2%; width: 90%; box-shadow: var(--gr-shadow-x-large);">
-  <apie-form-select name="{{ property('name') }}" class="unhandled-tab-split">
+  <apie-form-select name="{{ property('name').getTypehintName() }}" class="unhandled-tab-split">
 </div>
 <apie-script>
 (function(element){
