@@ -1,4 +1,8 @@
 <input type="hidden" name="{{ property('name').getTypehintName() }}" value="" />
-<gr-checkbox name="{{ property('name') }}" value="1"{% if property('value') is same as(null) %} indeterminate{% endif %}{% if property('value') %} checked{% endif %}{% if (property('validationError')) %} invalid invalid-text="{{ property('validationError') }}"{% endif %}>
-    {{ property('name') }}
-</gr-checkbox>
+<apie-scalar-element name="{{ property('name') }}" use-checked>
+  <apie-listen-other-event name="{{ property('name') }}" use-checked event-name="gr-change">        
+    <gr-checkbox name="{{ property('name') }}"{% if property('value') is same as(null) %} indeterminate{% endif %}{% if property('value') %} checked{% endif %}{% if (property('validationError')) %} invalid invalid-text="{{ property('validationError') }}"{% endif %}>
+      {{ property('name') }}
+    </gr-checkbox>
+  </apie-listen-other-event>
+</apie-scalar-element>
