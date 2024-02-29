@@ -32,7 +32,7 @@ class ComponentHelperExtension extends AbstractExtension
         array_pop($this->renderers);
     }
 
-    public function apieConstant(string $constantName)
+    public function apieConstant(string $constantName): mixed
     {
         $refl = new ReflectionClass(ApieLib::class);
         return $refl->getConstant($constantName);

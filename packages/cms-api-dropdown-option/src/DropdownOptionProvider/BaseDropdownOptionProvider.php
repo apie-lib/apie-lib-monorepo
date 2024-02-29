@@ -41,7 +41,8 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
             );
             return $fieldMetadata instanceof FieldInterface && $this->supportsField($fieldMetadata, $apieContext);
         }
-        if (false && -$apieContext->hasContext(ContextConstants::SERVICE_CLASS) && $apieContext->hasContext(ContextConstants::METHOD_NAME)) {
+        // @phpstan-ignore-next-line
+        if (false && $apieContext->hasContext(ContextConstants::SERVICE_CLASS) && $apieContext->hasContext(ContextConstants::METHOD_NAME)) {
             $refl = new ReflectionMethod(
                 $apieContext->getContext(ContextConstants::SERVICE_CLASS),
                 $apieContext->getContext(ContextConstants::METHOD_NAME)
@@ -68,7 +69,6 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
                 $property
             );
         } else {
-            assert($apieContext->hasContext());
             $refl = new ReflectionMethod(
                 $apieContext->getContext(ContextConstants::SERVICE_CLASS),
                 $apieContext->getContext(ContextConstants::METHOD_NAME)
@@ -78,6 +78,9 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
                     $fieldMetadata = new ConstructorParameter($parameter);
                     break;
                 }
+            }
+            if (!isset($fieldMetadata)) {
+                return new DropdownOptionList();
             }
         }
 

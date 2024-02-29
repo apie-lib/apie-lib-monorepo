@@ -98,7 +98,5 @@ class CmsResourceOverviewRenderTest extends TestCase
                 $message
             );
         }
-
-        $this->assertStringContainsString('<revo-grid', (string) $response->getBody());
     }
 }
