@@ -1,0 +1,327 @@
+{
+    "conflict": {
+        "symfony/twig-bundle": "v6.4.0-BETA1"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/packages/laravel-apie",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/laravel-apie": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/doctrine-entity-datalayer",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/doctrine-entity-datalayer": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/storage-metadata-builder",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/storage-metadata-builder": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/composite-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/composite-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/date-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/date-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/common-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/common-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/doctrine-entity-converter",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/doctrine-entity-converter": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/meta-minimal",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/meta-minimal": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/regex-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/regex-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/serializer",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/serializer": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/dateformat-to-regex",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/dateformat-to-regex": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/faker",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/faker": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/maker",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/maker": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/country-and-phone-number",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/country-and-phone-number": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/schema-generator",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/schema-generator": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/text-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/text-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/cms-api-dropdown-option",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-api-dropdown-option": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/otp-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/otp-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/apie-phpstan-rules",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/apie-phpstan-rules": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/meta-recommended",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/meta-recommended": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/integration-tests",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/integration-tests": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/cms-layout-graphite",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-layout-graphite": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/storage-metadata",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/storage-metadata": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/common",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/common": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/core",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/core": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/console",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/console": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/apie-bundle",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/apie-bundle": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/count-words",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/count-words": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/meta-maximum",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/meta-maximum": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/html-builders",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/html-builders": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/cms",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/rest-api",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/rest-api": "1.0.0.x-dev"
+                }
+            }
+        }
+    ]
+}

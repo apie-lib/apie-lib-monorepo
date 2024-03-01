@@ -1,0 +1,15 @@
+apie:
+  cms:
+   #  dashboard_template: 'apie/dashboard.html.twig'
+  doctrine:
+    # build_once: true
+    connection_params:
+      url: "mysql://project:project@mysql:3306/project"
+  datalayers:
+    default_datalayer: 'Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer'
+  bounded_contexts:
+    types:
+      entities_folder: "%kernel.project_dir%/src/ApiePlayground/Types/Resources/"
+      entities_namespace: 'App\ApiePlayground\Types\Resources'
+      actions_folder: "%kernel.project_dir%/src/ApiePlayground/Types/Actions/"
+      actions_namespace: 'App\ApiePlayground\Types\Actions'

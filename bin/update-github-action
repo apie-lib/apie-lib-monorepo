@@ -3,17 +3,33 @@
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../shared-bin.php';
 
+use Apie\Core\ApieLib;
 use Symfony\Component\Finder\Finder;
 
 $phpunitXml = new DOMDocument();
 $phpunitXml->load(__DIR__ . '/../phpunit.xml');
-
+$composer = json_decode(file_get_contents(__DIR__ . '/../playground/edit-composer.json'), true);
+$composer['repositories'] = [];
 foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0) as $packageFolder) {
     $package = new Package($packageFolder);
     if ($package->getPackage() === 'fixtures') {
         continue;
     }
+    $composer['repositories'][] = [
+        "type" => "path",
+        "url" => "/packages/" . $package->getPackage(),
+        "options" => [
+            "symlink" => true,
+            "versions" => [
+                "apie/" . $package->getPackage() => ApieLib::VERSION,
+            ]
+        ]
+    ];
     $package->createFile('.github/workflows/php.yml', true);
 }
+file_put_contents(
+    __DIR__ . '/../playground/edit-composer.json',
+    json_encode($composer, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES)
+);
 
 ComposerTools::runUpdate();
