@@ -22,7 +22,6 @@
   "require": {
     "php": ">=8.1",
     "apie/core": "self.version",
-    "apie/composite-value-objects": "self.version",
     "giggsey/libphonenumber-for-php": "^8.0",
     "prinsfrank/standards": "^1.0.0"
   },
