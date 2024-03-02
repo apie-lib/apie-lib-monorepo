@@ -8,6 +8,11 @@ apie:
   datalayers:
     default_datalayer: 'Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer'
   bounded_contexts:
+    example:
+      entities_folder: "%kernel.project_dir%/src/ApiePlayground/Example/Resources/"
+      entities_namespace: 'App\ApiePlayground\Example\Resources'
+      actions_folder: "%kernel.project_dir%/src/ApiePlayground/Example/Actions/"
+      actions_namespace: 'App\ApiePlayground\Example\Actions'
     types:
       entities_folder: "%kernel.project_dir%/src/ApiePlayground/Types/Resources/"
       entities_namespace: 'App\ApiePlayground\Types\Resources'
