@@ -2,9 +2,13 @@
 
 namespace App\ApiePlayground\Types\Resources;
 
+use Apie\CommonValueObjects\StarRating;
+use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Lists\IntegerHashmap;
+use Apie\Core\Lists\IntegerList;
 use App\ApiePlayground\Types\Identifiers\NumberFieldsIdentifier;
 
-class NumberFields implements \Apie\Core\Entities\EntityInterface
+class NumberFields implements EntityInterface
 {
     private NumberFieldsIdentifier $id;
 
@@ -15,6 +19,18 @@ class NumberFields implements \Apie\Core\Entities\EntityInterface
     public ?int $nullableInteger;
 
     public ?float $nullableFloatingPoint;
+
+    public StarRating $starRating;
+
+    public ?StarRating $nullableStarRating;
+
+    public IntegerList $integerList;
+
+    public IntegerHashmap $integerHashmap;
+
+    public ?IntegerList $nullableIntegerList;
+
+    public ?IntegerHashmap $nullableIntegerHashmap;
 
     public function __construct()
     {

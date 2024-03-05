@@ -40,7 +40,13 @@ services:
       - ./.docker/virtualhost.conf:/etc/apache2/sites-available/000-default.conf
       - ./.docker/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
     ports:
-      - "80:80"
+      - "82:80"
+    labels:
+      traefik.enable: true
+      traefik.http.routers.lesapp-api-nginx.priority: 1
+      traefik.http.routers.lesapp-api-nginx.rule: HostRegexp(`apie-playground.localtest.me`)
+      traefik.http.routers.lesapp-api-nginx.entrypoints: "web"
+      traefik.http.routers.lesapp-api-nginx.tls: tfalse
     environment:
       - APIE_STARTER_SETUP=maximum
       - APIE_STARTER_ENABLE_CMS=1
