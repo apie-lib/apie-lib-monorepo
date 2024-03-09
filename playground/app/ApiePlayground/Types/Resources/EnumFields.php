@@ -6,6 +6,7 @@ use Apie\CommonValueObjects\Gender;
 use Apie\CommonValueObjects\Stars;
 use Apie\Core\Entities\EntityInterface;
 use App\ApiePlayground\Types\Identifiers\EnumFieldsIdentifier;
+use App\ApiePlayground\Types\Lists\StarsList;
 
 class EnumFields implements EntityInterface
 {
@@ -18,6 +19,10 @@ class EnumFields implements EntityInterface
     public Stars $stars;
 
     public ?Stars $nullableStars;
+
+    public StarsList $starsList;
+
+    public ?StarsList $nullableStarsList;
 
     public function __construct()
     {
