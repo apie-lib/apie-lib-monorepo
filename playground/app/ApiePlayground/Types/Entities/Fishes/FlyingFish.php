@@ -1,5 +1,5 @@
 <?php
-namespace App\ApiePlayground\Types\Entities\Mammals;
+namespace App\ApiePlayground\Types\Entities\Fishes;
 
 use App\ApiePlayground\Types\Concerns\FlyingAnimal;
 use App\ApiePlayground\Types\Concerns\SwimmingAnimal;

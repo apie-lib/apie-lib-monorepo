@@ -3,9 +3,9 @@ namespace App\ApiePlayground\Types\Entities;
 
 use Apie\Core\Other\DiscriminatorConfig;
 use Apie\Core\Other\DiscriminatorMapping;
-use App\ApiePlayground\Types\Entities\Mammals\FlyingFish;
-use App\ApiePlayground\Types\Entities\Mammals\LungFish;
-use App\ApiePlayground\Types\Entities\Mammals\Shark;
+use App\ApiePlayground\Types\Entities\Fishes\FlyingFish;
+use App\ApiePlayground\Types\Entities\Fishes\LungFish;
+use App\ApiePlayground\Types\Entities\Fishes\Shark;
 use App\ApiePlayground\Types\Resources\Animal;
 
 abstract class Fish extends Animal

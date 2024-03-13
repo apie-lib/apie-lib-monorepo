@@ -33,6 +33,26 @@ abstract class PhoneNumber implements StringValueObjectInterface
         return self::$util;
     }
 
+    final public function toE164(): string
+    {
+        return self::getUtil()->format($this->phoneNumber, PhoneNumberFormat::E164);
+    }
+
+    final public function toInternational(): string
+    {
+        return self::getUtil()->format($this->phoneNumber, PhoneNumberFormat::INTERNATIONAL);
+    }
+
+    final public function toNational(): string
+    {
+        return self::getUtil()->format($this->phoneNumber, PhoneNumberFormat::NATIONAL);
+    }
+
+    final public function toRFC3966(): string
+    {
+        return self::getUtil()->format($this->phoneNumber, PhoneNumberFormat::RFC3966);
+    }
+
     final protected function convert(string $input): string
     {
         $phoneNumberUtil = self::getUtil();

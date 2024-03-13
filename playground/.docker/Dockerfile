@@ -23,8 +23,7 @@ RUN docker-php-ext-install \
     pdo_pgsql \
     zip \
     pdo \
-    pdo_mysql \
-    opcache
+    pdo_mysql
 
 # Install APCU
 RUN pecl install apcu
