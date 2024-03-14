@@ -28,4 +28,9 @@ abstract class Fish extends Animal
             )
         );
     }
+
+    public function isThirsty(): bool
+    {
+        return false;
+    }
 }
