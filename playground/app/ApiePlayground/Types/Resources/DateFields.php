@@ -2,17 +2,14 @@
 
 namespace App\ApiePlayground\Types\Resources;
 
-use Apie\DateValueObjects\DateWithTimezone;
-use Apie\DateValueObjects\HourAndMinutes;
-use Apie\DateValueObjects\LocalDate;
+use Apie\Core\Attributes\FakeCount;
 use Apie\DateValueObjects\Ranges\DateTimeRange;
-use Apie\DateValueObjects\Time;
-use Apie\DateValueObjects\UnixTimestamp;
 use App\ApiePlayground\Types\Identifiers\DateFieldsIdentifier;
 use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
 
+#[FakeCount(25)]
 class DateFields implements \Apie\Core\Entities\EntityInterface
 {
     private DateFieldsIdentifier $id;

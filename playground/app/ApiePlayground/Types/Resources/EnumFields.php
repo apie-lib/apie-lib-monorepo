@@ -4,10 +4,12 @@ namespace App\ApiePlayground\Types\Resources;
 
 use Apie\CommonValueObjects\Gender;
 use Apie\CommonValueObjects\Stars;
+use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Entities\EntityInterface;
 use App\ApiePlayground\Types\Identifiers\EnumFieldsIdentifier;
 use App\ApiePlayground\Types\Lists\StarsList;
 
+#[FakeCount(25)]
 class EnumFields implements EntityInterface
 {
     private EnumFieldsIdentifier $id;

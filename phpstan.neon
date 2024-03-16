@@ -41,6 +41,10 @@ parameters:
         - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
         - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
         - '#ReflectionEnumUnitCase::getBackingValue#'
+        -
+            message: '#is assigned outside of its declaring class#'
+            path: packages/doctrine-entity-converter/src/CodeGenerators/AddDoctrineFields.php
+            count: 1
         - 
             message: '#ActionInterface::#'
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
@@ -103,11 +107,11 @@ parameters:
             message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'
             path: packages/faker/src/Fakers/PasswordValueObjectFaker.php
             count: 7
-        
+        -   '#SearchIndex::\$parent#'
         -
             message: '#constructor expects Apie\\Faker\\Interfaces\\ApieClassFaker<object>,#'
             path: packages/faker/src/ApieObjectFaker.php
-            count: 8
+            count: 9
 
         -
             message: '#Unable to resolve the template type T in call to method#'
