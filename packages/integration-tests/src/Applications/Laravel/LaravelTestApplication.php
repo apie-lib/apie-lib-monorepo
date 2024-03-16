@@ -48,7 +48,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         return $this->applicationConfig;
     }
 
-    protected function defineEnvironment($app)
+    protected function defineEnvironment($app): void
     {
         tap($app->make('config'), function (Repository $config) {
             $config->set('app.key', 'base64:/aNEFWQbsYwDslb4Xw1RKKj9oCdZdbNhvcyUpVgXPz4=');
@@ -119,7 +119,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         return $factory->createResponse($laravelResponse);
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [ApieServiceProvider::class];
     }
