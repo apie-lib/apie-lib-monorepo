@@ -103,6 +103,8 @@ parameters:
             path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
             count: 1
 
+        -   '#Unable to resolve the template type T in call to method static method Apie\\Core\\Utils\\EntityUtils::findClass#'
+
         -
             message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'
             path: packages/faker/src/Fakers/PasswordValueObjectFaker.php

@@ -12,12 +12,23 @@ use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Lists\StringList;
+use Apie\Core\Utils\EntityUtils;
+use LogicException;
 use ReflectionClass;
 
 class DropdownOptionsAction implements ActionInterface
 {
     public function __construct(private readonly ApieFacadeInterface $apieFacade)
     {
+    }
+
+    public static function isAuthorized(ApieContext $context, bool $runtimeChecks, bool $throwError = false): bool
+    {
+        $refl = new ReflectionClass($context->getContext(ContextConstants::RESOURCE_NAME, $throwError));
+        if (EntityUtils::isPolymorphicEntity($refl) && $runtimeChecks && $context->hasContext(ContextConstants::RESOURCE)) {
+            $refl = new ReflectionClass($context->getContext(ContextConstants::RESOURCE, $throwError));
+        }
+        return $context->appliesToContext($refl, $runtimeChecks, $throwError ? new LogicException('Class is not authorized') : null);
     }
 
     public function __invoke(ApieContext $context, array $rawContents): ActionResponse

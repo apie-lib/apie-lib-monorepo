@@ -4,8 +4,6 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\RemovalCheck;
-use Apie\Core\Attributes\Requires;
-use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\OrderLine;
@@ -13,7 +11,6 @@ use Apie\IntegrationTests\Apie\TypeDemo\Enums\OrderStatus;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\OrderIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Lists\OrderLineList;
 
-#[RuntimeCheck(new Requires('authenticated'))]
 #[RemovalCheck(new StaticCheck())]
 #[FakeCount(0)]
 class Order implements EntityInterface
