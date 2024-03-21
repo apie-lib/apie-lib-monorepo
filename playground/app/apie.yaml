@@ -13,6 +13,11 @@ apie:
       entities_namespace: 'App\ApiePlayground\Example\Resources'
       actions_folder: "%kernel.project_dir%/src/ApiePlayground/Example/Actions/"
       actions_namespace: 'App\ApiePlayground\Example\Actions'
+    permission:
+      entities_folder: "%kernel.project_dir%/src/ApiePlayground/Permission/Resources/"
+      entities_namespace: 'App\ApiePlayground\Permission\Resources'
+      actions_folder: "%kernel.project_dir%/src/ApiePlayground/Permission/Actions/"
+      actions_namespace: 'App\ApiePlayground\Permission\Actions'
     types:
       entities_folder: "%kernel.project_dir%/src/ApiePlayground/Types/Resources/"
       entities_namespace: 'App\ApiePlayground\Types\Resources'

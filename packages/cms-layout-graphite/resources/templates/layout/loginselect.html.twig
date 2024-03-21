@@ -1,6 +1,7 @@
-{{ component('profile') }}
+
 {% if property('loginOptions') %}
     <gr-select label="Login" placeholder="Login" class="login-select">
+        <slot>{{ component('profile') }}</slot>
         {% for loginOption in property('loginOptions') %}
             <gr-menu-item value="{{ loginOption['value'] }}">{{ loginOption['name'] }}</gr-menu-item>
         {% endfor %}
@@ -15,4 +16,6 @@
             select.classList.remove('login-select');
         })(document.querySelector('gr-select.login-select'));
     </script>
+{% else %}
+    {{ component('profile') }}
 {% endif %}
