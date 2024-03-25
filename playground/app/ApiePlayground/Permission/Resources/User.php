@@ -3,7 +3,10 @@
 namespace App\ApiePlayground\Permission\Resources;
 
 use Apie\Common\Interfaces\CheckLoginStatusInterface;
+use Apie\Common\Interfaces\HasPermissionsInterface;
 use Apie\Common\Interfaces\HasRolesInterface;
+use Apie\Core\Lists\PermissionList;
+use Apie\Core\Permissions\AllPermission;
 use Apie\CommonValueObjects\Email;
 use Apie\CommonValueObjects\FullName;
 use Apie\Core\Attributes\Context;
@@ -13,7 +16,9 @@ use Apie\Core\Attributes\Internal;
 use Apie\Core\Attributes\LoggedIn;
 use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Identifiers\Identifier;
 use Apie\Core\Lists\StringList;
+use Apie\Core\Permissions\PermissionInterface;
 use Apie\DateValueObjects\LocalDate;
 use Apie\Serializer\Exceptions\ValidationException;
 use App\ApiePlayground\Permission\Enums\UserRole;
@@ -22,7 +27,7 @@ use App\ApiePlayground\Permission\Identifiers\UserIdentifier;
 use LogicException;
 
 #[FakeCount(5)]
-class User implements EntityInterface, CheckLoginStatusInterface, HasRolesInterface
+class User implements EntityInterface, CheckLoginStatusInterface, HasRolesInterface, PermissionInterface
 {
     private UserIdentifier $id;
 
@@ -112,6 +117,11 @@ class User implements EntityInterface, CheckLoginStatusInterface, HasRolesInterf
         return $this->blockedReason;
     }
 
+    public function getCompany(): ?CompanyIdentifier
+    {
+        return $this->company;
+    }
+
     public function getId(): UserIdentifier
     {
         return $this->id;
@@ -138,5 +148,13 @@ class User implements EntityInterface, CheckLoginStatusInterface, HasRolesInterf
     public function getRoles(): StringList
     {
         return new StringList([$this->userRole->name]);
+    }
+
+    #[Internal]
+    public function getPermissionIdentifiers(): PermissionList
+    {
+        return new PermissionList([
+            new AllPermission(new Identifier('user'))
+        ]);
     }
 }

@@ -36,7 +36,7 @@ class LoginTest
             new ReflectionClass(User::class),
             $boundedContext
         )->toPaginatedResult(
-            new QuerySearch(0, 1, null, new StringHashmap(['email' => $email->toNative()])),
+            new QuerySearch(0, 1, null, new StringHashmap(['email' => $email->toNative()]), apieContext: $apieContext),
             $apieContext
         );
         $iterator = $results->getIterator();
