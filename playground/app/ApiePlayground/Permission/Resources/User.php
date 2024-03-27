@@ -154,7 +154,8 @@ class User implements EntityInterface, CheckLoginStatusInterface, HasRolesInterf
     public function getPermissionIdentifiers(): PermissionList
     {
         return new PermissionList([
-            new AllPermission(new Identifier('user'))
+            new AllPermission(new Identifier('user')),
+            'user:' . $this->getId()->toNative(),
         ]);
     }
 }
