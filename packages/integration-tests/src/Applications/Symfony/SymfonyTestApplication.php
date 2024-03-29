@@ -53,7 +53,7 @@ class SymfonyTestApplication implements TestApplicationInterface
                 'datalayers' => [
                     'default_datalayer' => $this->applicationConfig->getDatalayerImplementation()->name,
                 ],
-                'enable_doctrine_bundle_connection' => false,
+                'enable_doctrine_bundle_connection' => true,
                 'enable_security' => $this->applicationConfig->doesIncludeSecurity(),
                 'doctrine' => [
                     'run_migrations' => true,

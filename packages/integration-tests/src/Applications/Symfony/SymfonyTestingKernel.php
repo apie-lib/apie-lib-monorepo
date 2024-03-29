@@ -5,6 +5,7 @@ use Apie\ApieBundle\ApieBundle;
 use Apie\ApieBundle\Security\ApieUserProvider;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
+use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\SecurityBundle\SecurityBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
@@ -40,7 +41,8 @@ class SymfonyTestingKernel extends Kernel
     {
         $res = [
             new FrameworkBundle(), // this is needed to have a functional http_kernel service.
-            new ApieBundle()
+            new ApieBundle(),
+            new DoctrineBundle(), // maybe make this optional as the bundle also works without
         ];
         if ($this->includeTwigBundle) {
             $res[] = new TwigBundle();
@@ -64,6 +66,7 @@ class SymfonyTestingKernel extends Kernel
                 FileWriterInterface::class => (new Definition(MockFileWriter::class))->setPublic(true),
             ]);
             $container->loadFromExtension('apie', $this->apieConfig);
+            $container->loadFromExtension('doctrine', ['orm' => ['auto_mapping' => true], 'dbal' => []]);
             $container->loadFromExtension(
                 'framework',
                 [
@@ -74,12 +77,22 @@ class SymfonyTestingKernel extends Kernel
                         'storage_factory_id' => InMemoryPersistentSessionStorageFactory::class,
                         'handler_id' => 'session.handler.native_file',
                         'use_cookies' => true,
+                        'cookie_secure' => 'auto',
+                        'cookie_samesite' => 'lax',
+                    ],
+                    'php_errors' => [
+                        'log' => false,
                     ],
                     'router' => [
                         'resource' => '.',
                         'type' => 'apie'
                     ],
+                    'uid' => [
+                        'default_uuid_version' => 7,
+                        'time_based_uuid_version' => 7,
+                    ],
                     'csrf_protection' => false,
+                    'handle_all_throwables' => true,
                 ]
             );
             if ($this->includeTwigBundle) {

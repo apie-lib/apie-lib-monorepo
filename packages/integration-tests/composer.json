@@ -30,6 +30,8 @@
     "symfony/psr-http-message-bridge": "2.*"
   },
   "require-dev": {
+    "doctrine/doctrine-bundle": "*",
+    "symfony/orm-pack": "*",
     "phpunit/phpunit": "^9.5",
     "phpspec/prophecy-phpunit": "^2.0"
   },

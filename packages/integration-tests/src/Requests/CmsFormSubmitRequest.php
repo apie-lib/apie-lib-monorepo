@@ -32,7 +32,13 @@ class CmsFormSubmitRequest implements TestRequestInterface, BootstrapRequestInte
         private readonly string $methodName,
         private readonly array $entities,
         private readonly array $formData,
+        private readonly ?string $expectedTargetUrl = null
     ) {
+    }
+
+    public function getExpectedTargetUrl(): ?string
+    {
+        return $this->expectedTargetUrl;
     }
 
     public function shouldDoRequestValidation(): bool

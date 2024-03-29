@@ -172,7 +172,8 @@ trait CreatesApieBoundedContext
             [
                 '_csrf' => 'string',
                 'form[blockedReason]' => 'This is a test'
-            ]
+            ],
+            '/cms/types/resource/User/test@example.com'
         );
     }
 

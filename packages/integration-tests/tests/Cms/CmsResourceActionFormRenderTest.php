@@ -68,8 +68,6 @@ class CmsResourceActionFormRenderTest extends TestCase
         $response = $testApplication->httpRequest($cmsFormSubmitRequest);
         $cmsFormSubmitRequest->verifyValidResponse($response);
         $location = $response->getHeaderLine('location');
-        if ($location) {
-            $testApplication->httpRequestGet($location);
-        }
+        $this->assertEquals($location, $cmsFormSubmitRequest->getExpectedTargetUrl());
     }
 }
