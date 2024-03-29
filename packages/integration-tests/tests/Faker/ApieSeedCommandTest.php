@@ -32,9 +32,6 @@ class ApieSeedCommandTest extends TestCase
      */
     public function it_can_seed_apie_resources(TestApplicationInterface $testApplication)
     {
-        if ($testApplication instanceof LaravelTestApplication) {
-            $this->markTestIncomplete('Laravel application does not support console commands yet?');
-        }
         $testApplication->bootApplication();
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
         $exitCode = $tester->run(['apie:seed-entities']);
