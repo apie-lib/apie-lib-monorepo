@@ -3,7 +3,6 @@ namespace Apie\Tests\IntegrationTests\Faker;
 
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
-use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;

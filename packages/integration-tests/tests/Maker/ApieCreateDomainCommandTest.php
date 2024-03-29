@@ -3,7 +3,6 @@ namespace Apie\Tests\IntegrationTests\Console;
 
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
-use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
