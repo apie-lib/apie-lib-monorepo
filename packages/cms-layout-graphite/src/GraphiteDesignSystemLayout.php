@@ -5,6 +5,9 @@ use Apie\HtmlBuilders\Assets\AssetManager;
 
 final class GraphiteDesignSystemLayout
 {
+    /**
+     * @codeCoverageIgnore
+     */
     private function __construct()
     {
     }

@@ -38,6 +38,19 @@ class FullNameTest extends TestCase
     /**
      * @test
      */
+    public function it_can_give_me_a_word_index()
+    {
+        $testItem = new FullName(
+            Gender::FEMALE,
+            new FirstName('Peppa Porky'),
+            new LastName('Pig')
+        );
+        $this->assertEquals(['mrs' => 1, 'peppa' => 1, 'porky' => 1, 'pig' => 1], $testItem->getIndexes());
+    }
+
+    /**
+     * @test
+     */
     public function it_can_be_displayed_as_string()
     {
         $testItem = new FullName(

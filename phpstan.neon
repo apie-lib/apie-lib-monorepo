@@ -110,10 +110,6 @@ parameters:
             path: packages/faker/src/Fakers/PasswordValueObjectFaker.php
             count: 7
         -   '#SearchIndex::\$parent#'
-        -
-            message: '#constructor expects Apie\\Faker\\Interfaces\\ApieClassFaker<object>,#'
-            path: packages/faker/src/ApieObjectFaker.php
-            count: 9
 
         -
             message: '#Unable to resolve the template type T in call to method#'
