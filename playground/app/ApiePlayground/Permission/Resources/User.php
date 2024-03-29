@@ -153,8 +153,13 @@ class User implements EntityInterface, CheckLoginStatusInterface, HasRolesInterf
     #[Internal]
     public function getPermissionIdentifiers(): PermissionList
     {
+        if ($this->userRole === UserRole::ADMIN) {
+            if ($this->company === null) {
+                return new PermissionList([new AllPermission(new Identifier('user'))]);
+            }
+            return new PermissionList(['company:' . $this->company]);
+        }
         return new PermissionList([
-            new AllPermission(new Identifier('user')),
             'user:' . $this->getId()->toNative(),
         ]);
     }

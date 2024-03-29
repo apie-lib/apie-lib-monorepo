@@ -3,13 +3,19 @@
 namespace App\ApiePlayground\Permission\Resources;
 
 use Apie\Core\Attributes\HasRole;
+use Apie\Core\Attributes\Internal;
 use Apie\Core\Attributes\LoggedIn;
 use Apie\Core\Attributes\RuntimeCheck;
+use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Identifiers\Identifier;
+use Apie\Core\Lists\PermissionList;
+use Apie\Core\Permissions\AllPermission;
+use Apie\Core\Permissions\RequiresPermissionsInterface;
 use Apie\TextValueObjects\CompanyName;
 use App\ApiePlayground\Permission\Identifiers\CompanyIdentifier;
 
 #[RuntimeCheck(new LoggedIn())]
-class Company implements \Apie\Core\Entities\EntityInterface
+class Company implements EntityInterface, RequiresPermissionsInterface
 {
     private CompanyIdentifier $id;
 
@@ -33,5 +39,11 @@ class Company implements \Apie\Core\Entities\EntityInterface
     public function getId(): CompanyIdentifier
     {
         return $this->id;
+    }
+
+    #[Internal]
+    public function getRequiredPermissions(): PermissionList
+    {
+        return new PermissionList(['company:' . $this->id, new AllPermission(new Identifier('user'))]);
     }
 }
