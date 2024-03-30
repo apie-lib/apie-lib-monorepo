@@ -39,6 +39,7 @@ services:
       - ../packages:/packages
       - ./.docker/virtualhost.conf:/etc/apache2/sites-available/000-default.conf
       - ./.docker/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+      - ./.docker/php.ini:/usr/local/etc/php/conf.d/local.ini
     ports:
       - "82:80"
     labels:
