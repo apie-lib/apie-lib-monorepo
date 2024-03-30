@@ -1,6 +1,18 @@
-<stylo-editor class="unhandled"></stylo-editor>
-<article contenteditable="true" class="unhandled">{{ property('value') }}</article>
-<textarea name="{{ property('name') }}" class="unhandled-editor">{{ property('value') }}</textarea>
+<div style="margin: 5px;padding: 5px;">
+    <label for="{{ property('name') }}">{{ property('name') }}</label>
+    <stylo-editor class="unhandled"></stylo-editor>
+    <article placeholder="Type your text here..." contenteditable="true" class="html-field unhandled">{{ property('value') | raw }}</article>
+    <textarea style="display: none" name="{{ property('name') }}" class="unhandled-editor">{{ property('value') }}</textarea>
+    {% if property('validationError') %}
+        <apie-validation-error>{{ property('validationError') }}</apie-validation-error>
+    {% endif %}
+    <blockquote style="border: solid 1px;">
+      <ion-icon name="caret-up-outline" style="float: right;"></ion-icon>
+      To change style, type '/'.<br />
+      Make bold: type **.<br />
+      Italic: type __.<br />
+    </blockquote>
+</div>
 <script type="module">
 if (!window.loadedHTMLField) {
     window.loadedHTMLField = import('https://unpkg.com/@papyrs/stylo@latest/dist/stylo/stylo.esm.js')
@@ -14,7 +26,7 @@ if (!window.loadedHTMLField) {
             textarea.classList.remove('unhandled-editor');
             stylo.addEventListener('updateParagraphs', function (ev) {
                 const newHTML = article.innerHTML;
-                textarea.value = newHTML;
+                textarea.textContent = newHTML;
             })
         })
 }

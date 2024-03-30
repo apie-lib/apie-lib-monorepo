@@ -56,6 +56,9 @@ final class SafeHtml implements StringValueObjectInterface
         return new self($string);
     }
 
+    /**
+     * @return array<string, int>
+     */
     public function provideIndexes(): array
     {
         return WordCounter::countFromString(strip_tags(str_replace('<', ' <', $this->internal)));

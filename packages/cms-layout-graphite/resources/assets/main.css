@@ -143,6 +143,47 @@ table.detail-table td, table.detail-table th {
 .apie-sidebar.active {
     right: 0; /* Slide in from the right when active */
 }
+.html-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 200px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+  
+.html-field:empty:before {
+    content: attr(placeholder);
+    color: #999;
+}
+  
+.html-field:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+  
+.html-field::selection {
+    background-color: #007bff;
+    color: #fff;
+}
+  
+.html-field::-webkit-scrollbar {
+    width: 8px;
+}
+  
+.html-field::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+  
+.html-field::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+stylo-plugins {
+    z-index: 6;
+}
 apie-script {
     display: none!important;
 }
