@@ -25,6 +25,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/regex-tools",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/regex-tools": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/storage-metadata-builder",
             "options": {
                 "symlink": true,
