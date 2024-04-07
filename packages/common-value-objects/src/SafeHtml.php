@@ -4,6 +4,7 @@ namespace Apie\CommonValueObjects;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Core\ValueObjects\Interfaces\LengthConstraintStringValueObjectInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
 use Apie\CountWords\WordCounter;
@@ -14,7 +15,7 @@ use Symfony\Component\HtmlSanitizer\HtmlSanitizerConfig;
 
 #[FakeMethod('createRandom')]
 #[ProvideIndex('provideIndexes')]
-final class SafeHtml implements StringValueObjectInterface
+final class SafeHtml implements StringValueObjectInterface, LengthConstraintStringValueObjectInterface
 {
     use IsStringValueObject;
 
@@ -74,5 +75,15 @@ final class SafeHtml implements StringValueObjectInterface
     protected function convert(string $input): string
     {
         return self::getHtmlSanitizer()->sanitizeFor('body', $input);
+    }
+
+    public static function minStringLength(): int
+    {
+        return 0;
+    }
+
+    public static function maxStringLength(): ?int
+    {
+        return 65535;
     }
 }
