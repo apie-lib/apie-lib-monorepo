@@ -20,12 +20,16 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: apie_playground_phpmyadmin
+    volumes:
+      - ./.docker/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
     links:
       - mysql
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
-      PMA_ARBITRARY: 1
+      PMA_ARBITRARY: 0
+      PMA_USER: project
+      PMA_PASSWORD: project
     ports:
       - "81:80"
 
