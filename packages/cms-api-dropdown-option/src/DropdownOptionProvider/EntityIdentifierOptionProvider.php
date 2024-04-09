@@ -62,7 +62,7 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
             $class = $class->getMethod('getReferenceFor')->invoke(null);
         }
         $result = $this->apieDatalayer->all($class, $boundedContext)
-            ->toPaginatedResult(new QuerySearch(0, textSearch: $searchTerm), $apieContext);
+            ->toPaginatedResult(new QuerySearch(0, textSearch: $searchTerm, apieContext: $apieContext));
         $list = [];
         foreach ($result as $entity) {
             $list[] = new DropdownOption($entity->getId(), $this->determineDisplayValue($entity));
