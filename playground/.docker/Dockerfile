@@ -1,7 +1,6 @@
 FROM php:8.2-apache
 
-# Set the working directory inside the container
-WORKDIR /var/www/html
+
 
 # Install system dependencies
 RUN apt-get update \
@@ -55,6 +54,10 @@ RUN jq -s 'add' tmp.json ./html/composer.json > tmp-merged.json
 RUN mv tmp-merged.json /var/www/html/composer.json
 WORKDIR /var/www/html
 COPY ./playground/app/apie.yaml /var/www/html/config/packages/apie.yaml
+COPY ./playground/sqlite.db /var/www/html/var/db.sqlite
+RUN chmod 666 /var/www/html/config/packages/apie.yaml /var/www/html/var/db.sqlite
+RUN chmod 777 /var/www/html/var
+RUN chown www-data:www-data /var/www/html/config/packages/apie.yaml /var/www/html/var /var/www/html/var/db.sqlite
 RUN rm -rf vendor
 RUN composer update
 

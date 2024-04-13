@@ -39,6 +39,9 @@ services:
       dockerfile: ./playground/.docker/Dockerfile
     container_name: apie_playground_web
     volumes:
+      - ./app/apie.yaml:/var/www/html/apie.yaml
+      - ./app/Controller/DisplayDashboardController.php:/var/www/html/src/Controller/DisplayDashboardController.php
+      - ./app/templates/apie:/var/www/html/templates/apie
       - ./app/ApiePlayground:/var/www/html/src/ApiePlayground
       - ../packages:/packages
       - ./.docker/virtualhost.conf:/etc/apache2/sites-available/000-default.conf

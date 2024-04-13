@@ -1,6 +1,6 @@
 apie:
   cms:
-   #  dashboard_template: 'apie/dashboard.html.twig'
+   dashboard_template: 'apie/dashboard.html.twig'
   doctrine:
     # build_once: true
     connection_params:
