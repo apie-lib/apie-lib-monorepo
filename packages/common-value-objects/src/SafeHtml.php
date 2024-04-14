@@ -1,6 +1,7 @@
 <?php
 namespace Apie\CommonValueObjects;
 
+use Apie\CommonValueObjects\Bridge\Symfony\AllowedCssInSpanSanitizer;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
@@ -26,6 +27,8 @@ final class SafeHtml implements StringValueObjectInterface, LengthConstraintStri
         if (!isset(self::$htmlSanitizer)) {
             $config = (new HtmlSanitizerConfig())
                 ->allowSafeElements()
+                ->allowElement('b')
+                ->allowElement('i')
                 ->dropAttribute('id', [])
                 ->forceAttribute('a', 'rel', 'noopener noreferrer')
                 ->forceAttribute('a', 'target', '_blank')
@@ -35,7 +38,9 @@ final class SafeHtml implements StringValueObjectInterface, LengthConstraintStri
                 ->dropElement('html')
                 ->dropElement('head')
                 ->dropElement('script')
-                ->dropElement('style');
+                ->dropElement('style')
+                ->allowAttribute('style', 'span')
+                ->withAttributeSanitizer(new AllowedCssInSpanSanitizer());
             self::$htmlSanitizer = new HtmlSanitizer(
                 $config
             );

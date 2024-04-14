@@ -9,6 +9,7 @@ use Apie\Core\Lists\StringHashmap;
 use Apie\Core\Lists\StringList;
 use Apie\TextValueObjects\StrongPassword;
 use App\ApiePlayground\Types\Identifiers\StringFieldsIdentifier;
+use App\ApiePlayground\Types\Lists\SafeHtmlList;
 
 #[FakeCount(25)]
 class StringFields implements \Apie\Core\Entities\EntityInterface
@@ -16,6 +17,8 @@ class StringFields implements \Apie\Core\Entities\EntityInterface
     private StringFieldsIdentifier $id;
 
     public SafeHtml $safeHtml;
+
+    public SafeHtmlList $safeHtmlList;
 
     public string $regularString;
 

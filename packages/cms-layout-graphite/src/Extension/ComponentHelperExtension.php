@@ -3,6 +3,10 @@ namespace Apie\CmsLayoutGraphite\Extension;
 
 use Apie\CmsLayoutGraphite\TwigRenderer;
 use Apie\Core\ApieLib;
+use Apie\Core\Context\ApieContext;
+use Apie\Core\Translator\ApieTranslator;
+use Apie\Core\Translator\ApieTranslatorInterface;
+use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use LogicException;
 use ReflectionClass;
@@ -17,10 +21,17 @@ class ComponentHelperExtension extends AbstractExtension
     /** @var TwigRenderer[] */
     private array $renderers = [];
 
-    public function selectComponent(TwigRenderer $renderer, ComponentInterface $component): void
-    {
+    /** @var ApieContext[] */
+    private array $contexts = [];
+
+    public function selectComponent(
+        TwigRenderer $renderer,
+        ComponentInterface $component,
+        ApieContext $apieContext
+    ): void {
         $this->renderers[] = $renderer;
         $this->componentsHandled[] = $component;
+        $this->contexts[] = $apieContext;
     }
 
     public function deselectComponent(ComponentInterface $component): void
@@ -30,6 +41,7 @@ class ComponentHelperExtension extends AbstractExtension
         }
         array_pop($this->componentsHandled);
         array_pop($this->renderers);
+        array_pop($this->contexts);
     }
 
     public function apieConstant(string $constantName): mixed
@@ -38,15 +50,36 @@ class ComponentHelperExtension extends AbstractExtension
         return $refl->getConstant($constantName);
     }
 
+    public function translate(string|TranslationString $translation): string
+    {
+        $apieContext = $this->getCurrentContext();
+        $translator = $apieContext->getContext(ApieTranslatorInterface::class, false) ?? ApieTranslator::create();
+        return $translator->getGeneralTranslation(
+            $apieContext,
+            $translation instanceof TranslationString
+                ? $translation
+                : new TranslationString($translation)
+        ) ?? $translation;
+    }
+
     public function getFunctions(): array
     {
         return [
             new TwigFunction('component', [$this, 'component'], ['is_safe' => ['all']]),
             new TwigFunction('apieConstant', [$this, 'apieConstant']),
+            new TwigFunction('translate', [$this, 'translate'], []),
             new TwigFunction('property', [$this, 'property'], []),
             new TwigFunction('assetUrl', [$this, 'assetUrl'], []),
             new TwigFunction('assetContent', [$this, 'assetContent'], ['is_safe' => ['all']]),
         ];
+    }
+
+    private function getCurrentContext(): ApieContext
+    {
+        if (empty($this->contexts)) {
+            throw new LogicException('No component is selected');
+        }
+        return end($this->contexts);
     }
 
     private function getCurrentRenderer(): TwigRenderer
@@ -82,6 +115,9 @@ class ComponentHelperExtension extends AbstractExtension
 
     public function component(string $componentName): string
     {
-        return $this->getCurrentRenderer()->render($this->getCurrentComponent()->getComponent($componentName));
+        return $this->getCurrentRenderer()->render(
+            $this->getCurrentComponent()->getComponent($componentName),
+            $this->getCurrentContext()
+        );
     }
 }

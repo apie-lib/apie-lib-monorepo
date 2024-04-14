@@ -2,6 +2,7 @@
 namespace Apie\CmsLayoutGraphite;
 
 use Apie\CmsLayoutGraphite\Extension\ComponentHelperExtension;
+use Apie\Core\Context\ApieContext;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
@@ -37,13 +38,13 @@ final class TwigRenderer implements ComponentRendererInterface
         return $this->assetManager->getAsset($filename)->getBase64Url();
     }
 
-    public function render(ComponentInterface $component): string
+    public function render(ComponentInterface $component, ApieContext $apieContext): string
     {
         $className = get_class($component);
         if (!str_starts_with($className, self::NAMESPACE)) {
             throw new InvalidTypeException($component, 'class in ' . self::NAMESPACE . ' namespace');
         }
-        self::$extension->selectComponent($this, $component);
+        self::$extension->selectComponent($this, $component, $apieContext);
         try {
             $templatePath = str_replace('\\', '/', strtolower(substr($className, strlen(self::NAMESPACE)))) . '.html.twig';
             return $this->twigEnvironment->render($templatePath);

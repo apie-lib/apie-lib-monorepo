@@ -13,21 +13,21 @@
       Italic: type __.<br />
     </blockquote>
 </div>
-<script type="module">
+<apie-script type="module">
 if (!window.loadedHTMLField) {
     window.loadedHTMLField = import('https://unpkg.com/@papyrs/stylo@latest/dist/stylo/stylo.esm.js')
-        .then((module) => {
-            const article = document.querySelector('article[contenteditable="true"].unhandled');
-            article.classList.remove('unhandled');
-            const stylo = document.querySelector('stylo-editor.unhandled');
-            stylo.classList.remove('unhandled');
-            stylo.containerRef = article;
-            const textarea = document.querySelector('textarea.unhandled-editor');
-            textarea.classList.remove('unhandled-editor');
-            stylo.addEventListener('updateParagraphs', function (ev) {
-                const newHTML = article.innerHTML;
-                textarea.textContent = newHTML;
-            })
-        })
 }
-</script>
+window.loadedHTMLField.then((module) => {
+    const article = document.querySelector('article[contenteditable="true"].unhandled');
+    article.classList.remove('unhandled');
+    const stylo = document.querySelector('stylo-editor.unhandled');
+    stylo.classList.remove('unhandled');
+    stylo.containerRef = article;
+    const textarea = document.querySelector('textarea.unhandled-editor');
+    textarea.classList.remove('unhandled-editor');
+    stylo.addEventListener('updateParagraphs', function (ev) {
+        const newHTML = article.innerHTML;
+        textarea.textContent = newHTML;
+    })
+})
+</apie-script>
