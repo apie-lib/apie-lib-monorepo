@@ -36,8 +36,18 @@ final class AllowedCssInSpanSanitizer implements AttributeSanitizerInterface
     public function sanitizeAttribute(string $element, string $attribute, string $value, HtmlSanitizerConfig $config): ?string
     {
         $newValue = '';
-        if (preg_match('/(;|^)\s*((background-|)color\s*:[^;]*);/i', $value, $matches)) {
-            $newValue .= $matches[2];
+        $found = true;
+        while ($found) {
+            $found = false;
+            $value = preg_replace_callback(
+                '/(;|^)\s*(?<color>(background-|)color\s*:[^;]*(;|$))/i',
+                function (array $matches) use(&$newValue, &$found): string {
+                    $newValue .= $matches['color'];
+                    $found = true;
+                    return '';
+                },
+                $value
+            );
         }
         foreach (self::ALLOWED_CSS as $regex => $css) {
             if (preg_match($regex, $value)) {
@@ -45,6 +55,6 @@ final class AllowedCssInSpanSanitizer implements AttributeSanitizerInterface
             }
         }
 
-        return $newValue ? : null;
+        return $newValue ? rtrim($newValue, ';') : null;
     }
 }

@@ -69,12 +69,20 @@ class SafeHtmlTest extends TestCase
             '<script>alert("HI");//' . str_repeat('a', 70000) . PHP_EOL . '</script>'
         ];
         yield 'underline text' => [
-            '<span style="text-decoration-line:underline;">Underline text</span>',
+            '<span style="text-decoration-line:underline">Underline text</span>',
             '<span style="text-decoration-line:  underline;">Underline text</span>'
         ];
         yield 'striked text' => [
-            '<span style="text-decoration-line:line-through;">striked text</span>',
+            '<span style="text-decoration-line:line-through">striked text</span>',
             '<span style="text-decoration-line:  line-through;">striked text</span>',
+        ];
+        yield 'colored text' => [
+            '<span style="background-color: #424242;color: #111">striked text</span>',
+            '<span style="background-color: #424242; color: #111">striked text</span>',
+        ];
+        yield 'unknown style' => [
+            '<span>test</span>',
+            '<span style="border: solid 1px">test</span>',
         ];
     }
 
