@@ -41,7 +41,7 @@ final class AllowedCssInSpanSanitizer implements AttributeSanitizerInterface
             $found = false;
             $value = preg_replace_callback(
                 '/(;|^)\s*(?<color>(background-|)color\s*:[^;]*(;|$))/i',
-                function (array $matches) use(&$newValue, &$found): string {
+                function (array $matches) use (&$newValue, &$found): string {
                     $newValue .= $matches['color'];
                     $found = true;
                     return '';

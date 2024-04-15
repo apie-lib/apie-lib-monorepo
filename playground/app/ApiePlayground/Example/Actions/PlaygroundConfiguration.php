@@ -2,7 +2,6 @@
 namespace App\ApiePlayground\Example\Actions;
 
 use App\ApiePlayground\Example\Dtos\ApieConfiguration;
-use App\ApiePlayground\Example\Enums\DatalayerImplementation;
 use Symfony\Component\Yaml\Yaml;
 
 class PlaygroundConfiguration
