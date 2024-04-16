@@ -1,14 +1,9 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Console;
 
-use Apie\Common\Interfaces\ApieFacadeInterface;
-use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Metadata\MetadataFactory;
-use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Apie\TypeDemo\Actions\Calculator;
-use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
-use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;

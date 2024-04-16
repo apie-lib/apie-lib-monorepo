@@ -1,8 +1,21 @@
 version: "3"
 volumes:
   volume_database_project:
+  volume_database_postgres:
 
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: apie_playground_postgres
+    environment:
+      POSTGRES_DB: project
+      POSTGRES_PASSWORD: project
+      POSTGRES_USER: project
+    volumes:
+      - volume_database_postgres:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+
   mysql:
     image: mysql:8.0
     container_name: apie_playground_mysql
@@ -16,6 +29,13 @@ services:
       - volume_database_project:/var/lib/mysql
     ports:
       - "3306:3306"
+
+  adminer:
+    image: adminer
+    container_name: apie_playground_adminer
+    restart: always
+    ports:
+      - 8080:8080
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
