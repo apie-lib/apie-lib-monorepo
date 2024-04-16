@@ -17,4 +17,9 @@ final class Calculator
     {
         return $numberOne * $numberTwo;
     }
+
+    public function squareRoot(float $numberOne): float
+    {
+        return sqrt($numberOne);
+    }
 }

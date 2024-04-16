@@ -1226,6 +1226,54 @@ paths:
             application/json:
               schema:
                 type: number
+  /Calculator/squareRoot:
+    post:
+      tags:
+        - Calculator
+        - action
+      description: 'Calls method squareRoot and returns return value.'
+      operationId: call-method-Calculator-squareRoot
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - numberOne
+              type: object
+              properties:
+                numberOne:
+                  type: number
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
   /Authentication/verifyAuthentication:
     post:
       tags:
