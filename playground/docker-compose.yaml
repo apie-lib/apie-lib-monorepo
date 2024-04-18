@@ -33,9 +33,18 @@ services:
   adminer:
     image: adminer
     container_name: apie_playground_adminer
-    restart: always
+    volumes:
+      - ./.docker/adminer/login-password-less.php:/var/www/html/plugins-enabled/login-password-less.php
     ports:
       - 8080:8080
+    environment:
+      ADMINER_DEFAULT_DB_NAME: postgres
+    labels:
+      traefik.enable: true
+      traefik.http.routers.playground-db.priority: 1
+      traefik.http.routers.playground-db.rule: HostRegexp(`apie-playground-db.localtest.me`)
+      traefik.http.routers.playground-db.entrypoints: "web"
+      traefik.http.routers.playground-db.tls: false
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -71,10 +80,10 @@ services:
       - "82:80"
     labels:
       traefik.enable: true
-      traefik.http.routers.lesapp-api-nginx.priority: 1
-      traefik.http.routers.lesapp-api-nginx.rule: HostRegexp(`apie-playground.localtest.me`)
-      traefik.http.routers.lesapp-api-nginx.entrypoints: "web"
-      traefik.http.routers.lesapp-api-nginx.tls: tfalse
+      traefik.http.routers.playground.priority: 1
+      traefik.http.routers.playground.rule: HostRegexp(`apie-playground.localtest.me`)
+      traefik.http.routers.playground.entrypoints: "web"
+      traefik.http.routers.playground.tls: false
     environment:
       - APIE_STARTER_SETUP=maximum
       - APIE_STARTER_ENABLE_CMS=1
