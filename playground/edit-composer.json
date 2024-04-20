@@ -275,6 +275,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/apie-common-plugin",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/apie-common-plugin": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/apie-bundle",
             "options": {
                 "symlink": true,

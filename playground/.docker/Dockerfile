@@ -59,6 +59,7 @@ RUN chmod 666 /var/www/html/config/packages/apie.yaml /var/www/html/var/db.sqlit
 RUN chmod 777 /var/www/html/var
 RUN chown www-data:www-data /var/www/html/config/packages/apie.yaml /var/www/html/var /var/www/html/var/db.sqlite
 RUN rm -rf vendor
+RUN composer config --no-plugins allow-plugins.apie/apie-common-plugin true
 RUN composer update
 
 # Setup crontab

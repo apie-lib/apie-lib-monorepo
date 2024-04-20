@@ -19,6 +19,22 @@
       "Apie\\Tests\\CountryAndPhoneNumber\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\CountryAndPhoneNumber\\BelgianPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\BritishPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\CanadianPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\ChinesePhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\CountryAndPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\DutchPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\FrenchPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\GermanPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\InternationalPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\JapanesePhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\MexicanPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\USPhoneNumber"
+    ]
+  },
   "require": {
     "php": ">=8.1",
     "apie/core": "self.version",

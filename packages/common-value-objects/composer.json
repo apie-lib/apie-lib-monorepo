@@ -19,6 +19,16 @@
       "Apie\\Tests\\CommonValueObjects\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\CommonValueObjects\\Email",
+      "Apie\\CommonValueObjects\\FullName",
+      "Apie\\CommonValueObjects\\Gender",
+      "Apie\\CommonValueObjects\\SafeHtml",
+      "Apie\\CommonValueObjects\\StarRating",
+      "Apie\\CommonValueObjects\\Stars"
+    ]
+  },
   "require": {
     "php": ">=8.1",
     "apie/core": "self.version",

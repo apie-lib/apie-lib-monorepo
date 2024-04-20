@@ -19,6 +19,13 @@
       "Apie\\Tests\\CmsApiDropdownOption\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\CmsApiDropdownOption\\Dtos\\DropdownOption",
+      "Apie\\CmsApiDropdownOption\\Dtos\\PartialInput",
+      "Apie\\CmsApiDropdownOption\\Lists\\DropdownOptionList"
+    ]
+  },
   "require": {
     "php": ">=8.1",
     "apie/core": "self.version",

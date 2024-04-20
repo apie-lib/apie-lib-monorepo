@@ -27,6 +27,7 @@
         "apie/type-converter": "^1.3.0",
         "cebe/php-openapi": "^1.7",
         "chillerlan/php-qrcode": "^5.0",
+        "composer-plugin-api": "^2.0",
         "doctrine/common": "^3.4.3",
         "doctrine/orm": "^2.16",
         "doctrine/persistence": "^3.2",
@@ -77,6 +78,7 @@
     "autoload": {
         "psr-4": {
             "Apie\\ApieBundle\\": "packages/apie-bundle/src/",
+            "Apie\\ApieCommonPlugin\\": "packages/apie-common-plugin/src/",
             "Apie\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/src/",
             "Apie\\CmsApiDropdownOption\\": "packages/cms-api-dropdown-option/src/",
             "Apie\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/src/",
@@ -116,6 +118,7 @@
     "autoload-dev": {
         "psr-4": {
             "Apie\\Tests\\ApieBundle\\": "packages/apie-bundle/tests/",
+            "Apie\\Tests\\ApieCommonPlugin\\": "packages/apie-common-plugin/tests/",
             "Apie\\Tests\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/tests/",
             "Apie\\Tests\\CmsApiDropdownOption\\": "packages/cms-api-dropdown-option/tests/",
             "Apie\\Tests\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/tests/",
@@ -151,6 +154,15 @@
         }
     },
     "extra": {
+        "class": "Apie\\ApieCommonPlugin\\ApieCommonPlugin",
+        "apie-objects": [
+            "Apie\\Common\\ValueObjects\\EntityNamespace",
+            "Apie\\Common\\ValueObjects\\PossibleRoutePrefixes",
+            "Apie\\Common\\Wrappers\\ApieUserDecoratorIdentifier",
+            "Apie\\CmsApiDropdownOption\\Dtos\\DropdownOption",
+            "Apie\\CmsApiDropdownOption\\Dtos\\PartialInput",
+            "Apie\\CmsApiDropdownOption\\Lists\\DropdownOptionList"
+        ],
         "laravel": {
             "providers": [
                 "Apie\\LaravelApie\\ApieServiceProvider"
@@ -162,6 +174,7 @@
     },
     "replace": {
         "apie/apie-bundle": "self.version",
+        "apie/apie-common-plugin": "self.version",
         "apie/apie-phpstan-rules": "self.version",
         "apie/cms": "self.version",
         "apie/cms-api-dropdown-option": "self.version",
