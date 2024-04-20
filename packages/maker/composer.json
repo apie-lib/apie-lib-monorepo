@@ -19,6 +19,12 @@
       "Apie\\Tests\\Maker\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\Maker\\Dtos\\DomainObjectDto",
+      "Apie\\Maker\\Enums\\IdType"
+    ]
+  },
   "require": {
     "php": ">=8.1",
     "apie/common": "self.version",

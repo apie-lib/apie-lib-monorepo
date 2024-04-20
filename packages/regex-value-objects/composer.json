@@ -28,6 +28,12 @@
     "phpunit/phpunit": "^9.5",
     "phpspec/prophecy-phpunit": "^2.0"
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\RegexValueObjects\\PhpRegularExpression",
+      "Apie\\RegexValueObjects\\PhpSafeRegularExpression"
+    ]
+  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }

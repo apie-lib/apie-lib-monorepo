@@ -19,6 +19,18 @@
       "Apie\\Tests\\TextValueObjects\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\TextValueObjects\\CompanyName",
+      "Apie\\TextValueObjects\\DatabaseText",
+      "Apie\\TextValueObjects\\EncryptedPassword",
+      "Apie\\TextValueObjects\\FirstName",
+      "Apie\\TextValueObjects\\LastName",
+      "Apie\\TextValueObjects\\NonEmptyString",
+      "Apie\\TextValueObjects\\SmallDatabaseText",
+      "Apie\\TextValueObjects\\StrongPassword"
+    ]
+  },
   "require": {
     "php": ">=8.1",
     "apie/core": "self.version",

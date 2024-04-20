@@ -29,15 +29,15 @@ abstract class ObjectProvider
             foreach (self::DEFINED_GETTERS as $name => $interface) {
                 self::$mapping[$name] = [];
             }
-            foreach (self::DEFINED_CLASSES as $apieObject) {
+            foreach (static::DEFINED_CLASSES as $apieObject) {
                 try {
                     $refl = new ReflectionClass($apieObject);
-                    $interfaceNames = [$refl->getInterfaceNames()];
+                    $interfaceNames = [$refl->name, ...$refl->getInterfaceNames()];
                     while ($refl = $refl->getParentClass()) {
                         $interfaceNames[] = $refl->name;
                     }
-                    foreach (self::DEFINED_GETTERS as $name => $interface) {
-                        if (in_array($interface, $interfaceNames)) {
+                    foreach (self::DEFINED_GETTERS as $name => $interfaceName) {
+                        if (in_array($interfaceName, $interfaceNames)) {
                             self::$mapping[$name][] = $apieObject;
                         }
                     }
@@ -51,21 +51,21 @@ abstract class ObjectProvider
 
     final public static function getAvailableValueObjects(): array
     {
-        return self::getMapping()['ValueObjects'] ?? [];
+        return static::getMapping()['ValueObjects'] ?? [];
     }
 
     final public static function getAvailableLists(): array
     {
-        return self::getMapping()['Lists'] ?? [];
+        return static::getMapping()['Lists'] ?? [];
     }
 
     final public static function getAvailableHashmaps(): array
     {
-        return self::getMapping()['Hashmaps'] ?? [];
+        return static::getMapping()['Hashmaps'] ?? [];
     }
 
     final public static function getAvailableDtos(): array
     {
-        return self::getMapping()['Dtos'] ?? [];
+        return static::getMapping()['Dtos'] ?? [];
     }
 }
