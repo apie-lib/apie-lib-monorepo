@@ -53,6 +53,7 @@ class ObjectProviderTest extends TestCase
                 Order::class,
                 ItemList::class,
                 'DoesNotExist',
+                ObjectProviderTest::class,
                 Cow::class,
             ];
         };
@@ -60,5 +61,6 @@ class ObjectProviderTest extends TestCase
         $this->assertEquals([ItemList::class], $testItem->getAvailableLists());
         $this->assertEquals([], $testItem->getAvailableHashmaps());
         $this->assertEquals([], $testItem->getAvailableDtos());
+        $this->assertEquals([__CLASS__], $testItem->getAvailableServices());
     }
 }
