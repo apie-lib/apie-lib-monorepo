@@ -5,7 +5,6 @@ use Apie\ApieCommonPlugin\AvailableApieObjectProvider;
 use Apie\ApieCommonPlugin\ObjectProvider;
 use Apie\Core\Lists\ItemList;
 use Apie\Fixtures\Entities\Order;
-use Apie\Fixtures\Entities\Polymorphic\Animal;
 use Apie\Fixtures\Entities\Polymorphic\Cow;
 use Apie\Fixtures\ValueObjects\AddressWithZipcodeCheck;
 use Generator;
