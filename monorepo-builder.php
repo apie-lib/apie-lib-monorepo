@@ -17,7 +17,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // what extra parts to add after merge?
     $parameters->set(Option::DATA_TO_APPEND, [
         ComposerJsonSection::REQUIRE_DEV => [
-            "apie/service-provider-generator" => "0.11.1",
+            "apie/service-provider-generator" => "0.11.2",
             "phpspec/prophecy-phpunit" => "^2.0",
             "phpstan/phpstan" => "^1.8.2",
             'friendsofphp/php-cs-fixer' =>  "^3.8",
