@@ -7,7 +7,7 @@
         }
     ],
     "description": "Monorepo of the Apie library",
-    "type": "project",
+    "type": "composer-plugin",
     "license": "MIT",
     "conflict": {
         "laravel/framework": "^10.29"
@@ -285,7 +285,10 @@
         }
     },
     "config": {
-        "lock": false
+        "lock": false,
+        "allow-plugins": {
+            "apie/apie-common-plugin": true
+        }
     },
     "replace": {
         "apie/apie-bundle": "self.version",
