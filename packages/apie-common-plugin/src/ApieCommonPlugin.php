@@ -5,7 +5,6 @@ use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
-use Nette\PhpGenerator\PhpFile;
 
 class ApieCommonPlugin implements PluginInterface, EventSubscriberInterface
 {
@@ -45,27 +44,8 @@ class ApieCommonPlugin implements PluginInterface, EventSubscriberInterface
             }
         }
 
-        $phpCode = $this->generateAvailableApieObjectProvider($classNames);
-        file_put_contents(__DIR__ . '/AvailableApieObjectProvider.php', $phpCode);
+        $generator = new AvailableApieObjectProviderGenerator();
+        $generator->generateFile($classNames);
         @chmod(__DIR__ . '/AvailableApieObjectProvider.php', 0666);
-    }
-
-    private function generateAvailableApieObjectProvider(array $classNames): string
-    {
-        $phpFile = new PhpFile();
-        $namespace = $phpFile->addNamespace('Apie\ApieCommonPlugin');
-
-        $namespace->addUse(ObjectProvider::class);
-
-        $class = $namespace->addClass('AvailableApieObjectProvider');
-        $class->setComment('@codeCoverageIgnore' . PHP_EOL . 'This class is auto-generated');
-
-        $class->addMethod('__construct')->setPrivate();
-
-        $class->setExtends(ObjectProvider::class);
-        $class->addConstant('DEFINED_CLASSES', $classNames)->setVisibility('protected');
-        
-        return (string) $phpFile;
-       
     }
 }

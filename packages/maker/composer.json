@@ -22,11 +22,13 @@
   "extra": {
     "apie-objects": [
       "Apie\\Maker\\Dtos\\DomainObjectDto",
-      "Apie\\Maker\\Enums\\IdType"
+      "Apie\\Maker\\Enums\\IdType",
+      "Apie\\Maker\\ValueObjects\\VendorValueObject"
     ]
   },
   "require": {
     "php": ">=8.1",
+    "apie/apie-common-plugin": "self.version",
     "apie/common": "self.version",
     "apie/core": "self.version",
     "haydenpierce/class-finder": "0.5.3",

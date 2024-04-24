@@ -220,6 +220,7 @@
             "Apie\\CountryAndPhoneNumber\\USPhoneNumber",
             "Apie\\Maker\\Dtos\\DomainObjectDto",
             "Apie\\Maker\\Enums\\IdType",
+            "Apie\\Maker\\ValueObjects\\VendorValueObject",
             "Apie\\Fixtures\\Dto\\DefaultExampleDto",
             "Apie\\Fixtures\\Dto\\EmptyDto",
             "Apie\\Fixtures\\Dto\\ExampleDto",
