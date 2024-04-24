@@ -5,6 +5,6 @@ trait IsClassNameReference
 {
     public static function getRegularExpression(): string
     {
-        return '/^[A-Z][a-zA-Z0-9]*(\\[A-Z][a-zA-Z0-9]*)*$/';
+        return '/^[A-Z][a-zA-Z0-9]*(\\\\[A-Z][a-zA-Z0-9]*)*$/';
     }
 }

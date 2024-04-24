@@ -2,12 +2,15 @@
 namespace Apie\Maker\ValueObjects;
 
 use Apie\ApieCommonPlugin\ObjectProviderFactory;
+use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
 use Apie\Maker\Concerns\IsClassNameReference;
+use Faker\Generator;
 use ReflectionClass;
 
+#[FakeMethod('createRandom')]
 final class VendorValueObject implements HasRegexValueObjectInterface
 {
     use IsClassNameReference;
@@ -27,5 +30,10 @@ final class VendorValueObject implements HasRegexValueObjectInterface
                 new ReflectionClass(self::class)
             );
         }
+    }
+
+    public static function createRandom(Generator $factory): self
+    {
+        return new self($factory->randomElement(ObjectProviderFactory::create()->getAvailableValueObjects()));
     }
 }
