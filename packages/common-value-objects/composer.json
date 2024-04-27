@@ -21,10 +21,12 @@
   },
   "extra": {
     "apie-objects": [
+      "Apie\\CommonValueObjects\\ApplicationVersion",
       "Apie\\CommonValueObjects\\Email",
       "Apie\\CommonValueObjects\\FullName",
       "Apie\\CommonValueObjects\\Gender",
       "Apie\\CommonValueObjects\\SafeHtml",
+      "Apie\\CommonValueObjects\\SemanticVersion",
       "Apie\\CommonValueObjects\\StarRating",
       "Apie\\CommonValueObjects\\Stars"
     ]

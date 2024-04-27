@@ -29,6 +29,7 @@
         "chillerlan/php-qrcode": "^5.0",
         "composer-plugin-api": "^2.0",
         "composer/composer": "^2.0",
+        "composer/semver": "^3.0",
         "defuse/php-encryption": "2.*",
         "doctrine/common": "^3.4.3",
         "doctrine/orm": "^2.16",

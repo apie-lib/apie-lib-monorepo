@@ -24,7 +24,8 @@ final class VendorValueObject implements HasRegexValueObjectInterface
                 new ReflectionClass(self::class)
             );
         }
-        if (!in_array($input, ObjectProviderFactory::create()->getAvailableValueObjects())) {
+        $objects = ObjectProviderFactory::create()->getAvailableValueObjects();
+        if (!empty($objects) && !in_array($input, $objects)) {
             throw new InvalidStringForValueObjectException(
                 $input,
                 new ReflectionClass(self::class)
@@ -34,6 +35,6 @@ final class VendorValueObject implements HasRegexValueObjectInterface
 
     public static function createRandom(Generator $factory): self
     {
-        return new self($factory->randomElement(ObjectProviderFactory::create()->getAvailableValueObjects()));
+        return new self($factory->randomElement(ObjectProviderFactory::create()->getAvailableValueObjects() ? : [__CLASS__]));
     }
 }
