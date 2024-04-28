@@ -25,9 +25,7 @@ class ResourceDefinition implements EntityInterface
 
     public function addPropertyDefinition(PropertyDefinition $propertyDefinition): self
     {
-        dump($this->properties);
         $this->properties->append($propertyDefinition);
-
         return $this;
     }
 
