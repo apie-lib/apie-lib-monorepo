@@ -117,6 +117,12 @@ class User implements EntityInterface, CheckLoginStatusInterface, HasRolesInterf
         return $this->blockedReason;
     }
 
+    #[RuntimeCheck(new HasRole('ADMIN'))]
+    public function changeRole(UserRole $userRole)
+    {
+        $this->userRole = $userRole;
+    }
+
     public function getCompany(): ?CompanyIdentifier
     {
         return $this->company;

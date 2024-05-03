@@ -1,6 +1,7 @@
 <?php
 namespace Apie\IntegrationTests\Applications\Symfony;
 
+use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\IntegrationTestLogger;
 use Apie\IntegrationTests\Concerns\RunApplicationTest;
 use Apie\IntegrationTests\Config\ApplicationConfig;
@@ -14,13 +15,18 @@ use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Bundle\FrameworkBundle\Console\Application as ConsoleApplication;
 use Symfony\Component\Console\Application;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 class SymfonyTestApplication implements TestApplicationInterface
 {
     use RunApplicationTest;
 
     private ?SymfonyTestingKernel $kernel = null;
+
+    private ?string $authenticationCookie = null;
 
     public function __construct(
         private readonly ApplicationConfig $applicationConfig,
@@ -47,6 +53,7 @@ class SymfonyTestApplication implements TestApplicationInterface
             return;
         }
         $boundedContexts = $this->boundedContextConfig->toArray();
+        $this->authenticationCookie = null;
         $this->kernel = new SymfonyTestingKernel(
             [
                 'bounded_contexts' => $boundedContexts,
@@ -85,10 +92,15 @@ class SymfonyTestApplication implements TestApplicationInterface
         if ($parameterRaw) {
             parse_str($parameterRaw, $parameters);
         }
-        $sfResponse = $this->kernel->handle(Request::create($uri, parameters: $parameters));
-        $psrFactory = new NyholmPsr17Factory();
-        $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);
-        return $factory->createResponse($sfResponse);
+        $sfRequest = Request::create($uri, parameters: $parameters);
+        if ($this->authenticationCookie) {
+            $sfRequest->cookies->set(
+                AddAuthenticationCookie::COOKIE_NAME,
+                $this->authenticationCookie
+            );
+        }
+        $sfResponse = $this->kernel->handle($sfRequest);
+        return $this->handleResponse($sfResponse);
     }
 
     public function httpRequest(TestRequestInterface $testRequest): ResponseInterface
@@ -96,8 +108,23 @@ class SymfonyTestApplication implements TestApplicationInterface
         $psrRequest = $testRequest->getRequest();
         $factory = new HttpFoundationFactory();
         $sfRequest = $factory->createRequest($psrRequest);
+        if ($this->authenticationCookie) {
+            $sfRequest->cookies->set(
+                AddAuthenticationCookie::COOKIE_NAME,
+                $this->authenticationCookie
+            );
+        }
 
         $sfResponse = $this->kernel->handle($sfRequest);
+        return $this->handleResponse($sfResponse);
+    }
+
+    private function handleResponse(Response $sfResponse): ResponseInterface
+    {
+        $this->authenticationCookie = $sfResponse->headers->getCookies(
+            ResponseHeaderBag::COOKIES_ARRAY
+        )[AddAuthenticationCookie::COOKIE_NAME] ?? null;
+        
         $psrFactory = new NyholmPsr17Factory();
         $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);
         return $factory->createResponse($sfResponse);

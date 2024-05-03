@@ -1,6 +1,7 @@
 <?php
 namespace Apie\IntegrationTests\Applications\Laravel;
 
+use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\IntegrationTestLogger;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
@@ -13,6 +14,7 @@ use Apie\LaravelApie\ApieServiceProvider;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Nyholm\Psr7\Factory\Psr17Factory as NyholmPsr17Factory;
 use Orchestra\Testbench\TestCase;
 use Psr\Container\ContainerInterface;
@@ -20,6 +22,8 @@ use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Component\Console\Application;
+use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class LaravelTestApplication extends TestCase implements TestApplicationInterface
@@ -89,6 +93,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             ]);
         }
         $this->app->instance(FileWriterInterface::class, new MockFileWriter());
+        unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
     }
 
     /**
@@ -114,6 +119,20 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
     {
         $testResponse = $this->get($uri);
         $laravelResponse = $testResponse->baseResponse;
+        return $this->handleResponse($laravelResponse);
+    }
+
+    private function handleResponse(HttpFoundationResponse $laravelResponse): ResponseInterface
+    {
+        $cookie = $laravelResponse->headers->getCookies(
+            ResponseHeaderBag::COOKIES_ARRAY
+        )[AddAuthenticationCookie::COOKIE_NAME] ?? null;
+        if ($cookie) {
+            $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME] = $cookie;
+        } else {
+            unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+        }
+
         $psrFactory = new NyholmPsr17Factory();
         $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);
         return $factory->createResponse($laravelResponse);
@@ -131,8 +150,6 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         $sfRequest = $factory->createRequest($psrRequest);
         $laravelRequest = Request::createFromBase($sfRequest);
         $laravelResponse = $this->app->make(HttpKernel::class)->handle($laravelRequest);
-        $psrFactory = new NyholmPsr17Factory();
-        $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);
-        return $factory->createResponse($laravelResponse);
+        return $this->handleResponse($laravelResponse);
     }
 }
