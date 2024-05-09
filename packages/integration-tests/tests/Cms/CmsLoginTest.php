@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Tests\IntegrationTests\RestApi;
+namespace Apie\Tests\IntegrationTests\Cms;
 
 use Apie\Common\IntegrationTestLogger;
 use Apie\Core\BoundedContext\BoundedContextId;
@@ -8,6 +8,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\ActionMethodApiCall;
+use Apie\IntegrationTests\Requests\FormSubmitCall;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
 use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\SetPrimitiveField;
@@ -18,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 use ReflectionProperty;
 
-class LoginTest extends TestCase
+class CmsLoginTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
@@ -44,9 +45,9 @@ class LoginTest extends TestCase
                 new StrongPassword('Test@test2'),
                 new StrongPassword('Test@test2'),
             );
-            $loginRequest = new ActionMethodApiCall(
+            $loginRequest = new FormSubmitCall(
+                'action/Authentication/verifyAuthentication',
                 new BoundedContextId('types'),
-                'Authentication/verifyAuthentication',
                 new GetAndSetObjectField(
                     '',
                     new SetPrimitiveField('username', 'test@example.nl'),
@@ -56,8 +57,9 @@ class LoginTest extends TestCase
                     new GetPrimitiveField('blockedReason', null),
                     new GetPrimitiveField('phoneNumber', null),
                 ),
+                '/cms/types/resource/User/test@example.nl',
                 entities: [
-                    $user,
+                    $user
                 ]
             );
             $loginRequest->bootstrap($testApplication);

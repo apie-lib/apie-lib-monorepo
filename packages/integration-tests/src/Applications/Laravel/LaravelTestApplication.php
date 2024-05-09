@@ -3,6 +3,8 @@ namespace Apie\IntegrationTests\Applications\Laravel;
 
 use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\IntegrationTestLogger;
+use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
+use Apie\Common\Wrappers\TextEncrypter;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
 use Apie\IntegrationTests\Concerns\RunApplicationTest;
@@ -11,10 +13,12 @@ use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\LaravelApie\ApieServiceProvider;
+use Apie\LaravelApie\Wrappers\Security\ApieUserDecorator;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Nyholm\Psr7\Factory\Psr17Factory as NyholmPsr17Factory;
 use Orchestra\Testbench\TestCase;
 use Psr\Container\ContainerInterface;
@@ -22,6 +26,7 @@ use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Component\Console\Application;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -56,6 +61,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
     {
         tap($app->make('config'), function (Repository $config) {
             $config->set('app.key', 'base64:/aNEFWQbsYwDslb4Xw1RKKj9oCdZdbNhvcyUpVgXPz4=');
+            $config->set('apie.encryption_key', 'test');
             $config->set(
                 'apie.bounded_contexts',
                 $this->boundedContextConfig->toArray()
@@ -126,7 +132,10 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
     {
         $cookie = $laravelResponse->headers->getCookies(
             ResponseHeaderBag::COOKIES_ARRAY
-        )[AddAuthenticationCookie::COOKIE_NAME] ?? null;
+        )[""]["/"][AddAuthenticationCookie::COOKIE_NAME] ?? null;
+        if ($cookie !== null) {
+            $cookie = Cookie::fromString($cookie)->getValue();
+        }
         if ($cookie) {
             $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME] = $cookie;
         } else {
@@ -151,5 +160,36 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         $laravelRequest = Request::createFromBase($sfRequest);
         $laravelResponse = $this->app->make(HttpKernel::class)->handle($laravelRequest);
         return $this->handleResponse($laravelResponse);
+    }
+
+    public function loginAs(DecryptedAuthenticatedUser $user): void
+    {
+        $textEncrypter = new TextEncrypter('test');
+        $entity = $this->getServiceContainer()->get('apie')->find(
+            $user->getId(),
+            $user->getBoundedContextId()
+        );
+        Auth::login(new ApieUserDecorator($user, $entity));
+        $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME] = $textEncrypter->encrypt($user->toNative());
+    }
+
+    /**
+     * Forget that you are logged in.
+     */
+    public function logout(): void
+    {
+        Auth::logout();
+        unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+    }
+
+    public function getLoggedInAs(): ?DecryptedAuthenticatedUser
+    {
+        if (empty($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME])) {
+            return null;
+        }
+        $textEncrypter = new TextEncrypter('test');
+        return DecryptedAuthenticatedUser::fromNative(
+            $textEncrypter->decrypt($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]),
+        );
     }
 }

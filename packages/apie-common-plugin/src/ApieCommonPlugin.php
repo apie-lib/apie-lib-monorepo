@@ -8,9 +8,9 @@ use Composer\Plugin\PluginInterface;
 
 class ApieCommonPlugin implements PluginInterface, EventSubscriberInterface
 {
-    protected $composer;
+    protected Composer $composer;
 
-    public function activate(Composer $composer, IOInterface $io)
+    public function activate(Composer $composer, IOInterface $io): void
     {
         $this->composer = $composer;
     }
@@ -23,7 +23,7 @@ class ApieCommonPlugin implements PluginInterface, EventSubscriberInterface
     {
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             'post-install-cmd' => 'generatePhpCode',
@@ -31,7 +31,7 @@ class ApieCommonPlugin implements PluginInterface, EventSubscriberInterface
         ];
     }
 
-    public function generatePhpCode()
+    public function generatePhpCode(): void
     {
         $installedRepo = $this->composer->getRepositoryManager()->getLocalRepository();
         $packages = $installedRepo->getPackages();

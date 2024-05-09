@@ -3,6 +3,8 @@ namespace Apie\IntegrationTests\Applications\Symfony;
 
 use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\IntegrationTestLogger;
+use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
+use Apie\Common\Wrappers\TextEncrypter;
 use Apie\IntegrationTests\Concerns\RunApplicationTest;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -60,6 +62,7 @@ class SymfonyTestApplication implements TestApplicationInterface
                 'datalayers' => [
                     'default_datalayer' => $this->applicationConfig->getDatalayerImplementation()->name,
                 ],
+                'encryption_key' => 'test',
                 'enable_doctrine_bundle_connection' => true,
                 'enable_security' => $this->applicationConfig->doesIncludeSecurity(),
                 'doctrine' => [
@@ -121,12 +124,45 @@ class SymfonyTestApplication implements TestApplicationInterface
 
     private function handleResponse(Response $sfResponse): ResponseInterface
     {
-        $this->authenticationCookie = $sfResponse->headers->getCookies(
+        $cookie = $sfResponse->headers->getCookies(
             ResponseHeaderBag::COOKIES_ARRAY
-        )[AddAuthenticationCookie::COOKIE_NAME] ?? null;
+        )[""]["/"][AddAuthenticationCookie::COOKIE_NAME] ?? null;
+        if ($cookie !== null) {
+            $cookie = Cookie::fromString($cookie)->getValue();
+        }
+        $this->authenticationCookie = $cookie;
         
         $psrFactory = new NyholmPsr17Factory();
         $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);
         return $factory->createResponse($sfResponse);
+    }
+
+    public function loginAs(DecryptedAuthenticatedUser $user): void
+    {
+        $textEncrypter = new TextEncrypter('test');
+        $this->getServiceContainer()->get('apie')->find(
+            $user->getId(),
+            $user->getBoundedContextId()
+        );
+        $this->authenticationCookie = $textEncrypter->encrypt($user->toNative());
+    }
+
+    /**
+     * Forget that you are logged in.
+     */
+    public function logout(): void
+    {
+        $this->authenticationCookie = null;
+    }
+
+    public function getLoggedInAs(): ?DecryptedAuthenticatedUser
+    {
+        if (empty($this->authenticationCookie)) {
+            return null;
+        }
+        $textEncrypter = new TextEncrypter('test');
+        return DecryptedAuthenticatedUser::fromNative(
+            $textEncrypter->decrypt($this->authenticationCookie),
+        );
     }
 }

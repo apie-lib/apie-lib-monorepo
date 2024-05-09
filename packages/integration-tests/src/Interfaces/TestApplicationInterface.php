@@ -1,6 +1,8 @@
 <?php
 namespace Apie\IntegrationTests\Interfaces;
 
+use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
+use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Psr\Container\ContainerInterface;
@@ -38,6 +40,24 @@ interface TestApplicationInterface
      * Gets used Application config
      */
     public function getApplicationConfig(): ApplicationConfig;
+
+    /**
+     * Login as a specific user.
+     *
+     * @param DecryptedAuthenticatedUser<EntityInterface> $user
+     */
+    public function loginAs(DecryptedAuthenticatedUser $user): void;
+
+    /**
+     * Forget that you are logged in.
+     */
+    public function logout(): void;
+
+    /**
+     * Get logged in as user.
+     * @return DecryptedAuthenticatedUser<EntityInterface>|null
+     */
+    public function getLoggedInAs(): ?DecryptedAuthenticatedUser;
 
     /**
      * Does a GET HTTP request on the application and returns the response.
