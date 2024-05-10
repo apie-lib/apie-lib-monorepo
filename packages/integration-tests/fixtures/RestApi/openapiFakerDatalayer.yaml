@@ -1166,7 +1166,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Entity-get'
+                $ref: '#/components/schemas/Entity-nullable-get'
   '/calc/{numberOne}/times/{numberTwo}':
     post:
       tags:
@@ -1772,8 +1772,9 @@ components:
         type:
           type: string
           nullable: false
-    Entity-get:
+    Entity-nullable-get:
       type: object
+      nullable: true
       properties: {  }
     FirstName-get:
       type: string

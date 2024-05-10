@@ -13,11 +13,9 @@ use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\LaravelApie\ApieServiceProvider;
-use Apie\LaravelApie\Wrappers\Security\ApieUserDecorator;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Nyholm\Psr7\Factory\Psr17Factory as NyholmPsr17Factory;
 use Orchestra\Testbench\TestCase;
@@ -165,11 +163,6 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
     public function loginAs(DecryptedAuthenticatedUser $user): void
     {
         $textEncrypter = new TextEncrypter('test');
-        $entity = $this->getServiceContainer()->get('apie')->find(
-            $user->getId(),
-            $user->getBoundedContextId()
-        );
-        Auth::login(new ApieUserDecorator($user, $entity));
         $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME] = $textEncrypter->encrypt($user->toNative());
     }
 

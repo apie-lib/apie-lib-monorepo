@@ -7,10 +7,12 @@ use Apie\CommonValueObjects\Email;
 use Apie\CommonValueObjects\FullName;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\NotLoggedIn;
+use Apie\Core\Attributes\Route;
 use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Datalayers\Search\QuerySearch;
+use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Lists\StringHashmap;
 use Apie\Serializer\Exceptions\ValidationException;
 use App\ApiePlayground\Permission\Enums\UserRole;
@@ -54,5 +56,12 @@ class LoginTest
             $user = $apieDatalayer->persistNew($user, $boundedContext);
         }
         return $user;
+    }
+
+    #[Route('/me')]
+    #[Route('/profile', target: Route::CMS)]
+    public function currentUser(#[Context('authenticated')] ?EntityInterface $currentUser = null): ?EntityInterface
+    {
+        return $currentUser;
     }
 }

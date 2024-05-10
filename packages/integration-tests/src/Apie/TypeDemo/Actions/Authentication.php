@@ -31,7 +31,7 @@ class Authentication
 
     #[Route('/me')]
     #[Route('/profile', target: Route::CMS)]
-    public function currentUser(#[Context('authenticated')] ?EntityInterface $currentUser = null): EntityInterface
+    public function currentUser(#[Context('authenticated')] ?EntityInterface $currentUser = null): ?EntityInterface
     {
         return $currentUser;
     }

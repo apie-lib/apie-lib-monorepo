@@ -140,10 +140,6 @@ class SymfonyTestApplication implements TestApplicationInterface
     public function loginAs(DecryptedAuthenticatedUser $user): void
     {
         $textEncrypter = new TextEncrypter('test');
-        $this->getServiceContainer()->get('apie')->find(
-            $user->getId(),
-            $user->getBoundedContextId()
-        );
         $this->authenticationCookie = $textEncrypter->encrypt($user->toNative());
     }
 

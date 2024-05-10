@@ -1799,7 +1799,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Entity-get"
+                                    "$ref": "#/components/schemas/Entity-nullable-get"
                                 }
                             }
                         }
@@ -2746,8 +2746,9 @@
                     }
                 }
             },
-            "Entity-get": {
+            "Entity-nullable-get": {
                 "type": "object",
+                "nullable": true,
                 "properties": {}
             },
             "FirstName-get": {
