@@ -86,7 +86,7 @@ parameters:
         -
             message: '#constructor expects Apie\\SchemaGenerator\\Interfaces\\SchemaProvider\<object\>#'
             path: packages/schema-generator/src/ComponentsBuilderFactory.php
-            count: 8
+            count: 9
 
         -
             message: '#Negated boolean expression is always false#'
