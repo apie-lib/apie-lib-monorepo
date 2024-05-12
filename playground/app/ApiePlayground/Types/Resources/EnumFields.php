@@ -8,6 +8,7 @@ use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Entities\EntityInterface;
 use App\ApiePlayground\Types\Identifiers\EnumFieldsIdentifier;
 use App\ApiePlayground\Types\Lists\StarsList;
+use App\ApiePlayground\Types\Lists\StarsSet;
 
 #[FakeCount(25)]
 class EnumFields implements EntityInterface
@@ -25,6 +26,10 @@ class EnumFields implements EntityInterface
     public StarsList $starsList;
 
     public ?StarsList $nullableStarsList;
+
+    public StarsSet $starsSet;
+
+    public ?StarsSet $nullableStarsSet;
 
     public function __construct()
     {

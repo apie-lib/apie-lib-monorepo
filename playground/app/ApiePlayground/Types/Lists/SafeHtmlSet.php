@@ -2,9 +2,9 @@
 namespace App\ApiePlayground\Types\Lists;
 
 use Apie\CommonValueObjects\SafeHtml;
-use Apie\Core\Lists\ItemList;
+use Apie\Core\Lists\ItemSet;
 
-class SafeHtmlList extends ItemList
+class SafeHtmlSet extends ItemSet
 {
     public function offsetGet(mixed $offset): SafeHtml
     {
