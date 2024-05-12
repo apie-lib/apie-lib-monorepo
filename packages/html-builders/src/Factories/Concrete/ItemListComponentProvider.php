@@ -19,6 +19,11 @@ class ItemListComponentProvider implements FormComponentProviderInterface
             $refl = new ReflectionClass($type->getName());
             return $refl->isInstantiable();
         }
+        if (HashmapUtils::isSet($type)) {
+            assert($type instanceof ReflectionNamedType);
+            $refl = new ReflectionClass($type->getName());
+            return $refl->isInstantiable();
+        }
         return false;
     }
 

@@ -25,6 +25,7 @@ use Apie\HtmlBuilders\Factories\Concrete\ItemHashmapComponentProvider;
 use Apie\HtmlBuilders\Factories\Concrete\ItemListComponentProvider;
 use Apie\HtmlBuilders\Factories\Concrete\MixedComponentProvider;
 use Apie\HtmlBuilders\Factories\Concrete\NullComponentProvider;
+use Apie\HtmlBuilders\Factories\Concrete\OptionsComponentProvider;
 use Apie\HtmlBuilders\Factories\Concrete\PasswordComponentProvider;
 use Apie\HtmlBuilders\Factories\Concrete\PolymorphicEntityComponentProvider;
 use Apie\HtmlBuilders\Factories\Concrete\SafeHtmlComponentProvider;
@@ -69,6 +70,7 @@ final class FormComponentFactory
             new NullComponentProvider(),
             new BooleanComponentProvider(),
             new EnumComponentProvider(),
+            new OptionsComponentProvider(),
             new FloatComponentProvider(),
             new IntComponentProvider(),
             new DateTimeComponentProvider(),

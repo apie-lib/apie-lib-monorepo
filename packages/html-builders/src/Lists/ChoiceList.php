@@ -1,7 +1,10 @@
 <?php
 namespace Apie\HtmlBuilders\Lists;
 
+use Apie\Core\Context\ApieContext;
 use Apie\Core\Lists\ItemList;
+use Apie\Core\Metadata\MetadataInterface;
+use Apie\Core\ValueObjects\Utils;
 use Apie\HtmlBuilders\Dto\Choice;
 use ReflectionEnum;
 use ReflectionEnumBackedCase;
@@ -12,6 +15,15 @@ class ChoiceList extends ItemList
     public function offsetGet(mixed $offset): Choice
     {
         return parent::offsetGet($offset);
+    }
+
+    public static function createFromMetadata(MetadataInterface $metadata, ApieContext $context): self
+    {
+        $options = [];
+        foreach ($metadata->getValueOptions($context) ?? [] as $valueOption) {
+            $options[] = new Choice(Utils::toString($valueOption->value), $valueOption->name);
+        }
+        return new ChoiceList($options);
     }
 
     public static function createFromEnum(ReflectionEnum $enum, bool $addNullOption = false): self
