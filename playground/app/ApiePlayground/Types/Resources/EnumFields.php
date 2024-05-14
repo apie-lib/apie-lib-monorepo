@@ -15,6 +15,10 @@ class EnumFields implements EntityInterface
 {
     private EnumFieldsIdentifier $id;
 
+    public Gender|Stars $genderOrStars;
+
+    public Gender|Stars|null $nullableGenderOrStars;
+
     public Gender $gender;
 
     public ?Gender $nullableGender;

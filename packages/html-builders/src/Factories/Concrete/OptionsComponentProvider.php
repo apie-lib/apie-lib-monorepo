@@ -6,7 +6,6 @@ use Apie\HtmlBuilders\Components\Forms\Select;
 use Apie\HtmlBuilders\FormBuildContext;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\Interfaces\FormComponentProviderInterface;
-use Apie\HtmlBuilders\Lists\ChoiceList;
 use ReflectionType;
 
 class OptionsComponentProvider implements FormComponentProviderInterface
@@ -14,7 +13,7 @@ class OptionsComponentProvider implements FormComponentProviderInterface
     public function supports(ReflectionType $type, FormBuildContext $context): bool
     {
         $metadata = MetadataFactory::getCreationMetadata($type, $context->getApieContext());
-        return !empty($metadata->getValueOptions($context->getApieContext())?->toArray());
+        return !empty($metadata->getValueOptions($context->getApieContext(), true)?->toArray());
     }
 
     public function createComponentFor(ReflectionType $type, FormBuildContext $context): ComponentInterface
@@ -22,10 +21,8 @@ class OptionsComponentProvider implements FormComponentProviderInterface
         return new Select(
             $context->getFormName(),
             $context->getFilledInValue('', true),
-            ChoiceList::createFromMetadata(
-                MetadataFactory::getCreationMetadata($type, $context->getApieContext()),
-                $context->getApieContext()
-            )
+            MetadataFactory::getCreationMetadata($type, $context->getApieContext())
+                ->getValueOptions($context->getApieContext(), true)
         );
     }
 }

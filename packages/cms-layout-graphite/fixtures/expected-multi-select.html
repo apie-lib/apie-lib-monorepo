@@ -1,0 +1,16 @@
+<apie-scalar-element name="form[set]">
+  <apie-listen-other-event name="form[test]" event-name="gr-change">      
+    <gr-select class="unhandled-select" label="form[set]" name="form[set]" multiple clearable>
+                    <gr-menu-item value="1">boolean true</gr-menu-item>
+                        <gr-menu-divider></gr-menu-divider>
+            <gr-menu-item value="M">male</gr-menu-item>
+                      <gr-menu-item value="F">female</gr-menu-item>
+              </gr-select>
+  </apie-listen-other-event>
+</apie-scalar-element>
+<apie-script>
+(function (elm) {
+  elm.value = [];
+  elm.classList.remove('unhandled-select');
+}(document.querySelector('gr-select.unhandled-select')))
+</apie-script>

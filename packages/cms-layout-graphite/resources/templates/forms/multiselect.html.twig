@@ -1,6 +1,6 @@
-<apie-scalar-element name="{{ property('name') }}" value="{{ property('value') }}">
+<apie-scalar-element name="{{ property('name') }}">
   <apie-listen-other-event name="form[test]" event-name="gr-change">      
-    <gr-select class="unhandled-select" label="{{ property('name') }}" name="{{ property('name') }}" value="{{ property('value') }}">
+    <gr-select class="unhandled-select" label="{{ property('name') }}" name="{{ property('name') }}" multiple clearable>
     {% set previous = false %}
     {% for option in property('options') %}
       {% if previous and previous != option.typehint %}
@@ -12,3 +12,9 @@
     </gr-select>
   </apie-listen-other-event>
 </apie-scalar-element>
+<apie-script>
+(function (elm) {
+  elm.value = {{ property('value') | json_encode | replace({'<': '&lt;'}) | raw }};
+  elm.classList.remove('unhandled-select');
+}(document.querySelector('gr-select.unhandled-select')))
+</apie-script>
