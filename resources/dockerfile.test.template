@@ -1,0 +1,34 @@
+# start with the official Composer image and name it
+FROM composer:2.5.5 AS composer
+# start with the official Composer image and name it
+FROM php:PHP_VERSION
+
+RUN apt-get clean
+RUN apt-get update
+
+#install some basic tools
+RUN apt-get install -y \
+        jq \
+        git \
+        tree \
+        vim \
+        wget \
+        unzip \
+        libssh2-1-dev \
+        zlib1g-dev \
+        zip
+
+# copy the Composer PHAR from the Composer image into the PHP image
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+RUN docker-php-ext-install opcache
+RUN pecl install pcov \
+    && docker-php-ext-enable pcov
+COPY ./packages/PACKAGE_NAME /app
+COPY bin/run-tests /app/bin/run-tests
+RUN chmod 777 bin/run-tests
+RUN mkdir /packages
+COPY ./packages /packages
+COPY ./playground/edit-composer.json tmp.json
+RUN jq -s 'add' tmp.json /app/composer.json > tmp-merged.json
+RUN mv tmp-merged.json /app/composer.json

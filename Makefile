@@ -10,4 +10,4 @@ test-8.2:
 
 test-8.3:
 	docker build --file dockerfile.php83 . -t apie-php83
-	docker run --rm -v $(CURDIR):/app -w /app apie-php83 bin/run-tests coverage/php82
+	docker run --rm -v $(CURDIR):/app -w /app apie-php83 bin/run-tests coverage/php83

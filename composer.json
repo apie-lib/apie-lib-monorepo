@@ -78,8 +78,7 @@
         "symfony/phpunit-bridge": "6.*",
         "symfony/security-bundle": "6.*",
         "symfony/twig-bundle": "6.*",
-        "symplify/monorepo-builder": "10.2.7",
-        "shyim/testcontainer": "^0.1.1"
+        "symplify/monorepo-builder": "10.2.7"
     },
     "autoload": {
         "psr-4": {

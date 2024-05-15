@@ -50,6 +50,11 @@ class Package {
         }
     }
 
+    public function getPackageFolder(): string
+    {
+        return $this->packageFolder;
+    }
+
     public function createFile(string $fileName, bool $overwrite)
     {
         $source = file_get_contents(__DIR__ . '/resources/template/' . $fileName);
