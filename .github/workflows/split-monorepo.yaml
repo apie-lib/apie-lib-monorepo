@@ -76,6 +76,6 @@ jobs:
 
       -
         name: Run tests in php 8.1
-        run: bin/run-package-test 8.1 ${{ matrix.package }}
+        run: composer install && bin/run-package-test 8.1 ${{ matrix.package }}
 
 

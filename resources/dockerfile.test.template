@@ -26,9 +26,11 @@ RUN pecl install pcov \
     && docker-php-ext-enable pcov
 COPY ./packages/PACKAGE_NAME /app
 COPY bin/run-tests /app/bin/run-tests
-RUN chmod 777 bin/run-tests
 RUN mkdir /packages
 COPY ./packages /packages
 COPY ./playground/edit-composer.json tmp.json
 RUN jq -s 'add' tmp.json /app/composer.json > tmp-merged.json
-RUN mv tmp-merged.json /app/composer.json
+RUN jq '. + {version: "1.0.0.x-dev"}' tmp-merged.json > /app/composer.json
+RUN rm tmp-merged.json
+RUN rm tmp.json
+RUN cat /app/composer.json
