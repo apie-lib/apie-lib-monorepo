@@ -3,8 +3,8 @@ namespace Apie\Tests\IntegrationTests;
 
 use Apie\Common\Actions\GetItemAction;
 use Apie\Common\ApieFacade;
-use Apie\Common\ContextConstants;
 use Apie\Core\Context\ApieContext;
+use Apie\Core\ContextConstants;
 use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;

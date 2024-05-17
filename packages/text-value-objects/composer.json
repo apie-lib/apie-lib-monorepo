@@ -22,7 +22,6 @@
   "extra": {
     "apie-objects": [
       "Apie\\TextValueObjects\\CompanyName",
-      "Apie\\TextValueObjects\\DatabaseText",
       "Apie\\TextValueObjects\\EncryptedPassword",
       "Apie\\TextValueObjects\\FirstName",
       "Apie\\TextValueObjects\\LastName",

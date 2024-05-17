@@ -22,7 +22,7 @@ All you need to do is make an object with the ValueObjectInterface and the Compo
 For example:
 ```php
 <?php
-use Apie\CommonValueObjects\Texts\DatabaseText;
+use Apie\Core\ValueObjects\DatabaseText;
 use Apie\Core\ValueObjects\CompositeValueObject;
 use Stringable;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Apie\TextValueObjects\Concerns;
+namespace Apie\Core\ValueObjects\Concerns;
 
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\IsStringValueObject;

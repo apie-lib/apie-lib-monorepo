@@ -3,9 +3,9 @@ namespace Apie\TextValueObjects;
 
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
+use Apie\Core\ValueObjects\Concerns\IndexesWords;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
-use Apie\TextValueObjects\Concerns\IndexesWords;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]

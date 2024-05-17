@@ -3,9 +3,9 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\UuidV4;
+use Apie\Core\ValueObjects\DatabaseText;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
-use Apie\TextValueObjects\DatabaseText;
 use Apie\TextValueObjects\EncryptedPassword;
 use Apie\TextValueObjects\StrongPassword;
 use LogicException;

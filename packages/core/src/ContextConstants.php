@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Common;
+namespace Apie\Core;
 
 use Apie\Common\Actions\RunAction;
 use Apie\Common\Actions\RunItemMethodAction;
@@ -12,6 +12,9 @@ use Apie\Core\Indexing\FromDateObject;
  */
 final class ContextConstants
 {
+    /**
+     * @codeCoverageIgnore
+     */
     private function __construct()
     {
     }
