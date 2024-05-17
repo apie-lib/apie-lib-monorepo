@@ -64,11 +64,13 @@
         "symfony/monolog-bundle": "3.*",
         "symfony/psr-http-message-bridge": "2.*",
         "symfony/routing": "6.*",
+        "symfony/security-core": "6.*",
         "twig/twig": "^3.4.2"
     },
     "require-dev": {
         "doctrine/doctrine-bundle": "*",
         "friendsofphp/php-cs-fixer": "^3.8",
+        "illuminate/support": "*",
         "league/openapi-psr7-validator": "0.18",
         "orchestra/testbench": "^8.5",
         "phpspec/prophecy-phpunit": "^2.0",
@@ -160,7 +162,6 @@
     },
     "extra": {
         "apie-objects": [
-            "Apie\\HtmlBuilders\\Dto\\Choice",
             "Apie\\HtmlBuilders\\Enums\\ActionDefinitionVariant",
             "Apie\\HtmlBuilders\\Enums\\LayoutEnum",
             "Apie\\HtmlBuilders\\ValueObjects\\FormName",
@@ -184,6 +185,7 @@
             "Apie\\Core\\Lists\\IntegerList",
             "Apie\\Core\\Lists\\ItemHashmap",
             "Apie\\Core\\Lists\\ItemList",
+            "Apie\\Core\\Lists\\ItemSet",
             "Apie\\Core\\Lists\\StringHashmap",
             "Apie\\Core\\Lists\\StringList",
             "Apie\\Core\\Translator\\Enums\\FromFileLanguage",
@@ -271,6 +273,7 @@
             "Apie\\DateValueObjects\\Time",
             "Apie\\DateValueObjects\\UnixTimestamp",
             "Apie\\DoctrineEntityDatalayer\\Enums\\SortingOrder",
+            "Apie\\HtmlBuilders\\Dto\\Choice",
             "Apie\\Core\\Identifiers\\UUidV1",
             "Apie\\Core\\Identifiers\\UUidV2",
             "Apie\\Core\\Identifiers\\UUidV3",

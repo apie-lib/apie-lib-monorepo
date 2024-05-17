@@ -32,6 +32,7 @@
   },
   "require-dev": {
     "apie/fixtures": "self.version",
+    "illuminate/support": "*",
     "phpunit/phpunit": "^9.5"
   },
   "minimum-stability": "dev",
