@@ -65,7 +65,14 @@ $process = new Process(
     env: ['COMPOSER_ALLOW_SUPERUSER' => 1],
 );
 $process->setTimeout(null);
-$process->mustRun(function ($type, $buffer): void {
-    echo $buffer;
+$echoOutput = false;
+$process->mustRun(function ($type, $buffer) use (&$echoOutput): void {
+    if (strpos($buffer, 'PHPUnit ') !== false) {
+        $echoOutput = true;
+    }
+
+    if ($echoOutput) {
+        echo $buffer;
+    }
 });
 

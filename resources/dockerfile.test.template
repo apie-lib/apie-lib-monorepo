@@ -21,6 +21,7 @@ RUN apt-get install -y \
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
+WORKDIR /app
 RUN docker-php-ext-install opcache
 RUN pecl install pcov \
     && docker-php-ext-enable pcov
@@ -33,4 +34,5 @@ RUN jq -s 'add' tmp.json /app/composer.json > tmp-merged.json
 RUN jq '. + {version: "1.0.0.x-dev"}' tmp-merged.json > /app/composer.json
 RUN rm tmp-merged.json
 RUN rm tmp.json
+RUN composer config --no-plugins allow-plugins.apie/apie-common-plugin true
 RUN cat /app/composer.json
