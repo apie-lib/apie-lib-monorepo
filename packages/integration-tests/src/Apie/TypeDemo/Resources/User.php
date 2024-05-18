@@ -6,7 +6,7 @@ use Apie\Core\Identifiers\UuidV4;
 use Apie\Core\ValueObjects\DatabaseText;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
-use Apie\TextValueObjects\EncryptedPassword;
+use Apie\Fixtures\ValueObjects\EncryptedPassword;
 use Apie\TextValueObjects\StrongPassword;
 use LogicException;
 
