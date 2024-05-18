@@ -55,9 +55,11 @@ $containerName = 'apie-' . $phpVersion . '-' . $selectedPackage->getPackage();
 //docker build --file dockerfile.php83 . -t apie-php83
 $process = new Process(['docker', 'build', '--file', $filename, '.', '-t', $containerName]);
 $process->setTimeout(null);
-$process->mustRun(function ($type, $buffer): void {
+if (0 !== $process->run(function ($type, $buffer): void {
     echo $buffer;
-});
+})) {
+    throw new \LogicException("problem building docker image");
+};
 
 //docker run --rm -w /app apie-php83 bin/run-tests coverage/php83
 $process = new Process(
@@ -66,7 +68,7 @@ $process = new Process(
 );
 $process->setTimeout(null);
 $echoOutput = false;
-$process->mustRun(function ($type, $buffer) use (&$echoOutput): void {
+if (0 !== $process->run(function ($type, $buffer) use (&$echoOutput): void {
     if (strpos($buffer, 'PHPUnit ') !== false) {
         $echoOutput = true;
     }
@@ -74,5 +76,7 @@ $process->mustRun(function ($type, $buffer) use (&$echoOutput): void {
     if ($echoOutput) {
         echo $buffer;
     }
-});
+})) {
+    throw new \LogicException("problem with running tests!");
+};
 
