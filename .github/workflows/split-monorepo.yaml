@@ -14,6 +14,7 @@ on:
 
 jobs:
   provide_packages_json:
+    name: determine all available packages
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +36,7 @@ jobs:
       matrix: ${{ steps.output_data.outputs.matrix }}
 
   run_phpunit_per_package:
+    name: Run all tests per package per PHP version
     needs: provide_packages_json
 
     runs-on: ubuntu-latest
@@ -45,10 +47,13 @@ jobs:
         php_version: ['8.1', '8.2', '8.3', 'latest']
     steps:
       -
+        uses: actions/checkout@v2
+      -
         name: Run tests for ${{ matrix.package }} in php ${{ matrix.php_version }}
         run: composer install && bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
 
   split_monorepo:
+    name: Push all code to git subtrees
     needs: run_phpunit_per_package
 
     runs-on: ubuntu-latest
