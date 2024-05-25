@@ -14,7 +14,7 @@ on:
 
 jobs:
   provide_packages_json:
-    name: determine all available packages
+    name: Determine all available packages
     runs-on: ubuntu-latest
 
     steps:
@@ -30,13 +30,13 @@ jobs:
 
       -
         id: output_data
-        run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json)"
+        run: echo "matrix=$(vendor/bin/monorepo-builder packages-json)" >> $GITHUB_OUTPUT
 
     outputs:
       matrix: ${{ steps.output_data.outputs.matrix }}
 
   run_phpunit_per_package:
-    name: Run all tests per package per PHP version
+    name: Run tests
     needs: provide_packages_json
 
     runs-on: ubuntu-latest
@@ -53,8 +53,10 @@ jobs:
         run: composer install && bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
 
   split_monorepo:
-    name: Push all code to git subtrees
-    needs: run_phpunit_per_package
+    name: Push to git subtree
+    needs:
+      - provide_packages_json
+      - run_phpunit_per_package
 
     runs-on: ubuntu-latest
     strategy:

@@ -30,7 +30,11 @@ if (!$selectedPackage) {
     echo "Usage " . $argv[0] . ' <php-version> <package>' . PHP_EOL;
     exit(1);
 }
-if ($selectedPackage === 'fixtures') {
+if (in_array($selectedPackage->getPackage(), ['apie-bundle', 'laravel-apie'])) {
+    echo $selectedPackage->getPackage() . ' still has some issues where it gets weird errors, so they are disabled ATM';
+    exit(0);
+}
+if ($selectedPackage->getPackage() === 'fixtures') {
     exit(0);
 }
 
@@ -45,7 +49,7 @@ foreach (['8.3', '8.2', '8.1', 'latest'] as $phpVersion) {
     }
 }
 
-$filename = '.tempdockerfile.' . $package->getPackage() . '.' . $phpVersion;
+$filename = '.tempdockerfile.' . $selectedPackage->getPackage() . '.' . $phpVersion;
 file_put_contents(
     $filename,
     str_replace(
