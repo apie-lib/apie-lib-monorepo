@@ -74,8 +74,8 @@ jobs:
           user_name: "Pieter Jordaan"
           user_email: "pieter_jordaan@hotmail.com"
 
-      #-
-      #  name: Run tests in php 8.1
-      #  run: composer install && bin/run-package-test 8.1 ${{ matrix.package }}
+      -
+        name: Run tests in php 8.1
+        run: composer install && bin/run-package-test 8.1 ${{ matrix.package }}
 
 

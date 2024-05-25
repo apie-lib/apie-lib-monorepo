@@ -69,7 +69,7 @@ $process = new Process(
 $process->setTimeout(null);
 $echoOutput = false;
 if (0 !== $process->run(function ($type, $buffer) use (&$echoOutput): void {
-    if (strpos($buffer, 'PHPUnit ') !== false) {
+    if (strpos($buffer, 'PHPUnit ') !== false || stripos($buffer, 'Error') !== false) {
         $echoOutput = true;
     }
 
