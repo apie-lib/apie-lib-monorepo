@@ -30,6 +30,9 @@ if (!$selectedPackage) {
     echo "Usage " . $argv[0] . ' <php-version> <package>' . PHP_EOL;
     exit(1);
 }
+if ($selectedPackage === 'fixtures') {
+    exit(0);
+}
 
 foreach (['8.3', '8.2', '8.1', 'latest'] as $phpVersion) {
     if ($arg1 === $phpVersion) {
