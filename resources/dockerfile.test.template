@@ -21,18 +21,18 @@ RUN apt-get install -y \
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-WORKDIR /app
 RUN docker-php-ext-install opcache
 RUN pecl install pcov \
     && docker-php-ext-enable pcov
-COPY ./packages/PACKAGE_NAME /app
-COPY bin/run-tests /app/bin/run-tests
+COPY ./packages/PACKAGE_NAME /app/packages/PACKAGE_NAME
+WORKDIR /app/packages/PACKAGE_NAME
+COPY bin/run-tests /app/packages/PACKAGE_NAME/bin/run-tests
 RUN mkdir /packages
 COPY ./packages /packages
 COPY ./playground/edit-composer.json tmp.json
-RUN jq -s 'add' tmp.json /app/composer.json > tmp-merged.json
-RUN jq '. + {version: "1.0.0.x-dev"}' tmp-merged.json > /app/composer.json
+RUN jq -s 'add' tmp.json /app/packages/PACKAGE_NAME/composer.json > tmp-merged.json
+RUN jq '. + {version: "1.0.0.x-dev"}' tmp-merged.json > /app/packages/PACKAGE_NAME/composer.json
 RUN rm tmp-merged.json
 RUN rm tmp.json
 RUN composer config --no-plugins allow-plugins.apie/apie-common-plugin true
-RUN cat /app/composer.json
+RUN cat /app/packages/PACKAGE_NAME/composer.json
