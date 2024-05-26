@@ -43,8 +43,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
         php_version: ['8.1', '8.2', '8.3', 'latest']
+        package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
     steps:
       -
         uses: actions/checkout@v2
@@ -52,11 +52,21 @@ jobs:
         name: Run tests for ${{ matrix.package }} in php ${{ matrix.php_version }}
         run: composer install && bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
 
+  create_coverage:
+    name: Merge code coverage
+    needs: run_phpunit_per_package
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Merge all coverage files
+        run: composer install && vendor/bin/phpcov merge --clover coverage.xml coverage
+
   split_monorepo:
     name: Push to git subtree
     needs:
       - provide_packages_json
       - run_phpunit_per_package
+      - create_coverage
 
     runs-on: ubuntu-latest
     strategy:

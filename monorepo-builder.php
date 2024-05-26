@@ -20,6 +20,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             "apie/service-provider-generator" => "0.11.2",
             "phpspec/prophecy-phpunit" => "^2.0",
             "phpstan/phpstan" => "^1.8.2",
+            "phpunit/phpcov" => "^8.2",
             'friendsofphp/php-cs-fixer' =>  "^3.8",
             "symfony/monolog-bundle" => "3.*",
             'symfony/phpunit-bridge' =>  "6.*",
