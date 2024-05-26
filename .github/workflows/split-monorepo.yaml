@@ -48,7 +48,16 @@ jobs:
         package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
     steps:
       -
+        name: cache generated coverage
+        id: coverage
         uses: actions/checkout@v4
+      -
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-coverage
+        with:
+          path: ./coverage/apie-${{ matrix.php_version }}-${{ matrix.package }}.cov
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.php_version }}-${{ matrix.package }}
       -
         name: Run tests for ${{ matrix.package }} in php ${{ matrix.php_version }}
         run: composer install && bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
@@ -58,6 +67,19 @@ jobs:
     needs: run_phpunit_per_package
     runs-on: ubuntu-latest
     steps:
+      -
+        uses: actions/checkout@v4
+      -
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-coverage
+        with:
+          path: ./coverage
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       -
         name: Merge all coverage files
         run: composer install && vendor/bin/phpcov merge --clover coverage.xml coverage
