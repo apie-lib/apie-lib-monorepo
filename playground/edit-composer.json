@@ -45,16 +45,6 @@
         },
         {
             "type": "path",
-            "url": "/packages/composite-value-objects",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/composite-value-objects": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
             "url": "/packages/date-value-objects",
             "options": {
                 "symlink": true,

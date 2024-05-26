@@ -10,7 +10,6 @@ parameters:
         - packages/cms-layout-graphite/src
         - packages/common/src
         - packages/common-value-objects/src
-        - packages/composite-value-objects/src
         - packages/console/src
         - packages/count-words/src
         - packages/core/src
