@@ -24,7 +24,7 @@ jobs:
       -   uses: shivammathur/setup-php@v2
           with:
             php-version: 8.3
-            coverage: none
+            coverage: pcov
 
       -   uses: "ramsey/composer-install@v1"
 
@@ -48,38 +48,38 @@ jobs:
         package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
     steps:
       -
-        name: cache generated coverage
         id: coverage
         uses: actions/checkout@v4
       -
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-coverage
-        with:
-          path: ./coverage/apie-${{ matrix.php_version }}-${{ matrix.package }}.cov
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.php_version }}-${{ matrix.package }}
-      -
         name: Run tests for ${{ matrix.package }} in php ${{ matrix.php_version }}
         run: composer install && bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
+      - name: Upload reports' artifacts 
+        if: success() || failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.run_id }}_artifact_${{ matrix.php_version }}_${{ matrix.package }}
+          if-no-files-found: ignore
+          path: coverage
+          retention-days: 1
 
   create_coverage:
     name: Merge code coverage
     needs: run_phpunit_per_package
     runs-on: ubuntu-latest
     steps:
+      -   uses: shivammathur/setup-php@v2
+          with:
+            php-version: 8.3
+            coverage: pcov
       -
         uses: actions/checkout@v4
-      -
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-coverage
+      - name: Download reports' artifacts
+        uses: actions/download-artifact@v3
         with:
-          path: ./coverage
-          key: ${{ runner.os }}-build-${{ env.cache-name }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          path: downloaded_artifacts
+          
+      - name: Place reports' artifacts
+        run: rsync -av downloaded_artifacts/*/ coverage/
       -
         name: Merge all coverage files
         run: composer install && vendor/bin/phpcov merge --clover coverage.xml coverage
