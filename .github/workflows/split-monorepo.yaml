@@ -13,6 +13,70 @@ on:
       - '*'
 
 jobs:
+  validate:
+    name: Composer validate
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: pcov
+          ini-values: pcov.directory=packages
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
+      - name: Validate composer.json
+        run: composer validate
+
+  run-test-suite:
+    name: Run tests (full suite)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php_version: ['8.1', '8.2', '8.3']
+    steps:
+      -
+        uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php_version }}
+          coverage: pcov
+          ini-values: pcov.directory=packages
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
+      - name: Run test suite
+        run: vendor/bin/phpunit --coverage-php=coverage/${{ matrix.php_version }}.cov
+      - name: Upload reports' artifacts 
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.run_id }}_artifact_${{ matrix.php_version }}
+          if-no-files-found: ignore
+          path: coverage
+          retention-days: 1
+  lint:
+    name: Static code analysis
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: pcov
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
+      - name: Run static code analysis
+        run: vendor/bin/phpstan
+    
   provide_packages_json:
     name: Determine all available packages
     runs-on: ubuntu-latest
@@ -21,12 +85,14 @@ jobs:
       -
         uses: actions/checkout@v4
 
-      -   uses: shivammathur/setup-php@v2
-          with:
-            php-version: 8.3
-            coverage: pcov
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          coverage: pcov
 
-      -   uses: "ramsey/composer-install@v1"
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
 
       -
         id: output_data
@@ -37,7 +103,10 @@ jobs:
 
   run_phpunit_per_package:
     name: Run tests
-    needs: provide_packages_json
+    needs:
+      - provide_packages_json
+      - lint
+      - validate
 
     runs-on: ubuntu-latest
     strategy:
@@ -55,7 +124,7 @@ jobs:
         run: composer install && bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
       - name: Upload reports' artifacts 
         if: success() || failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ github.run_id }}_artifact_${{ matrix.php_version }}_${{ matrix.package }}
           if-no-files-found: ignore
@@ -64,7 +133,9 @@ jobs:
 
   create_coverage:
     name: Merge code coverage
-    needs: run_phpunit_per_package
+    needs:
+      - run-test-suite
+      - run_phpunit_per_package
     runs-on: ubuntu-latest
     steps:
       -   uses: shivammathur/setup-php@v2
@@ -74,21 +145,26 @@ jobs:
       -
         uses: actions/checkout@v4
       - name: Download reports' artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          path: downloaded_artifacts
+          merge-multiple: true
+          path: /home/runner/coverage
           
-      - name: Place reports' artifacts
-        run: rsync -av downloaded_artifacts/*/ coverage/
+      - name: debug downloaded_artifacts
+        run: ls -l /home/runner/coverage
       -
         name: Merge all coverage files
-        run: composer install && vendor/bin/phpcov merge --clover coverage.xml coverage
+        run: composer install && vendor/bin/phpcov merge --clover coverage.xml /home/runner/coverage
+      - name: Upload merged report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage.xml
+          path: coverage.xml
 
   split_monorepo:
     name: Push to git subtree
     needs:
       - provide_packages_json
-      - run_phpunit_per_package
       - create_coverage
 
     runs-on: ubuntu-latest
