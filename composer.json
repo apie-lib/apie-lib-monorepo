@@ -74,7 +74,7 @@
         "league/openapi-psr7-validator": "0.18",
         "orchestra/testbench": "^8.5",
         "phpspec/prophecy-phpunit": "^2.0",
-        "phpstan/phpstan": "^1.8.2",
+        "phpstan/phpstan": "^1.11.2",
         "phpunit/phpcov": "^8.2",
         "phpunit/phpunit": "^9.5",
         "symfony/framework-bundle": "6.*",
