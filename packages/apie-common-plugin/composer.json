@@ -19,6 +19,9 @@
       "Apie\\Tests\\ApieCommonPlugin\\": "tests/"
     }
   },
+  "conflict": {
+    "nette/utils": "3.*"
+  },
   "extra": {
     "class": "Apie\\ApieCommonPlugin\\ApieCommonPlugin"
   },
@@ -27,7 +30,7 @@
     "apie/core": "self.version",
     "composer/composer": "^2.0",
     "composer-plugin-api": "^2.0",
-    "nette/php-generator": "^4.0.1",
+    "nette/php-generator": "^4.1.5",
     "symfony/finder": "^6.4"
   },
   "require-dev": {

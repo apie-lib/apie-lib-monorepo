@@ -5,8 +5,8 @@ use Apie\Core\Attributes\Internal;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Fixtures\Identifiers\UserWithAddressIdentifier;
 use Apie\Fixtures\ValueObjects\AddressWithZipcodeCheck;
-use Apie\Fixtures\ValueObjects\Password;
 use Apie\Fixtures\ValueObjects\EncryptedPassword;
+use Apie\Fixtures\ValueObjects\Password;
 
 class UserWithAddress implements EntityInterface
 {

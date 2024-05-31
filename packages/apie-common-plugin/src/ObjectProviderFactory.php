@@ -28,6 +28,7 @@ final class ObjectProviderFactory
         if (class_exists(AvailableApieObjectProvider::class)) {
             return new AvailableApieObjectProvider();
         }
-        return new class extends ObjectProvider {};
+        return new class extends ObjectProvider {
+        };
     }
 }

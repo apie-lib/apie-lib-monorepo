@@ -18,7 +18,7 @@ enum DatalayerImplementation: string
      */
     public function toClass(): ReflectionClass
     {
-        return match($this) {
+        return match ($this) {
             self::DB_DATALAYER => new ReflectionClass(DoctrineEntityDatalayer::class),
             self::IN_MEMORY => new ReflectionClass(RequestAwareInMemoryDatalayer::class),
             self::FAKER => new ReflectionClass(FakerDatalayer::class),

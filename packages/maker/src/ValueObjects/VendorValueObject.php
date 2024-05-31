@@ -32,7 +32,7 @@ final class VendorValueObject implements HasRegexValueObjectInterface, LimitedOp
             return;
         }
         $objects = self::getOptions();
-        if (!empty($objects) || !isset($objects[$input])) {
+        if (!empty($objects) && !isset($objects[$input])) {
             throw new InvalidStringForValueObjectException(
                 $input,
                 new ReflectionClass(self::class)

@@ -54,7 +54,6 @@ class ApieModifyResourceCommandTest extends TestCase
                 'string',
                 $apie->find($entity->getId(), new BoundedContextId('types'))->stringField
             );
-
         }
         $testApplication->cleanApplication();
     }

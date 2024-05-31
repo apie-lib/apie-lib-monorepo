@@ -38,7 +38,6 @@ class CmsDropdownServiceProvider extends ServiceProvider
                 return \Apie\CmsApiDropdownOption\DropdownOptionProvider\ChainedDropdownOptionProvider::create(
                     $this->getTaggedServicesIterator(\Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class)
                 );
-                
             }
         );
         \Apie\ServiceProviderGenerator\TagMap::register(
@@ -66,6 +65,5 @@ class CmsDropdownServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\CmsApiDropdownOption\DropdownOptionProvider\EntityIdentifierOptionProvider::class], \Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class);
-        
     }
 }

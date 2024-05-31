@@ -35,9 +35,12 @@ jobs:
     name: Run tests (full suite)
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         php_version: ['8.1', '8.2', '8.3']
+        composer:
+          - 'highest'
+          #- 'lowest'
     steps:
       -
         uses: actions/checkout@v4
@@ -49,9 +52,11 @@ jobs:
           ini-values: pcov.directory=packages
       - uses: "ramsey/composer-install@v3"
         with:
-          dependency-versions: "lowest"
+          dependency-versions: ${{ matrix.composer }}
       - name: Run test suite
         run: vendor/bin/phpunit --coverage-php=coverage/${{ matrix.php_version }}.cov
+        env:
+          SYMFONY_DEPRECATIONS_HELPER: 'max[total]=9999999&max[self]=9999999&verbose=0'
       - name: Upload reports' artifacts 
         if: success() || failure()
         uses: actions/upload-artifact@v4

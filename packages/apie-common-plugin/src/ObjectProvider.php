@@ -80,7 +80,6 @@ abstract class ObjectProvider
                 } catch (ReflectionException) {
                 }
             }
-
         }
         return self::$mappedServices[$key];
     }

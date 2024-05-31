@@ -26,7 +26,6 @@ class SemanticVersion implements HasRegexValueObjectInterface
         preg_match('/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/', $this->internal, $matches);
         assert(!empty($matches));
         return new ApplicationVersion($matches[1] . '.' . $matches[2] . '.' . $matches[3]);
-        
     }
 
     /**

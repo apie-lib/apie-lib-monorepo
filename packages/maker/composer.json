@@ -31,14 +31,17 @@
       "Apie\\Maker\\ValueObjects\\VendorValueObject"
     ]
   },
+  "conflict": {
+    "nette/utils": "3.*"
+  },
   "require": {
     "php": ">=8.1",
     "apie/apie-common-plugin": "self.version",
     "apie/common": "self.version",
     "apie/core": "self.version",
     "haydenpierce/class-finder": "0.5.3",
-    "nette/php-generator": "^4.0.1",
-    "nikic/php-parser": "^4.14"
+    "nette/php-generator": "^4.1.5",
+    "nikic/php-parser": "^4.0"
   },
   "require-dev": {
     "apie/fixtures": "self.version",

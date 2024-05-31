@@ -85,6 +85,5 @@ class CmsFormSubmitRequest implements TestRequestInterface, BootstrapRequestInte
                 TestCase::assertTrue($entity->isBlocked());
             }
         }
-
     }
 }

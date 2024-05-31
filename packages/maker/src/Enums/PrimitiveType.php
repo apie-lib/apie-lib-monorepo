@@ -11,5 +11,5 @@ enum PrimitiveType: string
     case FloatingPoint = 'float';
     case Array = 'array';
     #[StaticCheck(new RequiresPhpVersion('>=8.2'))]
-    case Null = 'null';
+    case null = 'null';
 }

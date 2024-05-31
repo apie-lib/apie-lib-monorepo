@@ -64,6 +64,9 @@ parameters:
             message: '#Call to an undefined method ReflectionType::getName#'
             path: packages/core/src/Utils/EnumUtils.php
             reportUnmatched: false
+        -
+            message: '#array<string, Apie\\TypeConverter\\Exceptions\\Throwable>#'
+            reportUnmatched: false
         - '#Unable to resolve the template type T in call to method static method Apie\\Core\\Utils\\ConverterUtils::toReflectionClass\(\)#'
         -
             message: '#NodeDefinition::children#'
@@ -118,7 +121,6 @@ parameters:
         -
             message: '#If condition is always true#'
             path: packages/country-and-phone-number/src/
-            count: 13
 
         -
             message: '#Unreachable statement - code above always terminates#'

@@ -52,7 +52,6 @@ class ApieRunResourceMethodCommandTest extends TestCase
             $this->assertTrue(
                 $apie->find($entity->getId(), new BoundedContextId('types'))->isBlocked()
             );
-
         }
         $testApplication->cleanApplication();
     }

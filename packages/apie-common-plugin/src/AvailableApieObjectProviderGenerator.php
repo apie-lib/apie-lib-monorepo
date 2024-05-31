@@ -10,7 +10,6 @@ final class AvailableApieObjectProviderGenerator
     public function __construct(
         private readonly FileWriterInterface $fileWriter = new ActualFileWriter()
     ) {
-
     }
 
     public function generateFile(array $classNames): void
@@ -34,6 +33,5 @@ final class AvailableApieObjectProviderGenerator
         $class->addConstant('DEFINED_CLASSES', $classNames)->setVisibility('protected');
         
         return (string) $phpFile;
-       
     }
 }

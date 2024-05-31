@@ -30,7 +30,7 @@
     "apie/core": "self.version",
     "apie/doctrine-entity-converter": "self.version",
     "doctrine/common": "^3.4.3",
-    "doctrine/orm": "^2.16"
+    "doctrine/orm": "^2.19"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
