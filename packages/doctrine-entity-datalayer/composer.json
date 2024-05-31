@@ -38,7 +38,7 @@
     "illuminate/support": "*",
     "phpunit/phpunit": "^9.5",
     "phpspec/prophecy-phpunit": "^2.0",
-    "symfony/cache": "^6.0"
+    "symfony/cache": "^6.4"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

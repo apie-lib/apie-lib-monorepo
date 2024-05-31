@@ -28,7 +28,7 @@
     "composer/composer": "^2.0",
     "composer-plugin-api": "^2.0",
     "nette/php-generator": "^4.0.1",
-    "symfony/finder": "6.*"
+    "symfony/finder": "^6.4"
   },
   "require-dev": {
     "apie/fixtures": "self.version",

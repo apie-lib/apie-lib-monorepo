@@ -25,7 +25,7 @@
     "apie/storage-metadata-builder": "self.version",
     "doctrine/orm": "^2.16",
     "nette/php-generator": "^4.0.1",
-    "symfony/finder": "6.*"
+    "symfony/finder": "^6.4"
   },
   "require-dev": {
     "apie/common-value-objects": "self.version",
@@ -36,7 +36,7 @@
     "illuminate/support": "*",
     "phpunit/phpunit": "^9.5",
     "phpspec/prophecy-phpunit": "^2.0",
-    "symfony/cache": "^6.0"
+    "symfony/cache": "^6.4"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

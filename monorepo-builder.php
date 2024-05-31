@@ -19,12 +19,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ComposerJsonSection::REQUIRE_DEV => [
             "apie/service-provider-generator" => "0.11.2",
             "phpspec/prophecy-phpunit" => "^2.0",
-            "phpstan/phpstan" => "^1.8.2",
+            "phpstan/phpstan" => "^1.11.2",
             "phpunit/phpcov" => "^8.2",
             'friendsofphp/php-cs-fixer' =>  "^3.8",
             "symfony/monolog-bundle" => "3.*",
-            'symfony/phpunit-bridge' =>  "6.*",
-            'symfony/finder' =>  "6.*",
+            'symfony/phpunit-bridge' =>  "^6.4",
+            'symfony/finder' =>  "^6.4",
             'symplify/monorepo-builder' =>  '10.2.7',
         ],
     ]);
