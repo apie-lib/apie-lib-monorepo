@@ -158,12 +158,28 @@ jobs:
         run: ls -l /home/runner/coverage
       -
         name: Merge all coverage files
-        run: composer install && vendor/bin/phpcov merge --clover coverage.xml /home/runner/coverage
+        run: composer install && vendor/bin/phpcov merge  --html coverage_merge --clover coverage.xml /home/runner/coverage
       - name: Upload merged report
         uses: actions/upload-artifact@v4
         with:
           name: coverage.xml
           path: coverage.xml
+      - name: Generate coverage badge
+        uses: timkrase/phpunit-coverage-badge@v1.2.0
+        with:
+          coverage_badge_path: coverage/coverage_badge.svg
+          report: coverage.xml
+      - name: Pushes test file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          source_file: 'coverage_merge'
+          destination_repo: 'apie-lib/apie-lib.github.io'
+          destination_folder: '.'
+          user_email: 'pieter_jordaan@Hotmail.com'
+          user_name: 'pjordaan'
+          commit_message: 'Update code coverage'
 
   split_monorepo:
     name: Push to git subtree
