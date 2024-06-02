@@ -40,7 +40,7 @@ jobs:
         php_version: ['8.1', '8.2', '8.3']
         composer:
           - 'highest'
-          #- 'lowest'
+          - 'lowest'
     steps:
       -
         uses: actions/checkout@v4
@@ -54,14 +54,14 @@ jobs:
         with:
           dependency-versions: ${{ matrix.composer }}
       - name: Run test suite
-        run: vendor/bin/phpunit --coverage-php=coverage/${{ matrix.php_version }}.cov
+        run: vendor/bin/phpunit --coverage-php=coverage/${{ matrix.php_version }}_${{ matrix.composer }}.cov
         env:
           SYMFONY_DEPRECATIONS_HELPER: 'max[total]=9999999&max[self]=9999999&verbose=0'
       - name: Upload reports' artifacts 
         if: success() || failure()
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.run_id }}_artifact_${{ matrix.php_version }}
+          name: ${{ github.run_id }}_artifact_${{ matrix.php_version }}_${{ matrix.composer }}
           if-no-files-found: ignore
           path: coverage
           retention-days: 1
@@ -117,8 +117,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        #php_version: ['8.1', '8.2', '8.3', 'latest']
-        php_version: ['8.3']
+        php_version: ['8.1', '8.2', '8.3', 'latest']
         package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
     steps:
       -
