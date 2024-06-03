@@ -158,7 +158,10 @@ jobs:
         run: ls -l /home/runner/coverage
       -
         name: Merge all coverage files
-        run: composer install && vendor/bin/phpcov merge  --html coverage_merge --clover coverage.xml /home/runner/coverage
+        run: composer install && vendor/bin/phpcov merge  --html projectCoverage --clover coverage.xml /home/runner/coverage
+      -
+        name: Create package coverage badges
+        run: bin/create-coverage-badges
       - name: Upload merged report
         uses: actions/upload-artifact@v4
         with:
@@ -174,7 +177,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
         with:
-          source_file: 'coverage_merge'
+          source_file: 'projectCoverage'
           destination_repo: 'apie-lib/apie-lib.github.io'
           destination_folder: '.'
           user_email: 'pieter_jordaan@Hotmail.com'

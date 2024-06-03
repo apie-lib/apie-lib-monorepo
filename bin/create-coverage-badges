@@ -1,0 +1,71 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../shared-bin.php';
+
+const PATH = __DIR__ . '/../coverage.xml';
+if (!file_exists(PATH)) {
+    throw new \LogicException(PATH . ' does not exist!');
+}
+$contents = str_replace('/home/runner/work/apie-lib-monorepo/apie-lib-monorepo/', '/app/' , file_get_contents(PATH));
+$xml = simplexml_load_string($contents);
+
+    $files = $xml->xpath('//file');
+
+    $groups = [];
+    
+    foreach ($files as $file) {
+        $attributes = $file->attributes();
+        $filePath = (string) $attributes->name;
+        
+        if (preg_match('|/app/packages/([^/]+)/|', $filePath, $matches)) {
+            $subfolder = $matches[1];
+        } else {
+            echo "Skipped: $filePath \n";
+            continue;
+        }
+        
+        $metrics = $file->metrics->attributes();
+        $elements = (int) $metrics->elements;
+        $coveredElements = (int) $metrics->coveredelements;
+        
+        if (!isset($groups[$subfolder])) {
+            $groups[$subfolder] = [
+                'elements' => 0,
+                'coveredelements' => 0
+            ];
+        }
+        
+        $groups[$subfolder]['elements'] += $elements;
+        $groups[$subfolder]['coveredelements'] += $coveredElements;
+    }
+
+    function renderBadge(float $coverage) {
+?><svg width="100" height="20" xmlns="http://www.w3.org/2000/svg">
+
+<g>
+    <rect fill="none" id="canvas_background" height="22" width="102" y="-1" x="-1"/>
+</g>
+<g>
+    <rect rx="2" id="svg_1" height="18" width="98" y="1" x="1" stroke-width="1.5" stroke="#4c4c4c" fill="#4c4c4c"/>
+    <text transform="matrix(0.95, 0, 0, 1.01133, 0.0809801, -0.0237383)" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="12" id="svg_8" y="14.45" x="2.8" stroke-width="0" stroke="#4c4c4c" fill="#6e747d">coverage</text>
+    <text transform="matrix(0.95, 0, 0, 1.01133, 0.0809801, -0.0237383)" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="12" id="svg_3" y="13.9" x="2.2" stroke-width="0" stroke="#4c4c4c" fill="#ffffff">coverage</text>
+    <rect rx="2" id="svg_5" height="18" width="40.90531" y="1.01077" x="58.13716" stroke-width="1.5" stroke="#97ca00" fill="#97ca00"/>
+    <rect id="svg_7" height="18" width="10" y="1.01077" x="58.00804" stroke-width="1.5" stroke="#97ca00" fill="#97ca00"/>
+    <text transform="matrix(0.95, 0, 0, 1.01133, 0.0809801, -0.0237383)" font-weight="normal" xml:space="preserve" text-anchor="end" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="10" id="svg_10" y="14.35" x="99" stroke-width="0" stroke="#4c4c4c" fill="#6e747d"><?=number_format($coverage, 2)?> %</text>
+    <text transform="matrix(0.95, 0, 0, 1.01133, 0.0809801, -0.0237383)" font-weight="normal" xml:space="preserve" text-anchor="end" font-family="'Trebuchet MS', Gadget, sans-serif" font-size="10" id="svg_9" y="13.8" x="98.4" stroke-width="0" stroke="#4c4c4c" fill="#ffffff"><?=number_format($coverage, 2)?> %</text>
+</g>
+</svg><?php
+    }
+    @mkdir(__DIR__ . '/../projectCoverage', recursive: true);
+    
+    foreach ($groups as $group => $coverage) {
+        if (empty($coverage['elements'])) {
+            echo "Skipped $group\n";
+            continue;
+        }
+        ob_start();
+        renderBadge($coverage['coveredelements'] / $coverage['elements'] * 100.0);
+        file_put_contents(__DIR__ . '/../projectCoverage/coverage-' . $group . '.svg', ob_get_clean());
+    }
