@@ -123,9 +123,12 @@ jobs:
       -
         id: coverage
         uses: actions/checkout@v4
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
       -
         name: Run tests for ${{ matrix.package }} in php ${{ matrix.php_version }}
-        run: composer install && bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
+        run: bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
       - name: Upload reports' artifacts 
         if: success() || failure()
         uses: actions/upload-artifact@v4

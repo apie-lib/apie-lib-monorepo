@@ -69,9 +69,8 @@ if (0 !== $process->run(function ($type, $buffer): void {
 };
 
 $dockerPath = '/app/packages/' . $selectedPackage->getPackage();
-//docker run --rm -w /app apie-php83 bin/run-tests coverage/php83
 $process = new Process(
-    ['docker', 'run', '--rm',  '-v', __DIR__ . '/../coverage:' . $dockerPath . '/coverage', '-w', $dockerPath, $containerName, 'bin/run-tests', 'coverage/' . $containerName],
+    ['docker', 'run', '--rm',  '--volume', '/tmp/composer:/root/.composer', '-v', __DIR__ . '/../coverage:' . $dockerPath . '/coverage', '-w', $dockerPath, $containerName, 'bin/run-tests', 'coverage/' . $containerName],
     env: ['COMPOSER_ALLOW_SUPERUSER' => 1],
 );
 $process->setTimeout(null);
