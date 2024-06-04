@@ -123,6 +123,11 @@ jobs:
       -
         id: coverage
         uses: actions/checkout@v4
+      - uses: actions/cache/restore@v3
+        id: restore-cache
+        with:
+          path: /tmp/composer
+          key: composer_${{ matrix.php_version }}
       - uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: "lowest"
@@ -137,6 +142,11 @@ jobs:
           if-no-files-found: ignore
           path: coverage
           retention-days: 1
+      - uses: actions/cache/save@v3
+        id: cache
+        with:
+          path: /tmp/composer
+          key: composer_${{ matrix.php_version }}
 
   create_coverage:
     name: Merge code coverage
