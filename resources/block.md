@@ -1,1 +1,1 @@
-<br>[{package}](https://github.com/apie-lib/{package}) [![PHP Composer](https://github.com/apie-lib/{package}/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/{package}/actions/workflows/php.yml){badges}
+<br>[{package}](https://github.com/apie-lib/{package}) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-{package}.svg)](https://apie-lib.github.io/projectCoverage/app/packages/{package}/index.html){badges}
