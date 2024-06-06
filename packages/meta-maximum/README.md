@@ -6,7 +6,7 @@
 
 
 
- [![Latest Stable Version](http://poser.pugx.org/apie/meta-maximum/v)](https://packagist.org/packages/apie/meta-maximum) [![Total Downloads](http://poser.pugx.org/apie/meta-maximum/downloads)](https://packagist.org/packages/apie/meta-maximum) [![Latest Unstable Version](http://poser.pugx.org/apie/meta-maximum/v/unstable)](https://packagist.org/packages/apie/meta-maximum) [![License](http://poser.pugx.org/apie/meta-maximum/license)](https://packagist.org/packages/apie/meta-maximum) [![PHP Version Require](http://poser.pugx.org/apie/meta-maximum/require/php)](https://packagist.org/packages/apie/meta-maximum) [![Code coverage](https://raw.githubusercontent.com/apie-lib/meta-maximum/main/coverage_badge.svg)](https://apie-lib.github.io/coverage/meta-maximum/index.html)  
+ [![Latest Stable Version](http://poser.pugx.org/apie/meta-maximum/v)](https://packagist.org/packages/apie/meta-maximum) [![Total Downloads](http://poser.pugx.org/apie/meta-maximum/downloads)](https://packagist.org/packages/apie/meta-maximum) [![Latest Unstable Version](http://poser.pugx.org/apie/meta-maximum/v/unstable)](https://packagist.org/packages/apie/meta-maximum) [![License](http://poser.pugx.org/apie/meta-maximum/license)](https://packagist.org/packages/apie/meta-maximum) [![PHP Version Require](http://poser.pugx.org/apie/meta-maximum/require/php)](https://packagist.org/packages/apie/meta-maximum) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-meta-maximum.svg)](https://apie-lib.github.io/projectCoverage/app/packages/meta-maximum/index.html)  
 
 [![PHP Composer](https://github.com/apie-lib/meta-maximum/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/meta-maximum/actions/workflows/php.yml)
 

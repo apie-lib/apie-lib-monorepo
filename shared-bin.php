@@ -107,7 +107,7 @@ class ComposerTools {
     {
         $repoName ??= $package;
         $donateBadge = '';
-        $coverageBadge = "[![Code coverage](https://raw.githubusercontent.com/apie-lib/$repoName/main/coverage_badge.svg)](https://apie-lib.github.io/coverage/$package/index.html)";
+        $coverageBadge = "[![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-$package.svg)](https://apie-lib.github.io/projectCoverage/app/packages/$package/index.html)";
         if ($repoName === 'apie-lib-monorepo') {
             $donateBadge = '[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=J4CAFUAW7VTAY)';
             $coverageBadge = '[![Code coverage](https://apie-lib.github.io/coverage/coverage_badge.svg)](https://apie-lib.github.io/coverage/)';
