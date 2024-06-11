@@ -110,7 +110,7 @@ class ComposerTools {
         $coverageBadge = "[![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-$package.svg)](https://apie-lib.github.io/projectCoverage/app/packages/$package/index.html)";
         if ($repoName === 'apie-lib-monorepo') {
             $donateBadge = '[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=J4CAFUAW7VTAY)';
-            $coverageBadge = '[![Code coverage](https://apie-lib.github.io/coverage/coverage_badge.svg)](https://apie-lib.github.io/coverage/)';
+            $coverageBadge = '[![Code coverage](https://apie-lib.github.io/projectCoverage/coverage_badge.svg)](https://apie-lib.github.io/projectCoverage/)';
         }
         return str_replace(PHP_EOL, ' ', "
 [![Latest Stable Version](http://poser.pugx.org/apie/$package/v)](https://packagist.org/packages/apie/$package)
