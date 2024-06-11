@@ -6,7 +6,7 @@
 
 
 
- [![Latest Stable Version](http://poser.pugx.org/apie/maker/v)](https://packagist.org/packages/apie/maker) [![Total Downloads](http://poser.pugx.org/apie/maker/downloads)](https://packagist.org/packages/apie/maker) [![Latest Unstable Version](http://poser.pugx.org/apie/maker/v/unstable)](https://packagist.org/packages/apie/maker) [![License](http://poser.pugx.org/apie/maker/license)](https://packagist.org/packages/apie/maker) [![PHP Version Require](http://poser.pugx.org/apie/maker/require/php)](https://packagist.org/packages/apie/maker) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-maker.svg)](https://apie-lib.github.io/projectCoverage/app/packages/maker/index.html)  
+ [![Latest Stable Version](http://poser.pugx.org/apie/maker/v)](https://packagist.org/packages/apie/maker) [![Total Downloads](http://poser.pugx.org/apie/maker/downloads)](https://packagist.org/packages/apie/maker) [![Latest Unstable Version](http://poser.pugx.org/apie/maker/v/unstable)](https://packagist.org/packages/apie/maker) [![License](http://poser.pugx.org/apie/maker/license)](https://packagist.org/packages/apie/maker) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-maker.svg)](https://apie-lib.github.io/projectCoverage/app/packages/maker/index.html)  
 
 [![PHP Composer](https://github.com/apie-lib/maker/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/maker/actions/workflows/php.yml)
 

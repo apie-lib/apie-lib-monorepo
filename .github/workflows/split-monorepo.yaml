@@ -177,7 +177,7 @@ jobs:
       - name: Generate coverage badge
         uses: timkrase/phpunit-coverage-badge@v1.2.0
         with:
-          coverage_badge_path: coverage/coverage_badge.svg
+          coverage_badge_path: projectCoverage/coverage_badge.svg
           report: coverage.xml
       - name: Pushes test file
         uses: dmnemec/copy_file_to_another_repo_action@main

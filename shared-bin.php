@@ -117,7 +117,6 @@ class ComposerTools {
 [![Total Downloads](http://poser.pugx.org/apie/$package/downloads)](https://packagist.org/packages/apie/$package)
 [![Latest Unstable Version](http://poser.pugx.org/apie/$package/v/unstable)](https://packagist.org/packages/apie/$package)
 [![License](http://poser.pugx.org/apie/$package/license)](https://packagist.org/packages/apie/$package)
-[![PHP Version Require](http://poser.pugx.org/apie/$package/require/php)](https://packagist.org/packages/apie/$package)
 $coverageBadge
 $donateBadge
 ");
