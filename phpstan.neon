@@ -49,6 +49,10 @@ parameters:
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
         -
+            message: '#StreamGetterActionDefinition::#'
+            path: packages/common/src/ActionDefinitions/StreamGetterActionDefinition.php
+            count: 1
+        -
             message: '#Variable \$parameters on left side#'
             path: packages/rest-api/src/EventListeners/OpenApiOperationAddedEventSubscriber.php
             count: 1
@@ -88,7 +92,6 @@ parameters:
         -
             message: '#constructor expects Apie\\SchemaGenerator\\Interfaces\\SchemaProvider\<object\>#'
             path: packages/schema-generator/src/ComponentsBuilderFactory.php
-            count: 9
 
         -
             message: '#Negated boolean expression is always false#'

@@ -298,7 +298,8 @@
     "config": {
         "lock": false,
         "allow-plugins": {
-            "apie/apie-common-plugin": true
+            "apie/apie-common-plugin": true,
+            "apie/apie-lib": true
         }
     },
     "replace": {

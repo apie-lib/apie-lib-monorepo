@@ -81,6 +81,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+  '/UploadedFile/dropdown-options/{property}':
+    post:
+      tags:
+        - UploadedFile
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.UploadedFile
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PartialInput-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
   '/User/dropdown-options/{property}':
     post:
       tags:
@@ -315,7 +341,7 @@ paths:
         - Animal
         - resource
       description: 'Creates an instance of Animal'
-      operationId: post-Animal
+      operationId: put-Animal
       requestBody:
         content:
           application/json:
@@ -418,7 +444,7 @@ paths:
         - PrimitiveOnly
         - resource
       description: 'Creates an instance of PrimitiveOnly'
-      operationId: post-PrimitiveOnly
+      operationId: put-PrimitiveOnly
       requestBody:
         content:
           application/json:
@@ -534,13 +560,116 @@ paths:
           in: query
           schema:
             type: string
+  /UploadedFile:
+    post:
+      tags:
+        - UploadedFile
+        - resource
+      description: 'Creates an instance of UploadedFile'
+      operationId: put-UploadedFile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/File-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    get:
+      tags:
+        - UploadedFile
+        - resource
+      description: 'Gets a list of resource that are an instance of UploadedFile'
+      operationId: get-all-UploadedFile
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/File-get'
+      parameters:
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: 'query[id]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[file]'
+          in: query
+          schema:
+            type: string
   /User:
     post:
       tags:
         - User
         - resource
       description: 'Creates an instance of User'
-      operationId: post-User
+      operationId: put-User
       requestBody:
         content:
           application/json:
@@ -901,6 +1030,81 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+      responses:
+        '204':
+          description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  '/UploadedFile/{id}':
+    get:
+      tags:
+        - UploadedFile
+        - resource
+      description: 'Gets a resource of UploadedFile with a specific id'
+      operationId: get-single-UploadedFile
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of UploadedFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UploadedFileIdentifier-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    delete:
+      tags:
+        - UploadedFile
+        - resource
+      description: 'Removes an instance of UploadedFile'
+      operationId: remove-single-UploadedFile
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of UploadedFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UploadedFileIdentifier-post'
       responses:
         '204':
           description: 'Resource was deleted'
@@ -1776,6 +1980,29 @@ components:
       type: object
       nullable: true
       properties: {  }
+    File-get:
+      type: object
+      required:
+        - id
+        - file
+        - stream
+      properties:
+        id:
+          $ref: '#/components/schemas/UploadedFileIdentifier-get'
+        file:
+          $ref: '#/components/schemas/UploadedFile-get'
+        stream:
+          $ref: '#/components/schemas/mixed'
+    File-post:
+      type: object
+      required:
+        - id
+        - file
+      properties:
+        id:
+          $ref: '#/components/schemas/UploadedFileIdentifier-post'
+        file:
+          $ref: '#/components/schemas/UploadedFile-post'
     FirstName-get:
       type: string
       format: firstname
@@ -2266,6 +2493,20 @@ components:
           nullable: false
         code:
           $ref: '#/components/schemas/mixed'
+    UploadedFile-get:
+      type: string
+      format: binary
+    UploadedFile-post:
+      type: string
+      format: binary
+    UploadedFileIdentifier-get:
+      type: string
+      format: uploadedfileidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    UploadedFileIdentifier-post:
+      type: string
+      format: uploadedfileidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
     User-get:
       type: object
       required:
