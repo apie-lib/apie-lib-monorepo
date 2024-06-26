@@ -14,5 +14,6 @@ class GeneratedApieCommonPluginServiceProvider extends ServiceProvider
 
     public function register()
     {
+        
     }
 }

@@ -1812,6 +1812,62 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+  '/UploadedFile/{id}/file':
+    get:
+      tags:
+        - UploadedFile
+        - action
+      description: 'Streams file on a UploadedFile with a specific id'
+      operationId: stream-single-UploadedFile-run-getFile
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of UploadedFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UploadedFileIdentifier-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadedFile-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  '/UploadedFile/{id}/stream':
+    get:
+      tags:
+        - UploadedFile
+        - action
+      description: 'Streams stream on a UploadedFile with a specific id'
+      operationId: stream-single-UploadedFile-run-getStream
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of UploadedFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UploadedFileIdentifier-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mixed'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
 servers:
   -
     url: /api/types

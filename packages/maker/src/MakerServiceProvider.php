@@ -43,5 +43,6 @@ class MakerServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\Maker\Command\ApieCreateDomainCommand::class], 'console.command');
+        
     }
 }
