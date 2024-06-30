@@ -21,8 +21,7 @@
   },
   "require": {
     "php": ">=8.1",
-    "apie/core": "self.version",
-    "nyholm/psr7": "^1.8.1"
+    "apie/core": "self.version"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
