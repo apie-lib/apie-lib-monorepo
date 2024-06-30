@@ -105,6 +105,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/fixtures",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/fixtures": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/dateformat-to-regex",
             "options": {
                 "symlink": true,

@@ -12,9 +12,6 @@ $composer = json_decode(file_get_contents(__DIR__ . '/../playground/edit-compose
 $composer['repositories'] = [];
 foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0) as $packageFolder) {
     $package = new Package($packageFolder);
-    if ($package->getPackage() === 'fixtures') {
-        continue;
-    }
     $composer['repositories'][] = [
         "type" => "path",
         "url" => "/packages/" . $package->getPackage(),
@@ -25,7 +22,6 @@ foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0)
             ]
         ]
     ];
-    $package->createFile('.github/workflows/php.yml', true);
 }
 file_put_contents(
     __DIR__ . '/../playground/edit-composer.json',
