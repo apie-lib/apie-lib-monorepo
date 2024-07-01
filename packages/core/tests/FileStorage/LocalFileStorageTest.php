@@ -23,6 +23,7 @@ class LocalFileStorageTest extends TestCase
         $this->cleaning[] = $path;
         $fixturesPath = __DIR__ . '/../../fixtures/LocalFileStorage';
         copy($fixturesPath . '/example.txt', $path . '/example.txt');
+        copy($fixturesPath . '/wrong-image.png', $path . '/wrong-image.png');
         return new LocalFileStorage(['path' => $path]);
     }
 
@@ -43,8 +44,8 @@ class LocalFileStorageTest extends TestCase
     public function it_can_create_and_find_uploaded_file_with_psr_uploaded_file()
     {
         $testItem = $this->givenALocalFileStorage();
-        $uploadedFile = $testItem->pathToPsr('test.png');
-        $this->assertEquals('text/plain', $uploadedFile->getClientMediaType());
-        $this->assertSame('test.png', $testItem->psrToPath($uploadedFile));
+        $uploadedFile = $testItem->pathToPsr('wrong-image.png');
+        $this->assertEquals('application/x-empty', $uploadedFile->getClientMediaType());
+        $this->assertSame('wrong-image.png', $testItem->psrToPath($uploadedFile));
     }
 }
