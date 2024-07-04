@@ -73,6 +73,10 @@ class SymfonyTestingKernel extends Kernel
         return __DIR__ . '/../../../fixtures/symfony/templates';
     }
 
+    public function __wakeup()
+    {
+    }
+
     public function registerContainerConfiguration(LoaderInterface $loader): void
     {
         $loader->load(function (ContainerBuilder $container) {

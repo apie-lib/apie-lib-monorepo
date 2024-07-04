@@ -50,6 +50,7 @@ jobs:
           php-version: ${{ matrix.php_version }}
           coverage: pcov
           ini-values: pcov.directory=packages
+          extensions: zip
       - uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: ${{ matrix.composer }}
