@@ -2,17 +2,23 @@
 namespace Apie\CountWords;
 
 use Apie\CountWords\Strategies\HtmlWordCounter;
+use Apie\CountWords\Strategies\JsonWordCounter;
 use Apie\CountWords\Strategies\OfficeDocumentWordCounter;
 use Apie\CountWords\Strategies\PdfFileWordCounter;
+use Apie\CountWords\Strategies\PlaintextWordCounter;
 use Apie\CountWords\Strategies\XmlWordCounter;
+use Apie\CountWords\Strategies\ZipArchiveWordCounter;
 
 class WordCounter
 {
     private const FILE_STRATEGIES = [
+        JsonWordCounter::class,
         OfficeDocumentWordCounter::class,
         PdfFileWordCounter::class,
         HtmlWordCounter::class,
         XmlWordCounter::class,
+        PlaintextWordCounter::class,
+        ZipArchiveWordCounter::class,
     ];
 
     /**

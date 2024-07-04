@@ -6,7 +6,7 @@ use Apie\CountWords\Strategies\Concerns\UseTempFileForString;
 use Apie\CountWords\WordCounter;
 use ZipArchive;
 
-final class OfficeDocumentWordCounter implements WordCounterInterface
+final class ZipArchiveWordCounter implements WordCounterInterface
 {
     use UseStringForResource;
     use UseTempFileForString;
@@ -22,14 +22,13 @@ final class OfficeDocumentWordCounter implements WordCounterInterface
 
     public static function isSupported(?string $fileExtension, ?string $mimeType): bool
     {
-        if (!class_exists(ZipArchive::class)) {
+        if (!class_exists(ZipArchive::class) || self::$counter > 6) {
             return false;
         }
-        return in_array(strtolower($fileExtension ?? ''), ['xlsx', 'pptx', 'docx'])
+        return in_array(strtolower($fileExtension ?? ''), ['zip'])
             || in_array(strtolower($mimeType ?? ''), [
-                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                'application/zip',
+                'application/x-zip-compressed',
             ]);
     }
 
