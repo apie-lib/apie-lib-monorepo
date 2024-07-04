@@ -28,16 +28,23 @@ final class PdfFileWordCounter implements WordCounterInterface
     public static function countFromFile(string $path, array $counts = []): array
     {
         $parser = new Parser();
-        $pdf = $parser->parseFile($path);
-        $text = $pdf->getText();
+        try {   
+            $pdf = $parser->parseFile($path);
+            $text = $pdf->getText();
+        } catch (\Exception) {
+            return $counts;
+        }
         $result = WordCounter::countFromString($text, $counts);
-        $details = $pdf->getDetails();
-        unset($details['CreationDate']);
-        unset($details['ModDate']);
-        unset($details['Pages']);
-        unset($details['Producer']);
-        foreach ($details as $detail) {
-            $result = WordCounter::countFromString($detail, $result);
+        try {
+            $details = $pdf->getDetails();
+            unset($details['CreationDate']);
+            unset($details['ModDate']);
+            unset($details['Pages']);
+            unset($details['Producer']);
+            foreach ($details as $detail) {
+                $result = WordCounter::countFromString($detail, $result);
+            }
+        } catch (\Exception) {
         }
         return $result;
     }

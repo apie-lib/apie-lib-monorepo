@@ -75,6 +75,11 @@ class SymfonyTestingKernel extends Kernel
 
     public function __wakeup()
     {
+        if (\is_object($this->environment) || \is_object($this->debug)) {
+            throw new \BadMethodCallException('Cannot unserialize '.__CLASS__);
+        }
+
+        $this->__construct($this->apieConfig, $this->environment, $this->debug);
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader): void
