@@ -23,6 +23,7 @@ class ZipArchiveWordCounterTest extends TestCase
     /**
      * @test
      * @runInSeparateProcess
+     * @requires extension zip
      */
     public function it_reads_zips_inside_zips_with_limited_recursion()
     {

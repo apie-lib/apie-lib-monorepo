@@ -44,6 +44,9 @@ final class OfficeDocumentWordCounter implements WordCounterInterface
             for ($i = 0; $i < $zip->numFiles; $i++) {
                 $filename = $zip->getNameIndex($i);
             
+                if (preg_match('/\.(zip|xlsx|pptx|docx)$/i', $filename)) {
+                    continue;
+                }
                 // Open a stream to read the file content
                 $stream = $zip->getStream($filename);
             
