@@ -18,6 +18,24 @@ class InlineStorage implements PsrAwareStorageInterface, UploadedFileAwareStorag
         return $className::createFromUploadedFile($fileUpload, $storagePath);
     }
 
+    public function getProxy(
+        string $storagePath,
+        string $className = StoredFile::class
+    ): StoredFile {
+        return $className::createFromStorage(
+            $this,
+            $storagePath
+        );
+    }
+
+    public function loadFromStorage(
+        string $storagePath,
+        string $className = StoredFile::class
+    ): StoredFile {
+        list($mimeType, $originalName, $contents) = explode('|', $storagePath, 3);
+        return $className::createFromString(base64_decode($contents), $mimeType, $originalName);
+    }
+
     public function uploadedFileToPath(UploadedFile $uploadedFile): string
     {
         return sprintf(

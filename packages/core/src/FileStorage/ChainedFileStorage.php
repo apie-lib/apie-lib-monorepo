@@ -2,6 +2,7 @@
 namespace Apie\Core\FileStorage;
 
 use Apie\Core\Exceptions\FileStorageException;
+use Exception;
 use LogicException;
 use Psr\Http\Message\UploadedFileInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -53,6 +54,38 @@ final class ChainedFileStorage implements PsrAwareStorageInterface, ResourceAwar
         }
 
         throw new \LogicException("I can not create an upload");
+    }
+
+    public function getProxy(
+        string $storagePath,
+        string $className = StoredFile::class
+    ): StoredFile {
+        return $className::createFromStorage(
+            $this,
+            $storagePath
+        );
+    }
+
+    /**
+     * @template T of StoredFile
+     * @param class-string<T> $className
+     * @return T
+     */
+    public function loadFromStorage(
+        string $storagePath,
+        string $className = StoredFile::class
+    ): StoredFile{
+        $errors = [];
+        $list = [...$this->psrAwareStorages, ...$this->uploadedAwareStorages, ...$this->resourceAwareStorages];
+        foreach ($list as $psrAwareStorage) {
+            try {
+                return $psrAwareStorage->loadFromStorage($storagePath, $className);
+            } catch (Exception $error) {
+                $errors[] = $error;
+            }
+        }
+
+        throw new FileStorageException('I can not load from "' . $storagePath . '"', $errors);
     }
 
     /**

@@ -19,7 +19,7 @@ class StoredFile implements UploadedFileInterface
      */
     final protected function __construct(
         private UploadedFileStatus $status,
-        private ?ChainedFileStorage $storage = null,
+        private ?FileStorageInterface $storage = null,
         private ?string $content = null,
         private ?string $storagePath = null,
         private mixed $resource = null,
@@ -39,6 +39,15 @@ class StoredFile implements UploadedFileInterface
     {
     }
 
+    public function withBeingStored(FileStorageInterface $storage, string $storagePath): static
+    {
+        $res = clone $this;
+        $res->status = UploadedFileStatus::StoredInStorage;
+        $res->storage = $storage;
+        $res->storagePath = $storagePath;
+        return $res;
+    }
+
     final public function __destruct()
     {
         if ($this->removeOnDestruct && $this->serverPath && file_exists($this->serverPath)) {
@@ -46,7 +55,7 @@ class StoredFile implements UploadedFileInterface
         }
     }
 
-    public final static function createFromStorage(ChainedFileStorage $storage, string $storagePath): static
+    public final static function createFromStorage(FileStorageInterface $storage, string $storagePath): static
     {
         return new static(
             UploadedFileStatus::StoredInStorage,

@@ -35,8 +35,39 @@ final class LocalFileStorage implements PsrAwareStorageInterface, UploadedFileAw
         $storagePath = 
             uniqid(KebabCaseSlug::fromClass($className)->toNative(), true)
             . ltrim($this->normalizePath($fileUpload->getClientFilename()));
+        $target = fopen($this->path . $storagePath, 'w+');
+        if ($fileUpload instanceof StoredFile) {
+            stream_copy_to_stream($fileUpload->getStream()->detach(), $target);
+        } else {
+            fputs($target, $fileUpload->getStream()->__toString());
+        }
+        fclose($target);
 
-        return $className::createFromUploadedFile($fileUpload, $storagePath);
+        return $className::createFromLocalFile(
+            $this->path . $storagePath,
+            $fileUpload->getClientFilename()
+        )->withBeingStored($this, $storagePath);
+    }
+
+    public function getProxy(
+        string $storagePath,
+        string $className = StoredFile::class
+    ): StoredFile {
+        return $className::createFromStorage(
+            $this,
+            $storagePath
+        );
+    }
+
+    public function loadFromStorage(
+        string $storagePath,
+        string $className = StoredFile::class
+    ): StoredFile {
+        $path = ltrim($this->normalizePath($storagePath), '\\/');
+        $fullPath = $this->path . $path;
+        return StoredFile::createFromLocalFile(
+            $fullPath
+        )->withBeingStored($this, $storagePath);
     }
 
     public function psrToPath(UploadedFileInterface $uploadedFile): string
