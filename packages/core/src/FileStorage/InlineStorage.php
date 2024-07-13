@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Core\FileStorage;
 
-use Apie\Core\Other\UploadedFileFactory;
 use Psr\Http\Message\UploadedFileInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
@@ -10,13 +9,22 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  */
 class InlineStorage implements PsrAwareStorageInterface, UploadedFileAwareStorageInterface, ResourceAwareStorageInterface
 {
+    public function createNewUpload(
+        UploadedFileInterface $fileUpload,
+        string $className = StoredFile::class
+    ): StoredFile
+    {   
+        $storagePath = $this->psrToPath($fileUpload);
+        return $className::createFromUploadedFile($fileUpload, $storagePath);
+    }
+
     public function uploadedFileToPath(UploadedFile $uploadedFile): string
     {
         return sprintf(
             '%s|%s|%s',
             str_replace('|', '', $uploadedFile->getMimeType()),
             str_replace('|', '', $uploadedFile->getClientOriginalName()),
-            $uploadedFile->getContent()
+            base64_encode($uploadedFile->getContent())
         );
     }
 
@@ -24,7 +32,7 @@ class InlineStorage implements PsrAwareStorageInterface, UploadedFileAwareStorag
     {
         list($mimeType, $originalName, $contents) = explode('|', $path, 3);
         $tmpFilePath = sys_get_temp_dir() . '/upload-' . md5($path);
-        file_put_contents($tmpFilePath, $contents);
+        file_put_contents($tmpFilePath, base64_decode($contents));
 
         return new UploadedFile(
             $tmpFilePath,
@@ -39,12 +47,12 @@ class InlineStorage implements PsrAwareStorageInterface, UploadedFileAwareStorag
     {
         assert(is_resource($resource));
         fseek($resource, 0);
-        return stream_get_contents($resource);
+        return base64_encode(stream_get_contents($resource));
     }
 
     public function pathToResource(string $path): mixed
     {
-        return fopen('data://text/plain,' . $path, 'r');
+        return fopen('data://text/plain,' . base64_decode($path), 'r');
     }
 
     public function psrToPath(UploadedFileInterface $uploadedFile): string
@@ -53,13 +61,13 @@ class InlineStorage implements PsrAwareStorageInterface, UploadedFileAwareStorag
             '%s|%s|%s',
             str_replace('|', '', $uploadedFile->getClientMediaType()),
             str_replace('|', '', $uploadedFile->getClientFilename()),
-            $uploadedFile->getStream()->__toString()
+            base64_encode($uploadedFile->getStream()->__toString())
         );
     }
 
     public function pathToPsr(string $path): UploadedFileInterface
     {
         list($mimeType, $originalName, $contents) = explode('|', $path, 3);
-        return UploadedFileFactory::createUploadedFileFromString($contents, $originalName, $mimeType);
+        return StoredFile::createFromString(base64_decode($contents), $mimeType, $originalName);
     }
 }

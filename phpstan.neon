@@ -44,6 +44,10 @@ parameters:
             message: '#is assigned outside of its declaring class#'
             path: packages/doctrine-entity-converter/src/CodeGenerators/AddDoctrineFields.php
             count: 1
+        -
+            message: '#Comparison operation "<" between int<0, max> and 0 is always false.#'
+            path: packages/core/src/FileStorage/StoredFile.php
+            count: 1
         - 
             message: '#ActionInterface::#'
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
@@ -83,7 +87,6 @@ parameters:
         - 
             message: '#iterable type array#'
             path: packages/serializer/src/
-            count: 12
         -
             message: '#ValueObjectInterface::getRegularExpression#'
             path: packages/schema-generator/src/SchemaProviders/

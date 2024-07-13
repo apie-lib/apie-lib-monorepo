@@ -1,15 +1,18 @@
 <?php
 namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
+use Apie\Core\Attributes\AllowMultipart;
 use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\ResourceName;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Utils\ConverterUtils;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UploadedFileIdentifier;
 use Psr\Http\Message\UploadedFileInterface;
 
 #[RemovalCheck(new StaticCheck())]
 #[ResourceName('File')]
+#[AllowMultipart]
 final class UploadedFile implements EntityInterface
 {
     public function __construct(
@@ -31,7 +34,7 @@ final class UploadedFile implements EntityInterface
     public function getStream(): mixed
     {
         $stream = $this->file->getStream();
-        $resource = $stream->detach();
+        $resource = ConverterUtils::extractResourceFromStream($stream);
 
         if (!is_resource($resource)) {
             throw new \RuntimeException('Failed to convert the stream to a PHP resource');

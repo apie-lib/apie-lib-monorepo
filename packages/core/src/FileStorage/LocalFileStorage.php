@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Core\FileStorage;
 
+use Apie\Core\Identifiers\KebabCaseSlug;
 use Apie\Core\ValueObjects\Utils;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\UploadedFileInterface;
@@ -25,6 +26,19 @@ final class LocalFileStorage implements PsrAwareStorageInterface, UploadedFileAw
         $this->mappedPaths = new WeakMap();
         $this->path = rtrim(Utils::toString($options['path']), '\\/') . DIRECTORY_SEPARATOR;
     }
+
+    public function createNewUpload(
+        UploadedFileInterface $fileUpload,
+        string $className = StoredFile::class
+    ): StoredFile
+    {   
+        $storagePath = 
+            uniqid(KebabCaseSlug::fromClass($className)->toNative(), true)
+            . ltrim($this->normalizePath($fileUpload->getClientFilename()));
+
+        return $className::createFromUploadedFile($fileUpload, $storagePath);
+    }
+
     public function psrToPath(UploadedFileInterface $uploadedFile): string
     {
         return $this->mappedPaths[$uploadedFile];

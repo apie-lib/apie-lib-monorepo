@@ -562,6 +562,20 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/File-post'
+          multipart/form-data:
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                form:
+                  $ref: '#/components/schemas/File-post-multipart-form-data'
+                _csrf:
+                  type: string
+                file:
+                  type: string
+                  format: binary
+                  nullable: false
       responses:
         '201':
           description: 'Resource was created'
@@ -1817,6 +1831,7 @@ paths:
       tags:
         - UploadedFile
         - action
+        - download
       description: 'Streams file on a UploadedFile with a specific id'
       operationId: stream-single-UploadedFile-run-getFile
       parameters:
@@ -1845,6 +1860,7 @@ paths:
       tags:
         - UploadedFile
         - action
+        - download
       description: 'Streams stream on a UploadedFile with a specific id'
       operationId: stream-single-UploadedFile-run-getStream
       parameters:
@@ -2060,6 +2076,16 @@ components:
           $ref: '#/components/schemas/UploadedFileIdentifier-post'
         file:
           $ref: '#/components/schemas/UploadedFile-post'
+    File-post-multipart-form-data:
+      type: object
+      required:
+        - id
+        - file
+      properties:
+        id:
+          $ref: '#/components/schemas/UploadedFileIdentifier-post-multipart-form-data'
+        file:
+          $ref: '#/components/schemas/UploadedFile-post-multipart-form-data'
     FirstName-get:
       type: string
       format: firstname
@@ -2552,15 +2578,34 @@ components:
           $ref: '#/components/schemas/mixed'
     UploadedFile-get:
       type: string
-      format: binary
+      format: path
     UploadedFile-post:
+      required:
+        - contents
+        - originalFilename
+      type: object
+      properties:
+        contents:
+          type: string
+          format: binary
+        originalFilename:
+          type: string
+          format: file
+      nullable: false
+    UploadedFile-post-multipart-form-data:
       type: string
-      format: binary
+      format: filename
+      nullable: false
+      x-upload: '*/*'
     UploadedFileIdentifier-get:
       type: string
       format: uploadedfileidentifier
       pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
     UploadedFileIdentifier-post:
+      type: string
+      format: uploadedfileidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    UploadedFileIdentifier-post-multipart-form-data:
       type: string
       format: uploadedfileidentifier
       pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'

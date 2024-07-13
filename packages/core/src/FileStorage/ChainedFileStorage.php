@@ -38,6 +38,23 @@ final class ChainedFileStorage implements PsrAwareStorageInterface, ResourceAwar
         $this->uploadedAwareStorages = is_array($uploadedAwareStorages) ? $uploadedAwareStorages : iterator_to_array($uploadedAwareStorages);
     }
 
+    public function createNewUpload(
+        UploadedFileInterface $fileUpload,
+        string $className = StoredFile::class
+    ): StoredFile {
+        foreach ($this->psrAwareStorages as $psrAwareStorage) {
+            return $psrAwareStorage->createNewUpload($fileUpload, $className);
+        }
+        foreach ($this->uploadedAwareStorages as $uploadedAwareStorage) {
+            return $uploadedAwareStorage->createNewUpload($fileUpload, $className);
+        }
+        foreach ($this->resourceAwareStorages as $resourceAwareStorage) {
+            return $resourceAwareStorage->createNewUpload($fileUpload, $className);
+        }
+
+        throw new \LogicException("I can not create an upload");
+    }
+
     /**
      * @param array<int, object> $list
      */
