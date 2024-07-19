@@ -224,8 +224,12 @@ class StoredFile implements UploadedFileInterface
         if ($tempStream === false) {
             throw new RuntimeException('Unable to create a temporary file');
         }
-        stream_copy_to_stream($resource, $tempStream);
-        rewind($tempStream);
+        if (!stream_copy_to_stream($resource, $tempStream)) {
+            throw new \RuntimeException('Could not copy stream');
+        }
+        if (!rewind($tempStream)) {
+            throw new \RuntimeException('Could not rewind stream');
+        }
 
         return $tempStream;
     }
@@ -240,9 +244,10 @@ class StoredFile implements UploadedFileInterface
         }
         if (is_resource($this->resource)) {
             $meta = stream_get_meta_data($this->resource);
-            if (!is_writable($meta['uri']) || !is_readable($meta['uri']) || 'a' === $meta['mode']) {
+            if (!$meta['seekable']) {
                 $this->resource = $this->makeRewindable($this->resource);
             }
+            rewind($this->resource);
             return new Stream($this->makeRewindable($this->resource));
         }
         if ($this->storage instanceof ChainedFileStorage) {

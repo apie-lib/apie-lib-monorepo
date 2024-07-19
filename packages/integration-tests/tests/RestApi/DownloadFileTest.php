@@ -67,7 +67,6 @@ class DownloadFileTest extends TestCase
     public function it_can_stream_an_uploaded_file(
         TestApplicationInterface $testApplication
     ) {
-        $this->markTestIncomplete();
         $testApplication->runApplicationTest(function () use ($testApplication) {
             $datalayer = $testApplication->getServiceContainer()->get('apie');
             $uploadedFile = new UploadedFile(

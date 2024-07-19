@@ -33,12 +33,6 @@ final class UploadedFile implements EntityInterface
 
     public function getStream(): mixed
     {
-        $stream = $this->file->getStream();
-        $resource = ConverterUtils::extractResourceFromStream($stream);
-        if (!is_resource($resource)) {
-            throw new \RuntimeException('Failed to convert the stream to a PHP resource');
-        }
-    
-        return $resource;
+        return $this->file->getStream()->detach();
     }
 }

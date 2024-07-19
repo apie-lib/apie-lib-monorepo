@@ -6,7 +6,6 @@ use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\ResourceName;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
-use Apie\Core\Utils\ConverterUtils;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UploadedFileIdentifier;
 use Psr\Http\Message\UploadedFileInterface;
 
@@ -33,13 +32,6 @@ final class UploadedFile implements EntityInterface
 
     public function getStream(): mixed
     {
-        $stream = $this->file->getStream();
-        $resource = ConverterUtils::extractResourceFromStream($stream);
-
-        if (!is_resource($resource)) {
-            throw new \RuntimeException('Failed to convert the stream to a PHP resource');
-        }
-    
-        return $resource;
+        return $this->file->getStream()->detach();
     }
 }
