@@ -867,6 +867,19 @@
                 ],
                 "description": "Creates an instance of UploadedFile",
                 "operationId": "put-UploadedFile",
+                "parameters": [
+                    {
+                        "name": "x-no-crsf",
+                        "in": "header",
+                        "description": "Disable csrf",
+                        "schema": {
+                            "enum": [
+                                1
+                            ],
+                            "type": "string"
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
