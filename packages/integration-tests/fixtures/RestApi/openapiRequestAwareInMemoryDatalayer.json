@@ -877,6 +877,7 @@
                         "multipart/form-data": {
                             "schema": {
                                 "required": [
+                                    "form",
                                     "file"
                                 ],
                                 "type": "object",
@@ -3017,6 +3018,10 @@
                 "format": "animalidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
+            "BinaryStream-post": {
+                "type": "string",
+                "format": "binary"
+            },
             "Bird-get": {
                 "type": "object",
                 "oneOf": [
@@ -3232,6 +3237,11 @@
                     }
                 }
             },
+            "Filename-post": {
+                "type": "string",
+                "format": "filename",
+                "pattern": "^(?=.{1,255}$)[^<>:\"\\/\\|?*\\x00-\\x1F\\x7F]+(\\.[^<>:\"\\/\\|?*\\x00-\\x1F\\x7F]+)?$"
+            },
             "FirstName-get": {
                 "type": "string",
                 "format": "firstname",
@@ -3362,6 +3372,24 @@
                     "type": {
                         "type": "string",
                         "nullable": false
+                    }
+                }
+            },
+            "JsonFileUpload-post": {
+                "type": "object",
+                "required": [
+                    "originalFilename",
+                    "contents"
+                ],
+                "properties": {
+                    "originalFilename": {
+                        "$ref": "#/components/schemas/Filename-post"
+                    },
+                    "contents": {
+                        "$ref": "#/components/schemas/BinaryStream-post"
+                    },
+                    "mime": {
+                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
                     }
                 }
             },
@@ -3901,6 +3929,12 @@
                     }
                 }
             },
+            "StrictMimeType-nullable-post": {
+                "type": "string",
+                "format": "strictmimetype",
+                "pattern": "^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$",
+                "nullable": true
+            },
             "StrongPassword-post": {
                 "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
                 "type": "string",
@@ -3927,26 +3961,26 @@
                 "format": "path"
             },
             "UploadedFile-post": {
-                "required": [
-                    "contents",
-                    "originalFilename"
-                ],
                 "type": "object",
+                "required": [
+                    "originalFilename",
+                    "contents"
+                ],
                 "properties": {
-                    "contents": {
-                        "type": "string",
-                        "format": "binary"
-                    },
                     "originalFilename": {
-                        "type": "string",
-                        "format": "file"
+                        "$ref": "#/components/schemas/Filename-post"
+                    },
+                    "contents": {
+                        "$ref": "#/components/schemas/BinaryStream-post"
+                    },
+                    "mime": {
+                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
                     }
-                },
-                "nullable": false
+                }
             },
             "UploadedFile-post-multipart-form-data": {
                 "type": "string",
-                "format": "filename",
+                "format": "binary",
                 "nullable": false,
                 "x-upload": "*/*"
             },

@@ -114,7 +114,7 @@ class OpenApiGenerator
             $visited = [];
             $state = [];
             $this->findUploads($result, $componentsBuilder, $state, $uploads, $visited);
-            $required = [];
+            $required = ['form'];
             foreach ($uploads as $uploadName => $upload) {
                 if (!$upload->nullable) {
                     $required[] = $uploadName;
