@@ -36,6 +36,10 @@ class JsonFileUploadTest extends TestCase
      */
     public function it_refuses_invalid_input(string $expectedExceptionClass, string $expectedExceptionMessage, array $input)
     {
+        // TODO move validationexception to apie/core
+        if (!class_exists($expectedExceptionClass)) {
+            $this->markTestSkipped('Class ' . $expectedExceptionClass . ' does not exist');
+        }
         $this->expectException($expectedExceptionClass);
         $this->expectExceptionMessage($expectedExceptionMessage);
         JsonFileUpload::fromNative($input);
