@@ -10,6 +10,8 @@ class StorageMappingAttributeConverter implements PropertyConverterInterface
     public function applyToDomain(
         DomainToStorageContext $context
     ): void {
+        foreach ($context->storageProperty->getAttributes(StorageMappingAttribute::class) as $attribute) {
+        }
     }
 
     public function applyToStorage(

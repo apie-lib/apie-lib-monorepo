@@ -209,7 +209,7 @@ class StoredFile implements UploadedFileInterface
         return $this->indexing = [];
     }
 
-    public function getStoragePath(): ?string
+    final public function getStoragePath(): ?string
     {
         return $this->storagePath;
     }
