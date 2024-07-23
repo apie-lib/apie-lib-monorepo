@@ -45,13 +45,13 @@ final class FileTableGenerator implements RunGeneratedCodeContextInterface
                 'serverPath' => ['getServerPath', 'serverPath', $class->name],
                 'indexing' => ['getIndexing', 'indexing', $class->name],
             ];
+            $types = [
+                'fileSize' => '?int',
+                'indexing' => 'array',
+                'storagePath' => 'string'
+            ];
             foreach ($properties as $propertyName => $attributeArguments) {
-                $type = '?string';
-                if ($propertyName === 'fileSize') {
-                    $type = '?int';
-                } elseif ($propertyName === 'indexing') {
-                    $type = 'array';
-                }
+                $type = $types[$propertyName] ?? '?string';
                 $table->addProperty($propertyName)
                     ->setType($type)
                     ->addAttribute(
