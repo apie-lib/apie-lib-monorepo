@@ -6,7 +6,6 @@ use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\ResourceName;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
-use Apie\Core\Utils\ConverterUtils;
 use App\ApiePlayground\Example\Identifiers\UploadedFileIdentifier;
 use Psr\Http\Message\UploadedFileInterface;
 

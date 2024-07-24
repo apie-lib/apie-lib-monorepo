@@ -28,6 +28,9 @@ jobs:
       - uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: "lowest"
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+        
       - name: Validate composer.json
         run: composer validate
 
@@ -54,6 +57,8 @@ jobs:
       - uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: ${{ matrix.composer }}
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
       - name: Build test suite
         run: docker build --file dockerfile.testing . --build-arg PHP_VERSION=${{ matrix.php_version }} -t apie-testing-${{ matrix.php_version }}-${{ matrix.composer }}-test
       - name: Run test suite
@@ -80,6 +85,8 @@ jobs:
       - uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: "lowest"
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
       - name: Run static code analysis
         run: vendor/bin/phpstan
     
@@ -99,6 +106,8 @@ jobs:
       - uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: "lowest"
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
 
       -
         id: output_data
@@ -132,9 +141,13 @@ jobs:
       - uses: "ramsey/composer-install@v3"
         with:
           dependency-versions: "lowest"
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
       -
         name: Run tests for ${{ matrix.package }} in php ${{ matrix.php_version }}
         run: bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
       - name: Upload reports' artifacts 
         if: success() || failure()
         uses: actions/upload-artifact@v4

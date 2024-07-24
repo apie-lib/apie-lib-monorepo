@@ -1,4 +1,4 @@
-<gr-input
+<{{property('type') == 'file' ? '' : 'gr-'}}input
     label="{{ property('name') }}"
     name="{{ property('name') }}"
     value="{{ property('value') }}"
@@ -13,4 +13,4 @@
     {%- if (property('validationError')) -%}
     <span slot="invalid-text" style="white-space:pre">{{ property('validationError') }}</span>
     {%- endif -%}
-</gr-input>
+</{{property('type') == 'file' ? '' : 'gr-'}}input>
