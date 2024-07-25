@@ -1,0 +1,29 @@
+<input
+    id="afd9aafcc17084f4e4a56ebd62a6d237e" 
+    label="form[name]"
+    name="_tmp"
+    type="file"
+    ></input>
+<input id="afd9aafcc17084f4e4a56ebd62a6d237e-contents" type="value" name="form[name][contents]" value="Hello World"/>
+<input id="afd9aafcc17084f4e4a56ebd62a6d237e-filename" type="value" name="form[name][originalFilename]" value="hello.txt"/>
+
+<apie-script>
+(function (elm) {
+    elm.classList.add('handled');
+    elm.addEventListener('change', function(event) {
+        const file = event.target.files[0]; // Get the selected file
+
+        if (file) {
+            document.getElementById('afd9aafcc17084f4e4a56ebd62a6d237e-filename').value = file.name;
+            // Create a FileReader object
+            const reader = new FileReader();
+
+            // Define the onload event for the reader
+            reader.onload = function(e) {
+                document.getElementById('afd9aafcc17084f4e4a56ebd62a6d237e-contents').value = e.target.result;
+            };
+            reader.readAsText(file)
+        }
+    });
+}(document.querySelector('#afd9aafcc17084f4e4a56ebd62a6d237e:not(.handled)')))
+</apie-script>
