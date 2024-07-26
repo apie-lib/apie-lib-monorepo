@@ -20,7 +20,7 @@ class UploadFileFields implements \Apie\Core\Entities\EntityInterface
 
     //public ImageFile $imageFile;
 
-    //public UploadedFileList $fileList;
+    public UploadedFileList $fileList;
 
     public function __construct(?UploadFileFieldsIdentifier $id = null)
     {
