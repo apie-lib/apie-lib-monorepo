@@ -1,11 +1,11 @@
 <?php
 namespace Apie\Console\Helpers;
 
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
 
-final class DisplayResultHelper {
+final class DisplayResultHelper
+{
     /**
      * @codeCoverageIgnore
      */
@@ -15,6 +15,9 @@ final class DisplayResultHelper {
 
     public static function displayResult(mixed $result): string
     {
+        if (is_string($result)) {
+            return $result;
+        }
         $cloner = new VarCloner();
         $stream = tmpfile();
         $dumper = new CliDumper($stream);
