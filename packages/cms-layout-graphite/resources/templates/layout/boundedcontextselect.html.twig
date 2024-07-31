@@ -1,4 +1,5 @@
-<gr-select class="unhandled-bounded-select" {% if property('boundedContextHashmap').count() == 1 %}disabled {% endif %}label="{{ translate('apie.cms.bounded_context') }}" value="{{ property('selectedBoundedContextId') }}">
+{% if property('boundedContextHashmap').count() > 1 %}
+<gr-select class="unhandled-bounded-select" label="{{ translate('apie.cms.bounded_context') }}" value="{{ property('selectedBoundedContextId') }}">
     {% for boundedContext in property('boundedContextHashmap') %}
         <gr-menu-item value="{{ boundedContext.getId() }}">{{ boundedContext.getId() }}</gr-menu-item>
     {% endfor %}
@@ -12,3 +13,6 @@
     element.classList.remove('unhandled-bounded-select');
 }(document.querySelector('.unhandled-bounded-select')));
 </script>
+{% else %}
+&nbsp;
+{% endif %}

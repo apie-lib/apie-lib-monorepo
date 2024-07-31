@@ -8,14 +8,10 @@
     {% for key, value in property('additionalAttributes') %}
     {{ key }}="{{ value }}"
     {% endfor %}
-    {%- if (property('validationError')) -%}
-    invalid invalid-text="{{ property('validationError') }}"
-    {%- endif -%}
-    >
+    />
     {%- if (property('validationError')) -%}
     <span slot="invalid-text" style="white-space:pre">{{ property('validationError') }}</span>
     {%- endif -%}
-</input>
 {% if not property('multipart') %}
 <input id="{{ property('id') }}-contents" type="value" name="{{ property('name') }}[contents]" value="{{ property('value').contents | default('') }}"/>
 <input id="{{ property('id') }}-filename" type="value" name="{{ property('name') }}[originalFilename]" value="{{ property('value').originalFilename | default('') }}"/>
