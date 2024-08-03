@@ -14,6 +14,7 @@ RUN apt-get install -y \
         vim \
         wget \
         unzip \
+        libpng-dev \
         libssh2-1-dev \
         zlib1g-dev \
         zip
@@ -21,7 +22,7 @@ RUN apt-get install -y \
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-RUN docker-php-ext-install opcache
+RUN docker-php-ext-install opcache gd
 RUN pecl install pcov \
     && docker-php-ext-enable pcov
 COPY ./packages/PACKAGE_NAME /app/packages/PACKAGE_NAME

@@ -8,6 +8,7 @@ RUN apt-get update \
         libicu-dev \
         libpq-dev \
         libzip-dev \
+        libpng-dev \
         unzip \
         jq \
         git \
@@ -20,6 +21,7 @@ RUN docker-php-ext-install \
     intl \
     pdo \
     pdo_pgsql \
+    gd \
     zip \
     pdo \
     pdo_mysql
