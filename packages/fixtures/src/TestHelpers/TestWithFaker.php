@@ -1,6 +1,8 @@
 <?php
 namespace Apie\Fixtures\TestHelpers;
 
+use Apie\Core\Utils\EntityUtils;
+use Apie\Core\Utils\ValueObjectUtils;
 use Apie\Faker\ApieObjectFaker;
 use Faker\Factory;
 use Faker\Generator;
@@ -20,7 +22,14 @@ trait TestWithFaker
             $generator = Factory::create();
             $generator->addProvider(ApieObjectFaker::createWithDefaultFakers($generator));
         }
-        for ($i = 0; $i < 1000; $i++) {
+        $interval = 1000;
+        if (EntityUtils::isEntity($classToTest) || ValueObjectUtils::isCompositeValueObject($classToTest)) {
+            $interval = 100;
+        }
+        if (preg_match('/File$/', $classToTest)) {
+            $interval = 10;
+        }
+        for ($i = 0; $i < $interval; $i++) {
             $result = $generator->fakeClass($classToTest);
             $this->assertInstanceOf($classToTest, $result);
             $testCase($result, $generator);

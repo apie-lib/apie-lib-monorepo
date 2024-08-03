@@ -2,11 +2,11 @@
 namespace Apie\Faker\FileFakers;
 
 use Apie\Core\FileStorage\StoredFile;
-use Apie\Faker\Interfaces\ApieFileFaker;
+use Apie\Faker\Interfaces\ApieImageFileFaker;
 use Faker\Generator;
 use Symfony\Component\Finder\Finder;
 
-final class BackgroundFileFaker implements ApieFileFaker
+final class BackgroundFileFaker implements ApieImageFileFaker
 {
     public function createOriginalFilename(Generator $faker): string
     {

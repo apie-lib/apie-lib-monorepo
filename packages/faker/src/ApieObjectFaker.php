@@ -4,7 +4,6 @@ namespace Apie\Faker;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Faker\Exceptions\ClassCanNotBeFakedException;
-use Apie\Faker\Fakers\ApieFileFaker;
 use Apie\Faker\Fakers\CheckBaseClassFaker;
 use Apie\Faker\Fakers\DateValueObjectFaker;
 use Apie\Faker\Fakers\EnumFaker;
@@ -69,7 +68,6 @@ final class ApieObjectFaker extends Base
                 new StringValueObjectWithRegexFaker(),
                 new EnumFaker(),
                 new PhpDateTimeObjectFaker(),
-                new ApieFileFaker(),
                 new StringableFaker(),
                 new UseConstructorFaker(),
             ]
