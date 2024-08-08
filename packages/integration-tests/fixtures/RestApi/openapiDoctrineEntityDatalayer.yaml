@@ -1994,7 +1994,7 @@ components:
       minLength: 0
       type: string
       example: 'Lorem Ipsum'
-    DropdownOption-post:
+    DropdownOption-get:
       type: object
       required:
         - value
@@ -2009,7 +2009,7 @@ components:
     DropdownOptionList-get:
       type: array
       items:
-        $ref: '#/components/schemas/DropdownOption-post'
+        $ref: '#/components/schemas/DropdownOption-get'
     DutchPhoneNumber-nullable-get:
       type: string
       format: dutchphonenumber
@@ -2303,6 +2303,10 @@ components:
             - mammal
           type: string
           nullable: false
+    NonEmptyString-get:
+      type: string
+      format: nonemptystring
+      pattern: ^.+$
     NonEmptyString-post:
       type: string
       format: nonemptystring
@@ -2330,6 +2334,16 @@ components:
     OrderIdentifier-post:
       type: integer
       nullable: true
+    OrderLine-get:
+      type: object
+      required:
+        - id
+        - description
+      properties:
+        id:
+          $ref: '#/components/schemas/OrderLineIdentifier-get'
+        description:
+          $ref: '#/components/schemas/NonEmptyString-get'
     OrderLine-post:
       type: object
       required:
@@ -2337,10 +2351,14 @@ components:
       properties:
         description:
           $ref: '#/components/schemas/NonEmptyString-post'
+    OrderLineIdentifier-get:
+      type: string
+      format: orderlineidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
     OrderLineList-get:
       type: array
       items:
-        $ref: '#/components/schemas/OrderLine-post'
+        $ref: '#/components/schemas/OrderLine-get'
     OrderLineList-post:
       type: array
       items:

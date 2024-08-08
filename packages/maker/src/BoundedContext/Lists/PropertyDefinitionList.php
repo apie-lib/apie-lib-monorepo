@@ -1,25 +1,13 @@
 <?php
 namespace Apie\Maker\BoundedContext\Lists;
 
-use Apie\Core\Lists\ItemList;
-use Apie\Maker\BoundedContext\Dtos\PropertyDefinition;
+use Apie\Core\Lists\ItemSet;
+use Apie\Maker\BoundedContext\Entities\PropertyDefinition;
 
-final class PropertyDefinitionList extends ItemList
+final class PropertyDefinitionList extends ItemSet
 {
     public function offsetGet(mixed $offset): PropertyDefinition
     {
         return parent::offsetGet($offset);
-    }
-
-    public function append(mixed $propertyDefinition): self
-    {
-        assert($propertyDefinition instanceof PropertyDefinition);
-        foreach ($this as $key => $value) {
-            if (strtolower($value->name->toNative()) === strtolower($propertyDefinition->name->toNative())) {
-                $this[$key] = $propertyDefinition;
-                return $this;
-            }
-        }
-        return parent::append($propertyDefinition);
     }
 }

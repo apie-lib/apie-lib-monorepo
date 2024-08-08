@@ -13,7 +13,7 @@ use Faker\Generator;
 use ReflectionClass;
 
 #[FakeMethod('createRandom')]
-final class ClassNameReference implements HasRegexValueObjectInterface, LimitedOptionsInterface
+class ClassNameReference implements HasRegexValueObjectInterface, LimitedOptionsInterface
 {
     use IsClassNameReference;
     use IsStringValueObject;
