@@ -31,6 +31,7 @@ class ApieSeedCommandTest extends TestCase
      */
     public function it_can_seed_apie_resources(TestApplicationInterface $testApplication)
     {
+        ini_set('memory_limit', -1);
         $testApplication->bootApplication();
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
         $exitCode = $tester->run(['apie:seed-entities']);
