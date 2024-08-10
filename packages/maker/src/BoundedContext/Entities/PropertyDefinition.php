@@ -2,17 +2,17 @@
 namespace Apie\Maker\BoundedContext\Entities;
 
 use Apie\Core\Attributes\FakeMethod;
-use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Dto\DtoInterface;
 use Apie\Core\Identifiers\CamelCaseSlug;
-use Apie\Maker\BoundedContext\Identifiers\PropertyDefinitionIdentifier;
 use Apie\Maker\Enums\NullableOption;
 use Apie\Maker\Enums\PrimitiveType;
 use Apie\Maker\ValueObjects\ClassNameReference;
 use Apie\Maker\ValueObjects\VendorValueObject;
 use Faker\Generator;
+use Stringable;
 
 #[FakeMethod('createRandom')]
-final class PropertyDefinition implements EntityInterface
+final class PropertyDefinition implements DtoInterface, Stringable
 {
     public function __construct(
         public VendorValueObject|PrimitiveType|ClassNameReference $type,
@@ -24,9 +24,9 @@ final class PropertyDefinition implements EntityInterface
     ) {
     }
 
-    public function getId(): PropertyDefinitionIdentifier
+    public function __toString(): string
     {
-        return PropertyDefinitionIdentifier::fromNative(strtolower($this->name));
+        return $this->name->toNative();
     }
 
     public static function createRandom(Generator $faker): self

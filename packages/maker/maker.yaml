@@ -9,3 +9,8 @@ services:
         - '@Apie\Core\Other\FileWriterInterface'
       tags:
           - name: console.command
+
+    Apie\Maker\ContextBuilders\AddMakerConfigToContext:
+      arguments:
+        - '%apie.maker%'
+      tags: [apie.core.context_builder]

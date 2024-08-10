@@ -10,6 +10,7 @@ use Nette\PhpGenerator\Property;
 
 final class Utils
 {
+    public const MAKER_CONFIG='maker_config';
     /**
      * @codeCoverageIgnore
      */

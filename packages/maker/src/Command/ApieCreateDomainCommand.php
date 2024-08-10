@@ -46,7 +46,7 @@ class ApieCreateDomainCommand extends Command
             'i',
             InputOption::VALUE_REQUIRED,
             description: 'Type of the identifier',
-            default: IdType::Uuid->name
+            default: IdType::Ulid->name
         );
     }
 

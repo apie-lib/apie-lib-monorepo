@@ -43,6 +43,22 @@ class MakerServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\Maker\Command\ApieCreateDomainCommand::class], 'console.command');
+        $this->app->singleton(
+            \Apie\Maker\ContextBuilders\AddMakerConfigToContext::class,
+            function ($app) {
+                return new \Apie\Maker\ContextBuilders\AddMakerConfigToContext(
+                    $this->parseArgument('%apie.maker%')
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Maker\ContextBuilders\AddMakerConfigToContext::class,
+            array(
+              0 => 'apie.core.context_builder',
+            )
+        );
+        $this->app->tag([\Apie\Maker\ContextBuilders\AddMakerConfigToContext::class], 'apie.core.context_builder');
         
     }
 }

@@ -4,6 +4,7 @@ namespace Apie\Maker\Enums;
 use Apie\CommonValueObjects\Email;
 use Apie\Core\Identifiers\AutoIncrementInteger;
 use Apie\Core\Identifiers\Identifier;
+use Apie\Core\Identifiers\Ulid;
 use Apie\Core\Identifiers\UuidV4;
 
 enum IdType: string
@@ -12,6 +13,7 @@ enum IdType: string
     case Slug = Identifier::class;
     case Email = Email::class;
     case Integer = AutoIncrementInteger::class;
+    case Ulid = Ulid::class;
 
     public static function tryFromName(string $name): ?static
     {

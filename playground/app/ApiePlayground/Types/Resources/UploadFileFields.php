@@ -3,6 +3,7 @@
 namespace App\ApiePlayground\Types\Resources;
 
 use Apie\Core\Attributes\AllowMultipart;
+use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\FileStorage\ImageFile;
 use Apie\Core\FileStorage\StoredFile;
@@ -12,6 +13,7 @@ use Faker\Generator;
 use Psr\Http\Message\UploadedFileInterface;
 
 #[AllowMultipart]
+#[FakeCount(1)]
 #[FakeMethod('createRandom')]
 class UploadFileFields implements \Apie\Core\Entities\EntityInterface
 {

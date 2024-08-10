@@ -28,6 +28,9 @@
     "apie-objects": [
       "Apie\\Maker\\Dtos\\DomainObjectDto",
       "Apie\\Maker\\Enums\\IdType",
+      "Apie\\Maker\\Enums\\NullableOption",
+      "Apie\\Maker\\Enums\\OverwriteStrategy",
+      "Apie\\Maker\\Enums\\PrimitiveType",
       "Apie\\Maker\\ValueObjects\\VendorValueObject"
     ]
   },

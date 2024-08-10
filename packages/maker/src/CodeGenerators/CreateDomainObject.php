@@ -98,7 +98,7 @@ class CreateDomainObject
             $classType,
             'id',
             $domainObjectDto->idType === IdType::Integer || $domainObjectDto->idType === IdType::Uuid,
-            $domainObjectDto->idType === IdType::Uuid
+            $domainObjectDto->idType === IdType::Uuid || $domainObjectDto->idType === IdType::Ulid
         );
         $idClass = $idNamespace . $domainObjectDto->name . 'Identifier';
         Utils::addUseStatements($code, $idClass);
