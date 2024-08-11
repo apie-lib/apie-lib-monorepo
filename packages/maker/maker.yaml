@@ -10,6 +10,10 @@ services:
       tags:
           - name: console.command
 
+    Apie\Maker\BoundedContext\Services\CodeWriter:
+      arguments:
+        - '@Apie\Core\Other\FileWriterInterface'
+      tags: ['apie.context']
     Apie\Maker\ContextBuilders\AddMakerConfigToContext:
       arguments:
         - '%apie.maker%'

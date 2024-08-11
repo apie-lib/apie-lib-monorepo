@@ -5,6 +5,9 @@ apie:
     # build_once: true
     connection_params:
       url: "mysql://project:project@mysql:3306/project"
+  maker:
+    target_path: /tmp/test
+    namespace: 'App\Apie\Maker'
   datalayers:
     default_datalayer: 'Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer'
   bounded_contexts:
