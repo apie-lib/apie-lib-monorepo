@@ -7,15 +7,23 @@ use Apie\Maker\BoundedContext\Entities\PropertyDefinition;
 use Apie\Maker\BoundedContext\Identifiers\BoundedContextDefinitionIdentifier;
 use Apie\Maker\BoundedContext\Identifiers\ResourceDefinitionIdentifier;
 use Apie\Maker\BoundedContext\Lists\PropertyDefinitionList;
+use Apie\Maker\Enums\IdType;
 
 class ResourceDefinition implements EntityInterface
 {
     public function __construct(
         private ResourceDefinitionIdentifier $id,
+        public IdType $idType,
         private PascalCaseSlug $name,
         public BoundedContextDefinitionIdentifier $boundedContextId,
         private PropertyDefinitionList $properties
     ) {
+        foreach ($properties as $property) {
+            if (strtolower($property->name->toNative()) === 'id') {
+                unset($properties[$property]);
+                break;
+            }
+        }
     }
 
     public function getName(): PascalCaseSlug
