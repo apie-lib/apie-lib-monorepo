@@ -41,7 +41,6 @@ class CodeGeneratedLog implements EntityInterface, CodeWriterConfigurationInterf
         #[Context()] CodeWriter $codeWriter,
         #[Context(Utils::MAKER_CONFIG)] private array $makerConfig
     ) {
-        assert(isset($makerConfig['target_path']));
         $this->id = CodeGeneratedLogIdentifier::createRandom();
         $this->date = ApieLib::getPsrClock()->now();
         try {

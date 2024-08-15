@@ -124,6 +124,6 @@ class BoundedContextDefinition implements \Apie\Core\Entities\EntityInterface
 
     public static function createRandom(Generator $faker): static
     {
-        return new static(new Identifier($faker->unique()->randomElement(self::EXAMPLE_NAMES)));
+        return new static(new Identifier($faker->randomElement(self::EXAMPLE_NAMES)));
     }
 }
