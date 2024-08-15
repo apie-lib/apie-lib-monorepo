@@ -2,10 +2,10 @@
 
 namespace Apie\Tests\Maker\Fixtures\Identifiers;
 
-use Apie\CommonValueObjects\Email;
 use Apie\Core\Attributes\SchemaMethod;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Identifiers\PascalCaseSlug;
+use Apie\Core\Identifiers\Ulid;
 use Apie\Tests\Maker\Fixtures\Resources\AlreadyExistingResource;
 use ReflectionClass;
 
@@ -13,7 +13,7 @@ use ReflectionClass;
  * This is the original resource without modifications
  */
 #[SchemaMethod('getSchema')]
-class AlreadyExistingResourceIdentifier extends Email implements IdentifierInterface
+class AlreadyExistingResourceIdentifier extends Ulid implements IdentifierInterface
 {
     public static function getReferenceFor(): ReflectionClass
     {

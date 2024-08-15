@@ -5,9 +5,16 @@ namespace Apie\Maker\BoundedContext\Resources;
 use Apie\Core\ApieLib;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
+use Apie\Core\Attributes\HideIdOnOverview;
+use Apie\Core\Attributes\Not;
+use Apie\Core\Attributes\Requires;
+use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\BoundedContext\BoundedContext;
+use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
+use Apie\Core\Entities\EntityInterface;
 use Apie\Maker\BoundedContext\Identifiers\CodeGeneratedLogIdentifier;
+use Apie\Maker\BoundedContext\Interfaces\CodeWriterConfigurationInterface;
 use Apie\Maker\BoundedContext\Services\CodeWriter;
 use Apie\Maker\Enums\OverwriteStrategy;
 use Apie\Maker\Utils;
@@ -16,7 +23,8 @@ use ReflectionClass;
 use Throwable;
 
 #[FakeCount(0)]
-class CodeGeneratedLog implements \Apie\Core\Entities\EntityInterface
+#[HideIdOnOverview]
+class CodeGeneratedLog implements EntityInterface, CodeWriterConfigurationInterface
 {
     private CodeGeneratedLogIdentifier $id;
 
@@ -69,16 +77,19 @@ class CodeGeneratedLog implements \Apie\Core\Entities\EntityInterface
         return $this->errorMessage;
     }
 
+    #[RuntimeCheck(new Not(new Requires(ContextConstants::GET_ALL_OBJECTS)))]
     public function getErrorStacktrace(): ?string
     {
         return $this->errorStacktrace;
     }
 
+    #[RuntimeCheck(new Not(new Requires(ContextConstants::GET_ALL_OBJECTS)))]
     public function getTargetPath(): string|false|null
     {
         return $this->makerConfig['target_path'] ?? null;
     }
 
+    #[RuntimeCheck(new Not(new Requires(ContextConstants::GET_ALL_OBJECTS)))]
     public function getTargetNamespace(string $sub = ''): ?string
     {
         if (!isset($this->makerConfig['target_namespace'])) {

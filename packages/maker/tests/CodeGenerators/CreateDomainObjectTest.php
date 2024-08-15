@@ -63,7 +63,7 @@ class CreateDomainObjectTest extends TestCase
             new DomainObjectDto(
                 new PascalCaseSlug('Example'),
                 new BoundedContextId('example'),
-                IdType::Slug,
+                IdType::Identifier,
                 false
             )
         ];

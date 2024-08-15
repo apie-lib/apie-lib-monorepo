@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Tests\Maker\Fixtures\Identifiers;
 
+use Apie\Core\Attributes\SchemaMethod;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Identifiers\PascalCaseSlug;
 use Apie\Tests\Maker\Fixtures\Resources\AlreadyExistingResource;
@@ -9,10 +10,18 @@ use ReflectionClass;
 /**
  * This is the original resource without modifications
  */
+#[SchemaMethod('getSchema')]
 class AlreadyExistingResourceIdentifier extends PascalCaseSlug implements IdentifierInterface
 {
     public static function getReferenceFor(): ReflectionClass
     {
         return new ReflectionClass(AlreadyExistingResource::class);
+    }
+
+    public static function getSchema(): array
+    {
+        return [
+            'type' => 'string',
+        ];
     }
 }

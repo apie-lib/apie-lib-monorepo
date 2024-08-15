@@ -2,11 +2,13 @@
 namespace Apie\Maker\BoundedContext\Services;
 
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Identifiers\IdentifierInterface;
+use Apie\Core\Other\FileReaderInterface;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\ValueObjects\Utils;
 use Apie\Maker\BoundedContext\Entities\PropertyDefinition;
+use Apie\Maker\BoundedContext\Interfaces\CodeWriterConfigurationInterface;
 use Apie\Maker\BoundedContext\Resources\BoundedContextDefinition;
-use Apie\Maker\BoundedContext\Resources\CodeGeneratedLog;
 use Apie\Maker\BoundedContext\Resources\ResourceDefinition;
 use Apie\Maker\Enums\NullableOption;
 use Apie\Maker\Enums\OverwriteStrategy;
@@ -25,10 +27,10 @@ use ReflectionClass;
 
 final class CodeWriter
 {
-    public function __construct(private readonly FileWriterInterface $fileWriter)
+    public function __construct(private readonly FileWriterInterface&FileReaderInterface $fileWriter)
     {
     }
-    public function startWriting(CodeGeneratedLog $log): void
+    public function startWriting(CodeWriterConfigurationInterface $log): void
     {
         if ($log->getOverwriteStrategy() === OverwriteStrategy::Reset) {
             $this->fileWriter->clearPath($log->getTargetPath());
@@ -36,7 +38,7 @@ final class CodeWriter
     }
 
     public function writeIdentifier(
-        CodeGeneratedLog $log,
+        CodeWriterConfigurationInterface $log,
         ResourceDefinition $resourceDefinition,
         BoundedContextDefinition $boundedContextDefinition
     ): void {
@@ -45,8 +47,8 @@ final class CodeWriter
             $boundedNs . '\\Identifiers'
         );
         $targetFile = $log->getTargetPath() . '/' . $boundedNs . '/Identifiers/' . $resourceDefinition->getName()->toNative() . 'Identifier.php';
-        if ($log->getOverwriteStrategy() === OverwriteStrategy::Merge && file_exists($targetFile)) {
-            $file = PhpFile::fromCode(file_get_contents($targetFile));
+        if ($log->getOverwriteStrategy() === OverwriteStrategy::Merge && $this->fileWriter->fileExists($targetFile)) {
+            $file = PhpFile::fromCode($this->fileWriter->readContents($targetFile));
         } else {
             $file = new PhpFile();
         }
@@ -56,12 +58,14 @@ final class CodeWriter
             $boundedNs . '\\Resources\\' . $resourceDefinition->getName()->toNative()
         );
         $this->addOrGetUse($namespace, ReflectionClass::class);
+        $this->addOrGetUse($namespace, IdentifierInterface::class);
         $this->addOrGetUse($namespace, $targetIdentifier);
         $this->addOrGetUse($namespace, $resourceDefinition->idType->value);
         $class = $this->addOrGetClass($namespace, $resourceDefinition->getName()->toNative() . 'Identifier');
         $class->setExtends($resourceDefinition->idType->value);
+        $this->addOrGetImplement($class, IdentifierInterface::class);
 
-        $method = $this->addOrGetMethod($class, 'getReference');
+        $method = $this->addOrGetMethod($class, 'getReferenceFor');
         $method->setStatic(true);
         $method->setBody('return new ReflectionClass(' . $resourceDefinition->getName()->toNative() . '::class);');
         $method->setReturnType(ReflectionClass::class);
@@ -71,7 +75,7 @@ final class CodeWriter
     }
 
     public function writeResource(
-        CodeGeneratedLog $log,
+        CodeWriterConfigurationInterface $log,
         ResourceDefinition $resourceDefinition,
         BoundedContextDefinition $boundedContextDefinition
     ): void {
@@ -80,8 +84,8 @@ final class CodeWriter
             $boundedNs . '\\Resources'
         );
         $targetFile = $log->getTargetPath() . '/' . $boundedNs . '/Resources/' . $resourceDefinition->getName()->toNative() . '.php';
-        if ($log->getOverwriteStrategy() === OverwriteStrategy::Merge && file_exists($targetFile)) {
-            $file = PhpFile::fromCode(file_get_contents($targetFile));
+        if ($log->getOverwriteStrategy() === OverwriteStrategy::Merge && $this->fileWriter->fileExists($targetFile)) {
+            $file = PhpFile::fromCode($this->fileWriter->readContents($targetFile));
         } else {
             $file = new PhpFile();
         }

@@ -3,7 +3,9 @@ namespace Apie\Maker\Enums;
 
 use Apie\CommonValueObjects\Email;
 use Apie\Core\Identifiers\AutoIncrementInteger;
+use Apie\Core\Identifiers\CamelCaseSlug;
 use Apie\Core\Identifiers\Identifier;
+use Apie\Core\Identifiers\PascalCaseSlug;
 use Apie\Core\Identifiers\Ulid;
 use Apie\Core\Identifiers\UuidV4;
 use Nette\PhpGenerator\Parameter;
@@ -12,7 +14,9 @@ use Nette\PhpGenerator\PromotedParameter;
 enum IdType: string
 {
     case Uuid = UuidV4::class;
-    case Slug = Identifier::class;
+    case Identifier = Identifier::class;
+    case UppercaseSlug = PascalCaseSlug::class;
+    case LowercaseSlug = CamelCaseSlug::class;
     case Email = Email::class;
     case Integer = AutoIncrementInteger::class;
     case Ulid = Ulid::class;
@@ -32,7 +36,7 @@ enum IdType: string
     {
         return match($this) {
             self::Uuid, self::Ulid => (new Parameter('id'))->setType('?' . $type)->setDefaultValue(null),
-            self::Slug, self::Email => (new PromotedParameter('id'))->setType($type),
+            self::UppercaseSlug, self::LowercaseSlug, self::Identifier, self::Email => (new PromotedParameter('id'))->setType($type),
             default => null,
         };
     }
