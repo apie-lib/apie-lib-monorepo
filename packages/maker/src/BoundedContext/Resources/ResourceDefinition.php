@@ -3,8 +3,10 @@ namespace Apie\Maker\BoundedContext\Resources;
 
 use Apie\Core\Attributes\HideIdOnOverview;
 use Apie\Core\Attributes\Not;
+use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\Requires;
 use Apie\Core\Attributes\RuntimeCheck;
+use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\ContextConstants;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\PascalCaseSlug;
@@ -15,6 +17,7 @@ use Apie\Maker\BoundedContext\Lists\PropertyDefinitionList;
 use Apie\Maker\Enums\IdType;
 
 #[HideIdOnOverview]
+#[RemovalCheck(new StaticCheck())]
 class ResourceDefinition implements EntityInterface
 {
     public function __construct(

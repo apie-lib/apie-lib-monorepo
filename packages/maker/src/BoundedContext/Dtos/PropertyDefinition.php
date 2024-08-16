@@ -36,7 +36,6 @@ final class PropertyDefinition implements DtoInterface, Stringable
             [false, true, true, NullableOption::AlwaysNull],
             [true, false, true, NullableOption::AlwaysNull],
             [true, true, true, NullableOption::NeverNullable],
-            [false, true, true, NullableOption::NeverNullable],
             [true, false, true, NullableOption::NeverNullable],
             [true, true, true, NullableOption::InitialNull],
             [true, false, true, NullableOption::InitialNull],
