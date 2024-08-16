@@ -16,7 +16,7 @@ class PropertyDefinitionTest extends TestCase
      */
     public function it_works_with_faker()
     {
-        $this->runFakerTest(PropertyDefinitionTest::class);
+        $this->runFakerTest(PropertyDefinition::class);
     }
 
     /**

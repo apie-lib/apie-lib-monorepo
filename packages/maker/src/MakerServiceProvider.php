@@ -44,6 +44,22 @@ class MakerServiceProvider extends ServiceProvider
         );
         $this->app->tag([\Apie\Maker\Command\ApieCreateDomainCommand::class], 'console.command');
         $this->app->singleton(
+            \Apie\Maker\BoundedContext\Services\CodeWriter::class,
+            function ($app) {
+                return new \Apie\Maker\BoundedContext\Services\CodeWriter(
+                    $app->make(\Apie\Core\Other\FileWriterInterface::class)
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Maker\BoundedContext\Services\CodeWriter::class,
+            array(
+              0 => 'apie.context',
+            )
+        );
+        $this->app->tag([\Apie\Maker\BoundedContext\Services\CodeWriter::class], 'apie.context');
+        $this->app->singleton(
             \Apie\Maker\ContextBuilders\AddMakerConfigToContext::class,
             function ($app) {
                 return new \Apie\Maker\ContextBuilders\AddMakerConfigToContext(

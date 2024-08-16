@@ -53,8 +53,10 @@ COPY ./playground/app/.env /var/www/.env
 RUN composer create-project apie/apie-project-starter html -s dev
 COPY ./playground/edit-composer.json tmp.json
 RUN jq -s 'add' tmp.json ./html/composer.json > tmp-merged.json
-RUN mv tmp-merged.json /var/www/html/composer.json
+RUN jq '.autoload["psr-4"] += {"App\\\\Apie\\\\Maker\\\\": "generated/"}' tmp-merged.json > /var/www/html/composer.json
 WORKDIR /var/www/html
+RUN mkdir generated
+RUN chmod 777 /var/www/html/generated
 COPY ./playground/app/apie.yaml /var/www/html/config/packages/apie.yaml
 COPY ./playground/sqlite.db /var/www/html/var/db.sqlite
 RUN chmod 666 /var/www/html/config/packages/apie.yaml /var/www/html/var/db.sqlite

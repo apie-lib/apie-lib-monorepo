@@ -6,10 +6,13 @@ apie:
     connection_params:
       url: "mysql://project:project@mysql:3306/project"
   maker:
-    target_path: /tmp/test
+    target_path: "%kernel.project_dir%/generated/"
     target_namespace: 'App\Apie\Maker'
   datalayers:
     default_datalayer: 'Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer'
+  scan_bounded_contexts:
+    search_path: "%kernel.project_dir%/generated/"
+    search_namespace: 'App\Apie\Maker'
   bounded_contexts:
     make:
       entities_folder: "/packages/maker/src/BoundedContext/Resources"

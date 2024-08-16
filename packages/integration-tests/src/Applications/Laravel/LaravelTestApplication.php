@@ -65,6 +65,10 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                 $this->boundedContextConfig->toArray()
             );
             $config->set(
+                'apie.scan_bounded_contexts',
+                []
+            );
+            $config->set(
                 'apie.datalayers',
                 [
                     'default_datalayer' => $this->applicationConfig->getDatalayerImplementation()->name,

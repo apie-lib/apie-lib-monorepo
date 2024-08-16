@@ -2,6 +2,7 @@
 namespace Apie\Maker\ValueObjects;
 
 use Apie\Core\Attributes\FakeMethod;
+use Apie\Core\FileStorage\StoredFile;
 use Apie\Core\Lists\StringList;
 use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
@@ -9,7 +10,12 @@ use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
 use Apie\Maker\Concerns\IsClassNameReference;
+use DateTime;
+use DateTimeImmutable;
+use DateTimeInterface;
+use DateTimeZone;
 use Faker\Generator;
+use Psr\Http\Message\UploadedFileInterface;
 use ReflectionClass;
 
 #[FakeMethod('createRandom')]
@@ -45,6 +51,13 @@ class ClassNameReference implements HasRegexValueObjectInterface, LimitedOptions
 
     public static function getOptions(): StringSet
     {
-        return new StringSet();
+        return new StringSet([
+            UploadedFileInterface::class,
+            StoredFile::class,
+            DateTimeInterface::class,
+            DateTimeImmutable::class,
+            DateTime::class,
+            DateTimeZone::class,
+        ]);
     }
 }
