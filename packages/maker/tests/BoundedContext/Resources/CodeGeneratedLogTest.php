@@ -91,7 +91,7 @@ class CodeGeneratedLogTest extends TestCase
     /**
      * @test
      */
-    public function it_works_with_faker()
+    public function it_does_not_work_with_faker()
     {
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('I can not create a random instance of CodeGeneratedLog');

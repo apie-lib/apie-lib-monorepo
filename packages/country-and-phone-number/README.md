@@ -6,7 +6,7 @@
 
 
 
- [![Latest Stable Version](http://poser.pugx.org/apie/country-and-phone-number/v)](https://packagist.org/packages/apie/country-and-phone-number) [![Total Downloads](http://poser.pugx.org/apie/country-and-phone-number/downloads)](https://packagist.org/packages/apie/country-and-phone-number) [![Latest Unstable Version](http://poser.pugx.org/apie/country-and-phone-number/v/unstable)](https://packagist.org/packages/apie/country-and-phone-number) [![License](http://poser.pugx.org/apie/country-and-phone-number/license)](https://packagist.org/packages/apie/country-and-phone-number) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-country-and-phone-number.svg)](https://apie-lib.github.io/projectCoverage/app/packages/country-and-phone-number/index.html)  
+ [![Latest Stable Version](https://poser.pugx.org/apie/country-and-phone-number/v)](https://packagist.org/packages/apie/country-and-phone-number) [![Total Downloads](https://poser.pugx.org/apie/country-and-phone-number/downloads)](https://packagist.org/packages/apie/country-and-phone-number) [![Latest Unstable Version](https://poser.pugx.org/apie/country-and-phone-number/v/unstable)](https://packagist.org/packages/apie/country-and-phone-number) [![License](https://poser.pugx.org/apie/country-and-phone-number/license)](https://packagist.org/packages/apie/country-and-phone-number) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-country-and-phone-number.svg)](https://apie-lib.github.io/projectCoverage/country-and-phone-number/index.html)  
 
 [![PHP Composer](https://github.com/apie-lib/country-and-phone-number/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/country-and-phone-number/actions/workflows/php.yml)
 

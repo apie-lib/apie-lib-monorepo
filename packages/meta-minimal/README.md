@@ -6,7 +6,7 @@
 
 
 
- [![Latest Stable Version](http://poser.pugx.org/apie/meta-minimal/v)](https://packagist.org/packages/apie/meta-minimal) [![Total Downloads](http://poser.pugx.org/apie/meta-minimal/downloads)](https://packagist.org/packages/apie/meta-minimal) [![Latest Unstable Version](http://poser.pugx.org/apie/meta-minimal/v/unstable)](https://packagist.org/packages/apie/meta-minimal) [![License](http://poser.pugx.org/apie/meta-minimal/license)](https://packagist.org/packages/apie/meta-minimal) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-meta-minimal.svg)](https://apie-lib.github.io/projectCoverage/app/packages/meta-minimal/index.html)  
+ [![Latest Stable Version](https://poser.pugx.org/apie/meta-minimal/v)](https://packagist.org/packages/apie/meta-minimal) [![Total Downloads](https://poser.pugx.org/apie/meta-minimal/downloads)](https://packagist.org/packages/apie/meta-minimal) [![Latest Unstable Version](https://poser.pugx.org/apie/meta-minimal/v/unstable)](https://packagist.org/packages/apie/meta-minimal) [![License](https://poser.pugx.org/apie/meta-minimal/license)](https://packagist.org/packages/apie/meta-minimal) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-meta-minimal.svg)](https://apie-lib.github.io/projectCoverage/meta-minimal/index.html)  
 
 [![PHP Composer](https://github.com/apie-lib/meta-minimal/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/meta-minimal/actions/workflows/php.yml)
 

@@ -6,7 +6,7 @@
 
 
 
- [![Latest Stable Version](http://poser.pugx.org/apie/cms-api-dropdown-option/v)](https://packagist.org/packages/apie/cms-api-dropdown-option) [![Total Downloads](http://poser.pugx.org/apie/cms-api-dropdown-option/downloads)](https://packagist.org/packages/apie/cms-api-dropdown-option) [![Latest Unstable Version](http://poser.pugx.org/apie/cms-api-dropdown-option/v/unstable)](https://packagist.org/packages/apie/cms-api-dropdown-option) [![License](http://poser.pugx.org/apie/cms-api-dropdown-option/license)](https://packagist.org/packages/apie/cms-api-dropdown-option) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-cms-api-dropdown-option.svg)](https://apie-lib.github.io/projectCoverage/app/packages/cms-api-dropdown-option/index.html)  
+ [![Latest Stable Version](https://poser.pugx.org/apie/cms-api-dropdown-option/v)](https://packagist.org/packages/apie/cms-api-dropdown-option) [![Total Downloads](https://poser.pugx.org/apie/cms-api-dropdown-option/downloads)](https://packagist.org/packages/apie/cms-api-dropdown-option) [![Latest Unstable Version](https://poser.pugx.org/apie/cms-api-dropdown-option/v/unstable)](https://packagist.org/packages/apie/cms-api-dropdown-option) [![License](https://poser.pugx.org/apie/cms-api-dropdown-option/license)](https://packagist.org/packages/apie/cms-api-dropdown-option) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-cms-api-dropdown-option.svg)](https://apie-lib.github.io/projectCoverage/cms-api-dropdown-option/index.html)  
 
 [![PHP Composer](https://github.com/apie-lib/cms-api-dropdown-option/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/cms-api-dropdown-option/actions/workflows/php.yml)
 
