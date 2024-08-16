@@ -6,7 +6,7 @@ use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Other\FileReaderInterface;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\ValueObjects\Utils;
-use Apie\Maker\BoundedContext\Entities\PropertyDefinition;
+use Apie\Maker\BoundedContext\Dtos\PropertyDefinition;
 use Apie\Maker\BoundedContext\Interfaces\CodeWriterConfigurationInterface;
 use Apie\Maker\BoundedContext\Resources\BoundedContextDefinition;
 use Apie\Maker\BoundedContext\Resources\ResourceDefinition;

@@ -2,7 +2,7 @@
 namespace Apie\Maker\BoundedContext\Lists;
 
 use Apie\Core\Lists\ItemSet;
-use Apie\Maker\BoundedContext\Entities\PropertyDefinition;
+use Apie\Maker\BoundedContext\Dtos\PropertyDefinition;
 
 final class PropertyDefinitionList extends ItemSet
 {

@@ -12,7 +12,7 @@ use Apie\Core\Lists\ReflectionMethodList;
 use Apie\Core\Other\FileReaderInterface;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
-use Apie\Fixtures\BoundedContextFactory;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Maker\BoundedContext\Resources\BoundedContextDefinition;
 use Apie\Maker\BoundedContext\Resources\CodeGeneratedLog;
 use Apie\Maker\BoundedContext\Resources\ResourceDefinition;
@@ -22,9 +22,11 @@ use Beste\Clock\FrozenClock;
 use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
+use RuntimeException;
 
 class CodeGeneratedLogTest extends TestCase
 {
+    use TestWithFaker;
     /**
      * @test
      */
@@ -58,7 +60,8 @@ class CodeGeneratedLogTest extends TestCase
     {
         ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-01')));
         $filewriter = new class implements FileReaderInterface, FileWriterInterface {
-            public function fileExists(string $filePath): bool {
+            public function fileExists(string $filePath): bool
+            {
                 return false;
             }
             public function readContents(string $filePath): string
@@ -83,5 +86,15 @@ class CodeGeneratedLogTest extends TestCase
         );
         $this->assertEquals('I can not clear', $testItem->getErrorMessage());
         $this->assertNotNull($testItem->getErrorStacktrace());
+    }
+
+    /**
+     * @test
+     */
+    public function it_works_with_faker()
+    {
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage('I can not create a random instance of CodeGeneratedLog');
+        $this->runFakerTest(CodeGeneratedLog::class);
     }
 }

@@ -8,7 +8,7 @@ use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\ContextConstants;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\PascalCaseSlug;
-use Apie\Maker\BoundedContext\Entities\PropertyDefinition;
+use Apie\Maker\BoundedContext\Dtos\PropertyDefinition;
 use Apie\Maker\BoundedContext\Identifiers\BoundedContextDefinitionIdentifier;
 use Apie\Maker\BoundedContext\Identifiers\ResourceDefinitionIdentifier;
 use Apie\Maker\BoundedContext\Lists\PropertyDefinitionList;
@@ -26,12 +26,6 @@ class ResourceDefinition implements EntityInterface
         #[RuntimeCheck(new Not(new Requires(ContextConstants::GET_ALL_OBJECTS)))]
         private PropertyDefinitionList $properties
     ) {
-        foreach ($properties as $property) {
-            if (strtolower($property->name->toNative()) === 'id') {
-                unset($properties[$property]);
-                break;
-            }
-        }
     }
 
     public function getName(): PascalCaseSlug

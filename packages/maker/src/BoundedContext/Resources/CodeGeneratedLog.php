@@ -5,6 +5,7 @@ namespace Apie\Maker\BoundedContext\Resources;
 use Apie\Core\ApieLib;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
+use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\HideIdOnOverview;
 use Apie\Core\Attributes\Not;
 use Apie\Core\Attributes\Requires;
@@ -24,6 +25,7 @@ use Throwable;
 
 #[FakeCount(0)]
 #[HideIdOnOverview]
+#[FakeMethod('createRandom')]
 class CodeGeneratedLog implements EntityInterface, CodeWriterConfigurationInterface
 {
     private CodeGeneratedLogIdentifier $id;
@@ -98,5 +100,10 @@ class CodeGeneratedLog implements EntityInterface, CodeWriterConfigurationInterf
             return rtrim($this->makerConfig['target_namespace'], '\\');
         }
         return rtrim($this->makerConfig['target_namespace'], '\\') . '\\' . ltrim($sub, '\\');
+    }
+
+    public static function createRandom(): never
+    {
+        throw new \RuntimeException('I can not create a random instance of CodeGeneratedLog');
     }
 }

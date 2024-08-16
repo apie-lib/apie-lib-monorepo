@@ -1,11 +1,10 @@
 <?php
 namespace Apie\Tests\Maker\BoundedContext\Services;
 
-use Apie\Core\Identifiers\CamelCaseSlug;
 use Apie\Core\Identifiers\Identifier;
 use Apie\Core\Identifiers\PascalCaseSlug;
 use Apie\Core\Other\MockFileWriter;
-use Apie\Maker\BoundedContext\Entities\PropertyDefinition;
+use Apie\Maker\BoundedContext\Dtos\PropertyDefinition;
 use Apie\Maker\BoundedContext\Identifiers\ResourceDefinitionIdentifier;
 use Apie\Maker\BoundedContext\Interfaces\CodeWriterConfigurationInterface;
 use Apie\Maker\BoundedContext\Lists\PropertyDefinitionList;
@@ -16,6 +15,7 @@ use Apie\Maker\Enums\IdType;
 use Apie\Maker\Enums\NullableOption;
 use Apie\Maker\Enums\OverwriteStrategy;
 use Apie\Maker\Enums\PrimitiveType;
+use Apie\Maker\ValueObjects\PropertyDefinitionName;
 use Apie\Tests\Maker\Fixtures\Identifiers\AlreadyExistingResourceIdentifier;
 use Apie\Tests\Maker\Fixtures\MockCodeWriterConfiguration;
 use Apie\Tests\Maker\Fixtures\Resources\AlreadyExistingResource;
@@ -209,7 +209,7 @@ class CodeWriterTest extends TestCase
                             . ($readable ? 'Readable' : '');
                         $propertyList[] = new PropertyDefinition(
                             PrimitiveType::String,
-                            new CamelCaseSlug($propertyName),
+                            new PropertyDefinitionName($propertyName),
                             $requiredOnConstruction,
                             $writable,
                             $readable,

@@ -1,12 +1,12 @@
 <?php
-namespace Apie\Maker\BoundedContext\Entities;
+namespace Apie\Maker\BoundedContext\Dtos;
 
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Dto\DtoInterface;
-use Apie\Core\Identifiers\CamelCaseSlug;
 use Apie\Maker\Enums\NullableOption;
 use Apie\Maker\Enums\PrimitiveType;
 use Apie\Maker\ValueObjects\ClassNameReference;
+use Apie\Maker\ValueObjects\PropertyDefinitionName;
 use Apie\Maker\ValueObjects\VendorValueObject;
 use Faker\Generator;
 use Stringable;
@@ -16,7 +16,7 @@ final class PropertyDefinition implements DtoInterface, Stringable
 {
     public function __construct(
         public VendorValueObject|PrimitiveType|ClassNameReference $type,
-        public CamelCaseSlug $name,
+        public PropertyDefinitionName $name,
         public bool $requiredOnConstruction,
         public bool $writable,
         public bool $readable,
@@ -43,7 +43,7 @@ final class PropertyDefinition implements DtoInterface, Stringable
         ]);
         return new self(
             $faker->fakeClass($faker->randomElement([VendorValueObject::class, PrimitiveType::class])),
-            CamelCaseSlug::createRandom($faker),
+            PropertyDefinitionName::createRandom($faker),
             ...$variableOptions
         );
     }
