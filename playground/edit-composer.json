@@ -15,6 +15,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/twig-template-layout-renderer",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/twig-template-layout-renderer": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/doctrine-entity-datalayer",
             "options": {
                 "symlink": true,
@@ -340,6 +350,16 @@
                 "symlink": true,
                 "versions": {
                     "apie/rest-api": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/cms-layout-ionic",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-layout-ionic": "1.0.0.x-dev"
                 }
             }
         }

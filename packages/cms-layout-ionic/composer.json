@@ -1,6 +1,6 @@
 {
-  "name": "apie/cms-layout-graphite",
-  "description": "Composer package of the apie library: cms layout graphite",
+  "name": "apie/cms-layout-ionic",
+  "description": "Composer package of the apie library: cms layout ionic",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -11,12 +11,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Apie\\CmsLayoutGraphite\\": "src/"
+      "Apie\\CmsLayoutIonic\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Apie\\Tests\\CmsLayoutGraphite\\": "tests/"
+      "Apie\\Tests\\CmsLayoutIonic\\": "tests/"
     }
   },
   "require": {

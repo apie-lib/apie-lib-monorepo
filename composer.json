@@ -99,6 +99,7 @@
             "Apie\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/src/",
             "Apie\\CmsApiDropdownOption\\": "packages/cms-api-dropdown-option/src/",
             "Apie\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/src/",
+            "Apie\\CmsLayoutIonic\\": "packages/cms-layout-ionic/src/",
             "Apie\\Cms\\": "packages/cms/src/",
             "Apie\\CommonValueObjects\\": "packages/common-value-objects/src/",
             "Apie\\Common\\": "packages/common/src/",
@@ -128,7 +129,8 @@
             "Apie\\StorageMetadataBuilder\\": "packages/storage-metadata-builder/src/",
             "Apie\\StorageMetadata\\": "packages/storage-metadata/src/",
             "Apie\\TextValueObjects\\": "packages/text-value-objects/src/",
-            "Apie\\Tools\\": "tools/"
+            "Apie\\Tools\\": "tools/",
+            "Apie\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/src/"
         }
     },
     "autoload-dev": {
@@ -138,6 +140,7 @@
             "Apie\\Tests\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/tests/",
             "Apie\\Tests\\CmsApiDropdownOption\\": "packages/cms-api-dropdown-option/tests/",
             "Apie\\Tests\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/tests/",
+            "Apie\\Tests\\CmsLayoutIonic\\": "packages/cms-layout-ionic/tests/",
             "Apie\\Tests\\Cms\\": "packages/cms/tests/",
             "Apie\\Tests\\CommonValueObjects\\": "packages/common-value-objects/tests/",
             "Apie\\Tests\\Common\\": "packages/common/tests/",
@@ -165,7 +168,8 @@
             "Apie\\Tests\\Serializer\\": "packages/serializer/tests/",
             "Apie\\Tests\\StorageMetadataBuilder\\": "packages/storage-metadata-builder/tests/",
             "Apie\\Tests\\StorageMetadata\\": "packages/storage-metadata/tests/",
-            "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/"
+            "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/",
+            "Apie\\Tests\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/tests/"
         }
     },
     "extra": {
@@ -318,6 +322,7 @@
         "apie/cms": "self.version",
         "apie/cms-api-dropdown-option": "self.version",
         "apie/cms-layout-graphite": "self.version",
+        "apie/cms-layout-ionic": "self.version",
         "apie/common": "self.version",
         "apie/common-value-objects": "self.version",
         "apie/composite-value-object": "self.version",
@@ -346,7 +351,8 @@
         "apie/serializer": "self.version",
         "apie/storage-metadata": "self.version",
         "apie/storage-metadata-builder": "self.version",
-        "apie/text-value-objects": "self.version"
+        "apie/text-value-objects": "self.version",
+        "apie/twig-template-layout-renderer": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

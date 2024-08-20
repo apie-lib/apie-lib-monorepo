@@ -1,13 +1,13 @@
 <?php
-namespace Apie\CmsLayoutGraphite\Extension;
+namespace Apie\TwigTemplateLayoutRenderer\Extension;
 
-use Apie\CmsLayoutGraphite\TwigRenderer;
 use Apie\Core\ApieLib;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ApieTranslatorInterface;
 use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
+use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
 use LogicException;
 use ReflectionClass;
 use Twig\Extension\AbstractExtension;
