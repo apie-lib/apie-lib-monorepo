@@ -3032,6 +3032,11 @@
                 "format": "animalidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
+            "Base64Stream-post": {
+                "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
+                "type": "string",
+                "format": "base64"
+            },
             "BinaryStream-post": {
                 "type": "string",
                 "format": "binary"
@@ -3390,17 +3395,33 @@
                 }
             },
             "JsonFileUpload-post": {
-                "type": "object",
                 "required": [
-                    "originalFilename",
-                    "contents"
+                    "originalFilename"
+                ],
+                "type": "object",
+                "oneOf": [
+                    {
+                        "required": [
+                            "contents",
+                            "originalFilename"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "base64",
+                            "originalFilename"
+                        ]
+                    }
                 ],
                 "properties": {
+                    "contents": {
+                        "$ref": "#/components/schemas/BinaryStream-post"
+                    },
                     "originalFilename": {
                         "$ref": "#/components/schemas/Filename-post"
                     },
-                    "contents": {
-                        "$ref": "#/components/schemas/BinaryStream-post"
+                    "base64": {
+                        "$ref": "#/components/schemas/Base64Stream-post"
                     },
                     "mime": {
                         "$ref": "#/components/schemas/StrictMimeType-nullable-post"
@@ -4000,17 +4021,33 @@
                 "format": "path"
             },
             "UploadedFile-post": {
-                "type": "object",
                 "required": [
-                    "originalFilename",
-                    "contents"
+                    "originalFilename"
+                ],
+                "type": "object",
+                "oneOf": [
+                    {
+                        "required": [
+                            "contents",
+                            "originalFilename"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "base64",
+                            "originalFilename"
+                        ]
+                    }
                 ],
                 "properties": {
+                    "contents": {
+                        "$ref": "#/components/schemas/BinaryStream-post"
+                    },
                     "originalFilename": {
                         "$ref": "#/components/schemas/Filename-post"
                     },
-                    "contents": {
-                        "$ref": "#/components/schemas/BinaryStream-post"
+                    "base64": {
+                        "$ref": "#/components/schemas/Base64Stream-post"
                     },
                     "mime": {
                         "$ref": "#/components/schemas/StrictMimeType-nullable-post"
