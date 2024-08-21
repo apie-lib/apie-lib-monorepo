@@ -44,9 +44,6 @@ RUN echo 'alias dsu="/var/www/html/bin/console d:s:u --force --complete"' >> ~/.
 
 RUN echo "umask 0000" >> /root/.bashrc
 
-RUN mkdir /packages
-COPY ../../packages /packages
-
 WORKDIR /var/www
 ENV COMPOSER_ALLOW_SUPERUSER=1
 COPY ./playground/app/.env /var/www/.env
@@ -64,6 +61,9 @@ RUN chmod 777 /var/www/html/var
 RUN chown www-data:www-data /var/www/html/config/packages/apie.yaml /var/www/html/var /var/www/html/var/db.sqlite
 RUN rm -rf vendor
 RUN composer config --no-plugins allow-plugins.apie/apie-common-plugin true
+RUN mkdir /packages
+COPY ../../packages /packages
+RUN composer require 'apie/cms-layout-ionic:*' --no-install
 RUN composer update
 
 # Setup crontab

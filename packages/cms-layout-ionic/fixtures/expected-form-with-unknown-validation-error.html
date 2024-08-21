@@ -1,0 +1,30 @@
+<form method="POST">
+  <ion-list>
+    <ion-item>
+      <ion-card class="unhandled-form-group">
+  <ion-card-header>
+    <ion-card-title>form</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+          <ion-item>
+        test
+      </ion-item>
+        </ion-list>
+    <ion-list><ion-item>
+            <apie-validation-error>unknown field</apie-validation-error>
+          </ion-item></ion-card-content>
+</ion-card>
+    </ion-item>
+    <ion-item>
+      <ion-button variant="primary" type="submit" large expand="block">Submit</ion-button>
+    </ion-item>
+  </ion-list>
+</form>
+<apie-script>
+(function (elm) {
+  elm.classList.remove('unhandled-form-group');
+  elm.value = [];
+}(document.querySelector('apie-form-group.unhandled-form-group')));
+</apie-script>

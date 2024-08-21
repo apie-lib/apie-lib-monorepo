@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>{{ property('title') }}</title>
+        <style>
+            {{ assetContent('main.css') }}
+        </style>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+<script src="https://cdn.jsdelivr.net/npm/@revolist/revogrid@3.7.0/dist/revo-grid/revo-grid.js"></script>
+<script type="module" src="https://unpkg.com/apie-stacktrace@{{ apieConstant('APIE_STACKTRACE') }}/dist/apie-stacktrace/apie-stacktrace.esm.js" crossorigin></script>
+<script type="module" src="https://unpkg.com/apie-form-elements@{{ apieConstant('APIE_FORM_ELEMENTS') }}/dist/apie-form-elements/apie-form-elements.esm.js" crossorigin></script>
+<script>{{ assetContent('main.js') }}</script>
+    </head>
+    <body>
+      <ion-app>
+        <ion-header>
+          <ion-toolbar>
+            {{ component('top') }}
+          </ion-toolbar>
+        </ion-header>
+        <ion-menu side="start" content-id="main-content">
+          {{ component('menu') }}
+        </ion-menu>
+        <ion-content id="main-content">
+          {{ component('content') }}
+        </ion-content>
+        <ion-footer>
+          <ion-toolbar>
+            <ion-title>Footer Toolbar</ion-title>
+          </ion-toolbar>
+        </ion-footer>
+      </ion-app>
+      <div class="apie-sidebar">
+      </div>
+      <script type="text/javascript">
+(function (sidebar) {
+  document.addEventListener('click', (e) => {
+    if (sidebar.classList.contains('active')) {
+      let elm = e.target;
+      while (elm) {
+        if (elm === sidebar) {
+          return;
+        }
+        elm = elm.parentNode
+      }
+      sidebar.classList.remove('active');
+      sidebar.innerHTML = '';
+    }
+  });
+}(document.querySelector('.apie-sidebar')));
+      </script>
+    </body>
+</html>

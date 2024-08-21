@@ -1,0 +1,192 @@
+body {
+    background-color: #EEEEEE;
+    padding: 0;
+    margin: 0;
+}
+body .layout {
+    padding-top: 8rem;
+}
+body.scrollbar-lg .layout {
+    padding: 0;
+}
+nav {
+    z-index: 40; position: fixed;top: 0;left: 0;width: 100%; border-bottom-width: 1px; background-color: white
+}
+.hide-bullets li {
+    list-style: none;
+}
+gr-field-group > .form-control-invalid-text {
+    font-size: var(--gr-form-element-invalid-text-font-size-medium);
+    color: var(--gr-form-element-invalid-text-color);
+    line-height: var(--gr-line-height-normal);
+}
+.topbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+  }
+
+  .user-profile {
+    position: relative;
+    cursor: pointer;
+    float: right;
+  }
+
+  .user-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  .user-info {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1;
+  }
+
+  .user-profile:hover .user-info {
+    display: block;
+  }
+.profile-picture:hover .shown-on-hover{
+    display: block;
+}
+.autocomplete-container {
+    display: flex;
+    position: relative;
+  }
+.autocomplete-list {
+    position: absolute;
+    background-color: white;
+    border: 1px solid gray;
+    z-index: 1;
+    width: 100%;
+}
+.autocomplete-list .highlighted {
+    background-color: lightgray;
+    color: white;
+    font-weight: bold;
+  }
+  
+.autocomplete-list div {
+    padding: 0.5em;
+    cursor: pointer;
+}
+  
+.autocomplete-list div:hover {
+    background-color: lightgray;
+}
+
+table.detail-table {
+    width: 100%;
+    margin: 10px auto;
+    margin-right: 10px;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+  
+table.detail-table th {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+  
+table.detail-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+  
+table.detail-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+  
+table.detail-table table {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+  
+table.detail-table table th {
+    background-color: #e0e0e0;
+    font-weight: normal;
+}
+  
+table.detail-table table td {
+    border: 1px solid #ccc;
+}
+
+table.detail-table td, table.detail-table th {
+    margin: 0;
+}
+.apie-sidebar {
+    width: 450px;
+    background-color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    right: -500px;
+    height: 100%;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 90;
+}
+
+.apie-sidebar.active {
+    right: 0; /* Slide in from the right when active */
+}
+.html-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-height: 200px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+  
+.html-field:empty:before {
+    content: attr(placeholder);
+    color: #999;
+}
+  
+.html-field:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+  
+.html-field::selection {
+    background-color: #007bff;
+    color: #fff;
+}
+  
+.html-field::-webkit-scrollbar {
+    width: 8px;
+}
+  
+.html-field::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+  
+.html-field::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+stylo-plugins {
+    z-index: 6;
+}
+apie-script {
+    display: none!important;
+}
+apie-form-hashmap, apie-form-list {
+    width: 100%;
+}

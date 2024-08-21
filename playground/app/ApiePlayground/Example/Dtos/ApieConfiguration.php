@@ -7,6 +7,7 @@ use Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer;
 use App\ApiePlayground\Example\Actions\PlaygroundConfiguration;
 use App\ApiePlayground\Example\Enums\DatabaseConnection;
 use App\ApiePlayground\Example\Enums\DatalayerImplementation;
+use App\ApiePlayground\Example\Enums\SelectedLayout;
 use Symfony\Component\Yaml\Yaml;
 
 final class ApieConfiguration implements DtoInterface
@@ -14,6 +15,7 @@ final class ApieConfiguration implements DtoInterface
     public function __construct(
         public DatalayerImplementation $datalayerImplementation,
         public DatabaseConnection $usedDatabaseConnection,
+        public SelectedLayout $layout
     ) {
     }
 
@@ -24,7 +26,8 @@ final class ApieConfiguration implements DtoInterface
             DatalayerImplementation::fromClass(
                 $contents['apie']['datalayers']['default_datalayer'] ?? DoctrineEntityDatalayer::class
             ),
-            DatabaseConnection::fromSetting(Utils::toArray($contents['apie']['doctrine'] ?? []))
+            DatabaseConnection::fromSetting(Utils::toArray($contents['apie']['doctrine'] ?? [])),
+            SelectedLayout::fromConfig($contents)
         );
     }
 }

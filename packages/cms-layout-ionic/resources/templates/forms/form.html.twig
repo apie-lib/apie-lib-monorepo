@@ -1,0 +1,16 @@
+<form method="{{ property('method') }}"{% if (property('multipart')) %} enctype="multipart/form-data"{% endif %}>
+  <ion-list>
+    <ion-item>
+      {{ component('formElements') }}
+    </ion-item>
+    <ion-item>
+      <ion-button variant="primary" type="submit" large expand="block">Submit</ion-button>
+    </ion-item>
+  </ion-list>
+</form>
+<apie-script>
+(function (elm) {
+  elm.classList.remove('unhandled-form-group');
+  elm.value = {{ property('value') | json_encode | raw}};
+}(document.querySelector('apie-form-group.unhandled-form-group')));
+</apie-script>

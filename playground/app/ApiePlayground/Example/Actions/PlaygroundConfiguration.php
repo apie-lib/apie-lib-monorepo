@@ -1,6 +1,7 @@
 <?php
 namespace App\ApiePlayground\Example\Actions;
 
+use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
 use App\ApiePlayground\Example\Dtos\ApieConfiguration;
 use Symfony\Component\Yaml\Yaml;
 
@@ -14,6 +15,7 @@ class PlaygroundConfiguration
         $contents = Yaml::parseFile(PlaygroundConfiguration::CONFIG_FILE);
         $contents['apie']['datalayers']['default_datalayer'] = $apieConfiguration->datalayerImplementation->toClass()->name;
         $contents['apie']['doctrine'] = $apieConfiguration->usedDatabaseConnection->toDoctrineSetting();
+        $contents['services'][ComponentRendererInterface::class] = $apieConfiguration->layout->toServiceDefinition();
         file_put_contents(self::CONFIG_FILE, Yaml::dump($contents));
         return ApieConfiguration::createFromConfig();
     }

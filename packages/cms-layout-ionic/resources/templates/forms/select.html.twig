@@ -1,0 +1,16 @@
+<apie-scalar-element name="{{ property('name') }}" value="{{ property('value') }}">
+  <apie-listen-other-event name="form[test]" event-name="gr-change">      
+    <ion-select class="unhandled-select" label="{{ property('name') }}" name="{{ property('name') }}" value="{{ property('value') }}">
+      <ion-item-divider>
+    {% set previous = false %}
+    {% for option in property('options') %}
+      {% if previous and previous != option.typehint %}
+        </ion-item-divider><ion-item-divider>
+      {% endif %}
+      <ion-select-option value="{{ option.serializedValue }}">{{ option.name }}</ion-select-option>
+      {% set previous = option.typehint %}
+    {% endfor %}
+    </ion-item-divider>
+    </ion-select>
+  </apie-listen-other-event>
+</apie-scalar-element>
