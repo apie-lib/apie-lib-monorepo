@@ -29,6 +29,8 @@ parameters:
         - packages/storage-metadata/src
         - packages/text-value-objects/src
     ignoreErrors:
+        - '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children#'
+        - '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::scalarNode#'
         - '#isInitialized\(\) on a separate line has no effect#'
         - '#ReflectionException is never thrown in the try block#'
         - '#Call to an undefined method Faker\\Generator#'

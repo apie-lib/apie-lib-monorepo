@@ -67,10 +67,10 @@ class LoginTest extends TestCase
                 $this->assertEquals('User is not activated yet', IntegrationTestLogger::getLoggedException()?->getMessage());
                 return;
             }
-            $loginRequest->verifyValidResponse($response);
             $this->assertNotNull($testApplication->getLoggedInAs(), 'I should be logged in');
             $this->assertEquals('test@example.nl', $testApplication->getLoggedInAs()->getId()->toNative());
             $this->assertEquals('types', $testApplication->getLoggedInAs()->getBoundedContextId()->toNative());
+            $loginRequest->verifyValidResponse($response);
 
             $currentUserRequest = new ActionMethodApiCall(
                 new BoundedContextId('types'),

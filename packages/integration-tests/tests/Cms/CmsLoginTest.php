@@ -7,7 +7,6 @@ use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
-use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\ActionMethodApiCall;
@@ -112,9 +111,6 @@ class CmsLoginTest extends TestCase
      */
     public function it_can_read_the_authorization_cookie(TestApplicationInterface $testApplication)
     {
-        if ($testApplication instanceof LaravelTestApplication) {
-            $this->markTestIncomplete('does not work on laravel right now');
-        }
         $testApplication->runApplicationTest(function (TestApplicationInterface $testApplication) {
             $user = new User(new UserIdentifier('test@example.nl'));
             $user->activate(

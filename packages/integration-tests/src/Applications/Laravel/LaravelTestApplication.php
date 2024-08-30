@@ -160,6 +160,9 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         $factory = new HttpFoundationFactory();
         $sfRequest = $factory->createRequest($psrRequest);
         $laravelRequest = Request::createFromBase($sfRequest);
+        if (isset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME])) {
+            $laravelRequest->cookies->set(AddAuthenticationCookie::COOKIE_NAME, $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+        }
         $laravelResponse = $this->app->make(HttpKernel::class)->handle($laravelRequest);
         return $this->handleResponse($laravelResponse);
     }
