@@ -1,12 +1,13 @@
 <?php
 namespace Apie\HtmlBuilders\Components\Forms;
 
+use Apie\Core\Lists\ValueOptionList;
 use Apie\HtmlBuilders\Components\BaseComponent;
-use Apie\HtmlBuilders\Lists\ChoiceList;
+use Apie\HtmlBuilders\ValueObjects\FormName;
 
 class Select extends BaseComponent
 {
-    public function __construct(string $name, string $value, ChoiceList $choiceList)
+    public function __construct(FormName $name, string $value, ValueOptionList $choiceList)
     {
         parent::__construct(
             [

@@ -1,0 +1,66 @@
+<div style="max-width: 130vw">
+    <revo-grid class="unprocessed-grid" style="min-height: 166px;max-height: 80%"></revo-grid>
+  <script>
+  (function(grid) {
+    const importantNameColumns = ['displayName', 'name', 'internalName', 'shortDescription', 'description', 'productDescription', 'id'];
+    function renderCell(createElement, props) {
+      const value = props.model[props.prop];
+      return renderValue(createElement, value);
+    }
+    function renderValue(createElement, value) {
+      if (value === undefined || value === null) {
+        return createElement('ion-icon', { name: 'remove-outline' });
+      }
+      if (value === true) {
+        return createElement('ion-icon', { name: 'checkmark-outline' });
+      }
+      if (value === false) {
+        return createElement('ion-icon', { name: 'close-outline'});
+      }
+      if (value === 0) {
+        return createElement('div', {}, 0);
+      }
+      if (typeof value === 'number') {
+        if (value !== parseInt(value, 10)) {
+          return createElement('div', { title: value }, value.toFixed(4));
+        }
+      }
+      if (Array.isArray(value)) {
+        let components = [];
+        for (val of value) {
+          components.push(createElement('gr-tag', { size: 'small' }, renderValue(createElement, val)))
+        }
+        return createElement('div', { }, components);
+      }
+      if (typeof value === 'object') {
+        for (column of importantNameColumns) {
+          if (value[column]) {
+            return renderValue(createElement, value[column]);
+          }
+        }
+        return renderValue(createElement, value[Object.keys(value)[0]]);
+      }
+      return createElement('div', {}, value || '');
+    }
+    const columns = ["id","description","extra"]
+        .map(function (name) {
+          return {
+            prop: name,
+            name: name,
+            cellTemplate: renderCell,
+            autoSize: true,
+          }
+        });
+    const rows = [{"id":1,"description":"Description of 1"},{"id":2,"description":"Description of 2","extra":"extra field"}];
+    grid.classList.remove('unprocessed-grid');
+    grid.theme = 'material';
+    grid.columns = columns;
+    grid.source = rows;
+    grid.readonly = true;
+    grid.resize = true;
+    grid.autoSizeColumn = {
+      mode: 'autoSizeOnTextOverlap'
+    };
+  })(document.querySelector('revo-grid.unprocessed-grid'))
+  </script>
+  </div>

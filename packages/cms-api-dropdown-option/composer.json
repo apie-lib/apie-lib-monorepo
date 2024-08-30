@@ -1,0 +1,43 @@
+{
+  "name": "apie/cms-api-dropdown-option",
+  "description": "Composer package of the apie library: cms api dropdown option",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\CmsApiDropdownOption\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\CmsApiDropdownOption\\": "tests/"
+    }
+  },
+  "extra": {
+    "apie-objects": [
+      "Apie\\CmsApiDropdownOption\\Dtos\\DropdownOption",
+      "Apie\\CmsApiDropdownOption\\Dtos\\PartialInput",
+      "Apie\\CmsApiDropdownOption\\Lists\\DropdownOptionList"
+    ]
+  },
+  "require": {
+    "php": ">=8.1",
+    "apie/core": "self.version",
+    "apie/cms": "self.version",
+    "apie/common": "self.version"
+  },
+  "require-dev": {
+    "apie/service-provider-generator": "0.11.2",
+    "illuminate/support": "*",
+    "phpunit/phpunit": "^9.6.19",
+    "phpspec/prophecy-phpunit": "^2.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

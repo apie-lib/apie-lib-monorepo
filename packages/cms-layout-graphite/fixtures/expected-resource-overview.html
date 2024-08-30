@@ -1,9 +1,80 @@
 <div>
-  <revo-grid style="max-height: 80%"></revo-grid>
+  <div style="width: 100%; padding: 15PX; float: right; display: table;">
+  <form style="display: table-cell; vertical-align: middle">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <gr-input name="search" type="search" value=""></gr-input>
+          </td>
+                    <td>
+            <gr-button variant="secondary" type="submit" large expand="block">Search</gr-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+  <div style="display: table-cell; vertical-align: middle" class="resource-actions resource-actions-unprocessed">
+      </div>
+  <script>(function (resourceActionListElm) {
+    const stringToHTML = function (str) {
+        let dom = document.createElement('div');
+        dom.innerHTML = str;
+        return dom;
+    
+    };
+
+    for (const button of resourceActionListElm.querySelectorAll("*[data-url]")) {
+        button.addEventListener('click', async function () {
+            const dataUrl = button.dataset.url;
+            const dataSmallPage = button.dataset.smallPage;
+            if (dataSmallPage === 'true') {
+                try {
+                    const ajaxUrl = dataUrl + '?layout=sidebar';
+                    const response = await fetch(ajaxUrl);
+                    if (response.ok) {
+                        const html = await response.text();
+                        const dom = stringToHTML(html);
+                        const form = dom.querySelector('form');
+                        form.action = dataUrl;
+                        const sidebar = document.querySelector('.apie-sidebar');
+                        sidebar.classList.add('active');
+                        sidebar.appendChild(form);
+                        const scriptTags = form.querySelectorAll('script');
+                        for (const script of scriptTags) {
+                            const newScript = document.createElement('script');
+                            if (script.src) {
+                                newScript.src = script.src;
+                            }
+                            newScript.textContent = script.textContent;
+                            document.body.appendChild(newScript);
+                        }
+                        return;
+                    }
+                } catch (err) {
+                }
+            }
+            location.href = dataUrl;
+        }); 
+    }
+    resourceActionListElm.classList.remove('resource-actions-unprocessed');
+}(document.querySelector('.resource-actions-unprocessed')));</script>
+</div>
+    <revo-grid style="max-height: 80%"></revo-grid>
   <script>
   (function(grid) {
+    const importantNameColumns = ['displayName', 'name', 'internalName', 'shortDescription', 'description', 'productDescription', 'id'];
     function renderCell(createElement, props) {
       const value = props.model[props.prop];
+      const element = renderValue(createElement, value);
+      element.$attrs$.onClick = () => {
+        if (Object.hasOwnProperty.call(props.model, 'id')) {
+          location.href = location.protocol + '//' + location.host + location.pathname + '/' + props.model.id;
+        }
+      };
+      return element;
+    }
+    function renderValue(createElement, value) {
       if (value === undefined || value === null) {
         return createElement('ion-icon', { name: 'remove-outline' });
       }
@@ -21,6 +92,21 @@
           return createElement('div', { title: value }, value.toFixed(4));
         }
       }
+      if (Array.isArray(value)) {
+        let components = [];
+        for (val of value) {
+          components.push(createElement('gr-tag', { size: 'small' }, renderValue(createElement, val)))
+        }
+        return createElement('div', { }, components);
+      }
+      if (typeof value === 'object') {
+        for (column of importantNameColumns) {
+          if (value[column]) {
+            return renderValue(createElement, value[column]);
+          }
+        }
+        return renderValue(createElement, value[Object.keys(value)[0]]);
+      }
       return createElement('div', {}, value || '');
     }
     const columns = ["id","name"]
@@ -29,13 +115,19 @@
             prop: name,
             name: name,
             cellTemplate: renderCell,
+            autoSize: true,
           }
         });
     const rows = [{"id":12,"name":"Pizza"}];
     // grid.theme = 'material';
     grid.columns = columns;
     grid.source = rows;
+    grid.readonly = true;
+    grid.autoresize = true;
+    grid.autoSizeColumn = {
+      mode: 'autoSizeOnTextOverlap'
+    };
   })(document.querySelector('revo-grid'))
   </script>
-  
+    
 </div>

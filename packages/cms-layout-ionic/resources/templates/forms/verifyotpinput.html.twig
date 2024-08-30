@@ -1,0 +1,11 @@
+<ionic-input
+    label="{{ property('name') }}"
+    name="{{ property('name') }}"
+    value="{{ property('value') }}"
+    type="text"
+    {%- if (property('validationError')) -%}
+    invalid invalid-text="{{ property('validationError') }}"
+    {%- endif -%}
+    >
+</ionic-input>
+<img src="{{ property('secret').getUrl(property('label')) }}" width="100" />

@@ -1,0 +1,28 @@
+<form style="display: table-cell; vertical-align: middle">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <ion-input fill="outline" label-placement="floating" name="search" type="search" value="{{ property('textSearch') }}">
+              <ion-icon slot="start" name="search" aria-hidden="true"></ion-icon>
+            </ion-input>
+          </td>
+          {% if property('filters')|length %}
+            <td>
+                <apie-filter-overview class="unprocessed-filter"></apie-filter-overview>
+                <script>
+                (function (elm) {
+                  elm.classList.remove('unprocessed-filter');
+                  elm.filterNames = {{ property('filters') | json_encode | raw }};
+                  elm.filters = {{ property('currentFilter') | json_encode | raw }};
+                }(document.querySelector('apie-filter-overview.unprocessed-filter')));
+                </script>
+            </td>
+          {% endif %}
+          <td>
+            <ion-button variant="secondary" type="submit" large expand="block">Search</ion-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>

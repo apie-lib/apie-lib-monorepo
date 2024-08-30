@@ -1,10 +1,10 @@
 <?php
 namespace Apie\Fixtures\ValueObjects;
 
-use Apie\CompositeValueObjects\CompositeValueObject;
 use Apie\Core\Attributes\Internal;
+use Apie\Core\ValueObjects\CompositeValueObject;
+use Apie\Core\ValueObjects\DatabaseText;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
-use Apie\TextValueObjects\DatabaseText;
 
 class AddressWithZipcodeCheck implements ValueObjectInterface
 {

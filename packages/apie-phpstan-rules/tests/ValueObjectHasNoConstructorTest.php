@@ -6,18 +6,18 @@ use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 
 /**
- * @extends RuleTestCase<ValueObjectHasNoConstructor>
+ * @extends RuleTestCase<ValueObjectWithArrayShouldBeComposite>
  */
 class ValueObjectHasNoConstructorTest extends RuleTestCase
 {
     protected function getRule(): Rule
     {
-        // getRule() method needs to return an instance of the tested rule
-        return new ValueObjectHasNoConstructor();
+        return new ValueObjectHasNoConstructor($this->createReflectionProvider());
     }
 
     /**
      * @dataProvider ruleProvider
+     * @runInSeparateProcess
      */
     public function testLegacyRule(array $rules, string... $fileToAnalyse): void
     {
@@ -28,16 +28,15 @@ class ValueObjectHasNoConstructorTest extends RuleTestCase
     {
         yield [
             [
-                ["Class 'ValueObjectWithoutConstructor' is a value object, but it has no constructor.", 7],
+                ["Class 'ValueObjectWithoutConstructor' is a value object, but it has no constructor.", 7]
             ],
             __DIR__ . '/Fixtures/ValueObjectWithoutConstructor.php',
         ];
         yield [
             [
-                /*["Class 'ValueObjectWithBaseClass' is a value object, but it has no constructor.", 7],*/ // TODO
+                ["Class 'ValueObjectWithBaseClass' is a value object, but it has no constructor.", 4]
             ],
             __DIR__ . '/Fixtures/ValueObjectWithBaseClass.php',
-            __DIR__ . '/Fixtures/AbstractValueObjectWithoutConstructor.php',
         ];
         yield [
             [],

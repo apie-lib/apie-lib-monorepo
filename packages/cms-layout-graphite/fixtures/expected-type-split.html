@@ -1,27 +1,32 @@
-<div style="margin: 2%">
-  <gr-select name="_apie[form][name]" class="unhandled-tab-split" label="Type for form[name]">
-          <gr-menu-item value="input">input</gr-menu-item>
-          <gr-menu-item value="password">password</gr-menu-item>
-      </gr-select>
-  <div>
-    <gr-input
-    label="name"
-    name="name"
-    value="value"
-    type="text"
-    >
-</gr-input>
-  </div>
+<template id="sfd9aafcc17084f4e4a56ebd62a6d237einput">&lt;gr-input
+    label=&quot;name&quot;
+    name=&quot;name&quot;
+    value=&quot;value&quot;
+    type=&quot;text&quot;
+    &gt;&lt;/gr-input&gt;</template>
+<template id="sfd9aafcc17084f4e4a56ebd62a6d237epassword">&lt;gr-input
+    label=&quot;name&quot;
+    name=&quot;name&quot;
+    value=&quot;value&quot;
+    type=&quot;password&quot;
+    &gt;&lt;/gr-input&gt;</template>
+<div style="margin: 2%; width: 90%; box-shadow: var(--gr-shadow-x-large);">
+  <apie-form-select name="_apie[typehint][name]" class="unhandled-tab-split">
 </div>
-<script>
+<apie-script>
 (function(element){
   element.classList.remove('unhandled-tab-split');
   const templates = {};
-      templates["input"] = "<gr-input\n    label=\"name\"\n    name=\"name\"\n    value=\"value\"\n    type=\"text\"\n    >\n<\/gr-input>";
-      templates["password"] = "<gr-input\n    label=\"name\"\n    name=\"name\"\n    value=\"value\"\n    type=\"password\"\n    >\n<\/gr-input>";
-    element.addEventListener('gr-change', function (event) {
-    const target = event.target || element;
-    target.nextSibling.nextSibling.innerHTML = templates[target.value];
-  })
+      templates["input"] = {
+      label: "input",
+      templateId: "sfd9aafcc17084f4e4a56ebd62a6d237einput",
+      value: "value",
+    };
+      templates["password"] = {
+      label: "password",
+      templateId: "sfd9aafcc17084f4e4a56ebd62a6d237epassword",
+      value: "value",
+    };
+    element.options = templates;
 })(document.querySelector('.unhandled-tab-split'));
-</script>
+</apie-script>

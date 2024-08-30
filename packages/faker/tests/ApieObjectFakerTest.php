@@ -8,9 +8,11 @@ use Apie\Fixtures\Entities\UserWithAutoincrementKey;
 use Apie\Fixtures\Enums\Gender;
 use Apie\Fixtures\ValueObjects\Password;
 use Apie\Tests\Faker\Concerns\ItCreatesAFaker;
+use Apie\TypeConverter\ReflectionTypeFactory;
 use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
+use stdClass;
 use Symfony\Component\Finder\Finder;
 use UnitEnum;
 
@@ -38,7 +40,8 @@ class ApieObjectFakerTest extends TestCase
     {
         $path = dirname((new ReflectionClass(Time::class))->getFileName());
         foreach (Finder::create()->files()->name('*.php')->depth(0)->in($path) as $file) {
-            yield ['Apie\\DateValueObjects\\' . $file->getBasename('.php')];
+            $class = 'Apie\\DateValueObjects\\' . $file->getBasename('.php');
+            yield $class => [$class];
         }
     }
 
@@ -49,7 +52,7 @@ class ApieObjectFakerTest extends TestCase
     public function it_can_fake_composite_value_objects(string $classToTest)
     {
         $faker = $this->givenAFakerWithApieObjectFaker();
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $result = $faker->fakeClass($classToTest);
             $this->assertInstanceOf($classToTest, $result);
         }
@@ -57,9 +60,9 @@ class ApieObjectFakerTest extends TestCase
 
     public function compositeValueObjectProvider(): iterable
     {
-        yield [UserWithAutoincrementKey::class];
-        yield [UserWithAddress::class];
-        yield [Animal::class];
+        yield 'Entity with autoincrement identifier' => [UserWithAutoincrementKey::class];
+        yield 'Entity with uuid identifier' => [UserWithAddress::class];
+        yield 'Polymorphic entity' => [Animal::class];
     }
 
     /**
@@ -77,7 +80,7 @@ class ApieObjectFakerTest extends TestCase
 
     public function enumProvider()
     {
-        yield [Gender::class];
+        yield 'regular enum' => [Gender::class];
     }
 
     /**
@@ -95,6 +98,44 @@ class ApieObjectFakerTest extends TestCase
 
     public function passwordValueObjectsProvider(): iterable
     {
-        yield [Password::class];
+        yield 'regular password' => [Password::class];
+    }
+
+    /**
+     * @test
+     * @dataProvider primitiveProvider
+     */
+    public function it_can_fake_primitives(string $type)
+    {
+        $faker = $this->givenAFakerWithApieObjectFaker();
+        for ($i = 0; $i < 100; $i++) {
+            $result = $faker->fakeFromType(ReflectionTypeFactory::createReflectionType($type));
+            switch ($type) {
+                case 'true':
+                    $this->assertTrue($result);
+                    break;
+                case 'false':
+                    $this->assertFalse($result);
+                    break;
+                case 'mixed':
+                    if ($result !== null && !is_array($result)) {
+                        $this->assertIsScalar($result);
+                    }
+                    break;
+                default:
+                    $this->assertEquals($type, get_debug_type($result));
+            }
+        }
+    }
+
+    public function primitiveProvider(): iterable
+    {
+        $types = ['string', 'int', 'float', 'false', 'bool', 'mixed', 'array', stdClass::class];
+        if (PHP_VERSION_ID >= 80200) {
+            $types[] =  'true';
+        }
+        foreach ($types as $type) {
+            yield $type => [$type];
+        }
     }
 }

@@ -4,16 +4,17 @@ namespace Apie\Fixtures\Enums;
 use Apie\Core\Attributes\AllApplies;
 use Apie\Core\Attributes\Equals;
 use Apie\Core\Attributes\Requires;
+use Apie\Core\Attributes\RuntimeCheck;
 
 enum RestrictedEnum: string
 {
-    #[Equals('locale', 'nl')]
+    #[RuntimeCheck(new Equals('locale', 'nl'))]
     case RED = 'red';
-    #[Requires('authenticated')]
+    #[RuntimeCheck(new Requires('authenticated'))]
     case GREEN = 'green';
-    #[AllApplies(new Requires('authenticated'), new Equals('locale', 'nl'))]
+    #[RuntimeCheck(new AllApplies(new Requires('authenticated'), new Equals('locale', 'nl')))]
     case BLUE = 'blue';
-    #[Requires('authenticated')]
-    #[Equals('locale', 'nl')]
+    #[RuntimeCheck(new Requires('authenticated'))]
+    #[RuntimeCheck(new Equals('locale', 'nl'))]
     case ORANGE = 'orange';
 }

@@ -1,0 +1,17 @@
+<ion-input
+    label="{{ property('name') }}"
+    name="{{ property('name') }}"
+    value="{{ property('value') }}"
+    type="{{ property('type') }}"
+    label-placement="floating"
+    {% for key, value in property('additionalAttributes') %}
+    {{ key }}="{{ value }}"
+    {% endfor %}
+    {%- if (property('validationError')) -%}
+    invalid invalid-text="{{ property('validationError') }}"
+    {%- endif -%}
+    >
+    {%- if (property('validationError')) -%}
+    <span slot="invalid-text" style="white-space:pre">{{ property('validationError') }}</span>
+    {%- endif -%}
+</ion-input>

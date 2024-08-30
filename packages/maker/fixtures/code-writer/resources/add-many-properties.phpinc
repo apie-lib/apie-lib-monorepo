@@ -1,0 +1,173 @@
+<?php
+
+namespace Apie\Tests\Maker\Fixtures\Resources;
+
+use Apie\Core\Entities\EntityInterface;
+use Apie\Tests\Maker\Fixtures\Identifiers\AlreadyExistingResourceIdentifier;
+
+/**
+ * This is the original resource without modifications and we see if we can modify it.
+ */
+class AlreadyExistingResource implements EntityInterface
+{
+    private string $neverNullableWritableReadable;
+    private string $neverNullableWritable;
+    private string $neverNullableReadable;
+    private string $neverNullable;
+    private ?string $initialNullWritableReadable = null;
+    private ?string $initialNullWritable = null;
+    private ?string $initialNullReadable = null;
+    private ?string $initialNull = null;
+    private ?string $alwaysNullWritableReadable = null;
+    private ?string $alwaysNullWritable = null;
+    private ?string $alwaysNullReadable = null;
+    private ?string $alwaysNull = null;
+
+    public function __construct(
+        public AlreadyExistingResourceIdentifier $id,
+        private string $neverNullableConstructorWritableReadable,
+        private string $neverNullableConstructorWritable,
+        private string $neverNullableConstructorReadable,
+        private string $neverNullableConstructor,
+        private ?string $initialNullConstructorWritableReadable = null,
+        private ?string $initialNullConstructorWritable = null,
+        private ?string $initialNullConstructorReadable = null,
+        private ?string $initialNullConstructor = null,
+        private ?string $alwaysNullConstructorWritableReadable = null,
+        private ?string $alwaysNullConstructorWritable = null,
+        private ?string $alwaysNullConstructorReadable = null,
+        private ?string $alwaysNullConstructor = null,
+    ) {
+    }
+
+    public function getId(): AlreadyExistingResourceIdentifier
+    {
+        return $this->id;
+    }
+
+    public function setNeverNullableConstructorWritableReadable(string $neverNullableConstructorWritableReadable)
+    {
+        $this->neverNullableConstructorWritableReadable = $neverNullableConstructorWritableReadable;
+    }
+
+    public function getNeverNullableConstructorWritableReadable(): string
+    {
+        return $this->neverNullableConstructorWritableReadable;
+    }
+
+    public function setNeverNullableConstructorWritable(string $neverNullableConstructorWritable)
+    {
+        $this->neverNullableConstructorWritable = $neverNullableConstructorWritable;
+    }
+
+    public function getNeverNullableConstructorReadable(): string
+    {
+        return $this->neverNullableConstructorReadable;
+    }
+
+    public function setNeverNullableWritableReadable(string $neverNullableWritableReadable)
+    {
+        $this->neverNullableWritableReadable = $neverNullableWritableReadable;
+    }
+
+    public function getNeverNullableWritableReadable(): string
+    {
+        if (!isset($this->neverNullableWritableReadable)) {
+            throw new \LogicException("Property \"neverNullableWritableReadable\" is not set yet!");
+        }
+        return $this->neverNullableWritableReadable;
+    }
+
+    public function setNeverNullableWritable(string $neverNullableWritable)
+    {
+        $this->neverNullableWritable = $neverNullableWritable;
+    }
+
+    public function getNeverNullableReadable(): string
+    {
+        if (!isset($this->neverNullableReadable)) {
+            throw new \LogicException("Property \"neverNullableReadable\" is not set yet!");
+        }
+        return $this->neverNullableReadable;
+    }
+
+    public function setInitialNullConstructorWritableReadable(string $initialNullConstructorWritableReadable)
+    {
+        $this->initialNullConstructorWritableReadable = $initialNullConstructorWritableReadable;
+    }
+
+    public function getInitialNullConstructorWritableReadable(): ?string
+    {
+        return $this->initialNullConstructorWritableReadable;
+    }
+
+    public function setInitialNullConstructorWritable(string $initialNullConstructorWritable)
+    {
+        $this->initialNullConstructorWritable = $initialNullConstructorWritable;
+    }
+
+    public function getInitialNullConstructorReadable(): ?string
+    {
+        return $this->initialNullConstructorReadable;
+    }
+
+    public function setInitialNullWritableReadable(string $initialNullWritableReadable)
+    {
+        $this->initialNullWritableReadable = $initialNullWritableReadable;
+    }
+
+    public function getInitialNullWritableReadable(): ?string
+    {
+        return $this->initialNullWritableReadable;
+    }
+
+    public function setInitialNullWritable(string $initialNullWritable)
+    {
+        $this->initialNullWritable = $initialNullWritable;
+    }
+
+    public function getInitialNullReadable(): ?string
+    {
+        return $this->initialNullReadable;
+    }
+
+    public function setAlwaysNullConstructorWritableReadable(?string $alwaysNullConstructorWritableReadable)
+    {
+        $this->alwaysNullConstructorWritableReadable = $alwaysNullConstructorWritableReadable;
+    }
+
+    public function getAlwaysNullConstructorWritableReadable(): ?string
+    {
+        return $this->alwaysNullConstructorWritableReadable;
+    }
+
+    public function setAlwaysNullConstructorWritable(?string $alwaysNullConstructorWritable)
+    {
+        $this->alwaysNullConstructorWritable = $alwaysNullConstructorWritable;
+    }
+
+    public function getAlwaysNullConstructorReadable(): ?string
+    {
+        return $this->alwaysNullConstructorReadable;
+    }
+
+    public function setAlwaysNullWritableReadable(?string $alwaysNullWritableReadable)
+    {
+        $this->alwaysNullWritableReadable = $alwaysNullWritableReadable;
+    }
+
+    public function getAlwaysNullWritableReadable(): ?string
+    {
+        return $this->alwaysNullWritableReadable;
+    }
+
+    public function setAlwaysNullWritable(?string $alwaysNullWritable)
+    {
+        $this->alwaysNullWritable = $alwaysNullWritable;
+    }
+
+    public function getAlwaysNullReadable(): ?string
+    {
+        return $this->alwaysNullReadable;
+    }
+}

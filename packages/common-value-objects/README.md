@@ -6,7 +6,7 @@
 
 
 
- [![Latest Stable Version](http://poser.pugx.org/apie/common-value-objects/v)](https://packagist.org/packages/apie/common-value-objects) [![Total Downloads](http://poser.pugx.org/apie/common-value-objects/downloads)](https://packagist.org/packages/apie/common-value-objects) [![Latest Unstable Version](http://poser.pugx.org/apie/common-value-objects/v/unstable)](https://packagist.org/packages/apie/common-value-objects) [![License](http://poser.pugx.org/apie/common-value-objects/license)](https://packagist.org/packages/apie/common-value-objects) [![PHP Version Require](http://poser.pugx.org/apie/common-value-objects/require/php)](https://packagist.org/packages/apie/common-value-objects) [![Code coverage](https://raw.githubusercontent.com/apie-lib/common-value-objects/main/coverage_badge.svg)](https://apie-lib.github.io/coverage/common-value-objects/index.html)  
+ [![Latest Stable Version](https://poser.pugx.org/apie/common-value-objects/v)](https://packagist.org/packages/apie/common-value-objects) [![Total Downloads](https://poser.pugx.org/apie/common-value-objects/downloads)](https://packagist.org/packages/apie/common-value-objects) [![Latest Unstable Version](https://poser.pugx.org/apie/common-value-objects/v/unstable)](https://packagist.org/packages/apie/common-value-objects) [![License](https://poser.pugx.org/apie/common-value-objects/license)](https://packagist.org/packages/apie/common-value-objects) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-common-value-objects.svg)](https://apie-lib.github.io/projectCoverage/common-value-objects/index.html)  
 
 [![PHP Composer](https://github.com/apie-lib/common-value-objects/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/common-value-objects/actions/workflows/php.yml)
 
@@ -100,7 +100,6 @@ At first these value objects seem redundant as you wonder why you should not jus
 
 | Class | Description |
 | --- | --- |
-| DatabaseText | A string that fits into a database text field (65535 characters). The text will be trimmed and can be empty. |
 | NonEmptyString | Any string as long it is not empty. The text will be trimmed. |
 | SmallDatabaseText | A string that fits into a database varchar field (255 characters). The text will be trimmed and can be empty. |
 | StrongPasswordField | A string used for passwords that are considered strong passwords. |

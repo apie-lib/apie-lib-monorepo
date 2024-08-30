@@ -1,0 +1,60 @@
+{
+  "name": "apie/maker",
+  "description": "Composer package of the apie library: maker",
+  "type": "library",
+  "license": "MIT",
+  "config": {
+    "allow-plugins": {
+        "apie/apie-common-plugin": true
+    }
+  },
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\Maker\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\Maker\\": "tests/"
+    }
+  },
+  "extra": {
+    "apie-objects": [
+      "Apie\\Maker\\Dtos\\DomainObjectDto",
+      "Apie\\Maker\\Enums\\IdType",
+      "Apie\\Maker\\Enums\\NullableOption",
+      "Apie\\Maker\\Enums\\OverwriteStrategy",
+      "Apie\\Maker\\Enums\\PrimitiveType",
+      "Apie\\Maker\\ValueObjects\\VendorValueObject"
+    ]
+  },
+  "conflict": {
+    "nette/utils": "3.*"
+  },
+  "require": {
+    "php": ">=8.1",
+    "apie/apie-common-plugin": "self.version",
+    "apie/common": "self.version",
+    "apie/core": "self.version",
+    "haydenpierce/class-finder": "0.5.3",
+    "nette/php-generator": "^4.1.5",
+    "nikic/php-parser": "^4.19.1"
+  },
+  "require-dev": {
+    "apie/fixtures": "self.version",
+    "apie/service-provider-generator": "0.11.2",
+    "beste/clock": "^3.0",
+    "illuminate/support": "*",
+    "phpunit/phpunit": "^9.6.19",
+    "phpspec/prophecy-phpunit": "^2.2",
+    "symfony/event-dispatcher": "^6.4"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

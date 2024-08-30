@@ -2,12 +2,16 @@
 namespace Apie\Tests\DoctrineEntityConverter;
 
 use Apie\Core\Entities\EntityInterface;
-use Apie\DoctrineEntityConverter\Exceptions\ContentsCouldNotBeDeserialized;
+use Apie\Core\FileStorage\FileStorageFactory;
+use Apie\Core\IdentifierUtils;
+use Apie\Core\ValueObjects\DatabaseText;
+use Apie\DoctrineEntityConverter\Factories\PersistenceLayerFactory;
+use Apie\DoctrineEntityConverter\OrmBuilder;
+use Apie\Fixtures\BoundedContextFactory;
 use Apie\Fixtures\Entities\UserWithAddress;
 use Apie\Fixtures\Entities\UserWithAutoincrementKey;
 use Apie\Fixtures\ValueObjects\AddressWithZipcodeCheck;
-use Apie\Tests\DoctrineEntityConverter\Concerns\HasEntityBuilder;
-use Apie\TextValueObjects\DatabaseText;
+use Apie\StorageMetadata\DomainToStorageConverter;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\SchemaTool;
@@ -17,8 +21,6 @@ use ReflectionClass;
 
 class IntegrationTest extends TestCase
 {
-    use HasEntityBuilder;
-
     protected function createEntityManager(string $mockPath, ?string $path = null): EntityManagerInterface
     {
         $isDevMode = true;
@@ -30,11 +32,11 @@ class IntegrationTest extends TestCase
             $proxyDir,
             $cache
         );
-        $conn = array(
+        $conn = [
             'driver' => 'pdo_sqlite',
             'memory' => is_null($path),
             'path'   => $path
-        );
+        ];
 
         return EntityManager::create($conn, $config);
     }
@@ -57,7 +59,7 @@ class IntegrationTest extends TestCase
      * @requires extension sqlite3
      * @dataProvider entityProvider
      */
-    public function testPersistenceAndRetrieval(EntityInterface $domainObject, ?callable $testBefore = null, ?callable $testAfter = null)
+    public function testPersistenceAndRetrieval(EntityInterface $domainObject, string $boundedContextId, ?callable $testBefore = null, ?callable $testAfter = null)
     {
         $testBefore ??= function () {
         };
@@ -71,59 +73,44 @@ class IntegrationTest extends TestCase
         try {
             $reflClass = new ReflectionClass($domainObject);
             $namespace = 'Generated\Example' . uniqid();
-            $generatedEntityClassName = $namespace . '\\' . $reflClass->getShortName();
+            $generatedClassName = 'apie_resource__' . $boundedContextId . '_' . IdentifierUtils::classNameToUnderscore($reflClass);
+            $generatedEntityClassName = $namespace . '\\' . $generatedClassName;
             $entityManager = $this->givenAnEntityManagerFromGeneratedClass(
                 $namespace,
                 $tempFolder,
+                $boundedContextId,
                 $reflClass
             );
+            $converter = DomainToStorageConverter::create(FileStorageFactory::create());
 
-            $entity = $generatedEntityClassName::createFrom($domainObject);
+            $entity = $converter->createStorageObject(
+                $domainObject,
+                new ReflectionClass($generatedEntityClassName)
+            );
             $entityManager->persist($entity);
             $entityManager->flush();
             $testBefore($domainObject);
-            $entity->inject($domainObject);
+            $converter->injectExistingDomainObject($domainObject, $entity);
             $testAfter($domainObject);
         } finally {
             system('rm -rf ' . escapeshellarg($tempFolder));
         }
     }
 
-    public function testSerializationError()
+    private function givenAnEntityManagerFromGeneratedClass(string $namespace, string $tempFolder, string $boundedContextId, ReflectionClass $reflClass): EntityManagerInterface
     {
-        $tempFolder = sys_get_temp_dir() . DIRECTORY_SEPARATOR . uniqid('doctrine-');
-        if (!@mkdir($tempFolder)) {
-            $this->markTestSkipped('Can not create temp folder ' . $tempFolder);
-        }
+        $generatedClassName = 'apie_resource__' . $boundedContextId . '_' . IdentifierUtils::classNameToUnderscore($reflClass);
+        $generatedFilePath = $tempFolder . DIRECTORY_SEPARATOR . $generatedClassName . '.php';
+        $generatedEntityClassName = $namespace . '\\' . $generatedClassName;
 
-        try {
-            $reflClass = new ReflectionClass(UserWithAutoincrementKey::class);
-            $namespace = 'Generated\Example' . uniqid();
-            $generatedEntityClassName = $namespace . '\\' . $reflClass->getShortName();
-            $entityManager = $this->givenAnEntityManagerFromGeneratedClass(
-                $namespace,
-                $tempFolder,
-                $reflClass
-            );
-            $entityManager->getConnection()->exec(file_get_contents(__DIR__ . '/../fixtures/address.sql'));
-            $entity = $entityManager->find($generatedEntityClassName, 42);
-            $this->expectException(ContentsCouldNotBeDeserialized::class);
-            $entity->inject($reflClass->newInstanceWithoutConstructor());
-        } finally {
-            system('rm -rf ' . escapeshellarg($tempFolder));
-        }
-    }
-
-    private function givenAnEntityManagerFromGeneratedClass(string $namespace, string $tempFolder, ReflectionClass $reflClass): EntityManagerInterface
-    {
-        $entityBuilder = $this->givenAEntityBuilder($namespace);
-
-        $generatedFilePath = $tempFolder . DIRECTORY_SEPARATOR . $reflClass->getShortName() . '.php';
-        $generatedEntityClassName = $namespace . '\\' . $reflClass->getShortName();
-        file_put_contents(
-            $generatedFilePath,
-            $entityBuilder->createCodeFor($reflClass)
+        $ormBuilder = new OrmBuilder(
+            new PersistenceLayerFactory(),
+            BoundedContextFactory::createHashmapWithMultipleContexts(),
+            true,
+            $namespace
         );
+
+        $ormBuilder->createOrm($tempFolder);
 
         $this->assertFalse(class_exists($generatedEntityClassName));
         require_once($generatedFilePath);
@@ -144,6 +131,7 @@ class IntegrationTest extends TestCase
         );
         yield 'Entity with auto increment id' => [
             new UserWithAutoincrementKey($address),
+            'other',
             function (UserWithAutoincrementKey $domainObject) {
                 $this->assertNull($domainObject->getId()->toNative(), 'Object id is not updated after flush(), before inject()');
             },
@@ -160,6 +148,7 @@ class IntegrationTest extends TestCase
         $id = $domainObject->getId()->toNative();
         yield 'Entity with predefined uuid' => [
             $domainObject,
+            'default',
             null,
             function (UserWithAddress $persistedObject) use ($id) {
                 $this->assertEquals($id, $persistedObject->getId()->toNative());

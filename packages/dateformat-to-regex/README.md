@@ -6,7 +6,7 @@
 
 
 
- [![Latest Stable Version](http://poser.pugx.org/apie/dateformat-to-regex/v)](https://packagist.org/packages/apie/dateformat-to-regex) [![Total Downloads](http://poser.pugx.org/apie/dateformat-to-regex/downloads)](https://packagist.org/packages/apie/dateformat-to-regex) [![Latest Unstable Version](http://poser.pugx.org/apie/dateformat-to-regex/v/unstable)](https://packagist.org/packages/apie/dateformat-to-regex) [![License](http://poser.pugx.org/apie/dateformat-to-regex/license)](https://packagist.org/packages/apie/dateformat-to-regex) [![PHP Version Require](http://poser.pugx.org/apie/dateformat-to-regex/require/php)](https://packagist.org/packages/apie/dateformat-to-regex) [![Code coverage](https://raw.githubusercontent.com/apie-lib/dateformat-to-regex/main/coverage_badge.svg)](https://apie-lib.github.io/coverage/dateformat-to-regex/index.html)  
+ [![Latest Stable Version](https://poser.pugx.org/apie/dateformat-to-regex/v)](https://packagist.org/packages/apie/dateformat-to-regex) [![Total Downloads](https://poser.pugx.org/apie/dateformat-to-regex/downloads)](https://packagist.org/packages/apie/dateformat-to-regex) [![Latest Unstable Version](https://poser.pugx.org/apie/dateformat-to-regex/v/unstable)](https://packagist.org/packages/apie/dateformat-to-regex) [![License](https://poser.pugx.org/apie/dateformat-to-regex/license)](https://packagist.org/packages/apie/dateformat-to-regex) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-dateformat-to-regex.svg)](https://apie-lib.github.io/projectCoverage/dateformat-to-regex/index.html)  
 
 [![PHP Composer](https://github.com/apie-lib/dateformat-to-regex/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/dateformat-to-regex/actions/workflows/php.yml)
 

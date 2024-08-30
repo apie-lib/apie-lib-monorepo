@@ -2,9 +2,9 @@
 namespace Apie\Tests\CountryAndPhoneNumber;
 
 use Apie\CountryAndPhoneNumber\CountryAndPhoneNumber;
-use Apie\CountryAndPhoneNumber\Exceptions\PhoneNumberAndCountryMismatch;
 use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
 use Apie\CountryAndPhoneNumber\InternationalPhoneNumber;
+use Apie\Fixtures\TestHelpers\TestValidationError;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use cebe\openapi\spec\Reference;
@@ -15,6 +15,7 @@ use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
 
 class CountryAndPhoneNumberTest extends TestCase
 {
+    use TestValidationError;
     use TestWithFaker;
     use TestWithOpenapiSchema;
 
@@ -57,22 +58,30 @@ class CountryAndPhoneNumberTest extends TestCase
      * @test
      * @dataProvider incorrectProvider
      */
-    public function it_throws_errors_on_incorrect_combinations_with_fromNative(string $expectedClass, array $input)
+    public function it_throws_errors_on_incorrect_combinations_with_fromNative(array $expectedErrorMessages, array $input)
     {
-        $this->expectException($expectedClass);
-        CountryAndPhoneNumber::fromNative($input);
+        $this->assertValidationError(
+            $expectedErrorMessages,
+            function () use ($input) {
+                CountryAndPhoneNumber::fromNative($input);
+            }
+        );
     }
 
     /**
      * @test
      * @dataProvider incorrectProvider
      */
-    public function it_throws_errors_on_incorrect_combinations_with_constructor(string $expectedClass, array $input)
+    public function it_throws_errors_on_incorrect_combinations_with_constructor(array $expectedErrorMessages, array $input)
     {
-        $country = ISO3166_1_Alpha_2::from($input['country']);
-        $phoneNumber = (new InternationalPhoneNumber($input['phoneNumber']))->toPhoneNumber();
-        $this->expectException($expectedClass);
-        new CountryAndPhoneNumber($country, $phoneNumber);
+        $this->assertValidationError(
+            $expectedErrorMessages,
+            function () use ($input) {
+                $country = ISO3166_1_Alpha_2::from($input['country']);
+                $phoneNumber = (new InternationalPhoneNumber($input['phoneNumber']))->toPhoneNumber();
+                new CountryAndPhoneNumber($country, $phoneNumber);
+            }
+        );
     }
 
     public function incorrectProvider()
@@ -82,7 +91,10 @@ class CountryAndPhoneNumberTest extends TestCase
             'country' => 'DE',
             'phoneNumber' => $phoneUtil->format($phoneUtil->getExampleNumber('NL'), PhoneNumberFormat::E164),
         ];
-        yield [PhoneNumberAndCountryMismatch::class, $input];
+        yield [
+            ['phoneNumber' => 'Phone number and country are not from the same country. Country is "DE", phone number is "NL"'],
+            $input
+        ];
     }
 
     /**

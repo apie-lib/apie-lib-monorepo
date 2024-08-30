@@ -1,0 +1,34 @@
+<template id="sfd9aafcc17084f4e4a56ebd62a6d237einput">&lt;ion-input
+    label=&quot;name&quot;
+    name=&quot;name&quot;
+    value=&quot;value&quot;
+    type=&quot;text&quot;
+    label-placement=&quot;floating&quot;
+    &gt;&lt;/ion-input&gt;</template>
+<template id="sfd9aafcc17084f4e4a56ebd62a6d237epassword">&lt;ion-input
+    label=&quot;name&quot;
+    name=&quot;name&quot;
+    value=&quot;value&quot;
+    type=&quot;password&quot;
+    label-placement=&quot;floating&quot;
+    &gt;&lt;/ion-input&gt;</template>
+<div style="margin: 2%; width: 90%; box-shadow: var(--gr-shadow-x-large);">
+  <apie-form-select name="_apie[typehint][name]" class="unhandled-tab-split">
+</div>
+<apie-script>
+(function(element){
+  element.classList.remove('unhandled-tab-split');
+  const templates = {};
+      templates["input"] = {
+      label: "input",
+      templateId: "sfd9aafcc17084f4e4a56ebd62a6d237einput",
+      value: "value",
+    };
+      templates["password"] = {
+      label: "password",
+      templateId: "sfd9aafcc17084f4e4a56ebd62a6d237epassword",
+      value: "value",
+    };
+    element.options = templates;
+})(document.querySelector('.unhandled-tab-split'));
+</apie-script>

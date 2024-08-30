@@ -1,0 +1,27 @@
+<{{ property('extraClass') ? 'ion-card' : 'div' }} class="{{ property('extraClass') | default('child-form-group') }}">
+  <ion-card-header>
+    <ion-card-title>{{ property('groupName') }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+    {% for key in property('keys') %}
+      <ion-item>
+        {{ component(key) }}
+      </ion-item>
+    {% endfor %}
+    </ion-list>
+    <ion-list>
+      {%- if property('validationError') -%}
+        <ion-item>
+          <apie-validation-error>{{ property('validationError') }}</apie-validation-error>
+        </ion-item>
+      {%- else -%}
+        {%- for key,description in property('validationErrors') -%}
+          <ion-item>
+            <apie-validation-error>{{ description }}</apie-validation-error>
+          </ion-item>
+        {%- endfor -%}
+      {%- endif -%}
+  </ion-card-content>
+</{{ property('extraClass') ? 'ion-card' : 'div' }}>

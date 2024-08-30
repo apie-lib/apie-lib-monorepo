@@ -19,19 +19,33 @@
       "Apie\\Tests\\CommonValueObjects\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\CommonValueObjects\\ApplicationVersion",
+      "Apie\\CommonValueObjects\\Email",
+      "Apie\\CommonValueObjects\\FullName",
+      "Apie\\CommonValueObjects\\Gender",
+      "Apie\\CommonValueObjects\\SafeHtml",
+      "Apie\\CommonValueObjects\\SemanticVersion",
+      "Apie\\CommonValueObjects\\StarRating",
+      "Apie\\CommonValueObjects\\Stars"
+    ]
+  },
   "require": {
     "php": ">=8.1",
     "apie/core": "self.version",
-    "apie/composite-value-objects": "self.version",
     "apie/country-and-phone-number": "self.version",
+    "apie/count-words": "self.version",
     "apie/date-value-objects": "self.version",
     "apie/regex-value-objects": "self.version",
     "apie/text-value-objects": "self.version",
-    "cebe/php-openapi": "^1.7"
+    "cebe/php-openapi": "^1.7",
+    "egulias/email-validator": "^3.2.6",
+    "symfony/html-sanitizer": "^6.4|7.*"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "phpunit/phpunit": "^9.5"
+    "phpunit/phpunit": "^9.6.19"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

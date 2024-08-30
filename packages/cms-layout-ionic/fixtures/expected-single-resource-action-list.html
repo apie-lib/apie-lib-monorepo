@@ -1,0 +1,45 @@
+<div style="display: table-cell; vertical-align: middle" class="resource-actions resource-actions-unprocessed">
+  </div>
+<script>(function (resourceActionListElm) {
+    const stringToHTML = function (str) {
+        let dom = document.createElement('div');
+        dom.innerHTML = str;
+        return dom;
+    
+    };
+
+    for (const button of resourceActionListElm.querySelectorAll("*[data-url]")) {
+        button.addEventListener('click', async function () {
+            const dataUrl = button.dataset.url;
+            const dataSmallPage = button.dataset.smallPage;
+            if (dataSmallPage === 'true') {
+                try {
+                    const ajaxUrl = dataUrl + '?layout=sidebar';
+                    const response = await fetch(ajaxUrl);
+                    if (response.ok) {
+                        const html = await response.text();
+                        const dom = stringToHTML(html);
+                        const form = dom.querySelector('form');
+                        form.action = dataUrl;
+                        const sidebar = document.querySelector('.apie-sidebar');
+                        sidebar.classList.add('active');
+                        sidebar.appendChild(form);
+                        const scriptTags = form.querySelectorAll('script');
+                        for (const script of scriptTags) {
+                            const newScript = document.createElement('script');
+                            if (script.src) {
+                                newScript.src = script.src;
+                            }
+                            newScript.textContent = script.textContent;
+                            document.body.appendChild(newScript);
+                        }
+                        return;
+                    }
+                } catch (err) {
+                }
+            }
+            location.href = dataUrl;
+        }); 
+    }
+    resourceActionListElm.classList.remove('resource-actions-unprocessed');
+}(document.querySelector('.resource-actions-unprocessed')));</script>

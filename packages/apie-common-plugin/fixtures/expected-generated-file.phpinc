@@ -1,0 +1,12 @@
+<?php
+
+namespace Apie\ApieCommonPlugin;
+
+/**
+ * @codeCoverageIgnore
+ * This class is auto-generated
+ */
+class AvailableApieObjectProvider extends ObjectProvider
+{
+	protected const DEFINED_CLASSES = ['test'];
+}

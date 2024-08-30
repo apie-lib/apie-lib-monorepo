@@ -1,0 +1,19 @@
+#!/usr/bin/env php 
+<?php
+
+use Apie\Common\DependencyInjection\ApieConfigFileLocator;
+use Apie\ServiceProviderGenerator\ServiceProviderGenerator;
+
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../shared-bin.php';
+
+$locator = new ApieConfigFileLocator();
+$generator = new ServiceProviderGenerator();
+foreach ($locator->getAllPaths() as $foundPath) {
+    $shortName = substr(strrchr($foundPath[1], '\\'), 1);
+    $targetPath = dirname($foundPath[0]) . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR . $shortName . '.php';
+    $sourceCode = $generator->generateClass($foundPath[1], $foundPath[0]);
+    file_put_contents($targetPath, $sourceCode);
+}
+
+ComposerTools::runUpdate();

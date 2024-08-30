@@ -60,9 +60,9 @@ class TimeTest extends TestCase
 
     public function invalidInput()
     {
-        yield ['this is not a time'];
-        yield ['1984-1-1'];
-        yield ['25:12'];
-        yield ['1984-01-32 12:23'];
+        yield 'not a time' => ['this is not a time'];
+        yield 'date, no time' => ['1984-1-1'];
+        yield 'incorrect hours' => ['25:12:01'];
+        yield 'date + time' => ['1984-01-32 12:23'];
     }
 }

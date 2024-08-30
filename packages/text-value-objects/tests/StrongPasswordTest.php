@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Tests\TextValueObjects;
 
+use Apie\Core\Randomizer\SecureRandomizer;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
@@ -85,5 +86,20 @@ class StrongPasswordTest extends TestCase
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(StrongPassword::class);
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_render_passwords_securely()
+    {
+        $randomizer = new SecureRandomizer();
+        $rendered = [];
+        for($i = 0; $i < 100; $i++) {
+            mt_srand(42);
+            $password = StrongPassword::createRandom($randomizer)->toNative();
+            $this->assertArrayNotHasKey($password, $rendered);
+            $rendered[$password] = true;
+        }
     }
 }

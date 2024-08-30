@@ -1,0 +1,10 @@
+<div class="user-profile">
+  <a href="{{ property('profileUrl') }}" title="{{ property('email') }}">
+    <img src="{{ property('gravatarUrl') }}?s=80&amp;d=mp" align="right" border="0"/>
+  </a>
+  <span class="user-info">
+    {% for fieldName in property('fieldNames') %}
+      <strong>{{ fieldName }}:</strong>&nbsp;&nbsp;{{ property('fields')[fieldName] }}
+    {% endfor %}
+  </span>
+</div>

@@ -2,9 +2,13 @@
 namespace Apie\CmsLayoutGraphite;
 
 use Apie\HtmlBuilders\Assets\AssetManager;
+use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
 
 final class GraphiteDesignSystemLayout
 {
+    /**
+     * @codeCoverageIgnore
+     */
     private function __construct()
     {
     }
@@ -14,7 +18,8 @@ final class GraphiteDesignSystemLayout
         $assetManager ??= new AssetManager();
         return new TwigRenderer(
             __DIR__ . '/../resources/templates',
-            $assetManager->withAddedPath(__DIR__ . '/../resources/assets')
+            $assetManager->withAddedPath(__DIR__ . '/../resources/assets'),
+            'Apie\HtmlBuilders\Components\\'
         );
     }
 }

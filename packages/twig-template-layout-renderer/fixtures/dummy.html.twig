@@ -1,0 +1,9 @@
+<div>Hello {{ property('name') }}</div>
+{%- if (property('childExists')) -%}
+  {{ component('child') }}
+{%- else -%}
+  {{ translate('apie.cms.bounded_context') }}
+  {{ apieConstant('VERSION') }}
+  {{ assetContent('apie-logo.svg') }}
+  <img src="{{ assetUrl('apie-logo.svg') }}"/>
+{%- endif -%}
