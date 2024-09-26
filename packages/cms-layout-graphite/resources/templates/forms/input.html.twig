@@ -1,16 +1,10 @@
-<gr-input
-    label="{{ property('name') }}"
+<apie-single-input
+    {% if (property('label')) %}
+    label="{{ translate(property('label')) }}"
+    {% endif %}
+    types="{{ property('type') }}"
     name="{{ property('name') }}"
-    value="{{ property('value') }}"
-    type="{{ property('type') }}"
     {% for key, value in property('additionalAttributes') %}
     {{ key }}="{{ value }}"
     {% endfor %}
-    {%- if (property('validationError')) -%}
-    invalid invalid-text="{{ property('validationError') }}"
-    {%- endif -%}
-    >
-    {%- if (property('validationError')) -%}
-    <span slot="invalid-text" style="white-space:pre">{{ property('validationError') }}</span>
-    {%- endif -%}
-</gr-input>
+    ></apie-single-input>

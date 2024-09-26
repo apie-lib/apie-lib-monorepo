@@ -5,6 +5,7 @@ use Apie\Core\ApieLib;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ApieTranslatorInterface;
+use Apie\Core\Translator\Lists\TranslationStringSet;
 use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
@@ -50,15 +51,15 @@ class ComponentHelperExtension extends AbstractExtension
         return $refl->getConstant($constantName);
     }
 
-    public function translate(string|TranslationString $translation): string
+    public function translate(string|TranslationString|TranslationStringSet $translation): string
     {
         $apieContext = $this->getCurrentContext();
         $translator = $apieContext->getContext(ApieTranslatorInterface::class, false) ?? ApieTranslator::create();
         return $translator->getGeneralTranslation(
             $apieContext,
-            $translation instanceof TranslationString
-                ? $translation
-                : new TranslationString($translation)
+            is_string($translation)
+                ? new TranslationString($translation)
+                : $translation
         ) ?? $translation;
     }
 

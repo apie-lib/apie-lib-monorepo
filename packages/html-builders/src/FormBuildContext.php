@@ -1,12 +1,16 @@
 <?php
 namespace Apie\HtmlBuilders;
 
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
+use Apie\Core\Translator\Lists\TranslationStringSet;
+use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\Core\ValueObjects\Utils;
 use Apie\HtmlBuilders\Factories\FormComponentFactory;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\ValueObjects\FormName;
+use ReflectionClass;
 
 final class FormBuildContext
 {
@@ -115,6 +119,20 @@ final class FormBuildContext
     public function getFormName(): FormName
     {
         return $this->formName;
+    }
+
+    public function createTranslationLabel(): TranslationStringSet
+    {
+        $translations = [];
+        $boundedContextId = $this->context->getContext(ContextConstants::BOUNDED_CONTEXT_ID, false);
+        $resourceName = $this->context->getContext(ContextConstants::RESOURCE_NAME, false);
+        $resourceName ??= $this->context->getContext(ContextConstants::METHOD_CLASS);
+        // TODO add more variations
+        $translations[] = $this->formName->createTranslationString(
+            new ReflectionClass($resourceName),
+            $boundedContextId ? new BoundedContextId($boundedContextId) : null,
+        );
+        return new TranslationStringSet($translations);
     }
 
     public function createChildContext(string $propertyName): self

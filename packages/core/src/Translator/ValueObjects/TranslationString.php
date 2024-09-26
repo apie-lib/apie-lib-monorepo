@@ -37,6 +37,6 @@ final class TranslationString implements HasRegexValueObjectInterface
         if ($boundedContextId === null) {
             return new self('apie.resource.' . SnakeCaseSlug::fromClass($class) . '.singular');
         }
-        return new self('apie.bounded.' .  $boundedContextId . '.resource.singular');
+        return new self('apie.bounded.' .  $boundedContextId . '.resource.' . SnakeCaseSlug::fromClass($class) . '.singular');
     }
 }

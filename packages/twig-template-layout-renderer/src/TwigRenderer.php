@@ -21,7 +21,7 @@ final class TwigRenderer implements ComponentRendererInterface
         private AssetManager $assetManager,
         private string $namespacePrefix
     ) {
-        $loader = new FilesystemLoader($path);
+        $loader = new FilesystemLoader([$path, self::getFallbackFixturesPath()]);
         $this->twigEnvironment = new Environment($loader, []);
         if (!isset(self::$extension)) {
             self::$extension = new ComponentHelperExtension();
@@ -52,5 +52,10 @@ final class TwigRenderer implements ComponentRendererInterface
         } finally {
             self::$extension->deselectComponent($component);
         }
+    }
+
+    final public static function getFallbackFixturesPath(): string
+    {
+        return __DIR__ . '/../resources';
     }
 }

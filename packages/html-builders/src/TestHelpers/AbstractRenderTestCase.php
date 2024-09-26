@@ -2,14 +2,18 @@
 namespace Apie\HtmlBuilders\TestHelpers;
 
 use Apie\Common\ActionDefinitions\CreateResourceActionDefinition;
+use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
+use Apie\Core\Dto\CmsInputOption;
 use Apie\Core\Dto\ValueOption;
 use Apie\Core\Enums\RequestMethod;
 use Apie\Core\Lists\StringList;
 use Apie\Core\Lists\ValueOptionList;
 use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ApieTranslatorInterface;
+use Apie\Core\Translator\Lists\TranslationStringSet;
+use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\Core\ValueObjects\DatabaseText;
 use Apie\Fixtures\BoundedContextFactory;
 use Apie\Fixtures\Entities\Order;
@@ -38,6 +42,7 @@ use Apie\HtmlBuilders\Components\Forms\MultiSelect;
 use Apie\HtmlBuilders\Components\Forms\Password;
 use Apie\HtmlBuilders\Components\Forms\RemoveConfirm;
 use Apie\HtmlBuilders\Components\Forms\Select;
+use Apie\HtmlBuilders\Components\Forms\SingleInput;
 use Apie\HtmlBuilders\Components\Forms\VerifyOtpInput;
 use Apie\HtmlBuilders\Components\Layout;
 use Apie\HtmlBuilders\Components\Layout\BoundedContextSelect;
@@ -62,6 +67,8 @@ use Apie\HtmlBuilders\Lists\ComponentHashmap;
 use Apie\HtmlBuilders\ResourceActions\CreateResourceAction;
 use Apie\HtmlBuilders\ValueObjects\FormName;
 use Apie\OtpValueObjects\HOTPSecret;
+use Apie\TypeConverter\ReflectionTypeFactory;
+use Apie\TypeConverter\Utils\ReflectionTypeUtil;
 use Generator;
 use OTPHP\HOTP;
 use PHPUnit\Framework\TestCase;
@@ -248,6 +255,18 @@ abstract class AbstractRenderTestCase extends TestCase
         yield 'Simple input field' => [
             'expected-input.html',
             new Input('name', 'value')
+        ];
+
+        yield 'Configured input' => [
+            'expected-single-input.html',
+            new SingleInput(
+                'name',
+                42,
+                new TranslationStringSet([new TranslationString('test')]),
+                false,
+                ReflectionTypeFactory::createReflectionType('string'),
+                new CmsSingleInput(['datetimetz', 'text'], new CmsInputOption())
+            )
         ];
 
         yield 'Simple checkbox with validation error' => [

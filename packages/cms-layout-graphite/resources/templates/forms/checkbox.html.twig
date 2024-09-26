@@ -1,8 +1,18 @@
-<input type="hidden" name="{{ property('name').getTypehintName() }}" value="bool" />
-<apie-scalar-element name="{{ property('name') }}" use-checked>
-  <apie-listen-other-event name="{{ property('name') }}" use-checked event-name="gr-change">        
-    <gr-checkbox name="{{ property('name') }}" value="1" {% if property('value') is same as(null) %} indeterminate{% endif %}{% if property('value') %} checked{% endif %}{% if (property('validationError')) %} invalid invalid-text="{{ property('validationError') }}"{% endif %}>
-      {{ property('name') }}
-    </gr-checkbox>
-  </apie-listen-other-event>
-</apie-scalar-element>
+<apie-single-input class="unhandled-single-input" label="{{ translate(property('label')) }}" types="checkbox,select" name="{{ property('name') }}"></apie-single-input>
+<apie-script>
+((elm) => {
+    elm.classList.remove('unhandled-single-input');
+    elm.inputOptions = {
+      options = [
+        {
+          name: {{ translate(property('types.boolean.true')  | json_encode | replace({'<': '&lt;'}) | raw}},
+          value: true,
+        },
+        {
+          name: {{ translate(property('types.boolean.false')  | json_encode | replace({'<': '&lt;'}) | raw}},
+          value: false,
+        }
+      ]
+    }
+})(document.querySelector('apie-single-input.unhandled-single-input'));
+</apie-script>

@@ -1,6 +1,5 @@
-<form method="{{ property('method') }}"{% if (property('multipart')) %} enctype="multipart/form-data"{% endif %}>
+<apie-form method="{{ property('method') }}"{% if (property('multipart')) %} supports-multipart{% endif %}>
   {{ component('formElements') }}
-  <gr-button style="padding: 15PX" variant="primary" type="submit" large expand="block">Submit</gr-button>
 </form>
 <apie-script>
 (function (elm) {

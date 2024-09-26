@@ -4,9 +4,9 @@
   {% endfor %}
 </apie-form-group>
 {%- if property('validationError') -%}
-  <apie-validation-error>{{ property('validationError') }}</apie-validation-error>
+  <apie-serverside-error>{{ property('validationError') }}</apie-serverside-error>
 {%- else -%}
   {%- for key,description in property('validationErrors') -%}
-    <apie-validation-error>{{ description }}</apie-validation-error>
+    <apie-serverside-error>{{ description }}</apie-serverside-error>
   {%- endfor -%}
 {%- endif -%}

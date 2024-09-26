@@ -1,11 +1,16 @@
 <?php
 namespace Apie\Core\ValueObjects;
 
+use Apie\Core\Attributes\CmsSingleInput;
+use Apie\Core\Attributes\CmsValidationCheck;
 use Apie\Core\Randomizer\RandomizerInterface;
 use Apie\Core\Randomizer\SecureRandomizer;
+use League\OpenAPIValidation\Schema\Keywords\MaxLength;
 use SensitiveParameter;
 use Stringable;
 
+#[CmsSingleInput(['password'])]
+#[CmsValidationCheck(minLength: 'getMinLength', maxLength: 'getMaxLength')]
 trait IsPasswordValueObject
 {
     use IsStringWithRegexValueObject {
