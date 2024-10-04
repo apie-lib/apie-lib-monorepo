@@ -1,7 +1,13 @@
-<apie-single-input class="unhandled-single-input" label="test" types="datetimetz,text" name="name"></apie-single-input>
-<apie-script>
+<apie-form-field-definition
+        class="unhandled-single-input"
+    name="name"
+    types="datetimetz,text"
+    label="test"
+></apie-form-field-definition>
+<script>
 ((elm) => {
     elm.classList.remove('unhandled-single-input');
-    elm.inputOptions = {"streamType":null}
-})(document.querySelector('apie-single-input.unhandled-single-input'));
-</apie-script>
+    elm.additionalSettings = {"streamType":null,"options":null,"autocompleteUrl":null,"imageUrl":null}
+})(document.querySelector('apie-form-field-definition.unhandled-single-input'));
+</script>
+

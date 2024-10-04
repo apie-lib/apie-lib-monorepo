@@ -20,6 +20,7 @@ class FormPrototypeHashmap extends BaseComponent
         array $validationErrors = [],
     ) {
         $value ??= [];
+        $prototype = $this->makePrototype($prototypeName, $prototype);
         parent::__construct(
             [
                 'name' => $name,

@@ -1,0 +1,18 @@
+{% for tab in property('tabs') %}
+{{ component(tab) }}
+{% endfor %}
+<apie-form-select-definition
+  {% if isPrototyped() and property('name').hasChildFormFieldName() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %}
+  class="unhandled"
+  name="{{ property('name').hasChildFormFieldName() ? property('name').getChildFormFieldName() : '' }}">
+  </apie-form-select-definition>
+<script>
+(function (elm) {
+  elm.classList.remove('unhandled');
+  elm.definitionIdList = [
+    {% for tab in property('tabs') %}
+      { name: {{ tab | json_encode | replace({'<': '&lt;'}) | raw }}, value: {{ tab | json_encode | replace({'<': '&lt;'}) | raw }} },
+    {% endfor %}
+  ]
+}(document.querySelector('apie-form-select-definition.unhandled')))
+</script>

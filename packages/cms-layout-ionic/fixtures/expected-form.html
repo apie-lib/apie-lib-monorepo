@@ -1,31 +1,18 @@
-<form method="POST">
-  <ion-list>
-    <ion-item>
-      <ion-card class="unhandled-form-group">
-  <ion-card-header>
-    <ion-card-title>form</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    <ion-list>
-          <ion-item>
-        test
-      </ion-item>
-          <ion-item>
-        test2
-      </ion-item>
-        </ion-list>
-    <ion-list></ion-card-content>
-</ion-card>
-    </ion-item>
-    <ion-item>
-      <ion-button variant="primary" type="submit" large expand="block">Submit</ion-button>
-    </ion-item>
-  </ion-list>
-</form>
+<apie-form-definition id="definition123456">
+           test
+         test2
+  
+</apie-form-definition>
+<apie-ionic-form debug-mode
+        class="unhandled-form"
+        definition-id="definition123456"
+        method="POST"
+        csrf-token=""
+        >
+</apie-ionic-form>
 <apie-script>
 (function (elm) {
-  elm.classList.remove('unhandled-form-group');
+  elm.classList.remove('unhandled-form');
   elm.value = [];
-}(document.querySelector('apie-form-group.unhandled-form-group')));
+}(document.querySelector('apie-ionic-form.unhandled-form')));
 </apie-script>

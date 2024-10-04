@@ -2,21 +2,26 @@
 namespace Apie\HtmlBuilders\Components\Forms;
 
 use Apie\Core\Attributes\CmsSingleInput;
+use Apie\Core\Attributes\CmsValidationCheck;
 use Apie\Core\Translator\Lists\TranslationStringSet;
-use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\HtmlBuilders\Components\BaseComponent;
+use Apie\HtmlBuilders\ValueObjects\FormName;
 use ReflectionType;
 
 class SingleInput extends BaseComponent
 {
+    /**
+     * @param array<CmsValidationCheck> $validationChecks
+     */
     public function __construct(
-        string $name,
+        FormName $name,
         mixed $value,
         TranslationStringSet $label,
         bool $nullable = false,
         ReflectionType $type,
-        CmsSingleInput $input
-    ) {   
+        CmsSingleInput $input,
+        array $validationChecks = [],
+    ) {
         parent::__construct(
             [
                 'name' => $name,
@@ -25,6 +30,7 @@ class SingleInput extends BaseComponent
                 'nullable' => $nullable,
                 'types' => $input->types,
                 'options' => $input->options->forType($type),
+                'validationChecks' => $validationChecks,
             ]
         );
     }

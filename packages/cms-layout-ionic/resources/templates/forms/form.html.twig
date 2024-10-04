@@ -1,7 +1,12 @@
 <apie-form-definition id="definition123456">
   {{ component('formElements') }}
 </apie-form-definition>
-<apie-ionic-form class="unhandled-form" definition-id="definition123456" method="{{ property('method') }}"{% if (property('multipart')) %} supports-multipart{% endif %}>
+<apie-ionic-form debug-mode
+        class="unhandled-form"
+        definition-id="definition123456"
+        method="{{ property('method') }}"
+        csrf-token="{{ property('csrf') }}"
+        {% if (property('multipart')) %} supports-multipart{% endif %}>
 </apie-ionic-form>
 <apie-script>
 (function (elm) {

@@ -14,15 +14,20 @@ class FormSplit extends BaseComponent
         foreach ($tabComponents as $componentName => $component) {
             $valuePerType[$componentName] = $component->attributes['value'] ?? null;
         }
+        $newTabsComponent = [];
+        foreach ($tabComponents as $key => $component) {
+            $md5 = 's' . md5((string) $name . ',' . $key);
+            $newTabsComponent[$md5] = $this->makePrototype($md5, $component);
+        }
         parent::__construct(
             [
                 'name' => $name,
                 'tmpl' => 's' . md5((string) $name),
-                'tabs' => array_keys($tabComponents->toArray()),
+                'tabs' => array_keys($newTabsComponent),
                 'value' => $value,
                 'valuePerType' => $valuePerType,
             ],
-            $tabComponents
+            new ComponentHashmap($newTabsComponent)
         );
     }
 

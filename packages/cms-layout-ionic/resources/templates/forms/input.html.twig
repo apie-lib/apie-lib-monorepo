@@ -1,8 +1,0 @@
-<apie-form-field-definition {% for key, value in property('additionalAttributes') %}
-    {{ key }}="{{ value }}"
-    {% endfor %}
-    name="{{ property('name').getChildFormFieldName() }}"
-    types="{{ property('type') }}"
-    label="{{ property('name').getChildFormFieldName() }}"
-></apie-form-field-definition>
-{# property('validationError')#}

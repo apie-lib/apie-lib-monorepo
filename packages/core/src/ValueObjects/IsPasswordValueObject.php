@@ -5,12 +5,11 @@ use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\Attributes\CmsValidationCheck;
 use Apie\Core\Randomizer\RandomizerInterface;
 use Apie\Core\Randomizer\SecureRandomizer;
-use League\OpenAPIValidation\Schema\Keywords\MaxLength;
 use SensitiveParameter;
 use Stringable;
 
 #[CmsSingleInput(['password'])]
-#[CmsValidationCheck(minLength: 'getMinLength', maxLength: 'getMaxLength')]
+#[CmsValidationCheck(message: 'apie.validation_errors.length', minLengthMethod: 'getMinLength', maxLengthMethod: 'getMaxLength')]
 trait IsPasswordValueObject
 {
     use IsStringWithRegexValueObject {

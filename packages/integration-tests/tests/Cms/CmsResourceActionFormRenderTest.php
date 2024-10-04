@@ -43,7 +43,7 @@ class CmsResourceActionFormRenderTest extends TestCase
         $response = $testApplication->httpRequestGet('/cms/types/resource/action/User/test@example.com/block');
         $this->assertEquals(200, $response->getStatusCode());
         
-        $this->assertStringContainsString('form[blockedReason]', (string) $response->getBody());
+        $this->assertStringContainsString('"blockedReason"', (string) $response->getBody());
     }
 
     public function it_can_execute_a_resource_action_provider(): Generator

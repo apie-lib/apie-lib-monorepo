@@ -5,7 +5,6 @@ use Apie\Core\Attributes\SchemaMethod;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Identifiers\SnakeCaseSlug;
-use Apie\Core\Translator\Lists\TranslationStringSet;
 use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\HtmlBuilders\Exceptions\EmptyFormNameException;

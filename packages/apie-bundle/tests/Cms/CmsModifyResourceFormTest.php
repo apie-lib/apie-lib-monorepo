@@ -35,6 +35,6 @@ class CmsModifyResourceFormTest extends TestCase
         $response = $testItem->handle($request);
         HtmlOutput::writeHtml(__METHOD__, $response->getContent());
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertStringContainsString('<form', $response->getContent());
+        $this->assertStringContainsString('-form', $response->getContent());
     }
 }

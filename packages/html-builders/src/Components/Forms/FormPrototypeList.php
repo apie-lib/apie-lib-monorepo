@@ -19,6 +19,7 @@ class FormPrototypeList extends BaseComponent
         ComponentInterface $prototype,
         array $validationErrors = [],
     ) {
+        $prototype = $this->makePrototype($prototypeName, $prototype);
         parent::__construct(
             [
                 'name' => $name,

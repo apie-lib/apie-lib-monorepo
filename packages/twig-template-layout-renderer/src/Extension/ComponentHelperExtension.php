@@ -11,7 +11,9 @@ use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
 use LogicException;
 use ReflectionClass;
+use Twig\Environment;
 use Twig\Extension\AbstractExtension;
+use Twig\Runtime\EscaperRuntime;
 use Twig\TwigFunction;
 
 class ComponentHelperExtension extends AbstractExtension
@@ -67,12 +69,59 @@ class ComponentHelperExtension extends AbstractExtension
     {
         return [
             new TwigFunction('component', [$this, 'component'], ['is_safe' => ['all']]),
+            new TwigFunction('isPrototyped', [$this, 'isPrototyped']),
             new TwigFunction('apieConstant', [$this, 'apieConstant']),
             new TwigFunction('translate', [$this, 'translate'], []),
             new TwigFunction('property', [$this, 'property'], []),
             new TwigFunction('assetUrl', [$this, 'assetUrl'], []),
             new TwigFunction('assetContent', [$this, 'assetContent'], ['is_safe' => ['all']]),
+            new TwigFunction(
+                'renderValidationError',
+                [$this, 'renderValidationError'],
+                ['needs_environment' => true, 'is_safe' => ['all']]
+            ),
         ];
+    }
+
+    public function renderValidationError(
+        Environment $env,
+        string $name,
+        mixed $value,
+        array|string|null $validationError
+    ): string {
+        if ($validationError === null) {
+            return '';
+        }
+        $escaper = $env->getRuntime(EscaperRuntime::class);
+        $escapedName = $escaper->escape($name, 'html_attr', null, false);
+        $valueAttr = '';
+        $valueScript = '';
+        if ($value !== null) {
+            if (is_string($value)) {
+                $valueAttr = ' value="' . $escaper->escape($value, 'html_attr', null, false) . '"';
+            } else {
+                $valueAttr = ' class="unhandled-constraint"';
+                $valueScript = '<script>
+(function (elm) {
+    elm.classList.remove("unhandled-constraint");
+    elm.value = ' . str_replace('<', '&lt;', json_encode($value)) . ';
+}(document.querySelector(".unhandled-constraint"));
+                </script>';
+            }
+        }
+
+        if (is_string($validationError)) {
+            $escapedValidationError = $escaper->escape($validationError, 'html_attr', null, false);
+            return '<apie-constraint-check-definition name="'
+                . $escapedName
+                . '" message="'
+                . $escapedValidationError
+                . '"'
+                . $valueAttr
+                . '></apie-constraint-check-definition>'
+                . $valueScript;
+        }
+        return '';
     }
 
     private function getCurrentContext(): ApieContext
@@ -120,5 +169,11 @@ class ComponentHelperExtension extends AbstractExtension
             $this->getCurrentComponent()->getComponent($componentName),
             $this->getCurrentContext()
         );
+    }
+
+    public function isPrototyped(): bool
+    {
+        $attrs = $this->getCurrentComponent()->getAttribute('additionalAttributes');
+        return is_array($attrs) ? ((bool) $attrs['prototyped'] ?? false) : false;
     }
 }

@@ -2,6 +2,7 @@
 namespace Apie\CommonValueObjects;
 
 use Apie\CommonValueObjects\Bridge\Symfony\AllowedCssInSpanSanitizer;
+use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
@@ -16,6 +17,7 @@ use Symfony\Component\HtmlSanitizer\HtmlSanitizerConfig;
 
 #[FakeMethod('createRandom')]
 #[ProvideIndex('provideIndexes')]
+#[CmsSingleInput(['html'])]
 final class SafeHtml implements StringValueObjectInterface, LengthConstraintStringValueObjectInterface
 {
     use IsStringValueObject;

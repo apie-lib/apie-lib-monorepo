@@ -32,7 +32,7 @@ class CmsActionFormRenderTest extends TestCase
         $response = $testApplication->httpRequestGet('/cms/types/action/Authentication/verifyAuthentication');
         $this->assertEquals(200, $response->getStatusCode());
         
-        $this->assertStringContainsString('form[username]', (string) $response->getBody());
+        $this->assertStringContainsString('"username"', (string) $response->getBody());
     }
 
     /**
@@ -47,6 +47,6 @@ class CmsActionFormRenderTest extends TestCase
         $response = $testApplication->httpRequestGet('/cms/types/action/Authentication/verifyAuthentication');
         $this->assertEquals(200, $response->getStatusCode());
         
-        $this->assertStringContainsString('form[username]', (string) $response->getBody());
+        $this->assertStringContainsString('"username"', (string) $response->getBody());
     }
 }

@@ -2,6 +2,7 @@
 namespace Apie\Core\Dto;
 
 use Apie\Core\Enums\FileStreamType;
+use Apie\Core\Lists\ValueOptionList;
 use Apie\Core\Utils\ConverterUtils;
 use Attribute;
 use ReflectionType;
@@ -14,6 +15,12 @@ class CmsInputOption implements DtoInterface
         public readonly ?FileStreamType $streamType = null,
         // for date format inputs  a php date format string
         public readonly ?string $dateFormatMethod = null,
+        // for dropdowns
+        public readonly ?ValueOptionList $options = null,
+        // autocomplete url
+        public readonly ?string $autocompleteUrl = null,
+        // image url
+        public readonly ?string $imageUrl = null,
     ) {
     }
 

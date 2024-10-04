@@ -1,6 +1,7 @@
 <?php
 namespace Apie\CommonValueObjects;
 
+use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
@@ -11,10 +12,10 @@ use Faker\Generator;
 use ReflectionClass;
 
 #[FakeMethod('createRandom')]
+#[CmsSingleInput(['email', 'text'])]
 class Email implements StringValueObjectInterface
 {
     use IsStringValueObject;
-
 
     public static function createRandom(Generator $generator): self
     {
