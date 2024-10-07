@@ -57,7 +57,8 @@ class UnionTypehintComponentProvider implements FormComponentProviderInterface
             $context->getFormName(),
             false,
             false,
-            $context->getFilledInValue($type->allowsNull() ? null : ''), new ComponentHashmap($components)
+            $context->getFilledInValue($type->allowsNull() ? null : ''),
+            new ComponentHashmap($components)
         );
     }
 

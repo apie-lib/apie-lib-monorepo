@@ -31,8 +31,11 @@ class ModifyResourceFormController
         $class = $action::getInputType(
             new ReflectionClass($request->getAttribute(ContextConstants::RESOURCE_NAME))
         );
+        if ($context->hasContext(ContextConstants::RESOURCE)) {
+            $class = new ReflectionClass($context->getContext(ContextConstants::RESOURCE));
+        }
         $layout = $this->layoutPicker->pickLayout($request);
-        $component = $this->componentFactory->createFormForResourceCreation(
+        $component = $this->componentFactory->createFormForResourceModification(
             'Modify ' . $class->getShortName(),
             $class,
             new BoundedContextId($request->getAttribute(ContextConstants::BOUNDED_CONTEXT_ID)),
