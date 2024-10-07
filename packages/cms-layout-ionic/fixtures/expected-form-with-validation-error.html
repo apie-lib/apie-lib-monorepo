@@ -4,15 +4,15 @@
   
 </apie-form-definition>
 <apie-ionic-form debug-mode
-        class="unhandled-form"
+        class="unhandled-form unhandled-submit-form"
         definition-id="definition123456"
         method="POST"
         csrf-token=""
         >
 </apie-ionic-form>
-<apie-script>
+<script>
 (function (elm) {
   elm.classList.remove('unhandled-form');
   elm.value = [];
 }(document.querySelector('apie-ionic-form.unhandled-form')));
-</apie-script>
+</script>

@@ -2,15 +2,15 @@
   {{ component('formElements') }}
 </apie-form-definition>
 <apie-ionic-form debug-mode
-        class="unhandled-form"
+        class="unhandled-form unhandled-submit-form"
         definition-id="definition123456"
         method="{{ property('method') }}"
         csrf-token="{{ property('csrf') }}"
         {% if (property('multipart')) %} supports-multipart{% endif %}>
 </apie-ionic-form>
-<apie-script>
+<script>
 (function (elm) {
   elm.classList.remove('unhandled-form');
-  elm.value = {{ property('value') | json_encode | raw}};
+  elm.value = {{ property('value') | json_encode | replace({'<': '&lt;'}) | raw }};
 }(document.querySelector('apie-ionic-form.unhandled-form')));
-</apie-script>
+</script>

@@ -51,6 +51,13 @@ final class FormBuildContext
         return $this->context;
     }
 
+    public function withApieContext(string $key, mixed $value): FormBuildContext
+    {
+        $res = clone $this;
+        $res->context = $res->context->withContext($key, $value);
+        return $res;
+    }
+
     public function getComponentFactory(): FormComponentFactory
     {
         return $this->formComponentFactory;

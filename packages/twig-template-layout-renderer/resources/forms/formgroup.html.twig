@@ -1,5 +1,5 @@
 {% if property('groupName').hasChildFormFieldName() %}
-<apie-form-group-definition {% if isPrototyped() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %} name="{{ property('groupName').getChildFormFieldName() }}" label="{{ property('groupName') }}">
+<apie-form-group-definition {% if isPrototyped() %}prototyped id="{{ property('groupName').getChildFormFieldName() }}"{% endif %} name="{{ property('groupName').getChildFormFieldName() }}" label="{{ property('groupName') }}">
 {% endif %}
   {% for key in property('keys') %}
        {{ component(key) }}

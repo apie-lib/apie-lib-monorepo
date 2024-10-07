@@ -1,12 +1,18 @@
-<apie-form method="POST" supports-multipart>
-  <apie-form-group class="unhandled-form-group" name="form" style="box-shadow: var(--gr-shadow-small); width: 100%">
-      test
-      test2
-  </apie-form-group>
-</form>
-<apie-script>
+<apie-form-definition id="definition123456">
+           test
+         test2
+  
+</apie-form-definition>
+<apie-form debug-mode
+        class="unhandled-form unhandled-submit-form"
+        definition-id="definition123456"
+        method="POST"
+        csrf-token=""
+         supports-multipart>
+</apie-form>
+<script>
 (function (elm) {
-  elm.classList.remove('unhandled-form-group');
+  elm.classList.remove('unhandled-form');
   elm.value = [];
-}(document.querySelector('apie-form-group.unhandled-form-group')));
-</apie-script>
+}(document.querySelector('apie-form.unhandled-form')));
+</script>

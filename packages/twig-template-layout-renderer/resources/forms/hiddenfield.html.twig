@@ -1,8 +1,12 @@
-<apie-form-field-definition {% for key, value in property('additionalAttributes') %}
-  {{ key }}="{{ value }}"
-{% endfor %}
-  name="{{ property('name').getChildFormFieldName() }}"
-  types="hidden"
-  label="{{ property('name').getChildFormFieldName() }}"
+<apie-form-field-definition
+    {% if isPrototyped() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %}
+    class="unhandled-single-input"
+    name="{{ property('name').getChildFormFieldName() }}"
+    types="hidden"
 ></apie-form-field-definition>
-{{ renderValidationError(property('name').getChildFormFieldName(), property('value'), property('validationError')) }}
+<script>
+((elm) => {
+    elm.classList.remove('unhandled-single-input');
+    elm.valueWhenMissing = {{ property('value') | json_encode | replace({'<': '&lt;'}) | raw }}
+})(document.querySelector('apie-form-field-definition.unhandled-single-input'));
+</script>

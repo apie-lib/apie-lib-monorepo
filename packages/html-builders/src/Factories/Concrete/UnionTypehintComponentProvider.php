@@ -53,7 +53,12 @@ class UnionTypehintComponentProvider implements FormComponentProviderInterface
             $key = $this->getSafePanelName($subType);
             $components[$key] = $formComponentFactory->createFromType($subType, $context);
         }
-        return new FormSplit($context->getFormName(), $context->getFilledInValue($type->allowsNull() ? null : ''), new ComponentHashmap($components));
+        return new FormSplit(
+            $context->getFormName(),
+            false,
+            false,
+            $context->getFilledInValue($type->allowsNull() ? null : ''), new ComponentHashmap($components)
+        );
     }
 
     public function getSafePanelName(ReflectionType $type): string

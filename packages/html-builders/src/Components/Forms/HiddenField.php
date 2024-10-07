@@ -2,10 +2,11 @@
 namespace Apie\HtmlBuilders\Components\Forms;
 
 use Apie\HtmlBuilders\Components\BaseComponent;
+use Apie\HtmlBuilders\ValueObjects\FormName;
 
 class HiddenField extends BaseComponent
 {
-    public function __construct(string $name, string $value)
+    public function __construct(FormName $name, string $value)
     {
         parent::__construct(
             [

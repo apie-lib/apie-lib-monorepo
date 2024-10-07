@@ -95,7 +95,7 @@ class ApieSingleInputComponentProvider implements FormComponentProviderInterface
             $context->createTranslationLabel(),
             $type->allowsNull(),
             $type,
-            $this->getSingleInputAttribute($class) ?? new CmsSingleInput([]),
+            $this->getSingleInputAttribute($class) ?? new CmsSingleInput(['text']),
             $validationChecks
         );
     }

@@ -1,9 +1,16 @@
-<apie-form method="{{ property('method') }}"{% if (property('multipart')) %} supports-multipart{% endif %}>
+<apie-form-definition id="definition123456">
   {{ component('formElements') }}
-</form>
-<apie-script>
+</apie-form-definition>
+<apie-form debug-mode
+        class="unhandled-form unhandled-submit-form"
+        definition-id="definition123456"
+        method="{{ property('method') }}"
+        csrf-token="{{ property('csrf') }}"
+        {% if (property('multipart')) %} supports-multipart{% endif %}>
+</apie-form>
+<script>
 (function (elm) {
-  elm.classList.remove('unhandled-form-group');
-  elm.value = {{ property('value') | json_encode | raw}};
-}(document.querySelector('apie-form-group.unhandled-form-group')));
-</apie-script>
+  elm.classList.remove('unhandled-form');
+  elm.value = {{ property('value') | json_encode | replace({'<': '&lt;'}) | raw }};
+}(document.querySelector('apie-form.unhandled-form')));
+</script>

@@ -1,18 +1,37 @@
 {% for tab in property('tabs') %}
 {{ component(tab) }}
 {% endfor %}
+{% if not property('isRootObject') %}
 <apie-form-select-definition
-  {% if isPrototyped() and property('name').hasChildFormFieldName() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %}
+  {% if isPrototyped() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %}
   class="unhandled"
-  name="{{ property('name').hasChildFormFieldName() ? property('name').getChildFormFieldName() : '' }}">
+  name="{{ property('name').getChildFormFieldName() }}">
   </apie-form-select-definition>
 <script>
 (function (elm) {
   elm.classList.remove('unhandled');
   elm.definitionIdList = [
-    {% for tab in property('tabs') %}
-      { name: {{ tab | json_encode | replace({'<': '&lt;'}) | raw }}, value: {{ tab | json_encode | replace({'<': '&lt;'}) | raw }} },
+    {% for tab, key in property('mapping') %}
+      { name: {{ tab | json_encode | replace({'<': '&lt;'}) | raw }}, value: {{ key | json_encode | replace({'<': '&lt;'}) | raw }} },
     {% endfor %}
   ]
 }(document.querySelector('apie-form-select-definition.unhandled')))
 </script>
+{% else %}
+<script>
+(async function () {
+  const elm = await new Promise((resolve) => {
+    const id = setInterval(() => {
+      const elm = document.querySelector('.unhandled-submit-form');
+      if (elm) {
+        elm.classList.remove('unhandled-submit-form');
+        clearInterval(id);
+        resolve(elm);
+      }
+    }, 100)
+  });
+  elm.polymorphicColumnName = {{ property('name').getChildFormFieldName() | json_encode | replace({'<': '&lt;'}) | raw }};
+  elm.polymorphicFormDefinition = {{ property('mapping') | json_encode | replace({'<': '&lt;'}) | raw }};
+}())
+</script>
+{% endif %}

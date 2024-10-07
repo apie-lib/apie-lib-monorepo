@@ -250,13 +250,15 @@ abstract class AbstractRenderTestCase extends TestCase
 
         yield 'Hidden field' => [
             'expected-hidden-field.html',
-            new HiddenField('name', 'value')
+            new HiddenField(new FormName('name'), 'value')
         ];
 
         yield 'Union type' => [
             'expected-type-split.html',
             new FormSplit(
                 new FormName('name'),
+                false,
+                false,
                 '42',
                 new ComponentHashmap([
                     'input' => new RawContents('input'),
