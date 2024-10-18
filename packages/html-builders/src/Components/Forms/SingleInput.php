@@ -17,7 +17,7 @@ class SingleInput extends BaseComponent
         FormName $name,
         mixed $value,
         TranslationStringSet $label,
-        bool $nullable = false,
+        bool $nullable,
         ReflectionType $type,
         CmsSingleInput $input,
         array $validationChecks = [],

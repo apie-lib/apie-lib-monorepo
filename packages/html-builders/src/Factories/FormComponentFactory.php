@@ -5,6 +5,7 @@ use Apie\Core\Attributes\AllowMultipart;
 use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
+use Apie\Core\Dto\CmsInputOption;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Metadata\CompositeMetadata;
 use Apie\Core\Metadata\Fields\DiscriminatorColumn;
@@ -189,6 +190,17 @@ final class FormComponentFactory
                     }
                     break;
                 case DiscriminatorColumn::class:
+                    $components[$fieldName] = new SingleInput(
+                        $childContext->getFormName(),
+                        $childContext->getFilledInValue(),
+                        $childContext->createTranslationLabel(),
+                        false,
+                        ReflectionTypeFactory::createReflectionType('string'),
+                        new CmsSingleInput(
+                            ['forced_hidden', 'hidden'],
+                            new CmsInputOption(forcedValue: $reflectionData->getValueForClass($metadata->toClass()))
+                        ),
+                    );
                     break;
                 default:
                     $components[$fieldName] = $this->createFromType($reflectionData->getTypehint(), $childContext);

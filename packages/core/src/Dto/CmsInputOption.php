@@ -21,6 +21,8 @@ class CmsInputOption implements DtoInterface
         public readonly ?string $autocompleteUrl = null,
         // image url
         public readonly ?string $imageUrl = null,
+        // forced value
+        public readonly mixed $forcedValue = null,
     ) {
     }
 
@@ -33,7 +35,8 @@ class CmsInputOption implements DtoInterface
             return $data;
         }
         if ($this->dateFormatMethod) {
-            $data['dateFormatMethod'] = $class->getMethod($this->dateFormatMethod)->invoke(null);
+            unset($data['dateFormatMethod']);
+            $data['dateFormat'] = $class->getMethod($this->dateFormatMethod)->invoke(null);
         }
         return $data;
     }

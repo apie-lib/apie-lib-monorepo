@@ -28,7 +28,6 @@ use Apie\HtmlBuilders\Components\Forms\FormGroup;
 use Apie\HtmlBuilders\Components\Forms\FormPrototypeHashmap;
 use Apie\HtmlBuilders\Components\Forms\FormPrototypeList;
 use Apie\HtmlBuilders\Components\Forms\FormSplit;
-use Apie\HtmlBuilders\Components\Forms\HiddenField;
 use Apie\HtmlBuilders\Components\Forms\RemoveConfirm;
 use Apie\HtmlBuilders\Components\Forms\SingleInput;
 use Apie\HtmlBuilders\Components\Layout;
@@ -247,12 +246,7 @@ abstract class AbstractRenderTestCase extends TestCase
                 new CmsSingleInput(['datetimetz', 'text'], new CmsInputOption())
             )
         ];
-
-        yield 'Hidden field' => [
-            'expected-hidden-field.html',
-            new HiddenField(new FormName('name'), 'value')
-        ];
-
+        $type = ReflectionTypeFactory::createReflectionType('string');
         yield 'Union type' => [
             'expected-type-split.html',
             new FormSplit(
@@ -261,8 +255,8 @@ abstract class AbstractRenderTestCase extends TestCase
                 false,
                 '42',
                 new ComponentHashmap([
-                    'input' => new RawContents('input'),
-                    'password' => new RawContents('password'),
+                    'input' => new SingleInput(new FormName('input'), null, new TranslationStringSet([]), false, $type, new CmsSingleInput(['text'])),
+                    'password' => new SingleInput(new FormName('password'), null, new TranslationStringSet([]), false, $type, new CmsSingleInput(['text'])),
                 ])
             )
         ];

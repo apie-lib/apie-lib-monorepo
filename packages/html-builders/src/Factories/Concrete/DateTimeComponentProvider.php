@@ -34,7 +34,7 @@ class DateTimeComponentProvider implements FormComponentProviderInterface
             $context->createTranslationLabel(),
             $type->allowsNull(),
             $type,
-            new CmsSingleInput(['datetime-local'])
+            new CmsSingleInput(['datetime'])
         );
     }
 }

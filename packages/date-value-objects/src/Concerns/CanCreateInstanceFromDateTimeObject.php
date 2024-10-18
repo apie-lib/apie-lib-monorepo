@@ -12,7 +12,7 @@ use ReflectionClass;
 /**
  * Adds method to date value objects to convert a PHP Datetime object in the value object.
  */
-#[CmsSingleInput(['datetimez', 'datetime'], new CmsInputOption(dateFormatMethod: 'getDateFormat'))]
+#[CmsSingleInput(['datetime'], new CmsInputOption(dateFormatMethod: 'getDateFormat'))]
 trait CanCreateInstanceFromDateTimeObject
 {
     /**

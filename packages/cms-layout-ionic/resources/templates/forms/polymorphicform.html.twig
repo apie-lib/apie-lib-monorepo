@@ -19,5 +19,5 @@
     {{ ('definition-' ~ subtype) | json_encode | replace({'<': '&lt;'}) | raw }}: {{ subtype | json_encode | replace({'<': '&lt;'}) | raw }}{% if not loop.last %},{% endif %}
 {% endfor %}
   };
-}(document.querySelector('apie-form.unhandled-form')));
+}(document.querySelector('apie-ionic-form.unhandled-form')));
 </script>

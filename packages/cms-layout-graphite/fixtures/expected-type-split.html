@@ -1,5 +1,31 @@
-input
-password
+<apie-form-field-definition
+    prototyped id="input"    class="unhandled-single-input"
+    name="input"
+    types="text"
+    label="(unknown)"
+></apie-form-field-definition>
+<script>
+((elm) => {
+    elm.classList.remove('unhandled-single-input');
+    elm.additionalSettings = {"streamType":null,"options":null,"autocompleteUrl":null,"imageUrl":null,"forcedValue":null}
+})(document.querySelector('apie-form-field-definition.unhandled-single-input'));
+</script>
+
+
+<apie-form-field-definition
+    prototyped id="password"    class="unhandled-single-input"
+    name="password"
+    types="text"
+    label="(unknown)"
+></apie-form-field-definition>
+<script>
+((elm) => {
+    elm.classList.remove('unhandled-single-input');
+    elm.additionalSettings = {"streamType":null,"options":null,"autocompleteUrl":null,"imageUrl":null,"forcedValue":null}
+})(document.querySelector('apie-form-field-definition.unhandled-single-input'));
+</script>
+
+
 <apie-form-select-definition
     class="unhandled"
   name="name">
@@ -8,8 +34,8 @@ password
 (function (elm) {
   elm.classList.remove('unhandled');
   elm.definitionIdList = [
-          { name: "input", value: "input" },
-          { name: "password", value: "password" },
+          { name: "form[input]", value: "input" },
+          { name: "form[password]", value: "password" },
       ]
 }(document.querySelector('apie-form-select-definition.unhandled')))
 </script>
