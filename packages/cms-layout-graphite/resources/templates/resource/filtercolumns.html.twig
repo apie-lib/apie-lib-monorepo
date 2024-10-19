@@ -11,8 +11,8 @@
                 <script>
                 (function (elm) {
                   elm.classList.remove('unprocessed-filter');
-                  elm.filterNames = {{ property('filters') | json_encode | raw }};
-                  elm.filters = {{ property('currentFilter') | json_encode | raw }};
+                  elm.filterNames = {{ property('filters') | safe_json_encode }};
+                  elm.filters = {{ property('currentFilter') | safe_json_encode }};
                 }(document.querySelector('apie-filter-overview.unprocessed-filter')));
                 </script>
             </td>

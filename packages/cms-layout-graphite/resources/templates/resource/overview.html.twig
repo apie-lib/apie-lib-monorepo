@@ -50,7 +50,7 @@
       }
       return createElement('div', {}, value || '');
     }
-    const columns = {{ property('columns') | json_encode | raw }}
+    const columns = {{ property('columns') | safe_json_encode }}
         .map(function (name) {
           return {
             prop: name,
@@ -59,7 +59,7 @@
             autoSize: true,
           }
         });
-    const rows = {{ property('list') | json_encode | raw }};
+    const rows = {{ property('list') | safe_json_encode }};
     // grid.theme = 'material';
     grid.columns = columns;
     grid.source = rows;

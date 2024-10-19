@@ -7,6 +7,6 @@
 <script>
 ((elm) => {
     elm.classList.remove('unhandled-single-input');
-    elm.valueWhenMissing = {{ property('value') | json_encode | replace({'<': '&lt;'}) | raw }}
+    elm.valueWhenMissing = {{ property('value') | safe_json_encode }}
 })(document.querySelector('apie-form-field-definition.unhandled-single-input'));
 </script>

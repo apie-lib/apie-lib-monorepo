@@ -4,7 +4,7 @@
   
 </apie-form-definition>
 <apie-ionic-form debug-mode
-        class="unhandled-form unhandled-submit-form"
+        class="unhandled-form"
         definition-id="definition123456"
         method="POST"
         csrf-token=""
@@ -14,5 +14,6 @@
 (function (elm) {
   elm.classList.remove('unhandled-form');
   elm.value = [];
+  elm.validationErrors = [];
 }(document.querySelector('apie-ionic-form.unhandled-form')));
 </script>

@@ -8,7 +8,7 @@
 (function (element) {
     element.addEventListener('gr-select', function (event) {
         const elm = event.target || element;
-        location.href = {{ property('path') | json_encode | raw }} + elm.value + '/';
+        location.href = {{ property('path') | safe_json_encode }} + elm.value + '/';
     })
     element.classList.remove('unhandled-bounded-select');
 }(document.querySelector('.unhandled-bounded-select')));

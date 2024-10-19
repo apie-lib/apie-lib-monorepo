@@ -12,7 +12,7 @@
   elm.classList.remove('unhandled');
   elm.definitionIdList = [
     {% for tab, key in property('mapping') %}
-      { name: {{ tab | json_encode | replace({'<': '&lt;'}) | raw }}, value: {{ key | json_encode | replace({'<': '&lt;'}) | raw }} },
+      { name: {{ tab | safe_json_encode }}, value: {{ key | safe_json_encode }} },
     {% endfor %}
   ]
 }(document.querySelector('apie-form-select-definition.unhandled')))
@@ -30,8 +30,8 @@
       }
     }, 100)
   });
-  elm.polymorphicColumnName = {{ property('name').getChildFormFieldName() | json_encode | replace({'<': '&lt;'}) | raw }};
-  elm.polymorphicFormDefinition = {{ property('mapping') | json_encode | replace({'<': '&lt;'}) | raw }};
+  elm.polymorphicColumnName = {{ property('name').getChildFormFieldName() | safe_json_encode }};
+  elm.polymorphicFormDefinition = {{ property('mapping') | safe_json_encode }};
 }())
 </script>
 {% endif %}

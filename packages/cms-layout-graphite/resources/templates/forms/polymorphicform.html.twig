@@ -13,10 +13,10 @@
 <script>
 (function (elm) {
   elm.classList.remove('unhandled-form');
-  elm.value = {{ property('value') | json_encode | replace({'<': '&lt;'}) | raw }};
+  elm.value = {{ property('value') | safe_json_encode }};
   elm.polymorphicFormDefinition = {
 {% for subtype in property('subtypes') %}
-    {{ ('definition-' ~ subtype) | json_encode | replace({'<': '&lt;'}) | raw }}: {{ subtype | json_encode | replace({'<': '&lt;'}) | raw }}{% if not loop.last %},{% endif %}
+    {{ ('definition-' ~ subtype) | safe_json_encode }}: {{ subtype | safe_json_encode }}{% if not loop.last %},{% endif %}
 {% endfor %}
   };
 }(document.querySelector('apie-form.unhandled-form')));

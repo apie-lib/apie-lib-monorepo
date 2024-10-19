@@ -29,6 +29,15 @@ final class TranslationString implements HasRegexValueObjectInterface
         return $this;
     }
 
+    public function getLastTranslationSegment(): string
+    {
+        $pos = strrpos($this->internal, '.');
+        if ($pos === false || $pos === 0) {
+            return $this->internal; 
+        }
+        return substr(strrchr($this->internal, '.'), 1);
+    }
+
     /**
      * @param ReflectionClass<object> $class
      */

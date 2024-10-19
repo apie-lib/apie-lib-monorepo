@@ -14,6 +14,7 @@ use ReflectionClass;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\Runtime\EscaperRuntime;
+use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 class ComponentHelperExtension extends AbstractExtension
@@ -65,6 +66,18 @@ class ComponentHelperExtension extends AbstractExtension
         ) ?? $translation;
     }
 
+    public function safeJsonEncode(mixed $data): string
+    {
+        return json_encode($data, JSON_HEX_QUOT|JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS);
+    }
+
+    public function getFilters(): array
+    {
+        return [
+            new TwigFilter('safe_json_encode', [$this, 'safeJsonEncode'], ['is_safe' => ['all']]),
+        ];
+    }
+
     public function getFunctions(): array
     {
         return [
@@ -85,7 +98,6 @@ class ComponentHelperExtension extends AbstractExtension
 
     public function renderValidationError(
         Environment $env,
-        string $name,
         mixed $value,
         array|string|null $validationError
     ): string {
@@ -93,7 +105,6 @@ class ComponentHelperExtension extends AbstractExtension
             return '';
         }
         $escaper = $env->getRuntime(EscaperRuntime::class);
-        $escapedName = $escaper->escape($name, 'html_attr', null, false);
         $valueAttr = '';
         $valueScript = '';
         if ($value !== null) {
@@ -112,9 +123,7 @@ class ComponentHelperExtension extends AbstractExtension
 
         if (is_string($validationError)) {
             $escapedValidationError = $escaper->escape($validationError, 'html_attr', null, false);
-            return '<apie-constraint-check-definition name="'
-                . $escapedName
-                . '" message="'
+            return '<apie-constraint-check-definition message="'
                 . $escapedValidationError
                 . '"'
                 . $valueAttr
