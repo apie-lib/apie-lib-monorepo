@@ -7,11 +7,13 @@ use Apie\Core\Lists\ItemList;
 use Apie\Core\Lists\ItemSet;
 use Apie\Core\Utils\HashmapUtils;
 use Apie\Serializer\Context\ApieSerializerContext;
+use Apie\Serializer\Exceptions\ValidationException;
 use Apie\Serializer\Interfaces\DenormalizerInterface;
 use Apie\Serializer\Interfaces\NormalizerInterface;
 use Apie\Serializer\Lists\SerializedHashmap;
 use Apie\Serializer\Lists\SerializedList;
 use Psr\Http\Message\UploadedFileInterface;
+use Throwable;
 
 class ItemListNormalizer implements NormalizerInterface, DenormalizerInterface
 {
@@ -55,8 +57,27 @@ class ItemListNormalizer implements NormalizerInterface, DenormalizerInterface
             throw new InvalidTypeException($object, 'iterable');
         }
         $list = [];
-        foreach ($object as $key => $value) {
-            $list[$key] = $apieSerializerContext->denormalizeChildElement((string) $key, $value, HashmapUtils::getArrayType($desiredType));
+        $validationErrors = [];
+        $iterator = $object->getIterator();
+        $arrayType = HashmapUtils::getArrayType($desiredType);
+        while ($iterator->valid()) {
+            try {
+                do {
+                    $key = $iterator->key();
+                    $value = $iterator->current();
+                    $iterator->next();
+                    $list[$key] = $apieSerializerContext->denormalizeChildElement(
+                        (string) $key,
+                        $value,
+                        $arrayType
+                    );
+                } while ($iterator->valid());
+            } catch (Throwable $throwable) {
+                $validationErrors[$key] = $throwable;
+            }
+        }
+        if (!empty($validationErrors)) {
+            throw ValidationException::createFromArray($validationErrors);
         }
         return new $desiredType($list);
     }
