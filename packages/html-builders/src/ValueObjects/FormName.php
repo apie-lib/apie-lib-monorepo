@@ -74,11 +74,7 @@ final class FormName implements ValueObjectInterface, Stringable
 
     public function getPrototypeName(): string
     {
-        return strtoupper(str_replace(
-            ['[', ']'],
-            '__',
-            '__' . $this . '__'
-        )) . md5((string) $this);
+        return '__' . end($this->internal);
     }
 
     public function createTranslationString(ReflectionClass $class, ?BoundedContextId $boundedContextId = null): TranslationString
@@ -91,11 +87,6 @@ final class FormName implements ValueObjectInterface, Stringable
             return new TranslationString('apie.resource' . $suffix);
         }
         return new TranslationString('apie.bounded.' .  $boundedContextId . $suffix);
-    }
-
-    public function getTypehintName(): string
-    {
-        return '_apie[typehint][' . implode('][', $this->internal) . ']';
     }
 
     public function __toString(): string

@@ -29,13 +29,14 @@ final class TranslationString implements HasRegexValueObjectInterface
         return $this;
     }
 
-    public function getLastTranslationSegment(): string
+    public function getLastTranslationSegment(bool $trimUnderscoreAtStart = true): string
     {
+        $fn = $trimUnderscoreAtStart ? function ($v) { return ltrim($v, '_'); } : function ($v) { return $v; };
         $pos = strrpos($this->internal, '.');
         if ($pos === false || $pos === 0) {
-            return $this->internal; 
+            return $fn($this->internal); 
         }
-        return substr(strrchr($this->internal, '.'), 1);
+        return $fn(substr(strrchr($this->internal, '.'), 1));
     }
 
     /**

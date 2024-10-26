@@ -110,6 +110,7 @@ final class FormBuildContext
      */
     public function getValidationErrorsInContext(): array
     {
+        return $this->validationErrors;
         $prefix = $this->formName->toValidationErrorKey();
         $result = [];
         $prefixLength = strlen($prefix) + 1;
@@ -148,8 +149,6 @@ final class FormBuildContext
         $result->formName = $this->formName->createChildForm($propertyName);
         $filledIn = $this->filledIn[$propertyName] ?? null;
         $result->filledIn = $filledIn;
-        $result->validationErrors = $this->validationErrors;
-
         return $result;
     }
 }

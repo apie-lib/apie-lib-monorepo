@@ -5,7 +5,7 @@ use Apie\Core\Attributes\CmsValidationCheck;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use ReflectionClass;
 
-#[CmsValidationCheck(message: 'apie.validation_errors.pattern', inverseCheck: true, patternMethod: 'getRegularExpression')]
+#[CmsValidationCheck(patternMethod: 'getRegularExpression')]
 trait IsStringWithRegexValueObject
 {
     use IsStringValueObject;

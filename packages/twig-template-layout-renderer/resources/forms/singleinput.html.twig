@@ -5,15 +5,22 @@
     types="{{ property('types').toArray() | join(',') }}"
     label="{{ translate(property('label')) }}"
 >
-{{ renderValidationError(property('value'), property('validationError')) }}
 {% for validationCheck in property('validationChecks') %}
-  <apie-constraint-check-definition
-    {% if (validationCheck.message) %}message="{{ translate(validationCheck.message) }}"{% endif %}
-    {% if (validation.inverseCheck) %}inverse-check{% endif %}
+  <apie-constraint-check-definition{% if validationCheck.exactMatch is defined %} class="unchecked"{% endif %}
+    {% if (validationCheck.message) %}message="{{ validationCheck.exactMatch ? validationCheck.message : translate(validationCheck.message) }}"{% endif %}
+    {% if (validationCheck.inverseCheck) %}inverse-check{% endif %}
     {% if (validationCheck.minLength > 0) %}min-length="{{ validationCheck.minLength }}"{% endif %}
     {% if (validationCheck.maxLength > 0) %}max-length="{{ validationCheck.maxLength }}"{% endif %}
     {% if (validationCheck.pattern) %}pattern="{{ validationCheck.pattern }}"{% endif %}
     ></apie-constraint-check-definition>
+    {% if validationCheck.exactMatch is defined %}
+    <script>
+    (function (elm) {
+        elm.classList.remove('unchecked');
+        elm.exactMatch = {{ property('value') | safe_json_encode }};
+    })(document.querySelector('apie-constraint-check-definition.unchecked'))
+    </script>
+    {% endif %}
 {% endfor %}
 </apie-form-field-definition>
 <script>

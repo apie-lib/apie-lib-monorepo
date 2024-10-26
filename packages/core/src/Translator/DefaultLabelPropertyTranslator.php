@@ -27,6 +27,6 @@ class DefaultLabelPropertyTranslator implements ApieTranslatorInterface
 
     private function isPropertyTranslation(TranslationString $translation): bool
     {
-        return (bool) preg_match('/^apie\.(bounded|resource)\..*\.properties.*(\.[a-z0-9][a-z0-9_]*)$/', $translation->toNative());
+        return (bool) preg_match('/^apie\.(bounded|resource)\..*\.properties.*(\.([a-z0-9]|__)[a-z0-9_]*)$/', $translation->toNative());
     }
 }

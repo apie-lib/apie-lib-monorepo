@@ -2,16 +2,17 @@
   {{ component('formElements') }}
 </apie-form-definition>
 <apie-ionic-form debug-mode
-        class="unhandled-form"
+{% if property('value') is not empty %}        class="unhandled-form"{% endif %}
         definition-id="definition123456"
         method="{{ property('method') }}"
         csrf-token="{{ property('csrf') }}"
         {% if (property('multipart')) %} supports-multipart{% endif %}>
 </apie-ionic-form>
 <script>
+{% if property('value') is not empty %}
 (function (elm) {
   elm.classList.remove('unhandled-form');
   elm.value = {{ property('value') | safe_json_encode }};
-  elm.validationErrors = {{ property('validationErrors') | safe_json_encode }};
 }(document.querySelector('apie-ionic-form.unhandled-form')));
 </script>
+{% endif %}

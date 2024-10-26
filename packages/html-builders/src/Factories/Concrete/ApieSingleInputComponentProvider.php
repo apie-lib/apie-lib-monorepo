@@ -89,14 +89,24 @@ class ApieSingleInputComponentProvider implements FormComponentProviderInterface
     {
         $class = ConverterUtils::toReflectionClass($type);
         $validationChecks = $this->getMultipleInputAttributes($class, $class);
+        $validationError = $context->getValidationError();
+        $value = $context->getFilledInValue();
+        if ($validationError !== null) {
+            $validationChecks[] = CmsValidationCheck::createFromStaticValue($validationError, $value);
+        }
         return new SingleInput(
             $context->getFormName(),
-            $context->getFilledInValue(),
+            $value,
             $context->createTranslationLabel(),
             $type->allowsNull(),
             $type,
             $this->getSingleInputAttribute($class) ?? new CmsSingleInput(['text']),
-            $validationChecks
+            array_map(function (CmsValidationCheck|array  $check) use ($class) {
+                if (is_array($check)) {
+                    return $check;
+                }
+                return $check->toArray($class);
+            }, $validationChecks)
         );
     }
 }

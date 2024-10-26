@@ -7,6 +7,7 @@ use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ApieTranslatorInterface;
 use Apie\Core\Translator\Lists\TranslationStringSet;
 use Apie\Core\Translator\ValueObjects\TranslationString;
+use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
 use LogicException;
@@ -58,12 +59,19 @@ class ComponentHelperExtension extends AbstractExtension
     {
         $apieContext = $this->getCurrentContext();
         $translator = $apieContext->getContext(ApieTranslatorInterface::class, false) ?? ApieTranslator::create();
-        return $translator->getGeneralTranslation(
-            $apieContext,
-            is_string($translation)
-                ? new TranslationString($translation)
-                : $translation
-        ) ?? $translation;
+        try {
+            return $translator->getGeneralTranslation(
+                $apieContext,
+                is_string($translation)
+                    ? new TranslationString($translation)
+                    : $translation
+            ) ?? $translation;
+        } catch (InvalidStringForValueObjectException) {
+            if ($translation instanceof TranslationStringSet) {
+                return $translation->first();
+            }
+            return (string) $translation;
+        }
     }
 
     public function safeJsonEncode(mixed $data): string
@@ -109,7 +117,7 @@ class ComponentHelperExtension extends AbstractExtension
         $valueScript = '';
         if ($value !== null) {
             if (is_string($value)) {
-                $valueAttr = ' value="' . $escaper->escape($value, 'html_attr', null, false) . '"';
+                $valueAttr = ' exact-match="' . $escaper->escape($value, 'html_attr', null, false) . '"';
             } else {
                 $valueAttr = ' class="unhandled-constraint"';
                 $valueScript = '<script>

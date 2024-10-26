@@ -182,8 +182,8 @@ class ComponentFactory
         $formFields = ['_csrf' => new Csrf($csrfToken)];
         $filledIn = $context->hasContext(ContextConstants::RAW_CONTENTS)
             ? $context->getContext(ContextConstants::RAW_CONTENTS)
-            : [];
-        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context, $filledIn);
+            : null;
+        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context, Utils::toArray($filledIn));
         foreach ($method->getParameters() as $parameter) {
             if ($parameter->getAttributes(Context::class)) {
                 continue;
@@ -197,7 +197,7 @@ class ComponentFactory
             new Form(
                 RequestMethod::POST,
                 $formBuildContext->getValidationError(),
-                $formBuildContext->getMissingValidationErrors($formFields),
+                $formBuildContext->getValidationErrorsInContext(),
                 $filledIn,
                 $formBuildContext->isMultipart(),
                 ...$formFields
@@ -218,12 +218,12 @@ class ComponentFactory
     ): ComponentInterface {
         $filledIn = $context->hasContext(ContextConstants::RAW_CONTENTS)
             ? $context->getContext(ContextConstants::RAW_CONTENTS)
-            : [];
+            : null;
         /** @var CsrfTokenProvider $csrfTokenProvider */
         $csrfTokenProvider = $context->getContext(CsrfTokenProvider::class);
         $csrfToken = $csrfTokenProvider->createToken();
 
-        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context, $filledIn);
+        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context, Utils::toArray($filledIn));
         return $this->createWrapLayout(
             $pageTitle,
             $boundedContextId,
@@ -231,8 +231,8 @@ class ComponentFactory
             new Form(
                 RequestMethod::POST,
                 $formBuildContext->getValidationError(),
-                $formBuildContext->getMissingValidationErrors([]),
-                [],
+                $formBuildContext->getValidationErrorsInContext(),
+                null,
                 $formBuildContext->isMultipart(),
                 new RemoveConfirm($class),
                 new Csrf($csrfToken)
@@ -253,12 +253,12 @@ class ComponentFactory
     ): ComponentInterface {
         $filledIn = $context->hasContext(ContextConstants::RAW_CONTENTS)
             ? $context->getContext(ContextConstants::RAW_CONTENTS)
-            : [];
+            : null;
         /** @var CsrfTokenProvider $csrfTokenProvider */
         $csrfTokenProvider = $context->getContext(CsrfTokenProvider::class);
         $csrfToken = $csrfTokenProvider->createToken();
 
-        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context, $filledIn);
+        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context, Utils::toArray($filledIn));
         if (EntityUtils::isPolymorphicEntity($class)) {
             $subClasses = EntityUtils::getDiscriminatorClasses($class);
             $subForms = [];
@@ -292,7 +292,7 @@ class ComponentFactory
             new Form(
                 RequestMethod::POST,
                 $formBuildContext->getValidationError(),
-                $form->getMissingValidationErrors($formBuildContext),
+                $formBuildContext->getValidationErrorsInContext(),
                 $filledIn,
                 $formBuildContext->isMultipart(),
                 new Csrf($csrfToken),
@@ -314,12 +314,12 @@ class ComponentFactory
     ): ComponentInterface {
         $filledIn = $context->hasContext(ContextConstants::RAW_CONTENTS)
             ? $context->getContext(ContextConstants::RAW_CONTENTS)
-            : [];
+            : null;
         /** @var CsrfTokenProvider $csrfTokenProvider */
         $csrfTokenProvider = $context->getContext(CsrfTokenProvider::class);
         $csrfToken = $csrfTokenProvider->createToken();
 
-        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context, $filledIn);
+        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context,Utils::toArray($filledIn));
         if (EntityUtils::isPolymorphicEntity($class)) {
             $subClasses = EntityUtils::getDiscriminatorClasses($class);
             $subForms = [];
@@ -353,7 +353,7 @@ class ComponentFactory
             new Form(
                 RequestMethod::POST,
                 $formBuildContext->getValidationError(),
-                $form->getMissingValidationErrors($formBuildContext),
+                $formBuildContext->getValidationErrorsInContext(),
                 $filledIn,
                 $formBuildContext->isMultipart(),
                 new Csrf($csrfToken),
