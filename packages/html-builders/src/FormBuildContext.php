@@ -111,16 +111,6 @@ final class FormBuildContext
     public function getValidationErrorsInContext(): array
     {
         return $this->validationErrors;
-        $prefix = $this->formName->toValidationErrorKey();
-        $result = [];
-        $prefixLength = strlen($prefix) + 1;
-        foreach ($this->validationErrors as $key => $message) {
-            if (str_starts_with($key, $prefix)) {
-                $result[substr($key, $prefixLength)] = $message;
-            }
-        }
-
-        return $result;
     }
 
     public function getFormName(): FormName

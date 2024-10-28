@@ -3,9 +3,14 @@
   
 </apie-form-definition>
 <apie-ionic-form debug-mode
-        definition-id="definition123456"
+        class="unhandled-form"        definition-id="definition123456"
         method="POST"
         csrf-token=""
         >
 </apie-ionic-form>
 <script>
+(function (elm) {
+  elm.classList.remove('unhandled-form');
+      elm.validationErrors = {"id":"unknown field"};
+  }(document.querySelector('apie-ionic-form.unhandled-form')));
+</script>

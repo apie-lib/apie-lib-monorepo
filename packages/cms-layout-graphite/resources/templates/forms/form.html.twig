@@ -2,17 +2,23 @@
   {{ component('formElements') }}
 </apie-form-definition>
 <apie-form debug-mode
-{% if property('value') is not empty %}        class="unhandled-form"{% endif %}
+{% set requiresInitialization = property('value') is not empty or property('validationErrors') is not empty %}
+{% if requiresInitialization %}        class="unhandled-form"{% endif %}
         definition-id="definition123456"
         method="{{ property('method') }}"
         csrf-token="{{ property('csrf') }}"
         {% if (property('multipart')) %} supports-multipart{% endif %}>
 </apie-form>
+{% if requiresInitialization %}
 <script>
-{% if property('value') is not empty %}
   (function (elm) {
     elm.classList.remove('unhandled-form');
-    elm.value = {{ property('value') | safe_json_encode }};
+  {% if property('value') is not empty %}
+  elm.value = {{ property('value') | safe_json_encode }};
+  {% endif %}
+  {% if property('validationErrors') is not empty %}
+  elm.validationErrors = {{ property('validationErrors') | safe_json_encode }};
+  {% endif %}
   }(document.querySelector('apie-form.unhandled-form')));
-  </script>
+</script>
 {% endif %}
