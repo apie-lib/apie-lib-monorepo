@@ -92,7 +92,7 @@ class ValidationException extends ApieException implements HttpStatusCodeExcepti
         return $newList;
     }
 
-    private static function mergeProperty(string $prefix, string $property): string
+    private static function mergeProperty(string $prefix, string|int $property): string
     {
         if ($prefix) {
             return ($property || $property === 0 || $property === '0') ? ($prefix . '.' . $property) : $prefix;

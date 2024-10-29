@@ -2,7 +2,6 @@
 namespace Apie\HtmlBuilders\Components\Forms;
 
 use Apie\HtmlBuilders\Components\BaseComponent;
-use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\Lists\ComponentHashmap;
 use Apie\HtmlBuilders\ValueObjects\FormName;
 
@@ -16,7 +15,7 @@ class FormPrototypeList extends BaseComponent
         FormName $name,
         ?array $value,
         string $prototypeName,
-        ComponentInterface $prototype,
+        BaseComponent $prototype,
         array $validationErrors = [],
     ) {
         $prototype = $this->makePrototype($prototypeName, $prototype);

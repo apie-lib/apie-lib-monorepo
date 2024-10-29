@@ -22,7 +22,8 @@ final class CmsValidationCheck
     ) {
     }
 
-    public static function createFromStaticValue(string $message, mixed $value): self {
+    public static function createFromStaticValue(string $message, mixed $value): self
+    {
         $res = new self(message: $message);
         $res->exactMatch = $value;
         return $res;
@@ -30,6 +31,7 @@ final class CmsValidationCheck
 
     /**
      * @param ReflectionClass<object> $class
+     * @return array<string, mixed>
      */
     public function toArray(ReflectionClass $class): array
     {
@@ -53,7 +55,7 @@ final class CmsValidationCheck
         return $res;
     }
 
-    private function sanitize(string $propertyName, mixed $value)
+    private function sanitize(string $propertyName, mixed $value): mixed
     {
         if ($propertyName === 'patternMethod') {
             return RegexUtils::removeDelimiters(Utils::toString($value));

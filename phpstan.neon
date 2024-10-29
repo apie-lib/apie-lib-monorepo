@@ -42,6 +42,7 @@ parameters:
         - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
         - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
         - '#ReflectionEnumUnitCase::getBackingValue#'
+        - '/Parameter #4 \$prototype of class Apie\\HtmlBuilders\\Components\\Forms\\FormPrototype(Hashmap|List) constructor expects Apie\\HtmlBuilders\\Components\\BaseComponent, Apie\\HtmlBuilders\\Interfaces\\ComponentInterface given\./'
         -
             message: '#is assigned outside of its declaring class#'
             path: packages/doctrine-entity-converter/src/CodeGenerators/AddDoctrineFields.php
@@ -146,10 +147,6 @@ parameters:
         -
             message: '#the constructor#'
             path: packages/core/src/Actions/ActionResponse.php
-        -
-            message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'
-            path: packages/html-builders/src/Components/Forms/Password.php
-            count: 8
         -
             message: "#Class 'PossibleRoutePrefixes' is a value object that returns an array, but it does not use CompositeValueObject trait#"
             path: packages/common/src/ValueObjects/PossibleRoutePrefixes.php

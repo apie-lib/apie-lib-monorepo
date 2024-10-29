@@ -3,7 +3,9 @@ namespace Apie\HtmlBuilders\Factories\Concrete;
 
 use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\Dto\CmsInputOption;
+use Apie\Core\Dto\ValueOption;
 use Apie\Core\Enums\ScalarType;
+use Apie\Core\Lists\ValueOptionList;
 use Apie\Core\Metadata\MetadataFactory;
 use Apie\Core\ValueObjects\Utils;
 use Apie\HtmlBuilders\Components\Forms\SingleInput;
@@ -38,11 +40,11 @@ class BooleanComponentProvider implements FormComponentProviderInterface
             new CmsSingleInput(
                 $type->allowsNull() ? ['select'] : ['checkbox', 'select'],
                 new CmsInputOption(
-                    options: [
-                        ['name' => 'On', 'value' => true],
-                        ['name' => 'Off', 'value' => false],
-                        ...($type->allowsNull() ? [['name' => '-', 'value' => null]] : [])
-                    ]
+                    options: new ValueOptionList([
+                        new ValueOption('On', true),
+                        new ValueOption('Off', false),
+                        ...($type->allowsNull() ? [new ValueOption('-', null)] : [])
+                    ])
                 )
             )
         );

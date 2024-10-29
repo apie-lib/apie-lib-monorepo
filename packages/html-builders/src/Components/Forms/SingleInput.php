@@ -11,7 +11,7 @@ use ReflectionType;
 class SingleInput extends BaseComponent
 {
     /**
-     * @param array<CmsValidationCheck> $validationChecks
+     * @param array<CmsValidationCheck|array<string, mixed>> $validationChecks
      */
     public function __construct(
         FormName $name,

@@ -77,6 +77,9 @@ final class FormName implements ValueObjectInterface, Stringable
         return '__' . end($this->internal);
     }
 
+    /**
+     * @param ReflectionClass<object> $class
+     */
     public function createTranslationString(ReflectionClass $class, ?BoundedContextId $boundedContextId = null): TranslationString
     {
         $suffix = '.'

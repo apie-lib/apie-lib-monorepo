@@ -31,7 +31,7 @@ abstract class BaseComponent implements ComponentInterface
         return $this->attributes[$key] ?? null;
     }
 
-    final public function makePrototype(string $prototypeName, ComponentInterface $component): ComponentInterface
+    final public function makePrototype(string $prototypeName, BaseComponent $component): BaseComponent
     {
         $component->attributes['additionalAttributes'] ??= [];
         $component->attributes['additionalAttributes']['id'] = $prototypeName;

@@ -15,7 +15,7 @@ class ApieSingleInputComponentProvider implements FormComponentProviderInterface
 {
     /** @var array<class-string<object>, CmsSingleInput|null> $alreadyChecked */
     private static array $alreadyChecked = [];
-    /** @var array<class-string<object>, CmsValidationCheck[]> $alreadyChecked */
+    /** @var array<class-string<object>, (CmsValidationCheck|array<string, mixed>)[]> $alreadyCheckedValidation */
     private static array $alreadyCheckedValidation = [];
 
     /**
@@ -45,7 +45,7 @@ class ApieSingleInputComponentProvider implements FormComponentProviderInterface
     /**
      * @param ReflectionClass<object> $class
      * @param ReflectionClass<object> $mainClass
-     * @return CmsValidationCheck[]
+     * @return (CmsValidationCheck|array<string, mixed>)[]
      */
     private function getMultipleInputAttributes(ReflectionClass $class, ReflectionClass $mainClass): array
     {

@@ -319,7 +319,7 @@ class ComponentFactory
         $csrfTokenProvider = $context->getContext(CsrfTokenProvider::class);
         $csrfToken = $csrfTokenProvider->createToken();
 
-        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context,Utils::toArray($filledIn));
+        $formBuildContext = $this->formComponentFactory->createFormBuildContext($context, Utils::toArray($filledIn));
         if (EntityUtils::isPolymorphicEntity($class)) {
             $subClasses = EntityUtils::getDiscriminatorClasses($class);
             $subForms = [];

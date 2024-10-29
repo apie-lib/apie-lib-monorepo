@@ -26,6 +26,9 @@ class CmsInputOption implements DtoInterface
     ) {
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function forType(ReflectionType $type): array
     {
         $data = get_object_vars($this);

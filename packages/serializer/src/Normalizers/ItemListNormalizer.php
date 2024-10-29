@@ -12,8 +12,8 @@ use Apie\Serializer\Interfaces\DenormalizerInterface;
 use Apie\Serializer\Interfaces\NormalizerInterface;
 use Apie\Serializer\Lists\SerializedHashmap;
 use Apie\Serializer\Lists\SerializedList;
+use Exception;
 use Psr\Http\Message\UploadedFileInterface;
-use Throwable;
 
 class ItemListNormalizer implements NormalizerInterface, DenormalizerInterface
 {
@@ -60,6 +60,7 @@ class ItemListNormalizer implements NormalizerInterface, DenormalizerInterface
         $validationErrors = [];
         $iterator = $object->getIterator();
         $arrayType = HashmapUtils::getArrayType($desiredType);
+        $key = '';
         while ($iterator->valid()) {
             try {
                 do {
@@ -72,8 +73,8 @@ class ItemListNormalizer implements NormalizerInterface, DenormalizerInterface
                         $arrayType
                     );
                 } while ($iterator->valid());
-            } catch (Throwable $throwable) {
-                $validationErrors[$key] = $throwable;
+            } catch (Exception $throwable) {
+                $validationErrors[(string) $key] = $throwable;
             }
         }
         if (!empty($validationErrors)) {
