@@ -1,0 +1,6 @@
+services:
+  Apie\TwigTemplateLayoutRenderer\Command\CreateCustomLayoutRendererCommand:
+    arguments:
+      - '@Apie\Core\Other\FileWriterInterface'
+    tags:
+      - name: console.command

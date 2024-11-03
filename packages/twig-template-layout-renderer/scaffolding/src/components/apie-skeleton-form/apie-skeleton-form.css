@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+form {
+  max-height: 50px;
+  aspect-ratio: 0.5;
+}
