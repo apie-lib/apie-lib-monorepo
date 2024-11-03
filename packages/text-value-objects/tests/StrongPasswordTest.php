@@ -95,7 +95,7 @@ class StrongPasswordTest extends TestCase
     {
         $randomizer = new SecureRandomizer();
         $rendered = [];
-        for($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             mt_srand(42);
             $password = StrongPassword::createRandom($randomizer)->toNative();
             $this->assertArrayNotHasKey($password, $rendered);
