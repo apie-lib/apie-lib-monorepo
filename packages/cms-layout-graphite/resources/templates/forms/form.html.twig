@@ -1,7 +1,7 @@
 <apie-form-definition id="definition123456">
   {{ component('formElements') }}
 </apie-form-definition>
-<apie-form debug-mode
+<apie-form
 {% set requiresInitialization = property('value') is not empty or property('validationErrors') is not empty %}
 {% if requiresInitialization %}        class="unhandled-form"{% endif %}
         definition-id="definition123456"
