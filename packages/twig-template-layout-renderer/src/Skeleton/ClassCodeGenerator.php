@@ -73,7 +73,7 @@ use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
         return new TwigRenderer(
             __DIR__ . \'/../resources/templates\',
             $assetManager->withAddedPath(__DIR__ . \'/../resources/assets\'),
-            \'Apie\HtmlBuilders\Components\\\'
+            "Apie\HtmlBuilders\Components\\\\"
         );
     }
 }
