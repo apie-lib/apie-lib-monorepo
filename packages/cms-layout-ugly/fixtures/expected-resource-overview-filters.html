@@ -1,0 +1,12 @@
+<form>
+<input name="search" type="search" value="text search" />
+  <apie-filter-overview class="unprocessed-filter"></apie-filter-overview>
+  <script>
+  (function (elm) {
+    elm.classList.remove('unprocessed-filter');
+    elm.filterNames = ["id","description"];
+    elm.filters = {"description":"test"};
+  }(document.querySelector('apie-filter-overview.unprocessed-filter')));
+  </script>
+  <button>Search</button>
+</form>

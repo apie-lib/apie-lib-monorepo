@@ -63,7 +63,7 @@ RUN rm -rf vendor
 RUN composer config --no-plugins allow-plugins.apie/apie-common-plugin true
 RUN mkdir /packages
 COPY ../../packages /packages
-RUN composer require 'apie/cms-layout-ionic:*' --no-install
+RUN composer require 'apie/cms-layout-ionic:*' 'apie/cms-layout-ugly:*' --no-install
 RUN composer update
 
 # Setup crontab

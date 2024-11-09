@@ -1,0 +1,28 @@
+{% for subtype in property('subtypes') %}
+<apie-form-definition id="definition-{{ subtype }}">
+  {{ component(subtype) }}
+</apie-form-definition>
+{% endfor %}
+<apie-ugly-form debug-mode
+  polymorphic-column-name="__type"
+  class="unhandled-form"
+  method="{{ property('method') }}"
+  csrf-token="{{ property('csrf') }}"
+  {% if (property('multipart')) %} supports-multipart{% endif %}>
+</apie-ugly-form>
+<script>
+(function (elm) {
+  elm.classList.remove('unhandled-form');
+{% if property('value') is not empty %}
+  elm.value = {{ property('value') | safe_json_encode }};
+{% endif %}
+{% if property('validationErrors') is not empty %}
+  elm.validationErrors = {{ property('validationErrors') | safe_json_encode }};
+{% endif %}
+  elm.polymorphicFormDefinition = {
+{% for subtype in property('subtypes') %}
+    {{ ('definition-' ~ subtype) | safe_json_encode }}: {{ subtype | safe_json_encode }}{% if not loop.last %},{% endif %}
+{% endfor %}
+  };
+}(document.querySelector('apie-ugly-form.unhandled-form')));
+</script>

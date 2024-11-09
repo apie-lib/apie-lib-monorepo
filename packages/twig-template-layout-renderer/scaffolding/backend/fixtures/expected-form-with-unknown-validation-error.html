@@ -1,0 +1,16 @@
+<apie-form-definition id="definition123456">
+           test
+  
+</apie-form-definition>
+<apie-ugly-form debug-mode
+        class="unhandled-form"        definition-id="definition123456"
+        method="POST"
+        csrf-token=""
+        >
+</apie-ugly-form>
+<script>
+(function (elm) {
+  elm.classList.remove('unhandled-form');
+      elm.validationErrors = {"id":"unknown field"};
+  }(document.querySelector('apie-ugly-form.unhandled-form')));
+</script>

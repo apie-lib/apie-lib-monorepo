@@ -185,6 +185,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/cms-layout-ugly",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-layout-ugly": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/cms-api-dropdown-option",
             "options": {
                 "symlink": true,

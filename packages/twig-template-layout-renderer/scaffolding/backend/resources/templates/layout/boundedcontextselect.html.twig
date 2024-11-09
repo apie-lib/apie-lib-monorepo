@@ -1,0 +1,5 @@
+{{ translate('apie.cms.bounded_context') }} ({{ property('selectedBoundedContextId') }})
+
+{% for boundedContext in property('boundedContextHashmap') %}
+    <a href="{{ property('path') }}{{ boundedContext.getId() }}/">{{ boundedContext.getId() }}</a>
+{% endfor %}

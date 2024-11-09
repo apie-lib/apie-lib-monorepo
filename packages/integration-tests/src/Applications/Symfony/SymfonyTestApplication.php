@@ -95,6 +95,7 @@ class SymfonyTestApplication implements TestApplicationInterface
         if ($parameterRaw) {
             parse_str($parameterRaw, $parameters);
         }
+        $uri = parse_url($uri, PHP_URL_PATH);
         $sfRequest = Request::create($uri, parameters: $parameters);
         if ($this->authenticationCookie) {
             $sfRequest->cookies->set(

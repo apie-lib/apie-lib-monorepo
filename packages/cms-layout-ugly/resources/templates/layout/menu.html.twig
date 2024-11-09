@@ -1,0 +1,5 @@
+{% for menuItem in property('menuItems') %}
+  <a href="{{ menuItem['url'] }}" style="align-items: center; color: var(--gr-color-dark); display: flex; font-weight: var(--gr-font-weight-normal); margin-left: 0.5rem; padding: 0.5rem;">
+    {{  menuItem['title'] }}
+  </a>
+{% endfor %}

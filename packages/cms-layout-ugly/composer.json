@@ -1,0 +1,31 @@
+{
+    "name": "apie/cms-layout-ugly",
+    "description": "Composer package of the apie library: cms layout ugly",
+    "type": "library",
+    "license": "MIT",
+    "authors": [],
+    "autoload": {
+        "psr-4": {
+            "Apie\\CmsLayoutUgly\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Apie\\Tests\\CmsLayoutUgly\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "apie/core": "self.version",
+        "apie/html-builders": "self.version",
+        "apie/twig-template-layout-renderer": "self.version",
+        "twig/twig": "^3.10.2"
+    },
+    "require-dev": {
+        "apie/fixtures": "self.version",
+        "illuminate/support": "*",
+        "phpunit/phpunit": "^9.6.19"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

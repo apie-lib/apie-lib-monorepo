@@ -125,6 +125,10 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
      */
     public function httpRequestGet(string $uri): ResponseInterface
     {
+        //workaround against spacebar search test and Laravel doing unneeded things
+        if (str_ends_with($uri, ' ')) {
+            $uri .= '&dummy=1';
+        }
         $testResponse = $this->get($uri);
         $laravelResponse = $testResponse->baseResponse;
         return $this->handleResponse($laravelResponse);

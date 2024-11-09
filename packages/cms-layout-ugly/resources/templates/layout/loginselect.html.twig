@@ -1,0 +1,7 @@
+hi
+{% if property('loginOptions') %}
+    {% for loginOption in property('loginOptions') %}
+        <a href="{{ loginOption['value'] }}">{{ loginOption['name'] }}</a>
+    {% endfor %}
+{% endif %}
+{{ component('profile') }}
