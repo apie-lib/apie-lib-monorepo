@@ -9,8 +9,8 @@
         csrf-token="{{ property('csrf') }}"
         {% if (property('multipart')) %} supports-multipart{% endif %}>
 </apie-ionic-form>
-<script>
 {% if requiresInitialization %}
+<script>
 (function (elm) {
   elm.classList.remove('unhandled-form');
   {% if property('value') is not empty %}
