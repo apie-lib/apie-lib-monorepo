@@ -147,6 +147,12 @@ trait CreatesApieBoundedContext
                     'test-evil.txt',
                     '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/file'
                 ),
+                new GetAndSetUploadedFileField(
+                    'imageFile',
+                    file_get_contents(__DIR__ . '/../../fixtures/apie-logo.svg'),
+                    'apie-logo.svg',
+                    '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/imageFile'
+                ),
                 new GetPrimitiveField('stream', '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/stream')
             ),
         );

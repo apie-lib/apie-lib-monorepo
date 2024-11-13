@@ -310,6 +310,56 @@
                 }
             }
         },
+        "/UploadedFile/{id}/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "UploadedFile"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.existing.UploadedFile",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PartialInput-post"
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/PartialInput-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/User/{id}/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -901,6 +951,11 @@
                                     "_csrf": {
                                         "type": "string"
                                     },
+                                    "imageFile": {
+                                        "type": "string",
+                                        "format": "binary",
+                                        "nullable": true
+                                    },
                                     "file": {
                                         "type": "string",
                                         "format": "binary",
@@ -1047,6 +1102,14 @@
                         "in": "query",
                         "schema": {
                             "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[imageFile]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
                         }
                     }
                 ]
@@ -1707,6 +1770,123 @@
                         }
                     },
                     "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "UploadedFile",
+                    "resource"
+                ],
+                "description": "Modifies an instance of UploadedFile",
+                "operationId": "patch-single-UploadedFile",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of UploadedFile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UploadedFileIdentifier-post"
+                        }
+                    },
+                    {
+                        "name": "x-no-crsf",
+                        "in": "header",
+                        "description": "Disable csrf",
+                        "schema": {
+                            "enum": [
+                                1
+                            ],
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/File-patch"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "form"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "form": {
+                                        "$ref": "#/components/schemas/File-patch"
+                                    },
+                                    "_csrf": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/File-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
                         "description": "Resource not found",
                         "content": {
                             "application/json": {
@@ -3107,6 +3287,12 @@
                 "type": "string",
                 "example": "Lorem Ipsum"
             },
+            "DoNotChangeUploadedFile-post": {
+                "enum": [
+                    "DoNotChange"
+                ],
+                "type": "string"
+            },
             "DropdownOption-get": {
                 "type": "object",
                 "required": [
@@ -3210,6 +3396,7 @@
                 "type": "object",
                 "required": [
                     "id",
+                    "imageFile",
                     "file",
                     "stream"
                 ],
@@ -3217,11 +3404,34 @@
                     "id": {
                         "$ref": "#/components/schemas/UploadedFileIdentifier-get"
                     },
+                    "imageFile": {
+                        "$ref": "#/components/schemas/ImageFile-nullable-get"
+                    },
                     "file": {
                         "$ref": "#/components/schemas/UploadedFile-get"
                     },
                     "stream": {
                         "$ref": "#/components/schemas/mixed"
+                    }
+                }
+            },
+            "File-patch": {
+                "type": "object",
+                "properties": {
+                    "imageFile": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/ImageFile-post"
+                            },
+                            {
+                                "$ref": "#/components/schemas/DoNotChangeUploadedFile-post"
+                            },
+                            {
+                                "nullable": true,
+                                "default": null
+                            }
+                        ],
+                        "nullable": true
                     }
                 }
             },
@@ -3234,6 +3444,9 @@
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/UploadedFileIdentifier-post"
+                    },
+                    "imageFile": {
+                        "$ref": "#/components/schemas/ImageFile-nullable-post"
                     },
                     "file": {
                         "$ref": "#/components/schemas/UploadedFile-post"
@@ -3249,6 +3462,9 @@
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/UploadedFileIdentifier-post-multipart-form-data"
+                    },
+                    "imageFile": {
+                        "$ref": "#/components/schemas/ImageFile-nullable-post-multipart-form-data"
                     },
                     "file": {
                         "$ref": "#/components/schemas/UploadedFile-post-multipart-form-data"
@@ -3392,6 +3608,121 @@
                         "nullable": false
                     }
                 }
+            },
+            "ImageFile-nullable-get": {
+                "type": "string",
+                "format": "path",
+                "nullable": true
+            },
+            "ImageFile-nullable-post": {
+                "required": [
+                    "originalFilename"
+                ],
+                "type": "object",
+                "oneOf": [
+                    {
+                        "required": [
+                            "contents",
+                            "originalFilename"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "base64",
+                            "originalFilename"
+                        ]
+                    }
+                ],
+                "properties": {
+                    "contents": {
+                        "$ref": "#/components/schemas/BinaryStream-post"
+                    },
+                    "originalFilename": {
+                        "$ref": "#/components/schemas/Filename-post"
+                    },
+                    "base64": {
+                        "$ref": "#/components/schemas/Base64Stream-post"
+                    },
+                    "mime": {
+                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
+                    }
+                },
+                "nullable": true
+            },
+            "ImageFile-nullable-post-multipart-form-data": {
+                "type": "string",
+                "format": "binary",
+                "nullable": true,
+                "x-upload": "*/*"
+            },
+            "ImageFile-post": {
+                "required": [
+                    "originalFilename"
+                ],
+                "type": "object",
+                "oneOf": [
+                    {
+                        "required": [
+                            "contents",
+                            "originalFilename"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "base64",
+                            "originalFilename"
+                        ]
+                    }
+                ],
+                "properties": {
+                    "contents": {
+                        "$ref": "#/components/schemas/BinaryStream-post"
+                    },
+                    "originalFilename": {
+                        "$ref": "#/components/schemas/Filename-post"
+                    },
+                    "base64": {
+                        "$ref": "#/components/schemas/Base64Stream-post"
+                    },
+                    "mime": {
+                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
+                    }
+                }
+            },
+            "JsonFileUpload-nullable-post": {
+                "required": [
+                    "originalFilename"
+                ],
+                "type": "object",
+                "oneOf": [
+                    {
+                        "required": [
+                            "contents",
+                            "originalFilename"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "base64",
+                            "originalFilename"
+                        ]
+                    }
+                ],
+                "properties": {
+                    "contents": {
+                        "$ref": "#/components/schemas/BinaryStream-post"
+                    },
+                    "originalFilename": {
+                        "$ref": "#/components/schemas/Filename-post"
+                    },
+                    "base64": {
+                        "$ref": "#/components/schemas/Base64Stream-post"
+                    },
+                    "mime": {
+                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
+                    }
+                },
+                "nullable": true
             },
             "JsonFileUpload-post": {
                 "required": [

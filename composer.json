@@ -11,6 +11,7 @@
     "license": "MIT",
     "conflict": {
         "nette/utils": "3.*",
+        "phpstan/phpdoc-parser": "2.*",
         "thecodingmachine/safe": "1.*"
     },
     "repositories": [

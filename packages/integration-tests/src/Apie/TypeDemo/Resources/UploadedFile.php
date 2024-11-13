@@ -7,6 +7,7 @@ use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\ResourceName;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\FileStorage\ImageFile;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UploadedFileIdentifier;
 use Psr\Http\Message\UploadedFileInterface;
 
@@ -18,7 +19,8 @@ final class UploadedFile implements EntityInterface
 {
     public function __construct(
         private UploadedFileIdentifier $id,
-        private UploadedFileInterface $file
+        private UploadedFileInterface $file,
+        public ?ImageFile $imageFile = null
     ) {
     }
 
