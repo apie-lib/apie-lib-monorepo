@@ -48,6 +48,10 @@ parameters:
             path: packages/doctrine-entity-converter/src/CodeGenerators/AddDoctrineFields.php
             count: 1
         -
+            message: '#Offset ReflectionType on .* in isset#'
+            path: packages/core/src/PropertyToFieldMetadataUtil.php
+            count: 1
+        -
             message: '#Comparison operation "<" between int<0, max> and 0 is always false.#'
             path: packages/core/src/FileStorage/StoredFile.php
             count: 1
