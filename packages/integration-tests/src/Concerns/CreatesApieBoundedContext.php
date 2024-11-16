@@ -145,15 +145,15 @@ trait CreatesApieBoundedContext
                     'file',
                     'first order line',
                     'test-evil.txt',
-                    '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/file'
+                    '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/download/file'
                 ),
                 new GetAndSetUploadedFileField(
                     'imageFile',
                     file_get_contents(__DIR__ . '/../../fixtures/apie-logo.svg'),
                     'apie-logo.svg',
-                    '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/imageFile'
+                    '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/download/imageFile'
                 ),
-                new GetPrimitiveField('stream', '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/stream')
+                new GetPrimitiveField('stream', '/types/UploadedFile/550e8400-e29b-41d4-a716-446655440000/download/stream')
             ),
         );
     }

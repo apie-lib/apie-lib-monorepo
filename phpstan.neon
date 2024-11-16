@@ -48,6 +48,10 @@ parameters:
             path: packages/doctrine-entity-converter/src/CodeGenerators/AddDoctrineFields.php
             count: 1
         -
+            message: '#but returns array<int<0, max>#'
+            path: packages/common/src/ActionDefinitions/DownloadFilesActionDefinition.php
+            count: 1
+        -
             message: '#Offset ReflectionType on .* in isset#'
             path: packages/core/src/PropertyToFieldMetadataUtil.php
             count: 1

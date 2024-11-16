@@ -41,7 +41,7 @@ class DownloadFileTest extends TestCase
                 StoredFile::createFromString('Lorem ipsum', 'text/plain', 'test.txt')
             );
             $uploadedFile = $datalayer->persistNew($uploadedFile, new BoundedContextId('types'));
-            $response = $testApplication->httpRequestGet('http://localhost/api/types/UploadedFile/' . $uploadedFile->getId() . '/file');
+            $response = $testApplication->httpRequestGet('http://localhost/api/types/UploadedFile/' . $uploadedFile->getId() . '/download/file');
             $this->assertEquals(200, $response->getStatusCode());
             if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name !== FakerDatalayer::class) {
                 $this->assertEquals('Lorem ipsum', $response->getBody()->__toString());
@@ -74,7 +74,7 @@ class DownloadFileTest extends TestCase
                 StoredFile::createFromString('Lorem ipsum', 'text/plain', 'test.txt')
             );
             $uploadedFile = $datalayer->persistNew($uploadedFile, new BoundedContextId('types'));
-            $response = $testApplication->httpRequestGet('http://localhost/api/types/UploadedFile/' . $uploadedFile->getId() . '/stream');
+            $response = $testApplication->httpRequestGet('http://localhost/api/types/UploadedFile/' . $uploadedFile->getId() . '/download/stream');
             $this->assertEquals(200, $response->getStatusCode());
             if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name !== FakerDatalayer::class) {
                 $this->assertEquals('Lorem ipsum', $response->getBody()->__toString());

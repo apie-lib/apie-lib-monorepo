@@ -3050,15 +3050,15 @@
                 }
             }
         },
-        "/UploadedFile/{id}/file": {
+        "/UploadedFile/{id}/download/{properties}": {
             "get": {
                 "tags": [
                     "UploadedFile",
                     "action",
                     "download"
                 ],
-                "description": "Streams file on a UploadedFile with a specific id",
-                "operationId": "stream-single-UploadedFile-run-getFile",
+                "description": "Streams a file on a UploadedFile with a specific id",
+                "operationId": "stream-single-UploadedFile-run-download",
                 "parameters": [
                     {
                         "name": "id",
@@ -3067,6 +3067,15 @@
                         "required": true,
                         "schema": {
                             "$ref": "#/components/schemas/UploadedFileIdentifier-post"
+                        }
+                    },
+                    {
+                        "name": "properties",
+                        "in": "path",
+                        "description": "properties of instance of __construct",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/File-post"
                         }
                     }
                 ],
@@ -3081,8 +3090,8 @@
                             }
                         }
                     },
-                    "404": {
-                        "description": "Resource not found",
+                    "400": {
+                        "description": "Invalid request",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -3090,37 +3099,33 @@
                                 }
                             }
                         }
-                    }
-                }
-            }
-        },
-        "/UploadedFile/{id}/stream": {
-            "get": {
-                "tags": [
-                    "UploadedFile",
-                    "action",
-                    "download"
-                ],
-                "description": "Streams stream on a UploadedFile with a specific id",
-                "operationId": "stream-single-UploadedFile-run-getStream",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "id of instance of UploadedFile",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/UploadedFileIdentifier-post"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
+                    },
+                    "405": {
+                        "description": "Invalid request",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/mixed"
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
                                 }
                             }
                         }
