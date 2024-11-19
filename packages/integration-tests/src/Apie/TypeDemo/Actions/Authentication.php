@@ -22,7 +22,7 @@ class Authentication
         try {
             /** @var UserIdentifier @userId */
             $userId = UserIdentifier::fromNative($username);
-            $user = $apieDatalayer->find($userId, $boundedContext);
+            $user = $apieDatalayer->find($userId, $boundedContext->getId());
         } catch (Exception) {
             return null;
         }

@@ -2,7 +2,6 @@
 namespace App\ApiePlayground\Permission\Actions;
 
 use Apie\Core\Datalayers\ApieDatalayer;
-use Apie\Core\Datalayers\BoundedContextAwareApieDatalayer;
 use Apie\CommonValueObjects\Email;
 use Apie\CommonValueObjects\FullName;
 use Apie\Core\Attributes\Context;
@@ -25,7 +24,7 @@ class LoginTest
     #[RuntimeCheck(new NotLoggedIn())]
     public function verifyAuthentication(
         #[Context()]
-        BoundedContextAwareApieDatalayer $apieDatalayer,
+        ApieDatalayer $apieDatalayer,
         #[Context()]
         BoundedContext $boundedContext,
         #[Context()]
@@ -36,7 +35,7 @@ class LoginTest
     ): User {
         $results = $apieDatalayer->all(
             new ReflectionClass(User::class),
-            $boundedContext
+            $boundedContext->getId()
         )->toPaginatedResult(
             new QuerySearch(0, 1, null, new StringHashmap(['email' => $email->toNative()]), apieContext: $apieContext)
         );
@@ -50,10 +49,10 @@ class LoginTest
             }
             $user->setFullName($fullName);
             $user->setUserRole($userRole);
-            $user = $apieDatalayer->persistExisting($user, $boundedContext);
+            $user = $apieDatalayer->persistExisting($user, $boundedContext->getId());
         } else {
             $user = new User($email, $fullName, $userRole);
-            $user = $apieDatalayer->persistNew($user, $boundedContext);
+            $user = $apieDatalayer->persistNew($user, $boundedContext->getId());
         }
         return $user;
     }

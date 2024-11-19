@@ -47,8 +47,8 @@ class CodeGeneratedLog implements EntityInterface, CodeWriterConfigurationInterf
         $this->date = ApieLib::getPsrClock()->now();
         try {
             $codeWriter->startWriting($this);
-            foreach ($apieDatalayer->all(new ReflectionClass(ResourceDefinition::class), $boundedContext) as $resourceDefinition) {
-                $boundedContextDefinition = $apieDatalayer->find($resourceDefinition->boundedContextId, $boundedContext);
+            foreach ($apieDatalayer->all(new ReflectionClass(ResourceDefinition::class), $boundedContext->getId()) as $resourceDefinition) {
+                $boundedContextDefinition = $apieDatalayer->find($resourceDefinition->boundedContextId, $boundedContext->getId());
                 $codeWriter->writeResource($this, $resourceDefinition, $boundedContextDefinition);
                 $codeWriter->writeIdentifier($this, $resourceDefinition, $boundedContextDefinition);
             }
