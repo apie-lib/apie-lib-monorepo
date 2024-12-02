@@ -20,6 +20,8 @@ use Apie\Maker\BoundedContext\Services\CodeWriter;
 use Apie\Maker\Enums\OverwriteStrategy;
 use Apie\Maker\Utils;
 use DateTimeImmutable;
+use Exception;
+use Faker\Generator;
 use ReflectionClass;
 use Throwable;
 
@@ -102,8 +104,23 @@ class CodeGeneratedLog implements EntityInterface, CodeWriterConfigurationInterf
         return rtrim($this->makerConfig['target_namespace'], '\\') . '\\' . ltrim($sub, '\\');
     }
 
-    public static function createRandom(): never
+    public static function createRandom(Generator $faker): self
     {
-        throw new \RuntimeException('I can not create a random instance of CodeGeneratedLog');
+        $res = (new ReflectionClass(__CLASS__))->newInstanceWithoutConstructor();
+        $res->id = $faker->fakeClass(CodeGeneratedLogIdentifier::class);
+        $res->date = $faker->fakeClass(DateTimeImmutable::class);
+        $res->strategy = $faker->fakeClass(OverwriteStrategy::class);
+        if ($faker->boolean()) {
+            $exception = new Exception($faker->text(30));
+            //$exception = $faker->fakeClass(Exception::class);
+            $res->errorMessage = $exception->getMessage();
+            $res->errorStacktrace = $exception->getTraceAsString();
+        } else {
+            $res->errorMessage = $res->errorStacktrace = null;
+        }
+        $res->makerConfig = [
+            'dummy' => $faker->languageCode()
+        ];
+        return $res;
     }
 }

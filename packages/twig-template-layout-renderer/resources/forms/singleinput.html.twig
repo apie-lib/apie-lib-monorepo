@@ -4,8 +4,9 @@
     name="{{ property('name').getChildFormFieldName() }}"
     types="{{ property('types').toArray() | join(',') }}"
     label="{{ translate(property('label')) }}"
-    {%if (property('nullable')) %}allows-null{% endif %}
-    {%if (property('allowsEmptyString')) %}empty-string-allowed{% endif %}
+    {% if (property('nullable')) %}allows-null{% endif %}
+    {% if (property('allowsEmptyString')) %}empty-string-allowed{% endif %}
+    {% if (not property('nullable') and not property('allowsEmptyString')) %}required{% endif %}
 >
 {% for validationCheck in property('validationChecks') %}
   <apie-constraint-check-definition{% if validationCheck.exactMatch is defined %} class="unchecked"{% endif %}

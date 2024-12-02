@@ -5,10 +5,12 @@ use Apie\Common\Events\ApieResourceCreated;
 use Apie\Maker\BoundedContext\Resources\CodeGeneratedLog;
 use Symfony\Bundle\FrameworkBundle\Command\CacheWarmupCommand;
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate;
 use Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface;
 use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 final class DoCacheWarmupForApieMaker implements EventSubscriberInterface
 {
@@ -39,22 +41,13 @@ final class DoCacheWarmupForApieMaker implements EventSubscriberInterface
         }
         $cacheDir = $this->kernel->getContainer()->getParameter('kernel.cache_dir');
 
-        @unlink($cacheDir . '/url_generating_routes.php');
-        @unlink($cacheDir . '/url_generating_routes.php.meta');
-        @unlink($cacheDir . '/url_matching_routes.php');
-        @unlink($cacheDir . '/url_matching_routes.php.meta');
-        $this->cacheWarmer->enableOptionalWarmers();
-        
-
-        if ($this->kernel instanceof WarmableInterface) {
-            $this->kernel->warmUp($cacheDir);
-        }
-
-        $preload = $this->cacheWarmer->warmUp($cacheDir);
-        $buildDir = $this->kernel->getContainer()->getParameter('kernel.build_dir');
-        $preloadFile = $buildDir.'/'.$this->kernel->getContainer()->getParameter('kernel.container_class').'.preload.php';
-        if ($preload && $cacheDir === $buildDir && file_exists($preloadFile)) {
-            Preloader::append($preloadFile, $preload);
-        }
+        /** @var EventDispatcherinterface */
+        $dispatcher = $this->kernel->getContainer()->get('event_dispatcher');
+        $dispatcher->addListener(KernelEvents::TERMINATE, function () use ($cacheDir) {
+            @unlink($cacheDir . '/url_generating_routes.php');
+            @unlink($cacheDir . '/url_matching_routes.php');
+            @unlink($cacheDir . '/url_generating_routes.php.meta');
+            @unlink($cacheDir . '/url_matching_routes.php.meta');
+        });
     }
 }
