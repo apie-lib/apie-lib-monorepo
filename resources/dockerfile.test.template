@@ -23,8 +23,7 @@ RUN apt-get install -y \
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 RUN docker-php-ext-install opcache gd
-RUN pecl install pcov \
-    && docker-php-ext-enable pcov
+RUN pecl install pcov && docker-php-ext-enable pcov || true
 COPY ./packages/PACKAGE_NAME /app/packages/PACKAGE_NAME
 WORKDIR /app/packages/PACKAGE_NAME
 COPY bin/run-tests /app/packages/PACKAGE_NAME/bin/run-tests
