@@ -24,6 +24,18 @@ class ClassNameReference implements HasRegexValueObjectInterface, LimitedOptions
     use IsClassNameReference;
     use IsStringValueObject;
 
+    private const CLASSNAMES = [
+        StringList::class,
+        __CLASS__,
+        VendorValueObject::class,
+        UploadedFileInterface::class,
+        StoredFile::class,
+        DateTimeInterface::class,
+        DateTimeImmutable::class,
+        DateTime::class,
+        DateTimeZone::class,
+    ];
+
     public static function validate(string $input): void
     {
         if (!preg_match(static::getRegularExpression(), $input)) {
@@ -32,7 +44,7 @@ class ClassNameReference implements HasRegexValueObjectInterface, LimitedOptions
                 new ReflectionClass(self::class)
             );
         }
-        if (!class_exists($input)) {
+        if (!class_exists($input) && !interface_exists($input)) {
             throw new InvalidStringForValueObjectException(
                 $input,
                 new ReflectionClass(self::class)
@@ -42,22 +54,11 @@ class ClassNameReference implements HasRegexValueObjectInterface, LimitedOptions
 
     public static function createRandom(Generator $factory): self
     {
-        return new self($factory->randomElement([
-            StringList::class,
-            __CLASS__,
-            VendorValueObject::class
-        ]));
+        return new self($factory->randomElement(self::CLASSNAMES));
     }
 
     public static function getOptions(): StringSet
     {
-        return new StringSet([
-            UploadedFileInterface::class,
-            StoredFile::class,
-            DateTimeInterface::class,
-            DateTimeImmutable::class,
-            DateTime::class,
-            DateTimeZone::class,
-        ]);
+        return new StringSet(self::CLASSNAMES);
     }
 }

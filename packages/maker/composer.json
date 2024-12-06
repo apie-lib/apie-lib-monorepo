@@ -44,7 +44,8 @@
     "apie/core": "self.version",
     "haydenpierce/class-finder": "0.5.3",
     "nette/php-generator": "^4.1.5",
-    "nikic/php-parser": "^4.19.1"
+    "nikic/php-parser": "^4.19.1",
+    "psr/http-message": "^1.1"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
