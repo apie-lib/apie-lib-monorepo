@@ -3,6 +3,32 @@ info:
   title: 'Apie-lib generated OpenAPI spec'
   version: 1.0.0
 paths:
+  '/ObjectWithRelation/dropdown-options/{property}':
+    post:
+      tags:
+        - ObjectWithRelation
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.ObjectWithRelation
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
   '/Order/dropdown-options/{property}':
     post:
       tags:
@@ -16,7 +42,7 @@ paths:
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -42,7 +68,7 @@ paths:
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -68,7 +94,7 @@ paths:
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -94,7 +120,7 @@ paths:
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -120,7 +146,7 @@ paths:
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -146,14 +172,47 @@ paths:
           description: 'id of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
         -
           name: property
           in: path
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/ObjectWithRelation/{id}/dropdown-options/{property}':
+    post:
+      tags:
+        - ObjectWithRelation
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.existing.ObjectWithRelation
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -179,14 +238,14 @@ paths:
           description: 'id of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
         -
           name: property
           in: path
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -212,14 +271,14 @@ paths:
           description: 'id of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
         -
           name: property
           in: path
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -245,14 +304,14 @@ paths:
           description: 'id of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
         -
           name: property
           in: path
           description: 'property of instance of PartialInput'
           required: true
           schema:
-            $ref: '#/components/schemas/PartialInput-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -265,6 +324,115 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+  /ObjectWithRelation:
+    post:
+      tags:
+        - ObjectWithRelation
+        - resource
+      description: 'Creates an instance of ObjectWithRelation'
+      operationId: post-ObjectWithRelation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectWithRelation-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectWithRelation-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    get:
+      tags:
+        - ObjectWithRelation
+        - resource
+      description: 'Gets a list of resource that are an instance of ObjectWithRelation'
+      operationId: get-all-ObjectWithRelation
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ObjectWithRelation-get'
+      parameters:
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: 'query[id]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[userId]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[orderId]'
+          in: query
+          schema:
+            type: string
+            nullable: true
   /Order:
     post:
       tags:
@@ -895,6 +1063,90 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Animal-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  '/ObjectWithRelation/{id}':
+    get:
+      tags:
+        - ObjectWithRelation
+        - resource
+      description: 'Gets a resource of ObjectWithRelation with a specific id'
+      operationId: get-single-ObjectWithRelation
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of ObjectWithRelation'
+          required: true
+          schema:
+            $ref: '#/components/schemas/ObjectWithRelationIdentifier-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectWithRelation-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    patch:
+      tags:
+        - ObjectWithRelation
+        - resource
+      description: 'Modifies an instance of ObjectWithRelation'
+      operationId: patch-single-ObjectWithRelation
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of ObjectWithRelation'
+          required: true
+          schema:
+            $ref: '#/components/schemas/ObjectWithRelationIdentifier-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectWithRelation-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectWithRelation-get'
         '400':
           description: 'Invalid request'
           content:
@@ -1685,7 +1937,7 @@ paths:
           description: 'id of instance of Order'
           required: true
           schema:
-            $ref: '#/components/schemas/OrderIdentifier-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -1747,7 +1999,7 @@ paths:
           description: 'id of instance of User'
           required: true
           schema:
-            $ref: '#/components/schemas/UserIdentifier-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -1809,7 +2061,7 @@ paths:
           description: 'id of instance of User'
           required: true
           schema:
-            $ref: '#/components/schemas/UserIdentifier-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       responses:
         '200':
           description: OK
@@ -1837,7 +2089,7 @@ paths:
           description: 'id of instance of User'
           required: true
           schema:
-            $ref: '#/components/schemas/UserIdentifier-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -1905,7 +2157,7 @@ paths:
           description: 'id of instance of User'
           required: true
           schema:
-            $ref: '#/components/schemas/UserIdentifier-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       requestBody:
         content:
           application/json:
@@ -1975,7 +2227,7 @@ paths:
           description: 'properties of instance of __construct'
           required: true
           schema:
-            $ref: '#/components/schemas/File-post'
+            $ref: '#/components/schemas/NonEmptyString-post'
       responses:
         '200':
           description: OK
@@ -2545,6 +2797,43 @@ components:
       type: string
       format: nonemptystring
       pattern: ^.+$
+    ObjectWithRelation-get:
+      type: object
+      required:
+        - id
+        - userId
+        - orderId
+      properties:
+        id:
+          $ref: '#/components/schemas/ObjectWithRelationIdentifier-get'
+        userId:
+          $ref: '#/components/schemas/UserIdentifier-get'
+        orderId:
+          $ref: '#/components/schemas/OrderIdentifier-nullable-get'
+    ObjectWithRelation-patch:
+      type: object
+      properties:
+        userId:
+          $ref: '#/components/schemas/UserIdentifier-post'
+        orderId:
+          $ref: '#/components/schemas/OrderIdentifier-nullable-post'
+    ObjectWithRelation-post:
+      type: object
+      required:
+        - userId
+      properties:
+        userId:
+          $ref: '#/components/schemas/UserIdentifier-post'
+        orderId:
+          $ref: '#/components/schemas/OrderIdentifier-nullable-post'
+    ObjectWithRelationIdentifier-get:
+      type: string
+      format: objectwithrelationidentifier
+      pattern: '^[a-zA-Z0-9]{22}$'
+    ObjectWithRelationIdentifier-post:
+      type: string
+      format: objectwithrelationidentifier
+      pattern: '^[a-zA-Z0-9]{22}$'
     Order-get:
       type: object
       required:
@@ -2563,6 +2852,12 @@ components:
         orderLineList:
           $ref: '#/components/schemas/OrderLineList-post'
     OrderIdentifier-get:
+      type: integer
+      nullable: true
+    OrderIdentifier-nullable-get:
+      type: integer
+      nullable: true
+    OrderIdentifier-nullable-post:
       type: integer
       nullable: true
     OrderIdentifier-post:

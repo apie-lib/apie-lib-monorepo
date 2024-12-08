@@ -1,11 +1,10 @@
 <?php
-namespace Apie\TextValueObjects;
+namespace Apie\Core\ValueObjects;
 
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\Concerns\IndexesWords;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
-use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]

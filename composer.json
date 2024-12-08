@@ -221,7 +221,7 @@
             "Apie\\TextValueObjects\\EncryptedPassword",
             "Apie\\TextValueObjects\\FirstName",
             "Apie\\TextValueObjects\\LastName",
-            "Apie\\TextValueObjects\\NonEmptyString",
+            "Apie\\Core\\ValueObjects\\NonEmptyString",
             "Apie\\TextValueObjects\\SmallDatabaseText",
             "Apie\\TextValueObjects\\StrongPassword",
             "Apie\\SchemaGenerator\\Enums\\SchemaUsages",

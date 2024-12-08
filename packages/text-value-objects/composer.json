@@ -25,7 +25,6 @@
       "Apie\\TextValueObjects\\EncryptedPassword",
       "Apie\\TextValueObjects\\FirstName",
       "Apie\\TextValueObjects\\LastName",
-      "Apie\\TextValueObjects\\NonEmptyString",
       "Apie\\TextValueObjects\\SmallDatabaseText",
       "Apie\\TextValueObjects\\StrongPassword"
     ]

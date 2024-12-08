@@ -4,11 +4,9 @@ namespace Apie\Maker\EventListeners;
 use Apie\Common\Events\ApieResourceCreated;
 use Apie\Maker\BoundedContext\Resources\CodeGeneratedLog;
 use Symfony\Bundle\FrameworkBundle\Command\CacheWarmupCommand;
-use Symfony\Component\DependencyInjection\Dumper\Preloader;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate;
-use Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\KernelEvents;
 

@@ -103,6 +103,9 @@ class DoApiCallTest extends TestCase
             new GetPrimitiveField('', 13)
         );
         $testApplication->bootApplication();
+        if ($testRequest instanceof BootstrapRequestInterface) {
+            $testRequest->bootstrap($testApplication);
+        }
         $response = $testApplication->httpRequest($testRequest);
         $this->assertEquals(422, $response->getStatusCode());
         $this->validateOpenApiSpec(

@@ -21,6 +21,7 @@ use Apie\IntegrationTests\Requests\JsonFields\GetAndSetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetUploadedFileField;
 use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetUuidField;
+use Apie\IntegrationTests\Requests\JsonFields\SetPrimitiveField;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
 use Apie\TextValueObjects\FirstName;
@@ -183,6 +184,29 @@ trait CreatesApieBoundedContext
                     )
                 ),
             ),
+        );
+    }
+
+    /**
+     * Test for dropdown action for comboboxes.
+     */
+    public function createPropertyOptionsTestRequest(): TestRequestInterface
+    {
+        $user = new User(UserIdentifier::fromNative('test@example.com'));
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'ObjectWithRelation/dropdown-options/userId',
+            new GetAndSetObjectField(
+                '',
+                new SetPrimitiveField('input', 'test@'),
+                new GetAndSetObjectField(
+                    '0',
+                    new GetPrimitiveField('value', 'test@example.com'),
+                    new GetPrimitiveField('displayValue', 'test@example.com'),
+                )
+            ),
+            entities: [$user],
+            discardValidationOnFaker: true
         );
     }
 

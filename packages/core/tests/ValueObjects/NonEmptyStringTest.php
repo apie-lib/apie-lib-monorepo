@@ -1,10 +1,10 @@
 <?php
-namespace Apie\Tests\TextValueObjects;
+namespace Apie\Tests\Core\ValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
-use Apie\TextValueObjects\NonEmptyString;
 use PHPUnit\Framework\TestCase;
 
 class NonEmptyStringTest extends TestCase

@@ -22,7 +22,6 @@ use Beste\Clock\FrozenClock;
 use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
-use RuntimeException;
 
 class CodeGeneratedLogTest extends TestCase
 {

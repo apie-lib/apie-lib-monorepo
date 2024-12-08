@@ -3,8 +3,8 @@
 namespace Apie\IntegrationTests\Apie\TypeDemo\Entities;
 
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\OrderLineIdentifier;
-use Apie\TextValueObjects\NonEmptyString;
 
 class OrderLine implements EntityInterface
 {

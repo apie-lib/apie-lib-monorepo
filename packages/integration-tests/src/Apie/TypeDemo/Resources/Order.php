@@ -12,7 +12,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\OrderIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Lists\OrderLineList;
 
 #[RemovalCheck(new StaticCheck())]
-#[FakeCount(0)]
+#[FakeCount(1)]
 class Order implements EntityInterface
 {
     private OrderIdentifier $id;

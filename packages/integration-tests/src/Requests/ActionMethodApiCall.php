@@ -16,7 +16,7 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class ActionMethodApiCall implements TestRequestInterface, BootstrapRequestInterface
 {
-    private bool $faked;
+    private bool $faked = false;
 
     /**
      * @param array<int, EntityInterface> $entities
@@ -28,6 +28,7 @@ class ActionMethodApiCall implements TestRequestInterface, BootstrapRequestInter
         private readonly bool $discardRequestValidation = false,
         private readonly bool $discardResponseValidation = false,
         private readonly array $entities = [],
+        private readonly bool $discardValidationOnFaker = false,
     ) {
     }
 
@@ -47,12 +48,12 @@ class ActionMethodApiCall implements TestRequestInterface, BootstrapRequestInter
 
     public function shouldDoRequestValidation(): bool
     {
-        return !$this->discardRequestValidation;
+        return !$this->discardRequestValidation && !($this->faked && $this->discardValidationOnFaker);
     }
 
     public function shouldDoResponseValidation(): bool
     {
-        return !$this->discardResponseValidation;
+        return !$this->discardResponseValidation && !($this->faked && $this->discardValidationOnFaker);
     }
 
     public function getRequest(): ServerRequestInterface
@@ -77,7 +78,7 @@ class ActionMethodApiCall implements TestRequestInterface, BootstrapRequestInter
             IntegrationTestLogger::failTestShowError();
         }
         TestCase::assertEquals(200, $statusCode, 'Expect status code 200, got: ' . $body);
-        if ($this->inputOutput instanceof JsonSetFieldInterface) {
+        if ($this->shouldDoRequestValidation() && $this->inputOutput instanceof JsonSetFieldInterface) {
             $data = json_decode($body, true);
             $this->inputOutput->assertResponseValue($data);
         }
