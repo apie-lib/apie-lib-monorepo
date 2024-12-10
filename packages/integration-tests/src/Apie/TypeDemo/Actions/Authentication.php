@@ -4,6 +4,8 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Actions;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\Route;
 use Apie\Core\BoundedContext\BoundedContext;
+use Apie\Core\Context\ApieContext;
+use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
@@ -42,5 +44,14 @@ class Authentication
     public function currentSession(#[Context] SessionInterface $sessionInterface): array
     {
         return $sessionInterface->all();
+    }
+
+    public function isThisMe(#[Context] ApieContext $apieContext, UserIdentifier $userId): bool
+    {
+        $authenticated = $apieContext->getContext(ContextConstants::AUTHENTICATED_USER, false);
+        if (!$authenticated) {
+            return false;
+        }
+        return $authenticated->getId()->toNative() === $userId->toNative();
     }
 }

@@ -188,7 +188,7 @@ trait CreatesApieBoundedContext
     }
 
     /**
-     * Test for dropdown action for comboboxes.
+     * Test for dropdown action for comboboxes on entity create
      */
     public function createPropertyOptionsTestRequest(): TestRequestInterface
     {
@@ -196,6 +196,29 @@ trait CreatesApieBoundedContext
         return new ActionMethodApiCall(
             new BoundedContextId('types'),
             'ObjectWithRelation/dropdown-options/userId',
+            new GetAndSetObjectField(
+                '',
+                new SetPrimitiveField('input', 'test@'),
+                new GetAndSetObjectField(
+                    '0',
+                    new GetPrimitiveField('value', 'test@example.com'),
+                    new GetPrimitiveField('displayValue', 'test@example.com'),
+                )
+            ),
+            entities: [$user],
+            discardValidationOnFaker: true
+        );
+    }
+
+    /**
+     * Test for dropdown action for comboboxes on action method call.
+     */
+    public function createMethodArgumentOptionsTestRequest(): TestRequestInterface
+    {
+        $user = new User(UserIdentifier::fromNative('test@example.com'));
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'action/Authentication/isThisMe/dropdown-options/userId',
             new GetAndSetObjectField(
                 '',
                 new SetPrimitiveField('input', 'test@'),

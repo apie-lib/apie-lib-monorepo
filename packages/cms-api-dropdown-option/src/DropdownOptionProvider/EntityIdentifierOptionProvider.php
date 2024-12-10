@@ -38,7 +38,7 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
             return null;
         }
         $class = new ReflectionClass($typehint->getName());
-        if (!$class->implementsInterface(IdentifierInterface::class)) {
+        if (!in_array(IdentifierInterface::class, $class->getInterfaceNames())) {
             return null;
         }
         $boundedContextId = $apieContext->hasContext(ContextConstants::BOUNDED_CONTEXT_ID)
@@ -58,7 +58,7 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
         $typehint = $fieldMetadata->getTypehint();
         assert($typehint instanceof ReflectionNamedType);
         $class = new ReflectionClass($typehint->getName());
-        if ($class->implementsInterface(IdentifierInterface::class)) {
+        if (in_array(IdentifierInterface::class, $class->getInterfaceNames())) {
             $class = $class->getMethod('getReferenceFor')->invoke(null);
         }
         $result = $this->apieDatalayer->all($class, $boundedContext->getId())

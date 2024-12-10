@@ -15,6 +15,7 @@ use Apie\Core\Lists\StringList;
 use Apie\Core\Utils\EntityUtils;
 use LogicException;
 use ReflectionClass;
+use ReflectionMethod;
 
 class DropdownOptionsAction implements ActionInterface
 {
@@ -24,9 +25,13 @@ class DropdownOptionsAction implements ActionInterface
 
     public static function isAuthorized(ApieContext $context, bool $runtimeChecks, bool $throwError = false): bool
     {
-        $refl = new ReflectionClass($context->getContext(ContextConstants::RESOURCE_NAME, $throwError));
-        if (EntityUtils::isPolymorphicEntity($refl) && $runtimeChecks && $context->hasContext(ContextConstants::RESOURCE)) {
-            $refl = new ReflectionClass($context->getContext(ContextConstants::RESOURCE, $throwError));
+        if ($context->hasContext(ContextConstants::RESOURCE_NAME)) {
+            $refl = new ReflectionClass($context->getContext(ContextConstants::RESOURCE_NAME, $throwError));
+            if (EntityUtils::isPolymorphicEntity($refl) && $runtimeChecks && $context->hasContext(ContextConstants::RESOURCE)) {
+                $refl = new ReflectionClass($context->getContext(ContextConstants::RESOURCE, $throwError));
+            }
+        } else {
+            $refl = new ReflectionClass($context->getContext(ContextConstants::SERVICE_CLASS));
         }
         return $context->appliesToContext($refl, $runtimeChecks, $throwError ? new LogicException('Class is not authorized') : null);
     }
@@ -74,8 +79,14 @@ class DropdownOptionsAction implements ActionInterface
         return new StringList([$class->getShortName()]);
     }
 
-    public static function getRouteAttributes(ReflectionClass $class): array
+    public static function getRouteAttributes(ReflectionClass $class, ?ReflectionMethod $method = null): array
     {
+        if ($method !== null) {
+            return [
+                ContextConstants::SERVICE_CLASS => $class->name,
+                ContextConstants::METHOD_NAME => $method->name,
+            ];
+        }
         return [
             ContextConstants::GET_OBJECT => true,
             ContextConstants::RESOURCE_NAME => $class->name,

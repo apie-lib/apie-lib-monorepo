@@ -324,6 +324,188 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/Calculator/add/dropdown-options/{property}':
+    post:
+      tags:
+        - Calculator
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.Calculator-add
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/Authentication/currentSession/dropdown-options/{property}':
+    post:
+      tags:
+        - Authentication
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.Authentication-currentSession
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/Authentication/currentUser/dropdown-options/{property}':
+    post:
+      tags:
+        - Authentication
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.Authentication-currentUser
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/Authentication/isThisMe/dropdown-options/{property}':
+    post:
+      tags:
+        - Authentication
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.Authentication-isThisMe
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/Calculator/multiply/dropdown-options/{property}':
+    post:
+      tags:
+        - Calculator
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.Calculator-multiply
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/Calculator/squareRoot/dropdown-options/{property}':
+    post:
+      tags:
+        - Calculator
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.Calculator-squareRoot
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/Authentication/verifyAuthentication/dropdown-options/{property}':
+    post:
+      tags:
+        - Authentication
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.Authentication-verifyAuthentication
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
   /ObjectWithRelation:
     post:
       tags:
@@ -1764,6 +1946,54 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Entity-nullable-get'
+  /Authentication/isThisMe:
+    post:
+      tags:
+        - Authentication
+        - action
+      description: 'Calls method isThisMe and returns return value.'
+      operationId: call-method-Authentication-isThisMe
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - userId
+              type: object
+              properties:
+                userId:
+                  $ref: '#/components/schemas/UserIdentifier-post'
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: boolean
   '/calc/{numberOne}/times/{numberTwo}':
     post:
       tags:

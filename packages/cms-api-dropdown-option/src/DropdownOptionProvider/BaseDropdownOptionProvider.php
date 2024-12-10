@@ -2,6 +2,7 @@
 namespace Apie\CmsApiDropdownOption\DropdownOptionProvider;
 
 use Apie\CmsApiDropdownOption\Lists\DropdownOptionList;
+use Apie\Core\ApieLib;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\Core\Metadata\Fields\ConstructorParameter;
@@ -10,6 +11,8 @@ use Apie\Core\PropertyToFieldMetadataUtil;
 use Apie\Core\ValueObjects\Utils;
 use ReflectionClass;
 use ReflectionMethod;
+use Symfony\Component\VarDumper\Cloner\VarCloner;
+use Symfony\Component\VarDumper\Dumper\CliDumper;
 
 abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInterface
 {
@@ -39,10 +42,11 @@ abstract class BaseDropdownOptionProvider implements DropdownOptionProviderInter
                 $apieContext,
                 $property
             );
-            return $fieldMetadata instanceof FieldInterface && $this->supportsField($fieldMetadata, $apieContext);
+            if ($fieldMetadata instanceof FieldInterface) {
+                return $this->supportsField($fieldMetadata, $apieContext);
+            }
         }
-        // @phpstan-ignore-next-line
-        if (false && $apieContext->hasContext(ContextConstants::SERVICE_CLASS) && $apieContext->hasContext(ContextConstants::METHOD_NAME)) {
+        if ($apieContext->hasContext(ContextConstants::SERVICE_CLASS) && $apieContext->hasContext(ContextConstants::METHOD_NAME)) {
             $refl = new ReflectionMethod(
                 $apieContext->getContext(ContextConstants::SERVICE_CLASS),
                 $apieContext->getContext(ContextConstants::METHOD_NAME)
