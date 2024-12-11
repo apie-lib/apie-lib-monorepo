@@ -8,6 +8,9 @@ use Apie\IntegrationTests\Concerns\CreatesApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\Enums\DatalayerImplementation;
 
+/**
+ * @codeCoverageIgnore
+ */
 final class IntegrationTestHelper
 {
     use CreatesApplications;

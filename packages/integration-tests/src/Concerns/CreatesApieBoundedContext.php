@@ -26,6 +26,9 @@ use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
 use Apie\TextValueObjects\FirstName;
 
+/**
+ * @codeCoverageIgnore
+ */
 trait CreatesApieBoundedContext
 {
     /**
@@ -189,6 +192,8 @@ trait CreatesApieBoundedContext
 
     /**
      * Test for dropdown action for comboboxes on entity create
+     * 
+     * Url POST /ObjectWithRelation/dropdown-options/userId
      */
     public function createPropertyOptionsTestRequest(): TestRequestInterface
     {
@@ -207,6 +212,24 @@ trait CreatesApieBoundedContext
             ),
             entities: [$user],
             discardValidationOnFaker: true
+        );
+    }
+
+    /**
+     * Test for invalid property for comboboxes on entity create
+     * 
+     * Url POST /ObjectWithRelation/dropdown-options/unknown
+     */
+    public function createInvalidPropertyOptionsTestRequest(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'ObjectWithRelation/dropdown-options/unknown',
+            new GetAndSetObjectField(
+                '',
+                new SetPrimitiveField('input', 'test@'),
+            ),
+            entities: [],
         );
     }
 

@@ -7,6 +7,9 @@ use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 trait CreatesApplications
 {
     public function createTestSymfonyApplication(ApplicationConfig $applicationConfig, BoundedContextConfig $boundedContextConfig): ?TestApplicationInterface
