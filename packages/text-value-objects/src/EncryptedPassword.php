@@ -4,7 +4,7 @@ namespace Apie\TextValueObjects;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
-use Apie\Core\ValueObjects\IsStringValueObject;
+use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 use Faker\Generator;
 use Stringable;
 
@@ -12,12 +12,17 @@ use Stringable;
 #[ProvideIndex('getIndexes')]
 final class EncryptedPassword implements StringValueObjectInterface
 {
-    use IsStringValueObject;
+    use IsStringWithRegexValueObject;
 
     public static function fromUnencryptedPassword(Stringable|string $password): self
     {
         $password = (string) $password;
         return new self(password_hash($password, null));
+    }
+
+    public static function getRegularExpression(): string
+    {
+        return '/^[$]2[abxy]?[$](?:0[4-9]|[12][0-9]|3[01])[$][.\/0-9a-zA-Z]{53,60}$/';
     }
 
     public function verifyUnencryptedPassword(Stringable|string $password): bool
