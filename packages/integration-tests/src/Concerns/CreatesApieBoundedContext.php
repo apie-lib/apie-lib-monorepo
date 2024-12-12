@@ -13,6 +13,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\UploadedFile;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
+use Apie\IntegrationTests\Console\InteractiveConsoleCommand;
 use Apie\IntegrationTests\Requests\ActionMethodApiCall;
 use Apie\IntegrationTests\Requests\CmsFormSubmitRequest;
 use Apie\IntegrationTests\Requests\GetResourceApiCall;
@@ -25,6 +26,7 @@ use Apie\IntegrationTests\Requests\JsonFields\SetPrimitiveField;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
 use Apie\TextValueObjects\FirstName;
+use ReflectionClass;
 
 /**
  * @codeCoverageIgnore
@@ -288,6 +290,60 @@ trait CreatesApieBoundedContext
             new GetPrimitiveField('', 13)
         );
     }
+
+    public function createSimpleConsoleInteraction(): InteractiveConsoleCommand
+    {
+        return new InteractiveConsoleCommand(
+            'apie:types:primitive-only:create',
+            PrimitiveOnly::class,
+            [
+                'stringField' => [0, 'string'],
+                'integerField' => [0, 42],
+                'floatingPoint' => [0, 1.5],
+                'booleanField' => [0, 'yes'],
+                'id' => ['075433c9-ca1f-435c-be81-61bae3009521']
+            ]
+        );
+    }
+
+    public function createOrderLineInteraction(): InteractiveConsoleCommand
+    {
+        return new InteractiveConsoleCommand(
+            'apie:types:order:create',
+            Order::class,
+            [
+                'orderLineList' => ['yes', 'my order line description', 'no'],
+            ]
+        );
+    }
+
+    public function createFileUploadInteraction(): InteractiveConsoleCommand
+    {
+        return new InteractiveConsoleCommand(
+            'apie:types:uploaded-file:create',
+            UploadedFile::class,
+            [
+                'id' => ['075433c9-ca1f-435c-be81-61bae3009521'],
+                'file' => [__FILE__],
+                'imageFile' => ['1'],
+            ]
+        );
+    }
+
+    /*public function createPolymorphicObjectInteraction(): InteractiveConsoleCommand
+    {
+        return new InteractiveConsoleCommand(
+            'apie:types:animal:create',
+            Animal::class,
+            [
+                'type' => ['mammal'],
+                'name' => ['human'],
+                'id' => ['075433c9-ca1f-435c-be81-61bae3009521'],
+                'animalName' => ['Donald'],
+                'lastName' => ['Duck'],
+            ]
+        );
+    }  */  
 
     public function createExampleBoundedContext(): BoundedContextConfig
     {
