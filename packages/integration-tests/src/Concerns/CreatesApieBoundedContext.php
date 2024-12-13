@@ -10,6 +10,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Order;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\RestrictedEntity;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\UploadedFile;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -214,6 +215,26 @@ trait CreatesApieBoundedContext
             ),
             entities: [$user],
             discardValidationOnFaker: true
+        );
+    }
+
+    /**
+     * Test for entity with permission restrictions.
+     * 
+     * POST /RestrictedEntity
+     */
+    public function createObjectWithRestrictionTestRequest(): TestRequestInterface
+    {
+        return new ValidCreateResourceApiCall(
+            new BoundedContextId('types'),
+            RestrictedEntity::class,
+            new GetAndSetObjectField(
+                '',
+                new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440000'),
+                new GetAndSetPrimitiveField('companyName', 'Company NV'),
+                new GetPrimitiveField('userId', null),
+                new GetPrimitiveField('requiredPermissions', [])
+            ),
         );
     }
 

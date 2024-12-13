@@ -107,6 +107,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+  '/RestrictedEntity/dropdown-options/{property}':
+    post:
+      tags:
+        - RestrictedEntity
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.RestrictedEntity
+      parameters:
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
   '/UploadedFile/dropdown-options/{property}':
     post:
       tags:
@@ -231,6 +257,39 @@ paths:
         - PrimitiveOnly
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.existing.PrimitiveOnly
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/RestrictedEntity/{id}/dropdown-options/{property}':
+    post:
+      tags:
+        - RestrictedEntity
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.existing.RestrictedEntity
       parameters:
         -
           name: id
@@ -933,6 +992,120 @@ paths:
           schema:
             type: string
             nullable: true
+  /RestrictedEntity:
+    post:
+      tags:
+        - RestrictedEntity
+        - resource
+      description: 'Creates an instance of RestrictedEntity'
+      operationId: put-RestrictedEntity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestrictedEntity-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestrictedEntity-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    get:
+      tags:
+        - RestrictedEntity
+        - resource
+      description: 'Gets a list of resource that are an instance of RestrictedEntity'
+      operationId: get-all-RestrictedEntity
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/RestrictedEntity-get'
+      parameters:
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: 'query[id]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[companyName]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[requiredPermissions]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[userId]'
+          in: query
+          schema:
+            type: string
+            nullable: true
   /UploadedFile:
     post:
       tags:
@@ -1535,6 +1708,90 @@ paths:
       responses:
         '204':
           description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  '/RestrictedEntity/{id}':
+    get:
+      tags:
+        - RestrictedEntity
+        - resource
+      description: 'Gets a resource of RestrictedEntity with a specific id'
+      operationId: get-single-RestrictedEntity
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of RestrictedEntity'
+          required: true
+          schema:
+            $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestrictedEntity-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    patch:
+      tags:
+        - RestrictedEntity
+        - resource
+      description: 'Modifies an instance of RestrictedEntity'
+      operationId: patch-single-RestrictedEntity
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'id of instance of RestrictedEntity'
+          required: true
+          schema:
+            $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestrictedEntity-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestrictedEntity-get'
         '400':
           description: 'Invalid request'
           content:
@@ -2588,6 +2845,14 @@ components:
             - bird
           type: string
           nullable: false
+    CompanyName-get:
+      type: string
+      format: companyname
+      pattern: '^\w[\w\-\s''`"‘’“”‟,]*$'
+    CompanyName-post:
+      type: string
+      format: companyname
+      pattern: '^\w[\w\-\s''`"‘’“”‟,]*$'
     DatabaseText-nullable-get:
       maxLength: 65535
       minLength: 0
@@ -3174,6 +3439,17 @@ components:
         input:
           type: string
           nullable: false
+    Permission-get:
+      type: object
+      properties: {  }
+    PermissionList-get:
+      type: array
+      items:
+        oneOf:
+          -
+            $ref: '#/components/schemas/Permission-get'
+          -
+            type: string
     Platypus-get:
       type: object
       required:
@@ -3278,6 +3554,45 @@ components:
     PrimitiveOnlyIdentifier-post:
       type: string
       format: primitiveonlyidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    RestrictedEntity-get:
+      type: object
+      required:
+        - id
+        - companyName
+        - requiredPermissions
+        - userId
+      properties:
+        id:
+          $ref: '#/components/schemas/RestrictedEntityIdentifier-get'
+        companyName:
+          $ref: '#/components/schemas/CompanyName-get'
+        requiredPermissions:
+          $ref: '#/components/schemas/PermissionList-get'
+        userId:
+          $ref: '#/components/schemas/UserIdentifier-nullable-get'
+    RestrictedEntity-patch:
+      type: object
+      properties:
+        companyName:
+          $ref: '#/components/schemas/CompanyName-post'
+    RestrictedEntity-post:
+      type: object
+      required:
+        - id
+        - companyName
+      properties:
+        id:
+          $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
+        companyName:
+          $ref: '#/components/schemas/CompanyName-post'
+    RestrictedEntityIdentifier-get:
+      type: string
+      format: restrictedentityidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    RestrictedEntityIdentifier-post:
+      type: string
+      format: restrictedentityidentifier
       pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
     Seagull-get:
       type: object
@@ -3481,6 +3796,10 @@ components:
     UserIdentifier-get:
       type: string
       format: useridentifier
+    UserIdentifier-nullable-get:
+      type: string
+      format: useridentifier
+      nullable: true
     UserIdentifier-post:
       type: string
       format: useridentifier

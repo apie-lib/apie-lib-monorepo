@@ -1,8 +1,13 @@
 <?php
 namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
+use Apie\Core\Attributes\Internal;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Identifiers\Identifier;
 use Apie\Core\Identifiers\UuidV4;
+use Apie\Core\Lists\PermissionList;
+use Apie\Core\Permissions\AllPermission;
+use Apie\Core\Permissions\PermissionInterface;
 use Apie\Core\ValueObjects\DatabaseText;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\Fixtures\ValueObjects\EncryptedPassword;
@@ -10,7 +15,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\TextValueObjects\StrongPassword;
 use LogicException;
 
-final class User implements EntityInterface
+final class User implements EntityInterface, PermissionInterface
 {
     private ?EncryptedPassword $password = null;
 
@@ -94,5 +99,11 @@ final class User implements EntityInterface
             throw new LogicException('User is blocked');
         }
         return $this->password->verifyUnencryptedPassword($password);
+    }
+
+    #[Internal]
+    public function getPermissionIdentifiers(): PermissionList
+    {
+        return new PermissionList([$this->id->toPermission()]);
     }
 }
