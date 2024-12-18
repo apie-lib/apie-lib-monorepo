@@ -16,7 +16,7 @@ use ReflectionClass;
 
 class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterface
 {
-    private bool $faked = false;
+    protected bool $faked = false;
     /**
      * @param class-string<EntityInterface> $resourceName
      * @param array<int, EntityInterface> $entities
@@ -26,7 +26,8 @@ class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterf
         private readonly string $resourceName,
         private readonly string $id,
         private readonly array $entities,
-        private readonly JsonSetFieldInterface $inputOutput
+        private readonly JsonSetFieldInterface $inputOutput,
+        private readonly bool $discardValidationOnFaker = false,
     ) {
     }
 
@@ -37,7 +38,8 @@ class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterf
 
     public function shouldDoResponseValidation(): bool
     {
-        return true;
+        return !$this->discardValidationOnFaker || !$this->faked;
+        ;
     }
 
     public function bootstrap(TestApplicationInterface $testApplication): void
@@ -65,7 +67,9 @@ class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterf
     {
         $body = (string) $response->getBody();
         $statusCode = $response->getStatusCode();
-        TestCase::assertEquals(200, $statusCode, 'Expect object retrieved, got: ' . $body);
+        if (!$this->faked || !$this->discardValidationOnFaker) {
+            TestCase::assertEquals(200, $statusCode, 'Expect object retrieved, got: ' . $body);
+        }
         $data = json_decode($body, true);
         if (!$this->faked) {
             $this->inputOutput->assertResponseValue($data);

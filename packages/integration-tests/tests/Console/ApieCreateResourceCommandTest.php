@@ -2,8 +2,6 @@
 namespace Apie\Tests\IntegrationTests\Console;
 
 use Apie\Core\BoundedContext\BoundedContextId;
-use Apie\Core\Context\ApieContext;
-use Apie\Core\Metadata\MetadataFactory;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Console\InteractiveConsoleCommand;
 use Apie\IntegrationTests\IntegrationTestHelper;

@@ -6,6 +6,7 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
+use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\RestrictedEntityIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Order;
@@ -18,6 +19,7 @@ use Apie\IntegrationTests\Console\InteractiveConsoleCommand;
 use Apie\IntegrationTests\Requests\ActionMethodApiCall;
 use Apie\IntegrationTests\Requests\CmsFormSubmitRequest;
 use Apie\IntegrationTests\Requests\GetResourceApiCall;
+use Apie\IntegrationTests\Requests\GetResourceApiCallDenied;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetUploadedFileField;
@@ -26,8 +28,8 @@ use Apie\IntegrationTests\Requests\JsonFields\GetUuidField;
 use Apie\IntegrationTests\Requests\JsonFields\SetPrimitiveField;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
+use Apie\TextValueObjects\CompanyName;
 use Apie\TextValueObjects\FirstName;
-use ReflectionClass;
 
 /**
  * @codeCoverageIgnore
@@ -195,7 +197,7 @@ trait CreatesApieBoundedContext
 
     /**
      * Test for dropdown action for comboboxes on entity create
-     * 
+     *
      * Url POST /ObjectWithRelation/dropdown-options/userId
      */
     public function createPropertyOptionsTestRequest(): TestRequestInterface
@@ -220,7 +222,7 @@ trait CreatesApieBoundedContext
 
     /**
      * Test for entity with permission restrictions.
-     * 
+     *
      * POST /RestrictedEntity
      */
     public function createObjectWithRestrictionTestRequest(): TestRequestInterface
@@ -239,8 +241,66 @@ trait CreatesApieBoundedContext
     }
 
     /**
+     * Test for entity with permission restrictions.
+     *
+     * GET /RestrictedEntity
+     */
+    public function getObjectWithRestrictionTestRequest(): TestRequestInterface
+    {
+        $object = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440000'),
+            new CompanyName('Company NV'),
+            null
+        );
+        return new GetResourceApiCall(
+            new BoundedContextId('types'),
+            RestrictedEntity::class,
+            '550e8400-e29b-41d4-a716-446655440000',
+            [$object],
+            new GetAndSetObjectField(
+                '',
+                new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440000'),
+                new GetAndSetPrimitiveField('companyName', 'Company NV'),
+                new GetPrimitiveField('userId', null),
+                new GetPrimitiveField('requiredPermissions', [])
+            ),
+            discardValidationOnFaker: true
+        );
+    }
+
+    /**
+     * Test for entity with permission restrictions.
+     *
+     * GET /RestrictedEntity
+     */
+    public function getObjectWithRestrictionDeniedTestRequest(): TestRequestInterface
+    {
+        $userId = UserIdentifier::fromNative('user@example.com');
+        $user = new User($userId);
+        $object = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440000'),
+            new CompanyName('Company NV'),
+            $user
+        );
+        return new GetResourceApiCallDenied(
+            new BoundedContextId('types'),
+            RestrictedEntity::class,
+            '550e8400-e29b-41d4-a716-446655440000',
+            [$object, $user],
+            new GetAndSetObjectField(
+                '',
+                new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440000'),
+                new GetAndSetPrimitiveField('companyName', 'Company NV'),
+                new GetPrimitiveField('userId', 'user@example.com'),
+                new GetPrimitiveField('requiredPermissions', ['useratexampledotcom:read', 'useratexampledotcom:write'])
+            ),
+            discardValidationOnFaker: true
+        );
+    }
+
+    /**
      * Test for invalid property for comboboxes on entity create
-     * 
+     *
      * Url POST /ObjectWithRelation/dropdown-options/unknown
      */
     public function createInvalidPropertyOptionsTestRequest(): TestRequestInterface
@@ -364,7 +424,7 @@ trait CreatesApieBoundedContext
                 'lastName' => ['Duck'],
             ]
         );
-    }  */  
+    }  */
 
     public function createExampleBoundedContext(): BoundedContextConfig
     {

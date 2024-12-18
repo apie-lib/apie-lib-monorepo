@@ -7,7 +7,8 @@ use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Metadata\MetadataFactory;
 use ReflectionClass;
 
-class InteractiveConsoleCommand implements DtoInterface {
+class InteractiveConsoleCommand implements DtoInterface
+{
     /**
      * @param class-string<EntityInterface> $class
      * @param array<string, array<int, int|float|string>> $inputPerField

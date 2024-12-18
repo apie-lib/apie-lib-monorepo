@@ -2,7 +2,6 @@
 namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
 use Apie\Core\Attributes\Context;
-use Apie\Core\Attributes\Internal;
 use Apie\Core\Attributes\LoggedIn;
 use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\StaticCheck;

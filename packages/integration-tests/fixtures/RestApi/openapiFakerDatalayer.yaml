@@ -589,19 +589,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -698,19 +698,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -801,19 +801,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -904,19 +904,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1026,19 +1026,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1163,19 +1163,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1272,19 +1272,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1380,6 +1380,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Animal-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
         '404':
           description: 'Resource not found'
           content:
@@ -1417,19 +1429,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1464,6 +1476,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjectWithRelation-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
         '404':
           description: 'Resource not found'
           content:
@@ -1501,19 +1525,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1548,6 +1572,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
         '404':
           description: 'Resource not found'
           content:
@@ -1576,19 +1612,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1623,6 +1659,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrimitiveOnly-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
         '404':
           description: 'Resource not found'
           content:
@@ -1660,19 +1708,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1707,19 +1755,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1754,6 +1802,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
         '404':
           description: 'Resource not found'
           content:
@@ -1791,19 +1851,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1838,6 +1898,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
         '404':
           description: 'Resource not found'
           content:
@@ -1893,19 +1965,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1940,19 +2012,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -1987,6 +2059,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
         '404':
           description: 'Resource not found'
           content:
@@ -2024,19 +2108,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2083,19 +2167,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2127,19 +2211,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2173,19 +2257,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2221,19 +2305,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2280,19 +2364,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2328,19 +2412,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2379,19 +2463,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2441,19 +2525,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2503,19 +2587,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2599,19 +2683,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2661,19 +2745,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -2721,19 +2805,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '405':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '406':
           description: 'Invalid request'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Throwable-get'
+                $ref: '#/components/schemas/NotAcceptedException-get'
         '422':
           description: 'A validation error occurred'
           content:
@@ -3286,6 +3370,17 @@ components:
       type: string
       format: nonemptystring
       pattern: ^.+$
+    NotAcceptedException-get:
+      type: object
+      required:
+        - message
+        - code
+      properties:
+        message:
+          type: string
+          nullable: false
+        code:
+          $ref: '#/components/schemas/mixed'
     ObjectWithRelation-get:
       type: object
       required:
@@ -3798,6 +3893,9 @@ components:
       type: string
       format: useridentifier
     ValidationException-get:
+      required:
+        - message
+        - errors
       type: object
       properties:
         message:
@@ -3806,5 +3904,16 @@ components:
           type: object
           additionalProperties:
             type: string
+    WrongTokenException-get:
+      type: object
+      required:
+        - message
+        - code
+      properties:
+        message:
+          type: string
+          nullable: false
+        code:
+          $ref: '#/components/schemas/mixed'
     mixed:
       nullable: true

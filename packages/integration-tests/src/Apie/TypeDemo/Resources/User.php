@@ -3,10 +3,8 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
 use Apie\Core\Attributes\Internal;
 use Apie\Core\Entities\EntityInterface;
-use Apie\Core\Identifiers\Identifier;
 use Apie\Core\Identifiers\UuidV4;
 use Apie\Core\Lists\PermissionList;
-use Apie\Core\Permissions\AllPermission;
 use Apie\Core\Permissions\PermissionInterface;
 use Apie\Core\ValueObjects\DatabaseText;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
