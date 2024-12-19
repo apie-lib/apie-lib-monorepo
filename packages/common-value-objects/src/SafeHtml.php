@@ -36,7 +36,7 @@ final class SafeHtml implements StringValueObjectInterface, LengthConstraintStri
                 ->forceAttribute('a', 'target', '_blank')
                 ->allowLinkSchemes(['https', 'http', 'mailto'])
                 ->allowRelativeLinks(false)
-                ->withMaxInputLength(70000) // character limit is 65535, but maybe HTML is removed
+                ->withMaxInputLength(1024 * 1024 * 21) // character limit is 20mb, but could be truncated
                 ->dropElement('html')
                 ->dropElement('head')
                 ->dropElement('script')
@@ -74,7 +74,7 @@ final class SafeHtml implements StringValueObjectInterface, LengthConstraintStri
 
     public static function validate(string $input): void
     {
-        if (strlen($input) > 65535) {
+        if (strlen($input) > (1024 * 1024 * 20)) {
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(__CLASS__));
         }
     }
@@ -91,6 +91,6 @@ final class SafeHtml implements StringValueObjectInterface, LengthConstraintStri
 
     public static function maxStringLength(): ?int
     {
-        return 65535;
+        return 1024 * 1024 * 20;
     }
 }

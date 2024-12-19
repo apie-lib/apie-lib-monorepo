@@ -33,7 +33,7 @@ class SafeHtmlTest extends TestCase
     public function it_refuses_large_html()
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        new SafeHtml(str_repeat('aaa', 65536));
+        new SafeHtml(str_repeat('aaa', 20 * 1024 * 1024));
     }
 
     /**
