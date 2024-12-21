@@ -18,7 +18,7 @@ A set of common value object classes that can be used right away or can be used 
 
 ### Enums
 
-enums are just PHP 8.1 enums with common values. They are fully supported by Apie.
+enums are just PHP enums with common values. They are fully supported by Apie.
 
 | Enums | Description |
 | --- | --- |

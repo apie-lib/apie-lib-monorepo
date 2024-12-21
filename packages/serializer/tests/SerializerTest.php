@@ -323,9 +323,6 @@ class SerializerTest extends TestCase
     public function empty_enums_always_fail()
     {
         $refl = new ReflectionClass(EmptyEnum::class);
-        if ($refl->isInstantiable()) {
-            $this->markTestSkipped('Used old version of PHP8.1 where this test fails. See https://github.com/php/php-src/issues/8583');
-        }
         $serializer = $this->givenASerializer();
         $this->expectException(InvalidTypeException::class);
         $serializer->denormalizeNewObject(null, EmptyEnum::class, new ApieContext());

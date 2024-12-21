@@ -26,7 +26,7 @@
     "apie/rest-api": "Access domain object actions in a fully working REST API to your application"
   },
   "require": {
-    "php": ">=8.1",
+    "php": ">=8.3",
     "apie/common": "self.version",
     "apie/core": "self.version",
     "symfony/config": "^6.4",

@@ -23,7 +23,7 @@
     "nette/utils": "3.*"
   },
   "require": {
-    "php": ">=8.1",
+    "php": ">=8.3",
     "apie/core": "self.version",
     "apie/storage-metadata-builder": "self.version",
     "doctrine/orm": "^2.19.5",

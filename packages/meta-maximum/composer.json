@@ -20,7 +20,7 @@
     }
   },
   "require": {
-    "php": ">=8.1",
+    "php": ">=8.3",
     "apie/core": "self.version",
     "apie/meta-recommended": "self.version",
     "apie/cms-api-dropdown-option": "self.version",

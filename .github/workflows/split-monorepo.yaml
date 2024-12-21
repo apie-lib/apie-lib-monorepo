@@ -40,7 +40,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php_version: ['8.1', '8.2', '8.3']
+        php_version: ['8.3', '8.4']
         composer:
           - '--prefer-lowest'
           - ''
@@ -127,12 +127,15 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php_version: ['8.1', '8.3', 'latest']
+        php_version: ['8.3', '8.4']
         package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
     steps:
       -
         id: coverage
         uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
       - uses: actions/cache/restore@v3
         id: restore-cache
         with:

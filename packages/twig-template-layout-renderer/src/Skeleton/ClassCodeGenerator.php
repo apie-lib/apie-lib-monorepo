@@ -30,7 +30,7 @@ final class ClassCodeGenerator
                 ]
             ],
             "require" => [
-                "php" => ">=8.1",
+                "php" => ">=8.3",
                 "apie/core" => $apieVersion,
                 "apie/html-builders" => $apieVersion,
                 "apie/twig-template-layout-renderer" => $apieVersion,

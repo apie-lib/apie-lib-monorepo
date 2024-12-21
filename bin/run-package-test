@@ -38,7 +38,7 @@ if ($selectedPackage->getPackage() === 'fixtures') {
     exit(0);
 }
 
-foreach (['8.3', '8.2', '8.1', 'latest'] as $phpVersion) {
+foreach (['8.4', '8.3', 'latest'] as $phpVersion) {
     if ($arg1 === $phpVersion) {
         $selectedPhpVersion = $phpVersion . ($phpVersion === 'latest' ? '' : '.0-cli');
         break;
