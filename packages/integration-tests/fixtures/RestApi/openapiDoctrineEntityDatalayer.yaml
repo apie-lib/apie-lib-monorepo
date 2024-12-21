@@ -627,6 +627,7 @@ paths:
             application/json:
               schema:
                 required:
+                  - filteredCount
                   - totalCount
                   - first
                   - last
@@ -634,6 +635,10 @@ paths:
                 type: object
                 properties:
                   totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
                     type: integer
                   first:
                     type: string
@@ -736,6 +741,7 @@ paths:
             application/json:
               schema:
                 required:
+                  - filteredCount
                   - totalCount
                   - first
                   - last
@@ -743,6 +749,10 @@ paths:
                 type: object
                 properties:
                   totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
                     type: integer
                   first:
                     type: string
@@ -839,6 +849,7 @@ paths:
             application/json:
               schema:
                 required:
+                  - filteredCount
                   - totalCount
                   - first
                   - last
@@ -846,6 +857,10 @@ paths:
                 type: object
                 properties:
                   totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
                     type: integer
                   first:
                     type: string
@@ -932,6 +947,7 @@ paths:
             application/json:
               schema:
                 required:
+                  - filteredCount
                   - totalCount
                   - first
                   - last
@@ -939,6 +955,10 @@ paths:
                 type: object
                 properties:
                   totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
                     type: integer
                   first:
                     type: string
@@ -1054,6 +1074,7 @@ paths:
             application/json:
               schema:
                 required:
+                  - filteredCount
                   - totalCount
                   - first
                   - last
@@ -1061,6 +1082,10 @@ paths:
                 type: object
                 properties:
                   totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
                     type: integer
                   first:
                     type: string
@@ -1196,6 +1221,7 @@ paths:
             application/json:
               schema:
                 required:
+                  - filteredCount
                   - totalCount
                   - first
                   - last
@@ -1203,6 +1229,10 @@ paths:
                 type: object
                 properties:
                   totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
                     type: integer
                   first:
                     type: string
@@ -1311,6 +1341,7 @@ paths:
             application/json:
               schema:
                 required:
+                  - filteredCount
                   - totalCount
                   - first
                   - last
@@ -1318,6 +1349,10 @@ paths:
                 type: object
                 properties:
                   totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
                     type: integer
                   first:
                     type: string

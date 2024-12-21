@@ -973,6 +973,7 @@
                             "application/json": {
                                 "schema": {
                                     "required": [
+                                        "filteredCount",
                                         "totalCount",
                                         "first",
                                         "last",
@@ -981,6 +982,11 @@
                                     "type": "object",
                                     "properties": {
                                         "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
                                             "type": "integer"
                                         },
                                         "first": {
@@ -1139,6 +1145,7 @@
                             "application/json": {
                                 "schema": {
                                     "required": [
+                                        "filteredCount",
                                         "totalCount",
                                         "first",
                                         "last",
@@ -1147,6 +1154,11 @@
                                     "type": "object",
                                     "properties": {
                                         "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
                                             "type": "integer"
                                         },
                                         "first": {
@@ -1297,6 +1309,7 @@
                             "application/json": {
                                 "schema": {
                                     "required": [
+                                        "filteredCount",
                                         "totalCount",
                                         "first",
                                         "last",
@@ -1305,6 +1318,11 @@
                                     "type": "object",
                                     "properties": {
                                         "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
                                             "type": "integer"
                                         },
                                         "first": {
@@ -1441,6 +1459,7 @@
                             "application/json": {
                                 "schema": {
                                     "required": [
+                                        "filteredCount",
                                         "totalCount",
                                         "first",
                                         "last",
@@ -1449,6 +1468,11 @@
                                     "type": "object",
                                     "properties": {
                                         "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
                                             "type": "integer"
                                         },
                                         "first": {
@@ -1624,6 +1648,7 @@
                             "application/json": {
                                 "schema": {
                                     "required": [
+                                        "filteredCount",
                                         "totalCount",
                                         "first",
                                         "last",
@@ -1632,6 +1657,11 @@
                                     "type": "object",
                                     "properties": {
                                         "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
                                             "type": "integer"
                                         },
                                         "first": {
@@ -1837,6 +1867,7 @@
                             "application/json": {
                                 "schema": {
                                     "required": [
+                                        "filteredCount",
                                         "totalCount",
                                         "first",
                                         "last",
@@ -1845,6 +1876,11 @@
                                     "type": "object",
                                     "properties": {
                                         "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
                                             "type": "integer"
                                         },
                                         "first": {
@@ -2011,6 +2047,7 @@
                             "application/json": {
                                 "schema": {
                                     "required": [
+                                        "filteredCount",
                                         "totalCount",
                                         "first",
                                         "last",
@@ -2019,6 +2056,11 @@
                                     "type": "object",
                                     "properties": {
                                         "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
                                             "type": "integer"
                                         },
                                         "first": {

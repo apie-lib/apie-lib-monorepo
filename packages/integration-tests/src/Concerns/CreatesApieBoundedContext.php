@@ -20,6 +20,7 @@ use Apie\IntegrationTests\Requests\ActionMethodApiCall;
 use Apie\IntegrationTests\Requests\CmsFormSubmitRequest;
 use Apie\IntegrationTests\Requests\GetResourceApiCall;
 use Apie\IntegrationTests\Requests\GetResourceApiCallDenied;
+use Apie\IntegrationTests\Requests\GetResourceListApiCall;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetAndSetUploadedFileField;
@@ -271,7 +272,7 @@ trait CreatesApieBoundedContext
     /**
      * Test for entity with permission restrictions.
      *
-     * GET /RestrictedEntity
+     * GET /RestrictedEntity/{id}
      */
     public function getObjectWithRestrictionDeniedTestRequest(): TestRequestInterface
     {
@@ -293,6 +294,50 @@ trait CreatesApieBoundedContext
                 new GetAndSetPrimitiveField('companyName', 'Company NV'),
                 new GetPrimitiveField('userId', 'user@example.com'),
                 new GetPrimitiveField('requiredPermissions', ['useratexampledotcom:read', 'useratexampledotcom:write'])
+            ),
+            discardValidationOnFaker: true
+        );
+    }
+
+    /**
+     * Test for entity list with permission restrictions.
+     *
+     * GET /RestrictedEntity/
+     */
+    public function getObjectWithRestrictionListTestRequest(): TestRequestInterface
+    {
+        $userId = UserIdentifier::fromNative('user@example.com');
+        $user = new User($userId);
+        $object = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440000'),
+            new CompanyName('Company NV'),
+            $user
+        );
+        $object2 = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440001'),
+            new CompanyName('Company NV 2'),
+            null
+        );
+        return new GetResourceListApiCall(
+            new BoundedContextId('types'),
+            RestrictedEntity::class,
+            [$object, $object2, $user],
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('totalCount', 1),
+                new GetPrimitiveField('filteredCount', 1),
+                new GetPrimitiveField('first', '/types/RestrictedEntity'),
+                new GetPrimitiveField('last', '/types/RestrictedEntity'),
+                new GetAndSetObjectField(
+                    'list',
+                    new GetAndSetObjectField(
+                        '0',
+                        new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440001'),
+                        new GetAndSetPrimitiveField('companyName', 'Company NV 2'),
+                        new GetPrimitiveField('requiredPermissions', []),
+                        new GetPrimitiveField('userId', null),
+                    )
+                ),
             ),
             discardValidationOnFaker: true
         );

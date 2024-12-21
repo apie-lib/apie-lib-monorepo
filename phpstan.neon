@@ -67,6 +67,10 @@ parameters:
             path: packages/storage-metadata/src/PropertyConverters/MethodAttributeConverter.php
             count: 1
         -
+            message: '#in isset\(\) does not exist#'
+            path: packages/core/src/Lists/PermissionList.php
+            count: 1
+        -
             message: '#Unable to resolve the template type T in call to method.*injectExistingDomainObject#'
             path: packages/storage-metadata/src/PropertyConverters/OneToOneAttributeConverter.php
             count: 1
