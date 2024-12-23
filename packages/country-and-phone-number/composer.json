@@ -39,12 +39,12 @@
     "php": ">=8.3",
     "apie/core": "self.version",
     "giggsey/libphonenumber-for-php": "^8.13.37",
-    "prinsfrank/standards": "^1.6.0"
+    "prinsfrank/standards": "^3.3.0"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
     "cebe/php-openapi": "^1.7",
-    "phpunit/phpunit": "^9.6.19",
+    "phpunit/phpunit": "^11.5.2",
     "phpspec/prophecy-phpunit": "^2.2"
   },
   "minimum-stability": "dev",

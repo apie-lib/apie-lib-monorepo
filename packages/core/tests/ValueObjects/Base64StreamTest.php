@@ -31,7 +31,7 @@ class Base64StreamTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield 'empty string' => ['', ''];
         yield 'space' => ['', ' '];

@@ -21,10 +21,10 @@ class ApieRunResourceMethodCommandTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_run_a_resource_method_provider(): Generator
+    public static function it_can_run_a_resource_method_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_run_a_resource_method'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_run_a_resource_method'),
             new IntegrationTestHelper()
         );
     }

@@ -63,7 +63,7 @@ class DateFormatToRegexTest extends TestCase
         }
     }
 
-    public function formatProvider()
+    public static function formatProvider()
     {
         yield 'ATOM format' => [DateTime::ATOM];
         yield 'Cookie format' => [DateTime::COOKIE];

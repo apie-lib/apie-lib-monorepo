@@ -20,7 +20,7 @@ class ValueObjectUtilsTest extends TestCase
         );
     }
 
-    public function nonCompositeValueObjectProvider(): Generator
+    public static function nonCompositeValueObjectProvider(): Generator
     {
         yield [
             true,

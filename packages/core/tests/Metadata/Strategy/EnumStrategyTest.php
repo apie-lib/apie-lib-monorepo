@@ -35,7 +35,7 @@ class EnumStrategyTest extends TestCase
         $this->assertEquals($expectedOptions, $metadata->getOptions($context, true));
     }
 
-    public function enumOptionsProvider()
+    public static function enumOptionsProvider()
     {
         $context = new ApieContext();
         yield [

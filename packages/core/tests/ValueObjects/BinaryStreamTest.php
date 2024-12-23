@@ -31,7 +31,7 @@ class BinaryStreamTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield 'regular filename' => ['test.txt', 'test.txt'];
         yield 'no extension' => ['readme', 'readme'];

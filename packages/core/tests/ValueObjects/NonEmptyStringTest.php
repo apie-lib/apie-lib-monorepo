@@ -31,7 +31,7 @@ class NonEmptyStringTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['test', 'test'];
         yield ['trimmed', '   trimmed   '];
@@ -57,7 +57,7 @@ class NonEmptyStringTest extends TestCase
         NonEmptyString::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield [''];
         yield [' '];

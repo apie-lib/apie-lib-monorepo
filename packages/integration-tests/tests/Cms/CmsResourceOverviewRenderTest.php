@@ -19,10 +19,10 @@ class CmsResourceOverviewRenderTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_renders_a_resource_overview_page_provider(): Generator
+    public static function it_renders_a_resource_overview_page_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_renders_a_resource_overview_page'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_renders_a_resource_overview_page'),
             new IntegrationTestHelper()
         );
     }
@@ -53,10 +53,10 @@ class CmsResourceOverviewRenderTest extends TestCase
         }
     }
 
-    public function it_renders_a_resource_overview_page_with_text_search_filter_provider(): Generator
+    public static function it_renders_a_resource_overview_page_with_text_search_filter_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_renders_a_resource_overview_page_with_text_search_filter'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_renders_a_resource_overview_page_with_text_search_filter'),
             new IntegrationTestHelper()
         );
     }

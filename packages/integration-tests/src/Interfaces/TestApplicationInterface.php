@@ -19,7 +19,7 @@ interface TestApplicationInterface
     /**
      * Starts bootApplication, runs test and does cleanApplication.
      */
-    public function runApplicationTest(callable $test): void;
+    public function ItRunsApplications(callable $test): void;
 
     /**
      * Get console command application for testing console commands.

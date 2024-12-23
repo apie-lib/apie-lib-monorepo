@@ -11,7 +11,7 @@ use cebe\openapi\spec\Reference;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
 use PHPUnit\Framework\TestCase;
-use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use PrinsFrank\Standards\Country\CountryAlpha2;
 
 class CountryAndPhoneNumberTest extends TestCase
 {
@@ -34,13 +34,13 @@ class CountryAndPhoneNumberTest extends TestCase
      */
     public function it_can_instantiate_correct_combinations_with_constructor(array $expected, array $input)
     {
-        $country = ISO3166_1_Alpha_2::from($input['country']);
+        $country = CountryAlpha2::from($input['country']);
         $phoneNumber = PhoneNumberFactory::createFrom($input['phoneNumber'], $country);
         $instance = new CountryAndPhoneNumber($country, $phoneNumber);
         $this->assertEquals($expected, $instance->toNative());
     }
 
-    public function correctProvider()
+    public static function correctProvider()
     {
         $phoneUtil = PhoneNumberUtil::getInstance();
         $input = [
@@ -48,7 +48,7 @@ class CountryAndPhoneNumberTest extends TestCase
             'phoneNumber' => $phoneUtil->format($phoneUtil->getExampleNumber('NL'), PhoneNumberFormat::E164),
         ];
         $expected = [
-            'country' => ISO3166_1_Alpha_2::Netherlands_the,
+            'country' => CountryAlpha2::Netherlands,
             'phoneNumber' => $input['phoneNumber'],
         ];
         yield [$expected, $input];
@@ -77,14 +77,14 @@ class CountryAndPhoneNumberTest extends TestCase
         $this->assertValidationError(
             $expectedErrorMessages,
             function () use ($input) {
-                $country = ISO3166_1_Alpha_2::from($input['country']);
+                $country = CountryAlpha2::from($input['country']);
                 $phoneNumber = (new InternationalPhoneNumber($input['phoneNumber']))->toPhoneNumber();
                 new CountryAndPhoneNumber($country, $phoneNumber);
             }
         );
     }
 
-    public function incorrectProvider()
+    public static function incorrectProvider()
     {
         $phoneUtil = PhoneNumberUtil::getInstance();
         $input = [
@@ -109,7 +109,7 @@ class CountryAndPhoneNumberTest extends TestCase
                 'type' => 'object',
                 'required' => ['country', 'phoneNumber'],
                 'properties' => [
-                    'country' => new Reference(['$ref' => '#/components/schemas/ISO3166_1_Alpha_2-post']),
+                    'country' => new Reference(['$ref' => '#/components/schemas/CountryAlpha2-post']),
                     'phoneNumber' => new Reference(['$ref' => '#/components/schemas/PhoneNumber-post'])
                 ],
             ]

@@ -33,7 +33,7 @@ class CamelCaseSlugTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['slugExample', 'slugExample'];
         yield ['short', 'short'];
@@ -60,7 +60,7 @@ class CamelCaseSlugTest extends TestCase
         CamelCaseSlug::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield ['kebab-case-slug'];
         yield ['Capital_start'];
@@ -102,7 +102,7 @@ class CamelCaseSlugTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function otherFormatsProvider(): Generator
+    public static function otherFormatsProvider(): Generator
     {
         yield [
             'slug-example',

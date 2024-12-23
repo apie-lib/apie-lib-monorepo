@@ -11,7 +11,7 @@ services:
     tags: ['apie.context']
     factory: ['Apie\CmsApiDropdownOption\DropdownOptionProvider\ChainedDropdownOptionProvider', 'create']
     arguments:
-      - !tagged Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface
+      - !tagged_iterator Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface
 
   Apie\CmsApiDropdownOption\DropdownOptionProvider\EntityIdentifierOptionProvider:
     arguments:

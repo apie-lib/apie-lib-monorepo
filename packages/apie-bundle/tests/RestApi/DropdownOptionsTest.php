@@ -38,7 +38,7 @@ class DropdownOptionsTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
 
-    public function prefixProvider(): Generator
+    public static function prefixProvider(): Generator
     {
         yield 'cms prefix' => ['cms'];
         yield 'api prefix' => ['api'];

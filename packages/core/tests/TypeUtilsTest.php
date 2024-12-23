@@ -20,7 +20,7 @@ class TypeUtilsTest extends TestCase
         $this->assertEquals($expected, TypeUtils::allowEmptyString($input));
     }
 
-    public function emptyStringAllowedProvider(): Generator
+    public static function emptyStringAllowedProvider(): Generator
     {
         yield 'no typehint' => [true, null];
         yield 'string' => [true, ReflectionTypeFactory::createReflectionType('string')];

@@ -28,7 +28,7 @@ class ScalarStrategyTest extends TestCase
         $this->assertSame($expectedScalar, $metadata->toScalarType());
     }
 
-    public function scalarProvider()
+    public static function scalarProvider()
     {
         yield [ScalarType::ARRAY, 'array'];
         yield [ScalarType::BOOLEAN, 'bool'];
@@ -37,9 +37,7 @@ class ScalarStrategyTest extends TestCase
         yield [ScalarType::MIXED, 'mixed'];
         yield [ScalarType::NULLVALUE, 'null'];
         yield [ScalarType::BOOLEAN, 'false'];
-        if (PHP_VERSION_ID >= 80200) {
-            yield [ScalarType::BOOLEAN, 'true'];
-        }
+        yield [ScalarType::BOOLEAN, 'true'];
         yield [ScalarType::STDCLASS, 'stdClass'];
         yield [ScalarType::STRING, 'string'];
     }

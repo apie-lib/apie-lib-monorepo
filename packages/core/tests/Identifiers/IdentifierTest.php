@@ -32,7 +32,7 @@ class IdentifierTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['slug', 'slug'];
         yield ['short', 'short'];
@@ -59,7 +59,7 @@ class IdentifierTest extends TestCase
         Identifier::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield ['kebab-case-slug'];
         yield ['pascal_case_slug'];

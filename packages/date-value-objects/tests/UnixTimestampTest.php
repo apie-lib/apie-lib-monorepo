@@ -113,7 +113,7 @@ class UnixTimestampTest extends TestCase
         UnixTimestamp::fromNative($input);
     }
 
-    public function invalidInput()
+    public static function invalidInput()
     {
         yield 'not a timestamp' => ['this is not a date'];
         yield 'date without 0 prefix' => ['1984-1-1'];

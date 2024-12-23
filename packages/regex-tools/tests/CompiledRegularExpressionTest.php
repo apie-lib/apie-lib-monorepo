@@ -23,7 +23,7 @@ class CompiledRegularExpressionTest extends TestCase
         $this->assertEquals($expectedToString, $testItem->__toString());
     }
 
-    public function provideRegularExpressions(): Generator
+    public static function provideRegularExpressions(): Generator
     {
         yield 'empty regex' => [0, 0, '', ''];
         yield 'match only empty string' => [0, 0, '^$', '^$'];

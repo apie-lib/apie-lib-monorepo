@@ -16,10 +16,10 @@ class ApieSeedCommandTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_seed_apie_resources_provider(): Generator
+    public static function it_can_seed_apie_resources_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_seed_apie_resources'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_seed_apie_resources'),
             new IntegrationTestHelper()
         );
     }

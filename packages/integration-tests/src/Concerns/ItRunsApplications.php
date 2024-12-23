@@ -1,12 +1,12 @@
 <?php
 namespace Apie\IntegrationTests\Concerns;
 
-trait RunApplicationTest
+trait ItRunsApplications
 {
     abstract public function bootApplication(): void;
     abstract public function cleanApplication(): void;
 
-    public function runApplicationTest(callable $test): void
+    public function ItRunsApplications(callable $test): void
     {
         $this->bootApplication();
         try {

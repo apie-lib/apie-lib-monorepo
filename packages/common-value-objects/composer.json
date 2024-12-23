@@ -40,8 +40,8 @@
     "apie/regex-value-objects": "self.version",
     "apie/text-value-objects": "self.version",
     "cebe/php-openapi": "^1.7",
-    "egulias/email-validator": "^3.2.6",
-    "symfony/html-sanitizer": "^6.4|7.*"
+    "egulias/email-validator": "^4.0.2",
+    "symfony/html-sanitizer": "^7.2"
   },
   "require-dev": {
     "apie/fixtures": "self.version",

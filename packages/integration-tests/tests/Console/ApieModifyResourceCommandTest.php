@@ -22,10 +22,10 @@ class ApieModifyResourceCommandTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_modify_a_resource_provider(): Generator
+    public static function it_can_modify_a_resource_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_modify_a_resource'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_modify_a_resource'),
             new IntegrationTestHelper()
         );
     }

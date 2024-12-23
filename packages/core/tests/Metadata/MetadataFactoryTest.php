@@ -48,7 +48,7 @@ class MetadataFactoryTest extends TestCase
         $this->assertInstanceOf($expectedStrategyClass, MetadataFactory::getMetadataStrategy(new ReflectionClass($input)));
     }
 
-    public function provideStrategy()
+    public static function provideStrategy()
     {
         yield [
             RegularObjectStrategy::class, __CLASS__
@@ -115,7 +115,7 @@ class MetadataFactoryTest extends TestCase
         $this->assertEquals($expected, MetadataFactory::getScalarForType($type));
     }
 
-    public function getScalarForTypeProvider(): Generator
+    public static function getScalarForTypeProvider(): Generator
     {
         yield 'string typehint' => [
             ScalarType::STRING,
@@ -162,7 +162,7 @@ class MetadataFactoryTest extends TestCase
         $this->assertEquals(['id', 'owned'], array_keys($filteredHashmap->toArray()));
     }
 
-    public function compositeMetadataProvider()
+    public static function compositeMetadataProvider()
     {
         $context = new ApieContext();
         yield 'Creation of entity' => [

@@ -13,7 +13,7 @@ use Apie\Serializer\Exceptions\ValidationException;
 use Faker\Generator;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
-use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use PrinsFrank\Standards\Country\CountryAlpha2;
 use ReflectionProperty;
 
 #[FakeMethod('createRandom')]
@@ -21,7 +21,7 @@ final class CountryAndPhoneNumber implements CompositeWithOwnValidation
 {
     use CompositeValueObject;
 
-    public function __construct(private ISO3166_1_Alpha_2 $country, private PhoneNumber $phoneNumber)
+    public function __construct(private CountryAlpha2 $country, private PhoneNumber $phoneNumber)
     {
         $this->validateState();
     }
@@ -55,7 +55,7 @@ final class CountryAndPhoneNumber implements CompositeWithOwnValidation
     {
         $phoneNumber = '';
         do {
-            $country = $generator->randomElement(ISO3166_1_Alpha_2::cases());
+            $country = $generator->randomElement(CountryAlpha2::cases());
             $phoneNumberUtil = PhoneNumberUtil::getInstance();
             $phoneNumberObject = $phoneNumberUtil->getExampleNumber($country->value);
             if ($phoneNumberObject) {

@@ -17,10 +17,10 @@ class CmsResourceActionFormRenderTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_renders_a_resource_action_form_page_provider(): Generator
+    public static function it_renders_a_resource_action_form_page_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_renders_a_resource_action_form_page'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_renders_a_resource_action_form_page'),
             new IntegrationTestHelper()
         );
     }
@@ -46,10 +46,10 @@ class CmsResourceActionFormRenderTest extends TestCase
         $this->assertStringContainsString('"blockedReason"', (string) $response->getBody());
     }
 
-    public function it_can_execute_a_resource_action_provider(): Generator
+    public static function it_can_execute_a_resource_action_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_execute_a_resource_action'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_execute_a_resource_action'),
             new IntegrationTestHelper()
         );
     }

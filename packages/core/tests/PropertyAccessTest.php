@@ -32,7 +32,7 @@ class PropertyAccessTest extends TestCase
         );
     }
 
-    public function propertyProvider(): Generator
+    public static function propertyProvider(): Generator
     {
         $orderId = OrderIdentifier::createRandom();
         $orderLineId = OrderLineIdentifier::createRandom();

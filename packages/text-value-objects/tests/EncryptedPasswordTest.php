@@ -42,7 +42,7 @@ class EncryptedPasswordTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield [
             '$2y$10$zL2UWxcQ9.lYpoI.yTjl9eYdO4hv.jb/iwCpathPmgpV38hkGzBAW',
@@ -70,7 +70,7 @@ class EncryptedPasswordTest extends TestCase
         EncryptedPassword::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield [''];
         yield [' '];

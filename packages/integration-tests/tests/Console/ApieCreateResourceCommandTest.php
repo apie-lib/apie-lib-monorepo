@@ -18,18 +18,18 @@ class ApieCreateResourceCommandTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_create_a_resource_provider(): Generator
+    public static function it_can_create_a_resource_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_create_a_resource'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_create_a_resource'),
             new IntegrationTestHelper()
         );
     }
 
-    public function it_can_create_a_resource_with_interaction_provider(): Generator
+    public static function it_can_create_a_resource_with_interaction_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_create_a_resource_with_interaction'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_create_a_resource_with_interaction'),
             new IntegrationTestHelper()
         );
     }

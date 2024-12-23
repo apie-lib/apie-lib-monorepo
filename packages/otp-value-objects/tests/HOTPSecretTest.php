@@ -39,7 +39,7 @@ class HOTPSecretTest extends TestCase
         }
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         $validSecret = HOTPSecret::createRandom()->getSecret();
         yield 'empty array' => [

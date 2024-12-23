@@ -15,18 +15,18 @@ class DoctrineConsoleCommandTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_run_doctrine_schema_update_commands_on_apie_connection_provider(): Generator
+    public static function it_can_run_doctrine_schema_update_commands_on_apie_connection_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_run_doctrine_schema_update_commands_on_apie_connection'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_run_doctrine_schema_update_commands_on_apie_connection'),
             new IntegrationTestHelper()
         );
     }
 
-    public function it_can_run_doctrine_schema_validate_commands_on_apie_connection_provider(): Generator
+    public static function it_can_run_doctrine_schema_validate_commands_on_apie_connection_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_run_doctrine_schema_validate_commands_on_apie_connection'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_run_doctrine_schema_validate_commands_on_apie_connection'),
             new IntegrationTestHelper()
         );
     }

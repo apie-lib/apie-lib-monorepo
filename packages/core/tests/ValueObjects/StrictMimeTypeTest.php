@@ -33,7 +33,7 @@ class StrictMimeTypeTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield 'plain text mime type' => ['text/plain', 'text/plain'];
         yield 'binary stream mime type' => ['application/octet-stream', 'application/octet-stream'];
@@ -59,7 +59,7 @@ class StrictMimeTypeTest extends TestCase
         StrictMimeType::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield 'wild card mime type' => ['image/*'];
         yield 'no slash' => ['applicationjson'];

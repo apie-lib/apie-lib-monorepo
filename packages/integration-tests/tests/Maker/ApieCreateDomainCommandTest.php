@@ -16,10 +16,10 @@ class ApieCreateDomainCommandTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_create_a_domain_object_provider(): Generator
+    public static function it_can_create_a_domain_object_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_create_a_domain_object'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_create_a_domain_object'),
             new IntegrationTestHelper()
         );
     }

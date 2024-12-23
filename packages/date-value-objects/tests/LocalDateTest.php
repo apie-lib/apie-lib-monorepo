@@ -82,7 +82,7 @@ class LocalDateTest extends TestCase
         LocalDate::fromNative($input);
     }
 
-    public function invalidInput()
+    public static function invalidInput()
     {
         yield 'not a date' => ['this is not a date'];
         yield 'missing 0 prefix on month and day' => ['1984-1-1'];

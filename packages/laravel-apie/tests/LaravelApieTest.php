@@ -53,7 +53,6 @@ final class LaravelApieTest extends TestCase
     {
         $response = $this->get('/api/default/openapi.yaml');
         $response->assertOk();
-        // TODO figure out
-        // $response->assertSeeText('/api/default/TestEntity');
+        $response->assertSeeText('TestEntity-post');
     }
 }

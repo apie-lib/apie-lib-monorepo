@@ -24,7 +24,7 @@ class EntityGetIdShouldBeSpecificTest extends RuleTestCase
         $this->analyse($fileToAnalyse, $rules);
     }
 
-    public function ruleProvider(): iterable
+    public static function ruleProvider(): iterable
     {
         yield [
             [

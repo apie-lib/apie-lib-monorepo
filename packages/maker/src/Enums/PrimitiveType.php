@@ -1,9 +1,6 @@
 <?php
 namespace Apie\Maker\Enums;
 
-use Apie\Core\Attributes\RequiresPhpVersion;
-use Apie\Core\Attributes\StaticCheck;
-
 enum PrimitiveType: string
 {
     case String = 'string';

@@ -33,7 +33,7 @@ class SnakeCaseSlugTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['slug_example', 'slug_example'];
         yield ['short', 'short'];
@@ -60,7 +60,7 @@ class SnakeCaseSlugTest extends TestCase
         SnakeCaseSlug::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield ['kebab-case-slug'];
         yield ['CapitalStart'];
@@ -102,7 +102,7 @@ class SnakeCaseSlugTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function otherFormatsProvider(): Generator
+    public static function otherFormatsProvider(): Generator
     {
         yield [
             'slugExample',

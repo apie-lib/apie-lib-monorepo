@@ -32,7 +32,7 @@ class KebabCaseSlugTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['slug-example', 'slug-example'];
         yield ['short', 'short'];
@@ -59,7 +59,7 @@ class KebabCaseSlugTest extends TestCase
         KebabCaseSlug::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield ['pascal_case_slug'];
         yield ['Capital-start'];
@@ -101,7 +101,7 @@ class KebabCaseSlugTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function otherFormatsProvider(): Generator
+    public static function otherFormatsProvider(): Generator
     {
         yield [
             'slugExample',

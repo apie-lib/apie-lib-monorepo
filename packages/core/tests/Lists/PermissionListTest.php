@@ -41,7 +41,7 @@ class PermissionListTest extends TestCase
         $this->assertEquals($expected, $testItem->hasOverlap(new PermissionList($compareInput)));
     }
 
-    public function provideHasOverlap(): Generator
+    public static function provideHasOverlap(): Generator
     {
         $emptyList = [];
         $publicOnly = [''];

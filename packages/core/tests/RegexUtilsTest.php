@@ -16,7 +16,7 @@ class RegexUtilsTest extends TestCase
         $this->assertEquals($expected, RegexUtils::getMaximumAcceptedStringLengthOfRegularExpression($input));
     }
 
-    public function maxLengthProvider(): Generator
+    public static function maxLengthProvider(): Generator
     {
         yield 'no start and end delimiter' => [null, '/aaa/'];
         yield 'open regex with *' => [null, '/^.*$/'];

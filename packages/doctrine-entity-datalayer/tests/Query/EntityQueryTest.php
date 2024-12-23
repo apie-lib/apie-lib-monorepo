@@ -53,7 +53,7 @@ class EntityQueryTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function sqlProvider(): Generator
+    public static function sqlProvider(): Generator
     {
         foreach (Finder::create()->in(__DIR__ . '/../../fixtures/entity-query')->files()->name('*.json') as $inputFile) {
             $input = (array) json_decode(file_get_contents($inputFile), true);

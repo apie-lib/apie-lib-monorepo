@@ -69,15 +69,15 @@ class StarRatingTest extends TestCase
         StarRating::fromNative($input);
     }
 
-    public function provideInvalidInputIntegers(): Generator
+    public static function provideInvalidInputIntegers(): Generator
     {
         yield [-1];
         yield [7];
     }
 
-    public function provideInvalidInput(): Generator
+    public static function provideInvalidInput(): Generator
     {
-        yield from $this->provideInvalidInputIntegers();
+        yield from self::provideInvalidInputIntegers();
         yield ['-1'];
         yield [5.9];
         yield ['this is bogus'];

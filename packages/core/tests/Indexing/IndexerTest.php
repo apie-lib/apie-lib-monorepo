@@ -38,7 +38,7 @@ class IndexerTest extends TestCase
         );
     }
 
-    public function provideIndexes(): Generator
+    public static function provideIndexes(): Generator
     {
         yield 'empty string' => [
             [],

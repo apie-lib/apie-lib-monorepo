@@ -9,6 +9,7 @@ use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\Rule;
+use PHPStan\Rules\RuleErrorBuilder;
 
 /**
  * EntityInterface only implements getId() with return type IdentifierInterface. To get better
@@ -45,10 +46,14 @@ final class EntityGetIdShouldBeSpecific implements Rule
                 if ($type instanceof \PHPStan\Type\ObjectType) {
                     if ($type->getClassName() === IdentifierInterface::class) {
                         return [
-                            __CLASS__ => sprintf(
-                                "Class '%s' is an entity, but the getId() implementation has still IdentifierInterface return type.",
-                                $nodeName
-                            )
+
+                            __CLASS__ => RuleErrorBuilder::message(
+                                sprintf(
+                                    "Class '%s' is an entity, but the getId() implementation has still IdentifierInterface return type.",
+                                    $nodeName
+                                )
+                            )->identifier('apie.get.id.specific')
+                            ->build()
                         ];
                     }
                 }

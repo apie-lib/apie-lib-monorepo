@@ -57,7 +57,7 @@ class CodeWriterTest extends TestCase
         );
     }
 
-    public function provideFromExistingSource(): Generator
+    public static function provideFromExistingSource(): Generator
     {
         $boundedContextDefinition = new BoundedContextDefinition(new Identifier('fixtures'));
         $resourceDefinition = new ResourceDefinition(
@@ -130,7 +130,7 @@ class CodeWriterTest extends TestCase
         );
     }
 
-    public function provideForCodeWriter(): Generator
+    public static function provideForCodeWriter(): Generator
     {
         $boundedContextDefinition = new BoundedContextDefinition(new Identifier('fixtures'));
         $resourceDefinition = new ResourceDefinition(

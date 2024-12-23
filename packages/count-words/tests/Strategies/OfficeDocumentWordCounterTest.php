@@ -20,7 +20,7 @@ class OfficeDocumentWordCounterTest extends TestCase
         );
     }
 
-    public function officeDataProvider(): Generator
+    public static function officeDataProvider(): Generator
     {
         $fixturesPath = __DIR__ . '/../../fixtures/office/';
         yield 'word document' => [

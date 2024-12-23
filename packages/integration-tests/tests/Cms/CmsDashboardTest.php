@@ -12,10 +12,10 @@ class CmsDashboardTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_renders_a_dashboard_page_provider(): Generator
+    public static function it_renders_a_dashboard_page_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_renders_a_dashboard_page'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_renders_a_dashboard_page'),
             new IntegrationTestHelper()
         );
     }

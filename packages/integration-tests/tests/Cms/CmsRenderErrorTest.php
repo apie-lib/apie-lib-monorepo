@@ -12,10 +12,10 @@ class CmsRenderErrorTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_renders_an_error_page_provider(): Generator
+    public static function it_renders_an_error_page_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_renders_an_error_page'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_renders_an_error_page'),
             new IntegrationTestHelper()
         );
     }

@@ -49,7 +49,7 @@ class ComponentsBuilderFactoryTest extends TestCase
         $this->assertEquals($expected, $actualSchema);
     }
 
-    public function valueObjectProviders()
+    public static function valueObjectProviders()
     {
         yield 'Backed string enum' => [
             new Schema([

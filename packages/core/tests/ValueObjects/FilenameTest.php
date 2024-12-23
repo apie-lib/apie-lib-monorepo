@@ -33,7 +33,7 @@ class FilenameTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield 'regular filename' => ['test.txt', 'test.txt'];
         yield 'no extension' => ['readme', 'readme'];
@@ -60,7 +60,7 @@ class FilenameTest extends TestCase
         Filename::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield 'too long' => [str_repeat('1', 256)];
         yield 'null character is always invalid' => [chr(0) . 'test'];

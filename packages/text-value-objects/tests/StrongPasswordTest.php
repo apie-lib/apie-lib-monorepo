@@ -32,7 +32,7 @@ class StrongPasswordTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['&#12azAZ', '&#12azAZ'];
         yield ['&#12azAZ', '   &#12azAZ   '];
@@ -58,7 +58,7 @@ class StrongPasswordTest extends TestCase
         StrongPassword::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield [str_repeat('1', 300)];
         yield [''];

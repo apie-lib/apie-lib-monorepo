@@ -118,8 +118,7 @@ class OrmBuilder
             [$this->path],
             $this->devMode,
             $this->proxyDir,
-            $this->devMode ? null : $this->cache,
-            reportFieldsWhereDeclared: true
+            $this->devMode ? null : $this->cache
         );
         if (class_exists(DefaultSchemaManagerFactory::class) && is_callable([$config, 'setSchemaManagerFactory'])) {
             $config->setSchemaManagerFactory(new DefaultSchemaManagerFactory());

@@ -14,26 +14,26 @@ class OpenapiDocumentationTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function display_openapi_spec_in_json_provider(): Generator
+    public static function display_openapi_spec_in_json_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_display_openapi_spec_in_json'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_display_openapi_spec_in_json'),
             new IntegrationTestHelper()
         );
     }
 
-    public function display_openapi_spec_in_yaml_provider(): Generator
+    public static function display_openapi_spec_in_yaml_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_display_openapi_spec_in_yaml'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_display_openapi_spec_in_yaml'),
             new IntegrationTestHelper()
         );
     }
 
-    public function it_can_display_the_swagger_ui_page_provider(): Generator
+    public static function it_can_display_the_swagger_ui_page_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_display_the_swagger_ui_page'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_display_the_swagger_ui_page'),
             new IntegrationTestHelper()
         );
     }
@@ -52,10 +52,10 @@ class OpenapiDocumentationTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    public function it_can_display_the_swagger_ui_redirect_page_provider(): Generator
+    public static function it_can_display_the_swagger_ui_redirect_page_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_display_the_swagger_ui_redirect_page'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_display_the_swagger_ui_redirect_page'),
             new IntegrationTestHelper()
         );
     }

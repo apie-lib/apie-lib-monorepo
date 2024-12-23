@@ -46,7 +46,7 @@ class CompositeValueObjectTest extends TestCase
         $this->assertSame($expectedIntFirst, $testItem->getIntFirst());
     }
 
-    public function unionDataProvider()
+    public static function unionDataProvider()
     {
         yield 'strings only' => [
             'text',
@@ -83,7 +83,7 @@ class CompositeValueObjectTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function optionalProvider(): Generator
+    public static function optionalProvider(): Generator
     {
         yield 'empty input' => [
             ['withDefaultValue' => 'default value'],
@@ -121,7 +121,7 @@ class CompositeValueObjectTest extends TestCase
         );
     }
 
-    public function incorrectObjectsProvider(): iterable
+    public static function incorrectObjectsProvider(): iterable
     {
         yield 'no typehint, property provided' => [
             ['noTypehint' => 'Type (null) is not expected, expected ReflectionUnionType|ReflectionNamedType'],

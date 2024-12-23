@@ -51,7 +51,7 @@ class IsStringValueObjectTest extends TestCase implements Stringable
         IsStringValueObjectExample::fromNative($invalidValue);
     }
 
-    public function invalidInputProvider()
+    public static function invalidInputProvider()
     {
         yield [''];
         yield [' '];

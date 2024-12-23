@@ -28,7 +28,7 @@ class RegexStreamTest extends TestCase
         $this->assertEquals($expected, $data);
     }
 
-    public function regularExpressionProvider(): Generator
+    public static function regularExpressionProvider(): Generator
     {
         yield 'empty regex' => [
             [],

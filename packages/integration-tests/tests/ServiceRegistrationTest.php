@@ -14,6 +14,8 @@ use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Exception;
 use Generator;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Attributes\After;
+use PHPUnit\Framework\Attributes\WithoutErrorHandler;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,10 +24,10 @@ class ServiceRegistrationTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_registers_an_apie_service_provider(): Generator
+    public static function it_registers_an_apie_service_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_registers_an_apie_service'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_registers_an_apie_service'),
             new IntegrationTestHelper()
         );
     }
@@ -43,15 +45,16 @@ class ServiceRegistrationTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    public function it_registers_an_error_render_provider(): Generator
+    public static function it_registers_an_error_render_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_registers_an_error_render'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_registers_an_error_render'),
             new IntegrationTestHelper()
         );
     }
 
     /**
+     * @runInSeparateProcess
      * @dataProvider it_registers_an_error_render_provider
      * @test
      */
@@ -65,10 +68,10 @@ class ServiceRegistrationTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    public function it_registers_a_laravel_facade_provider(): Generator
+    public static function it_registers_a_laravel_facade_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_registers_a_laravel_facade'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_registers_a_laravel_facade'),
             new IntegrationTestHelper()
         );
     }
@@ -77,6 +80,7 @@ class ServiceRegistrationTest extends TestCase
      * @dataProvider it_registers_a_laravel_facade_provider
      * @test
      */
+    #[WithoutErrorHandler]
     public function it_registers_a_laravel_facade(LaravelTestApplication $testApplication)
     {
         $testApplication->bootApplication();
@@ -87,5 +91,11 @@ class ServiceRegistrationTest extends TestCase
         );
         $this->assertSame($apieService, Apie::getFacadeRoot());
         $testApplication->cleanApplication();
+    }
+
+    #[After()]
+    public function __internalDisableErrorHandler(): void
+    {
+        restore_exception_handler();
     }
 }

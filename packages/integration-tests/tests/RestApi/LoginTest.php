@@ -22,10 +22,10 @@ class LoginTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_login_by_convention_provider(): Generator
+    public static function it_can_login_by_convention_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_login_by_convention'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_login_by_convention'),
             new IntegrationTestHelper()
         );
     }
@@ -37,7 +37,7 @@ class LoginTest extends TestCase
      */
     public function it_can_login_by_convention(TestApplicationInterface $testApplication)
     {
-        $testApplication->runApplicationTest(function (TestApplicationInterface $testApplication) {
+        $testApplication->ItRunsApplications(function (TestApplicationInterface $testApplication) {
             $user = new User(new UserIdentifier('test@example.nl'));
             $user->activate(
                 (new ReflectionProperty(User::class, 'activationToken'))->getValue($user)->toNative(),

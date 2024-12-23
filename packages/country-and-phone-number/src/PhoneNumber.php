@@ -11,7 +11,7 @@ use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumber as LibPhoneNumber;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
-use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use PrinsFrank\Standards\Country\CountryAlpha2;
 use ReflectionClass;
 
 #[FakeMethod('createRandom')]
@@ -23,7 +23,7 @@ abstract class PhoneNumber implements StringValueObjectInterface
 
     private LibPhoneNumber $phoneNumber;
 
-    abstract public static function fromCountry(): ISO3166_1_Alpha_2;
+    abstract public static function fromCountry(): CountryAlpha2;
 
     final protected static function getUtil(): PhoneNumberUtil
     {
@@ -81,7 +81,7 @@ abstract class PhoneNumber implements StringValueObjectInterface
     {
         $phoneNumber = '';
         do {
-            $country = $generator->randomElement(ISO3166_1_Alpha_2::cases());
+            $country = $generator->randomElement(CountryAlpha2::cases());
             $phoneNumberUtil = self::getUtil();
             $phoneNumberObject = $phoneNumberUtil->getExampleNumber($country->value);
             if ($phoneNumberObject) {

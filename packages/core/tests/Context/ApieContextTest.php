@@ -54,9 +54,9 @@ class ApieContextTest extends TestCase
         $testItem = $testItem->registerInstance($this);
         $actual = $testItem->getContext(TestCase::class);
         $this->assertSame($this, $actual);
-        $testItem = $testItem->registerInstance(new class extends TestCase {
+        $testItem = $testItem->registerInstance(new class('test') extends TestCase {
         });
-        $testItem = $testItem->registerInstance(new class extends TestCase {
+        $testItem = $testItem->registerInstance(new class('test2') extends TestCase {
         });
         $actual = $testItem->getContext(TestCase::class);
         $this->assertInstanceOf(AmbiguousCall::class, $actual);
@@ -76,7 +76,7 @@ class ApieContextTest extends TestCase
         $this->assertEquals($expectedKeys, $keys);
     }
 
-    public function filterProvider()
+    public static function filterProvider()
     {
         yield [
             ['property3'],

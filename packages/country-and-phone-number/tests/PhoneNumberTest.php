@@ -57,7 +57,7 @@ class PhoneNumberTest extends TestCase
         $this->runFakerTest($className);
     }
 
-    public function phoneNumberClassProvider(): Generator
+    public static function phoneNumberClassProvider(): Generator
     {
         yield [PhoneNumber::class];
         yield [BelgianPhoneNumber::class];

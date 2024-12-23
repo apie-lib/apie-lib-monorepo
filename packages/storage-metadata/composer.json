@@ -25,7 +25,7 @@
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "phpunit/phpunit": "^9.6.19",
+    "phpunit/phpunit": "^11.5.2",
     "phpspec/prophecy-phpunit": "^2.2"
   },
   "minimum-stability": "dev",

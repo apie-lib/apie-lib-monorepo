@@ -36,7 +36,7 @@ class ApieObjectFakerTest extends TestCase
         }
     }
 
-    public function dateValueObjectsProvider(): iterable
+    public static function dateValueObjectsProvider(): iterable
     {
         $path = dirname((new ReflectionClass(Time::class))->getFileName());
         foreach (Finder::create()->files()->name('*.php')->depth(0)->in($path) as $file) {
@@ -58,7 +58,7 @@ class ApieObjectFakerTest extends TestCase
         }
     }
 
-    public function compositeValueObjectProvider(): iterable
+    public static function compositeValueObjectProvider(): iterable
     {
         yield 'Entity with autoincrement identifier' => [UserWithAutoincrementKey::class];
         yield 'Entity with uuid identifier' => [UserWithAddress::class];
@@ -78,7 +78,7 @@ class ApieObjectFakerTest extends TestCase
         }
     }
 
-    public function enumProvider()
+    public static function enumProvider()
     {
         yield 'regular enum' => [Gender::class];
     }
@@ -96,7 +96,7 @@ class ApieObjectFakerTest extends TestCase
         }
     }
 
-    public function passwordValueObjectsProvider(): iterable
+    public static function passwordValueObjectsProvider(): iterable
     {
         yield 'regular password' => [Password::class];
     }
@@ -128,12 +128,9 @@ class ApieObjectFakerTest extends TestCase
         }
     }
 
-    public function primitiveProvider(): iterable
+    public static function primitiveProvider(): iterable
     {
-        $types = ['string', 'int', 'float', 'false', 'bool', 'mixed', 'array', stdClass::class];
-        if (PHP_VERSION_ID >= 80200) {
-            $types[] =  'true';
-        }
+        $types = ['string', 'int', 'float', 'false', 'true', 'bool', 'mixed', 'array', stdClass::class];
         foreach ($types as $type) {
             yield $type => [$type];
         }

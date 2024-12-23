@@ -24,7 +24,7 @@ class JsonFileUploadTest extends TestCase
         $this->assertEquals($input, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield 'empty file' => [['contents' => '', 'originalFilename' => 'empty.txt']];
         yield 'empty file, mime null' => [['contents' => '', 'originalFilename' => 'empty.txt', 'mime' => null]];
@@ -47,7 +47,7 @@ class JsonFileUploadTest extends TestCase
         JsonFileUpload::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield 'empty array' => [
             ValidationException::class,

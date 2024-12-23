@@ -32,7 +32,7 @@ class UuidV2Test extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['123e4567-e89b-12d3-a456-426614174000', '123e4567-e89b-12d3-a456-426614174000'];
     }
@@ -57,7 +57,7 @@ class UuidV2Test extends TestCase
         UuidV2::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield ['pascal_case_slug'];
         yield ['123e4567-g89b-12d3-a456-426614179000'];

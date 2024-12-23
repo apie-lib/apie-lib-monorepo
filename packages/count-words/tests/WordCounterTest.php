@@ -16,7 +16,7 @@ class WordCounterTest extends TestCase
         $this->assertEquals($expectedCounts, $counts);
     }
 
-    public function fileDataProvider()
+    public static function fileDataProvider()
     {
         $path = __DIR__ . '/../fixtures/';
         yield 'html file' => [$path . '/html/test.html', json_decode(file_get_contents($path . 'expected-html-sample.json'), true)];
@@ -59,7 +59,7 @@ class WordCounterTest extends TestCase
         $this->assertEquals($expectedCounts, $counts);
     }
     
-    public function textDataProvider()
+    public static function textDataProvider()
     {
         return [
             'simple test 1' => [

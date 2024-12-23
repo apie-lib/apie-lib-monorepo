@@ -58,7 +58,7 @@ class TimeTest extends TestCase
         Time::fromNative($input);
     }
 
-    public function invalidInput()
+    public static function invalidInput()
     {
         yield 'not a time' => ['this is not a time'];
         yield 'date, no time' => ['1984-1-1'];

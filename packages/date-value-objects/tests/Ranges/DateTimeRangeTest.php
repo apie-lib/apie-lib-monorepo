@@ -35,7 +35,7 @@ class DateTimeRangeTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield 'day range' => [
             ['start' => '2005-08-15T15:52:01+00:00', 'end' => '2005-08-16T15:52:01+00:00'],
@@ -82,7 +82,7 @@ class DateTimeRangeTest extends TestCase
         );
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield 'start date higher than end date' => [
             ['start' => '2005-08-15T15:52:01+00:00 is higher than 1984-08-16T15:52:01+00:00'],

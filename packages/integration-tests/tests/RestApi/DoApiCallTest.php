@@ -23,10 +23,10 @@ class DoApiCallTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_run_a_documented_api_call_provider(): Generator
+    public static function it_can_run_a_documented_api_call_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_run_a_documented_api_call'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_run_a_documented_api_call'),
             new IntegrationTestHelper()
         );
     }
@@ -81,10 +81,10 @@ class DoApiCallTest extends TestCase
         }
     }
 
-    public function it_throws_validation_error_on_invalid_route_placeholders_provider(): Generator
+    public static function it_throws_validation_error_on_invalid_route_placeholders_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_throws_validation_error_on_invalid_route_placeholders'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_throws_validation_error_on_invalid_route_placeholders'),
             new IntegrationTestHelper()
         );
     }

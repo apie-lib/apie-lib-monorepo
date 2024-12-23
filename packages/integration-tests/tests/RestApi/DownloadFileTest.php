@@ -18,10 +18,10 @@ class DownloadFileTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_download_an_uploaded_file_provider(): Generator
+    public static function it_can_download_an_uploaded_file_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_download_an_uploaded_file'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_download_an_uploaded_file'),
             new IntegrationTestHelper()
         );
     }
@@ -34,7 +34,7 @@ class DownloadFileTest extends TestCase
     public function it_can_download_an_uploaded_file(
         TestApplicationInterface $testApplication
     ) {
-        $testApplication->runApplicationTest(function () use ($testApplication) {
+        $testApplication->ItRunsApplications(function () use ($testApplication) {
             $datalayer = $testApplication->getServiceContainer()->get('apie');
             $uploadedFile = new UploadedFile(
                 UploadedFileIdentifier::createRandom(),
@@ -51,10 +51,10 @@ class DownloadFileTest extends TestCase
         });
     }
 
-    public function it_can_stream_an_uploaded_file_provider(): Generator
+    public static function it_can_stream_an_uploaded_file_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_stream_an_uploaded_file'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_stream_an_uploaded_file'),
             new IntegrationTestHelper()
         );
     }
@@ -67,7 +67,7 @@ class DownloadFileTest extends TestCase
     public function it_can_stream_an_uploaded_file(
         TestApplicationInterface $testApplication
     ) {
-        $testApplication->runApplicationTest(function () use ($testApplication) {
+        $testApplication->ItRunsApplications(function () use ($testApplication) {
             $datalayer = $testApplication->getServiceContainer()->get('apie');
             $uploadedFile = new UploadedFile(
                 UploadedFileIdentifier::createRandom(),

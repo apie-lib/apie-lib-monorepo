@@ -7,7 +7,7 @@ use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
 use Apie\Common\Wrappers\TextEncrypter;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
-use Apie\IntegrationTests\Concerns\RunApplicationTest;
+use Apie\IntegrationTests\Concerns\ItRunsApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
@@ -31,13 +31,16 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class LaravelTestApplication extends TestCase implements TestApplicationInterface
 {
-    use RunApplicationTest;
+    use ItRunsApplications;
 
+    /**
+     * @phpstan-ignore method.parentMethodFinalByPhpDoc
+     */
     public function __construct(
         private readonly ApplicationConfig $applicationConfig,
         private readonly BoundedContextConfig $boundedContextConfig
     ) {
-        parent::__construct();
+        parent::__construct('Laravel application');
     }
 
     public function getConsoleApplication(): Application

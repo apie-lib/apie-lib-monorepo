@@ -26,7 +26,7 @@ class PhpSafeRegularExpressionTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield 'regular expression with modifier' => ['/test/i', '/', 'i', '/test/i'];
         yield 'regular expression without modifier' => ['/test/', '/', '', '/test/'];
@@ -52,7 +52,7 @@ class PhpSafeRegularExpressionTest extends TestCase
         PhpSafeRegularExpression::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield 'empty string' => [InvalidPhpRegularExpression::class, ''];
         //yield ['[a-z]'];

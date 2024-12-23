@@ -63,7 +63,7 @@ class CreateResourceTest extends TestCase
         $this->assertEquals(422, $response->getStatusCode());
     }
 
-    public function invalidDataProvider(): Generator
+    public static function invalidDataProvider(): Generator
     {
         yield 'missing field and invalid value object' => [
             [

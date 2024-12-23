@@ -29,7 +29,7 @@ class TranslationStringSetBuilderTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function translationProvider(): Generator
+    public static function translationProvider(): Generator
     {
         $path = __DIR__ . '/../../fixtures/Translations/';
         yield 'simple entity' => [$path . 'user-plain.json', new ReflectionClass(UserWithAddress::class)];

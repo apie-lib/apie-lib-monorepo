@@ -31,10 +31,12 @@ class ObjectProviderTest extends TestCase
         );
     }
 
-    public function provideClasses(): Generator
+    public static function provideClasses(): Generator
     {
+        // to make sure there is always one test
+        yield Order::class => [Order::class];
         if (!class_exists(AvailableApieObjectProvider::class)) {
-            $this->markTestSkipped('Class could not be found. Did the plugin run?');
+            return;
         }
         $refl = new ReflectionClass(AvailableApieObjectProvider::class);
         foreach ($refl->getConstant('DEFINED_CLASSES') as $definedClass) {

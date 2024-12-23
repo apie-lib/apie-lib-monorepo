@@ -32,7 +32,7 @@ class LastNameTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['Jordan', 'Jordan'];
         yield ['van Oranje Nassouwe', '   van Oranje Nassouwe   '];
@@ -59,7 +59,7 @@ class LastNameTest extends TestCase
         LastName::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield [''];
         yield [' '];

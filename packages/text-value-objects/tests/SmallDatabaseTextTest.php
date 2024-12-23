@@ -31,7 +31,7 @@ class SmallDatabaseTextTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['', '    '];
         yield ['', str_repeat(' ', 300)];
@@ -59,7 +59,7 @@ class SmallDatabaseTextTest extends TestCase
         SmallDatabaseText::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield [str_repeat('1', '300')];
     }

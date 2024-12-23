@@ -17,10 +17,10 @@ class ApieRunGlobalMethodCommandTest extends TestCase
 {
     use MakeDataProviderMatrix;
 
-    public function it_can_run_a_global_method_provider(): Generator
+    public static function it_can_run_a_global_method_provider(): Generator
     {
-        yield from $this->createDataProviderFrom(
-            new ReflectionMethod($this, 'it_can_run_a_global_method'),
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_run_a_global_method'),
             new IntegrationTestHelper()
         );
     }

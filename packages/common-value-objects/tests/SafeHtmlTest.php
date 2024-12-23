@@ -46,7 +46,7 @@ class SafeHtmlTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function invalidHTMLProvider(): Generator
+    public static function invalidHTMLProvider(): Generator
     {
         yield 'malformed HTML' => [
             'this is a test<div>hi</div>',

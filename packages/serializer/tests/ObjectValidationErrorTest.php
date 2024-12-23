@@ -68,7 +68,7 @@ class ObjectValidationErrorTest extends TestCase
         );
     }
 
-    public function validationErrorProvider()
+    public static function validationErrorProvider()
     {
         $validUuid = '123e4567-e89b-12d3-a456-426614174000';
         $validAddress = [
@@ -149,7 +149,7 @@ class ObjectValidationErrorTest extends TestCase
         if (class_exists(CountryAndPhoneNumber::class)) {
             yield 'empty country and phone number' => [
                 [
-                    'country' => 'Type "" is not expected, expected ISO3166_1_Alpha_2',
+                    'country' => 'Type "" is not expected, expected CountryAlpha2',
                 ],
                 [
                     'phoneNumber' => '',
@@ -171,7 +171,7 @@ class ObjectValidationErrorTest extends TestCase
             ];
             yield 'empty country' => [
                 [
-                    'country' => 'Type "" is not expected, expected ISO3166_1_Alpha_2',
+                    'country' => 'Type "" is not expected, expected CountryAlpha2',
                 ],
                 [
                     'phoneNumber' => '+31611223344',

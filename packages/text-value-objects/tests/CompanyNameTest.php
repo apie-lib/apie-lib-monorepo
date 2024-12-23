@@ -32,7 +32,7 @@ class CompanyNameTest extends TestCase
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public function inputProvider()
+    public static function inputProvider()
     {
         yield ['42', '42'];
         yield ['Team 17', '   Team 17   '];
@@ -59,7 +59,7 @@ class CompanyNameTest extends TestCase
         CompanyName::fromNative($input);
     }
 
-    public function invalidProvider()
+    public static function invalidProvider()
     {
         yield [''];
         yield [' '];

@@ -73,13 +73,10 @@ class SymfonyTestingKernel extends Kernel
         return __DIR__ . '/../../../fixtures/symfony/templates';
     }
 
-    public function __wakeup()
+    public function __wakeup(): void
     {
-        if (\is_object($this->environment) || \is_object($this->debug)) {
-            throw new \BadMethodCallException('Cannot unserialize '.__CLASS__);
-        }
-
-        $this->__construct($this->apieConfig, $this->environment, $this->debug);
+        $this->__construct($this->apieConfig, $this->includeTwigBundle, $this->includeSecurityBundle);
+        parent::__wakeup();
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader): void

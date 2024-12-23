@@ -5,7 +5,7 @@ use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\IntegrationTestLogger;
 use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
 use Apie\Common\Wrappers\TextEncrypter;
-use Apie\IntegrationTests\Concerns\RunApplicationTest;
+use Apie\IntegrationTests\Concerns\ItRunsApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 class SymfonyTestApplication implements TestApplicationInterface
 {
-    use RunApplicationTest;
+    use ItRunsApplications;
 
     private ?SymfonyTestingKernel $kernel = null;
 

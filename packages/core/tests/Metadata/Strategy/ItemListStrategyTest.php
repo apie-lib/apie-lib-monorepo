@@ -30,7 +30,7 @@ class ItemListStrategyTest extends TestCase
         $this->assertInstanceOf($expectedMetadataClass, $metadata->getArrayItemType());
     }
 
-    public function hashmapOptionsProvider()
+    public static function hashmapOptionsProvider()
     {
         yield [
             ScalarMetadata::class,

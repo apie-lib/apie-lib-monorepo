@@ -38,6 +38,7 @@ use DateTimeInterface;
 use DateTimeZone;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
+use Prophecy\Prophet;
 use ReflectionClass;
 
 class SerializerTest extends TestCase
@@ -59,7 +60,7 @@ class SerializerTest extends TestCase
         $this->assertEquals($expected, $serializer->denormalizeNewObject($input, $desiredType, $apieContext));
     }
 
-    public function denormalizeProvider()
+    public static function denormalizeProvider()
     {
         yield 'string enum' => [
             ColorEnum::RED,
@@ -182,7 +183,8 @@ class SerializerTest extends TestCase
 
         $orderIdentifier = OrderIdentifier::createRandom();
         $order = new Order($orderIdentifier, new OrderLineList([]));
-        $dataLayer = $this->prophesize(ApieDatalayer::class);
+        $prophet = new Prophet();
+        $dataLayer = $prophet->prophesize(ApieDatalayer::class);
         $dataLayer->find($orderIdentifier)->willReturn($order);
 
         yield 'Identifier with data layer check' => [
@@ -206,7 +208,7 @@ class SerializerTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function normalizeProvider()
+    public static function normalizeProvider()
     {
         yield 'string enum' => [
             'red',
@@ -322,7 +324,6 @@ class SerializerTest extends TestCase
      */
     public function empty_enums_always_fail()
     {
-        $refl = new ReflectionClass(EmptyEnum::class);
         $serializer = $this->givenASerializer();
         $this->expectException(InvalidTypeException::class);
         $serializer->denormalizeNewObject(null, EmptyEnum::class, new ApieContext());
@@ -339,7 +340,7 @@ class SerializerTest extends TestCase
         $serializer->denormalizeNewObject($input, RestrictedEnum::class, $apieContext);
     }
 
-    public function invalidEnumsProvider()
+    public static function invalidEnumsProvider()
     {
         yield 'misses authenticated context' => ['green', new ApieContext()];
         // yield 'incorrect locale value' => ['red', new ApieContext(['locale' => 'gb'])]; TODO

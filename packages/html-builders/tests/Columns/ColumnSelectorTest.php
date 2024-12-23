@@ -22,7 +22,7 @@ class ColumnSelectorTest extends TestCase
         $this->assertEquals($expected, $testItem->getColumns(new ReflectionClass($class), new ApieContext()));
     }
 
-    public function classProvider(): Generator
+    public static function classProvider(): Generator
     {
         yield 'Regular entity' => [
             ['id', 'orderStatus', 'orderLines'],

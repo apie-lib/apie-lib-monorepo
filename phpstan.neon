@@ -160,11 +160,11 @@ parameters:
             count: 1
         -
             message: '/Parameter #1 \$fakeProviders/'
-            path: packages/faker/src/Command/ApieSeedCommand
+            path: packages/faker/src/Command/ApieSeedCommand.php
             count: 1
         -
             message: '/constructor expects Illuminate\\Contracts\\Container\\Container/'
-            path: packages/integration-tests/src/Applications/Laravel/LaravelTestApplication
+            path: packages/integration-tests/src/Applications/Laravel/LaravelTestApplication.php
             count: 1
         -
             message: '# has an uninitialized readonly property#'

@@ -14,7 +14,7 @@ class CreateLayoutIntegrationTest extends AbstractRenderTestCase
     private static string $path;
     private static ComponentRendererInterface $renderer;
 
-    public function __destruct()
+    public static function tearDownAfterClass(): void
     {
         if (isset(self::$path) && self::$path !== '/') {
             system('rm -rf ' . escapeshellarg(self::$path));
