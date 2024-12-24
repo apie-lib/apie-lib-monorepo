@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
-<phpunit cacheResult="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="tools/PhpUnitBootstrap.php">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" cacheResult="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="tools/PhpUnitBootstrap.php">
   <coverage processUncoveredFiles="true">
     <include>
       <directory suffix=".php">./packages</directory>
     </include>
     <exclude><directory suffix=".php">vendor</directory><directory suffix=".php">packages/apie-bundle/tests</directory><directory suffix=".php">packages/apie-common-plugin/tests</directory><directory suffix=".php">packages/apie-phpstan-rules/tests</directory><directory suffix=".php">packages/cms-api-dropdown-option/tests</directory><directory suffix=".php">packages/cms-layout-graphite/tests</directory><directory suffix=".php">packages/cms-layout-ionic/tests</directory><directory suffix=".php">packages/cms-layout-ugly/tests</directory><directory suffix=".php">packages/cms/tests</directory><directory suffix=".php">packages/common-value-objects/tests</directory><directory suffix=".php">packages/common/tests</directory><directory suffix=".php">packages/console/tests</directory><directory suffix=".php">packages/core/tests</directory><directory suffix=".php">packages/count-words/tests</directory><directory suffix=".php">packages/country-and-phone-number/tests</directory><directory suffix=".php">packages/date-value-objects/tests</directory><directory suffix=".php">packages/dateformat-to-regex/tests</directory><directory suffix=".php">packages/doctrine-entity-converter/tests</directory><directory suffix=".php">packages/doctrine-entity-datalayer/tests</directory><directory suffix=".php">packages/faker/tests</directory><directory suffix=".php">packages/html-builders/tests</directory><directory suffix=".php">packages/integration-tests/tests</directory><directory suffix=".php">packages/laravel-apie/tests</directory><directory suffix=".php">packages/maker/tests</directory><directory suffix=".php">packages/meta-maximum/tests</directory><directory suffix=".php">packages/meta-minimal/tests</directory><directory suffix=".php">packages/meta-recommended/tests</directory><directory suffix=".php">packages/otp-value-objects/tests</directory><directory suffix=".php">packages/regex-tools/tests</directory><directory suffix=".php">packages/regex-value-objects/tests</directory><directory suffix=".php">packages/rest-api/tests</directory><directory suffix=".php">packages/schema-generator/tests</directory><directory suffix=".php">packages/serializer/tests</directory><directory suffix=".php">packages/storage-metadata-builder/tests</directory><directory suffix=".php">packages/storage-metadata/tests</directory><directory suffix=".php">packages/text-value-objects/tests</directory><directory suffix=".php">packages/twig-template-layout-renderer/tests</directory></exclude>
   </coverage>
+  <source>
+    <include>
+        <directory suffix=".php">packages</directory>
+    </include>
+  </source>
   <php>
     <ini name="error_reporting" value="-1"/>
     <server name="APP_ENV" value="test" force="true"/>
