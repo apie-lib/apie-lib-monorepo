@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="vendor/autoload.php" colors="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd">
-  <source>
+<phpunit xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="vendor/autoload.php"
+        cacheDirectory=".phpunit.cache"
+        executionOrder="depends,defects"
+        shortenArraysForExportThreshold="10"
+        requireCoverageMetadata="false"
+        beStrictAboutCoverageMetadata="false"
+        beStrictAboutOutputDuringTests="false"
+        displayDetailsOnPhpunitDeprecations="true"
+        failOnPhpunitDeprecation="false"
+        failOnRisky="true"
+        failOnWarning="true">
+  <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
     <include>
       <directory suffix=".php">./src</directory>
     </include>

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" cacheResult="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="tools/PhpUnitBootstrap.php">
-  <source>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd"
+        bootstrap="tools/PhpUnitBootstrap.php"
+        cacheDirectory=".phpunit.cache"
+        executionOrder="depends,defects"
+        shortenArraysForExportThreshold="10"
+        requireCoverageMetadata="false"
+        beStrictAboutCoverageMetadata="false"
+        beStrictAboutOutputDuringTests="true"
+        displayDetailsOnPhpunitDeprecations="true"
+        failOnPhpunitDeprecation="false"
+        failOnRisky="true"
+        failOnWarning="true">
+  <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
     <include>
       <directory suffix=".php">./packages</directory>
     </include>
@@ -13,7 +24,7 @@
     <server name="SHELL_VERBOSITY" value="-1"/>
     <server name="SYMFONY_PHPUNIT_REMOVE" value=""/>
     <server name="SYMFONY_DEPRECATIONS_HELPER" value="max[total]=999999&amp;max[self]=0&amp;baselineFile=./allowed.json"/>
-    </php>
+  </php>
   <testsuites>
     <testsuite name="All packages"><directory>packages/laravel-apie/tests</directory><directory>packages/twig-template-layout-renderer/tests</directory><directory>packages/doctrine-entity-datalayer/tests</directory><directory>packages/regex-tools/tests</directory><directory>packages/storage-metadata-builder/tests</directory><directory>packages/date-value-objects/tests</directory><directory>packages/common-value-objects/tests</directory><directory>packages/doctrine-entity-converter/tests</directory><directory>packages/meta-minimal/tests</directory><directory>packages/regex-value-objects/tests</directory><directory>packages/serializer/tests</directory><directory>packages/dateformat-to-regex/tests</directory><directory>packages/faker/tests</directory><directory>packages/maker/tests</directory><directory>packages/country-and-phone-number/tests</directory><directory>packages/schema-generator/tests</directory><directory>packages/text-value-objects/tests</directory><directory>packages/cms-layout-ugly/tests</directory><directory>packages/cms-api-dropdown-option/tests</directory><directory>packages/otp-value-objects/tests</directory><directory>packages/apie-phpstan-rules/tests</directory><directory>packages/meta-recommended/tests</directory><directory>packages/integration-tests/tests</directory><directory>packages/cms-layout-graphite/tests</directory><directory>packages/storage-metadata/tests</directory><directory>packages/common/tests</directory><directory>packages/core/tests</directory><directory>packages/console/tests</directory><directory>packages/apie-common-plugin/tests</directory><directory>packages/apie-bundle/tests</directory><directory>packages/count-words/tests</directory><directory>packages/meta-maximum/tests</directory><directory>packages/html-builders/tests</directory><directory>packages/cms/tests</directory><directory>packages/rest-api/tests</directory><directory>packages/cms-layout-ionic/tests</directory></testsuite>
   </testsuites>
