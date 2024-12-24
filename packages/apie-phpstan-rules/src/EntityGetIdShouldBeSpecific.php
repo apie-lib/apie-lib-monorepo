@@ -43,19 +43,16 @@ final class EntityGetIdShouldBeSpecific implements Rule
             $method = $class->getMethod('getId', $scope);
             foreach ($method->getVariants() as $variant) {
                 $type = $variant->getNativeReturnType();
-                if ($type instanceof \PHPStan\Type\ObjectType) {
-                    if ($type->getClassName() === IdentifierInterface::class) {
-                        return [
-
-                            __CLASS__ => RuleErrorBuilder::message(
-                                sprintf(
-                                    "Class '%s' is an entity, but the getId() implementation has still IdentifierInterface return type.",
-                                    $nodeName
-                                )
-                            )->identifier('apie.get.id.specific')
-                            ->build()
-                        ];
-                    }
+                if ($type->isObject()->yes() && in_array(IdentifierInterface::class, $type->getReferencedClasses())) {
+                    return [
+                        RuleErrorBuilder::message(
+                            sprintf(
+                                "Class '%s' is an entity, but the getId() implementation has still IdentifierInterface return type.",
+                                $nodeName
+                            )
+                        )->identifier('apie.get.id.specific')
+                        ->build()
+                    ];
                 }
             }
         }

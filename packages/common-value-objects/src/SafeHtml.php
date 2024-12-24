@@ -89,7 +89,7 @@ final class SafeHtml implements StringValueObjectInterface, LengthConstraintStri
         return 0;
     }
 
-    public static function maxStringLength(): ?int
+    public static function maxStringLength(): int
     {
         return 1024 * 1024 * 20;
     }

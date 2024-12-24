@@ -20,12 +20,18 @@ final class AllowedCssInSpanSanitizer implements AttributeSanitizerInterface
         '/font-size\s*:\s*xxx-large\s*(;|$)/i' => 'font-size:xxx-large;',
     ];
 
-    public function getSupportedElements(): ?array
+    /**
+     * @return list<string>
+     */
+    public function getSupportedElements(): array
     {
         return ['span'];
     }
 
-    public function getSupportedAttributes(): ?array
+    /**
+     * @return list<string>
+     */
+    public function getSupportedAttributes(): array
     {
         return ['style'];
     }

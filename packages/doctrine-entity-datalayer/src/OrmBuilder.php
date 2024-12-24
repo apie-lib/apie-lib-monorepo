@@ -8,7 +8,6 @@ use Apie\DoctrineEntityDatalayer\Exceptions\CouldNotUpdateDatabaseAutomatically;
 use Apie\StorageMetadata\Interfaces\StorageDtoInterface;
 use Apie\StorageMetadataBuilder\Interfaces\RootObjectInterface;
 use Doctrine\Bundle\DoctrineBundle\Middleware\DebugMiddleware;
-use Doctrine\Common\EventManager;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Exception\DriverException;
 use Doctrine\DBAL\Schema\AbstractAsset;
@@ -38,7 +37,6 @@ class OrmBuilder
         private readonly ?CacheItemPoolInterface $cache,
         private readonly string $path,
         private readonly array $connectionConfig,
-        private readonly ?EventManager $eventManager = null,
         private readonly ?DebugMiddleware $debugMiddleware = null
     ) {
     }
@@ -120,9 +118,7 @@ class OrmBuilder
             $this->proxyDir,
             $this->devMode ? null : $this->cache
         );
-        if (class_exists(DefaultSchemaManagerFactory::class) && is_callable([$config, 'setSchemaManagerFactory'])) {
-            $config->setSchemaManagerFactory(new DefaultSchemaManagerFactory());
-        }
+        $config->setSchemaManagerFactory(new DefaultSchemaManagerFactory());
         $config->setLazyGhostObjectEnabled(true);
         $config->setSchemaAssetsFilter(static function (string|AbstractAsset $assetName): bool {
             if ($assetName instanceof AbstractAsset) {
@@ -137,7 +133,7 @@ class OrmBuilder
             ]);
         }
         if (!$this->createdEntityManager || !$this->createdEntityManager->isOpen()) {
-            $connection = DriverManager::getConnection($this->connectionConfig, $config, $this->eventManager ?? new EventManager());
+            $connection = DriverManager::getConnection($this->connectionConfig, $config);
             $this->createdEntityManager = new EntityManager($connection, $config);
             if ($this->runMigrations) {
                 $this->runMigrations($this->createdEntityManager);

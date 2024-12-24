@@ -42,7 +42,7 @@ final class ValueObjectHasNoConstructor implements Rule
         $class = $this->getClass($node, $scope);
         if ($class->implementsInterface(ValueObjectInterface::class) && !$class->hasConstructor()) {
             return [
-                __CLASS__ => RuleErrorBuilder::message(
+                RuleErrorBuilder::message(
                     sprintf(
                         "Class '%s' is a value object, but it has no constructor.",
                         $node->name->toString()

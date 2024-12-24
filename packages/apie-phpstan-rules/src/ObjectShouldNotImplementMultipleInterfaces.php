@@ -62,7 +62,7 @@ final class ObjectShouldNotImplementMultipleInterfaces implements Rule
         }
         if (!empty($conflicted)) {
             return [
-                __CLASS__ => RuleErrorBuilder::message(
+                RuleErrorBuilder::message(
                     sprintf(
                         "Class '%s' has conflicting interfaces: %s",
                         $nodeName,

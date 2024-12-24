@@ -52,8 +52,7 @@ class DoctrineEntityDatalayerTest extends TestCase
                 connectionConfig: [
                     'driver' => 'pdo_sqlite',
                     'memory' => true
-                ],
-                eventManager: null
+                ]
             );
             $domainToStorageConverter = DomainToStorageConverter::create(FileStorageFactory::create());
             $doctrineListFactory = new DoctrineListFactory(
