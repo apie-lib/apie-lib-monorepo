@@ -28,9 +28,7 @@ class CanCreateRandomPhoneNumberTest extends TestCase
         return PhoneNumberUtil::getInstance();
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_error_if_libphonenumber_has_no_example_phonenumber()
     {
         self::$country = CountryAlpha2::Antarctica;

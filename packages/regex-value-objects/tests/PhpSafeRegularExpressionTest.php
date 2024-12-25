@@ -14,10 +14,8 @@ class PhpSafeRegularExpressionTest extends TestCase
     use TestWithFaker;
     use TestWithOpenapiSchema;
 
-    /**
-     * @test
-     * @dataProvider inputProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_allows_valid_regular_expressions(string $expected, string $expectedDelimiter, string $expectedModifier, string $input)
     {
         $testItem = new PhpSafeRegularExpression($input);
@@ -32,20 +30,16 @@ class PhpSafeRegularExpressionTest extends TestCase
         yield 'regular expression without modifier' => ['/test/', '/', '', '/test/'];
     }
 
-    /**
-     * @test
-     * @dataProvider invalidProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_invalid_regular_expressions(string $expectedClass, string $input)
     {
         $this->expectException($expectedClass);
         new PhpSafeRegularExpression($input);
     }
 
-    /**
-     * @test
-     * @dataProvider invalidProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_invalid_regular_expressions_with_fromNative(string $expectedClass, string $input)
     {
         $this->expectException($expectedClass);
@@ -67,9 +61,7 @@ class PhpSafeRegularExpressionTest extends TestCase
         yield 'contains look aheads and repeat in repeat' => [ExpressionContainsLookAheads::class, '/^\d+(?:,\d+)+$/'];
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -82,9 +74,7 @@ class PhpSafeRegularExpressionTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(PhpSafeRegularExpression::class);

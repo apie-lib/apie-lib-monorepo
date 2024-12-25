@@ -8,4 +8,5 @@ clover.xml
 /coverage
 coverage.xml
 /projectCoverage
+.phpunit.cache
 /.tempdockerfile.*

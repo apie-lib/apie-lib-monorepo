@@ -8,9 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class ClassCodeGeneratorTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_generate_a_composer_file()
     {
         $testItem = new ClassCodeGenerator();
@@ -24,9 +22,7 @@ class ClassCodeGeneratorTest extends TestCase
         $this->assertEquals(file_get_contents($expectedFile), $actual);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_generate_a_layout_file()
     {
         $testItem = new ClassCodeGenerator();
@@ -40,9 +36,7 @@ class ClassCodeGeneratorTest extends TestCase
         $this->assertEquals(file_get_contents($expectedFile), $actual);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_generate_a_layout_test_file()
     {
         $testItem = new ClassCodeGenerator();

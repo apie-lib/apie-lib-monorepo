@@ -13,20 +13,16 @@ class FilenameTest extends TestCase
     use TestWithFaker;
     use TestWithOpenapiSchema;
 
-    /**
-     * @test
-     * @dataProvider inputProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function fromNative_allows_all_strings_that_are_not_too_long(string $expected, string $input)
     {
         $testItem = Filename::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    /**
-     * @test
-     * @dataProvider inputProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_allows_all_strings_that_are_not_too_long(string $expected, string $input)
     {
         $testItem = new Filename($input);
@@ -40,20 +36,16 @@ class FilenameTest extends TestCase
         yield 'linux hidden file' => ['.htaccess', '.htaccess'];
     }
 
-    /**
-     * @test
-     * @dataProvider invalidProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_invalid_file_names(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
         new Filename($input);
     }
 
-    /**
-     * @test
-     * @dataProvider invalidProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_invalid_file_names_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
@@ -69,9 +61,7 @@ class FilenameTest extends TestCase
         yield 'empty string' => [''];
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -85,9 +75,7 @@ class FilenameTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(Filename::class);

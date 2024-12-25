@@ -37,11 +37,9 @@ class CmsLoginTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_login_by_convention_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_login_by_convention_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_login_by_convention(TestApplicationInterface $testApplication)
     {
         $testApplication->ItRunsApplications(function (TestApplicationInterface $testApplication) {
@@ -104,11 +102,9 @@ class CmsLoginTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_read_the_authorization_cookie_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_read_the_authorization_cookie_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_read_the_authorization_cookie(TestApplicationInterface $testApplication)
     {
         $testApplication->ItRunsApplications(function (TestApplicationInterface $testApplication) {
@@ -149,11 +145,9 @@ class CmsLoginTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_display_401_if_auth_cookie_contains_garbage_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_display_401_if_auth_cookie_contains_garbage_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_display_401_if_auth_cookie_contains_garbage(TestApplicationInterface $testApplication)
     {
         $testApplication->ItRunsApplications(function (TestApplicationInterface $testApplication) {

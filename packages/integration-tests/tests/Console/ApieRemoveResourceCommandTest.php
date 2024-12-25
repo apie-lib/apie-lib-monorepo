@@ -27,11 +27,9 @@ class ApieRemoveResourceCommandTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_remove_a_resource_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_remove_a_resource_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_remove_a_resource(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();
@@ -51,11 +49,9 @@ class ApieRemoveResourceCommandTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_remove_a_resource_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_remove_a_resource_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_an_error_on_invalid_id(TestApplicationInterface $testApplication)
     {
         $invalidIds = [
@@ -77,11 +73,9 @@ class ApieRemoveResourceCommandTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_remove_a_resource_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_remove_a_resource_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_remove_a_resource_with_interaction(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();

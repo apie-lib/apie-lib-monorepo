@@ -30,11 +30,9 @@ class LoginTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_login_by_convention_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_login_by_convention_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_login_by_convention(TestApplicationInterface $testApplication)
     {
         $testApplication->ItRunsApplications(function (TestApplicationInterface $testApplication) {

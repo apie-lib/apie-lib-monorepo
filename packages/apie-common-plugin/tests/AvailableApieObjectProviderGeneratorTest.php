@@ -7,9 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class AvailableApieObjectProviderGeneratorTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_generate_a_class()
     {
         $fileWriter = new MockFileWriter();

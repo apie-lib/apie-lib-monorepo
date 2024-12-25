@@ -32,10 +32,8 @@ class EntityQueryTest extends TestCase
         $manager->getConnection()->willReturn($connection->reveal());
         return $manager->reveal();
     }
-    /**
-     * @test
-     * @dataProvider sqlProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('sqlProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_create_sql_with_text_search(string $expectedOutputPath, QuerySearch $querySearch): void
     {
         $testItem = new EntityQuery(

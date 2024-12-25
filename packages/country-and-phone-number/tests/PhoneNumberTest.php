@@ -23,9 +23,7 @@ class PhoneNumberTest extends TestCase
     use TestWithFaker;
     use TestWithOpenapiSchema;
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -38,9 +36,7 @@ class PhoneNumberTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_error_on_incorrect_country()
     {
         $this->expectException(InvalidStringForValueObjectException::class);
@@ -49,9 +45,9 @@ class PhoneNumberTest extends TestCase
 
     /**
      * @param class-string<PhoneNumber> $className
-     * @dataProvider phoneNumberClassProvider
-     * @test
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('phoneNumberClassProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker(string $className)
     {
         $this->runFakerTest($className);

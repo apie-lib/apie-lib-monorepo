@@ -27,11 +27,9 @@ class CmsResourceOverviewRenderTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_renders_a_resource_overview_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_renders_a_resource_overview_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_renders_a_resource_overview_page(
         TestApplicationInterface $testApplication
     ) {
@@ -61,11 +59,9 @@ class CmsResourceOverviewRenderTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_renders_a_resource_overview_page_with_text_search_filter_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_renders_a_resource_overview_page_with_text_search_filter_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_renders_a_resource_overview_page_with_text_search_filter(
         TestApplicationInterface $testApplication,
         SearchTerm $searchTerm

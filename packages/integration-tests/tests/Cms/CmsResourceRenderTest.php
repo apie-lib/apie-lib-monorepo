@@ -24,11 +24,9 @@ class CmsResourceRenderTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_renders_a_resource_detail_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_renders_a_resource_detail_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_renders_a_resource_detail_page(
         TestApplicationInterface $testApplication
     ) {

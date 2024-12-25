@@ -12,20 +12,16 @@ class KebabCaseSlugTest extends TestCase
 {
     use TestWithFaker;
     use TestWithOpenapiSchema;
-    /**
-     * @test
-     * @dataProvider inputProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function fromNative_allows_many_names(string $expected, string $input)
     {
         $testItem = KebabCaseSlug::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    /**
-     * @test
-     * @dataProvider inputProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_allows_many_names(string $expected, string $input)
     {
         $testItem = new KebabCaseSlug($input);
@@ -39,20 +35,16 @@ class KebabCaseSlugTest extends TestCase
         yield ['example-3-example3', 'example-3-example3'];
     }
 
-    /**
-     * @test
-     * @dataProvider invalidProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_non_kebab_case_strings(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
         new KebabCaseSlug($input);
     }
 
-    /**
-     * @test
-     * @dataProvider invalidProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_non_kebab_case_strings_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
@@ -66,17 +58,13 @@ class KebabCaseSlugTest extends TestCase
         yield ["capital-Start"];
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(KebabCaseSlug::class);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -90,10 +78,8 @@ class KebabCaseSlugTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     * @dataProvider otherFormatsProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('otherFormatsProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_be_converted_in_other_slug_formats(string $expected, string $input, string $methodCall)
     {
         $testItem = new KebabCaseSlug($input);

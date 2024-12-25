@@ -7,9 +7,9 @@ use PHPUnit\Framework\TestCase;
 class ZipArchiveWordCounterTest extends TestCase
 {
     /**
-     * @test
      * @requires extension zip
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_count_words_in_zip_files()
     {
         $zipPath = __DIR__ . '/../../fixtures/zip/fixtures.zip';
@@ -21,10 +21,10 @@ class ZipArchiveWordCounterTest extends TestCase
     }
 
     /**
-     * @test
-     * @runInSeparateProcess
      * @requires extension zip
      */
+    #[\PHPUnit\Framework\Attributes\Test]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
     public function it_reads_zips_inside_zips_with_limited_recursion()
     {
         // can not provide the file on the repo, considering it is not my zip file.

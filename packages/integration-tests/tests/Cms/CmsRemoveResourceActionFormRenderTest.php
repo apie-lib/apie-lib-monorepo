@@ -24,11 +24,9 @@ class CmsRemoveResourceActionFormRenderTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_renders_a_remove_resource_form_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_renders_a_remove_resource_form_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_renders_a_remove_resource_form_page(
         TestApplicationInterface $testApplication
     ) {

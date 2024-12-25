@@ -20,10 +20,8 @@ class ApieObjectFakerTest extends TestCase
 {
     use ItCreatesAFaker;
 
-    /**
-     * @test
-     * @dataProvider dateValueObjectsProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dateValueObjectsProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_fake_a_date_value_object(string $classToTest)
     {
         $faker = $this->givenAFakerWithApieObjectFaker();
@@ -45,10 +43,8 @@ class ApieObjectFakerTest extends TestCase
         }
     }
 
-    /**
-     * @test
-     * @dataProvider compositeValueObjectProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('compositeValueObjectProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_fake_composite_value_objects(string $classToTest)
     {
         $faker = $this->givenAFakerWithApieObjectFaker();
@@ -65,10 +61,8 @@ class ApieObjectFakerTest extends TestCase
         yield 'Polymorphic entity' => [Animal::class];
     }
 
-    /**
-     * @test
-     * @dataProvider enumProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('enumProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_fake_an_enum(string $classToTest)
     {
         $faker = $this->givenAFakerWithApieObjectFaker();
@@ -83,10 +77,8 @@ class ApieObjectFakerTest extends TestCase
         yield 'regular enum' => [Gender::class];
     }
 
-    /**
-     * @test
-     * @dataProvider passwordValueObjectsProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('passwordValueObjectsProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_fake_a_password_value_object(string $classToTest)
     {
         $faker = $this->givenAFakerWithApieObjectFaker();
@@ -101,10 +93,8 @@ class ApieObjectFakerTest extends TestCase
         yield 'regular password' => [Password::class];
     }
 
-    /**
-     * @test
-     * @dataProvider primitiveProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('primitiveProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_fake_primitives(string $type)
     {
         $faker = $this->givenAFakerWithApieObjectFaker();

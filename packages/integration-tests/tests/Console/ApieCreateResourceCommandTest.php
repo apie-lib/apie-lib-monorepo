@@ -34,11 +34,9 @@ class ApieCreateResourceCommandTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_create_a_resource_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_create_a_resource_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_create_a_resource(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();
@@ -55,11 +53,9 @@ class ApieCreateResourceCommandTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_create_a_resource_with_interaction_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_create_a_resource_with_interaction_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_create_a_resource_with_interaction(
         TestApplicationInterface $testApplication,
         InteractiveConsoleCommand $interactiveConsoleCommand

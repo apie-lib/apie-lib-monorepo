@@ -19,19 +19,15 @@ class CountryAndPhoneNumberTest extends TestCase
     use TestWithFaker;
     use TestWithOpenapiSchema;
 
-    /**
-     * @test
-     * @dataProvider correctProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('correctProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_instantiate_correct_combinations_with_fromNative(array $expected, array $input)
     {
         $this->assertEquals($expected, CountryAndPhoneNumber::fromNative($input)->toNative());
     }
 
-    /**
-     * @test
-     * @dataProvider correctProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('correctProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_instantiate_correct_combinations_with_constructor(array $expected, array $input)
     {
         $country = CountryAlpha2::from($input['country']);
@@ -54,10 +50,8 @@ class CountryAndPhoneNumberTest extends TestCase
         yield [$expected, $input];
     }
 
-    /**
-     * @test
-     * @dataProvider incorrectProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('incorrectProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_errors_on_incorrect_combinations_with_fromNative(array $expectedErrorMessages, array $input)
     {
         $this->assertValidationError(
@@ -68,10 +62,8 @@ class CountryAndPhoneNumberTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     * @dataProvider incorrectProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('incorrectProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_errors_on_incorrect_combinations_with_constructor(array $expectedErrorMessages, array $input)
     {
         $this->assertValidationError(
@@ -97,9 +89,7 @@ class CountryAndPhoneNumberTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -116,9 +106,7 @@ class CountryAndPhoneNumberTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(CountryAndPhoneNumber::class);

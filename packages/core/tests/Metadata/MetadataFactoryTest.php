@@ -40,9 +40,7 @@ use Stringable;
 
 class MetadataFactoryTest extends TestCase
 {
-    /**
-     * @dataProvider provideStrategy
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideStrategy')]
     public function testGetMetadataStrategy(string $expectedStrategyClass, string $input)
     {
         $this->assertInstanceOf($expectedStrategyClass, MetadataFactory::getMetadataStrategy(new ReflectionClass($input)));
@@ -106,9 +104,7 @@ class MetadataFactoryTest extends TestCase
         }
     }
 
-    /**
-     * @dataProvider getScalarForTypeProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('getScalarForTypeProvider')]
     public function testGetScalarForType(ScalarType $expected, ?string $typehint)
     {
         $type = $typehint === null ? null : ReflectionTypeFactory::createReflectionType($typehint);
@@ -135,8 +131,8 @@ class MetadataFactoryTest extends TestCase
      * @param array<int, string> $expectedFields
      * @param array<int, string> $expectedRequired
      * @param class-string<object> $className
-     * @dataProvider compositeMetadataProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('compositeMetadataProvider')]
     public function testCompositeMetadata(
         array $expectedFields,
         array $expectedRequired,

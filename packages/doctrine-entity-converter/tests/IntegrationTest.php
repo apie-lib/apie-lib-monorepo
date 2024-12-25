@@ -58,8 +58,8 @@ class IntegrationTest extends TestCase
 
     /**
      * @requires extension sqlite3
-     * @dataProvider entityProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('entityProvider')]
     public function testPersistenceAndRetrieval(EntityInterface $domainObject, string $boundedContextId, ?callable $testBefore = null, ?callable $testAfter = null)
     {
         $testBefore ??= function () {

@@ -12,9 +12,7 @@ class SafeHtmlTest extends TestCase
     use TestWithOpenapiSchema;
     use TestWithFaker;
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -27,19 +25,15 @@ class SafeHtmlTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_large_html()
     {
         $this->expectException(InvalidStringForValueObjectException::class);
         new SafeHtml(str_repeat('aaa', 20 * 1024 * 1024));
     }
 
-    /**
-     * @test
-     * @dataProvider invalidHTMLProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidHTMLProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_sanitizes_html(string $expected, string $input)
     {
         $testItem = new SafeHtml($input);
@@ -86,9 +80,7 @@ class SafeHtmlTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_indexes_html()
     {
         $testItem = new SafeHtml('<div>Test</div><p>Paragraph</p><h1>Header is important, right?</h1>');
@@ -105,9 +97,7 @@ class SafeHtmlTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(SafeHtml::class);

@@ -15,10 +15,8 @@ class ValueObjectHasNoConstructorTest extends RuleTestCase
         return new ValueObjectHasNoConstructor($this->createReflectionProvider());
     }
 
-    /**
-     * @dataProvider ruleProvider
-     * @runInSeparateProcess
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('ruleProvider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
     public function testLegacyRule(array $rules, string... $fileToAnalyse): void
     {
         $this->analyse($fileToAnalyse, $rules);

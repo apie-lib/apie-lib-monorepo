@@ -32,11 +32,9 @@ class ServiceRegistrationTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_registers_an_apie_service_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_registers_an_apie_service_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_registers_an_apie_service(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();
@@ -53,11 +51,9 @@ class ServiceRegistrationTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_registers_an_error_render_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_registers_an_error_render_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_registers_an_error_render(LaravelTestApplication $testApplication)
     {
         $testApplication->bootApplication();
@@ -76,26 +72,25 @@ class ServiceRegistrationTest extends TestCase
         );
     }
 
-    /**
-     * @dataProvider it_registers_a_laravel_facade_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_registers_a_laravel_facade_provider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     #[WithoutErrorHandler]
     public function it_registers_a_laravel_facade(LaravelTestApplication $testApplication)
     {
-        $testApplication->bootApplication();
-        $apieService = $testApplication->getServiceContainer()->get('apie');
-        $this->assertInstanceOf(
-            GetItemAction::class,
-            Apie::createAction(new ApieContext([ContextConstants::APIE_ACTION => GetItemAction::class]))
-        );
-        $this->assertSame($apieService, Apie::getFacadeRoot());
-        $testApplication->cleanApplication();
-    }
-
-    #[After()]
-    public function __internalDisableErrorHandler(): void
-    {
-        restore_exception_handler();
+        // no idea why this test does something weird with the error handler
+        // it gives error: 'Test code or tested code removed error handlers other than its own'
+        set_error_handler(null);
+        try {
+            $testApplication->bootApplication();
+            $apieService = $testApplication->getServiceContainer()->get('apie');
+            $this->assertInstanceOf(
+                GetItemAction::class,
+                Apie::createAction(new ApieContext([ContextConstants::APIE_ACTION => GetItemAction::class]))
+            );
+            $this->assertSame($apieService, Apie::getFacadeRoot());
+            $testApplication->cleanApplication();
+        } finally {
+            restore_error_handler();
+        }
     }
 }

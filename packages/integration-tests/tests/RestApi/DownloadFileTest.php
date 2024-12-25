@@ -26,11 +26,9 @@ class DownloadFileTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_download_an_uploaded_file_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_download_an_uploaded_file_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_download_an_uploaded_file(
         TestApplicationInterface $testApplication
     ) {
@@ -59,11 +57,9 @@ class DownloadFileTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_stream_an_uploaded_file_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_stream_an_uploaded_file_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_stream_an_uploaded_file(
         TestApplicationInterface $testApplication
     ) {

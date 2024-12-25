@@ -25,11 +25,9 @@ class ApieRunGlobalMethodCommandTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_run_a_global_method_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_run_a_global_method_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_run_a_global_method(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();
@@ -43,11 +41,9 @@ class ApieRunGlobalMethodCommandTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_run_a_global_method_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_run_a_global_method_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_run_a_global_method_with_interaction(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();

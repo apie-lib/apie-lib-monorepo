@@ -48,10 +48,8 @@ class HourAndMinutesTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     * @dataProvider invalidInput
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidInput')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_validates_invalid_input(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);

@@ -23,9 +23,7 @@ class ObjectValidationErrorTest extends TestCase
         return Serializer::create();
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_has_metadata_for_validation_errors()
     {
         $metadata = MetadataFactory::getResultMetadata(new ReflectionClass(ValidationException::class), new ApieContext());
@@ -35,9 +33,7 @@ class ObjectValidationErrorTest extends TestCase
         $this->assertArrayHasKey('errors', $fields);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_serializes_validation_errors()
     {
         $serializer = $this->givenASerializer();
@@ -53,10 +49,8 @@ class ObjectValidationErrorTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    /**
-     * @dataProvider validationErrorProvider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('validationErrorProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_validation_errors_on_incorrect_input(array $expected, mixed $input, string $desiredType, ApieContext $apieContext)
     {
         $serializer = $this->givenASerializer();

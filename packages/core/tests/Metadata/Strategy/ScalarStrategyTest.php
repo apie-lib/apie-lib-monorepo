@@ -10,10 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 class ScalarStrategyTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider scalarProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('scalarProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_typehint_scalars(ScalarType $expectedScalar, string $typehint)
     {
         $context = new ApieContext();

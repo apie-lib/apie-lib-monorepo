@@ -7,10 +7,8 @@ use PHPUnit\Framework\TestCase;
 
 class RegexUtilsTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider maxLengthProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('maxLengthProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_figure_out_maximum_length_of_a_regular_expression(?int $expected, string $input)
     {
         $this->assertEquals($expected, RegexUtils::getMaximumAcceptedStringLengthOfRegularExpression($input));

@@ -24,10 +24,8 @@ use ReflectionProperty;
 
 class PropertyToFieldMetadataUtilTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider typehintProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('typehintProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_find_typehints(bool $expected, string $input, string $searchType)
     {
         $this->assertEquals(
@@ -46,10 +44,8 @@ class PropertyToFieldMetadataUtilTest extends TestCase
         yield [true, ImageFile::class, UploadedFileInterface::class];
         yield [true, Order::class, OrderLine::class];
     }
-    /**
-     * @test
-     * @dataProvider fieldMetadataProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('fieldMetadataProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_gets_field_metadata(?FieldInterface $expected, string $className, string $property)
     {
         $apieContext = new ApieContext();

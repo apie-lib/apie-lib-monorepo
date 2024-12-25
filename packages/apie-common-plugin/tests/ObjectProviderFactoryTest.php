@@ -8,9 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class ObjectProviderFactoryTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function i_can_get_an_object_provider()
     {
         $object = ObjectProviderFactory::create(new MockFileWriter());

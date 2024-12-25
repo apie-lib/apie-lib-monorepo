@@ -9,9 +9,7 @@ use PHPUnit\Framework\TestCase;
 class BoundedContextDefinitionTest extends TestCase
 {
     use TestWithFaker;
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_as_intended()
     {
         $testItem = new BoundedContextDefinition(new Identifier('test'));
@@ -19,9 +17,7 @@ class BoundedContextDefinitionTest extends TestCase
         $this->assertStringStartsWith('test', $id->toNative());
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_faker()
     {
         $this->runFakerTest(BoundedContextDefinition::class);

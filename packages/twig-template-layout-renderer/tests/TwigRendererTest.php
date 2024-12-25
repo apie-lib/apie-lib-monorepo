@@ -21,9 +21,7 @@ class TwigRendererTest extends TestCase
             'Apie\Tests\TwigTemplateLayoutRenderer\Fixtures\\'
         );
     }
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_render_a_twig_template_from_a_component()
     {
         $testItem = $this->given_a_twig_renderer();
@@ -34,9 +32,7 @@ class TwigRendererTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_error_on_invalid_namespace_for_component()
     {
         $testItem = new TwigRenderer(
@@ -49,9 +45,7 @@ class TwigRendererTest extends TestCase
         $testItem->render(new Dummy('world', new Dummy('world 2')), new ApieContext());
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_error_on_missing_template_for_component()
     {
         $testItem = $this->given_a_twig_renderer();

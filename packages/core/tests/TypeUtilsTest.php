@@ -11,10 +11,8 @@ use ReflectionType;
 
 class TypeUtilsTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider emptyStringAllowedProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('emptyStringAllowedProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_determine_if_empty_strings_are_allowed(bool $expected, ?ReflectionType $input)
     {
         $this->assertEquals($expected, TypeUtils::allowEmptyString($input));

@@ -24,11 +24,9 @@ class ApieCreateDomainCommandTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_create_a_domain_object_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_create_a_domain_object_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_create_a_domain_object(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();

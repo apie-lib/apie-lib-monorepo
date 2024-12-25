@@ -15,10 +15,8 @@ use ReflectionClass;
 
 class EnumStrategyTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider enumOptionsProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('enumOptionsProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_extract_values(array $expectedOptions, ScalarType $expectedScalar, ApieContext $context, string $class)
     {
         /** @var EnumStrategy $actual */

@@ -11,20 +11,16 @@ class NonEmptyStringTest extends TestCase
 {
     use TestWithFaker;
     use TestWithOpenapiSchema;
-    /**
-     * @test
-     * @dataProvider inputProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function fromNative_allows_all_strings_that_are_not_empty(string $expected, string $input)
     {
         $testItem = NonEmptyString::fromNative($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    /**
-     * @test
-     * @dataProvider inputProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_allows_all_strings_that_are_not_empty(string $expected, string $input)
     {
         $testItem = new NonEmptyString($input);
@@ -37,20 +33,16 @@ class NonEmptyStringTest extends TestCase
         yield ['trimmed', '   trimmed   '];
     }
 
-    /**
-     * @test
-     * @dataProvider invalidProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_empty_strings(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
         new NonEmptyString($input);
     }
 
-    /**
-     * @test
-     * @dataProvider invalidProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_empty_strings_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
@@ -64,9 +56,7 @@ class NonEmptyStringTest extends TestCase
         yield ["          \t\n\r\n"];
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -80,9 +70,7 @@ class NonEmptyStringTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(NonEmptyString::class);

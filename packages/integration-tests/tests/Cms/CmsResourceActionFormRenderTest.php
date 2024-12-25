@@ -25,11 +25,9 @@ class CmsResourceActionFormRenderTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_renders_a_resource_action_form_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_renders_a_resource_action_form_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_renders_a_resource_action_form_page(
         TestApplicationInterface $testApplication
     ) {
@@ -54,11 +52,9 @@ class CmsResourceActionFormRenderTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_execute_a_resource_action_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_execute_a_resource_action_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_execute_a_resource_action(
         TestApplicationInterface $testApplication,
         CmsFormSubmitRequest $cmsFormSubmitRequest

@@ -20,11 +20,9 @@ class CmsRenderErrorTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_renders_an_error_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_renders_an_error_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_renders_an_error_page(
         TestApplicationInterface $testApplication
     ) {

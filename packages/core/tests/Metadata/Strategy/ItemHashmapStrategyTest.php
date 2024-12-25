@@ -14,10 +14,8 @@ use ReflectionClass;
 
 class ItemHashmapStrategyTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider hashmapOptionsProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('hashmapOptionsProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_extract_item_types(string $expectedMetadataClass, string $class)
     {
         $context = new ApieContext();

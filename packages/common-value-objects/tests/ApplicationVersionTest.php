@@ -12,9 +12,7 @@ class ApplicationVersionTest extends TestCase
     use TestWithOpenapiSchema;
     use TestWithFaker;
     
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -28,9 +26,7 @@ class ApplicationVersionTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_convert_to_a_semantic_version()
     {
         $testItem = new ApplicationVersion('1.0.0');
@@ -38,9 +34,7 @@ class ApplicationVersionTest extends TestCase
         $this->assertEquals('1.0.0', $actual->toNative());
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(ApplicationVersion::class);

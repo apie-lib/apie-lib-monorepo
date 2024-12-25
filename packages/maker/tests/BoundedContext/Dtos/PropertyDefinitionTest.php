@@ -11,17 +11,13 @@ class PropertyDefinitionTest extends TestCase
 {
     use TestWithFaker;
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_faker()
     {
         $this->runFakerTest(PropertyDefinition::class);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_maps_uniqueness_on_name_property()
     {
         $testItem = new PropertyDefinition(

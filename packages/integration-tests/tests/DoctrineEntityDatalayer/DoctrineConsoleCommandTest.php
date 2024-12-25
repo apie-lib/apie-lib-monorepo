@@ -31,11 +31,9 @@ class DoctrineConsoleCommandTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_run_doctrine_schema_update_commands_on_apie_connection_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_run_doctrine_schema_update_commands_on_apie_connection_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_run_doctrine_schema_update_commands_on_apie_connection(
         SymfonyTestApplication $testApplication
     ) {
@@ -46,11 +44,9 @@ class DoctrineConsoleCommandTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_run_doctrine_schema_validate_commands_on_apie_connection_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_run_doctrine_schema_validate_commands_on_apie_connection_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_run_doctrine_schema_validate_commands_on_apie_connection(
         SymfonyTestApplication $testApplication
     ) {

@@ -12,10 +12,8 @@ use ReflectionClass;
 
 class ColumnSelectorTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider classProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('classProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_retrieve_columns_from_an_entity(array $expected, string $class)
     {
         $testItem = new ColumnSelector();

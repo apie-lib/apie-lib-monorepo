@@ -8,9 +8,9 @@ use PHPUnit\Framework\TestCase;
 class OfficeDocumentWordCounterTest extends TestCase
 {
     /**
-     * @dataProvider officeDataProvider
      * @requires extension zip
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('officeDataProvider')]
     public function testCountFromOfficeDocument(string $path, array $expectedCounts)
     {
         $actual = OfficeDocumentWordCounter::countFromFile($path);

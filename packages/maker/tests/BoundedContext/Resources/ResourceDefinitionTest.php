@@ -19,9 +19,7 @@ class ResourceDefinitionTest extends TestCase
 {
     use TestWithFaker;
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_as_intended()
     {
         $propertyDefinition = new PropertyDefinition(
@@ -51,9 +49,7 @@ class ResourceDefinitionTest extends TestCase
         $this->assertEquals($propertyDefinition, $testItem->getProperties()[$propertyDefinition]);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_faker()
     {
         $this->runFakerTest(ResourceDefinition::class);

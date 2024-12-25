@@ -24,11 +24,9 @@ class ApieSeedCommandTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_seed_apie_resources_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_seed_apie_resources_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_seed_apie_resources(TestApplicationInterface $testApplication)
     {
         ini_set('memory_limit', -1);

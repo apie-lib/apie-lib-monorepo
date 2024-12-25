@@ -11,9 +11,7 @@ class EmailTest extends TestCase
     use TestWithOpenapiSchema;
     use TestWithFaker;
     
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_schema_generator()
     {
         $this->runOpenapiSchemaTestForCreation(
@@ -26,9 +24,7 @@ class EmailTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(Email::class);

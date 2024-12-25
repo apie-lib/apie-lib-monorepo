@@ -31,11 +31,9 @@ class DoApiCallTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_run_a_documented_api_call_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_run_a_documented_api_call_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_run_a_documented_api_call(
         TestApplicationInterface $testApplication,
         TestRequestInterface $testRequest
@@ -89,11 +87,9 @@ class DoApiCallTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_throws_validation_error_on_invalid_route_placeholders_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_throws_validation_error_on_invalid_route_placeholders_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_validation_error_on_invalid_route_placeholders(
         TestApplicationInterface $testApplication
     ) {

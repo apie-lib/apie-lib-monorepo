@@ -19,10 +19,8 @@ use PHPUnit\Framework\TestCase;
 
 class PropertyAccessTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider propertyProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('propertyProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_get_a_property(mixed $expected, object $object, string $property)
     {
         $apieContext = new ApieContext();

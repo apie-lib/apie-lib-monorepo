@@ -35,9 +35,7 @@ use ReflectionClass;
 
 class DomainToStorageConverterTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_inject_values_in_an_existing_domain_object()
     {
         $domainObject = $this->createUserForDomainObject();
@@ -53,10 +51,8 @@ class DomainToStorageConverterTest extends TestCase
         $this->assertFalse($domainObject->hasPassword(), 'hasPassword() should return false after update from storage object');
     }
 
-    /**
-     * @test
-     * @dataProvider provideDomainObjects
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideDomainObjects')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_convert_a_storage_object_to_domain_object(EntityInterface $domainObject, StorageDtoInterface $storageObject)
     {
         $testItem = DomainToStorageConverter::create(FileStorageFactory::create());
@@ -67,10 +63,8 @@ class DomainToStorageConverterTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     * @dataProvider provideDomainObjects
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideDomainObjects')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_convert_a_domain_object_to_a_storage_object(EntityInterface $domainObject, StorageDtoInterface $storageObject)
     {
         $testItem = DomainToStorageConverter::create(FileStorageFactory::create());

@@ -26,10 +26,8 @@ class ComponentsBuilderFactoryTest extends TestCase
         return ComponentsBuilderFactory::createComponentsBuilderFactory();
     }
 
-    /**
-     * @test
-     * @dataProvider valueObjectProviders
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('valueObjectProviders')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function i_can_have_a_schema_of_value_object(
         Schema $expected,
         string $expectedKey,

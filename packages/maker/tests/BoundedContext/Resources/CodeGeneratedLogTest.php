@@ -26,9 +26,7 @@ use ReflectionClass;
 class CodeGeneratedLogTest extends TestCase
 {
     use TestWithFaker;
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_as_intended()
     {
         ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-01')));
@@ -52,9 +50,7 @@ class CodeGeneratedLogTest extends TestCase
         $this->assertEquals('App\Generated', $testItem->getTargetNamespace());
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_logs_errors()
     {
         ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-01')));
@@ -87,9 +83,7 @@ class CodeGeneratedLogTest extends TestCase
         $this->assertNotNull($testItem->getErrorStacktrace());
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_faker()
     {
         $this->runFakerTest(CodeGeneratedLog::class);

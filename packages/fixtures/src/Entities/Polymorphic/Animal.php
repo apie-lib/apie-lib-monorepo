@@ -9,7 +9,7 @@ abstract class Animal implements PolymorphicEntityInterface
 {
     private AnimalIdentifier $id;
 
-    public function __construct(AnimalIdentifier $id = null)
+    public function __construct(?AnimalIdentifier $id = null)
     {
         $this->id = $id ?? AnimalIdentifier::createRandom();
     }

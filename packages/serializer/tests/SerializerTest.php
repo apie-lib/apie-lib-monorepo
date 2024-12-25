@@ -50,10 +50,8 @@ class SerializerTest extends TestCase
         return Serializer::create();
     }
 
-    /**
-     * @dataProvider denormalizeProvider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('denormalizeProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_denormalize_objects(object $expected, mixed $input, string $desiredType, ApieContext $apieContext)
     {
         $serializer = $this->givenASerializer();
@@ -197,10 +195,8 @@ class SerializerTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     * @dataProvider normalizeProvider
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('normalizeProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_normalize_objects(string|int|ItemHashmap|ItemList $expected, object $input, ApieContext $apieContext)
     {
         $serializer = $this->givenASerializer();
@@ -319,9 +315,7 @@ class SerializerTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function empty_enums_always_fail()
     {
         $serializer = $this->givenASerializer();
@@ -329,10 +323,8 @@ class SerializerTest extends TestCase
         $serializer->denormalizeNewObject(null, EmptyEnum::class, new ApieContext());
     }
 
-    /**
-     * @dataProvider invalidEnumsProvider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('invalidEnumsProvider')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_refuse_enum_values_if_apie_context_is_missing(mixed $input, ApieContext $apieContext)
     {
         $serializer = $this->givenASerializer();

@@ -20,11 +20,9 @@ class CmsActionFormRenderTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_renders_an_action_form_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_renders_an_action_form_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_renders_an_action_form_page(
         TestApplicationInterface $testApplication
     ) {
@@ -35,11 +33,9 @@ class CmsActionFormRenderTest extends TestCase
         $this->assertStringContainsString('"username"', (string) $response->getBody());
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_renders_an_action_form_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_renders_an_action_form_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_refuses_invalid_csrf_tokens(
         TestApplicationInterface $testApplication
     ) {

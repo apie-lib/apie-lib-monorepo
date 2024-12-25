@@ -27,10 +27,8 @@ class CodeWriterTest extends TestCase
 {
     private const IDENTIFIER_FILE = '/app/Fixtures/Identifiers/AlreadyExistingResourceIdentifier.php';
     private const RESOURCE_FILE = '/app/Fixtures/Resources/AlreadyExistingResource.php';
-    /**
-     * @test
-     * @dataProvider provideFromExistingSource
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideFromExistingSource')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_generate_identifier_code_from_an_existing_code(
         string $expectedOutputFile,
         CodeWriterConfigurationInterface $log,
@@ -100,10 +98,8 @@ class CodeWriterTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     * @dataProvider provideForCodeWriter
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideForCodeWriter')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_generate_resource_code_from_an_existing_code(
         string $expectedOutputFile,
         CodeWriterConfigurationInterface $log,

@@ -38,11 +38,9 @@ class OpenapiDocumentationTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_display_the_swagger_ui_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_display_the_swagger_ui_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_display_the_swagger_ui_page(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();
@@ -60,11 +58,9 @@ class OpenapiDocumentationTest extends TestCase
         );
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider it_can_display_the_swagger_ui_redirect_page_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_display_the_swagger_ui_redirect_page_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_display_the_swagger_ui_redirect_page(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();
@@ -74,11 +70,9 @@ class OpenapiDocumentationTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider display_openapi_spec_in_json_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('display_openapi_spec_in_json_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_display_openapi_spec_in_json(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();
@@ -96,11 +90,9 @@ class OpenapiDocumentationTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    /**
-     * @runInSeparateProcess
-     * @dataProvider display_openapi_spec_in_yaml_provider
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('display_openapi_spec_in_yaml_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_display_openapi_spec_in_yaml(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();

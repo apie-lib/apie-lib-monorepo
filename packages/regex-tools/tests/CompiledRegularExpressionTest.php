@@ -7,10 +7,8 @@ use PHPUnit\Framework\TestCase;
 
 class CompiledRegularExpressionTest extends TestCase
 {
-    /**
-     * @test
-     * @dataProvider provideRegularExpressions
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideRegularExpressions')]
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_define_maximum_and_minimal_string_length_of_a_regex(
         int $expectedMinimal,
         ?int $expectedMaximum,

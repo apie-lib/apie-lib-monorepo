@@ -76,9 +76,7 @@ abstract class AbstractRenderTestCase extends TestCase
         return true;//false;
     }
 
-    /**
-     * @dataProvider provideComponents
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideComponents')]
     public function testRender(string $expectedFixtureFile, ComponentInterface $component): void
     {
         $renderer = $this->getRenderer();
