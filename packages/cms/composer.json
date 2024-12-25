@@ -24,7 +24,7 @@
     "apie/common": "self.version",
     "apie/core": "self.version",
     "apie/html-builders": "self.version",
-    "nyholm/psr7": "^1.8.1"
+    "nyholm/psr7": "^1.8.2"
   },
   "require-dev": {
     "apie/fixtures": "self.version",

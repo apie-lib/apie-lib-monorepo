@@ -12,8 +12,14 @@
     "conflict": {
         "nette/utils": "3.*",
         "respect/validation": "1.*",
+        "symfony/clock": "<7.0",
         "symfony/monolog-bridge": "<7.0",
+        "symfony/password-hasher": "<7.0",
+        "symfony/property-access": "<7.0",
         "symfony/property-info": "<7.0",
+        "symfony/stopwatch": "<7.0",
+        "symfony/string": "<7.0",
+        "symfony/translation": "<7.0",
         "symfony/twig-bridge": "<7.0",
         "symfony/var-exporter": "<7.0",
         "thecodingmachine/safe": "1.*"
@@ -54,7 +60,7 @@
         "nette/php-generator": "^4.1.5",
         "nikic/php-parser": "^5.3.1",
         "niklongstone/regex-reverse": "^0.4.0|^0.5.0",
-        "nyholm/psr7": "^1.8.1",
+        "nyholm/psr7": "^1.8.2",
         "php": ">=8.3",
         "pragmarx/google2fa-qrcode": "^3.0",
         "prinsfrank/standards": "^3.3.0",
