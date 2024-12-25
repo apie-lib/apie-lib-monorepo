@@ -31,11 +31,11 @@
     "apie/core": "self.version",
     "apie/cms": "self.version",
     "apie/common": "self.version",
-    "devizzent/cebe-php-openapi": "^1.1.2",
+    "devizzent/cebe-php-openapi": "^1.1.2"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "apie/service-provider-generator": "0.11.2",
+    "apie/service-provider-generator": "0.11.3",
     "illuminate/support": "*",
     "phpunit/phpunit": "^11.5.2",
     "phpspec/prophecy-phpunit": "^2.2"

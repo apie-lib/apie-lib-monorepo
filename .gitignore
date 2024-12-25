@@ -10,3 +10,4 @@ coverage.xml
 /projectCoverage
 .phpunit.cache
 /.tempdockerfile.*
+/.cov
