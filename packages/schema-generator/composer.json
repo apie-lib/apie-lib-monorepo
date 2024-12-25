@@ -23,7 +23,7 @@
     "php": ">=8.3",
     "apie/core": "self.version",
     "apie/dateformat-to-regex": "self.version",
-    "cebe/php-openapi": "^1.7"
+    "devizzent/cebe-php-openapi": "^1.1.2"
   },
   "require-dev": {
     "apie/common-value-objects": "self.version",

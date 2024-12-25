@@ -31,7 +31,7 @@
     "apie/core": "self.version",
     "apie/cms": "self.version",
     "apie/common": "self.version",
-    "cebe/php-openapi": "^1.7"
+    "devizzent/cebe-php-openapi": "^1.1.2",
   },
   "require-dev": {
     "apie/fixtures": "self.version",

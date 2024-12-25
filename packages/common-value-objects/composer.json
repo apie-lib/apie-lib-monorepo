@@ -39,7 +39,7 @@
     "apie/date-value-objects": "self.version",
     "apie/regex-value-objects": "self.version",
     "apie/text-value-objects": "self.version",
-    "cebe/php-openapi": "^1.7",
+    "devizzent/cebe-php-openapi": "^1.1.2",
     "egulias/email-validator": "^4.0.2",
     "symfony/html-sanitizer": "^7.2"
   },
