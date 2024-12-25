@@ -39,7 +39,7 @@ final class ClassCodeGenerator
             "require-dev" => [
                 "apie/fixtures" => $apieVersion,
                 "illuminate/support" => "*",
-                "phpunit/phpunit" => "^9.6.19"
+                "phpunit/phpunit" => "^11.5.2"
             ],
             "minimum-stability" => "dev",
             "prefer-stable" => true

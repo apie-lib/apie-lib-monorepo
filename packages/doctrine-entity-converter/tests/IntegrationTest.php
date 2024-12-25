@@ -17,6 +17,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\ORMSetup;
 use Doctrine\ORM\Tools\SchemaTool;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
@@ -56,9 +57,7 @@ class IntegrationTest extends TestCase
         }
     }
 
-    /**
-     * @requires extension sqlite3
-     */
+    #[RequiresPhpExtension('sqlite3')]
     #[\PHPUnit\Framework\Attributes\DataProvider('entityProvider')]
     public function testPersistenceAndRetrieval(EntityInterface $domainObject, string $boundedContextId, ?callable $testBefore = null, ?callable $testAfter = null)
     {

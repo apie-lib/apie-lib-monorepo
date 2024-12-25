@@ -2,13 +2,12 @@
 namespace Apie\Tests\CountWords\Strategies;
 
 use Apie\CountWords\Strategies\ZipArchiveWordCounter;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 use PHPUnit\Framework\TestCase;
 
 class ZipArchiveWordCounterTest extends TestCase
 {
-    /**
-     * @requires extension zip
-     */
+    #[RequiresPhpExtension('zip')]
     #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_count_words_in_zip_files()
     {
@@ -20,9 +19,7 @@ class ZipArchiveWordCounterTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    /**
-     * @requires extension zip
-     */
+    #[RequiresPhpExtension('zip')]
     #[\PHPUnit\Framework\Attributes\Test]
     #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
     public function it_reads_zips_inside_zips_with_limited_recursion()

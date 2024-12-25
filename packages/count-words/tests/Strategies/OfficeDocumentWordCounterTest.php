@@ -3,13 +3,12 @@ namespace Apie\Tests\CountWords\Strategies;
 
 use Apie\CountWords\Strategies\OfficeDocumentWordCounter;
 use Generator;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 use PHPUnit\Framework\TestCase;
 
 class OfficeDocumentWordCounterTest extends TestCase
 {
-    /**
-     * @requires extension zip
-     */
+    #[RequiresPhpExtension('zip')]
     #[\PHPUnit\Framework\Attributes\DataProvider('officeDataProvider')]
     public function testCountFromOfficeDocument(string $path, array $expectedCounts)
     {
