@@ -18,12 +18,12 @@ enum DatabaseConnection: string {
         if ($urlConfig && str_starts_with($urlConfig, 'sqlite')) {
             return self::SQLITE;
         }
-        if ($urlConfig && str_starts_with($urlConfig, 'postgres')) {
+        if ($urlConfig && str_starts_with($urlConfig, 'pdo_pgsql')) {
             return self::POSTGRES;
         }
         return match($configuration['connection_params']['driver']) {
             'pdo_sqlite' => self::SQLITE,
-            'postgres' => self::POSTGRES,
+            'pdo_pgsql' => self::POSTGRES,
             default => self::MYSQL,
         };
     }
@@ -41,15 +41,25 @@ enum DatabaseConnection: string {
         if ($this === self::POSTGRES) {
             return [
                 'connection_params' => [
-                    'driver' => 'postgresql',
+                    'driver' => 'pdo_pgsql',
+                    'dbname' => 'project',
+                    'host' => 'postgres',
+                    'port' => 5432,
+                    'user' => 'project',   
+                    'password' => 'project',
                     'server_version' => 16,
-                    'url' => self::POSTGRES_CONNECTION_SETTING,
                 ]
             ];
         }
         return [
             'connection_params' => [
-                'url' => self::MYSQL_CONNECTION_SETTING,
+                'driver' => 'pdo_mysql',
+                'dbname' => 'project',
+                'host' => 'mysql',
+                'port' => 3306,
+                'user' => 'project',
+                'server_version' => '8',
+                'password' => 'project',
             ],
         ];
     }

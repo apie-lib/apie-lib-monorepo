@@ -4,7 +4,12 @@ apie:
   doctrine:
     # build_once: true
     connection_params:
-      url: "mysql://project:project@mysql:3306/project"
+      dbname:               project
+      host:                 mysql
+      port:                 3306
+      user:                 project
+      password:             project
+      driver:               pdo_mysql
   maker:
     target_path: "%kernel.project_dir%/generated/"
     target_namespace: 'App\Apie\Maker'
