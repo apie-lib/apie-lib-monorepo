@@ -10,8 +10,12 @@
     "type": "composer-plugin",
     "license": "MIT",
     "conflict": {
+        "composer/ca-bundle": "<1.5.4",
+        "composer/pcre": "<3.0.0",
         "guzzlehttp/promises": "1.*",
+        "justinrainbow/json-schema": "<5.3",
         "nette/utils": "3.*",
+        "psy/psysh": "<0.12.0",
         "respect/validation": "1.*",
         "symfony/clock": "<7.0",
         "symfony/monolog-bridge": "<7.0",
