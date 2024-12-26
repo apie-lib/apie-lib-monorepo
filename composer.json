@@ -10,6 +10,7 @@
     "type": "composer-plugin",
     "license": "MIT",
     "conflict": {
+        "guzzlehttp/promises": "1.*",
         "nette/utils": "3.*",
         "respect/validation": "1.*",
         "symfony/clock": "<7.0",
