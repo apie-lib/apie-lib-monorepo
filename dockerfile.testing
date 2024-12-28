@@ -23,6 +23,6 @@ RUN docker-php-ext-install opcache
 RUN docker-php-ext-install zip
 RUN pecl install pcov \
     && docker-php-ext-enable pcov
-
+RUN git config --global --add safe.directory /app
 # show that both Composer and PHP run as expected
 RUN composer --version && php -v && php -m
