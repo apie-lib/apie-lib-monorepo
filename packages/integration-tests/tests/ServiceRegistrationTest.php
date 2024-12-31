@@ -14,7 +14,6 @@ use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Exception;
 use Generator;
 use Illuminate\Http\Request;
-use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\WithoutErrorHandler;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
