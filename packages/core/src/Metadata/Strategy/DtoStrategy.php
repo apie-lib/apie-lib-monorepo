@@ -8,6 +8,7 @@ use Apie\Core\Metadata\CompositeMetadata;
 use Apie\Core\Metadata\Fields\PublicProperty;
 use Apie\Core\Metadata\StrategyInterface;
 use Apie\Core\Utils\DtoUtils;
+use Nette\PhpGenerator\PropertyHookType;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -25,7 +26,7 @@ final class DtoStrategy implements StrategyInterface
     {
     }
 
-    private function getDtoMetadata(ApieContext $context, bool $optional): CompositeMetadata
+    private function getDtoMetadata(ApieContext $context, bool $optional, bool $setterHooks): CompositeMetadata
     {
         $list = [];
         foreach ($this->class->getProperties(ReflectionProperty::IS_PUBLIC) as $property) {
@@ -34,7 +35,7 @@ final class DtoStrategy implements StrategyInterface
                     continue;
                 }
             }
-            $list[$property->getName()] = new PublicProperty($property, $optional);
+            $list[$property->getName()] = new PublicProperty($property, $optional, $setterHooks);
         }
     
         return new CompositeMetadata(new MetadataFieldHashmap($list), $this->class);
@@ -42,16 +43,16 @@ final class DtoStrategy implements StrategyInterface
 
     public function getCreationMetadata(ApieContext $context): CompositeMetadata
     {
-        return $this->getDtoMetadata($context, false);
+        return $this->getDtoMetadata($context, false, true);
     }
 
     public function getModificationMetadata(ApieContext $context): CompositeMetadata
     {
-        return $this->getDtoMetadata($context, true);
+        return $this->getDtoMetadata($context, true, true);
     }
 
     public function getResultMetadata(ApieContext $context): CompositeMetadata
     {
-        return $this->getDtoMetadata($context, false);
+        return $this->getDtoMetadata($context, false, false);
     }
 }

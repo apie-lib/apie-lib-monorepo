@@ -1,6 +1,7 @@
 includes:
     - packages/apie-phpstan-rules/apie-phpstan-rules.neon
 parameters:
+    phpVersion: 80400
     level: 6
     paths:
         - packages/apie-bundle/src
@@ -43,7 +44,7 @@ parameters:
         - '#ReflectionEnumUnitCase::getBackingValue#'
         - '/Parameter #4 \$prototype of class Apie\\HtmlBuilders\\Components\\Forms\\FormPrototype(Hashmap|List) constructor expects Apie\\HtmlBuilders\\Components\\BaseComponent, Apie\\HtmlBuilders\\Interfaces\\ComponentInterface given\./'
         -
-            message: '#is assigned outside of its declaring class#'
+            message: '#is assigned outside of its declaring class|Assign to protected#'
             path: packages/doctrine-entity-converter/src/CodeGenerators/AddDoctrineFields.php
             count: 1
         -
