@@ -30,6 +30,7 @@ use Apie\Fixtures\FuturePhpVersion;
 use Apie\Fixtures\Identifiers\UserAutoincrementIdentifier;
 use Apie\Fixtures\Lists\ImmutableStringOrIntHashmap;
 use Apie\Fixtures\Lists\ImmutableStringOrIntList;
+use Apie\Fixtures\Php84\AsyncVisibility;
 use Apie\Fixtures\Php84\PropertyHooks;
 use Apie\Fixtures\ValueObjects\CompositeValueObjectExample;
 use Apie\Fixtures\ValueObjects\CompositeValueObjectWithOptionalFields;
@@ -452,6 +453,27 @@ class MetadataFactoryTest extends TestCase
                 ['name', 'virtual'],
                 'getResultMetadata',
                 PropertyHooks::class,
+                $context
+            ];
+            yield 'Object with async visibility creation' => [
+                ['name', 'option'],
+                ['name', 'option'],
+                'getCreationMetadata',
+                AsyncVisibility::class,
+                $context
+            ];
+            yield 'Object with async visibility modification' => [
+                [],
+                [],
+                'getModificationMetadata',
+                AsyncVisibility::class,
+                $context
+            ];
+            yield 'Object with async visibility retrieval' => [
+                ['name', 'option'],
+                ['name', 'option'],
+                'getResultMetadata',
+                AsyncVisibility::class,
                 $context
             ];
         }

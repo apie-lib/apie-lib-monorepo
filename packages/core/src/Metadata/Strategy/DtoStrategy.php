@@ -8,7 +8,6 @@ use Apie\Core\Metadata\CompositeMetadata;
 use Apie\Core\Metadata\Fields\PublicProperty;
 use Apie\Core\Metadata\StrategyInterface;
 use Apie\Core\Utils\DtoUtils;
-use Nette\PhpGenerator\PropertyHookType;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -26,12 +25,22 @@ final class DtoStrategy implements StrategyInterface
     {
     }
 
-    private function getDtoMetadata(ApieContext $context, bool $optional, bool $setterHooks): CompositeMetadata
+    private function isReadOnly(ReflectionProperty $property, bool $setterHooks): bool
+    {
+        if (PHP_VERSION_ID > 80400 && $setterHooks) {
+            $modifiers = $property->getModifiers();
+            if ($modifiers & (ReflectionProperty::IS_PROTECTED_SET|ReflectionProperty::IS_PRIVATE_SET)) {
+                return true;
+            }
+        }
+        return $property->isReadOnly();
+    }
+    private function getDtoMetadata(ApieContext $context, bool $optional, bool $setterHooks, bool $allowPromoted): CompositeMetadata
     {
         $list = [];
         foreach ($this->class->getProperties(ReflectionProperty::IS_PUBLIC) as $property) {
-            if ($property->isReadOnly()) {
-                if ($optional || !$property->isPromoted()) {
+            if ($this->isReadOnly($property, $setterHooks)) {
+                if ($optional || !($allowPromoted && $property->isPromoted())) {
                     continue;
                 }
             }
@@ -43,16 +52,16 @@ final class DtoStrategy implements StrategyInterface
 
     public function getCreationMetadata(ApieContext $context): CompositeMetadata
     {
-        return $this->getDtoMetadata($context, false, true);
+        return $this->getDtoMetadata($context, false, true, true);
     }
 
     public function getModificationMetadata(ApieContext $context): CompositeMetadata
     {
-        return $this->getDtoMetadata($context, true, true);
+        return $this->getDtoMetadata($context, true, true, false);
     }
 
     public function getResultMetadata(ApieContext $context): CompositeMetadata
     {
-        return $this->getDtoMetadata($context, false, false);
+        return $this->getDtoMetadata($context, false, false, true);
     }
 }
