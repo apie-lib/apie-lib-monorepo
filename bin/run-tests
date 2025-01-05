@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 rm -rf /tmp/cache
-composer update $2 && php -d memory_limit=-1 -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit --coverage-php=$1.cov --coverage-text --testdox
+composer update $2 && php -d memory_limit=-1 -d pcov.enabled=1 -d pcov.directory=. vendor/bin/phpunit --coverage-php=$1.cov --coverage-text --stop-on-error
