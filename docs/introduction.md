@@ -15,3 +15,4 @@ a domain object.
 * [__Hash maps__](./hashmaps.md): A hash map is the same as a list, except the key has meaning too (and is always a string or integer).
 * [__Set__](./hashmaps.md): A set is a special type of list, where there can be no duplicate items.
 * __Identifiers__: Identifiers are special value objects used to reference an other entity. Entities are not allowed to have direct references to sibling entities. 
+* __Files and stream__: Files are stored somewhere and often have some storage path to reference it.
