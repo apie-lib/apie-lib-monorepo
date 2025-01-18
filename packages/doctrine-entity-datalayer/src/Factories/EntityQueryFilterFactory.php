@@ -1,4 +1,5 @@
 <?php
+
 namespace Apie\DoctrineEntityDatalayer\Factories;
 
 use Apie\Core\BoundedContext\BoundedContextId;
@@ -6,7 +7,9 @@ use Apie\Core\Permissions\RequiresPermissionsInterface;
 use Apie\DoctrineEntityDatalayer\Query\EntityQueryFilterInterface;
 use Apie\DoctrineEntityDatalayer\Query\FieldTextSearchFilter;
 use Apie\DoctrineEntityDatalayer\Query\FulltextSearchFilter;
+use Apie\DoctrineEntityDatalayer\Query\OrderBySearchFilter;
 use Apie\DoctrineEntityDatalayer\Query\RequiresPermissionFilter;
+use Apie\StorageMetadata\Attributes\GetMethodAttribute;
 use Apie\StorageMetadata\Attributes\GetSearchIndexAttribute;
 use Apie\StorageMetadata\Interfaces\StorageDtoInterface;
 use ReflectionClass;
@@ -39,6 +42,17 @@ final class EntityQueryFilterFactory
                         $publicPropertyAttribute->newInstance()->arrayValueType ?? (string) $publicProperty->getType()
                     );
                 }
+            } else {
+                foreach ($publicProperty->getAttributes(GetMethodAttribute::class) as $publicPropertyAttribute) {
+                    $filters[] = new FieldTextSearchFilter(
+                        $publicPropertyAttribute->newInstance()->methodName,
+                        $publicProperty->name
+                    );
+                }
+                $filters[] = new OrderBySearchFilter(
+                    $publicPropertyAttribute->newInstance()->methodName,
+                    $publicProperty->getName()
+                );
             }
         }
         return $filters;
