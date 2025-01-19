@@ -48,7 +48,7 @@ final class QuerySearch
         foreach ($orderBy as $column) {
             if (str_starts_with($column, '+')) {
                 $constructedOrderBy[substr($column, 1)] = SortingOrder::ASCENDING->value;
-            } else if (str_starts_with($column, '-')) {
+            } elseif (str_starts_with($column, '-')) {
                 $constructedOrderBy[substr($column, 1)] = SortingOrder::DESCENDING->value;
             } else {
                 $constructedOrderBy[$column] = SortingOrder::ASCENDING->value;

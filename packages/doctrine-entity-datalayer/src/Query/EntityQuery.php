@@ -116,7 +116,8 @@ ORDER BY %s",
         $orderBy = $this->querySearch->getOrderBy()->toArray();
         return implode(
             ', ',
-                array_map(function (OrderByFilterInterface $filter) use ($orderBy) {
+            array_map(
+                function (OrderByFilterInterface $filter) use ($orderBy) {
                     if (is_callable([$filter, 'getFilterName'])) {
                         return $filter->getOrderByCode(SortingOrder::from($orderBy[$filter->getFilterName()]));
                     }
