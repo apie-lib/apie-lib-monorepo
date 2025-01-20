@@ -679,6 +679,20 @@ paths:
           schema:
             type: string
             nullable: true
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - userId
+                - +userId
+                - '-userId'
+                - id
+                - +id
+                - '-id'
+              type: string
   /Order:
     post:
       tags:
@@ -787,6 +801,17 @@ paths:
           in: query
           schema:
             type: string
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - orderStatus
+                - +orderStatus
+                - '-orderStatus'
+              type: string
   /Animal:
     post:
       tags:
@@ -885,6 +910,23 @@ paths:
           schema:
             minLength: 1
             type: string
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - animalName
+                - +animalName
+                - '-animalName'
+                - id
+                - +id
+                - '-id'
+                - lastName
+                - +lastName
+                - '-lastName'
+              type: string
   /PrimitiveOnly:
     post:
       tags:
@@ -1012,6 +1054,29 @@ paths:
           schema:
             type: string
             nullable: true
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - id
+                - +id
+                - '-id'
+                - booleanField
+                - +booleanField
+                - '-booleanField'
+                - floatingPoint
+                - +floatingPoint
+                - '-floatingPoint'
+                - integerField
+                - +integerField
+                - '-integerField'
+                - stringField
+                - +stringField
+                - '-stringField'
+              type: string
   /RestrictedEntity:
     post:
       tags:
@@ -1131,6 +1196,23 @@ paths:
           schema:
             type: string
             nullable: true
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - companyName
+                - +companyName
+                - '-companyName'
+                - id
+                - +id
+                - '-id'
+                - userId
+                - +userId
+                - '-userId'
+              type: string
   /UploadedFile:
     post:
       tags:
@@ -1279,6 +1361,17 @@ paths:
           schema:
             type: string
             nullable: true
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - id
+                - +id
+                - '-id'
+              type: string
   /User:
     post:
       tags:
@@ -1399,6 +1492,29 @@ paths:
           schema:
             type: string
             nullable: true
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - id
+                - +id
+                - '-id'
+                - blockedReason
+                - +blockedReason
+                - '-blockedReason'
+                - phoneNumber
+                - +phoneNumber
+                - '-phoneNumber'
+                - activationToken
+                - +activationToken
+                - '-activationToken'
+                - password
+                - +password
+                - '-password'
+              type: string
   '/Animal/{id}':
     get:
       tags:
