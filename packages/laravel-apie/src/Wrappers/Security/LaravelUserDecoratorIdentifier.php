@@ -1,17 +1,18 @@
 <?php
 
-namespace Apie\ApieBundle\Security;
+namespace Apie\LaravelApie\Wrappers\Security;
 
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\IsStringValueObject;
+use Illuminate\Contracts\Auth\Authenticatable;
 use ReflectionClass;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @implements IdentifierInterface<SymfonyUserDecorator>
+ * @implements IdentifierInterface<LaravelUserDecorator>
  */
-final class SymfonyUserDecoratorIdentifier implements IdentifierInterface
+final class LaravelUserDecoratorIdentifier implements IdentifierInterface
 {
     use IsStringValueObject;
 
@@ -22,9 +23,9 @@ final class SymfonyUserDecoratorIdentifier implements IdentifierInterface
 
     private string $userId;
 
-    public static function createFrom(UserInterface $user): self
+    public static function createFrom(Authenticatable $user): self
     {
-        return new self(get_class($user) . '@' . $user->getUserIdentifier());
+        return new self(get_class($user) . '@' . $user->getAuthIdentifier());
     }
 
     protected function convert(string $input): string
@@ -40,6 +41,6 @@ final class SymfonyUserDecoratorIdentifier implements IdentifierInterface
 
     public static function getReferenceFor(): ReflectionClass
     {
-        return new ReflectionClass(SymfonyUserDecorator::class);
+        return new ReflectionClass(LaravelUserDecorator::class);
     }
 }

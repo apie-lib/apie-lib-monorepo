@@ -1,14 +1,14 @@
 <?php
 
-namespace Apie\ApieBundle\Security;
+namespace Apie\LaravelApie\Wrappers\Security;
 
 use Apie\Core\Lists\PermissionList;
 use Apie\Core\Permissions\PermissionInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Illuminate\Contracts\Auth\Authenticatable;
 
-class SymfonyUserWithPermissionDecorator extends SymfonyUserDecorator implements PermissionInterface
+class LaravelUserWithPermissionDecorator extends LaravelUserDecorator implements PermissionInterface
 {
-    public function __construct(UserInterface&PermissionInterface $user)
+    public function __construct(Authenticatable&PermissionInterface $user)
     {
         parent::__construct($user);
     }
