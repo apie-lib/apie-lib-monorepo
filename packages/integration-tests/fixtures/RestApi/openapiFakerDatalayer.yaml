@@ -3564,8 +3564,7 @@ components:
           type: string
           nullable: false
     Permission-get:
-      type: object
-      properties: {  }
+      type: string
     PermissionList-get:
       type: array
       items:

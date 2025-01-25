@@ -5473,8 +5473,7 @@
                 }
             },
             "Permission-get": {
-                "type": "object",
-                "properties": {}
+                "type": "string"
             },
             "PermissionList-get": {
                 "type": "array",
