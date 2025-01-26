@@ -1771,8 +1771,7 @@
                         "multipart/form-data": {
                             "schema": {
                                 "required": [
-                                    "form",
-                                    "file"
+                                    "form"
                                 ],
                                 "type": "object",
                                 "properties": {
@@ -1786,11 +1785,6 @@
                                         "type": "string",
                                         "format": "binary",
                                         "nullable": true
-                                    },
-                                    "file": {
-                                        "type": "string",
-                                        "format": "binary",
-                                        "nullable": false
                                     }
                                 }
                             }
@@ -4504,6 +4498,29 @@
                     }
                 }
             },
+            "Animal-nullable-get": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/Mammal-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/Bird-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/Fish-nullable-get"
+                    }
+                ],
+                "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                        "mammal": "#/components/schemas/Mammal-nullable-get",
+                        "bird": "#/components/schemas/Bird-nullable-get",
+                        "fish": "#/components/schemas/Fish-nullable-get"
+                    }
+                },
+                "nullable": true
+            },
             "Animal-patch": {
                 "type": "object",
                 "properties": {
@@ -4570,6 +4587,34 @@
                         "seagull": "#/components/schemas/Seagull-get"
                     }
                 },
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "bird"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
+            "Bird-nullable-get": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/Ostrich-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/Seagull-nullable-get"
+                    }
+                ],
+                "discriminator": {
+                    "propertyName": "name",
+                    "mapping": {
+                        "ostrich": "#/components/schemas/Ostrich-nullable-get",
+                        "seagull": "#/components/schemas/Seagull-nullable-get"
+                    }
+                },
+                "nullable": true,
                 "properties": {
                     "type": {
                         "enum": [
@@ -4702,6 +4747,40 @@
                     }
                 }
             },
+            "Elephant-nullable-get": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "id",
+                    "capableOfLayingEggs",
+                    "animalName",
+                    "type"
+                ],
+                "nullable": true,
+                "properties": {
+                    "name": {
+                        "enum": [
+                            "elephant"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfLayingEggs": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
             "Elephant-post": {
                 "type": "object",
                 "required": [
@@ -4731,9 +4810,29 @@
                 }
             },
             "Entity-nullable-get": {
-                "type": "object",
-                "nullable": true,
-                "properties": {}
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/Animal-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ObjectWithRelation-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/Order-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/PrimitiveOnly-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/RestrictedEntity-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/File-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/User-nullable-get"
+                    }
+                ]
             },
             "File-get": {
                 "type": "object",
@@ -4743,6 +4842,30 @@
                     "file",
                     "stream"
                 ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/UploadedFileIdentifier-get"
+                    },
+                    "imageFile": {
+                        "$ref": "#/components/schemas/ImageFile-nullable-get"
+                    },
+                    "file": {
+                        "$ref": "#/components/schemas/UploadedFile-get"
+                    },
+                    "stream": {
+                        "$ref": "#/components/schemas/mixed"
+                    }
+                }
+            },
+            "File-nullable-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "imageFile",
+                    "file",
+                    "stream"
+                ],
+                "nullable": true,
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/UploadedFileIdentifier-get"
@@ -4856,6 +4979,34 @@
                     }
                 }
             },
+            "Fish-nullable-get": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/Shark-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/Lungfish-nullable-get"
+                    }
+                ],
+                "discriminator": {
+                    "propertyName": "name",
+                    "mapping": {
+                        "shark": "#/components/schemas/Shark-nullable-get",
+                        "lungfish": "#/components/schemas/Lungfish-nullable-get"
+                    }
+                },
+                "nullable": true,
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "fish"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
             "Fish-post": {
                 "type": "object",
                 "oneOf": [
@@ -4893,6 +5044,44 @@
                     "animalName",
                     "type"
                 ],
+                "properties": {
+                    "name": {
+                        "enum": [
+                            "human"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "lastName": {
+                        "$ref": "#/components/schemas/LastName-get"
+                    },
+                    "capableOfLayingEggs": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
+            "Human-nullable-get": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "id",
+                    "lastName",
+                    "capableOfLayingEggs",
+                    "animalName",
+                    "type"
+                ],
+                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -5144,6 +5333,40 @@
                     }
                 }
             },
+            "Lungfish-nullable-get": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "id",
+                    "capableOfWalkingOnWater",
+                    "animalName",
+                    "type"
+                ],
+                "nullable": true,
+                "properties": {
+                    "name": {
+                        "enum": [
+                            "lungfish"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfWalkingOnWater": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
             "Lungfish-post": {
                 "type": "object",
                 "required": [
@@ -5193,6 +5416,38 @@
                         "human": "#/components/schemas/Human-get"
                     }
                 },
+                "properties": {
+                    "type": {
+                        "enum": [
+                            "mammal"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
+            "Mammal-nullable-get": {
+                "type": "object",
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/Elephant-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/Platypus-nullable-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/Human-nullable-get"
+                    }
+                ],
+                "discriminator": {
+                    "propertyName": "name",
+                    "mapping": {
+                        "elephant": "#/components/schemas/Elephant-nullable-get",
+                        "platypus": "#/components/schemas/Platypus-nullable-get",
+                        "human": "#/components/schemas/Human-nullable-get"
+                    }
+                },
+                "nullable": true,
                 "properties": {
                     "type": {
                         "enum": [
@@ -5279,6 +5534,26 @@
                     }
                 }
             },
+            "ObjectWithRelation-nullable-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "userId",
+                    "orderId"
+                ],
+                "nullable": true,
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/ObjectWithRelationIdentifier-get"
+                    },
+                    "userId": {
+                        "$ref": "#/components/schemas/UserIdentifier-get"
+                    },
+                    "orderId": {
+                        "$ref": "#/components/schemas/OrderIdentifier-nullable-get"
+                    }
+                }
+            },
             "ObjectWithRelation-patch": {
                 "type": "object",
                 "properties": {
@@ -5320,6 +5595,22 @@
                     "id",
                     "orderLineList"
                 ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/OrderIdentifier-get"
+                    },
+                    "orderLineList": {
+                        "$ref": "#/components/schemas/OrderLineList-get"
+                    }
+                }
+            },
+            "Order-nullable-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "orderLineList"
+                ],
+                "nullable": true,
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/OrderIdentifier-get"
@@ -5432,6 +5723,40 @@
                     }
                 }
             },
+            "Ostrich-nullable-get": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "id",
+                    "capableOfFlying",
+                    "animalName",
+                    "type"
+                ],
+                "nullable": true,
+                "properties": {
+                    "name": {
+                        "enum": [
+                            "ostrich"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfFlying": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
             "Ostrich-post": {
                 "type": "object",
                 "required": [
@@ -5473,7 +5798,11 @@
                 }
             },
             "Permission-get": {
-                "type": "string"
+                "oneOf": [
+                    {
+                        "type": "string"
+                    }
+                ]
             },
             "PermissionList-get": {
                 "type": "array",
@@ -5497,6 +5826,40 @@
                     "animalName",
                     "type"
                 ],
+                "properties": {
+                    "name": {
+                        "enum": [
+                            "platypus"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfLayingEggs": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
+            "Platypus-nullable-get": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "id",
+                    "capableOfLayingEggs",
+                    "animalName",
+                    "type"
+                ],
+                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -5554,6 +5917,34 @@
                 "required": [
                     "id"
                 ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-get"
+                    },
+                    "stringField": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "integerField": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "floatingPoint": {
+                        "type": "number",
+                        "nullable": true
+                    },
+                    "booleanField": {
+                        "type": "boolean",
+                        "nullable": true
+                    }
+                }
+            },
+            "PrimitiveOnly-nullable-get": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "nullable": true,
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-get"
@@ -5657,6 +6048,30 @@
                     }
                 }
             },
+            "RestrictedEntity-nullable-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "companyName",
+                    "requiredPermissions",
+                    "userId"
+                ],
+                "nullable": true,
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/RestrictedEntityIdentifier-get"
+                    },
+                    "companyName": {
+                        "$ref": "#/components/schemas/CompanyName-get"
+                    },
+                    "requiredPermissions": {
+                        "$ref": "#/components/schemas/PermissionList-get"
+                    },
+                    "userId": {
+                        "$ref": "#/components/schemas/UserIdentifier-nullable-get"
+                    }
+                }
+            },
             "RestrictedEntity-patch": {
                 "type": "object",
                 "properties": {
@@ -5699,6 +6114,40 @@
                     "animalName",
                     "type"
                 ],
+                "properties": {
+                    "name": {
+                        "enum": [
+                            "seagull"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfFlying": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
+            "Seagull-nullable-get": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "id",
+                    "capableOfFlying",
+                    "animalName",
+                    "type"
+                ],
+                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -5784,6 +6233,40 @@
                     }
                 }
             },
+            "Shark-nullable-get": {
+                "type": "object",
+                "required": [
+                    "name",
+                    "id",
+                    "capableOfWalkingOnWater",
+                    "animalName",
+                    "type"
+                ],
+                "nullable": true,
+                "properties": {
+                    "name": {
+                        "enum": [
+                            "shark"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfWalkingOnWater": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                }
+            },
             "Shark-post": {
                 "type": "object",
                 "required": [
@@ -5812,38 +6295,11 @@
                     }
                 }
             },
-            "StrictMimeType-nullable-post": {
-                "type": "string",
-                "format": "strictmimetype",
-                "pattern": "^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$",
-                "nullable": true
-            },
-            "StrongPassword-post": {
-                "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
-                "type": "string",
-                "format": "password"
-            },
-            "Throwable-get": {
-                "type": "object",
-                "required": [
-                    "message",
-                    "code"
-                ],
-                "properties": {
-                    "message": {
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "code": {
-                        "$ref": "#/components/schemas/mixed"
-                    }
-                }
-            },
-            "UploadedFile-get": {
+            "StoredFile-get": {
                 "type": "string",
                 "format": "path"
             },
-            "UploadedFile-post": {
+            "StoredFile-post": {
                 "required": [
                     "originalFilename"
                 ],
@@ -5877,11 +6333,59 @@
                     }
                 }
             },
-            "UploadedFile-post-multipart-form-data": {
+            "StoredFile-post-multipart-form-data": {
                 "type": "string",
                 "format": "binary",
                 "nullable": false,
                 "x-upload": "*/*"
+            },
+            "StrictMimeType-nullable-post": {
+                "type": "string",
+                "format": "strictmimetype",
+                "pattern": "^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$",
+                "nullable": true
+            },
+            "StrongPassword-post": {
+                "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
+                "type": "string",
+                "format": "password"
+            },
+            "Throwable-get": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "code"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "code": {
+                        "$ref": "#/components/schemas/mixed"
+                    }
+                }
+            },
+            "UploadedFile-get": {
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/StoredFile-get"
+                    }
+                ]
+            },
+            "UploadedFile-post": {
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/StoredFile-post"
+                    }
+                ]
+            },
+            "UploadedFile-post-multipart-form-data": {
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/StoredFile-post-multipart-form-data"
+                    }
+                ]
             },
             "UploadedFileIdentifier-get": {
                 "type": "string",
