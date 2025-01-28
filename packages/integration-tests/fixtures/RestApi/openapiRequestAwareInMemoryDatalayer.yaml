@@ -3794,7 +3794,7 @@ components:
     Permission-get:
       oneOf:
         -
-          type: string
+          $ref: '#/components/schemas/SerializedPermission-get'
     PermissionList-get:
       type: array
       items:
@@ -4078,6 +4078,10 @@ components:
         type:
           type: string
           nullable: false
+    SerializedPermission-get:
+      type: string
+      format: serializedpermission
+      pattern: '^[a-z:]+$'
     Shark-get:
       type: object
       required:

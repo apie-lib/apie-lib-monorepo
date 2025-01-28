@@ -5800,7 +5800,7 @@
             "Permission-get": {
                 "oneOf": [
                     {
-                        "type": "string"
+                        "$ref": "#/components/schemas/SerializedPermission-get"
                     }
                 ]
             },
@@ -6199,6 +6199,11 @@
                         "nullable": false
                     }
                 }
+            },
+            "SerializedPermission-get": {
+                "type": "string",
+                "format": "serializedpermission",
+                "pattern": "^[a-z:]+$"
             },
             "Shark-get": {
                 "type": "object",
