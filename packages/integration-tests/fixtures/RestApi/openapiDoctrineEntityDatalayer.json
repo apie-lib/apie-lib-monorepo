@@ -1041,7 +1041,29 @@
                         }
                     },
                     {
+                        "name": "query[expireDate]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[expired]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "query[orderId]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[dateToRecalculate]",
                         "in": "query",
                         "schema": {
                             "type": "string",
@@ -1055,6 +1077,12 @@
                             "type": "array",
                             "items": {
                                 "enum": [
+                                    "dateToRecalculate",
+                                    "+dateToRecalculate",
+                                    "-dateToRecalculate",
+                                    "expireDate",
+                                    "+expireDate",
+                                    "-expireDate",
                                     "userId",
                                     "+userId",
                                     "-userId",
@@ -4827,6 +4855,22 @@
                 "type": "string",
                 "example": "Lorem Ipsum"
             },
+            "DateTime-get": {
+                "pattern": "^((|\\-)[0-9]{4})\\-((0[1-9])|(1[0-2]))\\-((0[1-9])|([12][0-9])|(3[01]))T(([01][0-9])|(2[0-3]))\\:[0-5][0-9]\\:[0-5][0-9](\\+\\d{2}:\\d{2})$",
+                "type": "string",
+                "format": "datetime"
+            },
+            "DateTime-nullable-get": {
+                "pattern": "^((|\\-)[0-9]{4})\\-((0[1-9])|(1[0-2]))\\-((0[1-9])|([12][0-9])|(3[01]))T(([01][0-9])|(2[0-3]))\\:[0-5][0-9]\\:[0-5][0-9](\\+\\d{2}:\\d{2})$",
+                "type": "string",
+                "format": "datetime",
+                "nullable": true
+            },
+            "DateTime-post": {
+                "pattern": "^((|\\-)[0-9]{4})\\-((0[1-9])|(1[0-2]))\\-((0[1-9])|([12][0-9])|(3[01]))T(([01][0-9])|(2[0-3]))\\:[0-5][0-9]\\:[0-5][0-9](\\+\\d{2}:\\d{2})$",
+                "type": "string",
+                "format": "datetime"
+            },
             "DoNotChangeUploadedFile-post": {
                 "enum": [
                     "DoNotChange"
@@ -5672,7 +5716,10 @@
                 "required": [
                     "id",
                     "userId",
-                    "orderId"
+                    "expireDate",
+                    "expired",
+                    "orderId",
+                    "dateToRecalculate"
                 ],
                 "properties": {
                     "id": {
@@ -5681,8 +5728,18 @@
                     "userId": {
                         "$ref": "#/components/schemas/UserIdentifier-get"
                     },
+                    "expireDate": {
+                        "$ref": "#/components/schemas/DateTime-get"
+                    },
+                    "expired": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
                     "orderId": {
                         "$ref": "#/components/schemas/OrderIdentifier-nullable-get"
+                    },
+                    "dateToRecalculate": {
+                        "$ref": "#/components/schemas/DateTime-nullable-get"
                     }
                 }
             },
@@ -5691,7 +5748,10 @@
                 "required": [
                     "id",
                     "userId",
-                    "orderId"
+                    "expireDate",
+                    "expired",
+                    "orderId",
+                    "dateToRecalculate"
                 ],
                 "nullable": true,
                 "properties": {
@@ -5701,8 +5761,18 @@
                     "userId": {
                         "$ref": "#/components/schemas/UserIdentifier-get"
                     },
+                    "expireDate": {
+                        "$ref": "#/components/schemas/DateTime-get"
+                    },
+                    "expired": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
                     "orderId": {
                         "$ref": "#/components/schemas/OrderIdentifier-nullable-get"
+                    },
+                    "dateToRecalculate": {
+                        "$ref": "#/components/schemas/DateTime-nullable-get"
                     }
                 }
             },
@@ -5712,19 +5782,23 @@
                     "userId": {
                         "$ref": "#/components/schemas/UserIdentifier-post"
                     },
-                    "orderId": {
-                        "$ref": "#/components/schemas/OrderIdentifier-nullable-post"
+                    "expireDate": {
+                        "$ref": "#/components/schemas/DateTime-post"
                     }
                 }
             },
             "ObjectWithRelation-post": {
                 "type": "object",
                 "required": [
-                    "userId"
+                    "userId",
+                    "expireDate"
                 ],
                 "properties": {
                     "userId": {
                         "$ref": "#/components/schemas/UserIdentifier-post"
+                    },
+                    "expireDate": {
+                        "$ref": "#/components/schemas/DateTime-post"
                     },
                     "orderId": {
                         "$ref": "#/components/schemas/OrderIdentifier-nullable-post"
