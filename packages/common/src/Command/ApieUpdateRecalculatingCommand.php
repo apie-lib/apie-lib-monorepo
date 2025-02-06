@@ -72,7 +72,7 @@ class ApieUpdateRecalculatingCommand extends Command
                         $stop = true;
                         foreach ($chunk as $item) {
                             /** @var RequiresRecalculatingInterface $item */
-                            $output->write(sprintf('%40s', (string) $item->getId()));
+                            $output->write(sprintf('%40s', Utils::toString($item->getId())));
                             $date = $item->getDateToRecalculate();
                             $stop = false;
                             $this->apieDatalayer->persistExisting($item, $boundedContextId);
