@@ -13,6 +13,7 @@ use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Entities\RequiresRecalculatingInterface;
 use Apie\Core\Enums\ConsoleCommand;
 use Apie\Core\Lists\StringHashmap;
+use Apie\Core\ValueObjects\Utils;
 use ReflectionClass;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
