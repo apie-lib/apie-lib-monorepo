@@ -12,6 +12,7 @@ use Apie\Core\Datalayers\Search\QuerySearch;
 use Apie\Core\Entities\RequiresRecalculatingInterface;
 use Apie\Core\Enums\ConsoleCommand;
 use Apie\Core\Lists\StringHashmap;
+use ReflectionClass;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -49,6 +50,7 @@ class ApieUpdateRecalculatingCommand extends Command
                 ->withContext(ContextConstants::BOUNDED_CONTEXT_ID, $contextId)
                 ->registerInstance(new BoundedContextId($contextId));
             $now = ApieLib::getPsrClock()->now();
+            /** @var ReflectionClass<EntityInterface> $resource */
             foreach ($boundedContext->resources as $resource) {
                 if (in_array(RequiresRecalculatingInterface::class, $resource->getInterfaceNames())) {
                     $offset = 0;
@@ -69,7 +71,7 @@ class ApieUpdateRecalculatingCommand extends Command
                         $stop = true;
                         foreach ($chunk as $item) {
                             /** @var RequiresRecalculatingInterface $item */
-                            $output->write(sprintf('%40s', $item->getId()));
+                            $output->write(sprintf('%40s', (string) $item->getId()));
                             $date = $item->getDateToRecalculate();
                             $stop = false;
                             $this->apieDatalayer->persistExisting($item, $boundedContextId);
