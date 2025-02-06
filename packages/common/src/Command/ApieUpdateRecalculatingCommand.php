@@ -9,6 +9,7 @@ use Apie\Core\ContextBuilders\ContextBuilderFactory;
 use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Datalayers\Search\QuerySearch;
+use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Entities\RequiresRecalculatingInterface;
 use Apie\Core\Enums\ConsoleCommand;
 use Apie\Core\Lists\StringHashmap;
