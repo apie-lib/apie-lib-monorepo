@@ -6,8 +6,8 @@ use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\Lists\ReflectionClassList;
 use Apie\Core\Lists\ReflectionMethodList;
-use Apie\DoctrineEntityConverter\Resources\GeneratedCodeTimestamp;
 use Apie\StorageMetadataBuilder\Lists\GeneratedCodeHashmap;
+use Apie\StorageMetadataBuilder\Resources\GeneratedCodeTimestamp;
 use ReflectionClass;
 use RuntimeException;
 

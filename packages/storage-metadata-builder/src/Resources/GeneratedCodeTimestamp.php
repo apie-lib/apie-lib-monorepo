@@ -1,9 +1,9 @@
 <?php
-namespace Apie\DoctrineEntityConverter\Resources;
+namespace Apie\StorageMetadataBuilder\Resources;
 
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Lists\StringHashmap;
-use Apie\DoctrineEntityConverter\Identifiers\GeneratedCodeTimestampId;
+use Apie\StorageMetadataBuilder\Identifiers\GeneratedCodeTimestampId;
 use Apie\StorageMetadataBuilder\Lists\GeneratedCodeHashmap;
 
 class GeneratedCodeTimestamp implements EntityInterface

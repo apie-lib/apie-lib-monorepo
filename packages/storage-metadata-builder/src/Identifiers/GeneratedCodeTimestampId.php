@@ -1,10 +1,10 @@
 <?php
-namespace Apie\DoctrineEntityConverter\Identifiers;
+namespace Apie\StorageMetadataBuilder\Identifiers;
 
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Lists\StringHashmap;
 use Apie\Core\ValueObjects\Md5Checksum;
-use Apie\DoctrineEntityConverter\Resources\GeneratedCodeTimestamp;
+use Apie\StorageMetadataBuilder\Resources\GeneratedCodeTimestamp;
 use ReflectionClass;
 
 /**
@@ -17,7 +17,7 @@ class GeneratedCodeTimestampId extends Md5Checksum implements IdentifierInterfac
         return new ReflectionClass(GeneratedCodeTimestamp::class);
     }
 
-    public static function createFromMap(StringHashmap $generatedCodeHashmap): GeneratedCodeTimestampId
+    public static function createFromMap(StringHashmap $generatedCodeHashmap)
     {
         return self::fromNative(md5(json_encode($generatedCodeHashmap)));
     }
