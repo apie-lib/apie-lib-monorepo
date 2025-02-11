@@ -9,6 +9,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 class IndexAfterResponseIsSentStrategy implements IndexStrategyInterface, EventSubscriberInterface
 {
+    /** @var array<int, array{0: HasIndexInterface, 1: EntityInterface}> $todo */
     private array $todo = [];
     public function __construct(private readonly EntityReindexer $entityReindexer)
     {

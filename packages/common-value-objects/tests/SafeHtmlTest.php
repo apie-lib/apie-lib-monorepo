@@ -78,6 +78,14 @@ class SafeHtmlTest extends TestCase
             '<span>test</span>',
             '<span style="border: solid 1px">test</span>',
         ];
+        yield 'Non breaking space' => [
+            '<div>&nbsp;</div>',
+            '<div>&nbsp;</div>'
+        ];
+        yield 'Exploitable wrong html' => [
+            '<div></div>',
+            '<div onload="xss()"></div>',
+        ];
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

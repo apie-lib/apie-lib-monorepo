@@ -81,7 +81,11 @@ final class SafeHtml implements StringValueObjectInterface, LengthConstraintStri
 
     protected function convert(string $input): string
     {
-        return self::getHtmlSanitizer()->sanitizeFor('body', $input);
+        return str_replace(
+            ' ',
+            '&nbsp;',
+            self::getHtmlSanitizer()->sanitizeFor('body', $input)
+        );
     }
 
     public static function minStringLength(): int

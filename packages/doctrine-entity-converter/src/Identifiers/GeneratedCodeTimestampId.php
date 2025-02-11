@@ -7,6 +7,9 @@ use Apie\Core\ValueObjects\Md5Checksum;
 use Apie\DoctrineEntityConverter\Resources\GeneratedCodeTimestamp;
 use ReflectionClass;
 
+/**
+ * @implements IdentifierInterface<GeneratedCodeTimestamp>
+ */
 class GeneratedCodeTimestampId extends Md5Checksum implements IdentifierInterface
 {
     public static function getReferenceFor(): ReflectionClass
