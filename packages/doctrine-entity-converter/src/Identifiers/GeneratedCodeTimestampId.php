@@ -17,7 +17,7 @@ class GeneratedCodeTimestampId extends Md5Checksum implements IdentifierInterfac
         return new ReflectionClass(GeneratedCodeTimestamp::class);
     }
 
-    public static function createFromMap(StringHashmap $generatedCodeHashmap)
+    public static function createFromMap(StringHashmap $generatedCodeHashmap): GeneratedCodeTimestampId
     {
         return self::fromNative(md5(json_encode($generatedCodeHashmap)));
     }

@@ -27,14 +27,14 @@ class IndexAfterResponseIsSentStrategy implements IndexStrategyInterface, EventS
         $this->todo[] = [$doctrineEntity, $entity];
     }
 
-    public function onKernelTerminate()
+    public function onKernelTerminate(): void
     {
         while (!empty($this->todo)) {
             $call = array_shift($this->todo);
             $this->entityReindexer->updateIndex(
                 ...[
                     ...$call,
-                    !empty($todo)
+                    !empty($this->todo)
                 ]
             );
         }
