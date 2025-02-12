@@ -84,6 +84,6 @@ class EncryptedPasswordTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(EncryptedPassword::class);
+        $this->runFakerTest(EncryptedPassword::class, interval: 15);
     }
 }

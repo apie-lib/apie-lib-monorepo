@@ -10,7 +10,7 @@ use Faker\Generator;
 /** @codeCoverageIgnore */
 trait TestWithFaker
 {
-    public function runFakerTest(string $classToTest, ?callable $testCase = null, ?Generator $generator = null)
+    public function runFakerTest(string $classToTest, ?callable $testCase = null, ?Generator $generator = null, int $interval = 1000)
     {
         if (!class_exists(ApieObjectFaker::class)) {
             $this->markTestIncomplete('Faker library not loaded, so skipping test');
@@ -22,7 +22,6 @@ trait TestWithFaker
             $generator = Factory::create();
             $generator->addProvider(ApieObjectFaker::createWithDefaultFakers($generator));
         }
-        $interval = 1000;
         if (EntityUtils::isEntity($classToTest) || ValueObjectUtils::isCompositeValueObject($classToTest)) {
             $interval = 100;
         }
