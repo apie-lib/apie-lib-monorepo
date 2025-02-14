@@ -2,6 +2,7 @@
 namespace Apie\CommonValueObjects;
 
 use Apie\CommonValueObjects\Bridge\Symfony\AllowedCssInSpanSanitizer;
+use Apie\CommonValueObjects\Bridge\Symfony\YoutubeNoCookieSanitizer;
 use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
@@ -42,6 +43,8 @@ final class SafeHtml implements StringValueObjectInterface, LengthConstraintStri
                 ->dropElement('script')
                 ->dropElement('style')
                 ->allowAttribute('style', 'span')
+                ->withAttributeSanitizer(new YoutubeNoCookieSanitizer())
+                ->allowElement('iframe', ['src', 'referrerpolicy', 'width', 'title', 'height', 'frameborder', 'allowfullscreen', 'allow'])
                 ->withAttributeSanitizer(new AllowedCssInSpanSanitizer());
             self::$htmlSanitizer = new HtmlSanitizer(
                 $config

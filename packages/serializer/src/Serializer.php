@@ -45,9 +45,10 @@ class Serializer
     {
     }
 
-    public static function create(): self
+    public static function create(iterable $additionalNormalizers = []): self
     {
         return new self(new NormalizerList([
+            ...$additionalNormalizers,
             new AliasDenormalizer(),
             new PaginatedResultNormalizer(),
             new DoNotChangeFileNormalizer(),
