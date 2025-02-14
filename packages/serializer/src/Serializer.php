@@ -13,6 +13,8 @@ use Apie\Serializer\Context\ApieSerializerContext;
 use Apie\Serializer\Context\NormalizeChildGroup;
 use Apie\Serializer\Exceptions\ValidationException;
 use Apie\Serializer\Lists\NormalizerList;
+use Apie\Serializer\Interfaces\DenormalizerInterface;
+use Apie\Serializer\Interfaces\NormalizerInterface;
 use Apie\Serializer\Normalizers\AliasDenormalizer;
 use Apie\Serializer\Normalizers\BooleanNormalizer;
 use Apie\Serializer\Normalizers\DateTimeNormalizer;
@@ -45,6 +47,9 @@ class Serializer
     {
     }
 
+    /**
+     * @param iterable<int, NormalizerInterface|DenormalizerInterface> $additionalNormalizers
+     */
     public static function create(iterable $additionalNormalizers = []): self
     {
         return new self(new NormalizerList([
