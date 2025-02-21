@@ -705,6 +705,12 @@ paths:
                 - dateToRecalculate
                 - +dateToRecalculate
                 - '-dateToRecalculate'
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
                 - expireDate
                 - +expireDate
                 - '-expireDate'
@@ -830,6 +836,12 @@ paths:
             type: array
             items:
               enum:
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
                 - orderStatus
                 - +orderStatus
                 - '-orderStatus'
@@ -939,6 +951,12 @@ paths:
             type: array
             items:
               enum:
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
                 - animalName
                 - +animalName
                 - '-animalName'
@@ -1083,6 +1101,12 @@ paths:
             type: array
             items:
               enum:
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
                 - id
                 - +id
                 - '-id'
@@ -1225,6 +1249,12 @@ paths:
             type: array
             items:
               enum:
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
                 - companyName
                 - +companyName
                 - '-companyName'
@@ -1385,6 +1415,12 @@ paths:
             type: array
             items:
               enum:
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
                 - id
                 - +id
                 - '-id'
@@ -1516,6 +1552,12 @@ paths:
             type: array
             items:
               enum:
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
                 - id
                 - +id
                 - '-id'

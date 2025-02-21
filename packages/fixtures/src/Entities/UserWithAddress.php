@@ -2,6 +2,7 @@
 namespace Apie\Fixtures\Entities;
 
 use Apie\Core\Attributes\Internal;
+use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Fixtures\Identifiers\UserWithAddressIdentifier;
 use Apie\Fixtures\ValueObjects\AddressWithZipcodeCheck;
@@ -35,6 +36,7 @@ class UserWithAddress implements EntityInterface
     }
 
     #[Internal()]
+    #[SearchFilterOption(enabled: false)]
     public function hasPassword(): bool
     {
         return $this->password !== null;

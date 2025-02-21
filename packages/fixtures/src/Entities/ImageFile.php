@@ -2,6 +2,7 @@
 namespace Apie\Fixtures\Entities;
 
 use Apie\Core\Attributes\RemovalCheck;
+use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Fixtures\Identifiers\ImageFileIdentifier;
@@ -22,6 +23,7 @@ final class ImageFile implements EntityInterface
         return $this->id;
     }
 
+    #[SearchFilterOption(enabled: false)]
     public function getFile(): UploadedFileInterface
     {
         return $this->file;

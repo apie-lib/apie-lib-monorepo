@@ -1080,6 +1080,12 @@
                                     "dateToRecalculate",
                                     "+dateToRecalculate",
                                     "-dateToRecalculate",
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
                                     "expireDate",
                                     "+expireDate",
                                     "-expireDate",
@@ -1265,6 +1271,12 @@
                             "type": "array",
                             "items": {
                                 "enum": [
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
                                     "orderStatus",
                                     "+orderStatus",
                                     "-orderStatus"
@@ -1430,6 +1442,12 @@
                             "type": "array",
                             "items": {
                                 "enum": [
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
                                     "animalName",
                                     "+animalName",
                                     "-animalName",
@@ -1640,6 +1658,12 @@
                             "type": "array",
                             "items": {
                                 "enum": [
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
                                     "id",
                                     "+id",
                                     "-id",
@@ -1846,6 +1870,12 @@
                             "type": "array",
                             "items": {
                                 "enum": [
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
                                     "companyName",
                                     "+companyName",
                                     "-companyName",
@@ -2081,6 +2111,12 @@
                             "type": "array",
                             "items": {
                                 "enum": [
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
                                     "id",
                                     "+id",
                                     "-id"
@@ -2276,6 +2312,12 @@
                             "type": "array",
                             "items": {
                                 "enum": [
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
                                     "id",
                                     "+id",
                                     "-id",

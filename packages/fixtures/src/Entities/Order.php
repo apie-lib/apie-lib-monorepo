@@ -3,6 +3,7 @@ namespace Apie\Fixtures\Entities;
 
 use APie\Core\Attributes\Internal;
 use Apie\Core\Attributes\ProvideIndex;
+use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Entities\EntityWithStatesInterface;
 use Apie\Core\Entities\RootAggregate;
 use Apie\Core\Lists\StringList;
@@ -42,6 +43,7 @@ class Order implements RootAggregate, EntityWithStatesInterface
         return $this->id;
     }
 
+    #[SearchFilterOption(enabled: false)]
     public function getOrderLines(): OrderLineList
     {
         return $this->orderLines;

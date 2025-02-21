@@ -2,6 +2,7 @@
 namespace Apie\Fixtures\Entities;
 
 use Apie\Core\Attributes\FakeCount;
+use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Fixtures\Identifiers\UserAutoincrementIdentifier;
 use Apie\Fixtures\ValueObjects\AddressWithZipcodeCheck;
@@ -34,6 +35,7 @@ class UserWithAutoincrementKey implements EntityInterface
         $this->password = $password;
     }
 
+    #[SearchFilterOption(enabled: false)]
     public function getPassword(): ?Password
     {
         return $this->password;

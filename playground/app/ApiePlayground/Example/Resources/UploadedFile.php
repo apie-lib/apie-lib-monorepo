@@ -4,6 +4,7 @@ namespace App\ApiePlayground\Example\Resources;
 use Apie\Core\Attributes\AllowMultipart;
 use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\ResourceName;
+use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
 use App\ApiePlayground\Example\Identifiers\UploadedFileIdentifier;
@@ -25,6 +26,7 @@ final class UploadedFile implements EntityInterface
         return $this->id;
     }
 
+    #[SearchFilterOption(enabled: false)]
     public function getFile(): UploadedFileInterface
     {
         return $this->file;
