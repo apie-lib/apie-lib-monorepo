@@ -11,6 +11,14 @@ paths:
       operationId: cms.dropdown_options.ObjectWithRelation
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -36,6 +44,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.Order
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: property
           in: path
@@ -63,6 +79,14 @@ paths:
       operationId: cms.dropdown_options.Animal
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -88,6 +112,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.PrimitiveOnly
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: property
           in: path
@@ -115,6 +147,14 @@ paths:
       operationId: cms.dropdown_options.RestrictedEntity
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -140,6 +180,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.UploadedFile
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: property
           in: path
@@ -167,6 +215,14 @@ paths:
       operationId: cms.dropdown_options.User
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -192,6 +248,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.existing.Animal
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -226,6 +290,14 @@ paths:
       operationId: cms.dropdown_options.existing.ObjectWithRelation
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PartialInput'
@@ -258,6 +330,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.existing.PrimitiveOnly
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -292,6 +372,14 @@ paths:
       operationId: cms.dropdown_options.existing.RestrictedEntity
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PartialInput'
@@ -324,6 +412,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.existing.UploadedFile
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -358,6 +454,14 @@ paths:
       operationId: cms.dropdown_options.existing.User
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PartialInput'
@@ -391,6 +495,14 @@ paths:
       operationId: cms.dropdown_options.method-call.Calculator-add
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -416,6 +528,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.method-call.Authentication-currentSession
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: property
           in: path
@@ -443,6 +563,14 @@ paths:
       operationId: cms.dropdown_options.method-call.Authentication-currentUser
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -468,6 +596,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.method-call.Authentication-isThisMe
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: property
           in: path
@@ -495,6 +631,14 @@ paths:
       operationId: cms.dropdown_options.method-call.Calculator-multiply
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -520,6 +664,14 @@ paths:
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.method-call.Calculator-squareRoot
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: property
           in: path
@@ -547,6 +699,14 @@ paths:
       operationId: cms.dropdown_options.method-call.Authentication-verifyAuthentication
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -572,6 +732,15 @@ paths:
         - resource
       description: 'Creates an instance of ObjectWithRelation'
       operationId: post-ObjectWithRelation
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -620,43 +789,15 @@ paths:
         - resource
       description: 'Gets a list of resource that are an instance of ObjectWithRelation'
       operationId: get-all-ObjectWithRelation
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                required:
-                  - filteredCount
-                  - totalCount
-                  - first
-                  - last
-                  - list
-                type: object
-                properties:
-                  totalCount:
-                    minimum: 0
-                    type: integer
-                  filteredCount:
-                    minimum: 0
-                    type: integer
-                  first:
-                    type: string
-                    format: uri
-                  last:
-                    type: string
-                    format: uri
-                  prev:
-                    type: string
-                    format: uri
-                  next:
-                    type: string
-                    format: uri
-                  list:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/ObjectWithRelation-get'
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: search
           in: query
@@ -721,6 +862,42 @@ paths:
                 - +id
                 - '-id'
               type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - filteredCount
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ObjectWithRelation-get'
   /Order:
     post:
       tags:
@@ -728,6 +905,15 @@ paths:
         - resource
       description: 'Creates an instance of Order'
       operationId: post-Order
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -776,6 +962,48 @@ paths:
         - resource
       description: 'Gets a list of resource that are an instance of Order'
       operationId: get-all-Order
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: 'query[id]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[orderLineList]'
+          in: query
+          schema:
+            type: string
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
+                - orderStatus
+                - +orderStatus
+                - '-orderStatus'
+              type: string
       responses:
         '200':
           description: OK
@@ -812,40 +1040,6 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Order-get'
-      parameters:
-        -
-          name: search
-          in: query
-          schema:
-            minLength: 1
-            type: string
-        -
-          name: 'query[id]'
-          in: query
-          schema:
-            type: string
-        -
-          name: 'query[orderLineList]'
-          in: query
-          schema:
-            type: string
-        -
-          name: order_by
-          in: query
-          schema:
-            type: array
-            items:
-              enum:
-                - createdAt
-                - +createdAt
-                - '-createdAt'
-                - updatedAt
-                - +updatedAt
-                - '-updatedAt'
-                - orderStatus
-                - +orderStatus
-                - '-orderStatus'
-              type: string
   /Animal:
     post:
       tags:
@@ -853,6 +1047,15 @@ paths:
         - resource
       description: 'Creates an instance of Animal'
       operationId: put-Animal
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -901,6 +1104,44 @@ paths:
         - resource
       description: 'Gets a list of resource that are an instance of Animal'
       operationId: get-all-Animal
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: order_by
+          in: query
+          schema:
+            type: array
+            items:
+              enum:
+                - createdAt
+                - +createdAt
+                - '-createdAt'
+                - updatedAt
+                - +updatedAt
+                - '-updatedAt'
+                - animalName
+                - +animalName
+                - '-animalName'
+                - id
+                - +id
+                - '-id'
+                - lastName
+                - +lastName
+                - '-lastName'
+              type: string
       responses:
         '200':
           description: OK
@@ -937,36 +1178,6 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Animal-get'
-      parameters:
-        -
-          name: search
-          in: query
-          schema:
-            minLength: 1
-            type: string
-        -
-          name: order_by
-          in: query
-          schema:
-            type: array
-            items:
-              enum:
-                - createdAt
-                - +createdAt
-                - '-createdAt'
-                - updatedAt
-                - +updatedAt
-                - '-updatedAt'
-                - animalName
-                - +animalName
-                - '-animalName'
-                - id
-                - +id
-                - '-id'
-                - lastName
-                - +lastName
-                - '-lastName'
-              type: string
   /PrimitiveOnly:
     post:
       tags:
@@ -974,6 +1185,15 @@ paths:
         - resource
       description: 'Creates an instance of PrimitiveOnly'
       operationId: put-PrimitiveOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -1022,43 +1242,15 @@ paths:
         - resource
       description: 'Gets a list of resource that are an instance of PrimitiveOnly'
       operationId: get-all-PrimitiveOnly
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                required:
-                  - filteredCount
-                  - totalCount
-                  - first
-                  - last
-                  - list
-                type: object
-                properties:
-                  totalCount:
-                    minimum: 0
-                    type: integer
-                  filteredCount:
-                    minimum: 0
-                    type: integer
-                  first:
-                    type: string
-                    format: uri
-                  last:
-                    type: string
-                    format: uri
-                  prev:
-                    type: string
-                    format: uri
-                  next:
-                    type: string
-                    format: uri
-                  list:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/PrimitiveOnly-get'
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: search
           in: query
@@ -1123,6 +1315,42 @@ paths:
                 - +stringField
                 - '-stringField'
               type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - filteredCount
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PrimitiveOnly-get'
   /RestrictedEntity:
     post:
       tags:
@@ -1130,6 +1358,15 @@ paths:
         - resource
       description: 'Creates an instance of RestrictedEntity'
       operationId: put-RestrictedEntity
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -1178,43 +1415,15 @@ paths:
         - resource
       description: 'Gets a list of resource that are an instance of RestrictedEntity'
       operationId: get-all-RestrictedEntity
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                required:
-                  - filteredCount
-                  - totalCount
-                  - first
-                  - last
-                  - list
-                type: object
-                properties:
-                  totalCount:
-                    minimum: 0
-                    type: integer
-                  filteredCount:
-                    minimum: 0
-                    type: integer
-                  first:
-                    type: string
-                    format: uri
-                  last:
-                    type: string
-                    format: uri
-                  prev:
-                    type: string
-                    format: uri
-                  next:
-                    type: string
-                    format: uri
-                  list:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/RestrictedEntity-get'
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: search
           in: query
@@ -1265,6 +1474,42 @@ paths:
                 - +userId
                 - '-userId'
               type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - filteredCount
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/RestrictedEntity-get'
   /UploadedFile:
     post:
       tags:
@@ -1273,6 +1518,14 @@ paths:
       description: 'Creates an instance of UploadedFile'
       operationId: put-UploadedFile
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: x-no-crsf
           in: header
@@ -1343,43 +1596,15 @@ paths:
         - resource
       description: 'Gets a list of resource that are an instance of UploadedFile'
       operationId: get-all-UploadedFile
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                required:
-                  - filteredCount
-                  - totalCount
-                  - first
-                  - last
-                  - list
-                type: object
-                properties:
-                  totalCount:
-                    minimum: 0
-                    type: integer
-                  filteredCount:
-                    minimum: 0
-                    type: integer
-                  first:
-                    type: string
-                    format: uri
-                  last:
-                    type: string
-                    format: uri
-                  prev:
-                    type: string
-                    format: uri
-                  next:
-                    type: string
-                    format: uri
-                  list:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/File-get'
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: search
           in: query
@@ -1425,6 +1650,42 @@ paths:
                 - +id
                 - '-id'
               type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - filteredCount
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/File-get'
   /User:
     post:
       tags:
@@ -1432,6 +1693,15 @@ paths:
         - resource
       description: 'Creates an instance of User'
       operationId: put-User
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -1480,43 +1750,15 @@ paths:
         - resource
       description: 'Gets a list of resource that are an instance of User'
       operationId: get-all-User
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                required:
-                  - filteredCount
-                  - totalCount
-                  - first
-                  - last
-                  - list
-                type: object
-                properties:
-                  totalCount:
-                    minimum: 0
-                    type: integer
-                  filteredCount:
-                    minimum: 0
-                    type: integer
-                  first:
-                    type: string
-                    format: uri
-                  last:
-                    type: string
-                    format: uri
-                  prev:
-                    type: string
-                    format: uri
-                  next:
-                    type: string
-                    format: uri
-                  list:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/User-get'
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: search
           in: query
@@ -1574,6 +1816,42 @@ paths:
                 - +password
                 - '-password'
               type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - filteredCount
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/User-get'
   '/Animal/{id}':
     get:
       tags:
@@ -1582,6 +1860,14 @@ paths:
       description: 'Gets a resource of Animal with a specific id'
       operationId: get-single-Animal
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -1621,6 +1907,14 @@ paths:
       description: 'Modifies an instance of Animal'
       operationId: patch-single-Animal
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -1679,6 +1973,14 @@ paths:
       operationId: get-single-ObjectWithRelation
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of ObjectWithRelation'
@@ -1717,6 +2019,14 @@ paths:
       description: 'Modifies an instance of ObjectWithRelation'
       operationId: patch-single-ObjectWithRelation
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -1775,6 +2085,14 @@ paths:
       operationId: get-single-Order
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of Order'
@@ -1813,6 +2131,14 @@ paths:
       description: 'Removes an instance of Order'
       operationId: remove-single-Order
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -1862,6 +2188,14 @@ paths:
       operationId: get-single-PrimitiveOnly
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PrimitiveOnly'
@@ -1900,6 +2234,14 @@ paths:
       description: 'Modifies an instance of PrimitiveOnly'
       operationId: patch-single-PrimitiveOnly
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -1957,6 +2299,14 @@ paths:
       operationId: remove-single-PrimitiveOnly
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PrimitiveOnly'
@@ -2005,6 +2355,14 @@ paths:
       operationId: get-single-RestrictedEntity
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of RestrictedEntity'
@@ -2043,6 +2401,14 @@ paths:
       description: 'Modifies an instance of RestrictedEntity'
       operationId: patch-single-RestrictedEntity
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -2101,6 +2467,14 @@ paths:
       operationId: get-single-UploadedFile
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of UploadedFile'
@@ -2139,6 +2513,14 @@ paths:
       description: 'Modifies an instance of UploadedFile'
       operationId: patch-single-UploadedFile
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -2214,6 +2596,14 @@ paths:
       operationId: remove-single-UploadedFile
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of UploadedFile'
@@ -2262,6 +2652,14 @@ paths:
       operationId: get-single-User
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of User'
@@ -2300,6 +2698,14 @@ paths:
       description: 'Modifies an instance of User'
       operationId: patch-single-User
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -2358,6 +2764,14 @@ paths:
       operationId: call-method-Calculator-add
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: numberOne
           in: path
           description: 'numberOne of instance of add'
@@ -2415,6 +2829,15 @@ paths:
         - action
       description: 'Calls method currentSession and returns return value.'
       operationId: call-method-Authentication-currentSession
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -2461,6 +2884,15 @@ paths:
         - action
       description: 'Calls method currentUser and returns return value.'
       operationId: call-method-Authentication-currentUser
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -2505,6 +2937,15 @@ paths:
         - action
       description: 'Calls method isThisMe and returns return value.'
       operationId: call-method-Authentication-isThisMe
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -2554,6 +2995,14 @@ paths:
       description: 'Calls method multiply and returns return value.'
       operationId: call-method-Calculator-multiply
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: numberOne
           in: path
@@ -2612,6 +3061,15 @@ paths:
         - action
       description: 'Calls method squareRoot and returns return value.'
       operationId: call-method-Calculator-squareRoot
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -2660,6 +3118,15 @@ paths:
         - action
       description: 'Calls method verifyAuthentication and returns return value.'
       operationId: call-method-Authentication-verifyAuthentication
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -2712,6 +3179,14 @@ paths:
       description: 'Adds orderLine to Order'
       operationId: get-single-Order-run-addOrderLine
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -2775,6 +3250,14 @@ paths:
       operationId: get-single-User-run-block
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of User'
@@ -2837,6 +3320,14 @@ paths:
       operationId: get-single-User-run-unblock
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of User'
@@ -2864,6 +3355,14 @@ paths:
       description: 'Runs method activate on a User with a specific id'
       operationId: get-single-User-run-activate
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path
@@ -2933,6 +3432,14 @@ paths:
       operationId: get-single-User-run-verify
       parameters:
         -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of User'
@@ -2995,6 +3502,14 @@ paths:
       description: 'Streams a file on a UploadedFile with a specific id'
       operationId: stream-single-UploadedFile-run-download
       parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           name: id
           in: path

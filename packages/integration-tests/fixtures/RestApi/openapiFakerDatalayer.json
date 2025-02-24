@@ -14,6 +14,17 @@
                 "operationId": "cms.dropdown_options.ObjectWithRelation",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -54,6 +65,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.Order",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "property",
                         "in": "path",
@@ -96,6 +118,17 @@
                 "operationId": "cms.dropdown_options.Animal",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -136,6 +169,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.PrimitiveOnly",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "property",
                         "in": "path",
@@ -178,6 +222,17 @@
                 "operationId": "cms.dropdown_options.RestrictedEntity",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -218,6 +273,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.UploadedFile",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "property",
                         "in": "path",
@@ -260,6 +326,17 @@
                 "operationId": "cms.dropdown_options.User",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -300,6 +377,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.existing.Animal",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -351,6 +439,17 @@
                 "operationId": "cms.dropdown_options.existing.ObjectWithRelation",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PartialInput",
@@ -400,6 +499,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.existing.PrimitiveOnly",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -451,6 +561,17 @@
                 "operationId": "cms.dropdown_options.existing.RestrictedEntity",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PartialInput",
@@ -500,6 +621,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.existing.UploadedFile",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -551,6 +683,17 @@
                 "operationId": "cms.dropdown_options.existing.User",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PartialInput",
@@ -601,6 +744,17 @@
                 "operationId": "cms.dropdown_options.method-call.Calculator-add",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -641,6 +795,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.method-call.Authentication-currentSession",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "property",
                         "in": "path",
@@ -683,6 +848,17 @@
                 "operationId": "cms.dropdown_options.method-call.Authentication-currentUser",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -723,6 +899,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.method-call.Authentication-isThisMe",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "property",
                         "in": "path",
@@ -765,6 +952,17 @@
                 "operationId": "cms.dropdown_options.method-call.Calculator-multiply",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -805,6 +1003,17 @@
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.method-call.Calculator-squareRoot",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "property",
                         "in": "path",
@@ -847,6 +1056,17 @@
                 "operationId": "cms.dropdown_options.method-call.Authentication-verifyAuthentication",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -887,6 +1107,19 @@
                 ],
                 "description": "Creates an instance of ObjectWithRelation",
                 "operationId": "post-ObjectWithRelation",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -966,6 +1199,56 @@
                 ],
                 "description": "Gets a list of resource that are an instance of ObjectWithRelation",
                 "operationId": "get-all-ObjectWithRelation",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[userId]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[expireDate]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[orderId]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1016,46 +1299,7 @@
                             }
                         }
                     }
-                },
-                "parameters": [
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[userId]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[expireDate]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[orderId]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    }
-                ]
+                }
             }
         },
         "/Order": {
@@ -1066,6 +1310,19 @@
                 ],
                 "description": "Creates an instance of Order",
                 "operationId": "post-Order",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1145,6 +1402,41 @@
                 ],
                 "description": "Gets a list of resource that are an instance of Order",
                 "operationId": "get-all-Order",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[orderLineList]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1195,31 +1487,7 @@
                             }
                         }
                     }
-                },
-                "parameters": [
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[orderLineList]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
+                }
             }
         },
         "/Animal": {
@@ -1230,6 +1498,19 @@
                 ],
                 "description": "Creates an instance of Animal",
                 "operationId": "put-Animal",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1309,6 +1590,41 @@
                 ],
                 "description": "Gets a list of resource that are an instance of Animal",
                 "operationId": "get-all-Animal",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[animalName]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1359,31 +1675,7 @@
                             }
                         }
                     }
-                },
-                "parameters": [
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[animalName]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
+                }
             }
         },
         "/PrimitiveOnly": {
@@ -1394,6 +1686,19 @@
                 ],
                 "description": "Creates an instance of PrimitiveOnly",
                 "operationId": "put-PrimitiveOnly",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1473,6 +1778,66 @@
                 ],
                 "description": "Gets a list of resource that are an instance of PrimitiveOnly",
                 "operationId": "get-all-PrimitiveOnly",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[stringField]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[integerField]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[floatingPoint]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[booleanField]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1523,56 +1888,7 @@
                             }
                         }
                     }
-                },
-                "parameters": [
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[stringField]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    },
-                    {
-                        "name": "query[integerField]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    },
-                    {
-                        "name": "query[floatingPoint]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    },
-                    {
-                        "name": "query[booleanField]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
+                }
             }
         },
         "/RestrictedEntity": {
@@ -1583,6 +1899,19 @@
                 ],
                 "description": "Creates an instance of RestrictedEntity",
                 "operationId": "put-RestrictedEntity",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -1662,6 +1991,49 @@
                 ],
                 "description": "Gets a list of resource that are an instance of RestrictedEntity",
                 "operationId": "get-all-RestrictedEntity",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[userId]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[companyName]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1712,39 +2084,7 @@
                             }
                         }
                     }
-                },
-                "parameters": [
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[userId]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[companyName]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
+                }
             }
         },
         "/UploadedFile": {
@@ -1756,6 +2096,17 @@
                 "description": "Creates an instance of UploadedFile",
                 "operationId": "put-UploadedFile",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "x-no-crsf",
                         "in": "header",
@@ -1868,6 +2219,49 @@
                 ],
                 "description": "Gets a list of resource that are an instance of UploadedFile",
                 "operationId": "get-all-UploadedFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[file]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[imageFile]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -1918,39 +2312,7 @@
                             }
                         }
                     }
-                },
-                "parameters": [
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[file]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[imageFile]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    }
-                ]
+                }
             }
         },
         "/User": {
@@ -1961,6 +2323,19 @@
                 ],
                 "description": "Creates an instance of User",
                 "operationId": "put-User",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -2040,6 +2415,50 @@
                 ],
                 "description": "Gets a list of resource that are an instance of User",
                 "operationId": "get-all-User",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[phoneNumber]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[blockedReason]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -2090,40 +2509,7 @@
                             }
                         }
                     }
-                },
-                "parameters": [
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[phoneNumber]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    },
-                    {
-                        "name": "query[blockedReason]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ]
+                }
             }
         },
         "/Animal/{id}": {
@@ -2135,6 +2521,17 @@
                 "description": "Gets a resource of Animal with a specific id",
                 "operationId": "get-single-Animal",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -2196,6 +2593,17 @@
                 "description": "Modifies an instance of Animal",
                 "operationId": "patch-single-Animal",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -2289,6 +2697,17 @@
                 "operationId": "get-single-ObjectWithRelation",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of ObjectWithRelation",
@@ -2349,6 +2768,17 @@
                 "description": "Modifies an instance of ObjectWithRelation",
                 "operationId": "patch-single-ObjectWithRelation",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -2442,6 +2872,17 @@
                 "operationId": "get-single-Order",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of Order",
@@ -2502,6 +2943,17 @@
                 "description": "Removes an instance of Order",
                 "operationId": "remove-single-Order",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -2579,6 +3031,17 @@
                 "operationId": "get-single-PrimitiveOnly",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PrimitiveOnly",
@@ -2639,6 +3102,17 @@
                 "description": "Modifies an instance of PrimitiveOnly",
                 "operationId": "patch-single-PrimitiveOnly",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -2730,6 +3204,17 @@
                 "operationId": "remove-single-PrimitiveOnly",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PrimitiveOnly",
@@ -2806,6 +3291,17 @@
                 "operationId": "get-single-RestrictedEntity",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of RestrictedEntity",
@@ -2866,6 +3362,17 @@
                 "description": "Modifies an instance of RestrictedEntity",
                 "operationId": "patch-single-RestrictedEntity",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -2959,6 +3466,17 @@
                 "operationId": "get-single-UploadedFile",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of UploadedFile",
@@ -3019,6 +3537,17 @@
                 "description": "Modifies an instance of UploadedFile",
                 "operationId": "patch-single-UploadedFile",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -3137,6 +3666,17 @@
                 "operationId": "remove-single-UploadedFile",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of UploadedFile",
@@ -3213,6 +3753,17 @@
                 "operationId": "get-single-User",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of User",
@@ -3273,6 +3824,17 @@
                 "description": "Modifies an instance of User",
                 "operationId": "patch-single-User",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -3366,6 +3928,17 @@
                 "operationId": "call-method-Calculator-add",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "numberOne",
                         "in": "path",
                         "description": "numberOne of instance of add",
@@ -3456,6 +4029,19 @@
                 ],
                 "description": "Calls method currentSession and returns return value.",
                 "operationId": "call-method-Authentication-currentSession",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -3531,6 +4117,19 @@
                 ],
                 "description": "Calls method currentUser and returns return value.",
                 "operationId": "call-method-Authentication-currentUser",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -3603,6 +4202,19 @@
                 ],
                 "description": "Calls method isThisMe and returns return value.",
                 "operationId": "call-method-Authentication-isThisMe",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -3683,6 +4295,17 @@
                 "description": "Calls method multiply and returns return value.",
                 "operationId": "call-method-Calculator-multiply",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "numberOne",
                         "in": "path",
@@ -3774,6 +4397,19 @@
                 ],
                 "description": "Calls method squareRoot and returns return value.",
                 "operationId": "call-method-Calculator-squareRoot",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -3853,6 +4489,19 @@
                 ],
                 "description": "Calls method verifyAuthentication and returns return value.",
                 "operationId": "call-method-Authentication-verifyAuthentication",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -3937,6 +4586,17 @@
                 "description": "Adds orderLine to Order",
                 "operationId": "get-single-Order-run-addOrderLine",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -4038,6 +4698,17 @@
                 "operationId": "get-single-User-run-block",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of User",
@@ -4138,6 +4809,17 @@
                 "operationId": "get-single-User-run-unblock",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of User",
@@ -4180,6 +4862,17 @@
                 "description": "Runs method activate on a User with a specific id",
                 "operationId": "get-single-User-run-activate",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -4289,6 +4982,17 @@
                 "operationId": "get-single-User-run-verify",
                 "parameters": [
                     {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of User",
@@ -4389,6 +5093,17 @@
                 "description": "Streams a file on a UploadedFile with a specific id",
                 "operationId": "stream-single-UploadedFile-run-download",
                 "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
                     {
                         "name": "id",
                         "in": "path",
