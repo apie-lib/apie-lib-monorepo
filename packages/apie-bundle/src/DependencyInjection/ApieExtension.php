@@ -141,7 +141,7 @@ final class ApieExtension extends Extension
                     new Reference(OrmBuilder::class)
                 ]);
                 $definition->addTag('console.command');
-                $container->addDefinitions([$definition]);
+                $container->addDefinitions([ApieUpdateIdfCommand::class => $definition]);
             }
         }
         $loaded = [];

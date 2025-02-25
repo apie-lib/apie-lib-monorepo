@@ -16,7 +16,8 @@ final class EntityReindexer
     }
 
     /**
-     * @return ReflectionClass<HasIndexInterface>
+     * @param ReflectionClass<HasIndexInterface> $doctrineEntity
+     * @return class-string<object>
      */
     private function getIndexClass(ReflectionClass $doctrineEntity): string
     {
@@ -59,6 +60,9 @@ final class EntityReindexer
         $entityManager->getConnection()->executeQuery($query);
     }
 
+    /**
+     * @param ReflectionClass<HasIndexInterface> $doctrineEntity
+     */
     private function createUpdateQuery(ReflectionClass $doctrineEntity): string
     {
         $entityManager = $this->ormBuilder->createEntityManager();
