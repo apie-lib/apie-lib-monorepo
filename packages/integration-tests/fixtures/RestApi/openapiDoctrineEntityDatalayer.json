@@ -1212,6 +1212,22 @@
                         }
                     },
                     {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 0
+                        }
+                    },
+                    {
                         "name": "search",
                         "in": "query",
                         "schema": {
@@ -1460,6 +1476,22 @@
                         }
                     },
                     {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 0
+                        }
+                    },
+                    {
                         "name": "search",
                         "in": "query",
                         "schema": {
@@ -1669,6 +1701,22 @@
                         }
                     },
                     {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 0
+                        }
+                    },
+                    {
                         "name": "search",
                         "in": "query",
                         "schema": {
@@ -1867,6 +1915,22 @@
                             "items": {
                                 "type": "string"
                             }
+                        }
+                    },
+                    {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 0
                         }
                     },
                     {
@@ -2113,6 +2177,22 @@
                             "items": {
                                 "type": "string"
                             }
+                        }
+                    },
+                    {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 0
                         }
                     },
                     {
@@ -2378,6 +2458,22 @@
                         }
                     },
                     {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 0
+                        }
+                    },
+                    {
                         "name": "search",
                         "in": "query",
                         "schema": {
@@ -2600,6 +2696,22 @@
                             "items": {
                                 "type": "string"
                             }
+                        }
+                    },
+                    {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 1
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "type": "int",
+                            "min": 0
                         }
                     },
                     {

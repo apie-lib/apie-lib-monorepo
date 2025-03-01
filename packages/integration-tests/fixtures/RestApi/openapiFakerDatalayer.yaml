@@ -799,6 +799,18 @@ paths:
             items:
               type: string
         -
+          name: items_per_page
+          in: query
+          schema:
+            type: int
+            min: 1
+        -
+          name: page
+          in: query
+          schema:
+            type: int
+            min: 0
+        -
           name: search
           in: query
           schema:
@@ -935,6 +947,18 @@ paths:
             items:
               type: string
         -
+          name: items_per_page
+          in: query
+          schema:
+            type: int
+            min: 1
+        -
+          name: page
+          in: query
+          schema:
+            type: int
+            min: 0
+        -
           name: search
           in: query
           schema:
@@ -1060,6 +1084,18 @@ paths:
             items:
               type: string
         -
+          name: items_per_page
+          in: query
+          schema:
+            type: int
+            min: 1
+        -
+          name: page
+          in: query
+          schema:
+            type: int
+            min: 0
+        -
           name: search
           in: query
           schema:
@@ -1184,6 +1220,18 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: items_per_page
+          in: query
+          schema:
+            type: int
+            min: 1
+        -
+          name: page
+          in: query
+          schema:
+            type: int
+            min: 0
         -
           name: search
           in: query
@@ -1328,6 +1376,18 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: items_per_page
+          in: query
+          schema:
+            type: int
+            min: 1
+        -
+          name: page
+          in: query
+          schema:
+            type: int
+            min: 0
         -
           name: search
           in: query
@@ -1482,6 +1542,18 @@ paths:
             items:
               type: string
         -
+          name: items_per_page
+          in: query
+          schema:
+            type: int
+            min: 1
+        -
+          name: page
+          in: query
+          schema:
+            type: int
+            min: 0
+        -
           name: search
           in: query
           schema:
@@ -1612,6 +1684,18 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: items_per_page
+          in: query
+          schema:
+            type: int
+            min: 1
+        -
+          name: page
+          in: query
+          schema:
+            type: int
+            min: 0
         -
           name: search
           in: query
