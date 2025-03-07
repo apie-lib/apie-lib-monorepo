@@ -19,6 +19,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -46,6 +54,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -87,6 +103,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -114,6 +138,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -155,6 +187,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -182,6 +222,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -223,6 +271,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -250,6 +306,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -298,6 +362,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PartialInput'
@@ -332,6 +404,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -380,6 +460,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PartialInput'
@@ -414,6 +502,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -462,6 +558,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PartialInput'
@@ -503,6 +607,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -530,6 +642,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -571,6 +691,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -598,6 +726,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -639,6 +775,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -666,6 +810,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -707,6 +859,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: property
           in: path
           description: 'property of instance of PartialInput'
@@ -735,6 +895,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -792,6 +960,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -926,6 +1102,14 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -977,6 +1161,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -1080,6 +1272,14 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -1131,6 +1331,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -1230,6 +1438,14 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -1281,6 +1497,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -1415,6 +1639,14 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -1466,6 +1698,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -1587,6 +1827,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: x-no-crsf
           in: header
           description: 'Disable csrf'
@@ -1659,6 +1907,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -1774,6 +2030,14 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -1825,6 +2089,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -1953,6 +2225,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of Animal'
@@ -1993,6 +2273,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -2065,6 +2353,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of ObjectWithRelation'
@@ -2105,6 +2401,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -2177,6 +2481,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of Order'
@@ -2217,6 +2529,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -2280,6 +2600,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PrimitiveOnly'
@@ -2320,6 +2648,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -2391,6 +2727,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of PrimitiveOnly'
@@ -2447,6 +2791,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of RestrictedEntity'
@@ -2487,6 +2839,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -2559,6 +2919,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of UploadedFile'
@@ -2599,6 +2967,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -2688,6 +3064,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of UploadedFile'
@@ -2744,6 +3128,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of User'
@@ -2784,6 +3176,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -2849,6 +3249,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -2922,6 +3330,14 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -2971,6 +3387,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -3030,6 +3454,14 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -3081,6 +3513,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -3154,6 +3594,14 @@ paths:
             type: array
             items:
               type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -3205,6 +3653,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -3265,6 +3721,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -3342,6 +3806,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of User'
@@ -3412,6 +3884,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of User'
@@ -3441,6 +3921,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:
@@ -3524,6 +4012,14 @@ paths:
             items:
               type: string
         -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           name: id
           in: path
           description: 'id of instance of User'
@@ -3588,6 +4084,14 @@ paths:
       parameters:
         -
           name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
           in: query
           explode: false
           schema:

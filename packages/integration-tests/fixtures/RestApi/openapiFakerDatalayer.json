@@ -25,6 +25,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -67,6 +78,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -129,6 +151,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -171,6 +204,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -233,6 +277,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -275,6 +330,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -337,6 +403,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -379,6 +456,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -450,6 +538,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PartialInput",
@@ -501,6 +600,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -572,6 +682,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PartialInput",
@@ -623,6 +744,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -694,6 +826,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PartialInput",
@@ -745,6 +888,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -807,6 +961,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -849,6 +1014,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -911,6 +1087,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -953,6 +1140,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -1015,6 +1213,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "property",
                         "in": "path",
                         "description": "property of instance of PartialInput",
@@ -1057,6 +1266,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -1110,6 +1330,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -1202,6 +1433,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -1337,6 +1579,17 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "requestBody": {
@@ -1421,6 +1674,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -1541,6 +1805,17 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "requestBody": {
@@ -1625,6 +1900,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -1745,6 +2031,17 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "requestBody": {
@@ -1829,6 +2126,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -1974,6 +2282,17 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "requestBody": {
@@ -2058,6 +2377,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -2178,6 +2508,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -2312,6 +2653,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "items_per_page",
                         "in": "query",
                         "schema": {
@@ -2430,6 +2782,17 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "requestBody": {
@@ -2514,6 +2877,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -2645,6 +3019,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of Animal",
@@ -2707,6 +3092,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -2820,6 +3216,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of ObjectWithRelation",
@@ -2882,6 +3289,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -2995,6 +3413,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of Order",
@@ -3057,6 +3486,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -3154,6 +3594,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PrimitiveOnly",
@@ -3216,6 +3667,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -3327,6 +3789,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of PrimitiveOnly",
@@ -3414,6 +3887,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of RestrictedEntity",
@@ -3476,6 +3960,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -3589,6 +4084,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of UploadedFile",
@@ -3651,6 +4157,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -3789,6 +4306,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of UploadedFile",
@@ -3876,6 +4404,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of User",
@@ -3938,6 +4477,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -4051,6 +4601,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "numberOne",
                         "in": "path",
                         "description": "numberOne of instance of add",
@@ -4152,6 +4713,17 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "requestBody": {
@@ -4232,6 +4804,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -4325,6 +4908,17 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "requestBody": {
@@ -4409,6 +5003,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -4520,6 +5125,17 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
                     }
                 ],
                 "requestBody": {
@@ -4604,6 +5220,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -4700,6 +5327,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -4821,6 +5459,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of User",
@@ -4932,6 +5581,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of User",
@@ -4976,6 +5636,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
@@ -5105,6 +5776,17 @@
                         }
                     },
                     {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "id of instance of User",
@@ -5207,6 +5889,17 @@
                 "parameters": [
                     {
                         "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
                         "in": "query",
                         "explode": false,
                         "schema": {
