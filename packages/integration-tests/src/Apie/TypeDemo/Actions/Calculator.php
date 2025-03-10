@@ -18,6 +18,11 @@ final class Calculator
         return $numberOne * $numberTwo;
     }
 
+    public function sum(float... $numbers): float
+    {
+        return array_sum($numbers);
+    }
+
     public function squareRoot(float $numberOne): float
     {
         return sqrt($numberOne);

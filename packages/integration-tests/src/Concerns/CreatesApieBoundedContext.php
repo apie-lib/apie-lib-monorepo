@@ -417,6 +417,18 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * For testing /Calculator/sum for testing variadic request.
+     */
+    public function createVariadicActionRequest(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Calculator/sum',
+            new GetAndSetPrimitiveField('', ['numbers' => [1,2,3]], 6)
+        );
+    }
+
     public function createSimpleConsoleInteraction(): InteractiveConsoleCommand
     {
         return new InteractiveConsoleCommand(

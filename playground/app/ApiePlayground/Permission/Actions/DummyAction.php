@@ -13,4 +13,9 @@ class DummyAction {
     ): User {
         return $apieDatalayer->find($userId);
     }
+
+    public function sum(float... $numbers): float
+    {
+        return array_sum($numbers);
+    }
 }
