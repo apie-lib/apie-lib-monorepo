@@ -110,19 +110,19 @@ final class SetterMethod implements FieldInterface, SetterInterface
             $arguments = $this->method->getParameters();
             $argument = end($arguments);
             if ($argument) {
-                foreach ($argument->getAttributes($attributeClass) as $attribute) {
+                foreach ($argument->getAttributes($attributeClass, \ReflectionReflectionAttribute::IS_INSTANCEOF) as $attribute) {
                     $list[] = $attribute->newInstance();
                 }
             }
         }
         if ($propertyDocblock) {
-            foreach ($this->method->getAttributes($attributeClass) as $attribute) {
+            foreach ($this->method->getAttributes($attributeClass, \ReflectionReflectionAttribute::IS_INSTANCEOF) as $attribute) {
                 $list[] = $attribute->newInstance();
             }
         }
         $class = ConverterUtils::toReflectionClass($this->method);
         if ($class && $classDocBlock) {
-            foreach ($class->getAttributes($attributeClass) as $attribute) {
+            foreach ($class->getAttributes($attributeClass, \ReflectionReflectionAttribute::IS_INSTANCEOF) as $attribute) {
                 $list[] = $attribute->newInstance();
             }
         }
