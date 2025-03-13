@@ -16,7 +16,8 @@ class InteractiveConsoleCommand implements DtoInterface
     public function __construct(
         public readonly string $command,
         public readonly string $class,
-        public readonly array $inputPerField
+        public readonly array $inputPerField,
+        public readonly ?string $polymorphicClass = null
     ) {
 
     }
@@ -26,10 +27,19 @@ class InteractiveConsoleCommand implements DtoInterface
      */
     public function getInputs(): array
     {
-        $metadata = MetadataFactory::getCreationMetadata(new ReflectionClass($this->class), new ApieContext());
+        $metadata = MetadataFactory::getCreationMetadata(new ReflectionClass($this->polymorphicClass ?? $this->class), new ApieContext());
         $inputs = [];
+        if ($this->polymorphicClass) {
+            $inputs[] = $this->polymorphicClass;
+        }
+        $handled = [];
         foreach ($metadata->getHashmap() as $key => $mapping) {
+            $handled[] = $key;
             $inputs = [...$inputs, ...$this->inputPerField[$key]];
+        }
+        $diff = array_diff($handled, array_keys($this->inputPerField));
+        if (!empty($diff)) {
+            throw new \LogicException('Mapping inputs failed, found unknown keys: ' . implode(', ', $diff));
         }
         return $inputs;
     }

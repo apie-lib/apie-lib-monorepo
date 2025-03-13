@@ -4,6 +4,7 @@ namespace Apie\IntegrationTests\Concerns;
 use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
+use Apie\IntegrationTests\Apie\TypeDemo\Entities\Human;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\RestrictedEntityIdentifier;
@@ -468,7 +469,7 @@ trait CreatesApieBoundedContext
         );
     }
 
-    /*public function createPolymorphicObjectInteraction(): InteractiveConsoleCommand
+    public function createPolymorphicObjectInteraction(): InteractiveConsoleCommand
     {
         return new InteractiveConsoleCommand(
             'apie:types:animal:create',
@@ -479,9 +480,10 @@ trait CreatesApieBoundedContext
                 'id' => ['075433c9-ca1f-435c-be81-61bae3009521'],
                 'animalName' => ['Donald'],
                 'lastName' => ['Duck'],
-            ]
+            ],
+            Human::class
         );
-    }  */
+    }
 
     public function createExampleBoundedContext(): BoundedContextConfig
     {
