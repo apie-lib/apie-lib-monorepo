@@ -475,8 +475,6 @@ trait CreatesApieBoundedContext
             'apie:types:animal:create',
             Animal::class,
             [
-                'type' => ['mammal'],
-                'name' => ['human'],
                 'id' => ['075433c9-ca1f-435c-be81-61bae3009521'],
                 'animalName' => ['Donald'],
                 'lastName' => ['Duck'],
