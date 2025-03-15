@@ -17,6 +17,7 @@ use Apie\Core\Lists\StringList;
 use Apie\Core\Permissions\PermissionInterface;
 use Apie\Core\Permissions\RequiresPermissionsInterface;
 use Apie\Core\Utils\EntityUtils;
+use Apie\Serializer\Serializer;
 use LogicException;
 use ReflectionClass;
 
