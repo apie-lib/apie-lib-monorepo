@@ -11,6 +11,7 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Exceptions\InvalidTypeException;
+use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\IdentifierUtils;
 use Apie\Core\Lists\PermissionList;
 use Apie\Core\Lists\StringList;
@@ -61,8 +62,9 @@ final class GetItemAction implements ActionInterface
             throw new InvalidTypeException($resourceClass->name, 'EntityInterface');
         }
         $idClass = IdentifierUtils::entityClassToIdentifier($resourceClass);
+        /** @var IdentifierInterface<EntityInterface> $idObject */
         $idObject = $context->hasContext(Serializer::class)
-            ? $context->getContext(Serializer::class)->denormalizeNewObject($id, $idClass->name)
+            ? $context->getContext(Serializer::class)->denormalizeNewObject($id, $idClass->name, $context)
             : $idClass->newInstance($id);
         $result = $this->apieFacade->find(
             $idObject,
