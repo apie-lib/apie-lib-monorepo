@@ -1,0 +1,6 @@
+{{ component('__proto__') }}
+<apie-form-map-definition
+    {% if isPrototyped() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %}
+    name="{{ property('name').getChildFormFieldName() }}"
+    definition-id="{{ property('name').getPrototypeName() }}">
+</apie-form-map-definition>

@@ -1,0 +1,100 @@
+volumes:
+  volume_database_project:
+  volume_database_postgres:
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: apie_playground_postgres
+    environment:
+      POSTGRES_DB: project
+      POSTGRES_PASSWORD: project
+      POSTGRES_USER: project
+    volumes:
+      - volume_database_postgres:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+
+  mysql:
+    image: mysql:8.0
+    container_name: apie_playground_mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: project
+      MYSQL_USER: project
+      MYSQL_PASSWORD: project
+    volumes:
+      - volume_database_project:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  adminer:
+    image: adminer
+    container_name: apie_playground_adminer
+    volumes:
+      - ./.docker/adminer/login-password-less.php:/var/www/html/plugins-enabled/login-password-less.php
+    ports:
+      - 8080:8080
+    environment:
+      ADMINER_DEFAULT_DB_NAME: postgres
+    labels:
+      traefik.enable: true
+      traefik.http.routers.playground-db.priority: 1
+      traefik.http.routers.playground-db.rule: HostRegexp(`apie-playground-db.localtest.me`)
+      traefik.http.routers.playground-db.entrypoints: "web"
+      traefik.http.routers.playground-db.tls: false
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: apie_playground_phpmyadmin
+    volumes:
+      - ./.docker/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 0
+      PMA_USER: project
+      PMA_PASSWORD: project
+    ports:
+      - "81:80"
+
+  web:
+    build:
+      context: ../
+      dockerfile: ./playground/.docker/Dockerfile
+    container_name: apie_playground_web
+    volumes:
+      - ./app/apie.yaml:/var/www/html/apie.yaml
+      - ./app/Controller/DisplayDashboardController.php:/var/www/html/src/Controller/DisplayDashboardController.php
+      - ./app/templates/apie:/var/www/html/templates/apie
+      - ./app/ApiePlayground:/var/www/html/src/ApiePlayground
+      - ../packages:/packages
+      - ./.docker/virtualhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./.docker/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+      - ./.docker/php.ini:/usr/local/etc/php/conf.d/local.ini
+    ports:
+      - "82:80"
+    labels:
+      traefik.enable: true
+      traefik.http.routers.playground.priority: 1
+      traefik.http.routers.playground.rule: HostRegexp(`apie-playground.localtest.me`)
+      traefik.http.routers.playground.entrypoints: "web"
+      traefik.http.routers.playground.tls: false
+    environment:
+      - APIE_STARTER_SETUP=maximum
+      - APIE_STARTER_ENABLE_CMS=1
+      - APIE_STARTER_FRAMEWORK=Symfony
+      - APIE_STARTER_ENABLE_USER=0
+      - DATABASE_URL=mysql://project:project@mysql:3306/project
+    depends_on:
+      - mysql
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: apie_playground_mailhog
+    ports:
+      - "1025:1025" # smtp server
+      - "8025:8025" # web ui

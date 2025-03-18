@@ -1,0 +1,19 @@
+<?php
+namespace Example\Tests\Namespace;
+
+use Example\Namespace\TestDesignSystemLayout;
+use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
+use Apie\HtmlBuilders\TestHelpers\AbstractRenderTestCase;
+
+class TestDesignSystemLayoutTest extends AbstractRenderTestCase
+{ 
+    public function getRenderer(): ComponentRendererInterface
+    {
+        return TestDesignSystemLayout::createRenderer();
+    }
+
+    public function getFixturesPath(): string
+    {
+        return  __DIR__ . '/../fixtures';
+    }
+}

@@ -13,29 +13,209 @@ on:
       - '*'
 
 jobs:
+  validate:
+    name: Composer validate
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: pcov
+          ini-values: pcov.directory=packages
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+        
+      - name: Validate composer.json
+        run: composer validate
+
+  run-test-suite:
+    name: Run tests (full suite)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php_version: ['8.3']
+        composer:
+          - '--prefer-lowest'
+          - ''
+        include:
+          - php_version: 8.4
+            composer: ''
+    steps:
+      -
+        uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php_version }}
+          coverage: pcov
+          ini-values: pcov.directory=packages, memory_limit=-1
+          extensions: zip
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: ${{ matrix.composer }}
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+      - name: Build test suite
+        run: docker build --file dockerfile.testing . --build-arg PHP_VERSION=${{ matrix.php_version }} -t apie-testing-${{ matrix.php_version }}-${{ matrix.composer }}-test
+      - name: Run test suite
+        run: docker run --rm -e PHP_VERSION=${{ matrix.php_version }} -e DEPENDENCIES=${{ matrix.composer }} -v $(pwd):/app -w /app apie-testing-${{ matrix.php_version }}-${{ matrix.composer }}-test bin/run-tests coverage/${{ matrix.php_version }}_${{ matrix.composer }}.cov ${{ matrix.composer }}
+      - name: Upload reports' artifacts 
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.run_id }}_artifact_${{ matrix.php_version }}_${{ matrix.composer }}
+          if-no-files-found: ignore
+          path: coverage
+          retention-days: 1
+  lint:
+    name: Static code analysis
+    runs-on: ubuntu-latest
+    steps:
+      -
+        uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: pcov
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+      - name: Run static code analysis
+        run: vendor/bin/phpstan
+    
   provide_packages_json:
+    name: Determine all available packages
     runs-on: ubuntu-latest
 
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      -   uses: shivammathur/setup-php@v2
-          with:
-            php-version: 8.1
-            coverage: none
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          coverage: pcov
 
-      -   uses: "ramsey/composer-install@v1"
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
 
       -
         id: output_data
-        run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json)"
+        run: echo "matrix=$(vendor/bin/monorepo-builder packages-json)" >> $GITHUB_OUTPUT
 
     outputs:
       matrix: ${{ steps.output_data.outputs.matrix }}
 
+  run_phpunit_per_package:
+    name: Run tests
+    needs:
+      - provide_packages_json
+      - lint
+      - validate
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php_version: ['8.3', '8.4']
+        package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
+    steps:
+      -
+        id: coverage
+        uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+      - uses: actions/cache/restore@v3
+        id: restore-cache
+        with:
+          path: /tmp/composer
+          key: composer_${{ matrix.php_version }}
+      - uses: "ramsey/composer-install@v3"
+        with:
+          dependency-versions: "lowest"
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+      -
+        name: Run tests for ${{ matrix.package }} in php ${{ matrix.php_version }}
+        run: bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+      - name: Upload reports' artifacts 
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.run_id }}_artifact_${{ matrix.php_version }}_${{ matrix.package }}
+          if-no-files-found: ignore
+          path: ${{ github.workspace }}/coverage
+          retention-days: 1
+      - uses: actions/cache/save@v3
+        id: cache
+        with:
+          path: /tmp/composer
+          key: composer_${{ matrix.php_version }}
+
+  create_coverage:
+    name: Merge code coverage
+    needs:
+      - run-test-suite
+      - run_phpunit_per_package
+    runs-on: ubuntu-latest
+    steps:
+      -   uses: shivammathur/setup-php@v2
+          with:
+            php-version: 8.3
+            coverage: pcov
+      -
+        uses: actions/checkout@v4
+      - name: Download reports' artifacts
+        uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+          path: ${{ github.workspace }}/coverage
+      -
+        name: Merge all coverage files and make coverage badges
+        run: cd ${{ github.workspace }} && make coverage-badge
+      - name: Upload merged report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage.xml
+          path: ${{ github.workspace }}/coverage.xml
+      - name: Generate coverage badge
+        uses: timkrase/phpunit-coverage-badge@v1.2.0
+        with:
+          coverage_badge_path: projectCoverage/coverage_badge.svg
+          report: coverage.xml
+      - name: Pushes test file
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          source_file: 'projectCoverage'
+          destination_repo: 'apie-lib/apie-lib.github.io'
+          destination_folder: '.'
+          user_email: 'pieter_jordaan@Hotmail.com'
+          user_name: 'pjordaan'
+          commit_message: 'Update code coverage'
+
   split_monorepo:
-    needs: provide_packages_json
+    name: Push to git subtree
+    needs:
+      - provide_packages_json
+      - create_coverage
 
     runs-on: ubuntu-latest
     strategy:
@@ -45,24 +225,25 @@ jobs:
 
     steps:
       -
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # no tag
-      -
-        name: Monorepo Split of ${{ matrix.package }} (no tag)
+      - name: Pushes to apie-lib/${{ matrix.package }}, branch '${{ github.ref_name }}'
         if: "!startsWith(github.ref, 'refs/tags/')"
-        uses: "symplify/monorepo-split-github-action@2.1"
+        uses: andstor/copycat-action@v3.2.4
         with:
-          package_directory: 'packages/${{ matrix.package }}'
-          repository_organization: 'apie-lib'
-          repository_name: '${{ matrix.package }}'
-          user_name: "Pieter Jordaan"
-          user_email: "pieter_jordaan@hotmail.com"
-          branch: '${{ github.ref_name }}'
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          src_branch: '${{ github.ref_name }}'
+          src_path: 'packages/${{ matrix.package }}/.'
+          dst_path: /.
+          dst_owner: apie-lib
+          dst_repo_name: '${{ matrix.package }}'
+          dst_branch: '${{ github.ref_name }}'
+          clean: true
 
       # with tag
       -
-        name: Monorepo Split of ${{ matrix.package }} (tag)
+        name: Pushes tag to apie-lib/${{ matrix.package }}
         if: "startsWith(github.ref, 'refs/tags/')"
         uses: "symplify/monorepo-split-github-action@2.1"
         with:
@@ -72,4 +253,7 @@ jobs:
           repository_name: '${{ matrix.package }}'
           user_name: "Pieter Jordaan"
           user_email: "pieter_jordaan@hotmail.com"
+
+      
+
 

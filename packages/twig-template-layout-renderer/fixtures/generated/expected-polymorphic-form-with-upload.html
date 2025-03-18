@@ -1,0 +1,20 @@
+<apie-form-definition id="definition-test1">
+  test3
+</apie-form-definition>
+<apie-form-definition id="definition-test2">
+  test4
+</apie-form-definition>
+<apie-ugly-form
+  polymorphic-column-name="__type"
+  class="unhandled-form"
+  method="POST"
+  csrf-token="temp"
+   supports-multipart>
+</apie-ugly-form>
+<script>
+(function (elm) {
+  elm.classList.remove('unhandled-form');
+  elm.polymorphicFormDefinition = {
+    "definition-test1": "test1",    "definition-test2": "test2"  };
+}(document.querySelector('apie-ugly-form.unhandled-form')));
+</script>

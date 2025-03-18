@@ -1,0 +1,6 @@
+<div style="display: table-cell; vertical-align: middle" class="resource-actions resource-actions-unprocessed">
+  {% for action in property('actions') %}
+    <gr-button variant="{{ action.getVariant().value }}"  data-small-page="{{ action.isSmallPage() | json_encode }}" data-url="{{ action.getUrl(property('config')) }}">{{ action.name }}</gr-button>
+  {% endfor %}
+</div>
+<script>{{ assetContent('apply-resource-action.js') }}</script>

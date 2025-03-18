@@ -11,7 +11,7 @@ use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumber as LibPhoneNumber;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
-use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use PrinsFrank\Standards\Country\CountryAlpha2;
 use ReflectionClass;
 
 #[FakeMethod('createRandom')]
@@ -23,7 +23,7 @@ abstract class PhoneNumber implements StringValueObjectInterface
 
     private LibPhoneNumber $phoneNumber;
 
-    abstract public static function fromCountry(): ISO3166_1_Alpha_2;
+    abstract public static function fromCountry(): CountryAlpha2;
 
     final protected static function getUtil(): PhoneNumberUtil
     {
@@ -31,6 +31,26 @@ abstract class PhoneNumber implements StringValueObjectInterface
             self::$util = PhoneNumberUtil::getInstance();
         }
         return self::$util;
+    }
+
+    final public function toE164(): string
+    {
+        return self::getUtil()->format($this->phoneNumber, PhoneNumberFormat::E164);
+    }
+
+    final public function toInternational(): string
+    {
+        return self::getUtil()->format($this->phoneNumber, PhoneNumberFormat::INTERNATIONAL);
+    }
+
+    final public function toNational(): string
+    {
+        return self::getUtil()->format($this->phoneNumber, PhoneNumberFormat::NATIONAL);
+    }
+
+    final public function toRFC3966(): string
+    {
+        return self::getUtil()->format($this->phoneNumber, PhoneNumberFormat::RFC3966);
     }
 
     final protected function convert(string $input): string
@@ -48,7 +68,7 @@ abstract class PhoneNumber implements StringValueObjectInterface
     {
         $phoneNumberUtil = self::getUtil();
         try {
-            $phoneNumber = $phoneNumberUtil->parse($input, static::fromCountry()->value);
+            $phoneNumber = $phoneNumberUtil->parse($input, static::class === PhoneNumber::class ? null : static::fromCountry()->value);
         } catch (NumberParseException $error) {
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(static::class), $error);
         }
@@ -61,7 +81,7 @@ abstract class PhoneNumber implements StringValueObjectInterface
     {
         $phoneNumber = '';
         do {
-            $country = $generator->randomElement(ISO3166_1_Alpha_2::cases());
+            $country = $generator->randomElement(CountryAlpha2::cases());
             $phoneNumberUtil = self::getUtil();
             $phoneNumberObject = $phoneNumberUtil->getExampleNumber($country->value);
             if ($phoneNumberObject) {

@@ -6,19 +6,18 @@
         </style>
         <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@graphiteds/core@1.9.4/css/graphite.bundle.css"
-  integrity="sha256-gFHf9tmgozxinafVf1kRA43fM6cmXpQecxRncZdH3NI="
-  crossorigin="anonymous"
+  href="https://cdn.jsdelivr.net/npm/apie-graphite-layout@0.4.0/dist/apie-graphite-layout/apie-graphite-layout.css"
 />
 <script
   type="module"
-  src="https://cdn.jsdelivr.net/npm/@graphiteds/core@1.9.4/dist/core/core.esm.js"
-  integrity="sha256-q5Jy9Y8HgOTpcoKEX2Z4uve7lucflCGuaxcMQezTtog="
-  crossorigin="anonymous"
+  src="https://cdn.jsdelivr.net/npm/@graphiteds/core@1.9.20/dist/core/core.esm.js"
 ></script>
-<script src="https://cdn.jsdelivr.net/npm/@revolist/revogrid@3.2.11/dist/revo-grid/revo-grid.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@revolist/revogrid@3.7.0/dist/revo-grid/revo-grid.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/apie-stacktrace@{{ apieConstant('APIE_STACKTRACE') }}/dist/apie-stacktrace/apie-stacktrace.esm.js" crossorigin></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/apie-graphite-layout@0.5.0/dist/apie-graphite-layout/apie-graphite-layout.esm.js" crossorigin></script>
+<script>{{ assetContent('main.js') }}</script>
     </head>
     <body>
       <div class="layout">
@@ -32,5 +31,24 @@
           {{ component('content') }}
         </div>
       </div>
+      <div class="apie-sidebar">
+      </div>
+      <script type="text/javascript">
+(function (sidebar) {
+  document.addEventListener('click', (e) => {
+    if (sidebar.classList.contains('active')) {
+      let elm = e.target;
+      while (elm) {
+        if (elm === sidebar) {
+          return;
+        }
+        elm = elm.parentNode
+      }
+      sidebar.classList.remove('active');
+      sidebar.innerHTML = '';
+    }
+  });
+}(document.querySelector('.apie-sidebar')));
+      </script>
     </body>
 </html>

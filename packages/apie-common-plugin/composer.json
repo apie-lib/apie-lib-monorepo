@@ -1,0 +1,44 @@
+{
+  "name": "apie/apie-common-plugin",
+  "description": "Composer package of the apie library: apie common plugin",
+  "type": "composer-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\ApieCommonPlugin\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\ApieCommonPlugin\\": "tests/"
+    }
+  },
+  "conflict": {
+    "nette/utils": "3.*"
+  },
+  "extra": {
+    "class": "Apie\\ApieCommonPlugin\\ApieCommonPlugin"
+  },
+  "require": {
+    "php": ">=8.3",
+    "apie/core": "self.version",
+    "composer/composer": "^2.7.6",
+    "composer-plugin-api": "^2.0",
+    "nette/php-generator": "^4.1.5",
+    "symfony/finder": "^7.2"
+  },
+  "require-dev": {
+    "apie/fixtures": "self.version",
+    "apie/service-provider-generator": "0.11.3",
+    "illuminate/support": "*",
+    "phpunit/phpunit": "^11.5.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

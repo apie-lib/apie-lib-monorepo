@@ -19,14 +19,25 @@
       "Apie\\Tests\\TextValueObjects\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\TextValueObjects\\CompanyName",
+      "Apie\\TextValueObjects\\EncryptedPassword",
+      "Apie\\TextValueObjects\\FirstName",
+      "Apie\\TextValueObjects\\LastName",
+      "Apie\\TextValueObjects\\SmallDatabaseText",
+      "Apie\\TextValueObjects\\StrongPassword"
+    ]
+  },
   "require": {
-    "php": ">=8.1",
-    "apie/core": "self.version"
+    "php": ">=8.3",
+    "apie/core": "self.version",
+    "apie/count-words": "self.version"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "phpunit/phpunit": "^9.5",
-    "phpspec/prophecy-phpunit": "^2.0"
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.2"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

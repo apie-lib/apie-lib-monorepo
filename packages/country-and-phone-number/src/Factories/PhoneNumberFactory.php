@@ -13,7 +13,7 @@ use Apie\CountryAndPhoneNumber\JapanesePhoneNumber;
 use Apie\CountryAndPhoneNumber\MexicanPhoneNumber;
 use Apie\CountryAndPhoneNumber\PhoneNumber;
 use Apie\CountryAndPhoneNumber\USPhoneNumber;
-use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use PrinsFrank\Standards\Country\CountryAlpha2;
 
 final class PhoneNumberFactory
 {
@@ -39,16 +39,16 @@ final class PhoneNumberFactory
     /**
      * @return class-string<PhoneNumber>
      */
-    private static function getClass(ISO3166_1_Alpha_2 $countryEnum): string
+    private static function getClass(CountryAlpha2 $countryEnum): string
     {
         $country = $countryEnum->value;
         if (!isset(self::$instantiatedClasses[$country])) {
             // this code is evil....
             $class = eval('return new class("", $countryEnum) extends \Apie\CountryAndPhoneNumber\PhoneNumber {
-                static private \PrinsFrank\Standards\Country\ISO3166_1_Alpha_2 $country;
+                static private \PrinsFrank\Standards\Country\CountryAlpha2 $country;
                 static private bool $ignored = true;
 
-                public function __construct(string $input, ?\PrinsFrank\Standards\Country\ISO3166_1_Alpha_2 $country = null)
+                public function __construct(string $input, ?\PrinsFrank\Standards\Country\CountryAlpha2 $country = null)
                 {
                     if (self::$ignored && empty($input) && $country !== null) {
                         self::$country = $country;
@@ -58,7 +58,7 @@ final class PhoneNumberFactory
                     parent::__construct($input);
                 }
 
-                static public function fromCountry(): \PrinsFrank\Standards\Country\ISO3166_1_Alpha_2 {
+                static public function fromCountry(): \PrinsFrank\Standards\Country\CountryAlpha2 {
                     return self::$country;
                 }
             };');
@@ -79,7 +79,7 @@ final class PhoneNumberFactory
         self::$instantiatedClasses[$country] = $class;
     }
 
-    public static function createFrom(string $phoneNumber, ISO3166_1_Alpha_2 $countryEnum): PhoneNumber
+    public static function createFrom(string $phoneNumber, CountryAlpha2 $countryEnum): PhoneNumber
     {
         $class = self::getClass($countryEnum);
         return new $class($phoneNumber);

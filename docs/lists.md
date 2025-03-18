@@ -26,7 +26,7 @@ class IntOrFloatArray extends ItemList
     }
 }
 
-$testItem = new ItemList();
+$testItem = new IntOrFloatArray();
 $testItem[] = "12";
 ```
 

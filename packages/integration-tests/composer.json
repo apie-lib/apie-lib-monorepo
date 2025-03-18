@@ -1,0 +1,41 @@
+{
+  "name": "apie/integration-tests",
+  "description": "Composer package of the apie library: integration tests",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\IntegrationTests\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\IntegrationTests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.3",
+    "apie/common-value-objects": "self.version",
+    "apie/core": "self.version",
+    "apie/count-words": "self.version",
+    "apie/phpunit-matrix-data-provider": "^1.0.3",
+    "nyholm/psr7": "^1.8.2",
+    "orchestra/testbench": "^9.8.0",
+    "symfony/psr-http-message-bridge": "^2.3.1",
+    "symfony/monolog-bundle": "^3.10"
+  },
+  "require-dev": {
+    "doctrine/doctrine-bundle": "^2.12.0",
+    "symfony/orm-pack": "*",
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

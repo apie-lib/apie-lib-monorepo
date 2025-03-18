@@ -6,3 +6,8 @@ composer.lock
 .php-cs-fixer.cache
 clover.xml
 /coverage
+coverage.xml
+/projectCoverage
+.phpunit.cache
+/.tempdockerfile.*
+/.cov

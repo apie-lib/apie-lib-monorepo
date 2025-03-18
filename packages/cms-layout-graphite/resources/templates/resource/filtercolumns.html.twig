@@ -1,0 +1,26 @@
+<form style="display: table-cell; vertical-align: middle">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <gr-input name="search" type="search" value="{{ property('textSearch') }}"></gr-input>
+          </td>
+          {% if property('filters')|length %}
+            <td>
+                <apie-filter-overview class="unprocessed-filter"></apie-filter-overview>
+                <script>
+                (function (elm) {
+                  elm.classList.remove('unprocessed-filter');
+                  elm.filterNames = {{ property('filters') | safe_json_encode }};
+                  elm.filters = {{ property('currentFilter') | safe_json_encode }};
+                }(document.querySelector('apie-filter-overview.unprocessed-filter')));
+                </script>
+            </td>
+          {% endif %}
+          <td>
+            <gr-button variant="secondary" type="submit" large expand="block">Search</gr-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>

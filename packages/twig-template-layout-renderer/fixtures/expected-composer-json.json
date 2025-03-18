@@ -1,0 +1,31 @@
+{
+    "name": "apie/cms-layout-test",
+    "description": "Composer package of the apie library: cms layout test",
+    "type": "library",
+    "license": "MIT",
+    "authors": [],
+    "autoload": {
+        "psr-4": {
+            "Example\\Namespace\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Example\\Tests\\Namespace\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.3",
+        "apie/core": "1.2.3",
+        "apie/html-builders": "1.2.3",
+        "apie/twig-template-layout-renderer": "1.2.3",
+        "twig/twig": "^3.10.2"
+    },
+    "require-dev": {
+        "apie/fixtures": "1.2.3",
+        "illuminate/support": "*",
+        "phpunit/phpunit": "^11.5.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

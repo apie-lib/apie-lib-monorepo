@@ -1,0 +1,37 @@
+{% for tab in property('tabs') %}
+{{ component(tab) }}
+{% endfor %}
+{% if not property('isRootObject') %}
+<apie-form-select-definition
+  {% if isPrototyped() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %}
+  class="unhandled"
+  name="{{ property('name').getChildFormFieldName() }}">
+  </apie-form-select-definition>
+<script>
+(function (elm) {
+  elm.classList.remove('unhandled');
+  elm.definitionIdList = [
+    {% for tab, key in property('mapping') %}
+      { name: {{ tab | safe_json_encode }}, value: {{ key | safe_json_encode }} },
+    {% endfor %}
+  ]
+}(document.querySelector('apie-form-select-definition.unhandled')))
+</script>
+{% else %}
+<script>
+(async function () {
+  const elm = await new Promise((resolve) => {
+    const id = setInterval(() => {
+      const elm = document.querySelector('.unhandled-submit-form');
+      if (elm) {
+        elm.classList.remove('unhandled-submit-form');
+        clearInterval(id);
+        resolve(elm);
+      }
+    }, 100)
+  });
+  elm.polymorphicColumnName = {{ property('name').getChildFormFieldName() | safe_json_encode }};
+  elm.polymorphicFormDefinition = {{ property('mapping') | safe_json_encode }};
+}())
+</script>
+{% endif %}

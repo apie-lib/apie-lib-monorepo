@@ -1,0 +1,10 @@
+services:
+  Apie\TwigTemplateLayoutRenderer\Command\CreateCustomLayoutRendererCommand:
+    arguments:
+      - '@Apie\Core\Other\FileWriterInterface'
+      - '@Apie\TwigTemplateLayoutRenderer\Skeleton\ClassCodeGenerator'
+    tags:
+      - name: console.command
+
+  Apie\TwigTemplateLayoutRenderer\Skeleton\ClassCodeGenerator:
+

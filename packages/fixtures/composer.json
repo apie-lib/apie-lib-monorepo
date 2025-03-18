@@ -15,12 +15,47 @@
     }
   },
   "require": {
-    "php": ">=8.1",
-    "fakerphp/faker": "^1.19"
+    "php": ">=8.3",
+    "fakerphp/faker": "^1.23.1",
+    "symfony/finder": "^7.2"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.5",
-    "phpspec/prophecy-phpunit": "^2.0"
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.2"
+  },
+  "extra": {
+    "apie-objects": [
+      "Apie\\Fixtures\\Dto\\DefaultExampleDto",
+      "Apie\\Fixtures\\Dto\\EmptyDto",
+      "Apie\\Fixtures\\Dto\\ExampleDto",
+      "Apie\\Fixtures\\Dto\\NullableExampleDto",
+      "Apie\\Fixtures\\Dto\\OptionalExampleDto",
+      "Apie\\Fixtures\\Entities\\Polymorphic\\Animal",
+      "Apie\\Fixtures\\Entities\\CollectionItemOwned",
+      "Apie\\Fixtures\\Entities\\Order",
+      "Apie\\Fixtures\\Entities\\OrderLine",
+      "Apie\\Fixtures\\Entities\\UserWithAddress",
+      "Apie\\Fixtures\\Entities\\UserWithAutoincrementKey",
+      "Apie\\Fixtures\\Enums\\ColorEnum",
+      "Apie\\Fixtures\\Enums\\EmptyEnum",
+      "Apie\\Fixtures\\Enums\\Gender",
+      "Apie\\Fixtures\\Enums\\IntEnum",
+      "Apie\\Fixtures\\Enums\\NoValueEnum",
+      "Apie\\Fixtures\\Enums\\OrderStatus",
+      "Apie\\Fixtures\\Enums\\RestrictedEnum",
+      "Apie\\Fixtures\\Lists\\ImmutableStringOrIntHashmap",
+      "Apie\\Fixtures\\Lists\\ImmutableStringOrIntList",
+      "Apie\\Fixtures\\Lists\\OrderLineList",
+      "Apie\\Fixtures\\Lists\\StringOrIntHashmap",
+      "Apie\\Fixtures\\Lists\\StringOrIntList",
+      "Apie\\Fixtures\\Lists\\StrongPasswordList",
+      "Apie\\Fixtures\\ValueObjects\\AddressWithZipcodeCheck",
+      "Apie\\Fixtures\\ValueObjects\\CompositeValueObjectExample",
+      "Apie\\Fixtures\\ValueObjects\\CompositeValueObjectWithOptionalFields",
+      "Apie\\Fixtures\\ValueObjects\\CompositeValueObjectWithUnionType",
+      "Apie\\Fixtures\\ValueObjects\\IsStringValueObjectExample",
+      "Apie\\Fixtures\\ValueObjects\\Password"
+    ]
   },
   "suggest": {
     "apie/core": "The classes here do not work without",

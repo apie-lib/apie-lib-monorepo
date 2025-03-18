@@ -1,0 +1,49 @@
+apie:
+  cms:
+   dashboard_template: 'apie/dashboard.html.twig'
+  doctrine:
+    # build_once: true
+    connection_params:
+      dbname:               project
+      host:                 mysql
+      port:                 3306
+      user:                 project
+      password:             project
+      driver:               pdo_mysql
+  maker:
+    target_path: "%kernel.project_dir%/generated/"
+    target_namespace: 'App\Apie\Maker'
+  datalayers:
+    default_datalayer: 'Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer'
+  scan_bounded_contexts:
+    search_path: "%kernel.project_dir%/generated/"
+    search_namespace: 'App\Apie\Maker'
+  bounded_contexts:
+    make:
+      entities_folder: "/packages/maker/src/BoundedContext/Resources"
+      entities_namespace: 'Apie\Maker\BoundedContext\Resources'
+      actions_folder: "/packages/maker/src/BoundedContext/Actions"
+      actions_namespace: 'Apie\Maker\BoundedContext\Actions'
+    example:
+      entities_folder: "%kernel.project_dir%/src/ApiePlayground/Example/Resources/"
+      entities_namespace: 'App\ApiePlayground\Example\Resources'
+      actions_folder: "%kernel.project_dir%/src/ApiePlayground/Example/Actions/"
+      actions_namespace: 'App\ApiePlayground\Example\Actions'
+    permission:
+      entities_folder: "%kernel.project_dir%/src/ApiePlayground/Permission/Resources/"
+      entities_namespace: 'App\ApiePlayground\Permission\Resources'
+      actions_folder: "%kernel.project_dir%/src/ApiePlayground/Permission/Actions/"
+      actions_namespace: 'App\ApiePlayground\Permission\Actions'
+    types:
+      entities_folder: "%kernel.project_dir%/src/ApiePlayground/Types/Resources/"
+      entities_namespace: 'App\ApiePlayground\Types\Resources'
+      actions_folder: "%kernel.project_dir%/src/ApiePlayground/Types/Actions/"
+      actions_namespace: 'App\ApiePlayground\Types\Actions'
+
+services:
+  Apie\HtmlBuilders\Interfaces\ComponentRendererInterface:
+    factory:
+      - 'Apie\CmsLayoutIonic\IonicDesignSystemLayout'
+      - createRenderer
+    arguments:
+      - '@Apie\HtmlBuilders\Assets\AssetManager'

@@ -8,6 +8,8 @@ use cebe\openapi\spec\Components;
 use ReflectionClass;
 
 /**
+ * Creates schemas for Item Lists.
+ *
  * @implements SchemaProvider<ItemList>
  */
 class ItemListSchemaProvider implements SchemaProvider
@@ -20,18 +22,24 @@ class ItemListSchemaProvider implements SchemaProvider
     public function addDisplaySchemaFor(
         ComponentsBuilder $componentsBuilder,
         string $componentIdentifier,
-        ReflectionClass $class
+        ReflectionClass $class,
+        bool $nullable = false
     ): Components {
-        return $this->addCreationSchemaFor($componentsBuilder, $componentIdentifier, $class);
+        $type = $class->getMethod('offsetGet')->getReturnType();
+        $schema = $componentsBuilder->getSchemaForType($type, true, display: true, nullable: $nullable);
+        $componentsBuilder->setSchema($componentIdentifier, $schema);
+
+        return $componentsBuilder->getComponents();
     }
 
     public function addCreationSchemaFor(
         ComponentsBuilder $componentsBuilder,
         string $componentIdentifier,
-        ReflectionClass $class
+        ReflectionClass $class,
+        bool $nullable = false
     ): Components {
         $type = $class->getMethod('offsetGet')->getReturnType();
-        $schema = $componentsBuilder->getSchemaForType($type, true);
+        $schema = $componentsBuilder->getSchemaForType($type, true, display: false, nullable: $nullable);
         $componentsBuilder->setSchema($componentIdentifier, $schema);
 
         return $componentsBuilder->getComponents();

@@ -1,0 +1,34 @@
+<apie-form-field-definition
+    {% if isPrototyped() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %}
+    class="unhandled-single-input"
+    name="{{ property('name').getChildFormFieldName() }}"
+    types="{{ property('types').toArray() | join(',') }}"
+    label="{{ translate(property('label')) }}"
+    {% if (property('nullable')) %}allows-null{% endif %}
+    {% if (property('allowsEmptyString')) %}empty-string-allowed{% endif %}
+    {% if (not property('nullable') and not property('allowsEmptyString')) %}required{% endif %}
+>
+{% for validationCheck in property('validationChecks') %}
+  <apie-constraint-check-definition{% if validationCheck.exactMatch is defined %} class="unchecked"{% endif %}
+    {% if (validationCheck.message) %}message="{{ validationCheck.exactMatch ? validationCheck.message : translate(validationCheck.message) }}"{% endif %}
+    {% if (validationCheck.inverseCheck) %}inverse-check{% endif %}
+    {% if (validationCheck.minLength > 0) %}min-length="{{ validationCheck.minLength }}"{% endif %}
+    {% if (validationCheck.maxLength > 0) %}max-length="{{ validationCheck.maxLength }}"{% endif %}
+    {% if (validationCheck.pattern) %}pattern="{{ validationCheck.pattern }}"{% endif %}
+    ></apie-constraint-check-definition>
+    {% if validationCheck.exactMatch is defined %}
+    <script>
+    (function (elm) {
+        elm.classList.remove('unchecked');
+        elm.exactMatch = {{ property('value') | safe_json_encode }};
+    })(document.querySelector('apie-constraint-check-definition.unchecked'))
+    </script>
+    {% endif %}
+{% endfor %}
+</apie-form-field-definition>
+<script>
+((elm) => {
+    elm.classList.remove('unhandled-single-input');
+    elm.additionalSettings = {{ property('options') | safe_json_encode }}
+})(document.querySelector('apie-form-field-definition.unhandled-single-input'));
+</script>

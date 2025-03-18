@@ -1,0 +1,38 @@
+# start with the official Composer image and name it
+FROM composer:2.8.4 AS composer
+# start with the official Composer image and name it
+FROM php:PHP_VERSION
+
+RUN apt-get clean
+RUN apt-get update
+
+#install some basic tools
+RUN apt-get install -y \
+        jq \
+        git \
+        tree \
+        vim \
+        wget \
+        unzip \
+        libpng-dev \
+        libssh2-1-dev \
+        zlib1g-dev \
+        zip
+
+# copy the Composer PHAR from the Composer image into the PHP image
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+RUN docker-php-ext-install opcache gd
+RUN pecl install pcov && docker-php-ext-enable pcov || true
+COPY ./packages/PACKAGE_NAME /app/packages/PACKAGE_NAME
+WORKDIR /app/packages/PACKAGE_NAME
+COPY bin/run-tests /app/packages/PACKAGE_NAME/bin/run-tests
+RUN mkdir /packages
+COPY ./packages /packages
+COPY ./playground/edit-composer.json tmp.json
+RUN jq -s 'add' tmp.json /app/packages/PACKAGE_NAME/composer.json > tmp-merged.json
+RUN jq '. + {version: "1.0.0.x-dev"}' tmp-merged.json > /app/packages/PACKAGE_NAME/composer.json
+RUN rm tmp-merged.json
+RUN rm tmp.json
+RUN composer config --no-plugins allow-plugins.apie/apie-common-plugin true
+RUN cat /app/packages/PACKAGE_NAME/composer.json

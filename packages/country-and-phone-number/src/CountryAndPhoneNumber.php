@@ -1,26 +1,27 @@
 <?php
 namespace Apie\CountryAndPhoneNumber;
 
-use Apie\CompositeValueObjects\CompositeValueObject;
-use Apie\CompositeValueObjects\Fields\FieldInterface;
-use Apie\CompositeValueObjects\Fields\FromProperty;
 use Apie\Core\Attributes\FakeMethod;
-use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
+use Apie\Core\ValueObjects\CompositeValueObject;
+use Apie\Core\ValueObjects\CompositeWithOwnValidation;
+use Apie\Core\ValueObjects\Fields\FieldInterface;
+use Apie\Core\ValueObjects\Fields\FromProperty;
 use Apie\CountryAndPhoneNumber\Exceptions\PhoneNumberAndCountryMismatch;
 use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
 use Apie\CountryAndPhoneNumber\Fields\DynamicPhoneNumberProperty;
+use Apie\Serializer\Exceptions\ValidationException;
 use Faker\Generator;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
-use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use PrinsFrank\Standards\Country\CountryAlpha2;
 use ReflectionProperty;
 
 #[FakeMethod('createRandom')]
-final class CountryAndPhoneNumber implements ValueObjectInterface
+final class CountryAndPhoneNumber implements CompositeWithOwnValidation
 {
     use CompositeValueObject;
 
-    public function __construct(private ISO3166_1_Alpha_2 $country, private PhoneNumber $phoneNumber)
+    public function __construct(private CountryAlpha2 $country, private PhoneNumber $phoneNumber)
     {
         $this->validateState();
     }
@@ -39,9 +40,13 @@ final class CountryAndPhoneNumber implements ValueObjectInterface
     private function validateState(): void
     {
         if ($this->country !== $this->phoneNumber->fromCountry()) {
-            throw new PhoneNumberAndCountryMismatch(
-                $this->country,
-                $this->phoneNumber->fromCountry()
+            throw ValidationException::createFromArray(
+                [
+                    'phoneNumber'  => new PhoneNumberAndCountryMismatch(
+                        $this->country,
+                        $this->phoneNumber->fromCountry()
+                    )
+                ]
             );
         }
     }
@@ -50,7 +55,7 @@ final class CountryAndPhoneNumber implements ValueObjectInterface
     {
         $phoneNumber = '';
         do {
-            $country = $generator->randomElement(ISO3166_1_Alpha_2::cases());
+            $country = $generator->randomElement(CountryAlpha2::cases());
             $phoneNumberUtil = PhoneNumberUtil::getInstance();
             $phoneNumberObject = $phoneNumberUtil->getExampleNumber($country->value);
             if ($phoneNumberObject) {

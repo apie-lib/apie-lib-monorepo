@@ -1,0 +1,12 @@
+<apie-form-field-definition
+    {% if isPrototyped() %}prototyped id="{{ property('name').getChildFormFieldName() }}"{% endif %}
+    class="unhandled-single-input"
+    name="{{ property('name').getChildFormFieldName() }}"
+    types="hidden"
+></apie-form-field-definition>
+<script>
+((elm) => {
+    elm.classList.remove('unhandled-single-input');
+    elm.valueWhenMissing = {{ property('value') | safe_json_encode }}
+})(document.querySelector('apie-form-field-definition.unhandled-single-input'));
+</script>

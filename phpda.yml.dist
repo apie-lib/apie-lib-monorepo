@@ -8,6 +8,9 @@ ignore:
 formatter: 'PhpDA\Writer\Strategy\Svg'
 target: './phpda.svg'
 groupLength: 1
+namespaceFilter: 'Apie\Tools\NamespaceFilter'
+classMap:
+  'Apie\Tools\NamespaceFilter': './tools/NamespaceFilter.php'
 visitor:
   - PhpDA\Parser\Visitor\TagCollector
   - PhpDA\Parser\Visitor\SuperglobalCollector

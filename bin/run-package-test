@@ -1,0 +1,82 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../shared-bin.php';
+
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Process\Process;
+
+$selectedPackage = null;
+$selectedPhpVersion = '8.3.0-cli';
+
+$arg1 = $argv[1] ?? null;
+$arg2 = $argv[2] ?? null;
+
+foreach (Finder::create()->in(__DIR__ . '/../packages')->directories()->depth(0) as $packageFolder) {
+    $package = new Package($packageFolder);
+    if ($package->getPackage() === $arg1) {
+        $selectedPackage = $package;
+        $arg1 = null;
+        break;
+    }
+    if ($package->getPackage() === $arg2) {
+        $selectedPackage = $package;
+        $arg2 = null;
+        break;
+    }
+}
+
+if (!$selectedPackage) {
+    echo "Usage " . $argv[0] . ' <php-version> <package>' . PHP_EOL;
+    exit(1);
+}
+if (in_array($selectedPackage->getPackage(), ['apie-bundle', 'laravel-apie'])) {
+    echo $selectedPackage->getPackage() . ' still has some issues where it gets weird errors, so they are disabled ATM';
+    exit(0);
+}
+if ($selectedPackage->getPackage() === 'fixtures') {
+    exit(0);
+}
+
+foreach (['8.4', '8.3', 'latest'] as $phpVersion) {
+    if ($arg1 === $phpVersion) {
+        $selectedPhpVersion = $phpVersion . ($phpVersion === 'latest' ? '' : '.0-cli');
+        break;
+    }
+    if ($arg2 === $phpVersion) {
+        $selectedPhpVersion = $phpVersion . ($phpVersion === 'latest' ? '' : '.0-cli');
+        break;
+    }
+}
+
+$filename = '.tempdockerfile.' . $selectedPackage->getPackage() . '.' . $phpVersion;
+file_put_contents(
+    $filename,
+    str_replace(
+        ['PHP_VERSION', 'PACKAGE_NAME'],
+        [$phpVersion, $package->getPackage()],
+        file_get_contents(__DIR__ . '/../resources/dockerfile.test.template')
+    )
+);
+$containerName = 'apie-' . $phpVersion . '-' . $selectedPackage->getPackage();
+//docker build --file dockerfile.php83 . -t apie-php83
+$process = new Process(['docker', 'build', '--file', $filename, '.', '-t', $containerName]);
+$process->setTimeout(null);
+if (0 !== $process->run(function ($type, $buffer): void {
+    echo $buffer;
+})) {
+    throw new \LogicException("problem building docker image");
+};
+
+$dockerPath = '/app/packages/' . $selectedPackage->getPackage();
+$process = new Process(
+    ['docker', 'run', '--rm',  '--volume', '/tmp/composer:/root/.composer', '-v', __DIR__ . '/../coverage:' . $dockerPath . '/coverage', '-w', $dockerPath, $containerName, 'bin/run-tests', 'coverage/' . $containerName],
+    env: ['COMPOSER_ALLOW_SUPERUSER' => 1],
+);
+$process->setTimeout(null);
+if (0 !== $process->run(function ($type, $buffer): void {
+    echo $buffer;
+})) {
+    throw new \LogicException("problem with running tests!");
+};
+

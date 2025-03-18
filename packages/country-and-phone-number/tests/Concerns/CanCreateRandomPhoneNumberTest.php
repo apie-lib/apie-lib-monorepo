@@ -5,20 +5,20 @@ use Apie\CountryAndPhoneNumber\Concerns\CanCreateRandomPhoneNumber;
 use libphonenumber\PhoneNumberUtil;
 use LogicException;
 use PHPUnit\Framework\TestCase;
-use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use PrinsFrank\Standards\Country\CountryAlpha2;
 
 class CanCreateRandomPhoneNumberTest extends TestCase
 {
     use CanCreateRandomPhoneNumber;
 
-    private static ISO3166_1_Alpha_2 $country = ISO3166_1_Alpha_2::Netherlands_the;
+    private static CountryAlpha2 $country = CountryAlpha2::Netherlands;
 
     protected function tearDown(): void
     {
-        self::$country = ISO3166_1_Alpha_2::Netherlands_the;
+        self::$country = CountryAlpha2::Netherlands;
     }
 
-    public static function fromCountry(): ISO3166_1_Alpha_2
+    public static function fromCountry(): CountryAlpha2
     {
         return self::$country;
     }
@@ -28,12 +28,10 @@ class CanCreateRandomPhoneNumberTest extends TestCase
         return PhoneNumberUtil::getInstance();
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_error_if_libphonenumber_has_no_example_phonenumber()
     {
-        self::$country = ISO3166_1_Alpha_2::Antarctica;
+        self::$country = CountryAlpha2::Antarctica;
         $this->expectException(LogicException::class);
         self::createRandomInstance();
     }

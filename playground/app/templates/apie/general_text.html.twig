@@ -1,0 +1,12 @@
+<p>
+You are now viewing the CMS dashboard in the bounded context {{ boundedContext.id.toNative() }}, but you can also see the <a href="{{ url('apie.' ~ boundedContext.id.toNative() ~ '.swagger_ui') }}">Rest API generated Swagger UI page.</a>
+</p>
+<h2>Current settings:</h2>
+<div>
+  <a href="{{ url('apie.example.call-method-commit-PlaygroundConfiguration-resetConfiguration') }}">Reset config</a>
+  <a href="{{ url('apie.example.call-method-commit-PlaygroundConfiguration-applyConfiguration') }}">Change config</a>
+
+</div>
+<p>
+  {{ renderApieCmsData(configuration) }}
+</p>

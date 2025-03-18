@@ -1,0 +1,24 @@
+<form style="display: table-cell; vertical-align: middle">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <gr-input name="search" type="search" value="text search"></gr-input>
+          </td>
+                      <td>
+                <apie-filter-overview class="unprocessed-filter"></apie-filter-overview>
+                <script>
+                (function (elm) {
+                  elm.classList.remove('unprocessed-filter');
+                  elm.filterNames = ["id","description"];
+                  elm.filters = {"description":"test"};
+                }(document.querySelector('apie-filter-overview.unprocessed-filter')));
+                </script>
+            </td>
+                    <td>
+            <gr-button variant="secondary" type="submit" large expand="block">Search</gr-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>

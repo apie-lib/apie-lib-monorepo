@@ -2,13 +2,17 @@
 namespace Apie\TextValueObjects;
 
 use Apie\Core\Attributes\FakeMethod;
+use Apie\Core\Attributes\ProvideIndex;
+use Apie\Core\ValueObjects\Concerns\IndexesWords;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]
+#[ProvideIndex('getIndexes')]
 class LastName implements HasRegexValueObjectInterface
 {
+    use IndexesWords;
     use IsStringWithRegexValueObject;
 
     public static function getRegularExpression(): string
@@ -23,6 +27,6 @@ class LastName implements HasRegexValueObjectInterface
 
     public static function createRandom(Generator $generator): self
     {
-        return new self($generator->lastName());
+        return new static($generator->lastName());
     }
 }

@@ -1,11 +1,13 @@
 <?php
 namespace Apie\Fixtures\Entities;
 
+use Apie\Core\Attributes\Internal;
+use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Fixtures\Identifiers\UserWithAddressIdentifier;
 use Apie\Fixtures\ValueObjects\AddressWithZipcodeCheck;
+use Apie\Fixtures\ValueObjects\EncryptedPassword;
 use Apie\Fixtures\ValueObjects\Password;
-use Apie\TextValueObjects\EncryptedPassword;
 
 class UserWithAddress implements EntityInterface
 {
@@ -31,6 +33,13 @@ class UserWithAddress implements EntityInterface
     public function setPassword(Password $password)
     {
         $this->password = EncryptedPassword::fromUnencryptedPassword($password);
+    }
+
+    #[Internal()]
+    #[SearchFilterOption(enabled: false)]
+    public function hasPassword(): bool
+    {
+        return $this->password !== null;
     }
 
     public function verifyAuthentication(string $username, string $password): bool

@@ -19,18 +19,33 @@
       "Apie\\Tests\\CountryAndPhoneNumber\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+      "Apie\\CountryAndPhoneNumber\\BelgianPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\BritishPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\CanadianPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\ChinesePhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\CountryAndPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\DutchPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\FrenchPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\GermanPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\InternationalPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\JapanesePhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\MexicanPhoneNumber",
+      "Apie\\CountryAndPhoneNumber\\USPhoneNumber"
+    ]
+  },
   "require": {
-    "php": ">=8.1",
+    "php": ">=8.3",
     "apie/core": "self.version",
-    "apie/composite-value-objects": "self.version",
-    "giggsey/libphonenumber-for-php": "^8.0",
-    "prinsfrank/standards": "^1.0.0"
+    "giggsey/libphonenumber-for-php": "^8.13.37",
+    "prinsfrank/standards": "^3.3.0"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "cebe/php-openapi": "^1.7",
-    "phpunit/phpunit": "^9.5",
-    "phpspec/prophecy-phpunit": "^2.0"
+    "devizzent/cebe-php-openapi": "^1.1.2",
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.2"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

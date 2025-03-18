@@ -9,7 +9,7 @@ use Apie\CountryAndPhoneNumber\Factories\PhoneNumberFactory;
 use Faker\Generator;
 use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
-use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+use PrinsFrank\Standards\Country\CountryAlpha2;
 use ReflectionClass;
 
 /**
@@ -41,7 +41,7 @@ final class InternationalPhoneNumber implements StringValueObjectInterface
         $phone = $phoneUtil->parse($this->internal);
         return PhoneNumberFactory::createFrom(
             $this->internal,
-            ISO3166_1_Alpha_2::from($phoneUtil->getRegionCodeForNumber($phone))
+            CountryAlpha2::from($phoneUtil->getRegionCodeForNumber($phone))
         );
     }
 
@@ -49,7 +49,7 @@ final class InternationalPhoneNumber implements StringValueObjectInterface
     {
         $phoneNumber = '';
         do {
-            $country = $generator->randomElement(ISO3166_1_Alpha_2::cases());
+            $country = $generator->randomElement(CountryAlpha2::cases());
             $phoneNumberUtil = PhoneNumberUtil::getInstance();
             $phoneNumberObject = $phoneNumberUtil->getExampleNumber($country->value);
             if ($phoneNumberObject) {

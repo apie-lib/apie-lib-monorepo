@@ -1,0 +1,28 @@
+ARG PHP_VERSION=8.3
+FROM composer:2.8.4 AS composer
+FROM php:${PHP_VERSION}-cli
+
+RUN apt-get clean
+RUN apt-get update
+
+#install some basic tools
+RUN apt-get install -y \
+        git \
+        tree \
+        vim \
+        wget \
+        unzip \
+        libssh2-1-dev \
+        libzip-dev \
+        zlib1g-dev \
+        zip
+
+# copy the Composer PHAR from the Composer image into the PHP image
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN docker-php-ext-install opcache
+RUN docker-php-ext-install zip
+RUN pecl install pcov \
+    && docker-php-ext-enable pcov
+RUN git config --global --add safe.directory /app
+# show that both Composer and PHP run as expected
+RUN composer --version && php -v && php -m

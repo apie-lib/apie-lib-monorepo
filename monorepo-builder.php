@@ -16,12 +16,19 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // what extra parts to add after merge?
     $parameters->set(Option::DATA_TO_APPEND, [
+        ComposerJsonSection::REQUIRE => [
+            "doctrine/dbal" => "^4.2.1",
+        ],
         ComposerJsonSection::REQUIRE_DEV => [
-            "phpspec/prophecy-phpunit" => "^2.0",
-            "phpstan/phpstan" => "^1.8.2",
-            'friendsofphp/php-cs-fixer' =>  "^3.8",
-            'symfony/phpunit-bridge' =>  "6.*",
-            'symfony/finder' =>  "6.*",
+            "apie/service-provider-generator" => "0.11.3",
+            "phpspec/prophecy-phpunit" => "^2.2",
+            "phpstan/phpstan" => "^2.0.4",
+            "phpunit/phpcov" => "^10.0.1",
+            'friendsofphp/php-cs-fixer' =>  "^3.58.1",
+            "symfony/doctrine-bridge" => "^7.2",
+            "symfony/monolog-bundle" => "^3.10",
+            'symfony/phpunit-bridge' =>  "^7.2",
+            'symfony/finder' =>  "^7.2",
             'symplify/monorepo-builder' =>  '10.2.7',
         ],
     ]);

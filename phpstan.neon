@@ -1,56 +1,115 @@
 includes:
     - packages/apie-phpstan-rules/apie-phpstan-rules.neon
 parameters:
+    phpVersion: 80400
     level: 6
     paths:
         - packages/apie-bundle/src
+        - packages/apie-phpstan-rules/src
+        - packages/cms/src
+        - packages/cms-api-dropdown-option/src
+        - packages/cms-layout-graphite/src
+        - packages/common/src
         - packages/common-value-objects/src
-        - packages/composite-value-objects/src
+        - packages/console/src
+        - packages/count-words/src
         - packages/core/src
         - packages/country-and-phone-number/src
         - packages/date-value-objects/src
         - packages/dateformat-to-regex/src
         - packages/doctrine-entity-converter/src
+        - packages/doctrine-entity-datalayer/src
         - packages/faker/src
+        - packages/integration-tests/src
+        - packages/html-builders/src
+        - packages/laravel-apie/src
         - packages/regex-value-objects/src
         - packages/rest-api/src
         - packages/schema-generator/src
         - packages/serializer/src
+        - packages/storage-metadata/src
         - packages/text-value-objects/src
     ignoreErrors:
+        - '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children#'
+        - '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::scalarNode#'
+        - '#isInitialized\(\) on a separate line has no effect#'
+        - '#ReflectionException is never thrown in the try block#'
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
-        - '#::(all|find|persistNew|persistExisting)\(\) invoked with 2 parameters, 1 required#'
+        - '#template type T in call to method static method Apie\\Core\\Actions\\ActionInterface::getInputType#'
+        - '#::getInputType|getRouteAttributes\(\) invoked with 2 parameters, 1 required#'
+        - '#template type T in call to method static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'
+        - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
+        - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
+        - '#ReflectionEnumUnitCase::getBackingValue#'
+        - '/Parameter #4 \$prototype of class Apie\\HtmlBuilders\\Components\\Forms\\FormPrototype(Hashmap|List) constructor expects Apie\\HtmlBuilders\\Components\\BaseComponent, Apie\\HtmlBuilders\\Interfaces\\ComponentInterface given\./'
+        -
+            message: '#is assigned outside of its declaring class|Assign to protected#'
+            path: packages/doctrine-entity-converter/src/CodeGenerators/AddDoctrineFields.php
+            count: 1
+        -
+            message: '#Offset ReflectionType on .* in isset#'
+            path: packages/core/src/PropertyToFieldMetadataUtil.php
+            count: 1
+        -
+            message: '#Comparison operation "<" between int<0, max> and 0 is always false.#'
+            path: packages/core/src/FileStorage/StoredFile.php
+            count: 1
         - 
             message: '#ActionInterface::#'
-            path: packages/rest-api/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
+            path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
             count: 8
+        -
+            message: '#Unable to resolve the template type T in call to method.*createNewUpload#'
+            path: packages/storage-metadata/src/PropertyConverters/MethodAttributeConverter.php
+            count: 1
+        -
+            message: '#in isset\(\) does not exist#'
+            path: packages/core/src/Lists/PermissionList.php
+            count: 1
+        -
+            message: '#Unable to resolve the template type T in call to method.*injectExistingDomainObject#'
+            path: packages/storage-metadata/src/PropertyConverters/OneToOneAttributeConverter.php
+            count: 1
+        -
+            message: '#Variable \$parameters on left side#'
+            path: packages/rest-api/src/EventListeners/OpenApiOperationAddedEventSubscriber.php
+            count: 1
+        -
+            message: '#Unable to resolve the template type T in call to method Apie\\Core\\Datalayers\\ApieDatalayer::all#'
+            path: packages/cms-api-dropdown-option/src/DropdownOptionProvider/EntityIdentifierOptionProvider.php
+            count: 1
+        -
+            message: '#View to string#'
+            path: packages/laravel-apie/src/Wrappers/Cms/DashboardContents.php
+            count: 1
+        -   
+            message: '#Call to an undefined method ReflectionType::getName#'
+            path: packages/core/src/Utils/EnumUtils.php
+            reportUnmatched: false
+        -
+            message: '#array<string, Apie\\TypeConverter\\Exceptions\\Throwable>#'
+            reportUnmatched: false
+        - '#Unable to resolve the template type T in call to method static method Apie\\Core\\Utils\\ConverterUtils::toReflectionClass\(\)#'
         -
             message: '#NodeDefinition::children#'
             path: packages/apie-bundle/src/DependencyInjection/Configuration.php
             count: 1
+        -
+            message: '#Instantiated class Apie\\CountryAndPhoneNumber\\PhoneNumber is abstract#'
+            path: packages/core/src/ValueObjects/IsStringValueObject.php
+            count: 1
         - 
             message: '#iterable type array#'
             path: packages/serializer/src/
-            count: 7
-        -
-            message: '#method UnitEnum::from#'
-            path: packages/serializer/src/Normalizers/EnumNormalizer.php
-            count: 1
         -
             message: '#ValueObjectInterface::getRegularExpression#'
             path: packages/schema-generator/src/SchemaProviders/
             count: 2
 
         -
-            message: '#ValueObjectInterface::getFields#'
-            path: packages/schema-generator/src/SchemaProviders/CompositeValueObjectSchemaProvider.php
-            count: 2
-
-        -
             message: '#constructor expects Apie\\SchemaGenerator\\Interfaces\\SchemaProvider\<object\>#'
             path: packages/schema-generator/src/ComponentsBuilderFactory.php
-            count: 12
 
         -
             message: '#Negated boolean expression is always false#'
@@ -67,15 +126,13 @@ parameters:
             path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
             count: 1
 
+        -   '#Unable to resolve the template type T in call to method static method Apie\\Core\\Utils\\EntityUtils::findClass#'
+
         -
-            message: '#Call to an undefined static method \*NEVER\*::#'
+            message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'
             path: packages/faker/src/Fakers/PasswordValueObjectFaker.php
-            count: 8
-        
-        -
-            message: '#constructor expects Apie\\Faker\\Interfaces\\ApieClassFaker<object>,#'
-            path: packages/faker/src/ApieObjectFaker.php
-            count: 5
+            count: 1
+        -   '#SearchIndex::\$parent#'
 
         -
             message: '#Unable to resolve the template type T in call to method#'
@@ -85,7 +142,6 @@ parameters:
         -
             message: '#If condition is always true#'
             path: packages/country-and-phone-number/src/
-            count: 13
 
         -
             message: '#Unreachable statement - code above always terminates#'
@@ -95,4 +151,21 @@ parameters:
         -
             message: '#the constructor#'
             path: packages/core/src/Actions/ActionResponse.php
-            count: 7
+        -
+            message: "#Class 'PossibleRoutePrefixes' is a value object that returns an array, but it does not use CompositeValueObject trait#"
+            path: packages/common/src/ValueObjects/PossibleRoutePrefixes.php
+            count: 1
+        -
+            message: '/Parameter #1 \$fakeProviders/'
+            path: packages/faker/src/Command/ApieSeedCommand.php
+            count: 1
+        -
+            message: '/constructor expects Illuminate\\Contracts\\Container\\Container/'
+            path: packages/integration-tests/src/Applications/Laravel/LaravelTestApplication.php
+            count: 1
+        -
+            message: '# has an uninitialized readonly property#'
+            path: packages/storage-metadata/src/Mediators/DomainToStorageContext.php
+        -
+            message: '#Unable to resolve the template type T#'
+            path: packages/storage-metadata/src/PropertyConverters/OneToManyAttributeConverter.php
