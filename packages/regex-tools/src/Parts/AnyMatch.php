@@ -49,4 +49,33 @@ final class AnyMatch implements RegexPartInterface
         }
         return $currentMax;
     }
+
+    public function toCaseInsensitive(): RegexPartInterface
+    {
+        return new AnyMatch(
+            array_map(
+                function (RegexPartInterface $part) {
+                    return $part->toCaseInsensitive();
+                },
+                $this->part
+            )
+        );
+    }
+
+    public function removeStartAndEndMarkers(): ?RegexPartInterface
+    {
+        return new AnyMatch(
+            array_filter(
+                array_map(
+                    function (RegexPartInterface $part) {
+                        if ($part instanceof StartOfRegex || $part instanceof EndOfRegex) {
+                            return $part;
+                        }
+                        return $part->removeStartAndEndMarkers();
+                    },
+                    $this->part
+                )
+            )
+        );
+    }
 }
