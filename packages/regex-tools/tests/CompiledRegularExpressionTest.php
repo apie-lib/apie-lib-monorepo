@@ -39,4 +39,35 @@ class CompiledRegularExpressionTest extends TestCase
         yield 'not [] regex' => [1, 1, '[^ab]', '[^ab]'];
         yield 'a or b or c' => [1, 1, 'a|b|c', 'a|b|c'];
     }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('provideConversionRegex')]
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function it_can_modify_a_regex_regex(
+        string $expectedCaseInsensitive,
+        string $expectedRemoveMarkers,
+        string $regex
+    ) {
+        $testItem = CompiledRegularExpression::createFromRegexWithoutDelimiters($regex);
+        $this->assertEquals($expectedRemoveMarkers, $testItem->removeStartAndEndMarkers()->__toString());
+        $this->assertEquals($expectedCaseInsensitive, $testItem->toCaseInsensitive()->__toString());
+    }
+
+    public static function provideConversionRegex(): Generator
+    {
+        yield 'empty regex' => ['', '', ''];
+        yield 'match only empty string' => ['^$', '', '^$'];
+        yield 'single character' => ['(a|A)', 'a', 'a'];
+        yield 'escaped character' => ['\\$\\\\\\', '\\$\\\\\\', '\\$\\\\\\'];
+        yield 'capture group' => ['(((a|A))(a|A))', '((a)a)', '((a)a)'];
+        yield 'optional' => ['(a|A)?', 'a?', 'a?'];
+        yield 'regex with *' => ['(a|A)*', 'a*', 'a*'];
+        yield 'regex with +' => ['(a|A)+', 'a+', 'a+'];
+        yield 'repeat static' => ['(a|A){8}', 'a{8}', 'a{8}'];
+        yield 'repeat static (with spaces)' => ['(a|A){8}', 'a{8}', 'a{ 8 }'];
+        yield 'repeat range' => ['(a|A){8,10}', 'a{8,10}', 'a{8,10}'];
+        yield 'repeat range (with spaces)' => ['(a|A){8,10}', 'a{8,10}', 'a{ 8 , 10 }'];
+        yield '[] regex' => ['[(a|A)(b|B)[(d|D)(e|E)]]', '[ab[de]]', '[ab[de]]'];
+        yield 'not [] regex' => ['[^(a|A)(b|B)]', '[^ab]', '[^ab]'];
+        yield 'a or b or c' => ['(a|A)|(b|B)|(c|C)', 'a|b|c', 'a|b|c'];
+    }
 }
