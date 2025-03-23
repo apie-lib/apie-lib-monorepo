@@ -13,7 +13,7 @@ class SemanticVersion implements HasRegexValueObjectInterface
 
     public static function createRandom(Generator $generator): self
     {
-        return new static($generator->semver(true, true));
+        return static::fromNative($generator->semver(true, true));
     }
 
     protected function convert(string $input): string

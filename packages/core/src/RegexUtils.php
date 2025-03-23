@@ -21,7 +21,7 @@ final class RegexUtils
         $regex = preg_replace($removeStartDelimiterRegex, '', $regularExpressionWithDelimiter);
         $caseSensitive = true;
         $regexModifiers = preg_match('#' . $delimiter . '[imsxADSUJXu]*$#u', $regularExpressionWithDelimiter, $matches);
-        if ($regexModifiers && is_array($matches)) {
+        if ($regexModifiers) {
             $caseSensitive = strpos($matches[0], 'i') === false;
         }
         $removeEndDelimiterRegex = '#' . $delimiter . '[imsxADSUJXu]*$#u';
