@@ -7539,12 +7539,12 @@
             "ObjectWithRelationIdentifier-get": {
                 "type": "string",
                 "format": "objectwithrelationidentifier",
-                "pattern": "^[(a|A)-(z|Z)A-Z0-9]{22}$"
+                "pattern": "^[0-9A-Za-z]{22}$"
             },
             "ObjectWithRelationIdentifier-post": {
                 "type": "string",
                 "format": "objectwithrelationidentifier",
-                "pattern": "^[(a|A)-(z|Z)A-Z0-9]{22}$"
+                "pattern": "^[0-9A-Za-z]{22}$"
             },
             "Order-get": {
                 "type": "object",

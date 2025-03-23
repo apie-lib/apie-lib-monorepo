@@ -35,7 +35,7 @@ class CompiledRegularExpressionTest extends TestCase
         yield 'repeat static (with spaces)' => [8, 8, 'a{8}', 'a{ 8 }'];
         yield 'repeat range' => [8, 10, 'a{8,10}', 'a{8,10}'];
         yield 'repeat range (with spaces)' => [8, 10, 'a{8,10}', 'a{ 8 , 10 }'];
-        yield '[] regex' => [1, 1, '[ab[de]]', '[ab[de]]'];
+        yield '[] regex' => [1, 1, '[ab[de\]]', '[ab[de\]]'];
         yield 'not [] regex' => [1, 1, '[^ab]', '[^ab]'];
         yield 'a or b or c' => [1, 1, 'a|b|c', 'a|b|c'];
     }
@@ -66,8 +66,12 @@ class CompiledRegularExpressionTest extends TestCase
         yield 'repeat static (with spaces)' => ['(a|A){8}', 'a{8}', 'a{ 8 }'];
         yield 'repeat range' => ['(a|A){8,10}', 'a{8,10}', 'a{8,10}'];
         yield 'repeat range (with spaces)' => ['(a|A){8,10}', 'a{8,10}', 'a{ 8 , 10 }'];
-        yield '[] regex' => ['[(a|A)(b|B)[(d|D)(e|E)]]', '[ab[de]]', '[ab[de]]'];
-        yield 'not [] regex' => ['[^(a|A)(b|B)]', '[^ab]', '[^ab]'];
+        yield '[] regex' => ['[ABDE\[\]abde]', '[ab[de\]]', '[ab[de\]]'];
+        yield 'not [] regex' => ['[^ABab]', '[^ab]', '[^ab]'];
         yield 'a or b or c' => ['(a|A)|(b|B)|(c|C)', 'a|b|c', 'a|b|c'];
+        yield '[] range' => ['^[A-Za-z]$', '[a-z]', '^[a-z]$'];
+        yield '[] range lower and upper case' => ['[A-Za-z]', '[a-zA-Z]', '[a-zA-Z]'];
+        yield 'invalid range' => ['[\-AZaz]', '[a-Z]', '[a-Z]'];
+        yield 'huge range' => ['[0-\[\]-ÿŸΜ]', '[0-ÿ]', '[0-ÿ]']; //Μ is upper of μ, Ÿ is upper of ÿ
     }
 }
