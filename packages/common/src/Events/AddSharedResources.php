@@ -13,12 +13,13 @@ class AddSharedResources implements EventSubscriberInterface
         return [RegisterBoundedContexts::class => 'addSharedResources'];
     }
 
-    public function addSharedResources(RegisterBoundedContexts $registerBoundedContexts)
+    public function addSharedResources(RegisterBoundedContexts $registerBoundedContexts): void
     {
         foreach ($registerBoundedContexts->hashmap as $boundedContext) {
             /** @var BoundedContext $boundedContext */
             $lists = $boundedContext->findRelatedClasses()->toStringArray();
             if (in_array(SequentialBackgroundProcess::class, $lists)) {
+                // @phpstan-ignore property.readOnlyAssignOutOfClass
                 $boundedContext->resources[] = new ReflectionClass(SequentialBackgroundProcess::class);
             }
         }

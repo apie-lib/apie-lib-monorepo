@@ -14,7 +14,6 @@ use Apie\Core\Identifiers\PascalCaseSlug;
 use Apie\Core\Identifiers\Ulid;
 use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
-use Apie\Core\Lists\ItemSet;
 use Apie\Core\Lists\MessageAndTimestampList;
 use Apie\Core\ValueObjects\DatabaseText;
 use DateTimeInterface;
@@ -51,7 +50,7 @@ class SequentialBackgroundProcess implements EntityInterface
         $this->errors = new MessageAndTimestampList();
     }
 
-    public function getPayload(): ItemHashmap|ItemSet
+    public function getPayload(): ItemHashmap|ItemList
     {
         return $this->payload;
     }

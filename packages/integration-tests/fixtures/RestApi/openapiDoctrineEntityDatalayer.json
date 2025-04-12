@@ -5325,7 +5325,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/mixed"
+                                    "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
                                 }
                             }
                         }
@@ -6638,6 +6638,15 @@
                 "format": "animalidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
+            "BackgroundProcessStatus-get": {
+                "enum": [
+                    "active",
+                    "finished",
+                    "tooManyErrors",
+                    "canceled"
+                ],
+                "type": "string"
+            },
             "Base64Stream-post": {
                 "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
                 "type": "string",
@@ -6764,6 +6773,11 @@
                 "nullable": true
             },
             "DateTime-post": {
+                "pattern": "^((|\\-)[0-9]{4})\\-((0[1-9])|(1[0-2]))\\-((0[1-9])|([12][0-9])|(3[01]))T(([01][0-9])|(2[0-3]))\\:[0-5][0-9]\\:[0-5][0-9](\\+\\d{2}:\\d{2})$",
+                "type": "string",
+                "format": "datetime"
+            },
+            "DateTimeImmutable-get": {
                 "pattern": "^((|\\-)[0-9]{4})\\-((0[1-9])|(1[0-2]))\\-((0[1-9])|([12][0-9])|(3[01]))T(([01][0-9])|(2[0-3]))\\:[0-5][0-9]\\:[0-5][0-9](\\+\\d{2}:\\d{2})$",
                 "type": "string",
                 "format": "datetime"
@@ -7314,6 +7328,18 @@
                     }
                 }
             },
+            "ItemHashmap-get": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#/components/schemas/mixed"
+                }
+            },
+            "ItemList-get": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/mixed"
+                }
+            },
             "JsonFileUpload-nullable-post": {
                 "required": [
                     "originalFilename"
@@ -7580,6 +7606,28 @@
                         "type": "string",
                         "nullable": false
                     }
+                }
+            },
+            "MessageAndTimestamp-get": {
+                "type": "object",
+                "required": [
+                    "message",
+                    "timestamp"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "timestamp": {
+                        "$ref": "#/components/schemas/DateTimeImmutable-get"
+                    }
+                }
+            },
+            "MessageAndTimestampList-get": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/MessageAndTimestamp-get"
                 }
             },
             "NonEmptyString-get": {
@@ -8322,6 +8370,69 @@
                         "nullable": false
                     }
                 }
+            },
+            "SequentialBackgroundProcess-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "status",
+                    "payload",
+                    "errors",
+                    "version",
+                    "step",
+                    "retries",
+                    "startTime",
+                    "completionTime",
+                    "result"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/SequentialBackgroundProcessIdentifier-get"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/BackgroundProcessStatus-get"
+                    },
+                    "payload": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/ItemHashmap-get"
+                            },
+                            {
+                                "$ref": "#/components/schemas/ItemList-get"
+                            }
+                        ],
+                        "nullable": false
+                    },
+                    "errors": {
+                        "$ref": "#/components/schemas/MessageAndTimestampList-get"
+                    },
+                    "version": {
+                        "type": "integer",
+                        "nullable": false
+                    },
+                    "step": {
+                        "type": "integer",
+                        "nullable": false
+                    },
+                    "retries": {
+                        "type": "integer",
+                        "nullable": false
+                    },
+                    "startTime": {
+                        "$ref": "#/components/schemas/DateTime-get"
+                    },
+                    "completionTime": {
+                        "$ref": "#/components/schemas/DateTime-nullable-get"
+                    },
+                    "result": {
+                        "$ref": "#/components/schemas/mixed"
+                    }
+                }
+            },
+            "SequentialBackgroundProcessIdentifier-get": {
+                "type": "string",
+                "format": "sequentialbackgroundprocessidentifier",
+                "pattern": "([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$"
             },
             "SerializedPermission-get": {
                 "type": "string",

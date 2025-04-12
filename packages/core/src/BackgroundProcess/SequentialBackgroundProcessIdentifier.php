@@ -7,6 +7,9 @@ use Apie\Core\Identifiers\Ulid;
 use Apie\Core\ValueObjects\SnowflakeIdentifier;
 use ReflectionClass;
 
+/**
+ * @implements IdentifierInterface<SequentialBackgroundProcess>
+ */
 class SequentialBackgroundProcessIdentifier extends SnowflakeIdentifier implements IdentifierInterface
 {
     public function __construct(
@@ -19,6 +22,16 @@ class SequentialBackgroundProcessIdentifier extends SnowflakeIdentifier implemen
     protected static function getSeparator(): string
     {
         return ',';
+    }
+    
+    public function getClassName(): PascalCaseSlug
+    {
+        return $this->className;
+    }
+
+    public function getUlid(): Ulid
+    {
+        return $this->ulid;
     }
 
     public static function getReferenceFor(): ReflectionClass

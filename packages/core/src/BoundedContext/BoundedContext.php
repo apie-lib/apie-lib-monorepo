@@ -51,6 +51,7 @@ final class BoundedContext implements EntityInterface
                     $type = ConverterUtils::toReflectionType(
                         ApieLib::getAlias($class->name)
                     );
+                    // @phpstan-ignore method.notFound
                     $types = ($type instanceof ReflectionNamedType) ? [$type] : $type->getTypes();
                     foreach ($types as $type) {
                         $class = ConverterUtils::toReflectionClass($type);

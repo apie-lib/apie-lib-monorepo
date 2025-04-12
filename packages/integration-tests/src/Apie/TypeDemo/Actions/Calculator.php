@@ -31,7 +31,7 @@ final class Calculator
         return sqrt($numberOne);
     }
 
-    public function expensiveBackgroundCalculation(int $payload)
+    public function expensiveBackgroundCalculation(int $payload): SequentialBackgroundProcess
     {
         return new SequentialBackgroundProcess(
             new SequentialExample(),
