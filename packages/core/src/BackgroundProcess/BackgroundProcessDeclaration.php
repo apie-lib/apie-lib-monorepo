@@ -7,5 +7,5 @@ interface BackgroundProcessDeclaration
 
     public function getCurrentVersion(): int;
 
-    public function getMaxRetries(int $version): int;
+    public static function getMaxRetries(int $version): int;
 }

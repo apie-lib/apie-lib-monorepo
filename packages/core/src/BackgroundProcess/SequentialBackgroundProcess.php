@@ -8,11 +8,14 @@ use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
+use Apie\Core\Dto\MessageAndTimestamp;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\PascalCaseSlug;
 use Apie\Core\Identifiers\Ulid;
 use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
+use Apie\Core\Lists\ItemSet;
+use Apie\Core\Lists\MessageAndTimestampList;
 use Apie\Core\ValueObjects\DatabaseText;
 use DateTimeInterface;
 use ReflectionClass;
@@ -30,6 +33,7 @@ class SequentialBackgroundProcess implements EntityInterface
     private BackgroundProcessStatus $status = BackgroundProcessStatus::Active;
     private SequentialBackgroundProcessIdentifier $id;
     private mixed $result = null;
+    private MessageAndTimestampList $errors;
 
     #[StaticCheck(new AlwaysDisabled())]
     public function __construct(
@@ -44,6 +48,17 @@ class SequentialBackgroundProcess implements EntityInterface
             new PascalCaseSlug((new ReflectionClass($backgroundProcessDeclaration))->getShortName()),
             Ulid::createRandom()
         );
+        $this->errors = new MessageAndTimestampList();
+    }
+
+    public function getPayload(): ItemHashmap|ItemSet
+    {
+        return $this->payload;
+    }
+
+    public function getErrors(): MessageAndTimestampList
+    {
+        return $this->errors;
     }
 
     public function getId(): SequentialBackgroundProcessIdentifier
@@ -86,16 +101,25 @@ class SequentialBackgroundProcess implements EntityInterface
         return $this->result;
     }
 
-    public function runStep(#[Context()] ApieContext $apieContext)
+    public function cancel(): void
     {
         if ($this->status !== BackgroundProcessStatus::Active) {
             throw new \LogicException('Process ' . $this->id . ' can not be executed!');
         }
-        $apieContext = $apieContext->withContext(ContextConstants::BACKGROUND_PROCESS, 1);
+        $this->status = BackgroundProcessStatus::Canceled;
+    }
+
+    public function runStep(#[Context()] ApieContext $apieContext): void
+    {
+        if ($this->status !== BackgroundProcessStatus::Active) {
+            throw new \LogicException('Process ' . $this->id . ' can not be executed!');
+        }
+        $apieContext = $apieContext->withContext(ContextConstants::BACKGROUND_PROCESS, $this->result);
         $maxRetries = 1;
         try {
-            $maxRetries = $this->className::getMaxRetries($this->version);
-            $steps = array_values($this->className::retrieveDeclaration($this->version));
+            $className = $this->className->toNative();
+            $maxRetries = $className::getMaxRetries($this->version);
+            $steps = array_values($className::retrieveDeclaration($this->version));
             if (isset($steps[$this->step])) {
                 $this->result = call_user_func($steps[$this->step], $apieContext, $this->payload);
                 $this->step++;
@@ -105,6 +129,11 @@ class SequentialBackgroundProcess implements EntityInterface
                 $this->status = BackgroundProcessStatus::Finished;
             }
         } catch (Throwable $error) {
+            $this->errors[] = new MessageAndTimestamp(
+                $error->getMessage(),
+                ApieLib::getPsrClock()->now()
+            );
+            $this->retries++;
             if ($this->retries >= $maxRetries) {
                 $this->status = BackgroundProcessStatus::TooManyErrors;
             }

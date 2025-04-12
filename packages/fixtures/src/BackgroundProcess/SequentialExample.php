@@ -30,7 +30,7 @@ class SequentialExample implements BackgroundProcessDeclaration
         return 2;
     }
 
-    public function getMaxRetries(int $version): int
+    public static function getMaxRetries(int $version): int
     {
         return $version;
     }
