@@ -1067,6 +1067,69 @@
                 }
             }
         },
+        "/action/Calculator/expensiveBackgroundCalculation/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Calculator"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.Calculator-expensiveBackgroundCalculation",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/action/Authentication/isThisMe/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -1520,23 +1583,23 @@
                         "name": "items_per_page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 1
+                            "minimum": 1,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 0
+                            "minimum": 0,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
+                            "minimum": 1,
                             "type": "string"
                         }
                     },
@@ -1761,23 +1824,23 @@
                         "name": "items_per_page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 1
+                            "minimum": 1,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 0
+                            "minimum": 0,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
+                            "minimum": 1,
                             "type": "string"
                         }
                     },
@@ -1987,23 +2050,23 @@
                         "name": "items_per_page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 1
+                            "minimum": 1,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 0
+                            "minimum": 0,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
+                            "minimum": 1,
                             "type": "string"
                         }
                     },
@@ -2213,23 +2276,23 @@
                         "name": "items_per_page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 1
+                            "minimum": 1,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 0
+                            "minimum": 0,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
+                            "minimum": 1,
                             "type": "string"
                         }
                     },
@@ -2464,23 +2527,23 @@
                         "name": "items_per_page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 1
+                            "minimum": 1,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 0
+                            "minimum": 0,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
+                            "minimum": 1,
                             "type": "string"
                         }
                     },
@@ -2730,23 +2793,23 @@
                         "name": "items_per_page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 1
+                            "minimum": 1,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 0
+                            "minimum": 0,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
+                            "minimum": 1,
                             "type": "string"
                         }
                     },
@@ -2964,23 +3027,23 @@
                         "name": "items_per_page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 1
+                            "minimum": 1,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "page",
                         "in": "query",
                         "schema": {
-                            "type": "int",
-                            "min": 0
+                            "minimum": 0,
+                            "type": "integer"
                         }
                     },
                     {
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minLength": 1,
+                            "minimum": 1,
                             "type": "string"
                         }
                     },
@@ -4945,6 +5008,109 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Entity-nullable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Calculator/expensiveBackgroundCalculation": {
+            "post": {
+                "tags": [
+                    "Calculator",
+                    "action"
+                ],
+                "description": "Calls method expensiveBackgroundCalculation and returns return value.",
+                "operationId": "call-method-Calculator-expensiveBackgroundCalculation",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "payload"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "payload": {
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/mixed"
                                 }
                             }
                         }

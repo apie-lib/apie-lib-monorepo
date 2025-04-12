@@ -74,8 +74,9 @@ class CmsResourceOverviewRenderTest extends TestCase
             new BoundedContextId('types')
         );
         $response = $testApplication->httpRequestGet('/cms/types/resource/User?search=' . $searchTerm);
-        $this->assertEquals(200, $response->getStatusCode());
         HtmlOutput::writeHtml(__METHOD__, (string) $response->getBody());
+        $this->assertEquals(200, $response->getStatusCode());
+        
         $this->assertNotSame(
             false,
             strpos((string) $response->getBody(), 'value="' . (string) $searchTerm . '"'),

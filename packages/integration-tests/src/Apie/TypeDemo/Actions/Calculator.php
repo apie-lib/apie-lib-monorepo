@@ -3,6 +3,9 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Actions;
 
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\Route;
+use Apie\Core\BackgroundProcess\SequentialBackgroundProcess;
+use Apie\Core\Lists\ItemHashmap;
+use Apie\Fixtures\BackgroundProcess\SequentialExample;
 
 final class Calculator
 {
@@ -26,5 +29,13 @@ final class Calculator
     public function squareRoot(float $numberOne): float
     {
         return sqrt($numberOne);
+    }
+
+    public function expensiveBackgroundCalculation(int $payload)
+    {
+        return new SequentialBackgroundProcess(
+            new SequentialExample(),
+            new ItemHashmap(['payload' => $payload])
+        );
     }
 }

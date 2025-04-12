@@ -6,6 +6,7 @@ use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Lists\ReflectionClassList;
 use Apie\Core\Lists\ReflectionMethodList;
+use Apie\Fixtures\Actions\BackgroundProcessExample;
 use Apie\Fixtures\Actions\StaticActionExample;
 use Apie\Fixtures\Entities\Order;
 use Apie\Fixtures\Entities\Polymorphic\Animal;
@@ -52,6 +53,7 @@ final class BoundedContextFactory
             ]),
             new ReflectionMethodList([
                 new ReflectionMethod(StaticActionExample::class, 'secretCode'),
+                new ReflectionMethod(BackgroundProcessExample::class, 'createBackgroundProcess'),
             ])
         );
     }
