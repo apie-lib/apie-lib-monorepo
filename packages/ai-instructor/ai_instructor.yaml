@@ -1,0 +1,19 @@
+services:
+  Apie\AiInstructor\AiInstructor:
+    arguments:
+      - '@Apie\SchemaGenerator\SchemaGenerator'
+      - '@Apie\Serializer\Serializer'
+      - '@Apie\AiInstructor\AiClient'
+
+  Apie\AiInstructor\AiClient:
+    arguments:
+      - '@?http_client'
+      - 'TODO'
+      - 'http://ollama:11434'
+
+  Apie\AiInstructor\AiPlaygroundCommand:
+    arguments:
+      - '@Apie\AiInstructor\AiInstructor'
+    tags:
+      -
+        name: console.command

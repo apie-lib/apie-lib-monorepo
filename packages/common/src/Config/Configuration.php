@@ -12,6 +12,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 abstract class Configuration implements ConfigurationInterface
 {
     private const ENABLE_CONFIGS = [
+        'enable_ai_instructor' => 'Apie\AiInstructor\AiInstructor',
         'enable_common_plugin' => 'Apie\ApieCommonPlugin\ApieCommonPlugin',
         'enable_cms' => 'Apie\Cms\RouteDefinitions\CmsRouteDefinitionProvider',
         'enable_cms_dropdown' => 'Apie\CmsApiDropdownOption\RouteDefinitions\DropdownOptionsForExistingObjectRouteDefinition',

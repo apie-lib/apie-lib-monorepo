@@ -5,6 +5,16 @@
     "repositories": [
         {
             "type": "path",
+            "url": "/packages/ai-instructor",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/ai-instructor": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/laravel-apie",
             "options": {
                 "symlink": true,
