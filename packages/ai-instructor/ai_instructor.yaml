@@ -8,8 +8,8 @@ services:
   Apie\AiInstructor\AiClient:
     arguments:
       - '@?http_client'
-      - 'TODO'
-      - 'http://ollama:11434'
+      - '%apie.ai.api_key%'
+      - '%apie.ai.base_url%'
 
   Apie\AiInstructor\AiPlaygroundCommand:
     arguments:

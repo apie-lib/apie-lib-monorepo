@@ -47,6 +47,12 @@ abstract class Configuration implements ConfigurationInterface
           ->scalarNode('base_url')->defaultValue('/api')->end()
         ->end();
         $this->addApiOptions($apiConfig);
+
+        $aiConfig = $children->arrayNode('ai');
+        $aiConfig->children()
+            ->scalarNode('base_url')->defaultValue('https://api.openai.com/v1')->end()
+            ->scalarNode('api_key')->defaultValue('no-value')->end()
+        ->end();
         $children->arrayNode('datalayers')
                 ->children()
                     ->scalarNode('default_datalayer')->isRequired()->end()
