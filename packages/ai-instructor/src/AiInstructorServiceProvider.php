@@ -29,8 +29,8 @@ class AiInstructorServiceProvider extends ServiceProvider
             function ($app) {
                 return new \Apie\AiInstructor\AiClient(
                     $app->bound('http_client') ? $app->make('http_client') : null,
-                    'TODO',
-                    'http://localhost:11434/'
+                    $this->parseArgument('%apie.ai.api_key%'),
+                    $this->parseArgument('%apie.ai.base_url%')
                 );
             }
         );

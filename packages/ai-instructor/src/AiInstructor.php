@@ -62,7 +62,7 @@ final class AiInstructor
         );
     }
 
-    public static function createForOllama()
+    public static function createForOllama(): self
     {
         return self::createForCustomConfig(
             'IGNORED',

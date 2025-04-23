@@ -3,7 +3,6 @@ namespace Apie\Tests\AiInstructor;
 
 use Apie\AiInstructor\AiClient;
 use Apie\AiInstructor\AiInstructor;
-use Apie\AiInstructor\ExampleClass;
 use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
 use Apie\SchemaGenerator\SchemaGenerator;
