@@ -6,6 +6,7 @@ use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
 use Apie\SchemaGenerator\SchemaGenerator;
 use Apie\Serializer\Serializer;
+use Apie\TypeConverter\ReflectionTypeFactory;
 use ReflectionNamedType;
 use ReflectionUnionType;
 use Symfony\Component\HttpClient\HttpClient;
@@ -20,11 +21,17 @@ final class AiInstructor
     }
 
     public function instruct(
-        ReflectionNamedType|ReflectionUnionType $type,
-        NonEmptyString $model,
+        ReflectionNamedType|ReflectionUnionType|string $type,
+        NonEmptyString|string $model,
         string $systemMessage,
         string $prompt
     ) {
+        if (is_string($type)) {
+            $type = ReflectionTypeFactory::createReflectionType($type);
+        }
+        if (is_string($model)) {
+            $model = NonEmptyString::fromNative($model);
+        }
         $schema = $this->schemaGenerator->createSchema((string) $type);
         $response = $this->aiClient->ask(
             $systemMessage,

@@ -14,4 +14,44 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+Instructor is a library for Python that works with LLM's to force a specific structure. Wouldn't it be nice if we have the same functionality in PHP? That's what apie/ai-instructor does. Like you have some class in PHP and ask AI to fill it in for you from a chat prompt given by the user:
+
+```php
+class MovieReview {
+    public function __construct(
+        public string $name,
+        public string $description,
+        public int $rating
+    ) {
+    }
+}
+```
+
+### Requirements
+You need a valid ollama service running (in Docker or locally). I use the endpoint that should also work with OpenAI, but I've not checked if it works with OpenAI.
+
+### Setup
+The simplest standalone setup is using ```AiInstructor::createForCustomConfig()```:
+
+```php
+$instructor = AiInstructor::createForCustomConfig(
+    'api-key', // ignored for Ollama
+    'http://localhost:11434/'
+);
+$result = $instructor->instruct(
+    MovieReview::class,
+    'tinyllama',
+    'You are an AI bot that comes up with a movie review for a movie made from the description given by the user. It should follow the format given. If you can not come up with a movie review of the description given by the user, then make a review of a random Hollywood movie.'
+    'I think the Lord of the Rings movie has dated terrible'
+);
+dump($result); // dumps a MovieReview instance.
+```
+
+You can also set it up with the [Apie library](https://github.com/apie-lib/apie-lib-monorepo). In This case you require to setup the key and url in the Laravel/Symfony configuration:
+```yaml
+apie:
+  ai:
+    base_url: http://localhost:11434
+    api_key: 'ignored-for-ollama'
+```
+
