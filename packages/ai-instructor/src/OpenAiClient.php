@@ -26,7 +26,7 @@ class OpenAiClient extends AiClient
                     'Content-Type' => 'application/json',
                 ],
                 'json' => [
-                    'model' => $model ?? 'gpt4-mini',
+                    'model' => $model ?? 'gpt-4o-mini',
                     'messages' => [
                         ['role' => 'system', 'content' => $systemMessage],
                         ['role' => 'user', 'content' => $prompt],
@@ -46,7 +46,7 @@ class OpenAiClient extends AiClient
 
             return $functionCall ? json_encode(json_decode($functionCall, true), JSON_PRETTY_PRINT) : 'No structured response';
         } catch (TransportExceptionInterface $e) {
-            return 'Request failed: ' . $e->getMessage();
+            return 'Request failed: ' . $e->getMessage() . ' "' . $response?->toArray(false) . '"';
         }
     }
 }
