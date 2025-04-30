@@ -59,21 +59,29 @@ final class AiInstructor
         return new self(
             new SchemaGenerator(ComponentsBuilderFactory::createComponentsBuilderFactory()),
             Serializer::create(),
-            new AiClient(
+            AiClient::create(
                 HttpClient::create([
                     'max_redirects' => 7,
                 ]),
-                $apiKey,
-                $baseUrl
+                $baseUrl,
+                $apiKey
             )
         );
     }
 
-    public static function createForOllama(): self
+    public static function createForOllama(string $baseUrl = 'http://localhost:11434/'): self
     {
         return self::createForCustomConfig(
             'IGNORED',
-            'http://localhost:11434/',
+            $baseUrl,
+        );
+    }
+
+    public static function createForOpenAi(string $apiSecret): self
+    {
+        return self::createForCustomConfig(
+            $apiSecret,
+            'https://api.openai.com/v1',
         );
     }
 }

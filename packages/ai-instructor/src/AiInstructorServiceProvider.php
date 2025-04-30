@@ -27,11 +27,12 @@ class AiInstructorServiceProvider extends ServiceProvider
         $this->app->singleton(
             \Apie\AiInstructor\AiClient::class,
             function ($app) {
-                return new \Apie\AiInstructor\AiClient(
+                return \Apie\AiInstructor\AiClient::create(
                     $app->bound('http_client') ? $app->make('http_client') : null,
-                    $this->parseArgument('%apie.ai.api_key%'),
-                    $this->parseArgument('%apie.ai.base_url%')
+                    $this->parseArgument('%apie.ai.base_url%'),
+                    $this->parseArgument('%apie.ai.api_key%')
                 );
+                
             }
         );
         $this->app->singleton(
