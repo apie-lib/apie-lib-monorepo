@@ -2,6 +2,7 @@
 namespace Apie\AiInstructor;
 
 use cebe\openapi\spec\Schema;
+use Symfony\Component\HttpClient\Exception\ClientException;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -33,20 +34,28 @@ class OpenAiClient extends AiClient
                     ],
                     'functions' => [[
                         'name' => 'structured_response',
-                        'description' => 'Structured response as defined by schema',
-                        'parameters' => $schema->getSerializableData(),
+                        'description' => 'Structured response as defined by schema, stored in a "result" property',
+                        'parameters' => [
+                            'type' => 'object',
+                            'properties' => [
+                                'result' => $schema->getSerializableData()
+                            ],
+                            'required' => ['result']
+                        ],
                     ]],
                     'function_call' => ['name' => 'structured_response'],
                 ],
             ]);
 
             $data = $response->toArray();
-
-            $functionCall = $data['choices'][0]['message']['function_call']['arguments'] ?? null;
-
-            return $functionCall ? json_encode(json_decode($functionCall, true), JSON_PRETTY_PRINT) : 'No structured response';
-        } catch (TransportExceptionInterface $e) {
-            return 'Request failed: ' . $e->getMessage() . ' "' . $response?->toArray(false) . '"';
+            $functionCall = (array) json_decode($data['choices'][0]['message']['function_call']['arguments'] ?? null, true);
+            return $functionCall ? json_encode($functionCall['result'] ?? null, JSON_PRETTY_PRINT) : 'No structured response';
+        } catch (TransportExceptionInterface|ClientException $e) {
+            throw new \RuntimeException(
+                'Request failed: ' . $e->getMessage() . ' "' . ($response ?? null)?->getContent(false) . '"',
+                0,
+                $e
+            );
         }
     }
 }

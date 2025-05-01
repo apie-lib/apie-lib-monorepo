@@ -11,6 +11,7 @@ services:
       - '@?http_client'
       - '%apie.ai.base_url%'
       - '%apie.ai.api_key%'
+    tags: [apie.context]
 
   Apie\AiInstructor\AiPlaygroundCommand:
     arguments:

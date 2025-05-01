@@ -2,6 +2,7 @@
 namespace Apie\AiInstructor;
 
 use cebe\openapi\spec\Schema;
+use Symfony\Component\HttpClient\Exception\ClientException;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -38,8 +39,12 @@ class OllamaClient extends AiClient
             $data = $response->toArray();
 
             return $data['message']['content'] ?? 'No response';
-        } catch (TransportExceptionInterface $e) {
-            return 'Request failed: ' . $e->getMessage();
+        } catch (TransportExceptionInterface|ClientException $e) {
+            throw new \RuntimeException(
+                'Request failed: ' . $e->getMessage() . ' "' . ($response ?? null)?->getContent(false) . '"',
+                0,
+                $e
+            );
         }
     }
 }
