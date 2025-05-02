@@ -2,6 +2,7 @@
 namespace Apie\AiInstructor;
 
 use cebe\openapi\spec\Schema;
+use SensitiveParameter;
 use Symfony\Component\HttpClient\Exception\ClientException;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
@@ -12,7 +13,7 @@ class OpenAiClient extends AiClient
     private HttpClientInterface $client;
     private string $apiKey;
 
-    public function __construct(?HttpClientInterface $client = null, string $apiKey = 'ignored')
+    public function __construct(?HttpClientInterface $client = null, #[SensitiveParameter] string $apiKey = 'ignored')
     {
         $this->client = $client ?? HttpClient::create([]);
         $this->apiKey = $apiKey;

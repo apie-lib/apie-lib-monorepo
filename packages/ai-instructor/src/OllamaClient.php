@@ -15,7 +15,7 @@ class OllamaClient extends AiClient
     public function __construct(?HttpClientInterface $client = null, string $baseUrl = 'http://localhost:11434')
     {
         $this->client = $client ?? HttpClient::create([]);
-        $this->baseUrl = $baseUrl;
+        $this->baseUrl = rtrim($baseUrl, '/');
     }
 
     public function ask(string $systemMessage, string $prompt, Schema $schema, ?string $model = null): string

@@ -9,6 +9,7 @@ use Apie\Serializer\Serializer;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use ReflectionNamedType;
 use ReflectionUnionType;
+use SensitiveParameter;
 use Symfony\Component\HttpClient\HttpClient;
 
 final class AiInstructor
@@ -54,7 +55,7 @@ final class AiInstructor
         }
     }
 
-    public static function createForCustomConfig(string $apiKey, string $baseUrl): self
+    public static function createForCustomConfig(#[SensitiveParameter] string $apiKey, string $baseUrl): self
     {
         return new self(
             new SchemaGenerator(ComponentsBuilderFactory::createComponentsBuilderFactory()),
@@ -77,7 +78,7 @@ final class AiInstructor
         );
     }
 
-    public static function createForOpenAi(string $apiSecret): self
+    public static function createForOpenAi(#[SensitiveParameter] string $apiSecret): self
     {
         return self::createForCustomConfig(
             $apiSecret,

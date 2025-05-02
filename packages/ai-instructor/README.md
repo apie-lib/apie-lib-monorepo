@@ -28,20 +28,25 @@ class MovieReview {
 ```
 
 ### Requirements
-You need a valid ollama service running (in Docker or locally). I use the endpoint that should also work with OpenAI, but I've not checked if it works with OpenAI.
+You need a valid ollama service running (in Docker or locally). It should also work with OpenAI.
 
 ### Setup
 The simplest standalone setup is using ```AiInstructor::createForCustomConfig()```:
 
 ```php
+// ollama
+$instructor = AiInstructor::createForOllama('http://localhost:11434');
+// openAI
+$instructor = AiInstructor::createForOpenAi('api-key');
+// custom:
 $instructor = AiInstructor::createForCustomConfig(
-    'api-key', // ignored for Ollama
+    'api-key',
     'http://localhost:11434/'
 );
 $result = $instructor->instruct(
     MovieReview::class,
     'tinyllama',
-    'You are an AI bot that comes up with a movie review for a movie made from the description given by the user. It should follow the format given. If you can not come up with a movie review of the description given by the user, then make a review of a random Hollywood movie.'
+    'You are an AI bot that comes up with a movie review for a movie made from the description given by the user. It should follow the format given. If you can not come up with a movie review of the description given by the user, then make a review of a random Hollywood movie.',
     'I think the Lord of the Rings movie has dated terrible'
 );
 dump($result); // dumps a MovieReview instance.
@@ -55,3 +60,19 @@ apie:
     api_key: 'ignored-for-ollama'
 ```
 
+It is recommended to use environment variables for the api key:
+Symfony:
+```yaml
+apie:
+  ai:
+    api_key: '%env(AI_API_KEY)%'
+```
+Laravel:
+```php
+// config/apie.php
+return [
+    'ai' => [
+        'api_key' => env('AI_API_KEY'),
+    ]
+];
+```
