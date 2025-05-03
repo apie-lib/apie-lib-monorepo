@@ -28,10 +28,10 @@ class MovieReview {
 ```
 
 ### Requirements
-You need a valid ollama service running (in Docker or locally). It should also work with OpenAI.
+You need a OpenAI key or a valid ollama service running (in Docker or locally).
 
 ### Setup
-The simplest standalone setup is using ```AiInstructor::createForCustomConfig()```:
+The simplest standalone setup is using any of the static methods in ```AiInstructor```:
 
 ```php
 // ollama
@@ -52,7 +52,7 @@ $result = $instructor->instruct(
 dump($result); // dumps a MovieReview instance.
 ```
 
-You can also set it up with the [Apie library](https://github.com/apie-lib/apie-lib-monorepo). In This case you require to setup the key and url in the Laravel/Symfony configuration:
+You can also set it up with the [Apie library](https://github.com/apie-lib/apie-lib-monorepo). In This case you would need to require apie/apie-bundle for Symfony or apie/laravel-apie for Laravel to setup the key and url in the Laravel/Symfony configuration:
 ```yaml
 apie:
   ai:

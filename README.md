@@ -4,7 +4,7 @@
 
 
 
- [![Latest Stable Version](https://poser.pugx.org/apie/apie-lib/v)](https://packagist.org/packages/apie/apie-lib) [![Total Downloads](https://poser.pugx.org/apie/apie-lib/downloads)](https://packagist.org/packages/apie/apie-lib) [![Latest Unstable Version](https://poser.pugx.org/apie/apie-lib/v/unstable)](https://packagist.org/packages/apie/apie-lib) [![License](https://poser.pugx.org/apie/apie-lib/license)](https://packagist.org/packages/apie/apie-lib) [![Code coverage](https://apie-lib.github.io/projectCoverage/coverage_badge.svg)](https://apie-lib.github.io/projectCoverage/) [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=J4CAFUAW7VTAY) 
+ [![Latest Stable Version](https://poser.pugx.org/apie/apie-lib/v)](https://packagist.org/packages/apie/apie-lib) [![Total Downloads](https://poser.pugx.org/apie/apie-lib/downloads)](https://packagist.org/packages/apie/apie-lib) [![Latest Unstable Version](https://poser.pugx.org/apie/apie-lib/v/unstable)](https://packagist.org/packages/apie/apie-lib) [![License](https://poser.pugx.org/apie/apie-lib/license)](https://packagist.org/packages/apie/apie-lib) [![Code coverage](https://apie-lib.github.io/projectCoverage/coverage_badge.svg)](https://apie-lib.github.io/projectCoverage/) [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/apie) 
 
 Apie is a suite of composer packages to work with domain objects. It tries to aim to follow a Domain-objects-first approach and not a database first approach that you find in many PHP frameworks nowadays.
 
