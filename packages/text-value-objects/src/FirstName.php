@@ -27,6 +27,6 @@ class FirstName implements HasRegexValueObjectInterface
 
     public static function createRandom(Generator $generator): self
     {
-        return new static($generator->firstName());
+        return static::fromNative($generator->firstName());
     }
 }

@@ -40,6 +40,11 @@ apie:
       actions_folder: "%kernel.project_dir%/src/ApiePlayground/Types/Actions/"
       actions_namespace: 'App\ApiePlayground\Types\Actions'
 
+framework:
+  http_client:
+    default_options:
+      max_redirects: 7
+
 services:
   Apie\HtmlBuilders\Interfaces\ComponentRendererInterface:
     factory:

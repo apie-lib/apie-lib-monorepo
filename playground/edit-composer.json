@@ -1,7 +1,4 @@
 {
-    "conflict": {
-        "symfony/twig-bundle": "v6.4.0-BETA1"
-    },
     "repositories": [
         {
             "type": "path",
@@ -120,6 +117,16 @@
                 "symlink": true,
                 "versions": {
                     "apie/fixtures": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/ai-instructor",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/ai-instructor": "1.0.0.x-dev"
                 }
             }
         },

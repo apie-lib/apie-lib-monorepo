@@ -1,0 +1,21 @@
+services:
+  Apie\AiInstructor\AiInstructor:
+    arguments:
+      - '@Apie\SchemaGenerator\SchemaGenerator'
+      - '@Apie\Serializer\Serializer'
+      - '@Apie\AiInstructor\AiClient'
+
+  Apie\AiInstructor\AiClient:
+    factory: ['Apie\AiInstructor\AiClient', 'create']
+    arguments:
+      - '@?http_client'
+      - '%apie.ai.base_url%'
+      - '%apie.ai.api_key%'
+    tags: [apie.context]
+
+  Apie\AiInstructor\AiPlaygroundCommand:
+    arguments:
+      - '@Apie\AiInstructor\AiInstructor'
+    tags:
+      -
+        name: console.command

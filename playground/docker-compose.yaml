@@ -1,4 +1,5 @@
 volumes:
+  ollama_data:
   volume_database_project:
   volume_database_postgres:
 
@@ -14,6 +15,23 @@ services:
       - volume_database_postgres:/var/lib/postgresql/data:rw
     ports:
       - "5432:5432"
+
+  ollama:
+    image: ollama/ollama:0.6.6
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    entrypoint: >
+      sh -c "
+        ollama serve & 
+        sleep 5 && 
+        ollama pull tinyllama &&
+        tail -f /dev/null
+      "
 
   mysql:
     image: mysql:8.0

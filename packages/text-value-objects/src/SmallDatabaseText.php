@@ -27,6 +27,6 @@ class SmallDatabaseText implements HasRegexValueObjectInterface
 
     public static function createRandom(Generator $generator): self
     {
-        return new static($generator->realText(80));
+        return static::fromNative($generator->realText(80));
     }
 }

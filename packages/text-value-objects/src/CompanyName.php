@@ -27,6 +27,6 @@ class CompanyName implements HasRegexValueObjectInterface
 
     public static function createRandom(Generator $generator): self
     {
-        return new static($generator->company());
+        return self::fromNative($generator->company());
     }
 }

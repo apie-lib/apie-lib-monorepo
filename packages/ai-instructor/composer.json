@@ -1,0 +1,37 @@
+{
+  "name": "apie/ai-instructor",
+  "description": "Use a LLM to create an object in PHP similar to Instructor in Python",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\AiInstructor\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\AiInstructor\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.3",
+    "apie/core": "self.version",
+    "apie/serializer": "self.version",
+    "apie/schema-generator": "self.version",
+    "devizzent/cebe-php-openapi": "^1.1.2",
+    "symfony/http-client": "^7.2"
+  },
+  "require-dev": {
+    "illuminate/support": "*",
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
