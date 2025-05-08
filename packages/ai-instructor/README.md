@@ -34,6 +34,7 @@ You need a OpenAI key or a valid ollama service running (in Docker or locally).
 The simplest standalone setup is using any of the static methods in ```AiInstructor```:
 
 ```php
+use Apie\AiInstructor\AiInstructor;
 // ollama
 $instructor = AiInstructor::createForOllama('http://localhost:11434');
 // openAI
@@ -49,9 +50,22 @@ $result = $instructor->instruct(
     'You are an AI bot that comes up with a movie review for a movie made from the description given by the user. It should follow the format given. If you can not come up with a movie review of the description given by the user, then make a review of a random Hollywood movie.',
     'I think the Lord of the Rings movie has dated terrible'
 );
-dump($result); // dumps a MovieReview instance.
+var_dump($result); // dumps a MovieReview instance.
+```
+It would give a response like this:
+```
+object(MovieReview)#160 (3) {
+  ["name"]=>
+  string(21) "The Lord of the Rings"
+  ["description"]=>
+  string(472) "Once a groundbreaking epic, The Lord of the Rings now feels surprisingly outdated. The ambitious scope and Howard Shore’s majestic score still impress, but the early-2000s CGI and practical-effects limitations often pull you out of Middle-earth. Pacing issues and theatrical dialogue that once felt grand now come across as heavy-handed. While die-hard fans may forgive its age, newcomers might struggle to stay immersed in a story weighed down by its own technical era."
+  ["rating"]=>
+  int(4)
+}
 ```
 
+
+### Setup with Apie
 You can also set it up with the [Apie library](https://github.com/apie-lib/apie-lib-monorepo). In This case you would need to require apie/apie-bundle for Symfony or apie/laravel-apie for Laravel to setup the key and url in the Laravel/Symfony configuration:
 ```yaml
 apie:
