@@ -24,6 +24,14 @@ class AiInstructorServiceProvider extends ServiceProvider
                 );
             }
         );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\AiInstructor\AiInstructor::class,
+            array(
+              0 => 'apie.context',
+            )
+        );
+        $this->app->tag([\Apie\AiInstructor\AiInstructor::class], 'apie.context');
         $this->app->singleton(
             \Apie\AiInstructor\AiClient::class,
             function ($app) {
