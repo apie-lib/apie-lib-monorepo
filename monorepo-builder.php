@@ -22,7 +22,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ComposerJsonSection::REQUIRE_DEV => [
             "apie/service-provider-generator" => "0.11.3",
             "phpspec/prophecy-phpunit" => "^2.2",
-            "phpstan/phpstan" => "^2.0.4",
+            "phpstan/phpstan" => "2.0.4",
             "phpunit/phpcov" => "^10.0.1",
             'friendsofphp/php-cs-fixer' =>  "^3.58.1",
             "symfony/doctrine-bridge" => "^7.2",
