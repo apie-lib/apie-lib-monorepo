@@ -1,6 +1,7 @@
 apie:
   cms:
    dashboard_template: 'apie/dashboard.html.twig'
+  enable_messenger: true
   doctrine:
     # build_once: true
     connection_params:

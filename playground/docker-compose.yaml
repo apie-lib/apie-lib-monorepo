@@ -63,6 +63,20 @@ services:
       traefik.http.routers.playground-db.entrypoints: "web"
       traefik.http.routers.playground-db.tls: false
 
+  redis:
+    image: redis:7-alpine
+    container_name: apie_playground_redis
+    ports:
+      - "6379:6379"
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: redis_commander
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: apie_playground_phpmyadmin

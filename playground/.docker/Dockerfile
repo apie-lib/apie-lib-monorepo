@@ -30,6 +30,10 @@ RUN docker-php-ext-install \
 RUN pecl install apcu
 RUN docker-php-ext-enable apcu
 
+# Install redis
+RUN pecl install redis
+RUN docker-php-ext-enable redis
+
 # Install symfony CLI
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
@@ -55,6 +59,7 @@ WORKDIR /var/www/html
 RUN mkdir generated
 RUN chmod 777 /var/www/html/generated
 COPY ./playground/app/apie.yaml /var/www/html/config/packages/apie.yaml
+COPY ./playground/app/messenger.yaml /var/www/html/config/packages/messenger.yaml
 COPY ./playground/sqlite.db /var/www/html/var/db.sqlite
 RUN chmod 666 /var/www/html/config/packages/apie.yaml /var/www/html/var/db.sqlite
 RUN chmod 777 /var/www/html/var
@@ -63,7 +68,7 @@ RUN rm -rf vendor
 RUN composer config --no-plugins allow-plugins.apie/apie-common-plugin true
 RUN mkdir /packages
 COPY ../../packages /packages
-RUN composer require 'apie/cms-layout-ionic:*' 'apie/cms-layout-ugly:*' 'apie/ai-instructor:*' 'symfony/messenger:7.*' --no-install
+RUN composer require 'apie/cms-layout-ionic:*' 'apie/cms-layout-ugly:*' 'apie/ai-instructor:*' 'symfony/messenger:7.*' 'symfony/redis-messenger:7.*' --no-install
 RUN composer update
 
 # Setup crontab
