@@ -191,6 +191,6 @@ class ComponentHelperExtension extends AbstractExtension
     public function isPrototyped(): bool
     {
         $attrs = $this->getCurrentComponent()->getAttribute('additionalAttributes');
-        return is_array($attrs) ? ((bool) $attrs['prototyped'] ?? false) : false;
+        return is_array($attrs) ? ((bool) ($attrs['prototyped'] ?? false)) : false;
     }
 }
