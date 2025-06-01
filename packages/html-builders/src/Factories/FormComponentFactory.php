@@ -203,7 +203,8 @@ final class FormComponentFactory
                 case SetterMethod::class:
                     foreach ($reflectionData->getMethod()->getParameters() as $parameter) {
                         if ($parameter->name === $fieldName) {
-                            $components[$fieldName] = $this->makeOptional($this->createFromParameter($parameter, $context));
+                            $component = $this->createFromParameter($parameter, $context);
+                            $components[$fieldName] = $component instanceof BaseComponent ? $this->makeOptional($component) : $component;
                             break;
                         }
                     }
