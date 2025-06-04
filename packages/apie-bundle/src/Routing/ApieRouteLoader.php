@@ -19,6 +19,7 @@ use Psr\Log\NullLogger;
 use ReflectionClass;
 use Symfony\Component\Config\Loader\Loader;
 use Symfony\Component\Config\Resource\DirectoryResource;
+use Symfony\Component\Config\Resource\FileExistenceResource;
 use Symfony\Component\Config\Resource\GlobResource;
 use Symfony\Component\Config\Resource\ReflectionClassResource;
 use Symfony\Component\Routing\Route;
@@ -79,6 +80,8 @@ final class ApieRouteLoader extends Loader
             }
             if (is_dir($this->scanBoundedContexts['search_path'])) {
                 $routes->addResource(new GlobResource($this->scanBoundedContexts['search_path'], '*', true));
+            } else {
+                $routes->addResource(new FileExistenceResource($this->scanBoundedContexts['search_path']));
             }
         }
         
