@@ -1,6 +1,7 @@
 <?php
 namespace Apie\TextValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
@@ -10,6 +11,7 @@ use Stringable;
 
 #[FakeMethod('createRandom')]
 #[ProvideIndex('getIndexes')]
+#[Description('An encrypted password is a password in such a way that you can only verify passwords and not read the password')]
 final class EncryptedPassword implements StringValueObjectInterface
 {
     use IsStringWithRegexValueObject;
