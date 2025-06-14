@@ -1,9 +1,11 @@
 <?php
 namespace Apie\CommonValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 
+#[Description('A semantic version without any suffix, for example "1.0.0"')]
 class ApplicationVersion implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;

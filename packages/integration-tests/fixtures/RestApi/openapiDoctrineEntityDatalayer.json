@@ -6741,19 +6741,22 @@
             "CompanyName-get": {
                 "type": "string",
                 "format": "companyname",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$"
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$",
+                "description": "Represents a company name."
             },
             "CompanyName-post": {
                 "type": "string",
                 "format": "companyname",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$"
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$",
+                "description": "Represents a company name."
             },
             "DatabaseText-nullable-get": {
                 "maxLength": 65535,
                 "minLength": 0,
                 "type": "string",
                 "example": "Lorem Ipsum",
-                "nullable": true
+                "nullable": true,
+                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database"
             },
             "DatabaseText-post": {
                 "maxLength": 65535,
@@ -6814,7 +6817,8 @@
             "DutchPhoneNumber-nullable-get": {
                 "type": "string",
                 "format": "dutchphonenumber",
-                "nullable": true
+                "nullable": true,
+                "description": "A phone number valid in the Netherlands in national format or E164 format"
             },
             "DutchPhoneNumber-nullable-post": {
                 "type": "string",
@@ -7052,12 +7056,14 @@
             "FirstName-get": {
                 "type": "string",
                 "format": "firstname",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$",
+                "description": "Represents a first name of a person"
             },
             "FirstName-post": {
                 "type": "string",
                 "format": "firstname",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$",
+                "description": "Represents a first name of a person"
             },
             "Fish-get": {
                 "type": "object",
@@ -7412,12 +7418,14 @@
             "LastName-get": {
                 "type": "string",
                 "format": "lastname",
-                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
+                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$",
+                "description": "Represents a last or family name of a person."
             },
             "LastName-post": {
                 "type": "string",
                 "format": "lastname",
-                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
+                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$",
+                "description": "Represents a last or family name of a person."
             },
             "Lungfish-get": {
                 "type": "object",
@@ -7633,12 +7641,14 @@
             "NonEmptyString-get": {
                 "type": "string",
                 "format": "nonemptystring",
-                "pattern": "^.+$"
+                "pattern": "^.+$",
+                "description": "Any text, except the empty string."
             },
             "NonEmptyString-post": {
                 "type": "string",
                 "format": "nonemptystring",
-                "pattern": "^.+$"
+                "pattern": "^.+$",
+                "description": "Any text, except the empty string."
             },
             "NotAcceptedException-get": {
                 "type": "object",
@@ -8432,7 +8442,8 @@
             "SequentialBackgroundProcessIdentifier-get": {
                 "type": "string",
                 "format": "sequentialbackgroundprocessidentifier",
-                "pattern": "([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$"
+                "pattern": "([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$",
+                "description": "A reference to a background process."
             },
             "SerializedPermission-get": {
                 "type": "string",

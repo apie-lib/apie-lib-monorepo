@@ -1,10 +1,12 @@
 <?php
 namespace Apie\Fixtures\ValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\ValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\Fixtures\Enums\ColorEnum;
 
+#[Description('Example class used for a composite value object and different types')]
 class CompositeValueObjectExample implements ValueObjectInterface
 {
     use CompositeValueObject;

@@ -1,12 +1,14 @@
 <?php
 namespace Apie\CommonValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]
+#[Description('Represents a semantic version, possibly also with a suffix, for example "1.0.0-dev"')]
 class SemanticVersion implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
