@@ -15,18 +15,33 @@ use ReflectionClass;
 
 class CreateDomainObject
 {
+    private readonly ?string $searchContextPath;
+    private readonly ?string $searchContextNamespace;
     /**
      * @param array<string, mixed> $boundedContexts
+     * @param array<string, string|null>|null $scanBoundedContextConfig
      */
     public function __construct(
-        private readonly array $boundedContextConfig
+        private readonly array $boundedContextConfig,
+        ?array $scanBoundedContextConfig = null
     ) {
+        $this->searchContextPath = $scanBoundedContextConfig['search_path'] ?? null;
+        $this->searchContextNamespace = $this->searchContextPath ? ($scanBoundedContextConfig['search_namespace'] ?? null) : null;
     }
 
     private function getBoundedContextConfig(DomainObjectDto $domainObjectDto): array
     {
         $boundedContextId = $domainObjectDto->boundedContextId->toNative();
         if (!isset($this->boundedContextConfig[$boundedContextId])) {
+            if ($this->scanBoundedContextConfig['searchContextPath'] ?? null) {
+                $path = $domainObjectDto->boundedContextId->toPascalCaseSlug()->toNative();
+                return [
+                    'entities_folder' => $this->searchContextPath . '/' . $path . '/Resources',
+                    'entities_namespace' => $this->searchContextNamespace . $path . '\\Resources',
+                    'actions_folder' => $this->searchContextPath . '/' . $path . '/Actions',
+                    'actions_namespace' => $this->searchContextNamespace . $path . '\\Actions',
+                ];
+            }
             throw new LogicException('Bounded context "' . $boundedContextId . '" not found!');
         }
         return $this->boundedContextConfig[$boundedContextId];

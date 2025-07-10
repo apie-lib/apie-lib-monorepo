@@ -18,7 +18,8 @@ class MakerServiceProvider extends ServiceProvider
             \Apie\Maker\CodeGenerators\CreateDomainObject::class,
             function ($app) {
                 return new \Apie\Maker\CodeGenerators\CreateDomainObject(
-                    $this->parseArgument('%apie.bounded_contexts%')
+                    $this->parseArgument('%apie.bounded_contexts%'),
+                    $this->parseArgument('%apie.scan_bounded_contexts%')
                 );
             }
         );
