@@ -152,7 +152,8 @@
             "Apie\\StorageMetadata\\": "packages/storage-metadata/src/",
             "Apie\\TextValueObjects\\": "packages/text-value-objects/src/",
             "Apie\\Tools\\": "tools/",
-            "Apie\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/src/"
+            "Apie\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/src/",
+            "Apie\\TypescriptClientBuilder\\": "packages/typescript-client-builder/src/"
         }
     },
     "autoload-dev": {
@@ -193,7 +194,8 @@
             "Apie\\Tests\\StorageMetadataBuilder\\": "packages/storage-metadata-builder/tests/",
             "Apie\\Tests\\StorageMetadata\\": "packages/storage-metadata/tests/",
             "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/",
-            "Apie\\Tests\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/tests/"
+            "Apie\\Tests\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/tests/",
+            "Apie\\Tests\\TypescriptClientBuilder\\": "packages/typescript-client-builder/tests/"
         }
     },
     "extra": {
@@ -378,7 +380,8 @@
         "apie/storage-metadata": "self.version",
         "apie/storage-metadata-builder": "self.version",
         "apie/text-value-objects": "self.version",
-        "apie/twig-template-layout-renderer": "self.version"
+        "apie/twig-template-layout-renderer": "self.version",
+        "apie/typescript-client-builder": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

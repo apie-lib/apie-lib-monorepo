@@ -11,3 +11,4 @@ coverage.xml
 .phpunit.cache
 /.tempdockerfile.*
 /.cov
+node_modules
