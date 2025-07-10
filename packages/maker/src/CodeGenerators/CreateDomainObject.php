@@ -33,7 +33,7 @@ class CreateDomainObject
     {
         $boundedContextId = $domainObjectDto->boundedContextId->toNative();
         if (!isset($this->boundedContextConfig[$boundedContextId])) {
-            if ($this->scanBoundedContextConfig['searchContextPath'] ?? null) {
+            if ($this->searchContextPath) {
                 $path = $domainObjectDto->boundedContextId->toPascalCaseSlug()->toNative();
                 return [
                     'entities_folder' => $this->searchContextPath . '/' . $path . '/Resources',
