@@ -2,6 +2,7 @@ vendor
 composer.lock
 .phpunit.result.cache
 .idea
+.vscode
 /tmp
 .php-cs-fixer.cache
 clover.xml
