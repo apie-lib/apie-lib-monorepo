@@ -89,7 +89,8 @@
         "symfony/routing": "^7.2",
         "symfony/security-core": "^7.2",
         "symfony/uid": "^7.2",
-        "twig/twig": "^3.10.2"
+        "twig/twig": "^3.10.2",
+        "cweagans/composer-patches": "^1.7"
     },
     "require-dev": {
         "doctrine/doctrine-bundle": "^2.12.0",
@@ -338,7 +339,8 @@
         "lock": false,
         "allow-plugins": {
             "apie/apie-common-plugin": true,
-            "apie/apie-lib": true
+            "apie/apie-lib": true,
+            "cweagans/composer-patches": true
         }
     },
     "replace": {
