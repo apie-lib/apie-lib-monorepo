@@ -26,7 +26,8 @@
     "apie/cms-api-dropdown-option": "self.version",
     "apie/cms-layout-graphite": "self.version",
     "apie/console": "self.version",
-    "apie/regex-value-objects": "self.version"
+    "apie/regex-value-objects": "self.version",
+    "apie/typescript-client-builder": "self.version"
   },
   "require-dev": {
     "phpunit/phpunit": "^11.5.2"
