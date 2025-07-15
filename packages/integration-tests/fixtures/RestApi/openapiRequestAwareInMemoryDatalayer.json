@@ -131,6 +131,69 @@
                 }
             }
         },
+        "/SequentialBackgroundProcess/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "SequentialBackgroundProcess"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.SequentialBackgroundProcess",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Animal/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -1902,6 +1965,290 @@
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/Order-get"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/SequentialBackgroundProcess": {
+            "post": {
+                "tags": [
+                    "SequentialBackgroundProcess",
+                    "resource"
+                ],
+                "description": "Creates an instance of SequentialBackgroundProcess",
+                "operationId": "post-SequentialBackgroundProcess",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SequentialBackgroundProcess-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "SequentialBackgroundProcess",
+                    "resource"
+                ],
+                "description": "Gets a list of resource that are an instance of SequentialBackgroundProcess",
+                "operationId": "get-all-SequentialBackgroundProcess",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 0,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[version]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[step]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[retries]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[startTime]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[completionTime]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[status]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[result]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    },
+                    {
+                        "name": "query[errors]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[payload]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "required": [
+                                        "filteredCount",
+                                        "totalCount",
+                                        "first",
+                                        "last",
+                                        "list"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "first": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "last": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "prev": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "next": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
                                             }
                                         }
                                     }
@@ -4706,6 +5053,91 @@
                 }
             }
         },
+        "/SequentialBackgroundProcess/{id}": {
+            "get": {
+                "tags": [
+                    "SequentialBackgroundProcess",
+                    "resource"
+                ],
+                "description": "Gets a resource of SequentialBackgroundProcess with a specific id",
+                "operationId": "get-single-SequentialBackgroundProcess",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of SequentialBackgroundProcess",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/SequentialBackgroundProcessIdentifier-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Requires authorization",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WrongTokenException-get"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Access denied",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WrongTokenException-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/calc/{numberOne}/plus/{numberTwo}": {
             "post": {
                 "tags": [
@@ -6212,6 +6644,251 @@
                 }
             }
         },
+        "/SequentialBackgroundProcess/{id}/provideAllowedMethods": {
+            "get": {
+                "tags": [
+                    "SequentialBackgroundProcess",
+                    "action"
+                ],
+                "description": "Runs method provideAllowedMethods on a SequentialBackgroundProcess with a specific id",
+                "operationId": "get-single-SequentialBackgroundProcess-run-provideAllowedMethods",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of SequentialBackgroundProcess",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StringList-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/SequentialBackgroundProcess/{id}/cancel": {
+            "get": {
+                "tags": [
+                    "SequentialBackgroundProcess",
+                    "action"
+                ],
+                "description": "Runs method cancel on a SequentialBackgroundProcess with a specific id",
+                "operationId": "get-single-SequentialBackgroundProcess-run-cancel",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of SequentialBackgroundProcess",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/SequentialBackgroundProcess/{id}/runStep": {
+            "post": {
+                "tags": [
+                    "SequentialBackgroundProcess",
+                    "action"
+                ],
+                "description": "Runs method runStep on a SequentialBackgroundProcess with a specific id",
+                "operationId": "get-single-SequentialBackgroundProcess-run-runStep",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of SequentialBackgroundProcess",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/UploadedFile/{id}/download/{properties}": {
             "get": {
                 "tags": [
@@ -6358,6 +7035,33 @@
                         "bird": "#/components/schemas/Bird-get",
                         "fish": "#/components/schemas/Fish-get"
                     }
+                },
+                "required": [
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfLayingEggs": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "capableOfFlying": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "capableOfWalkingOnWater": {
+                        "type": "boolean",
+                        "nullable": false
+                    }
                 }
             },
             "Animal-nullable-get": {
@@ -6381,7 +7085,33 @@
                         "fish": "#/components/schemas/Fish-nullable-get"
                     }
                 },
-                "nullable": true
+                "required": [
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
+                    },
+                    "capableOfLayingEggs": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
+                    },
+                    "capableOfFlying": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "capableOfWalkingOnWater": {
+                        "type": "boolean",
+                        "nullable": true
+                    }
+                }
             },
             "Animal-patch": {
                 "type": "object",
@@ -6411,6 +7141,21 @@
                         "bird": "#/components/schemas/Bird-post",
                         "fish": "#/components/schemas/Fish-post"
                     }
+                },
+                "required": [
+                    "type"
+                ],
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-post"
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-post"
+                    }
                 }
             },
             "AnimalIdentifier-get": {
@@ -6418,10 +7163,20 @@
                 "format": "animalidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
+            "AnimalIdentifier-nullable-get": {
+                "type": "string",
+                "format": "animalidentifier",
+                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
+                "nullable": true
+            },
             "AnimalIdentifier-post": {
                 "type": "string",
                 "format": "animalidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+            },
+            "BackgroundProcessDeclaration-post": {
+                "type": "object",
+                "properties": {}
             },
             "BackgroundProcessStatus-get": {
                 "enum": [
@@ -6458,7 +7213,24 @@
                         "seagull": "#/components/schemas/Seagull-get"
                     }
                 },
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfFlying": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
                     "type": {
                         "enum": [
                             "bird"
@@ -6485,8 +7257,24 @@
                         "seagull": "#/components/schemas/Seagull-nullable-get"
                     }
                 },
-                "nullable": true,
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
+                    },
+                    "capableOfFlying": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
+                    },
                     "type": {
                         "enum": [
                             "bird"
@@ -6513,7 +7301,20 @@
                         "seagull": "#/components/schemas/Seagull-post"
                     }
                 },
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-post"
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-post"
+                    },
                     "type": {
                         "enum": [
                             "bird"
@@ -6527,6 +7328,13 @@
                 "type": "string",
                 "format": "companyname",
                 "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$",
+                "description": "Represents a company name."
+            },
+            "CompanyName-nullable-get": {
+                "type": "string",
+                "format": "companyname",
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$",
+                "nullable": true,
                 "description": "Represents a company name."
             },
             "CompanyName-post": {
@@ -6652,7 +7460,6 @@
                     "animalName",
                     "type"
                 ],
-                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -6662,20 +7469,21 @@
                         "nullable": false
                     },
                     "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
                     },
                     "capableOfLayingEggs": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "animalName": {
-                        "$ref": "#/components/schemas/FirstName-get"
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "type": "string",
-                        "nullable": false
+                        "nullable": true
                     }
-                }
+                },
+                "nullable": true
             },
             "Elephant-post": {
                 "type": "object",
@@ -6761,21 +7569,21 @@
                     "file",
                     "stream"
                 ],
-                "nullable": true,
                 "properties": {
                     "id": {
-                        "$ref": "#/components/schemas/UploadedFileIdentifier-get"
+                        "$ref": "#/components/schemas/UploadedFileIdentifier-nullable-get"
                     },
                     "imageFile": {
                         "$ref": "#/components/schemas/ImageFile-nullable-get"
                     },
                     "file": {
-                        "$ref": "#/components/schemas/UploadedFile-get"
+                        "$ref": "#/components/schemas/UploadedFile-nullable-get"
                     },
                     "stream": {
                         "$ref": "#/components/schemas/mixed"
                     }
-                }
+                },
+                "nullable": true
             },
             "File-patch": {
                 "type": "object",
@@ -6844,6 +7652,13 @@
                 "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$",
                 "description": "Represents a first name of a person"
             },
+            "FirstName-nullable-get": {
+                "type": "string",
+                "format": "firstname",
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$",
+                "nullable": true,
+                "description": "Represents a first name of a person"
+            },
             "FirstName-post": {
                 "type": "string",
                 "format": "firstname",
@@ -6867,7 +7682,24 @@
                         "lungfish": "#/components/schemas/Lungfish-get"
                     }
                 },
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfWalkingOnWater": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
                     "type": {
                         "enum": [
                             "fish"
@@ -6894,8 +7726,24 @@
                         "lungfish": "#/components/schemas/Lungfish-nullable-get"
                     }
                 },
-                "nullable": true,
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
+                    },
+                    "capableOfWalkingOnWater": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
+                    },
                     "type": {
                         "enum": [
                             "fish"
@@ -6922,7 +7770,20 @@
                         "lungfish": "#/components/schemas/Lungfish-post"
                     }
                 },
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-post"
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-post"
+                    },
                     "type": {
                         "enum": [
                             "fish"
@@ -6979,7 +7840,6 @@
                     "animalName",
                     "type"
                 ],
-                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -6989,23 +7849,24 @@
                         "nullable": false
                     },
                     "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
                     },
                     "lastName": {
-                        "$ref": "#/components/schemas/LastName-get"
+                        "$ref": "#/components/schemas/LastName-nullable-get"
                     },
                     "capableOfLayingEggs": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "animalName": {
-                        "$ref": "#/components/schemas/FirstName-get"
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "type": "string",
-                        "nullable": false
+                        "nullable": true
                     }
-                }
+                },
+                "nullable": true
             },
             "Human-post": {
                 "type": "object",
@@ -7125,7 +7986,19 @@
                     "$ref": "#/components/schemas/mixed"
                 }
             },
+            "ItemHashmap-post": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#/components/schemas/mixed"
+                }
+            },
             "ItemList-get": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/mixed"
+                }
+            },
+            "ItemList-post": {
                 "type": "array",
                 "items": {
                     "$ref": "#/components/schemas/mixed"
@@ -7206,6 +8079,13 @@
                 "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$",
                 "description": "Represents a last or family name of a person."
             },
+            "LastName-nullable-get": {
+                "type": "string",
+                "format": "lastname",
+                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$",
+                "nullable": true,
+                "description": "Represents a last or family name of a person."
+            },
             "LastName-post": {
                 "type": "string",
                 "format": "lastname",
@@ -7254,7 +8134,6 @@
                     "animalName",
                     "type"
                 ],
-                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -7264,20 +8143,21 @@
                         "nullable": false
                     },
                     "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
                     },
                     "capableOfWalkingOnWater": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "animalName": {
-                        "$ref": "#/components/schemas/FirstName-get"
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "type": "string",
-                        "nullable": false
+                        "nullable": true
                     }
-                }
+                },
+                "nullable": true
             },
             "Lungfish-post": {
                 "type": "object",
@@ -7328,7 +8208,27 @@
                         "human": "#/components/schemas/Human-get"
                     }
                 },
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "capableOfLayingEggs": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-get"
+                    },
+                    "lastName": {
+                        "$ref": "#/components/schemas/LastName-get"
+                    },
                     "type": {
                         "enum": [
                             "mammal"
@@ -7359,8 +8259,27 @@
                         "human": "#/components/schemas/Human-nullable-get"
                     }
                 },
-                "nullable": true,
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
+                    },
+                    "capableOfLayingEggs": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
+                    },
+                    "lastName": {
+                        "$ref": "#/components/schemas/LastName-nullable-get"
+                    },
                     "type": {
                         "enum": [
                             "mammal"
@@ -7391,7 +8310,23 @@
                         "human": "#/components/schemas/Human-post"
                     }
                 },
+                "required": [
+                    "name"
+                ],
                 "properties": {
+                    "name": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-post"
+                    },
+                    "animalName": {
+                        "$ref": "#/components/schemas/FirstName-post"
+                    },
+                    "lastName": {
+                        "$ref": "#/components/schemas/LastName-post"
+                    },
                     "type": {
                         "enum": [
                             "mammal"
@@ -7427,6 +8362,13 @@
                 "type": "string",
                 "format": "nonemptystring",
                 "pattern": "^.+$",
+                "description": "Any text, except the empty string."
+            },
+            "NonEmptyString-nullable-get": {
+                "type": "string",
+                "format": "nonemptystring",
+                "pattern": "^.+$",
+                "nullable": true,
                 "description": "Any text, except the empty string."
             },
             "NonEmptyString-post": {
@@ -7493,20 +8435,19 @@
                     "orderId",
                     "dateToRecalculate"
                 ],
-                "nullable": true,
                 "properties": {
                     "id": {
-                        "$ref": "#/components/schemas/ObjectWithRelationIdentifier-get"
+                        "$ref": "#/components/schemas/ObjectWithRelationIdentifier-nullable-get"
                     },
                     "userId": {
-                        "$ref": "#/components/schemas/UserIdentifier-get"
+                        "$ref": "#/components/schemas/UserIdentifier-nullable-get"
                     },
                     "expireDate": {
-                        "$ref": "#/components/schemas/DateTime-get"
+                        "$ref": "#/components/schemas/DateTime-nullable-get"
                     },
                     "expired": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "orderId": {
                         "$ref": "#/components/schemas/OrderIdentifier-nullable-get"
@@ -7514,7 +8455,8 @@
                     "dateToRecalculate": {
                         "$ref": "#/components/schemas/DateTime-nullable-get"
                     }
-                }
+                },
+                "nullable": true
             },
             "ObjectWithRelation-patch": {
                 "type": "object",
@@ -7550,6 +8492,12 @@
                 "format": "objectwithrelationidentifier",
                 "pattern": "^[0-9A-Za-z]{22}$"
             },
+            "ObjectWithRelationIdentifier-nullable-get": {
+                "type": "string",
+                "format": "objectwithrelationidentifier",
+                "pattern": "^[0-9A-Za-z]{22}$",
+                "nullable": true
+            },
             "ObjectWithRelationIdentifier-post": {
                 "type": "string",
                 "format": "objectwithrelationidentifier",
@@ -7576,15 +8524,15 @@
                     "id",
                     "orderLineList"
                 ],
-                "nullable": true,
                 "properties": {
                     "id": {
-                        "$ref": "#/components/schemas/OrderIdentifier-get"
+                        "$ref": "#/components/schemas/OrderIdentifier-nullable-get"
                     },
                     "orderLineList": {
-                        "$ref": "#/components/schemas/OrderLineList-get"
+                        "$ref": "#/components/schemas/OrderLineList-nullable-get"
                     }
-                }
+                },
+                "nullable": true
             },
             "Order-post": {
                 "type": "object",
@@ -7628,6 +8576,22 @@
                     }
                 }
             },
+            "OrderLine-nullable-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "description"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/OrderLineIdentifier-nullable-get"
+                    },
+                    "description": {
+                        "$ref": "#/components/schemas/NonEmptyString-nullable-get"
+                    }
+                },
+                "nullable": true
+            },
             "OrderLine-post": {
                 "type": "object",
                 "required": [
@@ -7644,11 +8608,24 @@
                 "format": "orderlineidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
+            "OrderLineIdentifier-nullable-get": {
+                "type": "string",
+                "format": "orderlineidentifier",
+                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
+                "nullable": true
+            },
             "OrderLineList-get": {
                 "type": "array",
                 "items": {
                     "$ref": "#/components/schemas/OrderLine-get"
                 }
+            },
+            "OrderLineList-nullable-get": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/OrderLine-nullable-get"
+                },
+                "nullable": true
             },
             "OrderLineList-post": {
                 "type": "array",
@@ -7698,7 +8675,6 @@
                     "animalName",
                     "type"
                 ],
-                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -7708,20 +8684,21 @@
                         "nullable": false
                     },
                     "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
                     },
                     "capableOfFlying": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "animalName": {
-                        "$ref": "#/components/schemas/FirstName-get"
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "type": "string",
-                        "nullable": false
+                        "nullable": true
                     }
-                }
+                },
+                "nullable": true
             },
             "Ostrich-post": {
                 "type": "object",
@@ -7770,6 +8747,13 @@
                     }
                 ]
             },
+            "Permission-nullable-get": {
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/SerializedPermission-nullable-get"
+                    }
+                ]
+            },
             "PermissionList-get": {
                 "type": "array",
                 "items": {
@@ -7782,6 +8766,22 @@
                         }
                     ]
                 }
+            },
+            "PermissionList-nullable-get": {
+                "type": "array",
+                "items": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/components/schemas/Permission-nullable-get"
+                        },
+                        {
+                            "type": "string",
+                            "nullable": true
+                        }
+                    ],
+                    "nullable": true
+                },
+                "nullable": true
             },
             "Platypus-get": {
                 "type": "object",
@@ -7825,7 +8825,6 @@
                     "animalName",
                     "type"
                 ],
-                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -7835,20 +8834,21 @@
                         "nullable": false
                     },
                     "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
                     },
                     "capableOfLayingEggs": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "animalName": {
-                        "$ref": "#/components/schemas/FirstName-get"
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "type": "string",
-                        "nullable": false
+                        "nullable": true
                     }
-                }
+                },
+                "nullable": true
             },
             "Platypus-post": {
                 "type": "object",
@@ -7910,10 +8910,9 @@
                 "required": [
                     "id"
                 ],
-                "nullable": true,
                 "properties": {
                     "id": {
-                        "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-get"
+                        "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-nullable-get"
                     },
                     "stringField": {
                         "type": "string",
@@ -7931,7 +8930,8 @@
                         "type": "boolean",
                         "nullable": true
                     }
-                }
+                },
+                "nullable": true
             },
             "PrimitiveOnly-patch": {
                 "type": "object",
@@ -7986,6 +8986,12 @@
                 "format": "primitiveonlyidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
+            "PrimitiveOnlyIdentifier-nullable-get": {
+                "type": "string",
+                "format": "primitiveonlyidentifier",
+                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
+                "nullable": true
+            },
             "PrimitiveOnlyIdentifier-post": {
                 "type": "string",
                 "format": "primitiveonlyidentifier",
@@ -8022,21 +9028,21 @@
                     "requiredPermissions",
                     "userId"
                 ],
-                "nullable": true,
                 "properties": {
                     "id": {
-                        "$ref": "#/components/schemas/RestrictedEntityIdentifier-get"
+                        "$ref": "#/components/schemas/RestrictedEntityIdentifier-nullable-get"
                     },
                     "companyName": {
-                        "$ref": "#/components/schemas/CompanyName-get"
+                        "$ref": "#/components/schemas/CompanyName-nullable-get"
                     },
                     "requiredPermissions": {
-                        "$ref": "#/components/schemas/PermissionList-get"
+                        "$ref": "#/components/schemas/PermissionList-nullable-get"
                     },
                     "userId": {
                         "$ref": "#/components/schemas/UserIdentifier-nullable-get"
                     }
-                }
+                },
+                "nullable": true
             },
             "RestrictedEntity-patch": {
                 "type": "object",
@@ -8065,6 +9071,12 @@
                 "type": "string",
                 "format": "restrictedentityidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+            },
+            "RestrictedEntityIdentifier-nullable-get": {
+                "type": "string",
+                "format": "restrictedentityidentifier",
+                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
+                "nullable": true
             },
             "RestrictedEntityIdentifier-post": {
                 "type": "string",
@@ -8113,7 +9125,6 @@
                     "animalName",
                     "type"
                 ],
-                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -8123,20 +9134,21 @@
                         "nullable": false
                     },
                     "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
                     },
                     "capableOfFlying": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "animalName": {
-                        "$ref": "#/components/schemas/FirstName-get"
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "type": "string",
-                        "nullable": false
+                        "nullable": true
                     }
-                }
+                },
+                "nullable": true
             },
             "Seagull-post": {
                 "type": "object",
@@ -8224,16 +9236,50 @@
                     }
                 }
             },
+            "SequentialBackgroundProcess-post": {
+                "type": "object",
+                "required": [
+                    "backgroundProcessDeclaration",
+                    "payload"
+                ],
+                "properties": {
+                    "backgroundProcessDeclaration": {
+                        "$ref": "#/components/schemas/BackgroundProcessDeclaration-post"
+                    },
+                    "payload": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/ItemHashmap-post"
+                            },
+                            {
+                                "$ref": "#/components/schemas/ItemList-post"
+                            }
+                        ],
+                        "nullable": false
+                    }
+                }
+            },
             "SequentialBackgroundProcessIdentifier-get": {
                 "type": "string",
                 "format": "sequentialbackgroundprocessidentifier",
                 "pattern": "([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$",
                 "description": "A reference to a background process."
             },
+            "SequentialBackgroundProcessIdentifier-post": {
+                "type": "string",
+                "format": "sequentialbackgroundprocessidentifier",
+                "pattern": "([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$"
+            },
             "SerializedPermission-get": {
                 "type": "string",
                 "format": "serializedpermission",
                 "pattern": "^[a-z:]+$"
+            },
+            "SerializedPermission-nullable-get": {
+                "type": "string",
+                "format": "serializedpermission",
+                "pattern": "^[a-z:]+$",
+                "nullable": true
             },
             "Shark-get": {
                 "type": "object",
@@ -8277,7 +9323,6 @@
                     "animalName",
                     "type"
                 ],
-                "nullable": true,
                 "properties": {
                     "name": {
                         "enum": [
@@ -8287,20 +9332,21 @@
                         "nullable": false
                     },
                     "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
                     },
                     "capableOfWalkingOnWater": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "animalName": {
-                        "$ref": "#/components/schemas/FirstName-get"
+                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "type": "string",
-                        "nullable": false
+                        "nullable": true
                     }
-                }
+                },
+                "nullable": true
             },
             "Shark-post": {
                 "type": "object",
@@ -8333,6 +9379,11 @@
             "StoredFile-get": {
                 "type": "string",
                 "format": "path"
+            },
+            "StoredFile-nullable-get": {
+                "type": "string",
+                "format": "path",
+                "nullable": true
             },
             "StoredFile-post": {
                 "required": [
@@ -8380,6 +9431,12 @@
                 "pattern": "^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$",
                 "nullable": true
             },
+            "StringList-get": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
             "StrongPassword-post": {
                 "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
                 "type": "string",
@@ -8408,6 +9465,13 @@
                     }
                 ]
             },
+            "UploadedFile-nullable-get": {
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/StoredFile-nullable-get"
+                    }
+                ]
+            },
             "UploadedFile-post": {
                 "oneOf": [
                     {
@@ -8426,6 +9490,12 @@
                 "type": "string",
                 "format": "uploadedfileidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+            },
+            "UploadedFileIdentifier-nullable-get": {
+                "type": "string",
+                "format": "uploadedfileidentifier",
+                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
+                "nullable": true
             },
             "UploadedFileIdentifier-post": {
                 "type": "string",
@@ -8469,14 +9539,13 @@
                     "blockedReason",
                     "phoneNumber"
                 ],
-                "nullable": true,
                 "properties": {
                     "id": {
-                        "$ref": "#/components/schemas/UserIdentifier-get"
+                        "$ref": "#/components/schemas/UserIdentifier-nullable-get"
                     },
                     "blocked": {
                         "type": "boolean",
-                        "nullable": false
+                        "nullable": true
                     },
                     "blockedReason": {
                         "$ref": "#/components/schemas/DatabaseText-nullable-get"
@@ -8484,7 +9553,8 @@
                     "phoneNumber": {
                         "$ref": "#/components/schemas/DutchPhoneNumber-nullable-get"
                     }
-                }
+                },
+                "nullable": true
             },
             "User-patch": {
                 "type": "object",
