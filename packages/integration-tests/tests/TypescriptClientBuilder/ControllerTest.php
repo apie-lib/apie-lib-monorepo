@@ -25,11 +25,10 @@ class ControllerTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_display_static_content(TestApplicationInterface $testApplication)
     {
-        $this->markTestIncomplete('not working yet');
         $testApplication->bootApplication();
         $response = $testApplication->httpRequestGet('/contents/es6/index');
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertStringContainsString('export function', $response->getContent());
+        $this->assertStringContainsString('export function', $response->getBody());
         $this->assertEquals('application/json', $response->headers->get('Content-Type'));
         $testApplication->cleanApplication();
     }
