@@ -4,7 +4,6 @@ namespace Apie\TypescriptClientBuilder\Controllers;
 use Nyholm\Psr7\Response;
 use Nyholm\Psr7\Stream;
 use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class StaticContentController
