@@ -29,7 +29,7 @@ class ControllerTest extends TestCase
         $response = $testApplication->httpRequestGet('/contents/es6/index.js');
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertStringContainsString('export function', $response->getBody());
-        $this->assertEquals('application/javascript; charset=UTF-8', $response->getHeaderLine('Content-Type'));
+        $this->assertEquals('application/javascript', $response->getHeaderLine('Content-Type'));
         $testApplication->cleanApplication();
     }
 

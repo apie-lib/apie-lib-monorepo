@@ -17,8 +17,13 @@ class CodeRouteDefinitionProvider implements GlobalRouteDefinitionProviderInterf
         );
         $routes[$definition->getOperationId()] = $definition;
         $definition = new StaticContentRoute(
-            __DIR__ . '/../../dist',
+            __DIR__ . '/../../dist/es6',
             '/contents/es6'
+        );
+        $routes[$definition->getOperationId()] = $definition;
+        $definition = new StaticContentRoute(
+            __DIR__ . '/../../dist/es5',
+            '/contents/es5'
         );
         $routes[$definition->getOperationId()] = $definition;
         return new ActionHashmap($routes);
@@ -35,6 +40,11 @@ class CodeRouteDefinitionProvider implements GlobalRouteDefinitionProviderInterf
         $definition = new StaticContentRoute(
             __DIR__ . '/../../dist',
             '/contents/es6'
+        );
+        $routes[$definition->getOperationId()] = $definition;
+        $definition = new StaticContentRoute(
+            __DIR__ . '/../../dist/es5',
+            '/contents/es5'
         );
         $routes[$definition->getOperationId()] = $definition;
         return new ActionHashmap($routes);
