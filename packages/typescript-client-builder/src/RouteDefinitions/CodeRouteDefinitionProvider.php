@@ -2,7 +2,6 @@
 namespace Apie\TypescriptClientBuilder\RouteDefinitions;
 
 use Apie\Common\Interfaces\GlobalRouteDefinitionProviderInterface;
-use Apie\Common\Interfaces\RouteDefinitionProviderInterface;
 use Apie\Common\RouteDefinitions\ActionHashmap;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;

@@ -17,7 +17,7 @@ class Es6CodeGeneratorTest extends \PHPUnit\Framework\TestCase
             'https://apie-lib.blogspot.com/'
         );
         $fixturePath = __DIR__ . '/../../fixtures/es6.module.js';
-        file_put_contents($fixturePath, $actual);
+        // file_put_contents($fixturePath, $actual);
         $expected = file_get_contents($fixturePath);
         $this->assertEquals($expected, $actual);
     }

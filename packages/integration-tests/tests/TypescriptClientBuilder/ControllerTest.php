@@ -26,10 +26,29 @@ class ControllerTest extends TestCase
     public function it_can_display_static_content(TestApplicationInterface $testApplication)
     {
         $testApplication->bootApplication();
-        $response = $testApplication->httpRequestGet('/contents/es6/index');
+        $response = $testApplication->httpRequestGet('/contents/es6/index.js');
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertStringContainsString('export function', $response->getBody());
-        $this->assertEquals('application/json', $response->headers->get('Content-Type'));
+        $this->assertEquals('application/javascript; charset=UTF-8', $response->getHeaderLine('Content-Type'));
+        $testApplication->cleanApplication();
+    }
+
+    public static function it_returns_404_on_missing_asset_provider(): Generator
+    {
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_returns_404_on_missing_asset'),
+            new IntegrationTestHelper()
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_returns_404_on_missing_asset_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function it_returns_404_on_missing_asset(TestApplicationInterface $testApplication)
+    {
+        $testApplication->bootApplication();
+        $response = $testApplication->httpRequestGet('/contents/es6/missing.txt');
+        $this->assertEquals(404, $response->getStatusCode());
         $testApplication->cleanApplication();
     }
 }

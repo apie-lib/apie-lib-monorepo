@@ -13,9 +13,20 @@ class StaticContentController
         $filename = $request->getAttribute('filename');
         $localFilepath = $request->getAttribute('localFilepath');
         $filePath = $localFilepath . '/' . $filename;
-        $stream = Stream::create(fopen($filePath, 'rb'));
+        $handle = @fopen($filePath, 'rb');
+        if ($handle === false) {
+            return new Response(
+                404,
+                ['Content-Type' => 'text/plain'],
+                "File not found: $filename"
+            );
+        }
+        $stream = Stream::create($handle);
         $mimeType = mime_content_type($filePath);
-        if ($mimeType === false) {
+        // issue in PHP 8.3
+        if ($mimeType === 'text/x-java') {
+            $mimeType = 'application/javascript';
+        } elseif ($mimeType === false) {
             $mimeType = 'application/octet-stream';
         }
         return new Response(
