@@ -73,10 +73,12 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                 'apie.scan_bounded_contexts',
                 []
             );
+            // this has to be explicit because of some code execution order issues
+            $config->set('apie.enable_ai_instructor', true);
             $config->set(
                 'apie.ai',
                 [
-                    'base_url' => 'http://localhost:11434',
+                    'base_url' => 'http://localbost:11434',
                     'api_key' => 'test',
                 ]
             );
@@ -113,11 +115,9 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             ]);
         }
         $this->app->instance(FileWriterInterface::class, new MockFileWriter());
-        $this->app->bind(
+        $this->app->instance(
             AiClient::class,
-            function () {
-                return MockFactory::createMockAiClient();
-            }
+            MockFactory::createMockAiClient()
         );
         unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
     }
