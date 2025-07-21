@@ -4,6 +4,7 @@ namespace Apie\Tests\AiInstructor;
 use Apie\AiInstructor\AiClient;
 use Apie\AiInstructor\AiInstructor;
 use Apie\AiInstructor\OllamaClient;
+use Apie\AiInstructor\OpenAiClient;
 use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
 use Apie\SchemaGenerator\SchemaGenerator;
@@ -116,6 +117,30 @@ class AiInstructorTest extends TestCase
             $openAiResponse,
             'https://api.openai.com/v1'
         ];
+    }
+
+    #[Test]
+    public function it_can_create_for_ollama()
+    {
+        $ollama = AiInstructor::createForOllama();
+        $this->assertInstanceOf(AiInstructor::class, $ollama);
+        $this->assertInstanceOf(OllamaClient::class, $ollama->getAiClient());
+    }
+
+    #[Test]
+    public function it_can_create_for_open_ai()
+    {
+        $ollama = AiInstructor::createForOpenAi('secret');
+        $this->assertInstanceOf(AiInstructor::class, $ollama);
+        $this->assertInstanceOf(OpenAiClient::class, $ollama->getAiClient());
+    }
+
+    #[Test]
+    public function it_can_create_for_custom_config()
+    {
+        $ollama = AiInstructor::createForCustomConfig('secret', 'http://locallhost:1234');
+        $this->assertInstanceOf(AiInstructor::class, $ollama);
+        $this->assertInstanceOf(OllamaClient::class, $ollama->getAiClient());
     }
 
     #[Test]

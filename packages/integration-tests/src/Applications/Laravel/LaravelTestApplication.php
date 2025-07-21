@@ -1,12 +1,14 @@
 <?php
 namespace Apie\IntegrationTests\Applications\Laravel;
 
+use Apie\AiInstructor\AiClient;
 use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\IntegrationTestLogger;
 use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
 use Apie\Common\Wrappers\TextEncrypter;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
+use Apie\IntegrationTests\Applications\MockFactory;
 use Apie\IntegrationTests\Concerns\ItRunsApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -72,6 +74,13 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                 []
             );
             $config->set(
+                'apie.ai',
+                [
+                    'base_url' => 'http://localhost:11434',
+                    'api_key' => 'test',
+                ]
+            );
+            $config->set(
                 'apie.datalayers',
                 [
                     'default_datalayer' => $this->applicationConfig->getDatalayerImplementation()->name,
@@ -104,6 +113,12 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             ]);
         }
         $this->app->instance(FileWriterInterface::class, new MockFileWriter());
+        $this->app->bind(
+            AiClient::class,
+            function () {
+                return MockFactory::createMockAiClient();
+            }
+        );
         unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
     }
 
