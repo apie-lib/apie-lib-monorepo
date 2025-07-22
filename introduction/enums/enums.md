@@ -7,15 +7,16 @@ The context restriction attributes are fully supported on enum values. Putting t
 setting the enum from an API call
 
 ```php
-use Apie\Core\Attributes\Requires;
+use Apie\Core\Attributes\LoggedIn;
+use Apie\Core\Attributes\RuntimeCheck;
 
 enum TopicStatus: string {
     case DRAFT = 'draft';
-    #[Requires('authenticated')]
+    #[RuntimeCheck(new LoggedIn())]
     case ACCEPTED = 'accepted';
-    #[Requires('authenticated')]
+    #[RuntimeCheck(new LoggedIn())]
     case REJECTED = 'rejected';
 }
 ```
 
-If a user is not authenticated only draft status is allowed in the above example.
+If a user is not logged in only draft status is allowed in the above example.
