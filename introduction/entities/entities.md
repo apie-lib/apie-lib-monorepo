@@ -10,6 +10,21 @@ Entities in Apie are just what they meant in domain-driven design. They are obje
 - An entity has a unique identifier. This unique identifier is often also a unique value object 
 - If the identifier is changed in an entity, it is considered a different entity. In most cases this should never happen and makes sense in domain-driven design.
 
+## Creating a simple entity
+The easiest way is using the create:domain-object console command. If the console is missing make sure you require apie/maker with ```composer require --dev apie/maker```
+
+If Apie is using Symfony you can create a domain object like this:
+```bash
+bin/console apie:create-domain-object -b domain Entity
+```
+
+If Apie is using Laravel you can create a domain object like this:
+```bash
+./artisan apie:create-domain-object -b domain Entity
+```
+
+This will create an 'Entity' entity in the domain/bounded context 'domain'.
+
 ## A typical entity
 Entities in Apie implement EntityInterface. Often the getId() returns a unique identifier.
 ```php
