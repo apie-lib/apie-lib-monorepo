@@ -2,9 +2,14 @@
 namespace Apie\Fixtures\Entities;
 
 use APie\Core\Attributes\Internal;
+use Apie\Core\Attributes\Not;
 use Apie\Core\Attributes\ProvideIndex;
+use Apie\Core\Attributes\Requires;
+use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\Attributes\SearchFilterOption;
+use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Attributes\StoreOptions;
+use Apie\Core\ContextConstants;
 use Apie\Core\Entities\EntityWithStatesInterface;
 use Apie\Core\Entities\RootAggregate;
 use Apie\Core\Lists\StringList;
@@ -18,6 +23,9 @@ class Order implements RootAggregate, EntityWithStatesInterface
 {
     #[StoreOptions(alwaysMixedData: true)]
     private OrderStatus $orderStatus;
+
+    #[StaticCheck(new Not(new Requires(ContextConstants::REST_API)))]
+    public ?StringList $optionalTags = null;
 
     public function __construct(private OrderIdentifier $id, private OrderLineList $orderLines)
     {
