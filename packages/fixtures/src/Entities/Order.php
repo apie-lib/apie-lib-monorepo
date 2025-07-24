@@ -13,10 +13,12 @@ use Apie\Core\ContextConstants;
 use Apie\Core\Entities\EntityWithStatesInterface;
 use Apie\Core\Entities\RootAggregate;
 use Apie\Core\Lists\StringList;
+use Apie\Core\Lists\StringSet;
 use Apie\Fixtures\Enums\OrderStatus;
 use Apie\Fixtures\Identifiers\OrderIdentifier;
 use Apie\Fixtures\Identifiers\OrderLineIdentifier;
 use Apie\Fixtures\Lists\OrderLineList;
+use ReflectionClass;
 
 #[ProvideIndex('provideIndex')]
 class Order implements RootAggregate, EntityWithStatesInterface
@@ -25,10 +27,13 @@ class Order implements RootAggregate, EntityWithStatesInterface
     private OrderStatus $orderStatus;
 
     #[StaticCheck(new Not(new Requires(ContextConstants::REST_API)))]
-    public ?StringList $optionalTags = null;
+    public ?StringSet $optionalTags = null;
 
-    public function __construct(private OrderIdentifier $id, private OrderLineList $orderLines)
-    {
+    public function __construct(
+        private OrderIdentifier $id,
+        #[StoreOptions(mutableListField: true)]
+        private OrderLineList $orderLines
+    ) {
         $this->orderStatus = OrderStatus::DRAFT;
     }
 
@@ -96,6 +101,8 @@ class Order implements RootAggregate, EntityWithStatesInterface
 
     public function acceptOrder(): void
     {
+        (new ReflectionClass(OrderLineList::class))->getProperty('mutable')
+            ->setValue($this->orderLines, false);
         $this->orderStatus->ensureDraft();
         $this->orderStatus = OrderStatus::ACCEPTED;
     }
