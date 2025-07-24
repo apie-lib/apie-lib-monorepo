@@ -4,6 +4,7 @@ namespace Apie\Fixtures\Entities;
 use APie\Core\Attributes\Internal;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\Attributes\SearchFilterOption;
+use Apie\Core\Attributes\StoreOptions;
 use Apie\Core\Entities\EntityWithStatesInterface;
 use Apie\Core\Entities\RootAggregate;
 use Apie\Core\Lists\StringList;
@@ -15,6 +16,7 @@ use Apie\Fixtures\Lists\OrderLineList;
 #[ProvideIndex('provideIndex')]
 class Order implements RootAggregate, EntityWithStatesInterface
 {
+    #[StoreOptions(alwaysMixedData: true)]
     private OrderStatus $orderStatus;
 
     public function __construct(private OrderIdentifier $id, private OrderLineList $orderLines)
