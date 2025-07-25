@@ -1,4 +1,8 @@
 # Polymorphic entity relations
+See also:
+  - [Basic entities](./entities.md)
+  - [Root aggregates](./root-aggregates.md)
+
 It is possible to make domain objects with inheritance. Polymorphic relations with interfaces are not supported. To create a polymorphic relation we need to create a base class that implements <code>PolymorphicEntityInterface</code>.
 
 Example:

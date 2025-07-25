@@ -13,6 +13,22 @@ class Address implements DtoInterface {
 }
 ```
 
+It is also possible to use promoted properties:
+```php
+use Apie\Core\Dto\DtoInterface;
+use PrinsFrank\Standards\Country\ISO3166_1_Alpha_2;
+
+class Address implements DtoInterface {
+    public function __construct(
+        public Street $street,
+        public ?StreetNumber $streetNumber = null,
+        public Location $location,
+        public ISO3166_1_Alpha_2 $country
+    ) {
+    }
+}
+```
+
 ## Optional fields
 By default all fields are considered required, unless it has a default value or if the Optional attribute is assigned to a property:
 
@@ -30,3 +46,4 @@ class Address implements DtoInterface {
     public ISO3166_1_Alpha_2 $country; // use a country enum from https://github.com/PrinsFrank/standards
 }
 ```
+While it is possible, adding #[Optional] attributes to a promoted property with no default value stil marks the field as optional even if it is required in the constructor as Apie will create DTO's with [newInstanceWithoutConstructor](https://www.php.net/manual/en/reflectionclass.newinstancewithoutconstructor.php) and will ignore the constructor definition.
