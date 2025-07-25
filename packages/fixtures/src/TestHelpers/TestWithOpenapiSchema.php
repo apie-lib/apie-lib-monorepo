@@ -28,8 +28,11 @@ trait TestWithOpenapiSchema
         $this->assertNotEmpty($schemas);
         $this->assertArrayHasKey($expectedKey, $schemas);
         $actualSchema = $schemas[$expectedKey];
-        if ($expected->pattern) {
+        if ($expected->pattern === true) {
             $expected->pattern = $actualSchema->pattern;
+        }
+        if ($expected->description === true) {
+            $expected->description = $actualSchema->description;
         }
         $this->assertEquals($expected, $actualSchema);
         $testCase($builder);

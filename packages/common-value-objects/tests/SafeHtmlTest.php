@@ -21,6 +21,7 @@ class SafeHtmlTest extends TestCase
             [
                 'type' => 'string',
                 'format' => 'safehtml',
+                'description' => true,
             ]
         );
     }

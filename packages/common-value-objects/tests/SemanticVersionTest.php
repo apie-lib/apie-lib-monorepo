@@ -22,6 +22,7 @@ class SemanticVersionTest extends TestCase
                 'type' => 'string',
                 'format' =>  'semanticversion',
                 'pattern' => RegexUtils::removeDelimiters(SemanticVersion::getRegularExpression()),
+                'description' => true,
             ]
         );
     }

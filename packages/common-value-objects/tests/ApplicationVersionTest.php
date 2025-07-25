@@ -22,6 +22,7 @@ class ApplicationVersionTest extends TestCase
                 'type' => 'string',
                 'format' =>  'applicationversion',
                 'pattern' => RegexUtils::removeDelimiters(ApplicationVersion::getRegularExpression()),
+                'description' => true,
             ]
         );
     }

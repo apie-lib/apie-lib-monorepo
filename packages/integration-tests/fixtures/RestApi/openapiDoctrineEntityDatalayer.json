@@ -1800,7 +1800,7 @@
                     "Order",
                     "resource"
                 ],
-                "description": "Creates an instance of Order",
+                "description": "Creates an instance of Order. An order is a web order and consists of multiple order lines",
                 "operationId": "post-Order",
                 "parameters": [
                     {
@@ -1903,7 +1903,7 @@
                     "Order",
                     "resource"
                 ],
-                "description": "Gets a list of resource that are an instance of Order",
+                "description": "Gets a list of resource that are an instance of Order. An order is a web order and consists of multiple order lines",
                 "operationId": "get-all-Order",
                 "parameters": [
                     {
@@ -4128,7 +4128,7 @@
                     "Order",
                     "resource"
                 ],
-                "description": "Gets a resource of Order with a specific id",
+                "description": "Gets a resource of Order with a specific id. An order is a web order and consists of multiple order lines",
                 "operationId": "get-single-Order",
                 "parameters": [
                     {
@@ -4211,7 +4211,7 @@
                     "Order",
                     "resource"
                 ],
-                "description": "Removes an instance of Order",
+                "description": "Removes an instance of Order. An order is a web order and consists of multiple order lines",
                 "operationId": "remove-single-Order",
                 "parameters": [
                     {
@@ -5614,7 +5614,7 @@
                     "Authentication",
                     "action"
                 ],
-                "description": "Calls method currentUser and returns return value.",
+                "description": "Display the current logged in user, returns null if not logged in",
                 "operationId": "call-method-Authentication-currentUser",
                 "parameters": [
                     {
@@ -5710,7 +5710,7 @@
                     "Calculator",
                     "action"
                 ],
-                "description": "Calls method expensiveBackgroundCalculation and returns return value.",
+                "description": "Runs an expensive background calculation",
                 "operationId": "call-method-Calculator-expensiveBackgroundCalculation",
                 "parameters": [
                     {
@@ -6239,7 +6239,7 @@
                     "Authentication",
                     "action"
                 ],
-                "description": "Calls method verifyAuthentication and returns return value.",
+                "description": "Login as user with username and password, returns null if authentication fails",
                 "operationId": "call-method-Authentication-verifyAuthentication",
                 "parameters": [
                     {
@@ -7584,21 +7584,21 @@
             "CompanyName-get": {
                 "type": "string",
                 "format": "companyname",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$",
-                "description": "Represents a company name."
+                "description": "Represents a company name.",
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$"
             },
             "CompanyName-nullable-get": {
                 "type": "string",
                 "format": "companyname",
+                "description": "Represents a company name.",
                 "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$",
-                "nullable": true,
-                "description": "Represents a company name."
+                "nullable": true
             },
             "CompanyName-post": {
                 "type": "string",
                 "format": "companyname",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$",
-                "description": "Represents a company name."
+                "description": "Represents a company name.",
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$"
             },
             "DatabaseText-nullable-get": {
                 "maxLength": 65535,
@@ -7667,12 +7667,13 @@
             "DutchPhoneNumber-nullable-get": {
                 "type": "string",
                 "format": "dutchphonenumber",
-                "nullable": true,
-                "description": "A phone number valid in the Netherlands in national format or E164 format"
+                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                "nullable": true
             },
             "DutchPhoneNumber-nullable-post": {
                 "type": "string",
                 "format": "dutchphonenumber",
+                "description": "A phone number valid in the Netherlands in national format or E164 format",
                 "nullable": true
             },
             "Elephant-get": {
@@ -7901,26 +7902,27 @@
             "Filename-post": {
                 "type": "string",
                 "format": "filename",
+                "description": "A file name with extension, but without path",
                 "pattern": "^(?=.{1,255}$)[^<>:\"\\/\\|?*\\x00-\\x1F\\x7F]+(\\.[^<>:\"\\/\\|?*\\x00-\\x1F\\x7F]+)?$"
             },
             "FirstName-get": {
                 "type": "string",
                 "format": "firstname",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$",
-                "description": "Represents a first name of a person"
+                "description": "Represents a first name of a person",
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
             },
             "FirstName-nullable-get": {
                 "type": "string",
                 "format": "firstname",
+                "description": "Represents a first name of a person",
                 "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$",
-                "nullable": true,
-                "description": "Represents a first name of a person"
+                "nullable": true
             },
             "FirstName-post": {
                 "type": "string",
                 "format": "firstname",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$",
-                "description": "Represents a first name of a person"
+                "description": "Represents a first name of a person",
+                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
             },
             "Fish-get": {
                 "type": "object",
@@ -8333,21 +8335,21 @@
             "LastName-get": {
                 "type": "string",
                 "format": "lastname",
-                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$",
-                "description": "Represents a last or family name of a person."
+                "description": "Represents a last or family name of a person.",
+                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
             },
             "LastName-nullable-get": {
                 "type": "string",
                 "format": "lastname",
+                "description": "Represents a last or family name of a person.",
                 "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$",
-                "nullable": true,
-                "description": "Represents a last or family name of a person."
+                "nullable": true
             },
             "LastName-post": {
                 "type": "string",
                 "format": "lastname",
-                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$",
-                "description": "Represents a last or family name of a person."
+                "description": "Represents a last or family name of a person.",
+                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
             },
             "Lungfish-get": {
                 "type": "object",
@@ -8618,21 +8620,21 @@
             "NonEmptyString-get": {
                 "type": "string",
                 "format": "nonemptystring",
-                "pattern": "^.+$",
-                "description": "Any text, except the empty string."
+                "description": "Any text, except the empty string.",
+                "pattern": "^.+$"
             },
             "NonEmptyString-nullable-get": {
                 "type": "string",
                 "format": "nonemptystring",
+                "description": "Any text, except the empty string.",
                 "pattern": "^.+$",
-                "nullable": true,
-                "description": "Any text, except the empty string."
+                "nullable": true
             },
             "NonEmptyString-post": {
                 "type": "string",
                 "format": "nonemptystring",
-                "pattern": "^.+$",
-                "description": "Any text, except the empty string."
+                "description": "Any text, except the empty string.",
+                "pattern": "^.+$"
             },
             "NotAcceptedException-get": {
                 "type": "object",
@@ -9519,22 +9521,25 @@
             "SequentialBackgroundProcessIdentifier-get": {
                 "type": "string",
                 "format": "sequentialbackgroundprocessidentifier",
-                "pattern": "([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$",
-                "description": "A reference to a background process."
+                "description": "A reference to a background process.",
+                "pattern": "([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$"
             },
             "SequentialBackgroundProcessIdentifier-post": {
                 "type": "string",
                 "format": "sequentialbackgroundprocessidentifier",
+                "description": "A reference to a background process.",
                 "pattern": "([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$"
             },
             "SerializedPermission-get": {
                 "type": "string",
                 "format": "serializedpermission",
+                "description": "A serialized permission identifier, for example \"user:read\"",
                 "pattern": "^[a-z:]+$"
             },
             "SerializedPermission-nullable-get": {
                 "type": "string",
                 "format": "serializedpermission",
+                "description": "A serialized permission identifier, for example \"user:read\"",
                 "pattern": "^[a-z:]+$",
                 "nullable": true
             },
@@ -9685,6 +9690,7 @@
             "StrictMimeType-nullable-post": {
                 "type": "string",
                 "format": "strictmimetype",
+                "description": "Strict mime type without wildcards, for example \"application/json\"",
                 "pattern": "^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$",
                 "nullable": true
             },

@@ -2,6 +2,7 @@
 namespace Apie\IntegrationTests\Apie\TypeDemo\Actions;
 
 use Apie\Core\Attributes\Context;
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\Route;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
@@ -15,6 +16,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Authentication
 {
+    #[Description('Login as user with username and password, returns null if authentication fails')]
     public function verifyAuthentication(
         #[Context()] ApieDatalayer $apieDatalayer,
         #[Context()] BoundedContext $boundedContext,
@@ -31,6 +33,7 @@ class Authentication
         return $user->verify($password) ? $user : null;
     }
 
+    #[Description('Display the current logged in user, returns null if not logged in')]
     #[Route('/me')]
     #[Route('/profile', target: Route::CMS)]
     public function currentUser(#[Context('authenticated')] ?EntityInterface $currentUser = null): ?EntityInterface

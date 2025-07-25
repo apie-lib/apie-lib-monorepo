@@ -69,7 +69,8 @@ class PhpSafeRegularExpressionTest extends TestCase
             'PhpSafeRegularExpression-post',
             [
                 'type' => 'string',
-                'format' => 'phpsaferegularexpression'
+                'format' => 'phpsaferegularexpression',
+                'description' => true,
             ]
         );
     }

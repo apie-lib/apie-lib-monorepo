@@ -77,6 +77,7 @@ class EncryptedPasswordTest extends TestCase
             [
                 'type' => 'string',
                 'format' => 'encryptedpassword',
+                'description' => true,
             ]
         );
     }

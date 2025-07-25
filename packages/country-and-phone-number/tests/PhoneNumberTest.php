@@ -32,6 +32,7 @@ class PhoneNumberTest extends TestCase
             [
                 'type' => 'string',
                 'format' => 'phonenumber',
+                'description' => true,
             ]
         );
     }

@@ -20,6 +20,7 @@ class EmailTest extends TestCase
             [
                 'type' => 'string',
                 'format' =>  'email',
+                'description' => true,
             ]
         );
     }

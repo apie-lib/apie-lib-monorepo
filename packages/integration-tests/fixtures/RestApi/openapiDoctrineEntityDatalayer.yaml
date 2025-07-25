@@ -1217,7 +1217,7 @@ paths:
       tags:
         - Order
         - resource
-      description: 'Creates an instance of Order'
+      description: 'Creates an instance of Order. An order is a web order and consists of multiple order lines'
       operationId: post-Order
       parameters:
         -
@@ -1282,7 +1282,7 @@ paths:
       tags:
         - Order
         - resource
-      description: 'Gets a list of resource that are an instance of Order'
+      description: 'Gets a list of resource that are an instance of Order. An order is a web order and consists of multiple order lines'
       operationId: get-all-Order
       parameters:
         -
@@ -2828,7 +2828,7 @@ paths:
       tags:
         - Order
         - resource
-      description: 'Gets a resource of Order with a specific id'
+      description: 'Gets a resource of Order with a specific id. An order is a web order and consists of multiple order lines'
       operationId: get-single-Order
       parameters:
         -
@@ -2883,7 +2883,7 @@ paths:
       tags:
         - Order
         - resource
-      description: 'Removes an instance of Order'
+      description: 'Removes an instance of Order. An order is a web order and consists of multiple order lines'
       operationId: remove-single-Order
       parameters:
         -
@@ -3797,7 +3797,7 @@ paths:
       tags:
         - Authentication
         - action
-      description: 'Calls method currentUser and returns return value.'
+      description: 'Display the current logged in user, returns null if not logged in'
       operationId: call-method-Authentication-currentUser
       parameters:
         -
@@ -3858,7 +3858,7 @@ paths:
       tags:
         - Calculator
         - action
-      description: 'Calls method expensiveBackgroundCalculation and returns return value.'
+      description: 'Runs an expensive background calculation'
       operationId: call-method-Calculator-expensiveBackgroundCalculation
       parameters:
         -
@@ -4195,7 +4195,7 @@ paths:
       tags:
         - Authentication
         - action
-      description: 'Calls method verifyAuthentication and returns return value.'
+      description: 'Login as user with username and password, returns null if authentication fails'
       operationId: call-method-Authentication-verifyAuthentication
       parameters:
         -
@@ -5083,19 +5083,19 @@ components:
     CompanyName-get:
       type: string
       format: companyname
-      pattern: '^\w[\w\-\s''`"‘’“”‟,]*$'
       description: 'Represents a company name.'
+      pattern: '^\w[\w\-\s''`"‘’“”‟,]*$'
     CompanyName-nullable-get:
       type: string
       format: companyname
+      description: 'Represents a company name.'
       pattern: '^\w[\w\-\s''`"‘’“”‟,]*$'
       nullable: true
-      description: 'Represents a company name.'
     CompanyName-post:
       type: string
       format: companyname
-      pattern: '^\w[\w\-\s''`"‘’“”‟,]*$'
       description: 'Represents a company name.'
+      pattern: '^\w[\w\-\s''`"‘’“”‟,]*$'
     DatabaseText-nullable-get:
       maxLength: 65535
       minLength: 0
@@ -5148,11 +5148,12 @@ components:
     DutchPhoneNumber-nullable-get:
       type: string
       format: dutchphonenumber
-      nullable: true
       description: 'A phone number valid in the Netherlands in national format or E164 format'
+      nullable: true
     DutchPhoneNumber-nullable-post:
       type: string
       format: dutchphonenumber
+      description: 'A phone number valid in the Netherlands in national format or E164 format'
       nullable: true
     Elephant-get:
       type: object
@@ -5312,23 +5313,24 @@ components:
     Filename-post:
       type: string
       format: filename
+      description: 'A file name with extension, but without path'
       pattern: '^(?=.{1,255}$)[^<>:"\/\|?*\x00-\x1F\x7F]+(\.[^<>:"\/\|?*\x00-\x1F\x7F]+)?$'
     FirstName-get:
       type: string
       format: firstname
-      pattern: '^\w[\w\-\s''`"‘’“”‟]*$'
       description: 'Represents a first name of a person'
+      pattern: '^\w[\w\-\s''`"‘’“”‟]*$'
     FirstName-nullable-get:
       type: string
       format: firstname
+      description: 'Represents a first name of a person'
       pattern: '^\w[\w\-\s''`"‘’“”‟]*$'
       nullable: true
-      description: 'Represents a first name of a person'
     FirstName-post:
       type: string
       format: firstname
-      pattern: '^\w[\w\-\s''`"‘’“”‟]*$'
       description: 'Represents a first name of a person'
+      pattern: '^\w[\w\-\s''`"‘’“”‟]*$'
     Fish-get:
       type: object
       oneOf:
@@ -5612,19 +5614,19 @@ components:
     LastName-get:
       type: string
       format: lastname
-      pattern: '^\w(\w|\-|[^\S\r\n]|''|`|"|‘|’|“|”|‟)*$'
       description: 'Represents a last or family name of a person.'
+      pattern: '^\w(\w|\-|[^\S\r\n]|''|`|"|‘|’|“|”|‟)*$'
     LastName-nullable-get:
       type: string
       format: lastname
+      description: 'Represents a last or family name of a person.'
       pattern: '^\w(\w|\-|[^\S\r\n]|''|`|"|‘|’|“|”|‟)*$'
       nullable: true
-      description: 'Represents a last or family name of a person.'
     LastName-post:
       type: string
       format: lastname
-      pattern: '^\w(\w|\-|[^\S\r\n]|''|`|"|‘|’|“|”|‟)*$'
       description: 'Represents a last or family name of a person.'
+      pattern: '^\w(\w|\-|[^\S\r\n]|''|`|"|‘|’|“|”|‟)*$'
     Lungfish-get:
       type: object
       required:
@@ -5814,19 +5816,19 @@ components:
     NonEmptyString-get:
       type: string
       format: nonemptystring
-      pattern: ^.+$
       description: 'Any text, except the empty string.'
+      pattern: ^.+$
     NonEmptyString-nullable-get:
       type: string
       format: nonemptystring
+      description: 'Any text, except the empty string.'
       pattern: ^.+$
       nullable: true
-      description: 'Any text, except the empty string.'
     NonEmptyString-post:
       type: string
       format: nonemptystring
-      pattern: ^.+$
       description: 'Any text, except the empty string.'
+      pattern: ^.+$
     NotAcceptedException-get:
       type: object
       required:
@@ -6456,19 +6458,22 @@ components:
     SequentialBackgroundProcessIdentifier-get:
       type: string
       format: sequentialbackgroundprocessidentifier
-      pattern: '([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$'
       description: 'A reference to a background process.'
+      pattern: '([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$'
     SequentialBackgroundProcessIdentifier-post:
       type: string
       format: sequentialbackgroundprocessidentifier
+      description: 'A reference to a background process.'
       pattern: '([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$'
     SerializedPermission-get:
       type: string
       format: serializedpermission
+      description: 'A serialized permission identifier, for example "user:read"'
       pattern: '^[a-z:]+$'
     SerializedPermission-nullable-get:
       type: string
       format: serializedpermission
+      description: 'A serialized permission identifier, for example "user:read"'
       pattern: '^[a-z:]+$'
       nullable: true
     Shark-get:
@@ -6577,6 +6582,7 @@ components:
     StrictMimeType-nullable-post:
       type: string
       format: strictmimetype
+      description: 'Strict mime type without wildcards, for example "application/json"'
       pattern: '^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$'
       nullable: true
     StringList-get:
