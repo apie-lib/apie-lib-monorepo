@@ -21,10 +21,14 @@
   },
   "require": {
     "php": ">=8.3",
+    "apie/common": "self.version",
     "apie/core": "self.version",
-    "logiscape/mcp-sdk-php": "^1.0"
+    "apie/schema-generator": "self.version",
+    "logiscape/mcp-sdk-php": "^1.0",
+    "symfony/console": "^7.2"
   },
   "require-dev": {
+    "apie/fixtures": "self.version",
     "phpunit/phpunit": "^11.5.2",
     "phpspec/prophecy-phpunit": "^2.2"
   },

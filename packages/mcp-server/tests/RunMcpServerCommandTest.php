@@ -56,6 +56,14 @@ class RunMcpServerCommandTest extends TestCase
                         new JSONRPCRequest(
                             "2.0",
                             new RequestId('2'),
+                            null,
+                            'tools/list',
+                        )
+                    ),
+                    new JsonRpcMessage(
+                        new JSONRPCRequest(
+                            "2.0",
+                            new RequestId('3'),
                             $this->createRequestParams([
                                 'name' => 'shutdown',
                                 'arguments' => []
