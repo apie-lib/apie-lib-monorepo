@@ -4,6 +4,7 @@ namespace Apie\Fixtures\Entities;
 use APie\Core\Attributes\Internal;
 use Apie\Core\Attributes\Not;
 use Apie\Core\Attributes\ProvideIndex;
+use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\Requires;
 use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Attributes\StaticCheck;
@@ -20,6 +21,7 @@ use Apie\Fixtures\Lists\OrderLineList;
 use ReflectionClass;
 
 #[ProvideIndex('provideIndex')]
+#[RemovalCheck(new StaticCheck())]
 class Order implements RootAggregate, EntityWithStatesInterface
 {
     #[StoreOptions(alwaysMixedData: true)]
