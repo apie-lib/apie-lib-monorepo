@@ -26,6 +26,7 @@
     "apie/cms-api-dropdown-option": "self.version",
     "apie/cms-layout-graphite": "self.version",
     "apie/console": "self.version",
+    "apie/mcp-server": "self.version",
     "apie/regex-value-objects": "self.version",
     "apie/typescript-client-builder": "self.version"
   },
