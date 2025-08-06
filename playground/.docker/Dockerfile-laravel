@@ -37,6 +37,11 @@ RUN docker-php-ext-enable redis
 # Install Composer CLI
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# Install Node.js and npm (using Debian-based approach)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g @google/gemini-cli
+
 # You can add your own aliases here
 RUN echo 'alias console="php /var/www/html/artisan"' >> ~/.bashrc
 RUN echo 'alias phpstan="/var/www/html/vendor/phpstan/phpstan/phpstan"' >> ~/.bashrc
