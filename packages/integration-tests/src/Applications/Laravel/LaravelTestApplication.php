@@ -75,6 +75,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             );
             // this has to be explicit because of some code execution order issues
             $config->set('apie.enable_ai_instructor', true);
+            $config->set('apie.enable_mcp_server', true);
             $config->set(
                 'apie.ai',
                 [
@@ -98,6 +99,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                     ]
                 ]
             );
+            $config->set('apie.remote_mcp_path', '/mcp');
         });
     }
 

@@ -58,6 +58,8 @@ RUN jq '.autoload["psr-4"] += {"App\\Apie\\Maker\\": "generated/"}' tmp-merged.j
 WORKDIR /var/www/html
 RUN mkdir generated
 RUN chmod 777 /var/www/html/generated
+
+COPY ./playground/laravel-app/.gemini /var/www/html/.gemini
 COPY ./playground/laravel-app/apie.php /var/www/html/config/apie.php
 COPY ./playground/laravel-app/AppServiceProvider.php /var/www/html/app/Providers/AppServiceProvider.php
 # COPY ./playground/app/messenger.yaml /var/www/html/config/packages/messenger.yaml

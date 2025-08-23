@@ -16,6 +16,7 @@ apie:
     target_namespace: 'App\Apie\Maker'
   datalayers:
     default_datalayer: 'Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer'
+  remote_mcp_path: '/mcp'
   scan_bounded_contexts:
     search_path: "%kernel.project_dir%/generated/"
     search_namespace: 'App\Apie\Maker'

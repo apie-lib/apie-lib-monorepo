@@ -26,6 +26,7 @@ return [
             'search_path' => base_path('generated/'),
             'search_namespace' => 'App\\Apie\\Maker',
         ],
+        'remote_mcp_path' => '/mcp',
         'bounded_contexts' => [
             'make' => [
                 'entities_folder' => '/packages/maker/src/BoundedContext/Resources',
