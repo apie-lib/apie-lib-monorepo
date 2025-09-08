@@ -1674,6 +1674,13 @@
                         }
                     },
                     {
+                        "name": "query[status]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "query[userId]",
                         "in": "query",
                         "schema": {
@@ -7796,6 +7803,20 @@
                     }
                 ]
             },
+            "ExpireStatus-get": {
+                "enum": [
+                    "active",
+                    "expired"
+                ],
+                "type": "string"
+            },
+            "ExpireStatus-nullable-get": {
+                "enum": [
+                    "active",
+                    "expired"
+                ],
+                "type": "string"
+            },
             "File-get": {
                 "type": "object",
                 "required": [
@@ -8656,6 +8677,7 @@
                 "type": "object",
                 "required": [
                     "id",
+                    "status",
                     "userId",
                     "expireDate",
                     "expired",
@@ -8665,6 +8687,9 @@
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/ObjectWithRelationIdentifier-get"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/ExpireStatus-get"
                     },
                     "userId": {
                         "$ref": "#/components/schemas/UserIdentifier-get"
@@ -8688,6 +8713,7 @@
                 "type": "object",
                 "required": [
                     "id",
+                    "status",
                     "userId",
                     "expireDate",
                     "expired",
@@ -8697,6 +8723,9 @@
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/ObjectWithRelationIdentifier-nullable-get"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/ExpireStatus-nullable-get"
                     },
                     "userId": {
                         "$ref": "#/components/schemas/UserIdentifier-nullable-get"
