@@ -44,7 +44,7 @@ class ApieUpdateRecalculatingCommandTest extends TestCase
     public function it_can_update_idf_indexing(TestApplicationInterface $testApplication)
     {
         if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name === FakerDatalayer::class) {
-            $this->markTestSkipped('Faker will result in infinte loop here.');
+            $this->markTestSkipped('Faker will result in infinite loop here.');
         }
         $testApplication->bootApplication();
         $container = $testApplication->getServiceContainer();
