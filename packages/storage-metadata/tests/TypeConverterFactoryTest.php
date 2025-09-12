@@ -144,6 +144,19 @@ class TypeConverterFactoryTest extends TestCase
             StoredFile::class
         ];
 
+        $object = (object)['a' => 'b'];
+        yield 'object to mixed storage' => [
+            new Fixtures\MockMixedStorage($object),
+            $object,
+            Fixtures\MockMixedStorage::class
+        ];
+
+        yield 'mixed storage to object' => [
+            $object,
+            new Fixtures\MockMixedStorage($object),
+            \stdClass::class
+        ];
+
         // conversions to the same type throw an error in the current definition and are handled differently.
         /*yield 'string to string' => ['hello', 'hello', 'string'];
         yield 'int to int' => [42, 42, 'int'];

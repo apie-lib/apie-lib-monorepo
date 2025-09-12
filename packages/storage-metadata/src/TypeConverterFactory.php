@@ -60,7 +60,6 @@ final class TypeConverterFactory
                 new MixedStorageToObject(),
                 new MixedToMixedStorage(),
                 new ValueObjectToString(),
-                new EnumToString(),
                 new StringToDateTime(),
                 new DateTimeToString(),
                 new StringToValueObject(),
