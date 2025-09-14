@@ -97,7 +97,7 @@ class McpServerTest extends TestCase
                     
                     $decodedResponse = json_decode($responseBody, true);
                     TestCase::assertIsArray($decodedResponse, 'Response is ' . $responseBody  . ' ' . json_last_error_msg());
-                    TestCase::assertCount(2, $decodedResponse, 'Expected two responses in batch, got: ' . $responseBody);
+                    TestCase::assertCount(2, $decodedResponse, 'Expected 2 keys in batch, got: ' . $responseBody);
                     
                     // Check each response
                     foreach ($decodedResponse as $index => $result) {

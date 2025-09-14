@@ -1662,7 +1662,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -1903,7 +1903,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -2129,7 +2129,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -2413,7 +2413,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -2639,7 +2639,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -2890,7 +2890,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -3156,7 +3156,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -3390,7 +3390,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },

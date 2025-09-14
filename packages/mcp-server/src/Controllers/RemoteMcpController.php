@@ -25,13 +25,30 @@ class RemoteMcpController
     public function __invoke(ServerRequestInterface $request): Response
     {
         $server = new Server('apie-server');
-        $server->registerHandler('tools/list', function ($params) {
-            return $this->toolFactory->createList();
+        $hadError = false;
+        $server->registerHandler('tools/list', function ($params) use (&$hadError){
+            try {
+                $res = $this->toolFactory->createList();
+                $hadError = false;
+                return $res;
+            } catch (\Throwable $e) {
+                $hadError = true;
+                $this->logger->error('Error in tools/list: ' . $e->getMessage() . ': ' . $e->getTraceAsString(), ['exception' => $e]);
+                throw $e;
+            }
         });
-        $server->registerHandler('tools/call', function ($params) use ($request) {
-            $name = $params->name;
-            $tool = $this->toolFactory->findByName($name);
-            return $this->toolRunner->run($tool, $params, $request);
+        $server->registerHandler('tools/call', function ($params) use ($request, &$hadError) {
+            try {
+                $name = $params->name;
+                $tool = $this->toolFactory->findByName($name);
+                $res = $this->toolRunner->run($tool, $params, $request);
+                $hadError = false;
+                return $res;
+            } catch (\Throwable $e) {
+                $hadError = true;
+                $this->logger->error('Error in tools/call: ' . $e->getMessage() . ': ' . $e->getTraceAsString(), ['exception' => $e]);
+                throw $e;
+            }
         });
         // TODO: configurable options?
         $httpOptions = [
@@ -55,9 +72,8 @@ class RemoteMcpController
             $message->setHeader($name, implode(', ', $values));
         }
         $result = $runner->handleRequest($message);
-
         return new Response(
-            $result->getStatusCode(),
+            $hadError ? 500 : $result->getStatusCode(),
             $result->getHeaders(),
             Stream::create($result->getBody())
         );

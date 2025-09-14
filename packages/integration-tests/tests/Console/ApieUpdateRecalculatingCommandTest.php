@@ -1,25 +1,19 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Console;
 
-use Apie\Common\Interfaces\ApieFacadeInterface;
 use Apie\Core\ApieLib;
 use Apie\Core\BoundedContext\BoundedContextId;
-use Apie\Core\Context\ApieContext;
-use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Datalayers\Search\QuerySearch;
 use Apie\Core\Lists\StringHashmap;
-use Apie\Core\Metadata\MetadataFactory;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Apie\TypeDemo\Enums\ExpireStatus;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\ObjectWithRelation;
-use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Beste\Clock\FrozenClock;
 use Faker\Factory;
-use Faker\Generator as FakerGenerator;
 use Generator;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
@@ -69,7 +63,7 @@ class ApieUpdateRecalculatingCommandTest extends TestCase
         $this->assertStringContainsString($entity->getId() . ' Done', $tester->getDisplay());
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         $newEntity = $datalayer->all(ObjectWithRelation::class, new BoundedContextId('types'))
-            ->toPaginatedResult( 
+            ->toPaginatedResult(
                 new QuerySearch(
                     0,
                     20,

@@ -30,7 +30,7 @@ class ObjectWithRelation implements EntityInterface, RequiresRecalculatingInterf
     public function getStatus(): ExpireStatus
     {
         return $this->isExpired() ? ExpireStatus::EXPIRED : ExpireStatus::ACTIVE;
-    }   
+    }
 
     public function isExpired(): bool
     {

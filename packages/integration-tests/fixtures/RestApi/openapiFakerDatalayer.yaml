@@ -1116,7 +1116,7 @@ paths:
           name: search
           in: query
           schema:
-            minimum: 1
+            minLength: 1
             type: string
         -
           name: 'query[id]'
@@ -1280,7 +1280,7 @@ paths:
           name: search
           in: query
           schema:
-            minimum: 1
+            minLength: 1
             type: string
         -
           name: 'query[id]'
@@ -1433,7 +1433,7 @@ paths:
           name: search
           in: query
           schema:
-            minimum: 1
+            minLength: 1
             type: string
         -
           name: 'query[version]'
@@ -1628,7 +1628,7 @@ paths:
           name: search
           in: query
           schema:
-            minimum: 1
+            minLength: 1
             type: string
         -
           name: 'query[id]'
@@ -1781,7 +1781,7 @@ paths:
           name: search
           in: query
           schema:
-            minimum: 1
+            minLength: 1
             type: string
         -
           name: 'query[stringField]'
@@ -1953,7 +1953,7 @@ paths:
           name: search
           in: query
           schema:
-            minimum: 1
+            minLength: 1
             type: string
         -
           name: 'query[userId]'
@@ -2134,7 +2134,7 @@ paths:
           name: search
           in: query
           schema:
-            minimum: 1
+            minLength: 1
             type: string
         -
           name: 'query[id]'
@@ -2293,7 +2293,7 @@ paths:
           name: search
           in: query
           schema:
-            minimum: 1
+            minLength: 1
             type: string
         -
           name: 'query[phoneNumber]'

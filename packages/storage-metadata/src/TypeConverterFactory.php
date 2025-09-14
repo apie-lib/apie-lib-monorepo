@@ -11,7 +11,6 @@ use Apie\StorageMetadata\Converters\ArrayToItemSet;
 use Apie\StorageMetadata\Converters\AutoIncrementTableToInt;
 use Apie\StorageMetadata\Converters\AutoIncrementTableToValueObject;
 use Apie\StorageMetadata\Converters\DateTimeToString;
-use Apie\StorageMetadata\Converters\EnumToString;
 use Apie\StorageMetadata\Converters\IntToAutoIncrementTable;
 use Apie\StorageMetadata\Converters\IntToValueObject;
 use Apie\StorageMetadata\Converters\MixedStorageToObject;

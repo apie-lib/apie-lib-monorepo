@@ -53,7 +53,7 @@ class TypeConverterFactoryTest extends TestCase
         yield 'value object to string' => [
             'user-123',
             NonEmptyString::fromNative('user-123'),
-            'string',  
+            'string',
         ];
 
         yield 'int to value object' => [
