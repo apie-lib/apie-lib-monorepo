@@ -1,0 +1,2441 @@
+[
+    {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+            "capabilities": {
+                "experimental": [],
+                "tools": {
+                    "listChanged": false
+                }
+            },
+            "serverInfo": {
+                "name": "apie-server",
+                "version": "1.0.0",
+                "extraFields": []
+            },
+            "protocolVersion": "2025-03-26"
+        }
+    },
+    {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+            "tools": [
+                {
+                    "name": "create-object-types-object-with-relation",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "userId",
+                            "expireDate"
+                        ],
+                        "properties": {
+                            "userId": {
+                                "type": "string"
+                            },
+                            "expireDate": {
+                                "type": "string",
+                                "pattern": "^((|\\-)[0-9]{4})\\-((0[1-9])|(1[0-2]))\\-((0[1-9])|([12][0-9])|(3[01]))T(([01][0-9])|(2[0-3]))\\:[0-5][0-9]\\:[0-5][0-9](\\+\\d{2}:\\d{2})$"
+                            },
+                            "orderId": {
+                                "type": "integer",
+                                "nullable": true
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of ObjectWithRelation",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\ObjectWithRelation",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "create-object-types-order",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "orderLineList"
+                        ],
+                        "properties": {
+                            "orderLineList": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "description"
+                                    ],
+                                    "properties": {
+                                        "description": {
+                                            "type": "string",
+                                            "description": "Any text, except the empty string.",
+                                            "pattern": "^.+$"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of Order. An order is a web order and consists of multiple order lines",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Order",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "create-object-types-sequential-background-process",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "backgroundProcessDeclaration",
+                            "payload"
+                        ],
+                        "properties": {
+                            "backgroundProcessDeclaration": {
+                                "type": "object"
+                            },
+                            "payload": {
+                                "type": "object",
+                                "nullable": false,
+                                "anyOf": [
+                                    {
+                                        "type": "object"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of SequentialBackgroundProcess",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "replace-object-types-animal",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "type"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "nullable": false
+                            },
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "animalName": {
+                                "type": "string",
+                                "description": "Represents a first name of a person",
+                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                            }
+                        },
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "nullable": false
+                                    },
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                    },
+                                    "animalName": {
+                                        "type": "string",
+                                        "description": "Represents a first name of a person",
+                                        "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                    },
+                                    "lastName": {
+                                        "type": "string",
+                                        "description": "Represents a last or family name of a person.",
+                                        "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "nullable": false,
+                                        "enum": [
+                                            "mammal"
+                                        ],
+                                        "format": "enum"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "elephant"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "platypus"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "lastName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "human"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "lastName": {
+                                                "type": "string",
+                                                "description": "Represents a last or family name of a person.",
+                                                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "nullable": false
+                                    },
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                    },
+                                    "animalName": {
+                                        "type": "string",
+                                        "description": "Represents a first name of a person",
+                                        "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "nullable": false,
+                                        "enum": [
+                                            "bird"
+                                        ],
+                                        "format": "enum"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "ostrich"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "seagull"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "nullable": false
+                                    },
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                    },
+                                    "animalName": {
+                                        "type": "string",
+                                        "description": "Represents a first name of a person",
+                                        "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "nullable": false,
+                                        "enum": [
+                                            "fish"
+                                        ],
+                                        "format": "enum"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "shark"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "lungfish"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "description": "Creates an instance of Animal",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Animal",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "replace-object-types-primitive-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "stringField": {
+                                "type": "string",
+                                "nullable": true
+                            },
+                            "integerField": {
+                                "type": "integer",
+                                "nullable": true
+                            },
+                            "floatingPoint": {
+                                "type": "number",
+                                "nullable": true
+                            },
+                            "booleanField": {
+                                "type": "boolean",
+                                "nullable": true
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of PrimitiveOnly",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\PrimitiveOnly",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "replace-object-types-restricted-entity",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "companyName"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "companyName": {
+                                "type": "string",
+                                "description": "Represents a company name.",
+                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$"
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of RestrictedEntity",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "replace-object-types-uploaded-file",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "file"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "imageFile": {
+                                "type": "object",
+                                "required": [
+                                    "originalFilename"
+                                ],
+                                "nullable": true,
+                                "properties": {
+                                    "contents": {
+                                        "type": "string"
+                                    },
+                                    "originalFilename": {
+                                        "type": "string",
+                                        "description": "A file name with extension, but without path",
+                                        "pattern": "^(?=.{1,255}$)[^<>:\"\\\/\\|?*\\x00-\\x1F\\x7F]+(\\.[^<>:\"\\\/\\|?*\\x00-\\x1F\\x7F]+)?$"
+                                    },
+                                    "base64": {
+                                        "type": "string",
+                                        "pattern": "^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$"
+                                    },
+                                    "mime": {
+                                        "type": "string",
+                                        "description": "Strict mime type without wildcards, for example \"application\/json\"",
+                                        "nullable": true,
+                                        "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "contents",
+                                            "originalFilename"
+                                        ]
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "base64",
+                                            "originalFilename"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "file": {
+                                "type": "object",
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "originalFilename"
+                                        ],
+                                        "properties": {
+                                            "contents": {
+                                                "type": "string"
+                                            },
+                                            "originalFilename": {
+                                                "type": "string",
+                                                "description": "A file name with extension, but without path",
+                                                "pattern": "^(?=.{1,255}$)[^<>:\"\\\/\\|?*\\x00-\\x1F\\x7F]+(\\.[^<>:\"\\\/\\|?*\\x00-\\x1F\\x7F]+)?$"
+                                            },
+                                            "base64": {
+                                                "type": "string",
+                                                "pattern": "^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$"
+                                            },
+                                            "mime": {
+                                                "type": "string",
+                                                "description": "Strict mime type without wildcards, for example \"application\/json\"",
+                                                "nullable": true,
+                                                "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$"
+                                            }
+                                        },
+                                        "anyOf": [
+                                            {
+                                                "type": "object",
+                                                "required": [
+                                                    "contents",
+                                                    "originalFilename"
+                                                ]
+                                            },
+                                            {
+                                                "type": "object",
+                                                "required": [
+                                                    "base64",
+                                                    "originalFilename"
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of UploadedFile",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UploadedFile",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "replace-object-types-user",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "phoneNumber": {
+                                "type": "string",
+                                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                                "nullable": true
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of User",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-animal",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of Animal with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Animal",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-object-with-relation",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of ObjectWithRelation with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\ObjectWithRelation",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-order",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of Order with a specific id. An order is a web order and consists of multiple order lines",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Order",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-primitive-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of PrimitiveOnly with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\PrimitiveOnly",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-restricted-entity",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of RestrictedEntity with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-uploaded-file",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of UploadedFile with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UploadedFile",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-user",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of User with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-sequential-background-process",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of SequentialBackgroundProcess with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-animal",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "animalName": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of Animal",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Animal",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-object-with-relation",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "userId": {
+                                        "type": "string"
+                                    },
+                                    "expireDate": {
+                                        "type": "string"
+                                    },
+                                    "orderId": {
+                                        "type": "string",
+                                        "nullable": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of ObjectWithRelation",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\ObjectWithRelation",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-order",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "orderLineList": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of Order. An order is a web order and consists of multiple order lines",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Order",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-primitive-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "stringField": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "integerField": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "floatingPoint": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "booleanField": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of PrimitiveOnly",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\PrimitiveOnly",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-restricted-entity",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "userId": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "companyName": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of RestrictedEntity",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-uploaded-file",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "file": {
+                                        "type": "string"
+                                    },
+                                    "imageFile": {
+                                        "type": "string",
+                                        "nullable": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of UploadedFile",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UploadedFile",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-user",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "phoneNumber": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "blockedReason": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of User",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-sequential-background-process",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "version": {
+                                        "type": "string"
+                                    },
+                                    "step": {
+                                        "type": "string"
+                                    },
+                                    "retries": {
+                                        "type": "string"
+                                    },
+                                    "startTime": {
+                                        "type": "string"
+                                    },
+                                    "completionTime": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "status": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "result": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "errors": {
+                                        "type": "string"
+                                    },
+                                    "payload": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of SequentialBackgroundProcess",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "modify-object-types-animal",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "animalName": {
+                                "type": "string",
+                                "description": "Represents a first name of a person",
+                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        },
+                        "anyOf": [
+                            {
+                                "type": "object",
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "nullable": false
+                                    },
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                    },
+                                    "animalName": {
+                                        "type": "string",
+                                        "description": "Represents a first name of a person",
+                                        "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                    },
+                                    "lastName": {
+                                        "type": "string",
+                                        "description": "Represents a last or family name of a person.",
+                                        "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "nullable": false,
+                                        "enum": [
+                                            "mammal"
+                                        ],
+                                        "format": "enum"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "elephant"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "platypus"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "lastName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "human"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "lastName": {
+                                                "type": "string",
+                                                "description": "Represents a last or family name of a person.",
+                                                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "nullable": false
+                                    },
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                    },
+                                    "animalName": {
+                                        "type": "string",
+                                        "description": "Represents a first name of a person",
+                                        "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "nullable": false,
+                                        "enum": [
+                                            "bird"
+                                        ],
+                                        "format": "enum"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "ostrich"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "seagull"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "object",
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "nullable": false
+                                    },
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                    },
+                                    "animalName": {
+                                        "type": "string",
+                                        "description": "Represents a first name of a person",
+                                        "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "nullable": false,
+                                        "enum": [
+                                            "fish"
+                                        ],
+                                        "format": "enum"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "shark"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "id",
+                                            "animalName",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "nullable": false,
+                                                "enum": [
+                                                    "lungfish"
+                                                ],
+                                                "format": "enum"
+                                            },
+                                            "id": {
+                                                "type": "string",
+                                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                            },
+                                            "animalName": {
+                                                "type": "string",
+                                                "description": "Represents a first name of a person",
+                                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
+                                            },
+                                            "type": {
+                                                "type": "string",
+                                                "nullable": false
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "description": "Modifies an instance of Animal",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Animal",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "modify-object-types-object-with-relation",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "userId": {
+                                "type": "string"
+                            },
+                            "expireDate": {
+                                "type": "string",
+                                "pattern": "^((|\\-)[0-9]{4})\\-((0[1-9])|(1[0-2]))\\-((0[1-9])|([12][0-9])|(3[01]))T(([01][0-9])|(2[0-3]))\\:[0-5][0-9]\\:[0-5][0-9](\\+\\d{2}:\\d{2})$"
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Modifies an instance of ObjectWithRelation",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\ObjectWithRelation",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "modify-object-types-primitive-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "stringField": {
+                                "type": "string",
+                                "nullable": true
+                            },
+                            "integerField": {
+                                "type": "integer",
+                                "nullable": true
+                            },
+                            "floatingPoint": {
+                                "type": "number",
+                                "nullable": true
+                            },
+                            "booleanField": {
+                                "type": "boolean",
+                                "nullable": true
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Modifies an instance of PrimitiveOnly",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\PrimitiveOnly",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "modify-object-types-restricted-entity",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "companyName": {
+                                "type": "string",
+                                "description": "Represents a company name.",
+                                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$"
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Modifies an instance of RestrictedEntity",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "modify-object-types-uploaded-file",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "imageFile": {
+                                "type": "object",
+                                "required": [
+                                    "originalFilename"
+                                ],
+                                "nullable": true,
+                                "properties": {
+                                    "contents": {
+                                        "type": "string"
+                                    },
+                                    "originalFilename": {
+                                        "type": "string",
+                                        "description": "A file name with extension, but without path",
+                                        "pattern": "^(?=.{1,255}$)[^<>:\"\\\/\\|?*\\x00-\\x1F\\x7F]+(\\.[^<>:\"\\\/\\|?*\\x00-\\x1F\\x7F]+)?$"
+                                    },
+                                    "base64": {
+                                        "type": "string",
+                                        "pattern": "^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$"
+                                    },
+                                    "mime": {
+                                        "type": "string",
+                                        "description": "Strict mime type without wildcards, for example \"application\/json\"",
+                                        "nullable": true,
+                                        "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "contents",
+                                            "originalFilename"
+                                        ]
+                                    },
+                                    {
+                                        "type": "object",
+                                        "required": [
+                                            "base64",
+                                            "originalFilename"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Modifies an instance of UploadedFile",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UploadedFile",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "modify-object-types-user",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "phoneNumber": {
+                                "type": "string",
+                                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                                "nullable": true
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Modifies an instance of User",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "remove-object-types-order",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Removes an instance of Order. An order is a web order and consists of multiple order lines",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RemoveObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Order",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RemoveObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "remove-object-types-primitive-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Removes an instance of PrimitiveOnly",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RemoveObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\PrimitiveOnly",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RemoveObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "remove-object-types-uploaded-file",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Removes an instance of UploadedFile",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RemoveObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UploadedFile",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RemoveObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-calculator-method-add",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Calls method add and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                        "x-method": "add",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                            "methodName": "add",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-authentication-method-current-session",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Calls method currentSession and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                        "x-method": "currentSession",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                            "methodName": "currentSession",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-authentication-method-current-user",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Display the current logged in user, returns null if not logged in",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                        "x-method": "currentUser",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                            "methodName": "currentUser",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-calculator-method-expensive-background-calculation",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "payload"
+                        ],
+                        "properties": {
+                            "payload": {
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "description": "Runs an expensive background calculation",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                        "x-method": "expensiveBackgroundCalculation",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                            "methodName": "expensiveBackgroundCalculation",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-authentication-method-is-this-me",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "userId"
+                        ],
+                        "properties": {
+                            "userId": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Calls method isThisMe and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                        "x-method": "isThisMe",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                            "methodName": "isThisMe",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-calculator-method-multiply",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Calls method multiply and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                        "x-method": "multiply",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                            "methodName": "multiply",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-calculator-method-square-root",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "numberOne"
+                        ],
+                        "properties": {
+                            "numberOne": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "description": "Calls method squareRoot and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                        "x-method": "squareRoot",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                            "methodName": "squareRoot",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-calculator-method-sum",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "numbers"
+                        ],
+                        "properties": {
+                            "numbers": {
+                                "type": "array",
+                                "items": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Calls method sum and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                        "x-method": "sum",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
+                            "methodName": "sum",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-authentication-method-verify-authentication",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "username",
+                            "password"
+                        ],
+                        "properties": {
+                            "username": {
+                                "type": "string"
+                            },
+                            "password": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Login as user with username and password, returns null if authentication fails",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                        "x-method": "verifyAuthentication",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                            "methodName": "verifyAuthentication",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-order-method-add-order-line",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "orderLine"
+                        ],
+                        "properties": {
+                            "orderLine": {
+                                "type": "object",
+                                "required": [
+                                    "description"
+                                ],
+                                "properties": {
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Any text, except the empty string.",
+                                        "pattern": "^.+$"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Adds orderLine to Order",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Order",
+                        "x-method": "addOrderLine",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Order",
+                            "methodClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\Order",
+                            "methodName": "addOrderLine",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-user-method-block",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "blockedReason"
+                        ],
+                        "properties": {
+                            "blockedReason": {
+                                "type": "string",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            }
+                        }
+                    },
+                    "description": "Runs method block on a User with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                        "x-method": "block",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "methodClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "methodName": "block",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-user-method-unblock",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Runs method unblock on a User with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                        "x-method": "unblock",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "methodClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "methodName": "unblock",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-user-method-activate",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "activationToken",
+                            "newPassword",
+                            "repeat"
+                        ],
+                        "properties": {
+                            "activationToken": {
+                                "type": "string"
+                            },
+                            "newPassword": {
+                                "type": "string",
+                                "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$"
+                            },
+                            "repeat": {
+                                "type": "string",
+                                "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$"
+                            }
+                        }
+                    },
+                    "description": "Runs method activate on a User with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                        "x-method": "activate",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "methodClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "methodName": "activate",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-user-method-verify",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "password"
+                        ],
+                        "properties": {
+                            "password": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Runs method verify on a User with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                        "x-method": "verify",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "methodClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "methodName": "verify",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-sequential-background-process-method-provide-allowed-methods",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Runs method provideAllowedMethods on a SequentialBackgroundProcess with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                        "x-method": "provideAllowedMethods",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodClass": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodName": "provideAllowedMethods",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-sequential-background-process-method-cancel",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Runs method cancel on a SequentialBackgroundProcess with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                        "x-method": "cancel",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodClass": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodName": "cancel",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-sequential-background-process-method-run-step",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Runs method runStep on a SequentialBackgroundProcess with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                        "x-method": "runStep",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodClass": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodName": "runStep",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                }
+            ]
+        }
+    }
+]

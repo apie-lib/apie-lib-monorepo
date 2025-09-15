@@ -1,6 +1,7 @@
 <?php
 namespace Apie\McpServer\Controllers;
 
+use Apie\Common\IntegrationTestLogger;
 use Apie\Core\ApieLib;
 use Apie\McpServer\Tool\ToolFactory;
 use Apie\McpServer\Tool\ToolRunner;
@@ -33,6 +34,7 @@ class RemoteMcpController
                 return $res;
             } catch (\Throwable $e) {
                 $hadError = true;
+                IntegrationTestLogger::logException($e);
                 $this->logger->error('Error in tools/list: ' . $e->getMessage() . ': ' . $e->getTraceAsString(), ['exception' => $e]);
                 throw $e;
             }
@@ -46,6 +48,7 @@ class RemoteMcpController
                 return $res;
             } catch (\Throwable $e) {
                 $hadError = true;
+                IntegrationTestLogger::logException($e);
                 $this->logger->error('Error in tools/call: ' . $e->getMessage() . ': ' . $e->getTraceAsString(), ['exception' => $e]);
                 throw $e;
             }
