@@ -95,48 +95,6 @@
                     }
                 },
                 {
-                    "name": "create-object-types-sequential-background-process",
-                    "inputSchema": {
-                        "type": "object",
-                        "required": [
-                            "backgroundProcessDeclaration",
-                            "payload"
-                        ],
-                        "properties": {
-                            "backgroundProcessDeclaration": {
-                                "type": "object"
-                            },
-                            "payload": {
-                                "type": "object",
-                                "nullable": false,
-                                "anyOf": [
-                                    {
-                                        "type": "object"
-                                    },
-                                    {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    "description": "Creates an instance of SequentialBackgroundProcess",
-                    "_meta": {
-                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
-                        "x-fields": {
-                            "create": true,
-                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
-                            "display-form": true,
-                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
-                        },
-                        "x-bounded-context-id": "types"
-                    }
-                },
-                {
                     "name": "replace-object-types-animal",
                     "inputSchema": {
                         "type": "object",
