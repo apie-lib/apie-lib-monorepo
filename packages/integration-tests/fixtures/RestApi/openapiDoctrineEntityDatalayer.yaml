@@ -4782,6 +4782,10 @@ components:
         - type
       properties:
         type:
+          enum:
+            - mammal
+            - bird
+            - fish
           type: string
           nullable: false
         id:
@@ -4816,8 +4820,12 @@ components:
         - type
       properties:
         type:
+          enum:
+            - mammal
+            - bird
+            - fish
           type: string
-          nullable: true
+          nullable: false
         id:
           $ref: '#/components/schemas/AnimalIdentifier-nullable-get'
         capableOfLayingEggs:
@@ -4855,6 +4863,10 @@ components:
         - type
       properties:
         type:
+          enum:
+            - mammal
+            - bird
+            - fish
           type: string
           nullable: false
         id:
@@ -4907,6 +4919,9 @@ components:
         - name
       properties:
         name:
+          enum:
+            - ostrich
+            - seagull
           type: string
           nullable: false
         id:
@@ -4937,8 +4952,11 @@ components:
         - name
       properties:
         name:
+          enum:
+            - ostrich
+            - seagull
           type: string
-          nullable: true
+          nullable: false
         id:
           $ref: '#/components/schemas/AnimalIdentifier-nullable-get'
         capableOfFlying:
@@ -4967,6 +4985,9 @@ components:
         - name
       properties:
         name:
+          enum:
+            - ostrich
+            - seagull
           type: string
           nullable: false
         id:
@@ -5255,6 +5276,9 @@ components:
         - name
       properties:
         name:
+          enum:
+            - shark
+            - lungfish
           type: string
           nullable: false
         id:
@@ -5285,8 +5309,11 @@ components:
         - name
       properties:
         name:
+          enum:
+            - shark
+            - lungfish
           type: string
-          nullable: true
+          nullable: false
         id:
           $ref: '#/components/schemas/AnimalIdentifier-nullable-get'
         capableOfWalkingOnWater:
@@ -5315,6 +5342,9 @@ components:
         - name
       properties:
         name:
+          enum:
+            - shark
+            - lungfish
           type: string
           nullable: false
         id:
@@ -5623,6 +5653,10 @@ components:
         - name
       properties:
         name:
+          enum:
+            - elephant
+            - platypus
+            - human
           type: string
           nullable: false
         id:
@@ -5658,8 +5692,12 @@ components:
         - name
       properties:
         name:
+          enum:
+            - elephant
+            - platypus
+            - human
           type: string
-          nullable: true
+          nullable: false
         id:
           $ref: '#/components/schemas/AnimalIdentifier-nullable-get'
         capableOfLayingEggs:
@@ -5693,6 +5731,10 @@ components:
         - name
       properties:
         name:
+          enum:
+            - elephant
+            - platypus
+            - human
           type: string
           nullable: false
         id:

@@ -7139,6 +7139,11 @@
                 ],
                 "properties": {
                     "type": {
+                        "enum": [
+                            "mammal",
+                            "bird",
+                            "fish"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -7188,8 +7193,13 @@
                 ],
                 "properties": {
                     "type": {
+                        "enum": [
+                            "mammal",
+                            "bird",
+                            "fish"
+                        ],
                         "type": "string",
-                        "nullable": true
+                        "nullable": false
                     },
                     "id": {
                         "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
@@ -7245,6 +7255,11 @@
                 ],
                 "properties": {
                     "type": {
+                        "enum": [
+                            "mammal",
+                            "bird",
+                            "fish"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -7316,6 +7331,10 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "ostrich",
+                            "seagull"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -7360,8 +7379,12 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "ostrich",
+                            "seagull"
+                        ],
                         "type": "string",
-                        "nullable": true
+                        "nullable": false
                     },
                     "id": {
                         "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
@@ -7404,6 +7427,10 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "ostrich",
+                            "seagull"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -7801,6 +7828,10 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "shark",
+                            "lungfish"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -7845,8 +7876,12 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "shark",
+                            "lungfish"
+                        ],
                         "type": "string",
-                        "nullable": true
+                        "nullable": false
                     },
                     "id": {
                         "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
@@ -7889,6 +7924,10 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "shark",
+                            "lungfish"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -8327,6 +8366,11 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "elephant",
+                            "platypus",
+                            "human"
+                        ],
                         "type": "string",
                         "nullable": false
                     },
@@ -8378,8 +8422,13 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "elephant",
+                            "platypus",
+                            "human"
+                        ],
                         "type": "string",
-                        "nullable": true
+                        "nullable": false
                     },
                     "id": {
                         "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
@@ -8429,6 +8478,11 @@
                 ],
                 "properties": {
                     "name": {
+                        "enum": [
+                            "elephant",
+                            "platypus",
+                            "human"
+                        ],
                         "type": "string",
                         "nullable": false
                     },

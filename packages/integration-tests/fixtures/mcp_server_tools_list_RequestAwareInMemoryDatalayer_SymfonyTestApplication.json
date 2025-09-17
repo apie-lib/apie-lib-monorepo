@@ -104,7 +104,13 @@
                         "properties": {
                             "type": {
                                 "type": "string",
-                                "nullable": false
+                                "nullable": false,
+                                "enum": [
+                                    "mammal",
+                                    "bird",
+                                    "fish"
+                                ],
+                                "format": "enum"
                             },
                             "id": {
                                 "type": "string",
@@ -125,7 +131,13 @@
                                 "properties": {
                                     "name": {
                                         "type": "string",
-                                        "nullable": false
+                                        "nullable": false,
+                                        "enum": [
+                                            "elephant",
+                                            "platypus",
+                                            "human"
+                                        ],
+                                        "format": "enum"
                                     },
                                     "id": {
                                         "type": "string",
@@ -263,7 +275,12 @@
                                 "properties": {
                                     "name": {
                                         "type": "string",
-                                        "nullable": false
+                                        "nullable": false,
+                                        "enum": [
+                                            "ostrich",
+                                            "seagull"
+                                        ],
+                                        "format": "enum"
                                     },
                                     "id": {
                                         "type": "string",
@@ -358,7 +375,12 @@
                                 "properties": {
                                     "name": {
                                         "type": "string",
-                                        "nullable": false
+                                        "nullable": false,
+                                        "enum": [
+                                            "shark",
+                                            "lungfish"
+                                        ],
+                                        "format": "enum"
                                     },
                                     "id": {
                                         "type": "string",
@@ -1309,7 +1331,13 @@
                                 "properties": {
                                     "name": {
                                         "type": "string",
-                                        "nullable": false
+                                        "nullable": false,
+                                        "enum": [
+                                            "elephant",
+                                            "platypus",
+                                            "human"
+                                        ],
+                                        "format": "enum"
                                     },
                                     "id": {
                                         "type": "string",
@@ -1447,7 +1475,12 @@
                                 "properties": {
                                     "name": {
                                         "type": "string",
-                                        "nullable": false
+                                        "nullable": false,
+                                        "enum": [
+                                            "ostrich",
+                                            "seagull"
+                                        ],
+                                        "format": "enum"
                                     },
                                     "id": {
                                         "type": "string",
@@ -1542,7 +1575,12 @@
                                 "properties": {
                                     "name": {
                                         "type": "string",
-                                        "nullable": false
+                                        "nullable": false,
+                                        "enum": [
+                                            "shark",
+                                            "lungfish"
+                                        ],
+                                        "format": "enum"
                                     },
                                     "id": {
                                         "type": "string",

@@ -103,7 +103,7 @@ class SchemaGeneratorTest extends TestCase
             new Schema([
                 'type' => 'object',
                 'properties' => [
-                    'type' => new Schema(['type' => 'string', 'nullable' => false]),
+                    'type' => new Schema(['type' => 'string', 'nullable' => false, 'enum' => ['integer', 'string']]),
                     'id' => $idSchema,
                     'name' => $stringOrInt,
                     'value' => $stringOrInt,
