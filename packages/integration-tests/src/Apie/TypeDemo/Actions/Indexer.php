@@ -19,7 +19,7 @@ class Indexer
     }
 
     #[StaticCheck(new Not(new Requires(ContextConstants::MCP_SERVER)))]
-    #[Route(routeDefinition: '/indexes/{resourceName}/{resourceId}')]
+    #[Route(routeDefinition: '/indexes/{resourceName}/{id}')]
     public function getAllIndexes(
         #[Context()]
         EntityReference $reference,

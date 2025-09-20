@@ -223,6 +223,26 @@ trait CreatesApieBoundedContext
     }
 
     /**
+     * Test for hydrating EntityReference on method call.
+     *
+     * Url POST /indexes/User/{userId}
+     */
+    public function createEntityReferenceTest(): TestRequestInterface
+    {
+        $user = new User(UserIdentifier::fromNative('test@example.com'));
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'indexes/User/test@example.com',
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('0', 'test@example.com'),
+            ),
+            entities: [$user],
+            discardValidationOnFaker: true
+        );
+    }
+
+    /**
      * Test for entity with permission restrictions.
      *
      * POST /RestrictedEntity

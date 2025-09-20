@@ -3858,7 +3858,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SequentialBackgroundProcess-get'
-  '/indexes/{resourceName}/{resourceId}':
+  '/indexes/{resourceName}/{id}':
     post:
       tags:
         - Indexer
@@ -3890,9 +3890,9 @@ paths:
           schema:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
-          name: resourceId
+          name: id
           in: path
-          description: 'resourceId of instance of getAllIndexes'
+          description: 'id of instance of Indexer'
           required: true
           schema:
             $ref: '#/components/schemas/NonEmptyString-post'
