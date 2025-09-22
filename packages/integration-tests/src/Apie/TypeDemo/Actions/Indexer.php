@@ -25,8 +25,7 @@ class Indexer
         EntityReference $reference,
         #[Context()]
         ApieContext $apieContext
-    ): StringSet
-    {
+    ): StringSet {
         $object = $reference->resolve($apieContext);
         $indexes = $this->indexer->getIndexesFor($object, $apieContext);
 
