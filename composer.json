@@ -41,7 +41,7 @@
     "require": {
         "apie/phpunit-matrix-data-provider": "^1.0.3",
         "apie/service-provider-generator": "0.12.1",
-        "apie/type-converter": "^1.6.0",
+        "apie/type-converter": "^1.6.1",
         "beste/clock": "^3.0",
         "cebe/php-openapi": "^1.5",
         "chillerlan/php-qrcode": "^5.0.2",
