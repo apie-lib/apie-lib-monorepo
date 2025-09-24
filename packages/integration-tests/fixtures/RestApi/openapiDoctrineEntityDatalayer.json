@@ -10850,5 +10850,51 @@
                 "nullable": true
             }
         }
-    }
+    },
+    "tags": [
+        {
+            "name": "Animal",
+            "description": "All operations for Animal"
+        },
+        {
+            "name": "ObjectWithRelation",
+            "description": "All operations for ObjectWithRelation"
+        },
+        {
+            "name": "Order",
+            "description": "All operations for Order"
+        },
+        {
+            "name": "PrimitiveOnly",
+            "description": "All operations for PrimitiveOnly"
+        },
+        {
+            "name": "RestrictedEntity",
+            "description": "All operations for RestrictedEntity"
+        },
+        {
+            "name": "SequentialBackgroundProcess",
+            "description": "All operations for SequentialBackgroundProcess"
+        },
+        {
+            "name": "UploadedFile",
+            "description": "All operations for UploadedFile"
+        },
+        {
+            "name": "User",
+            "description": "All operations for User"
+        },
+        {
+            "name": "Authentication",
+            "description": "All operations for Authentication"
+        },
+        {
+            "name": "Calculator",
+            "description": "All operations for Calculator"
+        },
+        {
+            "name": "Indexer",
+            "description": "All operations for Indexer"
+        }
+    ]
 }
