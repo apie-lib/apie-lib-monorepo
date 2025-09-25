@@ -16,7 +16,7 @@ class PriceTest extends TestCase
         $this->assertInstanceOf(Price::class, $price);
         $this->assertSame('12.35', (string) $price);
         $this->assertSame('12.35', $price->toNative());
-        $this->assertSame('12.35', json_encode($price, JSON_THROW_ON_ERROR));
+        $this->assertSame('"12.35"', json_encode($price, JSON_THROW_ON_ERROR));
     }
 
     #[Test]
