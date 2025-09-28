@@ -131,6 +131,69 @@
                 }
             }
         },
+        "/UnionObject/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "UnionObject"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.UnionObject",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Animal/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -669,6 +732,78 @@
                 ],
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.existing.RestrictedEntity",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/UnionObject/{id}/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "UnionObject"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.existing.UnionObject",
                 "parameters": [
                     {
                         "name": "fields",
@@ -1691,8 +1826,7 @@
                         "name": "query[orderId]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     }
                 ],
@@ -1965,6 +2099,246 @@
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/Order-get"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/UnionObject": {
+            "post": {
+                "tags": [
+                    "UnionObject",
+                    "resource"
+                ],
+                "description": "Creates an instance of UnionObject",
+                "operationId": "post-UnionObject",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UnionObject-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnionObject-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "UnionObject",
+                    "resource"
+                ],
+                "description": "Gets a list of resource that are an instance of UnionObject",
+                "operationId": "get-all-UnionObject",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 0,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[value]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[otherValue]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[phoneNumber]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "required": [
+                                        "filteredCount",
+                                        "totalCount",
+                                        "first",
+                                        "last",
+                                        "list"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "first": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "last": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "prev": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "next": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/UnionObject-get"
                                             }
                                         }
                                     }
@@ -2363,32 +2737,28 @@
                         "name": "query[stringField]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[integerField]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[floatingPoint]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[booleanField]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -2614,8 +2984,7 @@
                         "name": "query[userId]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -2894,8 +3263,7 @@
                         "name": "query[imageFile]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     }
                 ],
@@ -3114,16 +3482,14 @@
                         "name": "query[phoneNumber]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[blockedReason]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -4252,6 +4618,203 @@
                 }
             }
         },
+        "/UnionObject/{id}": {
+            "get": {
+                "tags": [
+                    "UnionObject",
+                    "resource"
+                ],
+                "description": "Gets a resource of UnionObject with a specific id",
+                "operationId": "get-single-UnionObject",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of UnionObject",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UnionObjectId-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnionObject-get"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Requires authorization",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WrongTokenException-get"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Access denied",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WrongTokenException-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "UnionObject",
+                    "resource"
+                ],
+                "description": "Modifies an instance of UnionObject",
+                "operationId": "patch-single-UnionObject",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of UnionObject",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/UnionObjectId-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UnionObject-patch"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UnionObject-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/UploadedFile/{id}": {
             "get": {
                 "tags": [
@@ -4941,8 +5504,7 @@
                         "name": "query[completionTime]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -4963,8 +5525,7 @@
                         "name": "query[result]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -5458,6 +6019,7 @@
                     "PrimitiveOnly",
                     "RestrictedEntity",
                     "SequentialBackgroundProcess",
+                    "UnionObject",
                     "UploadedFile",
                     "User",
                     "action"
@@ -7554,6 +8116,112 @@
                 }
             }
         },
+        "/indexes/UnionObject/{id}": {
+            "post": {
+                "tags": [
+                    "Indexer",
+                    "UnionObject",
+                    "action"
+                ],
+                "description": "Calls method getAllIndexes and returns return value.",
+                "operationId": "call-method-Indexer-getAllIndexes_UnionObject",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of Indexer",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/indexes/UploadedFile/{id}": {
             "post": {
                 "tags": [
@@ -7937,60 +8605,6 @@
                     }
                 }
             },
-            "Animal-nullable-get": {
-                "type": "object",
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/Mammal-nullable-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Bird-nullable-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Fish-nullable-get"
-                    }
-                ],
-                "discriminator": {
-                    "propertyName": "type",
-                    "mapping": {
-                        "mammal": "#/components/schemas/Mammal-nullable-get",
-                        "bird": "#/components/schemas/Bird-nullable-get",
-                        "fish": "#/components/schemas/Fish-nullable-get"
-                    }
-                },
-                "required": [
-                    "type"
-                ],
-                "properties": {
-                    "type": {
-                        "enum": [
-                            "mammal",
-                            "bird",
-                            "fish"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfLayingEggs": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "capableOfFlying": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "capableOfWalkingOnWater": {
-                        "type": "boolean",
-                        "nullable": true
-                    }
-                }
-            },
             "Animal-patch": {
                 "type": "object",
                 "properties": {
@@ -8046,12 +8660,6 @@
                 "format": "animalidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
-            "AnimalIdentifier-nullable-get": {
-                "type": "string",
-                "format": "animalidentifier",
-                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
-                "nullable": true
-            },
             "AnimalIdentifier-post": {
                 "type": "string",
                 "format": "animalidentifier",
@@ -8074,6 +8682,16 @@
                 "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
                 "type": "string",
                 "format": "base64"
+            },
+            "BelgianPhoneNumber-get": {
+                "type": "string",
+                "format": "belgianphonenumber",
+                "description": "A phone number valid in Belgium in national format or E164 format"
+            },
+            "BelgianPhoneNumber-post": {
+                "type": "string",
+                "format": "belgianphonenumber",
+                "description": "A phone number valid in Belgium in national format or E164 format"
             },
             "BinaryStream-post": {
                 "type": "string",
@@ -8117,54 +8735,6 @@
                     },
                     "animalName": {
                         "$ref": "#/components/schemas/FirstName-get"
-                    },
-                    "type": {
-                        "enum": [
-                            "bird"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    }
-                }
-            },
-            "Bird-nullable-get": {
-                "type": "object",
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/Ostrich-nullable-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Seagull-nullable-get"
-                    }
-                ],
-                "discriminator": {
-                    "propertyName": "name",
-                    "mapping": {
-                        "ostrich": "#/components/schemas/Ostrich-nullable-get",
-                        "seagull": "#/components/schemas/Seagull-nullable-get"
-                    }
-                },
-                "required": [
-                    "name"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "ostrich",
-                            "seagull"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfFlying": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "enum": [
@@ -8224,13 +8794,6 @@
                 "format": "companyname",
                 "description": "Represents a company name.",
                 "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$"
-            },
-            "CompanyName-nullable-get": {
-                "type": "string",
-                "format": "companyname",
-                "description": "Represents a company name.",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$",
-                "nullable": true
             },
             "CompanyName-post": {
                 "type": "string",
@@ -8302,6 +8865,11 @@
                     "$ref": "#/components/schemas/DropdownOption-get"
                 }
             },
+            "DutchPhoneNumber-get": {
+                "type": "string",
+                "format": "dutchphonenumber",
+                "description": "A phone number valid in the Netherlands in national format or E164 format"
+            },
             "DutchPhoneNumber-nullable-get": {
                 "type": "string",
                 "format": "dutchphonenumber",
@@ -8313,6 +8881,11 @@
                 "format": "dutchphonenumber",
                 "description": "A phone number valid in the Netherlands in national format or E164 format",
                 "nullable": true
+            },
+            "DutchPhoneNumber-post": {
+                "type": "string",
+                "format": "dutchphonenumber",
+                "description": "A phone number valid in the Netherlands in national format or E164 format"
             },
             "Elephant-get": {
                 "type": "object",
@@ -8347,40 +8920,6 @@
                     }
                 }
             },
-            "Elephant-nullable-get": {
-                "type": "object",
-                "required": [
-                    "name",
-                    "id",
-                    "capableOfLayingEggs",
-                    "animalName",
-                    "type"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "elephant"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfLayingEggs": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "type": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "nullable": true
-            },
             "Elephant-post": {
                 "type": "object",
                 "required": [
@@ -8412,36 +8951,32 @@
             "Entity-nullable-get": {
                 "oneOf": [
                     {
-                        "$ref": "#/components/schemas/Animal-nullable-get"
+                        "$ref": "#/components/schemas/Animal-get"
                     },
                     {
-                        "$ref": "#/components/schemas/ObjectWithRelation-nullable-get"
+                        "$ref": "#/components/schemas/ObjectWithRelation-get"
                     },
                     {
-                        "$ref": "#/components/schemas/Order-nullable-get"
+                        "$ref": "#/components/schemas/Order-get"
                     },
                     {
-                        "$ref": "#/components/schemas/PrimitiveOnly-nullable-get"
+                        "$ref": "#/components/schemas/PrimitiveOnly-get"
                     },
                     {
-                        "$ref": "#/components/schemas/RestrictedEntity-nullable-get"
+                        "$ref": "#/components/schemas/RestrictedEntity-get"
                     },
                     {
-                        "$ref": "#/components/schemas/File-nullable-get"
+                        "$ref": "#/components/schemas/UnionObject-get"
                     },
                     {
-                        "$ref": "#/components/schemas/User-nullable-get"
+                        "$ref": "#/components/schemas/File-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/User-get"
                     }
                 ]
             },
             "ExpireStatus-get": {
-                "enum": [
-                    "active",
-                    "expired"
-                ],
-                "type": "string"
-            },
-            "ExpireStatus-nullable-get": {
                 "enum": [
                     "active",
                     "expired"
@@ -8470,30 +9005,6 @@
                         "$ref": "#/components/schemas/mixed"
                     }
                 }
-            },
-            "File-nullable-get": {
-                "type": "object",
-                "required": [
-                    "id",
-                    "imageFile",
-                    "file",
-                    "stream"
-                ],
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/UploadedFileIdentifier-nullable-get"
-                    },
-                    "imageFile": {
-                        "$ref": "#/components/schemas/ImageFile-nullable-get"
-                    },
-                    "file": {
-                        "$ref": "#/components/schemas/UploadedFile-nullable-get"
-                    },
-                    "stream": {
-                        "$ref": "#/components/schemas/mixed"
-                    }
-                },
-                "nullable": true
             },
             "File-patch": {
                 "type": "object",
@@ -8563,13 +9074,6 @@
                 "description": "Represents a first name of a person",
                 "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
             },
-            "FirstName-nullable-get": {
-                "type": "string",
-                "format": "firstname",
-                "description": "Represents a first name of a person",
-                "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$",
-                "nullable": true
-            },
             "FirstName-post": {
                 "type": "string",
                 "format": "firstname",
@@ -8614,54 +9118,6 @@
                     },
                     "animalName": {
                         "$ref": "#/components/schemas/FirstName-get"
-                    },
-                    "type": {
-                        "enum": [
-                            "fish"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    }
-                }
-            },
-            "Fish-nullable-get": {
-                "type": "object",
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/Shark-nullable-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Lungfish-nullable-get"
-                    }
-                ],
-                "discriminator": {
-                    "propertyName": "name",
-                    "mapping": {
-                        "shark": "#/components/schemas/Shark-nullable-get",
-                        "lungfish": "#/components/schemas/Lungfish-nullable-get"
-                    }
-                },
-                "required": [
-                    "name"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "shark",
-                            "lungfish"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfWalkingOnWater": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
                     },
                     "type": {
                         "enum": [
@@ -8752,44 +9208,6 @@
                         "nullable": false
                     }
                 }
-            },
-            "Human-nullable-get": {
-                "type": "object",
-                "required": [
-                    "name",
-                    "id",
-                    "lastName",
-                    "capableOfLayingEggs",
-                    "animalName",
-                    "type"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "human"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "lastName": {
-                        "$ref": "#/components/schemas/LastName-nullable-get"
-                    },
-                    "capableOfLayingEggs": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "type": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "nullable": true
             },
             "Human-post": {
                 "type": "object",
@@ -9002,13 +9420,6 @@
                 "description": "Represents a last or family name of a person.",
                 "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$"
             },
-            "LastName-nullable-get": {
-                "type": "string",
-                "format": "lastname",
-                "description": "Represents a last or family name of a person.",
-                "pattern": "^\\w(\\w|\\-|[^\\S\\r\\n]|'|`|\"|\u2018|\u2019|\u201c|\u201d|\u201f)*$",
-                "nullable": true
-            },
             "LastName-post": {
                 "type": "string",
                 "format": "lastname",
@@ -9047,40 +9458,6 @@
                         "nullable": false
                     }
                 }
-            },
-            "Lungfish-nullable-get": {
-                "type": "object",
-                "required": [
-                    "name",
-                    "id",
-                    "capableOfWalkingOnWater",
-                    "animalName",
-                    "type"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "lungfish"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfWalkingOnWater": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "type": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "nullable": true
             },
             "Lungfish-post": {
                 "type": "object",
@@ -9156,62 +9533,6 @@
                     },
                     "lastName": {
                         "$ref": "#/components/schemas/LastName-get"
-                    },
-                    "type": {
-                        "enum": [
-                            "mammal"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    }
-                }
-            },
-            "Mammal-nullable-get": {
-                "type": "object",
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/Elephant-nullable-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Platypus-nullable-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Human-nullable-get"
-                    }
-                ],
-                "discriminator": {
-                    "propertyName": "name",
-                    "mapping": {
-                        "elephant": "#/components/schemas/Elephant-nullable-get",
-                        "platypus": "#/components/schemas/Platypus-nullable-get",
-                        "human": "#/components/schemas/Human-nullable-get"
-                    }
-                },
-                "required": [
-                    "name"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "elephant",
-                            "platypus",
-                            "human"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfLayingEggs": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "lastName": {
-                        "$ref": "#/components/schemas/LastName-nullable-get"
                     },
                     "type": {
                         "enum": [
@@ -9302,13 +9623,6 @@
                 "description": "Any text, except the empty string.",
                 "pattern": "^.+$"
             },
-            "NonEmptyString-nullable-get": {
-                "type": "string",
-                "format": "nonemptystring",
-                "description": "Any text, except the empty string.",
-                "pattern": "^.+$",
-                "nullable": true
-            },
             "NonEmptyString-post": {
                 "type": "string",
                 "format": "nonemptystring",
@@ -9367,43 +9681,6 @@
                     }
                 }
             },
-            "ObjectWithRelation-nullable-get": {
-                "type": "object",
-                "required": [
-                    "id",
-                    "status",
-                    "userId",
-                    "expireDate",
-                    "expired",
-                    "orderId",
-                    "dateToRecalculate"
-                ],
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/ObjectWithRelationIdentifier-nullable-get"
-                    },
-                    "status": {
-                        "$ref": "#/components/schemas/ExpireStatus-nullable-get"
-                    },
-                    "userId": {
-                        "$ref": "#/components/schemas/UserIdentifier-nullable-get"
-                    },
-                    "expireDate": {
-                        "$ref": "#/components/schemas/DateTime-nullable-get"
-                    },
-                    "expired": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "orderId": {
-                        "$ref": "#/components/schemas/OrderIdentifier-nullable-get"
-                    },
-                    "dateToRecalculate": {
-                        "$ref": "#/components/schemas/DateTime-nullable-get"
-                    }
-                },
-                "nullable": true
-            },
             "ObjectWithRelation-patch": {
                 "type": "object",
                 "properties": {
@@ -9438,12 +9715,6 @@
                 "format": "objectwithrelationidentifier",
                 "pattern": "^[0-9A-Za-z]{22}$"
             },
-            "ObjectWithRelationIdentifier-nullable-get": {
-                "type": "string",
-                "format": "objectwithrelationidentifier",
-                "pattern": "^[0-9A-Za-z]{22}$",
-                "nullable": true
-            },
             "ObjectWithRelationIdentifier-post": {
                 "type": "string",
                 "format": "objectwithrelationidentifier",
@@ -9463,22 +9734,6 @@
                         "$ref": "#/components/schemas/OrderLineList-get"
                     }
                 }
-            },
-            "Order-nullable-get": {
-                "type": "object",
-                "required": [
-                    "id",
-                    "orderLineList"
-                ],
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/OrderIdentifier-nullable-get"
-                    },
-                    "orderLineList": {
-                        "$ref": "#/components/schemas/OrderLineList-nullable-get"
-                    }
-                },
-                "nullable": true
             },
             "Order-post": {
                 "type": "object",
@@ -9522,22 +9777,6 @@
                     }
                 }
             },
-            "OrderLine-nullable-get": {
-                "type": "object",
-                "required": [
-                    "id",
-                    "description"
-                ],
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/OrderLineIdentifier-nullable-get"
-                    },
-                    "description": {
-                        "$ref": "#/components/schemas/NonEmptyString-nullable-get"
-                    }
-                },
-                "nullable": true
-            },
             "OrderLine-post": {
                 "type": "object",
                 "required": [
@@ -9554,24 +9793,11 @@
                 "format": "orderlineidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
-            "OrderLineIdentifier-nullable-get": {
-                "type": "string",
-                "format": "orderlineidentifier",
-                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
-                "nullable": true
-            },
             "OrderLineList-get": {
                 "type": "array",
                 "items": {
                     "$ref": "#/components/schemas/OrderLine-get"
                 }
-            },
-            "OrderLineList-nullable-get": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/components/schemas/OrderLine-nullable-get"
-                },
-                "nullable": true
             },
             "OrderLineList-post": {
                 "type": "array",
@@ -9611,40 +9837,6 @@
                         "nullable": false
                     }
                 }
-            },
-            "Ostrich-nullable-get": {
-                "type": "object",
-                "required": [
-                    "name",
-                    "id",
-                    "capableOfFlying",
-                    "animalName",
-                    "type"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "ostrich"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfFlying": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "type": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "nullable": true
             },
             "Ostrich-post": {
                 "type": "object",
@@ -9693,13 +9885,6 @@
                     }
                 ]
             },
-            "Permission-nullable-get": {
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/SerializedPermission-nullable-get"
-                    }
-                ]
-            },
             "PermissionList-get": {
                 "type": "array",
                 "items": {
@@ -9712,22 +9897,6 @@
                         }
                     ]
                 }
-            },
-            "PermissionList-nullable-get": {
-                "type": "array",
-                "items": {
-                    "oneOf": [
-                        {
-                            "$ref": "#/components/schemas/Permission-nullable-get"
-                        },
-                        {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    ],
-                    "nullable": true
-                },
-                "nullable": true
             },
             "Platypus-get": {
                 "type": "object",
@@ -9761,40 +9930,6 @@
                         "nullable": false
                     }
                 }
-            },
-            "Platypus-nullable-get": {
-                "type": "object",
-                "required": [
-                    "name",
-                    "id",
-                    "capableOfLayingEggs",
-                    "animalName",
-                    "type"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "platypus"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfLayingEggs": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "type": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "nullable": true
             },
             "Platypus-post": {
                 "type": "object",
@@ -9851,34 +9986,6 @@
                     }
                 }
             },
-            "PrimitiveOnly-nullable-get": {
-                "type": "object",
-                "required": [
-                    "id"
-                ],
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-nullable-get"
-                    },
-                    "stringField": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "integerField": {
-                        "type": "integer",
-                        "nullable": true
-                    },
-                    "floatingPoint": {
-                        "type": "number",
-                        "nullable": true
-                    },
-                    "booleanField": {
-                        "type": "boolean",
-                        "nullable": true
-                    }
-                },
-                "nullable": true
-            },
             "PrimitiveOnly-patch": {
                 "type": "object",
                 "properties": {
@@ -9932,12 +10039,6 @@
                 "format": "primitiveonlyidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
-            "PrimitiveOnlyIdentifier-nullable-get": {
-                "type": "string",
-                "format": "primitiveonlyidentifier",
-                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
-                "nullable": true
-            },
             "PrimitiveOnlyIdentifier-post": {
                 "type": "string",
                 "format": "primitiveonlyidentifier",
@@ -9966,30 +10067,6 @@
                     }
                 }
             },
-            "RestrictedEntity-nullable-get": {
-                "type": "object",
-                "required": [
-                    "id",
-                    "companyName",
-                    "requiredPermissions",
-                    "userId"
-                ],
-                "properties": {
-                    "id": {
-                        "$ref": "#/components/schemas/RestrictedEntityIdentifier-nullable-get"
-                    },
-                    "companyName": {
-                        "$ref": "#/components/schemas/CompanyName-nullable-get"
-                    },
-                    "requiredPermissions": {
-                        "$ref": "#/components/schemas/PermissionList-nullable-get"
-                    },
-                    "userId": {
-                        "$ref": "#/components/schemas/UserIdentifier-nullable-get"
-                    }
-                },
-                "nullable": true
-            },
             "RestrictedEntity-patch": {
                 "type": "object",
                 "properties": {
@@ -10017,12 +10094,6 @@
                 "type": "string",
                 "format": "restrictedentityidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
-            },
-            "RestrictedEntityIdentifier-nullable-get": {
-                "type": "string",
-                "format": "restrictedentityidentifier",
-                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
-                "nullable": true
             },
             "RestrictedEntityIdentifier-post": {
                 "type": "string",
@@ -10061,40 +10132,6 @@
                         "nullable": false
                     }
                 }
-            },
-            "Seagull-nullable-get": {
-                "type": "object",
-                "required": [
-                    "name",
-                    "id",
-                    "capableOfFlying",
-                    "animalName",
-                    "type"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "seagull"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfFlying": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "type": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "nullable": true
             },
             "Seagull-post": {
                 "type": "object",
@@ -10223,13 +10260,6 @@
                 "description": "A serialized permission identifier, for example \"user:read\"",
                 "pattern": "^[a-z:]+$"
             },
-            "SerializedPermission-nullable-get": {
-                "type": "string",
-                "format": "serializedpermission",
-                "description": "A serialized permission identifier, for example \"user:read\"",
-                "pattern": "^[a-z:]+$",
-                "nullable": true
-            },
             "Shark-get": {
                 "type": "object",
                 "required": [
@@ -10263,40 +10293,6 @@
                     }
                 }
             },
-            "Shark-nullable-get": {
-                "type": "object",
-                "required": [
-                    "name",
-                    "id",
-                    "capableOfWalkingOnWater",
-                    "animalName",
-                    "type"
-                ],
-                "properties": {
-                    "name": {
-                        "enum": [
-                            "shark"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-get"
-                    },
-                    "capableOfWalkingOnWater": {
-                        "type": "boolean",
-                        "nullable": true
-                    },
-                    "animalName": {
-                        "$ref": "#/components/schemas/FirstName-nullable-get"
-                    },
-                    "type": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "nullable": true
-            },
             "Shark-post": {
                 "type": "object",
                 "required": [
@@ -10328,11 +10324,6 @@
             "StoredFile-get": {
                 "type": "string",
                 "format": "path"
-            },
-            "StoredFile-nullable-get": {
-                "type": "string",
-                "format": "path",
-                "nullable": true
             },
             "StoredFile-post": {
                 "required": [
@@ -10415,17 +10406,171 @@
                     }
                 }
             },
+            "UnionObject-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "value",
+                    "otherValue",
+                    "phoneNumber"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/UnionObjectId-get"
+                    },
+                    "value": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "integer"
+                            }
+                        ],
+                        "nullable": false
+                    },
+                    "otherValue": {
+                        "oneOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "boolean"
+                            }
+                        ],
+                        "nullable": false
+                    },
+                    "phoneNumber": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/DutchPhoneNumber-get"
+                            },
+                            {
+                                "$ref": "#/components/schemas/BelgianPhoneNumber-get"
+                            },
+                            {
+                                "nullable": true,
+                                "default": null
+                            }
+                        ],
+                        "description": "A phone number valid in the Netherlands in national format or E164 format",
+                        "nullable": true
+                    }
+                }
+            },
+            "UnionObject-patch": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "integer"
+                            }
+                        ],
+                        "nullable": false
+                    },
+                    "otherValue": {
+                        "oneOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "boolean"
+                            }
+                        ],
+                        "nullable": false
+                    },
+                    "phoneNumber": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/DutchPhoneNumber-post"
+                            },
+                            {
+                                "$ref": "#/components/schemas/BelgianPhoneNumber-post"
+                            },
+                            {
+                                "nullable": true,
+                                "default": null
+                            }
+                        ],
+                        "description": "A phone number valid in the Netherlands in national format or E164 format",
+                        "nullable": true
+                    }
+                }
+            },
+            "UnionObject-post": {
+                "type": "object",
+                "required": [
+                    "value",
+                    "otherValue"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/UnionObjectId-nullable-post"
+                    },
+                    "value": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "integer"
+                            }
+                        ],
+                        "nullable": false
+                    },
+                    "otherValue": {
+                        "oneOf": [
+                            {
+                                "type": "number"
+                            },
+                            {
+                                "type": "boolean"
+                            }
+                        ],
+                        "nullable": false
+                    },
+                    "phoneNumber": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/components/schemas/DutchPhoneNumber-post"
+                            },
+                            {
+                                "$ref": "#/components/schemas/BelgianPhoneNumber-post"
+                            },
+                            {
+                                "nullable": true,
+                                "default": null
+                            }
+                        ],
+                        "description": "A phone number valid in the Netherlands in national format or E164 format",
+                        "nullable": true
+                    }
+                }
+            },
+            "UnionObjectId-get": {
+                "type": "string",
+                "format": "unionobjectid",
+                "pattern": "^[0-9A-Za-z]{22}$"
+            },
+            "UnionObjectId-nullable-post": {
+                "type": "string",
+                "format": "unionobjectid",
+                "pattern": "^[0-9A-Za-z]{22}$",
+                "nullable": true
+            },
+            "UnionObjectId-post": {
+                "type": "string",
+                "format": "unionobjectid",
+                "pattern": "^[0-9A-Za-z]{22}$"
+            },
             "UploadedFile-get": {
                 "oneOf": [
                     {
                         "$ref": "#/components/schemas/StoredFile-get"
-                    }
-                ]
-            },
-            "UploadedFile-nullable-get": {
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/StoredFile-nullable-get"
                     }
                 ]
             },
@@ -10447,12 +10592,6 @@
                 "type": "string",
                 "format": "uploadedfileidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
-            },
-            "UploadedFileIdentifier-nullable-get": {
-                "type": "string",
-                "format": "uploadedfileidentifier",
-                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$",
-                "nullable": true
             },
             "UploadedFileIdentifier-post": {
                 "type": "string",
@@ -10498,11 +10637,11 @@
                 ],
                 "properties": {
                     "id": {
-                        "$ref": "#/components/schemas/UserIdentifier-nullable-get"
+                        "$ref": "#/components/schemas/UserIdentifier-get"
                     },
                     "blocked": {
                         "type": "boolean",
-                        "nullable": true
+                        "nullable": false
                     },
                     "blockedReason": {
                         "$ref": "#/components/schemas/DatabaseText-nullable-get"
@@ -10611,6 +10750,10 @@
         {
             "name": "SequentialBackgroundProcess",
             "description": "All operations for SequentialBackgroundProcess"
+        },
+        {
+            "name": "UnionObject",
+            "description": "All operations for UnionObject"
         },
         {
             "name": "UploadedFile",

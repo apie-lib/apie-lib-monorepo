@@ -95,6 +95,77 @@
                     }
                 },
                 {
+                    "name": "create-object-types-union-object",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "value",
+                            "otherValue"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "nullable": true,
+                                "pattern": "^[0-9A-Za-z]{22}$"
+                            },
+                            "value": {
+                                "type": "object",
+                                "nullable": false,
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "integer"
+                                    }
+                                ]
+                            },
+                            "otherValue": {
+                                "type": "object",
+                                "nullable": false,
+                                "anyOf": [
+                                    {
+                                        "type": "number"
+                                    },
+                                    {
+                                        "type": "boolean"
+                                    }
+                                ]
+                            },
+                            "phoneNumber": {
+                                "type": "object",
+                                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                                "nullable": true,
+                                "anyOf": [
+                                    {
+                                        "type": "string",
+                                        "description": "A phone number valid in the Netherlands in national format or E164 format"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "A phone number valid in Belgium in national format or E164 format"
+                                    },
+                                    {
+                                        "type": "object",
+                                        "nullable": true
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of UnionObject",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UnionObject",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "replace-object-types-animal",
                     "inputSchema": {
                         "type": "object",
@@ -823,6 +894,30 @@
                     }
                 },
                 {
+                    "name": "get-object-types-union-object",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of UnionObject with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UnionObject",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "get-object-types-uploaded-file",
                     "inputSchema": {
                         "type": "object",
@@ -1109,6 +1204,57 @@
                             "all": true,
                             "get": true,
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-union-object",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    },
+                                    "otherValue": {
+                                        "type": "string"
+                                    },
+                                    "phoneNumber": {
+                                        "type": "string",
+                                        "nullable": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of UnionObject",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UnionObject",
                             "_apie_action": "Apie\\Common\\Actions\\GetListAction"
                         },
                         "x-bounded-context-id": "types"
@@ -1684,6 +1830,74 @@
                         "x-fields": {
                             "edit": true,
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "modify-object-types-union-object",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "value": {
+                                "type": "object",
+                                "nullable": false,
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "integer"
+                                    }
+                                ]
+                            },
+                            "otherValue": {
+                                "type": "object",
+                                "nullable": false,
+                                "anyOf": [
+                                    {
+                                        "type": "number"
+                                    },
+                                    {
+                                        "type": "boolean"
+                                    }
+                                ]
+                            },
+                            "phoneNumber": {
+                                "type": "object",
+                                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                                "nullable": true,
+                                "anyOf": [
+                                    {
+                                        "type": "string",
+                                        "description": "A phone number valid in the Netherlands in national format or E164 format"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "A phone number valid in Belgium in national format or E164 format"
+                                    },
+                                    {
+                                        "type": "object",
+                                        "nullable": true
+                                    }
+                                ]
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Modifies an instance of UnionObject",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UnionObject",
                             "display-form": true,
                             "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
                         },

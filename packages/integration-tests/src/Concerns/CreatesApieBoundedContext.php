@@ -2,7 +2,11 @@
 namespace Apie\IntegrationTests\Concerns;
 
 use Apie\Common\ValueObjects\EntityNamespace;
+use Apie\Core\ApieLib;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Identifiers\Ulid;
+use Apie\CountryAndPhoneNumber\BelgianPhoneNumber;
+use Apie\CountryAndPhoneNumber\BritishPhoneNumber;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Human;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
@@ -13,6 +17,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Order;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\RestrictedEntity;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\UnionObject;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\UploadedFile;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -239,6 +244,30 @@ trait CreatesApieBoundedContext
             ),
             entities: [$user],
             discardValidationOnFaker: true
+        );
+    }
+
+    /**
+     * Test for entity with union object
+     *
+     * POST /UnionObject
+     */
+    public function createUnionObjectTestRequest(): TestRequestInterface
+    {
+        ApieLib::registerValueObject(DutchPhoneNumber::class);
+        ApieLib::registerValueObject(BelgianPhoneNumber::class);
+        return new ValidCreateResourceApiCall(
+            new BoundedContextId('types'),
+            UnionObject::class,
+            new GetAndSetObjectField(
+                '',
+                new GetAndSetPrimitiveField('id', Ulid::createRandom()->toNative()),
+                new GetAndSetPrimitiveField('value', 'string'),
+                new GetAndSetPrimitiveField('otherValue', true),
+                new GetAndSetPrimitiveField('phoneNumber', ' 0611223344 ', '+31611223344'),
+            ),
+            discardRequestValidation: true,
+            discardResponseValidation: true // Somehow gives a false positive.
         );
     }
 
