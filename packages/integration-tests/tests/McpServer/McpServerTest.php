@@ -106,7 +106,7 @@ class McpServerTest extends TestCase
                         . '_'
                         . (new \ReflectionClass($this->testApplication))->getShortName()
                         . '.json';
-                     file_put_contents($fixturePath, json_encode($decodedResponse, JSON_PRETTY_PRINT));
+                    file_put_contents($fixturePath, json_encode($decodedResponse, JSON_PRETTY_PRINT));
                     $expectedResponse = json_decode(file_get_contents($fixturePath), true);
                     TestCase::assertEquals($expectedResponse, $decodedResponse);
                 }

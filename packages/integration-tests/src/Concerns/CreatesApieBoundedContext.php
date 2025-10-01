@@ -6,7 +6,6 @@ use Apie\Core\ApieLib;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Identifiers\Ulid;
 use Apie\CountryAndPhoneNumber\BelgianPhoneNumber;
-use Apie\CountryAndPhoneNumber\BritishPhoneNumber;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Human;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
