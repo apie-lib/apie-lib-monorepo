@@ -26,7 +26,7 @@
     "apie/count-words": "self.version",
     "apie/phpunit-matrix-data-provider": "^1.0.3",
     "nyholm/psr7": "^1.8.2",
-    "orchestra/testbench": "^9.8.0",
+    "orchestra/testbench": "^9.8.0|^10.6.0",
     "symfony/psr-http-message-bridge": "^2.3.1",
     "symfony/monolog-bundle": "^3.10"
   },
