@@ -73,6 +73,7 @@
         "prinsfrank/standards": "^3.3.0",
         "psr/http-message": "^1.1|^2.0",
         "ramsey/uuid": "^4.7.6",
+        "sabre/dav": "^4.7",
         "spomky-labs/otphp": "^11.3.0",
         "symfony/cache": "^7.2",
         "symfony/config": "^7.2",
@@ -119,6 +120,7 @@
             "Apie\\AiInstructor\\": "packages/ai-instructor/src/",
             "Apie\\ApieBundle\\": "packages/apie-bundle/src/",
             "Apie\\ApieCommonPlugin\\": "packages/apie-common-plugin/src/",
+            "Apie\\ApieFileSystem\\": "packages/apie-file-system/src/",
             "Apie\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/src/",
             "Apie\\CmsApiDropdownOption\\": "packages/cms-api-dropdown-option/src/",
             "Apie\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/src/",
@@ -156,7 +158,8 @@
             "Apie\\TextValueObjects\\": "packages/text-value-objects/src/",
             "Apie\\Tools\\": "tools/",
             "Apie\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/src/",
-            "Apie\\TypescriptClientBuilder\\": "packages/typescript-client-builder/src/"
+            "Apie\\TypescriptClientBuilder\\": "packages/typescript-client-builder/src/",
+            "Apie\\Webdav\\": "packages/webdav/src/"
         }
     },
     "autoload-dev": {
@@ -164,6 +167,7 @@
             "Apie\\Tests\\AiInstructor\\": "packages/ai-instructor/tests/",
             "Apie\\Tests\\ApieBundle\\": "packages/apie-bundle/tests/",
             "Apie\\Tests\\ApieCommonPlugin\\": "packages/apie-common-plugin/tests/",
+            "Apie\\Tests\\ApieFileSystem\\": "packages/apie-file-system/tests/",
             "Apie\\Tests\\ApiePhpstanRules\\": "packages/apie-phpstan-rules/tests/",
             "Apie\\Tests\\CmsApiDropdownOption\\": "packages/cms-api-dropdown-option/tests/",
             "Apie\\Tests\\CmsLayoutGraphite\\": "packages/cms-layout-graphite/tests/",
@@ -199,7 +203,8 @@
             "Apie\\Tests\\StorageMetadata\\": "packages/storage-metadata/tests/",
             "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/",
             "Apie\\Tests\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/tests/",
-            "Apie\\Tests\\TypescriptClientBuilder\\": "packages/typescript-client-builder/tests/"
+            "Apie\\Tests\\TypescriptClientBuilder\\": "packages/typescript-client-builder/tests/",
+            "Apie\\Tests\\Webdav\\": "packages/webdav/tests/"
         }
     },
     "extra": {
@@ -349,6 +354,7 @@
         "apie/ai-instructor": "self.version",
         "apie/apie-bundle": "self.version",
         "apie/apie-common-plugin": "self.version",
+        "apie/apie-file-system": "self.version",
         "apie/apie-phpstan-rules": "self.version",
         "apie/cms": "self.version",
         "apie/cms-api-dropdown-option": "self.version",
@@ -386,7 +392,8 @@
         "apie/storage-metadata-builder": "self.version",
         "apie/text-value-objects": "self.version",
         "apie/twig-template-layout-renderer": "self.version",
-        "apie/typescript-client-builder": "self.version"
+        "apie/typescript-client-builder": "self.version",
+        "apie/webdav": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

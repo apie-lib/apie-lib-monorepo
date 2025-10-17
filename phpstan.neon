@@ -117,11 +117,6 @@ parameters:
             count: 1
 
         -
-            message: '#PathItem::\$connect#'
-            path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
-            count: 1
-
-        -
             message: '#Operation::\$responses#'
             path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
             count: 1

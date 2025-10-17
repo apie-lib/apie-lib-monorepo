@@ -3,6 +3,7 @@ namespace Apie\LaravelApie;
 
 use Apie\AiInstructor\AiInstructorServiceProvider;
 use Apie\ApieCommonPlugin\ApieCommonPluginServiceProvider;
+use Apie\ApieFileSystem\ApieFileSystemServiceProvider;
 use Apie\CmsApiDropdownOption\CmsDropdownServiceProvider;
 use Apie\Common\CommonServiceProvider;
 use Apie\Common\ContextBuilders\FrameworkContextBuilder;
@@ -42,6 +43,7 @@ use Apie\SchemaGenerator\SchemaGeneratorServiceProvider;
 use Apie\Serializer\SerializerServiceProvider;
 use Apie\ServiceProviderGenerator\TagMap;
 use Apie\TypescriptClientBuilder\TypescriptClientBuilderServiceProvider;
+use Apie\Webdav\WebdavServiceProvider;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -123,6 +125,10 @@ class ApieServiceProvider extends ServiceProvider
         'enable_typescript_client_builder' => [
             TypescriptClientBuilderServiceProvider::class,
         ],
+        'enable_webdav' => [
+            ApieFileSystemServiceProvider::class,
+            WebdavServiceProvider::class,
+        ]
     ];
 
     private function autoTagHashmapActions(): void

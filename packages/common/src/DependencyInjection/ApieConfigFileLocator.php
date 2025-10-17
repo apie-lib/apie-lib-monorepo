@@ -3,6 +3,7 @@ namespace Apie\Common\DependencyInjection;
 
 use Apie\AiInstructor\AiInstructor;
 use Apie\ApieCommonPlugin\ApieCommonPlugin;
+use Apie\ApieFileSystem\ApieFilesystemFactory;
 use Apie\Cms\RouteDefinitions\AbstractCmsRouteDefinition;
 use Apie\CmsApiDropdownOption\Lists\DropdownOptionList;
 use Apie\Common\ApieFacade;
@@ -19,6 +20,7 @@ use Apie\SchemaGenerator\ComponentsBuilderFactory;
 use Apie\Serializer\Serializer;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
 use Apie\TypescriptClientBuilder\RouteDefinitions\CodeRouteDefinitionProvider;
+use Apie\Webdav\Controller\WebdavController;
 use ReflectionClass;
 use ReflectionException;
 use Symfony\Component\Config\FileLocator;
@@ -31,6 +33,7 @@ class ApieConfigFileLocator extends FileLocator
     private array $predefined = [
         'ai_instructor.yaml' => [AiInstructor::class, '..', 'Apie\\AiInstructor\\AiInstructorServiceProvider'],
         'apie_common_plugin.yaml' => [ApieCommonPlugin::class, '..', 'Apie\\ApieCommonPlugin\\GeneratedApieCommonPluginServiceProvider'],
+        'apie_file_system.yaml' => [ApieFilesystemFactory::class, '..', 'Apie\\ApieFileSystem\\ApieFileSystemServiceProvider'],
         'cms.yaml' => [AbstractCmsRouteDefinition::class, '../..', 'Apie\\Cms\\CmsServiceProvider'],
         'cms_dropdown.yaml' => [DropdownOptionList::class, '../..', 'Apie\\CmsApiDropdownOption\\CmsDropdownServiceProvider'],
         'common.yaml' => [ApieFacade::class, '..', 'Apie\\Common\\CommonServiceProvider'],
@@ -47,6 +50,7 @@ class ApieConfigFileLocator extends FileLocator
         'schema_generator.yaml' => [ComponentsBuilderFactory::class, '..', 'Apie\\SchemaGenerator\\SchemaGeneratorServiceProvider'],
         'twig_template_layout_renderer.yaml' => [TwigRenderer::class, '..', 'Apie\\TwigTemplateLayoutRenderer\\TwigTemplateLayoutRendererServiceProvider'],
         'typescript_client_builder.yaml' => [CodeRouteDefinitionProvider::class, '../..', 'Apie\\TypescriptClientBuilder\\TypescriptClientBuilderServiceProvider'],
+        'webdav.yaml' => [WebdavController::class, '../..', 'Apie\\Webdav\\WebdavServiceProvider'],
     ];
 
     public function __construct(string|array $paths = [])
