@@ -27,12 +27,11 @@ class WebdavController
     public function __invoke(ServerRequestInterface $request): ResponseInterface
     {
         $apieContext = $this->contextBuilderFactory
-            ->createFromRequest($request, [ContextConstants::WEBDAV => true]);
+            ->createFromRequest($request, [ContextConstants::WEBDAV => true, ContextConstants::RAW_CONTENTS => []]);
         $filesystem = $this->apieFilesystemFactory->create($apieContext);
         $server = new Server(new ApieDirectory($filesystem->rootFolder));
         $server->setBaseUri('/webdav');
         $server->addPlugin(new Plugin()); // Optional browser UI
-
         $sabreRequest = new SabreRequest(
             $request->getMethod(),
             (string) $request->getUri()->getPath(),

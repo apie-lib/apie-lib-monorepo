@@ -22,7 +22,7 @@
   "require": {
     "php": ">=8.3",
     "apie/core": "self.version",
-    "apie/apie-file-system": "*",
+    "apie/apie-file-system": "self.version",
     "sabre/dav": "^4.7"
   },
   "require-dev": {
