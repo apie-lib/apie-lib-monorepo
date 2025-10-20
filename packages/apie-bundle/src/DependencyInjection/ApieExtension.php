@@ -109,10 +109,6 @@ final class ApieExtension extends Extension
         'enable_typescript_client_builder' => [
             'typescript_client_builder.yaml',
         ],
-        'enable_webdav' => [
-            'apie_file_system.yaml',
-            'webdav.yaml',
-        ],
     ];
 
     /**

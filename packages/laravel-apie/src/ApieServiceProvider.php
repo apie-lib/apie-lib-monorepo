@@ -43,7 +43,6 @@ use Apie\SchemaGenerator\SchemaGeneratorServiceProvider;
 use Apie\Serializer\SerializerServiceProvider;
 use Apie\ServiceProviderGenerator\TagMap;
 use Apie\TypescriptClientBuilder\TypescriptClientBuilderServiceProvider;
-use Apie\Webdav\WebdavServiceProvider;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -125,10 +124,6 @@ class ApieServiceProvider extends ServiceProvider
         'enable_typescript_client_builder' => [
             TypescriptClientBuilderServiceProvider::class,
         ],
-        'enable_webdav' => [
-            ApieFileSystemServiceProvider::class,
-            WebdavServiceProvider::class,
-        ]
     ];
 
     private function autoTagHashmapActions(): void
