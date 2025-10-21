@@ -3557,6 +3557,190 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+  '/SequentialBackgroundProcess/{id}':
+    get:
+      tags:
+        - SequentialBackgroundProcess
+        - resource
+      description: 'Gets a resource of SequentialBackgroundProcess with a specific id'
+      operationId: get-single-SequentialBackgroundProcess
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SequentialBackgroundProcess'
+          required: true
+          schema:
+            $ref: '#/components/schemas/SequentialBackgroundProcessIdentifier-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SequentialBackgroundProcess-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  /SequentialBackgroundProcess:
+    get:
+      tags:
+        - SequentialBackgroundProcess
+        - resource
+      description: 'Gets a list of resource that are an instance of SequentialBackgroundProcess'
+      operationId: get-all-SequentialBackgroundProcess
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: items_per_page
+          in: query
+          schema:
+            minimum: 1
+            type: integer
+        -
+          name: page
+          in: query
+          schema:
+            minimum: 0
+            type: integer
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: 'query[version]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[step]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[retries]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[startTime]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[completionTime]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[status]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[id]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[result]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[errors]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[payload]'
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - filteredCount
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SequentialBackgroundProcess-get'
   '/calc/{numberOne}/plus/{numberTwo}':
     post:
       tags:
@@ -3831,6 +4015,7 @@ paths:
         - Order
         - PrimitiveOnly
         - RestrictedEntity
+        - SequentialBackgroundProcess
         - UnionObject
         - UploadedFile
         - User
@@ -4607,6 +4792,168 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+  '/SequentialBackgroundProcess/{id}/provideAllowedMethods':
+    get:
+      tags:
+        - SequentialBackgroundProcess
+        - action
+      description: 'Runs method provideAllowedMethods on a SequentialBackgroundProcess with a specific id'
+      operationId: get-single-SequentialBackgroundProcess-run-provideAllowedMethods
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SequentialBackgroundProcess'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringList-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  '/SequentialBackgroundProcess/{id}/cancel':
+    get:
+      tags:
+        - SequentialBackgroundProcess
+        - action
+      description: 'Runs method cancel on a SequentialBackgroundProcess with a specific id'
+      operationId: get-single-SequentialBackgroundProcess-run-cancel
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SequentialBackgroundProcess'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SequentialBackgroundProcess-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  '/SequentialBackgroundProcess/{id}/runStep':
+    post:
+      tags:
+        - SequentialBackgroundProcess
+        - action
+      description: 'Runs method runStep on a SequentialBackgroundProcess with a specific id'
+      operationId: get-single-SequentialBackgroundProcess-run-runStep
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SequentialBackgroundProcess'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {  }
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SequentialBackgroundProcess-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
   '/UploadedFile/{id}/download/{properties}':
     get:
       tags:
@@ -5235,6 +5582,75 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+  '/indexes/SequentialBackgroundProcess/{id}':
+    post:
+      tags:
+        - Indexer
+        - SequentialBackgroundProcess
+        - action
+      description: 'Calls method getAllIndexes and returns return value.'
+      operationId: call-method-Indexer-getAllIndexes_SequentialBackgroundProcess
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of Indexer'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {  }
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringSet-get'
 servers:
   -
     url: /api/types
@@ -5322,6 +5738,9 @@ components:
       type: string
       format: animalidentifier
       pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    BackgroundProcessDeclaration-post:
+      type: object
+      properties: {  }
     BackgroundProcessStatus-get:
       enum:
         - active
@@ -5790,7 +6209,15 @@ components:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/mixed'
+    ItemHashmap-post:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/mixed'
     ItemList-get:
+      type: array
+      items:
+        $ref: '#/components/schemas/mixed'
+    ItemList-post:
       type: array
       items:
         $ref: '#/components/schemas/mixed'
@@ -6409,7 +6836,27 @@ components:
           $ref: '#/components/schemas/DateTime-nullable-get'
         result:
           $ref: '#/components/schemas/mixed'
+    SequentialBackgroundProcess-post:
+      type: object
+      required:
+        - backgroundProcessDeclaration
+        - payload
+      properties:
+        backgroundProcessDeclaration:
+          $ref: '#/components/schemas/BackgroundProcessDeclaration-post'
+        payload:
+          oneOf:
+            -
+              $ref: '#/components/schemas/ItemHashmap-post'
+            -
+              $ref: '#/components/schemas/ItemList-post'
+          nullable: false
     SequentialBackgroundProcessIdentifier-get:
+      type: string
+      format: sequentialbackgroundprocessidentifier
+      description: 'A reference to a background process.'
+      pattern: '([A-Z][a-zA-Z0-9]*),([0-9A-Za-z]{22})$'
+    SequentialBackgroundProcessIdentifier-post:
       type: string
       format: sequentialbackgroundprocessidentifier
       description: 'A reference to a background process.'
@@ -6499,6 +6946,10 @@ components:
       description: 'Strict mime type without wildcards, for example "application/json"'
       pattern: '^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$'
       nullable: true
+    StringList-get:
+      type: array
+      items:
+        type: string
     StringSet-get:
       type: array
       items:
@@ -6752,6 +7203,9 @@ tags:
   -
     name: RestrictedEntity
     description: 'All operations for RestrictedEntity'
+  -
+    name: SequentialBackgroundProcess
+    description: 'All operations for SequentialBackgroundProcess'
   -
     name: UnionObject
     description: 'All operations for UnionObject'

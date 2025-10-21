@@ -17,7 +17,7 @@ class SymfonyCommandTest extends TestCase
     private const EXPECTED_ROUTES = [
         'external MCP setting (POST)' => 'POST     ANY      ANY    /mcp',
         'external MCP setting (GET)'  => 'GET      ANY      ANY    /mcp',
-        //'WebDAV'                      => 'ANY      ANY      ANY    /webdav/{path}',
+        'WebDAV'                      => 'ANY      ANY      ANY    /webdav/{path}',
         'javascript code generated'   => 'GET      ANY      ANY    /js/Apie.es6.js',
         'OpenAPI spec yaml'           => 'GET      ANY      ANY    /api/types/openapi.yaml',
         'OpenAPI spec JSON'           => 'GET      ANY      ANY    /api/types/openapi.json',
