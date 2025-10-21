@@ -7,8 +7,6 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
-use Apie\IntegrationTests\Requests\JsonFields\JsonGetFieldInterface;
-use Apie\IntegrationTests\Requests\JsonFields\JsonSetFieldInterface;
 use Nyholm\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;

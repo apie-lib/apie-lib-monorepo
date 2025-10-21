@@ -22,7 +22,7 @@ class ApieFile extends File
 
     public function getSize()
     {
-        return $this->file->getSize();
+       return $this->file->getSize();
     }
 
     public function getETag()

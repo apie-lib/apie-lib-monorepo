@@ -18,7 +18,17 @@ class GetSingleResourceFile implements VirtualFileInterface
     }
 
     public function getContents(): string
-    {
+    { // TODO json encode
         return serialize($this->resource);
+    }
+
+    public function getSize(): int
+    {
+        return strlen($this->getContents());
+    }
+
+    public function getMimeType(): string
+    {
+        return 'application/json';
     }
 }
