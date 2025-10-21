@@ -69,10 +69,7 @@ class WebdavRouteDefinition implements HasRouteDefinition, HasActionDefinition
     public function getRouteAttributes(): array
     {
         return [
-            'path' => [
-                'type' => 'string',
-                'regex' => '.*'
-            ]
+            'path' => '',
         ];
     }
 

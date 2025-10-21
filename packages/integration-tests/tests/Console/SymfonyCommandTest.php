@@ -53,4 +53,25 @@ class SymfonyCommandTest extends TestCase
             new IntegrationTestHelper()
         );
     }
+
+    #[RunInSeparateProcess]
+    #[Test]
+    #[DataProvider('it_can_list_all_routes_with_the_regular_symfony_command_provider')]
+    public function it_can_match_all_webdav_routes(SymfonyTestApplication $testApplication)
+    {
+        $testApplication->bootApplication();
+        $tester = new ApplicationTester($testApplication->getConsoleApplication());
+        $exitCode = $tester->run([
+            'router:match',
+            'path_info' => '/webdav',
+            '--method' => 'PUT',
+            '--scheme' => 'http',
+            '--host' => 'localhost',
+        ]);
+        $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
+        $output = $tester->getDisplay();
+        $this->assertStringContainsString('apie._global.apie_webdav', $output, 'Route should match this route name');
+        
+        $testApplication->cleanApplication();
+    }
 }

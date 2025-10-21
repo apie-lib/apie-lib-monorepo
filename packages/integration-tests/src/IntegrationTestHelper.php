@@ -11,7 +11,7 @@ use Apie\IntegrationTests\Config\Enums\DatalayerImplementation;
 /**
  * @codeCoverageIgnore
  */
-final class IntegrationTestHelper
+class IntegrationTestHelper
 {
     use CreatesApplications;
     use CreatesApieBoundedContext;

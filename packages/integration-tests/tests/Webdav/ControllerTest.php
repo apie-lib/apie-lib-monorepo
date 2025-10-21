@@ -5,6 +5,8 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\ListFilesWebdavCall;
+use Apie\IntegrationTests\Requests\WebdavTestRequestInterface;
+use Apie\IntegrationTests\WebdavTestHelper;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Generator;
 use PHPUnit\Framework\TestCase;
@@ -13,6 +15,11 @@ use ReflectionMethod;
 class ControllerTest extends TestCase
 {
     use MakeDataProviderMatrix;
+
+    private function shouldOverwriteFixtures(): bool
+    {
+        return true;
+    }
 
     public static function it_can_display_test_page_provider(): Generator
     {
@@ -35,16 +42,33 @@ class ControllerTest extends TestCase
         $testApplication->cleanApplication();
     }
 
-    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_display_test_page_provider')]
+    public static function it_can_retrieve_folder_listings_provider(): Generator
+    {
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_retrieve_folder_listings'),
+            new WebdavTestHelper()
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_retrieve_folder_listings_provider')]
     #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
     #[\PHPUnit\Framework\Attributes\Test]
-    public function it_can_display_resources_in_a_bounded_context(TestApplicationInterface $testApplication)
-    {
+    public function it_can_retrieve_folder_listings(
+        TestApplicationInterface $testApplication,
+        WebdavTestRequestInterface $request
+    ) {
         $testApplication->bootApplication();
-        $response = $testApplication->httpRequest(new ListFilesWebdavCall(new BoundedContextId('types')));
-        $this->assertEquals(207, $response->getStatusCode(), 'Body is ' . $response->getBody());
-        $fixtureFile = __DIR__ . '/../../fixtures/Webdav/ControllerTest_it_can_display_resources_in_a_bounded_context.xml';
-        // file_put_contents($fixtureFile, $response->getBody());
+        $response = $testApplication->httpRequest($request);
+        $this->assertEquals($request->getExpectedStatusCode(), $response->getStatusCode(), 'Body is ' . substr($response->getBody(), 0, 100));
+        $fixtureFile = __DIR__ . '/../../fixtures/Webdav/ControllerTest_it_can_retrieve_folder_listings_' . $request->getTestName() . '.xml';
+        if ($this->shouldOverwriteFixtures() || !file_exists($fixtureFile)) {
+            $xmlString = $response->getBody();
+            $dom = new \DOMDocument();
+            $dom->preserveWhiteSpace = false;
+            $dom->formatOutput = true;
+            $dom->loadXML($xmlString);
+            file_put_contents($fixtureFile, $dom->saveXML());
+        }
         $this->assertXmlStringEqualsXmlFile($fixtureFile, $response->getBody());
         $this->assertEquals('application/xml; charset=utf-8', $response->getHeaderLine('Content-Type'));
         $testApplication->cleanApplication();

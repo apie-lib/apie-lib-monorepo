@@ -5,6 +5,7 @@ namespace Apie\IntegrationTests\Requests;
 use Apie\Common\IntegrationTestLogger;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Identifiers\SnakeCaseSlug;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Nyholm\Psr7\ServerRequest;
@@ -12,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class ListFilesWebdavCall implements TestRequestInterface, BootstrapRequestInterface
+class ListFilesWebdavCall implements WebdavTestRequestInterface, BootstrapRequestInterface
 {
     private bool $faked = false;
 
@@ -21,8 +22,17 @@ class ListFilesWebdavCall implements TestRequestInterface, BootstrapRequestInter
      */
     public function __construct(
         private readonly BoundedContextId $boundedContextId,
+        private readonly int $depth = 1,
+        private readonly string $pathSuffix = '',
         private readonly array $entities = [],
     ) {
+    }
+
+    public function getTestName(): SnakeCaseSlug
+    {
+        return new SnakeCaseSlug(
+            'list_files_in_' . $this->boundedContextId . '_with_depth_' . $this->depth . '_' . count($this->entities) . ($this->pathSuffix ? ('_' . md5($this->pathSuffix)) : '')
+        );
     }
 
     public function bootstrap(TestApplicationInterface $testApplication): void
@@ -53,11 +63,16 @@ class ListFilesWebdavCall implements TestRequestInterface, BootstrapRequestInter
     {
         return new ServerRequest(
             'PROPFIND',
-            'http://localhost/webdav/' . $this->boundedContextId,
+            'http://localhost/webdav/' . $this->boundedContextId . $this->pathSuffix,
             [
-                'depth' => 1,
+                'depth' => $this->depth,
             ]
         );
+    }
+
+    public function getExpectedStatusCode(): int
+    {
+        return 207;
     }
 
     public function verifyValidResponse(ResponseInterface $response): void
