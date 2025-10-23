@@ -16,6 +16,7 @@ use Apie\Core\Indexing\Indexer;
 use Apie\Fixtures\BoundedContextFactory;
 use Apie\Fixtures\Entities\Polymorphic\AnimalIdentifier;
 use Apie\Fixtures\Entities\Polymorphic\Elephant;
+use Apie\Serializer\Serializer;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -25,7 +26,7 @@ class ApieFilesystemFactoryTest extends TestCase
     {
         $result = [];
         for ($i = $start; $i < $end; $i++) {
-            $result[$this->toUuid($i)] = GetSingleResourceFile::class;
+            $result[$this->toUuid($i) . '.json'] = GetSingleResourceFile::class;
         }
 
         return $result;
@@ -49,6 +50,7 @@ class ApieFilesystemFactoryTest extends TestCase
         }
         $actual = $factory->create(new ApieContext([
             ApieDatalayer::class => $dataLayer,
+            Serializer::class => Serializer::create(),
         ]));
         $this->assertInstanceOf(RootFolder::class, $actual->rootFolder);
         $this->assertSameStructure([
