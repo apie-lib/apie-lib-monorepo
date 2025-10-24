@@ -3,6 +3,7 @@ namespace Apie\ApieFileSystem\Virtual;
 
 use Apie\ApieFileSystem\Lists\VirtualFileMap;
 use Apie\Common\ActionDefinitions\GetResourceListActionDefinition;
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
@@ -23,6 +24,17 @@ class GetResourceListFolder implements VirtualFolderInterface
 
     public function getChild(string $name): VirtualFileInterface|VirtualFolderInterface|null
     {
+        if (is_numeric($name)) {
+            $datalayer = $this->apieContext->getContext(ApieDatalayer::class, false);
+            $serializer = $this->apieContext->getContext(Serializer::class, false);
+            if ($datalayer instanceof ApieDatalayer && $serializer instanceof Serializer) {
+                $list = $datalayer->all(
+                    $this->actionDefinition->getResourceName(),
+                    $this->apieContext->getContext(BoundedContextId::class, false)
+                );
+                return new GetResourceListPaginationFolder($list, (int) $name, $serializer, $this->apieContext);
+            }
+        }
         return null;
     }
 
@@ -33,7 +45,7 @@ class GetResourceListFolder implements VirtualFolderInterface
         if ($datalayer instanceof ApieDatalayer && $serializer instanceof Serializer) {
             $list = $datalayer->all(
                 $this->actionDefinition->getResourceName(),
-                $this->apieContext->getContext(ContextConstants::BOUNDED_CONTEXT_ID, false)
+                $this->apieContext->getContext(BoundedContextId::class, false)
             );
             $totalCount = $list->getTotalCount();
             $files = [];
@@ -43,6 +55,7 @@ class GetResourceListFolder implements VirtualFolderInterface
             }
             return new VirtualFileMap($files);
         }
+        
         return new VirtualFileMap();
     }
 }

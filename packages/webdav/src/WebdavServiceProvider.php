@@ -46,7 +46,8 @@ class WebdavServiceProvider extends ServiceProvider
             function ($app) {
                 return new \Apie\Webdav\Controller\WebdavController(
                     $app->make(\Apie\ApieFileSystem\ApieFilesystemFactory::class),
-                    $app->make(\Apie\Core\ContextBuilders\ContextBuilderFactory::class)
+                    $app->make(\Apie\Core\ContextBuilders\ContextBuilderFactory::class),
+                    $this->parseArgument('%kernel.debug%', \Apie\Webdav\Controller\WebdavController::class, 2)
                 );
             }
         );

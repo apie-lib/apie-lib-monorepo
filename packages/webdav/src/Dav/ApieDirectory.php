@@ -37,7 +37,7 @@ class ApieDirectory extends Collection
         } elseif ($child instanceof VirtualFileInterface) {
             return new ApieFile($child);
         }
-        throw new \Sabre\DAV\Exception\NotFound('File not found: '.$name);
+        throw new \Sabre\DAV\Exception\NotFound('File not found: ' . $name);
     }
 
     public function childExists($name): bool

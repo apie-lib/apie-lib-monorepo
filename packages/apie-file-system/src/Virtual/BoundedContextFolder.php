@@ -4,7 +4,9 @@ namespace Apie\ApieFileSystem\Virtual;
 use Apie\ApieFileSystem\Lists\VirtualFileMap;
 use Apie\Common\ActionDefinitionProvider;
 use Apie\Core\BoundedContext\BoundedContext;
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
+use Apie\Core\ContextConstants;
 
 /**
  * A folder representing a bounded context in the virtual file system.
@@ -14,11 +16,22 @@ use Apie\Core\Context\ApieContext;
  */
 class BoundedContextFolder implements VirtualFolderInterface
 {
+    private readonly ApieContext $apieContext;
+
     public function __construct(
         private readonly BoundedContext $boundedContext,
         private readonly ActionDefinitionProvider $actionDefinitionProvider,
-        private readonly ApieContext $apieContext
+        ApieContext $apieContext
     ) {
+        $this->apieContext = $apieContext
+            ->withContext(
+                ContextConstants::BOUNDED_CONTEXT_ID,
+                $this->boundedContext->getId()->toNative()
+            )
+            ->withContext(
+                BoundedContextId::class,
+                $this->boundedContext->getId()
+            );
     }
 
     public function getName(): string

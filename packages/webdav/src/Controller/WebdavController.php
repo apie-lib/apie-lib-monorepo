@@ -21,6 +21,7 @@ class WebdavController
     public function __construct(
         private readonly ApieFilesystemFactory $apieFilesystemFactory,
         private readonly ContextBuilderFactory $contextBuilderFactory,
+        private readonly bool $debug = false,
     ) {
     }
 
@@ -30,6 +31,7 @@ class WebdavController
             ->createFromRequest($request, [ContextConstants::WEBDAV => true, ContextConstants::RAW_CONTENTS => []]);
         $filesystem = $this->apieFilesystemFactory->create($apieContext);
         $server = new Server(new ApieDirectory($filesystem->rootFolder));
+        $server->debugExceptions = $this->debug;
         $server->setBaseUri('/webdav');
         $server->addPlugin(new Plugin()); // Optional browser UI
         $sabreRequest = new SabreRequest(
@@ -45,10 +47,15 @@ class WebdavController
 
         $server->httpRequest = $sabreRequest;
         $server->httpResponse = $sabreResponse;
-
-        ob_start();
-        $server->start();
-        $body = ob_get_clean();
+        try {
+            ob_start();
+            $server->start();
+        } catch (\Exception $e) {
+            error_log($e->getMessage());
+            $server->emit('exception', [$e]);
+        } finally {
+            $body = ob_get_clean();
+        }
 
         $psrResponse = new Response(
             $sabreResponse->getStatus(),

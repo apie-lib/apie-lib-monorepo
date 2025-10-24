@@ -23,7 +23,7 @@ class GetSingleResourceFile implements VirtualFileInterface
     }
 
     public function getContents(): string
-    { 
+    {
         return json_encode(
             $this->serializer->normalize($this->resource, $this->context),
             JSON_PRETTY_PRINT

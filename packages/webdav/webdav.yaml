@@ -8,5 +8,6 @@ services:
     arguments:
       - '@Apie\ApieFileSystem\ApieFilesystemFactory'
       - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - '%kernel.debug%'
     tags:
       - name: 'controller.service_arguments'
