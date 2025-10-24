@@ -2,6 +2,7 @@
 namespace Apie\IntegrationTests;
 
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
@@ -18,6 +19,9 @@ class WebdavTestHelper extends IntegrationTestHelper
         return new ListFilesWebdavCall(new BoundedContextId('types'));
     }
 
+    /**
+     * @return array<int, EntityInterface>
+     */
     private function createEntityList(): array
     {
         return [

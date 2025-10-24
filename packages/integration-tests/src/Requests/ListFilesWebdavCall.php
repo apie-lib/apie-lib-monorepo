@@ -40,6 +40,7 @@ class ListFilesWebdavCall implements WebdavTestRequestInterface, BootstrapReques
         $apieFacade = $testApplication->getServiceContainer()->get('apie');
         foreach ($this->entities as $entity) {
             $apieFacade->persistNew($entity, $this->boundedContextId);
+            usleep(1); // Ensure different timestamps
         }
         $this->faked = $testApplication->getApplicationConfig()->getDatalayerImplementation()->name === FakerDatalayer::class;
     }

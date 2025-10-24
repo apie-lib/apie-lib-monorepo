@@ -73,6 +73,9 @@ class ControllerTest extends TestCase
         $body = preg_replace('/<s:stacktrace>.*?<\/s:stacktrace>/s', '', (string) $body);
         // remove <s:file> because they are not deterministic because of full file path
         $body = preg_replace('/<s:file>.*?<\/s:file>/s', '', (string) $body);
+        // remove <s:line> because they are not deterministic because of full file path
+        $body = preg_replace('/<s:line>.*?<\/s:line>/s', '', (string) $body);
+
         if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name !== FakerDatalayer::class) {
             $this->assertEquals($request->getExpectedStatusCode(), $response->getStatusCode(), 'Body is ' . substr($response->getBody(), 0, 400));
             $fixtureFile = __DIR__ . '/../../fixtures/Webdav/ControllerTest_it_can_retrieve_folder_listings_' . $request->getTestName() . '.xml';
