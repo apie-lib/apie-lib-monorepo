@@ -24,6 +24,7 @@
     "apie/core": "self.version",
     "apie/serializer": "self.version",
     "apie/html-builders": "self.version",
+    "guzzlehttp/psr7": "^2.4",
     "maennchen/zipstream-php": "^3.0",
     "nyholm/psr7": "^1.8.2"
   },
