@@ -4,7 +4,10 @@ namespace Apie\ApieFileSystem\Virtual;
 interface VirtualFileInterface
 {
     public function getName(): string;
-    public function getContents(): string;
-    public function getSize(): int;
+    /**
+     * @return string|resource
+     */
+    public function getContents(): mixed;
+    public function getSize(): ?int;
     public function getMimeType(): string;
 }

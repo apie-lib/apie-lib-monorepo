@@ -6,6 +6,7 @@ use Apie\Common\ActionDefinitionProvider;
 use Apie\Common\ActionDefinitions\GetResourceListActionDefinition;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
+use Apie\Export\EntityExport;
 
 /**
  * A folder representing the resources in a bounded context in the virtual file system.
@@ -36,11 +37,22 @@ class ResourcesFolder implements VirtualFolderInterface
 
     public function getChildren(): VirtualFileMap
     {
+        $exporter = $this->apieContext->getContext(EntityExport::class, false);
         if (!isset($this->children)) {
             $files = [];
             foreach ($this->actionDefinitionProvider->provideActionDefinitions($this->boundedContext, $this->apieContext, true) as $actionDefinition) {
                 if ($actionDefinition instanceof GetResourceListActionDefinition) {
                     $files[$actionDefinition->getResourceName()->getShortName()] = new GetResourceListFolder($actionDefinition, $this->apieContext);
+                    if ($exporter) {
+                        foreach ($exporter->getSupportedExtensions() as $fileExtension) {
+                            $files[$actionDefinition->getResourceName()->getShortName() . '.' . $fileExtension->toNative()] = new ExportResourceFile(
+                                $this->apieContext,
+                                $actionDefinition->getResourceName(),
+                                $fileExtension,
+                                $exporter
+                            );
+                        }
+                    }
                 }
             }
             $this->children = new VirtualFileMap($files);

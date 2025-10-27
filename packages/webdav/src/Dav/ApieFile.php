@@ -27,7 +27,11 @@ class ApieFile extends File
 
     public function getETag()
     {
-        return md5($this->file->getContents());
+        $contents = $this->file->getContents();
+        if (is_string($contents)) {
+            return md5($contents);
+        }
+        return null;
     }
 
     public function getContentType()

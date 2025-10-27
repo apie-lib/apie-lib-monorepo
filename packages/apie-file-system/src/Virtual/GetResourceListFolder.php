@@ -5,7 +5,6 @@ use Apie\ApieFileSystem\Lists\VirtualFileMap;
 use Apie\Common\ActionDefinitions\GetResourceListActionDefinition;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
-use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Serializer\Serializer;
 

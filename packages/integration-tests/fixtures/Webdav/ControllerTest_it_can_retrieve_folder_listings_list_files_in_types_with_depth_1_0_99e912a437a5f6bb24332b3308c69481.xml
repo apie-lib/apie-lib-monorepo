@@ -23,12 +23,32 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/Animal.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/ObjectWithRelation/</d:href>
     <d:propstat>
       <d:prop>
         <d:resourcetype>
           <d:collection/>
         </d:resourcetype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/ObjectWithRelation.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -45,12 +65,32 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/Order.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/PrimitiveOnly/</d:href>
     <d:propstat>
       <d:prop>
         <d:resourcetype>
           <d:collection/>
         </d:resourcetype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/PrimitiveOnly.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -67,12 +107,32 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/RestrictedEntity.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/UnionObject/</d:href>
     <d:propstat>
       <d:prop>
         <d:resourcetype>
           <d:collection/>
         </d:resourcetype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/UnionObject.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -89,6 +149,16 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/UploadedFile.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/User/</d:href>
     <d:propstat>
       <d:prop>
@@ -100,12 +170,32 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/User.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/SequentialBackgroundProcess/</d:href>
     <d:propstat>
       <d:prop>
         <d:resourcetype>
           <d:collection/>
         </d:resourcetype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/SequentialBackgroundProcess.xlsx</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>

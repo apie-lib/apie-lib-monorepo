@@ -25,9 +25,11 @@
     "apie/core": "self.version"
   },
   "require-dev": {
+    "apie/export": "self.version",
     "apie/fixtures": "self.version",
     "phpunit/phpunit": "^11.5.2",
-    "phpspec/prophecy-phpunit": "^2.2"
+    "phpspec/prophecy-phpunit": "^2.2",
+    "symfony/mime":  "^7.2"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

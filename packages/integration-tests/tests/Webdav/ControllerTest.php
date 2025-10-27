@@ -1,6 +1,8 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Webdav;
 
+use Apie\Export\ExportInterface;
+use Apie\Export\ExportServiceProvider;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
