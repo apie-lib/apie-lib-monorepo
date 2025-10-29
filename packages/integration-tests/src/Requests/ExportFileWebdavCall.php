@@ -7,18 +7,15 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\SnakeCaseSlug;
 use Apie\Faker\Datalayers\FakerDatalayer;
-use Apie\IntegrationTests\Concerns\TestsDefaultWebdavXml;
-use Apie\IntegrationTests\FixtureUtils;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Nyholm\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use ZipArchive;
 
-class ListFilesWebdavCall implements WebdavTestRequestInterface, BootstrapRequestInterface
+class ExportFileWebdavCall implements WebdavTestRequestInterface, BootstrapRequestInterface
 {
-    use TestsDefaultWebdavXml;
-    
     private bool $faked = false;
 
     /**
@@ -26,8 +23,7 @@ class ListFilesWebdavCall implements WebdavTestRequestInterface, BootstrapReques
      */
     public function __construct(
         private readonly BoundedContextId $boundedContextId,
-        private readonly int $depth = 1,
-        private readonly string $pathSuffix = '',
+        private readonly string $path,
         private readonly array $entities = [],
     ) {
     }
@@ -35,7 +31,7 @@ class ListFilesWebdavCall implements WebdavTestRequestInterface, BootstrapReques
     public function getTestName(): SnakeCaseSlug
     {
         return new SnakeCaseSlug(
-            'list_files_in_' . $this->boundedContextId . '_with_depth_' . $this->depth . '_' . count($this->entities) . ($this->pathSuffix ? ('_' . md5($this->pathSuffix)) : '')
+            'download_file_in_' . $this->boundedContextId . '_' . count($this->entities) . '_' . md5($this->path)
         );
     }
 
@@ -59,21 +55,49 @@ class ListFilesWebdavCall implements WebdavTestRequestInterface, BootstrapReques
         return false;
     }
 
-    
+    public function shouldDoResponseValidation(): bool
+    {
+        return true;
+    }
+
     public function getRequest(): ServerRequestInterface
     {
         return new ServerRequest(
-            'PROPFIND',
-            'http://localhost/webdav/' . $this->boundedContextId . $this->pathSuffix,
-            [
-                'depth' => $this->depth,
-            ]
+            'GET',
+            'http://localhost/webdav/' . $this->boundedContextId . $this->path
         );
     }
 
     public function getExpectedStatusCode(): int
     {
-        return 207;
+        return 200;
     }
-    
+
+    public function verifyValidResponse(ResponseInterface $response): void
+    {
+        $body = (string) $response->getBody();
+        $statusCode = $response->getStatusCode();
+        if ($statusCode === 500) {
+            IntegrationTestLogger::failTestShowError();
+        }
+        TestCase::assertEquals($this->getExpectedStatusCode(), $statusCode, 'Expect status code 200, got: ' . $body);
+        TestCase::assertEquals(
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            $response->getHeaderLine('content-type')
+        );
+        if (!class_exists(ZipArchive::class)) {
+            return;
+        }
+        $tempfile = tempnam(sys_get_temp_dir(), 'webdav-export');
+        try {
+            file_put_contents($tempfile, $body);
+            $archive = new ZipArchive();
+            if (!$archive->open($tempfile)) {
+                throw new \LogicException('Could not open zip file');
+            }
+            TestCase::assertEquals(6, $archive->count());
+        } finally {
+            @unlink($tempfile);
+        }
+    }
 }

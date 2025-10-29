@@ -7,6 +7,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
+use Apie\IntegrationTests\Requests\ExportFileWebdavCall;
 use Apie\IntegrationTests\Requests\ListFilesWebdavCall;
 use Apie\IntegrationTests\Requests\UploadFileWebdavCall;
 use Apie\IntegrationTests\Requests\WebdavTestRequestInterface;
@@ -53,6 +54,14 @@ class WebdavTestHelper extends IntegrationTestHelper
         return new ListFilesWebdavCall(
             new BoundedContextId('types'),
             pathSuffix: '/resources'
+        );
+    }
+
+    public function createExportCall(): WebdavTestRequestInterface
+    {
+        return new ExportFileWebdavCall(
+            new BoundedContextId('types'),
+            '/resources/Animal.xlsx'
         );
     }
 

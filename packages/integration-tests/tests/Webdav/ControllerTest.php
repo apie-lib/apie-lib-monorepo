@@ -1,8 +1,6 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Webdav;
 
-use Apie\Export\ExportInterface;
-use Apie\Export\ExportServiceProvider;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
@@ -70,29 +68,12 @@ class ControllerTest extends TestCase
             $request->bootstrap($testApplication);
         }
         $response = $testApplication->httpRequest($request);
-        $body = $response->getBody();
-        // remove <s:stacktrace> because it is not deterministic because of full file path
-        $body = preg_replace('/<s:stacktrace>.*?<\/s:stacktrace>/s', '', (string) $body);
-        // remove <s:file> because they are not deterministic because of full file path
-        $body = preg_replace('/<s:file>.*?<\/s:file>/s', '', (string) $body);
-        // remove <s:line> because they are not deterministic because of full file path
-        $body = preg_replace('/<s:line>.*?<\/s:line>/s', '', (string) $body);
-
-        if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name !== FakerDatalayer::class) {
-            $this->assertEquals($request->getExpectedStatusCode(), $response->getStatusCode(), 'Body is ' . substr($response->getBody(), 0, 400));
-            $fixtureFile = __DIR__ . '/../../fixtures/Webdav/ControllerTest_it_can_retrieve_folder_listings_' . $request->getTestName() . '.xml';
-        
-            if ($this->shouldOverwriteFixtures() || !file_exists($fixtureFile)) {
-                $xmlString = $body;
-                $dom = new \DOMDocument();
-                $dom->preserveWhiteSpace = false;
-                $dom->formatOutput = true;
-                $dom->loadXML($xmlString);
-                file_put_contents($fixtureFile, $dom->saveXML());
-            }
-            $this->assertXmlStringEqualsXmlFile($fixtureFile, $body);
+        if ($request->shouldDoRequestValidation()) {
+            //
         }
-        $this->assertEquals('application/xml; charset=utf-8', $response->getHeaderLine('Content-Type'));
+        if ($request->shouldDoResponseValidation()) {
+            $request->verifyValidResponse($response);
+        }
         $testApplication->cleanApplication();
     }
 

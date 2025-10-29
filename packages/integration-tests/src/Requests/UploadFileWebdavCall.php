@@ -7,6 +7,7 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\SnakeCaseSlug;
 use Apie\Faker\Datalayers\FakerDatalayer;
+use Apie\IntegrationTests\Concerns\TestsDefaultWebdavXml;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Nyholm\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
@@ -15,6 +16,8 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class UploadFileWebdavCall implements WebdavTestRequestInterface, BootstrapRequestInterface
 {
+    use TestsDefaultWebdavXml;
+    
     private bool $faked = false;
 
     /**
@@ -55,11 +58,6 @@ class UploadFileWebdavCall implements WebdavTestRequestInterface, BootstrapReque
         return false;
     }
 
-    public function shouldDoResponseValidation(): bool
-    {
-        return false;
-    }
-
     public function getRequest(): ServerRequestInterface
     {
         return new ServerRequest(
@@ -70,16 +68,5 @@ class UploadFileWebdavCall implements WebdavTestRequestInterface, BootstrapReque
             ],
             'This is the content of the uploaded file.'
         );
-    }
-
-    public function verifyValidResponse(ResponseInterface $response): void
-    {
-        $body = (string) $response->getBody();
-        $statusCode = $response->getStatusCode();
-        if ($statusCode === 500) {
-            IntegrationTestLogger::failTestShowError();
-        }
-        TestCase::assertEquals(200, $statusCode, 'Expect status code 200, got: ' . $body);
-        TestCase::assertEquals('application/json', $response->getHeaderLine('content-type'));
     }
 }
