@@ -42,6 +42,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/webdav",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/webdav": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/storage-metadata-builder",
             "options": {
                 "symlink": true,
@@ -102,6 +112,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/apie-file-system",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/apie-file-system": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/regex-value-objects",
             "options": {
                 "symlink": true,
@@ -157,6 +177,16 @@
                 "symlink": true,
                 "versions": {
                     "apie/faker": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/export",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/export": "1.0.0.x-dev"
                 }
             }
         },

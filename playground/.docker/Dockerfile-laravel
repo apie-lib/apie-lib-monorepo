@@ -78,7 +78,7 @@ RUN mkdir /packages
 COPY ../../packages /packages
 RUN echo '' >> /var/www/html/.env
 RUN echo 'SESSION_DRIVER=file' >> /var/www/html/.env
-RUN composer require 'apie/cms-layout-ionic:*' 'apie/cms-layout-ugly:*' 'apie/ai-instructor:*' --no-install --no-scripts
+RUN composer require -W 'apie/export:*' 'apie/webdav:*' 'apie/cms-layout-ionic:*' 'apie/cms-layout-ugly:*' 'apie/ai-instructor:*' --no-install --no-scripts
 RUN composer update
 
 # Setup crontab
