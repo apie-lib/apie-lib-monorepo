@@ -34,9 +34,15 @@ class WebdavController
         $server->debugExceptions = $this->debug;
         $server->setBaseUri('/webdav');
         $server->addPlugin(new Plugin()); // Optional browser UI
+        $uri = $request->getUri();
+        $path = $uri->getPath();
+        $query = $uri->getQuery();
+        if ($query !== '') {
+            $path .= '/?' . $query;
+        }
         $sabreRequest = new SabreRequest(
             $request->getMethod(),
-            (string) $request->getUri()->getPath(),
+            $path,
             $request->getHeaders(),
             (string) $request->getBody()
         );

@@ -44,6 +44,26 @@ class ControllerTest extends TestCase
         $testApplication->cleanApplication();
     }
 
+    public static function it_can_display_sabre_assets_provider(): Generator
+    {
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_can_display_sabre_assets'),
+            new IntegrationTestHelper()
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_display_sabre_assets_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function it_can_display_sabre_assets(TestApplicationInterface $testApplication)
+    {
+        $testApplication->bootApplication();
+        $response = $testApplication->httpRequestGet('/webdav/?sabreAction=asset&assetName=favicon.ico');
+        $this->assertEquals(200, $response->getStatusCode(), 'Body is ' . $response->getBody());
+        $this->assertEquals('image/vnd.microsoft.icon', $response->getHeaderLine('Content-Type'));
+        $testApplication->cleanApplication();
+    }
+
     public static function it_can_retrieve_folder_listings_provider(): Generator
     {
         yield from self::createDataProviderFrom(
