@@ -5,7 +5,8 @@ use Apie\IntegrationTests\FixtureUtils;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
-trait TestsDefaultWebdavXml {
+trait TestsDefaultWebdavXml
+{
     public function shouldDoResponseValidation(): bool
     {
         return true;

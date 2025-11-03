@@ -2,17 +2,13 @@
 
 namespace Apie\IntegrationTests\Requests;
 
-use Apie\Common\IntegrationTestLogger;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\SnakeCaseSlug;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Concerns\TestsDefaultWebdavXml;
-use Apie\IntegrationTests\FixtureUtils;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Nyholm\Psr7\ServerRequest;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 class ListFilesWebdavCall implements WebdavTestRequestInterface, BootstrapRequestInterface
@@ -75,5 +71,5 @@ class ListFilesWebdavCall implements WebdavTestRequestInterface, BootstrapReques
     {
         return 207;
     }
-    
+
 }

@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Webdav;
 
-use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;

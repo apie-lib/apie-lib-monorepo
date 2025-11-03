@@ -33,6 +33,26 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/Animal.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/Animal.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/ObjectWithRelation/</d:href>
     <d:propstat>
       <d:prop>
@@ -49,6 +69,26 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/ObjectWithRelation.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/ObjectWithRelation.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -75,6 +115,26 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/Order.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/Order.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/PrimitiveOnly/</d:href>
     <d:propstat>
       <d:prop>
@@ -91,6 +151,26 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/PrimitiveOnly.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/PrimitiveOnly.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -117,6 +197,26 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/RestrictedEntity.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/RestrictedEntity.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/UnionObject/</d:href>
     <d:propstat>
       <d:prop>
@@ -133,6 +233,26 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/UnionObject.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/UnionObject.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -159,6 +279,26 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/UploadedFile.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/UploadedFile.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/User/</d:href>
     <d:propstat>
       <d:prop>
@@ -180,6 +320,26 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/User.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/User.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/SequentialBackgroundProcess/</d:href>
     <d:propstat>
       <d:prop>
@@ -196,6 +356,26 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/SequentialBackgroundProcess.csv</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>text/csv</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/SequentialBackgroundProcess.zip</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/zip</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
