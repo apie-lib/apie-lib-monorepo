@@ -2,6 +2,7 @@
 namespace Apie\Tests\FtpServer;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 use Symfony\Component\Process\PhpProcess;
 
 class IntegrationTest extends TestCase
@@ -24,6 +25,7 @@ class IntegrationTest extends TestCase
         
     }
 
+    #[RequiresPhpExtension('ftp')]
     public function testListFolders()
     {
 
