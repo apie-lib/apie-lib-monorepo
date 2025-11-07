@@ -82,6 +82,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/ftp-server",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/ftp-server": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/mcp-server",
             "options": {
                 "symlink": true,
