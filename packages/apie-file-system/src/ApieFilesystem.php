@@ -19,7 +19,7 @@ class ApieFilesystem
         $paths = explode('/', $path);
         while (!empty($paths)) {
             $segment = array_shift($paths);
-            if ($segment === '.') {
+            if ($segment === '.' || $segment === '') {
                 continue;
             }
             if ($segment === '..') {
