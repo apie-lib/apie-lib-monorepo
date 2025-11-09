@@ -6,8 +6,6 @@ namespace Apie\FtpServer;
 use Apie\ApieFileSystem\ApieFilesystem;
 use Apie\ApieFileSystem\ApieFilesystemFactory;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
-use Apie\FtpServer\FtpServerRunner;
-use React\EventLoop\Factory;
 use React\EventLoop\Loop;
 use React\Socket\ConnectionInterface;
 use React\Socket\SocketServer;
@@ -69,12 +67,12 @@ class FtpServerCommand extends Command
             'ftp' => true,
             ConnectionInterface::class => $conn,
             ApieFilesystemFactory::class => $this->filesystemFactory,
-            'ftp_cwd' => '/',
+            FtpConstants::CURRENT_PWD => '/',
         ]);
         $filesystem = $this->filesystemFactory->create($context);
         $context = $context
             ->withContext(ApieFilesystem::class, $filesystem)
-            ->withContext('ftp_current_folder', $filesystem->rootFolder);
+            ->withContext(FtpConstants::CURRENT_FOLDER, $filesystem->rootFolder);
 
         $conn->on('data', function ($data) use ($conn, &$context) {
             $command = trim($data);
