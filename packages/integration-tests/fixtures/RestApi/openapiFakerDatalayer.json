@@ -11768,8 +11768,20 @@
             "mixed": {
                 "nullable": true
             }
+        },
+        "securitySchemes": {
+            "BasicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            }
         }
     },
+    "security": [
+        {
+            "BasicAuth": []
+        },
+        []
+    ],
     "tags": [
         {
             "name": "Animal",

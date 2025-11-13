@@ -28,6 +28,7 @@ class AddBasicAuthToOpenApiSubscriber implements EventSubscriberInterface
 
         $security = $openApi->security ?? [];
         $security[] = ['BasicAuth' => []];
+        $security[] = []; // add anonymous security option as well....
         $openApi->security = $security;
     }
 }
