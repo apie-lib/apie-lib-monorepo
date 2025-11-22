@@ -13,7 +13,7 @@ class ApieFilesystem
 
     public function visit(string $path): VirtualFolderInterface|VirtualFileInterface|null
     {
-        $path = ltrim('/');
+        $path = ltrim($path, '/');
         $current = $this->rootFolder;
         $visited = [$current];
         $paths = explode('/', $path);

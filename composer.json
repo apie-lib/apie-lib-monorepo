@@ -99,6 +99,7 @@
     },
     "require-dev": {
         "doctrine/doctrine-bundle": "^2.12.0",
+        "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
         "ext-sqlite3": "*",
         "friendsofphp/php-cs-fixer": "^3.58.1",
         "illuminate/support": "*",
