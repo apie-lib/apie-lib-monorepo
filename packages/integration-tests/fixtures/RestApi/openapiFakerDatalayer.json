@@ -3171,7 +3171,8 @@
                         "multipart/form-data": {
                             "schema": {
                                 "required": [
-                                    "form"
+                                    "form",
+                                    "file"
                                 ],
                                 "type": "object",
                                 "properties": {
@@ -3185,6 +3186,11 @@
                                         "type": "string",
                                         "format": "binary",
                                         "nullable": true
+                                    },
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary",
+                                        "nullable": false
                                     }
                                 }
                             }
@@ -11365,50 +11371,6 @@
                     }
                 }
             },
-            "StoredFile-get": {
-                "type": "string",
-                "format": "path"
-            },
-            "StoredFile-post": {
-                "required": [
-                    "originalFilename"
-                ],
-                "type": "object",
-                "oneOf": [
-                    {
-                        "required": [
-                            "contents",
-                            "originalFilename"
-                        ]
-                    },
-                    {
-                        "required": [
-                            "base64",
-                            "originalFilename"
-                        ]
-                    }
-                ],
-                "properties": {
-                    "contents": {
-                        "$ref": "#/components/schemas/BinaryStream-post"
-                    },
-                    "originalFilename": {
-                        "$ref": "#/components/schemas/Filename-post"
-                    },
-                    "base64": {
-                        "$ref": "#/components/schemas/Base64Stream-post"
-                    },
-                    "mime": {
-                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
-                    }
-                }
-            },
-            "StoredFile-post-multipart-form-data": {
-                "type": "string",
-                "format": "binary",
-                "nullable": false,
-                "x-upload": "*/*"
-            },
             "StrictMimeType-nullable-post": {
                 "type": "string",
                 "format": "strictmimetype",
@@ -11612,25 +11574,48 @@
                 "pattern": "^[0-9A-Za-z]{22}$"
             },
             "UploadedFile-get": {
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/StoredFile-get"
-                    }
-                ]
+                "type": "string",
+                "format": "path"
             },
             "UploadedFile-post": {
+                "required": [
+                    "originalFilename"
+                ],
+                "type": "object",
                 "oneOf": [
                     {
-                        "$ref": "#/components/schemas/StoredFile-post"
+                        "required": [
+                            "contents",
+                            "originalFilename"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "base64",
+                            "originalFilename"
+                        ]
                     }
-                ]
+                ],
+                "properties": {
+                    "contents": {
+                        "$ref": "#/components/schemas/BinaryStream-post"
+                    },
+                    "originalFilename": {
+                        "$ref": "#/components/schemas/Filename-post"
+                    },
+                    "base64": {
+                        "$ref": "#/components/schemas/Base64Stream-post"
+                    },
+                    "mime": {
+                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
+                    }
+                }
             },
             "UploadedFile-post-multipart-form-data": {
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/StoredFile-post-multipart-form-data"
-                    }
-                ]
+                "type": "string",
+                "format": "binary",
+                "nullable": false,
+                "x-upload": "*/*"
             },
             "UploadedFileIdentifier-get": {
                 "type": "string",
