@@ -18,7 +18,6 @@
         "psy/psysh": "<0.12.0",
         "respect/validation": "1.*",
         "symfony/clock": "<7.0",
-        "symfony/console": ">=7.3.5",
         "symfony/monolog-bridge": "<7.0",
         "symfony/password-hasher": "<7.0",
         "symfony/property-access": "<7.0",
