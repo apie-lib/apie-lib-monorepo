@@ -84,7 +84,7 @@ class SafeHtmlTest extends TestCase
             '<div>&nbsp;</div>'
         ];
         yield 'Exploitable wrong html' => [
-            '<div></div>',
+            PHP_VERSION_ID >= 80500 ? "" : '<div></div>',
             '<div onload="xss()"></div>',
         ];
         yield 'Youtube movie' => [
