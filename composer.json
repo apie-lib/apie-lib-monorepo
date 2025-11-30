@@ -95,6 +95,7 @@
         "symfony/routing": "^7.2",
         "symfony/security-core": "^7.2",
         "symfony/uid": "^7.2",
+        "symfony/var-exporter": "^7.2",
         "twig/twig": "^3.10.2"
     },
     "require-dev": {

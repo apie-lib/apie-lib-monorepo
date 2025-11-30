@@ -84,7 +84,8 @@ class SafeHtmlTest extends TestCase
             '<div>&nbsp;</div>'
         ];
         yield 'Exploitable wrong html' => [
-            PHP_VERSION_ID >= 80500 ? "" : '<div></div>',
+            // this no longer works on PHP 8.4 because of the new native parser.
+            PHP_VERSION_ID >= 80400 ? "" : '<div></div>',
             '<div onload="xss()"></div>',
         ];
         yield 'Youtube movie' => [
