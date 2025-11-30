@@ -47,8 +47,8 @@ jobs:
         include:
           - php_version: 8.4
             composer: ''
-          #- php_version: 8.5
-          #  composer: '--ignore-platform-reqs'
+          - php_version: 8.5
+            composer: ''
     steps:
       -
         uses: actions/checkout@v4

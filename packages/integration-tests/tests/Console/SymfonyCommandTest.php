@@ -15,14 +15,14 @@ use Symfony\Component\Console\Tester\ApplicationTester;
 class SymfonyCommandTest extends TestCase
 {
     private const EXPECTED_ROUTES = [
-        'external MCP setting (POST)' => 'POST     ANY      ANY    /mcp',
-        'external MCP setting (GET)'  => 'GET      ANY      ANY    /mcp',
-        'WebDAV'                      => 'ANY      ANY      ANY    /webdav/{path}',
-        'javascript code generated'   => 'GET      ANY      ANY    /js/Apie.es6.js',
-        'OpenAPI spec yaml'           => 'GET      ANY      ANY    /api/types/openapi.yaml',
-        'OpenAPI spec JSON'           => 'GET      ANY      ANY    /api/types/openapi.json',
-        'Delete endpoint'             => 'DELETE   ANY      ANY    /api/types/Order/{id}',
-        'Background process method'   => 'POST     ANY      ANY    /api/types/SequentialBackgroundProcess/{id}/runStep',
+        'external MCP setting (POST)' => 'POST  /mcp',
+        'external MCP setting (GET)'  => 'GET  /mcp',
+        'WebDAV'                      => 'ANY  /webdav/{path}',
+        'javascript code generated'   => 'GET  /js/Apie.es6.js',
+        'OpenAPI spec yaml'           => 'GET  /api/types/openapi.yaml',
+        'OpenAPI spec JSON'           => 'GET  /api/types/openapi.json',
+        'Delete endpoint'             => 'DELETE  /api/types/Order/{id}',
+        'Background process method'   => 'POST  /api/types/SequentialBackgroundProcess/{id}/runStep',
     ];
 
     use MakeDataProviderMatrix;
@@ -40,7 +40,8 @@ class SymfonyCommandTest extends TestCase
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         $output = $tester->getDisplay();
         foreach (self::EXPECTED_ROUTES as $message => $expectedRoute) {
-            $this->assertStringContainsString($expectedRoute, $output, 'Route should exist: ' . $message);
+            $pattern = '#' . str_replace('  ', '\s*', $expectedRoute) . '#';
+            $this->assertMatchesRegularExpression($pattern, $output, 'Route should exist: ' . $message);
         }
         
         $testApplication->cleanApplication();
