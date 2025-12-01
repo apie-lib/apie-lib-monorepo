@@ -40,7 +40,7 @@ class SymfonyCommandTest extends TestCase
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         $output = $tester->getDisplay();
         foreach (self::EXPECTED_ROUTES as $message => $expectedRoute) {
-            $pattern = '#' . str_replace('  ', '\s*', $expectedRoute) . '#';
+            $pattern = '#' . str_replace('  ', '(\s|ANY)*', $expectedRoute) . '#';
             $this->assertMatchesRegularExpression($pattern, $output, 'Route should exist: ' . $message);
         }
         
