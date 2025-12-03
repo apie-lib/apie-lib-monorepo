@@ -16,6 +16,7 @@
         "justinrainbow/json-schema": "<5.3",
         "nette/utils": "3.*",
         "psy/psysh": "<0.12.0",
+        "react/promise": "<3.0",
         "respect/validation": "1.*",
         "symfony/clock": "<7.0",
         "symfony/console": ">=7.3.5",
