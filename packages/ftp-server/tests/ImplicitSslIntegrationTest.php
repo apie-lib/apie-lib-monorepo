@@ -44,7 +44,7 @@ class ImplicitSslIntegrationTest extends TestCase
             $this->assertEquals(['default', 'other'], $files, '2 files found in root directory');
         } catch (\Throwable $error) {
             $this->assertStringContainsString('Nobody connected with the server ', $this->process->getErrorOutput(), 'FTP Call failed: ' . $error->getMessage() . ': ' . $this->process->getErrorOutput() . $this->process->getOutput());
-        }        
+        }
     }
 
     public static function listFoldersProvider(): \Generator

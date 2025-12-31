@@ -101,6 +101,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                 ]
             );
             $config->set('apie.remote_mcp_path', '/mcp');
+            $config->set('apie.enable_graphql', true);
         });
     }
 

@@ -1,0 +1,18 @@
+{
+    "data": {
+        "__type": {
+            "name": "findPrimitiveOnly",
+            "description": "Return search results for PrimitiveOnly",
+            "fields": [
+                {
+                    "name": "results",
+                    "description": "The search results"
+                },
+                {
+                    "name": "totalCount",
+                    "description": "Total number of results found"
+                }
+            ]
+        }
+    }
+}

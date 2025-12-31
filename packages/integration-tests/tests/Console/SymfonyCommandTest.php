@@ -18,6 +18,7 @@ class SymfonyCommandTest extends TestCase
         'external MCP setting (POST)' => 'POST  /mcp',
         'external MCP setting (GET)'  => 'GET  /mcp',
         'WebDAV'                      => 'ANY  /webdav/{path}',
+        'GraphQL endpoint'            => 'POST  /types/graphql',
         'javascript code generated'   => 'GET  /js/Apie.es6.js',
         'OpenAPI spec yaml'           => 'GET  /api/types/openapi.yaml',
         'OpenAPI spec JSON'           => 'GET  /api/types/openapi.json',
@@ -40,6 +41,7 @@ class SymfonyCommandTest extends TestCase
         $this->assertEquals(Command::SUCCESS, $exitCode, 'console command gave me ' . $tester->getDisplay());
         $output = $tester->getDisplay();
         foreach (self::EXPECTED_ROUTES as $message => $expectedRoute) {
+            // supported symfony versions have different formatting for the debug:route output
             $pattern = '#' . str_replace('  ', '(\s|ANY)*', $expectedRoute) . '#';
             $this->assertMatchesRegularExpression($pattern, $output, 'Route should exist: ' . $message);
         }

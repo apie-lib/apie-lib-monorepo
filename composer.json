@@ -97,7 +97,8 @@
         "symfony/security-core": "^7.2",
         "symfony/uid": "^7.2",
         "symfony/var-exporter": "^7.2",
-        "twig/twig": "^3.10.2"
+        "twig/twig": "^3.10.2",
+        "webonyx/graphql-php": "^15.0"
     },
     "require-dev": {
         "doctrine/doctrine-bundle": "^2.12.0",
@@ -148,6 +149,7 @@
             "Apie\\Faker\\": "packages/faker/src/",
             "Apie\\Fixtures\\": "packages/fixtures/src/",
             "Apie\\FtpServer\\": "packages/ftp-server/src/",
+            "Apie\\Graphql\\": "packages/graphql/src/",
             "Apie\\HtmlBuilders\\": "packages/html-builders/src/",
             "Apie\\IntegrationTests\\": "packages/integration-tests/src/",
             "Apie\\LaravelApie\\": "packages/laravel-apie/src/",
@@ -197,6 +199,7 @@
             "Apie\\Tests\\Faker\\": "packages/faker/tests/",
             "Apie\\Tests\\Fixtures\\": "packages/fixtures/tests/",
             "Apie\\Tests\\FtpServer\\": "packages/ftp-server/tests/",
+            "Apie\\Tests\\Graphql\\": "packages/graphql/tests/",
             "Apie\\Tests\\HtmlBuilders\\": "packages/html-builders/tests/",
             "Apie\\Tests\\LaravelApie\\": "packages/laravel-apie/tests/",
             "Apie\\Tests\\Maker\\": "packages/maker/tests/",
@@ -389,6 +392,7 @@
         "apie/faker": "self.version",
         "apie/fixtures": "self.version",
         "apie/ftp-server": "self.version",
+        "apie/graphql": "self.version",
         "apie/html-builders": "self.version",
         "apie/laravel-apie": "self.version",
         "apie/maker": "self.version",

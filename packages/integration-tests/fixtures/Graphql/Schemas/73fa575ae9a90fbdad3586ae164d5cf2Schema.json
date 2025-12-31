@@ -1,0 +1,46 @@
+{
+    "data": {
+        "__schema": {
+            "queryType": {
+                "fields": [
+                    {
+                        "name": "apie_version",
+                        "description": "Get the current version of the Apie library"
+                    },
+                    {
+                        "name": "findAnimal",
+                        "description": null
+                    },
+                    {
+                        "name": "findObjectWithRelation",
+                        "description": null
+                    },
+                    {
+                        "name": "findOrder",
+                        "description": null
+                    },
+                    {
+                        "name": "findPrimitiveOnly",
+                        "description": null
+                    },
+                    {
+                        "name": "findRestrictedEntity",
+                        "description": null
+                    },
+                    {
+                        "name": "findUnionObject",
+                        "description": null
+                    },
+                    {
+                        "name": "findUploadedFile",
+                        "description": null
+                    },
+                    {
+                        "name": "findUser",
+                        "description": null
+                    }
+                ]
+            }
+        }
+    }
+}
