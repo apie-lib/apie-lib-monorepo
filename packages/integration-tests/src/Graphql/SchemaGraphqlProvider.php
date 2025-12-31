@@ -2,14 +2,9 @@
 namespace Apie\IntegrationTests\Graphql;
 
 use Apie\Common\IntegrationTestLogger;
-use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
-use Apie\IntegrationTests\Requests\BootstrapRequestInterface;
-use Apie\IntegrationTests\Requests\TestRequestInterface;
-use Nyholm\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
 
 class SchemaGraphqlProvider extends GraphqlProvider
 {

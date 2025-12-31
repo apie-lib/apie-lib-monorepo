@@ -25,7 +25,7 @@ enum ScalarType: string
     {
         if ($type === null) {
             return self::MIXED;
-        }   
+        }
         if ($type instanceof ReflectionIntersectionType) {
             return self::STDCLASS;
         }

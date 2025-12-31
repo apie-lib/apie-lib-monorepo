@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Graphql\RouteDefinitions;
 
-use Apie\Common\ActionDefinitionProvider;
 use Apie\Common\Interfaces\RouteDefinitionProviderInterface;
 use Apie\Common\RouteDefinitions\ActionHashmap;
 use Apie\Core\BoundedContext\BoundedContext;

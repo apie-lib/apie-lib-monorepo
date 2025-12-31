@@ -13,7 +13,8 @@ final class Types
      * @codeCoverageIgnore
      */
     private function __construct()
-    {}
+    {
+    }
 
     public static function json(): JsonType
     {
@@ -24,5 +25,5 @@ final class Types
     {
         return self::$null ??= new NullType();
     }
-    
+
 }

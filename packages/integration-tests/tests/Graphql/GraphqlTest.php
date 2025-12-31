@@ -28,7 +28,7 @@ class GraphqlTest extends TestCase
         TestApplicationInterface $testApplication,
         GraphqlProvider $graphqlProvider
     ) {
-        $testApplication->itRunsApplications(function () use ($testApplication, $graphqlProvider){
+        $testApplication->itRunsApplications(function () use ($testApplication, $graphqlProvider) {
             $graphqlProvider->bootstrap($testApplication);
             $response = $testApplication->httpRequest(
                 $graphqlProvider

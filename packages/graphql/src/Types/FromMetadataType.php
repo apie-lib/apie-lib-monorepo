@@ -38,7 +38,7 @@ class FromMetadataType extends ObjectType
             return Type::nonNull($result);
         }
         return self::createFromScalar($scalarType, $nullable);
-    } 
+    }
 
     public static function createFromScalar(ScalarType $scalarType, bool $nullable = false): Type
     {
