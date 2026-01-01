@@ -84,6 +84,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                     'api_key' => 'test',
                 ]
             );
+            $config->set('apie.graphql.base_url', 'graphql');
             $config->set(
                 'apie.datalayers',
                 [
