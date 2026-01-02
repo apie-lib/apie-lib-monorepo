@@ -9,39 +9,39 @@
                     },
                     {
                         "name": "findAnimal",
-                        "description": null
+                        "description": "Return search results for Animal"
                     },
                     {
                         "name": "findObjectWithRelation",
-                        "description": null
+                        "description": "Return search results for ObjectWithRelation"
                     },
                     {
                         "name": "findOrder",
-                        "description": null
+                        "description": "Return search results for Order"
                     },
                     {
                         "name": "findPrimitiveOnly",
-                        "description": null
+                        "description": "Return search results for PrimitiveOnly"
                     },
                     {
                         "name": "findRestrictedEntity",
-                        "description": null
+                        "description": "Return search results for RestrictedEntity"
                     },
                     {
                         "name": "findUnionObject",
-                        "description": null
+                        "description": "Return search results for UnionObject"
                     },
                     {
                         "name": "findUploadedFile",
-                        "description": null
+                        "description": "Return search results for UploadedFile"
                     },
                     {
                         "name": "findUser",
-                        "description": null
+                        "description": "Return search results for User"
                     },
                     {
                         "name": "findSequentialBackgroundProcess",
-                        "description": null
+                        "description": "Return search results for SequentialBackgroundProcess"
                     }
                 ]
             }

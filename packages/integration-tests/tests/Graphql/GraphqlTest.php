@@ -51,7 +51,7 @@ class GraphqlTest extends TestCase
             }
             $actualBody = (string) $response->getBody();
             $fixtureFile = __DIR__ . '/../../fixtures/Graphql/playground-page.html';
-             file_put_contents($fixtureFile, $actualBody);
+            file_put_contents($fixtureFile, $actualBody);
             $this->assertEquals(
                 str_replace("\r", "", file_get_contents($fixtureFile)),
                 str_replace("\r", "", $actualBody)

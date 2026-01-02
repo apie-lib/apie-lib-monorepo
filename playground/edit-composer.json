@@ -312,6 +312,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/graphql",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/graphql": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/storage-metadata",
             "options": {
                 "symlink": true,

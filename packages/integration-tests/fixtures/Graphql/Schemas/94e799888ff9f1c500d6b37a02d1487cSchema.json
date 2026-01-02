@@ -5,12 +5,16 @@
             "description": "Return search results for PrimitiveOnly",
             "fields": [
                 {
-                    "name": "results",
+                    "name": "list",
                     "description": "The search results"
                 },
                 {
                     "name": "totalCount",
                     "description": "Total number of results found"
+                },
+                {
+                    "name": "filteredCount",
+                    "description": "Total number of filtered results found"
                 }
             ]
         }
