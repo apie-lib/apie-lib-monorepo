@@ -2,6 +2,8 @@
 namespace Apie\IntegrationTests\Graphql;
 
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\IntegrationTestHelper;
 
 class GraphqlTestHelper extends IntegrationTestHelper
@@ -170,6 +172,61 @@ fragment TypeRef on __Type {
             ],
             [
             ]
+        );
+    }
+
+    /**
+     * @return array<int, PrimitiveOnly>
+     */
+    private function createEntityList(int $count): array
+    {
+        $entities = [];
+        for ($i = 0; $i < $count; $i++) {
+            $entity = new PrimitiveOnly(PrimitiveOnlyIdentifier::generateFromInteger($i));
+            $entity->stringField = 'String ' . $i;
+            $entity->integerField = $i * 10;
+            $entity->floatingPoint = $i * 1.5;
+            $entity->booleanField = $i % 2 === 0;
+            $entities[] = $entity;
+        }
+        return $entities;
+    }
+
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    private function createExpectedListResponse(int $start, int $end): array
+    {
+        $list = [];
+        for ($i = $start; $i <= $end; $i++) {
+            $list[] = [
+                'id' => (string) PrimitiveOnlyIdentifier::generateFromInteger($i),
+                'stringField' => 'String ' . $i,
+                'integerField' => $i * 10,
+                'floatingPoint' => $i * 1.5,
+                'booleanField' => $i % 2 === 0,
+            ];
+        }
+        return $list;
+    }
+
+    public function createQueryCall(): GraphqlProvider
+    {
+        $entities = $this->createEntityList(30);
+        return new GraphqlProvider(
+            new BoundedContextId('types'),
+            [
+                  'query' => '{ findPrimitiveOnly(filter: { orderBy: "+id" }) { totalCount, list { id, stringField, integerField, floatingPoint, booleanField } } }'
+              ],
+            [
+                'data' => [
+                    'findPrimitiveOnly' => [
+                        'list' => $this->createExpectedListResponse(0, 19),
+                        'totalCount' => 30,
+                    ]
+                ]
+              ],
+            $entities
         );
     }
 

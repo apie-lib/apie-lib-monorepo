@@ -2,7 +2,10 @@
 namespace Apie\IntegrationTests\Graphql;
 
 use Apie\Common\IntegrationTestLogger;
+use Apie\Common\Interfaces\ApieFacadeInterface;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Entities\EntityInterface;
+use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\BootstrapRequestInterface;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
@@ -13,20 +16,28 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class GraphqlProvider implements TestRequestInterface, BootstrapRequestInterface
 {
+    private bool $faked = false;
     /**
      * @param array<string, mixed> $graphQlQuery
      * @param array<string, mixed> $expectedResponse
+     * @param array<int, EntityInterface> $entities
      */
     public function __construct(
         private readonly BoundedContextId $boundedContextId,
         protected readonly array $graphQlQuery,
-        protected array $expectedResponse
+        protected array $expectedResponse,
+        protected array $entities = [],
     ) {
     }
 
     public function bootstrap(TestApplicationInterface $testApplication): void
     {
-        // TODO
+        /** @var ApieFacadeInterface $apieFacade */
+        $apieFacade = $testApplication->getServiceContainer()->get('apie');
+        foreach ($this->entities as $entity) {
+            $apieFacade->persistNew($entity, $this->boundedContextId);
+        }
+        $this->faked = $testApplication->getApplicationConfig()->getDatalayerImplementation()->name === FakerDatalayer::class;
     }
 
     public function shouldDoRequestValidation(): bool
@@ -65,7 +76,9 @@ class GraphqlProvider implements TestRequestInterface, BootstrapRequestInterface
         if (IntegrationTestLogger::getLoggedException()) {
             IntegrationTestLogger::failTestShowError($statusCode);
         }
-        TestCase::assertEquals($this->expectedResponse, $data, 'Expected response is not right, got: ' . $error);
+        if (!$this->faked) {
+            TestCase::assertEquals($this->expectedResponse, $data, 'Expected response is not right, got: ' . $error);
+        }
         TestCase::assertEquals('application/json', $response->getHeaderLine('content-type'));
     }
 }
