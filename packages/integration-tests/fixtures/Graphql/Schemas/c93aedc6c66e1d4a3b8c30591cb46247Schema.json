@@ -267,8 +267,16 @@
                             "description": null,
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
-                                "ofType": null
+                                "name": "MapOfString!",
+                                "ofType": {
+                                    "kind": "NON_NULL",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    }
+                                }
                             },
                             "defaultValue": null
                         },
@@ -277,8 +285,16 @@
                             "description": null,
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
-                                "ofType": null
+                                "name": "MapOfString!",
+                                "ofType": {
+                                    "kind": "NON_NULL",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    }
+                                }
                             },
                             "defaultValue": null
                         },
@@ -286,8 +302,8 @@
                             "name": "apieContext",
                             "description": null,
                             "type": {
-                                "kind": "SCALAR",
-                                "name": "JSON",
+                                "kind": "INPUT_OBJECT",
+                                "name": "ApieContext",
                                 "ofType": null
                             },
                             "defaultValue": null
@@ -308,9 +324,34 @@
                     "possibleTypes": null
                 },
                 {
-                    "kind": "SCALAR",
-                    "name": "JSON",
+                    "kind": "INPUT_OBJECT",
+                    "name": "ApieContext",
                     "description": null,
+                    "fields": null,
+                    "inputFields": [
+                        {
+                            "name": "context",
+                            "description": null,
+                            "type": {
+                                "kind": "LIST",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "Mixed",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        }
+                    ],
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "SCALAR",
+                    "name": "Mixed",
+                    "description": "Loose type that allows any value. Be careful when passing in large `Int` or `Float` literals,\nas they may not be parsed correctly on the server side. Use `String` literals if you are\ndealing with really large numbers to be on the safe side.",
                     "fields": null,
                     "inputFields": null,
                     "interfaces": null,
@@ -414,7 +455,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -446,7 +487,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -582,7 +623,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -598,7 +639,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -614,7 +655,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -630,7 +671,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -659,7 +700,7 @@
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "Int",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -671,7 +712,7 @@
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "String",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -760,13 +801,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "JSON",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "Int",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -779,8 +816,59 @@
                                 "kind": "NON_NULL",
                                 "name": null,
                                 "ofType": {
+                                    "kind": "LIST",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "OBJECT",
+                                            "name": "OrderLine",
+                                            "ofType": null
+                                        }
+                                    }
+                                }
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        }
+                    ],
+                    "inputFields": null,
+                    "interfaces": [],
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "OBJECT",
+                    "name": "OrderLine",
+                    "description": null,
+                    "fields": [
+                        {
+                            "name": "id",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "description",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -874,7 +962,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -1026,7 +1114,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -1042,7 +1130,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -1057,9 +1145,17 @@
                                 "kind": "NON_NULL",
                                 "name": null,
                                 "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "JSON",
-                                    "ofType": null
+                                    "kind": "LIST",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "String",
+                                            "ofType": null
+                                        }
+                                    }
                                 }
                             },
                             "isDeprecated": false,
@@ -1071,7 +1167,7 @@
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "String",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -1164,7 +1260,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -1180,7 +1276,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "Mixed",
                                     "ofType": null
                                 }
                             },
@@ -1196,7 +1292,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "Mixed",
                                     "ofType": null
                                 }
                             },
@@ -1209,7 +1305,7 @@
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "String",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -1302,7 +1398,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -1314,8 +1410,8 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "SCALAR",
-                                "name": "JSON",
+                                "kind": "OBJECT",
+                                "name": "ImageFile",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -1329,8 +1425,8 @@
                                 "kind": "NON_NULL",
                                 "name": null,
                                 "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "kind": "OBJECT",
+                                    "name": "UploadedFileInterface",
                                     "ofType": null
                                 }
                             },
@@ -1343,13 +1439,54 @@
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "Mixed",
                                 "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
                         }
                     ],
+                    "inputFields": null,
+                    "interfaces": [],
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "OBJECT",
+                    "name": "ImageFile",
+                    "description": null,
+                    "fields": [
+                        {
+                            "name": "indexing",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "LIST",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "SCALAR",
+                                        "name": "Mixed",
+                                        "ofType": null
+                                    }
+                                }
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        }
+                    ],
+                    "inputFields": null,
+                    "interfaces": [],
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "OBJECT",
+                    "name": "UploadedFileInterface",
+                    "description": null,
+                    "fields": [],
                     "inputFields": null,
                     "interfaces": [],
                     "enumValues": null,
@@ -1436,7 +1573,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -1465,7 +1602,7 @@
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "String",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -1477,7 +1614,7 @@
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "String",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -1583,7 +1720,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -1597,7 +1734,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "String",
                                     "ofType": null
                                 }
                             },
@@ -1608,7 +1745,7 @@
                             "description": null,
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "Int",
                                 "ofType": null
                             },
                             "defaultValue": null
@@ -1631,9 +1768,17 @@
                                 "kind": "NON_NULL",
                                 "name": null,
                                 "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "JSON",
-                                    "ofType": null
+                                    "kind": "LIST",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "OBJECT",
+                                            "name": "OrderLine",
+                                            "ofType": null
+                                        }
+                                    }
                                 }
                             },
                             "defaultValue": null
@@ -1654,7 +1799,7 @@
                             "description": null,
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "String",
                                 "ofType": null
                             },
                             "defaultValue": null
@@ -1667,7 +1812,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "Mixed",
                                     "ofType": null
                                 }
                             },
@@ -1681,7 +1826,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "JSON",
+                                    "name": "Mixed",
                                     "ofType": null
                                 }
                             },
@@ -1692,7 +1837,7 @@
                             "description": "A phone number valid in the Netherlands in national format or E164 format",
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "JSON",
+                                "name": "String",
                                 "ofType": null
                             },
                             "defaultValue": null
