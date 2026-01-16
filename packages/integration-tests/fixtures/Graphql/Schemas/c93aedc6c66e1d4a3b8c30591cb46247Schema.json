@@ -1699,6 +1699,121 @@
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
+                        },
+                        {
+                            "name": "createAnimal",
+                            "description": null,
+                            "args": [
+                                {
+                                    "name": "input",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "INPUT_OBJECT",
+                                        "name": "Animal_create",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                }
+                            ],
+                            "type": {
+                                "kind": "OBJECT",
+                                "name": "Animal",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "createPrimitiveOnly",
+                            "description": null,
+                            "args": [
+                                {
+                                    "name": "input",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "INPUT_OBJECT",
+                                        "name": "PrimitiveOnly_create",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                }
+                            ],
+                            "type": {
+                                "kind": "OBJECT",
+                                "name": "PrimitiveOnly",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "createRestrictedEntity",
+                            "description": null,
+                            "args": [
+                                {
+                                    "name": "input",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "INPUT_OBJECT",
+                                        "name": "RestrictedEntity_create",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                }
+                            ],
+                            "type": {
+                                "kind": "OBJECT",
+                                "name": "RestrictedEntity",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "createUploadedFile",
+                            "description": null,
+                            "args": [
+                                {
+                                    "name": "input",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "INPUT_OBJECT",
+                                        "name": "UploadedFile_create",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                }
+                            ],
+                            "type": {
+                                "kind": "OBJECT",
+                                "name": "UploadedFile",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "createUser",
+                            "description": null,
+                            "args": [
+                                {
+                                    "name": "input",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "INPUT_OBJECT",
+                                        "name": "User_create",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                }
+                            ],
+                            "type": {
+                                "kind": "OBJECT",
+                                "name": "User",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
                         }
                     ],
                     "inputFields": null,
@@ -1835,6 +1950,247 @@
                         {
                             "name": "phoneNumber",
                             "description": "A phone number valid in the Netherlands in national format or E164 format",
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        }
+                    ],
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "INPUT_OBJECT",
+                    "name": "Animal_create",
+                    "description": null,
+                    "fields": null,
+                    "inputFields": [
+                        {
+                            "name": "type",
+                            "description": null,
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "id",
+                            "description": null,
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "animalName",
+                            "description": "Represents a first name of a person",
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        }
+                    ],
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PrimitiveOnly_create",
+                    "description": null,
+                    "fields": null,
+                    "inputFields": [
+                        {
+                            "name": "id",
+                            "description": null,
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "stringField",
+                            "description": null,
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "integerField",
+                            "description": null,
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "Int",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "floatingPoint",
+                            "description": null,
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "Float",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "booleanField",
+                            "description": null,
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "Boolean",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        }
+                    ],
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "INPUT_OBJECT",
+                    "name": "RestrictedEntity_create",
+                    "description": null,
+                    "fields": null,
+                    "inputFields": [
+                        {
+                            "name": "id",
+                            "description": null,
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "companyName",
+                            "description": "Represents a company name.",
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        }
+                    ],
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "INPUT_OBJECT",
+                    "name": "UploadedFile_create",
+                    "description": null,
+                    "fields": null,
+                    "inputFields": [
+                        {
+                            "name": "id",
+                            "description": null,
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "imageFile",
+                            "description": null,
+                            "type": {
+                                "kind": "OBJECT",
+                                "name": "ImageFile",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "file",
+                            "description": null,
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "OBJECT",
+                                    "name": "UploadedFileInterface",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        }
+                    ],
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "INPUT_OBJECT",
+                    "name": "User_create",
+                    "description": null,
+                    "fields": null,
+                    "inputFields": [
+                        {
+                            "name": "id",
+                            "description": null,
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        },
+                        {
+                            "name": "phoneNumber",
+                            "description": null,
                             "type": {
                                 "kind": "SCALAR",
                                 "name": "String",

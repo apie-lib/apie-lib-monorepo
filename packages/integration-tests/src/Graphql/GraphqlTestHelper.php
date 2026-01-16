@@ -230,4 +230,37 @@ fragment TypeRef on __Type {
         );
     }
 
+    public function createMutationCall(): GraphqlProvider
+    {
+        $entities = $this->createEntityList(30);
+        return new GraphqlProvider(
+            new BoundedContextId('types'),
+            [
+              'query' => <<<GQL
+mutation CreatePrimitiveOnly(\$id: String!, \$booleanField: Boolean!) {
+  createPrimitiveOnly(input: {
+    id: \$id,
+    booleanField: \$booleanField
+  }) { id, stringField, integerField, booleanField }
+}
+GQL,
+                'variables' => [
+                    'id' => '821c5aca-2853-4f7a-b3bc-045a81798e24',
+                    'booleanField' => false,
+                ],
+            ],
+            [
+                'data' => [
+                    'createPrimitiveOnly' => [
+                        'id' => '821c5aca-2853-4f7a-b3bc-045a81798e24',
+                        'stringField' => null,
+                        'integerField' => null,
+                        'booleanField' => false,
+                    ]
+                ]
+              ],
+            $entities
+        );
+    }
+
 }
