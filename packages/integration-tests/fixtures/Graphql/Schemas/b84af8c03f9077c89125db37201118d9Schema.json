@@ -1433,7 +1433,7 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "OBJECT",
+                                "kind": "SCALAR",
                                 "name": "ImageFile",
                                 "ofType": null
                             },
@@ -1475,33 +1475,12 @@
                     "possibleTypes": null
                 },
                 {
-                    "kind": "OBJECT",
+                    "kind": "SCALAR",
                     "name": "ImageFile",
-                    "description": null,
-                    "fields": [
-                        {
-                            "name": "indexing",
-                            "description": null,
-                            "args": [],
-                            "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "LIST",
-                                    "name": null,
-                                    "ofType": {
-                                        "kind": "SCALAR",
-                                        "name": "Mixed",
-                                        "ofType": null
-                                    }
-                                }
-                            },
-                            "isDeprecated": false,
-                            "deprecationReason": null
-                        }
-                    ],
+                    "description": "URL to download the file",
+                    "fields": null,
                     "inputFields": null,
-                    "interfaces": [],
+                    "interfaces": null,
                     "enumValues": null,
                     "possibleTypes": null
                 },
@@ -2492,8 +2471,8 @@
                             "name": "imageFile",
                             "description": null,
                             "type": {
-                                "kind": "OBJECT",
-                                "name": "ImageFile",
+                                "kind": "SCALAR",
+                                "name": "ImageFile_create",
                                 "ofType": null
                             },
                             "defaultValue": null
@@ -2513,6 +2492,16 @@
                             "defaultValue": null
                         }
                     ],
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "SCALAR",
+                    "name": "ImageFile_create",
+                    "description": "The `Upload` special type represents a file to be uploaded in the same HTTP request as specified by\n [graphql-multipart-request-spec](https:\/\/github.com\/jaydenseric\/graphql-multipart-request-spec).",
+                    "fields": null,
+                    "inputFields": null,
                     "interfaces": null,
                     "enumValues": null,
                     "possibleTypes": null
