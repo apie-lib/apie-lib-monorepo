@@ -638,8 +638,8 @@
                                 "kind": "NON_NULL",
                                 "name": null,
                                 "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "String",
+                                    "kind": "ENUM",
+                                    "name": "ExpireStatus",
                                     "ofType": null
                                 }
                             },
@@ -722,6 +722,29 @@
                     "inputFields": null,
                     "interfaces": [],
                     "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "ENUM",
+                    "name": "ExpireStatus",
+                    "description": null,
+                    "fields": null,
+                    "inputFields": null,
+                    "interfaces": null,
+                    "enumValues": [
+                        {
+                            "name": "active",
+                            "description": "Object is still active and not expired yet",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "expired",
+                            "description": "Object expire date has passed",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        }
+                    ],
                     "possibleTypes": null
                 },
                 {
