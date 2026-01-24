@@ -31,6 +31,16 @@
                             "description": "Return search results for Animal",
                             "args": [
                                 {
+                                    "name": "id",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                },
+                                {
                                     "name": "filter",
                                     "description": null,
                                     "type": {
@@ -53,6 +63,16 @@
                             "name": "findObjectWithRelation",
                             "description": "Return search results for ObjectWithRelation",
                             "args": [
+                                {
+                                    "name": "id",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                },
                                 {
                                     "name": "filter",
                                     "description": null,
@@ -77,6 +97,16 @@
                             "description": "Return search results for Order",
                             "args": [
                                 {
+                                    "name": "id",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "SCALAR",
+                                        "name": "Int",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                },
+                                {
                                     "name": "filter",
                                     "description": null,
                                     "type": {
@@ -99,6 +129,16 @@
                             "name": "findPrimitiveOnly",
                             "description": "Return search results for PrimitiveOnly",
                             "args": [
+                                {
+                                    "name": "id",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                },
                                 {
                                     "name": "filter",
                                     "description": null,
@@ -123,6 +163,16 @@
                             "description": "Return search results for RestrictedEntity",
                             "args": [
                                 {
+                                    "name": "id",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                },
+                                {
                                     "name": "filter",
                                     "description": null,
                                     "type": {
@@ -145,6 +195,16 @@
                             "name": "findUnionObject",
                             "description": "Return search results for UnionObject",
                             "args": [
+                                {
+                                    "name": "id",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                },
                                 {
                                     "name": "filter",
                                     "description": null,
@@ -169,6 +229,16 @@
                             "description": "Return search results for UploadedFile",
                             "args": [
                                 {
+                                    "name": "id",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                },
+                                {
                                     "name": "filter",
                                     "description": null,
                                     "type": {
@@ -191,6 +261,16 @@
                             "name": "findUser",
                             "description": "Return search results for User",
                             "args": [
+                                {
+                                    "name": "id",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
+                                    },
+                                    "defaultValue": null
+                                },
                                 {
                                     "name": "filter",
                                     "description": null,
@@ -1445,13 +1525,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "OBJECT",
-                                    "name": "UploadedFileInterface",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "UploadedFileInterface",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -1485,12 +1561,12 @@
                     "possibleTypes": null
                 },
                 {
-                    "kind": "OBJECT",
+                    "kind": "SCALAR",
                     "name": "UploadedFileInterface",
-                    "description": null,
-                    "fields": [],
+                    "description": "URL to download the file",
+                    "fields": null,
                     "inputFields": null,
-                    "interfaces": [],
+                    "interfaces": null,
                     "enumValues": null,
                     "possibleTypes": null
                 },
@@ -2155,13 +2231,9 @@
                             "name": "file",
                             "description": null,
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "OBJECT",
-                                    "name": "UploadedFileInterface",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "UploadedFileInterface_create",
+                                "ofType": null
                             },
                             "defaultValue": null
                         }
@@ -2173,6 +2245,16 @@
                 {
                     "kind": "SCALAR",
                     "name": "ImageFile_create",
+                    "description": "The `Upload` special type represents a file to be uploaded in the same HTTP request as specified by\n [graphql-multipart-request-spec](https:\/\/github.com\/jaydenseric\/graphql-multipart-request-spec).",
+                    "fields": null,
+                    "inputFields": null,
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "SCALAR",
+                    "name": "UploadedFileInterface_create",
                     "description": "The `Upload` special type represents a file to be uploaded in the same HTTP request as specified by\n [graphql-multipart-request-spec](https:\/\/github.com\/jaydenseric\/graphql-multipart-request-spec).",
                     "fields": null,
                     "inputFields": null,
@@ -2220,6 +2302,18 @@
                     "name": "__Schema",
                     "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
                     "fields": [
+                        {
+                            "name": "description",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
                         {
                             "name": "types",
                             "description": "A list of all types supported by this server.",

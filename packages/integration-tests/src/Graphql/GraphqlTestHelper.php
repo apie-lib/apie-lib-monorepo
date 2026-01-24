@@ -2,9 +2,17 @@
 namespace Apie\IntegrationTests\Graphql;
 
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\FileStorage\ImageFile;
+use Apie\Core\FileStorage\StoredFile;
+use Apie\Faker\FileFakers\BackgroundFileFaker;
+use Apie\Faker\SeededFile;
+use Apie\Fixtures\Identifiers\ImageFileIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
+use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UploadedFileIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\UploadedFile;
 use Apie\IntegrationTests\IntegrationTestHelper;
+use Faker\Factory;
 
 class GraphqlTestHelper extends IntegrationTestHelper
 {
@@ -228,6 +236,38 @@ fragment TypeRef on __Type {
               ],
             $entities
         );
+    }
+
+    public function createFileQuery(): GraphqlProvider
+    {
+      $path = __DIR__ . '/../../fixtures/apie-logo.svg';
+      $entities = [
+        new UploadedFile(
+          UploadedFileIdentifier::fromNative('821c5aca-2853-4f7a-b3bc-045a81798e24'),
+          StoredFile::createFromLocalFile($path),
+          //ImageFile::createFromLocalFile($path),
+        )
+      ];
+      return new GraphqlProvider(
+          new BoundedContextId('types'),
+          [
+                'query' => '{ findUploadedFile(id: "821c5aca-2853-4f7a-b3bc-045a81798e24") { list { id, imageFile, file } } }'
+            ],
+          [
+              'data' => [
+                  'findUploadedFile' => [
+                      'list' => [
+                        [
+                          'id' => '821c5aca-2853-4f7a-b3bc-045a81798e24',
+                          'imageFile' => null,
+                          'file' => '/types/UploadedFile/821c5aca-2853-4f7a-b3bc-045a81798e24/download/file',
+                        ]
+                      ]
+                  ]
+              ]
+          ],
+          $entities
+      );
     }
 
     public function createMutationCall(): GraphqlProvider
