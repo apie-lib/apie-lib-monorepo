@@ -7,7 +7,6 @@ use Apie\Core\Metadata\MetadataFactory;
 use Apie\Graphql\Types\FromMetadataInputType;
 use Apie\Graphql\Types\FromMetadataType;
 use GraphQL\Type\Definition\NonNull;
-use GraphQL\Type\Definition\NullableType;
 use GraphQL\Type\Definition\Type;
 use MLL\GraphQLScalars\MixedScalar;
 use MLL\GraphQLScalars\NullScalar;

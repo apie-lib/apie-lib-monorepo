@@ -12,7 +12,6 @@ use Apie\Core\ApieLib;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Datalayers\Search\QuerySearch;
-use Apie\Core\Metadata\MetadataFactory;
 use Apie\Graphql\TypeResolvers\ApieCallTypeResolver;
 use Apie\Graphql\TypeResolvers\SearchObjectTypeResolver;
 use Apie\Graphql\Types;

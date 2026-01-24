@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Graphql\TypeResolvers;
 
-use Apie\Common\Actions\GetItemAction;
 use Apie\Common\Actions\GetListAction;
 use Apie\Common\Interfaces\ApieFacadeInterface;
 use Apie\Core\Actions\ActionResponse;
@@ -26,8 +25,8 @@ class SearchObjectTypeResolver
         $resourceName = new \ReflectionClass($this->resourceName);
         $boundedContextId = new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID));
         
-            $context = $context->withContext(ContextConstants::APIE_ACTION, GetListAction::class)
-                ->withMultipleContext(GetListAction::getRouteAttributes($resourceName));
+        $context = $context->withContext(ContextConstants::APIE_ACTION, GetListAction::class)
+            ->withMultipleContext(GetListAction::getRouteAttributes($resourceName));
         $context->checkAuthorization();
         $list = $apieDatalayer->all($resourceName, $boundedContextId)
             ->toPaginatedResult(QuerySearch::fromCamelCaseArray(

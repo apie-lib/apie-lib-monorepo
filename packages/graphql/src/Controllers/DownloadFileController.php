@@ -8,7 +8,7 @@ use Apie\Graphql\Factories\JWKForFileDownloadFactory;
 class DownloadFileController
 {
     public function __construct(
-        private readonly FileStorageInterface $fileStorage ,
+        private readonly FileStorageInterface $fileStorage,
         private readonly JWKForFileDownloadFactory $jwkFactory,
     ) {
     }

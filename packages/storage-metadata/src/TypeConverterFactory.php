@@ -16,7 +16,6 @@ use Apie\StorageMetadata\Converters\IntToAutoIncrementTable;
 use Apie\StorageMetadata\Converters\IntToValueObject;
 use Apie\StorageMetadata\Converters\MixedStorageToObject;
 use Apie\StorageMetadata\Converters\MixedToMixedStorage;
-use Apie\StorageMetadata\Converters\StoredFileToStoredFile;
 use Apie\StorageMetadata\Converters\StringToDateTime;
 use Apie\StorageMetadata\Converters\StringToEnum;
 use Apie\StorageMetadata\Converters\StringToSearchIndex;
@@ -47,7 +46,6 @@ final class TypeConverterFactory
             ...DefaultConvertersFactory::create(
                 new StringToUploadedFileInterface($fileStorage),
                 new UploadedFileInterfaceToString($fileStorage),
-                new StoredFileToStoredFile(),
                 new ArrayToDoctrineCollection(),
                 new StringToSearchIndex(),
                 new DoctrineCollectionToArray(),
