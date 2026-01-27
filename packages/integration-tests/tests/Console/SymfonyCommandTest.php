@@ -24,6 +24,7 @@ class SymfonyCommandTest extends TestCase
         'OpenAPI spec JSON'           => 'GET  /api/types/openapi.json',
         'Delete endpoint'             => 'DELETE  /api/types/Order/{id}',
         'Background process method'   => 'POST  /api/types/SequentialBackgroundProcess/{id}/runStep',
+        'Graphql download file link'  => 'GET  /types/UploadedFile/{id}/download/{properties}'
     ];
 
     use MakeDataProviderMatrix;
