@@ -23,7 +23,7 @@ class GraphqlProvider implements TestRequestInterface, BootstrapRequestInterface
      * @param array<int, EntityInterface> $entities
      */
     public function __construct(
-        private readonly BoundedContextId $boundedContextId,
+        protected readonly BoundedContextId $boundedContextId,
         protected readonly array $graphQlQuery,
         protected array $expectedResponse,
         protected array $entities = [],

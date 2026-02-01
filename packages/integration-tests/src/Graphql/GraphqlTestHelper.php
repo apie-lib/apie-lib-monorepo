@@ -299,4 +299,38 @@ GQL,
         );
     }
 
+    public function createFileuploadCall(): GraphqlProvider
+    {
+        return new GraphqlWithFileUpload(
+            new BoundedContextId('types'),
+            [
+              'query' => <<<GQL
+mutation CreateUploadedFile(\$id: String!, \$file: UploadedFileInterface_create!) {
+  createUploadedFile(input: {
+    id: \$id,
+    file: \$file
+  }) { id, file, stream, imageFile }
+}
+GQL,
+                'variables' => [
+                    'id' => '821c5aca-2853-4f7a-b3bc-045a81798e24',
+                ],
+            ],
+            [
+                'data' => [
+                    'createUploadedFile' => [
+                        'id' => '821c5aca-2853-4f7a-b3bc-045a81798e24',
+                        'imageFile' => null,
+                        'stream' => '/types/UploadedFile/821c5aca-2853-4f7a-b3bc-045a81798e24/download/stream',
+                        'file' => '/types/UploadedFile/821c5aca-2853-4f7a-b3bc-045a81798e24/download/file',
+                    ]
+                ]
+              ],
+            [],
+            [
+                'variables.file' => StoredFile::createFromString('test', 'test.txt'),
+              ]
+        );
+    }
+
 }
