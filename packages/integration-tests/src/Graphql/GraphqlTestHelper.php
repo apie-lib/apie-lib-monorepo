@@ -266,9 +266,8 @@ fragment TypeRef on __Type {
         );
     }
 
-    public function createMutationCall(): GraphqlProvider
+    public function createCreationCall(): GraphqlProvider
     {
-        $entities = $this->createEntityList(30);
         return new GraphqlProvider(
             new BoundedContextId('types'),
             [
@@ -293,6 +292,30 @@ GQL,
                         'integerField' => null,
                         'booleanField' => false,
                     ]
+                ]
+            ],
+            []
+        );
+    }
+
+    public function createRemovalCall(): GraphqlProvider
+    {
+        $entities = $this->createEntityList(1);
+        return new GraphqlProvider(
+            new BoundedContextId('types'),
+            [
+              'query' => <<<GQL
+mutation RemovePrimitiveOnly(\$id: String!) {
+  removePrimitiveOnly(id: \$id)
+}
+GQL,
+                'variables' => [
+                    'id' => PrimitiveOnlyIdentifier::generateFromInteger(0)->toNative(),
+                ],
+            ],
+            [
+                'data' => [
+                    'removePrimitiveOnly' => true
                 ]
               ],
             $entities
