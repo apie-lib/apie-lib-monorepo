@@ -322,6 +322,36 @@ GQL,
         );
     }
 
+    public function createModificationCall(): GraphqlProvider
+    {
+        $entities = $this->createEntityList(1);
+        return new GraphqlProvider(
+            new BoundedContextId('types'),
+            [
+              'query' => <<<GQL
+mutation ModifyPrimitiveOnly(\$id: String!, \$booleanField: Boolean!) {
+  modifyPrimitiveOnly(id: \$id, input: { integerField: 12, booleanField: \$booleanField }) { id, stringField, integerField, booleanField }
+}
+GQL,
+                'variables' => [
+                    'id' => PrimitiveOnlyIdentifier::generateFromInteger(0)->toNative(),
+                    'booleanField' => false,
+                ],
+            ],
+            [
+                'data' => [
+                    'modifyPrimitiveOnly' => [
+                        'id' => PrimitiveOnlyIdentifier::generateFromInteger(0)->toNative(),
+                        'stringField' => 'String 0',
+                        'integerField' => 12,
+                        'booleanField' => false,
+                    ]
+                ]
+              ],
+            $entities
+        );
+    }
+
     public function createFileuploadCall(): GraphqlProvider
     {
         return new GraphqlWithFileUpload(
