@@ -6,8 +6,10 @@ use Apie\Core\FileStorage\ImageFile;
 use Apie\Core\FileStorage\StoredFile;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UploadedFileIdentifier;
+use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\UploadedFile;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\IntegrationTestHelper;
 
 class GraphqlTestHelper extends IntegrationTestHelper
@@ -345,6 +347,35 @@ GQL,
                         'stringField' => 'String 0',
                         'integerField' => 12,
                         'booleanField' => false,
+                    ]
+                ]
+              ],
+            $entities
+        );
+    }
+
+    public function createResourceMethodCall(): GraphqlProvider
+    {
+        $entities = [new User(UserIdentifier::fromNative('test@example.com'))];
+        return new GraphqlProvider(
+            new BoundedContextId('types'),
+            [
+              'query' => <<<GQL
+mutation RunUserBlock(\$id: String!,\$blockedReason: String!) {
+  runUserBlock(id: \$id, input: { blockedReason: \$blockedReason }) { id, blocked, blockedReason }
+}
+GQL,
+                'variables' => [
+                    'id' => 'test@example.com',
+                    'blockedReason' => 'Test reason',
+                ],
+            ],
+            [
+                'data' => [
+                    'runUserBlock' => [
+                        'id' => 'test@example.com',
+                        'blocked' => true,
+                        'blockedReason' => 'Test reason',
                     ]
                 ]
               ],
