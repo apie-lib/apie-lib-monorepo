@@ -961,6 +961,30 @@
                     }
                 },
                 {
+                    "name": "get-object-types-sequential-background-process",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of SequentialBackgroundProcess with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "all-object-types-animal",
                     "inputSchema": {
                         "type": "object",
@@ -1347,6 +1371,76 @@
                             "all": true,
                             "get": true,
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-sequential-background-process",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "version": {
+                                        "type": "string"
+                                    },
+                                    "step": {
+                                        "type": "string"
+                                    },
+                                    "retries": {
+                                        "type": "string"
+                                    },
+                                    "startTime": {
+                                        "type": "string"
+                                    },
+                                    "completionTime": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "status": {
+                                        "type": "string"
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "result": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "errors": {
+                                        "type": "string"
+                                    },
+                                    "payload": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of SequentialBackgroundProcess",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
                             "_apie_action": "Apie\\Common\\Actions\\GetListAction"
                         },
                         "x-bounded-context-id": "types"
@@ -2468,6 +2562,78 @@
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
                             "methodClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\User",
                             "methodName": "verify",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-sequential-background-process-method-provide-allowed-methods",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Runs method provideAllowedMethods on a SequentialBackgroundProcess with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                        "x-method": "provideAllowedMethods",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodClass": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodName": "provideAllowedMethods",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-sequential-background-process-method-cancel",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Runs method cancel on a SequentialBackgroundProcess with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                        "x-method": "cancel",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodClass": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodName": "cancel",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-object-types-sequential-background-process-method-run-step",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Runs method runStep on a SequentialBackgroundProcess with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                        "x-method-class": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                        "x-method": "runStep",
+                        "x-fields": {
+                            "get": true,
+                            "resource-call": true,
+                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodClass": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
+                            "methodName": "runStep",
                             "display-form": true,
                             "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
                         },

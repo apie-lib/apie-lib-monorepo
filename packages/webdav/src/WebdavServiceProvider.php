@@ -14,7 +14,7 @@ class WebdavServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             '_defaults',
             function ($app) {
                 return new \_defaults(
@@ -22,7 +22,7 @@ class WebdavServiceProvider extends ServiceProvider
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\Webdav\RouteDefinitions\WebdavRouteDefinitionProvider::class,
             function ($app) {
                 return new \Apie\Webdav\RouteDefinitions\WebdavRouteDefinitionProvider(
@@ -41,7 +41,7 @@ class WebdavServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\Webdav\RouteDefinitions\WebdavRouteDefinitionProvider::class], 'apie.common.route_definition');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\Webdav\Controller\WebdavController::class,
             function ($app) {
                 return new \Apie\Webdav\Controller\WebdavController(

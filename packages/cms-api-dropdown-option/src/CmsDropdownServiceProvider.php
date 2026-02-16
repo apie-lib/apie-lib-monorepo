@@ -14,7 +14,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\CmsApiDropdownOption\Controllers\DropdownOptionController::class,
             function ($app) {
                 return new \Apie\CmsApiDropdownOption\Controllers\DropdownOptionController(
@@ -32,7 +32,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\CmsApiDropdownOption\Controllers\DropdownOptionController::class], 'controller.service_arguments');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class,
             function ($app) {
                 return \Apie\CmsApiDropdownOption\DropdownOptionProvider\ChainedDropdownOptionProvider::create(
@@ -49,7 +49,7 @@ class CmsDropdownServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\CmsApiDropdownOption\DropdownOptionProvider\DropdownOptionProviderInterface::class], 'apie.context');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\CmsApiDropdownOption\DropdownOptionProvider\EntityIdentifierOptionProvider::class,
             function ($app) {
                 return new \Apie\CmsApiDropdownOption\DropdownOptionProvider\EntityIdentifierOptionProvider(

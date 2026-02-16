@@ -3,5 +3,4 @@
   <s:sabredav-version>4.7.0</s:sabredav-version>
   <s:exception>Sabre\DAV\Exception\Forbidden</s:exception>
   <s:message>Permission denied to create file (filename test.txt)</s:message>
-  <s:code>0</s:code>
 </d:error>

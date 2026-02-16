@@ -14,7 +14,7 @@ class AiInstructorServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\AiInstructor\AiInstructor::class,
             function ($app) {
                 return new \Apie\AiInstructor\AiInstructor(
@@ -32,7 +32,7 @@ class AiInstructorServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\AiInstructor\AiInstructor::class], 'apie.context');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\AiInstructor\AiClient::class,
             function ($app) {
                 return \Apie\AiInstructor\AiClient::create(
@@ -51,7 +51,7 @@ class AiInstructorServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\AiInstructor\AiClient::class], 'apie.context');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\AiInstructor\AiPlaygroundCommand::class,
             function ($app) {
                 return new \Apie\AiInstructor\AiPlaygroundCommand(

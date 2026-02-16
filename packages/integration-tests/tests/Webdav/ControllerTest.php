@@ -19,7 +19,7 @@ class ControllerTest extends TestCase
 
     private function shouldOverwriteFixtures(): bool
     {
-        return true;
+        return false;
     }
 
     public static function it_can_display_test_page_provider(): Generator

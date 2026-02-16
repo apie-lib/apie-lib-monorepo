@@ -125,6 +125,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             MockFactory::createMockAiClient()
         );
         unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+        $this->app->boot();
     }
 
     /**

@@ -14,7 +14,7 @@ class ApieFileSystemServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\ApieFileSystem\ApieFilesystemFactory::class,
             function ($app) {
                 return new \Apie\ApieFileSystem\ApieFilesystemFactory(

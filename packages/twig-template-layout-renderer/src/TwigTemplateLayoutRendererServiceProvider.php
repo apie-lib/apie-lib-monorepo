@@ -14,7 +14,7 @@ class TwigTemplateLayoutRendererServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\TwigTemplateLayoutRenderer\Command\CreateCustomLayoutRendererCommand::class,
             function ($app) {
                 return new \Apie\TwigTemplateLayoutRenderer\Command\CreateCustomLayoutRendererCommand(
@@ -34,7 +34,7 @@ class TwigTemplateLayoutRendererServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\TwigTemplateLayoutRenderer\Command\CreateCustomLayoutRendererCommand::class], 'console.command');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\TwigTemplateLayoutRenderer\Skeleton\ClassCodeGenerator::class,
             function ($app) {
                 return new \Apie\TwigTemplateLayoutRenderer\Skeleton\ClassCodeGenerator(

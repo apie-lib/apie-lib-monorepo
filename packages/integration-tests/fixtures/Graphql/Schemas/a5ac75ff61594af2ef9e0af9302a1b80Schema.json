@@ -38,6 +38,10 @@
                     {
                         "name": "findUser",
                         "description": "Return search results for User"
+                    },
+                    {
+                        "name": "findSequentialBackgroundProcess",
+                        "description": "Return search results for SequentialBackgroundProcess"
                     }
                 ]
             }

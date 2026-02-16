@@ -14,7 +14,7 @@ class MakerServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\Maker\CodeGenerators\CreateDomainObject::class,
             function ($app) {
                 return new \Apie\Maker\CodeGenerators\CreateDomainObject(
@@ -23,7 +23,7 @@ class MakerServiceProvider extends ServiceProvider
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\Maker\Command\ApieCreateDomainCommand::class,
             function ($app) {
                 return new \Apie\Maker\Command\ApieCreateDomainCommand(
@@ -44,7 +44,7 @@ class MakerServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\Maker\Command\ApieCreateDomainCommand::class], 'console.command');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\Maker\BoundedContext\Services\CodeWriter::class,
             function ($app) {
                 return new \Apie\Maker\BoundedContext\Services\CodeWriter(
@@ -60,7 +60,7 @@ class MakerServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\Maker\BoundedContext\Services\CodeWriter::class], 'apie.context');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\Maker\ContextBuilders\AddMakerConfigToContext::class,
             function ($app) {
                 return new \Apie\Maker\ContextBuilders\AddMakerConfigToContext(
