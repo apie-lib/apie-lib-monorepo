@@ -19,7 +19,7 @@ class ControllerTest extends TestCase
 
     private function shouldOverwriteFixtures(): bool
     {
-        return false;
+        return true;
     }
 
     public static function it_can_display_test_page_provider(): Generator
@@ -78,10 +78,6 @@ class ControllerTest extends TestCase
         TestApplicationInterface $testApplication,
         WebdavTestRequestInterface $request
     ) {
-        if ($testApplication instanceof LaravelTestApplication && $request instanceof ListFilesWebdavCall) {
-            // Laravel's filesystem integration test setup is broken for webdav
-            $this->markTestSkipped('Laravel filesystem integration test setup is broken for webdav');
-        }
         $testApplication->bootApplication();
         if ($request instanceof BootstrapRequestInterface) {
             $request->bootstrap($testApplication);

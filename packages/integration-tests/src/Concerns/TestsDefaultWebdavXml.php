@@ -19,9 +19,10 @@ trait TestsDefaultWebdavXml
         // remove <s:stacktrace> because it is not deterministic because of full file path
         $body = preg_replace('/<s:stacktrace>.*?<\/s:stacktrace>/s', '', (string) $body);
         // remove <s:file> because they are not deterministic because of full file path
-        $body = preg_replace('/<s:file>.*?<\/s:file>/s', '', (string) $body);
+        $body = preg_replace('/<s:file>.*?<\/s:file>/s', '', $body);
         // remove <s:line> because they are not deterministic because of full file path
-        $body = preg_replace('/<s:line>.*?<\/s:line>/s', '', (string) $body);
+        $body = preg_replace('/<s:line>.*?<\/s:line>/s', '', $body);
+        $body = str_replace('<s:code>0</s:code>', '', $body);
 
         if (!$this->faked) {
             TestCase::assertEquals($this->getExpectedStatusCode(), $response->getStatusCode(), 'Body is ' . substr($response->getBody(), 0, 400));
