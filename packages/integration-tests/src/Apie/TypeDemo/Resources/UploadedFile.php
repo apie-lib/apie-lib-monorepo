@@ -27,7 +27,7 @@ final class UploadedFile implements EntityInterface
         public ?ImageFile $imageFile = null
     ) {
     }
-    /*
+    
         public static function createRandomFile(
             #[Context]
             ApieDatalayer $apieDatalayer
@@ -38,7 +38,7 @@ final class UploadedFile implements EntityInterface
             );
             $apieDatalayer->persistNew($file, new BoundedContextId('types'));
             return $file;
-        }*/
+        }
 
     public function getId(): UploadedFileIdentifier
     {

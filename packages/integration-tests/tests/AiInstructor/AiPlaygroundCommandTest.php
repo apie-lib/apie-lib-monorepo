@@ -25,9 +25,6 @@ class AiPlaygroundCommandTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function it_can_run_a_playground_command(TestApplicationInterface $testApplication)
     {
-        if ($testApplication instanceof LaravelTestApplication) {
-            $this->markTestIncomplete('This test is not yet implemented for LaravelTestApplication');
-        }
         $testApplication->bootApplication();
         $tester = new ApplicationTester($testApplication->getConsoleApplication());
         $exitCode = $tester->run([

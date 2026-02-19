@@ -467,6 +467,23 @@ trait CreatesApieBoundedContext
     }
 
     /**
+     * For testing /UploadedFile/createRandomFile (static method on resource)
+     */
+    public function createResourceStaticMethodRequest(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'UploadedFile/createRandomFile?fields=id,imageFile',
+            new GetAndSetObjectField(
+                '',
+                new GetUuidField('id'),
+                new GetPrimitiveField('imageFile', null),
+            ),
+            discardResponseValidation: true, // disabled because of fields request parameter not following required fields logic
+        );
+    }
+
+    /**
      * For testing /Calculator/sum for testing variadic request.
      */
     public function createVariadicActionRequest(): TestRequestInterface

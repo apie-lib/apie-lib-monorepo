@@ -2402,6 +2402,28 @@
                     }
                 },
                 {
+                    "name": "run-global-types-uploaded-file-method-create-random-file",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Calls method createRandomFile and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UploadedFile",
+                        "x-method": "createRandomFile",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\UploadedFile",
+                            "methodName": "createRandomFile",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "run-object-types-order-method-add-order-line",
                     "inputSchema": {
                         "type": "object",
