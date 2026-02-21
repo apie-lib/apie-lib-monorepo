@@ -28,17 +28,17 @@ final class UploadedFile implements EntityInterface
     ) {
     }
     
-        public static function createRandomFile(
-            #[Context]
-            ApieDatalayer $apieDatalayer
-        ): UploadedFile {
-            $file = new UploadedFile(
-                UploadedFileIdentifier::createRandom(),
-                StoredFile::createFromString('file contents', clientOriginalFile: 'example.txt')
-            );
-            $apieDatalayer->persistNew($file, new BoundedContextId('types'));
-            return $file;
-        }
+    public static function createRandomFile(
+        #[Context]
+        ApieDatalayer $apieDatalayer
+    ): UploadedFile {
+        $file = new UploadedFile(
+            UploadedFileIdentifier::createRandom(),
+            StoredFile::createFromString('file contents', clientOriginalFile: 'example.txt')
+        );
+        $apieDatalayer->persistNew($file, new BoundedContextId('types'));
+        return $file;
+    }
 
     public function getId(): UploadedFileIdentifier
     {

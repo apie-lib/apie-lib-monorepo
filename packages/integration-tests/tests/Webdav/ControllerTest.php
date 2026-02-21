@@ -1,11 +1,9 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Webdav;
 
-use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\BootstrapRequestInterface;
-use Apie\IntegrationTests\Requests\ListFilesWebdavCall;
 use Apie\IntegrationTests\Requests\WebdavTestRequestInterface;
 use Apie\IntegrationTests\WebdavTestHelper;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;

@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Tests\IntegrationTests\AiInstructor;
 
-use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use PHPUnit\Framework\TestCase;
