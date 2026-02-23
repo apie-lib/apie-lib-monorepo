@@ -196,7 +196,8 @@ class StoredFileTest extends TestCase
         }
     }
 
-    public static function permutate(array $itemsLeft): Generator {
+    public static function permutate(array $itemsLeft): Generator
+    {
         if (empty($itemsLeft)) {
             yield [];
         } else {

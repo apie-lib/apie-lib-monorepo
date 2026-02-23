@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Tests\Core\ValueObjects;
 
-use Apie\Core\RegexUtils;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Uri;
 use Apie\Fixtures\TestHelpers\TestWithFaker;

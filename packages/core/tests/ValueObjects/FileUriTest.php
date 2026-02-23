@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Tests\Core\ValueObjects;
 
-use Apie\Core\RegexUtils;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\FileUri;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
@@ -65,7 +64,7 @@ class FileUriTest extends TestCase
     {
         $this->runOpenapiSchemaTestForCreation(
             FileUri::class,
-            'Uri-post',
+            'FileUri-post',
             [
                 'type' => 'string',
                 'format' => 'fileuri',
@@ -77,6 +76,6 @@ class FileUriTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(FileUri::class);
+        $this->runFakerTest(FileUri::class, interval: 10);
     }
 }
