@@ -257,6 +257,69 @@
                 }
             }
         },
+        "/ExternalFile/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "ExternalFile"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.ExternalFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/PrimitiveOnly/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -2810,6 +2873,290 @@
                 }
             }
         },
+        "/ExternalFile": {
+            "post": {
+                "tags": [
+                    "ExternalFile",
+                    "resource"
+                ],
+                "description": "Creates an instance of ExternalFile",
+                "operationId": "put-ExternalFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "x-no-crsf",
+                        "in": "header",
+                        "description": "Disable csrf",
+                        "schema": {
+                            "enum": [
+                                1
+                            ],
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ExternalFile-post"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "form"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "form": {
+                                        "$ref": "#/components/schemas/ExternalFile-post-multipart-form-data"
+                                    },
+                                    "_csrf": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExternalFile-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "ExternalFile",
+                    "resource"
+                ],
+                "description": "Gets a list of resource that are an instance of ExternalFile",
+                "operationId": "get-all-ExternalFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 0,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[file]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[fileUri]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order_by",
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "enum": [
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
+                                    "id",
+                                    "+id",
+                                    "-id",
+                                    "fileUri",
+                                    "+fileUri",
+                                    "-fileUri"
+                                ],
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "required": [
+                                        "filteredCount",
+                                        "totalCount",
+                                        "first",
+                                        "last",
+                                        "list"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "first": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "last": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "prev": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "next": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ExternalFile-get"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/PrimitiveOnly": {
             "post": {
                 "tags": [
@@ -4072,6 +4419,187 @@
                                 }
                             }
                         }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ExternalFile/{id}": {
+            "get": {
+                "tags": [
+                    "ExternalFile",
+                    "resource"
+                ],
+                "description": "Gets a resource of ExternalFile with a specific id",
+                "operationId": "get-single-ExternalFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of ExternalFile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/ExternalFileIdentifier-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExternalFile-get"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Requires authorization",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WrongTokenException-get"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Access denied",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/WrongTokenException-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "ExternalFile",
+                    "resource"
+                ],
+                "description": "Removes an instance of ExternalFile",
+                "operationId": "remove-single-ExternalFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of ExternalFile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/ExternalFileIdentifier-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Resource was deleted"
                     },
                     "400": {
                         "description": "Invalid request",
@@ -6432,6 +6960,7 @@
                 "tags": [
                     "Animal",
                     "ExportAll",
+                    "ExternalFile",
                     "ObjectWithRelation",
                     "Order",
                     "PrimitiveOnly",
@@ -6544,6 +7073,7 @@
             "post": {
                 "tags": [
                     "Animal",
+                    "ExternalFile",
                     "Indexer",
                     "ObjectWithRelation",
                     "Order",
@@ -7285,6 +7815,71 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/File-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ExternalFile/{id}/refreshFile": {
+            "get": {
+                "tags": [
+                    "ExternalFile",
+                    "action"
+                ],
+                "description": "Runs method refreshFile on a ExternalFile with a specific id",
+                "operationId": "get-single-ExternalFile-run-refreshFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of ExternalFile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExternalFile-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
                                 }
                             }
                         }
@@ -8098,6 +8693,121 @@
                 }
             }
         },
+        "/ExternalFile/{id}/download/{properties}": {
+            "get": {
+                "tags": [
+                    "ExternalFile",
+                    "action",
+                    "download"
+                ],
+                "description": "Streams a file on a ExternalFile with a specific id",
+                "operationId": "stream-single-ExternalFile-run-download",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of ExternalFile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/ExternalFileIdentifier-post"
+                        }
+                    },
+                    {
+                        "name": "properties",
+                        "in": "path",
+                        "description": "properties of instance of __construct",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UploadedFile-get"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/UploadedFile/{id}/download/{properties}": {
             "get": {
                 "tags": [
@@ -8222,6 +8932,102 @@
                 ],
                 "description": "Calls method export and returns return value.",
                 "operationId": "call-method-ExportAll-export_Animal",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "extension",
+                        "in": "path",
+                        "description": "extension of instance of export",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UploadedFile-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/export/ExternalFile.{extension}": {
+            "get": {
+                "tags": [
+                    "ExportAll",
+                    "ExternalFile",
+                    "action"
+                ],
+                "description": "Calls method export and returns return value.",
+                "operationId": "call-method-ExportAll-export_ExternalFile",
                 "parameters": [
                     {
                         "name": "fields",
@@ -9086,6 +9892,112 @@
                 ],
                 "description": "Calls method getAllIndexes and returns return value.",
                 "operationId": "call-method-Indexer-getAllIndexes_Animal",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of instance of Indexer",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/indexes/ExternalFile/{id}": {
+            "post": {
+                "tags": [
+                    "ExternalFile",
+                    "Indexer",
+                    "action"
+                ],
+                "description": "Calls method getAllIndexes and returns return value.",
+                "operationId": "call-method-Indexer-getAllIndexes_ExternalFile",
                 "parameters": [
                     {
                         "name": "fields",
@@ -10170,7 +11082,7 @@
                 "type": "string"
             },
             "Base64Stream-post": {
-                "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$",
+                "pattern": "^[A-Za-z0-9+\\/]*={0,3}$",
                 "type": "string",
                 "format": "base64"
             },
@@ -10445,6 +11357,9 @@
                         "$ref": "#/components/schemas/Animal-get"
                     },
                     {
+                        "$ref": "#/components/schemas/ExternalFile-get"
+                    },
+                    {
                         "$ref": "#/components/schemas/ObjectWithRelation-get"
                     },
                     {
@@ -10473,6 +11388,70 @@
                     "expired"
                 ],
                 "type": "string"
+            },
+            "ExternalFile-get": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "file",
+                    "fileUri"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/ExternalFileIdentifier-get"
+                    },
+                    "file": {
+                        "$ref": "#/components/schemas/UploadedFile-get"
+                    },
+                    "fileUri": {
+                        "$ref": "#/components/schemas/Uri-get"
+                    }
+                }
+            },
+            "ExternalFile-post": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "fileUri"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/ExternalFileIdentifier-post"
+                    },
+                    "fileUri": {
+                        "$ref": "#/components/schemas/FileUri-post"
+                    }
+                }
+            },
+            "ExternalFile-post-multipart-form-data": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "fileUri"
+                ],
+                "properties": {
+                    "id": {
+                        "$ref": "#/components/schemas/ExternalFileIdentifier-post-multipart-form-data"
+                    },
+                    "fileUri": {
+                        "$ref": "#/components/schemas/FileUri-post-multipart-form-data"
+                    }
+                }
+            },
+            "ExternalFileIdentifier-get": {
+                "type": "string",
+                "format": "externalfileidentifier",
+                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+            },
+            "ExternalFileIdentifier-post": {
+                "type": "string",
+                "format": "externalfileidentifier",
+                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+            },
+            "ExternalFileIdentifier-post-multipart-form-data": {
+                "type": "string",
+                "format": "externalfileidentifier",
+                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
             "File-get": {
                 "type": "object",
@@ -10552,6 +11531,16 @@
                         "$ref": "#/components/schemas/UploadedFile-post-multipart-form-data"
                     }
                 }
+            },
+            "FileUri-post": {
+                "type": "string",
+                "description": "URL to download file",
+                "format": "fileuri"
+            },
+            "FileUri-post-multipart-form-data": {
+                "type": "string",
+                "description": "URL to download file",
+                "format": "fileuri"
             },
             "Filename-post": {
                 "type": "string",
@@ -12077,6 +13066,11 @@
                 "format": "uploadedfileidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
+            "Uri-get": {
+                "type": "string",
+                "format": "uri",
+                "description": "URI in RFC 3986 format."
+            },
             "User-get": {
                 "type": "object",
                 "required": [
@@ -12216,6 +13210,10 @@
         {
             "name": "Animal",
             "description": "All operations for Animal"
+        },
+        {
+            "name": "ExternalFile",
+            "description": "All operations for ExternalFile"
         },
         {
             "name": "ObjectWithRelation",

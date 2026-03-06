@@ -12,6 +12,10 @@
                         "description": "Return search results for Animal"
                     },
                     {
+                        "name": "findExternalFile",
+                        "description": "Return search results for ExternalFile"
+                    },
+                    {
                         "name": "findObjectWithRelation",
                         "description": "Return search results for ObjectWithRelation"
                     },

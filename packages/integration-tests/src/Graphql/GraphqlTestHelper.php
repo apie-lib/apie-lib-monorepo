@@ -389,7 +389,7 @@ GQL,
             new BoundedContextId('types'),
             [
               'query' => <<<GQL
-mutation CreateUploadedFile(\$id: String!, \$file: UploadedFileInterface_create!) {
+mutation CreateUploadedFile(\$id: String!, \$file: UploadedFile_create!) {
   createUploadedFile(input: {
     id: \$id,
     file: \$file

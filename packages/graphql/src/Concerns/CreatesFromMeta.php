@@ -11,6 +11,7 @@ use Apie\Core\Metadata\MetadataInterface;
 use Apie\Core\Metadata\NullableMetadataInterface;
 use Apie\Core\Metadata\UnionTypeMetadata;
 use Apie\Core\Utils\ConverterUtils;
+use Apie\Core\ValueObjects\Utils;
 use Apie\Graphql\Types;
 use Apie\Graphql\Types\FromMetadataInputType;
 use Apie\Graphql\Types\MapOfType;
@@ -70,9 +71,10 @@ trait CreatesFromMeta
         $class = $metadata->toClass();
         $options = self::createValueOptions($metadata);
         if ($options !== null && $class) {
-            $result = Types::createSingleton($class->getShortName(), function () use ($class, $options) {
+            $resourceName = Utils::getDisplayNameForValueObject($class);
+            $result = Types::createSingleton($resourceName, function () use ($resourceName, $options) {
                 return new EnumType([
-                    'name' => $class->getShortName(),
+                    'name' => $resourceName,
                     'values' => $options,
                 ]);
             });
@@ -101,16 +103,25 @@ trait CreatesFromMeta
         $class = $metadata->toClass();
         if ($class && in_array(UploadedFileInterface::class, [$class->name, ...$class->getInterfaceNames()])) {
             if (in_array(InputType::class, (new ReflectionClass(static::class))->getInterfaceNames())) {
-                return Types::createSingleton($class->getShortName() . '_create', function () use ($class) {
-                    return new UploadType(['name' => $class->getShortName() . '_create']);
+                $name = Utils::getDisplayNameForValueObject($class) . '_create';
+                $result = Types::createSingleton($name, function () use ($name) {
+                    return new UploadType(['name' => $name]);
+                });
+            } else {
+                $name = Utils::getDisplayNameForValueObject($class);
+                $result = Types::createSingleton($name, function () use ($name) {
+                      
+                    return new StringType([
+                        'name' => $name,
+                        'description' => 'URL to download the file',
+                    ]);
                 });
             }
-            return Types::createSingleton($class->getShortName(), function () use ($class) {
-                return new StringType([
-                    'name' => $class->getShortName(),
-                    'description' => 'URL to download the file',
-                ]);
-            });
+
+            if ($nullable) {
+                return $result;
+            }
+            return Type::nonNull($result);
         }
         
         $scalarType = $metadata->toScalarType($nullable);
