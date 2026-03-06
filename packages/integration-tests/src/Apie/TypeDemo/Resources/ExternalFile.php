@@ -13,7 +13,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\ExternalFileIdentifier;
 use Psr\Http\Message\UploadedFileInterface;
 
 #[RemovalCheck(new StaticCheck())]
-#[FakeCount(1)]
+#[FakeCount(0)]
 #[AllowMultipart]
 final class ExternalFile implements EntityInterface
 {

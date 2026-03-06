@@ -9,8 +9,10 @@ use Apie\Core\Metadata\ItemListMetadata;
 use Apie\Core\Metadata\MetadataFactory;
 use Apie\Core\Metadata\MetadataInterface;
 use Apie\Core\Metadata\NullableMetadataInterface;
+use Apie\Core\Metadata\StoredFileMetadata;
 use Apie\Core\Metadata\UnionTypeMetadata;
 use Apie\Core\Utils\ConverterUtils;
+use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\Core\ValueObjects\Utils;
 use Apie\Graphql\Types;
 use Apie\Graphql\Types\FromMetadataInputType;
@@ -102,7 +104,7 @@ trait CreatesFromMeta
         }
         $class = $metadata->toClass();
         if ($class && in_array(UploadedFileInterface::class, [$class->name, ...$class->getInterfaceNames()])) {
-            if (in_array(InputType::class, (new ReflectionClass(static::class))->getInterfaceNames())) {
+            if (in_array(InputType::class, (new ReflectionClass(static::class))->getInterfaceNames()) && !in_array(ValueObjectInterface::class,$class->getInterfaceNames())) {
                 $name = Utils::getDisplayNameForValueObject($class) . '_create';
                 $result = Types::createSingleton($name, function () use ($name) {
                     return new UploadType(['name' => $name]);

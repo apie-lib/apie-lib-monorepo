@@ -153,7 +153,7 @@ class FromMetadataInputTypeTest extends TestCase
             'getCreationMetadata',
             false
         ];
-        /*yield 'file uri' => [
+        yield 'file uri' => [
             Type::nonNull(
                 new StringType([
                     'name' => 'FileUri',
@@ -172,6 +172,6 @@ class FromMetadataInputTypeTest extends TestCase
             FileUri::class,
             'getCreationMetadata',
             true
-        ];*/
+        ];
     }
 }

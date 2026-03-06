@@ -400,7 +400,7 @@
                                 "name": null,
                                 "ofType": {
                                     "kind": "SCALAR",
-                                    "name": "FileUri_create",
+                                    "name": "FileUri",
                                     "ofType": null
                                 }
                             },
@@ -480,8 +480,8 @@
                 },
                 {
                     "kind": "SCALAR",
-                    "name": "FileUri_create",
-                    "description": "The `Upload` special type represents a file to be uploaded in the same HTTP request as specified by\n [graphql-multipart-request-spec](https:\/\/github.com\/jaydenseric\/graphql-multipart-request-spec).",
+                    "name": "FileUri",
+                    "description": "URL to download the file",
                     "fields": null,
                     "inputFields": null,
                     "interfaces": null,
