@@ -367,7 +367,18 @@
                     "name": "ExternalFileRunRefreshFile",
                     "description": null,
                     "fields": null,
-                    "inputFields": [],
+                    "inputFields": [
+                        {
+                            "name": "_",
+                            "description": "This is a dummy field, because GraphQL does not allow empty input types.",
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        }
+                    ],
                     "interfaces": null,
                     "enumValues": null,
                     "possibleTypes": null
@@ -572,6 +583,26 @@
                     "kind": "SCALAR",
                     "name": "ImageFile_create",
                     "description": "The `Upload` special type represents a file to be uploaded in the same HTTP request as specified by\n [graphql-multipart-request-spec](https:\/\/github.com\/jaydenseric\/graphql-multipart-request-spec).",
+                    "fields": null,
+                    "inputFields": null,
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "SCALAR",
+                    "name": "MapOfMixed",
+                    "description": "A map\/dictionary\/hashmap where the keys are strings and the values are of type Mixed",
+                    "fields": null,
+                    "inputFields": null,
+                    "interfaces": null,
+                    "enumValues": null,
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "SCALAR",
+                    "name": "MapOfString",
+                    "description": "A map\/dictionary\/hashmap where the keys are strings and the values are of type String",
                     "fields": null,
                     "inputFields": null,
                     "interfaces": null,
@@ -1216,16 +1247,8 @@
                             "description": null,
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "MapOfString!",
-                                "ofType": {
-                                    "kind": "NON_NULL",
-                                    "name": null,
-                                    "ofType": {
-                                        "kind": "SCALAR",
-                                        "name": "String",
-                                        "ofType": null
-                                    }
-                                }
+                                "name": "MapOfString",
+                                "ofType": null
                             },
                             "defaultValue": null
                         },
@@ -1234,16 +1257,8 @@
                             "description": null,
                             "type": {
                                 "kind": "SCALAR",
-                                "name": "MapOfString!",
-                                "ofType": {
-                                    "kind": "NON_NULL",
-                                    "name": null,
-                                    "ofType": {
-                                        "kind": "SCALAR",
-                                        "name": "String",
-                                        "ofType": null
-                                    }
-                                }
+                                "name": "MapOfString",
+                                "ofType": null
                             },
                             "defaultValue": null
                         },
@@ -1577,7 +1592,18 @@
                     "name": "SequentialBackgroundProcessRunCancel",
                     "description": null,
                     "fields": null,
-                    "inputFields": [],
+                    "inputFields": [
+                        {
+                            "name": "_",
+                            "description": "This is a dummy field, because GraphQL does not allow empty input types.",
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        }
+                    ],
                     "interfaces": null,
                     "enumValues": null,
                     "possibleTypes": null
@@ -1587,7 +1613,18 @@
                     "name": "SequentialBackgroundProcessRunProvideAllowedMethods",
                     "description": null,
                     "fields": null,
-                    "inputFields": [],
+                    "inputFields": [
+                        {
+                            "name": "_",
+                            "description": "This is a dummy field, because GraphQL does not allow empty input types.",
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        }
+                    ],
                     "interfaces": null,
                     "enumValues": null,
                     "possibleTypes": null
@@ -1597,7 +1634,18 @@
                     "name": "SequentialBackgroundProcessRunRunStep",
                     "description": null,
                     "fields": null,
-                    "inputFields": [],
+                    "inputFields": [
+                        {
+                            "name": "_",
+                            "description": "This is a dummy field, because GraphQL does not allow empty input types.",
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        }
+                    ],
                     "interfaces": null,
                     "enumValues": null,
                     "possibleTypes": null
@@ -1787,16 +1835,8 @@
                             "name": null,
                             "ofType": {
                                 "kind": "SCALAR",
-                                "name": "MapOfMixed!",
-                                "ofType": {
-                                    "kind": "NON_NULL",
-                                    "name": null,
-                                    "ofType": {
-                                        "kind": "SCALAR",
-                                        "name": "Mixed",
-                                        "ofType": null
-                                    }
-                                }
+                                "name": "MapOfMixed",
+                                "ofType": null
                             }
                         },
                         {
@@ -1988,7 +2028,18 @@
                     "name": "UserRunUnblock",
                     "description": null,
                     "fields": null,
-                    "inputFields": [],
+                    "inputFields": [
+                        {
+                            "name": "_",
+                            "description": "This is a dummy field, because GraphQL does not allow empty input types.",
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "defaultValue": null
+                        }
+                    ],
                     "interfaces": null,
                     "enumValues": null,
                     "possibleTypes": null
