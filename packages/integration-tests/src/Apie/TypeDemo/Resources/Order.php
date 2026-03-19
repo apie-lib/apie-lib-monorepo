@@ -4,6 +4,7 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
 use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeCount;
+use Apie\Core\Attributes\OverwriteAfterPersist;
 use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
@@ -15,6 +16,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Lists\OrderLineList;
 #[RemovalCheck(new StaticCheck())]
 #[FakeCount(1)]
 #[Description('An order is a web order and consists of multiple order lines')]
+#[OverwriteAfterPersist]
 class Order implements EntityInterface
 {
     private OrderIdentifier $id;
