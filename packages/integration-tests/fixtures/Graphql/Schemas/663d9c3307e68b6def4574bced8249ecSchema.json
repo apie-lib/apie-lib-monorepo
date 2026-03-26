@@ -46,6 +46,10 @@
                     {
                         "name": "findSequentialBackgroundProcess",
                         "description": "Return search results for SequentialBackgroundProcess"
+                    },
+                    {
+                        "name": "findAuditLog",
+                        "description": "Return search results for AuditLog"
                     }
                 ]
             }

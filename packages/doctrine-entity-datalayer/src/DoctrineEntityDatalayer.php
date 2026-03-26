@@ -28,7 +28,6 @@ use Apie\TypeConverter\ReflectionTypeFactory;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Exception\EntityIdentityCollisionException;
-use Reflection;
 use ReflectionAttribute;
 use ReflectionClass;
 use ReflectionProperty;
@@ -160,7 +159,7 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
         } catch (UniqueConstraintViolationException|EntityIdentityCollisionException $uniqueConstraintViolation) {
             throw new InsertConflict($uniqueConstraintViolation);
         }
-        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {    
+        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {
             $this->domainToStorageConverter->injectExistingDomainObject(
                 $entity,
                 $doctrineEntity
@@ -190,7 +189,7 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
         );
         $entityManager->persist($doctrineEntity);
         $entityManager->flush();
-        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {    
+        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {
             $this->domainToStorageConverter->injectExistingDomainObject(
                 $entity,
                 $doctrineEntity
@@ -238,7 +237,7 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
         }
         $entityManager->persist($doctrineEntity);
         $entityManager->flush();
-        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {    
+        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {
             $this->domainToStorageConverter->injectExistingDomainObject(
                 $entity,
                 $doctrineEntity

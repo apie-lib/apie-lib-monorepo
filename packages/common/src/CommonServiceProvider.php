@@ -137,6 +137,23 @@ class CommonServiceProvider extends ServiceProvider
             }
         );
         $this->registerSingleton(
+            \Apie\Common\Events\AddAuditLog::class,
+            function ($app) {
+                return new \Apie\Common\Events\AddAuditLog(
+                    $app->make(\Apie\Core\Datalayers\ApieDatalayer::class),
+                    $app->make(\Apie\Serializer\PropertySerializer\PropertySerializer::class)
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Common\Events\AddAuditLog::class,
+            array(
+              0 => 'kernel.event_subscriber',
+            )
+        );
+        $this->app->tag([\Apie\Common\Events\AddAuditLog::class], 'kernel.event_subscriber');
+        $this->registerSingleton(
             'apie.bounded_context.hashmap_factory',
             function ($app) {
                 return new \Apie\Common\Wrappers\BoundedContextHashmapFactory(

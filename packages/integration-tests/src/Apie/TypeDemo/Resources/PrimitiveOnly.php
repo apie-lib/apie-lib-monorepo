@@ -1,11 +1,13 @@
 <?php
 namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
+use Apie\Core\Attributes\Auditable;
 use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
 
+#[Auditable()]
 #[RemovalCheck(new StaticCheck())]
 final class PrimitiveOnly implements EntityInterface
 {

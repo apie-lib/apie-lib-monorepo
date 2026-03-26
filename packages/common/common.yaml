@@ -49,6 +49,12 @@ services:
     arguments:
       - '@Apie\Serializer\DecoderHashmap'
 
+  Apie\Common\Events\AddAuditLog:
+    arguments:
+      - '@Apie\Core\Datalayers\ApieDatalayer'
+      - '@Apie\Serializer\PropertySerializer\PropertySerializer'
+    tags: ['kernel.event_subscriber']
+
   apie.bounded_context.hashmap_factory:
       class: Apie\Common\Wrappers\BoundedContextHashmapFactory
       arguments:
