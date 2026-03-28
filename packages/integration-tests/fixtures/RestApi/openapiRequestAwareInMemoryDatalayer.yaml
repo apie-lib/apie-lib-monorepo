@@ -7590,12 +7590,18 @@ components:
       required:
         - id
         - reference
+        - rawData
         - data
       properties:
         id:
           $ref: '#/components/schemas/AuditLogIdentifier-get'
         reference:
           $ref: '#/components/schemas/EntityReference-get'
+        rawData:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/mixed'
+          nullable: false
         data:
           $ref: '#/components/schemas/Entity-nullable-get'
     AuditLog-post:

@@ -39,6 +39,7 @@ class PropertySerializer
     private function toJsonStdclass(stdClass $object): SerializedProperties
     {
         $returnValue = [];
+        // @phpstan-ignore foreach.nonIterable
         foreach ($object as $key => $value) {
             $returnValue[$key] = $this->toJson($value)->getRoot();
         }
@@ -46,6 +47,7 @@ class PropertySerializer
     }
 
     /**
+     * @param ReflectionClass<object> $reflectionClass
      * @return iterable<string, ReflectionProperty>
      */
     private function iterate(ReflectionClass $reflectionClass, int $filter): iterable

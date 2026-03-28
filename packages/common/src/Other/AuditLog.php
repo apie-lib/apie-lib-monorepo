@@ -34,10 +34,17 @@ class AuditLog implements EntityInterface
         return $this->reference;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
+    public function getRawData(): array
+    {
+        return $this->serializedProperties->jsonSerialize();
+    }
+
     public function getData(): ?EntityInterface
     {
         // TODO
         return null;
-        return $this->serializedProperties;
     }
 }

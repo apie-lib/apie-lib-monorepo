@@ -17,6 +17,16 @@ class AuditLogIdentifier extends SnowflakeIdentifier implements IdentifierInterf
     ) {
     }
 
+    public function getEntityReference(): EntityReference
+    {
+        return $this->entityReference;
+    }
+
+    public function getMicrotime(): float
+    {
+        return $this->microtime;
+    }
+
     protected static function getSeparator(): string
     {
         return '.';

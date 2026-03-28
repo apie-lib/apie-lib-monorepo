@@ -1891,6 +1891,9 @@
                                     "reference": {
                                         "type": "string"
                                     },
+                                    "rawData": {
+                                        "type": "string"
+                                    },
                                     "data": {
                                         "type": "string",
                                         "nullable": true

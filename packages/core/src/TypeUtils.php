@@ -20,6 +20,9 @@ final class TypeUtils
     {
     }
 
+    /**
+     * @var array<string, object>
+     */
     private static array $alreadyChecked = [];
 
     /**

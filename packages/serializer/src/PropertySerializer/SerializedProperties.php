@@ -10,6 +10,7 @@ final class SerializedProperties implements JsonSerializable
 
     private array $registeredObjects = [];
 
+    /** @var WeakMap<object, mixed> */
     private WeakMap $registeredObjectsMap;
 
     public function __construct()
