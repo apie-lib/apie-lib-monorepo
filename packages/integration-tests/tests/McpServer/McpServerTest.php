@@ -47,7 +47,6 @@ class McpServerTest extends TestCase
                     private string $sessionId,
                     private TestApplicationInterface $testApplication
                 ) {
-                    $this->sessionId = $sessionId;
                 }
 
                 public function getRequest(): ServerRequestInterface

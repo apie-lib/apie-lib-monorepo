@@ -235,22 +235,6 @@ class CommonServiceProvider extends ServiceProvider
         );
         $this->app->tag([\Apie\Common\Events\AddAuthenticationCookie::class], 'kernel.event_subscriber');
         $this->registerSingleton(
-            \Apie\Common\Events\AddSharedResources::class,
-            function ($app) {
-                return new \Apie\Common\Events\AddSharedResources(
-                
-                );
-            }
-        );
-        \Apie\ServiceProviderGenerator\TagMap::register(
-            $this->app,
-            \Apie\Common\Events\AddSharedResources::class,
-            array(
-              0 => 'kernel.event_subscriber',
-            )
-        );
-        $this->app->tag([\Apie\Common\Events\AddSharedResources::class], 'kernel.event_subscriber');
-        $this->registerSingleton(
             \Apie\Common\ContextBuilders\AddLockManagerContextBuilder::class,
             function ($app) {
                 return new \Apie\Common\ContextBuilders\AddLockManagerContextBuilder(

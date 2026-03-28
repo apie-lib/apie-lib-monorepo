@@ -76,7 +76,7 @@ final class Types
     {
         if (isset(self::$created[$typeName])) {
             return self::$created[$typeName];
-        } 
+        }
         self::$created[$typeName] = self::json();
         return self::$created[$typeName] = $factory(self::apieContext());
     }
@@ -85,7 +85,7 @@ final class Types
     {
         if (isset(self::$createMeta[$class->name])) {
             return self::$createMeta[$class->name];
-        } 
+        }
         self::$createMeta[$class->name] = self::json();
         return self::$createMeta[$class->name] = new FromMetadataInputType(
             MetadataFactory::getCreationMetadata($class, self::apieContext()),
@@ -98,7 +98,7 @@ final class Types
         $key = $method->getDeclaringClass()->name . '::' . $method->name;
         if (isset(self::$methodCallMeta[$key])) {
             return self::$methodCallMeta[$key];
-        } 
+        }
         self::$methodCallMeta[$key] = self::json();
         return self::$methodCallMeta[$key] = new FromMetadataInputType(
             MetadataFactory::getMethodMetadata($method, self::apieContext()),
@@ -111,7 +111,7 @@ final class Types
     {
         if (isset(self::$modifyMeta[$class->name])) {
             return self::$modifyMeta[$class->name];
-        } 
+        }
         self::$modifyMeta[$class->name] = self::json();
         return self::$modifyMeta[$class->name] = new FromMetadataInputType(
             MetadataFactory::getModificationMetadata($class, self::apieContext()),
@@ -133,7 +133,7 @@ final class Types
     {
         if (isset(self::$resultMeta[$class->name])) {
             return self::$resultMeta[$class->name];
-        } 
+        }
 
         self::$resultMeta[$class->name] = self::json();
 

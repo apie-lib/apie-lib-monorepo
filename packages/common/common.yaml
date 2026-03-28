@@ -87,9 +87,6 @@ services:
   Apie\Common\Events\AddAuthenticationCookie:
     tags: ['kernel.event_subscriber']
 
-  Apie\Common\Events\AddSharedResources:
-    tags: ['kernel.event_subscriber']
-
   Apie\Common\ContextBuilders\AddLockManagerContextBuilder:
     arguments:
       - '@Symfony\Component\Lock\LockFactory'
