@@ -165,32 +165,6 @@
                     }
                 },
                 {
-                    "name": "create-object-types-audit-log",
-                    "inputSchema": {
-                        "type": "object",
-                        "required": [
-                            "reference"
-                        ],
-                        "properties": {
-                            "reference": {
-                                "type": "string",
-                                "pattern": "([a-z][a-z0-9]*)\/(.+)\/(.+)$"
-                            }
-                        }
-                    },
-                    "description": "Creates an instance of AuditLog",
-                    "_meta": {
-                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
-                        "x-fields": {
-                            "create": true,
-                            "resourceName": "Apie\\Common\\Other\\AuditLog",
-                            "display-form": true,
-                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
-                        },
-                        "x-bounded-context-id": "types"
-                    }
-                },
-                {
                     "name": "replace-object-types-animal",
                     "inputSchema": {
                         "type": "object",

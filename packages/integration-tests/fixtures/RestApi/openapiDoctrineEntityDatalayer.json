@@ -194,69 +194,6 @@
                 }
             }
         },
-        "/AuditLog/dropdown-options/{property}": {
-            "post": {
-                "tags": [
-                    "AuditLog"
-                ],
-                "description": "Returns dropdown options for a specific input",
-                "operationId": "cms.dropdown_options.AuditLog",
-                "parameters": [
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "name": "relations",
-                        "in": "query",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "name": "property",
-                        "in": "path",
-                        "description": "property of instance of PartialInput",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/NonEmptyString-post"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PartialInput-post"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/DropdownOptionList-get"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/Animal/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -2687,270 +2624,6 @@
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/UnionObject-get"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/AuditLog": {
-            "post": {
-                "tags": [
-                    "AuditLog",
-                    "resource"
-                ],
-                "description": "Creates an instance of AuditLog",
-                "operationId": "post-AuditLog",
-                "parameters": [
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "name": "relations",
-                        "in": "query",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AuditLog-post"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "Resource was created",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/AuditLog-get"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotAcceptedException-get"
-                                }
-                            }
-                        }
-                    },
-                    "405": {
-                        "description": "Invalid request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotAcceptedException-get"
-                                }
-                            }
-                        }
-                    },
-                    "406": {
-                        "description": "Invalid request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotAcceptedException-get"
-                                }
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "A validation error occurred",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ValidationException-get"
-                                }
-                            }
-                        }
-                    },
-                    "409": {
-                        "description": "Resource not found",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Throwable-get"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "get": {
-                "tags": [
-                    "AuditLog",
-                    "resource"
-                ],
-                "description": "Gets a list of resource that are an instance of AuditLog",
-                "operationId": "get-all-AuditLog",
-                "parameters": [
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "name": "relations",
-                        "in": "query",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "name": "items_per_page",
-                        "in": "query",
-                        "schema": {
-                            "minimum": 1,
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "schema": {
-                            "minimum": 0,
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "minLength": 1,
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[id]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[reference]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[rawData]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "query[data]",
-                        "in": "query",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "order_by",
-                        "in": "query",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "enum": [
-                                    "createdAt",
-                                    "+createdAt",
-                                    "-createdAt",
-                                    "updatedAt",
-                                    "+updatedAt",
-                                    "-updatedAt",
-                                    "reference",
-                                    "+reference",
-                                    "-reference",
-                                    "id",
-                                    "+id",
-                                    "-id"
-                                ],
-                                "type": "string"
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "required": [
-                                        "filteredCount",
-                                        "totalCount",
-                                        "first",
-                                        "last",
-                                        "list"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "totalCount": {
-                                            "minimum": 0,
-                                            "type": "integer"
-                                        },
-                                        "filteredCount": {
-                                            "minimum": 0,
-                                            "type": "integer"
-                                        },
-                                        "first": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "last": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "prev": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "next": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "list": {
-                                            "type": "array",
-                                            "items": {
-                                                "$ref": "#/components/schemas/AuditLog-get"
                                             }
                                         }
                                     }
@@ -6944,6 +6617,167 @@
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/AuditLog": {
+            "get": {
+                "tags": [
+                    "AuditLog",
+                    "resource"
+                ],
+                "description": "Gets a list of resource that are an instance of AuditLog",
+                "operationId": "get-all-AuditLog",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "items_per_page",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 1,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "schema": {
+                            "minimum": 0,
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[reference]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[rawData]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[data]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "order_by",
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "enum": [
+                                    "createdAt",
+                                    "+createdAt",
+                                    "-createdAt",
+                                    "updatedAt",
+                                    "+updatedAt",
+                                    "-updatedAt",
+                                    "reference",
+                                    "+reference",
+                                    "-reference",
+                                    "id",
+                                    "+id",
+                                    "-id"
+                                ],
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "required": [
+                                        "filteredCount",
+                                        "totalCount",
+                                        "first",
+                                        "last",
+                                        "list"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "totalCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "filteredCount": {
+                                            "minimum": 0,
+                                            "type": "integer"
+                                        },
+                                        "first": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "last": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "prev": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "next": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        },
+                                        "list": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/AuditLog-get"
                                             }
                                         }
                                     }
