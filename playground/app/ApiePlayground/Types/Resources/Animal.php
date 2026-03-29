@@ -2,6 +2,7 @@
 
 namespace App\ApiePlayground\Types\Resources;
 
+use Apie\Core\Attributes\Auditable;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Entities\PolymorphicEntityInterface;
 use Apie\Core\Other\DiscriminatorConfig;
@@ -11,6 +12,7 @@ use App\ApiePlayground\Types\Entities\Mammal;
 use App\ApiePlayground\Types\Identifiers\AnimalIdentifier;
 
 #[FakeCount(25)]
+#[Auditable()]
 class Animal implements PolymorphicEntityInterface
 {
     private AnimalIdentifier $id;

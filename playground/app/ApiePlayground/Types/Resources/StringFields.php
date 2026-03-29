@@ -4,6 +4,7 @@ namespace App\ApiePlayground\Types\Resources;
 
 use Apie\CommonValueObjects\Email;
 use Apie\CommonValueObjects\SafeHtml;
+use Apie\Core\Attributes\Auditable;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Lists\StringHashmap;
 use Apie\Core\Lists\StringList;
@@ -14,6 +15,7 @@ use App\ApiePlayground\Types\Lists\SafeHtmlList;
 use App\ApiePlayground\Types\Lists\SafeHtmlSet;
 
 #[FakeCount(25)]
+#[Auditable()]
 class StringFields implements \Apie\Core\Entities\EntityInterface
 {
     private StringFieldsIdentifier $id;

@@ -3,6 +3,7 @@
 namespace App\ApiePlayground\Types\Resources;
 
 use Apie\CommonValueObjects\StarRating;
+use Apie\Core\Attributes\Auditable;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Lists\IntegerHashmap;
@@ -10,6 +11,7 @@ use Apie\Core\Lists\IntegerList;
 use App\ApiePlayground\Types\Identifiers\NumberFieldsIdentifier;
 
 #[FakeCount(25)]
+#[Auditable()]
 class NumberFields implements EntityInterface
 {
     private NumberFieldsIdentifier $id;

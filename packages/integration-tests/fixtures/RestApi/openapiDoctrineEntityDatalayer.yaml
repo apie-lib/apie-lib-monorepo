@@ -7781,7 +7781,7 @@ components:
         id:
           $ref: '#/components/schemas/AuditLogIdentifier-get'
         reference:
-          $ref: '#/components/schemas/EntityReference-get'
+          $ref: '#/components/schemas/IdFriendlyEntityReference-get'
         rawData:
           type: object
           additionalProperties:
@@ -7795,15 +7795,15 @@ components:
         - reference
       properties:
         reference:
-          $ref: '#/components/schemas/EntityReference-post'
+          $ref: '#/components/schemas/IdFriendlyEntityReference-post'
     AuditLogIdentifier-get:
       type: string
       format: auditlogidentifier
-      pattern: '(([a-z][a-z0-9]*)/(.+)/(.+))\.-?(0|[1-9]\d*)(\.\d+)?$'
+      pattern: '(([a-z][a-z0-9]*)_(.+)_(.+))\.\-\.-?(0|[1-9]\d*)(\.\d+)?$'
     AuditLogIdentifier-post:
       type: string
       format: auditlogidentifier
-      pattern: '(([a-z][a-z0-9]*)/(.+)/(.+))\.-?(0|[1-9]\d*)(\.\d+)?$'
+      pattern: '(([a-z][a-z0-9]*)_(.+)_(.+))\.\-\.-?(0|[1-9]\d*)(\.\d+)?$'
     BackgroundProcessDeclaration-post:
       type: object
       properties: {  }
@@ -8033,14 +8033,6 @@ components:
           $ref: '#/components/schemas/File-get'
         -
           $ref: '#/components/schemas/User-get'
-    EntityReference-get:
-      type: string
-      format: entityreference
-      pattern: '([a-z][a-z0-9]*)/(.+)/(.+)$'
-    EntityReference-post:
-      type: string
-      format: entityreference
-      pattern: '([a-z][a-z0-9]*)/(.+)/(.+)$'
     ExpireStatus-get:
       enum:
         - active
@@ -8280,6 +8272,14 @@ components:
         type:
           type: string
           nullable: false
+    IdFriendlyEntityReference-get:
+      type: string
+      format: idfriendlyentityreference
+      pattern: '([a-z][a-z0-9]*)_(.+)_(.+)$'
+    IdFriendlyEntityReference-post:
+      type: string
+      format: idfriendlyentityreference
+      pattern: '([a-z][a-z0-9]*)_(.+)_(.+)$'
     ImageFile-nullable-get:
       type: string
       format: path
