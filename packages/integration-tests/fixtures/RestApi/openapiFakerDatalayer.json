@@ -11290,7 +11290,6 @@
                 "required": [
                     "id",
                     "reference",
-                    "rawData",
                     "data"
                 ],
                 "properties": {
@@ -11299,13 +11298,6 @@
                     },
                     "reference": {
                         "$ref": "#/components/schemas/IdFriendlyEntityReference-get"
-                    },
-                    "rawData": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "#/components/schemas/mixed"
-                        },
-                        "nullable": false
                     },
                     "data": {
                         "$ref": "#/components/schemas/Entity-nullable-get"

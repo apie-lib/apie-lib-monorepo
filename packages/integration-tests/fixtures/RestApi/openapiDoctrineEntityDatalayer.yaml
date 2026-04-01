@@ -4538,11 +4538,6 @@ paths:
           schema:
             type: string
         -
-          name: 'query[rawData]'
-          in: query
-          schema:
-            type: string
-        -
           name: 'query[data]'
           in: query
           schema:
@@ -4560,6 +4555,9 @@ paths:
                 - updatedAt
                 - +updatedAt
                 - '-updatedAt'
+                - serializedProperties
+                - +serializedProperties
+                - '-serializedProperties'
                 - reference
                 - +reference
                 - '-reference'
@@ -7775,18 +7773,12 @@ components:
       required:
         - id
         - reference
-        - rawData
         - data
       properties:
         id:
           $ref: '#/components/schemas/AuditLogIdentifier-get'
         reference:
           $ref: '#/components/schemas/IdFriendlyEntityReference-get'
-        rawData:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/mixed'
-          nullable: false
         data:
           $ref: '#/components/schemas/Entity-nullable-get'
     AuditLog-post:

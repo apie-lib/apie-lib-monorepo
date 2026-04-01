@@ -4,14 +4,12 @@ namespace Apie\Common\Other;
 use Apie\Core\Attributes\AlwaysDisabled;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
-use Apie\Core\Attributes\Not;
-use Apie\Core\Attributes\Requires;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Attributes\StoreOptions;
 use Apie\Core\Entities\EntityInterface;
-use Apie\Core\ValueObjects\EntityReference;
 use Apie\Core\ValueObjects\IdFriendlyEntityReference;
 use Apie\Serializer\PropertySerializer\SerializedProperties;
+use Apie\Serializer\ValueObjects\SerializedPhpObject;
 
 #[FakeCount(0)]
 class AuditLog implements EntityInterface
@@ -22,8 +20,7 @@ class AuditLog implements EntityInterface
     public function __construct(
         private readonly IdFriendlyEntityReference $reference,
         #[Context()]
-        #[StoreOptions(alwaysMixedData: true)]
-        private readonly SerializedProperties $serializedProperties,
+        private readonly SerializedPhpObject $serializedProperties,
     ) {
         $this->id = new AuditLogIdentifier($reference, microtime(true));
     }
@@ -38,17 +35,12 @@ class AuditLog implements EntityInterface
         return $this->reference;
     }
 
-    /**
-     * @return array<string, mixed>
-     */
-    public function getRawData(): array
-    {
-        return $this->serializedProperties->jsonSerialize();
-    }
-
     public function getData(): ?EntityInterface
     {
-        // TODO
+        $entity = $this->serializedProperties->toPhpObject();
+        if ($entity instanceof EntityInterface) {
+            return $entity;
+        }
         return null;
     }
 }

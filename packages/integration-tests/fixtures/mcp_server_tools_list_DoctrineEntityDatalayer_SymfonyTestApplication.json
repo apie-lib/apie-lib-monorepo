@@ -1865,9 +1865,6 @@
                                     "reference": {
                                         "type": "string"
                                     },
-                                    "rawData": {
-                                        "type": "string"
-                                    },
                                     "data": {
                                         "type": "string",
                                         "nullable": true
@@ -1885,6 +1882,9 @@
                                         "updatedAt",
                                         "+updatedAt",
                                         "-updatedAt",
+                                        "serializedProperties",
+                                        "+serializedProperties",
+                                        "-serializedProperties",
                                         "reference",
                                         "+reference",
                                         "-reference",
