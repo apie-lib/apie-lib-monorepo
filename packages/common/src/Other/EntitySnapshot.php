@@ -78,10 +78,11 @@ final class EntitySnapshot implements EntitySnapshotInstance
         if ($value instanceof ValueObjectInterface) {
             $value = $value->toNative();
         }
-        if ($fieldData->getAttributes(SensitiveParameter::class)) {
-            return new EntitySnapshotHidden();
-        }
+        
         $context =  new AnyApplies(...$fieldData->getAttributes(RuntimeCheck::class));
+        if ($fieldData->getAttributes(SensitiveParameter::class)) {
+            return new EntitySnapshotHidden($context);
+        }
         if ($value instanceof UploadedFileInterface) {
             $storagePath = null;
             $originalFilename = $value->getClientFilename();

@@ -31,9 +31,9 @@ class EntitySnapshotFile implements EntitySnapshotInstance
             return AccessDenied::Denied;
         }
         $storage = $apieSerializerContext->getContext()->getContext(FileStorageInterface::class, false);
-        if ($storage instanceof FileStorageInterface) {
-            $file = StoredFile::createFromStorage($storage, $this->storagePath);
-        }
+        $file = ($storage instanceof FileStorageInterface)
+            ? StoredFile::createFromStorage($storage, $this->storagePath)
+            : null;
         return new SerializedHashmap([
             'storagePath' => $this->storagePath,
             'originalFilename' => $this->originalFilename,

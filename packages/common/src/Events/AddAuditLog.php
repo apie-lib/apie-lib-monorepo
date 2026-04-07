@@ -33,10 +33,10 @@ class AddAuditLog implements EventSubscriberInterface
                     $reference,
                     SerializedPhpObject::createFromPhpObject($event->resource)
                 );
-                /*$this->datalayer->persistNew(
+                $this->datalayer->persistNew(
                     $auditLog,
                     new BoundedContextId($event->context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
-                );*/
+                );
             }
         }
     }
