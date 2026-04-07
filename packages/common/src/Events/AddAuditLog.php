@@ -7,7 +7,6 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\ValueObjects\IdFriendlyEntityReference;
-use Apie\Serializer\PropertySerializer\PropertySerializer;
 use Apie\Serializer\ValueObjects\SerializedPhpObject;
 use ReflectionClass;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -34,10 +33,10 @@ class AddAuditLog implements EventSubscriberInterface
                     $reference,
                     SerializedPhpObject::createFromPhpObject($event->resource)
                 );
-                $this->datalayer->persistNew(
+                /*$this->datalayer->persistNew(
                     $auditLog,
                     new BoundedContextId($event->context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
-                );
+                );*/
             }
         }
     }

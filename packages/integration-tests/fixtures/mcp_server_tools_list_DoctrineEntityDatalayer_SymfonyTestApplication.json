@@ -1862,12 +1862,14 @@
                                     "id": {
                                         "type": "string"
                                     },
+                                    "requiredPermissions": {
+                                        "type": "string"
+                                    },
                                     "reference": {
                                         "type": "string"
                                     },
                                     "data": {
-                                        "type": "string",
-                                        "nullable": true
+                                        "type": "string"
                                     }
                                 }
                             },

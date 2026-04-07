@@ -4533,6 +4533,11 @@ paths:
           schema:
             type: string
         -
+          name: 'query[requiredPermissions]'
+          in: query
+          schema:
+            type: string
+        -
           name: 'query[reference]'
           in: query
           schema:
@@ -7772,15 +7777,23 @@ components:
       type: object
       required:
         - id
+        - requiredPermissions
         - reference
         - data
       properties:
         id:
           $ref: '#/components/schemas/AuditLogIdentifier-get'
+        requiredPermissions:
+          $ref: '#/components/schemas/PermissionList-get'
         reference:
           $ref: '#/components/schemas/IdFriendlyEntityReference-get'
         data:
-          $ref: '#/components/schemas/Entity-nullable-get'
+          oneOf:
+            -
+              $ref: '#/components/schemas/Entity-get'
+            -
+              $ref: '#/components/schemas/EntitySnapshotInstance-get'
+          nullable: false
     AuditLog-post:
       type: object
       required:
@@ -8005,6 +8018,26 @@ components:
         type:
           type: string
           nullable: false
+    Entity-get:
+      oneOf:
+        -
+          $ref: '#/components/schemas/Animal-get'
+        -
+          $ref: '#/components/schemas/ExternalFile-get'
+        -
+          $ref: '#/components/schemas/ObjectWithRelation-get'
+        -
+          $ref: '#/components/schemas/Order-get'
+        -
+          $ref: '#/components/schemas/PrimitiveOnly-get'
+        -
+          $ref: '#/components/schemas/RestrictedEntity-get'
+        -
+          $ref: '#/components/schemas/UnionObject-get'
+        -
+          $ref: '#/components/schemas/File-get'
+        -
+          $ref: '#/components/schemas/User-get'
     Entity-nullable-get:
       oneOf:
         -
@@ -8025,6 +8058,9 @@ components:
           $ref: '#/components/schemas/File-get'
         -
           $ref: '#/components/schemas/User-get'
+    EntitySnapshotInstance-get:
+      type: object
+      properties: {  }
     ExpireStatus-get:
       enum:
         - active

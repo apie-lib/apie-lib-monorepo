@@ -3,7 +3,10 @@ namespace Apie\Serializer\ValueObjects;
 
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
-use function Opis\Closure\{init, set_security_provider, serialize, unserialize};
+use function Opis\Closure\init;
+use function Opis\Closure\serialize;
+use function Opis\Closure\set_security_provider;
+use function Opis\Closure\unserialize;
 
 final class SerializedPhpObject implements StringValueObjectInterface
 {
@@ -19,7 +22,7 @@ final class SerializedPhpObject implements StringValueObjectInterface
         self::$alreadyParsed[$input] = unserialize($input);
     }
 
-    public static function createFromPhpObject(mixed $input)
+    public static function createFromPhpObject(mixed $input): self
     {
         $inputString = serialize($input);
         self::$alreadyParsed[$inputString] = $input;
