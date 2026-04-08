@@ -6690,6 +6690,20 @@
                         }
                     },
                     {
+                        "name": "query[event]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "query[contents]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "query[requiredPermissions]",
                         "in": "query",
                         "schema": {
@@ -6723,6 +6737,9 @@
                                     "updatedAt",
                                     "+updatedAt",
                                     "-updatedAt",
+                                    "event",
+                                    "+event",
+                                    "-event",
                                     "serializedProperties",
                                     "+serializedProperties",
                                     "-serializedProperties",
@@ -11640,6 +11657,8 @@
                 "type": "object",
                 "required": [
                     "id",
+                    "event",
+                    "contents",
                     "requiredPermissions",
                     "reference",
                     "data"
@@ -11647,6 +11666,12 @@
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/AuditLogIdentifier-get"
+                    },
+                    "event": {
+                        "$ref": "#/components/schemas/AuditLogEvent-get"
+                    },
+                    "contents": {
+                        "$ref": "#/components/schemas/mixed"
                     },
                     "requiredPermissions": {
                         "$ref": "#/components/schemas/PermissionList-get"
@@ -11670,13 +11695,33 @@
             "AuditLog-post": {
                 "type": "object",
                 "required": [
-                    "reference"
+                    "reference",
+                    "event"
                 ],
                 "properties": {
                     "reference": {
                         "$ref": "#/components/schemas/IdFriendlyEntityReference-post"
+                    },
+                    "event": {
+                        "$ref": "#/components/schemas/AuditLogEvent-post"
                     }
                 }
+            },
+            "AuditLogEvent-get": {
+                "enum": [
+                    "Created",
+                    "Modified",
+                    "Replaced"
+                ],
+                "type": "string"
+            },
+            "AuditLogEvent-post": {
+                "enum": [
+                    "Created",
+                    "Modified",
+                    "Replaced"
+                ],
+                "type": "string"
             },
             "AuditLogIdentifier-get": {
                 "type": "string",

@@ -1862,6 +1862,13 @@
                                     "id": {
                                         "type": "string"
                                     },
+                                    "event": {
+                                        "type": "string"
+                                    },
+                                    "contents": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
                                     "requiredPermissions": {
                                         "type": "string"
                                     },
@@ -1884,6 +1891,9 @@
                                         "updatedAt",
                                         "+updatedAt",
                                         "-updatedAt",
+                                        "event",
+                                        "+event",
+                                        "-event",
                                         "serializedProperties",
                                         "+serializedProperties",
                                         "-serializedProperties",
