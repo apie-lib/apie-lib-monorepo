@@ -401,6 +401,12 @@
                             "description": null,
                             "isDeprecated": false,
                             "deprecationReason": null
+                        },
+                        {
+                            "name": "Removed",
+                            "description": null,
+                            "isDeprecated": false,
+                            "deprecationReason": null
                         }
                     ],
                     "possibleTypes": null

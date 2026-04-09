@@ -7530,12 +7530,14 @@ components:
         - Created
         - Modified
         - Replaced
+        - Removed
       type: string
     AuditLogEvent-post:
       enum:
         - Created
         - Modified
         - Replaced
+        - Removed
       type: string
     AuditLogIdentifier-get:
       type: string

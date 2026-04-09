@@ -11711,7 +11711,8 @@
                 "enum": [
                     "Created",
                     "Modified",
-                    "Replaced"
+                    "Replaced",
+                    "Removed"
                 ],
                 "type": "string"
             },
@@ -11719,7 +11720,8 @@
                 "enum": [
                     "Created",
                     "Modified",
-                    "Replaced"
+                    "Replaced",
+                    "Removed"
                 ],
                 "type": "string"
             },
