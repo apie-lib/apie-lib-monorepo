@@ -2238,6 +2238,13 @@
                         }
                     },
                     {
+                        "name": "query[orderStatus]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "query[orderLineList]",
                         "in": "query",
                         "schema": {
@@ -12562,11 +12569,15 @@
                 "type": "object",
                 "required": [
                     "id",
+                    "orderStatus",
                     "orderLineList"
                 ],
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/OrderIdentifier-get"
+                    },
+                    "orderStatus": {
+                        "$ref": "#/components/schemas/OrderStatus-get"
                     },
                     "orderLineList": {
                         "$ref": "#/components/schemas/OrderLineList-get"
@@ -12642,6 +12653,14 @@
                 "items": {
                     "$ref": "#/components/schemas/OrderLine-post"
                 }
+            },
+            "OrderStatus-get": {
+                "enum": [
+                    "draft",
+                    "accepted",
+                    "delivered"
+                ],
+                "type": "string"
             },
             "Ostrich-get": {
                 "type": "object",

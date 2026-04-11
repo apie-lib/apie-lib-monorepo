@@ -1229,6 +1229,9 @@
                                     "id": {
                                         "type": "string"
                                     },
+                                    "orderStatus": {
+                                        "type": "string"
+                                    },
                                     "orderLineList": {
                                         "type": "string"
                                     }

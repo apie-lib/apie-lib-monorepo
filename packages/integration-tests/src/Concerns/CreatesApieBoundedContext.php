@@ -9,9 +9,11 @@ use Apie\CountryAndPhoneNumber\BelgianPhoneNumber;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Human;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
+use Apie\IntegrationTests\Apie\TypeDemo\Enums\OrderStatus;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\RestrictedEntityIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
+use Apie\IntegrationTests\Apie\TypeDemo\Lists\OrderLineList;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Order;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
@@ -32,6 +34,7 @@ use Apie\IntegrationTests\Requests\JsonFields\GetAndSetUploadedFileField;
 use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetUuidField;
 use Apie\IntegrationTests\Requests\JsonFields\SetPrimitiveField;
+use Apie\IntegrationTests\Requests\RemoveResourceApiCall;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
 use Apie\TextValueObjects\CompanyName;
@@ -121,7 +124,8 @@ trait CreatesApieBoundedContext
                 new GetAndSetPrimitiveField('floatingPoint', 1.5, 1.5),
                 new GetPrimitiveField('booleanField', null),
             ),
-            discardRequestValidation: true //casting string to int is not documented in OpenAPI spec.
+            discardRequestValidation: true, //casting string to int is not documented in OpenAPI spec.
+            expectedAuditLogsAdded: 1
         );
     }
 
@@ -184,6 +188,7 @@ trait CreatesApieBoundedContext
             new GetAndSetObjectField(
                 '',
                 new GetPrimitiveField('id', 1),
+                new GetPrimitiveField('orderStatus', OrderStatus::DRAFT->value),
                 new GetAndSetObjectField(
                     'orderLineList',
                     new GetAndSetObjectField(
@@ -198,6 +203,7 @@ trait CreatesApieBoundedContext
                     )
                 ),
             ),
+            expectedAuditLogsAdded: 1, // 1: created
         );
     }
 
@@ -315,6 +321,18 @@ trait CreatesApieBoundedContext
                 new GetPrimitiveField('requiredPermissions', [])
             ),
             discardValidationOnFaker: true
+        );
+    }
+
+    public function removeOrderTestRequest(): TestRequestInterface
+    {
+        $order = new Order(new OrderLineList());
+        return new RemoveResourceApiCall(
+            new BoundedContextId('types'),
+            'Order/1',
+            new GetAndSetObjectField(''),
+            entities: [$order],
+            expectedAuditLogsAdded: 2 // 1: created, 1: removed
         );
     }
 
