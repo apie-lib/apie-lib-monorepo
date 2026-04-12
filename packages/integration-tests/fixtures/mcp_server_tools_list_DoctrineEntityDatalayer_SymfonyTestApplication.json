@@ -1868,7 +1868,7 @@
                                     "event": {
                                         "type": "string"
                                     },
-                                    "contents": {
+                                    "createdBy": {
                                         "type": "string",
                                         "nullable": true
                                     },
@@ -1894,9 +1894,9 @@
                                         "updatedAt",
                                         "+updatedAt",
                                         "-updatedAt",
-                                        "event",
-                                        "+event",
-                                        "-event",
+                                        "createdBy",
+                                        "+createdBy",
+                                        "-createdBy",
                                         "serializedProperties",
                                         "+serializedProperties",
                                         "-serializedProperties",

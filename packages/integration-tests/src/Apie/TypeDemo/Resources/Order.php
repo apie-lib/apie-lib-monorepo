@@ -19,7 +19,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Rules\OnlyDraftOrders;
 #[RemovalCheck(new StaticCheck())]
 #[RemovalCheck(new RuntimeCheck(new OnlyDraftOrders()))]
 #[FakeCount(1)]
-#[Auditable()]
+#[Auditable(readEvents: true)]
 #[Description('An order is a web order and consists of multiple order lines')]
 #[OverwriteAfterPersist]
 class Order implements EntityInterface

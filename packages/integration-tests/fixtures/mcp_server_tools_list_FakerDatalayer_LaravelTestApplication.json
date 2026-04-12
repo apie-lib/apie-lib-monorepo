@@ -1602,10 +1602,7 @@
                                     "reference": {
                                         "type": "string"
                                     },
-                                    "event": {
-                                        "type": "string"
-                                    },
-                                    "contents": {
+                                    "createdBy": {
                                         "type": "string",
                                         "nullable": true
                                     }

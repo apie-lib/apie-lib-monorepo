@@ -7,7 +7,7 @@ use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
 
-#[Auditable()]
+#[Auditable(readAllEvents: true)]
 #[RemovalCheck(new StaticCheck())]
 final class PrimitiveOnly implements EntityInterface
 {

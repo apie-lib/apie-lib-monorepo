@@ -6704,7 +6704,7 @@
                         }
                     },
                     {
-                        "name": "query[contents]",
+                        "name": "query[createdBy]",
                         "in": "query",
                         "schema": {
                             "type": "string"
@@ -6744,9 +6744,9 @@
                                     "updatedAt",
                                     "+updatedAt",
                                     "-updatedAt",
-                                    "event",
-                                    "+event",
-                                    "-event",
+                                    "createdBy",
+                                    "+createdBy",
+                                    "-createdBy",
                                     "serializedProperties",
                                     "+serializedProperties",
                                     "-serializedProperties",
@@ -11660,15 +11660,47 @@
                 "format": "animalidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
             },
+            "AuditCreate-post": {
+                "type": "object",
+                "required": [
+                    "withId"
+                ],
+                "properties": {
+                    "withId": {
+                        "type": "boolean",
+                        "nullable": false
+                    }
+                }
+            },
+            "AuditEvent-post": {
+                "oneOf": [
+                    {
+                        "$ref": "#/components/schemas/AuditCreate-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/AuditModified-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/AuditRemoved-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/AuditRead-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/AuditMethodCalled-post"
+                    }
+                ]
+            },
             "AuditLog-get": {
                 "type": "object",
                 "required": [
                     "id",
                     "event",
-                    "contents",
+                    "createdBy",
                     "requiredPermissions",
                     "reference",
-                    "data"
+                    "data",
+                    "description"
                 ],
                 "properties": {
                     "id": {
@@ -11677,8 +11709,8 @@
                     "event": {
                         "$ref": "#/components/schemas/AuditLogEvent-get"
                     },
-                    "contents": {
-                        "$ref": "#/components/schemas/mixed"
+                    "createdBy": {
+                        "$ref": "#/components/schemas/NonEmptyString-nullable-get"
                     },
                     "requiredPermissions": {
                         "$ref": "#/components/schemas/PermissionList-get"
@@ -11696,6 +11728,9 @@
                             }
                         ],
                         "nullable": false
+                    },
+                    "description": {
+                        "$ref": "#/components/schemas/NonEmptyString-get"
                     }
                 }
             },
@@ -11703,14 +11738,18 @@
                 "type": "object",
                 "required": [
                     "reference",
+                    "serializedProperties",
                     "event"
                 ],
                 "properties": {
                     "reference": {
                         "$ref": "#/components/schemas/IdFriendlyEntityReference-post"
                     },
+                    "serializedProperties": {
+                        "$ref": "#/components/schemas/SerializedPhpObject-post"
+                    },
                     "event": {
-                        "$ref": "#/components/schemas/AuditLogEvent-post"
+                        "$ref": "#/components/schemas/AuditEvent-post"
                     }
                 }
             },
@@ -11719,16 +11758,9 @@
                     "Created",
                     "Modified",
                     "Replaced",
-                    "Removed"
-                ],
-                "type": "string"
-            },
-            "AuditLogEvent-post": {
-                "enum": [
-                    "Created",
-                    "Modified",
-                    "Replaced",
-                    "Removed"
+                    "Removed",
+                    "Read",
+                    "MethodCalled"
                 ],
                 "type": "string"
             },
@@ -11741,6 +11773,46 @@
                 "type": "string",
                 "format": "auditlogidentifier",
                 "pattern": "(([a-z][a-z0-9]*)_(.+)_(.+))\\.\\-\\.-?(0|[1-9]\\d*)(\\.\\d+)?$"
+            },
+            "AuditMethodCalled-post": {
+                "type": "object",
+                "required": [
+                    "methodName",
+                    "contents"
+                ],
+                "properties": {
+                    "methodName": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "contents": {
+                        "$ref": "#/components/schemas/mixed"
+                    }
+                }
+            },
+            "AuditModified-post": {
+                "type": "object",
+                "required": [
+                    "contents"
+                ],
+                "properties": {
+                    "contents": {
+                        "$ref": "#/components/schemas/mixed"
+                    }
+                }
+            },
+            "AuditRead-post": {
+                "type": "object",
+                "properties": {
+                    "fromList": {
+                        "type": "boolean",
+                        "nullable": false
+                    }
+                }
+            },
+            "AuditRemoved-post": {
+                "type": "object",
+                "properties": {}
             },
             "BackgroundProcessDeclaration-post": {
                 "type": "object",
@@ -12822,6 +12894,13 @@
                 "description": "Any text, except the empty string.",
                 "pattern": "^.+$"
             },
+            "NonEmptyString-nullable-get": {
+                "type": "string",
+                "format": "nonemptystring",
+                "description": "Any text, except the empty string.",
+                "pattern": "^.+$",
+                "nullable": true
+            },
             "NonEmptyString-post": {
                 "type": "string",
                 "format": "nonemptystring",
@@ -13474,6 +13553,10 @@
                 "format": "serializedpermission",
                 "description": "A serialized permission identifier, for example \"user:read\"",
                 "pattern": "^[a-z:]+$"
+            },
+            "SerializedPhpObject-post": {
+                "type": "string",
+                "format": "serializedphpobject"
             },
             "Shark-get": {
                 "type": "object",
