@@ -13,10 +13,12 @@ use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Attributes\StaticCheck;
+use Apie\Core\Context\ApieContext;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Lists\PermissionList;
 use Apie\Core\Permissions\RequiresPermissionsInterface;
 use Apie\Core\Translator\ApieTranslatorInterface;
+use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\Core\ValueObjects\IdFriendlyEntityReference;
 use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\Core\ValueObjects\Utils;
@@ -67,8 +69,20 @@ class AuditLog implements EntityInterface, RequiresPermissionsInterface
     #[SearchFilterOption(enabled: false)]
     public function getDescription(
         ApieTranslatorInterface $translator,
+        ApieContext $context
     ): NonEmptyString {
-        return NonEmptyString::fromNative('TODO');
+        $context = $context->withContext(AuditLog::class, $this);
+        foreach (self::EVENT_MAPPING as $property) {
+            if ($this->$property !== null) {
+                return $this->$property->getTranslation($translator, $context);
+            }
+        }
+        return NonEmptyString::fromNative(
+            $translator->getGeneralTranslation(
+                $context,
+                new TranslationString('audit_log.unknown_event')
+            )
+        );
     }
 
     public function getEvent(): AuditLogEvent

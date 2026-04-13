@@ -102,7 +102,7 @@ class AddAuditLog implements EventSubscriberInterface
                 continue;
             }
             foreach ($event->resource as $entity) {
-                $context = $context->withContext(ContextConstants::RESOURCE_ID, Utils::toString($entity->getId()));
+                $context = $event->context->withContext(ContextConstants::RESOURCE_ID, Utils::toString($entity->getId()));
                 $reference = IdFriendlyEntityReference::createFromContext($event->context);
 
                 if ($reference instanceof IdFriendlyEntityReference) {
