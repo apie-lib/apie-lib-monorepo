@@ -435,6 +435,12 @@
                             "description": "An action was performed on the object",
                             "isDeprecated": false,
                             "deprecationReason": null
+                        },
+                        {
+                            "name": "Migration",
+                            "description": "A database migration was performed",
+                            "isDeprecated": false,
+                            "deprecationReason": null
                         }
                     ],
                     "possibleTypes": null

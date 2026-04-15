@@ -32,7 +32,7 @@ parameters:
     ignoreErrors:
         - path: packages/common/src/Other/AuditLog.php
           identifier: property.uninitializedReadonly
-          count: 5
+          count: 6
         - '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children#'
         - '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::scalarNode#'
         - '#isInitialized\(\) on a separate line has no effect#'

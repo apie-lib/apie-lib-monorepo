@@ -11399,7 +11399,8 @@
                     "Replaced",
                     "Removed",
                     "Read",
-                    "MethodCalled"
+                    "MethodCalled",
+                    "Migration"
                 ],
                 "type": "string"
             },

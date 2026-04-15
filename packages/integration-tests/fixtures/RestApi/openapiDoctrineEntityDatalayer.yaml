@@ -7862,6 +7862,7 @@ components:
         - Removed
         - Read
         - MethodCalled
+        - Migration
       type: string
     AuditLogIdentifier-get:
       type: string
