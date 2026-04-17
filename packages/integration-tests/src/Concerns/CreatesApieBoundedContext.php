@@ -324,6 +324,30 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * Test for entity with audit log for reading.
+     *
+     * GET /Order/{id}
+     */
+    public function getObjectWithReadAuditLogRequest(): TestRequestInterface
+    {
+        $object = new Order(new OrderLineList());
+        return new GetResourceApiCall(
+            new BoundedContextId('types'),
+            Order::class,
+            '1',
+            [$object],
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('id', '1'),
+                new GetPrimitiveField('orderStatus', OrderStatus::DRAFT->value),
+                new GetPrimitiveField('orderLineList', [])
+            ),
+            discardValidationOnFaker: true,
+            expectedAuditLogsAdded: 1
+        );
+    }
+
     public function removeOrderTestRequest(): TestRequestInterface
     {
         $order = new Order(new OrderLineList());
