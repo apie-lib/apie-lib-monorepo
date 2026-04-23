@@ -2678,6 +2678,35 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/Animal-post"
+                            },
+                            "examples": {
+                                "example_elephant": {
+                                    "summary": "Example elephant",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                                        "animalName": "Charlie",
+                                        "name": "elephant",
+                                        "type": "mammal"
+                                    }
+                                },
+                                "example_ostrich": {
+                                    "summary": "Example ostrich",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174001",
+                                        "animalName": "Polly",
+                                        "name": "ostrich",
+                                        "type": "bird"
+                                    }
+                                },
+                                "example_fish": {
+                                    "summary": "Example fish",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174002",
+                                        "animalName": "Nemo",
+                                        "name": "shark",
+                                        "type": "fish"
+                                    }
+                                }
                             }
                         }
                     }
@@ -2917,7 +2946,7 @@
                         "description": "Disable csrf",
                         "schema": {
                             "enum": [
-                                1
+                                "1"
                             ],
                             "type": "string"
                         }
@@ -3748,7 +3777,7 @@
                         "description": "Disable csrf",
                         "schema": {
                             "enum": [
-                                1
+                                "1"
                             ],
                             "type": "string"
                         }
@@ -4412,6 +4441,35 @@
                         "application/json": {
                             "schema": {
                                 "$ref": "#/components/schemas/Animal-patch"
+                            },
+                            "examples": {
+                                "example_elephant": {
+                                    "summary": "Example elephant",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                                        "animalName": "Charlie",
+                                        "name": "elephant",
+                                        "type": "mammal"
+                                    }
+                                },
+                                "example_ostrich": {
+                                    "summary": "Example ostrich",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174001",
+                                        "animalName": "Polly",
+                                        "name": "ostrich",
+                                        "type": "bird"
+                                    }
+                                },
+                                "example_fish": {
+                                    "summary": "Example fish",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174002",
+                                        "animalName": "Nemo",
+                                        "name": "shark",
+                                        "type": "fish"
+                                    }
+                                }
                             }
                         }
                     }
@@ -5855,7 +5913,7 @@
                         "description": "Disable csrf",
                         "schema": {
                             "enum": [
-                                1
+                                "1"
                             ],
                             "type": "string"
                         }
@@ -7286,6 +7344,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -9352,6 +9420,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -9448,6 +9526,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -9544,6 +9632,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -9640,6 +9738,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -9736,6 +9844,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -9832,6 +9950,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -9928,6 +10056,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -10024,6 +10162,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -10120,6 +10268,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -10216,6 +10374,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -10312,6 +10480,16 @@
                         "required": true,
                         "schema": {
                             "type": "string"
+                        },
+                        "examples": {
+                            "excel_2007_file": {
+                                "summary": "Excel 2007+ file",
+                                "value": "xlsx"
+                            },
+                            "comma_separated_values": {
+                                "summary": "Comma separated values",
+                                "value": "csv"
+                            }
                         }
                     }
                 ],
@@ -11567,6 +11745,12 @@
                         "fish": "#/components/schemas/Fish-get"
                     }
                 },
+                "example": {
+                    "id": "123e4567-e89b-12d3-a456-426614174000",
+                    "animalName": "Charlie",
+                    "name": "elephant",
+                    "type": "mammal"
+                },
                 "required": [
                     "type"
                 ],
@@ -11629,6 +11813,12 @@
                         "fish": "#/components/schemas/Fish-post"
                     }
                 },
+                "example": {
+                    "id": "123e4567-e89b-12d3-a456-426614174000",
+                    "animalName": "Charlie",
+                    "name": "elephant",
+                    "type": "mammal"
+                },
                 "required": [
                     "type"
                 ],
@@ -11659,37 +11849,6 @@
                 "type": "string",
                 "format": "animalidentifier",
                 "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
-            },
-            "AuditCreate-post": {
-                "type": "object",
-                "required": [
-                    "withId"
-                ],
-                "properties": {
-                    "withId": {
-                        "type": "boolean",
-                        "nullable": false
-                    }
-                }
-            },
-            "AuditEvent-post": {
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/AuditCreate-post"
-                    },
-                    {
-                        "$ref": "#/components/schemas/AuditModified-post"
-                    },
-                    {
-                        "$ref": "#/components/schemas/AuditRemoved-post"
-                    },
-                    {
-                        "$ref": "#/components/schemas/AuditRead-post"
-                    },
-                    {
-                        "$ref": "#/components/schemas/AuditMethodCalled-post"
-                    }
-                ]
             },
             "AuditLog-get": {
                 "type": "object",
@@ -11734,25 +11893,6 @@
                     }
                 }
             },
-            "AuditLog-post": {
-                "type": "object",
-                "required": [
-                    "reference",
-                    "serializedProperties",
-                    "event"
-                ],
-                "properties": {
-                    "reference": {
-                        "$ref": "#/components/schemas/IdFriendlyEntityReference-post"
-                    },
-                    "serializedProperties": {
-                        "$ref": "#/components/schemas/SerializedPhpObject-post"
-                    },
-                    "event": {
-                        "$ref": "#/components/schemas/AuditEvent-post"
-                    }
-                }
-            },
             "AuditLogEvent-get": {
                 "enum": [
                     "Created",
@@ -11774,50 +11914,6 @@
                 "type": "string",
                 "format": "auditlogidentifier",
                 "pattern": "(([a-z][a-z0-9]*)_(.+)_(.+))\\.\\-\\.-?(0|[1-9]\\d*)(\\.\\d+)?$"
-            },
-            "AuditMethodCalled-post": {
-                "type": "object",
-                "required": [
-                    "methodName",
-                    "contents"
-                ],
-                "properties": {
-                    "methodName": {
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "contents": {
-                        "$ref": "#/components/schemas/mixed"
-                    }
-                }
-            },
-            "AuditModified-post": {
-                "type": "object",
-                "required": [
-                    "contents"
-                ],
-                "properties": {
-                    "contents": {
-                        "$ref": "#/components/schemas/mixed"
-                    }
-                }
-            },
-            "AuditRead-post": {
-                "type": "object",
-                "properties": {
-                    "fromList": {
-                        "type": "boolean",
-                        "nullable": false
-                    }
-                }
-            },
-            "AuditRemoved-post": {
-                "type": "object",
-                "properties": {}
-            },
-            "BackgroundProcessDeclaration-post": {
-                "type": "object",
-                "properties": {}
             },
             "BackgroundProcessStatus-get": {
                 "enum": [
@@ -12018,24 +12114,28 @@
             "DutchPhoneNumber-get": {
                 "type": "string",
                 "format": "dutchphonenumber",
-                "description": "A phone number valid in the Netherlands in national format or E164 format"
+                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                "example": "0612345678"
             },
             "DutchPhoneNumber-nullable-get": {
                 "type": "string",
                 "format": "dutchphonenumber",
                 "description": "A phone number valid in the Netherlands in national format or E164 format",
+                "example": "0612345678",
                 "nullable": true
             },
             "DutchPhoneNumber-nullable-post": {
                 "type": "string",
                 "format": "dutchphonenumber",
                 "description": "A phone number valid in the Netherlands in national format or E164 format",
+                "example": "0612345678",
                 "nullable": true
             },
             "DutchPhoneNumber-post": {
                 "type": "string",
                 "format": "dutchphonenumber",
-                "description": "A phone number valid in the Netherlands in national format or E164 format"
+                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                "example": "0612345678"
             },
             "Elephant-get": {
                 "type": "object",
@@ -12506,11 +12606,7 @@
             "IdFriendlyEntityReference-get": {
                 "type": "string",
                 "format": "idfriendlyentityreference",
-                "pattern": "([a-z][a-z0-9]*)_(.+)_(.+)$"
-            },
-            "IdFriendlyEntityReference-post": {
-                "type": "string",
-                "format": "idfriendlyentityreference",
+                "example": "domain_resource_123",
                 "pattern": "([a-z][a-z0-9]*)_(.+)_(.+)$"
             },
             "ImageFile-nullable-get": {
@@ -12599,91 +12695,10 @@
                     "$ref": "#/components/schemas/mixed"
                 }
             },
-            "ItemHashmap-post": {
-                "type": "object",
-                "additionalProperties": {
-                    "$ref": "#/components/schemas/mixed"
-                }
-            },
             "ItemList-get": {
                 "type": "array",
                 "items": {
                     "$ref": "#/components/schemas/mixed"
-                }
-            },
-            "ItemList-post": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/components/schemas/mixed"
-                }
-            },
-            "JsonFileUpload-nullable-post": {
-                "required": [
-                    "originalFilename"
-                ],
-                "type": "object",
-                "oneOf": [
-                    {
-                        "required": [
-                            "contents",
-                            "originalFilename"
-                        ]
-                    },
-                    {
-                        "required": [
-                            "base64",
-                            "originalFilename"
-                        ]
-                    }
-                ],
-                "properties": {
-                    "contents": {
-                        "$ref": "#/components/schemas/BinaryStream-post"
-                    },
-                    "originalFilename": {
-                        "$ref": "#/components/schemas/Filename-post"
-                    },
-                    "base64": {
-                        "$ref": "#/components/schemas/Base64Stream-post"
-                    },
-                    "mime": {
-                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
-                    }
-                },
-                "nullable": true
-            },
-            "JsonFileUpload-post": {
-                "required": [
-                    "originalFilename"
-                ],
-                "type": "object",
-                "oneOf": [
-                    {
-                        "required": [
-                            "contents",
-                            "originalFilename"
-                        ]
-                    },
-                    {
-                        "required": [
-                            "base64",
-                            "originalFilename"
-                        ]
-                    }
-                ],
-                "properties": {
-                    "contents": {
-                        "$ref": "#/components/schemas/BinaryStream-post"
-                    },
-                    "originalFilename": {
-                        "$ref": "#/components/schemas/Filename-post"
-                    },
-                    "base64": {
-                        "$ref": "#/components/schemas/Base64Stream-post"
-                    },
-                    "mime": {
-                        "$ref": "#/components/schemas/StrictMimeType-nullable-post"
-                    }
                 }
             },
             "LastName-get": {
@@ -13031,19 +13046,23 @@
             },
             "OrderIdentifier-get": {
                 "type": "integer",
-                "nullable": true
+                "nullable": true,
+                "example": 42
             },
             "OrderIdentifier-nullable-get": {
                 "type": "integer",
-                "nullable": true
+                "nullable": true,
+                "example": 42
             },
             "OrderIdentifier-nullable-post": {
                 "type": "integer",
-                "nullable": true
+                "nullable": true,
+                "example": 42
             },
             "OrderIdentifier-post": {
                 "type": "integer",
-                "nullable": true
+                "nullable": true,
+                "example": 42
             },
             "OrderLine-get": {
                 "type": "object",
@@ -13514,29 +13533,6 @@
                     }
                 }
             },
-            "SequentialBackgroundProcess-post": {
-                "type": "object",
-                "required": [
-                    "backgroundProcessDeclaration",
-                    "payload"
-                ],
-                "properties": {
-                    "backgroundProcessDeclaration": {
-                        "$ref": "#/components/schemas/BackgroundProcessDeclaration-post"
-                    },
-                    "payload": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/components/schemas/ItemHashmap-post"
-                            },
-                            {
-                                "$ref": "#/components/schemas/ItemList-post"
-                            }
-                        ],
-                        "nullable": false
-                    }
-                }
-            },
             "SequentialBackgroundProcessIdentifier-get": {
                 "type": "string",
                 "format": "sequentialbackgroundprocessidentifier",
@@ -13554,10 +13550,6 @@
                 "format": "serializedpermission",
                 "description": "A serialized permission identifier, for example \"user:read\"",
                 "pattern": "^[a-z:]+$"
-            },
-            "SerializedPhpObject-post": {
-                "type": "string",
-                "format": "serializedphpobject"
             },
             "Shark-get": {
                 "type": "object",
@@ -13624,6 +13616,7 @@
                 "type": "string",
                 "format": "strictmimetype",
                 "description": "Strict mime type without wildcards, for example \"application/json\"",
+                "example": "application/json",
                 "pattern": "^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$",
                 "nullable": true
             },
@@ -13884,7 +13877,8 @@
             "Uri-get": {
                 "type": "string",
                 "format": "uri",
-                "description": "URI in RFC 3986 format."
+                "description": "URI in RFC 3986 format.",
+                "example": "https://apie-lib.blogspot.com/"
             },
             "User-get": {
                 "type": "object",

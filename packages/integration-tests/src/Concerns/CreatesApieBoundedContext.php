@@ -409,28 +409,41 @@ trait CreatesApieBoundedContext
             new CompanyName('Company NV 2'),
             null
         );
+        $object3 = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440002'),
+            new CompanyName('Company NV 3'),
+            null
+        );
         return new GetResourceListApiCall(
             new BoundedContextId('types'),
             RestrictedEntity::class,
-            [$object, $object2, $user],
+            [$object, $object2, $object3, $user],
             new GetAndSetObjectField(
                 '',
-                new GetPrimitiveField('totalCount', 1),
-                new GetPrimitiveField('filteredCount', 1),
+                new GetPrimitiveField('totalCount', 2),
+                new GetPrimitiveField('filteredCount', 2),
                 new GetPrimitiveField('first', '/types/RestrictedEntity'),
                 new GetPrimitiveField('last', '/types/RestrictedEntity'),
                 new GetAndSetObjectField(
                     'list',
                     new GetAndSetObjectField(
                         '0',
+                        new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440002'),
+                        new GetAndSetPrimitiveField('companyName', 'Company NV 3'),
+                        new GetPrimitiveField('requiredPermissions', []),
+                        new GetPrimitiveField('userId', null),
+                    ),
+                    new GetAndSetObjectField(
+                        '1',
                         new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440001'),
                         new GetAndSetPrimitiveField('companyName', 'Company NV 2'),
                         new GetPrimitiveField('requiredPermissions', []),
                         new GetPrimitiveField('userId', null),
-                    )
+                    ),
                 ),
             ),
-            discardValidationOnFaker: true
+            discardValidationOnFaker: true,
+            expectedAuditLogsAdded: 2 // 2: created for object2 + 3, object1 is not returned because of permissions
         );
     }
 

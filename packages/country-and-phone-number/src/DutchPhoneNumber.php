@@ -2,12 +2,15 @@
 namespace Apie\CountryAndPhoneNumber;
 
 use Apie\Core\Attributes\Description;
+use Apie\Core\Attributes\ExampleValue;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\CountryAndPhoneNumber\Concerns\CanCreateRandomPhoneNumber;
 use PrinsFrank\Standards\Country\CountryAlpha2;
 
 #[FakeMethod('createRandomInstance')]
 #[Description('A phone number valid in the Netherlands in national format or E164 format')]
+#[ExampleValue('+31612345678')]
+#[ExampleValue('0612345678')]
 class DutchPhoneNumber extends PhoneNumber
 {
     use CanCreateRandomPhoneNumber;

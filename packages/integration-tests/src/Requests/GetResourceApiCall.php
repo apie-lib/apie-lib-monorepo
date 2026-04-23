@@ -43,7 +43,6 @@ class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterf
     public function shouldDoResponseValidation(): bool
     {
         return !$this->discardValidationOnFaker || !$this->faked;
-        ;
     }
 
     public function bootstrap(TestApplicationInterface $testApplication): void

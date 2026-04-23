@@ -39,7 +39,8 @@
                             },
                             "orderId": {
                                 "type": "integer",
-                                "nullable": true
+                                "nullable": true,
+                                "example": 42
                             }
                         }
                     },
@@ -138,7 +139,8 @@
                                 "anyOf": [
                                     {
                                         "type": "string",
-                                        "description": "A phone number valid in the Netherlands in national format or E164 format"
+                                        "description": "A phone number valid in the Netherlands in national format or E164 format",
+                                        "example": "0612345678"
                                     },
                                     {
                                         "type": "string",
@@ -191,6 +193,12 @@
                                 "description": "Represents a first name of a person",
                                 "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f]*$"
                             }
+                        },
+                        "example": {
+                            "id": "123e4567-e89b-12d3-a456-426614174000",
+                            "animalName": "Charlie",
+                            "name": "elephant",
+                            "type": "mammal"
                         },
                         "anyOf": [
                             {
@@ -692,7 +700,8 @@
                                         "type": "string",
                                         "description": "Strict mime type without wildcards, for example \"application\/json\"",
                                         "nullable": true,
-                                        "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$"
+                                        "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$",
+                                        "example": "application\/json"
                                     }
                                 },
                                 "anyOf": [
@@ -734,7 +743,8 @@
                                         "type": "string",
                                         "description": "Strict mime type without wildcards, for example \"application\/json\"",
                                         "nullable": true,
-                                        "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$"
+                                        "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$",
+                                        "example": "application\/json"
                                     }
                                 },
                                 "anyOf": [
@@ -782,7 +792,8 @@
                             "phoneNumber": {
                                 "type": "string",
                                 "description": "A phone number valid in the Netherlands in national format or E164 format",
-                                "nullable": true
+                                "nullable": true,
+                                "example": "0612345678"
                             }
                         }
                     },
@@ -1639,6 +1650,12 @@
                                 "type": "string"
                             }
                         },
+                        "example": {
+                            "id": "123e4567-e89b-12d3-a456-426614174000",
+                            "animalName": "Charlie",
+                            "name": "elephant",
+                            "type": "mammal"
+                        },
                         "anyOf": [
                             {
                                 "type": "object",
@@ -2140,7 +2157,8 @@
                                 "anyOf": [
                                     {
                                         "type": "string",
-                                        "description": "A phone number valid in the Netherlands in national format or E164 format"
+                                        "description": "A phone number valid in the Netherlands in national format or E164 format",
+                                        "example": "0612345678"
                                     },
                                     {
                                         "type": "string",
@@ -2200,7 +2218,8 @@
                                         "type": "string",
                                         "description": "Strict mime type without wildcards, for example \"application\/json\"",
                                         "nullable": true,
-                                        "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$"
+                                        "pattern": "^[a-zA-Z0-9!#$&^_.+-]+\/[a-zA-Z0-9!#$&^_.+-]+$",
+                                        "example": "application\/json"
                                     }
                                 },
                                 "anyOf": [
@@ -2248,7 +2267,8 @@
                             "phoneNumber": {
                                 "type": "string",
                                 "description": "A phone number valid in the Netherlands in national format or E164 format",
-                                "nullable": true
+                                "nullable": true,
+                                "example": "0612345678"
                             },
                             "id": {
                                 "type": "string"

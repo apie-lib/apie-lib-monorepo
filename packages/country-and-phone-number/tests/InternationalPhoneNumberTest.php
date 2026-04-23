@@ -21,6 +21,7 @@ class InternationalPhoneNumberTest extends TestCase
                 'type' => 'string',
                 'format' => 'internationalphonenumber',
                 'description' => true,
+                'example' => '+12025550123',
             ]
         );
     }

@@ -1819,6 +1819,28 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Animal-post'
+            examples:
+              example_elephant:
+                summary: 'Example elephant'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174000
+                  animalName: Charlie
+                  name: elephant
+                  type: mammal
+              example_ostrich:
+                summary: 'Example ostrich'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174001
+                  animalName: Polly
+                  name: ostrich
+                  type: bird
+              example_fish:
+                summary: 'Example fish'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174002
+                  animalName: Nemo
+                  name: shark
+                  type: fish
       responses:
         '201':
           description: 'Resource was created'
@@ -1986,7 +2008,7 @@ paths:
           description: 'Disable csrf'
           schema:
             enum:
-              - 1
+              - '1'
             type: string
       requestBody:
         content:
@@ -2565,7 +2587,7 @@ paths:
           description: 'Disable csrf'
           schema:
             enum:
-              - 1
+              - '1'
             type: string
       requestBody:
         content:
@@ -3025,6 +3047,28 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Animal-patch'
+            examples:
+              example_elephant:
+                summary: 'Example elephant'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174000
+                  animalName: Charlie
+                  name: elephant
+                  type: mammal
+              example_ostrich:
+                summary: 'Example ostrich'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174001
+                  animalName: Polly
+                  name: ostrich
+                  type: bird
+              example_fish:
+                summary: 'Example fish'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174002
+                  animalName: Nemo
+                  name: shark
+                  type: fish
       responses:
         '200':
           description: OK
@@ -3967,7 +4011,7 @@ paths:
           description: 'Disable csrf'
           schema:
             enum:
-              - 1
+              - '1'
             type: string
       requestBody:
         content:
@@ -4938,6 +4982,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6284,6 +6335,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6347,6 +6405,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6410,6 +6475,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6473,6 +6545,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6536,6 +6615,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6599,6 +6685,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6662,6 +6755,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6725,6 +6825,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6788,6 +6895,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6851,6 +6965,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -6914,6 +7035,13 @@ paths:
           required: true
           schema:
             type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
       responses:
         '400':
           description: 'Invalid request'
@@ -7726,6 +7854,7 @@ components:
           mammal: '#/components/schemas/Mammal-get'
           bird: '#/components/schemas/Bird-get'
           fish: '#/components/schemas/Fish-get'
+      example: null
       required:
         - type
       properties:
@@ -7769,6 +7898,7 @@ components:
           mammal: '#/components/schemas/Mammal-post'
           bird: '#/components/schemas/Bird-post'
           fish: '#/components/schemas/Fish-post'
+      example: null
       required:
         - type
       properties:
@@ -7791,26 +7921,6 @@ components:
       type: string
       format: animalidentifier
       pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
-    AuditCreate-post:
-      type: object
-      required:
-        - withId
-      properties:
-        withId:
-          type: boolean
-          nullable: false
-    AuditEvent-post:
-      oneOf:
-        -
-          $ref: '#/components/schemas/AuditCreate-post'
-        -
-          $ref: '#/components/schemas/AuditModified-post'
-        -
-          $ref: '#/components/schemas/AuditRemoved-post'
-        -
-          $ref: '#/components/schemas/AuditRead-post'
-        -
-          $ref: '#/components/schemas/AuditMethodCalled-post'
     AuditLog-get:
       type: object
       required:
@@ -7841,19 +7951,6 @@ components:
           nullable: false
         description:
           $ref: '#/components/schemas/NonEmptyString-get'
-    AuditLog-post:
-      type: object
-      required:
-        - reference
-        - serializedProperties
-        - event
-      properties:
-        reference:
-          $ref: '#/components/schemas/IdFriendlyEntityReference-post'
-        serializedProperties:
-          $ref: '#/components/schemas/SerializedPhpObject-post'
-        event:
-          $ref: '#/components/schemas/AuditEvent-post'
     AuditLogEvent-get:
       enum:
         - Created
@@ -7872,36 +7969,6 @@ components:
       type: string
       format: auditlogidentifier
       pattern: '(([a-z][a-z0-9]*)_(.+)_(.+))\.\-\.-?(0|[1-9]\d*)(\.\d+)?$'
-    AuditMethodCalled-post:
-      type: object
-      required:
-        - methodName
-        - contents
-      properties:
-        methodName:
-          type: string
-          nullable: false
-        contents:
-          $ref: '#/components/schemas/mixed'
-    AuditModified-post:
-      type: object
-      required:
-        - contents
-      properties:
-        contents:
-          $ref: '#/components/schemas/mixed'
-    AuditRead-post:
-      type: object
-      properties:
-        fromList:
-          type: boolean
-          nullable: false
-    AuditRemoved-post:
-      type: object
-      properties: {  }
-    BackgroundProcessDeclaration-post:
-      type: object
-      properties: {  }
     BackgroundProcessStatus-get:
       enum:
         - active
@@ -8050,20 +8117,24 @@ components:
       type: string
       format: dutchphonenumber
       description: 'A phone number valid in the Netherlands in national format or E164 format'
+      example: '0612345678'
     DutchPhoneNumber-nullable-get:
       type: string
       format: dutchphonenumber
       description: 'A phone number valid in the Netherlands in national format or E164 format'
+      example: '0612345678'
       nullable: true
     DutchPhoneNumber-nullable-post:
       type: string
       format: dutchphonenumber
       description: 'A phone number valid in the Netherlands in national format or E164 format'
+      example: '0612345678'
       nullable: true
     DutchPhoneNumber-post:
       type: string
       format: dutchphonenumber
       description: 'A phone number valid in the Netherlands in national format or E164 format'
+      example: '0612345678'
     Elephant-get:
       type: object
       required:
@@ -8393,10 +8464,7 @@ components:
     IdFriendlyEntityReference-get:
       type: string
       format: idfriendlyentityreference
-      pattern: '([a-z][a-z0-9]*)_(.+)_(.+)$'
-    IdFriendlyEntityReference-post:
-      type: string
-      format: idfriendlyentityreference
+      example: domain_resource_123
       pattern: '([a-z][a-z0-9]*)_(.+)_(.+)$'
     ImageFile-nullable-get:
       type: string
@@ -8456,63 +8524,10 @@ components:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/mixed'
-    ItemHashmap-post:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/mixed'
     ItemList-get:
       type: array
       items:
         $ref: '#/components/schemas/mixed'
-    ItemList-post:
-      type: array
-      items:
-        $ref: '#/components/schemas/mixed'
-    JsonFileUpload-nullable-post:
-      required:
-        - originalFilename
-      type: object
-      oneOf:
-        -
-          required:
-            - contents
-            - originalFilename
-        -
-          required:
-            - base64
-            - originalFilename
-      properties:
-        contents:
-          $ref: '#/components/schemas/BinaryStream-post'
-        originalFilename:
-          $ref: '#/components/schemas/Filename-post'
-        base64:
-          $ref: '#/components/schemas/Base64Stream-post'
-        mime:
-          $ref: '#/components/schemas/StrictMimeType-nullable-post'
-      nullable: true
-    JsonFileUpload-post:
-      required:
-        - originalFilename
-      type: object
-      oneOf:
-        -
-          required:
-            - contents
-            - originalFilename
-        -
-          required:
-            - base64
-            - originalFilename
-      properties:
-        contents:
-          $ref: '#/components/schemas/BinaryStream-post'
-        originalFilename:
-          $ref: '#/components/schemas/Filename-post'
-        base64:
-          $ref: '#/components/schemas/Base64Stream-post'
-        mime:
-          $ref: '#/components/schemas/StrictMimeType-nullable-post'
     LastName-get:
       type: string
       format: lastname
@@ -8760,15 +8775,19 @@ components:
     OrderIdentifier-get:
       type: integer
       nullable: true
+      example: 42
     OrderIdentifier-nullable-get:
       type: integer
       nullable: true
+      example: 42
     OrderIdentifier-nullable-post:
       type: integer
       nullable: true
+      example: 42
     OrderIdentifier-post:
       type: integer
       nullable: true
+      example: 42
     OrderLine-get:
       type: object
       required:
@@ -9101,21 +9120,6 @@ components:
           $ref: '#/components/schemas/DateTime-nullable-get'
         result:
           $ref: '#/components/schemas/mixed'
-    SequentialBackgroundProcess-post:
-      type: object
-      required:
-        - backgroundProcessDeclaration
-        - payload
-      properties:
-        backgroundProcessDeclaration:
-          $ref: '#/components/schemas/BackgroundProcessDeclaration-post'
-        payload:
-          oneOf:
-            -
-              $ref: '#/components/schemas/ItemHashmap-post'
-            -
-              $ref: '#/components/schemas/ItemList-post'
-          nullable: false
     SequentialBackgroundProcessIdentifier-get:
       type: string
       format: sequentialbackgroundprocessidentifier
@@ -9131,9 +9135,6 @@ components:
       format: serializedpermission
       description: 'A serialized permission identifier, for example "user:read"'
       pattern: '^[a-z:]+$'
-    SerializedPhpObject-post:
-      type: string
-      format: serializedphpobject
     Shark-get:
       type: object
       required:
@@ -9182,6 +9183,7 @@ components:
       type: string
       format: strictmimetype
       description: 'Strict mime type without wildcards, for example "application/json"'
+      example: application/json
       pattern: '^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$'
       nullable: true
     StringList-get:
@@ -9363,6 +9365,7 @@ components:
       type: string
       format: uri
       description: 'URI in RFC 3986 format.'
+      example: 'https://apie-lib.blogspot.com/'
     User-get:
       type: object
       required:

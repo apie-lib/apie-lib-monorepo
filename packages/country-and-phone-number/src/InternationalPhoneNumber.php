@@ -2,6 +2,7 @@
 namespace Apie\CountryAndPhoneNumber;
 
 use Apie\Core\Attributes\Description;
+use Apie\Core\Attributes\ExampleValue;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
@@ -15,6 +16,8 @@ use ReflectionClass;
 
 #[FakeMethod('createRandom')]
 #[Description('International phone number in E164 format, or example +31611223344.')]
+#[ExampleValue('+31611223344')]
+#[ExampleValue('+12025550123')]
 final class InternationalPhoneNumber implements StringValueObjectInterface
 {
     use IsStringValueObject;
