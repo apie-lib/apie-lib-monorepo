@@ -28,7 +28,13 @@ class WebdavController
     public function __invoke(ServerRequestInterface $request): ResponseInterface
     {
         $apieContext = $this->contextBuilderFactory
-            ->createFromRequest($request, [ContextConstants::WEBDAV => true, ContextConstants::RAW_CONTENTS => []]);
+            ->createFromRequest(
+                $request,
+                [
+                    ContextConstants::WEBDAV => true,
+                    ContextConstants::RAW_CONTENTS => [],
+                ]
+            );
         $filesystem = $this->apieFilesystemFactory->create($apieContext);
         $server = new Server(new ApieDirectory($filesystem->rootFolder));
         $server->debugExceptions = $this->debug;

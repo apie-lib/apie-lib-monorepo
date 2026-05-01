@@ -1891,6 +1891,9 @@
                                     },
                                     "data": {
                                         "type": "string"
+                                    },
+                                    "snapshot": {
+                                        "type": "string"
                                     }
                                 }
                             },

@@ -1,16 +1,23 @@
 <?php
 namespace Apie\IntegrationTests\Concerns;
 
+use Apie\Common\Other\Audit\AuditCreate;
+use Apie\Common\Other\AuditLog;
 use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\ApieLib;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\Ulid;
+use Apie\Core\IdentifierUtils;
+use Apie\Core\ValueObjects\IdFriendlyEntityReference;
+use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\CountryAndPhoneNumber\BelgianPhoneNumber;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Human;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
 use Apie\IntegrationTests\Apie\TypeDemo\Enums\OrderStatus;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
+use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\OrderIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\RestrictedEntityIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Lists\OrderLineList;
@@ -37,8 +44,13 @@ use Apie\IntegrationTests\Requests\JsonFields\SetPrimitiveField;
 use Apie\IntegrationTests\Requests\RemoveResourceApiCall;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
+use Apie\Serializer\ValueObjects\SerializedPhpObject;
 use Apie\TextValueObjects\CompanyName;
 use Apie\TextValueObjects\FirstName;
+use Beste\Clock\FrozenClock;
+use Beste\Clock\SystemClock;
+use DateTimeImmutable;
+use ReflectionClass;
 
 /**
  * @codeCoverageIgnore
@@ -390,6 +402,109 @@ trait CreatesApieBoundedContext
         );
     }
 
+    private function createAuditLogFor(BoundedContextId $boundedContextId, EntityInterface $entity, ?object $createdBy = null): AuditLog
+    {
+        return new AuditLog(
+            new IdFriendlyEntityReference(
+                $boundedContextId,
+                NonEmptyString::fromNative(
+                    IdentifierUtils::entityClassToIdentifier($entity)
+                        ->getMethod('getReferenceFor')
+                        ->invoke(null)
+                        ->name
+                ),
+                NonEmptyString::fromNative($entity->getId())
+            ),
+            SerializedPhpObject::createFromPhpObject($entity),
+            new AuditCreate(false),
+            SerializedPhpObject::createFromPhpObject($createdBy)
+        );
+    }
+
+    /**
+     * Test for reading audit logs.
+     *
+     * GET /AuditLog/
+     */
+    public function getAuditLogTestRequest(): TestRequestInterface
+    {
+        $userId = UserIdentifier::fromNative('user@example.com');
+        $user = new User($userId);
+        $boundedContextId = new BoundedContextId('types');
+        ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-01')));
+
+        $object = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440000'),
+            new CompanyName('Company NV'),
+            $user
+        );
+        $auditLog1 = $this->createAuditLogFor(
+            $boundedContextId,
+            $object,
+            $userId
+        );
+        ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-02')));
+        $object2 = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440001'),
+            new CompanyName('Company NV 2'),
+            null
+        );
+        $auditLog2 = $this->createAuditLogFor(
+            $boundedContextId,
+            $object2,
+            $userId
+        );
+        ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-03')));
+        $object3 = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440002'),
+            new CompanyName('Company NV 3'),
+            null
+        );
+        $auditLog3 = $this->createAuditLogFor(
+            $boundedContextId,
+            $object3
+        );
+
+        ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-04')));
+        $object4 = new Order(new OrderLineList());
+        $refl = new ReflectionClass($object4);
+        $refl->getProperty('id')->setValue($object4, new OrderIdentifier(1));
+        $auditLog4 = $this->createAuditLogFor(
+            $boundedContextId,
+            $object4
+        );
+
+
+        return new GetResourceListApiCall(
+            new BoundedContextId('types'),
+            AuditLog::class,
+            [$object, $auditLog1, $object2, $auditLog2, $object3, $auditLog3, $object4, $auditLog4, $user],
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('totalCount', 3),
+                new GetPrimitiveField('filteredCount', 3),
+                new GetPrimitiveField('first', '/types/AuditLog'),
+                new GetPrimitiveField('last', '/types/AuditLog'),
+                new GetAndSetObjectField(
+                    'list',
+                    new GetAndSetObjectField(
+                        '0',
+                        new GetAndSetPrimitiveField('id', $auditLog4->getId()->toNative()),
+                    ),
+                    new GetAndSetObjectField(
+                        '1',
+                        new GetAndSetPrimitiveField('id', $auditLog3->getId()->toNative()),
+                    ),
+                    new GetAndSetObjectField(
+                        '2',
+                        new GetAndSetPrimitiveField('id', $auditLog2->getId()->toNative()),
+                    ),
+                ),
+            ),
+            discardValidationOnFaker: true,
+        );
+    }
+
     /**
      * Test for entity list with permission restrictions.
      *
@@ -399,6 +514,7 @@ trait CreatesApieBoundedContext
     {
         $userId = UserIdentifier::fromNative('user@example.com');
         $user = new User($userId);
+        ApieLib::setPsrClock(SystemClock::create());
         $object = new RestrictedEntity(
             RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440000'),
             new CompanyName('Company NV'),
@@ -427,14 +543,14 @@ trait CreatesApieBoundedContext
                 new GetAndSetObjectField(
                     'list',
                     new GetAndSetObjectField(
-                        '0',
+                        '1',
                         new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440002'),
                         new GetAndSetPrimitiveField('companyName', 'Company NV 3'),
                         new GetPrimitiveField('requiredPermissions', []),
                         new GetPrimitiveField('userId', null),
                     ),
                     new GetAndSetObjectField(
-                        '1',
+                        '0',
                         new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440001'),
                         new GetAndSetPrimitiveField('companyName', 'Company NV 2'),
                         new GetPrimitiveField('requiredPermissions', []),

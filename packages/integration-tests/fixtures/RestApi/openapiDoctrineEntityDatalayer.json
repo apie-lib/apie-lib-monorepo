@@ -6790,6 +6790,13 @@
                         }
                     },
                     {
+                        "name": "query[snapshot]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "name": "order_by",
                         "in": "query",
                         "schema": {
@@ -11853,13 +11860,7 @@
             "AuditLog-get": {
                 "type": "object",
                 "required": [
-                    "id",
-                    "event",
-                    "createdBy",
-                    "requiredPermissions",
-                    "reference",
-                    "data",
-                    "description"
+                    "id"
                 ],
                 "properties": {
                     "id": {
@@ -11888,6 +11889,9 @@
                         ],
                         "nullable": false
                     },
+                    "snapshot": {
+                        "$ref": "#/components/schemas/EntitySnapshotInstance-get"
+                    },
                     "description": {
                         "$ref": "#/components/schemas/NonEmptyString-get"
                     }
@@ -11908,12 +11912,12 @@
             "AuditLogIdentifier-get": {
                 "type": "string",
                 "format": "auditlogidentifier",
-                "pattern": "(([a-z][a-z0-9]*)_(.+)_(.+))\\.\\-\\.-?(0|[1-9]\\d*)(\\.\\d+)?$"
+                "pattern": "-?(0|[1-9]\\d*)(\\.\\d+)?\\.\\-\\.(([a-z][a-z0-9]*)_(.+)_(.+))$"
             },
             "AuditLogIdentifier-post": {
                 "type": "string",
                 "format": "auditlogidentifier",
-                "pattern": "(([a-z][a-z0-9]*)_(.+)_(.+))\\.\\-\\.-?(0|[1-9]\\d*)(\\.\\d+)?$"
+                "pattern": "-?(0|[1-9]\\d*)(\\.\\d+)?\\.\\-\\.(([a-z][a-z0-9]*)_(.+)_(.+))$"
             },
             "BackgroundProcessStatus-get": {
                 "enum": [

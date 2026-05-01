@@ -271,13 +271,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "ENUM",
-                                    "name": "AuditLogEvent",
-                                    "ofType": null
-                                }
+                                "kind": "ENUM",
+                                "name": "AuditLogEvent",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -299,19 +295,15 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
+                                "kind": "LIST",
                                 "name": null,
                                 "ofType": {
-                                    "kind": "LIST",
+                                    "kind": "NON_NULL",
                                     "name": null,
                                     "ofType": {
-                                        "kind": "NON_NULL",
-                                        "name": null,
-                                        "ofType": {
-                                            "kind": "SCALAR",
-                                            "name": "String",
-                                            "ofType": null
-                                        }
+                                        "kind": "SCALAR",
+                                        "name": "String",
+                                        "ofType": null
                                     }
                                 }
                             },
@@ -323,13 +315,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "String",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -339,13 +327,21 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "OBJECT",
-                                    "name": "stdClass",
-                                    "ofType": null
-                                }
+                                "kind": "OBJECT",
+                                "name": "stdClass",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "snapshot",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "OBJECT",
+                                "name": "EntitySnapshotInstance",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -355,13 +351,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "String",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -478,6 +470,29 @@
                             "deprecationReason": null
                         }
                     ],
+                    "possibleTypes": null
+                },
+                {
+                    "kind": "OBJECT",
+                    "name": "EntitySnapshotInstance",
+                    "description": null,
+                    "fields": [
+                        {
+                            "name": "_",
+                            "description": "This is a dummy field, because GraphQL does not allow empty input types.",
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        }
+                    ],
+                    "inputFields": null,
+                    "interfaces": [],
+                    "enumValues": null,
                     "possibleTypes": null
                 },
                 {
