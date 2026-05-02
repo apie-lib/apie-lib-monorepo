@@ -19,6 +19,7 @@ use Apie\Fixtures\Entities\Polymorphic\Elephant;
 use Apie\Serializer\Serializer;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\DependencyInjection\ServiceLocator;
 
 class ApieFilesystemFactoryTest extends TestCase
 {
@@ -40,7 +41,7 @@ class ApieFilesystemFactoryTest extends TestCase
     public function it_can_create_a_file_system_from_apie()
     {
         $factory = new ApieFilesystemFactory(
-            new ActionDefinitionProvider(),
+            new ActionDefinitionProvider(new ServiceLocator([])),
             BoundedContextFactory::createHashmapWithMultipleContexts()
         );
         $filter = new LazyLoadedListFilterer(Indexer::create());
