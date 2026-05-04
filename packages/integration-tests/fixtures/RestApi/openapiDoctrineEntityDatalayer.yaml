@@ -4597,6 +4597,11 @@ paths:
           schema:
             type: string
         -
+          name: 'query[origin]'
+          in: query
+          schema:
+            type: string
+        -
           name: 'query[reference]'
           in: query
           schema:
@@ -7939,6 +7944,8 @@ components:
           $ref: '#/components/schemas/NonEmptyString-nullable-get'
         requiredPermissions:
           $ref: '#/components/schemas/PermissionList-get'
+        origin:
+          $ref: '#/components/schemas/AuditOrigin-get'
         reference:
           $ref: '#/components/schemas/IdFriendlyEntityReference-get'
         data:
@@ -7970,6 +7977,21 @@ components:
       type: string
       format: auditlogidentifier
       pattern: '-?(0|[1-9]\d*)(\.\d+)?\.\-\.(([a-z][a-z0-9]*)_(.+)_(.+))$'
+    AuditOrigin-get:
+      type: object
+      properties:
+        clientIp:
+          type: string
+          nullable: true
+        clientUserAgent:
+          type: string
+          nullable: true
+        serverName:
+          type: string
+          nullable: true
+        terminalUserName:
+          type: string
+          nullable: true
     BackgroundProcessStatus-get:
       enum:
         - active

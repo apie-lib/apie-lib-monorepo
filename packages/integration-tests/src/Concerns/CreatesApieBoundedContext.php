@@ -3,6 +3,7 @@ namespace Apie\IntegrationTests\Concerns;
 
 use Apie\Common\Other\Audit\AuditCreate;
 use Apie\Common\Other\AuditLog;
+use Apie\Common\Other\AuditOrigin;
 use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\Core\ApieLib;
 use Apie\Core\BoundedContext\BoundedContextId;
@@ -417,6 +418,7 @@ trait CreatesApieBoundedContext
             ),
             SerializedPhpObject::createFromPhpObject($entity),
             new AuditCreate(false),
+            new AuditOrigin('1.2.3.4', 'Apienternet Explorer', 'testserver', 'phpunit'),
             SerializedPhpObject::createFromPhpObject($createdBy)
         );
     }

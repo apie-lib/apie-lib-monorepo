@@ -1886,6 +1886,9 @@
                                     "requiredPermissions": {
                                         "type": "string"
                                     },
+                                    "origin": {
+                                        "type": "string"
+                                    },
                                     "reference": {
                                         "type": "string"
                                     },

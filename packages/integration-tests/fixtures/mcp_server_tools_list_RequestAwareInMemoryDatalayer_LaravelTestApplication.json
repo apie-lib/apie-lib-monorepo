@@ -1616,6 +1616,9 @@
                                     "reference": {
                                         "type": "string"
                                     },
+                                    "origin": {
+                                        "type": "string"
+                                    },
                                     "createdBy": {
                                         "type": "string",
                                         "nullable": true
