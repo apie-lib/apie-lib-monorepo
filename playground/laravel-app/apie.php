@@ -1,6 +1,8 @@
 <?php
 
-return [
+use Apie\LaravelApie\Config\ValidateAndSanitizeConfig;
+
+return ValidateAndSanitizeConfig::process([
         'cms' => [
            'dashboard_template' => 'apie/dashboard',
         ],
@@ -53,4 +55,4 @@ return [
                 'actions_namespace' => 'App\\ApiePlayground\\Types\\Actions',
             ],
         ],
-];
+]);

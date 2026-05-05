@@ -15,6 +15,7 @@ use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\LaravelApie\ApieServiceProvider;
+use Apie\LaravelApie\Config\ValidateAndSanitizeConfig;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
@@ -103,6 +104,9 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             );
             $config->set('apie.remote_mcp_path', '/mcp');
             $config->set('apie.enable_graphql', true);
+            $rawConfig = $config->get('apie');
+            $processedConfig = ValidateAndSanitizeConfig::process($rawConfig);
+            $config->set('apie', $processedConfig);
         });
     }
 
