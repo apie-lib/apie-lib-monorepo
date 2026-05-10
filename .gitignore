@@ -1,0 +1,13 @@
+vendor
+composer.lock
+.phpunit.result.cache
+.idea
+/tmp
+.php-cs-fixer.cache
+clover.xml
+/coverage
+coverage.xml
+/projectCoverage
+.phpunit.cache
+/.tempdockerfile.*
+/.cov
