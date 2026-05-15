@@ -29,20 +29,19 @@ abstract class Decimal implements ValueObjectInterface, HasRegexValueObjectInter
     final public static function fromNative(mixed $input): static
     {
         $decimals = static::getNumberOfDecimals();
-        if (is_numeric($input)) {
-            $float = floatval($input);
-            $formatted = number_format($float, $decimals, '.', '');
+        if (is_int($input) || is_float($input)) {
+            $formatted = number_format($input, $decimals, '.', '');
             [$int, $dec] = explode('.', $formatted);
             return new static((int)$int, $dec);
         }
         $string = trim(Utils::toString($input));
         // we do not use getRegularExpression here, because we are more lenient on fromNative.
         if (preg_match(
-            '/^(?<int>-?([0-9]|[1-9][0-9]*))\.(?<part>[0-9]{0,' . $decimals . '})[0-9]*$/',
+            '/^(?<int>-?([0-9]|[1-9][0-9]*))(\.(?<part>[0-9]{0,' . $decimals . '})[0-9]*)?$/',
             $string,
             $matches
         )) {
-            return new static((int)$matches['int'], str_pad($matches['part'], $decimals, '0', STR_PAD_RIGHT));
+            return new static((int)$matches['int'], str_pad($matches['part'] ?? '', $decimals, '0', STR_PAD_RIGHT));
         }
 
         throw new InvalidStringForValueObjectException($string, new \ReflectionClass(static::class));
