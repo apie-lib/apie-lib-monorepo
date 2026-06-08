@@ -31,8 +31,8 @@ final class BoundedContextConfig
             'entities_namespace' => $entityNamespace . 'Resources',
             'actions_folder' => $path . DIRECTORY_SEPARATOR . 'Actions',
             'actions_namespace' => $entityNamespace . 'Actions',
-            'policy_folder' => $path . DIRECTORY_SEPARATOR . 'Policies',
-            'policy_namespace' => $entityNamespace . 'Policies',
+            'policies_folder' => $path . DIRECTORY_SEPARATOR . 'Policies',
+            'policies_namespace' => $entityNamespace . 'Policies',
         ]);
     }
 
