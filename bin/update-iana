@@ -1,0 +1,62 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../shared-bin.php';
+$context = stream_context_create([
+    'http' => [
+        'method' => 'GET',
+        'header' => [
+            'User-Agent: MyApp/1.0',
+        ],
+    ],
+]);
+$registry = file_get_contents(
+    'https://www.iana.org/assignments/language-subtag-registry',
+    context: $context
+);
+
+$records = preg_split('/^%%$/m', $registry);
+
+$languages = require __DIR__ . '/../packages/iana-value-objects/fixtures/languages.php';
+foreach ($languages as $key => &$value) {
+    $value['Active'] = false;
+}
+$regions = require __DIR__ . '/../packages/iana-value-objects/fixtures/language-regions.php';
+foreach ($regions as $key => &$value) {
+    if (!is_array($value)) {
+        break;
+    }
+    $value['Active'] = false;
+}
+
+foreach ($records as $record) {
+    $type = null;
+    $subtag = null;
+    $description = null;
+
+    $fieldData = ['Active' => true];
+    foreach (explode("\n", $record) as $line) {
+        if (!str_contains($line, ':')) {
+            continue;
+        }
+        list ($key, $value) = explode(':', $line, 2);
+        $key = trim($key);
+        $value = trim($value);
+        if (!isset($fieldData[$key])) {
+            $fieldData[$key] = $value;
+        }
+    }
+    switch ($fieldData['Type'] ?? null) {
+        case 'language':
+            $languages[strtolower($fieldData['Subtag'])] = $fieldData;
+            break;
+        case 'region':
+            $regions[strtolower($fieldData['Subtag'])] = $fieldData;
+            break;
+    }
+}
+ksort($languages);
+ksort($regions);
+
+file_put_contents(__DIR__ . '/../packages/iana-value-objects/fixtures/languages.php', '<?php return ' . var_export($languages, true) . ';');
+file_put_contents(__DIR__ . '/../packages/iana-value-objects/fixtures/language-regions.php', '<?php return ' . var_export($regions, true) . ';');
