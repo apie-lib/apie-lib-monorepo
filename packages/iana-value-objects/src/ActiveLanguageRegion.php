@@ -1,14 +1,16 @@
 <?php
 namespace Apie\IanaValueObjects;
 
+use Apie\Core\Lists\StringSet;
+use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 
 /**
  * All language regions registered in the IANA Language Subtag Registry.
- * 
+ *
  * Only active language regions can be used.
  */
-final class ActiveLanguageRegion implements StringValueObjectInterface
+final class ActiveLanguageRegion implements StringValueObjectInterface, LimitedOptionsInterface
 {
     use IsLanguageSubtag;
 
@@ -20,5 +22,10 @@ final class ActiveLanguageRegion implements StringValueObjectInterface
     protected static function getData(): array
     {
         return require __DIR__ . '/../fixtures/language-regions.php';
+    }
+
+    public static function getOptions(): StringSet
+    {
+        return new StringSet(array_keys(static::getActiveData()));
     }
 }

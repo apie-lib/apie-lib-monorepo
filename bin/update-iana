@@ -58,5 +58,9 @@ foreach ($records as $record) {
 ksort($languages);
 ksort($regions);
 
-file_put_contents(__DIR__ . '/../packages/iana-value-objects/fixtures/languages.php', '<?php return ' . var_export($languages, true) . ';');
-file_put_contents(__DIR__ . '/../packages/iana-value-objects/fixtures/language-regions.php', '<?php return ' . var_export($regions, true) . ';');
+const CODE_PREFIX = '<?php ' . PHP_EOL . "/**
+ * @codeCoverageIgnore
+ */" . PHP_EOL . 'return ';
+
+file_put_contents(__DIR__ . '/../packages/iana-value-objects/fixtures/languages.php', CODE_PREFIX . var_export($languages, true) . ';');
+file_put_contents(__DIR__ . '/../packages/iana-value-objects/fixtures/language-regions.php', CODE_PREFIX . var_export($regions, true) . ';');

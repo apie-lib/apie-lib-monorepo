@@ -10,6 +10,16 @@ trait StaticDataValueObject
 
     abstract protected static function getData(): array;
 
+    protected static function getActiveData(): array
+    {
+        return array_filter(static::getData(), function (array $data) {
+            $active = $data['Active'] ?? false;
+            $deprecated = !empty($data['Deprecated'] ?? null);
+
+            return $active && !$deprecated;
+        });
+    }
+
     abstract protected static function requiresActive(): bool;
 
     protected function getFieldValue(string $fieldName): mixed
