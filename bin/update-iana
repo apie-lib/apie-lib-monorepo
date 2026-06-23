@@ -2,6 +2,30 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../shared-bin.php';
+
+use function Ajgl\Csv\Rfc\fgetcsv;
+use function Ajgl\Csv\Rfc\str_getcsv;
+
+function dumpCsv(string $csv, int $idColumn = 0): array
+{
+    $stream = fopen('php://temp', 'r+');
+    fwrite($stream, $csv);
+    rewind($stream);
+    $result = [];
+    $header = null;
+    while (($row = fgetcsv($stream)) !== false) {
+        if ($header === null) {
+            $header = $row;
+            continue;
+        }
+        $key = strtolower($row[$idColumn]);
+        $result[$key] = array_combine($header, $row);
+        $result[$key]['Active'] = true;
+    }
+    fclose($stream);
+    return $result;
+}
+
 $context = stream_context_create([
     'http' => [
         'method' => 'GET',
@@ -10,23 +34,47 @@ $context = stream_context_create([
         ],
     ],
 ]);
+
+const PRINT_FORMAT = '%30s';
+const DONE = ' - Done!' . PHP_EOL;
+echo sprintf(PRINT_FORMAT, "Iana subtag repository");
+
 $registry = file_get_contents(
     'https://www.iana.org/assignments/language-subtag-registry',
     context: $context
 );
 
+
 $records = preg_split('/^%%$/m', $registry);
 
 $languages = require __DIR__ . '/../packages/iana-value-objects/fixtures/languages.php';
-foreach ($languages as $key => &$value) {
-    $value['Active'] = false;
+foreach ($languages as $key => $value) {
+    $languages[$key]['Active'] = false;
 }
 $regions = require __DIR__ . '/../packages/iana-value-objects/fixtures/language-regions.php';
-foreach ($regions as $key => &$value) {
+foreach ($regions as $key => $value) {
     if (!is_array($value)) {
         break;
     }
-    $value['Active'] = false;
+    $regions[$key]['Active'] = false;
+}
+
+$scriptsFile = __DIR__ . '/../packages/iana-value-objects/fixtures/language-scripts.php';
+$scripts = file_exists($scriptsFile) ? require $scriptsFile : [];
+foreach ($scripts as $key => $value) {
+    $scripts[$key]['Active'] = false;
+}
+
+$variantsFile = __DIR__ . '/../packages/iana-value-objects/fixtures/language-variants.php';
+$variants = file_exists($variantsFile) ? require $variantsFile : [];
+foreach ($variants as $key => $value) {
+    $variants[$key]['Active'] = false;
+}
+
+$extlangsFile = __DIR__ . '/../packages/iana-value-objects/fixtures/language-extlangs.php';
+$extlangs = file_exists($extlangsFile) ? require $extlangsFile : [];
+foreach ($extlangs as $key => $value) {
+    $extlangs[$key]['Active'] = false;
 }
 
 foreach ($records as $record) {
@@ -39,11 +87,11 @@ foreach ($records as $record) {
         if (!str_contains($line, ':')) {
             continue;
         }
-        list ($key, $value) = explode(':', $line, 2);
+        list ($key, $valStr) = explode(':', $line, 2);
         $key = trim($key);
-        $value = trim($value);
+        $valStr = trim($valStr);
         if (!isset($fieldData[$key])) {
-            $fieldData[$key] = $value;
+            $fieldData[$key] = $valStr;
         }
     }
     switch ($fieldData['Type'] ?? null) {
@@ -53,10 +101,22 @@ foreach ($records as $record) {
         case 'region':
             $regions[strtolower($fieldData['Subtag'])] = $fieldData;
             break;
+        case 'script':
+            $scripts[strtolower($fieldData['Subtag'])] = $fieldData;
+            break;
+        case 'variant':
+            $variants[strtolower($fieldData['Subtag'])] = $fieldData;
+            break;
+        case 'extlang':
+            $extlangs[strtolower($fieldData['Subtag'])] = $fieldData;
+            break;
     }
 }
 ksort($languages);
 ksort($regions);
+ksort($scripts);
+ksort($variants);
+ksort($extlangs);
 
 const CODE_PREFIX = '<?php ' . PHP_EOL . "/**
  * @codeCoverageIgnore
@@ -64,3 +124,160 @@ const CODE_PREFIX = '<?php ' . PHP_EOL . "/**
 
 file_put_contents(__DIR__ . '/../packages/iana-value-objects/fixtures/languages.php', CODE_PREFIX . var_export($languages, true) . ';');
 file_put_contents(__DIR__ . '/../packages/iana-value-objects/fixtures/language-regions.php', CODE_PREFIX . var_export($regions, true) . ';');
+file_put_contents($scriptsFile, CODE_PREFIX . var_export($scripts, true) . ';');
+file_put_contents($variantsFile, CODE_PREFIX . var_export($variants, true) . ';');
+file_put_contents($extlangsFile, CODE_PREFIX . var_export($extlangs, true) . ';');
+echo DONE;
+// TLDs
+echo sprintf(PRINT_FORMAT, "IANA Top Level Domains");
+$tldsFile = __DIR__ . '/../packages/iana-value-objects/fixtures/tlds.php';
+$tldsData = file_exists($tldsFile) ? require $tldsFile : [];
+foreach ($tldsData as $key => $value) {
+    $tldsData[$key]['Active'] = false;
+}
+$tldRegistry = file_get_contents(
+    'https://data.iana.org/TLD/tlds-alpha-by-domain.txt',
+    context: $context
+);
+if ($tldRegistry) {
+    $lines = explode("\n", trim($tldRegistry));
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if ($line === '' || str_starts_with($line, '#')) {
+            continue;
+        }
+        $tldsData[strtolower($line)] = [
+            'Active' => true,
+            'Subtag' => $line,
+        ];
+    }
+}
+ksort($tldsData);
+file_put_contents($tldsFile, CODE_PREFIX . var_export($tldsData, true) . ';');
+echo DONE;
+// URI Schemes
+echo sprintf(PRINT_FORMAT, "IANA URI Schemes");
+$uriSchemesFile = __DIR__ . '/../packages/iana-value-objects/fixtures/uri-schemes.php';
+$uriSchemesData = file_exists($uriSchemesFile) ? require $uriSchemesFile : [];
+foreach ($uriSchemesData as $key => $value) {
+    $uriSchemesData[$key]['Active'] = false;
+}
+$uriSchemesRegistry = file_get_contents(
+    'https://www.iana.org/assignments/uri-schemes/uri-schemes-1.csv',
+    context: $context
+);
+foreach (dumpCsv($uriSchemesRegistry) as $scheme => $data) {
+    $uriSchemesData[$scheme] = $data;
+}
+ksort($uriSchemesData);
+file_put_contents($uriSchemesFile, CODE_PREFIX . var_export($uriSchemesData, true) . ';');
+echo DONE;
+
+// Media Types
+echo sprintf(PRINT_FORMAT, "IANA Media types");
+$mediaTypesFile = __DIR__ . '/../packages/iana-value-objects/fixtures/media-types.php';
+$mediaTypesData = file_exists($mediaTypesFile) ? require $mediaTypesFile : [];
+foreach ($mediaTypesData as $key => $value) {
+    $mediaTypesData[$key]['Active'] = false;
+}
+foreach (["application", "audio", "image", "message", "model", "multipart", "text", "video"] as $cat) {
+    $mediaTypesRegistry = file_get_contents(
+        "https://www.iana.org/assignments/media-types/$cat.csv",
+        context: $context
+    );
+    foreach (dumpCsv($mediaTypesRegistry, 1) as $scheme => $data) {
+        $mediaTypesData[$scheme] = $data;
+    }
+}
+ksort($mediaTypesData);
+file_put_contents($mediaTypesFile, CODE_PREFIX . var_export($mediaTypesData, true) . ';');
+echo DONE;
+
+// Character Sets
+echo sprintf(PRINT_FORMAT, "Iana Character sets");
+$charsetsFile = __DIR__ . '/../packages/iana-value-objects/fixtures/character-sets.php';
+$charsetsData = file_exists($charsetsFile) ? require $charsetsFile : [];
+foreach ($charsetsData as $key => $value) {
+    $charsetsData[$key]['Active'] = false;
+}
+$charsetsRegistry = file_get_contents(
+    'https://www.iana.org/assignments/character-sets/character-sets-1.csv',
+    context: $context
+);
+foreach (dumpCsv($charsetsRegistry) as $charset => $data) {
+    $charsetsData[$charset] = $data;
+}
+ksort($charsetsData);
+file_put_contents($charsetsFile, CODE_PREFIX . var_export($charsetsData, true) . ';');
+echo DONE;
+
+// HTTP Status Codes
+echo sprintf(PRINT_FORMAT, "Iana HTTP Status Codes");
+$httpStatusFile = __DIR__ . '/../packages/iana-value-objects/fixtures/http-status-codes.php';
+$httpStatusData = file_exists($httpStatusFile) ? require $httpStatusFile : [];
+foreach ($httpStatusData as $key => $value) {
+    $httpStatusData[$key]['Active'] = false;
+}
+$httpStatusRegistry = file_get_contents(
+    'https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv',
+    context: $context
+);
+foreach (dumpCsv($httpStatusRegistry) as $httpStatus => $data) {
+    if (preg_match('/^(\d+)-(\d+)$/', $httpStatus, $matches)) {
+        $start = (int)$matches[1];
+        $end = (int)$matches[2];
+        for ($p = $start; $p <= $end; $p++) {
+            $httpStatusData[(string)$p] =$data;
+        }
+    } elseif (preg_match('/^\d+$/', $httpStatus)) {
+        $httpStatusData[$httpStatus] = $data;
+    }
+}
+ksort($httpStatusData);
+file_put_contents($httpStatusFile, CODE_PREFIX . var_export($httpStatusData, true) . ';');
+echo DONE;
+
+// HTTP Fields (Headers)
+echo sprintf(PRINT_FORMAT, "Iana HTTP Headers");
+$httpFieldsFile = __DIR__ . '/../packages/iana-value-objects/fixtures/http-fields.php';
+$httpFieldsData = file_exists($httpFieldsFile) ? require $httpFieldsFile : [];
+foreach ($httpFieldsData as $key => $value) {
+    $httpFieldsData[$key]['Active'] = false;
+}
+$httpFieldsRegistry = file_get_contents(
+    'https://www.iana.org/assignments/http-fields/field-names.csv',
+    context: $context
+);
+foreach (dumpCsv($httpFieldsRegistry) as $field => $data) {
+    $httpFieldsData[$field] = $data;
+}
+ksort($httpFieldsData);
+file_put_contents($httpFieldsFile, CODE_PREFIX . var_export($httpFieldsData, true) . ';');
+echo DONE;
+
+// Ports
+echo sprintf(PRINT_FORMAT, "Iana Port numbers");
+$portNumbersFile = __DIR__ . '/../packages/iana-value-objects/fixtures/port-numbers.php';
+$portNumbersData = file_exists($portNumbersFile) ? require $portNumbersFile : [];
+foreach ($portNumbersData as $key => $value) {
+    $portNumbersData[$key]['Active'] = false;
+}
+$portsRegistry = file_get_contents(
+    'https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv',
+    context: $context
+);
+foreach (dumpCsv($portsRegistry, 1) as $portNumber => $data) {
+    if (preg_match('/^(\d+)-(\d+)$/', $portNumber, $matches)) {
+        $start = (int)$matches[1];
+        $end = (int)$matches[2];
+        for ($p = $start; $p <= $end; $p++) {
+            $portNumbersData[(string)$p] =$data;
+        }
+    } elseif (preg_match('/^\d+$/', $portNumber)) {
+        $portNumbersData[$portNumber] = $data;
+    }
+}
+ksort($portNumbersData);
+file_put_contents($portNumbersFile, CODE_PREFIX . var_export($portNumbersData, true) . ';');
+echo DONE;
+

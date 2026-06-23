@@ -98,6 +98,7 @@
         "webonyx/graphql-php": "^15.0"
     },
     "require-dev": {
+        "ajgl/csv-rfc": "0.4.0",
         "doctrine/doctrine-bundle": "^2.12.0",
         "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
         "ext-sqlite3": "*",

@@ -3,7 +3,9 @@ namespace Apie\IanaValueObjects;
 
 trait IsLanguageSubtag
 {
-    use StaticDataValueObject;
+    use StaticDataValueObject, IsSanitizingInput {
+        IsSanitizingInput::convert insteadof StaticDataValueObject;
+    }
 
     public function toPreferredValue(): static
     {
@@ -12,16 +14,5 @@ trait IsLanguageSubtag
             return $this;
         }
         return new static($preferred);
-    }
-
-    protected function convert(string $input): string
-    {
-        $inputLower = strtolower($input);
-        $data = static::getData();
-        if (!isset($data[$inputLower])) {
-            return $input;
-        }
-
-        return $data[$inputLower]['Subtag'] ?? $input;
     }
 }

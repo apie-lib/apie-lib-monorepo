@@ -20,6 +20,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             "doctrine/dbal" => "^4.2.1",
         ],
         ComposerJsonSection::REQUIRE_DEV => [
+            "ajgl/csv-rfc" => "0.4.0",
             "apie/service-provider-generator" => "0.14.0",
             "phpspec/prophecy-phpunit" => "^2.2",
             "phpstan/phpstan" => "2.0.4",

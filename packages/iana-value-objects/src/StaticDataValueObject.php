@@ -36,7 +36,8 @@ trait StaticDataValueObject
                 $input,
                 (new \ReflectionClass(static::class))
             );
-        };
+        }
+        
         $active = $data[$input]['Active'] ?? false;
         $deprecated = !empty($data[$input]['Deprecated'] ?? null);
         if (((!$active || $deprecated) && self::requiresActive())) {
