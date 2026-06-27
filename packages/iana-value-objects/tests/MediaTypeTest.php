@@ -2,8 +2,8 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\IanaValueObjects\ActiveMediaType;
-use Apie\IanaValueObjects\MediaType;
+use Apie\IanaValueObjects\MediaType\ActiveMediaType;
+use Apie\IanaValueObjects\MediaType\MediaType;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -14,6 +14,10 @@ class MediaTypeTest extends TestCase
     {
         $testItem = new MediaType('application/json');
         $this->assertEquals('application/json', $testItem->toNative());
+        $this->assertEquals('json', $testItem->getName());
+        $this->assertEquals('application/json', $testItem->getTemplate());
+        $this->assertEquals('[RFC8259]', $testItem->getReference());
+        $this->assertTrue($testItem->isActive());
     }
 
     #[Test]

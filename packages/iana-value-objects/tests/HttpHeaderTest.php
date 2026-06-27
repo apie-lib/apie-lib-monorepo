@@ -2,8 +2,9 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\IanaValueObjects\ActiveHttpHeader;
-use Apie\IanaValueObjects\HttpHeader;
+use Apie\IanaValueObjects\HttpHeader\ActiveHttpHeader;
+use Apie\IanaValueObjects\HttpHeader\HttpHeader;
+use Apie\IanaValueObjects\HttpHeader\HttpHeaderStatus;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -14,6 +15,10 @@ class HttpHeaderTest extends TestCase
     {
         $testItem = new HttpHeader('content-type');
         $this->assertEquals('Content-Type', $testItem->toNative());
+        $this->assertEquals(HttpHeaderStatus::Permanent, $testItem->getStatus());
+        $this->assertEquals(null, $testItem->getStructuredType());
+        $this->assertEquals(null, $testItem->getComments());
+        $this->assertTrue($testItem->isActive());
     }
 
     #[Test]

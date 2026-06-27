@@ -2,8 +2,8 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\IanaValueObjects\ActiveHttpStatus;
-use Apie\IanaValueObjects\HttpStatus;
+use Apie\IanaValueObjects\HttpStatus\ActiveHttpStatus;
+use Apie\IanaValueObjects\HttpStatus\HttpStatus;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -14,6 +14,10 @@ class HttpStatusTest extends TestCase
     {
         $testItem = new HttpStatus('200');
         $this->assertEquals('200', $testItem->toNative());
+        $this->assertEquals('200', $testItem->getValue());
+        $this->assertEquals('OK', $testItem->getDescription());
+        $this->assertEquals('[RFC9110, Section 15.3.1]', $testItem->getReference());
+        $this->assertTrue($testItem->isActive());
     }
 
     #[Test]

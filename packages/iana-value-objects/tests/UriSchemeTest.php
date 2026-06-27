@@ -2,8 +2,8 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\IanaValueObjects\ActiveUriScheme;
-use Apie\IanaValueObjects\UriScheme;
+use Apie\IanaValueObjects\UriScheme\ActiveUriScheme;
+use Apie\IanaValueObjects\UriScheme\UriScheme;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

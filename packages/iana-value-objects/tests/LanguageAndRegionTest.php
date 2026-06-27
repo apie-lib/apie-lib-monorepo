@@ -1,9 +1,9 @@
 <?php
 namespace Apie\Tests\IanaValueObjects;
 
-use Apie\IanaValueObjects\Language;
 use Apie\IanaValueObjects\LanguageAndRegion;
-use Apie\IanaValueObjects\LanguageRegion;
+use Apie\IanaValueObjects\LanguageTag\Language;
+use Apie\IanaValueObjects\LanguageTag\LanguageRegion;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 

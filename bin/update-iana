@@ -6,7 +6,7 @@ require __DIR__ . '/../shared-bin.php';
 use function Ajgl\Csv\Rfc\fgetcsv;
 use function Ajgl\Csv\Rfc\str_getcsv;
 
-function dumpCsv(string $csv, int $idColumn = 0): array
+function dumpCsv(string $csv, ?int $idColumn = 0): array
 {
     $stream = fopen('php://temp', 'r+');
     fwrite($stream, $csv);
@@ -18,7 +18,7 @@ function dumpCsv(string $csv, int $idColumn = 0): array
             $header = $row;
             continue;
         }
-        $key = strtolower($row[$idColumn]);
+        $key = $idColumn === null ? count($result) : strtolower($row[$idColumn]);
         $result[$key] = array_combine($header, $row);
         $result[$key]['Active'] = true;
     }
@@ -37,7 +37,7 @@ $context = stream_context_create([
 
 const PRINT_FORMAT = '%30s';
 const DONE = ' - Done!' . PHP_EOL;
-echo sprintf(PRINT_FORMAT, "Iana subtag repository");
+echo sprintf(PRINT_FORMAT, "IANA subtag repository");
 
 $registry = file_get_contents(
     'https://www.iana.org/assignments/language-subtag-registry',
@@ -194,7 +194,7 @@ file_put_contents($mediaTypesFile, CODE_PREFIX . var_export($mediaTypesData, tru
 echo DONE;
 
 // Character Sets
-echo sprintf(PRINT_FORMAT, "Iana Character sets");
+echo sprintf(PRINT_FORMAT, "IANA Character sets");
 $charsetsFile = __DIR__ . '/../packages/iana-value-objects/fixtures/character-sets.php';
 $charsetsData = file_exists($charsetsFile) ? require $charsetsFile : [];
 foreach ($charsetsData as $key => $value) {
@@ -212,7 +212,7 @@ file_put_contents($charsetsFile, CODE_PREFIX . var_export($charsetsData, true) .
 echo DONE;
 
 // HTTP Status Codes
-echo sprintf(PRINT_FORMAT, "Iana HTTP Status Codes");
+echo sprintf(PRINT_FORMAT, "IANA HTTP Status Codes");
 $httpStatusFile = __DIR__ . '/../packages/iana-value-objects/fixtures/http-status-codes.php';
 $httpStatusData = file_exists($httpStatusFile) ? require $httpStatusFile : [];
 foreach ($httpStatusData as $key => $value) {
@@ -227,7 +227,7 @@ foreach (dumpCsv($httpStatusRegistry) as $httpStatus => $data) {
         $start = (int)$matches[1];
         $end = (int)$matches[2];
         for ($p = $start; $p <= $end; $p++) {
-            $httpStatusData[(string)$p] =$data;
+            $httpStatusData[(string)$p] = $data;
         }
     } elseif (preg_match('/^\d+$/', $httpStatus)) {
         $httpStatusData[$httpStatus] = $data;
@@ -238,7 +238,7 @@ file_put_contents($httpStatusFile, CODE_PREFIX . var_export($httpStatusData, tru
 echo DONE;
 
 // HTTP Fields (Headers)
-echo sprintf(PRINT_FORMAT, "Iana HTTP Headers");
+echo sprintf(PRINT_FORMAT, "IANA HTTP Headers");
 $httpFieldsFile = __DIR__ . '/../packages/iana-value-objects/fixtures/http-fields.php';
 $httpFieldsData = file_exists($httpFieldsFile) ? require $httpFieldsFile : [];
 foreach ($httpFieldsData as $key => $value) {
@@ -256,7 +256,7 @@ file_put_contents($httpFieldsFile, CODE_PREFIX . var_export($httpFieldsData, tru
 echo DONE;
 
 // Ports
-echo sprintf(PRINT_FORMAT, "Iana Port numbers");
+echo sprintf(PRINT_FORMAT, "IANA Port numbers");
 $portNumbersFile = __DIR__ . '/../packages/iana-value-objects/fixtures/port-numbers.php';
 $portNumbersData = file_exists($portNumbersFile) ? require $portNumbersFile : [];
 foreach ($portNumbersData as $key => $value) {
@@ -266,15 +266,25 @@ $portsRegistry = file_get_contents(
     'https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv',
     context: $context
 );
-foreach (dumpCsv($portsRegistry, 1) as $portNumber => $data) {
+foreach (dumpCsv($portsRegistry, null) as $data) {
+    $portNumber = $data['Port Number'];
+    // this dataset is huge, so we simplify it a little bit.
+    if ($data['Description'] === 'Unassigned' || $data['Description'] === 'Reserved') {
+        continue;
+    }
+    $relevantData = [
+        'Description' => $data['Description'],
+        'Service Name' => $data['Service Name'],
+        'Active' => $data['Active'],
+    ];
     if (preg_match('/^(\d+)-(\d+)$/', $portNumber, $matches)) {
         $start = (int)$matches[1];
         $end = (int)$matches[2];
         for ($p = $start; $p <= $end; $p++) {
-            $portNumbersData[(string)$p] =$data;
+            $portNumbersData[(string)$p . $data['Transport Protocol']] = $relevantData;
         }
     } elseif (preg_match('/^\d+$/', $portNumber)) {
-        $portNumbersData[$portNumber] = $data;
+        $portNumbersData[$portNumber . $data['Transport Protocol']] = $relevantData;
     }
 }
 ksort($portNumbersData);

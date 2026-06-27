@@ -1,9 +1,10 @@
 <?php
 namespace Apie\Tests\IanaValueObjects;
 
+use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\IanaValueObjects\ActiveCharacterSet;
-use Apie\IanaValueObjects\CharacterSet;
+use Apie\IanaValueObjects\CharacterSet\ActiveCharacterSet;
+use Apie\IanaValueObjects\CharacterSet\CharacterSet;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -14,6 +15,27 @@ class CharacterSetTest extends TestCase
     {
         $testItem = new CharacterSet('euc-jp');
         $this->assertEquals('euc-jp', $testItem->toNative());
+        $this->assertEquals('EUC-JP', $testItem->getPreferredMimeName());
+        $this->assertEquals('Extended_UNIX_Code_Packed_Format_for_Japanese', $testItem->getName());
+        $this->assertEquals(18, $testItem->getMibEnum());
+        $source = 'Standardized by OSF, UNIX International, and UNIX Systems
+Laboratories Pacific.  Uses ISO 2022 rules to select
+code set 0: US-ASCII (a single 7-bit byte set)
+code set 1: JIS X0208-1990 (a double 8-bit byte set)
+restricted to A0-FF in both bytes
+code set 2: Half Width Katakana (a single 7-bit byte set)
+requiring SS2 as the character prefix
+code set 3: JIS X0212-1990 (a double 7-bit byte set)
+restricted to A0-FF in both bytes
+requiring SS3 as the character prefix';
+        $this->assertEquals($source, $testItem->getSource());
+        $this->assertNull($testItem->getReference());
+        $this->assertEquals(
+            new StringSet(['csEUCPkdFmtJapanese', 'EUC-JP']),
+            $testItem->getAliases()
+        );
+        $this->assertNull($testItem->getNote());
+        $this->assertTrue($testItem->isActive());
     }
 
     #[Test]

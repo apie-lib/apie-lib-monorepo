@@ -2,8 +2,9 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\IanaValueObjects\ActivePortNumber;
-use Apie\IanaValueObjects\PortNumber;
+use Apie\IanaValueObjects\PortNumber\ActivePortNumber;
+use Apie\IanaValueObjects\PortNumber\PortNumber;
+use Apie\IanaValueObjects\PortNumber\TransportType;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -14,6 +15,10 @@ class PortNumberTest extends TestCase
     {
         $testItem = new PortNumber('80');
         $this->assertEquals('80', $testItem->toNative());
+        $info = $testItem->getTransportInfo(TransportType::Sctp);
+        $this->assertEquals('HTTP', $info->getDescription());
+        $this->assertEquals('http', $info->getServiceName());
+        $this->assertTrue($info->isActive());
     }
 
     #[Test]
@@ -35,5 +40,10 @@ class PortNumberTest extends TestCase
     {
         $testItem = new ActivePortNumber('443');
         $this->assertEquals('443', $testItem->toNative());
+        $info = $testItem->getTransportInfo(TransportType::Sctp);
+        
+        $this->assertEquals('HTTPS', $info->getDescription());
+        $this->assertEquals('https', $info->getServiceName());
+        $this->assertTrue($info->isActive());
     }
 }

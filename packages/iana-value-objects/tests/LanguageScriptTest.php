@@ -2,8 +2,8 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\IanaValueObjects\ActiveLanguageScript;
-use Apie\IanaValueObjects\LanguageScript;
+use Apie\IanaValueObjects\LanguageTag\ActiveLanguageScript;
+use Apie\IanaValueObjects\LanguageTag\LanguageScript;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

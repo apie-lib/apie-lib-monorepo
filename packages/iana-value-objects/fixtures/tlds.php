@@ -1,7190 +1,7190 @@
-<?php 
+<?php
 /**
  * @codeCoverageIgnore
  */
-return array (
-  'aaa' => 
-  array (
+return array(
+  'aaa' =>
+  array(
     'Active' => true,
     'Subtag' => 'AAA',
   ),
-  'aarp' => 
-  array (
+  'aarp' =>
+  array(
     'Active' => true,
     'Subtag' => 'AARP',
   ),
-  'abb' => 
-  array (
+  'abb' =>
+  array(
     'Active' => true,
     'Subtag' => 'ABB',
   ),
-  'abbott' => 
-  array (
+  'abbott' =>
+  array(
     'Active' => true,
     'Subtag' => 'ABBOTT',
   ),
-  'abbvie' => 
-  array (
+  'abbvie' =>
+  array(
     'Active' => true,
     'Subtag' => 'ABBVIE',
   ),
-  'abc' => 
-  array (
+  'abc' =>
+  array(
     'Active' => true,
     'Subtag' => 'ABC',
   ),
-  'able' => 
-  array (
+  'able' =>
+  array(
     'Active' => true,
     'Subtag' => 'ABLE',
   ),
-  'abogado' => 
-  array (
+  'abogado' =>
+  array(
     'Active' => true,
     'Subtag' => 'ABOGADO',
   ),
-  'abudhabi' => 
-  array (
+  'abudhabi' =>
+  array(
     'Active' => true,
     'Subtag' => 'ABUDHABI',
   ),
-  'ac' => 
-  array (
+  'ac' =>
+  array(
     'Active' => true,
     'Subtag' => 'AC',
   ),
-  'academy' => 
-  array (
+  'academy' =>
+  array(
     'Active' => true,
     'Subtag' => 'ACADEMY',
   ),
-  'accenture' => 
-  array (
+  'accenture' =>
+  array(
     'Active' => true,
     'Subtag' => 'ACCENTURE',
   ),
-  'accountant' => 
-  array (
+  'accountant' =>
+  array(
     'Active' => true,
     'Subtag' => 'ACCOUNTANT',
   ),
-  'accountants' => 
-  array (
+  'accountants' =>
+  array(
     'Active' => true,
     'Subtag' => 'ACCOUNTANTS',
   ),
-  'aco' => 
-  array (
+  'aco' =>
+  array(
     'Active' => true,
     'Subtag' => 'ACO',
   ),
-  'actor' => 
-  array (
+  'actor' =>
+  array(
     'Active' => true,
     'Subtag' => 'ACTOR',
   ),
-  'ad' => 
-  array (
+  'ad' =>
+  array(
     'Active' => true,
     'Subtag' => 'AD',
   ),
-  'ads' => 
-  array (
+  'ads' =>
+  array(
     'Active' => true,
     'Subtag' => 'ADS',
   ),
-  'adult' => 
-  array (
+  'adult' =>
+  array(
     'Active' => true,
     'Subtag' => 'ADULT',
   ),
-  'ae' => 
-  array (
+  'ae' =>
+  array(
     'Active' => true,
     'Subtag' => 'AE',
   ),
-  'aeg' => 
-  array (
+  'aeg' =>
+  array(
     'Active' => true,
     'Subtag' => 'AEG',
   ),
-  'aero' => 
-  array (
+  'aero' =>
+  array(
     'Active' => true,
     'Subtag' => 'AERO',
   ),
-  'aetna' => 
-  array (
+  'aetna' =>
+  array(
     'Active' => true,
     'Subtag' => 'AETNA',
   ),
-  'af' => 
-  array (
+  'af' =>
+  array(
     'Active' => true,
     'Subtag' => 'AF',
   ),
-  'afl' => 
-  array (
+  'afl' =>
+  array(
     'Active' => true,
     'Subtag' => 'AFL',
   ),
-  'africa' => 
-  array (
+  'africa' =>
+  array(
     'Active' => true,
     'Subtag' => 'AFRICA',
   ),
-  'ag' => 
-  array (
+  'ag' =>
+  array(
     'Active' => true,
     'Subtag' => 'AG',
   ),
-  'agakhan' => 
-  array (
+  'agakhan' =>
+  array(
     'Active' => true,
     'Subtag' => 'AGAKHAN',
   ),
-  'agency' => 
-  array (
+  'agency' =>
+  array(
     'Active' => true,
     'Subtag' => 'AGENCY',
   ),
-  'ai' => 
-  array (
+  'ai' =>
+  array(
     'Active' => true,
     'Subtag' => 'AI',
   ),
-  'aig' => 
-  array (
+  'aig' =>
+  array(
     'Active' => true,
     'Subtag' => 'AIG',
   ),
-  'airbus' => 
-  array (
+  'airbus' =>
+  array(
     'Active' => true,
     'Subtag' => 'AIRBUS',
   ),
-  'airforce' => 
-  array (
+  'airforce' =>
+  array(
     'Active' => true,
     'Subtag' => 'AIRFORCE',
   ),
-  'airtel' => 
-  array (
+  'airtel' =>
+  array(
     'Active' => true,
     'Subtag' => 'AIRTEL',
   ),
-  'akdn' => 
-  array (
+  'akdn' =>
+  array(
     'Active' => true,
     'Subtag' => 'AKDN',
   ),
-  'al' => 
-  array (
+  'al' =>
+  array(
     'Active' => true,
     'Subtag' => 'AL',
   ),
-  'alibaba' => 
-  array (
+  'alibaba' =>
+  array(
     'Active' => true,
     'Subtag' => 'ALIBABA',
   ),
-  'alipay' => 
-  array (
+  'alipay' =>
+  array(
     'Active' => true,
     'Subtag' => 'ALIPAY',
   ),
-  'allfinanz' => 
-  array (
+  'allfinanz' =>
+  array(
     'Active' => true,
     'Subtag' => 'ALLFINANZ',
   ),
-  'allstate' => 
-  array (
+  'allstate' =>
+  array(
     'Active' => true,
     'Subtag' => 'ALLSTATE',
   ),
-  'ally' => 
-  array (
+  'ally' =>
+  array(
     'Active' => true,
     'Subtag' => 'ALLY',
   ),
-  'alsace' => 
-  array (
+  'alsace' =>
+  array(
     'Active' => true,
     'Subtag' => 'ALSACE',
   ),
-  'alstom' => 
-  array (
+  'alstom' =>
+  array(
     'Active' => true,
     'Subtag' => 'ALSTOM',
   ),
-  'am' => 
-  array (
+  'am' =>
+  array(
     'Active' => true,
     'Subtag' => 'AM',
   ),
-  'amazon' => 
-  array (
+  'amazon' =>
+  array(
     'Active' => true,
     'Subtag' => 'AMAZON',
   ),
-  'americanexpress' => 
-  array (
+  'americanexpress' =>
+  array(
     'Active' => true,
     'Subtag' => 'AMERICANEXPRESS',
   ),
-  'americanfamily' => 
-  array (
+  'americanfamily' =>
+  array(
     'Active' => true,
     'Subtag' => 'AMERICANFAMILY',
   ),
-  'amex' => 
-  array (
+  'amex' =>
+  array(
     'Active' => true,
     'Subtag' => 'AMEX',
   ),
-  'amfam' => 
-  array (
+  'amfam' =>
+  array(
     'Active' => true,
     'Subtag' => 'AMFAM',
   ),
-  'amica' => 
-  array (
+  'amica' =>
+  array(
     'Active' => true,
     'Subtag' => 'AMICA',
   ),
-  'amsterdam' => 
-  array (
+  'amsterdam' =>
+  array(
     'Active' => true,
     'Subtag' => 'AMSTERDAM',
   ),
-  'analytics' => 
-  array (
+  'analytics' =>
+  array(
     'Active' => true,
     'Subtag' => 'ANALYTICS',
   ),
-  'android' => 
-  array (
+  'android' =>
+  array(
     'Active' => true,
     'Subtag' => 'ANDROID',
   ),
-  'anquan' => 
-  array (
+  'anquan' =>
+  array(
     'Active' => true,
     'Subtag' => 'ANQUAN',
   ),
-  'anz' => 
-  array (
+  'anz' =>
+  array(
     'Active' => true,
     'Subtag' => 'ANZ',
   ),
-  'ao' => 
-  array (
+  'ao' =>
+  array(
     'Active' => true,
     'Subtag' => 'AO',
   ),
-  'aol' => 
-  array (
+  'aol' =>
+  array(
     'Active' => true,
     'Subtag' => 'AOL',
   ),
-  'apartments' => 
-  array (
+  'apartments' =>
+  array(
     'Active' => true,
     'Subtag' => 'APARTMENTS',
   ),
-  'app' => 
-  array (
+  'app' =>
+  array(
     'Active' => true,
     'Subtag' => 'APP',
   ),
-  'apple' => 
-  array (
+  'apple' =>
+  array(
     'Active' => true,
     'Subtag' => 'APPLE',
   ),
-  'aq' => 
-  array (
+  'aq' =>
+  array(
     'Active' => true,
     'Subtag' => 'AQ',
   ),
-  'aquarelle' => 
-  array (
+  'aquarelle' =>
+  array(
     'Active' => true,
     'Subtag' => 'AQUARELLE',
   ),
-  'ar' => 
-  array (
+  'ar' =>
+  array(
     'Active' => true,
     'Subtag' => 'AR',
   ),
-  'arab' => 
-  array (
+  'arab' =>
+  array(
     'Active' => true,
     'Subtag' => 'ARAB',
   ),
-  'aramco' => 
-  array (
+  'aramco' =>
+  array(
     'Active' => true,
     'Subtag' => 'ARAMCO',
   ),
-  'archi' => 
-  array (
+  'archi' =>
+  array(
     'Active' => true,
     'Subtag' => 'ARCHI',
   ),
-  'army' => 
-  array (
+  'army' =>
+  array(
     'Active' => true,
     'Subtag' => 'ARMY',
   ),
-  'arpa' => 
-  array (
+  'arpa' =>
+  array(
     'Active' => true,
     'Subtag' => 'ARPA',
   ),
-  'art' => 
-  array (
+  'art' =>
+  array(
     'Active' => true,
     'Subtag' => 'ART',
   ),
-  'arte' => 
-  array (
+  'arte' =>
+  array(
     'Active' => true,
     'Subtag' => 'ARTE',
   ),
-  'as' => 
-  array (
+  'as' =>
+  array(
     'Active' => true,
     'Subtag' => 'AS',
   ),
-  'asda' => 
-  array (
+  'asda' =>
+  array(
     'Active' => true,
     'Subtag' => 'ASDA',
   ),
-  'asia' => 
-  array (
+  'asia' =>
+  array(
     'Active' => true,
     'Subtag' => 'ASIA',
   ),
-  'associates' => 
-  array (
+  'associates' =>
+  array(
     'Active' => true,
     'Subtag' => 'ASSOCIATES',
   ),
-  'at' => 
-  array (
+  'at' =>
+  array(
     'Active' => true,
     'Subtag' => 'AT',
   ),
-  'athleta' => 
-  array (
+  'athleta' =>
+  array(
     'Active' => true,
     'Subtag' => 'ATHLETA',
   ),
-  'attorney' => 
-  array (
+  'attorney' =>
+  array(
     'Active' => true,
     'Subtag' => 'ATTORNEY',
   ),
-  'au' => 
-  array (
+  'au' =>
+  array(
     'Active' => true,
     'Subtag' => 'AU',
   ),
-  'auction' => 
-  array (
+  'auction' =>
+  array(
     'Active' => true,
     'Subtag' => 'AUCTION',
   ),
-  'audi' => 
-  array (
+  'audi' =>
+  array(
     'Active' => true,
     'Subtag' => 'AUDI',
   ),
-  'audible' => 
-  array (
+  'audible' =>
+  array(
     'Active' => true,
     'Subtag' => 'AUDIBLE',
   ),
-  'audio' => 
-  array (
+  'audio' =>
+  array(
     'Active' => true,
     'Subtag' => 'AUDIO',
   ),
-  'auspost' => 
-  array (
+  'auspost' =>
+  array(
     'Active' => true,
     'Subtag' => 'AUSPOST',
   ),
-  'author' => 
-  array (
+  'author' =>
+  array(
     'Active' => true,
     'Subtag' => 'AUTHOR',
   ),
-  'auto' => 
-  array (
+  'auto' =>
+  array(
     'Active' => true,
     'Subtag' => 'AUTO',
   ),
-  'autos' => 
-  array (
+  'autos' =>
+  array(
     'Active' => true,
     'Subtag' => 'AUTOS',
   ),
-  'aw' => 
-  array (
+  'aw' =>
+  array(
     'Active' => true,
     'Subtag' => 'AW',
   ),
-  'aws' => 
-  array (
+  'aws' =>
+  array(
     'Active' => true,
     'Subtag' => 'AWS',
   ),
-  'ax' => 
-  array (
+  'ax' =>
+  array(
     'Active' => true,
     'Subtag' => 'AX',
   ),
-  'axa' => 
-  array (
+  'axa' =>
+  array(
     'Active' => true,
     'Subtag' => 'AXA',
   ),
-  'az' => 
-  array (
+  'az' =>
+  array(
     'Active' => true,
     'Subtag' => 'AZ',
   ),
-  'azure' => 
-  array (
+  'azure' =>
+  array(
     'Active' => true,
     'Subtag' => 'AZURE',
   ),
-  'ba' => 
-  array (
+  'ba' =>
+  array(
     'Active' => true,
     'Subtag' => 'BA',
   ),
-  'baby' => 
-  array (
+  'baby' =>
+  array(
     'Active' => true,
     'Subtag' => 'BABY',
   ),
-  'baidu' => 
-  array (
+  'baidu' =>
+  array(
     'Active' => true,
     'Subtag' => 'BAIDU',
   ),
-  'banamex' => 
-  array (
+  'banamex' =>
+  array(
     'Active' => true,
     'Subtag' => 'BANAMEX',
   ),
-  'band' => 
-  array (
+  'band' =>
+  array(
     'Active' => true,
     'Subtag' => 'BAND',
   ),
-  'bank' => 
-  array (
+  'bank' =>
+  array(
     'Active' => true,
     'Subtag' => 'BANK',
   ),
-  'bar' => 
-  array (
+  'bar' =>
+  array(
     'Active' => true,
     'Subtag' => 'BAR',
   ),
-  'barcelona' => 
-  array (
+  'barcelona' =>
+  array(
     'Active' => true,
     'Subtag' => 'BARCELONA',
   ),
-  'barclaycard' => 
-  array (
+  'barclaycard' =>
+  array(
     'Active' => true,
     'Subtag' => 'BARCLAYCARD',
   ),
-  'barclays' => 
-  array (
+  'barclays' =>
+  array(
     'Active' => true,
     'Subtag' => 'BARCLAYS',
   ),
-  'barefoot' => 
-  array (
+  'barefoot' =>
+  array(
     'Active' => true,
     'Subtag' => 'BAREFOOT',
   ),
-  'bargains' => 
-  array (
+  'bargains' =>
+  array(
     'Active' => true,
     'Subtag' => 'BARGAINS',
   ),
-  'baseball' => 
-  array (
+  'baseball' =>
+  array(
     'Active' => true,
     'Subtag' => 'BASEBALL',
   ),
-  'basketball' => 
-  array (
+  'basketball' =>
+  array(
     'Active' => true,
     'Subtag' => 'BASKETBALL',
   ),
-  'bauhaus' => 
-  array (
+  'bauhaus' =>
+  array(
     'Active' => true,
     'Subtag' => 'BAUHAUS',
   ),
-  'bayern' => 
-  array (
+  'bayern' =>
+  array(
     'Active' => true,
     'Subtag' => 'BAYERN',
   ),
-  'bb' => 
-  array (
+  'bb' =>
+  array(
     'Active' => true,
     'Subtag' => 'BB',
   ),
-  'bbc' => 
-  array (
+  'bbc' =>
+  array(
     'Active' => true,
     'Subtag' => 'BBC',
   ),
-  'bbt' => 
-  array (
+  'bbt' =>
+  array(
     'Active' => true,
     'Subtag' => 'BBT',
   ),
-  'bbva' => 
-  array (
+  'bbva' =>
+  array(
     'Active' => true,
     'Subtag' => 'BBVA',
   ),
-  'bcg' => 
-  array (
+  'bcg' =>
+  array(
     'Active' => true,
     'Subtag' => 'BCG',
   ),
-  'bcn' => 
-  array (
+  'bcn' =>
+  array(
     'Active' => true,
     'Subtag' => 'BCN',
   ),
-  'bd' => 
-  array (
+  'bd' =>
+  array(
     'Active' => true,
     'Subtag' => 'BD',
   ),
-  'be' => 
-  array (
+  'be' =>
+  array(
     'Active' => true,
     'Subtag' => 'BE',
   ),
-  'beats' => 
-  array (
+  'beats' =>
+  array(
     'Active' => true,
     'Subtag' => 'BEATS',
   ),
-  'beauty' => 
-  array (
+  'beauty' =>
+  array(
     'Active' => true,
     'Subtag' => 'BEAUTY',
   ),
-  'beer' => 
-  array (
+  'beer' =>
+  array(
     'Active' => true,
     'Subtag' => 'BEER',
   ),
-  'berlin' => 
-  array (
+  'berlin' =>
+  array(
     'Active' => true,
     'Subtag' => 'BERLIN',
   ),
-  'best' => 
-  array (
+  'best' =>
+  array(
     'Active' => true,
     'Subtag' => 'BEST',
   ),
-  'bestbuy' => 
-  array (
+  'bestbuy' =>
+  array(
     'Active' => true,
     'Subtag' => 'BESTBUY',
   ),
-  'bet' => 
-  array (
+  'bet' =>
+  array(
     'Active' => true,
     'Subtag' => 'BET',
   ),
-  'bf' => 
-  array (
+  'bf' =>
+  array(
     'Active' => true,
     'Subtag' => 'BF',
   ),
-  'bg' => 
-  array (
+  'bg' =>
+  array(
     'Active' => true,
     'Subtag' => 'BG',
   ),
-  'bh' => 
-  array (
+  'bh' =>
+  array(
     'Active' => true,
     'Subtag' => 'BH',
   ),
-  'bharti' => 
-  array (
+  'bharti' =>
+  array(
     'Active' => true,
     'Subtag' => 'BHARTI',
   ),
-  'bi' => 
-  array (
+  'bi' =>
+  array(
     'Active' => true,
     'Subtag' => 'BI',
   ),
-  'bible' => 
-  array (
+  'bible' =>
+  array(
     'Active' => true,
     'Subtag' => 'BIBLE',
   ),
-  'bid' => 
-  array (
+  'bid' =>
+  array(
     'Active' => true,
     'Subtag' => 'BID',
   ),
-  'bike' => 
-  array (
+  'bike' =>
+  array(
     'Active' => true,
     'Subtag' => 'BIKE',
   ),
-  'bing' => 
-  array (
+  'bing' =>
+  array(
     'Active' => true,
     'Subtag' => 'BING',
   ),
-  'bingo' => 
-  array (
+  'bingo' =>
+  array(
     'Active' => true,
     'Subtag' => 'BINGO',
   ),
-  'bio' => 
-  array (
+  'bio' =>
+  array(
     'Active' => true,
     'Subtag' => 'BIO',
   ),
-  'biz' => 
-  array (
+  'biz' =>
+  array(
     'Active' => true,
     'Subtag' => 'BIZ',
   ),
-  'bj' => 
-  array (
+  'bj' =>
+  array(
     'Active' => true,
     'Subtag' => 'BJ',
   ),
-  'black' => 
-  array (
+  'black' =>
+  array(
     'Active' => true,
     'Subtag' => 'BLACK',
   ),
-  'blackfriday' => 
-  array (
+  'blackfriday' =>
+  array(
     'Active' => true,
     'Subtag' => 'BLACKFRIDAY',
   ),
-  'blockbuster' => 
-  array (
+  'blockbuster' =>
+  array(
     'Active' => true,
     'Subtag' => 'BLOCKBUSTER',
   ),
-  'blog' => 
-  array (
+  'blog' =>
+  array(
     'Active' => true,
     'Subtag' => 'BLOG',
   ),
-  'bloomberg' => 
-  array (
+  'bloomberg' =>
+  array(
     'Active' => true,
     'Subtag' => 'BLOOMBERG',
   ),
-  'blue' => 
-  array (
+  'blue' =>
+  array(
     'Active' => true,
     'Subtag' => 'BLUE',
   ),
-  'bm' => 
-  array (
+  'bm' =>
+  array(
     'Active' => true,
     'Subtag' => 'BM',
   ),
-  'bms' => 
-  array (
+  'bms' =>
+  array(
     'Active' => true,
     'Subtag' => 'BMS',
   ),
-  'bmw' => 
-  array (
+  'bmw' =>
+  array(
     'Active' => true,
     'Subtag' => 'BMW',
   ),
-  'bn' => 
-  array (
+  'bn' =>
+  array(
     'Active' => true,
     'Subtag' => 'BN',
   ),
-  'bnpparibas' => 
-  array (
+  'bnpparibas' =>
+  array(
     'Active' => true,
     'Subtag' => 'BNPPARIBAS',
   ),
-  'bo' => 
-  array (
+  'bo' =>
+  array(
     'Active' => true,
     'Subtag' => 'BO',
   ),
-  'boats' => 
-  array (
+  'boats' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOATS',
   ),
-  'boehringer' => 
-  array (
+  'boehringer' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOEHRINGER',
   ),
-  'bofa' => 
-  array (
+  'bofa' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOFA',
   ),
-  'bom' => 
-  array (
+  'bom' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOM',
   ),
-  'bond' => 
-  array (
+  'bond' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOND',
   ),
-  'boo' => 
-  array (
+  'boo' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOO',
   ),
-  'book' => 
-  array (
+  'book' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOOK',
   ),
-  'booking' => 
-  array (
+  'booking' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOOKING',
   ),
-  'bosch' => 
-  array (
+  'bosch' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOSCH',
   ),
-  'bostik' => 
-  array (
+  'bostik' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOSTIK',
   ),
-  'boston' => 
-  array (
+  'boston' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOSTON',
   ),
-  'bot' => 
-  array (
+  'bot' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOT',
   ),
-  'boutique' => 
-  array (
+  'boutique' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOUTIQUE',
   ),
-  'box' => 
-  array (
+  'box' =>
+  array(
     'Active' => true,
     'Subtag' => 'BOX',
   ),
-  'br' => 
-  array (
+  'br' =>
+  array(
     'Active' => true,
     'Subtag' => 'BR',
   ),
-  'bradesco' => 
-  array (
+  'bradesco' =>
+  array(
     'Active' => true,
     'Subtag' => 'BRADESCO',
   ),
-  'bridgestone' => 
-  array (
+  'bridgestone' =>
+  array(
     'Active' => true,
     'Subtag' => 'BRIDGESTONE',
   ),
-  'broadway' => 
-  array (
+  'broadway' =>
+  array(
     'Active' => true,
     'Subtag' => 'BROADWAY',
   ),
-  'broker' => 
-  array (
+  'broker' =>
+  array(
     'Active' => true,
     'Subtag' => 'BROKER',
   ),
-  'brother' => 
-  array (
+  'brother' =>
+  array(
     'Active' => true,
     'Subtag' => 'BROTHER',
   ),
-  'brussels' => 
-  array (
+  'brussels' =>
+  array(
     'Active' => true,
     'Subtag' => 'BRUSSELS',
   ),
-  'bs' => 
-  array (
+  'bs' =>
+  array(
     'Active' => true,
     'Subtag' => 'BS',
   ),
-  'bt' => 
-  array (
+  'bt' =>
+  array(
     'Active' => true,
     'Subtag' => 'BT',
   ),
-  'build' => 
-  array (
+  'build' =>
+  array(
     'Active' => true,
     'Subtag' => 'BUILD',
   ),
-  'builders' => 
-  array (
+  'builders' =>
+  array(
     'Active' => true,
     'Subtag' => 'BUILDERS',
   ),
-  'business' => 
-  array (
+  'business' =>
+  array(
     'Active' => true,
     'Subtag' => 'BUSINESS',
   ),
-  'buy' => 
-  array (
+  'buy' =>
+  array(
     'Active' => true,
     'Subtag' => 'BUY',
   ),
-  'buzz' => 
-  array (
+  'buzz' =>
+  array(
     'Active' => true,
     'Subtag' => 'BUZZ',
   ),
-  'bv' => 
-  array (
+  'bv' =>
+  array(
     'Active' => true,
     'Subtag' => 'BV',
   ),
-  'bw' => 
-  array (
+  'bw' =>
+  array(
     'Active' => true,
     'Subtag' => 'BW',
   ),
-  'by' => 
-  array (
+  'by' =>
+  array(
     'Active' => true,
     'Subtag' => 'BY',
   ),
-  'bz' => 
-  array (
+  'bz' =>
+  array(
     'Active' => true,
     'Subtag' => 'BZ',
   ),
-  'bzh' => 
-  array (
+  'bzh' =>
+  array(
     'Active' => true,
     'Subtag' => 'BZH',
   ),
-  'ca' => 
-  array (
+  'ca' =>
+  array(
     'Active' => true,
     'Subtag' => 'CA',
   ),
-  'cab' => 
-  array (
+  'cab' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAB',
   ),
-  'cafe' => 
-  array (
+  'cafe' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAFE',
   ),
-  'cal' => 
-  array (
+  'cal' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAL',
   ),
-  'call' => 
-  array (
+  'call' =>
+  array(
     'Active' => true,
     'Subtag' => 'CALL',
   ),
-  'calvinklein' => 
-  array (
+  'calvinklein' =>
+  array(
     'Active' => true,
     'Subtag' => 'CALVINKLEIN',
   ),
-  'cam' => 
-  array (
+  'cam' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAM',
   ),
-  'camera' => 
-  array (
+  'camera' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAMERA',
   ),
-  'camp' => 
-  array (
+  'camp' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAMP',
   ),
-  'canon' => 
-  array (
+  'canon' =>
+  array(
     'Active' => true,
     'Subtag' => 'CANON',
   ),
-  'capetown' => 
-  array (
+  'capetown' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAPETOWN',
   ),
-  'capital' => 
-  array (
+  'capital' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAPITAL',
   ),
-  'capitalone' => 
-  array (
+  'capitalone' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAPITALONE',
   ),
-  'car' => 
-  array (
+  'car' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAR',
   ),
-  'caravan' => 
-  array (
+  'caravan' =>
+  array(
     'Active' => true,
     'Subtag' => 'CARAVAN',
   ),
-  'cards' => 
-  array (
+  'cards' =>
+  array(
     'Active' => true,
     'Subtag' => 'CARDS',
   ),
-  'care' => 
-  array (
+  'care' =>
+  array(
     'Active' => true,
     'Subtag' => 'CARE',
   ),
-  'career' => 
-  array (
+  'career' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAREER',
   ),
-  'careers' => 
-  array (
+  'careers' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAREERS',
   ),
-  'cars' => 
-  array (
+  'cars' =>
+  array(
     'Active' => true,
     'Subtag' => 'CARS',
   ),
-  'casa' => 
-  array (
+  'casa' =>
+  array(
     'Active' => true,
     'Subtag' => 'CASA',
   ),
-  'case' => 
-  array (
+  'case' =>
+  array(
     'Active' => true,
     'Subtag' => 'CASE',
   ),
-  'cash' => 
-  array (
+  'cash' =>
+  array(
     'Active' => true,
     'Subtag' => 'CASH',
   ),
-  'casino' => 
-  array (
+  'casino' =>
+  array(
     'Active' => true,
     'Subtag' => 'CASINO',
   ),
-  'cat' => 
-  array (
+  'cat' =>
+  array(
     'Active' => true,
     'Subtag' => 'CAT',
   ),
-  'catering' => 
-  array (
+  'catering' =>
+  array(
     'Active' => true,
     'Subtag' => 'CATERING',
   ),
-  'catholic' => 
-  array (
+  'catholic' =>
+  array(
     'Active' => true,
     'Subtag' => 'CATHOLIC',
   ),
-  'cba' => 
-  array (
+  'cba' =>
+  array(
     'Active' => true,
     'Subtag' => 'CBA',
   ),
-  'cbn' => 
-  array (
+  'cbn' =>
+  array(
     'Active' => true,
     'Subtag' => 'CBN',
   ),
-  'cbre' => 
-  array (
+  'cbre' =>
+  array(
     'Active' => true,
     'Subtag' => 'CBRE',
   ),
-  'cc' => 
-  array (
+  'cc' =>
+  array(
     'Active' => true,
     'Subtag' => 'CC',
   ),
-  'cd' => 
-  array (
+  'cd' =>
+  array(
     'Active' => true,
     'Subtag' => 'CD',
   ),
-  'center' => 
-  array (
+  'center' =>
+  array(
     'Active' => true,
     'Subtag' => 'CENTER',
   ),
-  'ceo' => 
-  array (
+  'ceo' =>
+  array(
     'Active' => true,
     'Subtag' => 'CEO',
   ),
-  'cern' => 
-  array (
+  'cern' =>
+  array(
     'Active' => true,
     'Subtag' => 'CERN',
   ),
-  'cf' => 
-  array (
+  'cf' =>
+  array(
     'Active' => true,
     'Subtag' => 'CF',
   ),
-  'cfa' => 
-  array (
+  'cfa' =>
+  array(
     'Active' => true,
     'Subtag' => 'CFA',
   ),
-  'cfd' => 
-  array (
+  'cfd' =>
+  array(
     'Active' => true,
     'Subtag' => 'CFD',
   ),
-  'cg' => 
-  array (
+  'cg' =>
+  array(
     'Active' => true,
     'Subtag' => 'CG',
   ),
-  'ch' => 
-  array (
+  'ch' =>
+  array(
     'Active' => true,
     'Subtag' => 'CH',
   ),
-  'chanel' => 
-  array (
+  'chanel' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHANEL',
   ),
-  'channel' => 
-  array (
+  'channel' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHANNEL',
   ),
-  'charity' => 
-  array (
+  'charity' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHARITY',
   ),
-  'chase' => 
-  array (
+  'chase' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHASE',
   ),
-  'chat' => 
-  array (
+  'chat' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHAT',
   ),
-  'cheap' => 
-  array (
+  'cheap' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHEAP',
   ),
-  'chintai' => 
-  array (
+  'chintai' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHINTAI',
   ),
-  'christmas' => 
-  array (
+  'christmas' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHRISTMAS',
   ),
-  'chrome' => 
-  array (
+  'chrome' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHROME',
   ),
-  'church' => 
-  array (
+  'church' =>
+  array(
     'Active' => true,
     'Subtag' => 'CHURCH',
   ),
-  'ci' => 
-  array (
+  'ci' =>
+  array(
     'Active' => true,
     'Subtag' => 'CI',
   ),
-  'cipriani' => 
-  array (
+  'cipriani' =>
+  array(
     'Active' => true,
     'Subtag' => 'CIPRIANI',
   ),
-  'circle' => 
-  array (
+  'circle' =>
+  array(
     'Active' => true,
     'Subtag' => 'CIRCLE',
   ),
-  'cisco' => 
-  array (
+  'cisco' =>
+  array(
     'Active' => true,
     'Subtag' => 'CISCO',
   ),
-  'citadel' => 
-  array (
+  'citadel' =>
+  array(
     'Active' => true,
     'Subtag' => 'CITADEL',
   ),
-  'citi' => 
-  array (
+  'citi' =>
+  array(
     'Active' => true,
     'Subtag' => 'CITI',
   ),
-  'citic' => 
-  array (
+  'citic' =>
+  array(
     'Active' => true,
     'Subtag' => 'CITIC',
   ),
-  'city' => 
-  array (
+  'city' =>
+  array(
     'Active' => true,
     'Subtag' => 'CITY',
   ),
-  'ck' => 
-  array (
+  'ck' =>
+  array(
     'Active' => true,
     'Subtag' => 'CK',
   ),
-  'cl' => 
-  array (
+  'cl' =>
+  array(
     'Active' => true,
     'Subtag' => 'CL',
   ),
-  'claims' => 
-  array (
+  'claims' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLAIMS',
   ),
-  'cleaning' => 
-  array (
+  'cleaning' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLEANING',
   ),
-  'click' => 
-  array (
+  'click' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLICK',
   ),
-  'clinic' => 
-  array (
+  'clinic' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLINIC',
   ),
-  'clinique' => 
-  array (
+  'clinique' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLINIQUE',
   ),
-  'clothing' => 
-  array (
+  'clothing' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLOTHING',
   ),
-  'cloud' => 
-  array (
+  'cloud' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLOUD',
   ),
-  'club' => 
-  array (
+  'club' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLUB',
   ),
-  'clubmed' => 
-  array (
+  'clubmed' =>
+  array(
     'Active' => true,
     'Subtag' => 'CLUBMED',
   ),
-  'cm' => 
-  array (
+  'cm' =>
+  array(
     'Active' => true,
     'Subtag' => 'CM',
   ),
-  'cn' => 
-  array (
+  'cn' =>
+  array(
     'Active' => true,
     'Subtag' => 'CN',
   ),
-  'co' => 
-  array (
+  'co' =>
+  array(
     'Active' => true,
     'Subtag' => 'CO',
   ),
-  'coach' => 
-  array (
+  'coach' =>
+  array(
     'Active' => true,
     'Subtag' => 'COACH',
   ),
-  'codes' => 
-  array (
+  'codes' =>
+  array(
     'Active' => true,
     'Subtag' => 'CODES',
   ),
-  'coffee' => 
-  array (
+  'coffee' =>
+  array(
     'Active' => true,
     'Subtag' => 'COFFEE',
   ),
-  'college' => 
-  array (
+  'college' =>
+  array(
     'Active' => true,
     'Subtag' => 'COLLEGE',
   ),
-  'cologne' => 
-  array (
+  'cologne' =>
+  array(
     'Active' => true,
     'Subtag' => 'COLOGNE',
   ),
-  'com' => 
-  array (
+  'com' =>
+  array(
     'Active' => true,
     'Subtag' => 'COM',
   ),
-  'commbank' => 
-  array (
+  'commbank' =>
+  array(
     'Active' => true,
     'Subtag' => 'COMMBANK',
   ),
-  'community' => 
-  array (
+  'community' =>
+  array(
     'Active' => true,
     'Subtag' => 'COMMUNITY',
   ),
-  'company' => 
-  array (
+  'company' =>
+  array(
     'Active' => true,
     'Subtag' => 'COMPANY',
   ),
-  'compare' => 
-  array (
+  'compare' =>
+  array(
     'Active' => true,
     'Subtag' => 'COMPARE',
   ),
-  'computer' => 
-  array (
+  'computer' =>
+  array(
     'Active' => true,
     'Subtag' => 'COMPUTER',
   ),
-  'comsec' => 
-  array (
+  'comsec' =>
+  array(
     'Active' => true,
     'Subtag' => 'COMSEC',
   ),
-  'condos' => 
-  array (
+  'condos' =>
+  array(
     'Active' => true,
     'Subtag' => 'CONDOS',
   ),
-  'construction' => 
-  array (
+  'construction' =>
+  array(
     'Active' => true,
     'Subtag' => 'CONSTRUCTION',
   ),
-  'consulting' => 
-  array (
+  'consulting' =>
+  array(
     'Active' => true,
     'Subtag' => 'CONSULTING',
   ),
-  'contact' => 
-  array (
+  'contact' =>
+  array(
     'Active' => true,
     'Subtag' => 'CONTACT',
   ),
-  'contractors' => 
-  array (
+  'contractors' =>
+  array(
     'Active' => true,
     'Subtag' => 'CONTRACTORS',
   ),
-  'cooking' => 
-  array (
+  'cooking' =>
+  array(
     'Active' => true,
     'Subtag' => 'COOKING',
   ),
-  'cool' => 
-  array (
+  'cool' =>
+  array(
     'Active' => true,
     'Subtag' => 'COOL',
   ),
-  'coop' => 
-  array (
+  'coop' =>
+  array(
     'Active' => true,
     'Subtag' => 'COOP',
   ),
-  'corsica' => 
-  array (
+  'corsica' =>
+  array(
     'Active' => true,
     'Subtag' => 'CORSICA',
   ),
-  'country' => 
-  array (
+  'country' =>
+  array(
     'Active' => true,
     'Subtag' => 'COUNTRY',
   ),
-  'coupon' => 
-  array (
+  'coupon' =>
+  array(
     'Active' => true,
     'Subtag' => 'COUPON',
   ),
-  'coupons' => 
-  array (
+  'coupons' =>
+  array(
     'Active' => true,
     'Subtag' => 'COUPONS',
   ),
-  'courses' => 
-  array (
+  'courses' =>
+  array(
     'Active' => true,
     'Subtag' => 'COURSES',
   ),
-  'cpa' => 
-  array (
+  'cpa' =>
+  array(
     'Active' => true,
     'Subtag' => 'CPA',
   ),
-  'cr' => 
-  array (
+  'cr' =>
+  array(
     'Active' => true,
     'Subtag' => 'CR',
   ),
-  'credit' => 
-  array (
+  'credit' =>
+  array(
     'Active' => true,
     'Subtag' => 'CREDIT',
   ),
-  'creditcard' => 
-  array (
+  'creditcard' =>
+  array(
     'Active' => true,
     'Subtag' => 'CREDITCARD',
   ),
-  'creditunion' => 
-  array (
+  'creditunion' =>
+  array(
     'Active' => true,
     'Subtag' => 'CREDITUNION',
   ),
-  'cricket' => 
-  array (
+  'cricket' =>
+  array(
     'Active' => true,
     'Subtag' => 'CRICKET',
   ),
-  'crown' => 
-  array (
+  'crown' =>
+  array(
     'Active' => true,
     'Subtag' => 'CROWN',
   ),
-  'crs' => 
-  array (
+  'crs' =>
+  array(
     'Active' => true,
     'Subtag' => 'CRS',
   ),
-  'cruise' => 
-  array (
+  'cruise' =>
+  array(
     'Active' => true,
     'Subtag' => 'CRUISE',
   ),
-  'cruises' => 
-  array (
+  'cruises' =>
+  array(
     'Active' => true,
     'Subtag' => 'CRUISES',
   ),
-  'cu' => 
-  array (
+  'cu' =>
+  array(
     'Active' => true,
     'Subtag' => 'CU',
   ),
-  'cuisinella' => 
-  array (
+  'cuisinella' =>
+  array(
     'Active' => true,
     'Subtag' => 'CUISINELLA',
   ),
-  'cv' => 
-  array (
+  'cv' =>
+  array(
     'Active' => true,
     'Subtag' => 'CV',
   ),
-  'cw' => 
-  array (
+  'cw' =>
+  array(
     'Active' => true,
     'Subtag' => 'CW',
   ),
-  'cx' => 
-  array (
+  'cx' =>
+  array(
     'Active' => true,
     'Subtag' => 'CX',
   ),
-  'cy' => 
-  array (
+  'cy' =>
+  array(
     'Active' => true,
     'Subtag' => 'CY',
   ),
-  'cymru' => 
-  array (
+  'cymru' =>
+  array(
     'Active' => true,
     'Subtag' => 'CYMRU',
   ),
-  'cyou' => 
-  array (
+  'cyou' =>
+  array(
     'Active' => true,
     'Subtag' => 'CYOU',
   ),
-  'cz' => 
-  array (
+  'cz' =>
+  array(
     'Active' => true,
     'Subtag' => 'CZ',
   ),
-  'dad' => 
-  array (
+  'dad' =>
+  array(
     'Active' => true,
     'Subtag' => 'DAD',
   ),
-  'dance' => 
-  array (
+  'dance' =>
+  array(
     'Active' => true,
     'Subtag' => 'DANCE',
   ),
-  'data' => 
-  array (
+  'data' =>
+  array(
     'Active' => true,
     'Subtag' => 'DATA',
   ),
-  'date' => 
-  array (
+  'date' =>
+  array(
     'Active' => true,
     'Subtag' => 'DATE',
   ),
-  'dating' => 
-  array (
+  'dating' =>
+  array(
     'Active' => true,
     'Subtag' => 'DATING',
   ),
-  'datsun' => 
-  array (
+  'datsun' =>
+  array(
     'Active' => true,
     'Subtag' => 'DATSUN',
   ),
-  'day' => 
-  array (
+  'day' =>
+  array(
     'Active' => true,
     'Subtag' => 'DAY',
   ),
-  'dclk' => 
-  array (
+  'dclk' =>
+  array(
     'Active' => true,
     'Subtag' => 'DCLK',
   ),
-  'dds' => 
-  array (
+  'dds' =>
+  array(
     'Active' => true,
     'Subtag' => 'DDS',
   ),
-  'de' => 
-  array (
+  'de' =>
+  array(
     'Active' => true,
     'Subtag' => 'DE',
   ),
-  'deal' => 
-  array (
+  'deal' =>
+  array(
     'Active' => true,
     'Subtag' => 'DEAL',
   ),
-  'dealer' => 
-  array (
+  'dealer' =>
+  array(
     'Active' => true,
     'Subtag' => 'DEALER',
   ),
-  'deals' => 
-  array (
+  'deals' =>
+  array(
     'Active' => true,
     'Subtag' => 'DEALS',
   ),
-  'degree' => 
-  array (
+  'degree' =>
+  array(
     'Active' => true,
     'Subtag' => 'DEGREE',
   ),
-  'delivery' => 
-  array (
+  'delivery' =>
+  array(
     'Active' => true,
     'Subtag' => 'DELIVERY',
   ),
-  'dell' => 
-  array (
+  'dell' =>
+  array(
     'Active' => true,
     'Subtag' => 'DELL',
   ),
-  'deloitte' => 
-  array (
+  'deloitte' =>
+  array(
     'Active' => true,
     'Subtag' => 'DELOITTE',
   ),
-  'delta' => 
-  array (
+  'delta' =>
+  array(
     'Active' => true,
     'Subtag' => 'DELTA',
   ),
-  'democrat' => 
-  array (
+  'democrat' =>
+  array(
     'Active' => true,
     'Subtag' => 'DEMOCRAT',
   ),
-  'dental' => 
-  array (
+  'dental' =>
+  array(
     'Active' => true,
     'Subtag' => 'DENTAL',
   ),
-  'dentist' => 
-  array (
+  'dentist' =>
+  array(
     'Active' => true,
     'Subtag' => 'DENTIST',
   ),
-  'desi' => 
-  array (
+  'desi' =>
+  array(
     'Active' => true,
     'Subtag' => 'DESI',
   ),
-  'design' => 
-  array (
+  'design' =>
+  array(
     'Active' => true,
     'Subtag' => 'DESIGN',
   ),
-  'dev' => 
-  array (
+  'dev' =>
+  array(
     'Active' => true,
     'Subtag' => 'DEV',
   ),
-  'dhl' => 
-  array (
+  'dhl' =>
+  array(
     'Active' => true,
     'Subtag' => 'DHL',
   ),
-  'diamonds' => 
-  array (
+  'diamonds' =>
+  array(
     'Active' => true,
     'Subtag' => 'DIAMONDS',
   ),
-  'diet' => 
-  array (
+  'diet' =>
+  array(
     'Active' => true,
     'Subtag' => 'DIET',
   ),
-  'digital' => 
-  array (
+  'digital' =>
+  array(
     'Active' => true,
     'Subtag' => 'DIGITAL',
   ),
-  'direct' => 
-  array (
+  'direct' =>
+  array(
     'Active' => true,
     'Subtag' => 'DIRECT',
   ),
-  'directory' => 
-  array (
+  'directory' =>
+  array(
     'Active' => true,
     'Subtag' => 'DIRECTORY',
   ),
-  'discount' => 
-  array (
+  'discount' =>
+  array(
     'Active' => true,
     'Subtag' => 'DISCOUNT',
   ),
-  'discover' => 
-  array (
+  'discover' =>
+  array(
     'Active' => true,
     'Subtag' => 'DISCOVER',
   ),
-  'dish' => 
-  array (
+  'dish' =>
+  array(
     'Active' => true,
     'Subtag' => 'DISH',
   ),
-  'diy' => 
-  array (
+  'diy' =>
+  array(
     'Active' => true,
     'Subtag' => 'DIY',
   ),
-  'dj' => 
-  array (
+  'dj' =>
+  array(
     'Active' => true,
     'Subtag' => 'DJ',
   ),
-  'dk' => 
-  array (
+  'dk' =>
+  array(
     'Active' => true,
     'Subtag' => 'DK',
   ),
-  'dm' => 
-  array (
+  'dm' =>
+  array(
     'Active' => true,
     'Subtag' => 'DM',
   ),
-  'dnp' => 
-  array (
+  'dnp' =>
+  array(
     'Active' => true,
     'Subtag' => 'DNP',
   ),
-  'do' => 
-  array (
+  'do' =>
+  array(
     'Active' => true,
     'Subtag' => 'DO',
   ),
-  'docs' => 
-  array (
+  'docs' =>
+  array(
     'Active' => true,
     'Subtag' => 'DOCS',
   ),
-  'doctor' => 
-  array (
+  'doctor' =>
+  array(
     'Active' => true,
     'Subtag' => 'DOCTOR',
   ),
-  'dog' => 
-  array (
+  'dog' =>
+  array(
     'Active' => true,
     'Subtag' => 'DOG',
   ),
-  'domains' => 
-  array (
+  'domains' =>
+  array(
     'Active' => true,
     'Subtag' => 'DOMAINS',
   ),
-  'dot' => 
-  array (
+  'dot' =>
+  array(
     'Active' => true,
     'Subtag' => 'DOT',
   ),
-  'download' => 
-  array (
+  'download' =>
+  array(
     'Active' => true,
     'Subtag' => 'DOWNLOAD',
   ),
-  'drive' => 
-  array (
+  'drive' =>
+  array(
     'Active' => true,
     'Subtag' => 'DRIVE',
   ),
-  'dtv' => 
-  array (
+  'dtv' =>
+  array(
     'Active' => true,
     'Subtag' => 'DTV',
   ),
-  'dubai' => 
-  array (
+  'dubai' =>
+  array(
     'Active' => true,
     'Subtag' => 'DUBAI',
   ),
-  'dupont' => 
-  array (
+  'dupont' =>
+  array(
     'Active' => true,
     'Subtag' => 'DUPONT',
   ),
-  'durban' => 
-  array (
+  'durban' =>
+  array(
     'Active' => true,
     'Subtag' => 'DURBAN',
   ),
-  'dvag' => 
-  array (
+  'dvag' =>
+  array(
     'Active' => true,
     'Subtag' => 'DVAG',
   ),
-  'dvr' => 
-  array (
+  'dvr' =>
+  array(
     'Active' => true,
     'Subtag' => 'DVR',
   ),
-  'dz' => 
-  array (
+  'dz' =>
+  array(
     'Active' => true,
     'Subtag' => 'DZ',
   ),
-  'earth' => 
-  array (
+  'earth' =>
+  array(
     'Active' => true,
     'Subtag' => 'EARTH',
   ),
-  'eat' => 
-  array (
+  'eat' =>
+  array(
     'Active' => true,
     'Subtag' => 'EAT',
   ),
-  'ec' => 
-  array (
+  'ec' =>
+  array(
     'Active' => true,
     'Subtag' => 'EC',
   ),
-  'eco' => 
-  array (
+  'eco' =>
+  array(
     'Active' => true,
     'Subtag' => 'ECO',
   ),
-  'edeka' => 
-  array (
+  'edeka' =>
+  array(
     'Active' => true,
     'Subtag' => 'EDEKA',
   ),
-  'edu' => 
-  array (
+  'edu' =>
+  array(
     'Active' => true,
     'Subtag' => 'EDU',
   ),
-  'education' => 
-  array (
+  'education' =>
+  array(
     'Active' => true,
     'Subtag' => 'EDUCATION',
   ),
-  'ee' => 
-  array (
+  'ee' =>
+  array(
     'Active' => true,
     'Subtag' => 'EE',
   ),
-  'eg' => 
-  array (
+  'eg' =>
+  array(
     'Active' => true,
     'Subtag' => 'EG',
   ),
-  'email' => 
-  array (
+  'email' =>
+  array(
     'Active' => true,
     'Subtag' => 'EMAIL',
   ),
-  'emerck' => 
-  array (
+  'emerck' =>
+  array(
     'Active' => true,
     'Subtag' => 'EMERCK',
   ),
-  'energy' => 
-  array (
+  'energy' =>
+  array(
     'Active' => true,
     'Subtag' => 'ENERGY',
   ),
-  'engineer' => 
-  array (
+  'engineer' =>
+  array(
     'Active' => true,
     'Subtag' => 'ENGINEER',
   ),
-  'engineering' => 
-  array (
+  'engineering' =>
+  array(
     'Active' => true,
     'Subtag' => 'ENGINEERING',
   ),
-  'enterprises' => 
-  array (
+  'enterprises' =>
+  array(
     'Active' => true,
     'Subtag' => 'ENTERPRISES',
   ),
-  'epson' => 
-  array (
+  'epson' =>
+  array(
     'Active' => true,
     'Subtag' => 'EPSON',
   ),
-  'equipment' => 
-  array (
+  'equipment' =>
+  array(
     'Active' => true,
     'Subtag' => 'EQUIPMENT',
   ),
-  'er' => 
-  array (
+  'er' =>
+  array(
     'Active' => true,
     'Subtag' => 'ER',
   ),
-  'ericsson' => 
-  array (
+  'ericsson' =>
+  array(
     'Active' => true,
     'Subtag' => 'ERICSSON',
   ),
-  'erni' => 
-  array (
+  'erni' =>
+  array(
     'Active' => true,
     'Subtag' => 'ERNI',
   ),
-  'es' => 
-  array (
+  'es' =>
+  array(
     'Active' => true,
     'Subtag' => 'ES',
   ),
-  'esq' => 
-  array (
+  'esq' =>
+  array(
     'Active' => true,
     'Subtag' => 'ESQ',
   ),
-  'estate' => 
-  array (
+  'estate' =>
+  array(
     'Active' => true,
     'Subtag' => 'ESTATE',
   ),
-  'et' => 
-  array (
+  'et' =>
+  array(
     'Active' => true,
     'Subtag' => 'ET',
   ),
-  'eu' => 
-  array (
+  'eu' =>
+  array(
     'Active' => true,
     'Subtag' => 'EU',
   ),
-  'eurovision' => 
-  array (
+  'eurovision' =>
+  array(
     'Active' => true,
     'Subtag' => 'EUROVISION',
   ),
-  'eus' => 
-  array (
+  'eus' =>
+  array(
     'Active' => true,
     'Subtag' => 'EUS',
   ),
-  'events' => 
-  array (
+  'events' =>
+  array(
     'Active' => true,
     'Subtag' => 'EVENTS',
   ),
-  'exchange' => 
-  array (
+  'exchange' =>
+  array(
     'Active' => true,
     'Subtag' => 'EXCHANGE',
   ),
-  'expert' => 
-  array (
+  'expert' =>
+  array(
     'Active' => true,
     'Subtag' => 'EXPERT',
   ),
-  'exposed' => 
-  array (
+  'exposed' =>
+  array(
     'Active' => true,
     'Subtag' => 'EXPOSED',
   ),
-  'express' => 
-  array (
+  'express' =>
+  array(
     'Active' => true,
     'Subtag' => 'EXPRESS',
   ),
-  'extraspace' => 
-  array (
+  'extraspace' =>
+  array(
     'Active' => true,
     'Subtag' => 'EXTRASPACE',
   ),
-  'fage' => 
-  array (
+  'fage' =>
+  array(
     'Active' => true,
     'Subtag' => 'FAGE',
   ),
-  'fail' => 
-  array (
+  'fail' =>
+  array(
     'Active' => true,
     'Subtag' => 'FAIL',
   ),
-  'fairwinds' => 
-  array (
+  'fairwinds' =>
+  array(
     'Active' => true,
     'Subtag' => 'FAIRWINDS',
   ),
-  'faith' => 
-  array (
+  'faith' =>
+  array(
     'Active' => true,
     'Subtag' => 'FAITH',
   ),
-  'family' => 
-  array (
+  'family' =>
+  array(
     'Active' => true,
     'Subtag' => 'FAMILY',
   ),
-  'fan' => 
-  array (
+  'fan' =>
+  array(
     'Active' => true,
     'Subtag' => 'FAN',
   ),
-  'fans' => 
-  array (
+  'fans' =>
+  array(
     'Active' => true,
     'Subtag' => 'FANS',
   ),
-  'farm' => 
-  array (
+  'farm' =>
+  array(
     'Active' => true,
     'Subtag' => 'FARM',
   ),
-  'farmers' => 
-  array (
+  'farmers' =>
+  array(
     'Active' => true,
     'Subtag' => 'FARMERS',
   ),
-  'fashion' => 
-  array (
+  'fashion' =>
+  array(
     'Active' => true,
     'Subtag' => 'FASHION',
   ),
-  'fast' => 
-  array (
+  'fast' =>
+  array(
     'Active' => true,
     'Subtag' => 'FAST',
   ),
-  'fedex' => 
-  array (
+  'fedex' =>
+  array(
     'Active' => true,
     'Subtag' => 'FEDEX',
   ),
-  'feedback' => 
-  array (
+  'feedback' =>
+  array(
     'Active' => true,
     'Subtag' => 'FEEDBACK',
   ),
-  'ferrari' => 
-  array (
+  'ferrari' =>
+  array(
     'Active' => true,
     'Subtag' => 'FERRARI',
   ),
-  'ferrero' => 
-  array (
+  'ferrero' =>
+  array(
     'Active' => true,
     'Subtag' => 'FERRERO',
   ),
-  'fi' => 
-  array (
+  'fi' =>
+  array(
     'Active' => true,
     'Subtag' => 'FI',
   ),
-  'fidelity' => 
-  array (
+  'fidelity' =>
+  array(
     'Active' => true,
     'Subtag' => 'FIDELITY',
   ),
-  'fido' => 
-  array (
+  'fido' =>
+  array(
     'Active' => true,
     'Subtag' => 'FIDO',
   ),
-  'film' => 
-  array (
+  'film' =>
+  array(
     'Active' => true,
     'Subtag' => 'FILM',
   ),
-  'final' => 
-  array (
+  'final' =>
+  array(
     'Active' => true,
     'Subtag' => 'FINAL',
   ),
-  'finance' => 
-  array (
+  'finance' =>
+  array(
     'Active' => true,
     'Subtag' => 'FINANCE',
   ),
-  'financial' => 
-  array (
+  'financial' =>
+  array(
     'Active' => true,
     'Subtag' => 'FINANCIAL',
   ),
-  'fire' => 
-  array (
+  'fire' =>
+  array(
     'Active' => true,
     'Subtag' => 'FIRE',
   ),
-  'firestone' => 
-  array (
+  'firestone' =>
+  array(
     'Active' => true,
     'Subtag' => 'FIRESTONE',
   ),
-  'firmdale' => 
-  array (
+  'firmdale' =>
+  array(
     'Active' => true,
     'Subtag' => 'FIRMDALE',
   ),
-  'fish' => 
-  array (
+  'fish' =>
+  array(
     'Active' => true,
     'Subtag' => 'FISH',
   ),
-  'fishing' => 
-  array (
+  'fishing' =>
+  array(
     'Active' => true,
     'Subtag' => 'FISHING',
   ),
-  'fit' => 
-  array (
+  'fit' =>
+  array(
     'Active' => true,
     'Subtag' => 'FIT',
   ),
-  'fitness' => 
-  array (
+  'fitness' =>
+  array(
     'Active' => true,
     'Subtag' => 'FITNESS',
   ),
-  'fj' => 
-  array (
+  'fj' =>
+  array(
     'Active' => true,
     'Subtag' => 'FJ',
   ),
-  'fk' => 
-  array (
+  'fk' =>
+  array(
     'Active' => true,
     'Subtag' => 'FK',
   ),
-  'flickr' => 
-  array (
+  'flickr' =>
+  array(
     'Active' => true,
     'Subtag' => 'FLICKR',
   ),
-  'flights' => 
-  array (
+  'flights' =>
+  array(
     'Active' => true,
     'Subtag' => 'FLIGHTS',
   ),
-  'flir' => 
-  array (
+  'flir' =>
+  array(
     'Active' => true,
     'Subtag' => 'FLIR',
   ),
-  'florist' => 
-  array (
+  'florist' =>
+  array(
     'Active' => true,
     'Subtag' => 'FLORIST',
   ),
-  'flowers' => 
-  array (
+  'flowers' =>
+  array(
     'Active' => true,
     'Subtag' => 'FLOWERS',
   ),
-  'fly' => 
-  array (
+  'fly' =>
+  array(
     'Active' => true,
     'Subtag' => 'FLY',
   ),
-  'fm' => 
-  array (
+  'fm' =>
+  array(
     'Active' => true,
     'Subtag' => 'FM',
   ),
-  'fo' => 
-  array (
+  'fo' =>
+  array(
     'Active' => true,
     'Subtag' => 'FO',
   ),
-  'foo' => 
-  array (
+  'foo' =>
+  array(
     'Active' => true,
     'Subtag' => 'FOO',
   ),
-  'food' => 
-  array (
+  'food' =>
+  array(
     'Active' => true,
     'Subtag' => 'FOOD',
   ),
-  'football' => 
-  array (
+  'football' =>
+  array(
     'Active' => true,
     'Subtag' => 'FOOTBALL',
   ),
-  'ford' => 
-  array (
+  'ford' =>
+  array(
     'Active' => true,
     'Subtag' => 'FORD',
   ),
-  'forex' => 
-  array (
+  'forex' =>
+  array(
     'Active' => true,
     'Subtag' => 'FOREX',
   ),
-  'forsale' => 
-  array (
+  'forsale' =>
+  array(
     'Active' => true,
     'Subtag' => 'FORSALE',
   ),
-  'forum' => 
-  array (
+  'forum' =>
+  array(
     'Active' => true,
     'Subtag' => 'FORUM',
   ),
-  'foundation' => 
-  array (
+  'foundation' =>
+  array(
     'Active' => true,
     'Subtag' => 'FOUNDATION',
   ),
-  'fox' => 
-  array (
+  'fox' =>
+  array(
     'Active' => true,
     'Subtag' => 'FOX',
   ),
-  'fr' => 
-  array (
+  'fr' =>
+  array(
     'Active' => true,
     'Subtag' => 'FR',
   ),
-  'free' => 
-  array (
+  'free' =>
+  array(
     'Active' => true,
     'Subtag' => 'FREE',
   ),
-  'fresenius' => 
-  array (
+  'fresenius' =>
+  array(
     'Active' => true,
     'Subtag' => 'FRESENIUS',
   ),
-  'frl' => 
-  array (
+  'frl' =>
+  array(
     'Active' => true,
     'Subtag' => 'FRL',
   ),
-  'frogans' => 
-  array (
+  'frogans' =>
+  array(
     'Active' => true,
     'Subtag' => 'FROGANS',
   ),
-  'frontier' => 
-  array (
+  'frontier' =>
+  array(
     'Active' => true,
     'Subtag' => 'FRONTIER',
   ),
-  'ftr' => 
-  array (
+  'ftr' =>
+  array(
     'Active' => true,
     'Subtag' => 'FTR',
   ),
-  'fujitsu' => 
-  array (
+  'fujitsu' =>
+  array(
     'Active' => true,
     'Subtag' => 'FUJITSU',
   ),
-  'fun' => 
-  array (
+  'fun' =>
+  array(
     'Active' => true,
     'Subtag' => 'FUN',
   ),
-  'fund' => 
-  array (
+  'fund' =>
+  array(
     'Active' => true,
     'Subtag' => 'FUND',
   ),
-  'furniture' => 
-  array (
+  'furniture' =>
+  array(
     'Active' => true,
     'Subtag' => 'FURNITURE',
   ),
-  'futbol' => 
-  array (
+  'futbol' =>
+  array(
     'Active' => true,
     'Subtag' => 'FUTBOL',
   ),
-  'fyi' => 
-  array (
+  'fyi' =>
+  array(
     'Active' => true,
     'Subtag' => 'FYI',
   ),
-  'ga' => 
-  array (
+  'ga' =>
+  array(
     'Active' => true,
     'Subtag' => 'GA',
   ),
-  'gal' => 
-  array (
+  'gal' =>
+  array(
     'Active' => true,
     'Subtag' => 'GAL',
   ),
-  'gallery' => 
-  array (
+  'gallery' =>
+  array(
     'Active' => true,
     'Subtag' => 'GALLERY',
   ),
-  'gallo' => 
-  array (
+  'gallo' =>
+  array(
     'Active' => true,
     'Subtag' => 'GALLO',
   ),
-  'gallup' => 
-  array (
+  'gallup' =>
+  array(
     'Active' => true,
     'Subtag' => 'GALLUP',
   ),
-  'game' => 
-  array (
+  'game' =>
+  array(
     'Active' => true,
     'Subtag' => 'GAME',
   ),
-  'games' => 
-  array (
+  'games' =>
+  array(
     'Active' => true,
     'Subtag' => 'GAMES',
   ),
-  'gap' => 
-  array (
+  'gap' =>
+  array(
     'Active' => true,
     'Subtag' => 'GAP',
   ),
-  'garden' => 
-  array (
+  'garden' =>
+  array(
     'Active' => true,
     'Subtag' => 'GARDEN',
   ),
-  'gay' => 
-  array (
+  'gay' =>
+  array(
     'Active' => true,
     'Subtag' => 'GAY',
   ),
-  'gb' => 
-  array (
+  'gb' =>
+  array(
     'Active' => true,
     'Subtag' => 'GB',
   ),
-  'gbiz' => 
-  array (
+  'gbiz' =>
+  array(
     'Active' => true,
     'Subtag' => 'GBIZ',
   ),
-  'gd' => 
-  array (
+  'gd' =>
+  array(
     'Active' => true,
     'Subtag' => 'GD',
   ),
-  'gdn' => 
-  array (
+  'gdn' =>
+  array(
     'Active' => true,
     'Subtag' => 'GDN',
   ),
-  'ge' => 
-  array (
+  'ge' =>
+  array(
     'Active' => true,
     'Subtag' => 'GE',
   ),
-  'gea' => 
-  array (
+  'gea' =>
+  array(
     'Active' => true,
     'Subtag' => 'GEA',
   ),
-  'gent' => 
-  array (
+  'gent' =>
+  array(
     'Active' => true,
     'Subtag' => 'GENT',
   ),
-  'genting' => 
-  array (
+  'genting' =>
+  array(
     'Active' => true,
     'Subtag' => 'GENTING',
   ),
-  'george' => 
-  array (
+  'george' =>
+  array(
     'Active' => true,
     'Subtag' => 'GEORGE',
   ),
-  'gf' => 
-  array (
+  'gf' =>
+  array(
     'Active' => true,
     'Subtag' => 'GF',
   ),
-  'gg' => 
-  array (
+  'gg' =>
+  array(
     'Active' => true,
     'Subtag' => 'GG',
   ),
-  'ggee' => 
-  array (
+  'ggee' =>
+  array(
     'Active' => true,
     'Subtag' => 'GGEE',
   ),
-  'gh' => 
-  array (
+  'gh' =>
+  array(
     'Active' => true,
     'Subtag' => 'GH',
   ),
-  'gi' => 
-  array (
+  'gi' =>
+  array(
     'Active' => true,
     'Subtag' => 'GI',
   ),
-  'gift' => 
-  array (
+  'gift' =>
+  array(
     'Active' => true,
     'Subtag' => 'GIFT',
   ),
-  'gifts' => 
-  array (
+  'gifts' =>
+  array(
     'Active' => true,
     'Subtag' => 'GIFTS',
   ),
-  'gives' => 
-  array (
+  'gives' =>
+  array(
     'Active' => true,
     'Subtag' => 'GIVES',
   ),
-  'giving' => 
-  array (
+  'giving' =>
+  array(
     'Active' => true,
     'Subtag' => 'GIVING',
   ),
-  'gl' => 
-  array (
+  'gl' =>
+  array(
     'Active' => true,
     'Subtag' => 'GL',
   ),
-  'glass' => 
-  array (
+  'glass' =>
+  array(
     'Active' => true,
     'Subtag' => 'GLASS',
   ),
-  'gle' => 
-  array (
+  'gle' =>
+  array(
     'Active' => true,
     'Subtag' => 'GLE',
   ),
-  'global' => 
-  array (
+  'global' =>
+  array(
     'Active' => true,
     'Subtag' => 'GLOBAL',
   ),
-  'globo' => 
-  array (
+  'globo' =>
+  array(
     'Active' => true,
     'Subtag' => 'GLOBO',
   ),
-  'gm' => 
-  array (
+  'gm' =>
+  array(
     'Active' => true,
     'Subtag' => 'GM',
   ),
-  'gmail' => 
-  array (
+  'gmail' =>
+  array(
     'Active' => true,
     'Subtag' => 'GMAIL',
   ),
-  'gmbh' => 
-  array (
+  'gmbh' =>
+  array(
     'Active' => true,
     'Subtag' => 'GMBH',
   ),
-  'gmo' => 
-  array (
+  'gmo' =>
+  array(
     'Active' => true,
     'Subtag' => 'GMO',
   ),
-  'gmx' => 
-  array (
+  'gmx' =>
+  array(
     'Active' => true,
     'Subtag' => 'GMX',
   ),
-  'gn' => 
-  array (
+  'gn' =>
+  array(
     'Active' => true,
     'Subtag' => 'GN',
   ),
-  'godaddy' => 
-  array (
+  'godaddy' =>
+  array(
     'Active' => true,
     'Subtag' => 'GODADDY',
   ),
-  'gold' => 
-  array (
+  'gold' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOLD',
   ),
-  'goldpoint' => 
-  array (
+  'goldpoint' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOLDPOINT',
   ),
-  'golf' => 
-  array (
+  'golf' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOLF',
   ),
-  'goodyear' => 
-  array (
+  'goodyear' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOODYEAR',
   ),
-  'goog' => 
-  array (
+  'goog' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOOG',
   ),
-  'google' => 
-  array (
+  'google' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOOGLE',
   ),
-  'gop' => 
-  array (
+  'gop' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOP',
   ),
-  'got' => 
-  array (
+  'got' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOT',
   ),
-  'gov' => 
-  array (
+  'gov' =>
+  array(
     'Active' => true,
     'Subtag' => 'GOV',
   ),
-  'gp' => 
-  array (
+  'gp' =>
+  array(
     'Active' => true,
     'Subtag' => 'GP',
   ),
-  'gq' => 
-  array (
+  'gq' =>
+  array(
     'Active' => true,
     'Subtag' => 'GQ',
   ),
-  'gr' => 
-  array (
+  'gr' =>
+  array(
     'Active' => true,
     'Subtag' => 'GR',
   ),
-  'grainger' => 
-  array (
+  'grainger' =>
+  array(
     'Active' => true,
     'Subtag' => 'GRAINGER',
   ),
-  'graphics' => 
-  array (
+  'graphics' =>
+  array(
     'Active' => true,
     'Subtag' => 'GRAPHICS',
   ),
-  'gratis' => 
-  array (
+  'gratis' =>
+  array(
     'Active' => true,
     'Subtag' => 'GRATIS',
   ),
-  'green' => 
-  array (
+  'green' =>
+  array(
     'Active' => true,
     'Subtag' => 'GREEN',
   ),
-  'gripe' => 
-  array (
+  'gripe' =>
+  array(
     'Active' => true,
     'Subtag' => 'GRIPE',
   ),
-  'grocery' => 
-  array (
+  'grocery' =>
+  array(
     'Active' => true,
     'Subtag' => 'GROCERY',
   ),
-  'group' => 
-  array (
+  'group' =>
+  array(
     'Active' => true,
     'Subtag' => 'GROUP',
   ),
-  'gs' => 
-  array (
+  'gs' =>
+  array(
     'Active' => true,
     'Subtag' => 'GS',
   ),
-  'gt' => 
-  array (
+  'gt' =>
+  array(
     'Active' => true,
     'Subtag' => 'GT',
   ),
-  'gu' => 
-  array (
+  'gu' =>
+  array(
     'Active' => true,
     'Subtag' => 'GU',
   ),
-  'gucci' => 
-  array (
+  'gucci' =>
+  array(
     'Active' => true,
     'Subtag' => 'GUCCI',
   ),
-  'guge' => 
-  array (
+  'guge' =>
+  array(
     'Active' => true,
     'Subtag' => 'GUGE',
   ),
-  'guide' => 
-  array (
+  'guide' =>
+  array(
     'Active' => true,
     'Subtag' => 'GUIDE',
   ),
-  'guitars' => 
-  array (
+  'guitars' =>
+  array(
     'Active' => true,
     'Subtag' => 'GUITARS',
   ),
-  'guru' => 
-  array (
+  'guru' =>
+  array(
     'Active' => true,
     'Subtag' => 'GURU',
   ),
-  'gw' => 
-  array (
+  'gw' =>
+  array(
     'Active' => true,
     'Subtag' => 'GW',
   ),
-  'gy' => 
-  array (
+  'gy' =>
+  array(
     'Active' => true,
     'Subtag' => 'GY',
   ),
-  'hair' => 
-  array (
+  'hair' =>
+  array(
     'Active' => true,
     'Subtag' => 'HAIR',
   ),
-  'hamburg' => 
-  array (
+  'hamburg' =>
+  array(
     'Active' => true,
     'Subtag' => 'HAMBURG',
   ),
-  'hangout' => 
-  array (
+  'hangout' =>
+  array(
     'Active' => true,
     'Subtag' => 'HANGOUT',
   ),
-  'haus' => 
-  array (
+  'haus' =>
+  array(
     'Active' => true,
     'Subtag' => 'HAUS',
   ),
-  'hbo' => 
-  array (
+  'hbo' =>
+  array(
     'Active' => true,
     'Subtag' => 'HBO',
   ),
-  'hdfc' => 
-  array (
+  'hdfc' =>
+  array(
     'Active' => true,
     'Subtag' => 'HDFC',
   ),
-  'hdfcbank' => 
-  array (
+  'hdfcbank' =>
+  array(
     'Active' => true,
     'Subtag' => 'HDFCBANK',
   ),
-  'health' => 
-  array (
+  'health' =>
+  array(
     'Active' => true,
     'Subtag' => 'HEALTH',
   ),
-  'healthcare' => 
-  array (
+  'healthcare' =>
+  array(
     'Active' => true,
     'Subtag' => 'HEALTHCARE',
   ),
-  'help' => 
-  array (
+  'help' =>
+  array(
     'Active' => true,
     'Subtag' => 'HELP',
   ),
-  'helsinki' => 
-  array (
+  'helsinki' =>
+  array(
     'Active' => true,
     'Subtag' => 'HELSINKI',
   ),
-  'here' => 
-  array (
+  'here' =>
+  array(
     'Active' => true,
     'Subtag' => 'HERE',
   ),
-  'hermes' => 
-  array (
+  'hermes' =>
+  array(
     'Active' => true,
     'Subtag' => 'HERMES',
   ),
-  'hiphop' => 
-  array (
+  'hiphop' =>
+  array(
     'Active' => true,
     'Subtag' => 'HIPHOP',
   ),
-  'hisamitsu' => 
-  array (
+  'hisamitsu' =>
+  array(
     'Active' => true,
     'Subtag' => 'HISAMITSU',
   ),
-  'hitachi' => 
-  array (
+  'hitachi' =>
+  array(
     'Active' => true,
     'Subtag' => 'HITACHI',
   ),
-  'hiv' => 
-  array (
+  'hiv' =>
+  array(
     'Active' => true,
     'Subtag' => 'HIV',
   ),
-  'hk' => 
-  array (
+  'hk' =>
+  array(
     'Active' => true,
     'Subtag' => 'HK',
   ),
-  'hkt' => 
-  array (
+  'hkt' =>
+  array(
     'Active' => true,
     'Subtag' => 'HKT',
   ),
-  'hm' => 
-  array (
+  'hm' =>
+  array(
     'Active' => true,
     'Subtag' => 'HM',
   ),
-  'hn' => 
-  array (
+  'hn' =>
+  array(
     'Active' => true,
     'Subtag' => 'HN',
   ),
-  'hockey' => 
-  array (
+  'hockey' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOCKEY',
   ),
-  'holdings' => 
-  array (
+  'holdings' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOLDINGS',
   ),
-  'holiday' => 
-  array (
+  'holiday' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOLIDAY',
   ),
-  'homedepot' => 
-  array (
+  'homedepot' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOMEDEPOT',
   ),
-  'homegoods' => 
-  array (
+  'homegoods' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOMEGOODS',
   ),
-  'homes' => 
-  array (
+  'homes' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOMES',
   ),
-  'homesense' => 
-  array (
+  'homesense' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOMESENSE',
   ),
-  'honda' => 
-  array (
+  'honda' =>
+  array(
     'Active' => true,
     'Subtag' => 'HONDA',
   ),
-  'horse' => 
-  array (
+  'horse' =>
+  array(
     'Active' => true,
     'Subtag' => 'HORSE',
   ),
-  'hospital' => 
-  array (
+  'hospital' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOSPITAL',
   ),
-  'host' => 
-  array (
+  'host' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOST',
   ),
-  'hosting' => 
-  array (
+  'hosting' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOSTING',
   ),
-  'hot' => 
-  array (
+  'hot' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOT',
   ),
-  'hotels' => 
-  array (
+  'hotels' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOTELS',
   ),
-  'hotmail' => 
-  array (
+  'hotmail' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOTMAIL',
   ),
-  'house' => 
-  array (
+  'house' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOUSE',
   ),
-  'how' => 
-  array (
+  'how' =>
+  array(
     'Active' => true,
     'Subtag' => 'HOW',
   ),
-  'hr' => 
-  array (
+  'hr' =>
+  array(
     'Active' => true,
     'Subtag' => 'HR',
   ),
-  'hsbc' => 
-  array (
+  'hsbc' =>
+  array(
     'Active' => true,
     'Subtag' => 'HSBC',
   ),
-  'ht' => 
-  array (
+  'ht' =>
+  array(
     'Active' => true,
     'Subtag' => 'HT',
   ),
-  'hu' => 
-  array (
+  'hu' =>
+  array(
     'Active' => true,
     'Subtag' => 'HU',
   ),
-  'hughes' => 
-  array (
+  'hughes' =>
+  array(
     'Active' => true,
     'Subtag' => 'HUGHES',
   ),
-  'hyatt' => 
-  array (
+  'hyatt' =>
+  array(
     'Active' => true,
     'Subtag' => 'HYATT',
   ),
-  'hyundai' => 
-  array (
+  'hyundai' =>
+  array(
     'Active' => true,
     'Subtag' => 'HYUNDAI',
   ),
-  'ibm' => 
-  array (
+  'ibm' =>
+  array(
     'Active' => true,
     'Subtag' => 'IBM',
   ),
-  'icbc' => 
-  array (
+  'icbc' =>
+  array(
     'Active' => true,
     'Subtag' => 'ICBC',
   ),
-  'ice' => 
-  array (
+  'ice' =>
+  array(
     'Active' => true,
     'Subtag' => 'ICE',
   ),
-  'icu' => 
-  array (
+  'icu' =>
+  array(
     'Active' => true,
     'Subtag' => 'ICU',
   ),
-  'id' => 
-  array (
+  'id' =>
+  array(
     'Active' => true,
     'Subtag' => 'ID',
   ),
-  'ie' => 
-  array (
+  'ie' =>
+  array(
     'Active' => true,
     'Subtag' => 'IE',
   ),
-  'ieee' => 
-  array (
+  'ieee' =>
+  array(
     'Active' => true,
     'Subtag' => 'IEEE',
   ),
-  'ifm' => 
-  array (
+  'ifm' =>
+  array(
     'Active' => true,
     'Subtag' => 'IFM',
   ),
-  'ikano' => 
-  array (
+  'ikano' =>
+  array(
     'Active' => true,
     'Subtag' => 'IKANO',
   ),
-  'il' => 
-  array (
+  'il' =>
+  array(
     'Active' => true,
     'Subtag' => 'IL',
   ),
-  'im' => 
-  array (
+  'im' =>
+  array(
     'Active' => true,
     'Subtag' => 'IM',
   ),
-  'imamat' => 
-  array (
+  'imamat' =>
+  array(
     'Active' => true,
     'Subtag' => 'IMAMAT',
   ),
-  'imdb' => 
-  array (
+  'imdb' =>
+  array(
     'Active' => true,
     'Subtag' => 'IMDB',
   ),
-  'immo' => 
-  array (
+  'immo' =>
+  array(
     'Active' => true,
     'Subtag' => 'IMMO',
   ),
-  'immobilien' => 
-  array (
+  'immobilien' =>
+  array(
     'Active' => true,
     'Subtag' => 'IMMOBILIEN',
   ),
-  'in' => 
-  array (
+  'in' =>
+  array(
     'Active' => true,
     'Subtag' => 'IN',
   ),
-  'inc' => 
-  array (
+  'inc' =>
+  array(
     'Active' => true,
     'Subtag' => 'INC',
   ),
-  'industries' => 
-  array (
+  'industries' =>
+  array(
     'Active' => true,
     'Subtag' => 'INDUSTRIES',
   ),
-  'infiniti' => 
-  array (
+  'infiniti' =>
+  array(
     'Active' => true,
     'Subtag' => 'INFINITI',
   ),
-  'info' => 
-  array (
+  'info' =>
+  array(
     'Active' => true,
     'Subtag' => 'INFO',
   ),
-  'ing' => 
-  array (
+  'ing' =>
+  array(
     'Active' => true,
     'Subtag' => 'ING',
   ),
-  'ink' => 
-  array (
+  'ink' =>
+  array(
     'Active' => true,
     'Subtag' => 'INK',
   ),
-  'institute' => 
-  array (
+  'institute' =>
+  array(
     'Active' => true,
     'Subtag' => 'INSTITUTE',
   ),
-  'insurance' => 
-  array (
+  'insurance' =>
+  array(
     'Active' => true,
     'Subtag' => 'INSURANCE',
   ),
-  'insure' => 
-  array (
+  'insure' =>
+  array(
     'Active' => true,
     'Subtag' => 'INSURE',
   ),
-  'int' => 
-  array (
+  'int' =>
+  array(
     'Active' => true,
     'Subtag' => 'INT',
   ),
-  'international' => 
-  array (
+  'international' =>
+  array(
     'Active' => true,
     'Subtag' => 'INTERNATIONAL',
   ),
-  'intuit' => 
-  array (
+  'intuit' =>
+  array(
     'Active' => true,
     'Subtag' => 'INTUIT',
   ),
-  'investments' => 
-  array (
+  'investments' =>
+  array(
     'Active' => true,
     'Subtag' => 'INVESTMENTS',
   ),
-  'io' => 
-  array (
+  'io' =>
+  array(
     'Active' => true,
     'Subtag' => 'IO',
   ),
-  'ipiranga' => 
-  array (
+  'ipiranga' =>
+  array(
     'Active' => true,
     'Subtag' => 'IPIRANGA',
   ),
-  'iq' => 
-  array (
+  'iq' =>
+  array(
     'Active' => true,
     'Subtag' => 'IQ',
   ),
-  'ir' => 
-  array (
+  'ir' =>
+  array(
     'Active' => true,
     'Subtag' => 'IR',
   ),
-  'irish' => 
-  array (
+  'irish' =>
+  array(
     'Active' => true,
     'Subtag' => 'IRISH',
   ),
-  'is' => 
-  array (
+  'is' =>
+  array(
     'Active' => true,
     'Subtag' => 'IS',
   ),
-  'ismaili' => 
-  array (
+  'ismaili' =>
+  array(
     'Active' => true,
     'Subtag' => 'ISMAILI',
   ),
-  'ist' => 
-  array (
+  'ist' =>
+  array(
     'Active' => true,
     'Subtag' => 'IST',
   ),
-  'istanbul' => 
-  array (
+  'istanbul' =>
+  array(
     'Active' => true,
     'Subtag' => 'ISTANBUL',
   ),
-  'it' => 
-  array (
+  'it' =>
+  array(
     'Active' => true,
     'Subtag' => 'IT',
   ),
-  'itau' => 
-  array (
+  'itau' =>
+  array(
     'Active' => true,
     'Subtag' => 'ITAU',
   ),
-  'itv' => 
-  array (
+  'itv' =>
+  array(
     'Active' => true,
     'Subtag' => 'ITV',
   ),
-  'jaguar' => 
-  array (
+  'jaguar' =>
+  array(
     'Active' => true,
     'Subtag' => 'JAGUAR',
   ),
-  'java' => 
-  array (
+  'java' =>
+  array(
     'Active' => true,
     'Subtag' => 'JAVA',
   ),
-  'jcb' => 
-  array (
+  'jcb' =>
+  array(
     'Active' => true,
     'Subtag' => 'JCB',
   ),
-  'je' => 
-  array (
+  'je' =>
+  array(
     'Active' => true,
     'Subtag' => 'JE',
   ),
-  'jeep' => 
-  array (
+  'jeep' =>
+  array(
     'Active' => true,
     'Subtag' => 'JEEP',
   ),
-  'jetzt' => 
-  array (
+  'jetzt' =>
+  array(
     'Active' => true,
     'Subtag' => 'JETZT',
   ),
-  'jewelry' => 
-  array (
+  'jewelry' =>
+  array(
     'Active' => true,
     'Subtag' => 'JEWELRY',
   ),
-  'jio' => 
-  array (
+  'jio' =>
+  array(
     'Active' => true,
     'Subtag' => 'JIO',
   ),
-  'jll' => 
-  array (
+  'jll' =>
+  array(
     'Active' => true,
     'Subtag' => 'JLL',
   ),
-  'jm' => 
-  array (
+  'jm' =>
+  array(
     'Active' => true,
     'Subtag' => 'JM',
   ),
-  'jmp' => 
-  array (
+  'jmp' =>
+  array(
     'Active' => true,
     'Subtag' => 'JMP',
   ),
-  'jnj' => 
-  array (
+  'jnj' =>
+  array(
     'Active' => true,
     'Subtag' => 'JNJ',
   ),
-  'jo' => 
-  array (
+  'jo' =>
+  array(
     'Active' => true,
     'Subtag' => 'JO',
   ),
-  'jobs' => 
-  array (
+  'jobs' =>
+  array(
     'Active' => true,
     'Subtag' => 'JOBS',
   ),
-  'joburg' => 
-  array (
+  'joburg' =>
+  array(
     'Active' => true,
     'Subtag' => 'JOBURG',
   ),
-  'jot' => 
-  array (
+  'jot' =>
+  array(
     'Active' => true,
     'Subtag' => 'JOT',
   ),
-  'joy' => 
-  array (
+  'joy' =>
+  array(
     'Active' => true,
     'Subtag' => 'JOY',
   ),
-  'jp' => 
-  array (
+  'jp' =>
+  array(
     'Active' => true,
     'Subtag' => 'JP',
   ),
-  'jpmorgan' => 
-  array (
+  'jpmorgan' =>
+  array(
     'Active' => true,
     'Subtag' => 'JPMORGAN',
   ),
-  'jprs' => 
-  array (
+  'jprs' =>
+  array(
     'Active' => true,
     'Subtag' => 'JPRS',
   ),
-  'juegos' => 
-  array (
+  'juegos' =>
+  array(
     'Active' => true,
     'Subtag' => 'JUEGOS',
   ),
-  'juniper' => 
-  array (
+  'juniper' =>
+  array(
     'Active' => true,
     'Subtag' => 'JUNIPER',
   ),
-  'kaufen' => 
-  array (
+  'kaufen' =>
+  array(
     'Active' => true,
     'Subtag' => 'KAUFEN',
   ),
-  'kddi' => 
-  array (
+  'kddi' =>
+  array(
     'Active' => true,
     'Subtag' => 'KDDI',
   ),
-  'ke' => 
-  array (
+  'ke' =>
+  array(
     'Active' => true,
     'Subtag' => 'KE',
   ),
-  'kerryhotels' => 
-  array (
+  'kerryhotels' =>
+  array(
     'Active' => true,
     'Subtag' => 'KERRYHOTELS',
   ),
-  'kerryproperties' => 
-  array (
+  'kerryproperties' =>
+  array(
     'Active' => true,
     'Subtag' => 'KERRYPROPERTIES',
   ),
-  'kfh' => 
-  array (
+  'kfh' =>
+  array(
     'Active' => true,
     'Subtag' => 'KFH',
   ),
-  'kg' => 
-  array (
+  'kg' =>
+  array(
     'Active' => true,
     'Subtag' => 'KG',
   ),
-  'kh' => 
-  array (
+  'kh' =>
+  array(
     'Active' => true,
     'Subtag' => 'KH',
   ),
-  'ki' => 
-  array (
+  'ki' =>
+  array(
     'Active' => true,
     'Subtag' => 'KI',
   ),
-  'kia' => 
-  array (
+  'kia' =>
+  array(
     'Active' => true,
     'Subtag' => 'KIA',
   ),
-  'kids' => 
-  array (
+  'kids' =>
+  array(
     'Active' => true,
     'Subtag' => 'KIDS',
   ),
-  'kim' => 
-  array (
+  'kim' =>
+  array(
     'Active' => true,
     'Subtag' => 'KIM',
   ),
-  'kindle' => 
-  array (
+  'kindle' =>
+  array(
     'Active' => true,
     'Subtag' => 'KINDLE',
   ),
-  'kitchen' => 
-  array (
+  'kitchen' =>
+  array(
     'Active' => true,
     'Subtag' => 'KITCHEN',
   ),
-  'kiwi' => 
-  array (
+  'kiwi' =>
+  array(
     'Active' => true,
     'Subtag' => 'KIWI',
   ),
-  'km' => 
-  array (
+  'km' =>
+  array(
     'Active' => true,
     'Subtag' => 'KM',
   ),
-  'kn' => 
-  array (
+  'kn' =>
+  array(
     'Active' => true,
     'Subtag' => 'KN',
   ),
-  'koeln' => 
-  array (
+  'koeln' =>
+  array(
     'Active' => true,
     'Subtag' => 'KOELN',
   ),
-  'komatsu' => 
-  array (
+  'komatsu' =>
+  array(
     'Active' => true,
     'Subtag' => 'KOMATSU',
   ),
-  'kosher' => 
-  array (
+  'kosher' =>
+  array(
     'Active' => true,
     'Subtag' => 'KOSHER',
   ),
-  'kp' => 
-  array (
+  'kp' =>
+  array(
     'Active' => true,
     'Subtag' => 'KP',
   ),
-  'kpmg' => 
-  array (
+  'kpmg' =>
+  array(
     'Active' => true,
     'Subtag' => 'KPMG',
   ),
-  'kpn' => 
-  array (
+  'kpn' =>
+  array(
     'Active' => true,
     'Subtag' => 'KPN',
   ),
-  'kr' => 
-  array (
+  'kr' =>
+  array(
     'Active' => true,
     'Subtag' => 'KR',
   ),
-  'krd' => 
-  array (
+  'krd' =>
+  array(
     'Active' => true,
     'Subtag' => 'KRD',
   ),
-  'kred' => 
-  array (
+  'kred' =>
+  array(
     'Active' => true,
     'Subtag' => 'KRED',
   ),
-  'kuokgroup' => 
-  array (
+  'kuokgroup' =>
+  array(
     'Active' => true,
     'Subtag' => 'KUOKGROUP',
   ),
-  'kw' => 
-  array (
+  'kw' =>
+  array(
     'Active' => true,
     'Subtag' => 'KW',
   ),
-  'ky' => 
-  array (
+  'ky' =>
+  array(
     'Active' => true,
     'Subtag' => 'KY',
   ),
-  'kyoto' => 
-  array (
+  'kyoto' =>
+  array(
     'Active' => true,
     'Subtag' => 'KYOTO',
   ),
-  'kz' => 
-  array (
+  'kz' =>
+  array(
     'Active' => true,
     'Subtag' => 'KZ',
   ),
-  'la' => 
-  array (
+  'la' =>
+  array(
     'Active' => true,
     'Subtag' => 'LA',
   ),
-  'lacaixa' => 
-  array (
+  'lacaixa' =>
+  array(
     'Active' => true,
     'Subtag' => 'LACAIXA',
   ),
-  'lamborghini' => 
-  array (
+  'lamborghini' =>
+  array(
     'Active' => true,
     'Subtag' => 'LAMBORGHINI',
   ),
-  'lamer' => 
-  array (
+  'lamer' =>
+  array(
     'Active' => true,
     'Subtag' => 'LAMER',
   ),
-  'land' => 
-  array (
+  'land' =>
+  array(
     'Active' => true,
     'Subtag' => 'LAND',
   ),
-  'landrover' => 
-  array (
+  'landrover' =>
+  array(
     'Active' => true,
     'Subtag' => 'LANDROVER',
   ),
-  'lanxess' => 
-  array (
+  'lanxess' =>
+  array(
     'Active' => true,
     'Subtag' => 'LANXESS',
   ),
-  'lasalle' => 
-  array (
+  'lasalle' =>
+  array(
     'Active' => true,
     'Subtag' => 'LASALLE',
   ),
-  'lat' => 
-  array (
+  'lat' =>
+  array(
     'Active' => true,
     'Subtag' => 'LAT',
   ),
-  'latino' => 
-  array (
+  'latino' =>
+  array(
     'Active' => true,
     'Subtag' => 'LATINO',
   ),
-  'latrobe' => 
-  array (
+  'latrobe' =>
+  array(
     'Active' => true,
     'Subtag' => 'LATROBE',
   ),
-  'law' => 
-  array (
+  'law' =>
+  array(
     'Active' => true,
     'Subtag' => 'LAW',
   ),
-  'lawyer' => 
-  array (
+  'lawyer' =>
+  array(
     'Active' => true,
     'Subtag' => 'LAWYER',
   ),
-  'lb' => 
-  array (
+  'lb' =>
+  array(
     'Active' => true,
     'Subtag' => 'LB',
   ),
-  'lc' => 
-  array (
+  'lc' =>
+  array(
     'Active' => true,
     'Subtag' => 'LC',
   ),
-  'lds' => 
-  array (
+  'lds' =>
+  array(
     'Active' => true,
     'Subtag' => 'LDS',
   ),
-  'lease' => 
-  array (
+  'lease' =>
+  array(
     'Active' => true,
     'Subtag' => 'LEASE',
   ),
-  'leclerc' => 
-  array (
+  'leclerc' =>
+  array(
     'Active' => true,
     'Subtag' => 'LECLERC',
   ),
-  'lefrak' => 
-  array (
+  'lefrak' =>
+  array(
     'Active' => true,
     'Subtag' => 'LEFRAK',
   ),
-  'legal' => 
-  array (
+  'legal' =>
+  array(
     'Active' => true,
     'Subtag' => 'LEGAL',
   ),
-  'lego' => 
-  array (
+  'lego' =>
+  array(
     'Active' => true,
     'Subtag' => 'LEGO',
   ),
-  'lexus' => 
-  array (
+  'lexus' =>
+  array(
     'Active' => true,
     'Subtag' => 'LEXUS',
   ),
-  'lgbt' => 
-  array (
+  'lgbt' =>
+  array(
     'Active' => true,
     'Subtag' => 'LGBT',
   ),
-  'li' => 
-  array (
+  'li' =>
+  array(
     'Active' => true,
     'Subtag' => 'LI',
   ),
-  'lidl' => 
-  array (
+  'lidl' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIDL',
   ),
-  'life' => 
-  array (
+  'life' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIFE',
   ),
-  'lifeinsurance' => 
-  array (
+  'lifeinsurance' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIFEINSURANCE',
   ),
-  'lifestyle' => 
-  array (
+  'lifestyle' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIFESTYLE',
   ),
-  'lighting' => 
-  array (
+  'lighting' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIGHTING',
   ),
-  'like' => 
-  array (
+  'like' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIKE',
   ),
-  'lilly' => 
-  array (
+  'lilly' =>
+  array(
     'Active' => true,
     'Subtag' => 'LILLY',
   ),
-  'limited' => 
-  array (
+  'limited' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIMITED',
   ),
-  'limo' => 
-  array (
+  'limo' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIMO',
   ),
-  'lincoln' => 
-  array (
+  'lincoln' =>
+  array(
     'Active' => true,
     'Subtag' => 'LINCOLN',
   ),
-  'link' => 
-  array (
+  'link' =>
+  array(
     'Active' => true,
     'Subtag' => 'LINK',
   ),
-  'live' => 
-  array (
+  'live' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIVE',
   ),
-  'living' => 
-  array (
+  'living' =>
+  array(
     'Active' => true,
     'Subtag' => 'LIVING',
   ),
-  'lk' => 
-  array (
+  'lk' =>
+  array(
     'Active' => true,
     'Subtag' => 'LK',
   ),
-  'llc' => 
-  array (
+  'llc' =>
+  array(
     'Active' => true,
     'Subtag' => 'LLC',
   ),
-  'llp' => 
-  array (
+  'llp' =>
+  array(
     'Active' => true,
     'Subtag' => 'LLP',
   ),
-  'loan' => 
-  array (
+  'loan' =>
+  array(
     'Active' => true,
     'Subtag' => 'LOAN',
   ),
-  'loans' => 
-  array (
+  'loans' =>
+  array(
     'Active' => true,
     'Subtag' => 'LOANS',
   ),
-  'locker' => 
-  array (
+  'locker' =>
+  array(
     'Active' => true,
     'Subtag' => 'LOCKER',
   ),
-  'locus' => 
-  array (
+  'locus' =>
+  array(
     'Active' => true,
     'Subtag' => 'LOCUS',
   ),
-  'lol' => 
-  array (
+  'lol' =>
+  array(
     'Active' => true,
     'Subtag' => 'LOL',
   ),
-  'london' => 
-  array (
+  'london' =>
+  array(
     'Active' => true,
     'Subtag' => 'LONDON',
   ),
-  'lotte' => 
-  array (
+  'lotte' =>
+  array(
     'Active' => true,
     'Subtag' => 'LOTTE',
   ),
-  'lotto' => 
-  array (
+  'lotto' =>
+  array(
     'Active' => true,
     'Subtag' => 'LOTTO',
   ),
-  'love' => 
-  array (
+  'love' =>
+  array(
     'Active' => true,
     'Subtag' => 'LOVE',
   ),
-  'lpl' => 
-  array (
+  'lpl' =>
+  array(
     'Active' => true,
     'Subtag' => 'LPL',
   ),
-  'lplfinancial' => 
-  array (
+  'lplfinancial' =>
+  array(
     'Active' => true,
     'Subtag' => 'LPLFINANCIAL',
   ),
-  'lr' => 
-  array (
+  'lr' =>
+  array(
     'Active' => true,
     'Subtag' => 'LR',
   ),
-  'ls' => 
-  array (
+  'ls' =>
+  array(
     'Active' => true,
     'Subtag' => 'LS',
   ),
-  'lt' => 
-  array (
+  'lt' =>
+  array(
     'Active' => true,
     'Subtag' => 'LT',
   ),
-  'ltd' => 
-  array (
+  'ltd' =>
+  array(
     'Active' => true,
     'Subtag' => 'LTD',
   ),
-  'ltda' => 
-  array (
+  'ltda' =>
+  array(
     'Active' => true,
     'Subtag' => 'LTDA',
   ),
-  'lu' => 
-  array (
+  'lu' =>
+  array(
     'Active' => true,
     'Subtag' => 'LU',
   ),
-  'lundbeck' => 
-  array (
+  'lundbeck' =>
+  array(
     'Active' => true,
     'Subtag' => 'LUNDBECK',
   ),
-  'luxe' => 
-  array (
+  'luxe' =>
+  array(
     'Active' => true,
     'Subtag' => 'LUXE',
   ),
-  'luxury' => 
-  array (
+  'luxury' =>
+  array(
     'Active' => true,
     'Subtag' => 'LUXURY',
   ),
-  'lv' => 
-  array (
+  'lv' =>
+  array(
     'Active' => true,
     'Subtag' => 'LV',
   ),
-  'ly' => 
-  array (
+  'ly' =>
+  array(
     'Active' => true,
     'Subtag' => 'LY',
   ),
-  'ma' => 
-  array (
+  'ma' =>
+  array(
     'Active' => true,
     'Subtag' => 'MA',
   ),
-  'madrid' => 
-  array (
+  'madrid' =>
+  array(
     'Active' => true,
     'Subtag' => 'MADRID',
   ),
-  'maif' => 
-  array (
+  'maif' =>
+  array(
     'Active' => true,
     'Subtag' => 'MAIF',
   ),
-  'maison' => 
-  array (
+  'maison' =>
+  array(
     'Active' => true,
     'Subtag' => 'MAISON',
   ),
-  'makeup' => 
-  array (
+  'makeup' =>
+  array(
     'Active' => true,
     'Subtag' => 'MAKEUP',
   ),
-  'man' => 
-  array (
+  'man' =>
+  array(
     'Active' => true,
     'Subtag' => 'MAN',
   ),
-  'management' => 
-  array (
+  'management' =>
+  array(
     'Active' => true,
     'Subtag' => 'MANAGEMENT',
   ),
-  'mango' => 
-  array (
+  'mango' =>
+  array(
     'Active' => true,
     'Subtag' => 'MANGO',
   ),
-  'map' => 
-  array (
+  'map' =>
+  array(
     'Active' => true,
     'Subtag' => 'MAP',
   ),
-  'market' => 
-  array (
+  'market' =>
+  array(
     'Active' => true,
     'Subtag' => 'MARKET',
   ),
-  'marketing' => 
-  array (
+  'marketing' =>
+  array(
     'Active' => true,
     'Subtag' => 'MARKETING',
   ),
-  'markets' => 
-  array (
+  'markets' =>
+  array(
     'Active' => true,
     'Subtag' => 'MARKETS',
   ),
-  'marriott' => 
-  array (
+  'marriott' =>
+  array(
     'Active' => true,
     'Subtag' => 'MARRIOTT',
   ),
-  'marshalls' => 
-  array (
+  'marshalls' =>
+  array(
     'Active' => true,
     'Subtag' => 'MARSHALLS',
   ),
-  'mattel' => 
-  array (
+  'mattel' =>
+  array(
     'Active' => true,
     'Subtag' => 'MATTEL',
   ),
-  'mba' => 
-  array (
+  'mba' =>
+  array(
     'Active' => true,
     'Subtag' => 'MBA',
   ),
-  'mc' => 
-  array (
+  'mc' =>
+  array(
     'Active' => true,
     'Subtag' => 'MC',
   ),
-  'mckinsey' => 
-  array (
+  'mckinsey' =>
+  array(
     'Active' => true,
     'Subtag' => 'MCKINSEY',
   ),
-  'md' => 
-  array (
+  'md' =>
+  array(
     'Active' => true,
     'Subtag' => 'MD',
   ),
-  'me' => 
-  array (
+  'me' =>
+  array(
     'Active' => true,
     'Subtag' => 'ME',
   ),
-  'med' => 
-  array (
+  'med' =>
+  array(
     'Active' => true,
     'Subtag' => 'MED',
   ),
-  'media' => 
-  array (
+  'media' =>
+  array(
     'Active' => true,
     'Subtag' => 'MEDIA',
   ),
-  'meet' => 
-  array (
+  'meet' =>
+  array(
     'Active' => true,
     'Subtag' => 'MEET',
   ),
-  'melbourne' => 
-  array (
+  'melbourne' =>
+  array(
     'Active' => true,
     'Subtag' => 'MELBOURNE',
   ),
-  'meme' => 
-  array (
+  'meme' =>
+  array(
     'Active' => true,
     'Subtag' => 'MEME',
   ),
-  'memorial' => 
-  array (
+  'memorial' =>
+  array(
     'Active' => true,
     'Subtag' => 'MEMORIAL',
   ),
-  'men' => 
-  array (
+  'men' =>
+  array(
     'Active' => true,
     'Subtag' => 'MEN',
   ),
-  'menu' => 
-  array (
+  'menu' =>
+  array(
     'Active' => true,
     'Subtag' => 'MENU',
   ),
-  'merck' => 
-  array (
+  'merck' =>
+  array(
     'Active' => true,
     'Subtag' => 'MERCK',
   ),
-  'merckmsd' => 
-  array (
+  'merckmsd' =>
+  array(
     'Active' => true,
     'Subtag' => 'MERCKMSD',
   ),
-  'mg' => 
-  array (
+  'mg' =>
+  array(
     'Active' => true,
     'Subtag' => 'MG',
   ),
-  'mh' => 
-  array (
+  'mh' =>
+  array(
     'Active' => true,
     'Subtag' => 'MH',
   ),
-  'miami' => 
-  array (
+  'miami' =>
+  array(
     'Active' => true,
     'Subtag' => 'MIAMI',
   ),
-  'microsoft' => 
-  array (
+  'microsoft' =>
+  array(
     'Active' => true,
     'Subtag' => 'MICROSOFT',
   ),
-  'mil' => 
-  array (
+  'mil' =>
+  array(
     'Active' => true,
     'Subtag' => 'MIL',
   ),
-  'mini' => 
-  array (
+  'mini' =>
+  array(
     'Active' => true,
     'Subtag' => 'MINI',
   ),
-  'mint' => 
-  array (
+  'mint' =>
+  array(
     'Active' => true,
     'Subtag' => 'MINT',
   ),
-  'mit' => 
-  array (
+  'mit' =>
+  array(
     'Active' => true,
     'Subtag' => 'MIT',
   ),
-  'mitsubishi' => 
-  array (
+  'mitsubishi' =>
+  array(
     'Active' => true,
     'Subtag' => 'MITSUBISHI',
   ),
-  'mk' => 
-  array (
+  'mk' =>
+  array(
     'Active' => true,
     'Subtag' => 'MK',
   ),
-  'ml' => 
-  array (
+  'ml' =>
+  array(
     'Active' => true,
     'Subtag' => 'ML',
   ),
-  'mlb' => 
-  array (
+  'mlb' =>
+  array(
     'Active' => true,
     'Subtag' => 'MLB',
   ),
-  'mls' => 
-  array (
+  'mls' =>
+  array(
     'Active' => true,
     'Subtag' => 'MLS',
   ),
-  'mm' => 
-  array (
+  'mm' =>
+  array(
     'Active' => true,
     'Subtag' => 'MM',
   ),
-  'mma' => 
-  array (
+  'mma' =>
+  array(
     'Active' => true,
     'Subtag' => 'MMA',
   ),
-  'mn' => 
-  array (
+  'mn' =>
+  array(
     'Active' => true,
     'Subtag' => 'MN',
   ),
-  'mo' => 
-  array (
+  'mo' =>
+  array(
     'Active' => true,
     'Subtag' => 'MO',
   ),
-  'mobi' => 
-  array (
+  'mobi' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOBI',
   ),
-  'mobile' => 
-  array (
+  'mobile' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOBILE',
   ),
-  'moda' => 
-  array (
+  'moda' =>
+  array(
     'Active' => true,
     'Subtag' => 'MODA',
   ),
-  'moe' => 
-  array (
+  'moe' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOE',
   ),
-  'moi' => 
-  array (
+  'moi' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOI',
   ),
-  'mom' => 
-  array (
+  'mom' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOM',
   ),
-  'monash' => 
-  array (
+  'monash' =>
+  array(
     'Active' => true,
     'Subtag' => 'MONASH',
   ),
-  'money' => 
-  array (
+  'money' =>
+  array(
     'Active' => true,
     'Subtag' => 'MONEY',
   ),
-  'monster' => 
-  array (
+  'monster' =>
+  array(
     'Active' => true,
     'Subtag' => 'MONSTER',
   ),
-  'mormon' => 
-  array (
+  'mormon' =>
+  array(
     'Active' => true,
     'Subtag' => 'MORMON',
   ),
-  'mortgage' => 
-  array (
+  'mortgage' =>
+  array(
     'Active' => true,
     'Subtag' => 'MORTGAGE',
   ),
-  'moscow' => 
-  array (
+  'moscow' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOSCOW',
   ),
-  'moto' => 
-  array (
+  'moto' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOTO',
   ),
-  'motorcycles' => 
-  array (
+  'motorcycles' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOTORCYCLES',
   ),
-  'mov' => 
-  array (
+  'mov' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOV',
   ),
-  'movie' => 
-  array (
+  'movie' =>
+  array(
     'Active' => true,
     'Subtag' => 'MOVIE',
   ),
-  'mp' => 
-  array (
+  'mp' =>
+  array(
     'Active' => true,
     'Subtag' => 'MP',
   ),
-  'mq' => 
-  array (
+  'mq' =>
+  array(
     'Active' => true,
     'Subtag' => 'MQ',
   ),
-  'mr' => 
-  array (
+  'mr' =>
+  array(
     'Active' => true,
     'Subtag' => 'MR',
   ),
-  'ms' => 
-  array (
+  'ms' =>
+  array(
     'Active' => true,
     'Subtag' => 'MS',
   ),
-  'msd' => 
-  array (
+  'msd' =>
+  array(
     'Active' => true,
     'Subtag' => 'MSD',
   ),
-  'mt' => 
-  array (
+  'mt' =>
+  array(
     'Active' => true,
     'Subtag' => 'MT',
   ),
-  'mtn' => 
-  array (
+  'mtn' =>
+  array(
     'Active' => true,
     'Subtag' => 'MTN',
   ),
-  'mtr' => 
-  array (
+  'mtr' =>
+  array(
     'Active' => true,
     'Subtag' => 'MTR',
   ),
-  'mu' => 
-  array (
+  'mu' =>
+  array(
     'Active' => true,
     'Subtag' => 'MU',
   ),
-  'museum' => 
-  array (
+  'museum' =>
+  array(
     'Active' => true,
     'Subtag' => 'MUSEUM',
   ),
-  'music' => 
-  array (
+  'music' =>
+  array(
     'Active' => true,
     'Subtag' => 'MUSIC',
   ),
-  'mv' => 
-  array (
+  'mv' =>
+  array(
     'Active' => true,
     'Subtag' => 'MV',
   ),
-  'mw' => 
-  array (
+  'mw' =>
+  array(
     'Active' => true,
     'Subtag' => 'MW',
   ),
-  'mx' => 
-  array (
+  'mx' =>
+  array(
     'Active' => true,
     'Subtag' => 'MX',
   ),
-  'my' => 
-  array (
+  'my' =>
+  array(
     'Active' => true,
     'Subtag' => 'MY',
   ),
-  'mz' => 
-  array (
+  'mz' =>
+  array(
     'Active' => true,
     'Subtag' => 'MZ',
   ),
-  'na' => 
-  array (
+  'na' =>
+  array(
     'Active' => true,
     'Subtag' => 'NA',
   ),
-  'nab' => 
-  array (
+  'nab' =>
+  array(
     'Active' => true,
     'Subtag' => 'NAB',
   ),
-  'nagoya' => 
-  array (
+  'nagoya' =>
+  array(
     'Active' => true,
     'Subtag' => 'NAGOYA',
   ),
-  'name' => 
-  array (
+  'name' =>
+  array(
     'Active' => true,
     'Subtag' => 'NAME',
   ),
-  'navy' => 
-  array (
+  'navy' =>
+  array(
     'Active' => true,
     'Subtag' => 'NAVY',
   ),
-  'nba' => 
-  array (
+  'nba' =>
+  array(
     'Active' => true,
     'Subtag' => 'NBA',
   ),
-  'nc' => 
-  array (
+  'nc' =>
+  array(
     'Active' => true,
     'Subtag' => 'NC',
   ),
-  'ne' => 
-  array (
+  'ne' =>
+  array(
     'Active' => true,
     'Subtag' => 'NE',
   ),
-  'nec' => 
-  array (
+  'nec' =>
+  array(
     'Active' => true,
     'Subtag' => 'NEC',
   ),
-  'net' => 
-  array (
+  'net' =>
+  array(
     'Active' => true,
     'Subtag' => 'NET',
   ),
-  'netbank' => 
-  array (
+  'netbank' =>
+  array(
     'Active' => true,
     'Subtag' => 'NETBANK',
   ),
-  'netflix' => 
-  array (
+  'netflix' =>
+  array(
     'Active' => true,
     'Subtag' => 'NETFLIX',
   ),
-  'network' => 
-  array (
+  'network' =>
+  array(
     'Active' => true,
     'Subtag' => 'NETWORK',
   ),
-  'neustar' => 
-  array (
+  'neustar' =>
+  array(
     'Active' => true,
     'Subtag' => 'NEUSTAR',
   ),
-  'new' => 
-  array (
+  'new' =>
+  array(
     'Active' => true,
     'Subtag' => 'NEW',
   ),
-  'news' => 
-  array (
+  'news' =>
+  array(
     'Active' => true,
     'Subtag' => 'NEWS',
   ),
-  'next' => 
-  array (
+  'next' =>
+  array(
     'Active' => true,
     'Subtag' => 'NEXT',
   ),
-  'nextdirect' => 
-  array (
+  'nextdirect' =>
+  array(
     'Active' => true,
     'Subtag' => 'NEXTDIRECT',
   ),
-  'nexus' => 
-  array (
+  'nexus' =>
+  array(
     'Active' => true,
     'Subtag' => 'NEXUS',
   ),
-  'nf' => 
-  array (
+  'nf' =>
+  array(
     'Active' => true,
     'Subtag' => 'NF',
   ),
-  'nfl' => 
-  array (
+  'nfl' =>
+  array(
     'Active' => true,
     'Subtag' => 'NFL',
   ),
-  'ng' => 
-  array (
+  'ng' =>
+  array(
     'Active' => true,
     'Subtag' => 'NG',
   ),
-  'ngo' => 
-  array (
+  'ngo' =>
+  array(
     'Active' => true,
     'Subtag' => 'NGO',
   ),
-  'nhk' => 
-  array (
+  'nhk' =>
+  array(
     'Active' => true,
     'Subtag' => 'NHK',
   ),
-  'ni' => 
-  array (
+  'ni' =>
+  array(
     'Active' => true,
     'Subtag' => 'NI',
   ),
-  'nico' => 
-  array (
+  'nico' =>
+  array(
     'Active' => true,
     'Subtag' => 'NICO',
   ),
-  'nike' => 
-  array (
+  'nike' =>
+  array(
     'Active' => true,
     'Subtag' => 'NIKE',
   ),
-  'nikon' => 
-  array (
+  'nikon' =>
+  array(
     'Active' => true,
     'Subtag' => 'NIKON',
   ),
-  'ninja' => 
-  array (
+  'ninja' =>
+  array(
     'Active' => true,
     'Subtag' => 'NINJA',
   ),
-  'nissan' => 
-  array (
+  'nissan' =>
+  array(
     'Active' => true,
     'Subtag' => 'NISSAN',
   ),
-  'nissay' => 
-  array (
+  'nissay' =>
+  array(
     'Active' => true,
     'Subtag' => 'NISSAY',
   ),
-  'nl' => 
-  array (
+  'nl' =>
+  array(
     'Active' => true,
     'Subtag' => 'NL',
   ),
-  'no' => 
-  array (
+  'no' =>
+  array(
     'Active' => true,
     'Subtag' => 'NO',
   ),
-  'nokia' => 
-  array (
+  'nokia' =>
+  array(
     'Active' => true,
     'Subtag' => 'NOKIA',
   ),
-  'norton' => 
-  array (
+  'norton' =>
+  array(
     'Active' => true,
     'Subtag' => 'NORTON',
   ),
-  'now' => 
-  array (
+  'now' =>
+  array(
     'Active' => true,
     'Subtag' => 'NOW',
   ),
-  'nowruz' => 
-  array (
+  'nowruz' =>
+  array(
     'Active' => true,
     'Subtag' => 'NOWRUZ',
   ),
-  'nowtv' => 
-  array (
+  'nowtv' =>
+  array(
     'Active' => true,
     'Subtag' => 'NOWTV',
   ),
-  'np' => 
-  array (
+  'np' =>
+  array(
     'Active' => true,
     'Subtag' => 'NP',
   ),
-  'nr' => 
-  array (
+  'nr' =>
+  array(
     'Active' => true,
     'Subtag' => 'NR',
   ),
-  'nra' => 
-  array (
+  'nra' =>
+  array(
     'Active' => true,
     'Subtag' => 'NRA',
   ),
-  'nrw' => 
-  array (
+  'nrw' =>
+  array(
     'Active' => true,
     'Subtag' => 'NRW',
   ),
-  'ntt' => 
-  array (
+  'ntt' =>
+  array(
     'Active' => true,
     'Subtag' => 'NTT',
   ),
-  'nu' => 
-  array (
+  'nu' =>
+  array(
     'Active' => true,
     'Subtag' => 'NU',
   ),
-  'nyc' => 
-  array (
+  'nyc' =>
+  array(
     'Active' => true,
     'Subtag' => 'NYC',
   ),
-  'nz' => 
-  array (
+  'nz' =>
+  array(
     'Active' => true,
     'Subtag' => 'NZ',
   ),
-  'obi' => 
-  array (
+  'obi' =>
+  array(
     'Active' => true,
     'Subtag' => 'OBI',
   ),
-  'observer' => 
-  array (
+  'observer' =>
+  array(
     'Active' => true,
     'Subtag' => 'OBSERVER',
   ),
-  'office' => 
-  array (
+  'office' =>
+  array(
     'Active' => true,
     'Subtag' => 'OFFICE',
   ),
-  'okinawa' => 
-  array (
+  'okinawa' =>
+  array(
     'Active' => true,
     'Subtag' => 'OKINAWA',
   ),
-  'olayan' => 
-  array (
+  'olayan' =>
+  array(
     'Active' => true,
     'Subtag' => 'OLAYAN',
   ),
-  'olayangroup' => 
-  array (
+  'olayangroup' =>
+  array(
     'Active' => true,
     'Subtag' => 'OLAYANGROUP',
   ),
-  'ollo' => 
-  array (
+  'ollo' =>
+  array(
     'Active' => true,
     'Subtag' => 'OLLO',
   ),
-  'om' => 
-  array (
+  'om' =>
+  array(
     'Active' => true,
     'Subtag' => 'OM',
   ),
-  'omega' => 
-  array (
+  'omega' =>
+  array(
     'Active' => true,
     'Subtag' => 'OMEGA',
   ),
-  'one' => 
-  array (
+  'one' =>
+  array(
     'Active' => true,
     'Subtag' => 'ONE',
   ),
-  'ong' => 
-  array (
+  'ong' =>
+  array(
     'Active' => true,
     'Subtag' => 'ONG',
   ),
-  'onl' => 
-  array (
+  'onl' =>
+  array(
     'Active' => true,
     'Subtag' => 'ONL',
   ),
-  'online' => 
-  array (
+  'online' =>
+  array(
     'Active' => true,
     'Subtag' => 'ONLINE',
   ),
-  'ooo' => 
-  array (
+  'ooo' =>
+  array(
     'Active' => true,
     'Subtag' => 'OOO',
   ),
-  'open' => 
-  array (
+  'open' =>
+  array(
     'Active' => true,
     'Subtag' => 'OPEN',
   ),
-  'oracle' => 
-  array (
+  'oracle' =>
+  array(
     'Active' => true,
     'Subtag' => 'ORACLE',
   ),
-  'orange' => 
-  array (
+  'orange' =>
+  array(
     'Active' => true,
     'Subtag' => 'ORANGE',
   ),
-  'org' => 
-  array (
+  'org' =>
+  array(
     'Active' => true,
     'Subtag' => 'ORG',
   ),
-  'organic' => 
-  array (
+  'organic' =>
+  array(
     'Active' => true,
     'Subtag' => 'ORGANIC',
   ),
-  'origins' => 
-  array (
+  'origins' =>
+  array(
     'Active' => true,
     'Subtag' => 'ORIGINS',
   ),
-  'osaka' => 
-  array (
+  'osaka' =>
+  array(
     'Active' => true,
     'Subtag' => 'OSAKA',
   ),
-  'otsuka' => 
-  array (
+  'otsuka' =>
+  array(
     'Active' => true,
     'Subtag' => 'OTSUKA',
   ),
-  'ott' => 
-  array (
+  'ott' =>
+  array(
     'Active' => true,
     'Subtag' => 'OTT',
   ),
-  'ovh' => 
-  array (
+  'ovh' =>
+  array(
     'Active' => true,
     'Subtag' => 'OVH',
   ),
-  'pa' => 
-  array (
+  'pa' =>
+  array(
     'Active' => true,
     'Subtag' => 'PA',
   ),
-  'page' => 
-  array (
+  'page' =>
+  array(
     'Active' => true,
     'Subtag' => 'PAGE',
   ),
-  'panasonic' => 
-  array (
+  'panasonic' =>
+  array(
     'Active' => true,
     'Subtag' => 'PANASONIC',
   ),
-  'paris' => 
-  array (
+  'paris' =>
+  array(
     'Active' => true,
     'Subtag' => 'PARIS',
   ),
-  'pars' => 
-  array (
+  'pars' =>
+  array(
     'Active' => true,
     'Subtag' => 'PARS',
   ),
-  'partners' => 
-  array (
+  'partners' =>
+  array(
     'Active' => true,
     'Subtag' => 'PARTNERS',
   ),
-  'parts' => 
-  array (
+  'parts' =>
+  array(
     'Active' => true,
     'Subtag' => 'PARTS',
   ),
-  'party' => 
-  array (
+  'party' =>
+  array(
     'Active' => true,
     'Subtag' => 'PARTY',
   ),
-  'pay' => 
-  array (
+  'pay' =>
+  array(
     'Active' => true,
     'Subtag' => 'PAY',
   ),
-  'pccw' => 
-  array (
+  'pccw' =>
+  array(
     'Active' => true,
     'Subtag' => 'PCCW',
   ),
-  'pe' => 
-  array (
+  'pe' =>
+  array(
     'Active' => true,
     'Subtag' => 'PE',
   ),
-  'pet' => 
-  array (
+  'pet' =>
+  array(
     'Active' => true,
     'Subtag' => 'PET',
   ),
-  'pf' => 
-  array (
+  'pf' =>
+  array(
     'Active' => true,
     'Subtag' => 'PF',
   ),
-  'pfizer' => 
-  array (
+  'pfizer' =>
+  array(
     'Active' => true,
     'Subtag' => 'PFIZER',
   ),
-  'pg' => 
-  array (
+  'pg' =>
+  array(
     'Active' => true,
     'Subtag' => 'PG',
   ),
-  'ph' => 
-  array (
+  'ph' =>
+  array(
     'Active' => true,
     'Subtag' => 'PH',
   ),
-  'pharmacy' => 
-  array (
+  'pharmacy' =>
+  array(
     'Active' => true,
     'Subtag' => 'PHARMACY',
   ),
-  'phd' => 
-  array (
+  'phd' =>
+  array(
     'Active' => true,
     'Subtag' => 'PHD',
   ),
-  'philips' => 
-  array (
+  'philips' =>
+  array(
     'Active' => true,
     'Subtag' => 'PHILIPS',
   ),
-  'phone' => 
-  array (
+  'phone' =>
+  array(
     'Active' => true,
     'Subtag' => 'PHONE',
   ),
-  'photo' => 
-  array (
+  'photo' =>
+  array(
     'Active' => true,
     'Subtag' => 'PHOTO',
   ),
-  'photography' => 
-  array (
+  'photography' =>
+  array(
     'Active' => true,
     'Subtag' => 'PHOTOGRAPHY',
   ),
-  'photos' => 
-  array (
+  'photos' =>
+  array(
     'Active' => true,
     'Subtag' => 'PHOTOS',
   ),
-  'physio' => 
-  array (
+  'physio' =>
+  array(
     'Active' => true,
     'Subtag' => 'PHYSIO',
   ),
-  'pics' => 
-  array (
+  'pics' =>
+  array(
     'Active' => true,
     'Subtag' => 'PICS',
   ),
-  'pictet' => 
-  array (
+  'pictet' =>
+  array(
     'Active' => true,
     'Subtag' => 'PICTET',
   ),
-  'pictures' => 
-  array (
+  'pictures' =>
+  array(
     'Active' => true,
     'Subtag' => 'PICTURES',
   ),
-  'pid' => 
-  array (
+  'pid' =>
+  array(
     'Active' => true,
     'Subtag' => 'PID',
   ),
-  'pin' => 
-  array (
+  'pin' =>
+  array(
     'Active' => true,
     'Subtag' => 'PIN',
   ),
-  'ping' => 
-  array (
+  'ping' =>
+  array(
     'Active' => true,
     'Subtag' => 'PING',
   ),
-  'pink' => 
-  array (
+  'pink' =>
+  array(
     'Active' => true,
     'Subtag' => 'PINK',
   ),
-  'pioneer' => 
-  array (
+  'pioneer' =>
+  array(
     'Active' => true,
     'Subtag' => 'PIONEER',
   ),
-  'pizza' => 
-  array (
+  'pizza' =>
+  array(
     'Active' => true,
     'Subtag' => 'PIZZA',
   ),
-  'pk' => 
-  array (
+  'pk' =>
+  array(
     'Active' => true,
     'Subtag' => 'PK',
   ),
-  'pl' => 
-  array (
+  'pl' =>
+  array(
     'Active' => true,
     'Subtag' => 'PL',
   ),
-  'place' => 
-  array (
+  'place' =>
+  array(
     'Active' => true,
     'Subtag' => 'PLACE',
   ),
-  'play' => 
-  array (
+  'play' =>
+  array(
     'Active' => true,
     'Subtag' => 'PLAY',
   ),
-  'playstation' => 
-  array (
+  'playstation' =>
+  array(
     'Active' => true,
     'Subtag' => 'PLAYSTATION',
   ),
-  'plumbing' => 
-  array (
+  'plumbing' =>
+  array(
     'Active' => true,
     'Subtag' => 'PLUMBING',
   ),
-  'plus' => 
-  array (
+  'plus' =>
+  array(
     'Active' => true,
     'Subtag' => 'PLUS',
   ),
-  'pm' => 
-  array (
+  'pm' =>
+  array(
     'Active' => true,
     'Subtag' => 'PM',
   ),
-  'pn' => 
-  array (
+  'pn' =>
+  array(
     'Active' => true,
     'Subtag' => 'PN',
   ),
-  'pnc' => 
-  array (
+  'pnc' =>
+  array(
     'Active' => true,
     'Subtag' => 'PNC',
   ),
-  'pohl' => 
-  array (
+  'pohl' =>
+  array(
     'Active' => true,
     'Subtag' => 'POHL',
   ),
-  'poker' => 
-  array (
+  'poker' =>
+  array(
     'Active' => true,
     'Subtag' => 'POKER',
   ),
-  'politie' => 
-  array (
+  'politie' =>
+  array(
     'Active' => true,
     'Subtag' => 'POLITIE',
   ),
-  'porn' => 
-  array (
+  'porn' =>
+  array(
     'Active' => true,
     'Subtag' => 'PORN',
   ),
-  'post' => 
-  array (
+  'post' =>
+  array(
     'Active' => true,
     'Subtag' => 'POST',
   ),
-  'pr' => 
-  array (
+  'pr' =>
+  array(
     'Active' => true,
     'Subtag' => 'PR',
   ),
-  'praxi' => 
-  array (
+  'praxi' =>
+  array(
     'Active' => true,
     'Subtag' => 'PRAXI',
   ),
-  'press' => 
-  array (
+  'press' =>
+  array(
     'Active' => true,
     'Subtag' => 'PRESS',
   ),
-  'prime' => 
-  array (
+  'prime' =>
+  array(
     'Active' => true,
     'Subtag' => 'PRIME',
   ),
-  'pro' => 
-  array (
+  'pro' =>
+  array(
     'Active' => true,
     'Subtag' => 'PRO',
   ),
-  'prod' => 
-  array (
+  'prod' =>
+  array(
     'Active' => true,
     'Subtag' => 'PROD',
   ),
-  'productions' => 
-  array (
+  'productions' =>
+  array(
     'Active' => true,
     'Subtag' => 'PRODUCTIONS',
   ),
-  'prof' => 
-  array (
+  'prof' =>
+  array(
     'Active' => true,
     'Subtag' => 'PROF',
   ),
-  'progressive' => 
-  array (
+  'progressive' =>
+  array(
     'Active' => true,
     'Subtag' => 'PROGRESSIVE',
   ),
-  'promo' => 
-  array (
+  'promo' =>
+  array(
     'Active' => true,
     'Subtag' => 'PROMO',
   ),
-  'properties' => 
-  array (
+  'properties' =>
+  array(
     'Active' => true,
     'Subtag' => 'PROPERTIES',
   ),
-  'property' => 
-  array (
+  'property' =>
+  array(
     'Active' => true,
     'Subtag' => 'PROPERTY',
   ),
-  'protection' => 
-  array (
+  'protection' =>
+  array(
     'Active' => true,
     'Subtag' => 'PROTECTION',
   ),
-  'pru' => 
-  array (
+  'pru' =>
+  array(
     'Active' => true,
     'Subtag' => 'PRU',
   ),
-  'prudential' => 
-  array (
+  'prudential' =>
+  array(
     'Active' => true,
     'Subtag' => 'PRUDENTIAL',
   ),
-  'ps' => 
-  array (
+  'ps' =>
+  array(
     'Active' => true,
     'Subtag' => 'PS',
   ),
-  'pt' => 
-  array (
+  'pt' =>
+  array(
     'Active' => true,
     'Subtag' => 'PT',
   ),
-  'pub' => 
-  array (
+  'pub' =>
+  array(
     'Active' => true,
     'Subtag' => 'PUB',
   ),
-  'pw' => 
-  array (
+  'pw' =>
+  array(
     'Active' => true,
     'Subtag' => 'PW',
   ),
-  'pwc' => 
-  array (
+  'pwc' =>
+  array(
     'Active' => true,
     'Subtag' => 'PWC',
   ),
-  'py' => 
-  array (
+  'py' =>
+  array(
     'Active' => true,
     'Subtag' => 'PY',
   ),
-  'qa' => 
-  array (
+  'qa' =>
+  array(
     'Active' => true,
     'Subtag' => 'QA',
   ),
-  'qpon' => 
-  array (
+  'qpon' =>
+  array(
     'Active' => true,
     'Subtag' => 'QPON',
   ),
-  'quebec' => 
-  array (
+  'quebec' =>
+  array(
     'Active' => true,
     'Subtag' => 'QUEBEC',
   ),
-  'quest' => 
-  array (
+  'quest' =>
+  array(
     'Active' => true,
     'Subtag' => 'QUEST',
   ),
-  'racing' => 
-  array (
+  'racing' =>
+  array(
     'Active' => true,
     'Subtag' => 'RACING',
   ),
-  'radio' => 
-  array (
+  'radio' =>
+  array(
     'Active' => true,
     'Subtag' => 'RADIO',
   ),
-  're' => 
-  array (
+  're' =>
+  array(
     'Active' => true,
     'Subtag' => 'RE',
   ),
-  'read' => 
-  array (
+  'read' =>
+  array(
     'Active' => true,
     'Subtag' => 'READ',
   ),
-  'realestate' => 
-  array (
+  'realestate' =>
+  array(
     'Active' => true,
     'Subtag' => 'REALESTATE',
   ),
-  'realtor' => 
-  array (
+  'realtor' =>
+  array(
     'Active' => true,
     'Subtag' => 'REALTOR',
   ),
-  'realty' => 
-  array (
+  'realty' =>
+  array(
     'Active' => true,
     'Subtag' => 'REALTY',
   ),
-  'recipes' => 
-  array (
+  'recipes' =>
+  array(
     'Active' => true,
     'Subtag' => 'RECIPES',
   ),
-  'red' => 
-  array (
+  'red' =>
+  array(
     'Active' => true,
     'Subtag' => 'RED',
   ),
-  'redumbrella' => 
-  array (
+  'redumbrella' =>
+  array(
     'Active' => true,
     'Subtag' => 'REDUMBRELLA',
   ),
-  'rehab' => 
-  array (
+  'rehab' =>
+  array(
     'Active' => true,
     'Subtag' => 'REHAB',
   ),
-  'reise' => 
-  array (
+  'reise' =>
+  array(
     'Active' => true,
     'Subtag' => 'REISE',
   ),
-  'reisen' => 
-  array (
+  'reisen' =>
+  array(
     'Active' => true,
     'Subtag' => 'REISEN',
   ),
-  'reit' => 
-  array (
+  'reit' =>
+  array(
     'Active' => true,
     'Subtag' => 'REIT',
   ),
-  'reliance' => 
-  array (
+  'reliance' =>
+  array(
     'Active' => true,
     'Subtag' => 'RELIANCE',
   ),
-  'ren' => 
-  array (
+  'ren' =>
+  array(
     'Active' => true,
     'Subtag' => 'REN',
   ),
-  'rent' => 
-  array (
+  'rent' =>
+  array(
     'Active' => true,
     'Subtag' => 'RENT',
   ),
-  'rentals' => 
-  array (
+  'rentals' =>
+  array(
     'Active' => true,
     'Subtag' => 'RENTALS',
   ),
-  'repair' => 
-  array (
+  'repair' =>
+  array(
     'Active' => true,
     'Subtag' => 'REPAIR',
   ),
-  'report' => 
-  array (
+  'report' =>
+  array(
     'Active' => true,
     'Subtag' => 'REPORT',
   ),
-  'republican' => 
-  array (
+  'republican' =>
+  array(
     'Active' => true,
     'Subtag' => 'REPUBLICAN',
   ),
-  'rest' => 
-  array (
+  'rest' =>
+  array(
     'Active' => true,
     'Subtag' => 'REST',
   ),
-  'restaurant' => 
-  array (
+  'restaurant' =>
+  array(
     'Active' => true,
     'Subtag' => 'RESTAURANT',
   ),
-  'review' => 
-  array (
+  'review' =>
+  array(
     'Active' => true,
     'Subtag' => 'REVIEW',
   ),
-  'reviews' => 
-  array (
+  'reviews' =>
+  array(
     'Active' => true,
     'Subtag' => 'REVIEWS',
   ),
-  'rexroth' => 
-  array (
+  'rexroth' =>
+  array(
     'Active' => true,
     'Subtag' => 'REXROTH',
   ),
-  'rich' => 
-  array (
+  'rich' =>
+  array(
     'Active' => true,
     'Subtag' => 'RICH',
   ),
-  'richardli' => 
-  array (
+  'richardli' =>
+  array(
     'Active' => true,
     'Subtag' => 'RICHARDLI',
   ),
-  'ricoh' => 
-  array (
+  'ricoh' =>
+  array(
     'Active' => true,
     'Subtag' => 'RICOH',
   ),
-  'ril' => 
-  array (
+  'ril' =>
+  array(
     'Active' => true,
     'Subtag' => 'RIL',
   ),
-  'rio' => 
-  array (
+  'rio' =>
+  array(
     'Active' => true,
     'Subtag' => 'RIO',
   ),
-  'rip' => 
-  array (
+  'rip' =>
+  array(
     'Active' => true,
     'Subtag' => 'RIP',
   ),
-  'ro' => 
-  array (
+  'ro' =>
+  array(
     'Active' => true,
     'Subtag' => 'RO',
   ),
-  'rocks' => 
-  array (
+  'rocks' =>
+  array(
     'Active' => true,
     'Subtag' => 'ROCKS',
   ),
-  'rodeo' => 
-  array (
+  'rodeo' =>
+  array(
     'Active' => true,
     'Subtag' => 'RODEO',
   ),
-  'rogers' => 
-  array (
+  'rogers' =>
+  array(
     'Active' => true,
     'Subtag' => 'ROGERS',
   ),
-  'room' => 
-  array (
+  'room' =>
+  array(
     'Active' => true,
     'Subtag' => 'ROOM',
   ),
-  'rs' => 
-  array (
+  'rs' =>
+  array(
     'Active' => true,
     'Subtag' => 'RS',
   ),
-  'rsvp' => 
-  array (
+  'rsvp' =>
+  array(
     'Active' => true,
     'Subtag' => 'RSVP',
   ),
-  'ru' => 
-  array (
+  'ru' =>
+  array(
     'Active' => true,
     'Subtag' => 'RU',
   ),
-  'rugby' => 
-  array (
+  'rugby' =>
+  array(
     'Active' => true,
     'Subtag' => 'RUGBY',
   ),
-  'ruhr' => 
-  array (
+  'ruhr' =>
+  array(
     'Active' => true,
     'Subtag' => 'RUHR',
   ),
-  'run' => 
-  array (
+  'run' =>
+  array(
     'Active' => true,
     'Subtag' => 'RUN',
   ),
-  'rw' => 
-  array (
+  'rw' =>
+  array(
     'Active' => true,
     'Subtag' => 'RW',
   ),
-  'rwe' => 
-  array (
+  'rwe' =>
+  array(
     'Active' => true,
     'Subtag' => 'RWE',
   ),
-  'ryukyu' => 
-  array (
+  'ryukyu' =>
+  array(
     'Active' => true,
     'Subtag' => 'RYUKYU',
   ),
-  'sa' => 
-  array (
+  'sa' =>
+  array(
     'Active' => true,
     'Subtag' => 'SA',
   ),
-  'saarland' => 
-  array (
+  'saarland' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAARLAND',
   ),
-  'safe' => 
-  array (
+  'safe' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAFE',
   ),
-  'safety' => 
-  array (
+  'safety' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAFETY',
   ),
-  'sakura' => 
-  array (
+  'sakura' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAKURA',
   ),
-  'sale' => 
-  array (
+  'sale' =>
+  array(
     'Active' => true,
     'Subtag' => 'SALE',
   ),
-  'salon' => 
-  array (
+  'salon' =>
+  array(
     'Active' => true,
     'Subtag' => 'SALON',
   ),
-  'samsclub' => 
-  array (
+  'samsclub' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAMSCLUB',
   ),
-  'samsung' => 
-  array (
+  'samsung' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAMSUNG',
   ),
-  'sandvik' => 
-  array (
+  'sandvik' =>
+  array(
     'Active' => true,
     'Subtag' => 'SANDVIK',
   ),
-  'sandvikcoromant' => 
-  array (
+  'sandvikcoromant' =>
+  array(
     'Active' => true,
     'Subtag' => 'SANDVIKCOROMANT',
   ),
-  'sanofi' => 
-  array (
+  'sanofi' =>
+  array(
     'Active' => true,
     'Subtag' => 'SANOFI',
   ),
-  'sap' => 
-  array (
+  'sap' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAP',
   ),
-  'sarl' => 
-  array (
+  'sarl' =>
+  array(
     'Active' => true,
     'Subtag' => 'SARL',
   ),
-  'sas' => 
-  array (
+  'sas' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAS',
   ),
-  'save' => 
-  array (
+  'save' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAVE',
   ),
-  'saxo' => 
-  array (
+  'saxo' =>
+  array(
     'Active' => true,
     'Subtag' => 'SAXO',
   ),
-  'sb' => 
-  array (
+  'sb' =>
+  array(
     'Active' => true,
     'Subtag' => 'SB',
   ),
-  'sbi' => 
-  array (
+  'sbi' =>
+  array(
     'Active' => true,
     'Subtag' => 'SBI',
   ),
-  'sbs' => 
-  array (
+  'sbs' =>
+  array(
     'Active' => true,
     'Subtag' => 'SBS',
   ),
-  'sc' => 
-  array (
+  'sc' =>
+  array(
     'Active' => true,
     'Subtag' => 'SC',
   ),
-  'scb' => 
-  array (
+  'scb' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCB',
   ),
-  'schaeffler' => 
-  array (
+  'schaeffler' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCHAEFFLER',
   ),
-  'schmidt' => 
-  array (
+  'schmidt' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCHMIDT',
   ),
-  'scholarships' => 
-  array (
+  'scholarships' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCHOLARSHIPS',
   ),
-  'school' => 
-  array (
+  'school' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCHOOL',
   ),
-  'schule' => 
-  array (
+  'schule' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCHULE',
   ),
-  'schwarz' => 
-  array (
+  'schwarz' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCHWARZ',
   ),
-  'science' => 
-  array (
+  'science' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCIENCE',
   ),
-  'scot' => 
-  array (
+  'scot' =>
+  array(
     'Active' => true,
     'Subtag' => 'SCOT',
   ),
-  'sd' => 
-  array (
+  'sd' =>
+  array(
     'Active' => true,
     'Subtag' => 'SD',
   ),
-  'se' => 
-  array (
+  'se' =>
+  array(
     'Active' => true,
     'Subtag' => 'SE',
   ),
-  'search' => 
-  array (
+  'search' =>
+  array(
     'Active' => true,
     'Subtag' => 'SEARCH',
   ),
-  'seat' => 
-  array (
+  'seat' =>
+  array(
     'Active' => true,
     'Subtag' => 'SEAT',
   ),
-  'secure' => 
-  array (
+  'secure' =>
+  array(
     'Active' => true,
     'Subtag' => 'SECURE',
   ),
-  'security' => 
-  array (
+  'security' =>
+  array(
     'Active' => true,
     'Subtag' => 'SECURITY',
   ),
-  'seek' => 
-  array (
+  'seek' =>
+  array(
     'Active' => true,
     'Subtag' => 'SEEK',
   ),
-  'select' => 
-  array (
+  'select' =>
+  array(
     'Active' => true,
     'Subtag' => 'SELECT',
   ),
-  'sener' => 
-  array (
+  'sener' =>
+  array(
     'Active' => true,
     'Subtag' => 'SENER',
   ),
-  'services' => 
-  array (
+  'services' =>
+  array(
     'Active' => true,
     'Subtag' => 'SERVICES',
   ),
-  'seven' => 
-  array (
+  'seven' =>
+  array(
     'Active' => true,
     'Subtag' => 'SEVEN',
   ),
-  'sew' => 
-  array (
+  'sew' =>
+  array(
     'Active' => true,
     'Subtag' => 'SEW',
   ),
-  'sex' => 
-  array (
+  'sex' =>
+  array(
     'Active' => true,
     'Subtag' => 'SEX',
   ),
-  'sexy' => 
-  array (
+  'sexy' =>
+  array(
     'Active' => true,
     'Subtag' => 'SEXY',
   ),
-  'sfr' => 
-  array (
+  'sfr' =>
+  array(
     'Active' => true,
     'Subtag' => 'SFR',
   ),
-  'sg' => 
-  array (
+  'sg' =>
+  array(
     'Active' => true,
     'Subtag' => 'SG',
   ),
-  'sh' => 
-  array (
+  'sh' =>
+  array(
     'Active' => true,
     'Subtag' => 'SH',
   ),
-  'shangrila' => 
-  array (
+  'shangrila' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHANGRILA',
   ),
-  'sharp' => 
-  array (
+  'sharp' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHARP',
   ),
-  'shell' => 
-  array (
+  'shell' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHELL',
   ),
-  'shia' => 
-  array (
+  'shia' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHIA',
   ),
-  'shiksha' => 
-  array (
+  'shiksha' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHIKSHA',
   ),
-  'shoes' => 
-  array (
+  'shoes' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHOES',
   ),
-  'shop' => 
-  array (
+  'shop' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHOP',
   ),
-  'shopping' => 
-  array (
+  'shopping' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHOPPING',
   ),
-  'shouji' => 
-  array (
+  'shouji' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHOUJI',
   ),
-  'show' => 
-  array (
+  'show' =>
+  array(
     'Active' => true,
     'Subtag' => 'SHOW',
   ),
-  'si' => 
-  array (
+  'si' =>
+  array(
     'Active' => true,
     'Subtag' => 'SI',
   ),
-  'silk' => 
-  array (
+  'silk' =>
+  array(
     'Active' => true,
     'Subtag' => 'SILK',
   ),
-  'sina' => 
-  array (
+  'sina' =>
+  array(
     'Active' => true,
     'Subtag' => 'SINA',
   ),
-  'singles' => 
-  array (
+  'singles' =>
+  array(
     'Active' => true,
     'Subtag' => 'SINGLES',
   ),
-  'site' => 
-  array (
+  'site' =>
+  array(
     'Active' => true,
     'Subtag' => 'SITE',
   ),
-  'sj' => 
-  array (
+  'sj' =>
+  array(
     'Active' => true,
     'Subtag' => 'SJ',
   ),
-  'sk' => 
-  array (
+  'sk' =>
+  array(
     'Active' => true,
     'Subtag' => 'SK',
   ),
-  'ski' => 
-  array (
+  'ski' =>
+  array(
     'Active' => true,
     'Subtag' => 'SKI',
   ),
-  'skin' => 
-  array (
+  'skin' =>
+  array(
     'Active' => true,
     'Subtag' => 'SKIN',
   ),
-  'sky' => 
-  array (
+  'sky' =>
+  array(
     'Active' => true,
     'Subtag' => 'SKY',
   ),
-  'skype' => 
-  array (
+  'skype' =>
+  array(
     'Active' => true,
     'Subtag' => 'SKYPE',
   ),
-  'sl' => 
-  array (
+  'sl' =>
+  array(
     'Active' => true,
     'Subtag' => 'SL',
   ),
-  'sling' => 
-  array (
+  'sling' =>
+  array(
     'Active' => true,
     'Subtag' => 'SLING',
   ),
-  'sm' => 
-  array (
+  'sm' =>
+  array(
     'Active' => true,
     'Subtag' => 'SM',
   ),
-  'smart' => 
-  array (
+  'smart' =>
+  array(
     'Active' => true,
     'Subtag' => 'SMART',
   ),
-  'smile' => 
-  array (
+  'smile' =>
+  array(
     'Active' => true,
     'Subtag' => 'SMILE',
   ),
-  'sn' => 
-  array (
+  'sn' =>
+  array(
     'Active' => true,
     'Subtag' => 'SN',
   ),
-  'sncf' => 
-  array (
+  'sncf' =>
+  array(
     'Active' => true,
     'Subtag' => 'SNCF',
   ),
-  'so' => 
-  array (
+  'so' =>
+  array(
     'Active' => true,
     'Subtag' => 'SO',
   ),
-  'soccer' => 
-  array (
+  'soccer' =>
+  array(
     'Active' => true,
     'Subtag' => 'SOCCER',
   ),
-  'social' => 
-  array (
+  'social' =>
+  array(
     'Active' => true,
     'Subtag' => 'SOCIAL',
   ),
-  'softbank' => 
-  array (
+  'softbank' =>
+  array(
     'Active' => true,
     'Subtag' => 'SOFTBANK',
   ),
-  'software' => 
-  array (
+  'software' =>
+  array(
     'Active' => true,
     'Subtag' => 'SOFTWARE',
   ),
-  'sohu' => 
-  array (
+  'sohu' =>
+  array(
     'Active' => true,
     'Subtag' => 'SOHU',
   ),
-  'solar' => 
-  array (
+  'solar' =>
+  array(
     'Active' => true,
     'Subtag' => 'SOLAR',
   ),
-  'solutions' => 
-  array (
+  'solutions' =>
+  array(
     'Active' => true,
     'Subtag' => 'SOLUTIONS',
   ),
-  'song' => 
-  array (
+  'song' =>
+  array(
     'Active' => true,
     'Subtag' => 'SONG',
   ),
-  'sony' => 
-  array (
+  'sony' =>
+  array(
     'Active' => true,
     'Subtag' => 'SONY',
   ),
-  'soy' => 
-  array (
+  'soy' =>
+  array(
     'Active' => true,
     'Subtag' => 'SOY',
   ),
-  'spa' => 
-  array (
+  'spa' =>
+  array(
     'Active' => true,
     'Subtag' => 'SPA',
   ),
-  'space' => 
-  array (
+  'space' =>
+  array(
     'Active' => true,
     'Subtag' => 'SPACE',
   ),
-  'sport' => 
-  array (
+  'sport' =>
+  array(
     'Active' => true,
     'Subtag' => 'SPORT',
   ),
-  'spot' => 
-  array (
+  'spot' =>
+  array(
     'Active' => true,
     'Subtag' => 'SPOT',
   ),
-  'sr' => 
-  array (
+  'sr' =>
+  array(
     'Active' => true,
     'Subtag' => 'SR',
   ),
-  'srl' => 
-  array (
+  'srl' =>
+  array(
     'Active' => true,
     'Subtag' => 'SRL',
   ),
-  'ss' => 
-  array (
+  'ss' =>
+  array(
     'Active' => true,
     'Subtag' => 'SS',
   ),
-  'st' => 
-  array (
+  'st' =>
+  array(
     'Active' => true,
     'Subtag' => 'ST',
   ),
-  'stada' => 
-  array (
+  'stada' =>
+  array(
     'Active' => true,
     'Subtag' => 'STADA',
   ),
-  'staples' => 
-  array (
+  'staples' =>
+  array(
     'Active' => true,
     'Subtag' => 'STAPLES',
   ),
-  'star' => 
-  array (
+  'star' =>
+  array(
     'Active' => true,
     'Subtag' => 'STAR',
   ),
-  'statebank' => 
-  array (
+  'statebank' =>
+  array(
     'Active' => true,
     'Subtag' => 'STATEBANK',
   ),
-  'statefarm' => 
-  array (
+  'statefarm' =>
+  array(
     'Active' => true,
     'Subtag' => 'STATEFARM',
   ),
-  'stc' => 
-  array (
+  'stc' =>
+  array(
     'Active' => true,
     'Subtag' => 'STC',
   ),
-  'stcgroup' => 
-  array (
+  'stcgroup' =>
+  array(
     'Active' => true,
     'Subtag' => 'STCGROUP',
   ),
-  'stockholm' => 
-  array (
+  'stockholm' =>
+  array(
     'Active' => true,
     'Subtag' => 'STOCKHOLM',
   ),
-  'storage' => 
-  array (
+  'storage' =>
+  array(
     'Active' => true,
     'Subtag' => 'STORAGE',
   ),
-  'store' => 
-  array (
+  'store' =>
+  array(
     'Active' => true,
     'Subtag' => 'STORE',
   ),
-  'stream' => 
-  array (
+  'stream' =>
+  array(
     'Active' => true,
     'Subtag' => 'STREAM',
   ),
-  'studio' => 
-  array (
+  'studio' =>
+  array(
     'Active' => true,
     'Subtag' => 'STUDIO',
   ),
-  'study' => 
-  array (
+  'study' =>
+  array(
     'Active' => true,
     'Subtag' => 'STUDY',
   ),
-  'style' => 
-  array (
+  'style' =>
+  array(
     'Active' => true,
     'Subtag' => 'STYLE',
   ),
-  'su' => 
-  array (
+  'su' =>
+  array(
     'Active' => true,
     'Subtag' => 'SU',
   ),
-  'sucks' => 
-  array (
+  'sucks' =>
+  array(
     'Active' => true,
     'Subtag' => 'SUCKS',
   ),
-  'supplies' => 
-  array (
+  'supplies' =>
+  array(
     'Active' => true,
     'Subtag' => 'SUPPLIES',
   ),
-  'supply' => 
-  array (
+  'supply' =>
+  array(
     'Active' => true,
     'Subtag' => 'SUPPLY',
   ),
-  'support' => 
-  array (
+  'support' =>
+  array(
     'Active' => true,
     'Subtag' => 'SUPPORT',
   ),
-  'surf' => 
-  array (
+  'surf' =>
+  array(
     'Active' => true,
     'Subtag' => 'SURF',
   ),
-  'surgery' => 
-  array (
+  'surgery' =>
+  array(
     'Active' => true,
     'Subtag' => 'SURGERY',
   ),
-  'suzuki' => 
-  array (
+  'suzuki' =>
+  array(
     'Active' => true,
     'Subtag' => 'SUZUKI',
   ),
-  'sv' => 
-  array (
+  'sv' =>
+  array(
     'Active' => true,
     'Subtag' => 'SV',
   ),
-  'swatch' => 
-  array (
+  'swatch' =>
+  array(
     'Active' => true,
     'Subtag' => 'SWATCH',
   ),
-  'swiss' => 
-  array (
+  'swiss' =>
+  array(
     'Active' => true,
     'Subtag' => 'SWISS',
   ),
-  'sx' => 
-  array (
+  'sx' =>
+  array(
     'Active' => true,
     'Subtag' => 'SX',
   ),
-  'sy' => 
-  array (
+  'sy' =>
+  array(
     'Active' => true,
     'Subtag' => 'SY',
   ),
-  'sydney' => 
-  array (
+  'sydney' =>
+  array(
     'Active' => true,
     'Subtag' => 'SYDNEY',
   ),
-  'systems' => 
-  array (
+  'systems' =>
+  array(
     'Active' => true,
     'Subtag' => 'SYSTEMS',
   ),
-  'sz' => 
-  array (
+  'sz' =>
+  array(
     'Active' => true,
     'Subtag' => 'SZ',
   ),
-  'tab' => 
-  array (
+  'tab' =>
+  array(
     'Active' => true,
     'Subtag' => 'TAB',
   ),
-  'taipei' => 
-  array (
+  'taipei' =>
+  array(
     'Active' => true,
     'Subtag' => 'TAIPEI',
   ),
-  'talk' => 
-  array (
+  'talk' =>
+  array(
     'Active' => true,
     'Subtag' => 'TALK',
   ),
-  'taobao' => 
-  array (
+  'taobao' =>
+  array(
     'Active' => true,
     'Subtag' => 'TAOBAO',
   ),
-  'target' => 
-  array (
+  'target' =>
+  array(
     'Active' => true,
     'Subtag' => 'TARGET',
   ),
-  'tatamotors' => 
-  array (
+  'tatamotors' =>
+  array(
     'Active' => true,
     'Subtag' => 'TATAMOTORS',
   ),
-  'tatar' => 
-  array (
+  'tatar' =>
+  array(
     'Active' => true,
     'Subtag' => 'TATAR',
   ),
-  'tattoo' => 
-  array (
+  'tattoo' =>
+  array(
     'Active' => true,
     'Subtag' => 'TATTOO',
   ),
-  'tax' => 
-  array (
+  'tax' =>
+  array(
     'Active' => true,
     'Subtag' => 'TAX',
   ),
-  'taxi' => 
-  array (
+  'taxi' =>
+  array(
     'Active' => true,
     'Subtag' => 'TAXI',
   ),
-  'tc' => 
-  array (
+  'tc' =>
+  array(
     'Active' => true,
     'Subtag' => 'TC',
   ),
-  'tci' => 
-  array (
+  'tci' =>
+  array(
     'Active' => true,
     'Subtag' => 'TCI',
   ),
-  'td' => 
-  array (
+  'td' =>
+  array(
     'Active' => true,
     'Subtag' => 'TD',
   ),
-  'tdk' => 
-  array (
+  'tdk' =>
+  array(
     'Active' => true,
     'Subtag' => 'TDK',
   ),
-  'team' => 
-  array (
+  'team' =>
+  array(
     'Active' => true,
     'Subtag' => 'TEAM',
   ),
-  'tech' => 
-  array (
+  'tech' =>
+  array(
     'Active' => true,
     'Subtag' => 'TECH',
   ),
-  'technology' => 
-  array (
+  'technology' =>
+  array(
     'Active' => true,
     'Subtag' => 'TECHNOLOGY',
   ),
-  'tel' => 
-  array (
+  'tel' =>
+  array(
     'Active' => true,
     'Subtag' => 'TEL',
   ),
-  'temasek' => 
-  array (
+  'temasek' =>
+  array(
     'Active' => true,
     'Subtag' => 'TEMASEK',
   ),
-  'tennis' => 
-  array (
+  'tennis' =>
+  array(
     'Active' => true,
     'Subtag' => 'TENNIS',
   ),
-  'teva' => 
-  array (
+  'teva' =>
+  array(
     'Active' => true,
     'Subtag' => 'TEVA',
   ),
-  'tf' => 
-  array (
+  'tf' =>
+  array(
     'Active' => true,
     'Subtag' => 'TF',
   ),
-  'tg' => 
-  array (
+  'tg' =>
+  array(
     'Active' => true,
     'Subtag' => 'TG',
   ),
-  'th' => 
-  array (
+  'th' =>
+  array(
     'Active' => true,
     'Subtag' => 'TH',
   ),
-  'thd' => 
-  array (
+  'thd' =>
+  array(
     'Active' => true,
     'Subtag' => 'THD',
   ),
-  'theater' => 
-  array (
+  'theater' =>
+  array(
     'Active' => true,
     'Subtag' => 'THEATER',
   ),
-  'theatre' => 
-  array (
+  'theatre' =>
+  array(
     'Active' => true,
     'Subtag' => 'THEATRE',
   ),
-  'tiaa' => 
-  array (
+  'tiaa' =>
+  array(
     'Active' => true,
     'Subtag' => 'TIAA',
   ),
-  'tickets' => 
-  array (
+  'tickets' =>
+  array(
     'Active' => true,
     'Subtag' => 'TICKETS',
   ),
-  'tienda' => 
-  array (
+  'tienda' =>
+  array(
     'Active' => true,
     'Subtag' => 'TIENDA',
   ),
-  'tips' => 
-  array (
+  'tips' =>
+  array(
     'Active' => true,
     'Subtag' => 'TIPS',
   ),
-  'tires' => 
-  array (
+  'tires' =>
+  array(
     'Active' => true,
     'Subtag' => 'TIRES',
   ),
-  'tirol' => 
-  array (
+  'tirol' =>
+  array(
     'Active' => true,
     'Subtag' => 'TIROL',
   ),
-  'tj' => 
-  array (
+  'tj' =>
+  array(
     'Active' => true,
     'Subtag' => 'TJ',
   ),
-  'tjmaxx' => 
-  array (
+  'tjmaxx' =>
+  array(
     'Active' => true,
     'Subtag' => 'TJMAXX',
   ),
-  'tjx' => 
-  array (
+  'tjx' =>
+  array(
     'Active' => true,
     'Subtag' => 'TJX',
   ),
-  'tk' => 
-  array (
+  'tk' =>
+  array(
     'Active' => true,
     'Subtag' => 'TK',
   ),
-  'tkmaxx' => 
-  array (
+  'tkmaxx' =>
+  array(
     'Active' => true,
     'Subtag' => 'TKMAXX',
   ),
-  'tl' => 
-  array (
+  'tl' =>
+  array(
     'Active' => true,
     'Subtag' => 'TL',
   ),
-  'tm' => 
-  array (
+  'tm' =>
+  array(
     'Active' => true,
     'Subtag' => 'TM',
   ),
-  'tmall' => 
-  array (
+  'tmall' =>
+  array(
     'Active' => true,
     'Subtag' => 'TMALL',
   ),
-  'tn' => 
-  array (
+  'tn' =>
+  array(
     'Active' => true,
     'Subtag' => 'TN',
   ),
-  'to' => 
-  array (
+  'to' =>
+  array(
     'Active' => true,
     'Subtag' => 'TO',
   ),
-  'today' => 
-  array (
+  'today' =>
+  array(
     'Active' => true,
     'Subtag' => 'TODAY',
   ),
-  'tokyo' => 
-  array (
+  'tokyo' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOKYO',
   ),
-  'tools' => 
-  array (
+  'tools' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOOLS',
   ),
-  'top' => 
-  array (
+  'top' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOP',
   ),
-  'toray' => 
-  array (
+  'toray' =>
+  array(
     'Active' => true,
     'Subtag' => 'TORAY',
   ),
-  'toshiba' => 
-  array (
+  'toshiba' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOSHIBA',
   ),
-  'total' => 
-  array (
+  'total' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOTAL',
   ),
-  'tours' => 
-  array (
+  'tours' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOURS',
   ),
-  'town' => 
-  array (
+  'town' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOWN',
   ),
-  'toyota' => 
-  array (
+  'toyota' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOYOTA',
   ),
-  'toys' => 
-  array (
+  'toys' =>
+  array(
     'Active' => true,
     'Subtag' => 'TOYS',
   ),
-  'tr' => 
-  array (
+  'tr' =>
+  array(
     'Active' => true,
     'Subtag' => 'TR',
   ),
-  'trade' => 
-  array (
+  'trade' =>
+  array(
     'Active' => true,
     'Subtag' => 'TRADE',
   ),
-  'trading' => 
-  array (
+  'trading' =>
+  array(
     'Active' => true,
     'Subtag' => 'TRADING',
   ),
-  'training' => 
-  array (
+  'training' =>
+  array(
     'Active' => true,
     'Subtag' => 'TRAINING',
   ),
-  'travel' => 
-  array (
+  'travel' =>
+  array(
     'Active' => true,
     'Subtag' => 'TRAVEL',
   ),
-  'travelers' => 
-  array (
+  'travelers' =>
+  array(
     'Active' => true,
     'Subtag' => 'TRAVELERS',
   ),
-  'travelersinsurance' => 
-  array (
+  'travelersinsurance' =>
+  array(
     'Active' => true,
     'Subtag' => 'TRAVELERSINSURANCE',
   ),
-  'trust' => 
-  array (
+  'trust' =>
+  array(
     'Active' => true,
     'Subtag' => 'TRUST',
   ),
-  'trv' => 
-  array (
+  'trv' =>
+  array(
     'Active' => true,
     'Subtag' => 'TRV',
   ),
-  'tt' => 
-  array (
+  'tt' =>
+  array(
     'Active' => true,
     'Subtag' => 'TT',
   ),
-  'tube' => 
-  array (
+  'tube' =>
+  array(
     'Active' => true,
     'Subtag' => 'TUBE',
   ),
-  'tui' => 
-  array (
+  'tui' =>
+  array(
     'Active' => true,
     'Subtag' => 'TUI',
   ),
-  'tunes' => 
-  array (
+  'tunes' =>
+  array(
     'Active' => true,
     'Subtag' => 'TUNES',
   ),
-  'tushu' => 
-  array (
+  'tushu' =>
+  array(
     'Active' => true,
     'Subtag' => 'TUSHU',
   ),
-  'tv' => 
-  array (
+  'tv' =>
+  array(
     'Active' => true,
     'Subtag' => 'TV',
   ),
-  'tvs' => 
-  array (
+  'tvs' =>
+  array(
     'Active' => true,
     'Subtag' => 'TVS',
   ),
-  'tw' => 
-  array (
+  'tw' =>
+  array(
     'Active' => true,
     'Subtag' => 'TW',
   ),
-  'tz' => 
-  array (
+  'tz' =>
+  array(
     'Active' => true,
     'Subtag' => 'TZ',
   ),
-  'ua' => 
-  array (
+  'ua' =>
+  array(
     'Active' => true,
     'Subtag' => 'UA',
   ),
-  'ubank' => 
-  array (
+  'ubank' =>
+  array(
     'Active' => true,
     'Subtag' => 'UBANK',
   ),
-  'ubs' => 
-  array (
+  'ubs' =>
+  array(
     'Active' => true,
     'Subtag' => 'UBS',
   ),
-  'ug' => 
-  array (
+  'ug' =>
+  array(
     'Active' => true,
     'Subtag' => 'UG',
   ),
-  'uk' => 
-  array (
+  'uk' =>
+  array(
     'Active' => true,
     'Subtag' => 'UK',
   ),
-  'unicom' => 
-  array (
+  'unicom' =>
+  array(
     'Active' => true,
     'Subtag' => 'UNICOM',
   ),
-  'university' => 
-  array (
+  'university' =>
+  array(
     'Active' => true,
     'Subtag' => 'UNIVERSITY',
   ),
-  'uno' => 
-  array (
+  'uno' =>
+  array(
     'Active' => true,
     'Subtag' => 'UNO',
   ),
-  'uol' => 
-  array (
+  'uol' =>
+  array(
     'Active' => true,
     'Subtag' => 'UOL',
   ),
-  'ups' => 
-  array (
+  'ups' =>
+  array(
     'Active' => true,
     'Subtag' => 'UPS',
   ),
-  'us' => 
-  array (
+  'us' =>
+  array(
     'Active' => true,
     'Subtag' => 'US',
   ),
-  'uy' => 
-  array (
+  'uy' =>
+  array(
     'Active' => true,
     'Subtag' => 'UY',
   ),
-  'uz' => 
-  array (
+  'uz' =>
+  array(
     'Active' => true,
     'Subtag' => 'UZ',
   ),
-  'va' => 
-  array (
+  'va' =>
+  array(
     'Active' => true,
     'Subtag' => 'VA',
   ),
-  'vacations' => 
-  array (
+  'vacations' =>
+  array(
     'Active' => true,
     'Subtag' => 'VACATIONS',
   ),
-  'vana' => 
-  array (
+  'vana' =>
+  array(
     'Active' => true,
     'Subtag' => 'VANA',
   ),
-  'vanguard' => 
-  array (
+  'vanguard' =>
+  array(
     'Active' => true,
     'Subtag' => 'VANGUARD',
   ),
-  'vc' => 
-  array (
+  'vc' =>
+  array(
     'Active' => true,
     'Subtag' => 'VC',
   ),
-  've' => 
-  array (
+  've' =>
+  array(
     'Active' => true,
     'Subtag' => 'VE',
   ),
-  'vegas' => 
-  array (
+  'vegas' =>
+  array(
     'Active' => true,
     'Subtag' => 'VEGAS',
   ),
-  'ventures' => 
-  array (
+  'ventures' =>
+  array(
     'Active' => true,
     'Subtag' => 'VENTURES',
   ),
-  'verisign' => 
-  array (
+  'verisign' =>
+  array(
     'Active' => true,
     'Subtag' => 'VERISIGN',
   ),
-  'versicherung' => 
-  array (
+  'versicherung' =>
+  array(
     'Active' => true,
     'Subtag' => 'VERSICHERUNG',
   ),
-  'vet' => 
-  array (
+  'vet' =>
+  array(
     'Active' => true,
     'Subtag' => 'VET',
   ),
-  'vg' => 
-  array (
+  'vg' =>
+  array(
     'Active' => true,
     'Subtag' => 'VG',
   ),
-  'vi' => 
-  array (
+  'vi' =>
+  array(
     'Active' => true,
     'Subtag' => 'VI',
   ),
-  'viajes' => 
-  array (
+  'viajes' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIAJES',
   ),
-  'video' => 
-  array (
+  'video' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIDEO',
   ),
-  'vig' => 
-  array (
+  'vig' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIG',
   ),
-  'viking' => 
-  array (
+  'viking' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIKING',
   ),
-  'villas' => 
-  array (
+  'villas' =>
+  array(
     'Active' => true,
     'Subtag' => 'VILLAS',
   ),
-  'vin' => 
-  array (
+  'vin' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIN',
   ),
-  'vip' => 
-  array (
+  'vip' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIP',
   ),
-  'virgin' => 
-  array (
+  'virgin' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIRGIN',
   ),
-  'visa' => 
-  array (
+  'visa' =>
+  array(
     'Active' => true,
     'Subtag' => 'VISA',
   ),
-  'vision' => 
-  array (
+  'vision' =>
+  array(
     'Active' => true,
     'Subtag' => 'VISION',
   ),
-  'viva' => 
-  array (
+  'viva' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIVA',
   ),
-  'vivo' => 
-  array (
+  'vivo' =>
+  array(
     'Active' => true,
     'Subtag' => 'VIVO',
   ),
-  'vlaanderen' => 
-  array (
+  'vlaanderen' =>
+  array(
     'Active' => true,
     'Subtag' => 'VLAANDEREN',
   ),
-  'vn' => 
-  array (
+  'vn' =>
+  array(
     'Active' => true,
     'Subtag' => 'VN',
   ),
-  'vodka' => 
-  array (
+  'vodka' =>
+  array(
     'Active' => true,
     'Subtag' => 'VODKA',
   ),
-  'volvo' => 
-  array (
+  'volvo' =>
+  array(
     'Active' => true,
     'Subtag' => 'VOLVO',
   ),
-  'vote' => 
-  array (
+  'vote' =>
+  array(
     'Active' => true,
     'Subtag' => 'VOTE',
   ),
-  'voting' => 
-  array (
+  'voting' =>
+  array(
     'Active' => true,
     'Subtag' => 'VOTING',
   ),
-  'voto' => 
-  array (
+  'voto' =>
+  array(
     'Active' => true,
     'Subtag' => 'VOTO',
   ),
-  'voyage' => 
-  array (
+  'voyage' =>
+  array(
     'Active' => true,
     'Subtag' => 'VOYAGE',
   ),
-  'vu' => 
-  array (
+  'vu' =>
+  array(
     'Active' => true,
     'Subtag' => 'VU',
   ),
-  'wales' => 
-  array (
+  'wales' =>
+  array(
     'Active' => true,
     'Subtag' => 'WALES',
   ),
-  'walmart' => 
-  array (
+  'walmart' =>
+  array(
     'Active' => true,
     'Subtag' => 'WALMART',
   ),
-  'walter' => 
-  array (
+  'walter' =>
+  array(
     'Active' => true,
     'Subtag' => 'WALTER',
   ),
-  'wang' => 
-  array (
+  'wang' =>
+  array(
     'Active' => true,
     'Subtag' => 'WANG',
   ),
-  'wanggou' => 
-  array (
+  'wanggou' =>
+  array(
     'Active' => true,
     'Subtag' => 'WANGGOU',
   ),
-  'watch' => 
-  array (
+  'watch' =>
+  array(
     'Active' => true,
     'Subtag' => 'WATCH',
   ),
-  'watches' => 
-  array (
+  'watches' =>
+  array(
     'Active' => true,
     'Subtag' => 'WATCHES',
   ),
-  'weather' => 
-  array (
+  'weather' =>
+  array(
     'Active' => true,
     'Subtag' => 'WEATHER',
   ),
-  'weatherchannel' => 
-  array (
+  'weatherchannel' =>
+  array(
     'Active' => true,
     'Subtag' => 'WEATHERCHANNEL',
   ),
-  'webcam' => 
-  array (
+  'webcam' =>
+  array(
     'Active' => true,
     'Subtag' => 'WEBCAM',
   ),
-  'weber' => 
-  array (
+  'weber' =>
+  array(
     'Active' => true,
     'Subtag' => 'WEBER',
   ),
-  'website' => 
-  array (
+  'website' =>
+  array(
     'Active' => true,
     'Subtag' => 'WEBSITE',
   ),
-  'wed' => 
-  array (
+  'wed' =>
+  array(
     'Active' => true,
     'Subtag' => 'WED',
   ),
-  'wedding' => 
-  array (
+  'wedding' =>
+  array(
     'Active' => true,
     'Subtag' => 'WEDDING',
   ),
-  'weibo' => 
-  array (
+  'weibo' =>
+  array(
     'Active' => true,
     'Subtag' => 'WEIBO',
   ),
-  'weir' => 
-  array (
+  'weir' =>
+  array(
     'Active' => true,
     'Subtag' => 'WEIR',
   ),
-  'wf' => 
-  array (
+  'wf' =>
+  array(
     'Active' => true,
     'Subtag' => 'WF',
   ),
-  'whoswho' => 
-  array (
+  'whoswho' =>
+  array(
     'Active' => true,
     'Subtag' => 'WHOSWHO',
   ),
-  'wien' => 
-  array (
+  'wien' =>
+  array(
     'Active' => true,
     'Subtag' => 'WIEN',
   ),
-  'wiki' => 
-  array (
+  'wiki' =>
+  array(
     'Active' => true,
     'Subtag' => 'WIKI',
   ),
-  'williamhill' => 
-  array (
+  'williamhill' =>
+  array(
     'Active' => true,
     'Subtag' => 'WILLIAMHILL',
   ),
-  'win' => 
-  array (
+  'win' =>
+  array(
     'Active' => true,
     'Subtag' => 'WIN',
   ),
-  'windows' => 
-  array (
+  'windows' =>
+  array(
     'Active' => true,
     'Subtag' => 'WINDOWS',
   ),
-  'wine' => 
-  array (
+  'wine' =>
+  array(
     'Active' => true,
     'Subtag' => 'WINE',
   ),
-  'winners' => 
-  array (
+  'winners' =>
+  array(
     'Active' => true,
     'Subtag' => 'WINNERS',
   ),
-  'wme' => 
-  array (
+  'wme' =>
+  array(
     'Active' => true,
     'Subtag' => 'WME',
   ),
-  'woodside' => 
-  array (
+  'woodside' =>
+  array(
     'Active' => true,
     'Subtag' => 'WOODSIDE',
   ),
-  'work' => 
-  array (
+  'work' =>
+  array(
     'Active' => true,
     'Subtag' => 'WORK',
   ),
-  'works' => 
-  array (
+  'works' =>
+  array(
     'Active' => true,
     'Subtag' => 'WORKS',
   ),
-  'world' => 
-  array (
+  'world' =>
+  array(
     'Active' => true,
     'Subtag' => 'WORLD',
   ),
-  'wow' => 
-  array (
+  'wow' =>
+  array(
     'Active' => true,
     'Subtag' => 'WOW',
   ),
-  'ws' => 
-  array (
+  'ws' =>
+  array(
     'Active' => true,
     'Subtag' => 'WS',
   ),
-  'wtc' => 
-  array (
+  'wtc' =>
+  array(
     'Active' => true,
     'Subtag' => 'WTC',
   ),
-  'wtf' => 
-  array (
+  'wtf' =>
+  array(
     'Active' => true,
     'Subtag' => 'WTF',
   ),
-  'xbox' => 
-  array (
+  'xbox' =>
+  array(
     'Active' => true,
     'Subtag' => 'XBOX',
   ),
-  'xerox' => 
-  array (
+  'xerox' =>
+  array(
     'Active' => true,
     'Subtag' => 'XEROX',
   ),
-  'xihuan' => 
-  array (
+  'xihuan' =>
+  array(
     'Active' => true,
     'Subtag' => 'XIHUAN',
   ),
-  'xin' => 
-  array (
+  'xin' =>
+  array(
     'Active' => true,
     'Subtag' => 'XIN',
   ),
-  'xn--11b4c3d' => 
-  array (
+  'xn--11b4c3d' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--11B4C3D',
   ),
-  'xn--1ck2e1b' => 
-  array (
+  'xn--1ck2e1b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--1CK2E1B',
   ),
-  'xn--1qqw23a' => 
-  array (
+  'xn--1qqw23a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--1QQW23A',
   ),
-  'xn--2scrj9c' => 
-  array (
+  'xn--2scrj9c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--2SCRJ9C',
   ),
-  'xn--30rr7y' => 
-  array (
+  'xn--30rr7y' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--30RR7Y',
   ),
-  'xn--3bst00m' => 
-  array (
+  'xn--3bst00m' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--3BST00M',
   ),
-  'xn--3ds443g' => 
-  array (
+  'xn--3ds443g' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--3DS443G',
   ),
-  'xn--3e0b707e' => 
-  array (
+  'xn--3e0b707e' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--3E0B707E',
   ),
-  'xn--3hcrj9c' => 
-  array (
+  'xn--3hcrj9c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--3HCRJ9C',
   ),
-  'xn--3pxu8k' => 
-  array (
+  'xn--3pxu8k' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--3PXU8K',
   ),
-  'xn--42c2d9a' => 
-  array (
+  'xn--42c2d9a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--42C2D9A',
   ),
-  'xn--45br5cyl' => 
-  array (
+  'xn--45br5cyl' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--45BR5CYL',
   ),
-  'xn--45brj9c' => 
-  array (
+  'xn--45brj9c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--45BRJ9C',
   ),
-  'xn--45q11c' => 
-  array (
+  'xn--45q11c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--45Q11C',
   ),
-  'xn--4dbrk0ce' => 
-  array (
+  'xn--4dbrk0ce' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--4DBRK0CE',
   ),
-  'xn--4gbrim' => 
-  array (
+  'xn--4gbrim' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--4GBRIM',
   ),
-  'xn--54b7fta0cc' => 
-  array (
+  'xn--54b7fta0cc' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--54B7FTA0CC',
   ),
-  'xn--55qw42g' => 
-  array (
+  'xn--55qw42g' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--55QW42G',
   ),
-  'xn--55qx5d' => 
-  array (
+  'xn--55qx5d' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--55QX5D',
   ),
-  'xn--5su34j936bgsg' => 
-  array (
+  'xn--5su34j936bgsg' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--5SU34J936BGSG',
   ),
-  'xn--5tzm5g' => 
-  array (
+  'xn--5tzm5g' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--5TZM5G',
   ),
-  'xn--6frz82g' => 
-  array (
+  'xn--6frz82g' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--6FRZ82G',
   ),
-  'xn--6qq986b3xl' => 
-  array (
+  'xn--6qq986b3xl' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--6QQ986B3XL',
   ),
-  'xn--80adxhks' => 
-  array (
+  'xn--80adxhks' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--80ADXHKS',
   ),
-  'xn--80ao21a' => 
-  array (
+  'xn--80ao21a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--80AO21A',
   ),
-  'xn--80aqecdr1a' => 
-  array (
+  'xn--80aqecdr1a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--80AQECDR1A',
   ),
-  'xn--80asehdb' => 
-  array (
+  'xn--80asehdb' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--80ASEHDB',
   ),
-  'xn--80aswg' => 
-  array (
+  'xn--80aswg' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--80ASWG',
   ),
-  'xn--8y0a063a' => 
-  array (
+  'xn--8y0a063a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--8Y0A063A',
   ),
-  'xn--90a3ac' => 
-  array (
+  'xn--90a3ac' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--90A3AC',
   ),
-  'xn--90ae' => 
-  array (
+  'xn--90ae' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--90AE',
   ),
-  'xn--90ais' => 
-  array (
+  'xn--90ais' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--90AIS',
   ),
-  'xn--9dbq2a' => 
-  array (
+  'xn--9dbq2a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--9DBQ2A',
   ),
-  'xn--9et52u' => 
-  array (
+  'xn--9et52u' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--9ET52U',
   ),
-  'xn--9krt00a' => 
-  array (
+  'xn--9krt00a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--9KRT00A',
   ),
-  'xn--b4w605ferd' => 
-  array (
+  'xn--b4w605ferd' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--B4W605FERD',
   ),
-  'xn--bck1b9a5dre4c' => 
-  array (
+  'xn--bck1b9a5dre4c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--BCK1B9A5DRE4C',
   ),
-  'xn--c1avg' => 
-  array (
+  'xn--c1avg' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--C1AVG',
   ),
-  'xn--c2br7g' => 
-  array (
+  'xn--c2br7g' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--C2BR7G',
   ),
-  'xn--cck2b3b' => 
-  array (
+  'xn--cck2b3b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--CCK2B3B',
   ),
-  'xn--cckwcxetd' => 
-  array (
+  'xn--cckwcxetd' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--CCKWCXETD',
   ),
-  'xn--cg4bki' => 
-  array (
+  'xn--cg4bki' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--CG4BKI',
   ),
-  'xn--clchc0ea0b2g2a9gcd' => 
-  array (
+  'xn--clchc0ea0b2g2a9gcd' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--CLCHC0EA0B2G2A9GCD',
   ),
-  'xn--czr694b' => 
-  array (
+  'xn--czr694b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--CZR694B',
   ),
-  'xn--czrs0t' => 
-  array (
+  'xn--czrs0t' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--CZRS0T',
   ),
-  'xn--czru2d' => 
-  array (
+  'xn--czru2d' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--CZRU2D',
   ),
-  'xn--d1acj3b' => 
-  array (
+  'xn--d1acj3b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--D1ACJ3B',
   ),
-  'xn--d1alf' => 
-  array (
+  'xn--d1alf' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--D1ALF',
   ),
-  'xn--e1a4c' => 
-  array (
+  'xn--e1a4c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--E1A4C',
   ),
-  'xn--eckvdtc9d' => 
-  array (
+  'xn--eckvdtc9d' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--ECKVDTC9D',
   ),
-  'xn--efvy88h' => 
-  array (
+  'xn--efvy88h' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--EFVY88H',
   ),
-  'xn--fct429k' => 
-  array (
+  'xn--fct429k' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FCT429K',
   ),
-  'xn--fhbei' => 
-  array (
+  'xn--fhbei' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FHBEI',
   ),
-  'xn--fiq228c5hs' => 
-  array (
+  'xn--fiq228c5hs' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FIQ228C5HS',
   ),
-  'xn--fiq64b' => 
-  array (
+  'xn--fiq64b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FIQ64B',
   ),
-  'xn--fiqs8s' => 
-  array (
+  'xn--fiqs8s' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FIQS8S',
   ),
-  'xn--fiqz9s' => 
-  array (
+  'xn--fiqz9s' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FIQZ9S',
   ),
-  'xn--fjq720a' => 
-  array (
+  'xn--fjq720a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FJQ720A',
   ),
-  'xn--flw351e' => 
-  array (
+  'xn--flw351e' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FLW351E',
   ),
-  'xn--fpcrj9c3d' => 
-  array (
+  'xn--fpcrj9c3d' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FPCRJ9C3D',
   ),
-  'xn--fzc2c9e2c' => 
-  array (
+  'xn--fzc2c9e2c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FZC2C9E2C',
   ),
-  'xn--fzys8d69uvgm' => 
-  array (
+  'xn--fzys8d69uvgm' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--FZYS8D69UVGM',
   ),
-  'xn--g2xx48c' => 
-  array (
+  'xn--g2xx48c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--G2XX48C',
   ),
-  'xn--gckr3f0f' => 
-  array (
+  'xn--gckr3f0f' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--GCKR3F0F',
   ),
-  'xn--gecrj9c' => 
-  array (
+  'xn--gecrj9c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--GECRJ9C',
   ),
-  'xn--gk3at1e' => 
-  array (
+  'xn--gk3at1e' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--GK3AT1E',
   ),
-  'xn--h2breg3eve' => 
-  array (
+  'xn--h2breg3eve' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--H2BREG3EVE',
   ),
-  'xn--h2brj9c' => 
-  array (
+  'xn--h2brj9c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--H2BRJ9C',
   ),
-  'xn--h2brj9c8c' => 
-  array (
+  'xn--h2brj9c8c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--H2BRJ9C8C',
   ),
-  'xn--hxt814e' => 
-  array (
+  'xn--hxt814e' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--HXT814E',
   ),
-  'xn--i1b6b1a6a2e' => 
-  array (
+  'xn--i1b6b1a6a2e' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--I1B6B1A6A2E',
   ),
-  'xn--imr513n' => 
-  array (
+  'xn--imr513n' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--IMR513N',
   ),
-  'xn--io0a7i' => 
-  array (
+  'xn--io0a7i' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--IO0A7I',
   ),
-  'xn--j1aef' => 
-  array (
+  'xn--j1aef' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--J1AEF',
   ),
-  'xn--j1amh' => 
-  array (
+  'xn--j1amh' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--J1AMH',
   ),
-  'xn--j6w193g' => 
-  array (
+  'xn--j6w193g' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--J6W193G',
   ),
-  'xn--jlq480n2rg' => 
-  array (
+  'xn--jlq480n2rg' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--JLQ480N2RG',
   ),
-  'xn--jvr189m' => 
-  array (
+  'xn--jvr189m' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--JVR189M',
   ),
-  'xn--kcrx77d1x4a' => 
-  array (
+  'xn--kcrx77d1x4a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--KCRX77D1X4A',
   ),
-  'xn--kprw13d' => 
-  array (
+  'xn--kprw13d' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--KPRW13D',
   ),
-  'xn--kpry57d' => 
-  array (
+  'xn--kpry57d' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--KPRY57D',
   ),
-  'xn--kput3i' => 
-  array (
+  'xn--kput3i' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--KPUT3I',
   ),
-  'xn--l1acc' => 
-  array (
+  'xn--l1acc' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--L1ACC',
   ),
-  'xn--lgbbat1ad8j' => 
-  array (
+  'xn--lgbbat1ad8j' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--LGBBAT1AD8J',
   ),
-  'xn--mgb9awbf' => 
-  array (
+  'xn--mgb9awbf' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGB9AWBF',
   ),
-  'xn--mgba3a3ejt' => 
-  array (
+  'xn--mgba3a3ejt' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBA3A3EJT',
   ),
-  'xn--mgba3a4f16a' => 
-  array (
+  'xn--mgba3a4f16a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBA3A4F16A',
   ),
-  'xn--mgba7c0bbn0a' => 
-  array (
+  'xn--mgba7c0bbn0a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBA7C0BBN0A',
   ),
-  'xn--mgbaam7a8h' => 
-  array (
+  'xn--mgbaam7a8h' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBAAM7A8H',
   ),
-  'xn--mgbab2bd' => 
-  array (
+  'xn--mgbab2bd' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBAB2BD',
   ),
-  'xn--mgbah1a3hjkrd' => 
-  array (
+  'xn--mgbah1a3hjkrd' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBAH1A3HJKRD',
   ),
-  'xn--mgbai9azgqp6j' => 
-  array (
+  'xn--mgbai9azgqp6j' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBAI9AZGQP6J',
   ),
-  'xn--mgbayh7gpa' => 
-  array (
+  'xn--mgbayh7gpa' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBAYH7GPA',
   ),
-  'xn--mgbbh1a' => 
-  array (
+  'xn--mgbbh1a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBBH1A',
   ),
-  'xn--mgbbh1a71e' => 
-  array (
+  'xn--mgbbh1a71e' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBBH1A71E',
   ),
-  'xn--mgbc0a9azcg' => 
-  array (
+  'xn--mgbc0a9azcg' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBC0A9AZCG',
   ),
-  'xn--mgbca7dzdo' => 
-  array (
+  'xn--mgbca7dzdo' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBCA7DZDO',
   ),
-  'xn--mgbcpq6gpa1a' => 
-  array (
+  'xn--mgbcpq6gpa1a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBCPQ6GPA1A',
   ),
-  'xn--mgberp4a5d4ar' => 
-  array (
+  'xn--mgberp4a5d4ar' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBERP4A5D4AR',
   ),
-  'xn--mgbgu82a' => 
-  array (
+  'xn--mgbgu82a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBGU82A',
   ),
-  'xn--mgbi4ecexp' => 
-  array (
+  'xn--mgbi4ecexp' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBI4ECEXP',
   ),
-  'xn--mgbpl2fh' => 
-  array (
+  'xn--mgbpl2fh' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBPL2FH',
   ),
-  'xn--mgbt3dhd' => 
-  array (
+  'xn--mgbt3dhd' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBT3DHD',
   ),
-  'xn--mgbtx2b' => 
-  array (
+  'xn--mgbtx2b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBTX2B',
   ),
-  'xn--mgbx4cd0ab' => 
-  array (
+  'xn--mgbx4cd0ab' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MGBX4CD0AB',
   ),
-  'xn--mix891f' => 
-  array (
+  'xn--mix891f' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MIX891F',
   ),
-  'xn--mk1bu44c' => 
-  array (
+  'xn--mk1bu44c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MK1BU44C',
   ),
-  'xn--mxtq1m' => 
-  array (
+  'xn--mxtq1m' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--MXTQ1M',
   ),
-  'xn--ngbc5azd' => 
-  array (
+  'xn--ngbc5azd' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--NGBC5AZD',
   ),
-  'xn--ngbe9e0a' => 
-  array (
+  'xn--ngbe9e0a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--NGBE9E0A',
   ),
-  'xn--ngbrx' => 
-  array (
+  'xn--ngbrx' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--NGBRX',
   ),
-  'xn--node' => 
-  array (
+  'xn--node' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--NODE',
   ),
-  'xn--nqv7f' => 
-  array (
+  'xn--nqv7f' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--NQV7F',
   ),
-  'xn--nqv7fs00ema' => 
-  array (
+  'xn--nqv7fs00ema' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--NQV7FS00EMA',
   ),
-  'xn--nyqy26a' => 
-  array (
+  'xn--nyqy26a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--NYQY26A',
   ),
-  'xn--o3cw4h' => 
-  array (
+  'xn--o3cw4h' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--O3CW4H',
   ),
-  'xn--ogbpf8fl' => 
-  array (
+  'xn--ogbpf8fl' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--OGBPF8FL',
   ),
-  'xn--otu796d' => 
-  array (
+  'xn--otu796d' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--OTU796D',
   ),
-  'xn--p1acf' => 
-  array (
+  'xn--p1acf' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--P1ACF',
   ),
-  'xn--p1ai' => 
-  array (
+  'xn--p1ai' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--P1AI',
   ),
-  'xn--pgbs0dh' => 
-  array (
+  'xn--pgbs0dh' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--PGBS0DH',
   ),
-  'xn--pssy2u' => 
-  array (
+  'xn--pssy2u' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--PSSY2U',
   ),
-  'xn--q7ce6a' => 
-  array (
+  'xn--q7ce6a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--Q7CE6A',
   ),
-  'xn--q9jyb4c' => 
-  array (
+  'xn--q9jyb4c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--Q9JYB4C',
   ),
-  'xn--qcka1pmc' => 
-  array (
+  'xn--qcka1pmc' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--QCKA1PMC',
   ),
-  'xn--qxa6a' => 
-  array (
+  'xn--qxa6a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--QXA6A',
   ),
-  'xn--qxam' => 
-  array (
+  'xn--qxam' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--QXAM',
   ),
-  'xn--rhqv96g' => 
-  array (
+  'xn--rhqv96g' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--RHQV96G',
   ),
-  'xn--rovu88b' => 
-  array (
+  'xn--rovu88b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--ROVU88B',
   ),
-  'xn--rvc1e0am3e' => 
-  array (
+  'xn--rvc1e0am3e' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--RVC1E0AM3E',
   ),
-  'xn--s9brj9c' => 
-  array (
+  'xn--s9brj9c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--S9BRJ9C',
   ),
-  'xn--ses554g' => 
-  array (
+  'xn--ses554g' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--SES554G',
   ),
-  'xn--t60b56a' => 
-  array (
+  'xn--t60b56a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--T60B56A',
   ),
-  'xn--tckwe' => 
-  array (
+  'xn--tckwe' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--TCKWE',
   ),
-  'xn--tiq49xqyj' => 
-  array (
+  'xn--tiq49xqyj' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--TIQ49XQYJ',
   ),
-  'xn--unup4y' => 
-  array (
+  'xn--unup4y' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--UNUP4Y',
   ),
-  'xn--vermgensberater-ctb' => 
-  array (
+  'xn--vermgensberater-ctb' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--VERMGENSBERATER-CTB',
   ),
-  'xn--vermgensberatung-pwb' => 
-  array (
+  'xn--vermgensberatung-pwb' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--VERMGENSBERATUNG-PWB',
   ),
-  'xn--vhquv' => 
-  array (
+  'xn--vhquv' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--VHQUV',
   ),
-  'xn--vuq861b' => 
-  array (
+  'xn--vuq861b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--VUQ861B',
   ),
-  'xn--w4r85el8fhu5dnra' => 
-  array (
+  'xn--w4r85el8fhu5dnra' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--W4R85EL8FHU5DNRA',
   ),
-  'xn--w4rs40l' => 
-  array (
+  'xn--w4rs40l' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--W4RS40L',
   ),
-  'xn--wgbh1c' => 
-  array (
+  'xn--wgbh1c' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--WGBH1C',
   ),
-  'xn--wgbl6a' => 
-  array (
+  'xn--wgbl6a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--WGBL6A',
   ),
-  'xn--xhq521b' => 
-  array (
+  'xn--xhq521b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--XHQ521B',
   ),
-  'xn--xkc2al3hye2a' => 
-  array (
+  'xn--xkc2al3hye2a' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--XKC2AL3HYE2A',
   ),
-  'xn--xkc2dl3a5ee0h' => 
-  array (
+  'xn--xkc2dl3a5ee0h' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--XKC2DL3A5EE0H',
   ),
-  'xn--y9a3aq' => 
-  array (
+  'xn--y9a3aq' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--Y9A3AQ',
   ),
-  'xn--yfro4i67o' => 
-  array (
+  'xn--yfro4i67o' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--YFRO4I67O',
   ),
-  'xn--ygbi2ammx' => 
-  array (
+  'xn--ygbi2ammx' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--YGBI2AMMX',
   ),
-  'xn--zfr164b' => 
-  array (
+  'xn--zfr164b' =>
+  array(
     'Active' => true,
     'Subtag' => 'XN--ZFR164B',
   ),
-  'xxx' => 
-  array (
+  'xxx' =>
+  array(
     'Active' => true,
     'Subtag' => 'XXX',
   ),
-  'xyz' => 
-  array (
+  'xyz' =>
+  array(
     'Active' => true,
     'Subtag' => 'XYZ',
   ),
-  'yachts' => 
-  array (
+  'yachts' =>
+  array(
     'Active' => true,
     'Subtag' => 'YACHTS',
   ),
-  'yahoo' => 
-  array (
+  'yahoo' =>
+  array(
     'Active' => true,
     'Subtag' => 'YAHOO',
   ),
-  'yamaxun' => 
-  array (
+  'yamaxun' =>
+  array(
     'Active' => true,
     'Subtag' => 'YAMAXUN',
   ),
-  'yandex' => 
-  array (
+  'yandex' =>
+  array(
     'Active' => true,
     'Subtag' => 'YANDEX',
   ),
-  'ye' => 
-  array (
+  'ye' =>
+  array(
     'Active' => true,
     'Subtag' => 'YE',
   ),
-  'yodobashi' => 
-  array (
+  'yodobashi' =>
+  array(
     'Active' => true,
     'Subtag' => 'YODOBASHI',
   ),
-  'yoga' => 
-  array (
+  'yoga' =>
+  array(
     'Active' => true,
     'Subtag' => 'YOGA',
   ),
-  'yokohama' => 
-  array (
+  'yokohama' =>
+  array(
     'Active' => true,
     'Subtag' => 'YOKOHAMA',
   ),
-  'you' => 
-  array (
+  'you' =>
+  array(
     'Active' => true,
     'Subtag' => 'YOU',
   ),
-  'youtube' => 
-  array (
+  'youtube' =>
+  array(
     'Active' => true,
     'Subtag' => 'YOUTUBE',
   ),
-  'yt' => 
-  array (
+  'yt' =>
+  array(
     'Active' => true,
     'Subtag' => 'YT',
   ),
-  'yun' => 
-  array (
+  'yun' =>
+  array(
     'Active' => true,
     'Subtag' => 'YUN',
   ),
-  'za' => 
-  array (
+  'za' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZA',
   ),
-  'zappos' => 
-  array (
+  'zappos' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZAPPOS',
   ),
-  'zara' => 
-  array (
+  'zara' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZARA',
   ),
-  'zero' => 
-  array (
+  'zero' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZERO',
   ),
-  'zip' => 
-  array (
+  'zip' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZIP',
   ),
-  'zm' => 
-  array (
+  'zm' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZM',
   ),
-  'zone' => 
-  array (
+  'zone' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZONE',
   ),
-  'zuerich' => 
-  array (
+  'zuerich' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZUERICH',
   ),
-  'zw' => 
-  array (
+  'zw' =>
+  array(
     'Active' => true,
     'Subtag' => 'ZW',
   ),

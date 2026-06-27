@@ -1,10 +1,10 @@
-<?php 
+<?php
 /**
  * @codeCoverageIgnore
  */
-return array (
-  'aao' => 
-  array (
+return array(
+  'aao' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'aao',
@@ -14,8 +14,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'abh' => 
-  array (
+  'abh' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'abh',
@@ -25,8 +25,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'abv' => 
-  array (
+  'abv' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'abv',
@@ -36,8 +36,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'acm' => 
-  array (
+  'acm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'acm',
@@ -47,8 +47,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'acq' => 
-  array (
+  'acq' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'acq',
@@ -58,8 +58,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'acw' => 
-  array (
+  'acw' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'acw',
@@ -69,8 +69,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'acx' => 
-  array (
+  'acx' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'acx',
@@ -80,8 +80,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'acy' => 
-  array (
+  'acy' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'acy',
@@ -91,8 +91,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'adf' => 
-  array (
+  'adf' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'adf',
@@ -102,8 +102,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ads' => 
-  array (
+  'ads' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ads',
@@ -112,8 +112,8 @@ return array (
     'Preferred-Value' => 'ads',
     'Prefix' => 'sgn',
   ),
-  'aeb' => 
-  array (
+  'aeb' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'aeb',
@@ -123,8 +123,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'aec' => 
-  array (
+  'aec' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'aec',
@@ -134,8 +134,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'aed' => 
-  array (
+  'aed' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'aed',
@@ -144,8 +144,8 @@ return array (
     'Preferred-Value' => 'aed',
     'Prefix' => 'sgn',
   ),
-  'aen' => 
-  array (
+  'aen' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'aen',
@@ -154,8 +154,8 @@ return array (
     'Preferred-Value' => 'aen',
     'Prefix' => 'sgn',
   ),
-  'afb' => 
-  array (
+  'afb' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'afb',
@@ -165,8 +165,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'afg' => 
-  array (
+  'afg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'afg',
@@ -175,8 +175,8 @@ return array (
     'Preferred-Value' => 'afg',
     'Prefix' => 'sgn',
   ),
-  'ajp' => 
-  array (
+  'ajp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ajp',
@@ -187,8 +187,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ajs' => 
-  array (
+  'ajs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ajs',
@@ -197,8 +197,8 @@ return array (
     'Preferred-Value' => 'ajs',
     'Prefix' => 'sgn',
   ),
-  'apc' => 
-  array (
+  'apc' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'apc',
@@ -208,8 +208,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'apd' => 
-  array (
+  'apd' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'apd',
@@ -219,8 +219,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'arb' => 
-  array (
+  'arb' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'arb',
@@ -230,8 +230,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'arq' => 
-  array (
+  'arq' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'arq',
@@ -241,8 +241,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ars' => 
-  array (
+  'ars' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ars',
@@ -252,8 +252,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ary' => 
-  array (
+  'ary' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ary',
@@ -263,8 +263,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'arz' => 
-  array (
+  'arz' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'arz',
@@ -274,8 +274,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ase' => 
-  array (
+  'ase' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ase',
@@ -284,8 +284,8 @@ return array (
     'Preferred-Value' => 'ase',
     'Prefix' => 'sgn',
   ),
-  'asf' => 
-  array (
+  'asf' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'asf',
@@ -294,8 +294,8 @@ return array (
     'Preferred-Value' => 'asf',
     'Prefix' => 'sgn',
   ),
-  'asp' => 
-  array (
+  'asp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'asp',
@@ -304,8 +304,8 @@ return array (
     'Preferred-Value' => 'asp',
     'Prefix' => 'sgn',
   ),
-  'asq' => 
-  array (
+  'asq' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'asq',
@@ -314,8 +314,8 @@ return array (
     'Preferred-Value' => 'asq',
     'Prefix' => 'sgn',
   ),
-  'asw' => 
-  array (
+  'asw' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'asw',
@@ -324,8 +324,8 @@ return array (
     'Preferred-Value' => 'asw',
     'Prefix' => 'sgn',
   ),
-  'auz' => 
-  array (
+  'auz' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'auz',
@@ -335,8 +335,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'avl' => 
-  array (
+  'avl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'avl',
@@ -346,8 +346,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ayh' => 
-  array (
+  'ayh' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ayh',
@@ -357,8 +357,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ayl' => 
-  array (
+  'ayl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ayl',
@@ -368,8 +368,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ayn' => 
-  array (
+  'ayn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ayn',
@@ -379,8 +379,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ayp' => 
-  array (
+  'ayp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ayp',
@@ -390,8 +390,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'bbz' => 
-  array (
+  'bbz' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bbz',
@@ -402,8 +402,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'bfi' => 
-  array (
+  'bfi' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bfi',
@@ -412,8 +412,8 @@ return array (
     'Preferred-Value' => 'bfi',
     'Prefix' => 'sgn',
   ),
-  'bfk' => 
-  array (
+  'bfk' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bfk',
@@ -422,8 +422,8 @@ return array (
     'Preferred-Value' => 'bfk',
     'Prefix' => 'sgn',
   ),
-  'bjn' => 
-  array (
+  'bjn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bjn',
@@ -433,8 +433,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'bog' => 
-  array (
+  'bog' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bog',
@@ -443,8 +443,8 @@ return array (
     'Preferred-Value' => 'bog',
     'Prefix' => 'sgn',
   ),
-  'bqn' => 
-  array (
+  'bqn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bqn',
@@ -453,8 +453,8 @@ return array (
     'Preferred-Value' => 'bqn',
     'Prefix' => 'sgn',
   ),
-  'bqy' => 
-  array (
+  'bqy' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bqy',
@@ -463,8 +463,8 @@ return array (
     'Preferred-Value' => 'bqy',
     'Prefix' => 'sgn',
   ),
-  'btj' => 
-  array (
+  'btj' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'btj',
@@ -474,8 +474,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'bve' => 
-  array (
+  'bve' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bve',
@@ -485,8 +485,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'bvl' => 
-  array (
+  'bvl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bvl',
@@ -495,8 +495,8 @@ return array (
     'Preferred-Value' => 'bvl',
     'Prefix' => 'sgn',
   ),
-  'bvu' => 
-  array (
+  'bvu' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bvu',
@@ -506,8 +506,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'bzs' => 
-  array (
+  'bzs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'bzs',
@@ -516,8 +516,8 @@ return array (
     'Preferred-Value' => 'bzs',
     'Prefix' => 'sgn',
   ),
-  'cdo' => 
-  array (
+  'cdo' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'cdo',
@@ -527,8 +527,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'cds' => 
-  array (
+  'cds' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'cds',
@@ -537,8 +537,8 @@ return array (
     'Preferred-Value' => 'cds',
     'Prefix' => 'sgn',
   ),
-  'cjy' => 
-  array (
+  'cjy' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'cjy',
@@ -548,8 +548,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'cmn' => 
-  array (
+  'cmn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'cmn',
@@ -559,8 +559,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'cnp' => 
-  array (
+  'cnp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'cnp',
@@ -570,8 +570,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'coa' => 
-  array (
+  'coa' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'coa',
@@ -581,8 +581,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'cpx' => 
-  array (
+  'cpx' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'cpx',
@@ -592,8 +592,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'csc' => 
-  array (
+  'csc' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csc',
@@ -602,8 +602,8 @@ return array (
     'Preferred-Value' => 'csc',
     'Prefix' => 'sgn',
   ),
-  'csd' => 
-  array (
+  'csd' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csd',
@@ -612,8 +612,8 @@ return array (
     'Preferred-Value' => 'csd',
     'Prefix' => 'sgn',
   ),
-  'cse' => 
-  array (
+  'cse' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'cse',
@@ -622,8 +622,8 @@ return array (
     'Preferred-Value' => 'cse',
     'Prefix' => 'sgn',
   ),
-  'csf' => 
-  array (
+  'csf' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csf',
@@ -632,8 +632,8 @@ return array (
     'Preferred-Value' => 'csf',
     'Prefix' => 'sgn',
   ),
-  'csg' => 
-  array (
+  'csg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csg',
@@ -642,8 +642,8 @@ return array (
     'Preferred-Value' => 'csg',
     'Prefix' => 'sgn',
   ),
-  'csl' => 
-  array (
+  'csl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csl',
@@ -652,8 +652,8 @@ return array (
     'Preferred-Value' => 'csl',
     'Prefix' => 'sgn',
   ),
-  'csn' => 
-  array (
+  'csn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csn',
@@ -662,8 +662,8 @@ return array (
     'Preferred-Value' => 'csn',
     'Prefix' => 'sgn',
   ),
-  'csp' => 
-  array (
+  'csp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csp',
@@ -673,8 +673,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'csq' => 
-  array (
+  'csq' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csq',
@@ -683,8 +683,8 @@ return array (
     'Preferred-Value' => 'csq',
     'Prefix' => 'sgn',
   ),
-  'csr' => 
-  array (
+  'csr' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csr',
@@ -693,8 +693,8 @@ return array (
     'Preferred-Value' => 'csr',
     'Prefix' => 'sgn',
   ),
-  'csx' => 
-  array (
+  'csx' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'csx',
@@ -703,8 +703,8 @@ return array (
     'Preferred-Value' => 'csx',
     'Prefix' => 'sgn',
   ),
-  'czh' => 
-  array (
+  'czh' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'czh',
@@ -714,8 +714,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'czo' => 
-  array (
+  'czo' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'czo',
@@ -725,8 +725,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'doq' => 
-  array (
+  'doq' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'doq',
@@ -735,8 +735,8 @@ return array (
     'Preferred-Value' => 'doq',
     'Prefix' => 'sgn',
   ),
-  'dse' => 
-  array (
+  'dse' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'dse',
@@ -745,8 +745,8 @@ return array (
     'Preferred-Value' => 'dse',
     'Prefix' => 'sgn',
   ),
-  'dsl' => 
-  array (
+  'dsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'dsl',
@@ -755,8 +755,8 @@ return array (
     'Preferred-Value' => 'dsl',
     'Prefix' => 'sgn',
   ),
-  'dsz' => 
-  array (
+  'dsz' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'dsz',
@@ -765,8 +765,8 @@ return array (
     'Preferred-Value' => 'dsz',
     'Prefix' => 'sgn',
   ),
-  'dup' => 
-  array (
+  'dup' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'dup',
@@ -776,8 +776,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'dyl' => 
-  array (
+  'dyl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'dyl',
@@ -786,8 +786,8 @@ return array (
     'Preferred-Value' => 'dyl',
     'Prefix' => 'sgn',
   ),
-  'ecs' => 
-  array (
+  'ecs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ecs',
@@ -796,8 +796,8 @@ return array (
     'Preferred-Value' => 'ecs',
     'Prefix' => 'sgn',
   ),
-  'ehs' => 
-  array (
+  'ehs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ehs',
@@ -806,8 +806,8 @@ return array (
     'Preferred-Value' => 'ehs',
     'Prefix' => 'sgn',
   ),
-  'esl' => 
-  array (
+  'esl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'esl',
@@ -816,8 +816,8 @@ return array (
     'Preferred-Value' => 'esl',
     'Prefix' => 'sgn',
   ),
-  'esn' => 
-  array (
+  'esn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'esn',
@@ -826,8 +826,8 @@ return array (
     'Preferred-Value' => 'esn',
     'Prefix' => 'sgn',
   ),
-  'eso' => 
-  array (
+  'eso' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'eso',
@@ -836,8 +836,8 @@ return array (
     'Preferred-Value' => 'eso',
     'Prefix' => 'sgn',
   ),
-  'eth' => 
-  array (
+  'eth' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'eth',
@@ -846,8 +846,8 @@ return array (
     'Preferred-Value' => 'eth',
     'Prefix' => 'sgn',
   ),
-  'fcs' => 
-  array (
+  'fcs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'fcs',
@@ -856,8 +856,8 @@ return array (
     'Preferred-Value' => 'fcs',
     'Prefix' => 'sgn',
   ),
-  'fse' => 
-  array (
+  'fse' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'fse',
@@ -866,8 +866,8 @@ return array (
     'Preferred-Value' => 'fse',
     'Prefix' => 'sgn',
   ),
-  'fsl' => 
-  array (
+  'fsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'fsl',
@@ -876,8 +876,8 @@ return array (
     'Preferred-Value' => 'fsl',
     'Prefix' => 'sgn',
   ),
-  'fss' => 
-  array (
+  'fss' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'fss',
@@ -886,8 +886,8 @@ return array (
     'Preferred-Value' => 'fss',
     'Prefix' => 'sgn',
   ),
-  'gan' => 
-  array (
+  'gan' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'gan',
@@ -897,8 +897,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'gds' => 
-  array (
+  'gds' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'gds',
@@ -907,8 +907,8 @@ return array (
     'Preferred-Value' => 'gds',
     'Prefix' => 'sgn',
   ),
-  'gom' => 
-  array (
+  'gom' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'gom',
@@ -918,8 +918,8 @@ return array (
     'Prefix' => 'kok',
     'Macrolanguage' => 'kok',
   ),
-  'gse' => 
-  array (
+  'gse' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'gse',
@@ -928,8 +928,8 @@ return array (
     'Preferred-Value' => 'gse',
     'Prefix' => 'sgn',
   ),
-  'gsg' => 
-  array (
+  'gsg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'gsg',
@@ -938,8 +938,8 @@ return array (
     'Preferred-Value' => 'gsg',
     'Prefix' => 'sgn',
   ),
-  'gsm' => 
-  array (
+  'gsm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'gsm',
@@ -948,8 +948,8 @@ return array (
     'Preferred-Value' => 'gsm',
     'Prefix' => 'sgn',
   ),
-  'gss' => 
-  array (
+  'gss' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'gss',
@@ -958,8 +958,8 @@ return array (
     'Preferred-Value' => 'gss',
     'Prefix' => 'sgn',
   ),
-  'gus' => 
-  array (
+  'gus' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'gus',
@@ -968,8 +968,8 @@ return array (
     'Preferred-Value' => 'gus',
     'Prefix' => 'sgn',
   ),
-  'hab' => 
-  array (
+  'hab' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hab',
@@ -978,8 +978,8 @@ return array (
     'Preferred-Value' => 'hab',
     'Prefix' => 'sgn',
   ),
-  'haf' => 
-  array (
+  'haf' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'haf',
@@ -988,8 +988,8 @@ return array (
     'Preferred-Value' => 'haf',
     'Prefix' => 'sgn',
   ),
-  'hak' => 
-  array (
+  'hak' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hak',
@@ -999,8 +999,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'hds' => 
-  array (
+  'hds' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hds',
@@ -1009,8 +1009,8 @@ return array (
     'Preferred-Value' => 'hds',
     'Prefix' => 'sgn',
   ),
-  'hji' => 
-  array (
+  'hji' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hji',
@@ -1020,8 +1020,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'hks' => 
-  array (
+  'hks' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hks',
@@ -1030,8 +1030,8 @@ return array (
     'Preferred-Value' => 'hks',
     'Prefix' => 'sgn',
   ),
-  'hnm' => 
-  array (
+  'hnm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hnm',
@@ -1041,8 +1041,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'hos' => 
-  array (
+  'hos' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hos',
@@ -1051,8 +1051,8 @@ return array (
     'Preferred-Value' => 'hos',
     'Prefix' => 'sgn',
   ),
-  'hps' => 
-  array (
+  'hps' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hps',
@@ -1061,8 +1061,8 @@ return array (
     'Preferred-Value' => 'hps',
     'Prefix' => 'sgn',
   ),
-  'hsh' => 
-  array (
+  'hsh' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hsh',
@@ -1071,8 +1071,8 @@ return array (
     'Preferred-Value' => 'hsh',
     'Prefix' => 'sgn',
   ),
-  'hsl' => 
-  array (
+  'hsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hsl',
@@ -1081,8 +1081,8 @@ return array (
     'Preferred-Value' => 'hsl',
     'Prefix' => 'sgn',
   ),
-  'hsn' => 
-  array (
+  'hsn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'hsn',
@@ -1092,8 +1092,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'icl' => 
-  array (
+  'icl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'icl',
@@ -1102,8 +1102,8 @@ return array (
     'Preferred-Value' => 'icl',
     'Prefix' => 'sgn',
   ),
-  'iks' => 
-  array (
+  'iks' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'iks',
@@ -1112,8 +1112,8 @@ return array (
     'Preferred-Value' => 'iks',
     'Prefix' => 'sgn',
   ),
-  'ils' => 
-  array (
+  'ils' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ils',
@@ -1122,8 +1122,8 @@ return array (
     'Preferred-Value' => 'ils',
     'Prefix' => 'sgn',
   ),
-  'inl' => 
-  array (
+  'inl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'inl',
@@ -1132,8 +1132,8 @@ return array (
     'Preferred-Value' => 'inl',
     'Prefix' => 'sgn',
   ),
-  'ins' => 
-  array (
+  'ins' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ins',
@@ -1142,8 +1142,8 @@ return array (
     'Preferred-Value' => 'ins',
     'Prefix' => 'sgn',
   ),
-  'ise' => 
-  array (
+  'ise' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ise',
@@ -1152,8 +1152,8 @@ return array (
     'Preferred-Value' => 'ise',
     'Prefix' => 'sgn',
   ),
-  'isg' => 
-  array (
+  'isg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'isg',
@@ -1162,8 +1162,8 @@ return array (
     'Preferred-Value' => 'isg',
     'Prefix' => 'sgn',
   ),
-  'isr' => 
-  array (
+  'isr' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'isr',
@@ -1172,8 +1172,8 @@ return array (
     'Preferred-Value' => 'isr',
     'Prefix' => 'sgn',
   ),
-  'jak' => 
-  array (
+  'jak' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jak',
@@ -1183,8 +1183,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'jax' => 
-  array (
+  'jax' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jax',
@@ -1194,8 +1194,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'jcs' => 
-  array (
+  'jcs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jcs',
@@ -1204,8 +1204,8 @@ return array (
     'Preferred-Value' => 'jcs',
     'Prefix' => 'sgn',
   ),
-  'jhs' => 
-  array (
+  'jhs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jhs',
@@ -1214,8 +1214,8 @@ return array (
     'Preferred-Value' => 'jhs',
     'Prefix' => 'sgn',
   ),
-  'jks' => 
-  array (
+  'jks' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jks',
@@ -1224,8 +1224,8 @@ return array (
     'Preferred-Value' => 'jks',
     'Prefix' => 'sgn',
   ),
-  'jls' => 
-  array (
+  'jls' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jls',
@@ -1234,8 +1234,8 @@ return array (
     'Preferred-Value' => 'jls',
     'Prefix' => 'sgn',
   ),
-  'jos' => 
-  array (
+  'jos' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jos',
@@ -1244,8 +1244,8 @@ return array (
     'Preferred-Value' => 'jos',
     'Prefix' => 'sgn',
   ),
-  'jsl' => 
-  array (
+  'jsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jsl',
@@ -1254,8 +1254,8 @@ return array (
     'Preferred-Value' => 'jsl',
     'Prefix' => 'sgn',
   ),
-  'jus' => 
-  array (
+  'jus' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'jus',
@@ -1264,8 +1264,8 @@ return array (
     'Preferred-Value' => 'jus',
     'Prefix' => 'sgn',
   ),
-  'kgi' => 
-  array (
+  'kgi' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'kgi',
@@ -1274,8 +1274,8 @@ return array (
     'Preferred-Value' => 'kgi',
     'Prefix' => 'sgn',
   ),
-  'knn' => 
-  array (
+  'knn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'knn',
@@ -1285,8 +1285,8 @@ return array (
     'Prefix' => 'kok',
     'Macrolanguage' => 'kok',
   ),
-  'kvb' => 
-  array (
+  'kvb' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'kvb',
@@ -1296,8 +1296,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'kvk' => 
-  array (
+  'kvk' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'kvk',
@@ -1306,8 +1306,8 @@ return array (
     'Preferred-Value' => 'kvk',
     'Prefix' => 'sgn',
   ),
-  'kvr' => 
-  array (
+  'kvr' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'kvr',
@@ -1317,8 +1317,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'kxd' => 
-  array (
+  'kxd' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'kxd',
@@ -1328,8 +1328,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'lbs' => 
-  array (
+  'lbs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lbs',
@@ -1338,8 +1338,8 @@ return array (
     'Preferred-Value' => 'lbs',
     'Prefix' => 'sgn',
   ),
-  'lce' => 
-  array (
+  'lce' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lce',
@@ -1349,8 +1349,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'lcf' => 
-  array (
+  'lcf' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lcf',
@@ -1360,8 +1360,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'lgs' => 
-  array (
+  'lgs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lgs',
@@ -1370,8 +1370,8 @@ return array (
     'Preferred-Value' => 'lgs',
     'Prefix' => 'sgn',
   ),
-  'liw' => 
-  array (
+  'liw' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'liw',
@@ -1381,8 +1381,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'lls' => 
-  array (
+  'lls' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lls',
@@ -1391,8 +1391,8 @@ return array (
     'Preferred-Value' => 'lls',
     'Prefix' => 'sgn',
   ),
-  'lsb' => 
-  array (
+  'lsb' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsb',
@@ -1401,8 +1401,8 @@ return array (
     'Preferred-Value' => 'lsb',
     'Prefix' => 'sgn',
   ),
-  'lsc' => 
-  array (
+  'lsc' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsc',
@@ -1411,8 +1411,8 @@ return array (
     'Preferred-Value' => 'lsc',
     'Prefix' => 'sgn',
   ),
-  'lsg' => 
-  array (
+  'lsg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsg',
@@ -1422,8 +1422,8 @@ return array (
     'Preferred-Value' => 'lsg',
     'Prefix' => 'sgn',
   ),
-  'lsl' => 
-  array (
+  'lsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsl',
@@ -1432,8 +1432,8 @@ return array (
     'Preferred-Value' => 'lsl',
     'Prefix' => 'sgn',
   ),
-  'lsn' => 
-  array (
+  'lsn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsn',
@@ -1442,8 +1442,8 @@ return array (
     'Preferred-Value' => 'lsn',
     'Prefix' => 'sgn',
   ),
-  'lso' => 
-  array (
+  'lso' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lso',
@@ -1452,8 +1452,8 @@ return array (
     'Preferred-Value' => 'lso',
     'Prefix' => 'sgn',
   ),
-  'lsp' => 
-  array (
+  'lsp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsp',
@@ -1462,8 +1462,8 @@ return array (
     'Preferred-Value' => 'lsp',
     'Prefix' => 'sgn',
   ),
-  'lst' => 
-  array (
+  'lst' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lst',
@@ -1472,8 +1472,8 @@ return array (
     'Preferred-Value' => 'lst',
     'Prefix' => 'sgn',
   ),
-  'lsv' => 
-  array (
+  'lsv' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsv',
@@ -1482,8 +1482,8 @@ return array (
     'Preferred-Value' => 'lsv',
     'Prefix' => 'sgn',
   ),
-  'lsw' => 
-  array (
+  'lsw' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsw',
@@ -1492,8 +1492,8 @@ return array (
     'Preferred-Value' => 'lsw',
     'Prefix' => 'sgn',
   ),
-  'lsy' => 
-  array (
+  'lsy' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lsy',
@@ -1502,8 +1502,8 @@ return array (
     'Preferred-Value' => 'lsy',
     'Prefix' => 'sgn',
   ),
-  'ltg' => 
-  array (
+  'ltg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ltg',
@@ -1513,8 +1513,8 @@ return array (
     'Prefix' => 'lv',
     'Macrolanguage' => 'lv',
   ),
-  'luh' => 
-  array (
+  'luh' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'luh',
@@ -1524,8 +1524,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'lvs' => 
-  array (
+  'lvs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lvs',
@@ -1535,8 +1535,8 @@ return array (
     'Prefix' => 'lv',
     'Macrolanguage' => 'lv',
   ),
-  'lws' => 
-  array (
+  'lws' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lws',
@@ -1545,8 +1545,8 @@ return array (
     'Preferred-Value' => 'lws',
     'Prefix' => 'sgn',
   ),
-  'lzh' => 
-  array (
+  'lzh' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'lzh',
@@ -1556,8 +1556,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'max' => 
-  array (
+  'max' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'max',
@@ -1567,8 +1567,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'mdl' => 
-  array (
+  'mdl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mdl',
@@ -1577,8 +1577,8 @@ return array (
     'Preferred-Value' => 'mdl',
     'Prefix' => 'sgn',
   ),
-  'meo' => 
-  array (
+  'meo' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'meo',
@@ -1588,8 +1588,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'mfa' => 
-  array (
+  'mfa' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mfa',
@@ -1599,8 +1599,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'mfb' => 
-  array (
+  'mfb' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mfb',
@@ -1610,8 +1610,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'mfs' => 
-  array (
+  'mfs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mfs',
@@ -1620,8 +1620,8 @@ return array (
     'Preferred-Value' => 'mfs',
     'Prefix' => 'sgn',
   ),
-  'min' => 
-  array (
+  'min' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'min',
@@ -1631,8 +1631,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'mnp' => 
-  array (
+  'mnp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mnp',
@@ -1642,8 +1642,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'mqg' => 
-  array (
+  'mqg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mqg',
@@ -1653,8 +1653,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'mre' => 
-  array (
+  'mre' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mre',
@@ -1663,8 +1663,8 @@ return array (
     'Preferred-Value' => 'mre',
     'Prefix' => 'sgn',
   ),
-  'msd' => 
-  array (
+  'msd' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'msd',
@@ -1673,8 +1673,8 @@ return array (
     'Preferred-Value' => 'msd',
     'Prefix' => 'sgn',
   ),
-  'msi' => 
-  array (
+  'msi' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'msi',
@@ -1684,8 +1684,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'msr' => 
-  array (
+  'msr' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'msr',
@@ -1694,8 +1694,8 @@ return array (
     'Preferred-Value' => 'msr',
     'Prefix' => 'sgn',
   ),
-  'mui' => 
-  array (
+  'mui' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mui',
@@ -1705,8 +1705,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'mzc' => 
-  array (
+  'mzc' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mzc',
@@ -1715,8 +1715,8 @@ return array (
     'Preferred-Value' => 'mzc',
     'Prefix' => 'sgn',
   ),
-  'mzg' => 
-  array (
+  'mzg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mzg',
@@ -1725,8 +1725,8 @@ return array (
     'Preferred-Value' => 'mzg',
     'Prefix' => 'sgn',
   ),
-  'mzy' => 
-  array (
+  'mzy' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'mzy',
@@ -1735,8 +1735,8 @@ return array (
     'Preferred-Value' => 'mzy',
     'Prefix' => 'sgn',
   ),
-  'nan' => 
-  array (
+  'nan' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'nan',
@@ -1746,8 +1746,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'nbs' => 
-  array (
+  'nbs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'nbs',
@@ -1756,8 +1756,8 @@ return array (
     'Preferred-Value' => 'nbs',
     'Prefix' => 'sgn',
   ),
-  'ncs' => 
-  array (
+  'ncs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ncs',
@@ -1766,8 +1766,8 @@ return array (
     'Preferred-Value' => 'ncs',
     'Prefix' => 'sgn',
   ),
-  'nsi' => 
-  array (
+  'nsi' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'nsi',
@@ -1776,8 +1776,8 @@ return array (
     'Preferred-Value' => 'nsi',
     'Prefix' => 'sgn',
   ),
-  'nsl' => 
-  array (
+  'nsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'nsl',
@@ -1786,8 +1786,8 @@ return array (
     'Preferred-Value' => 'nsl',
     'Prefix' => 'sgn',
   ),
-  'nsp' => 
-  array (
+  'nsp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'nsp',
@@ -1796,8 +1796,8 @@ return array (
     'Preferred-Value' => 'nsp',
     'Prefix' => 'sgn',
   ),
-  'nsr' => 
-  array (
+  'nsr' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'nsr',
@@ -1806,8 +1806,8 @@ return array (
     'Preferred-Value' => 'nsr',
     'Prefix' => 'sgn',
   ),
-  'nzs' => 
-  array (
+  'nzs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'nzs',
@@ -1816,8 +1816,8 @@ return array (
     'Preferred-Value' => 'nzs',
     'Prefix' => 'sgn',
   ),
-  'okl' => 
-  array (
+  'okl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'okl',
@@ -1826,8 +1826,8 @@ return array (
     'Preferred-Value' => 'okl',
     'Prefix' => 'sgn',
   ),
-  'orn' => 
-  array (
+  'orn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'orn',
@@ -1837,8 +1837,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'ors' => 
-  array (
+  'ors' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ors',
@@ -1848,8 +1848,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'pel' => 
-  array (
+  'pel' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'pel',
@@ -1859,8 +1859,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'pga' => 
-  array (
+  'pga' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'pga',
@@ -1870,8 +1870,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'pgz' => 
-  array (
+  'pgz' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'pgz',
@@ -1880,8 +1880,8 @@ return array (
     'Preferred-Value' => 'pgz',
     'Prefix' => 'sgn',
   ),
-  'pks' => 
-  array (
+  'pks' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'pks',
@@ -1890,8 +1890,8 @@ return array (
     'Preferred-Value' => 'pks',
     'Prefix' => 'sgn',
   ),
-  'prl' => 
-  array (
+  'prl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'prl',
@@ -1900,8 +1900,8 @@ return array (
     'Preferred-Value' => 'prl',
     'Prefix' => 'sgn',
   ),
-  'prz' => 
-  array (
+  'prz' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'prz',
@@ -1910,8 +1910,8 @@ return array (
     'Preferred-Value' => 'prz',
     'Prefix' => 'sgn',
   ),
-  'psc' => 
-  array (
+  'psc' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'psc',
@@ -1920,8 +1920,8 @@ return array (
     'Preferred-Value' => 'psc',
     'Prefix' => 'sgn',
   ),
-  'psd' => 
-  array (
+  'psd' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'psd',
@@ -1930,8 +1930,8 @@ return array (
     'Preferred-Value' => 'psd',
     'Prefix' => 'sgn',
   ),
-  'pse' => 
-  array (
+  'pse' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'pse',
@@ -1941,8 +1941,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'psg' => 
-  array (
+  'psg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'psg',
@@ -1951,8 +1951,8 @@ return array (
     'Preferred-Value' => 'psg',
     'Prefix' => 'sgn',
   ),
-  'psl' => 
-  array (
+  'psl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'psl',
@@ -1961,8 +1961,8 @@ return array (
     'Preferred-Value' => 'psl',
     'Prefix' => 'sgn',
   ),
-  'pso' => 
-  array (
+  'pso' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'pso',
@@ -1971,8 +1971,8 @@ return array (
     'Preferred-Value' => 'pso',
     'Prefix' => 'sgn',
   ),
-  'psp' => 
-  array (
+  'psp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'psp',
@@ -1981,8 +1981,8 @@ return array (
     'Preferred-Value' => 'psp',
     'Prefix' => 'sgn',
   ),
-  'psr' => 
-  array (
+  'psr' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'psr',
@@ -1991,8 +1991,8 @@ return array (
     'Preferred-Value' => 'psr',
     'Prefix' => 'sgn',
   ),
-  'pys' => 
-  array (
+  'pys' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'pys',
@@ -2001,8 +2001,8 @@ return array (
     'Preferred-Value' => 'pys',
     'Prefix' => 'sgn',
   ),
-  'rib' => 
-  array (
+  'rib' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'rib',
@@ -2011,8 +2011,8 @@ return array (
     'Preferred-Value' => 'rib',
     'Prefix' => 'sgn',
   ),
-  'rms' => 
-  array (
+  'rms' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'rms',
@@ -2021,8 +2021,8 @@ return array (
     'Preferred-Value' => 'rms',
     'Prefix' => 'sgn',
   ),
-  'rnb' => 
-  array (
+  'rnb' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'rnb',
@@ -2031,8 +2031,8 @@ return array (
     'Preferred-Value' => 'rnb',
     'Prefix' => 'sgn',
   ),
-  'rsi' => 
-  array (
+  'rsi' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'rsi',
@@ -2042,8 +2042,8 @@ return array (
     'Preferred-Value' => 'rsi',
     'Prefix' => 'sgn',
   ),
-  'rsl' => 
-  array (
+  'rsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'rsl',
@@ -2052,8 +2052,8 @@ return array (
     'Preferred-Value' => 'rsl',
     'Prefix' => 'sgn',
   ),
-  'rsm' => 
-  array (
+  'rsm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'rsm',
@@ -2062,8 +2062,8 @@ return array (
     'Preferred-Value' => 'rsm',
     'Prefix' => 'sgn',
   ),
-  'rsn' => 
-  array (
+  'rsn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'rsn',
@@ -2072,8 +2072,8 @@ return array (
     'Preferred-Value' => 'rsn',
     'Prefix' => 'sgn',
   ),
-  'sdl' => 
-  array (
+  'sdl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sdl',
@@ -2082,8 +2082,8 @@ return array (
     'Preferred-Value' => 'sdl',
     'Prefix' => 'sgn',
   ),
-  'sfb' => 
-  array (
+  'sfb' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sfb',
@@ -2092,8 +2092,8 @@ return array (
     'Preferred-Value' => 'sfb',
     'Prefix' => 'sgn',
   ),
-  'sfs' => 
-  array (
+  'sfs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sfs',
@@ -2102,8 +2102,8 @@ return array (
     'Preferred-Value' => 'sfs',
     'Prefix' => 'sgn',
   ),
-  'sgg' => 
-  array (
+  'sgg' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sgg',
@@ -2112,8 +2112,8 @@ return array (
     'Preferred-Value' => 'sgg',
     'Prefix' => 'sgn',
   ),
-  'sgx' => 
-  array (
+  'sgx' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sgx',
@@ -2122,8 +2122,8 @@ return array (
     'Preferred-Value' => 'sgx',
     'Prefix' => 'sgn',
   ),
-  'shu' => 
-  array (
+  'shu' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'shu',
@@ -2133,8 +2133,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'sjc' => 
-  array (
+  'sjc' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sjc',
@@ -2144,8 +2144,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'slf' => 
-  array (
+  'slf' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'slf',
@@ -2154,8 +2154,8 @@ return array (
     'Preferred-Value' => 'slf',
     'Prefix' => 'sgn',
   ),
-  'sls' => 
-  array (
+  'sls' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sls',
@@ -2164,8 +2164,8 @@ return array (
     'Preferred-Value' => 'sls',
     'Prefix' => 'sgn',
   ),
-  'sqk' => 
-  array (
+  'sqk' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sqk',
@@ -2174,8 +2174,8 @@ return array (
     'Preferred-Value' => 'sqk',
     'Prefix' => 'sgn',
   ),
-  'sqs' => 
-  array (
+  'sqs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sqs',
@@ -2184,8 +2184,8 @@ return array (
     'Preferred-Value' => 'sqs',
     'Prefix' => 'sgn',
   ),
-  'sqx' => 
-  array (
+  'sqx' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'sqx',
@@ -2194,8 +2194,8 @@ return array (
     'Preferred-Value' => 'sqx',
     'Prefix' => 'sgn',
   ),
-  'ssh' => 
-  array (
+  'ssh' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ssh',
@@ -2205,8 +2205,8 @@ return array (
     'Prefix' => 'ar',
     'Macrolanguage' => 'ar',
   ),
-  'ssp' => 
-  array (
+  'ssp' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ssp',
@@ -2215,8 +2215,8 @@ return array (
     'Preferred-Value' => 'ssp',
     'Prefix' => 'sgn',
   ),
-  'ssr' => 
-  array (
+  'ssr' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ssr',
@@ -2225,8 +2225,8 @@ return array (
     'Preferred-Value' => 'ssr',
     'Prefix' => 'sgn',
   ),
-  'svk' => 
-  array (
+  'svk' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'svk',
@@ -2235,8 +2235,8 @@ return array (
     'Preferred-Value' => 'svk',
     'Prefix' => 'sgn',
   ),
-  'swc' => 
-  array (
+  'swc' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'swc',
@@ -2246,8 +2246,8 @@ return array (
     'Prefix' => 'sw',
     'Macrolanguage' => 'sw',
   ),
-  'swh' => 
-  array (
+  'swh' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'swh',
@@ -2257,8 +2257,8 @@ return array (
     'Prefix' => 'sw',
     'Macrolanguage' => 'sw',
   ),
-  'swl' => 
-  array (
+  'swl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'swl',
@@ -2267,8 +2267,8 @@ return array (
     'Preferred-Value' => 'swl',
     'Prefix' => 'sgn',
   ),
-  'syy' => 
-  array (
+  'syy' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'syy',
@@ -2277,8 +2277,8 @@ return array (
     'Preferred-Value' => 'syy',
     'Prefix' => 'sgn',
   ),
-  'szs' => 
-  array (
+  'szs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'szs',
@@ -2287,8 +2287,8 @@ return array (
     'Preferred-Value' => 'szs',
     'Prefix' => 'sgn',
   ),
-  'tmw' => 
-  array (
+  'tmw' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'tmw',
@@ -2298,8 +2298,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'tse' => 
-  array (
+  'tse' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'tse',
@@ -2308,8 +2308,8 @@ return array (
     'Preferred-Value' => 'tse',
     'Prefix' => 'sgn',
   ),
-  'tsm' => 
-  array (
+  'tsm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'tsm',
@@ -2318,8 +2318,8 @@ return array (
     'Preferred-Value' => 'tsm',
     'Prefix' => 'sgn',
   ),
-  'tsq' => 
-  array (
+  'tsq' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'tsq',
@@ -2328,8 +2328,8 @@ return array (
     'Preferred-Value' => 'tsq',
     'Prefix' => 'sgn',
   ),
-  'tss' => 
-  array (
+  'tss' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'tss',
@@ -2338,8 +2338,8 @@ return array (
     'Preferred-Value' => 'tss',
     'Prefix' => 'sgn',
   ),
-  'tsy' => 
-  array (
+  'tsy' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'tsy',
@@ -2348,8 +2348,8 @@ return array (
     'Preferred-Value' => 'tsy',
     'Prefix' => 'sgn',
   ),
-  'tza' => 
-  array (
+  'tza' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'tza',
@@ -2358,8 +2358,8 @@ return array (
     'Preferred-Value' => 'tza',
     'Prefix' => 'sgn',
   ),
-  'ugn' => 
-  array (
+  'ugn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ugn',
@@ -2368,8 +2368,8 @@ return array (
     'Preferred-Value' => 'ugn',
     'Prefix' => 'sgn',
   ),
-  'ugy' => 
-  array (
+  'ugy' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ugy',
@@ -2378,8 +2378,8 @@ return array (
     'Preferred-Value' => 'ugy',
     'Prefix' => 'sgn',
   ),
-  'ukl' => 
-  array (
+  'ukl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ukl',
@@ -2388,8 +2388,8 @@ return array (
     'Preferred-Value' => 'ukl',
     'Prefix' => 'sgn',
   ),
-  'uks' => 
-  array (
+  'uks' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'uks',
@@ -2398,8 +2398,8 @@ return array (
     'Preferred-Value' => 'uks',
     'Prefix' => 'sgn',
   ),
-  'urk' => 
-  array (
+  'urk' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'urk',
@@ -2409,8 +2409,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'uzn' => 
-  array (
+  'uzn' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'uzn',
@@ -2420,8 +2420,8 @@ return array (
     'Prefix' => 'uz',
     'Macrolanguage' => 'uz',
   ),
-  'uzs' => 
-  array (
+  'uzs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'uzs',
@@ -2431,8 +2431,8 @@ return array (
     'Prefix' => 'uz',
     'Macrolanguage' => 'uz',
   ),
-  'vgt' => 
-  array (
+  'vgt' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'vgt',
@@ -2441,8 +2441,8 @@ return array (
     'Preferred-Value' => 'vgt',
     'Prefix' => 'sgn',
   ),
-  'vkk' => 
-  array (
+  'vkk' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'vkk',
@@ -2452,8 +2452,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'vkt' => 
-  array (
+  'vkt' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'vkt',
@@ -2463,8 +2463,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'vsi' => 
-  array (
+  'vsi' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'vsi',
@@ -2473,8 +2473,8 @@ return array (
     'Preferred-Value' => 'vsi',
     'Prefix' => 'sgn',
   ),
-  'vsl' => 
-  array (
+  'vsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'vsl',
@@ -2483,8 +2483,8 @@ return array (
     'Preferred-Value' => 'vsl',
     'Prefix' => 'sgn',
   ),
-  'vsv' => 
-  array (
+  'vsv' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'vsv',
@@ -2493,8 +2493,8 @@ return array (
     'Preferred-Value' => 'vsv',
     'Prefix' => 'sgn',
   ),
-  'wbs' => 
-  array (
+  'wbs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'wbs',
@@ -2503,8 +2503,8 @@ return array (
     'Preferred-Value' => 'wbs',
     'Prefix' => 'sgn',
   ),
-  'wuu' => 
-  array (
+  'wuu' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'wuu',
@@ -2514,8 +2514,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'xki' => 
-  array (
+  'xki' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'xki',
@@ -2524,8 +2524,8 @@ return array (
     'Preferred-Value' => 'xki',
     'Prefix' => 'sgn',
   ),
-  'xml' => 
-  array (
+  'xml' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'xml',
@@ -2534,8 +2534,8 @@ return array (
     'Preferred-Value' => 'xml',
     'Prefix' => 'sgn',
   ),
-  'xmm' => 
-  array (
+  'xmm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'xmm',
@@ -2545,8 +2545,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'xms' => 
-  array (
+  'xms' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'xms',
@@ -2555,8 +2555,8 @@ return array (
     'Preferred-Value' => 'xms',
     'Prefix' => 'sgn',
   ),
-  'yds' => 
-  array (
+  'yds' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'yds',
@@ -2566,8 +2566,8 @@ return array (
     'Preferred-Value' => 'yds',
     'Prefix' => 'sgn',
   ),
-  'ygs' => 
-  array (
+  'ygs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ygs',
@@ -2576,8 +2576,8 @@ return array (
     'Preferred-Value' => 'ygs',
     'Prefix' => 'sgn',
   ),
-  'yhs' => 
-  array (
+  'yhs' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'yhs',
@@ -2586,8 +2586,8 @@ return array (
     'Preferred-Value' => 'yhs',
     'Prefix' => 'sgn',
   ),
-  'ysl' => 
-  array (
+  'ysl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ysl',
@@ -2596,8 +2596,8 @@ return array (
     'Preferred-Value' => 'ysl',
     'Prefix' => 'sgn',
   ),
-  'ysm' => 
-  array (
+  'ysm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'ysm',
@@ -2606,8 +2606,8 @@ return array (
     'Preferred-Value' => 'ysm',
     'Prefix' => 'sgn',
   ),
-  'yue' => 
-  array (
+  'yue' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'yue',
@@ -2617,8 +2617,8 @@ return array (
     'Prefix' => 'zh',
     'Macrolanguage' => 'zh',
   ),
-  'zhk' => 
-  array (
+  'zhk' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'zhk',
@@ -2627,8 +2627,8 @@ return array (
     'Preferred-Value' => 'zhk',
     'Prefix' => 'sgn',
   ),
-  'zib' => 
-  array (
+  'zib' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'zib',
@@ -2637,8 +2637,8 @@ return array (
     'Preferred-Value' => 'zib',
     'Prefix' => 'sgn',
   ),
-  'zlm' => 
-  array (
+  'zlm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'zlm',
@@ -2648,8 +2648,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'zmi' => 
-  array (
+  'zmi' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'zmi',
@@ -2659,8 +2659,8 @@ return array (
     'Prefix' => 'ms',
     'Macrolanguage' => 'ms',
   ),
-  'zsl' => 
-  array (
+  'zsl' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'zsl',
@@ -2669,8 +2669,8 @@ return array (
     'Preferred-Value' => 'zsl',
     'Prefix' => 'sgn',
   ),
-  'zsm' => 
-  array (
+  'zsm' =>
+  array(
     'Active' => true,
     'Type' => 'extlang',
     'Subtag' => 'zsm',

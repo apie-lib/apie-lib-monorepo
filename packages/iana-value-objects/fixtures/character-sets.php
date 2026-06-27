@@ -1,10 +1,10 @@
-<?php 
+<?php
 /**
  * @codeCoverageIgnore
  */
-return array (
-  '' => 
-  array (
+return array(
+  '' =>
+  array(
     'Preferred MIME Name' => '',
     'Name' => 'CP50220',
     'MIBenum' => '2260',
@@ -14,8 +14,8 @@ return array (
     'Note' => '',
     'Active' => true,
   ),
-  'big5' => 
-  array (
+  'big5' =>
+  array(
     'Preferred MIME Name' => 'Big5',
     'Name' => 'Big5',
     'MIBenum' => '2026',
@@ -26,8 +26,8 @@ PCL Symbol Set Id: 18T',
     'Note' => '',
     'Active' => true,
   ),
-  'euc-jp' => 
-  array (
+  'euc-jp' =>
+  array(
     'Preferred MIME Name' => 'EUC-JP',
     'Name' => 'Extended_UNIX_Code_Packed_Format_for_Japanese',
     'MIBenum' => '18',
@@ -47,8 +47,8 @@ EUC-JP',
     'Note' => '',
     'Active' => true,
   ),
-  'euc-kr' => 
-  array (
+  'euc-kr' =>
+  array(
     'Preferred MIME Name' => 'EUC-KR',
     'Name' => 'EUC-KR',
     'MIBenum' => '38',
@@ -58,8 +58,8 @@ EUC-JP',
     'Note' => '',
     'Active' => true,
   ),
-  'gb2312' => 
-  array (
+  'gb2312' =>
+  array(
     'Preferred MIME Name' => 'GB2312',
     'Name' => 'GB2312',
     'MIBenum' => '2025',
@@ -74,8 +74,8 @@ PCL Symbol Set Id: 18C',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-2022-jp' => 
-  array (
+  'iso-2022-jp' =>
+  array(
     'Preferred MIME Name' => 'ISO-2022-JP',
     'Name' => 'ISO-2022-JP',
     'MIBenum' => '39',
@@ -85,8 +85,8 @@ PCL Symbol Set Id: 18C',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-2022-jp-2' => 
-  array (
+  'iso-2022-jp-2' =>
+  array(
     'Preferred MIME Name' => 'ISO-2022-JP-2',
     'Name' => 'ISO-2022-JP-2',
     'MIBenum' => '40',
@@ -96,8 +96,8 @@ PCL Symbol Set Id: 18C',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-2022-kr' => 
-  array (
+  'iso-2022-kr' =>
+  array(
     'Preferred MIME Name' => 'ISO-2022-KR',
     'Name' => 'ISO-2022-KR',
     'MIBenum' => '37',
@@ -107,8 +107,8 @@ PCL Symbol Set Id: 18C',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-1' => 
-  array (
+  'iso-8859-1' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-1',
     'Name' => 'ISO_8859-1:1987',
     'MIBenum' => '4',
@@ -126,8 +126,8 @@ csISOLatin1',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-10' => 
-  array (
+  'iso-8859-10' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-10',
     'Name' => 'ISO-8859-10',
     'MIBenum' => '13',
@@ -142,8 +142,8 @@ latin6',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-2' => 
-  array (
+  'iso-8859-2' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-2',
     'Name' => 'ISO_8859-2:1987',
     'MIBenum' => '5',
@@ -159,8 +159,8 @@ csISOLatin2',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-3' => 
-  array (
+  'iso-8859-3' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-3',
     'Name' => 'ISO_8859-3:1988',
     'MIBenum' => '6',
@@ -176,8 +176,8 @@ csISOLatin3',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-4' => 
-  array (
+  'iso-8859-4' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-4',
     'Name' => 'ISO_8859-4:1988',
     'MIBenum' => '7',
@@ -193,8 +193,8 @@ csISOLatin4',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-5' => 
-  array (
+  'iso-8859-5' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-5',
     'Name' => 'ISO_8859-5:1988',
     'MIBenum' => '8',
@@ -209,8 +209,8 @@ csISOLatinCyrillic',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-6' => 
-  array (
+  'iso-8859-6' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-6',
     'Name' => 'ISO_8859-6:1987',
     'MIBenum' => '9',
@@ -227,8 +227,8 @@ csISOLatinArabic',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-6-e' => 
-  array (
+  'iso-8859-6-e' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-6-E',
     'Name' => 'ISO_8859-6-E',
     'MIBenum' => '81',
@@ -239,8 +239,8 @@ ISO-8859-6-E',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-6-i' => 
-  array (
+  'iso-8859-6-i' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-6-I',
     'Name' => 'ISO_8859-6-I',
     'MIBenum' => '82',
@@ -251,8 +251,8 @@ ISO-8859-6-I',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-7' => 
-  array (
+  'iso-8859-7' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-7',
     'Name' => 'ISO_8859-7:1987',
     'MIBenum' => '10',
@@ -270,8 +270,8 @@ csISOLatinGreek',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-8' => 
-  array (
+  'iso-8859-8' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-8',
     'Name' => 'ISO_8859-8:1988',
     'MIBenum' => '11',
@@ -286,8 +286,8 @@ csISOLatinHebrew',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-8-e' => 
-  array (
+  'iso-8859-8-e' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-8-E',
     'Name' => 'ISO_8859-8-E',
     'MIBenum' => '84',
@@ -298,8 +298,8 @@ ISO-8859-8-E',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-8-i' => 
-  array (
+  'iso-8859-8-i' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-8-I',
     'Name' => 'ISO_8859-8-I',
     'MIBenum' => '85',
@@ -310,8 +310,8 @@ ISO-8859-8-I',
     'Note' => '',
     'Active' => true,
   ),
-  'iso-8859-9' => 
-  array (
+  'iso-8859-9' =>
+  array(
     'Preferred MIME Name' => 'ISO-8859-9',
     'Name' => 'ISO_8859-9:1989',
     'MIBenum' => '12',
@@ -327,8 +327,8 @@ csISOLatin5',
     'Note' => '',
     'Active' => true,
   ),
-  'koi8-r' => 
-  array (
+  'koi8-r' =>
+  array(
     'Preferred MIME Name' => 'KOI8-R',
     'Name' => 'KOI8-R',
     'MIBenum' => '2084',
@@ -339,8 +339,8 @@ INIS-Cyrillic, ISO-5427.',
     'Note' => '',
     'Active' => true,
   ),
-  'shift_jis' => 
-  array (
+  'shift_jis' =>
+  array(
     'Preferred MIME Name' => 'Shift_JIS',
     'Name' => 'Shift_JIS',
     'MIBenum' => '17',
@@ -356,8 +356,8 @@ csShiftJIS',
     'Note' => '',
     'Active' => true,
   ),
-  'us-ascii' => 
-  array (
+  'us-ascii' =>
+  array(
     'Preferred MIME Name' => 'US-ASCII',
     'Name' => 'US-ASCII',
     'MIBenum' => '3',

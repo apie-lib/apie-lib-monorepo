@@ -2,6 +2,8 @@
 namespace Apie\IanaValueObjects;
 
 use Apie\Core\ValueObjects\SnowflakeIdentifier;
+use Apie\IanaValueObjects\LanguageTag\Language;
+use Apie\IanaValueObjects\LanguageTag\LanguageRegion;
 
 final class LanguageAndRegion extends SnowflakeIdentifier
 {
