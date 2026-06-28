@@ -41,4 +41,13 @@ class HttpStatusTest extends TestCase
         $testItem = new ActiveHttpStatus('200');
         $this->assertEquals('200', $testItem->toNative());
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertNotEquals(
+            HttpStatus::getOptions()->toArray(),
+            ActiveHttpStatus::getOptions()->toArray()
+        );
+    }
 }

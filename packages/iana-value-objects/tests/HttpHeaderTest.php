@@ -48,4 +48,13 @@ class HttpHeaderTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveHttpHeader('accept-charset');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertEquals(
+            HttpHeader::getOptions()->toArray(),
+            ActiveHttpHeader::getOptions()->toArray()
+        );
+    }
 }

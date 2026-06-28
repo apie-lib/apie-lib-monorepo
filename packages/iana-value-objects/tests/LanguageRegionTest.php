@@ -59,4 +59,13 @@ class LanguageRegionTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveLanguageRegion('bu');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertNotEquals(
+            LanguageRegion::getOptions()->toArray(),
+            ActiveLanguageRegion::getOptions()->toArray()
+        );
+    }
 }

@@ -58,4 +58,13 @@ requiring SS3 as the character prefix';
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveCharacterSet('invalid');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertEquals(
+            CharacterSet::getOptions()->toArray(),
+            ActiveCharacterSet::getOptions()->toArray()
+        );
+    }
 }

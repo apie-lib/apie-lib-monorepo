@@ -43,4 +43,13 @@ class UriSchemeTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveUriScheme('bb');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertEquals(
+            UriScheme::getOptions()->toArray(),
+            ActiveUriScheme::getOptions()->toArray()
+        );
+    }
 }

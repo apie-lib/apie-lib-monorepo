@@ -31,6 +31,6 @@ final class LanguageRegion implements StringValueObjectInterface, LimitedOptions
 
     public static function getOptions(): StringSet
     {
-        return new StringSet(array_keys(static::getData()));
+        return new StringSet(array_map('strval', array_keys(static::getData())));
     }
 }

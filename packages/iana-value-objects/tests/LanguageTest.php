@@ -36,4 +36,13 @@ class LanguageTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveLanguage('invalid');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertNotEquals(
+            Language::getOptions()->toArray(),
+            ActiveLanguage::getOptions()->toArray()
+        );
+    }
 }

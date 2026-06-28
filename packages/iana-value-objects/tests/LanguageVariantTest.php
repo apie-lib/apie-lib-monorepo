@@ -59,4 +59,13 @@ class LanguageVariantTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveLanguageVariant('heploc');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertNotEquals(
+            LanguageVariant::getOptions()->toArray(),
+            ActiveLanguageVariant::getOptions()->toArray()
+        );
+    }
 }

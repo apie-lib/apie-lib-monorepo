@@ -36,4 +36,13 @@ class TopLevelDomainTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveTopLevelDomain('invalid');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertEquals(
+            TopLevelDomain::getOptions()->toArray(),
+            ActiveTopLevelDomain::getOptions()->toArray()
+        );
+    }
 }

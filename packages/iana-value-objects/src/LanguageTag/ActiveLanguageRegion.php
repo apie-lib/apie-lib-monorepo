@@ -26,6 +26,6 @@ final class ActiveLanguageRegion implements StringValueObjectInterface, LimitedO
 
     public static function getOptions(): StringSet
     {
-        return new StringSet(array_keys(static::getActiveData()));
+        return new StringSet(array_map('strval', array_keys(static::getActiveData())));
     }
 }

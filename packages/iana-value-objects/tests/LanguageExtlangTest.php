@@ -43,4 +43,13 @@ class LanguageExtlangTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveLanguageExtlang('ajp');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertNotEquals(
+            LanguageExtlang::getOptions()->toArray(),
+            ActiveLanguageExtlang::getOptions()->toArray()
+        );
+    }
 }

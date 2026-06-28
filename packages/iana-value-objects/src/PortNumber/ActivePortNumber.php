@@ -13,9 +13,4 @@ use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 final class ActivePortNumber implements StringValueObjectInterface
 {
     use IsPortNumber;
-
-    protected static function requiresActive(): bool
-    {
-        return true;
-    }
 }

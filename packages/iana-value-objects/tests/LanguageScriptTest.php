@@ -36,4 +36,13 @@ class LanguageScriptTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveLanguageScript('invalid');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertEquals(
+            LanguageScript::getOptions()->toArray(),
+            ActiveLanguageScript::getOptions()->toArray()
+        );
+    }
 }

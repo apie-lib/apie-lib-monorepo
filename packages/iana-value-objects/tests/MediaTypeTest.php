@@ -40,4 +40,13 @@ class MediaTypeTest extends TestCase
         $this->expectException(InvalidStringForValueObjectException::class);
         new ActiveMediaType('invalid');
     }
+
+    #[Test]
+    public function it_can_provide_all_options()
+    {
+        $this->assertEquals(
+            MediaType::getOptions()->toArray(),
+            ActiveMediaType::getOptions()->toArray()
+        );
+    }
 }
