@@ -5,6 +5,7 @@ use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
+use Apie\IanaValueObjects\HasActiveFilter;
 
 /**
  * All URI schemes registered in the IANA URI Schemes Registry.
@@ -18,15 +19,14 @@ final class ActiveUriScheme implements StringValueObjectInterface, LimitedOption
     use IsUriScheme {
         validate as private validLanguage;
     }
+    use HasActiveFilter;
 
-    protected static function requiresActive(): bool
+    protected static function getActiveData(): array
     {
-        return true;
-    }
-
-    public static function getOptions(): StringSet
-    {
-        return new StringSet(array_keys(static::getActiveData()));
+        return array_filter(static::getData(), function (array $data) {
+            $status = $data['Status'] ?? null;
+            return in_array($status, ['Permanent', 'Provisional']);
+        });
     }
 
     public static function validate(string $input): void

@@ -1,6 +1,7 @@
 <?php
 namespace Apie\IanaValueObjects\PortNumber;
 
+use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 
 /**
@@ -10,6 +11,7 @@ use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
  *
  * Only active port numbers can be used (not reserved or unassigned).
  */
+#[FakeMethod('createRandom')]
 final class ActivePortNumber implements StringValueObjectInterface
 {
     use IsPortNumber;

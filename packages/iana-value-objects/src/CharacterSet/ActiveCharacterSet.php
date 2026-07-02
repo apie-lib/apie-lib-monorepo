@@ -4,6 +4,7 @@ namespace Apie\IanaValueObjects\CharacterSet;
 use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
+use Apie\IanaValueObjects\HasActiveFilter;
 use Apie\IanaValueObjects\StaticDataValueObject;
 
 /**
@@ -17,14 +18,5 @@ final class ActiveCharacterSet implements StringValueObjectInterface, LimitedOpt
 {
     use IsCharacterSet;
     use StaticDataValueObject;
-
-    protected static function requiresActive(): bool
-    {
-        return true;
-    }
-
-    public static function getOptions(): StringSet
-    {
-        return new StringSet(array_keys(static::getActiveData()));
-    }
+    use HasActiveFilter;
 }

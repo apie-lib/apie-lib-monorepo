@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Tests\IanaValueObjects;
 
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\LanguageAndRegion;
 use Apie\IanaValueObjects\LanguageTag\Language;
 use Apie\IanaValueObjects\LanguageTag\LanguageRegion;
@@ -9,6 +10,8 @@ use PHPUnit\Framework\Attributes\Test;
 
 class LanguageAndRegionTest extends LanguageRegionTest
 {
+    use TestWithFaker;
+
     #[Test]
     public function it_can_be_instantiated_with_a_valid_tag()
     {
@@ -54,5 +57,11 @@ class LanguageAndRegionTest extends LanguageRegionTest
             ['en-US', 'en-us'],
             ['nbr-MM', 'nns-BU'],
         ];
+    }
+
+    #[Test]
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(LanguageAndRegion::class, interval:10);
     }
 }

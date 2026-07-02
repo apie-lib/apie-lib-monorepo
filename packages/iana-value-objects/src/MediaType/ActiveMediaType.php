@@ -4,6 +4,7 @@ namespace Apie\IanaValueObjects\MediaType;
 use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
+use Apie\IanaValueObjects\HasActiveFilter;
 
 /**
  * All media types (MIME types) registered in the IANA Media Types Registry.
@@ -15,14 +16,5 @@ use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 final class ActiveMediaType implements StringValueObjectInterface, LimitedOptionsInterface
 {
     use IsMediaType;
-
-    protected static function requiresActive(): bool
-    {
-        return true;
-    }
-
-    public static function getOptions(): StringSet
-    {
-        return new StringSet(array_keys(static::getActiveData()));
-    }
+    use HasActiveFilter;
 }

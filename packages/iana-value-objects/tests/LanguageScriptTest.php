@@ -2,6 +2,7 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\LanguageTag\ActiveLanguageScript;
 use Apie\IanaValueObjects\LanguageTag\LanguageScript;
 use PHPUnit\Framework\Attributes\Test;
@@ -9,6 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 class LanguageScriptTest extends TestCase
 {
+    use TestWithFaker;
+
     #[Test]
     public function it_can_be_instantiated_with_a_valid_subtag()
     {
@@ -44,5 +47,11 @@ class LanguageScriptTest extends TestCase
             LanguageScript::getOptions()->toArray(),
             ActiveLanguageScript::getOptions()->toArray()
         );
+    }
+
+    #[Test]
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(LanguageScript::class);
     }
 }

@@ -2,6 +2,7 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\MediaType\ActiveMediaType;
 use Apie\IanaValueObjects\MediaType\MediaType;
 use PHPUnit\Framework\Attributes\Test;
@@ -9,6 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 class MediaTypeTest extends TestCase
 {
+    use TestWithFaker;
+
     #[Test]
     public function it_can_be_instantiated_with_a_valid_media_type()
     {
@@ -48,5 +51,13 @@ class MediaTypeTest extends TestCase
             MediaType::getOptions()->toArray(),
             ActiveMediaType::getOptions()->toArray()
         );
+    }
+
+    
+    #[Test]
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(MediaType::class);
+        $this->runFakerTest(ActiveMediaType::class);
     }
 }

@@ -5,6 +5,7 @@ use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
+use Apie\IanaValueObjects\HasActiveFilter;
 use Apie\IanaValueObjects\StaticDataValueObject;
 
 /**
@@ -20,26 +21,24 @@ final class ActiveHttpHeader implements StringValueObjectInterface, LimitedOptio
         IsHttpHeader::convert insteadof StaticDataValueObject;
         validate as private validLanguage;
     }
+    use HasActiveFilter;
 
     protected static function requiresActive(): bool
     {
         return true;
     }
 
+    protected static function getActiveData(): array
+    {
+        return array_filter(static::getData(), function (array $data) {
+            $status = $data['Status'] ?? null;
+            return $status === 'permanent';
+        });
+    }
+
     public static function getOptions(): StringSet
     {
         return new StringSet(array_keys(static::getActiveData()));
-    }
-
-    protected function convert(string $input): string
-    {
-        $inputLower = strtolower($input);
-        $data = static::getData();
-        if (!isset($data[$inputLower])) {
-            return $input;
-        }
-
-        return $data[$inputLower]['Field Name'] ?? $input;
     }
 
     public static function validate(string $input): void

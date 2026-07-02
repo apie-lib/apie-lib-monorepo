@@ -2,6 +2,7 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\PortNumber\ActivePortNumber;
 use Apie\IanaValueObjects\PortNumber\PortNumber;
 use Apie\IanaValueObjects\PortNumber\TransportType;
@@ -10,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class PortNumberTest extends TestCase
 {
+    use TestWithFaker;
     #[Test]
     public function it_can_be_instantiated_with_a_valid_port()
     {
@@ -45,5 +47,13 @@ class PortNumberTest extends TestCase
         $this->assertEquals('HTTPS', $info->getDescription());
         $this->assertEquals('https', $info->getServiceName());
         $this->assertTrue($info->isActive());
+    }
+
+    
+    #[Test]
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(PortNumber::class);
+        $this->runFakerTest(ActivePortNumber::class);
     }
 }

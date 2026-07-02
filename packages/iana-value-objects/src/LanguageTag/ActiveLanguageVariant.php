@@ -16,6 +16,16 @@ final class ActiveLanguageVariant implements StringValueObjectInterface, Limited
 {
     use IsLanguageSubtag;
 
+    private static StringSet $activeOptions;
+
+    public static function getOptions(): StringSet
+    {
+        if (!isset(static::$activeOptions)) {
+            static::$activeOptions = new StringSet(array_map('strval', array_keys(static::getActiveData())));
+        }
+        return static::$activeOptions;
+    }
+
     protected static function requiresActive(): bool
     {
         return true;
@@ -24,10 +34,5 @@ final class ActiveLanguageVariant implements StringValueObjectInterface, Limited
     protected static function getData(): array
     {
         return require __DIR__ . '/../../fixtures/language-variants.php';
-    }
-
-    public static function getOptions(): StringSet
-    {
-        return new StringSet(array_map('strval', array_keys(static::getActiveData())));
     }
 }

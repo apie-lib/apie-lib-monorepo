@@ -2,6 +2,7 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\UriScheme\ActiveUriScheme;
 use Apie\IanaValueObjects\UriScheme\UriScheme;
 use PHPUnit\Framework\Attributes\Test;
@@ -9,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class UriSchemeTest extends TestCase
 {
+    use TestWithFaker;
     #[Test]
     public function it_can_be_instantiated_with_a_valid_scheme()
     {
@@ -47,9 +49,16 @@ class UriSchemeTest extends TestCase
     #[Test]
     public function it_can_provide_all_options()
     {
-        $this->assertEquals(
+        $this->assertNotEquals(
             UriScheme::getOptions()->toArray(),
             ActiveUriScheme::getOptions()->toArray()
         );
+    }
+    
+    #[Test]
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(UriScheme::class);
+        $this->runFakerTest(ActiveUriScheme::class);
     }
 }

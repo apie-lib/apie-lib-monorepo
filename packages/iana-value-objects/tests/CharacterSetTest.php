@@ -3,6 +3,7 @@ namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\CharacterSet\ActiveCharacterSet;
 use Apie\IanaValueObjects\CharacterSet\CharacterSet;
 use PHPUnit\Framework\Attributes\Test;
@@ -10,6 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 class CharacterSetTest extends TestCase
 {
+    use TestWithFaker;
+
     #[Test]
     public function it_can_be_instantiated_with_a_valid_charset()
     {
@@ -66,5 +69,12 @@ requiring SS3 as the character prefix';
             CharacterSet::getOptions()->toArray(),
             ActiveCharacterSet::getOptions()->toArray()
         );
+    }
+
+    #[Test]
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(CharacterSet::class);
+        $this->runFakerTest(ActiveCharacterSet::class);
     }
 }

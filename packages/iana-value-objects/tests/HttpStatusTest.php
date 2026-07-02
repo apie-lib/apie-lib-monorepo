@@ -2,6 +2,7 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\HttpStatus\ActiveHttpStatus;
 use Apie\IanaValueObjects\HttpStatus\HttpStatus;
 use PHPUnit\Framework\Attributes\Test;
@@ -9,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class HttpStatusTest extends TestCase
 {
+    use TestWithFaker;
     #[Test]
     public function it_can_be_instantiated_with_a_valid_status_code()
     {
@@ -49,5 +51,12 @@ class HttpStatusTest extends TestCase
             HttpStatus::getOptions()->toArray(),
             ActiveHttpStatus::getOptions()->toArray()
         );
+    }
+
+    #[Test]
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(HttpStatus::class);
+        $this->runFakerTest(ActiveHttpStatus::class);
     }
 }

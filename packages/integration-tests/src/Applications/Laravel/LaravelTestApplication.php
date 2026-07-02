@@ -104,6 +104,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             );
             $config->set('apie.remote_mcp_path', '/mcp');
             $config->set('apie.enable_graphql', true);
+            $config->set('apie.open_api.max_enum_size', 500);
             $rawConfig = $config->get('apie');
             $processedConfig = ValidateAndSanitizeConfig::process($rawConfig);
             $config->set('apie', $processedConfig);

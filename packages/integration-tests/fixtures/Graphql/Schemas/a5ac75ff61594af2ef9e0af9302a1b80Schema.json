@@ -16,6 +16,10 @@
                         "description": "Return search results for ExternalFile"
                     },
                     {
+                        "name": "findIanaObject",
+                        "description": "Return search results for IanaObject"
+                    },
+                    {
                         "name": "findObjectWithRelation",
                         "description": "Return search results for ObjectWithRelation"
                     },

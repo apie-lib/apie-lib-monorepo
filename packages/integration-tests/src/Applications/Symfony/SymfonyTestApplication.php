@@ -73,6 +73,9 @@ class SymfonyTestApplication implements TestApplicationInterface
                         'driver' => 'pdo_sqlite'
                     ]
                 ],
+                'open_api' => [
+                    'max_enum_size' => 500,
+                ],
             ],
             $this->applicationConfig->doesIncludeTemplating(),
             $this->applicationConfig->doesIncludeSecurity(),

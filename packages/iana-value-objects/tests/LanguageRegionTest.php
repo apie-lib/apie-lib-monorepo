@@ -2,6 +2,7 @@
 namespace Apie\Tests\IanaValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\LanguageTag\ActiveLanguageRegion;
 use Apie\IanaValueObjects\LanguageTag\LanguageRegion;
 use PHPUnit\Framework\Attributes\Test;
@@ -9,6 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 class LanguageRegionTest extends TestCase
 {
+    use TestWithFaker;
+
     #[Test]
     public function it_can_be_instantiated_with_a_valid_tag()
     {
@@ -67,5 +70,12 @@ class LanguageRegionTest extends TestCase
             LanguageRegion::getOptions()->toArray(),
             ActiveLanguageRegion::getOptions()->toArray()
         );
+    }
+
+    #[Test]
+    public function it_works_with_apie_faker()
+    {
+        $this->runFakerTest(LanguageRegion::class);
+        $this->runFakerTest(ActiveLanguageRegion::class);
     }
 }
