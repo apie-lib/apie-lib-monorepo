@@ -75,7 +75,7 @@ class LanguageRegionTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(LanguageRegion::class);
-        $this->runFakerTest(ActiveLanguageRegion::class);
+        $this->runFakerTest(LanguageRegion::class, interval: 100);
+        $this->runFakerTest(ActiveLanguageRegion::class, interval: 100);
     }
 }

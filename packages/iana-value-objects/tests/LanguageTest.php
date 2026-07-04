@@ -52,7 +52,7 @@ class LanguageTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(Language::class);
-        $this->runFakerTest(ActiveLanguage::class);
+        $this->runFakerTest(Language::class, interval: 100);
+        $this->runFakerTest(ActiveLanguage::class, interval: 100);
     }
 }

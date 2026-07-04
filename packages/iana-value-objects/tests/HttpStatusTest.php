@@ -56,7 +56,7 @@ class HttpStatusTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(HttpStatus::class);
-        $this->runFakerTest(ActiveHttpStatus::class);
+        $this->runFakerTest(HttpStatus::class, interval: 100);
+        $this->runFakerTest(ActiveHttpStatus::class, interval: 100);
     }
 }

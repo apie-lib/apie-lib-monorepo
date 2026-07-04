@@ -53,7 +53,7 @@ class PortNumberTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(PortNumber::class);
-        $this->runFakerTest(ActivePortNumber::class);
+        $this->runFakerTest(PortNumber::class, interval: 100);
+        $this->runFakerTest(ActivePortNumber::class, interval: 100);
     }
 }

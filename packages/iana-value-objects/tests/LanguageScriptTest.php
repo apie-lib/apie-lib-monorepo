@@ -52,6 +52,7 @@ class LanguageScriptTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(LanguageScript::class);
+        $this->runFakerTest(LanguageScript::class, interval: 100);
+        $this->runFakerTest(ActiveLanguageScript::class, interval: 100);
     }
 }

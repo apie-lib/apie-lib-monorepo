@@ -75,7 +75,7 @@ class LanguageVariantTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(LanguageVariant::class);
-        $this->runFakerTest(ActiveLanguageVariant::class);
+        $this->runFakerTest(LanguageVariant::class, interval: 100);
+        $this->runFakerTest(ActiveLanguageVariant::class, interval: 100);
     }
 }

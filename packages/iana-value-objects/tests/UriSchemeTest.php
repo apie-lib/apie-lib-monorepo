@@ -59,6 +59,6 @@ class UriSchemeTest extends TestCase
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(UriScheme::class);
-        $this->runFakerTest(ActiveUriScheme::class);
+        $this->runFakerTest(ActiveUriScheme::class, interval: 100);
     }
 }

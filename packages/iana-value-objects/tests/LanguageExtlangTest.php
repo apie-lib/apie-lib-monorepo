@@ -59,7 +59,7 @@ class LanguageExtlangTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(LanguageExtlang::class);
-        $this->runFakerTest(ActiveLanguageExtlang::class);
+        $this->runFakerTest(LanguageExtlang::class, interval: 100);
+        $this->runFakerTest(ActiveLanguageExtlang::class, interval: 100);
     }
 }

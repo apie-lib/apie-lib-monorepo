@@ -57,7 +57,7 @@ class MediaTypeTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(MediaType::class);
+        $this->runFakerTest(MediaType::class, interval: 100);
         $this->runFakerTest(ActiveMediaType::class);
     }
 }

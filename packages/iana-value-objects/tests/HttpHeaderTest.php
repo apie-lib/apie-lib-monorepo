@@ -64,7 +64,7 @@ class HttpHeaderTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(HttpHeader::class);
-        $this->runFakerTest(ActiveHttpHeader::class);
+        $this->runFakerTest(HttpHeader::class, interval: 100);
+        $this->runFakerTest(ActiveHttpHeader::class, interval: 100);
     }
 }

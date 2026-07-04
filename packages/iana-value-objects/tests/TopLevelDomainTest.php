@@ -52,7 +52,7 @@ class TopLevelDomainTest extends TestCase
     #[Test]
     public function it_works_with_apie_faker()
     {
-        $this->runFakerTest(TopLevelDomain::class);
-        $this->runFakerTest(ActiveTopLevelDomain::class);
+        $this->runFakerTest(TopLevelDomain::class, interval: 100);
+        $this->runFakerTest(ActiveTopLevelDomain::class, interval: 100);
     }
 }
