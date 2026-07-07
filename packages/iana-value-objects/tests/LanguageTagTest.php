@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Tests\IanaValueObjects;
 
+use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\LanguageTag\LanguageTag;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -24,6 +25,30 @@ class LanguageTagTest extends TestCase
     {
         $testItem = LanguageTag::fromNative($input);
         $this->assertSame($expected, $testItem->toNative());
+    }
+
+    #[Test]
+    #[DataProvider('provideInvalidLanguageTags')]
+    public function it_throws_error_on_invalid_input(string $input): void
+    {
+        $this->expectException(InvalidStringForValueObjectException::class);
+        new LanguageTag($input);
+    }
+
+    public static function provideInvalidLanguageTags(): array
+    {
+        return [
+            ['invalid'],
+            ['en-'],
+            ['-US'],
+            ['en-US-'],
+            ['en--US'],
+            ['en-US-1234'],
+            ['en-US-abcde'],
+            ['en-US-abcde-fghij'],
+            ['en-US-abcde-fghij-klmno'],
+            ['en-x-1 2 3']
+        ];
     }
 
 

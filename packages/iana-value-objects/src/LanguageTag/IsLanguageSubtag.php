@@ -40,13 +40,13 @@ trait IsLanguageSubtag
     public function getAdded(): ?DateTimeImmutable
     {
         $added = $this->getFieldValue('Added');
-        return $added ? DateTimeImmutable::createFromFormat('Y-m-d', $added) : null;
+        return $added ? DateTimeImmutable::createFromFormat('!Y-m-d', $added) : null;
     }
 
     public function getDeprecated(): ?DateTimeImmutable
     {
         $added = $this->getFieldValue('Deprecated');
-        return $added ? DateTimeImmutable::createFromFormat('Y-m-d', $added) : null;
+        return $added ? DateTimeImmutable::createFromFormat('!Y-m-d', $added) : null;
     }
 
     public function getPrefix(): ?NonEmptyString

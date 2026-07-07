@@ -17,6 +17,14 @@ class LanguageScriptTest extends TestCase
     {
         $testItem = new LanguageScript('adlm');
         $this->assertEquals('Adlm', $testItem->toNative());
+        $this->assertEquals($testItem, $testItem->toPreferredValue());
+        $this->assertTrue($testItem->isActive());
+        $this->assertEquals('Adlm', $testItem->getSubtag());
+        $this->assertEquals('Adlam', $testItem->getDescription()->toNative());
+        $this->assertEquals(new \DateTimeImmutable('2014-12-11'), $testItem->getAdded());
+        $this->assertNull($testItem->getDeprecated());
+        $this->assertEquals(null, $testItem->getPrefix());
+        $this->assertEquals(null, $testItem->getMacrolanguage());
     }
 
     #[Test]

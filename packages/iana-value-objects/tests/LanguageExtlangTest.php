@@ -5,6 +5,7 @@ use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\IanaValueObjects\LanguageTag\ActiveLanguageExtlang;
 use Apie\IanaValueObjects\LanguageTag\LanguageExtlang;
+use DateTimeImmutable;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -17,6 +18,14 @@ class LanguageExtlangTest extends TestCase
     {
         $testItem = new LanguageExtlang('aao');
         $this->assertEquals('aao', $testItem->toNative());
+        $this->assertEquals('aao', $testItem->toPreferredValue()->toNative());
+        $this->assertTrue($testItem->isActive());
+        $this->assertEquals('aao', $testItem->getSubtag());
+        $this->assertEquals('Algerian Saharan Arabic', $testItem->getDescription()->toNative());
+        $this->assertEquals(new DateTimeImmutable('2009-07-29'), $testItem->getAdded());
+        $this->assertNull($testItem->getDeprecated());  
+        $this->assertEquals('ar', $testItem->getPrefix()->toNative());
+        $this->assertEquals('ar', $testItem->getMacrolanguage()->toNative());
     }
 
     #[Test]
@@ -24,6 +33,14 @@ class LanguageExtlangTest extends TestCase
     {
         $testItem = new LanguageExtlang('ajp');
         $this->assertEquals('ajp', $testItem->toNative());
+        $this->assertEquals('ajp', $testItem->toPreferredValue()->toNative());
+        $this->assertTrue($testItem->isActive());
+        $this->assertEquals('ajp', $testItem->getSubtag());
+        $this->assertEquals('South Levantine Arabic', $testItem->getDescription()->toNative());
+        $this->assertEquals(new DateTimeImmutable('2009-07-29'), $testItem->getAdded());
+        $this->assertNotNull($testItem->getDeprecated());
+        $this->assertEquals('ar', $testItem->getPrefix()->toNative());
+        $this->assertEquals('ar', $testItem->getMacrolanguage()->toNative());
     }
 
     #[Test]

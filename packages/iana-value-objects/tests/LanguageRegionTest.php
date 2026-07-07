@@ -17,6 +17,14 @@ class LanguageRegionTest extends TestCase
     {
         $testItem = new LanguageRegion('bE');
         $this->assertEquals('BE', $testItem->toNative());
+        $this->assertEquals($testItem, $testItem->toPreferredValue());
+        $this->assertTrue($testItem->isActive());
+        $this->assertEquals('BE', $testItem->getSubtag());
+        $this->assertEquals('Belgium', $testItem->getDescription()->toNative());
+        $this->assertEquals(new \DateTimeImmutable('2005-10-16'), $testItem->getAdded());
+        $this->assertNull($testItem->getDeprecated());
+        $this->assertEquals(null, $testItem->getPrefix());
+        $this->assertEquals(null, $testItem->getMacrolanguage());
     }
 
     #[Test]
