@@ -1,7 +1,6 @@
 <?php
 namespace Apie\IanaValueObjects\TopLevelDomain;
 
-use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\IanaValueObjects\HasActiveFilter;

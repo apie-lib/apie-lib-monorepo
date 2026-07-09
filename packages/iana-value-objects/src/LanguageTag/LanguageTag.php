@@ -1,17 +1,19 @@
 <?php
 namespace Apie\IanaValueObjects\LanguageTag;
 
+use Apie\Core\Attributes\ExampleValue;
+use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Identifiers\Identifier;
 use Apie\Core\Lists\IdentifierList;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
 use Apie\Core\ValueObjects\SingleLetter;
-use Apie\Core\Attributes\FakeMethod;
-use Faker\Factory;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]
+#[ExampleValue('nl')]
+#[ExampleValue('en-US')]
 class LanguageTag implements StringValueObjectInterface
 {
     use IsStringValueObject;
@@ -22,7 +24,7 @@ class LanguageTag implements StringValueObjectInterface
     {
         if (!isset(self::$resolvedLanguageSubtags[$input])) {
             $split = explode('-', $input);
-            $language = [Language::fromNative(array_shift($split))];   
+            $language = [Language::fromNative(array_shift($split))];
             $classes = [
                     LanguageExtlang::class,
                     LanguageScript::class,

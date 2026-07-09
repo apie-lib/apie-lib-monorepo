@@ -9,6 +9,7 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Entities\EntityInterface;
+use Apie\IanaValueObjects\LanguageAndRegion;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Exception;
@@ -47,6 +48,26 @@ class Authentication
     public function currentSession(#[Context] SessionInterface $sessionInterface): array
     {
         return $sessionInterface->all();
+    }
+
+    public function acceptLocale(#[Context(ContextConstants::ACCEPT_LOCALE)] ?string $locale = null): ?string
+    {
+        return $locale;
+    }
+
+    public function locale(#[Context(ContextConstants::LOCALE)] ?string $locale = null): ?string
+    {
+        return $locale;
+    }
+
+    public function dataLocale(#[Context(ContextConstants::DATA_LOCALE)] ?string $locale = null): ?string
+    {
+        return $locale;
+    }
+
+    public function localeObject(#[Context] LanguageAndRegion $locale): LanguageAndRegion
+    {
+        return $locale;
     }
 
     public function isThisMe(#[Context] ApieContext $apieContext, UserIdentifier $userId): bool

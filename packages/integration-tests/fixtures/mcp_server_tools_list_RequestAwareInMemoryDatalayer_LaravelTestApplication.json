@@ -1053,11 +1053,13 @@
                             },
                             "language": {
                                 "type": "string",
-                                "nullable": true
+                                "nullable": true,
+                                "example": "en"
                             },
                             "activeLanguage": {
                                 "type": "string",
-                                "nullable": true
+                                "nullable": true,
+                                "example": "en"
                             },
                             "mediaType": {
                                 "type": "string",
@@ -5089,11 +5091,13 @@
                             },
                             "language": {
                                 "type": "string",
-                                "nullable": true
+                                "nullable": true,
+                                "example": "en"
                             },
                             "activeLanguage": {
                                 "type": "string",
-                                "nullable": true
+                                "nullable": true,
+                                "example": "en"
                             },
                             "mediaType": {
                                 "type": "string",
@@ -6337,6 +6341,28 @@
                     }
                 },
                 {
+                    "name": "run-global-types-authentication-method-accept-locale",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Calls method acceptLocale and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                        "x-method": "acceptLocale",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                            "methodName": "acceptLocale",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "run-global-types-calculator-method-add",
                     "inputSchema": {
                         "type": "object",
@@ -6403,6 +6429,28 @@
                     }
                 },
                 {
+                    "name": "run-global-types-authentication-method-data-locale",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Calls method dataLocale and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                        "x-method": "dataLocale",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                            "methodName": "dataLocale",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "run-global-types-calculator-method-expensive-background-calculation",
                     "inputSchema": {
                         "type": "object",
@@ -6452,6 +6500,50 @@
                             "method-call": true,
                             "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
                             "methodName": "isThisMe",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-authentication-method-locale",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Calls method locale and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                        "x-method": "locale",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                            "methodName": "locale",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-authentication-method-locale-object",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": []
+                    },
+                    "description": "Calls method localeObject and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                        "x-method": "localeObject",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Authentication",
+                            "methodName": "localeObject",
                             "display-form": true,
                             "_apie_action": "Apie\\Common\\Actions\\RunAction"
                         },

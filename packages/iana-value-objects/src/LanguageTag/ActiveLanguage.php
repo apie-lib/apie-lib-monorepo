@@ -1,7 +1,7 @@
 <?php
 namespace Apie\IanaValueObjects\LanguageTag;
 
-use Apie\Core\Lists\StringSet;
+use Apie\Core\Attributes\ExampleValue;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\IanaValueObjects\HasActiveFilter;
@@ -14,6 +14,8 @@ use Apie\IanaValueObjects\HasActiveFilter;
  *
  * Only active languages can be used.
  */
+#[ExampleValue('nl')]
+#[ExampleValue('en')]
 final class ActiveLanguage implements StringValueObjectInterface, LimitedOptionsInterface
 {
     use IsLanguageSubtag;

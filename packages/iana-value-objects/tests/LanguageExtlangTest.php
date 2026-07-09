@@ -23,7 +23,7 @@ class LanguageExtlangTest extends TestCase
         $this->assertEquals('aao', $testItem->getSubtag());
         $this->assertEquals('Algerian Saharan Arabic', $testItem->getDescription()->toNative());
         $this->assertEquals(new DateTimeImmutable('2009-07-29'), $testItem->getAdded());
-        $this->assertNull($testItem->getDeprecated());  
+        $this->assertNull($testItem->getDeprecated());
         $this->assertEquals('ar', $testItem->getPrefix()->toNative());
         $this->assertEquals('ar', $testItem->getMacrolanguage()->toNative());
     }

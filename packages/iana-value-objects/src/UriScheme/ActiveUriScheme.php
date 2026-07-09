@@ -1,7 +1,6 @@
 <?php
 namespace Apie\IanaValueObjects\UriScheme;
 
-use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;

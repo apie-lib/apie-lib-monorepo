@@ -43,6 +43,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -106,6 +109,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -169,6 +175,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -232,6 +241,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -295,6 +307,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -358,6 +373,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -421,6 +439,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -484,6 +505,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -547,6 +571,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -610,6 +637,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -682,6 +712,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -754,6 +787,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -826,6 +862,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -898,6 +937,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -970,6 +1012,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1042,6 +1087,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1114,6 +1162,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1186,6 +1237,75 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/action/Authentication/acceptLocale/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.Authentication-acceptLocale",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1249,6 +1369,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1312,6 +1435,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1375,6 +1501,75 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/action/Authentication/dataLocale/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.Authentication-dataLocale",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1438,6 +1633,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1501,6 +1699,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1564,6 +1765,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1627,6 +1831,141 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/action/Authentication/locale/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.Authentication-locale",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/action/Authentication/localeObject/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.Authentication-localeObject",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1690,6 +2029,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1753,6 +2095,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1816,6 +2161,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1879,6 +2227,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1942,6 +2293,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1997,6 +2351,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -2417,6 +2774,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -2502,6 +2862,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -2708,6 +3071,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -2793,6 +3159,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -2962,6 +3331,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -3047,6 +3419,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -3226,6 +3601,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -3311,6 +3689,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -3494,6 +3875,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -3590,6 +3974,9 @@
                             ],
                             "type": "string"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -3778,6 +4165,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -3863,6 +4253,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -4058,6 +4451,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -4143,6 +4539,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -4325,6 +4724,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -4421,6 +4823,9 @@
                             ],
                             "type": "string"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -4624,6 +5029,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -4709,6 +5117,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -4897,6 +5308,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -4991,6 +5405,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/AnimalIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -5074,6 +5491,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/AnimalIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -5217,6 +5637,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/ExternalFileIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -5300,6 +5723,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/ExternalFileIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -5398,6 +5824,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/IanaObjectIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -5481,6 +5910,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/IanaObjectIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -5595,6 +6027,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/ObjectWithRelationIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -5678,6 +6113,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/ObjectWithRelationIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -5792,6 +6230,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/OrderIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -5875,6 +6316,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/OrderIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -5973,6 +6417,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -6056,6 +6503,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -6168,6 +6618,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/PrimitiveOnlyIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -6266,6 +6719,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/RestrictedEntityIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -6349,6 +6805,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/RestrictedEntityIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -6463,6 +6922,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/UnionObjectId-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -6546,6 +7008,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/UnionObjectId-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -6660,6 +7125,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/UploadedFileIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -6754,6 +7222,9 @@
                             ],
                             "type": "string"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -6882,6 +7353,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/UploadedFileIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -6980,6 +7454,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/UserIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -7063,6 +7540,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/UserIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -7177,6 +7657,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/SequentialBackgroundProcessIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -7262,6 +7745,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/AuditLogIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -7474,6 +7960,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -7669,6 +8158,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -7724,6 +8216,106 @@
                 }
             }
         },
+        "/Authentication/acceptLocale": {
+            "post": {
+                "tags": [
+                    "Authentication",
+                    "action"
+                ],
+                "description": "Calls method acceptLocale and returns return value.",
+                "operationId": "call-method-Authentication-acceptLocale",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/calc/{numberOne}/plus/{numberTwo}": {
             "post": {
                 "tags": [
@@ -7772,6 +8364,9 @@
                         "schema": {
                             "type": "number"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -7868,6 +8463,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -8034,6 +8632,106 @@
                 }
             }
         },
+        "/Authentication/dataLocale": {
+            "post": {
+                "tags": [
+                    "Authentication",
+                    "action"
+                ],
+                "description": "Calls method dataLocale and returns return value.",
+                "operationId": "call-method-Authentication-dataLocale",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Calculator/expensiveBackgroundCalculation": {
             "post": {
                 "tags": [
@@ -8064,6 +8762,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -8207,6 +8908,9 @@
                                 "value": "csv"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -8323,6 +9027,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -8419,6 +9126,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -8492,6 +9202,205 @@
                 }
             }
         },
+        "/Authentication/locale": {
+            "post": {
+                "tags": [
+                    "Authentication",
+                    "action"
+                ],
+                "description": "Calls method locale and returns return value.",
+                "operationId": "call-method-Authentication-locale",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Authentication/localeObject": {
+            "post": {
+                "tags": [
+                    "Authentication",
+                    "action"
+                ],
+                "description": "Calls method localeObject and returns return value.",
+                "operationId": "call-method-Authentication-localeObject",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LanguageAndRegion-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/calc/{numberOne}/times/{numberTwo}": {
             "post": {
                 "tags": [
@@ -8540,6 +9449,9 @@
                         "schema": {
                             "type": "number"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -8636,6 +9548,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -8739,6 +9654,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -8845,6 +9763,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -8952,6 +9873,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -9057,6 +9981,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -9122,6 +10049,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -9244,6 +10174,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -9366,6 +10299,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -9431,6 +10367,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -9561,6 +10500,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -9683,6 +10625,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -9748,6 +10693,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -9813,6 +10761,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "requestBody": {
@@ -9938,6 +10889,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -10053,6 +11007,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -10168,6 +11125,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -14246,11 +15206,13 @@
             "ActiveLanguage-nullable-get": {
                 "type": "string",
                 "format": "activelanguage",
+                "example": "en",
                 "nullable": true
             },
             "ActiveLanguage-nullable-post": {
                 "type": "string",
                 "format": "activelanguage",
+                "example": "en",
                 "nullable": true
             },
             "ActiveMediaType-nullable-get": {
@@ -16966,12 +17928,20 @@
             "Language-nullable-get": {
                 "type": "string",
                 "format": "language",
+                "example": "en",
                 "nullable": true
             },
             "Language-nullable-post": {
                 "type": "string",
                 "format": "language",
+                "example": "en",
                 "nullable": true
+            },
+            "LanguageAndRegion-get": {
+                "type": "string",
+                "format": "languageandregion",
+                "example": "nl",
+                "pattern": "[^\\-]+\\-[^\\-]+$"
             },
             "LastName-get": {
                 "type": "string",
@@ -19163,6 +20133,30 @@
             "BasicAuth": {
                 "type": "http",
                 "scheme": "basic"
+            }
+        },
+        "parameters": {
+            "AcceptLanguage": {
+                "name": "Accept-Language",
+                "in": "header",
+                "description": "Preferred language for the response.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "format": "languageandregion",
+                    "example": "nl",
+                    "pattern": "[^\\-]+\\-[^\\-]+$"
+                },
+                "examples": {
+                    "language_only": {
+                        "summary": "Language only",
+                        "value": "nl"
+                    },
+                    "language_and_region": {
+                        "summary": "Language and region",
+                        "value": "en-US"
+                    }
+                }
             }
         }
     },

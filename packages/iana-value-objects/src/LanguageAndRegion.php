@@ -1,6 +1,7 @@
 <?php
 namespace Apie\IanaValueObjects;
 
+use Apie\Core\Attributes\ExampleValue;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\SnowflakeIdentifier;
 use Apie\IanaValueObjects\LanguageTag\Language;
@@ -8,6 +9,8 @@ use Apie\IanaValueObjects\LanguageTag\LanguageRegion;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]
+#[ExampleValue('nl', 'Language only')]
+#[ExampleValue('en-US', 'Language and region')]
 final class LanguageAndRegion extends SnowflakeIdentifier
 {
     public function __construct(private Language $language, private ?LanguageRegion $region = null)

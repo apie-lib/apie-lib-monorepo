@@ -13,8 +13,7 @@ trait TestWithOpenapiSchema
         array|Schema $expected,
         ?callable $testCase = null,
         ?ComponentsBuilderFactory $factory = null
-    )
-    {
+    ) {
         if (!class_exists(ComponentsBuilderFactory::class)) {
             $this->markTestIncomplete('Schema generator library not loaded, so skipping test');
             return;

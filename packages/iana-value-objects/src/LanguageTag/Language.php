@@ -1,6 +1,7 @@
 <?php
 namespace Apie\IanaValueObjects\LanguageTag;
 
+use Apie\Core\Attributes\ExampleValue;
 use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
@@ -15,6 +16,8 @@ use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
  *
  * Any language that is not active anymore can be used as well (for data integrity).
  */
+#[ExampleValue('nl')]
+#[ExampleValue('en')]
 final class Language implements StringValueObjectInterface, LimitedOptionsInterface
 {
     use IsLanguageSubtag;
