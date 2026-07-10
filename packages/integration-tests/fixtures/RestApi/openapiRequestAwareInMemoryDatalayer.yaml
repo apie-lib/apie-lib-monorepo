@@ -12546,7 +12546,7 @@ components:
       type: string
       format: languageandregion
       example: nl
-      pattern: '[^\-]+\-[^\-]+$'
+      pattern: '[^\-]+(\-[^\-]+)?$'
     LastName-get:
       type: string
       format: lastname
@@ -14356,7 +14356,7 @@ components:
         type: string
         format: languageandregion
         example: nl
-        pattern: '[^\-]+\-[^\-]+$'
+        pattern: '[^\-]+(\-[^\-]+)?$'
       examples:
         language_only:
           summary: 'Language only'

@@ -17941,7 +17941,7 @@
                 "type": "string",
                 "format": "languageandregion",
                 "example": "nl",
-                "pattern": "[^\\-]+\\-[^\\-]+$"
+                "pattern": "[^\\-]+(\\-[^\\-]+)?$"
             },
             "LastName-get": {
                 "type": "string",
@@ -20145,7 +20145,7 @@
                     "type": "string",
                     "format": "languageandregion",
                     "example": "nl",
-                    "pattern": "[^\\-]+\\-[^\\-]+$"
+                    "pattern": "[^\\-]+(\\-[^\\-]+)?$"
                 },
                 "examples": {
                     "language_only": {
