@@ -53,6 +53,9 @@ class LocaleContextBuilder implements ContextBuilderInterface
         return $context;
     }
 
+    /**
+     * @param array<int, string> $locales
+     */
     private function pickLocale(array $locales, string $headerName): mixed
     {
         if ($this->languageTypehint === null) {
@@ -62,6 +65,7 @@ class LocaleContextBuilder implements ContextBuilderInterface
         foreach ($locales as $locale) {
             try {
                 return Utils::toTypehint(
+                    // @phpstan-ignore-next-line argument.type
                     ReflectionTypeFactory::createReflectionType($this->languageTypehint),
                     $locale
                 );

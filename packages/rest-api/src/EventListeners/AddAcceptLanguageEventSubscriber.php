@@ -66,6 +66,9 @@ class AddAcceptLanguageEventSubscriber implements EventSubscriberInterface
         $openApi->components->parameters = $parameters;
     }
 
+    /**
+     * @return array<string, Example>
+     */
     private function getExamples(\ReflectionType $input): array
     {
         $examples = [];

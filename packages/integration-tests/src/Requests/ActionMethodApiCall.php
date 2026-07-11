@@ -41,6 +41,9 @@ class ActionMethodApiCall implements TestRequestInterface, BootstrapRequestInter
     ) {
     }
 
+    /**
+     * @param array<string, string> $additionalHeaders
+     */
     public function withAdditionalHeaders(array $additionalHeaders): self
     {
         $new = clone $this;

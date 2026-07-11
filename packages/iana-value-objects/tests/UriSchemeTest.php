@@ -16,6 +16,14 @@ class UriSchemeTest extends TestCase
     {
         $testItem = new UriScheme('http');
         $this->assertEquals('http', $testItem->toNative());
+        $this->assertNull($testItem->getTemplate());
+        $this->assertEquals('Hypertext Transfer Protocol', $testItem->getDescription());
+        $this->assertEquals('Permanent', $testItem->getStatus());
+        $this->assertEquals(2, $testItem->getCriSchemeNumber());
+        $this->assertEquals('[RFC8615]', $testItem->getWellKnownUriSupport());
+        $this->assertEquals('[RFC9110, Section 4.2.1]', $testItem->getReference()->toNative());
+        $this->assertNull($testItem->getNotes());
+        $this->assertTrue($testItem->isActive());
     }
 
     #[Test]

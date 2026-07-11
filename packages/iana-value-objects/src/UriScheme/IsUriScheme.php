@@ -22,7 +22,7 @@ trait IsUriScheme
 
     public function getDescription(): ?NonEmptyString
     {
-        $template = $this->getFieldValue('Template');
+        $template = $this->getFieldValue('Description');
         return $template ? NonEmptyString::fromNative($template) : null;
     }
 

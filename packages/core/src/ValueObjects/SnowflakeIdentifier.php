@@ -196,6 +196,9 @@ abstract class SnowflakeIdentifier implements ValueObjectInterface, HasRegexValu
         return $tmp->merge(...$expressions)->__toString();
     }
 
+    /**
+     * @param array<int, string> $expressions
+     */
     private static function createRegex(array $expressions): string
     {
         $expressions = array_map(
