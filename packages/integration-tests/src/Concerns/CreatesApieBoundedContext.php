@@ -585,6 +585,8 @@ trait CreatesApieBoundedContext
 
     /**
      * Test for dropdown action for comboboxes on action method call.
+     * 
+     * Url POST /Authentication/isThisMe/dropdown-options/userId
      */
     public function createMethodArgumentOptionsTestRequest(): TestRequestInterface
     {
@@ -604,6 +606,92 @@ trait CreatesApieBoundedContext
             entities: [$user],
             discardValidationOnFaker: true
         );
+    }
+
+    public function createAcceptLocaleRequestWithoutLanguageHeader(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/acceptLocale',
+            new GetPrimitiveField('', null)
+        );
+    }
+
+    public function createAcceptLocaleRequestWithLanguageHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/acceptLocale',
+            new GetPrimitiveField('', 'nl-NL')
+        ))
+        ->withAdditionalHeaders([
+            'accept-language' => 'nl-NL',
+            'content-language' => 'en-US',
+        ]);
+    }
+
+    public function createLocaleRequestWithoutLanguageHeader(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/locale',
+            new GetPrimitiveField('', null)
+        );
+    }
+
+    public function createLocaleRequestWithLanguageHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/locale',
+            new GetPrimitiveField('', 'en-US')
+        ))->withAdditionalHeaders([
+            'accept-language' => 'nl-NL',
+            'content-language' => 'en-US',
+        ]);
+    }
+   
+
+    public function createDataLocaleRequestWithoutLanguageHeader(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/dataLocale',
+            new GetPrimitiveField('', null)
+        );
+    }
+
+    public function createDataLocaleRequestWithLanguageHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/dataLocale',
+            new GetPrimitiveField('', 'en-US')
+        ))->withAdditionalHeaders([
+            'accept-language' => 'nl-NL',
+            'content-language' => 'en-US',
+        ]);
+    }
+
+    public function createLocaleObjectRequestWithoutLanguageHeader(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/localeObject',
+            new GetPrimitiveField('', null)
+        );
+    }
+
+    public function createLocaleObjectRequestWithLanguageHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/localeObject',
+            new GetPrimitiveField('', 'en-US')
+        ))->withAdditionalHeaders([
+            'accept-language' => 'nl-nl',
+            'content-language' => 'en-us',
+        ]);
     }
 
     /**

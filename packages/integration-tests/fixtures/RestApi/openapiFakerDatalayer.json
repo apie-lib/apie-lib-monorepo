@@ -8858,7 +8858,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/LanguageAndRegion-get"
+                                    "$ref": "#/components/schemas/LanguageAndRegion-nullable-get"
                                 }
                             }
                         }
@@ -17402,11 +17402,12 @@
                 "example": "en",
                 "nullable": true
             },
-            "LanguageAndRegion-get": {
+            "LanguageAndRegion-nullable-get": {
                 "type": "string",
                 "format": "languageandregion",
                 "example": "nl",
-                "pattern": "[^\\-]+(\\-[^\\-]+)?$"
+                "pattern": "[^\\-]+(\\-[^\\-]+)?$",
+                "nullable": true
             },
             "LastName-get": {
                 "type": "string",

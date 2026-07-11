@@ -65,7 +65,7 @@ class Authentication
         return $locale;
     }
 
-    public function localeObject(#[Context] LanguageAndRegion $locale): LanguageAndRegion
+    public function localeObject(#[Context] ?LanguageAndRegion $locale = null): ?LanguageAndRegion
     {
         return $locale;
     }

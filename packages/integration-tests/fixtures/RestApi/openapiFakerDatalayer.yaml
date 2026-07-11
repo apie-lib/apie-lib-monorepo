@@ -5921,7 +5921,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LanguageAndRegion-get'
+                $ref: '#/components/schemas/LanguageAndRegion-nullable-get'
   '/calc/{numberOne}/times/{numberTwo}':
     post:
       tags:
@@ -12542,11 +12542,12 @@ components:
       format: language
       example: en
       nullable: true
-    LanguageAndRegion-get:
+    LanguageAndRegion-nullable-get:
       type: string
       format: languageandregion
       example: nl
       pattern: '[^\-]+(\-[^\-]+)?$'
+      nullable: true
     LastName-get:
       type: string
       format: lastname

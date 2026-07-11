@@ -23,6 +23,9 @@ class ActionMethodApiCall implements TestRequestInterface, BootstrapRequestInter
 
     private ?ApieFacadeInterface $apieFacade = null;
 
+    /** @var array<string, string> */
+    private array $additionalHeaders = [];
+
     /**
      * @param array<int, EntityInterface> $entities
      */
@@ -36,6 +39,13 @@ class ActionMethodApiCall implements TestRequestInterface, BootstrapRequestInter
         private readonly bool $discardValidationOnFaker = false,
         protected readonly ?int $expectedAuditLogsAdded = null,
     ) {
+    }
+
+    public function withAdditionalHeaders(array $additionalHeaders): self
+    {
+        $new = clone $this;
+        $new->additionalHeaders = [...$this->additionalHeaders, ...$additionalHeaders];
+        return $new;
     }
 
     public function bootstrap(TestApplicationInterface $testApplication): void
@@ -71,6 +81,7 @@ class ActionMethodApiCall implements TestRequestInterface, BootstrapRequestInter
             [
                 'content-type' => 'application/json',
                 'accept' => 'application/json',
+                ...$this->additionalHeaders,
             ],
             json_encode($data)
         );

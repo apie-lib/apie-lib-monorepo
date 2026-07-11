@@ -16,6 +16,7 @@ class TopLevelDomainTest extends TestCase
     {
         $testItem = new TopLevelDomain('cOm');
         $this->assertEquals('COM', $testItem->toNative());
+        $this->assertTrue($testItem->isActive());
     }
 
     #[Test]
