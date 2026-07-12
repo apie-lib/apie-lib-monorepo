@@ -16,7 +16,6 @@
   },
   "extra": {
     "apie-objects":[
-    "Apie\\FtpServer\\Lists\\CommandHashmap",
     "Apie\\FtpServer\\Enums\\PortStatus"
 ]
   },

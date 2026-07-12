@@ -5,7 +5,10 @@ use Apie\Core\Dto\DtoInterface;
 use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
 use Apie\Core\Lists\ItemSet;
+use Apie\Core\Utils\ConverterUtils;
+use Apie\Core\Utils\HashmapUtils;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
+use Apie\Core\ValueObjects\Utils;
 use Generator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Spatie\StructureDiscoverer\Discover;
@@ -33,16 +36,17 @@ class ComposerExtraIsCompleteTest extends TestCase
     {
         $composer = self::readComposerFor($package);
         $classes = $composer['extra']["apie-objects"] ?? [];
+        $interfaces = [
+            UploadedFileInterface::class,
+            ValueObjectInterface::class,
+            DtoInterface::class,
+        ];
         $classesFound = Discover::in(self::findPath($package . '/src'))
             ->any(
                 ConditionBuilder::create()->exact(
                     ConditionBuilder::create()->classes(),
-                    ConditionBuilder::create()->custom(function (DiscoveredStructure $structure) {
-                        $interfaces = [
-                            UploadedFileInterface::class,
-                            ValueObjectInterface::class,
-                            DtoInterface::class,
-                        ];
+                    ConditionBuilder::create()->custom(function (DiscoveredStructure $structure) use (&$interfaces) {
+                        
                         $refl = (new \ReflectionClass($structure->getFcqn()));
                         if ($refl->isAbstract()) {
                             return false;
@@ -59,13 +63,27 @@ class ComposerExtraIsCompleteTest extends TestCase
                 ConditionBuilder::create()->exact(
                     ConditionBuilder::create()->classes(),
                     ConditionBuilder::create()->extending(ItemList::class, ItemSet::class, ItemHashmap::class),
-                    ConditionBuilder::create()->custom(function (DiscoveredStructure $structure) {
+                    ConditionBuilder::create()->custom(function (DiscoveredStructure $structure) use (&$interfaces) {
                         $refl = (new \ReflectionClass($structure->getFcqn()));
                         if ($refl->isAbstract()) {
                             return false;
                         }
+                        $arrayType = ConverterUtils::toReflectionClass(
+                            HashmapUtils::getArrayType($refl)
+                        );
+                        if ($arrayType === null) {
+                            return false;
+                        }
+                        if ($arrayType->isEnum()) {
+                            return true;
+                        }
 
-                        return true;
+                        $res = array_intersect(
+                            $interfaces,
+                            $arrayType->getInterfaceNames()
+                        );
+
+                        return !empty($res);
                     })
                 ),
                 ConditionBuilder::create()->enums()

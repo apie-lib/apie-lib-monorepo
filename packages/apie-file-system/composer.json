@@ -31,11 +31,6 @@
     "phpspec/prophecy-phpunit": "^2.2",
     "symfony/mime":  "^7.2"
   },
-  "extra": {
-    "apie-objects": [
-    "Apie\\ApieFileSystem\\Lists\\VirtualFileMap"
-]
-  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }

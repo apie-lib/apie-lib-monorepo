@@ -21,8 +21,6 @@
   },
   "extra": {
     "apie-objects": [
-    "Apie\\StorageMetadataBuilder\\Lists\\GeneratedCodeHashmap",
-    "Apie\\StorageMetadataBuilder\\Lists\\ReflectionPropertyList",
     "Apie\\StorageMetadataBuilder\\Identifiers\\GeneratedCodeTimestampId"
 ]
   },

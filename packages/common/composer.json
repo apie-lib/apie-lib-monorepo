@@ -23,9 +23,7 @@
     "apie-objects": [
     "Apie\\Common\\MenuStructure\\MenuNode",
     "Apie\\Common\\MenuStructure\\MenuNodeChildren",
-    "Apie\\Common\\Lists\\ActionDefinitionList",
     "Apie\\Common\\Lists\\UrlPrefixList",
-    "Apie\\Common\\RouteDefinitions\\ActionHashmap",
     "Apie\\Common\\Enums\\AuditLogEvent",
     "Apie\\Common\\Enums\\AccessDenied",
     "Apie\\Common\\Enums\\UrlPrefix",
@@ -34,7 +32,6 @@
     "Apie\\Common\\ValueObjects\\EntityNamespace",
     "Apie\\Common\\ValueObjects\\DecryptedAuthenticatedUser",
     "Apie\\Common\\Other\\AuditLogIdentifier",
-    "Apie\\Common\\Other\\EntitySnapshotFieldMap",
     "Apie\\Common\\Other\\AuditOrigin"
 ]
   },
