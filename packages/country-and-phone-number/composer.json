@@ -21,19 +21,19 @@
   },
   "extra": {
     "apie-objects": [
-      "Apie\\CountryAndPhoneNumber\\BelgianPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\BritishPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\CanadianPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\ChinesePhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\CountryAndPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\DutchPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\FrenchPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\GermanPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\InternationalPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\JapanesePhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\MexicanPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\USPhoneNumber"
-    ]
+    "Apie\\CountryAndPhoneNumber\\FrenchPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\BritishPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\DutchPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\USPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\InternationalPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\JapanesePhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\CountryAndPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\BelgianPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\GermanPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\CanadianPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\MexicanPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\ChinesePhoneNumber"
+]
   },
   "require": {
     "php": ">=8.3",

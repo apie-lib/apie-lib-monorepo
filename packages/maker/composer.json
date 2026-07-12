@@ -26,13 +26,20 @@
   },
   "extra": {
     "apie-objects": [
-      "Apie\\Maker\\Dtos\\DomainObjectDto",
-      "Apie\\Maker\\Enums\\IdType",
-      "Apie\\Maker\\Enums\\NullableOption",
-      "Apie\\Maker\\Enums\\OverwriteStrategy",
-      "Apie\\Maker\\Enums\\PrimitiveType",
-      "Apie\\Maker\\ValueObjects\\VendorValueObject"
-    ]
+    "Apie\\Maker\\Dtos\\DomainObjectDto",
+    "Apie\\Maker\\BoundedContext\\Dtos\\PropertyDefinition",
+    "Apie\\Maker\\BoundedContext\\Lists\\PropertyDefinitionList",
+    "Apie\\Maker\\BoundedContext\\Identifiers\\BoundedContextDefinitionIdentifier",
+    "Apie\\Maker\\BoundedContext\\Identifiers\\ResourceDefinitionIdentifier",
+    "Apie\\Maker\\BoundedContext\\Identifiers\\CodeGeneratedLogIdentifier",
+    "Apie\\Maker\\Enums\\NullableOption",
+    "Apie\\Maker\\Enums\\PrimitiveType",
+    "Apie\\Maker\\Enums\\IdType",
+    "Apie\\Maker\\Enums\\OverwriteStrategy",
+    "Apie\\Maker\\ValueObjects\\PropertyDefinitionName",
+    "Apie\\Maker\\ValueObjects\\ClassNameReference",
+    "Apie\\Maker\\ValueObjects\\VendorValueObject"
+]
   },
   "conflict": {
     "nette/utils": "3.*"

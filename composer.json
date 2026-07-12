@@ -111,6 +111,7 @@
         "phpunit/phpcov": "^10.0.1",
         "phpunit/phpunit": "^11.5.2",
         "smalot/pdfparser": "^2.10",
+        "spatie/php-structure-discoverer": "^2.0.0",
         "symfony/doctrine-bridge": "^7.2",
         "symfony/framework-bundle": "^7.2",
         "symfony/messenger": "^7.2",

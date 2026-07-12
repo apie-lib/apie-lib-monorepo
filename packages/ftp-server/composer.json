@@ -14,6 +14,12 @@
       "Apie\\FtpServer\\": "src/"
     }
   },
+  "extra": {
+    "apie-objects":[
+    "Apie\\FtpServer\\Lists\\CommandHashmap",
+    "Apie\\FtpServer\\Enums\\PortStatus"
+]
+  },
   "autoload-dev": {
     "psr-4": {
       "Apie\\Tests\\FtpServer\\": "tests/"

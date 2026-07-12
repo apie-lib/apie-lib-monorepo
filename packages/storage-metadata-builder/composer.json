@@ -19,6 +19,13 @@
       "Apie\\Tests\\StorageMetadataBuilder\\": "tests/"
     }
   },
+  "extra": {
+    "apie-objects": [
+    "Apie\\StorageMetadataBuilder\\Lists\\GeneratedCodeHashmap",
+    "Apie\\StorageMetadataBuilder\\Lists\\ReflectionPropertyList",
+    "Apie\\StorageMetadataBuilder\\Identifiers\\GeneratedCodeTimestampId"
+]
+  },
   "conflict": {
     "nette/utils": "3.*"
   },
