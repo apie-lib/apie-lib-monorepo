@@ -608,12 +608,17 @@ trait CreatesApieBoundedContext
         );
     }
 
+    /**
+     * test POST /Authentication/acceptLocale
+     *
+     * Only works if application default locale is 'en'.
+     */
     public function createAcceptLocaleRequestWithoutLanguageHeader(): TestRequestInterface
     {
         return new ActionMethodApiCall(
             new BoundedContextId('types'),
             'Authentication/acceptLocale',
-            new GetPrimitiveField('', null)
+            new GetPrimitiveField('', 'en')
         );
     }
 
@@ -630,12 +635,17 @@ trait CreatesApieBoundedContext
         ]);
     }
 
+    /**
+     * test POST /Authentication/locale
+     *
+     * Only works if application default locale is 'en'.
+     */
     public function createLocaleRequestWithoutLanguageHeader(): TestRequestInterface
     {
         return new ActionMethodApiCall(
             new BoundedContextId('types'),
             'Authentication/locale',
-            new GetPrimitiveField('', null)
+            new GetPrimitiveField('', 'en')
         );
     }
 
@@ -650,14 +660,18 @@ trait CreatesApieBoundedContext
             'content-language' => 'en-US',
         ]);
     }
-   
 
+    /**
+     * test POST /Authentication/dataLocale
+     *
+     * Only works if application default locale is 'en'.
+     */
     public function createDataLocaleRequestWithoutLanguageHeader(): TestRequestInterface
     {
         return new ActionMethodApiCall(
             new BoundedContextId('types'),
             'Authentication/dataLocale',
-            new GetPrimitiveField('', null)
+            new GetPrimitiveField('', 'en')
         );
     }
 
@@ -673,6 +687,13 @@ trait CreatesApieBoundedContext
         ]);
     }
 
+    /**
+     * test POST /Authentication/localeObject
+     *
+     * Only works if application default locale is 'en'.
+     *
+     * It still results in null as the picked locale object class does not allow 'en' as a proper value.
+     */
     public function createLocaleObjectRequestWithoutLanguageHeader(): TestRequestInterface
     {
         return new ActionMethodApiCall(

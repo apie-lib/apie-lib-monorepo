@@ -40,15 +40,6 @@ class IntegrationTestHelper
         );
     }
 
-    public function createMinimalFrameworkConfig(): ApplicationConfig
-    {
-        return new ApplicationConfig(
-            false,
-            false,
-            DatalayerImplementation::IN_MEMORY
-        );
-    }
-
     public function createEmptySearch(): SearchTerm
     {
         return new SearchTerm('');

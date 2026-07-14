@@ -8,14 +8,12 @@ use Apie\Core\Lists\ItemSet;
 use Apie\Core\Utils\ConverterUtils;
 use Apie\Core\Utils\HashmapUtils;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
-use Apie\Core\ValueObjects\Utils;
 use Generator;
 use PHPUnit\Framework\Attributes\DataProvider;
-use Spatie\StructureDiscoverer\Discover;
-use Spatie\StructureDiscoverer\Data\DiscoveredStructure;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UploadedFileInterface;
-use ReflectionClass;
+use Spatie\StructureDiscoverer\Data\DiscoveredStructure;
+use Spatie\StructureDiscoverer\Discover;
 use Spatie\StructureDiscoverer\Support\Conditions\ConditionBuilder;
 use Symfony\Component\Finder\Finder;
 
@@ -29,7 +27,7 @@ class ComposerExtraIsCompleteTest extends TestCase
     private static function readComposerFor(string $package): array
     {
         return json_decode(file_get_contents(self::findPath($package) . '/composer.json'), true);
-    } 
+    }
 
     #[DataProvider('packageProvider')]
     public function testPackageComposer(string $package)
