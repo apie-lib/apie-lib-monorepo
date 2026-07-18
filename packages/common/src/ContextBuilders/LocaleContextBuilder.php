@@ -54,9 +54,9 @@ class LocaleContextBuilder implements ContextBuilderInterface
         if (!$context->getContext(ContextConstants::DATA_LOCALE, false)) {
             $acceptLanguage = $context->getContext(ContextConstants::ACCEPT_LOCALE, false);
             $contentLanguage = $context->getContext(ContextConstants::DATA_LOCALE, false);
-            if ($acceptLanguage || $contentLanguage) {
+            if ($acceptLanguage) {
                 $localeObject = $this->pickLocale(
-                    array_filter([$acceptLanguage, $contentLanguage]),
+                    [$acceptLanguage],
                     'framework locale'
                 );
                 if (is_object($localeObject)) {

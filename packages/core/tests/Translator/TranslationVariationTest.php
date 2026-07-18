@@ -4,8 +4,8 @@ namespace Apie\Tests\Core\Translator;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Translator\Enums\Pluralization;
 use Apie\Core\Translator\ValueObjects\TranslationVariation;
-use PHPUnit\Framework\TestCase;
 use Generator;
+use PHPUnit\Framework\TestCase;
 
 class TranslationVariationTest extends TestCase
 {
