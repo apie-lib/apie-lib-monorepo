@@ -8,5 +8,5 @@ use Apie\Core\Attributes\ExampleValue;
 #[ExampleValue('apie.menu.header.root.test.authenticated')]
 class MenuHeader extends AbstractTranslation
 {
-    protected const MIDDLE_REGEX = 'menu\.header\.[^.]+(?:\.[^.]+)*';
+    protected const MIDDLE_REGEX = '(menu.header|(menu(\.[^.]+(\.[^.]+)*))*\.header)';
 }

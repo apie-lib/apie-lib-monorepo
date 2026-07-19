@@ -40,7 +40,7 @@ final class TranslationStringPrefix implements HasRegexValueObjectInterface
 
     public function toNative(): string
     {
-        $resourceSection = $this->resourceIdentifier ? 'resource.' . $this->resourceIdentifier : '';
+        $resourceSection = $this->resourceIdentifier ? ('resource.' . $this->resourceIdentifier . '.') : '';
         if ($this->boundedContextId === null) {
             return 'apie.' . $resourceSection;
         }
