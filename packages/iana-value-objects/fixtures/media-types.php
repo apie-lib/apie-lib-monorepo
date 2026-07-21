@@ -693,28 +693,28 @@ return array(
   array(
     'Name' => 'cmw+cbor',
     'Template' => 'application/cmw+cbor',
-    'Reference' => '[RFC-ietf-rats-msg-wrap-22, Sections 3.1, 3.2, 3.3]',
+    'Reference' => '[RFC9999, Sections 3.1, 3.2, 3.3]',
     'Active' => true,
   ),
   'application/cmw+cose' =>
   array(
     'Name' => 'cmw+cose',
     'Template' => 'application/cmw+cose',
-    'Reference' => '[RFC-ietf-rats-msg-wrap-22, Section 4.1]',
+    'Reference' => '[RFC9999, Section 4.1]',
     'Active' => true,
   ),
   'application/cmw+json' =>
   array(
     'Name' => 'cmw+json',
     'Template' => 'application/cmw+json',
-    'Reference' => '[RFC-ietf-rats-msg-wrap-22, Sections 3.1, 3.2]',
+    'Reference' => '[RFC9999, Sections 3.1, 3.2]',
     'Active' => true,
   ),
   'application/cmw+jws' =>
   array(
     'Name' => 'cmw+jws',
     'Template' => 'application/cmw+jws',
-    'Reference' => '[RFC-ietf-rats-msg-wrap-22, Section 4.2]',
+    'Reference' => '[RFC9999, Section 4.2]',
     'Active' => true,
   ),
   'application/cnrp+xml' =>
@@ -1702,6 +1702,13 @@ return array(
     'Name' => 'jsonpath',
     'Template' => 'application/jsonpath',
     'Reference' => '[RFC9535]',
+    'Active' => true,
+  ),
+  'application/jumbf' =>
+  array(
+    'Name' => 'jumbf',
+    'Template' => 'application/jumbf',
+    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1][Leonard_Rosenthol][Frederik_Temmermans]',
     'Active' => true,
   ),
   'application/jwk+json' =>
@@ -2922,6 +2929,20 @@ return array(
     'Reference' => '[ATSC]',
     'Active' => true,
   ),
+  'application/rpki-ccr' =>
+  array(
+    'Name' => 'rpki-ccr',
+    'Template' => 'application/rpki-ccr',
+    'Reference' => '[RFC-ietf-sidrops-rpki-ccr-11]',
+    'Active' => true,
+  ),
+  'application/rpki-ccr+gzip' =>
+  array(
+    'Name' => 'rpki-ccr+gzip',
+    'Template' => 'application/rpki-ccr+gzip',
+    'Reference' => '[RFC-ietf-sidrops-rpki-ccr-11]',
+    'Active' => true,
+  ),
   'application/rpki-checklist' =>
   array(
     'Name' => 'rpki-checklist',
@@ -3059,14 +3080,14 @@ return array(
   array(
     'Name' => 'scitt-receipt+cose',
     'Template' => 'application/scitt-receipt+cose',
-    'Reference' => '[RFC-ietf-scitt-architecture-21]',
+    'Reference' => '[RFC9943]',
     'Active' => true,
   ),
   'application/scitt-statement+cose' =>
   array(
     'Name' => 'scitt-statement+cose',
     'Template' => 'application/scitt-statement+cose',
-    'Reference' => '[RFC-ietf-scitt-architecture-21]',
+    'Reference' => '[RFC9943]',
     'Active' => true,
   ),
   'application/scvp-cv-request' =>
@@ -3416,7 +3437,7 @@ return array(
   array(
     'Name' => 'sslkeylogfile',
     'Template' => 'application/sslkeylogfile',
-    'Reference' => '[RFC-ietf-tls-keylogfile-05]',
+    'Reference' => '[RFC9850]',
     'Active' => true,
   ),
   'application/ssml+xml' =>
@@ -3437,14 +3458,14 @@ return array(
   array(
     'Name' => 'statuslist+cwt',
     'Template' => 'application/statuslist+cwt',
-    'Reference' => '[RFC-ietf-oauth-status-list-20]',
+    'Reference' => '[RFC-ietf-oauth-status-list-21]',
     'Active' => true,
   ),
   'application/statuslist+jwt' =>
   array(
     'Name' => 'statuslist+jwt',
     'Template' => 'application/statuslist+jwt',
-    'Reference' => '[RFC-ietf-oauth-status-list-20]',
+    'Reference' => '[RFC-ietf-oauth-status-list-21]',
     'Active' => true,
   ),
   'application/stix+json' =>
@@ -5099,6 +5120,13 @@ return array(
     'Reference' => '[Victor_Costan]',
     'Active' => true,
   ),
+  'application/vnd.blockfact.facts' =>
+  array(
+    'Name' => 'vnd.blockfact.facts',
+    'Template' => 'application/vnd.blockfact.facts',
+    'Reference' => '[Egbert_von_Frankenberg]',
+    'Active' => true,
+  ),
   'application/vnd.blueice.multipass' =>
   array(
     'Name' => 'vnd.blueice.multipass',
@@ -5587,6 +5615,20 @@ return array(
     'Name' => 'vnd.curl',
     'Template' => 'application/vnd.curl',
     'Reference' => '[Robert_Byrnes]',
+    'Active' => true,
+  ),
+  'application/vnd.cxtf' =>
+  array(
+    'Name' => 'vnd.cxtf',
+    'Template' => 'application/vnd.cxtf',
+    'Reference' => '[Stefan_Gies]',
+    'Active' => true,
+  ),
+  'application/vnd.cxzip' =>
+  array(
+    'Name' => 'vnd.cxzip',
+    'Template' => 'application/vnd.cxzip',
+    'Reference' => '[Stefan_Gies]',
     'Active' => true,
   ),
   'application/vnd.cyan.dean.root+xml' =>
@@ -8156,6 +8198,13 @@ return array(
     'Name' => 'vnd.modl',
     'Template' => 'application/vnd.modl',
     'Reference' => '[Elliott_Brown]',
+    'Active' => true,
+  ),
+  'application/vnd.mohnetic' =>
+  array(
+    'Name' => 'vnd.mohnetic',
+    'Template' => 'application/vnd.mohnetic',
+    'Reference' => '[Kostiantyn_Cherednychenko]',
     'Active' => true,
   ),
   'application/vnd.mophun.application' =>
@@ -11441,6 +11490,13 @@ return array(
     'Reference' => '[James_Wigger]',
     'Active' => true,
   ),
+  'application/vnd.veraison.nvidia-gpu-evidence+json' =>
+  array(
+    'Name' => 'vnd.veraison.nvidia-gpu-evidence+json',
+    'Template' => 'application/vnd.veraison.nvidia-gpu-evidence+json',
+    'Reference' => '[Jagannathan_Raman]',
+    'Active' => true,
+  ),
   'application/vnd.veraison.tsm-report+cbor' =>
   array(
     'Name' => 'vnd.veraison.tsm-report+cbor',
@@ -12995,6 +13051,13 @@ return array(
     'Reference' => '[RFC5391]',
     'Active' => true,
   ),
+  'audio/prs.aaud' =>
+  array(
+    'Name' => 'prs.aaud',
+    'Template' => 'audio/prs.aaud',
+    'Reference' => '[Ai_Media_Format]',
+    'Active' => true,
+  ),
   'audio/prs.sid' =>
   array(
     'Name' => 'prs.sid',
@@ -13791,6 +13854,13 @@ return array(
     'Name' => 'png',
     'Template' => 'image/png',
     'Reference' => '[W3C][PNG_WG][PNG]',
+    'Active' => true,
+  ),
+  'image/prs.aimg' =>
+  array(
+    'Name' => 'prs.aimg',
+    'Template' => 'image/prs.aimg',
+    'Reference' => '[Ai_Media_Format]',
     'Active' => true,
   ),
   'image/prs.btif' =>
@@ -14742,7 +14812,7 @@ return array(
   array(
     'Name' => 'css',
     'Template' => 'text/css',
-    'Reference' => '[RFC2318]',
+    'Reference' => '[W3C][https://www.w3.org/TR/css]',
     'Active' => true,
   ),
   'text/csv' =>
@@ -15107,6 +15177,13 @@ return array(
     'Name' => 'vnd.ascii-art',
     'Template' => 'text/vnd.ascii-art',
     'Reference' => '[Kim_Scarborough]',
+    'Active' => true,
+  ),
+  'text/vnd.bovnar' =>
+  array(
+    'Name' => 'vnd.bovnar',
+    'Template' => 'text/vnd.bovnar',
+    'Reference' => '[Janos_Sonntag]',
     'Active' => true,
   ),
   'text/vnd.curl' =>
@@ -15723,6 +15800,13 @@ return array(
     'Name' => 'pointer',
     'Template' => 'video/pointer',
     'Reference' => '[RFC2862]',
+    'Active' => true,
+  ),
+  'video/prs.avid' =>
+  array(
+    'Name' => 'prs.avid',
+    'Template' => 'video/prs.avid',
+    'Reference' => '[Ai_Media_Format]',
     'Active' => true,
   ),
   'video/quicktime' =>

@@ -1193,6 +1193,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "unencoded-digest",
+                            "description": "unencoded-digest",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "upgrade",
                             "description": "upgrade",
                             "isDeprecated": false,
@@ -1243,6 +1249,12 @@
                         {
                             "name": "want-repr-digest",
                             "description": "want-repr-digest",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "want-unencoded-digest",
+                            "description": "want-unencoded-digest",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -54032,6 +54044,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/jumbf",
+                            "description": "application\/jumbf",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/jwk+json",
                             "description": "application\/jwk+json",
                             "isDeprecated": false,
@@ -55072,6 +55090,18 @@
                         {
                             "name": "application\/route-usd+xml",
                             "description": "application\/route-usd+xml",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/rpki-ccr",
+                            "description": "application\/rpki-ccr",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/rpki-ccr+gzip",
+                            "description": "application\/rpki-ccr+gzip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -56942,6 +56972,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.blockfact.facts",
+                            "description": "application\/vnd.blockfact.facts",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.blueice.multipass",
                             "description": "application\/vnd.blueice.multipass",
                             "isDeprecated": false,
@@ -57358,6 +57394,18 @@
                         {
                             "name": "application\/vnd.curl",
                             "description": "application\/vnd.curl",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.cxtf",
+                            "description": "application\/vnd.cxtf",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.cxzip",
+                            "description": "application\/vnd.cxzip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -59560,6 +59608,12 @@
                         {
                             "name": "application\/vnd.modl",
                             "description": "application\/vnd.modl",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.mohnetic",
+                            "description": "application\/vnd.mohnetic",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -62378,6 +62432,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.veraison.nvidia-gpu-evidence+json",
+                            "description": "application\/vnd.veraison.nvidia-gpu-evidence+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.veraison.tsm-report+cbor",
                             "description": "application\/vnd.veraison.tsm-report+cbor",
                             "isDeprecated": false,
@@ -63710,6 +63770,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "audio\/prs.aaud",
+                            "description": "audio\/prs.aaud",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "audio\/prs.sid",
                             "description": "audio\/prs.sid",
                             "isDeprecated": false,
@@ -64390,6 +64456,12 @@
                         {
                             "name": "image\/png",
                             "description": "image\/png",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "image\/prs.aimg",
+                            "description": "image\/prs.aimg",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -65522,6 +65594,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "text\/vnd.bovnar",
+                            "description": "text\/vnd.bovnar",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "text\/vnd.curl",
                             "description": "text\/vnd.curl",
                             "isDeprecated": false,
@@ -66046,6 +66124,12 @@
                         {
                             "name": "video\/pointer",
                             "description": "video\/pointer",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "video\/prs.avid",
+                            "description": "video\/prs.avid",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -76002,6 +76086,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "mdoc",
+                            "description": "mdoc",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "mdoc-openid4vp",
+                            "description": "mdoc-openid4vp",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "message",
                             "description": "message",
                             "isDeprecated": false,
@@ -76538,6 +76634,12 @@
                         {
                             "name": "mupdate",
                             "description": "mupdate",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "musik",
+                            "description": "musik",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -77130,6 +77232,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "tttps",
+                            "description": "tttps",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "turn",
                             "description": "turn",
                             "isDeprecated": false,
@@ -77174,6 +77282,12 @@
                         {
                             "name": "ut2004",
                             "description": "ut2004",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "uuaid",
+                            "description": "uuaid",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -79852,6 +79966,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "unencoded-digest",
+                            "description": "unencoded-digest",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "upgrade",
                             "description": "upgrade",
                             "isDeprecated": false,
@@ -79914,6 +80034,12 @@
                         {
                             "name": "want-repr-digest",
                             "description": "want-repr-digest",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "want-unencoded-digest",
+                            "description": "want-unencoded-digest",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -134993,6 +135119,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/jumbf",
+                            "description": "application\/jumbf",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/jwk+json",
                             "description": "application\/jwk+json",
                             "isDeprecated": false,
@@ -136033,6 +136165,18 @@
                         {
                             "name": "application\/route-usd+xml",
                             "description": "application\/route-usd+xml",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/rpki-ccr",
+                            "description": "application\/rpki-ccr",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/rpki-ccr+gzip",
+                            "description": "application\/rpki-ccr+gzip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -137903,6 +138047,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.blockfact.facts",
+                            "description": "application\/vnd.blockfact.facts",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.blueice.multipass",
                             "description": "application\/vnd.blueice.multipass",
                             "isDeprecated": false,
@@ -138319,6 +138469,18 @@
                         {
                             "name": "application\/vnd.curl",
                             "description": "application\/vnd.curl",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.cxtf",
+                            "description": "application\/vnd.cxtf",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.cxzip",
+                            "description": "application\/vnd.cxzip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -140521,6 +140683,12 @@
                         {
                             "name": "application\/vnd.modl",
                             "description": "application\/vnd.modl",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.mohnetic",
+                            "description": "application\/vnd.mohnetic",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -143339,6 +143507,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.veraison.nvidia-gpu-evidence+json",
+                            "description": "application\/vnd.veraison.nvidia-gpu-evidence+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.veraison.tsm-report+cbor",
                             "description": "application\/vnd.veraison.tsm-report+cbor",
                             "isDeprecated": false,
@@ -144671,6 +144845,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "audio\/prs.aaud",
+                            "description": "audio\/prs.aaud",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "audio\/prs.sid",
                             "description": "audio\/prs.sid",
                             "isDeprecated": false,
@@ -145351,6 +145531,12 @@
                         {
                             "name": "image\/png",
                             "description": "image\/png",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "image\/prs.aimg",
+                            "description": "image\/prs.aimg",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -146483,6 +146669,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "text\/vnd.bovnar",
+                            "description": "text\/vnd.bovnar",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "text\/vnd.curl",
                             "description": "text\/vnd.curl",
                             "isDeprecated": false,
@@ -147007,6 +147199,12 @@
                         {
                             "name": "video\/pointer",
                             "description": "video\/pointer",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "video\/prs.avid",
+                            "description": "video\/prs.avid",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -158328,6 +158526,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "mdoc",
+                            "description": "mdoc",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "mdoc-openid4vp",
+                            "description": "mdoc-openid4vp",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "message",
                             "description": "message",
                             "isDeprecated": false,
@@ -158870,6 +159080,12 @@
                         {
                             "name": "mupdate",
                             "description": "mupdate",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "musik",
+                            "description": "musik",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -159498,6 +159714,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "tttps",
+                            "description": "tttps",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "turn",
                             "description": "turn",
                             "isDeprecated": false,
@@ -159548,6 +159770,12 @@
                         {
                             "name": "ut2004",
                             "description": "ut2004",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "uuaid",
+                            "description": "uuaid",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -162631,6 +162859,18 @@
                     "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
                     "fields": [
                         {
+                            "name": "description",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "types",
                             "description": "A list of all types supported by this server.",
                             "args": [],
@@ -162770,6 +163010,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "specifiedByURL",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "fields",
                             "description": null,
                             "args": [
@@ -162777,9 +163029,13 @@
                                     "name": "includeDeprecated",
                                     "description": null,
                                     "type": {
-                                        "kind": "SCALAR",
-                                        "name": "Boolean",
-                                        "ofType": null
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
                                     },
                                     "defaultValue": "false"
                                 }
@@ -162848,9 +163104,13 @@
                                     "name": "includeDeprecated",
                                     "description": null,
                                     "type": {
-                                        "kind": "SCALAR",
-                                        "name": "Boolean",
-                                        "ofType": null
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
                                     },
                                     "defaultValue": "false"
                                 }
@@ -162874,7 +163134,22 @@
                         {
                             "name": "inputFields",
                             "description": null,
-                            "args": [],
+                            "args": [
+                                {
+                                    "name": "includeDeprecated",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
+                                    },
+                                    "defaultValue": "false"
+                                }
+                            ],
                             "type": {
                                 "kind": "LIST",
                                 "name": null,
@@ -162898,6 +163173,18 @@
                             "type": {
                                 "kind": "OBJECT",
                                 "name": "__Type",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "isOneOf",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "Boolean",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -163004,7 +163291,22 @@
                         {
                             "name": "args",
                             "description": null,
-                            "args": [],
+                            "args": [
+                                {
+                                    "name": "includeDeprecated",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
+                                    },
+                                    "defaultValue": "false"
+                                }
+                            ],
                             "type": {
                                 "kind": "NON_NULL",
                                 "name": null,
@@ -163127,6 +163429,34 @@
                         {
                             "name": "defaultValue",
                             "description": "A GraphQL-formatted string representing the default value for this input value.",
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "isDeprecated",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "Boolean",
+                                    "ofType": null
+                                }
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "deprecationReason",
+                            "description": null,
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
@@ -163285,7 +163615,22 @@
                         {
                             "name": "args",
                             "description": null,
-                            "args": [],
+                            "args": [
+                                {
+                                    "name": "includeDeprecated",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
+                                    },
+                                    "defaultValue": "false"
+                                }
+                            ],
                             "type": {
                                 "kind": "NON_NULL",
                                 "name": null,
@@ -163494,7 +163839,9 @@
                     "description": "Marks an element of a GraphQL schema as no longer supported.",
                     "locations": [
                         "FIELD_DEFINITION",
-                        "ENUM_VALUE"
+                        "ENUM_VALUE",
+                        "ARGUMENT_DEFINITION",
+                        "INPUT_FIELD_DEFINITION"
                     ],
                     "args": [
                         {
@@ -163508,6 +163855,37 @@
                             "defaultValue": "\"No longer supported\""
                         }
                     ]
+                },
+                {
+                    "name": "specifiedBy",
+                    "description": "Exposes a URL that specifies the behavior of this scalar.",
+                    "locations": [
+                        "SCALAR"
+                    ],
+                    "args": [
+                        {
+                            "name": "url",
+                            "description": "The URL that specifies the behavior of this scalar.",
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        }
+                    ]
+                },
+                {
+                    "name": "oneOf",
+                    "description": "Indicates that an Input Object is a OneOf Input Object (and thus requires exactly one of its fields be provided).",
+                    "locations": [
+                        "INPUT_OBJECT"
+                    ],
+                    "args": []
                 }
             ]
         }

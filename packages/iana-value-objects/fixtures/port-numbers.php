@@ -25035,12 +25035,6 @@ return array(
     'Service Name' => 'k3software-cli',
     'Active' => true,
   ),
-  26264 =>
-  array(
-    'Description' => 'De-registered',
-    'Service Name' => '',
-    'Active' => true,
-  ),
   '2626tcp' =>
   array(
     'Description' => 'gbjd816',
@@ -26041,66 +26035,6 @@ return array(
   array(
     'Description' => 'MANET Protocols',
     'Service Name' => 'manet',
-    'Active' => true,
-  ),
-  27000 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27001 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27002 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27003 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27004 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27005 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27006 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27007 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27008 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27009 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
     'Active' => true,
   ),
   '2700tcp' =>
@@ -35529,6 +35463,18 @@ return array(
     'Service Name' => 'fxaengine-net',
     'Active' => true,
   ),
+  585 =>
+  array(
+    'Description' => 'De-registered',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  659 =>
+  array(
+    'Description' => 'Removed',
+    'Service Name' => '',
+    'Active' => true,
+  ),
   3403 =>
   array(
     'Description' => 'De-registered',
@@ -35539,6 +35485,72 @@ return array(
   array(
     'Description' => 'Removed',
     'Service Name' => '',
+    'Active' => true,
+  ),
+  26264 =>
+  array(
+    'Description' => 'De-registered',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  27000 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27001 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27002 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27003 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27004 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27005 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27006 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27007 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27008 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27009 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
     'Active' => true,
   ),
   '3405tcp' =>
@@ -57348,12 +57360,6 @@ return array(
     'Service Name' => 'keyserver',
     'Active' => true,
   ),
-  585 =>
-  array(
-    'Description' => 'De-registered',
-    'Service Name' => '',
-    'Active' => true,
-  ),
   '5859tcp' =>
   array(
     'Description' => 'WHEREHOO',
@@ -61282,12 +61288,6 @@ return array(
   array(
     'Description' => 'TenFold',
     'Service Name' => 'tenfold',
-    'Active' => true,
-  ),
-  659 =>
-  array(
-    'Description' => 'Removed',
-    'Service Name' => '',
     'Active' => true,
   ),
   '65tcp' =>

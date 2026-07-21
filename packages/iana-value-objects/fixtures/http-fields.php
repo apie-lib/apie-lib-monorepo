@@ -331,7 +331,7 @@ return array(
   array(
     'Field Name' => 'Available-Dictionary',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Item',
     'Reference' => '[RFC 9842, Section 2.2: Compression Dictionary Transport]',
     'Comments' => '',
     'Active' => true,
@@ -394,7 +394,7 @@ return array(
   array(
     'Field Name' => 'Cache-Group-Invalidation',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'List',
     'Reference' => '[RFC9875: HTTP Cache Groups]',
     'Comments' => '',
     'Active' => true,
@@ -403,7 +403,7 @@ return array(
   array(
     'Field Name' => 'Cache-Groups',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'List',
     'Reference' => '[RFC9875: HTTP Cache Groups]',
     'Comments' => '',
     'Active' => true,
@@ -439,7 +439,7 @@ return array(
   array(
     'Field Name' => 'Capsule-Protocol',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Item',
     'Reference' => '[RFC 9297: HTTP Datagrams and the Capsule Protocol]',
     'Comments' => '',
     'Active' => true,
@@ -610,7 +610,7 @@ return array(
   array(
     'Field Name' => 'Content-Digest',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Dictionary',
     'Reference' => '[RFC 9530, Section 2: Digest Fields]',
     'Comments' => '',
     'Active' => true,
@@ -907,7 +907,7 @@ return array(
   array(
     'Field Name' => 'Dictionary-ID',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Item',
     'Reference' => '[RFC 9842, Section 2.3: Compression Dictionary Transport]',
     'Comments' => '',
     'Active' => true,
@@ -1772,7 +1772,7 @@ return array(
   array(
     'Field Name' => 'Repr-Digest',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Dictionary',
     'Reference' => '[RFC 9530, Section 3: Digest Fields]',
     'Comments' => '',
     'Active' => true,
@@ -1997,7 +1997,7 @@ return array(
   array(
     'Field Name' => 'Signature',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Dictionary',
     'Reference' => '[RFC 9421, Section 4.2: HTTP Message Signatures]',
     'Comments' => '',
     'Active' => true,
@@ -2006,7 +2006,7 @@ return array(
   array(
     'Field Name' => 'Signature-Input',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Dictionary',
     'Reference' => '[RFC 9421, Section 4.1: HTTP Message Signatures]',
     'Comments' => '',
     'Active' => true,
@@ -2164,6 +2164,15 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
+  'unencoded-digest' =>
+  array(
+    'Field Name' => 'Unencoded-Digest',
+    'Status' => 'permanent',
+    'Structured Type' => 'Dictionary',
+    'Reference' => '[RFC-ietf-httpbis-unencoded-digest-05, Section 3: HTTP Unencoded Digest]',
+    'Comments' => '',
+    'Active' => true,
+  ),
   'upgrade' =>
   array(
     'Field Name' => 'Upgrade',
@@ -2195,7 +2204,7 @@ return array(
   array(
     'Field Name' => 'Use-As-Dictionary',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Dictionary',
     'Reference' => '[RFC 9842, Section 2.1: Compression Dictionary Transport]',
     'Comments' => '',
     'Active' => true,
@@ -2240,7 +2249,7 @@ return array(
   array(
     'Field Name' => 'Want-Content-Digest',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Dictionary',
     'Reference' => '[RFC 9530, Section 4: Digest Fields]',
     'Comments' => '',
     'Active' => true,
@@ -2258,8 +2267,17 @@ return array(
   array(
     'Field Name' => 'Want-Repr-Digest',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Dictionary',
     'Reference' => '[RFC 9530, Section 4: Digest Fields]',
+    'Comments' => '',
+    'Active' => true,
+  ),
+  'want-unencoded-digest' =>
+  array(
+    'Field Name' => 'Want-Unencoded-Digest',
+    'Status' => 'permanent',
+    'Structured Type' => 'Dictionary',
+    'Reference' => '[RFC-ietf-httpbis-unencoded-digest-05, Section 4: HTTP Unencoded Digest]',
     'Comments' => '',
     'Active' => true,
   ),

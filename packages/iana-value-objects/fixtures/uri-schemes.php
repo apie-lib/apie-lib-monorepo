@@ -2067,6 +2067,30 @@ return array(
     'Notes' => '',
     'Active' => true,
   ),
+  'mdoc' =>
+  array(
+    'URI Scheme' => 'mdoc',
+    'Template' => 'prov/mdoc',
+    'Description' => 'mdoc',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1013',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[ISO_IEC_JTC1_SC17]',
+    'Notes' => '',
+    'Active' => true,
+  ),
+  'mdoc-openid4vp' =>
+  array(
+    'URI Scheme' => 'mdoc-openid4vp',
+    'Template' => 'prov/mdoc-openid4vp',
+    'Description' => 'mdoc-openid4vp',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1012',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[ISO_IEC_JTC1_SC17]',
+    'Notes' => '',
+    'Active' => true,
+  ),
   'message' =>
   array(
     'URI Scheme' => 'message',
@@ -3156,6 +3180,18 @@ return array(
     'CRI Scheme Number' => '12569',
     'Well-Known URI Support' => '-',
     'Reference' => '[RFC3656]',
+    'Notes' => '',
+    'Active' => true,
+  ),
+  'musik' =>
+  array(
+    'URI Scheme' => 'musik',
+    'Template' => 'prov/musik',
+    'Description' => 'musik',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1014',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[Alexander_Forselius_2]',
     'Notes' => '',
     'Active' => true,
   ),
@@ -4409,6 +4445,19 @@ return array(
     'Notes' => '',
     'Active' => true,
   ),
+  'tttps' =>
+  array(
+    'URI Scheme' => 'tttps',
+    'Template' => 'prov/tttps',
+    'Description' => 'TLS TimeToken Secure Protocol (TTTPS). A cryptographic 
+temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1011',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[draft-helmprotocol-tttps-04]',
+    'Notes' => '',
+    'Active' => true,
+  ),
   'turn' =>
   array(
     'URI Scheme' => 'turn',
@@ -4514,6 +4563,18 @@ return array(
     'CRI Scheme Number' => '6609',
     'Well-Known URI Support' => '-',
     'Reference' => '[Dave_Thaler]',
+    'Notes' => '',
+    'Active' => true,
+  ),
+  'uuaid' =>
+  array(
+    'URI Scheme' => 'uuaid',
+    'Template' => 'prov/uuaid',
+    'Description' => 'uuaid',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1015',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[Madhankumar_Kuppusamy][UUAID_Foundation]',
     'Notes' => '',
     'Active' => true,
   ),

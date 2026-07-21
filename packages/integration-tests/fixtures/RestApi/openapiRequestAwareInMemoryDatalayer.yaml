@@ -8997,6 +8997,7 @@ components:
         - trailer
         - transfer-encoding
         - ttl
+        - unencoded-digest
         - upgrade
         - urgency
         - use-as-dictionary
@@ -9006,6 +9007,7 @@ components:
         - via
         - want-content-digest
         - want-repr-digest
+        - want-unencoded-digest
         - www-authenticate
         - x-content-type-options
         - x-frame-options
@@ -9183,6 +9185,7 @@ components:
         - trailer
         - transfer-encoding
         - ttl
+        - unencoded-digest
         - upgrade
         - urgency
         - use-as-dictionary
@@ -9192,6 +9195,7 @@ components:
         - via
         - want-content-digest
         - want-repr-digest
+        - want-unencoded-digest
         - www-authenticate
         - x-content-type-options
         - x-frame-options
@@ -10410,6 +10414,8 @@ components:
         - maps
         - market
         - matrix
+        - mdoc
+        - mdoc-openid4vp
         - message
         - microsoft.windows.camera
         - microsoft.windows.camera.multipicker
@@ -10500,6 +10506,7 @@ components:
         - mtrust
         - mumble
         - mupdate
+        - musik
         - mvn
         - mvrp
         - mvrps
@@ -10598,6 +10605,7 @@ components:
         - tip
         - tn3270
         - tool
+        - tttps
         - turn
         - turns
         - tv
@@ -10606,6 +10614,7 @@ components:
         - upn
         - urn
         - ut2004
+        - uuaid
         - uuid-in-package
         - v-event
         - vemmi
@@ -10813,6 +10822,8 @@ components:
         - maps
         - market
         - matrix
+        - mdoc
+        - mdoc-openid4vp
         - message
         - microsoft.windows.camera
         - microsoft.windows.camera.multipicker
@@ -10903,6 +10914,7 @@ components:
         - mtrust
         - mumble
         - mupdate
+        - musik
         - mvn
         - mvrp
         - mvrps
@@ -11001,6 +11013,7 @@ components:
         - tip
         - tn3270
         - tool
+        - tttps
         - turn
         - turns
         - tv
@@ -11009,6 +11022,7 @@ components:
         - upn
         - urn
         - ut2004
+        - uuaid
         - uuid-in-package
         - v-event
         - vemmi
@@ -11939,6 +11953,7 @@ components:
         - trailer
         - transfer-encoding
         - ttl
+        - unencoded-digest
         - upgrade
         - urgency
         - uri
@@ -11950,6 +11965,7 @@ components:
         - want-content-digest
         - want-digest
         - want-repr-digest
+        - want-unencoded-digest
         - warning
         - www-authenticate
         - x-content-type-options
@@ -12199,6 +12215,7 @@ components:
         - trailer
         - transfer-encoding
         - ttl
+        - unencoded-digest
         - upgrade
         - urgency
         - uri
@@ -12210,6 +12227,7 @@ components:
         - want-content-digest
         - want-digest
         - want-repr-digest
+        - want-unencoded-digest
         - warning
         - www-authenticate
         - x-content-type-options
@@ -13594,6 +13612,8 @@ components:
         - maps
         - market
         - matrix
+        - mdoc
+        - mdoc-openid4vp
         - message
         - microsoft.windows.camera
         - microsoft.windows.camera.multipicker
@@ -13685,6 +13705,7 @@ components:
         - mtrust
         - mumble
         - mupdate
+        - musik
         - mvn
         - mvrp
         - mvrps
@@ -13789,6 +13810,7 @@ components:
         - tip
         - tn3270
         - tool
+        - tttps
         - turn
         - turns
         - tv
@@ -13798,6 +13820,7 @@ components:
         - upt
         - urn
         - ut2004
+        - uuaid
         - uuid-in-package
         - v-event
         - vemmi
@@ -14015,6 +14038,8 @@ components:
         - maps
         - market
         - matrix
+        - mdoc
+        - mdoc-openid4vp
         - message
         - microsoft.windows.camera
         - microsoft.windows.camera.multipicker
@@ -14106,6 +14131,7 @@ components:
         - mtrust
         - mumble
         - mupdate
+        - musik
         - mvn
         - mvrp
         - mvrps
@@ -14210,6 +14236,7 @@ components:
         - tip
         - tn3270
         - tool
+        - tttps
         - turn
         - turns
         - tv
@@ -14219,6 +14246,7 @@ components:
         - upt
         - urn
         - ut2004
+        - uuaid
         - uuid-in-package
         - v-event
         - vemmi
