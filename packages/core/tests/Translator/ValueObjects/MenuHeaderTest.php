@@ -14,17 +14,18 @@ class MenuHeaderTest extends TestCase
 
     #[Test]
     #[DataProvider('validInputProvider')]
-    public function it_can_create_object_from_fromNative(string $input)
+    public function it_can_create_object_from_fromNative(string $expectedFallback, string $input)
     {
         $testItem = MenuHeader::fromNative($input);
         $this->assertEquals($input, $testItem->toNative());
+        $this->assertEquals($expectedFallback, $testItem->getFallbackText());
     }
 
     public static function validInputProvider(): \Generator
     {
-        yield 'menu header root' => ['apie.menu.header'];
-        yield 'submenu item' => ['apie.menu.sub.sub2.header'];
-        yield 'all options' => ['apie.bounded.test.resource.test.menu.sub.sub2.header.singular.authenticated'];
+        yield 'menu header root' => ['Home', 'apie.menu.header'];
+        yield 'submenu item' => ['Sub2', 'apie.menu.sub.sub2.header'];
+        yield 'all options' => ['Sub2', 'apie.bounded.test.resource.test.menu.sub.sub2.header.singular.authenticated'];
     }
 
     #[Test]
@@ -32,7 +33,7 @@ class MenuHeaderTest extends TestCase
     public function fromNative_throws_error_on_invalid_input(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
-        $testItem = MenuHeader::fromNative($input);
+        MenuHeader::fromNative($input);
     }
 
     public static function invalidInputProvider(): \Generator

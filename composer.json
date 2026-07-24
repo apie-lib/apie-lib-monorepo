@@ -95,7 +95,8 @@
         "symfony/uid": "^7.2",
         "symfony/var-exporter": "^7.2",
         "twig/twig": "^3.10.2",
-        "webonyx/graphql-php": "^15.0"
+        "webonyx/graphql-php": "^15.0",
+        "icanboogie/inflector": "^4.0"
     },
     "require-dev": {
         "ajgl/csv-rfc": "0.4.0",

@@ -43,7 +43,15 @@ class ItemHashmap implements HashmapInterface
         }
         $this->mutable = $oldMutable;
     }
-
+    
+    final public function toImmutable(): static
+    {
+        $copy = clone $this;
+        $copy->internal = clone $copy->internal;
+        $copy->mutable = false;
+        return $copy;
+    }
+    
     /**
      * @return T
      */
