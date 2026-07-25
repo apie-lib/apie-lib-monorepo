@@ -35,6 +35,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -79,6 +81,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -123,6 +127,54 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/TranslationAware/dropdown-options/{property}':
+    post:
+      tags:
+        - TranslationAware
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.TranslationAware
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -167,6 +219,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -211,6 +265,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -255,6 +311,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -299,6 +357,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -343,6 +403,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -387,6 +449,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -431,6 +495,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -482,6 +548,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -533,6 +601,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -584,6 +654,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -635,6 +707,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -686,6 +760,61 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/TranslationAware/{id}/dropdown-options/{property}':
+    post:
+      tags:
+        - TranslationAware
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.existing.TranslationAware
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -737,6 +866,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -788,6 +919,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -839,6 +972,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -883,6 +1018,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -927,6 +1064,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -971,6 +1110,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1015,6 +1156,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1059,6 +1202,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1103,6 +1248,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1147,6 +1294,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1191,6 +1340,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1235,6 +1386,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1279,6 +1432,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1323,6 +1478,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1367,6 +1524,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1411,6 +1570,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1455,6 +1616,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1499,6 +1662,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1543,6 +1708,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1581,6 +1748,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1813,6 +1982,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -1980,6 +2151,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -2116,6 +2289,165 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Order-get'
+  /TranslationAware:
+    post:
+      tags:
+        - TranslationAware
+        - resource
+      description: 'Creates an instance of TranslationAware'
+      operationId: post-TranslationAware
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TranslationAware-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranslationAware-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    get:
+      tags:
+        - TranslationAware
+        - resource
+      description: 'Gets a list of resource that are an instance of TranslationAware'
+      operationId: get-all-TranslationAware
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: items_per_page
+          in: query
+          schema:
+            minimum: 1
+            type: integer
+        -
+          name: page
+          in: query
+          schema:
+            minimum: 0
+            type: integer
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: 'query[id]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[translation]'
+          in: query
+          schema:
+            type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - filteredCount
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/TranslationAware-get'
   /UnionObject:
     post:
       tags:
@@ -2142,6 +2474,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -2309,6 +2643,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -2496,6 +2832,8 @@ paths:
             type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -2668,6 +3006,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -2840,6 +3180,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -3010,6 +3352,8 @@ paths:
             type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -3191,6 +3535,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -3417,6 +3763,8 @@ paths:
             $ref: '#/components/schemas/AnimalIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -3694,6 +4042,8 @@ paths:
             $ref: '#/components/schemas/IanaObjectIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -3826,6 +4176,8 @@ paths:
             $ref: '#/components/schemas/ObjectWithRelationIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -4081,6 +4433,8 @@ paths:
             $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -4278,6 +4632,8 @@ paths:
             $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -4290,6 +4646,140 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  '/TranslationAware/{id}':
+    get:
+      tags:
+        - TranslationAware
+        - resource
+      description: 'Gets a resource of TranslationAware with a specific id'
+      operationId: get-single-TranslationAware
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of TranslationAware'
+          required: true
+          schema:
+            $ref: '#/components/schemas/TranslationAwareIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranslationAware-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    patch:
+      tags:
+        - TranslationAware
+        - resource
+      description: 'Modifies an instance of TranslationAware'
+      operationId: patch-single-TranslationAware
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of TranslationAware'
+          required: true
+          schema:
+            $ref: '#/components/schemas/TranslationAwareIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TranslationAware-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TranslationAware-get'
         '400':
           description: 'Invalid request'
           content:
@@ -4410,6 +4900,8 @@ paths:
             $ref: '#/components/schemas/UnionObjectId-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -4550,6 +5042,8 @@ paths:
             type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -4757,6 +5251,8 @@ paths:
             $ref: '#/components/schemas/UserIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5176,6 +5672,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5254,6 +5752,8 @@ paths:
             type: number
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5317,6 +5817,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5444,6 +5946,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5508,6 +6012,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5562,6 +6068,7 @@ paths:
         - PrimitiveOnly
         - RestrictedEntity
         - SequentialBackgroundProcess
+        - TranslationAware
         - UnionObject
         - UploadedFile
         - User
@@ -5652,6 +6159,7 @@ paths:
         - PrimitiveOnly
         - RestrictedEntity
         - SequentialBackgroundProcess
+        - TranslationAware
         - UnionObject
         - UploadedFile
         - User
@@ -5691,6 +6199,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5754,6 +6264,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5821,6 +6333,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5885,6 +6399,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -5962,6 +6478,8 @@ paths:
             type: number
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6025,6 +6543,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6092,6 +6612,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6161,6 +6683,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6231,6 +6755,8 @@ paths:
               type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6347,6 +6873,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6427,6 +6955,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6553,6 +7083,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6639,6 +7171,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -6811,6 +7345,8 @@ paths:
             $ref: '#/components/schemas/NonEmptyString-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
       requestBody:
         content:
           application/json:
@@ -7516,6 +8052,76 @@ paths:
         - action
       description: 'Calls method export and returns return value.'
       operationId: call-method-ExportAll-export_RestrictedEntity
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: extension
+          in: path
+          description: 'extension of instance of export'
+          required: true
+          schema:
+            type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadedFile-get'
+  '/export/TranslationAware.{extension}':
+    get:
+      tags:
+        - ExportAll
+        - TranslationAware
+        - action
+      description: 'Calls method export and returns return value.'
+      operationId: call-method-ExportAll-export_TranslationAware
       parameters:
         -
           name: fields
@@ -8350,6 +8956,75 @@ paths:
         - action
       description: 'Calls method getAllIndexes and returns return value.'
       operationId: call-method-Indexer-getAllIndexes_RestrictedEntity
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of Indexer'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {  }
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringSet-get'
+  '/indexes/TranslationAware/{id}':
+    post:
+      tags:
+        - Indexer
+        - TranslationAware
+        - action
+      description: 'Calls method getAllIndexes and returns return value.'
+      operationId: call-method-Indexer-getAllIndexes_TranslationAware
       parameters:
         -
           name: fields
@@ -11489,6 +12164,8 @@ components:
         -
           $ref: '#/components/schemas/RestrictedEntity-get'
         -
+          $ref: '#/components/schemas/TranslationAware-get'
+        -
           $ref: '#/components/schemas/UnionObject-get'
         -
           $ref: '#/components/schemas/File-get'
@@ -11510,6 +12187,8 @@ components:
           $ref: '#/components/schemas/PrimitiveOnly-get'
         -
           $ref: '#/components/schemas/RestrictedEntity-get'
+        -
+          $ref: '#/components/schemas/TranslationAware-get'
         -
           $ref: '#/components/schemas/UnionObject-get'
         -
@@ -12703,6 +13382,18 @@ components:
       type: string
       format: mediatype
       nullable: true
+    MenuHeader-get:
+      type: string
+      format: menuheader
+      description: 'Menu header translations. Keys reflect the tree structure of the menu'
+      example: apie.menu.header.root.test.authenticated
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?(menu.header|(menu(\.[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*))*\.header)(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    MenuHeader-post:
+      type: string
+      format: menuheader
+      description: 'Menu header translations. Keys reflect the tree structure of the menu'
+      example: apie.menu.header.root.test.authenticated
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?(menu.header|(menu(\.[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*))*\.header)(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
     MessageAndTimestamp-get:
       type: object
       required:
@@ -13049,6 +13740,66 @@ components:
     ReflectionClass-post:
       type: object
       properties: {  }
+    ResourceAddResourceButtonLabel-get:
+      type: string
+      format: resourceaddresourcebuttonlabel
+      description: 'Text shown on add resource button'
+      example: apie.bounded.test.resource.user.action.add.label.authenticated
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action\.add\.label(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceAddResourceButtonLabel-post:
+      type: string
+      format: resourceaddresourcebuttonlabel
+      description: 'Text shown on add resource button'
+      example: apie.bounded.test.resource.user.action.add.label.authenticated
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action\.add\.label(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceAddResourceHeader-get:
+      type: string
+      format: resourceaddresourceheader
+      description: 'Header shown on add resource form'
+      example: apie.bounded.test.example.user.action.add.header.authenticated
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action\.add\.header(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceAddResourceHeader-post:
+      type: string
+      format: resourceaddresourceheader
+      description: 'Header shown on add resource form'
+      example: apie.bounded.test.example.user.action.add.header.authenticated
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action\.add\.header(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceModifyResourceButtonLabel-get:
+      type: string
+      format: resourcemodifyresourcebuttonlabel
+      description: 'Text shown on edit resource button'
+      example: 'apie.bounded.test.example.user.action.edit.:id.label.authenticated'
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action\.edit\.[a-zA-Z0-9]+\.label(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceModifyResourceButtonLabel-post:
+      type: string
+      format: resourcemodifyresourcebuttonlabel
+      description: 'Text shown on edit resource button'
+      example: 'apie.bounded.test.example.user.action.edit.:id.label.authenticated'
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action\.edit\.[a-zA-Z0-9]+\.label(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceModifyResourceHeader-get:
+      type: string
+      format: resourcemodifyresourceheader
+      description: 'Header shown on edit resource button'
+      example: 'apie.bounded.test.example.user.action.edit.:id.header.authenticated'
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action\.edit\.[a-zA-Z0-9]+\.header(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceModifyResourceHeader-post:
+      type: string
+      format: resourcemodifyresourceheader
+      description: 'Header shown on edit resource button'
+      example: 'apie.bounded.test.example.user.action.edit.:id.header.authenticated'
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action\.edit\.[a-zA-Z0-9]+\.header(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceOverviewHeader-get:
+      type: string
+      format: resourceoverviewheader
+      description: 'Header shown on resource overview'
+      example: apie.bounded.test.resource.user.action.overview.authenticated
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action.overview(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    ResourceOverviewHeader-post:
+      type: string
+      format: resourceoverviewheader
+      description: 'Header shown on resource overview'
+      example: apie.bounded.test.resource.user.action.overview.authenticated
+      pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?action.overview(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
     RestrictedEntity-get:
       type: object
       required:
@@ -13279,6 +14030,74 @@ components:
       type: string
       format: topleveldomain
       nullable: true
+    Translation-get:
+      oneOf:
+        -
+          $ref: '#/components/schemas/MenuHeader-get'
+        -
+          $ref: '#/components/schemas/ResourceOverviewHeader-get'
+        -
+          $ref: '#/components/schemas/ResourceAddResourceButtonLabel-get'
+        -
+          $ref: '#/components/schemas/ResourceAddResourceHeader-get'
+        -
+          $ref: '#/components/schemas/ResourceModifyResourceButtonLabel-get'
+        -
+          $ref: '#/components/schemas/ResourceModifyResourceHeader-get'
+      description: 'A translation string for an Apie translation following a rigid, predictable structure.'
+    Translation-post:
+      oneOf:
+        -
+          $ref: '#/components/schemas/MenuHeader-post'
+        -
+          $ref: '#/components/schemas/ResourceOverviewHeader-post'
+        -
+          $ref: '#/components/schemas/ResourceAddResourceButtonLabel-post'
+        -
+          $ref: '#/components/schemas/ResourceAddResourceHeader-post'
+        -
+          $ref: '#/components/schemas/ResourceModifyResourceButtonLabel-post'
+        -
+          $ref: '#/components/schemas/ResourceModifyResourceHeader-post'
+      description: 'A translation string for an Apie translation following a rigid, predictable structure.'
+    TranslationAware-get:
+      type: object
+      required:
+        - id
+        - translation
+        - text
+      properties:
+        id:
+          $ref: '#/components/schemas/TranslationAwareIdentifier-get'
+        translation:
+          $ref: '#/components/schemas/Translation-get'
+        text:
+          type: string
+          nullable: true
+    TranslationAware-patch:
+      type: object
+      properties:
+        text:
+          type: string
+          nullable: false
+    TranslationAware-post:
+      type: object
+      required:
+        - translation
+      properties:
+        text:
+          type: string
+          nullable: false
+        translation:
+          $ref: '#/components/schemas/Translation-post'
+    TranslationAwareIdentifier-get:
+      type: string
+      format: translationawareidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    TranslationAwareIdentifier-post:
+      type: string
+      format: translationawareidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
     UnionObject-get:
       type: object
       required:
@@ -14393,6 +15212,23 @@ components:
         language_and_region:
           summary: 'Language and region'
           value: en-US
+    ContentLanguage:
+      name: Content-Language
+      in: header
+      description: 'Language of content body.'
+      required: false
+      schema:
+        type: string
+        format: languageandregion
+        example: nl
+        pattern: '[^\-]+(\-[^\-]+)?$'
+      examples:
+        language_only:
+          summary: 'Language only'
+          value: nl
+        language_and_region:
+          summary: 'Language and region'
+          value: en-US
 security:
   -
     BasicAuth: []
@@ -14425,6 +15261,9 @@ tags:
   -
     name: SequentialBackgroundProcess
     description: 'All operations for SequentialBackgroundProcess'
+  -
+    name: TranslationAware
+    description: 'All operations for TranslationAware'
   -
     name: UnionObject
     description: 'All operations for UnionObject'

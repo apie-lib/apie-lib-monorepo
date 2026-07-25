@@ -22,13 +22,10 @@ class ResourceName extends AbstractTranslation
         if ($id) {
             $inflector = Inflector::get($locale);
             return match ($plural) {
-                default => ucfirst($id->humanize()),
                 Pluralization::Singular => $inflector->singularize(ucfirst($id->humanize())),
                 Pluralization::Plural => $inflector->pluralize(ucfirst($id->humanize())),
+                default => ucfirst($id->humanize()),
             };
-        }
-        if ($id) {
-            return ucfirst($id->humanize());
         }
         return 'Resource';
     }

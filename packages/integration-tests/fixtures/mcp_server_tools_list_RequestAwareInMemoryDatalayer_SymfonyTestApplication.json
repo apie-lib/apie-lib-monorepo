@@ -2015,6 +2015,74 @@
                     }
                 },
                 {
+                    "name": "create-object-types-translation-aware",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "translation"
+                        ],
+                        "properties": {
+                            "text": {
+                                "type": "string",
+                                "nullable": false
+                            },
+                            "translation": {
+                                "type": "object",
+                                "description": "A translation string for an Apie translation following a rigid, predictable structure.",
+                                "anyOf": [
+                                    {
+                                        "type": "string",
+                                        "description": "Menu header translations. Keys reflect the tree structure of the menu",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?(menu.header|(menu(\\.[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*))*\\.header)(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.menu.header.root.test.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Header shown on resource overview",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action.overview(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.resource.user.action.overview.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Text shown on add resource button",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.add\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.resource.user.action.add.label.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Header shown on add resource form",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.add\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.example.user.action.add.header.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Text shown on edit resource button",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.example.user.action.edit.:id.label.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Header shown on edit resource button",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.example.user.action.edit.:id.header.authenticated"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of TranslationAware",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\TranslationAware",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "create-object-types-union-object",
                     "inputSchema": {
                         "type": "object",
@@ -2898,6 +2966,30 @@
                     }
                 },
                 {
+                    "name": "get-object-types-translation-aware",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of TranslationAware with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\TranslationAware",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "get-object-types-union-object",
                     "inputSchema": {
                         "type": "object",
@@ -3411,6 +3503,50 @@
                             "all": true,
                             "get": true,
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-translation-aware",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "translation": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of TranslationAware",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\TranslationAware",
                             "_apie_action": "Apie\\Common\\Actions\\GetListAction"
                         },
                         "x-bounded-context-id": "types"
@@ -6093,6 +6229,35 @@
                         "x-fields": {
                             "edit": true,
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "modify-object-types-translation-aware",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "text": {
+                                "type": "string",
+                                "nullable": false
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Modifies an instance of TranslationAware",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\TranslationAware",
                             "display-form": true,
                             "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
                         },

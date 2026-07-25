@@ -36,6 +36,10 @@
                         "description": "Return search results for RestrictedEntity"
                     },
                     {
+                        "name": "findTranslationAware",
+                        "description": "Return search results for TranslationAware"
+                    },
+                    {
                         "name": "findUnionObject",
                         "description": "Return search results for UnionObject"
                     },
