@@ -1,13 +1,13 @@
 <?php
 namespace Apie\Core\Translator\ValueObjects;
 
+use Apie\Core\Actions\BoundedContextEntityTuple;
 use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\ExampleValue;
+use Apie\Core\Identifiers\SnakeCaseSlug;
+use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Translator\Enums\Pluralization;
 use ICanBoogie\Inflector;
-use Symfony\Component\String\Inflector\EnglishInflector;
-use Symfony\Component\String\Inflector\FrenchInflector;
-use Symfony\Component\String\Inflector\SpanishInflector;
 
 #[Description('Name of resource')]
 #[ExampleValue('apie.bounded.test.resource.user.name.singular')]
@@ -28,5 +28,18 @@ class ResourceName extends AbstractTranslation
             };
         }
         return 'Resource';
+    }
+
+    public static function createFromTuple(BoundedContextEntityTuple $tuple, TranslationStringSuffix $suffix = new TranslationStringSuffix()): static
+    {
+        return new static(
+            new TranslationStringPrefix(
+                $tuple->boundedContext->getId(),
+                SnakeCaseSlug::fromClass($tuple->resourceClass)
+            ),
+            'name',
+            $suffix,
+            new ItemHashmap()
+        );
     }
 }

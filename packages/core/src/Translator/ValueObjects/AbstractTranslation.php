@@ -88,7 +88,7 @@ abstract class AbstractTranslation implements HasRegexValueObjectInterface
         $regex = RegexUtils::fromPlaceholderToRegularExpression(static::MIDDLE_REGEX);
         preg_match($regex, $middleSection, $placeholders);
         // @phpstan-ignore-next-line nullCoalesce.variable
-        $placeholders = array_filter($placeholders ?? [], fn($k) => !is_numeric($k), ARRAY_FILTER_USE_KEY);
+        $placeholders = array_filter($placeholders ?? [], fn ($k) => !is_numeric($k), ARRAY_FILTER_USE_KEY);
         return new static(
             $prefix,
             $middleSection,

@@ -1,0 +1,600 @@
+<?php
+return array (
+  'apie' => 
+  array (
+    'bounded' => 
+    array (
+      'types' => 
+      array (
+        'resource' => 
+        array (
+          'audit_log' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Audit logs',
+                '' => 'Audit logs',
+                'unauthenticated' => 'Audit logs',
+              ),
+              '' => 'Audit log',
+              'authenticated' => 'Audit log',
+              'singular' => 
+              array (
+                'authenticated' => 'Audit log',
+                '' => 'Audit log',
+                'unauthenticated' => 'Audit log',
+              ),
+              'unauthenticated' => 'Audit log',
+            ),
+          ),
+          'sequential_background_process' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Sequential background processes',
+                '' => 'Sequential background processes',
+                'unauthenticated' => 'Sequential background processes',
+              ),
+              '' => 'Sequential background process',
+              'authenticated' => 'Sequential background process',
+              'singular' => 
+              array (
+                'authenticated' => 'Sequential background process',
+                '' => 'Sequential background process',
+                'unauthenticated' => 'Sequential background process',
+              ),
+              'unauthenticated' => 'Sequential background process',
+            ),
+          ),
+          'user' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Users',
+                '' => 'Users',
+                'unauthenticated' => 'Users',
+              ),
+              '' => 'User',
+              'authenticated' => 'User',
+              'singular' => 
+              array (
+                'authenticated' => 'User',
+                '' => 'User',
+                'unauthenticated' => 'User',
+              ),
+              'unauthenticated' => 'User',
+            ),
+          ),
+          'uploaded_file' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Uploaded files',
+                '' => 'Uploaded files',
+                'unauthenticated' => 'Uploaded files',
+              ),
+              '' => 'Uploaded file',
+              'authenticated' => 'Uploaded file',
+              'singular' => 
+              array (
+                'authenticated' => 'Uploaded file',
+                '' => 'Uploaded file',
+                'unauthenticated' => 'Uploaded file',
+              ),
+              'unauthenticated' => 'Uploaded file',
+            ),
+          ),
+          'union_object' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Union objects',
+                '' => 'Union objects',
+                'unauthenticated' => 'Union objects',
+              ),
+              '' => 'Union object',
+              'authenticated' => 'Union object',
+              'singular' => 
+              array (
+                'authenticated' => 'Union object',
+                '' => 'Union object',
+                'unauthenticated' => 'Union object',
+              ),
+              'unauthenticated' => 'Union object',
+            ),
+          ),
+          'translation_aware' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Translation awares',
+                '' => 'Translation awares',
+                'unauthenticated' => 'Translation awares',
+              ),
+              '' => 'Translation aware',
+              'authenticated' => 'Translation aware',
+              'singular' => 
+              array (
+                'authenticated' => 'Translation aware',
+                '' => 'Translation aware',
+                'unauthenticated' => 'Translation aware',
+              ),
+              'unauthenticated' => 'Translation aware',
+            ),
+          ),
+          'restricted_entity' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Restricted entities',
+                '' => 'Restricted entities',
+                'unauthenticated' => 'Restricted entities',
+              ),
+              '' => 'Restricted entity',
+              'authenticated' => 'Restricted entity',
+              'singular' => 
+              array (
+                'authenticated' => 'Restricted entity',
+                '' => 'Restricted entity',
+                'unauthenticated' => 'Restricted entity',
+              ),
+              'unauthenticated' => 'Restricted entity',
+            ),
+          ),
+          'primitive_only' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Primitive onlies',
+                '' => 'Primitive onlies',
+                'unauthenticated' => 'Primitive onlies',
+              ),
+              '' => 'Primitive only',
+              'authenticated' => 'Primitive only',
+              'singular' => 
+              array (
+                'authenticated' => 'Primitive only',
+                '' => 'Primitive only',
+                'unauthenticated' => 'Primitive only',
+              ),
+              'unauthenticated' => 'Primitive only',
+            ),
+          ),
+          'order' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Orders',
+                '' => 'Orders',
+                'unauthenticated' => 'Orders',
+              ),
+              '' => 'Order',
+              'authenticated' => 'Order',
+              'singular' => 
+              array (
+                'authenticated' => 'Order',
+                '' => 'Order',
+                'unauthenticated' => 'Order',
+              ),
+              'unauthenticated' => 'Order',
+            ),
+          ),
+          'object_with_relation' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Object with relations',
+                '' => 'Object with relations',
+                'unauthenticated' => 'Object with relations',
+              ),
+              '' => 'Object with relation',
+              'authenticated' => 'Object with relation',
+              'singular' => 
+              array (
+                'authenticated' => 'Object with relation',
+                '' => 'Object with relation',
+                'unauthenticated' => 'Object with relation',
+              ),
+              'unauthenticated' => 'Object with relation',
+            ),
+          ),
+          'iana_object' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Iana objects',
+                '' => 'Iana objects',
+                'unauthenticated' => 'Iana objects',
+              ),
+              '' => 'Iana object',
+              'authenticated' => 'Iana object',
+              'singular' => 
+              array (
+                'authenticated' => 'Iana object',
+                '' => 'Iana object',
+                'unauthenticated' => 'Iana object',
+              ),
+              'unauthenticated' => 'Iana object',
+            ),
+          ),
+          'external_file' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'External files',
+                '' => 'External files',
+                'unauthenticated' => 'External files',
+              ),
+              '' => 'External file',
+              'authenticated' => 'External file',
+              'singular' => 
+              array (
+                'authenticated' => 'External file',
+                '' => 'External file',
+                'unauthenticated' => 'External file',
+              ),
+              'unauthenticated' => 'External file',
+            ),
+          ),
+          'animal' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Animals',
+                '' => 'Animals',
+                'unauthenticated' => 'Animals',
+              ),
+              '' => 'Animal',
+              'authenticated' => 'Animal',
+              'singular' => 
+              array (
+                'authenticated' => 'Animal',
+                '' => 'Animal',
+                'unauthenticated' => 'Animal',
+              ),
+              'unauthenticated' => 'Animal',
+            ),
+          ),
+        ),
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            '' => 'Resource',
+            'authenticated' => 'Resource',
+            'unauthenticated' => 'Resource',
+          ),
+          '' => 'Resource',
+          'authenticated' => 'Resource',
+          'singular' => 
+          array (
+            '' => 'Resource',
+            'authenticated' => 'Resource',
+            'unauthenticated' => 'Resource',
+          ),
+          'unauthenticated' => 'Resource',
+        ),
+      ),
+    ),
+    'resource' => 
+    array (
+      'audit_log' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Audit logs',
+            '' => 'Audit logs',
+            'unauthenticated' => 'Audit logs',
+          ),
+          '' => 'Audit log',
+          'authenticated' => 'Audit log',
+          'singular' => 
+          array (
+            'authenticated' => 'Audit log',
+            '' => 'Audit log',
+            'unauthenticated' => 'Audit log',
+          ),
+          'unauthenticated' => 'Audit log',
+        ),
+      ),
+      'sequential_background_process' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Sequential background processes',
+            '' => 'Sequential background processes',
+            'unauthenticated' => 'Sequential background processes',
+          ),
+          '' => 'Sequential background process',
+          'authenticated' => 'Sequential background process',
+          'singular' => 
+          array (
+            'authenticated' => 'Sequential background process',
+            '' => 'Sequential background process',
+            'unauthenticated' => 'Sequential background process',
+          ),
+          'unauthenticated' => 'Sequential background process',
+        ),
+      ),
+      'user' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Users',
+            '' => 'Users',
+            'unauthenticated' => 'Users',
+          ),
+          '' => 'User',
+          'authenticated' => 'User',
+          'singular' => 
+          array (
+            'authenticated' => 'User',
+            '' => 'User',
+            'unauthenticated' => 'User',
+          ),
+          'unauthenticated' => 'User',
+        ),
+      ),
+      'uploaded_file' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Uploaded files',
+            '' => 'Uploaded files',
+            'unauthenticated' => 'Uploaded files',
+          ),
+          '' => 'Uploaded file',
+          'authenticated' => 'Uploaded file',
+          'singular' => 
+          array (
+            'authenticated' => 'Uploaded file',
+            '' => 'Uploaded file',
+            'unauthenticated' => 'Uploaded file',
+          ),
+          'unauthenticated' => 'Uploaded file',
+        ),
+      ),
+      'union_object' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Union objects',
+            '' => 'Union objects',
+            'unauthenticated' => 'Union objects',
+          ),
+          '' => 'Union object',
+          'authenticated' => 'Union object',
+          'singular' => 
+          array (
+            'authenticated' => 'Union object',
+            '' => 'Union object',
+            'unauthenticated' => 'Union object',
+          ),
+          'unauthenticated' => 'Union object',
+        ),
+      ),
+      'translation_aware' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Translation awares',
+            '' => 'Translation awares',
+            'unauthenticated' => 'Translation awares',
+          ),
+          '' => 'Translation aware',
+          'authenticated' => 'Translation aware',
+          'singular' => 
+          array (
+            'authenticated' => 'Translation aware',
+            '' => 'Translation aware',
+            'unauthenticated' => 'Translation aware',
+          ),
+          'unauthenticated' => 'Translation aware',
+        ),
+      ),
+      'restricted_entity' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Restricted entities',
+            '' => 'Restricted entities',
+            'unauthenticated' => 'Restricted entities',
+          ),
+          '' => 'Restricted entity',
+          'authenticated' => 'Restricted entity',
+          'singular' => 
+          array (
+            'authenticated' => 'Restricted entity',
+            '' => 'Restricted entity',
+            'unauthenticated' => 'Restricted entity',
+          ),
+          'unauthenticated' => 'Restricted entity',
+        ),
+      ),
+      'primitive_only' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Primitive onlies',
+            '' => 'Primitive onlies',
+            'unauthenticated' => 'Primitive onlies',
+          ),
+          '' => 'Primitive only',
+          'authenticated' => 'Primitive only',
+          'singular' => 
+          array (
+            'authenticated' => 'Primitive only',
+            '' => 'Primitive only',
+            'unauthenticated' => 'Primitive only',
+          ),
+          'unauthenticated' => 'Primitive only',
+        ),
+      ),
+      'order' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Orders',
+            '' => 'Orders',
+            'unauthenticated' => 'Orders',
+          ),
+          '' => 'Order',
+          'authenticated' => 'Order',
+          'singular' => 
+          array (
+            'authenticated' => 'Order',
+            '' => 'Order',
+            'unauthenticated' => 'Order',
+          ),
+          'unauthenticated' => 'Order',
+        ),
+      ),
+      'object_with_relation' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Object with relations',
+            '' => 'Object with relations',
+            'unauthenticated' => 'Object with relations',
+          ),
+          '' => 'Object with relation',
+          'authenticated' => 'Object with relation',
+          'singular' => 
+          array (
+            'authenticated' => 'Object with relation',
+            '' => 'Object with relation',
+            'unauthenticated' => 'Object with relation',
+          ),
+          'unauthenticated' => 'Object with relation',
+        ),
+      ),
+      'iana_object' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Iana objects',
+            '' => 'Iana objects',
+            'unauthenticated' => 'Iana objects',
+          ),
+          '' => 'Iana object',
+          'authenticated' => 'Iana object',
+          'singular' => 
+          array (
+            'authenticated' => 'Iana object',
+            '' => 'Iana object',
+            'unauthenticated' => 'Iana object',
+          ),
+          'unauthenticated' => 'Iana object',
+        ),
+      ),
+      'external_file' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'External files',
+            '' => 'External files',
+            'unauthenticated' => 'External files',
+          ),
+          '' => 'External file',
+          'authenticated' => 'External file',
+          'singular' => 
+          array (
+            'authenticated' => 'External file',
+            '' => 'External file',
+            'unauthenticated' => 'External file',
+          ),
+          'unauthenticated' => 'External file',
+        ),
+      ),
+      'animal' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 
+          array (
+            'authenticated' => 'Animals',
+            '' => 'Animals',
+            'unauthenticated' => 'Animals',
+          ),
+          '' => 'Animal',
+          'authenticated' => 'Animal',
+          'singular' => 
+          array (
+            'authenticated' => 'Animal',
+            '' => 'Animal',
+            'unauthenticated' => 'Animal',
+          ),
+          'unauthenticated' => 'Animal',
+        ),
+      ),
+    ),
+    'name' => 
+    array (
+      'plural' => 
+      array (
+        '' => 'Resource',
+        'authenticated' => 'Resource',
+        'unauthenticated' => 'Resource',
+      ),
+      '' => 'Resource',
+      'authenticated' => 'Resource',
+      'singular' => 
+      array (
+        '' => 'Resource',
+        'authenticated' => 'Resource',
+        'unauthenticated' => 'Resource',
+      ),
+      'unauthenticated' => 'Resource',
+    ),
+  ),
+);
