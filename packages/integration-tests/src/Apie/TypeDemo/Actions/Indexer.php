@@ -18,7 +18,10 @@ class Indexer
     {
     }
 
-    #[StaticCheck(new Not(new Requires(ContextConstants::MCP_SERVER)))]
+    #[StaticCheck(
+        new Not(new Requires(ContextConstants::MCP_SERVER)),
+        new Not(new Requires(ContextConstants::MAIN_MENU_BUILDER))
+    )]
     #[Route(routeDefinition: '/indexes/{resourceName}/{id}')]
     public function getAllIndexes(
         #[Context()]

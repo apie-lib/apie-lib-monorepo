@@ -5,6 +5,7 @@ use Apie\Core\ApieLib;
 use Apie\Core\Attributes\AlwaysDisabled;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
+use Apie\Core\Attributes\Internal;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
@@ -101,6 +102,7 @@ class SequentialBackgroundProcess implements EntityWithStatesInterface
         return $this->result;
     }
 
+    #[Internal]
     public function provideAllowedMethods(): StringList
     {
         if ($this->status === BackgroundProcessStatus::Active) {

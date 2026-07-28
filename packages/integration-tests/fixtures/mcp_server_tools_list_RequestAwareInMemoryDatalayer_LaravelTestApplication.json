@@ -7070,30 +7070,6 @@
                     }
                 },
                 {
-                    "name": "run-object-types-sequential-background-process-method-provide-allowed-methods",
-                    "inputSchema": {
-                        "type": "object",
-                        "required": [],
-                        "properties": []
-                    },
-                    "description": "Runs method provideAllowedMethods on a SequentialBackgroundProcess with a specific id",
-                    "_meta": {
-                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
-                        "x-method-class": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
-                        "x-method": "provideAllowedMethods",
-                        "x-fields": {
-                            "get": true,
-                            "resource-call": true,
-                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
-                            "methodClass": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
-                            "methodName": "provideAllowedMethods",
-                            "display-form": true,
-                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
-                        },
-                        "x-bounded-context-id": "types"
-                    }
-                },
-                {
                     "name": "run-object-types-sequential-background-process-method-cancel",
                     "inputSchema": {
                         "type": "object",

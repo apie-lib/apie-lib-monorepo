@@ -7683,52 +7683,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-  '/SequentialBackgroundProcess/{id}/provideAllowedMethods':
-    get:
-      tags:
-        - SequentialBackgroundProcess
-        - action
-      description: 'Runs method provideAllowedMethods on a SequentialBackgroundProcess with a specific id'
-      operationId: get-single-SequentialBackgroundProcess-run-provideAllowedMethods
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of SequentialBackgroundProcess'
-          required: true
-          schema:
-            $ref: '#/components/schemas/NonEmptyString-post'
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StringList-get'
-        '404':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
   '/SequentialBackgroundProcess/{id}/cancel':
     get:
       tags:
@@ -14454,10 +14408,6 @@ components:
       example: application/json
       pattern: '^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$'
       nullable: true
-    StringList-get:
-      type: array
-      items:
-        type: string
     StringSet-get:
       type: array
       items:

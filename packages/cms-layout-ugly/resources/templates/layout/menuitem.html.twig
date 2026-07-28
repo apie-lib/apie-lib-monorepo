@@ -1,0 +1,16 @@
+<div>
+    {% if (property('route')) %}
+        <a href="{{ property('route') }}">
+    {% endif %}
+    {{  property('name') }}
+    {% if (property('route')) %}
+        </a>
+    {% endif %}
+    {% if (property('subcomponents')|length) %}
+    <ul>
+        {% for componentKey in property('subcomponents') %}
+            <li>{{ component(componentKey) }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>

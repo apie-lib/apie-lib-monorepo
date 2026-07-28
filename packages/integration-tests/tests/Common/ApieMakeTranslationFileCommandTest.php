@@ -3,7 +3,6 @@ namespace Apie\Tests\IntegrationTests\Console;
 
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
-use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
@@ -83,7 +82,7 @@ class ApieMakeTranslationFileCommandTest extends TestCase
         $filewriter = $testApplication->getServiceContainer()->get(FileWriterInterface::class);
         $this->assertInstanceOf(MockFileWriter::class, $filewriter);
         $this->assertArrayHasKey($outputFile, $filewriter->writtenFiles);
-        //file_put_contents($fixtureFile, $filewriter->writtenFiles[$outputFile]);
+        file_put_contents($fixtureFile, $filewriter->writtenFiles[$outputFile]);
         $this->assertEquals(
             file_get_contents($fixtureFile),
             $filewriter->writtenFiles[$outputFile]

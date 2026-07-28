@@ -148549,27 +148549,6 @@
                 },
                 {
                     "kind": "INPUT_OBJECT",
-                    "name": "SequentialBackgroundProcessRunProvideAllowedMethods",
-                    "description": null,
-                    "fields": null,
-                    "inputFields": [
-                        {
-                            "name": "_",
-                            "description": "This is a dummy field, because GraphQL does not allow empty input types.",
-                            "type": {
-                                "kind": "SCALAR",
-                                "name": "String",
-                                "ofType": null
-                            },
-                            "defaultValue": null
-                        }
-                    ],
-                    "interfaces": null,
-                    "enumValues": null,
-                    "possibleTypes": null
-                },
-                {
-                    "kind": "INPUT_OBJECT",
                     "name": "SequentialBackgroundProcessRunRunStep",
                     "description": null,
                     "fields": null,
@@ -163038,39 +163017,6 @@
                             "type": {
                                 "kind": "OBJECT",
                                 "name": "User",
-                                "ofType": null
-                            },
-                            "isDeprecated": false,
-                            "deprecationReason": null
-                        },
-                        {
-                            "name": "runSequentialBackgroundProcessProvideAllowedMethods",
-                            "description": "Runs provideAllowedMethods for a SequentialBackgroundProcess by id",
-                            "args": [
-                                {
-                                    "name": "id",
-                                    "description": null,
-                                    "type": {
-                                        "kind": "SCALAR",
-                                        "name": "String",
-                                        "ofType": null
-                                    },
-                                    "defaultValue": null
-                                },
-                                {
-                                    "name": "input",
-                                    "description": null,
-                                    "type": {
-                                        "kind": "INPUT_OBJECT",
-                                        "name": "SequentialBackgroundProcessRunProvideAllowedMethods",
-                                        "ofType": null
-                                    },
-                                    "defaultValue": null
-                                }
-                            ],
-                            "type": {
-                                "kind": "OBJECT",
-                                "name": "SequentialBackgroundProcess",
                                 "ofType": null
                             },
                             "isDeprecated": false,

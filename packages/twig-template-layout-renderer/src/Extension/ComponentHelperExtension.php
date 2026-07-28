@@ -6,6 +6,7 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ApieTranslatorInterface;
 use Apie\Core\Translator\Lists\TranslationStringSet;
+use Apie\Core\Translator\ValueObjects\AbstractTranslation;
 use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
@@ -55,7 +56,7 @@ class ComponentHelperExtension extends AbstractExtension
         return $refl->getConstant($constantName);
     }
 
-    public function translate(string|TranslationString|TranslationStringSet $translation): string
+    public function translate(string|AbstractTranslation|TranslationStringSet $translation): string
     {
         $apieContext = $this->getCurrentContext();
         $translator = $apieContext->getContext(ApieTranslatorInterface::class, false) ?? ApieTranslator::create();
