@@ -6,11 +6,15 @@ use Apie\Core\Attributes\AlwaysDisabled;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\Internal;
+use Apie\Core\Attributes\Policy;
+use Apie\Core\Attributes\Requires;
+use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\Core\Dto\MessageAndTimestamp;
 use Apie\Core\Entities\EntityWithStatesInterface;
+use Apie\Core\Enums\ConsoleCommand;
 use Apie\Core\Identifiers\PascalCaseSlug;
 use Apie\Core\Identifiers\Ulid;
 use Apie\Core\Lists\ItemHashmap;
@@ -23,6 +27,10 @@ use ReflectionClass;
 use Throwable;
 
 #[FakeCount(0)]
+#[StaticCheck(new Policy('staticCanViewAny', enabledOnMissingRule: true))]
+#[RuntimeCheck(
+    new Policy('canView', 'canViewAny')
+)]
 class SequentialBackgroundProcess implements EntityWithStatesInterface
 {
     private int $version;
@@ -52,11 +60,15 @@ class SequentialBackgroundProcess implements EntityWithStatesInterface
         $this->errors = new MessageAndTimestampList();
     }
 
+    #[StaticCheck(new Policy('staticReadPayload', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readPayload'))]
     public function getPayload(): ItemHashmap|ItemList
     {
         return $this->payload;
     }
 
+    #[StaticCheck(new Policy('staticReadErrors', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readErrors'))]
     public function getErrors(): MessageAndTimestampList
     {
         return $this->errors;
@@ -67,36 +79,50 @@ class SequentialBackgroundProcess implements EntityWithStatesInterface
         return $this->id;
     }
 
+    #[StaticCheck(new Policy('staticReadVersion', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readVersion'))]
     public function getVersion(): int
     {
         return $this->version;
     }
 
+    #[StaticCheck(new Policy('staticReadStep', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readStep'))]
     public function getStep(): int
     {
         return $this->step;
     }
 
+    #[StaticCheck(new Policy('staticReadRetries', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readRetries'))]
     public function getRetries(): int
     {
         return $this->retries;
     }
 
+    #[StaticCheck(new Policy('staticReadTime', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readTime'))]
     public function getStartTime(): DateTimeInterface
     {
         return $this->startTime;
     }
 
+    #[StaticCheck(new Policy('staticReadTime', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readTime'))]
     public function getCompletionTime(): ?DateTimeInterface
     {
         return $this->completionTime;
     }
 
+    #[StaticCheck(new Policy('staticReadStatus', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readStatus'))]
     public function getStatus(): BackgroundProcessStatus
     {
         return $this->status;
     }
 
+    #[StaticCheck(new Policy('staticReadResult', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('readResult'))]
     public function getResult(): mixed
     {
         return $this->result;
@@ -112,6 +138,8 @@ class SequentialBackgroundProcess implements EntityWithStatesInterface
         return new StringList([]);
     }
 
+    #[StaticCheck(new Policy('staticCancelBackgroundProcess', enabledOnMissingRule: true))]
+    #[RuntimeCheck(new Policy('cancelBackgroundProcess'))]
     public function cancel(): void
     {
         if ($this->status !== BackgroundProcessStatus::Active) {
@@ -120,6 +148,8 @@ class SequentialBackgroundProcess implements EntityWithStatesInterface
         $this->status = BackgroundProcessStatus::Canceled;
     }
 
+    #[StaticCheck(new Policy('staticRunStep', enabledOnMissingRule: new Requires(ConsoleCommand::class)))]
+    #[RuntimeCheck(new Policy('runStep'))]
     public function runStep(#[Context()] ApieContext $apieContext): void
     {
         if ($this->status !== BackgroundProcessStatus::Active) {

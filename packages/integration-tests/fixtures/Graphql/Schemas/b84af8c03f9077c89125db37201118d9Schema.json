@@ -148381,13 +148381,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "ENUM",
-                                    "name": "BackgroundProcessStatus",
-                                    "ofType": null
-                                }
+                                "kind": "ENUM",
+                                "name": "BackgroundProcessStatus",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -148397,13 +148393,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "UNION",
-                                    "name": "UnionOfd3833d3738eb828725fc3d944d6c7483",
-                                    "ofType": null
-                                }
+                                "kind": "UNION",
+                                "name": "UnionOfd3833d3738eb828725fc3d944d6c7483",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -148413,19 +148405,15 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
+                                "kind": "LIST",
                                 "name": null,
                                 "ofType": {
-                                    "kind": "LIST",
+                                    "kind": "NON_NULL",
                                     "name": null,
                                     "ofType": {
-                                        "kind": "NON_NULL",
-                                        "name": null,
-                                        "ofType": {
-                                            "kind": "OBJECT",
-                                            "name": "MessageAndTimestamp",
-                                            "ofType": null
-                                        }
+                                        "kind": "OBJECT",
+                                        "name": "MessageAndTimestamp",
+                                        "ofType": null
                                     }
                                 }
                             },
@@ -148437,13 +148425,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "Int",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "Int",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -148453,13 +148437,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "Int",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "Int",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -148469,13 +148449,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "Int",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "Int",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -148485,13 +148461,9 @@
                             "description": null,
                             "args": [],
                             "type": {
-                                "kind": "NON_NULL",
-                                "name": null,
-                                "ofType": {
-                                    "kind": "SCALAR",
-                                    "name": "String",
-                                    "ofType": null
-                                }
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
                             },
                             "isDeprecated": false,
                             "deprecationReason": null
@@ -148529,27 +148501,6 @@
                 {
                     "kind": "INPUT_OBJECT",
                     "name": "SequentialBackgroundProcessRunCancel",
-                    "description": null,
-                    "fields": null,
-                    "inputFields": [
-                        {
-                            "name": "_",
-                            "description": "This is a dummy field, because GraphQL does not allow empty input types.",
-                            "type": {
-                                "kind": "SCALAR",
-                                "name": "String",
-                                "ofType": null
-                            },
-                            "defaultValue": null
-                        }
-                    ],
-                    "interfaces": null,
-                    "enumValues": null,
-                    "possibleTypes": null
-                },
-                {
-                    "kind": "INPUT_OBJECT",
-                    "name": "SequentialBackgroundProcessRunRunStep",
                     "description": null,
                     "fields": null,
                     "inputFields": [
@@ -163042,39 +162993,6 @@
                                     "type": {
                                         "kind": "INPUT_OBJECT",
                                         "name": "SequentialBackgroundProcessRunCancel",
-                                        "ofType": null
-                                    },
-                                    "defaultValue": null
-                                }
-                            ],
-                            "type": {
-                                "kind": "OBJECT",
-                                "name": "SequentialBackgroundProcess",
-                                "ofType": null
-                            },
-                            "isDeprecated": false,
-                            "deprecationReason": null
-                        },
-                        {
-                            "name": "runSequentialBackgroundProcessRunStep",
-                            "description": "Runs runStep for a SequentialBackgroundProcess by id",
-                            "args": [
-                                {
-                                    "name": "id",
-                                    "description": null,
-                                    "type": {
-                                        "kind": "SCALAR",
-                                        "name": "String",
-                                        "ofType": null
-                                    },
-                                    "defaultValue": null
-                                },
-                                {
-                                    "name": "input",
-                                    "description": null,
-                                    "type": {
-                                        "kind": "INPUT_OBJECT",
-                                        "name": "SequentialBackgroundProcessRunRunStep",
                                         "ofType": null
                                     },
                                     "defaultValue": null

@@ -11478,127 +11478,6 @@
                 }
             }
         },
-        "/SequentialBackgroundProcess/{id}/runStep": {
-            "post": {
-                "tags": [
-                    "SequentialBackgroundProcess",
-                    "action"
-                ],
-                "description": "Runs method runStep on a SequentialBackgroundProcess with a specific id",
-                "operationId": "get-single-SequentialBackgroundProcess-run-runStep",
-                "parameters": [
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "name": "relations",
-                        "in": "query",
-                        "explode": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "id of instance of SequentialBackgroundProcess",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/components/schemas/NonEmptyString-post"
-                        }
-                    },
-                    {
-                        "$ref": "#/components/parameters/AcceptLanguage"
-                    },
-                    {
-                        "$ref": "#/components/parameters/ContentLanguage"
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {}
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotAcceptedException-get"
-                                }
-                            }
-                        }
-                    },
-                    "405": {
-                        "description": "Invalid request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotAcceptedException-get"
-                                }
-                            }
-                        }
-                    },
-                    "406": {
-                        "description": "Invalid request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/NotAcceptedException-get"
-                                }
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "A validation error occurred",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ValidationException-get"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Resource not found",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Throwable-get"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/ExternalFile/{id}/download/{properties}": {
             "get": {
                 "tags": [
@@ -19820,16 +19699,7 @@
             "SequentialBackgroundProcess-get": {
                 "type": "object",
                 "required": [
-                    "id",
-                    "status",
-                    "payload",
-                    "errors",
-                    "version",
-                    "step",
-                    "retries",
-                    "startTime",
-                    "completionTime",
-                    "result"
+                    "id"
                 ],
                 "properties": {
                     "id": {

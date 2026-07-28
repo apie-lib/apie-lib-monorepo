@@ -7092,30 +7092,6 @@
                         },
                         "x-bounded-context-id": "types"
                     }
-                },
-                {
-                    "name": "run-object-types-sequential-background-process-method-run-step",
-                    "inputSchema": {
-                        "type": "object",
-                        "required": [],
-                        "properties": []
-                    },
-                    "description": "Runs method runStep on a SequentialBackgroundProcess with a specific id",
-                    "_meta": {
-                        "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
-                        "x-method-class": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
-                        "x-method": "runStep",
-                        "x-fields": {
-                            "get": true,
-                            "resource-call": true,
-                            "resourceName": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
-                            "methodClass": "Apie\\Core\\BackgroundProcess\\SequentialBackgroundProcess",
-                            "methodName": "runStep",
-                            "display-form": true,
-                            "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
-                        },
-                        "x-bounded-context-id": "types"
-                    }
                 }
             ]
         }

@@ -271,7 +271,6 @@ apie:
                     action:
                         custom:
                             ':id':
-                                run_step: { header: { authenticated: 'sequential_background_process Run_step', '': 'sequential_background_process Run_step', unauthenticated: 'sequential_background_process Run_step' }, label: { authenticated: 'Run step', '': 'Run step', unauthenticated: 'Run step' } }
                                 cancel: { header: { authenticated: 'sequential_background_process Cancel', '': 'sequential_background_process Cancel', unauthenticated: 'sequential_background_process Cancel' }, label: { authenticated: Cancel, '': Cancel, unauthenticated: Cancel } }
                 user:
                     name:
@@ -2038,15 +2037,6 @@ apie:
             action:
                 custom:
                     ':id':
-                        run_step:
-                            header:
-                                '': Run_step
-                                authenticated: Run_step
-                                unauthenticated: Run_step
-                            label:
-                                '': 'Run step'
-                                authenticated: 'Run step'
-                                unauthenticated: 'Run step'
                         cancel:
                             header:
                                 '': Cancel
@@ -2537,15 +2527,6 @@ apie:
             action:
                 custom:
                     ':id':
-                        run_step:
-                            header:
-                                authenticated: 'sequential_background_process Run_step'
-                                '': 'sequential_background_process Run_step'
-                                unauthenticated: 'sequential_background_process Run_step'
-                            label:
-                                authenticated: 'Run step'
-                                '': 'Run step'
-                                unauthenticated: 'Run step'
                         cancel:
                             header:
                                 authenticated: 'sequential_background_process Cancel'
@@ -5188,15 +5169,6 @@ apie:
     action:
         custom:
             ':id':
-                run_step:
-                    header:
-                        '': Run_step
-                        authenticated: Run_step
-                        unauthenticated: Run_step
-                    label:
-                        '': 'Run step'
-                        authenticated: 'Run step'
-                        unauthenticated: 'Run step'
                 cancel:
                     header:
                         '': Cancel

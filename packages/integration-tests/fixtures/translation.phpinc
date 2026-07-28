@@ -783,21 +783,6 @@ return array (
               array (
                 ':id' => 
                 array (
-                  'run_step' => 
-                  array (
-                    'header' => 
-                    array (
-                      'authenticated' => 'sequential_background_process Run_step',
-                      '' => 'sequential_background_process Run_step',
-                      'unauthenticated' => 'sequential_background_process Run_step',
-                    ),
-                    'label' => 
-                    array (
-                      'authenticated' => 'Run step',
-                      '' => 'Run step',
-                      'unauthenticated' => 'Run step',
-                    ),
-                  ),
                   'cancel' => 
                   array (
                     'header' => 
@@ -5806,21 +5791,6 @@ return array (
           array (
             ':id' => 
             array (
-              'run_step' => 
-              array (
-                'header' => 
-                array (
-                  '' => 'Run_step',
-                  'authenticated' => 'Run_step',
-                  'unauthenticated' => 'Run_step',
-                ),
-                'label' => 
-                array (
-                  '' => 'Run step',
-                  'authenticated' => 'Run step',
-                  'unauthenticated' => 'Run step',
-                ),
-              ),
               'cancel' => 
               array (
                 'header' => 
@@ -6731,21 +6701,6 @@ return array (
           array (
             ':id' => 
             array (
-              'run_step' => 
-              array (
-                'header' => 
-                array (
-                  'authenticated' => 'sequential_background_process Run_step',
-                  '' => 'sequential_background_process Run_step',
-                  'unauthenticated' => 'sequential_background_process Run_step',
-                ),
-                'label' => 
-                array (
-                  'authenticated' => 'Run step',
-                  '' => 'Run step',
-                  'unauthenticated' => 'Run step',
-                ),
-              ),
               'cancel' => 
               array (
                 'header' => 
@@ -11700,21 +11655,6 @@ return array (
       array (
         ':id' => 
         array (
-          'run_step' => 
-          array (
-            'header' => 
-            array (
-              '' => 'Run_step',
-              'authenticated' => 'Run_step',
-              'unauthenticated' => 'Run_step',
-            ),
-            'label' => 
-            array (
-              '' => 'Run step',
-              'authenticated' => 'Run step',
-              'unauthenticated' => 'Run step',
-            ),
-          ),
           'cancel' => 
           array (
             'header' => 

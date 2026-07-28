@@ -599,18 +599,6 @@
                         "action": {
                             "custom": {
                                 ":id": {
-                                    "run_step": {
-                                        "header": {
-                                            "authenticated": "sequential_background_process Run_step",
-                                            "": "sequential_background_process Run_step",
-                                            "unauthenticated": "sequential_background_process Run_step"
-                                        },
-                                        "label": {
-                                            "authenticated": "Run step",
-                                            "": "Run step",
-                                            "unauthenticated": "Run step"
-                                        }
-                                    },
                                     "cancel": {
                                         "header": {
                                             "authenticated": "sequential_background_process Cancel",
@@ -4475,18 +4463,6 @@
                 "action": {
                     "custom": {
                         ":id": {
-                            "run_step": {
-                                "header": {
-                                    "": "Run_step",
-                                    "authenticated": "Run_step",
-                                    "unauthenticated": "Run_step"
-                                },
-                                "label": {
-                                    "": "Run step",
-                                    "authenticated": "Run step",
-                                    "unauthenticated": "Run step"
-                                }
-                            },
                             "cancel": {
                                 "header": {
                                     "": "Cancel",
@@ -5193,18 +5169,6 @@
                 "action": {
                     "custom": {
                         ":id": {
-                            "run_step": {
-                                "header": {
-                                    "authenticated": "sequential_background_process Run_step",
-                                    "": "sequential_background_process Run_step",
-                                    "unauthenticated": "sequential_background_process Run_step"
-                                },
-                                "label": {
-                                    "authenticated": "Run step",
-                                    "": "Run step",
-                                    "unauthenticated": "Run step"
-                                }
-                            },
                             "cancel": {
                                 "header": {
                                     "authenticated": "sequential_background_process Cancel",
@@ -9037,18 +9001,6 @@
         "action": {
             "custom": {
                 ":id": {
-                    "run_step": {
-                        "header": {
-                            "": "Run_step",
-                            "authenticated": "Run_step",
-                            "unauthenticated": "Run_step"
-                        },
-                        "label": {
-                            "": "Run step",
-                            "authenticated": "Run step",
-                            "unauthenticated": "Run step"
-                        }
-                    },
                     "cancel": {
                         "header": {
                             "": "Cancel",

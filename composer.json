@@ -119,7 +119,7 @@
         "symfony/phpunit-bridge": "^7.2",
         "symfony/process": "^7.2",
         "symfony/security-bundle": "^7.2",
-        "symfony/translator": "^7.2",
+        "symfony/translation": "^7.2",
         "symfony/twig-bundle": "^7.2",
         "symfony/validator": "^7.2",
         "symplify/monorepo-builder": "10.2.7"
