@@ -2038,6 +2038,14 @@
                                     },
                                     {
                                         "type": "string",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?audit_log\\.(unknown_event|migration|created|replaced|method_called\\.[a-zA-Z0-9]+|migration|modified|read_list|read|removed)(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+                                    },
+                                    {
+                                        "type": "string",
                                         "description": "Header shown on resource overview",
                                         "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action.overview(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
                                         "example": "apie.bounded.test.resource.user.action.overview.authenticated"
@@ -2056,6 +2064,30 @@
                                     },
                                     {
                                         "type": "string",
+                                        "description": "Label shown on button for a domain specific action",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.label.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Header shown on form for a domain specific action",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.header.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Label shown on button for a domain specific action",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.example.user.action.global.create_admin.label.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Header shown on form for a domain specific action",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.example.user.action.global.create_admin.header.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
                                         "description": "Text shown on edit resource button",
                                         "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
                                         "example": "apie.bounded.test.example.user.action.edit.:id.label.authenticated"
@@ -2065,6 +2097,12 @@
                                         "description": "Header shown on edit resource button",
                                         "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
                                         "example": "apie.bounded.test.example.user.action.edit.:id.header.authenticated"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Name of resource",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?name(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$",
+                                        "example": "apie.bounded.test.resource.user.name.singular"
                                     }
                                 ]
                             }

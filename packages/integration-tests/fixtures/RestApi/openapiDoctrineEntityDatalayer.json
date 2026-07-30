@@ -17100,6 +17100,16 @@
                 ],
                 "type": "string"
             },
+            "AuditLogEventMessage-get": {
+                "type": "string",
+                "format": "auditlogeventmessage",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?audit_log\\.(unknown_event|migration|created|replaced|method_called\\.[a-zA-Z0-9]+|migration|modified|read_list|read|removed)(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "AuditLogEventMessage-post": {
+                "type": "string",
+                "format": "auditlogeventmessage",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?audit_log\\.(unknown_event|migration|created|replaced|method_called\\.[a-zA-Z0-9]+|migration|modified|read_list|read|removed)(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
             "AuditLogIdentifier-get": {
                 "type": "string",
                 "format": "auditlogidentifier",
@@ -17825,6 +17835,16 @@
                         "nullable": false
                     }
                 }
+            },
+            "FormFieldProperty-get": {
+                "type": "string",
+                "format": "formfieldproperty",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "FormFieldProperty-post": {
+                "type": "string",
+                "format": "formfieldproperty",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "HttpHeader-nullable-get": {
                 "type": "string",
@@ -19537,6 +19557,62 @@
                 "example": "apie.bounded.test.example.user.action.add.header.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.add\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
+            "ResourceCustomActionResourceButtonLabel-get": {
+                "type": "string",
+                "format": "resourcecustomactionresourcebuttonlabel",
+                "description": "Label shown on button for a domain specific action",
+                "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.label.authenticated",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceCustomActionResourceButtonLabel-post": {
+                "type": "string",
+                "format": "resourcecustomactionresourcebuttonlabel",
+                "description": "Label shown on button for a domain specific action",
+                "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.label.authenticated",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceCustomActionResourceHeader-get": {
+                "type": "string",
+                "format": "resourcecustomactionresourceheader",
+                "description": "Header shown on form for a domain specific action",
+                "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.header.authenticated",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceCustomActionResourceHeader-post": {
+                "type": "string",
+                "format": "resourcecustomactionresourceheader",
+                "description": "Header shown on form for a domain specific action",
+                "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.header.authenticated",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceCustomGlobalActionResourceButtonLabel-get": {
+                "type": "string",
+                "format": "resourcecustomglobalactionresourcebuttonlabel",
+                "description": "Label shown on button for a domain specific action",
+                "example": "apie.bounded.test.example.user.action.global.create_admin.label.authenticated",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceCustomGlobalActionResourceButtonLabel-post": {
+                "type": "string",
+                "format": "resourcecustomglobalactionresourcebuttonlabel",
+                "description": "Label shown on button for a domain specific action",
+                "example": "apie.bounded.test.example.user.action.global.create_admin.label.authenticated",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceCustomGlobalActionResourceHeader-get": {
+                "type": "string",
+                "format": "resourcecustomglobalactionresourceheader",
+                "description": "Header shown on form for a domain specific action",
+                "example": "apie.bounded.test.example.user.action.global.create_admin.header.authenticated",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceCustomGlobalActionResourceHeader-post": {
+                "type": "string",
+                "format": "resourcecustomglobalactionresourceheader",
+                "description": "Header shown on form for a domain specific action",
+                "example": "apie.bounded.test.example.user.action.global.create_admin.header.authenticated",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
             "ResourceModifyResourceButtonLabel-get": {
                 "type": "string",
                 "format": "resourcemodifyresourcebuttonlabel",
@@ -19564,6 +19640,20 @@
                 "description": "Header shown on edit resource button",
                 "example": "apie.bounded.test.example.user.action.edit.:id.header.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceName-get": {
+                "type": "string",
+                "format": "resourcename",
+                "description": "Name of resource",
+                "example": "apie.bounded.test.resource.user.name.singular",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?name(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+            },
+            "ResourceName-post": {
+                "type": "string",
+                "format": "resourcename",
+                "description": "Name of resource",
+                "example": "apie.bounded.test.resource.user.name.singular",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?name(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "ResourceOverviewHeader-get": {
                 "type": "string",
@@ -19885,6 +19975,12 @@
                         "$ref": "#/components/schemas/MenuHeader-get"
                     },
                     {
+                        "$ref": "#/components/schemas/AuditLogEventMessage-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/FormFieldProperty-get"
+                    },
+                    {
                         "$ref": "#/components/schemas/ResourceOverviewHeader-get"
                     },
                     {
@@ -19894,10 +19990,25 @@
                         "$ref": "#/components/schemas/ResourceAddResourceHeader-get"
                     },
                     {
+                        "$ref": "#/components/schemas/ResourceCustomActionResourceButtonLabel-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ResourceCustomActionResourceHeader-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ResourceCustomGlobalActionResourceButtonLabel-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ResourceCustomGlobalActionResourceHeader-get"
+                    },
+                    {
                         "$ref": "#/components/schemas/ResourceModifyResourceButtonLabel-get"
                     },
                     {
                         "$ref": "#/components/schemas/ResourceModifyResourceHeader-get"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ResourceName-get"
                     }
                 ],
                 "description": "A translation string for an Apie translation following a rigid, predictable structure."
@@ -19906,6 +20017,12 @@
                 "oneOf": [
                     {
                         "$ref": "#/components/schemas/MenuHeader-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/AuditLogEventMessage-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/FormFieldProperty-post"
                     },
                     {
                         "$ref": "#/components/schemas/ResourceOverviewHeader-post"
@@ -19917,10 +20034,25 @@
                         "$ref": "#/components/schemas/ResourceAddResourceHeader-post"
                     },
                     {
+                        "$ref": "#/components/schemas/ResourceCustomActionResourceButtonLabel-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ResourceCustomActionResourceHeader-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ResourceCustomGlobalActionResourceButtonLabel-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ResourceCustomGlobalActionResourceHeader-post"
+                    },
+                    {
                         "$ref": "#/components/schemas/ResourceModifyResourceButtonLabel-post"
                     },
                     {
                         "$ref": "#/components/schemas/ResourceModifyResourceHeader-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/ResourceName-post"
                     }
                 ],
                 "description": "A translation string for an Apie translation following a rigid, predictable structure."

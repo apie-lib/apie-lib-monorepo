@@ -24,7 +24,7 @@ use Apie\Core\Lists\PermissionList;
 use Apie\Core\Lists\StringSet;
 use Apie\Core\Permissions\RequiresPermissionsInterface;
 use Apie\Core\Translator\ApieTranslatorInterface;
-use Apie\Core\Translator\ValueObjects\TranslationString;
+use Apie\Core\Translator\ValueObjects\AuditLogEventMessage;
 use Apie\Core\ValueObjects\IdFriendlyEntityReference;
 use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\Core\ValueObjects\Utils;
@@ -97,7 +97,7 @@ class AuditLog implements EntityInterface, RequiresPermissionsInterface
         return NonEmptyString::fromNative(
             $translator->getGeneralTranslation(
                 $context,
-                new TranslationString('audit_log.unknown_event')
+                AuditLogEventMessage::createUnknownEvent($context)
             )
         );
     }

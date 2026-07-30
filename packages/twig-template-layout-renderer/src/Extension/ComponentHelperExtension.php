@@ -7,7 +7,6 @@ use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ApieTranslatorInterface;
 use Apie\Core\Translator\Lists\TranslationStringSet;
 use Apie\Core\Translator\ValueObjects\AbstractTranslation;
-use Apie\Core\Translator\ValueObjects\TranslationString;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
@@ -64,7 +63,7 @@ class ComponentHelperExtension extends AbstractExtension
             return $translator->getGeneralTranslation(
                 $apieContext,
                 is_string($translation)
-                    ? new TranslationString($translation)
+                    ? AbstractTranslation::fromNative($translation)
                     : $translation
             ) ?? $translation;
         } catch (InvalidStringForValueObjectException) {
