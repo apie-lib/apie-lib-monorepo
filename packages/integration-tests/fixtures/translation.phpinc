@@ -20699,5 +20699,16 @@ return array (
         ),
       ),
     ),
+    'audit_log' => 
+    array (
+      'read_list' => 'Read_list',
+      'read' => 'Read',
+      'replaced' => 'Replaced',
+      'removed' => 'Removed',
+      'modified' => 'Modified',
+      'created' => 'Created',
+      'migration' => 'Migration',
+      'unknown_event' => 'Unknown_event',
+    ),
   ),
 );

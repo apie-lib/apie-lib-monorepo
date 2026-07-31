@@ -20,7 +20,7 @@ class MenuBuilderTest extends TestCase
             new MenuNode('', MenuHeader::createRoot()),
             $testItem->getRoot()
         );
-        $testItem->addLeaf('test', new MenuNode('id', MenuHeader::createRoot()->createChildNode('test')));
+        $testItem->addLeaf('test', new MenuNode('test', MenuHeader::createRoot()->createChildNode('test')));
         $this->assertEquals(
             new MenuNode(
                 '',
@@ -28,7 +28,7 @@ class MenuBuilderTest extends TestCase
                 null,
                 null,
                 new MenuNodeChildren([
-                    'test' => new MenuNode('id', MenuHeader::createRoot()->createChildNode('test')),
+                    'test' => new MenuNode('test', MenuHeader::createRoot()->createChildNode('test')),
                 ])
             ),
             $testItem->getRoot()
@@ -42,7 +42,7 @@ class MenuBuilderTest extends TestCase
     {
         $testItem->addLeaf(
             new StringList(['sub', 'sub2']),
-            new MenuNode('sub-id', MenuHeader::createRoot()->createChildNode('sub')->createChildNode('sub2'))
+            new MenuNode('sub2', MenuHeader::createRoot()->createChildNode('sub')->createChildNode('sub2'))
         );
         $this->assertEquals(
             new MenuNode(
@@ -51,7 +51,7 @@ class MenuBuilderTest extends TestCase
                 null,
                 null,
                 new MenuNodeChildren([
-                    'test' => new MenuNode('id', MenuHeader::createRoot()->createChildNode('name')),
+                    'test' => new MenuNode('test', MenuHeader::createRoot()->createChildNode('test')),
                     'sub' => new MenuNode(
                         'sub',
                         MenuHeader::createRoot()->createChildNode('sub'),
@@ -59,7 +59,7 @@ class MenuBuilderTest extends TestCase
                         null,
                         new MenuNodeChildren([
                             'sub2' => new MenuNode(
-                                'sub-id',
+                                'sub2',
                                 MenuHeader::createRoot()->createChildNode('sub')->createChildNode('sub2'),
                             ),
                         ])
@@ -85,14 +85,14 @@ class MenuBuilderTest extends TestCase
                 null,
                 null,
                 new MenuNodeChildren([
-                    'test' => new MenuNode('id', MenuHeader::createRoot()->createChildNode('test')),
+                    'test' => new MenuNode('test', MenuHeader::createRoot()->createChildNode('test')),
                     'sub' => new MenuNode(
                         'sub',
                         MenuHeader::createRoot()->createChildNode('sub'),
                         'url',
                         'icon-email',
                         new MenuNodeChildren([
-                            'sub2' => new MenuNode('sub-id', MenuHeader::createRoot()->createChildNode('sub')->createChildNode('sub2')),
+                            'sub2' => new MenuNode('sub2', MenuHeader::createRoot()->createChildNode('sub')->createChildNode('sub2')),
                         ])
                     ),
                 ])
@@ -107,7 +107,7 @@ class MenuBuilderTest extends TestCase
     #[DependsUsingDeepClone('it_can_replace_a_node_with_a_url')]
     public function it_can_replace_a_node_if_id_matches(MenuBuilder $testItem)
     {
-        $testItem->addLeaf('test', new MenuNode('id', MenuHeader::createRoot()->createChildNode('test'), 'url-2'));
+        $testItem->addLeaf('test', new MenuNode('test', MenuHeader::createRoot()->createChildNode('test'), 'url-2'));
 
         $this->assertEquals(
             new MenuNode(
@@ -116,7 +116,7 @@ class MenuBuilderTest extends TestCase
                 null,
                 null,
                 new MenuNodeChildren([
-                    'test' => new MenuNode('id', MenuHeader::createRoot()->createChildNode('test'), 'url-2'),
+                    'test' => new MenuNode('test', MenuHeader::createRoot()->createChildNode('test'), 'url-2'),
                     'sub' => new MenuNode(
                         'sub',
                         MenuHeader::createRoot()->createChildNode('sub'),
@@ -124,7 +124,7 @@ class MenuBuilderTest extends TestCase
                         'icon-email',
                         new MenuNodeChildren([
                             'sub2' => new MenuNode(
-                                'sub-id',
+                                'sub2',
                                 MenuHeader::createRoot()->createChildNode('sub')->createChildNode('sub2')
                             ),
                         ])
@@ -139,7 +139,7 @@ class MenuBuilderTest extends TestCase
     #[DependsUsingDeepClone('it_can_replace_a_node_with_a_url')]
     public function it_does_not_replace_a_node_if_id_does_not_match(MenuBuilder $testItem)
     {
-        $testItem->addLeaf('test', new MenuNode('other-id', MenuHeader::createRoot()->createChildNode('test'), 'url-2'));
+        $testItem->addLeaf('test', new MenuNode('test', MenuHeader::createRoot()->createChildNode('test'), 'url-2'));
 
         $this->assertEquals(
             new MenuNode(
@@ -148,15 +148,14 @@ class MenuBuilderTest extends TestCase
                 null,
                 null,
                 new MenuNodeChildren([
-                    'test' => new MenuNode('id', MenuHeader::createRoot()->createChildNode('test'), null),
-                    'test-0' => new MenuNode('other-id', MenuHeader::createRoot()->createChildNode('test-0'), 'url-2'),
+                    'test' => new MenuNode('test', MenuHeader::createRoot()->createChildNode('test'), 'url-2'),
                     'sub' => new MenuNode(
                         'sub',
                         MenuHeader::createRoot()->createChildNode('sub'),
                         'url',
                         'icon-email',
                         new MenuNodeChildren([
-                            'sub2' => new MenuNode('sub-id', MenuHeader::createRoot()->createChildNode('sub')->createChildNode('sub2')),
+                            'sub2' => new MenuNode('sub2', MenuHeader::createRoot()->createChildNode('sub')->createChildNode('sub2')),
                         ])
                     ),
                 ])

@@ -21,8 +21,8 @@ class ApieTranslator implements ApieTranslatorInterface
     public static function create(): self
     {
         return new self(
+            FromFileTranslator::createFallback(),
             new DefaultLabelPropertyTranslator(),
-            FromFileTranslator::createFallback()
         );
     }
 

@@ -16,7 +16,7 @@ final class MenuHeader extends AbstractTranslation
     public function getFallbackText(): string
     {
         if (preg_match('/\.([^.]+)\.header$/', $this->middleSection, $matches)) {
-            return $matches[1] ? ucfirst(SnakeCaseSlug::fromText($matches[1])->humanize()) : 'Home';
+            return ($matches[1]  ?? null) ? ucfirst(SnakeCaseSlug::fromText($matches[1])->humanize()) : 'Home';
         }
         return 'Home';
     }

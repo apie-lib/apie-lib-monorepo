@@ -28,6 +28,6 @@ class ApieTranslatorTest extends TestCase
             new ApieContext(),
             AuditLogEventMessage::createResourceCreatedEvent(new ApieContext())
         );
-        $this->assertEquals('Bounded context', $actual);
+        $this->assertEquals('Added resource', $actual);
     }
 }

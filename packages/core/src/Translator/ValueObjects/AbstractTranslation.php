@@ -82,7 +82,7 @@ abstract class AbstractTranslation implements HasRegexValueObjectInterface
             $alias = explode('|', ApieLib::getAlias(static::class));
             foreach ($alias as $class) {
                 try {
-                   return $class::fromNative($input);
+                    return $class::fromNative($input);
                 } catch (InvalidStringForValueObjectException) {
                 }
             }
@@ -215,6 +215,11 @@ abstract class AbstractTranslation implements HasRegexValueObjectInterface
             );
         }
         return new TranslationStringSet($list);
+    }
+
+    final public function toPath(string $rootPath): string
+    {
+        return rtrim($rootPath, '/') . '/' . str_replace('.', '/', $this->toNative());
     }
 
     abstract public function getFallbackText(): string;

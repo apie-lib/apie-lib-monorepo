@@ -17,7 +17,7 @@ final class FormFieldProperty extends AbstractTranslation
 
     public static function createForProperty(
         StringList $list,
-        \ReflectionClass $class, 
+        \ReflectionClass $class,
         ?BoundedContextId $boundedContextId = null
     ): static {
         return new FormFieldProperty(
