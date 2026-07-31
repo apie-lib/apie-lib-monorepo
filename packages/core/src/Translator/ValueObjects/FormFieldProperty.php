@@ -15,6 +15,9 @@ final class FormFieldProperty extends AbstractTranslation
         return strstr($this->middleSection, '.');
     }
 
+    /**
+     * @param \ReflectionClass<object> $class
+     */
     public static function createForProperty(
         StringList $list,
         \ReflectionClass $class,

@@ -18,10 +18,8 @@ class DefaultLabelPropertyTranslator implements ApieTranslatorInterface
             return $translations->getFallbackText($context->getContext(ContextConstants::ACCEPT_LOCALE, false));
         }
         foreach ($translations as $translation) {
-            if ($translation instanceof AbstractTranslation) {
-                // @phpstan-ignore-next-line argument.count
-                return $translation->getFallbackText($context->getContext(ContextConstants::ACCEPT_LOCALE, false));
-            }
+            // @phpstan-ignore-next-line argument.count
+            return $translation->getFallbackText($context->getContext(ContextConstants::ACCEPT_LOCALE, false));
         }
         return null;
     }
