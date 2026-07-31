@@ -4,7 +4,7 @@ namespace Apie\Tests\Core\Translator;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ValueObjects\AuditLogEventMessage;
-use Apie\Tests\Core\Translator\ValueObjects\DummyTranslation;
+use Apie\Core\Translator\ValueObjects\DummyTranslation;
 use PHPUnit\Framework\TestCase;
 
 class ApieTranslatorTest extends TestCase

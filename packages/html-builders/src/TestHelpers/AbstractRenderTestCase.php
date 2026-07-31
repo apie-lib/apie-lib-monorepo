@@ -57,7 +57,7 @@ use Apie\HtmlBuilders\Lists\ActionList;
 use Apie\HtmlBuilders\Lists\ComponentHashmap;
 use Apie\HtmlBuilders\ResourceActions\CreateResourceAction;
 use Apie\HtmlBuilders\ValueObjects\FormName;
-use Apie\Tests\Core\Translator\ValueObjects\DummyTranslation;
+use Apie\Core\Translator\ValueObjects\DummyTranslation;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use Generator;
 use PHPUnit\Framework\TestCase;

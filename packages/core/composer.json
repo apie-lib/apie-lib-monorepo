@@ -46,6 +46,7 @@
   },
   "extra": {
     "apie-objects": [
+      "Apie\\Core\\Translator\\ValueObjects\\DummyTranslation",
     "Apie\\Core\\Translator\\Lists\\TranslationStringSuffixSet",
     "Apie\\Core\\Translator\\Lists\\TranslationStringPrefixSet",
     "Apie\\Core\\Translator\\Lists\\TranslationStringSet",
