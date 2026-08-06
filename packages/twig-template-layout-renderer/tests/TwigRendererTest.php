@@ -8,16 +8,20 @@ use Apie\Tests\TwigTemplateLayoutRenderer\Fixtures\Dummy;
 use Apie\Tests\TwigTemplateLayoutRenderer\Fixtures\MissingTemplate;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\DependencyInjection\Container;
 use Twig\Error\LoaderError;
+use Twig\RuntimeLoader\ContainerRuntimeLoader;
 
 class TwigRendererTest extends TestCase
 {
 
     private function given_a_twig_renderer(): TwigRenderer
     {
+        $container = new Container();
         return new TwigRenderer(
             __DIR__ . '/../fixtures',
             new AssetManager(__DIR__ . '/../fixtures/assets'),
+            new ContainerRuntimeLoader($container),
             'Apie\Tests\TwigTemplateLayoutRenderer\Fixtures\\'
         );
     }
@@ -35,9 +39,11 @@ class TwigRendererTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_error_on_invalid_namespace_for_component()
     {
+        $container = new Container();
         $testItem = new TwigRenderer(
             __DIR__,
             new AssetManager(),
+            new ContainerRuntimeLoader($container),
             'Poop\\'
         );
         $this->expectException(InvalidTypeException::class);

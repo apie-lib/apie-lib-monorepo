@@ -23,7 +23,7 @@ enum SelectedLayout: string {
     {
         return [
             'factory' => [$this->value, 'createRenderer'],
-            'arguments' => ['@' . AssetManager::class]
+            'arguments' => ['@twig.runtime_loader', '@' . AssetManager::class]
         ];
     }
 }

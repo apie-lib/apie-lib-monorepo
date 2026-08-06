@@ -9,6 +9,7 @@ use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
 use Apie\TwigTemplateLayoutRenderer\Extension\ComponentHelperExtension;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
 final class TwigRenderer implements ComponentRendererInterface
 {
@@ -19,10 +20,12 @@ final class TwigRenderer implements ComponentRendererInterface
     public function __construct(
         string $path,
         private AssetManager $assetManager,
+        RuntimeLoaderInterface $runtimeLoader,
         private string $namespacePrefix
     ) {
         $loader = new FilesystemLoader([$path, self::getFallbackFixturesPath()]);
         $this->twigEnvironment = new Environment($loader, []);
+        $this->twigEnvironment->addRuntimeLoader($runtimeLoader);
         if (!isset(self::$extension)) {
             self::$extension = new ComponentHelperExtension();
         }

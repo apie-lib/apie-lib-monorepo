@@ -56,6 +56,7 @@ final class ClassCodeGenerator
         $contents .= '        
 use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
+use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
 ';
         $contents .= 'class ' . $name->toPascalCaseSlug()-> toNative() . 'DesignSystemLayout
@@ -67,12 +68,16 @@ use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
     {
     }
 
-    public static function createRenderer(?AssetManager $assetManager = null): TwigRenderer
+    public static function createRenderer(
+        RuntimeLoaderInterface $runtimeLoader,
+        ?AssetManager $assetManager = null
+    ): TwigRenderer
     {
         $assetManager ??= new AssetManager();
         return new TwigRenderer(
             __DIR__ . \'/../resources/templates\',
             $assetManager->withAddedPath(__DIR__ . \'/../resources/assets\'),
+            $runtimeLoader,
             "Apie\HtmlBuilders\Components\\\\"
         );
     }
@@ -97,7 +102,7 @@ use Apie\HtmlBuilders\TestHelpers\AbstractRenderTestCase;
 { 
     public function getRenderer(): ComponentRendererInterface
     {
-        return ' . $name->toPascalCaseSlug()-> toNative() . 'DesignSystemLayout::createRenderer();
+        return ' . $name->toPascalCaseSlug()-> toNative() . 'DesignSystemLayout::createRenderer(self::createTwigRuntimeForTests());
     }
 
     public function getFixturesPath(): string

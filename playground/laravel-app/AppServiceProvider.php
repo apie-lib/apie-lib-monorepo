@@ -6,6 +6,7 @@ use Apie\CmsLayoutIonic\IonicDesignSystemLayout;
 use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
 use Illuminate\Support\ServiceProvider;
+use Twig\RuntimeLoader\ContainerRuntimeLoader;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,7 +24,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->app->bind(ComponentRendererInterface::class, function () {
-             return IonicDesignSystemLayout::createRenderer($this->app->get(AssetManager::class));
+             return IonicDesignSystemLayout::createRenderer(
+                 $this->app->make(ContainerRuntimeLoader::class),
+                 $this->app->get(AssetManager::class)
+             );
         });
     }
 }

@@ -25,7 +25,7 @@ class PlaygroundConfiguration
             return ['apie' => require(self::LV_CONFIG_FILE)];
         }
 
-        return $contents;
+        return [];
     }
 
     public function applyConfiguration(

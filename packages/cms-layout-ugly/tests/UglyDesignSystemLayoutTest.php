@@ -9,7 +9,9 @@ class UglyDesignSystemLayoutTest extends AbstractRenderTestCase
 {
     public function getRenderer(): ComponentRendererInterface
     {
-        return UglyDesignSystemLayout::createRenderer();
+        return UglyDesignSystemLayout::createRenderer(
+            self::createTwigRuntimeForTests(self::createTwigRuntimeForTests())
+        );
     }
 
     public function getFixturesPath(): string

@@ -53,4 +53,5 @@ services:
       - 'Apie\CmsLayoutIonic\IonicDesignSystemLayout'
       - createRenderer
     arguments:
+      - '@twig.runtime_loader'
       - '@Apie\HtmlBuilders\Assets\AssetManager'
