@@ -345,10 +345,17 @@ class ApieServiceProvider extends ServiceProvider
         TagMap::register($this->app, BackgroundProcessPersistListener::class, ['kernel.event_subscriber']);
         if (interface_exists(IconRegistryInterface::class)) {
             $this->app->bind(IconRegistryInterface::class, function () {
+                if (class_exists(IconFactory::class)) {
+                    return new IconifyOnDemandRegistry(
+                        new Iconify(
+                            new PhpArrayAdapter(sys_get_temp_dir() . '/icons', new NullAdapter()),
+                            new IconFactory()
+                        )
+                    );
+                }
                 return new IconifyOnDemandRegistry(
                     new Iconify(
-                        new PhpArrayAdapter(sys_get_temp_dir() . '/icons', new NullAdapter()),
-                        new IconFactory()
+                        new PhpArrayAdapter(sys_get_temp_dir() . '/icons', new NullAdapter())
                     )
                 );
             });

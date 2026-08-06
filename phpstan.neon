@@ -36,6 +36,9 @@ parameters:
         - path: packages/common/src/Other/AuditLog.php
           identifier: property.uninitializedReadonly
           count: 6
+        - path: packages/laravel-apie/src/ApieServiceProvider.php
+          identifier: arguments.count
+          count: 1
         - 
             reportUnmatched: false
             message: '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children#'
