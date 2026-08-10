@@ -1,7 +1,176 @@
-<ion-buttons slot="start">
-  <ion-menu-button> {{ component('logo') }}</ion-menu-button>
-</ion-buttons>
-{{ component('middle') }}
-<ion-buttons slot="end">
-  {{ component('login') }}
-</ion-buttons>
+<ion-toolbar>
+
+
+  <ion-buttons slot="start">
+
+    <ion-menu-button> {{ component('logo') }}</ion-menu-button>
+
+  </ion-buttons>
+  {{ component('middle') }}
+
+  <ion-buttons slot="end">
+    {{ component('login') }}
+  </ion-buttons>
+
+
+</ion-toolbar>
+
+
+
+<script type="module">
+
+
+  import {
+    menuController,
+    popoverController
+  }
+    from
+            "https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/index.esm.js";
+
+
+
+  document
+          .querySelector("#quick-form")
+          .addEventListener(
+                  "click",
+                  ()=>menuController.open("right-panel")
+          );
+
+
+
+
+
+  class AccountPopover extends HTMLElement {
+
+
+    connectedCallback(){
+
+
+      this.innerHTML = `
+
+
+<ion-list>
+
+
+<ion-item lines="none">
+
+
+<ion-avatar slot="start">
+
+<img src="https://i.pravatar.cc/64?img=12">
+
+</ion-avatar>
+
+
+<ion-label>
+
+<h2>Guest User</h2>
+
+<p>Not logged in</p>
+
+</ion-label>
+
+
+</ion-item>
+
+
+<ion-item button>
+
+<ion-icon
+slot="start"
+name="log-in-outline">
+</ion-icon>
+
+Login
+
+</ion-item>
+
+
+<ion-item button>
+
+<ion-icon
+slot="start"
+name="person-add-outline">
+</ion-icon>
+
+Register
+
+</ion-item>
+
+
+
+<ion-item button>
+
+<ion-icon
+slot="start"
+name="key-outline">
+</ion-icon>
+
+Reset Password
+
+</ion-item>
+
+
+<hr>
+
+
+<ion-item button>
+
+<ion-icon
+slot="start"
+name="settings-outline">
+</ion-icon>
+
+Preferences
+
+</ion-item>
+
+
+</ion-list>
+
+
+`;
+
+
+    }
+
+
+  }
+
+
+  customElements.define(
+          "account-popover",
+          AccountPopover
+  );
+
+
+
+
+
+  document
+          .querySelector("#account")
+          .addEventListener(
+                  "click",
+                  async(event)=>{
+
+
+                    const pop =
+                            await popoverController.create({
+
+                              component:"account-popover",
+
+                              event:event,
+
+                              alignment:"end"
+
+                            });
+
+
+                    await pop.present();
+
+
+                  });
+
+
+
+</script>

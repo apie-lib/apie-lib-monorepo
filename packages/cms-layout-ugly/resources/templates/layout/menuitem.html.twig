@@ -1,15 +1,15 @@
 <div>
     {% if (property('route')) %}
-        <a href="{{ property('route') }}">
+        <a href="{{ property('route') }}" {% if (not property('allowed')) %}disabled{% endif %}>
     {% endif %}
-    {{  property('name') }}
+    {{  translate(property('name')) }}
     {% if (property('route')) %}
         </a>
     {% endif %}
     {% if (property('subcomponents')|length) %}
     <ul>
         {% for componentKey in property('subcomponents') %}
-            <li>{{ component(componentKey) }}</li>
+            <li>{{ ux_icon(property('icon') ? : 'mdi:file', { style: "80px"}) }} {{ component(componentKey) }}</li>
         {% endfor %}
     </ul>
     {% endif %}

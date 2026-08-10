@@ -31,6 +31,11 @@ class ComponentHelperExtension extends AbstractExtension
     /** @var ApieContext[] */
     private array $contexts = [];
 
+    public function __construct(
+        private readonly UXIconRuntime $uxIconExtension
+    ) {
+    }
+
     public function selectComponent(
         TwigRenderer $renderer,
         ComponentInterface $component,
@@ -91,7 +96,9 @@ class ComponentHelperExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('ux_icon', [UXIconRuntime::class, 'renderIcon'], ['is_safe' => ['html']]),
+            ...($this->uxIconExtension
+            ? [new TwigFunction('ux_icon', [$this->uxIconExtension, 'renderIcon'], ['is_safe' => ['html']])]
+            : []),
             new TwigFunction('component', [$this, 'component'], ['is_safe' => ['all']]),
             new TwigFunction('isPrototyped', [$this, 'isPrototyped']),
             new TwigFunction('apieConstant', [$this, 'apieConstant']),

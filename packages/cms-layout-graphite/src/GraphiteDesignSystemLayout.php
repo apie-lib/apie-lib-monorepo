@@ -3,7 +3,7 @@ namespace Apie\CmsLayoutGraphite;
 
 use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
-use Twig\RuntimeLoader\RuntimeLoaderInterface;
+use Symfony\UX\Icons\Twig\UXIconRuntime;
 
 final class GraphiteDesignSystemLayout
 {
@@ -15,15 +15,15 @@ final class GraphiteDesignSystemLayout
     }
 
     public static function createRenderer(
-        RuntimeLoaderInterface $runtimeLoader,
+        UXIconRuntime $uxIconRuntime,
         ?AssetManager $assetManager = null
     ): TwigRenderer {
         $assetManager ??= new AssetManager();
         return new TwigRenderer(
             __DIR__ . '/../resources/templates',
             $assetManager->withAddedPath(__DIR__ . '/../resources/assets'),
-            $runtimeLoader,
-            'Apie\HtmlBuilders\Components\\'
+            'Apie\HtmlBuilders\Components\\',
+            $uxIconRuntime
         );
     }
 }

@@ -1,1 +1,69 @@
-blah
+{% set url = property('allowed') ? property('route') : null %}
+{% if (property('index') == 0) %}
+    <ion-menu content-id="main-content">
+
+        <ion-header>
+
+            <ion-toolbar color="primary">
+
+                <ion-title>
+                    CMS
+                </ion-title>
+
+            </ion-toolbar>
+
+        </ion-header>
+
+
+        <ion-content>
+
+
+            <ion-list>
+
+
+                <!-- DASHBOARD -->
+
+                <ion-item button>
+
+                    <ion-icon
+                            slot="start"
+                            name="home-outline">
+                    </ion-icon>
+
+                    Dashboard
+
+                </ion-item>
+
+
+
+                <!-- CONTENT TREE -->
+
+                <ion-accordion-group>
+                    {% for componentKey in property('subcomponents') %}
+                        {{ component(componentKey) }}
+                    {% endfor %}
+                </ion-accordion-group>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+{% else %}
+    <ion-accordion{% if not property('allowed') %} disabled{% endif %}{% if property('subcomponents')|length %} value="content"{% else %} toggleIcon=""{% endif %}>
+        <ion-item slot="header" class="submenu-level-{{ property('index') }}">
+            {% if property('index') < 3 %}
+                {{ ux_icon(property('icon') ? : 'ion:document-text-outline', { slot: 'start'}) }}
+            {% endif %}
+            <ion-label{% if url %} data-url="{{ url }}" onclick="location.href=this.dataset.url"{% endif %}>
+                {{ translate(property('name')) }}
+            </ion-label>
+        </ion-item>
+        {% if property('subcomponents')|length %}
+            <div slot="content">
+                <ion-accordion-group>
+                    {% for componentKey in property('subcomponents') %}
+                        {{ component(componentKey) }}
+                    {% endfor %}
+                </ion-accordion-group>
+            </div>
+        {% endif %}
+    </ion-accordion>
+{% endif %}
