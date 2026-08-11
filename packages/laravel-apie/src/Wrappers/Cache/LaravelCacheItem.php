@@ -60,7 +60,7 @@ class LaravelCacheItem implements ItemInterface
         return $this;
     }
 
-    public function tag(string|iterable $tags): static
+    public function tag($tags): static
     {
         $this->metadata['tags'] = is_string($tags) ? [$tags] : Utils::toArray($tags);
 

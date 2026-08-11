@@ -77,7 +77,7 @@
         "react/socket": "^1.16",
         "sabre/dav": "^4.7",
         "spomky-labs/otphp": "^11.3.0",
-        "symfony/cache": "^7.2",
+        "symfony/cache": "^7.4",
         "symfony/config": "^7.2",
         "symfony/console": "^7.2",
         "symfony/dependency-injection": "^7.2",
