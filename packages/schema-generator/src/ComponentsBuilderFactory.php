@@ -16,6 +16,7 @@ use Apie\SchemaGenerator\SchemaProviders\PolymorphicEntitySchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\SchemaAttributeProvider;
 use Apie\SchemaGenerator\SchemaProviders\StringValueObjectSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\UploadedFileSchemaProvider;
+use Apie\SchemaGenerator\SchemaProviders\UriSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\ValueObjectSchemaProvider;
 use cebe\openapi\spec\Components;
 
@@ -50,6 +51,7 @@ class ComponentsBuilderFactory
             new StringValueObjectSchemaProvider($maxEnumSize ?? 100),
             new ValueObjectSchemaProvider(),
             new DurationSchemaProvider(),
+            new UriSchemaProvider(),
             new MetadataSchemaProvider(),
         );
     }

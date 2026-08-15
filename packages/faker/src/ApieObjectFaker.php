@@ -19,6 +19,7 @@ use Apie\Faker\Fakers\PolymorphicEntityFaker;
 use Apie\Faker\Fakers\StringableFaker;
 use Apie\Faker\Fakers\StringValueObjectWithRegexFaker;
 use Apie\Faker\Fakers\UploadedFileFaker;
+use Apie\Faker\Fakers\UriFaker;
 use Apie\Faker\Fakers\UseConstructorFaker;
 use Apie\Faker\Fakers\UseFakeMethodFaker;
 use Apie\Faker\Interfaces\ApieClassFaker;
@@ -73,6 +74,7 @@ final class ApieObjectFaker extends Base
                 new LimitedOptionsFaker(),
                 new CompositeObjectFaker(),
                 new DurationFaker(),
+                new UriFaker(),
                 new PhpDateTimeObjectFaker(),
                 new StringableFaker(),
                 new UseConstructorFaker(),

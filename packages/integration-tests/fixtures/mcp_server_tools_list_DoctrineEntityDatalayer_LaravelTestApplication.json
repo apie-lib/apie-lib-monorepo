@@ -11,10 +11,9 @@
             },
             "serverInfo": {
                 "name": "apie-server",
-                "version": "1.0.0",
-                "extraFields": []
+                "version": "1.0.0"
             },
-            "protocolVersion": "2025-03-26"
+            "protocolVersion": "2025-11-25"
         }
     },
     {

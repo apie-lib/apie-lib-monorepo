@@ -21,6 +21,7 @@ use Apie\Core\Metadata\Strategy\RegularObjectStrategy;
 use Apie\Core\Metadata\Strategy\ScalarStrategy;
 use Apie\Core\Metadata\Strategy\UnionTypeStrategy;
 use Apie\Core\Metadata\Strategy\UploadedFileStrategy;
+use Apie\Core\Metadata\Strategy\UriStrategy;
 use Apie\Core\Metadata\Strategy\ValueObjectStrategy;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use LogicException;
@@ -30,6 +31,7 @@ use ReflectionMethod;
 use ReflectionNamedType;
 use ReflectionType;
 use ReflectionUnionType;
+use Uri\Rfc3986\Uri;
 
 final class MetadataFactory
 {
@@ -47,6 +49,9 @@ final class MetadataFactory
         }
         if (BuiltInPhpClassStrategy::supports($class)) {
             return new BuiltInPhpClassStrategy($class);
+        }
+        if (UriStrategy::supports($class)) {
+            return new UriStrategy($class);
         }
         if (FileUriStrategy::supports($class)) {
             return new FileUriStrategy($class);

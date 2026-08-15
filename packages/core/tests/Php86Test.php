@@ -19,7 +19,7 @@ class Php86Test extends TestCase
 
     #[Test]
     #[DataProvider('provideFromNative')]
-    public function it_can_be_denormalized(mixed $expected, mixed $input): void
+    public function it_can_denormalize_Duration(mixed $expected, mixed $input): void
     {
         $serializer = Serializer::create();
         $actual = $serializer->denormalizeNewObject($input, Duration::class, new ApieContext());
@@ -94,7 +94,7 @@ class Php86Test extends TestCase
         );
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_works_with_apie_faker()
     {
         $this->runFakerTest(Duration::class);

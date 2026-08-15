@@ -163018,6 +163018,18 @@
                     "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
                     "fields": [
                         {
+                            "name": "description",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "types",
                             "description": "A list of all types supported by this server.",
                             "args": [],
@@ -163157,6 +163169,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "specifiedByURL",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "fields",
                             "description": null,
                             "args": [
@@ -163164,9 +163188,13 @@
                                     "name": "includeDeprecated",
                                     "description": null,
                                     "type": {
-                                        "kind": "SCALAR",
-                                        "name": "Boolean",
-                                        "ofType": null
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
                                     },
                                     "defaultValue": "false"
                                 }
@@ -163235,9 +163263,13 @@
                                     "name": "includeDeprecated",
                                     "description": null,
                                     "type": {
-                                        "kind": "SCALAR",
-                                        "name": "Boolean",
-                                        "ofType": null
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
                                     },
                                     "defaultValue": "false"
                                 }
@@ -163261,7 +163293,22 @@
                         {
                             "name": "inputFields",
                             "description": null,
-                            "args": [],
+                            "args": [
+                                {
+                                    "name": "includeDeprecated",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
+                                    },
+                                    "defaultValue": "false"
+                                }
+                            ],
                             "type": {
                                 "kind": "LIST",
                                 "name": null,
@@ -163285,6 +163332,18 @@
                             "type": {
                                 "kind": "OBJECT",
                                 "name": "__Type",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "isOneOf",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "Boolean",
                                 "ofType": null
                             },
                             "isDeprecated": false,
@@ -163391,7 +163450,22 @@
                         {
                             "name": "args",
                             "description": null,
-                            "args": [],
+                            "args": [
+                                {
+                                    "name": "includeDeprecated",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
+                                    },
+                                    "defaultValue": "false"
+                                }
+                            ],
                             "type": {
                                 "kind": "NON_NULL",
                                 "name": null,
@@ -163514,6 +163588,34 @@
                         {
                             "name": "defaultValue",
                             "description": "A GraphQL-formatted string representing the default value for this input value.",
+                            "args": [],
+                            "type": {
+                                "kind": "SCALAR",
+                                "name": "String",
+                                "ofType": null
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "isDeprecated",
+                            "description": null,
+                            "args": [],
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "Boolean",
+                                    "ofType": null
+                                }
+                            },
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "deprecationReason",
+                            "description": null,
                             "args": [],
                             "type": {
                                 "kind": "SCALAR",
@@ -163672,7 +163774,22 @@
                         {
                             "name": "args",
                             "description": null,
-                            "args": [],
+                            "args": [
+                                {
+                                    "name": "includeDeprecated",
+                                    "description": null,
+                                    "type": {
+                                        "kind": "NON_NULL",
+                                        "name": null,
+                                        "ofType": {
+                                            "kind": "SCALAR",
+                                            "name": "Boolean",
+                                            "ofType": null
+                                        }
+                                    },
+                                    "defaultValue": "false"
+                                }
+                            ],
                             "type": {
                                 "kind": "NON_NULL",
                                 "name": null,
@@ -163881,7 +163998,9 @@
                     "description": "Marks an element of a GraphQL schema as no longer supported.",
                     "locations": [
                         "FIELD_DEFINITION",
-                        "ENUM_VALUE"
+                        "ENUM_VALUE",
+                        "ARGUMENT_DEFINITION",
+                        "INPUT_FIELD_DEFINITION"
                     ],
                     "args": [
                         {
@@ -163895,6 +164014,37 @@
                             "defaultValue": "\"No longer supported\""
                         }
                     ]
+                },
+                {
+                    "name": "specifiedBy",
+                    "description": "Exposes a URL that specifies the behavior of this scalar.",
+                    "locations": [
+                        "SCALAR"
+                    ],
+                    "args": [
+                        {
+                            "name": "url",
+                            "description": "The URL that specifies the behavior of this scalar.",
+                            "type": {
+                                "kind": "NON_NULL",
+                                "name": null,
+                                "ofType": {
+                                    "kind": "SCALAR",
+                                    "name": "String",
+                                    "ofType": null
+                                }
+                            },
+                            "defaultValue": null
+                        }
+                    ]
+                },
+                {
+                    "name": "oneOf",
+                    "description": "Indicates that an Input Object is a OneOf Input Object (and thus requires exactly one of its fields be provided).",
+                    "locations": [
+                        "INPUT_OBJECT"
+                    ],
+                    "args": []
                 }
             ]
         }
