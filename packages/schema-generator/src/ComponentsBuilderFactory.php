@@ -7,6 +7,7 @@ use Apie\SchemaGenerator\SchemaProviders\AliasSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\DateTimeSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\DateTimeZoneSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\DateValueObjectSchemaProvider;
+use Apie\SchemaGenerator\SchemaProviders\DurationSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\ItemHashmapSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\ItemListSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\ItemSetSchemaProvider;
@@ -48,6 +49,7 @@ class ComponentsBuilderFactory
             new DateValueObjectSchemaProvider(),
             new StringValueObjectSchemaProvider($maxEnumSize ?? 100),
             new ValueObjectSchemaProvider(),
+            new DurationSchemaProvider(),
             new MetadataSchemaProvider(),
         );
     }

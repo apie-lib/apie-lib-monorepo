@@ -7,6 +7,7 @@ use Apie\Faker\Exceptions\ClassCanNotBeFakedException;
 use Apie\Faker\Fakers\CheckBaseClassFaker;
 use Apie\Faker\Fakers\CompositeObjectFaker;
 use Apie\Faker\Fakers\DateValueObjectFaker;
+use Apie\Faker\Fakers\DurationFaker;
 use Apie\Faker\Fakers\EnumFaker;
 use Apie\Faker\Fakers\ItemHashmapFaker;
 use Apie\Faker\Fakers\ItemListFaker;
@@ -71,6 +72,7 @@ final class ApieObjectFaker extends Base
                 new EnumFaker(),
                 new LimitedOptionsFaker(),
                 new CompositeObjectFaker(),
+                new DurationFaker(),
                 new PhpDateTimeObjectFaker(),
                 new StringableFaker(),
                 new UseConstructorFaker(),

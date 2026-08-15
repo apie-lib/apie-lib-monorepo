@@ -48,6 +48,9 @@ foreach (['8.4', '8.3', '8.5', 'latest'] as $phpVersion) {
         break;
     }
 }
+if ($arg1 === '8.6' || $arg2 === '8.6') {
+    $selectedPhpVersion = 'docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp wpstaging/php:8.6-dev';
+}
 
 $filename = '.tempdockerfile.' . $selectedPackage->getPackage() . '.' . $phpVersion;
 file_put_contents(

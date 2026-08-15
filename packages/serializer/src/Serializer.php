@@ -22,6 +22,7 @@ use Apie\Serializer\Normalizers\BooleanNormalizer;
 use Apie\Serializer\Normalizers\DateTimeNormalizer;
 use Apie\Serializer\Normalizers\DateTimeZoneNormalizer;
 use Apie\Serializer\Normalizers\DoNotChangeFileNormalizer;
+use Apie\Serializer\Normalizers\DurationNormalizer;
 use Apie\Serializer\Normalizers\EnumNormalizer;
 use Apie\Serializer\Normalizers\FloatNormalizer;
 use Apie\Serializer\Normalizers\IdentifierNormalizer;
@@ -74,6 +75,7 @@ class Serializer
             new StringableCompositeValueObjectNormalizer(),
             new PolymorphicObjectNormalizer(),
             new DateTimeNormalizer(),
+            new DurationNormalizer(),
             new DateTimeZoneNormalizer(),
             new ResourceNormalizer(),
             new EnumNormalizer(),
