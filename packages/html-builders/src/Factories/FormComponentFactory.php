@@ -172,7 +172,7 @@ final class FormComponentFactory
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public function createFromClass(ReflectionClass $class, FormBuildContext $context, ?FormComponentProviderInterface $skipProvider = null): ComponentInterface
     {

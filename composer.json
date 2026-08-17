@@ -109,7 +109,7 @@
         "league/openapi-psr7-validator": "0.22",
         "orchestra/testbench": "^9.8.0|^10.6.0",
         "phpspec/prophecy-phpunit": "^2.2",
-        "phpstan/phpstan": "2.0.4",
+        "phpstan/phpstan": "2.2.8",
         "phpunit/phpcov": "^10.0.1",
         "phpunit/phpunit": "^11.5.2",
         "smalot/pdfparser": "^2.10",
@@ -174,8 +174,7 @@
             "Apie\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/src/",
             "Apie\\TypescriptClientBuilder\\": "packages/typescript-client-builder/src/",
             "Apie\\Webdav\\": "packages/webdav/src/"
-        }
-    },
+        }    },
     "autoload-dev": {
         "psr-4": {
             "Apie\\Tests\\AiInstructor\\": "packages/ai-instructor/tests/",

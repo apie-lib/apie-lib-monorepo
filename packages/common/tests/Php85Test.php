@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Tests\Core;
+namespace Apie\Tests\Common;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
@@ -9,7 +9,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Time\Duration;
 use Uri\Rfc3986\Uri;
 
 #[RequiresPhp('>=8.5')]

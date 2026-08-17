@@ -8,6 +8,9 @@ use cebe\openapi\spec\Schema;
 use ReflectionClass;
 use Uri\Rfc3986\Uri;
 
+/**
+ * @implements SchemaProvider<Uri>
+ */
 class UriSchemaProvider implements SchemaProvider
 {
     public function supports(ReflectionClass $class): bool
@@ -15,7 +18,7 @@ class UriSchemaProvider implements SchemaProvider
         return $class->name === Uri::class;
     }
 
-    private function createSchema()
+    private function createSchema(): Schema
     {
         // json_encode Duration returns this structure: {"seconds":0,"nanoseconds":6000000,"negative":false}
         return new Schema([

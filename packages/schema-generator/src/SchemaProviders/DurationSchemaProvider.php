@@ -6,17 +6,21 @@ use Apie\SchemaGenerator\Interfaces\SchemaProvider;
 use cebe\openapi\spec\Components;
 use cebe\openapi\spec\Schema;
 use ReflectionClass;
+use Time\Duration;
 
+/**
+ * @implements SchemaProvider<Duration>
+ */
 class DurationSchemaProvider implements SchemaProvider
 {
     public const MAX_SECONDS_DURATION = 9223372035;
 
     public function supports(ReflectionClass $class): bool
     {
-        return $class->name === 'Time\Duration';
+        return $class->name === Duration::class;
     }
 
-    private function createSchema()
+    private function createSchema(): Schema
     {
         // json_encode Duration returns this structure: {"seconds":0,"nanoseconds":6000000,"negative":false}
         return new Schema([

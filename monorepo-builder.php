@@ -23,7 +23,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             "ajgl/csv-rfc" => "0.4.0",
             "apie/service-provider-generator" => "0.14.0",
             "phpspec/prophecy-phpunit" => "^2.2",
-            "phpstan/phpstan" => "2.0.4",
+            "phpstan/phpstan" => "2.2.8",
             "phpunit/phpcov" => "^10.0.1",
             'friendsofphp/php-cs-fixer' =>  "^3.58.1",
             "symfony/doctrine-bridge" => "^7.2",

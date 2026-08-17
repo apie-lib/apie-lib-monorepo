@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Tests\Core;
+namespace Apie\Tests\Common;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Fixtures\TestHelpers\TestWithFaker;

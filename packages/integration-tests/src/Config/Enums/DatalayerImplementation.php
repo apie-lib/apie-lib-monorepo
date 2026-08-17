@@ -14,7 +14,7 @@ enum DatalayerImplementation: string
     case FAKER = 'faker';
 
     /**
-     * @return ReflectionClass<ApieDatalayer>
+     * @return ReflectionClass<covariant ApieDatalayer>
      */
     public function toClass(): ReflectionClass
     {

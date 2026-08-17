@@ -21,7 +21,6 @@ use Apie\Core\Metadata\Strategy\RegularObjectStrategy;
 use Apie\Core\Metadata\Strategy\ScalarStrategy;
 use Apie\Core\Metadata\Strategy\UnionTypeStrategy;
 use Apie\Core\Metadata\Strategy\UploadedFileStrategy;
-use Apie\Core\Metadata\Strategy\UriStrategy;
 use Apie\Core\Metadata\Strategy\ValueObjectStrategy;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use LogicException;
@@ -31,16 +30,18 @@ use ReflectionMethod;
 use ReflectionNamedType;
 use ReflectionType;
 use ReflectionUnionType;
-use Uri\Rfc3986\Uri;
 
 final class MetadataFactory
 {
+    /**
+     * @codeCoverageIgnore
+     */
     private function __construct()
     {
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getMetadataStrategy(ReflectionClass $class): StrategyInterface
     {
@@ -49,9 +50,6 @@ final class MetadataFactory
         }
         if (BuiltInPhpClassStrategy::supports($class)) {
             return new BuiltInPhpClassStrategy($class);
-        }
-        if (UriStrategy::supports($class)) {
-            return new UriStrategy($class);
         }
         if (FileUriStrategy::supports($class)) {
             return new FileUriStrategy($class);
@@ -166,7 +164,7 @@ final class MetadataFactory
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionType $typehint
+     * @param ReflectionClass<covariant object>|ReflectionType $typehint
      */
     public static function getCreationMetadata(ReflectionClass|ReflectionType $typehint, ApieContext $context): MetadataInterface
     {
@@ -177,7 +175,7 @@ final class MetadataFactory
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionType $typehint
+     * @param ReflectionClass<covariant object>|ReflectionType $typehint
      */
     public static function getModificationMetadata(ReflectionClass|ReflectionType $typehint, ApieContext $context): MetadataInterface
     {
@@ -188,7 +186,7 @@ final class MetadataFactory
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionType $typehint
+     * @param ReflectionClass<covariant object>|ReflectionType $typehint
      */
     public static function getResultMetadata(ReflectionClass|ReflectionType $typehint, ApieContext $context): MetadataInterface
     {

@@ -32,8 +32,8 @@ class DurationNormalizer implements NormalizerInterface, DenormalizerInterface
     public function denormalize(string|int|float|bool|null|ItemList|ItemHashmap|UploadedFileInterface $object, string $desiredType, ApieSerializerContext $apieSerializerContext): mixed
     {
         if (is_numeric($object)) {
-            $object = (int)$object;
-            $result = Duration::fromMilliseconds(abs((float) $object));
+            $object = (float) $object;
+            $result = Duration::fromNanoseconds((int) abs(1000 * $object));
             if ($object < 0) {
                 $result = $result->negate();
             }
