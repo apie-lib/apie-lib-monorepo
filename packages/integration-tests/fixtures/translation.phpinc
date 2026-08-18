@@ -225,6 +225,24 @@ return array (
                     'unauthenticated' => 'Uploaded file',
                   ),
                 ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
+                  ),
+                ),
                 'restricted_entity' => 
                 array (
                   'create' => 
@@ -617,6 +635,24 @@ return array (
                     'authenticated' => 'Uploaded file',
                     '' => 'Uploaded file',
                     'unauthenticated' => 'Uploaded file',
+                  ),
+                ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
                   ),
                 ),
                 'restricted_entity' => 
@@ -1035,6 +1071,24 @@ return array (
                     'authenticated' => 'Uploaded file',
                     '' => 'Uploaded file',
                     'unauthenticated' => 'Uploaded file',
+                  ),
+                ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
                   ),
                 ),
                 'restricted_entity' => 
@@ -1518,6 +1572,24 @@ return array (
                     'unauthenticated' => 'Uploaded file',
                   ),
                 ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
+                  ),
+                ),
                 'restricted_entity' => 
                 array (
                   'create' => 
@@ -1931,6 +2003,24 @@ return array (
                     'authenticated' => 'Uploaded file',
                     '' => 'Uploaded file',
                     'unauthenticated' => 'Uploaded file',
+                  ),
+                ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
                   ),
                 ),
                 'restricted_entity' => 
@@ -2363,6 +2453,24 @@ return array (
                     'unauthenticated' => 'Uploaded file',
                   ),
                 ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
+                  ),
+                ),
                 'restricted_entity' => 
                 array (
                   'create' => 
@@ -2572,6 +2680,439 @@ return array (
                   'authenticated' => 'Add translation aware',
                   '' => 'Add translation aware',
                   'unauthenticated' => 'Add translation aware',
+                ),
+              ),
+            ),
+          ),
+          'special_type_only' => 
+          array (
+            'name' => 
+            array (
+              'plural' => 
+              array (
+                'authenticated' => 'Special type onlies',
+                'unauthenticated' => 'Special type onlies',
+              ),
+              'singular' => 
+              array (
+                'authenticated' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
+            'menu' => 
+            array (
+              'types' => 
+              array (
+                'calculator' => 
+                array (
+                  'sum' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Sum',
+                      '' => 'Sum',
+                      'unauthenticated' => 'Sum',
+                    ),
+                  ),
+                  'square_root' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Square root',
+                      '' => 'Square root',
+                      'unauthenticated' => 'Square root',
+                    ),
+                  ),
+                  'expensive_background_calculation' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Expensive background calculation',
+                      '' => 'Expensive background calculation',
+                      'unauthenticated' => 'Expensive background calculation',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Calculator',
+                    '' => 'Calculator',
+                    'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'profile' => 
+                array (
+                  'header' => 
+                  array (
+                    'authenticated' => 'Profile',
+                    '' => 'Profile',
+                    'unauthenticated' => 'Profile',
+                  ),
+                ),
+                'calc' => 
+                array (
+                  'number_one' => 
+                  array (
+                    'times' => 
+                    array (
+                      'header' => 
+                      array (
+                        'authenticated' => 'Times',
+                        '' => 'Times',
+                        'unauthenticated' => 'Times',
+                      ),
+                    ),
+                    'plus' => 
+                    array (
+                      'header' => 
+                      array (
+                        'authenticated' => 'Plus',
+                        '' => 'Plus',
+                        'unauthenticated' => 'Plus',
+                      ),
+                    ),
+                    'header' => 
+                    array (
+                      'authenticated' => 'Number one',
+                      '' => 'Number one',
+                      'unauthenticated' => 'Number one',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Calc',
+                    '' => 'Calc',
+                    'unauthenticated' => 'Calc',
+                  ),
+                ),
+                'authentication' => 
+                array (
+                  'verify_authentication' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Verify authentication',
+                      '' => 'Verify authentication',
+                      'unauthenticated' => 'Verify authentication',
+                    ),
+                  ),
+                  'locale_object' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Locale object',
+                      '' => 'Locale object',
+                      'unauthenticated' => 'Locale object',
+                    ),
+                  ),
+                  'locale' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Locale',
+                      '' => 'Locale',
+                      'unauthenticated' => 'Locale',
+                    ),
+                  ),
+                  'data_locale' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Data locale',
+                      '' => 'Data locale',
+                      'unauthenticated' => 'Data locale',
+                    ),
+                  ),
+                  'accept_locale' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Accept locale',
+                      '' => 'Accept locale',
+                      'unauthenticated' => 'Accept locale',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Authentication',
+                    '' => 'Authentication',
+                    'unauthenticated' => 'Authentication',
+                  ),
+                ),
+                'audit_log' => 
+                array (
+                  'header' => 
+                  array (
+                    'authenticated' => 'Audit log',
+                    '' => 'Audit log',
+                    'unauthenticated' => 'Audit log',
+                  ),
+                ),
+                'sequential_background_process' => 
+                array (
+                  'header' => 
+                  array (
+                    'authenticated' => 'Sequential background process',
+                    '' => 'Sequential background process',
+                    'unauthenticated' => 'Sequential background process',
+                  ),
+                ),
+                'user' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'User',
+                    '' => 'User',
+                    'unauthenticated' => 'User',
+                  ),
+                ),
+                'uploaded_file' => 
+                array (
+                  'create_random_file' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create random file',
+                      '' => 'Create random file',
+                      'unauthenticated' => 'Create random file',
+                    ),
+                  ),
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Uploaded file',
+                    '' => 'Uploaded file',
+                    'unauthenticated' => 'Uploaded file',
+                  ),
+                ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
+                  ),
+                ),
+                'restricted_entity' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Restricted entity',
+                    '' => 'Restricted entity',
+                    'unauthenticated' => 'Restricted entity',
+                  ),
+                ),
+                'primitive_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Primitive only',
+                    '' => 'Primitive only',
+                    'unauthenticated' => 'Primitive only',
+                  ),
+                ),
+                'external_file' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'External file',
+                    '' => 'External file',
+                    'unauthenticated' => 'External file',
+                  ),
+                ),
+                'animal' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Animal',
+                    '' => 'Animal',
+                    'unauthenticated' => 'Animal',
+                  ),
+                ),
+                'union_object' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Union object',
+                    '' => 'Union object',
+                    'unauthenticated' => 'Union object',
+                  ),
+                ),
+                'translation_aware' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation aware',
+                    '' => 'Translation aware',
+                    'unauthenticated' => 'Translation aware',
+                  ),
+                ),
+                'order' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Order',
+                    '' => 'Order',
+                    'unauthenticated' => 'Order',
+                  ),
+                ),
+                'object_with_relation' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Object with relation',
+                    '' => 'Object with relation',
+                    'unauthenticated' => 'Object with relation',
+                  ),
+                ),
+                'iana_object' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Iana object',
+                    '' => 'Iana object',
+                    'unauthenticated' => 'Iana object',
+                  ),
+                ),
+                'header' => 
+                array (
+                  'authenticated' => 'Types',
+                  '' => 'Types',
+                  'unauthenticated' => 'Types',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Home',
+                '' => 'Home',
+                'unauthenticated' => 'Home',
+              ),
+            ),
+            'action' => 
+            array (
+              'edit' => 
+              array (
+                ':id' => 
+                array (
+                  'header' => 
+                  array (
+                    'authenticated' => 'Edit special type only',
+                    '' => 'Edit special type only',
+                    'unauthenticated' => 'Edit special type only',
+                  ),
+                  'label' => 
+                  array (
+                    'authenticated' => 'Edit special type only',
+                    '' => 'Edit special type only',
+                    'unauthenticated' => 'Edit special type only',
+                  ),
                 ),
               ),
             ),
@@ -2791,6 +3332,24 @@ return array (
                     'authenticated' => 'Uploaded file',
                     '' => 'Uploaded file',
                     'unauthenticated' => 'Uploaded file',
+                  ),
+                ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
                   ),
                 ),
                 'restricted_entity' => 
@@ -3208,6 +3767,24 @@ return array (
                     'unauthenticated' => 'Uploaded file',
                   ),
                 ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
+                  ),
+                ),
                 'restricted_entity' => 
                 array (
                   'create' => 
@@ -3621,6 +4198,24 @@ return array (
                     'authenticated' => 'Uploaded file',
                     '' => 'Uploaded file',
                     'unauthenticated' => 'Uploaded file',
+                  ),
+                ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
                   ),
                 ),
                 'restricted_entity' => 
@@ -4056,6 +4651,24 @@ return array (
                     'unauthenticated' => 'Uploaded file',
                   ),
                 ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
+                  ),
+                ),
                 'restricted_entity' => 
                 array (
                   'create' => 
@@ -4484,6 +5097,24 @@ return array (
                     'authenticated' => 'Uploaded file',
                     '' => 'Uploaded file',
                     'unauthenticated' => 'Uploaded file',
+                  ),
+                ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
                   ),
                 ),
                 'restricted_entity' => 
@@ -4916,6 +5547,24 @@ return array (
                     'unauthenticated' => 'Uploaded file',
                   ),
                 ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
+                  ),
+                ),
                 'restricted_entity' => 
                 array (
                   'create' => 
@@ -5334,6 +5983,24 @@ return array (
                     'unauthenticated' => 'Uploaded file',
                   ),
                 ),
+                'special_type_only' => 
+                array (
+                  'create' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Create',
+                      '' => 'Create',
+                      'unauthenticated' => 'Create',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Special type only',
+                    '' => 'Special type only',
+                    'unauthenticated' => 'Special type only',
+                  ),
+                ),
                 'restricted_entity' => 
                 array (
                   'create' => 
@@ -5733,6 +6400,24 @@ return array (
                 '' => 'Uploaded file',
                 'authenticated' => 'Uploaded file',
                 'unauthenticated' => 'Uploaded file',
+              ),
+            ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  '' => 'Create',
+                  'authenticated' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                '' => 'Special type only',
+                'authenticated' => 'Special type only',
+                'unauthenticated' => 'Special type only',
               ),
             ),
             'restricted_entity' => 
@@ -6274,6 +6959,24 @@ return array (
                 'unauthenticated' => 'Uploaded file',
               ),
             ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
             'restricted_entity' => 
             array (
               'create' => 
@@ -6661,6 +7364,24 @@ return array (
                 'authenticated' => 'Uploaded file',
                 '' => 'Uploaded file',
                 'unauthenticated' => 'Uploaded file',
+              ),
+            ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
               ),
             ),
             'restricted_entity' => 
@@ -7074,6 +7795,24 @@ return array (
                 'authenticated' => 'Uploaded file',
                 '' => 'Uploaded file',
                 'unauthenticated' => 'Uploaded file',
+              ),
+            ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
               ),
             ),
             'restricted_entity' => 
@@ -7552,6 +8291,24 @@ return array (
                 'unauthenticated' => 'Uploaded file',
               ),
             ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
             'restricted_entity' => 
             array (
               'create' => 
@@ -7960,6 +8717,24 @@ return array (
                 'authenticated' => 'Uploaded file',
                 '' => 'Uploaded file',
                 'unauthenticated' => 'Uploaded file',
+              ),
+            ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
               ),
             ),
             'restricted_entity' => 
@@ -8387,6 +9162,24 @@ return array (
                 'unauthenticated' => 'Uploaded file',
               ),
             ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
             'restricted_entity' => 
             array (
               'create' => 
@@ -8596,6 +9389,434 @@ return array (
               'authenticated' => 'Add translation aware',
               '' => 'Add translation aware',
               'unauthenticated' => 'Add translation aware',
+            ),
+          ),
+        ),
+      ),
+      'special_type_only' => 
+      array (
+        'name' => 
+        array (
+          'plural' => 'Special type onlies',
+          '' => 'Special type only',
+          'authenticated' => 'Special type only',
+          'singular' => 'Special type only',
+          'unauthenticated' => 'Special type only',
+        ),
+        'menu' => 
+        array (
+          'types' => 
+          array (
+            'calculator' => 
+            array (
+              'sum' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Sum',
+                  '' => 'Sum',
+                  'unauthenticated' => 'Sum',
+                ),
+              ),
+              'square_root' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Square root',
+                  '' => 'Square root',
+                  'unauthenticated' => 'Square root',
+                ),
+              ),
+              'expensive_background_calculation' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Expensive background calculation',
+                  '' => 'Expensive background calculation',
+                  'unauthenticated' => 'Expensive background calculation',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Calculator',
+                '' => 'Calculator',
+                'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'profile' => 
+            array (
+              'header' => 
+              array (
+                'authenticated' => 'Profile',
+                '' => 'Profile',
+                'unauthenticated' => 'Profile',
+              ),
+            ),
+            'calc' => 
+            array (
+              'number_one' => 
+              array (
+                'times' => 
+                array (
+                  'header' => 
+                  array (
+                    'authenticated' => 'Times',
+                    '' => 'Times',
+                    'unauthenticated' => 'Times',
+                  ),
+                ),
+                'plus' => 
+                array (
+                  'header' => 
+                  array (
+                    'authenticated' => 'Plus',
+                    '' => 'Plus',
+                    'unauthenticated' => 'Plus',
+                  ),
+                ),
+                'header' => 
+                array (
+                  'authenticated' => 'Number one',
+                  '' => 'Number one',
+                  'unauthenticated' => 'Number one',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Calc',
+                '' => 'Calc',
+                'unauthenticated' => 'Calc',
+              ),
+            ),
+            'authentication' => 
+            array (
+              'verify_authentication' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Verify authentication',
+                  '' => 'Verify authentication',
+                  'unauthenticated' => 'Verify authentication',
+                ),
+              ),
+              'locale_object' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Locale object',
+                  '' => 'Locale object',
+                  'unauthenticated' => 'Locale object',
+                ),
+              ),
+              'locale' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Locale',
+                  '' => 'Locale',
+                  'unauthenticated' => 'Locale',
+                ),
+              ),
+              'data_locale' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Data locale',
+                  '' => 'Data locale',
+                  'unauthenticated' => 'Data locale',
+                ),
+              ),
+              'accept_locale' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Accept locale',
+                  '' => 'Accept locale',
+                  'unauthenticated' => 'Accept locale',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Authentication',
+                '' => 'Authentication',
+                'unauthenticated' => 'Authentication',
+              ),
+            ),
+            'audit_log' => 
+            array (
+              'header' => 
+              array (
+                'authenticated' => 'Audit log',
+                '' => 'Audit log',
+                'unauthenticated' => 'Audit log',
+              ),
+            ),
+            'sequential_background_process' => 
+            array (
+              'header' => 
+              array (
+                'authenticated' => 'Sequential background process',
+                '' => 'Sequential background process',
+                'unauthenticated' => 'Sequential background process',
+              ),
+            ),
+            'user' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'User',
+                '' => 'User',
+                'unauthenticated' => 'User',
+              ),
+            ),
+            'uploaded_file' => 
+            array (
+              'create_random_file' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create random file',
+                  '' => 'Create random file',
+                  'unauthenticated' => 'Create random file',
+                ),
+              ),
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Uploaded file',
+                '' => 'Uploaded file',
+                'unauthenticated' => 'Uploaded file',
+              ),
+            ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
+            'restricted_entity' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Restricted entity',
+                '' => 'Restricted entity',
+                'unauthenticated' => 'Restricted entity',
+              ),
+            ),
+            'primitive_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Primitive only',
+                '' => 'Primitive only',
+                'unauthenticated' => 'Primitive only',
+              ),
+            ),
+            'external_file' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'External file',
+                '' => 'External file',
+                'unauthenticated' => 'External file',
+              ),
+            ),
+            'animal' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Animal',
+                '' => 'Animal',
+                'unauthenticated' => 'Animal',
+              ),
+            ),
+            'union_object' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Union object',
+                '' => 'Union object',
+                'unauthenticated' => 'Union object',
+              ),
+            ),
+            'translation_aware' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation aware',
+                '' => 'Translation aware',
+                'unauthenticated' => 'Translation aware',
+              ),
+            ),
+            'order' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Order',
+                '' => 'Order',
+                'unauthenticated' => 'Order',
+              ),
+            ),
+            'object_with_relation' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Object with relation',
+                '' => 'Object with relation',
+                'unauthenticated' => 'Object with relation',
+              ),
+            ),
+            'iana_object' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Iana object',
+                '' => 'Iana object',
+                'unauthenticated' => 'Iana object',
+              ),
+            ),
+            'header' => 
+            array (
+              'authenticated' => 'Types',
+              '' => 'Types',
+              'unauthenticated' => 'Types',
+            ),
+          ),
+          'header' => 
+          array (
+            'authenticated' => 'Home',
+            '' => 'Home',
+            'unauthenticated' => 'Home',
+          ),
+        ),
+        'action' => 
+        array (
+          'edit' => 
+          array (
+            ':id' => 
+            array (
+              'header' => 
+              array (
+                'authenticated' => 'Edit special type only',
+                '' => 'Edit special type only',
+                'unauthenticated' => 'Edit special type only',
+              ),
+              'label' => 
+              array (
+                'authenticated' => 'Edit special type only',
+                '' => 'Edit special type only',
+                'unauthenticated' => 'Edit special type only',
+              ),
             ),
           ),
         ),
@@ -8810,6 +10031,24 @@ return array (
                 'authenticated' => 'Uploaded file',
                 '' => 'Uploaded file',
                 'unauthenticated' => 'Uploaded file',
+              ),
+            ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
               ),
             ),
             'restricted_entity' => 
@@ -9222,6 +10461,24 @@ return array (
                 'unauthenticated' => 'Uploaded file',
               ),
             ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
             'restricted_entity' => 
             array (
               'create' => 
@@ -9630,6 +10887,24 @@ return array (
                 'authenticated' => 'Uploaded file',
                 '' => 'Uploaded file',
                 'unauthenticated' => 'Uploaded file',
+              ),
+            ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
               ),
             ),
             'restricted_entity' => 
@@ -10060,6 +11335,24 @@ return array (
                 'unauthenticated' => 'Uploaded file',
               ),
             ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
             'restricted_entity' => 
             array (
               'create' => 
@@ -10483,6 +11776,24 @@ return array (
                 'authenticated' => 'Uploaded file',
                 '' => 'Uploaded file',
                 'unauthenticated' => 'Uploaded file',
+              ),
+            ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
               ),
             ),
             'restricted_entity' => 
@@ -10910,6 +12221,24 @@ return array (
                 'unauthenticated' => 'Uploaded file',
               ),
             ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
             'restricted_entity' => 
             array (
               'create' => 
@@ -11323,6 +12652,24 @@ return array (
                 'unauthenticated' => 'Uploaded file',
               ),
             ),
+            'special_type_only' => 
+            array (
+              'create' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Create',
+                  '' => 'Create',
+                  'unauthenticated' => 'Create',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Special type only',
+                '' => 'Special type only',
+                'unauthenticated' => 'Special type only',
+              ),
+            ),
             'restricted_entity' => 
             array (
               'create' => 
@@ -11722,6 +13069,24 @@ return array (
             '' => 'Uploaded file',
             'authenticated' => 'Uploaded file',
             'unauthenticated' => 'Uploaded file',
+          ),
+        ),
+        'special_type_only' => 
+        array (
+          'create' => 
+          array (
+            'header' => 
+            array (
+              '' => 'Create',
+              'authenticated' => 'Create',
+              'unauthenticated' => 'Create',
+            ),
+          ),
+          'header' => 
+          array (
+            '' => 'Special type only',
+            'authenticated' => 'Special type only',
+            'unauthenticated' => 'Special type only',
           ),
         ),
         'restricted_entity' => 

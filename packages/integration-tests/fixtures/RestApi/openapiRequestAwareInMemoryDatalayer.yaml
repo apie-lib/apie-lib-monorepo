@@ -417,6 +417,52 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+  '/SpecialTypeOnly/dropdown-options/{property}':
+    post:
+      tags:
+        - SpecialTypeOnly
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
   '/UploadedFile/dropdown-options/{property}':
     post:
       tags:
@@ -727,6 +773,59 @@ paths:
         - RestrictedEntity
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.existing.RestrictedEntity
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/SpecialTypeOnly/{id}/dropdown-options/{property}':
+    post:
+      tags:
+        - SpecialTypeOnly
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.existing.SpecialTypeOnly
       parameters:
         -
           name: fields
@@ -3318,6 +3417,170 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/RestrictedEntity-get'
+  /SpecialTypeOnly:
+    post:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Creates an instance of SpecialTypeOnly'
+      operationId: put-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpecialTypeOnly-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpecialTypeOnly-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    get:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Gets a list of resource that are an instance of SpecialTypeOnly'
+      operationId: get-all-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: items_per_page
+          in: query
+          schema:
+            minimum: 1
+            type: integer
+        -
+          name: page
+          in: query
+          schema:
+            minimum: 0
+            type: integer
+        -
+          name: search
+          in: query
+          schema:
+            minLength: 1
+            type: string
+        -
+          name: 'query[bcmathNumber]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[gmp]'
+          in: query
+          schema:
+            type: string
+        -
+          name: 'query[id]'
+          in: query
+          schema:
+            type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                required:
+                  - filteredCount
+                  - totalCount
+                  - first
+                  - last
+                  - list
+                type: object
+                properties:
+                  totalCount:
+                    minimum: 0
+                    type: integer
+                  filteredCount:
+                    minimum: 0
+                    type: integer
+                  first:
+                    type: string
+                    format: uri
+                  last:
+                    type: string
+                    format: uri
+                  prev:
+                    type: string
+                    format: uri
+                  next:
+                    type: string
+                    format: uri
+                  list:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SpecialTypeOnly-get'
   /UploadedFile:
     post:
       tags:
@@ -4646,6 +4909,205 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  '/SpecialTypeOnly/{id}':
+    get:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Gets a resource of SpecialTypeOnly with a specific id'
+      operationId: get-single-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SpecialTypeOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpecialTypeOnly-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    patch:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Modifies an instance of SpecialTypeOnly'
+      operationId: patch-single-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SpecialTypeOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpecialTypeOnly-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpecialTypeOnly-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    delete:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Removes an instance of SpecialTypeOnly'
+      operationId: remove-single-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SpecialTypeOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '204':
+          description: 'Resource was deleted'
         '400':
           description: 'Invalid request'
           content:
@@ -6068,6 +6530,7 @@ paths:
         - PrimitiveOnly
         - RestrictedEntity
         - SequentialBackgroundProcess
+        - SpecialTypeOnly
         - TranslationAware
         - UnionObject
         - UploadedFile
@@ -6159,6 +6622,7 @@ paths:
         - PrimitiveOnly
         - RestrictedEntity
         - SequentialBackgroundProcess
+        - SpecialTypeOnly
         - TranslationAware
         - UnionObject
         - UploadedFile
@@ -7990,6 +8454,76 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadedFile-get'
+  '/export/SpecialTypeOnly.{extension}':
+    get:
+      tags:
+        - ExportAll
+        - SpecialTypeOnly
+        - action
+      description: 'Calls method export and returns return value.'
+      operationId: call-method-ExportAll-export_SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: extension
+          in: path
+          description: 'extension of instance of export'
+          required: true
+          schema:
+            type: string
+          examples:
+            excel_2007_file:
+              summary: 'Excel 2007+ file'
+              value: xlsx
+            comma_separated_values:
+              summary: 'Comma separated values'
+              value: csv
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadedFile-get'
   '/export/TranslationAware.{extension}':
     get:
       tags:
@@ -8832,6 +9366,75 @@ paths:
         - action
       description: 'Calls method getAllIndexes and returns return value.'
       operationId: call-method-Indexer-getAllIndexes_RestrictedEntity
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of Indexer'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {  }
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringSet-get'
+  '/indexes/SpecialTypeOnly/{id}':
+    post:
+      tags:
+        - Indexer
+        - SpecialTypeOnly
+        - action
+      description: 'Calls method getAllIndexes and returns return value.'
+      operationId: call-method-Indexer-getAllIndexes_SpecialTypeOnly
       parameters:
         -
           name: fields
@@ -12048,6 +12651,8 @@ components:
         -
           $ref: '#/components/schemas/RestrictedEntity-get'
         -
+          $ref: '#/components/schemas/SpecialTypeOnly-get'
+        -
           $ref: '#/components/schemas/TranslationAware-get'
         -
           $ref: '#/components/schemas/UnionObject-get'
@@ -12071,6 +12676,8 @@ components:
           $ref: '#/components/schemas/PrimitiveOnly-get'
         -
           $ref: '#/components/schemas/RestrictedEntity-get'
+        -
+          $ref: '#/components/schemas/SpecialTypeOnly-get'
         -
           $ref: '#/components/schemas/TranslationAware-get'
         -
@@ -12279,6 +12886,20 @@ components:
       type: string
       format: formfieldproperty
       pattern: '^apie\.(bounded\.([a-z][a-z0-9]*)\.)?(resource\.([a-z0-9]+(_[a-z0-9]+)*)\.)?[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*(\.(singular|plural))?(\.(authenticated|unauthenticated))?$'
+    GMP-nullable-get:
+      type: string
+      description: 'Large integers written down as a string'
+      format: bigint
+      example: '1234547648759975'
+      regex: '^[1-9][0-9]*$'
+      nullable: true
+    GMP-nullable-post:
+      type: string
+      description: 'Large integers written down as a string'
+      format: bigint
+      example: '1234547648759975'
+      regex: '^[1-9][0-9]*$'
+      nullable: true
     HttpHeader-nullable-get:
       type: string
       format: httpheader
@@ -13328,6 +13949,20 @@ components:
           nullable: false
         code:
           $ref: '#/components/schemas/mixed'
+    Number-nullable-get:
+      type: string
+      description: 'Large numbers with arbitrary precision written down as a string'
+      format: bcmath-number
+      example: '1234547648759975.1313'
+      regex: '^[1-9][0-9]*(\.[0-9]*$'
+      nullable: true
+    Number-nullable-post:
+      type: string
+      description: 'Large numbers with arbitrary precision written down as a string'
+      format: bcmath-number
+      example: '1234547648759975.1313'
+      regex: '^[1-9][0-9]*(\.[0-9]*$'
+      nullable: true
     ObjectWithRelation-get:
       type: object
       required:
@@ -13927,6 +14562,43 @@ components:
         type:
           type: string
           nullable: false
+    SpecialTypeOnly-get:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-get'
+        bcmathNumber:
+          $ref: '#/components/schemas/Number-nullable-get'
+        gmp:
+          $ref: '#/components/schemas/GMP-nullable-get'
+    SpecialTypeOnly-patch:
+      type: object
+      properties:
+        bcmathNumber:
+          $ref: '#/components/schemas/Number-nullable-post'
+        gmp:
+          $ref: '#/components/schemas/GMP-nullable-post'
+    SpecialTypeOnly-post:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
+        bcmathNumber:
+          $ref: '#/components/schemas/Number-nullable-post'
+        gmp:
+          $ref: '#/components/schemas/GMP-nullable-post'
+    SpecialTypeOnlyIdentifier-get:
+      type: string
+      format: specialtypeonlyidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
+    SpecialTypeOnlyIdentifier-post:
+      type: string
+      format: specialtypeonlyidentifier
+      pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
     StrictMimeType-nullable-post:
       type: string
       format: strictmimetype
@@ -15228,6 +15900,9 @@ tags:
   -
     name: SequentialBackgroundProcess
     description: 'All operations for SequentialBackgroundProcess'
+  -
+    name: SpecialTypeOnly
+    description: 'All operations for SpecialTypeOnly'
   -
     name: TranslationAware
     description: 'All operations for TranslationAware'

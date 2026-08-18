@@ -11,7 +11,7 @@ use ReflectionClass;
 use Uri\Rfc3986\Uri;
 
 /**
- * @implements SchemaProvider<Uri|GMP>
+ * @implements SchemaProvider<Uri|GMP|Number>
  */
 class PredefinedObjectSchemaProvider implements SchemaProvider
 {
@@ -27,6 +27,9 @@ class PredefinedObjectSchemaProvider implements SchemaProvider
         );
     }
 
+    /**
+     * @param ReflectionClass<covariant object> $class
+     */
     private function createSchema(ReflectionClass $class): Schema
     {
         $fixturePath = __DIR__ . '/../../fixtures/' . str_replace('\\', '_', $class->name) . '.json';

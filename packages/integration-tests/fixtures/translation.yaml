@@ -40,6 +40,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -113,6 +116,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -190,6 +196,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -274,6 +283,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -352,6 +364,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -439,6 +454,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -488,6 +506,87 @@ apie:
                                 authenticated: 'Add translation aware'
                                 '': 'Add translation aware'
                                 unauthenticated: 'Add translation aware'
+                special_type_only:
+                    name:
+                        plural:
+                            authenticated: 'Special type onlies'
+                            unauthenticated: 'Special type onlies'
+                        singular:
+                            authenticated: 'Special type only'
+                            unauthenticated: 'Special type only'
+                    menu:
+                        types:
+                            calculator:
+                                sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
+                                square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
+                                expensive_background_calculation: { header: { authenticated: 'Expensive background calculation', '': 'Expensive background calculation', unauthenticated: 'Expensive background calculation' } }
+                                header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
+                            profile:
+                                header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
+                            calc:
+                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
+                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
+                            authentication:
+                                verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
+                                locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
+                                locale: { header: { authenticated: Locale, '': Locale, unauthenticated: Locale } }
+                                data_locale: { header: { authenticated: 'Data locale', '': 'Data locale', unauthenticated: 'Data locale' } }
+                                accept_locale: { header: { authenticated: 'Accept locale', '': 'Accept locale', unauthenticated: 'Accept locale' } }
+                                header: { authenticated: Authentication, '': Authentication, unauthenticated: Authentication }
+                            audit_log:
+                                header: { authenticated: 'Audit log', '': 'Audit log', unauthenticated: 'Audit log' }
+                            sequential_background_process:
+                                header: { authenticated: 'Sequential background process', '': 'Sequential background process', unauthenticated: 'Sequential background process' }
+                            user:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: User, '': User, unauthenticated: User }
+                            uploaded_file:
+                                create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
+                            restricted_entity:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
+                            primitive_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Primitive only', '': 'Primitive only', unauthenticated: 'Primitive only' }
+                            external_file:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'External file', '': 'External file', unauthenticated: 'External file' }
+                            animal:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: Animal, '': Animal, unauthenticated: Animal }
+                            union_object:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Union object', '': 'Union object', unauthenticated: 'Union object' }
+                            translation_aware:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Translation aware', '': 'Translation aware', unauthenticated: 'Translation aware' }
+                            order:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: Order, '': Order, unauthenticated: Order }
+                            object_with_relation:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Object with relation', '': 'Object with relation', unauthenticated: 'Object with relation' }
+                            iana_object:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Iana object', '': 'Iana object', unauthenticated: 'Iana object' }
+                            header:
+                                authenticated: Types
+                                '': Types
+                                unauthenticated: Types
+                        header:
+                            authenticated: Home
+                            '': Home
+                            unauthenticated: Home
+                    action:
+                        edit:
+                            ':id':
+                                header: { authenticated: 'Edit special type only', '': 'Edit special type only', unauthenticated: 'Edit special type only' }
+                                label: { authenticated: 'Edit special type only', '': 'Edit special type only', unauthenticated: 'Edit special type only' }
                 restricted_entity:
                     name:
                         plural:
@@ -526,6 +625,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -604,6 +706,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -682,6 +787,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -768,6 +876,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -855,6 +966,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -942,6 +1056,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -1019,6 +1136,9 @@ apie:
                                 create_random_file: { header: { authenticated: 'Create random file', '': 'Create random file', unauthenticated: 'Create random file' } }
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Uploaded file', '': 'Uploaded file', unauthenticated: 'Uploaded file' }
+                            special_type_only:
+                                create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
+                                header: { authenticated: 'Special type only', '': 'Special type only', unauthenticated: 'Special type only' }
                             restricted_entity:
                                 create: { header: { authenticated: Create, '': Create, unauthenticated: Create } }
                                 header: { authenticated: 'Restricted entity', '': 'Restricted entity', unauthenticated: 'Restricted entity' }
@@ -1165,6 +1285,16 @@ apie:
                             '': 'Uploaded file'
                             authenticated: 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                '': Create
+                                authenticated: Create
+                                unauthenticated: Create
+                        header:
+                            '': 'Special type only'
+                            authenticated: 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -1462,6 +1592,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -1673,6 +1813,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -1896,6 +2046,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -2156,6 +2316,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -2378,6 +2548,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -2609,6 +2789,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -2727,6 +2917,238 @@ apie:
                         authenticated: 'Add translation aware'
                         '': 'Add translation aware'
                         unauthenticated: 'Add translation aware'
+        special_type_only:
+            name:
+                plural: 'Special type onlies'
+                '': 'Special type only'
+                authenticated: 'Special type only'
+                singular: 'Special type only'
+                unauthenticated: 'Special type only'
+            menu:
+                types:
+                    calculator:
+                        sum:
+                            header:
+                                authenticated: Sum
+                                '': Sum
+                                unauthenticated: Sum
+                        square_root:
+                            header:
+                                authenticated: 'Square root'
+                                '': 'Square root'
+                                unauthenticated: 'Square root'
+                        expensive_background_calculation:
+                            header:
+                                authenticated: 'Expensive background calculation'
+                                '': 'Expensive background calculation'
+                                unauthenticated: 'Expensive background calculation'
+                        header:
+                            authenticated: Calculator
+                            '': Calculator
+                            unauthenticated: Calculator
+                    profile:
+                        header:
+                            authenticated: Profile
+                            '': Profile
+                            unauthenticated: Profile
+                    calc:
+                        number_one:
+                            times:
+                                header: { authenticated: Times, '': Times, unauthenticated: Times }
+                            plus:
+                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
+                            header:
+                                authenticated: 'Number one'
+                                '': 'Number one'
+                                unauthenticated: 'Number one'
+                        header:
+                            authenticated: Calc
+                            '': Calc
+                            unauthenticated: Calc
+                    authentication:
+                        verify_authentication:
+                            header:
+                                authenticated: 'Verify authentication'
+                                '': 'Verify authentication'
+                                unauthenticated: 'Verify authentication'
+                        locale_object:
+                            header:
+                                authenticated: 'Locale object'
+                                '': 'Locale object'
+                                unauthenticated: 'Locale object'
+                        locale:
+                            header:
+                                authenticated: Locale
+                                '': Locale
+                                unauthenticated: Locale
+                        data_locale:
+                            header:
+                                authenticated: 'Data locale'
+                                '': 'Data locale'
+                                unauthenticated: 'Data locale'
+                        accept_locale:
+                            header:
+                                authenticated: 'Accept locale'
+                                '': 'Accept locale'
+                                unauthenticated: 'Accept locale'
+                        header:
+                            authenticated: Authentication
+                            '': Authentication
+                            unauthenticated: Authentication
+                    audit_log:
+                        header:
+                            authenticated: 'Audit log'
+                            '': 'Audit log'
+                            unauthenticated: 'Audit log'
+                    sequential_background_process:
+                        header:
+                            authenticated: 'Sequential background process'
+                            '': 'Sequential background process'
+                            unauthenticated: 'Sequential background process'
+                    user:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: User
+                            '': User
+                            unauthenticated: User
+                    uploaded_file:
+                        create_random_file:
+                            header:
+                                authenticated: 'Create random file'
+                                '': 'Create random file'
+                                unauthenticated: 'Create random file'
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Uploaded file'
+                            '': 'Uploaded file'
+                            unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
+                    restricted_entity:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Restricted entity'
+                            '': 'Restricted entity'
+                            unauthenticated: 'Restricted entity'
+                    primitive_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Primitive only'
+                            '': 'Primitive only'
+                            unauthenticated: 'Primitive only'
+                    external_file:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'External file'
+                            '': 'External file'
+                            unauthenticated: 'External file'
+                    animal:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: Animal
+                            '': Animal
+                            unauthenticated: Animal
+                    union_object:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Union object'
+                            '': 'Union object'
+                            unauthenticated: 'Union object'
+                    translation_aware:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Translation aware'
+                            '': 'Translation aware'
+                            unauthenticated: 'Translation aware'
+                    order:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: Order
+                            '': Order
+                            unauthenticated: Order
+                    object_with_relation:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Object with relation'
+                            '': 'Object with relation'
+                            unauthenticated: 'Object with relation'
+                    iana_object:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Iana object'
+                            '': 'Iana object'
+                            unauthenticated: 'Iana object'
+                    header:
+                        authenticated: Types
+                        '': Types
+                        unauthenticated: Types
+                header:
+                    authenticated: Home
+                    '': Home
+                    unauthenticated: Home
+            action:
+                edit:
+                    ':id':
+                        header:
+                            authenticated: 'Edit special type only'
+                            '': 'Edit special type only'
+                            unauthenticated: 'Edit special type only'
+                        label:
+                            authenticated: 'Edit special type only'
+                            '': 'Edit special type only'
+                            unauthenticated: 'Edit special type only'
         restricted_entity:
             name:
                 plural: 'Restricted entities'
@@ -2840,6 +3262,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -3062,6 +3494,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -3284,6 +3726,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -3516,6 +3968,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -3747,6 +4209,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -3978,6 +4450,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -4201,6 +4683,16 @@ apie:
                             authenticated: 'Uploaded file'
                             '': 'Uploaded file'
                             unauthenticated: 'Uploaded file'
+                    special_type_only:
+                        create:
+                            header:
+                                authenticated: Create
+                                '': Create
+                                unauthenticated: Create
+                        header:
+                            authenticated: 'Special type only'
+                            '': 'Special type only'
+                            unauthenticated: 'Special type only'
                     restricted_entity:
                         create:
                             header:
@@ -4422,6 +4914,16 @@ apie:
                     '': 'Uploaded file'
                     authenticated: 'Uploaded file'
                     unauthenticated: 'Uploaded file'
+            special_type_only:
+                create:
+                    header:
+                        '': Create
+                        authenticated: Create
+                        unauthenticated: Create
+                header:
+                    '': 'Special type only'
+                    authenticated: 'Special type only'
+                    unauthenticated: 'Special type only'
             restricted_entity:
                 create:
                     header:

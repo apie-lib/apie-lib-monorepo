@@ -36,6 +36,10 @@
                         "description": "Return search results for RestrictedEntity"
                     },
                     {
+                        "name": "findSpecialTypeOnly",
+                        "description": "Return search results for SpecialTypeOnly"
+                    },
+                    {
                         "name": "findTranslationAware",
                         "description": "Return search results for TranslationAware"
                     },

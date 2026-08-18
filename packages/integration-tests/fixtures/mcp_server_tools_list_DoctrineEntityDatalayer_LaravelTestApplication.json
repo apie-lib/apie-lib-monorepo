@@ -2691,6 +2691,44 @@
                     }
                 },
                 {
+                    "name": "replace-object-types-special-type-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "bcmathNumber": {
+                                "type": "string",
+                                "description": "Large numbers with arbitrary precision written down as a string",
+                                "nullable": true,
+                                "example": "1234547648759975.1313"
+                            },
+                            "gmp": {
+                                "type": "string",
+                                "description": "Large integers written down as a string",
+                                "nullable": true,
+                                "example": "1234547648759975"
+                            }
+                        }
+                    },
+                    "description": "Creates an instance of SpecialTypeOnly",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                        "x-fields": {
+                            "create": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\SpecialTypeOnly",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "replace-object-types-uploaded-file",
                     "inputSchema": {
                         "type": "object",
@@ -2998,6 +3036,30 @@
                         "x-fields": {
                             "get": true,
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "get-object-types-special-type-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Gets a resource of SpecialTypeOnly with a specific id",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                        "x-fields": {
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\SpecialTypeOnly",
                             "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
                         },
                         "x-bounded-context-id": "types"
@@ -3810,6 +3872,79 @@
                             "all": true,
                             "get": true,
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\RestrictedEntity",
+                            "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "all-object-types-special-type-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                            "filters": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "search": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "items_per_page": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "page": {
+                                        "type": "integer",
+                                        "minimum": 0
+                                    },
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "bcmathNumber": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "gmp": {
+                                        "type": "string",
+                                        "nullable": true
+                                    }
+                                }
+                            },
+                            "order_by": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "createdAt",
+                                        "+createdAt",
+                                        "-createdAt",
+                                        "updatedAt",
+                                        "+updatedAt",
+                                        "-updatedAt",
+                                        "id",
+                                        "+id",
+                                        "-id",
+                                        "gmp",
+                                        "+gmp",
+                                        "-gmp",
+                                        "bcmathNumber",
+                                        "+bcmathNumber",
+                                        "-bcmathNumber"
+                                    ],
+                                    "format": "enum"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Gets a list of resource that are an instance of SpecialTypeOnly",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                        "x-fields": {
+                            "all": true,
+                            "get": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\SpecialTypeOnly",
                             "_apie_action": "Apie\\Common\\Actions\\GetListAction"
                         },
                         "x-bounded-context-id": "types"
@@ -6715,6 +6850,43 @@
                     }
                 },
                 {
+                    "name": "modify-object-types-special-type-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "bcmathNumber": {
+                                "type": "string",
+                                "description": "Large numbers with arbitrary precision written down as a string",
+                                "nullable": true,
+                                "example": "1234547648759975.1313"
+                            },
+                            "gmp": {
+                                "type": "string",
+                                "description": "Large integers written down as a string",
+                                "nullable": true,
+                                "example": "1234547648759975"
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Modifies an instance of SpecialTypeOnly",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\SpecialTypeOnly",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "modify-object-types-translation-aware",
                     "inputSchema": {
                         "type": "object",
@@ -6981,6 +7153,31 @@
                         "x-fields": {
                             "edit": true,
                             "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\PrimitiveOnly",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RemoveObjectAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "remove-object-types-special-type-only",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "id"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Removes an instance of SpecialTypeOnly",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RemoveObjectAction",
+                        "x-fields": {
+                            "edit": true,
+                            "resourceName": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Resources\\SpecialTypeOnly",
                             "display-form": true,
                             "_apie_action": "Apie\\Common\\Actions\\RemoveObjectAction"
                         },

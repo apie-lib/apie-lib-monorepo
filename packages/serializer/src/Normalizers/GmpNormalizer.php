@@ -27,7 +27,7 @@ class GmpNormalizer implements NormalizerInterface, DenormalizerInterface
      */
     public function normalize(mixed $object, ApieSerializerContext $apieSerializerContext): string
     {
-        return (string) $object;
+        return gmp_strval($object);
     }
 
     public function denormalize(string|int|float|bool|null|ItemList|ItemHashmap|UploadedFileInterface $object, string $desiredType, ApieSerializerContext $apieSerializerContext): GMP
