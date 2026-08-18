@@ -14,10 +14,6 @@ test-8.4:
 	docker build --file dockerfile.testing . --build-arg PHP_VERSION=8.4 -t apie-testing-8.4-latest
 	docker run --rm -e PHP_VERSION=8.4 -e DEPENDENCIES=latest -v .:/app -w /app apie-testing-8.4-latest bin/run-tests coverage/$(PHP_VERSION)_$(DEPENDENCIES).cov $(DEPENDENCIES)
 
-test-8.3:
-	docker build --file dockerfile.testing . --build-arg PHP_VERSION=8.3 -t apie-testing-8.3-latest
-	docker run --rm -e PHP_VERSION=8.3 -e DEPENDENCIES=latest -v .:/app -w /app apie-testing-8.3-latest bin/run-tests coverage/$(PHP_VERSION)_$(DEPENDENCIES).cov $(DEPENDENCIES)
-
 test-8.6:
 	docker build -t php-master -f resources/dockerfile.php86 .
 	docker run -it --rm --name my-running-script -v .:/usr/src/myapp -w /usr/src/myapp  php-master php vendor/bin/phpunit

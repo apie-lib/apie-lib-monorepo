@@ -53,6 +53,8 @@
         "ecodev/graphql-upload": "^8.0",
         "egulias/email-validator": "^4.0.2",
         "ext-mbstring": "*",
+        "ext-gmp": "*",
+        "ext-bcmath": "*",
         "fakerphp/faker": "^1.23.1",
         "giggsey/libphonenumber-for-php": "^8.13.37",
         "guzzlehttp/psr7": "^2.4",

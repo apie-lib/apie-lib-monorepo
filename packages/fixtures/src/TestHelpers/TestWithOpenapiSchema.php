@@ -39,6 +39,9 @@ trait TestWithOpenapiSchema
         if ($expected->description === true) {
             $expected->description = $actualSchema->description;
         }
+        if ($expected->example === true) {
+            $expected->example = $actualSchema->example;
+        }
         $this->assertEquals($expected, $actualSchema);
         $testCase($builder);
     }

@@ -18,6 +18,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::DATA_TO_APPEND, [
         ComposerJsonSection::REQUIRE => [
             "doctrine/dbal" => "^4.2.1",
+            "ext-gmp" => "*",
+            "ext-bcmath" => "*",
         ],
         ComposerJsonSection::REQUIRE_DEV => [
             "ajgl/csv-rfc" => "0.4.0",
