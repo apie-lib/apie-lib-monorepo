@@ -20,7 +20,7 @@
     }
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "apie/apie-common-plugin": "self.version",
     "apie/core": "self.version",
     "apie/rest-api": "self.version"

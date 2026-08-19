@@ -32,14 +32,14 @@
     ]
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "apie/core": "self.version",
     "apie/country-and-phone-number": "self.version",
     "apie/count-words": "self.version",
     "apie/date-value-objects": "self.version",
     "apie/regex-value-objects": "self.version",
     "apie/text-value-objects": "self.version",
-    "devizzent/cebe-php-openapi": "^1.1.2",
+    "devizzent/cebe-php-openapi": "^1.1.5",
     "egulias/email-validator": "^4.0.2",
     "symfony/html-sanitizer": "^7.2"
   },

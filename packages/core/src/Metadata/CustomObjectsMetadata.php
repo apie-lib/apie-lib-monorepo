@@ -14,6 +14,9 @@ use Uri\Rfc3986\Uri;
 
 class CustomObjectsMetadata implements MetadataInterface
 {
+    /**
+     * @var array<class-string<covariant object>, string> $mapping
+     */
     private static array $mapping = [
         Uri::class => 'string',
         Number::class => 'string',
@@ -22,6 +25,9 @@ class CustomObjectsMetadata implements MetadataInterface
 
     private MetadataInterface $internal;
 
+    /**
+     * @param ReflectionClass<covariant object> $class
+     */
     public function __construct(private readonly ReflectionClass $class)
     {
         $this->internal = new ScalarMetadata(ScalarType::MIXED);

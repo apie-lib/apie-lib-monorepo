@@ -36,16 +36,16 @@
 ]
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "apie/core": "self.version",
     "giggsey/libphonenumber-for-php": "^8.13.37",
-    "prinsfrank/standards": "^3.3.0"
+    "prinsfrank/standards": "^3.16.8"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "devizzent/cebe-php-openapi": "^1.1.2",
+    "devizzent/cebe-php-openapi": "^1.1.5",
     "phpunit/phpunit": "^11.5.2",
-    "phpspec/prophecy-phpunit": "^2.2"
+    "phpspec/prophecy-phpunit": "^2.5"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

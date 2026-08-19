@@ -24,7 +24,7 @@ jobs:
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           coverage: pcov
           ini-values: pcov.directory=packages
       - uses: "ramsey/composer-install@v3"
@@ -42,13 +42,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php_version: ['8.3']
+        php_version: ['8.4']
         composer:
           - '--prefer-lowest'
           - ''
         include:
-          - php_version: 8.4
-            composer: ''
           - php_version: 8.5
             composer: ''
     steps:
@@ -91,7 +89,7 @@ jobs:
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           coverage: pcov
       - uses: "ramsey/composer-install@v3"
         with:
@@ -113,7 +111,7 @@ jobs:
 
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.3
+          php-version: 8.4
           coverage: pcov
 
       - uses: "ramsey/composer-install@v3"
@@ -140,7 +138,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php_version: ['8.3', '8.4', '8.5']
+        php_version: ['8.4', '8.5']
         package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
     steps:
       -
@@ -150,7 +148,7 @@ jobs:
           persist-credentials: false
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.3
+          php-version: 8.4
       - uses: actions/cache/restore@v3
         id: restore-cache
         with:
@@ -190,7 +188,7 @@ jobs:
     steps:
       -   uses: shivammathur/setup-php@v2
           with:
-            php-version: 8.3
+            php-version: 8.4
             coverage: pcov
       -
         uses: actions/checkout@v4

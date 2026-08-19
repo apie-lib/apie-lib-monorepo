@@ -13,7 +13,7 @@ This project is a PHP-based monorepo focused on Domain-Driven Design (DDD) princ
 
 ## Coding Standards
 
-- **PHP Version**: PHP 8.3 or higher.
+- **PHP Version**: PHP 8.4 or higher.
 - **Type Hinting**: Everything should be type-hinted.
 - **Style**: Adhere to PSR-1/PSR-2.
 - **Code Fixer**: Use `bin/fix-code-style` or `vendor/bin/php-cs-fixer fix` to ensure consistency.

@@ -20,7 +20,7 @@
     }
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "apie/common": "self.version",
     "apie/core": "self.version"
   },
@@ -28,7 +28,7 @@
     "apie/export": "self.version",
     "apie/fixtures": "self.version",
     "phpunit/phpunit": "^11.5.2",
-    "phpspec/prophecy-phpunit": "^2.2",
+    "phpspec/prophecy-phpunit": "^2.5",
     "symfony/mime":  "^7.2"
   },
   "minimum-stability": "dev",
