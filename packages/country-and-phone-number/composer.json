@@ -39,7 +39,7 @@
     "php": ">=8.4",
     "apie/core": "self.version",
     "giggsey/libphonenumber-for-php": "^8.13.37",
-    "prinsfrank/standards": "^3.16.8"
+    "prinsfrank/standards": "^3.0.0"
   },
   "require-dev": {
     "apie/fixtures": "self.version",

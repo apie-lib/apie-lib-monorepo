@@ -25035,6 +25035,12 @@ return array(
     'Service Name' => 'k3software-cli',
     'Active' => true,
   ),
+  26264 =>
+  array(
+    'Description' => 'De-registered',
+    'Service Name' => '',
+    'Active' => true,
+  ),
   '2626tcp' =>
   array(
     'Description' => 'gbjd816',
@@ -26035,6 +26041,1188 @@ return array(
   array(
     'Description' => 'MANET Protocols',
     'Service Name' => 'manet',
+    'Active' => true,
+  ),
+  585 =>
+  array(
+    'Description' => 'De-registered',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  659 =>
+  array(
+    'Description' => 'Removed',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  2825 =>
+  array(
+    'Description' => '(unassigned) Possibly assigned',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  2925 =>
+  array(
+    'Description' => 'Unassigned (FRP-Released 12/7/00)',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  3322 =>
+  array(
+    'Description' => 'Active Networks',
+    'Service Name' => 'active-net',
+    'Active' => true,
+  ),
+  3323 =>
+  array(
+    'Description' => 'Active Networks',
+    'Service Name' => 'active-net',
+    'Active' => true,
+  ),
+  3324 =>
+  array(
+    'Description' => 'Active Networks',
+    'Service Name' => 'active-net',
+    'Active' => true,
+  ),
+  3325 =>
+  array(
+    'Description' => 'Active Networks',
+    'Service Name' => 'active-net',
+    'Active' => true,
+  ),
+  3367 =>
+  array(
+    'Description' => 'Satellite Video Data Link',
+    'Service Name' => 'satvid-datalnk',
+    'Active' => true,
+  ),
+  3368 =>
+  array(
+    'Description' => 'Satellite Video Data Link',
+    'Service Name' => 'satvid-datalnk',
+    'Active' => true,
+  ),
+  3369 =>
+  array(
+    'Description' => 'Satellite Video Data Link',
+    'Service Name' => 'satvid-datalnk',
+    'Active' => true,
+  ),
+  3370 =>
+  array(
+    'Description' => 'Satellite Video Data Link',
+    'Service Name' => 'satvid-datalnk',
+    'Active' => true,
+  ),
+  3371 =>
+  array(
+    'Description' => 'Satellite Video Data Link',
+    'Service Name' => 'satvid-datalnk',
+    'Active' => true,
+  ),
+  3403 =>
+  array(
+    'Description' => 'De-registered',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  3404 =>
+  array(
+    'Description' => 'Removed',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  4200 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4201 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4202 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4203 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4204 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4205 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4206 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4207 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4208 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4209 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4210 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4211 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4212 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4213 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4214 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4215 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4216 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4217 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4218 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4219 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4220 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4221 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4222 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4223 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4224 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4225 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4226 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4227 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4228 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4229 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4230 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4231 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4232 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4233 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4234 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4235 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4236 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4237 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4238 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4239 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4240 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4241 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4242 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4243 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4244 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4245 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4246 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4247 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4248 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4249 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4250 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4251 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4252 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4253 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4254 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4255 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4256 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4257 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4258 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4259 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4260 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4261 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4262 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4263 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4264 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4265 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4266 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4267 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4268 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4269 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4270 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4271 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4272 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4273 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4274 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4275 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4276 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4277 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4278 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4279 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4280 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4281 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4282 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4283 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4284 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4285 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4286 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4287 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4288 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4289 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4290 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4291 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4292 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4293 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4294 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4295 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4296 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4297 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4298 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  4299 =>
+  array(
+    'Description' => 'VRML Multi User Systems',
+    'Service Name' => 'vrml-multi-use',
+    'Active' => true,
+  ),
+  6400 =>
+  array(
+    'Description' => 'Business Objects CMS contact port',
+    'Service Name' => 'boe-cms',
+    'Active' => true,
+  ),
+  6401 =>
+  array(
+    'Description' => 'boe-was',
+    'Service Name' => 'boe-was',
+    'Active' => true,
+  ),
+  6402 =>
+  array(
+    'Description' => 'boe-eventsrv',
+    'Service Name' => 'boe-eventsrv',
+    'Active' => true,
+  ),
+  6403 =>
+  array(
+    'Description' => 'boe-cachesvr',
+    'Service Name' => 'boe-cachesvr',
+    'Active' => true,
+  ),
+  6404 =>
+  array(
+    'Description' => 'Business Objects Enterprise internal server',
+    'Service Name' => 'boe-filesvr',
+    'Active' => true,
+  ),
+  6405 =>
+  array(
+    'Description' => 'Business Objects Enterprise internal server',
+    'Service Name' => 'boe-pagesvr',
+    'Active' => true,
+  ),
+  6406 =>
+  array(
+    'Description' => 'Business Objects Enterprise internal server',
+    'Service Name' => 'boe-processsvr',
+    'Active' => true,
+  ),
+  6407 =>
+  array(
+    'Description' => 'Business Objects Enterprise internal server',
+    'Service Name' => 'boe-resssvr1',
+    'Active' => true,
+  ),
+  6408 =>
+  array(
+    'Description' => 'Business Objects Enterprise internal server',
+    'Service Name' => 'boe-resssvr2',
+    'Active' => true,
+  ),
+  6409 =>
+  array(
+    'Description' => 'Business Objects Enterprise internal server',
+    'Service Name' => 'boe-resssvr3',
+    'Active' => true,
+  ),
+  6410 =>
+  array(
+    'Description' => 'Business Objects Enterprise internal server',
+    'Service Name' => 'boe-resssvr4',
+    'Active' => true,
+  ),
+  7300 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7301 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7302 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7303 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7304 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7305 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7306 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7307 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7308 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7309 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7310 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7311 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7312 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7313 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7314 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7315 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7316 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7317 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7318 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7319 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7320 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7321 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7322 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7323 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7324 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7325 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7326 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7327 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7328 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7329 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7330 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7331 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7332 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7333 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7334 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7335 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7336 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7337 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7338 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7339 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7340 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7341 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7342 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7343 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7344 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7345 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7346 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7347 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7348 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7349 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7350 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7351 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7352 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7353 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7354 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7355 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7356 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7357 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7358 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  7359 =>
+  array(
+    'Description' => 'The Swiss Exchange',
+    'Service Name' => 'swx',
+    'Active' => true,
+  ),
+  9006 =>
+  array(
+    'Description' => 'De-Commissioned Port',
+    'Service Name' => '',
+    'Active' => true,
+  ),
+  27000 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27001 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27002 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27003 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27004 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27005 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27006 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27007 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27008 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
+    'Active' => true,
+  ),
+  27009 =>
+  array(
+    'Description' => 'FLEX LM (1-10)',
+    'Service Name' => 'flex-lm',
     'Active' => true,
   ),
   '2700tcp' =>
@@ -27729,12 +28917,6 @@ return array(
     'Service Name' => 'cqg-netlan-1',
     'Active' => true,
   ),
-  2825 =>
-  array(
-    'Description' => '(unassigned) Possibly assigned',
-    'Service Name' => '',
-    'Active' => true,
-  ),
   '2826tcp' =>
   array(
     'Description' => 'slc systemlog',
@@ -29029,12 +30211,6 @@ return array(
   array(
     'Description' => 'PRECISE-VIP',
     'Service Name' => 'precise-vip',
-    'Active' => true,
-  ),
-  2925 =>
-  array(
-    'Description' => 'Unassigned (FRP-Released 12/7/00)',
-    'Service Name' => '',
     'Active' => true,
   ),
   '2926tcp' =>
@@ -34455,30 +35631,6 @@ return array(
     'Service Name' => 'vnsstr',
     'Active' => true,
   ),
-  3322 =>
-  array(
-    'Description' => 'Active Networks',
-    'Service Name' => 'active-net',
-    'Active' => true,
-  ),
-  3323 =>
-  array(
-    'Description' => 'Active Networks',
-    'Service Name' => 'active-net',
-    'Active' => true,
-  ),
-  3324 =>
-  array(
-    'Description' => 'Active Networks',
-    'Service Name' => 'active-net',
-    'Active' => true,
-  ),
-  3325 =>
-  array(
-    'Description' => 'Active Networks',
-    'Service Name' => 'active-net',
-    'Active' => true,
-  ),
   '3326tcp' =>
   array(
     'Description' => 'SFTU',
@@ -35043,36 +36195,6 @@ return array(
     'Service Name' => 'creativepartnr',
     'Active' => true,
   ),
-  3367 =>
-  array(
-    'Description' => 'Satellite Video Data Link',
-    'Service Name' => 'satvid-datalnk',
-    'Active' => true,
-  ),
-  3368 =>
-  array(
-    'Description' => 'Satellite Video Data Link',
-    'Service Name' => 'satvid-datalnk',
-    'Active' => true,
-  ),
-  3369 =>
-  array(
-    'Description' => 'Satellite Video Data Link',
-    'Service Name' => 'satvid-datalnk',
-    'Active' => true,
-  ),
-  3370 =>
-  array(
-    'Description' => 'Satellite Video Data Link',
-    'Service Name' => 'satvid-datalnk',
-    'Active' => true,
-  ),
-  3371 =>
-  array(
-    'Description' => 'Satellite Video Data Link',
-    'Service Name' => 'satvid-datalnk',
-    'Active' => true,
-  ),
   '3372tcp' =>
   array(
     'Description' => 'TIP 2',
@@ -35461,96 +36583,6 @@ return array(
   array(
     'Description' => 'FXa Engine Network Port',
     'Service Name' => 'fxaengine-net',
-    'Active' => true,
-  ),
-  585 =>
-  array(
-    'Description' => 'De-registered',
-    'Service Name' => '',
-    'Active' => true,
-  ),
-  659 =>
-  array(
-    'Description' => 'Removed',
-    'Service Name' => '',
-    'Active' => true,
-  ),
-  3403 =>
-  array(
-    'Description' => 'De-registered',
-    'Service Name' => '',
-    'Active' => true,
-  ),
-  3404 =>
-  array(
-    'Description' => 'Removed',
-    'Service Name' => '',
-    'Active' => true,
-  ),
-  26264 =>
-  array(
-    'Description' => 'De-registered',
-    'Service Name' => '',
-    'Active' => true,
-  ),
-  27000 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27001 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27002 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27003 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27004 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27005 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27006 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27007 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27008 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
-    'Active' => true,
-  ),
-  27009 =>
-  array(
-    'Description' => 'FLEX LM (1-10)',
-    'Service Name' => 'flex-lm',
     'Active' => true,
   ),
   '3405tcp' =>
@@ -46422,66 +47454,6 @@ return array(
     'Service Name' => 'graphics',
     'Active' => true,
   ),
-  4200 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4201 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4202 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4203 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4204 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4205 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4206 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4207 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4208 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4209 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
   '420tcp' =>
   array(
     'Description' => 'SMPTE',
@@ -46492,66 +47464,6 @@ return array(
   array(
     'Description' => 'SMPTE',
     'Service Name' => 'smpte',
-    'Active' => true,
-  ),
-  4210 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4211 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4212 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4213 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4214 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4215 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4216 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4217 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4218 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4219 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
     'Active' => true,
   ),
   '421tcp' =>
@@ -46566,66 +47478,6 @@ return array(
     'Service Name' => 'ariel2',
     'Active' => true,
   ),
-  4220 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4221 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4222 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4223 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4224 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4225 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4226 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4227 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4228 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4229 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
   '422tcp' =>
   array(
     'Description' => 'Ariel 3',
@@ -46636,66 +47488,6 @@ return array(
   array(
     'Description' => 'Ariel 3',
     'Service Name' => 'ariel3',
-    'Active' => true,
-  ),
-  4230 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4231 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4232 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4233 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4234 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4235 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4236 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4237 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4238 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4239 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
     'Active' => true,
   ),
   '423tcp' =>
@@ -46710,66 +47502,6 @@ return array(
     'Service Name' => 'opc-job-start',
     'Active' => true,
   ),
-  4240 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4241 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4242 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4243 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4244 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4245 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4246 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4247 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4248 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4249 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
   '424tcp' =>
   array(
     'Description' => 'IBM Operations Planning and Control Track',
@@ -46780,12 +47512,6 @@ return array(
   array(
     'Description' => 'IBM Operations Planning and Control Track',
     'Service Name' => 'opc-job-track',
-    'Active' => true,
-  ),
-  4250 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
     'Active' => true,
   ),
   '42508tcp' =>
@@ -46812,12 +47538,6 @@ return array(
     'Service Name' => 'candrp',
     'Active' => true,
   ),
-  4251 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
   '42510tcp' =>
   array(
     'Description' => 'CA eTrust RPC',
@@ -46828,54 +47548,6 @@ return array(
   array(
     'Description' => 'CA eTrust RPC',
     'Service Name' => 'caerpc',
-    'Active' => true,
-  ),
-  4252 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4253 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4254 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4255 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4256 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4257 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4258 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4259 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
     'Active' => true,
   ),
   '425tcp' =>
@@ -46890,66 +47562,6 @@ return array(
     'Service Name' => 'icad-el',
     'Active' => true,
   ),
-  4260 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4261 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4262 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4263 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4264 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4265 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4266 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4267 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4268 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4269 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
   '426tcp' =>
   array(
     'Description' => 'smartsdp',
@@ -46960,66 +47572,6 @@ return array(
   array(
     'Description' => 'smartsdp',
     'Service Name' => 'smartsdp',
-    'Active' => true,
-  ),
-  4270 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4271 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4272 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4273 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4274 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4275 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4276 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4277 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4278 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4279 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
     'Active' => true,
   ),
   '427tcp' =>
@@ -47034,66 +47586,6 @@ return array(
     'Service Name' => 'svrloc',
     'Active' => true,
   ),
-  4280 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4281 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4282 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4283 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4284 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4285 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4286 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4287 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4288 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4289 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
   '428tcp' =>
   array(
     'Description' => 'OCS_CMU',
@@ -47104,66 +47596,6 @@ return array(
   array(
     'Description' => 'OCS_CMU',
     'Service Name' => 'ocs_cmu',
-    'Active' => true,
-  ),
-  4290 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4291 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4292 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4293 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4294 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4295 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4296 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4297 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4298 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
-    'Active' => true,
-  ),
-  4299 =>
-  array(
-    'Description' => 'VRML Multi User Systems',
-    'Service Name' => 'vrml-multi-use',
     'Active' => true,
   ),
   '42999tcp' =>
@@ -60348,66 +60780,6 @@ return array(
     'Service Name' => 'whois++',
     'Active' => true,
   ),
-  6400 =>
-  array(
-    'Description' => 'Business Objects CMS contact port',
-    'Service Name' => 'boe-cms',
-    'Active' => true,
-  ),
-  6401 =>
-  array(
-    'Description' => 'boe-was',
-    'Service Name' => 'boe-was',
-    'Active' => true,
-  ),
-  6402 =>
-  array(
-    'Description' => 'boe-eventsrv',
-    'Service Name' => 'boe-eventsrv',
-    'Active' => true,
-  ),
-  6403 =>
-  array(
-    'Description' => 'boe-cachesvr',
-    'Service Name' => 'boe-cachesvr',
-    'Active' => true,
-  ),
-  6404 =>
-  array(
-    'Description' => 'Business Objects Enterprise internal server',
-    'Service Name' => 'boe-filesvr',
-    'Active' => true,
-  ),
-  6405 =>
-  array(
-    'Description' => 'Business Objects Enterprise internal server',
-    'Service Name' => 'boe-pagesvr',
-    'Active' => true,
-  ),
-  6406 =>
-  array(
-    'Description' => 'Business Objects Enterprise internal server',
-    'Service Name' => 'boe-processsvr',
-    'Active' => true,
-  ),
-  6407 =>
-  array(
-    'Description' => 'Business Objects Enterprise internal server',
-    'Service Name' => 'boe-resssvr1',
-    'Active' => true,
-  ),
-  6408 =>
-  array(
-    'Description' => 'Business Objects Enterprise internal server',
-    'Service Name' => 'boe-resssvr2',
-    'Active' => true,
-  ),
-  6409 =>
-  array(
-    'Description' => 'Business Objects Enterprise internal server',
-    'Service Name' => 'boe-resssvr3',
-    'Active' => true,
-  ),
   '640tcp' =>
   array(
     'Description' => 'entrust-sps',
@@ -60418,12 +60790,6 @@ return array(
   array(
     'Description' => 'entrust-sps',
     'Service Name' => 'entrust-sps',
-    'Active' => true,
-  ),
-  6410 =>
-  array(
-    'Description' => 'Business Objects Enterprise internal server',
-    'Service Name' => 'boe-resssvr4',
     'Active' => true,
   ),
   '6417tcp' =>
@@ -62866,7 +63232,7 @@ return array(
   ),
   '700udp' =>
   array(
-    'Description' => 'Extensible Provisioning Protocol',
+    'Description' => 'EPP running over QUIC',
     'Service Name' => 'epp',
     'Active' => true,
   ),
@@ -63334,7 +63700,13 @@ return array(
   ),
   '7123tcp' =>
   array(
-    'Description' => 'End-to-end TLS Relay Control Connection',
+    'Description' => 'SNIF End-to-End TLS Relay Control Connection',
+    'Service Name' => 'snif',
+    'Active' => true,
+  ),
+  '7123udp' =>
+  array(
+    'Description' => 'SNIF End-to-End TLS Relay over QUIC',
     'Service Name' => 'snif',
     'Active' => true,
   ),
@@ -63855,66 +64227,6 @@ return array(
     'Service Name' => 'netrjs-2',
     'Active' => true,
   ),
-  7300 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7301 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7302 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7303 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7304 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7305 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7306 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7307 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7308 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7309 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
   '730tcp' =>
   array(
     'Description' => 'IBM NetView DM/6000 send/tcp',
@@ -63927,66 +64239,6 @@ return array(
     'Service Name' => 'netviewdm2',
     'Active' => true,
   ),
-  7310 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7311 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7312 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7313 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7314 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7315 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7316 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7317 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7318 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7319 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
   '731tcp' =>
   array(
     'Description' => 'IBM NetView DM/6000 receive/tcp',
@@ -63997,246 +64249,6 @@ return array(
   array(
     'Description' => 'IBM NetView DM/6000 receive/tcp',
     'Service Name' => 'netviewdm3',
-    'Active' => true,
-  ),
-  7320 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7321 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7322 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7323 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7324 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7325 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7326 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7327 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7328 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7329 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7330 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7331 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7332 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7333 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7334 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7335 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7336 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7337 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7338 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7339 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7340 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7341 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7342 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7343 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7344 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7345 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7346 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7347 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7348 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7349 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7350 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7351 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7352 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7353 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7354 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7355 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7356 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7357 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7358 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
-    'Active' => true,
-  ),
-  7359 =>
-  array(
-    'Description' => 'The Swiss Exchange',
-    'Service Name' => 'swx',
     'Active' => true,
   ),
   '7365tcp' =>
@@ -68695,12 +68707,6 @@ return array(
   array(
     'Description' => 'Golem Inter-System RPC',
     'Service Name' => 'golem',
-    'Active' => true,
-  ),
-  9006 =>
-  array(
-    'Description' => 'De-Commissioned Port',
-    'Service Name' => '',
     'Active' => true,
   ),
   '9007udp' =>

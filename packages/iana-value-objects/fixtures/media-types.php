@@ -773,6 +773,55 @@ return array(
     'Reference' => '[RFC9052]',
     'Active' => true,
   ),
+  'application/cose-c509+cbor' =>
+  array(
+    'Name' => 'cose-c509+cbor',
+    'Template' => 'application/cose-c509+cbor',
+    'Reference' => '[RFC-ietf-cose-cbor-encoded-cert-20]',
+    'Active' => true,
+  ),
+  'application/cose-c509-cert+cbor' =>
+  array(
+    'Name' => 'cose-c509-cert+cbor',
+    'Template' => 'application/cose-c509-cert+cbor',
+    'Reference' => '[RFC-ietf-cose-cbor-encoded-cert-20]',
+    'Active' => true,
+  ),
+  'application/cose-c509-crtemplate+cbor' =>
+  array(
+    'Name' => 'cose-c509-crtemplate+cbor',
+    'Template' => 'application/cose-c509-crtemplate+cbor',
+    'Reference' => '[RFC-ietf-cose-cbor-encoded-cert-20]',
+    'Active' => true,
+  ),
+  'application/cose-c509-pem+cbor' =>
+  array(
+    'Name' => 'cose-c509-pem+cbor',
+    'Template' => 'application/cose-c509-pem+cbor',
+    'Reference' => '[RFC-ietf-cose-cbor-encoded-cert-20]',
+    'Active' => true,
+  ),
+  'application/cose-c509-pkcs10+cbor' =>
+  array(
+    'Name' => 'cose-c509-pkcs10+cbor',
+    'Template' => 'application/cose-c509-pkcs10+cbor',
+    'Reference' => '[RFC-ietf-cose-cbor-encoded-cert-20]',
+    'Active' => true,
+  ),
+  'application/cose-c509-privkey+cbor' =>
+  array(
+    'Name' => 'cose-c509-privkey+cbor',
+    'Template' => 'application/cose-c509-privkey+cbor',
+    'Reference' => '[RFC-ietf-cose-cbor-encoded-cert-20]',
+    'Active' => true,
+  ),
+  'application/cose-certhash+cbor' =>
+  array(
+    'Name' => 'cose-certhash+cbor',
+    'Template' => 'application/cose-certhash+cbor',
+    'Reference' => '[RFC-ietf-cose-cbor-encoded-cert-20]',
+    'Active' => true,
+  ),
   'application/cose-key' =>
   array(
     'Name' => 'cose-key',
@@ -2002,14 +2051,14 @@ return array(
   array(
     'Name' => 'measured-component+cbor',
     'Template' => 'application/measured-component+cbor',
-    'Reference' => '[RFC-ietf-rats-eat-measured-component-12]',
+    'Reference' => '[RFC10013]',
     'Active' => true,
   ),
   'application/measured-component+json' =>
   array(
     'Name' => 'measured-component+json',
     'Template' => 'application/measured-component+json',
-    'Reference' => '[RFC-ietf-rats-eat-measured-component-12]',
+    'Reference' => '[RFC10013]',
     'Active' => true,
   ),
   'application/media-policy-dataset+xml' =>
@@ -2625,14 +2674,14 @@ return array(
   array(
     'Name' => 'protobuf',
     'Template' => 'application/protobuf',
-    'Reference' => '[RFC-ietf-dispatch-mime-protobuf-06]',
+    'Reference' => '[RFC9996]',
     'Active' => true,
   ),
   'application/protobuf+json' =>
   array(
     'Name' => 'protobuf+json',
     'Template' => 'application/protobuf+json',
-    'Reference' => '[RFC-ietf-dispatch-mime-protobuf-06]',
+    'Reference' => '[RFC9996]',
     'Active' => true,
   ),
   'application/provenance+xml' =>
@@ -2654,6 +2703,13 @@ return array(
     'Name' => 'prs.alvestrand.titrax-sheet',
     'Template' => 'application/prs.alvestrand.titrax-sheet',
     'Reference' => '[Harald_T._Alvestrand]',
+    'Active' => true,
+  ),
+  'application/prs.archive-markdown-format' =>
+  array(
+    'Name' => 'prs.archive-markdown-format',
+    'Template' => 'application/prs.archive-markdown-format',
+    'Reference' => '[Scott_Smith]',
     'Active' => true,
   ),
   'application/prs.bwtc32key' =>
@@ -4413,6 +4469,13 @@ return array(
     'Reference' => '[_3GPP]',
     'Active' => true,
   ),
+  'application/vnd.3gpp.seal-store-forward-events-info+xml' =>
+  array(
+    'Name' => 'vnd.3gpp.seal-store-forward-events-info+xml',
+    'Template' => 'application/vnd.3gpp.seal-store-forward-events-info+xml',
+    'Reference' => '[_3GPP]',
+    'Active' => true,
+  ),
   'application/vnd.3gpp.seal-ue-config-info+xml' =>
   array(
     'Name' => 'vnd.3gpp.seal-ue-config-info+xml',
@@ -4609,6 +4672,13 @@ return array(
     'Reference' => '[John_Brinkman]',
     'Active' => true,
   ),
+  'application/vnd.aep+zip' =>
+  array(
+    'Name' => 'vnd.aep+zip',
+    'Template' => 'application/vnd.aep+zip',
+    'Reference' => '[Anton_Sokolov]',
+    'Active' => true,
+  ),
   'application/vnd.aether.imp' =>
   array(
     'Name' => 'vnd.aether.imp',
@@ -4712,6 +4782,13 @@ return array(
     'Name' => 'vnd.age',
     'Template' => 'application/vnd.age',
     'Reference' => '[Filippo_Valsorda]',
+    'Active' => true,
+  ),
+  'application/vnd.agentmug.agent+json' =>
+  array(
+    'Name' => 'vnd.agentmug.agent+json',
+    'Template' => 'application/vnd.agentmug.agent+json',
+    'Reference' => '[Abdullah_Jamal_Aldahshan]',
     'Active' => true,
   ),
   'application/vnd.agtp.identity+json' =>
@@ -5764,6 +5841,13 @@ return array(
     'Reference' => '[Michael_A_Dolan]',
     'Active' => true,
   ),
+  'application/vnd.deckyard.deck' =>
+  array(
+    'Name' => 'vnd.deckyard.deck',
+    'Template' => 'application/vnd.deckyard.deck',
+    'Reference' => '[Jaap_Stronks]',
+    'Active' => true,
+  ),
   'application/vnd.denovo.fcselayout-link' =>
   array(
     'Name' => 'vnd.denovo.fcselayout-link',
@@ -5783,6 +5867,13 @@ return array(
     'Name' => 'vnd.deut+json',
     'Template' => 'application/vnd.deut+json',
     'Reference' => '[Deut.li]',
+    'Active' => true,
+  ),
+  'application/vnd.dgl' =>
+  array(
+    'Name' => 'vnd.dgl',
+    'Template' => 'application/vnd.dgl',
+    'Reference' => '[Yusuf_Vızvız]',
     'Active' => true,
   ),
   'application/vnd.digitalstack.document+zip' =>
@@ -5888,6 +5979,13 @@ return array(
     'Name' => 'vnd.dvb.ait',
     'Template' => 'application/vnd.dvb.ait',
     'Reference' => '[Peter_Siebert][Michael_Lagally]',
+    'Active' => true,
+  ),
+  'application/vnd.dvb.dash-playlist+xml' =>
+  array(
+    'Name' => 'vnd.dvb.dash-playlist+xml',
+    'Template' => 'application/vnd.dvb.dash-playlist+xml',
+    'Reference' => '[Emily_DUBS]',
     'Active' => true,
   ),
   'application/vnd.dvb.dvbisl+xml' =>
@@ -7682,6 +7780,13 @@ return array(
     'Reference' => '[Yokoyama_Kiyonobu]',
     'Active' => true,
   ),
+  'application/vnd.jupyter' =>
+  array(
+    'Name' => 'vnd.jupyter',
+    'Template' => 'application/vnd.jupyter',
+    'Reference' => '[Jupyter_Team]',
+    'Active' => true,
+  ),
   'application/vnd.kahootz' =>
   array(
     'Name' => 'vnd.kahootz',
@@ -7785,6 +7890,13 @@ return array(
     'Name' => 'vnd.Kinar',
     'Template' => 'application/vnd.Kinar',
     'Reference' => '[Hemant_Thakkar]',
+    'Active' => true,
+  ),
+  'application/vnd.klypix+zip' =>
+  array(
+    'Name' => 'vnd.klypix+zip',
+    'Template' => 'application/vnd.klypix+zip',
+    'Reference' => '[Abdullah_Jamal_Aldahshan]',
     'Active' => true,
   ),
   'application/vnd.koan' =>
@@ -7945,6 +8057,13 @@ return array(
   array(
     'Name' => 'vnd.majikah.bundle',
     'Template' => 'application/vnd.majikah.bundle',
+    'Reference' => '[Josef_Elijah_Fabian]',
+    'Active' => true,
+  ),
+  'application/vnd.majikah.mjksig' =>
+  array(
+    'Name' => 'vnd.majikah.mjksig',
+    'Template' => 'application/vnd.majikah.mjksig',
     'Reference' => '[Josef_Elijah_Fabian]',
     'Active' => true,
   ),
@@ -8879,6 +8998,13 @@ return array(
     'Reference' => '[Nokia]',
     'Active' => true,
   ),
+  'application/vnd.nomos+json' =>
+  array(
+    'Name' => 'vnd.nomos+json',
+    'Template' => 'application/vnd.nomos+json',
+    'Reference' => '[Allan_Sendagi]',
+    'Active' => true,
+  ),
   'application/vnd.novadigm.edm' =>
   array(
     'Name' => 'vnd.novadigm.EDM',
@@ -9556,6 +9682,13 @@ return array(
     'Name' => 'vnd.onvif.metadata',
     'Template' => 'application/vnd.onvif.metadata',
     'Reference' => '[Hans_Busch]',
+    'Active' => true,
+  ),
+  'application/vnd.ootmm.patch+zip' =>
+  array(
+    'Name' => 'vnd.ootmm.patch+zip',
+    'Template' => 'application/vnd.ootmm.patch+zip',
+    'Reference' => '[Maxime_Bacoux]',
     'Active' => true,
   ),
   'application/vnd.openblox.game+xml' =>
@@ -10314,6 +10447,13 @@ return array(
     'Reference' => '[Jorge_Pando]',
     'Active' => true,
   ),
+  'application/vnd.portableweb+zip' =>
+  array(
+    'Name' => 'vnd.portableweb+zip',
+    'Template' => 'application/vnd.portableweb+zip',
+    'Reference' => '[Omprakash_Selvaraj]',
+    'Active' => true,
+  ),
   'application/vnd.powerbuilder6' =>
   array(
     'Name' => 'vnd.powerbuilder6',
@@ -10375,6 +10515,13 @@ return array(
     'Name' => 'vnd.previewsystems.box',
     'Template' => 'application/vnd.previewsystems.box',
     'Reference' => '[Roman_Smolgovsky]',
+    'Active' => true,
+  ),
+  'application/vnd.prismatic' =>
+  array(
+    'Name' => 'vnd.prismatic',
+    'Template' => 'application/vnd.prismatic',
+    'Reference' => '[Thomas_Hern]',
     'Active' => true,
   ),
   'application/vnd.project-graph' =>
@@ -10697,6 +10844,13 @@ return array(
     'Name' => 'vnd.sailingtracker.track',
     'Template' => 'application/vnd.sailingtracker.track',
     'Reference' => '[Heikki_Vesalainen]',
+    'Active' => true,
+  ),
+  'application/vnd.salvanote.sal' =>
+  array(
+    'Name' => 'vnd.salvanote.sal',
+    'Template' => 'application/vnd.salvanote.sal',
+    'Reference' => '[Geoff_Ellison]',
     'Active' => true,
   ),
   'application/vnd.sar' =>
@@ -11201,6 +11355,13 @@ return array(
     'Name' => 'vnd.syncml.ds.notification',
     'Template' => 'application/vnd.syncml.ds.notification',
     'Reference' => '[OMA_Data_Synchronization_WG]',
+    'Active' => true,
+  ),
+  'application/vnd.tablafocus.notation' =>
+  array(
+    'Name' => 'vnd.tablafocus.notation',
+    'Template' => 'application/vnd.tablafocus.notation',
+    'Reference' => '[Sreeram_Kongeseri]',
     'Active' => true,
   ),
   'application/vnd.tableschema+json' =>
@@ -13499,6 +13660,13 @@ return array(
     'Reference' => '[Greg_Vaudreuil]',
     'Active' => true,
   ),
+  'audio/vnd.opennbs.nbs' =>
+  array(
+    'Name' => 'vnd.opennbs.nbs',
+    'Template' => 'audio/vnd.opennbs.nbs',
+    'Reference' => '[OpenNBS_Project]',
+    'Active' => true,
+  ),
   'audio/vnd.presonus.multitrack' =>
   array(
     'Name' => 'vnd.presonus.multitrack',
@@ -15016,6 +15184,13 @@ return array(
     'Name' => 'prs.texi',
     'Template' => 'text/prs.texi',
     'Reference' => '[Matin_Bavardi]',
+    'Active' => true,
+  ),
+  'text/qml' =>
+  array(
+    'Name' => 'qml',
+    'Template' => 'text/qml',
+    'Reference' => '[Qt][7]',
     'Active' => true,
   ),
   'text/raptorfec' =>

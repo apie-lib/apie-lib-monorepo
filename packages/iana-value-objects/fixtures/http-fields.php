@@ -1151,7 +1151,7 @@ return array(
   array(
     'Field Name' => 'Incremental',
     'Status' => 'permanent',
-    'Structured Type' => '',
+    'Structured Type' => 'Item',
     'Reference' => '[RFC-ietf-httpbis-incremental-04: Incremental Forwarding of HTTP Messages]',
     'Comments' => '',
     'Active' => true,

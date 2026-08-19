@@ -41,7 +41,7 @@
     "apie/text-value-objects": "self.version",
     "devizzent/cebe-php-openapi": "^1.1.5",
     "egulias/email-validator": "^4.0.2",
-    "symfony/html-sanitizer": "^7.2"
+    "symfony/html-sanitizer": "^7.4"
   },
   "require-dev": {
     "apie/fixtures": "self.version",

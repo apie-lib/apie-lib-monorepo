@@ -10388,7 +10388,7 @@ return array(
     'Active' => true,
     'Type' => 'language',
     'Subtag' => 'cey',
-    'Description' => 'Ekai Chin',
+    'Description' => 'Laoktu Chin',
     'Added' => '2019-04-16',
   ),
   'cfa' =>
@@ -33925,7 +33925,7 @@ return array(
     'Active' => true,
     'Type' => 'language',
     'Subtag' => 'mgp',
-    'Description' => 'Eastern Magar',
+    'Description' => 'Magar',
     'Added' => '2009-07-29',
   ),
   'mgq' =>
@@ -36099,6 +36099,8 @@ return array(
     'Subtag' => 'mrd',
     'Description' => 'Western Magar',
     'Added' => '2009-07-29',
+    'Deprecated' => '2026-08-08',
+    'Preferred-Value' => 'mgp',
   ),
   'mre' =>
   array(
@@ -36129,7 +36131,7 @@ return array(
     'Active' => true,
     'Type' => 'language',
     'Subtag' => 'mrh',
-    'Description' => 'Mara Chin',
+    'Description' => 'Mara',
     'Added' => '2009-07-29',
   ),
   'mrj' =>
@@ -49794,6 +49796,8 @@ return array(
     'Subtag' => 'shl',
     'Description' => 'Shendu',
     'Added' => '2009-07-29',
+    'Deprecated' => '2026-08-08',
+    'Preferred-Value' => 'mrh',
   ),
   'shm' =>
   array(

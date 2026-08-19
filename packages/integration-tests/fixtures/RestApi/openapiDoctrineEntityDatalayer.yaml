@@ -11897,6 +11897,7 @@ components:
         - acr
         - adiumxtra
         - adt
+        - aet
         - afp
         - afs
         - agtp
@@ -11931,6 +11932,7 @@ components:
         - chrome
         - chrome-extension
         - cid
+        - cm
         - coap
         - coap+tcp
         - coap+ws
@@ -11988,6 +11990,8 @@ components:
         - fm
         - ftp
         - fuchsia-pkg
+        - gcx
+        - gdsi
         - geo
         - gg
         - git
@@ -12155,6 +12159,7 @@ components:
         - ni
         - nih
         - nntp
+        - nostr
         - notes
         - npamp
         - num
@@ -12170,6 +12175,7 @@ components:
         - paparazzi
         - payto
         - pkcs11
+        - pkg
         - platform
         - pop
         - pres
@@ -12253,6 +12259,7 @@ components:
         - unreal
         - upn
         - urn
+        - ust
         - ut2004
         - uuaid
         - uuid-in-package
@@ -12305,6 +12312,7 @@ components:
         - acr
         - adiumxtra
         - adt
+        - aet
         - afp
         - afs
         - agtp
@@ -12339,6 +12347,7 @@ components:
         - chrome
         - chrome-extension
         - cid
+        - cm
         - coap
         - coap+tcp
         - coap+ws
@@ -12396,6 +12405,8 @@ components:
         - fm
         - ftp
         - fuchsia-pkg
+        - gcx
+        - gdsi
         - geo
         - gg
         - git
@@ -12563,6 +12574,7 @@ components:
         - ni
         - nih
         - nntp
+        - nostr
         - notes
         - npamp
         - num
@@ -12578,6 +12590,7 @@ components:
         - paparazzi
         - payto
         - pkcs11
+        - pkg
         - platform
         - pop
         - pres
@@ -12661,6 +12674,7 @@ components:
         - unreal
         - upn
         - urn
+        - ust
         - ut2004
         - uuaid
         - uuid-in-package
@@ -15393,6 +15407,7 @@ components:
         - acr
         - adiumxtra
         - adt
+        - aet
         - afp
         - afs
         - agtp
@@ -15428,6 +15443,7 @@ components:
         - chrome
         - chrome-extension
         - cid
+        - cm
         - coap
         - coap+tcp
         - coap+ws
@@ -15488,6 +15504,8 @@ components:
         - fm
         - ftp
         - fuchsia-pkg
+        - gcx
+        - gdsi
         - geo
         - gg
         - git
@@ -15658,6 +15676,7 @@ components:
         - ni
         - nih
         - nntp
+        - nostr
         - notes
         - npamp
         - num
@@ -15676,6 +15695,7 @@ components:
         - payment
         - payto
         - pkcs11
+        - pkg
         - platform
         - pop
         - pres
@@ -15763,6 +15783,7 @@ components:
         - upn
         - upt
         - urn
+        - ust
         - ut2004
         - uuaid
         - uuid-in-package
@@ -15819,6 +15840,7 @@ components:
         - acr
         - adiumxtra
         - adt
+        - aet
         - afp
         - afs
         - agtp
@@ -15854,6 +15876,7 @@ components:
         - chrome
         - chrome-extension
         - cid
+        - cm
         - coap
         - coap+tcp
         - coap+ws
@@ -15914,6 +15937,8 @@ components:
         - fm
         - ftp
         - fuchsia-pkg
+        - gcx
+        - gdsi
         - geo
         - gg
         - git
@@ -16084,6 +16109,7 @@ components:
         - ni
         - nih
         - nntp
+        - nostr
         - notes
         - npamp
         - num
@@ -16102,6 +16128,7 @@ components:
         - payment
         - payto
         - pkcs11
+        - pkg
         - platform
         - pop
         - pres
@@ -16189,6 +16216,7 @@ components:
         - upn
         - upt
         - urn
+        - ust
         - ut2004
         - uuaid
         - uuid-in-package

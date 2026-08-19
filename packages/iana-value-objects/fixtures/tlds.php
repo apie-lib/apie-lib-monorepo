@@ -6173,6 +6173,11 @@ return array(
     'Active' => true,
     'Subtag' => 'WEATHERCHANNEL',
   ),
+  'web' =>
+  array(
+    'Active' => true,
+    'Subtag' => 'WEB',
+  ),
   'webcam' =>
   array(
     'Active' => true,
