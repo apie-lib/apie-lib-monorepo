@@ -1,21 +1,70 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Menu</ion-title>
-    </ion-toolbar>
-</ion-header>
-<ion-content>
-    <div class="menu-content">
-        <ion-list>
-                      <ion-item>
-              <a href="/default/resource/UserWithAddress" style="align-items: center; color: var(--gr-color-dark); display: flex; font-weight: var(--gr-font-weight-normal); margin-left: 0.5rem; padding: 0.5rem;">
-                UserWithAddress
-              </a>
-            </ion-item>
-                      <ion-item>
-              <a href="/default/resource/Order" style="align-items: center; color: var(--gr-color-dark); display: flex; font-weight: var(--gr-font-weight-normal); margin-left: 0.5rem; padding: 0.5rem;">
-                Order
-              </a>
-            </ion-item>
-                  </ion-list>
-    </div>
-</ion-content>
+    <ion-menu content-id="main-content">
+
+        <ion-header>
+
+            <ion-toolbar color="primary">
+
+                <ion-title>
+                    CMS
+                </ion-title>
+
+            </ion-toolbar>
+
+        </ion-header>
+
+
+        <ion-content>
+
+
+            <ion-list>
+
+
+                <!-- DASHBOARD -->
+
+                <ion-item button>
+
+                    <ion-icon
+                            slot="start"
+                            name="home-outline">
+                    </ion-icon>
+
+                    Dashboard
+
+                </ion-item>
+
+
+
+                <!-- CONTENT TREE -->
+
+                <ion-accordion-group>
+                                                <ion-accordion toggleIcon="">
+        <ion-item slot="header" class="submenu-level-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" slot="start" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" d="M416 221.25V416a48 48 0 0 1-48 48H144a48 48 0 0 1-48-48V96a48 48 0 0 1 48-48h98.75a32 32 0 0 1 22.62 9.37l141.26 141.26a32 32 0 0 1 9.37 22.62Z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 56v120a32 32 0 0 0 32 32h120m-232 80h160m-160 80h160"/></svg>
+                        <ion-label data-url="/test" onclick="location.href=this.dataset.url">
+                apie.menu.test.header
+            </ion-label>
+        </ion-item>
+            </ion-accordion>
+
+                                                <ion-accordion toggleIcon="">
+        <ion-item slot="header" class="submenu-level-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" slot="start" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" d="M416 221.25V416a48 48 0 0 1-48 48H144a48 48 0 0 1-48-48V96a48 48 0 0 1 48-48h98.75a32 32 0 0 1 22.62 9.37l141.26 141.26a32 32 0 0 1 9.37 22.62Z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 56v120a32 32 0 0 0 32 32h120m-232 80h160m-160 80h160"/></svg>
+                        <ion-label data-url="/test2" onclick="location.href=this.dataset.url">
+                apie.menu.test2.header
+            </ion-label>
+        </ion-item>
+            </ion-accordion>
+
+                                                <ion-accordion toggleIcon="">
+        <ion-item slot="header" class="submenu-level-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" slot="start" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" d="M416 221.25V416a48 48 0 0 1-48 48H144a48 48 0 0 1-48-48V96a48 48 0 0 1 48-48h98.75a32 32 0 0 1 22.62 9.37l141.26 141.26a32 32 0 0 1 9.37 22.62Z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 56v120a32 32 0 0 0 32 32h120m-232 80h160m-160 80h160"/></svg>
+                        <ion-label data-url="/test3" onclick="location.href=this.dataset.url">
+                apie.menu.test3.header
+            </ion-label>
+        </ion-item>
+            </ion-accordion>
+
+                                    </ion-accordion-group>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
