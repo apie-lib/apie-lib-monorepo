@@ -2056,7 +2056,11 @@
                                     },
                                     {
                                         "type": "string",
-                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?create\\.[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?properties\\.[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
                                     },
                                     {
                                         "type": "string",
@@ -7057,6 +7061,37 @@
                             "method-call": true,
                             "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
                             "methodName": "sum",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-translation-method-translate",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "list"
+                        ],
+                        "properties": {
+                            "list": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "description": "Calls method translate and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Translation",
+                        "x-method": "translate",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Translation",
+                            "methodName": "translate",
                             "display-form": true,
                             "_apie_action": "Apie\\Common\\Actions\\RunAction"
                         },

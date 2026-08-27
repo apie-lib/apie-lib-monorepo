@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Serializer\Normalizers;
 
+use Apie\Core\ContextConstants;
 use Apie\Core\Translator\ApieTranslatorInterface;
 use Apie\Core\Translator\Lists\TranslationStringSet;
 use Apie\Core\Translator\ValueObjects\AbstractTranslation;
@@ -20,10 +21,17 @@ class TranslationNormalizer implements NormalizerInterface
         mixed $object,
         ApieSerializerContext $apieSerializerContext
     ): string {
-        $translator = $apieSerializerContext->getContext()->getContext(ApieTranslatorInterface::class, false);
+        $context = $apieSerializerContext->getContext();
+        if ($context->hasContext(ContextConstants::ACCEPT_LOCALE)) {
+            $context = $context->withContext(
+                ContextConstants::LOCALE,
+                $context->getContext(ContextConstants::ACCEPT_LOCALE)
+            );
+        }
+        $translator = $context->getContext(ApieTranslatorInterface::class, false);
 
         if ($translator instanceof ApieTranslatorInterface) {
-            return $translator->getGeneralTranslation($apieSerializerContext->getContext(), $object) ?? Utils::toString($object);
+            return $translator->getGeneralTranslation($context, $object) ?? Utils::toString($object);
         }
 
         return Utils::toString($object);

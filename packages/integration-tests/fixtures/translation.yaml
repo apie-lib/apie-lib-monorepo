@@ -12,6 +12,9 @@ apie:
                             unauthenticated: 'Audit log'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -88,6 +91,9 @@ apie:
                             unauthenticated: 'Sequential background process'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -168,6 +174,9 @@ apie:
                             unauthenticated: User
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -255,6 +264,9 @@ apie:
                             unauthenticated: 'Uploaded file'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -336,6 +348,9 @@ apie:
                             unauthenticated: 'Union object'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -426,6 +441,9 @@ apie:
                             unauthenticated: 'Translation aware'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -516,6 +534,9 @@ apie:
                             unauthenticated: 'Special type only'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -597,6 +618,9 @@ apie:
                             unauthenticated: 'Restricted entity'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -678,6 +702,9 @@ apie:
                             unauthenticated: 'Primitive only'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -759,6 +786,9 @@ apie:
                             unauthenticated: Order
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -848,6 +878,9 @@ apie:
                             unauthenticated: 'Object with relation'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -938,6 +971,9 @@ apie:
                             unauthenticated: 'Iana object'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -1028,6 +1064,9 @@ apie:
                             unauthenticated: 'External file'
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -1108,6 +1147,9 @@ apie:
                             unauthenticated: Animal
                     menu:
                         types:
+                            translation:
+                                translate: { header: { authenticated: Translate, '': Translate, unauthenticated: Translate } }
+                                header: { authenticated: Translation, '': Translation, unauthenticated: Translation }
                             calculator:
                                 sum: { header: { authenticated: Sum, '': Sum, unauthenticated: Sum } }
                                 square_root: { header: { authenticated: 'Square root', '': 'Square root', unauthenticated: 'Square root' } }
@@ -1181,6 +1223,16 @@ apie:
                                 label: { authenticated: 'Edit animal', '': 'Edit animal', unauthenticated: 'Edit animal' }
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                '': Translate
+                                authenticated: Translate
+                                unauthenticated: Translate
+                        header:
+                            '': Translation
+                            authenticated: Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -1488,6 +1540,16 @@ apie:
                 unauthenticated: 'Audit log'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -1709,6 +1771,16 @@ apie:
                 unauthenticated: 'Sequential background process'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -1942,6 +2014,16 @@ apie:
                 unauthenticated: User
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -2212,6 +2294,16 @@ apie:
                 unauthenticated: 'Uploaded file'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -2444,6 +2536,16 @@ apie:
                 unauthenticated: 'Union object'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -2685,6 +2787,16 @@ apie:
                 unauthenticated: 'Translation aware'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -2926,6 +3038,16 @@ apie:
                 unauthenticated: 'Special type only'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -3158,6 +3280,16 @@ apie:
                 unauthenticated: 'Restricted entity'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -3390,6 +3522,16 @@ apie:
                 unauthenticated: 'Primitive only'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -3622,6 +3764,16 @@ apie:
                 unauthenticated: Order
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -3864,6 +4016,16 @@ apie:
                 unauthenticated: 'Object with relation'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -4105,6 +4267,16 @@ apie:
                 unauthenticated: 'Iana object'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -4346,6 +4518,16 @@ apie:
                 unauthenticated: 'External file'
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -4579,6 +4761,16 @@ apie:
                 unauthenticated: Animal
             menu:
                 types:
+                    translation:
+                        translate:
+                            header:
+                                authenticated: Translate
+                                '': Translate
+                                unauthenticated: Translate
+                        header:
+                            authenticated: Translation
+                            '': Translation
+                            unauthenticated: Translation
                     calculator:
                         sum:
                             header:
@@ -4804,6 +4996,16 @@ apie:
                             unauthenticated: 'Edit animal'
     menu:
         types:
+            translation:
+                translate:
+                    header:
+                        '': Translate
+                        authenticated: Translate
+                        unauthenticated: Translate
+                header:
+                    '': Translation
+                    authenticated: Translation
+                    unauthenticated: Translation
             calculator:
                 sum:
                     header:

@@ -16,6 +16,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -336,6 +350,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -674,6 +702,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -1062,6 +1104,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -1398,6 +1454,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -1746,6 +1816,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -2094,6 +2178,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -2430,6 +2528,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -2766,6 +2878,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -3102,6 +3228,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -3452,6 +3592,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -3800,6 +3954,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -4148,6 +4316,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -4486,6 +4668,20 @@
                         },
                         "menu": {
                             "types": {
+                                "translation": {
+                                    "translate": {
+                                        "header": {
+                                            "authenticated": "Translate",
+                                            "": "Translate",
+                                            "unauthenticated": "Translate"
+                                        }
+                                    },
+                                    "header": {
+                                        "authenticated": "Translation",
+                                        "": "Translation",
+                                        "unauthenticated": "Translation"
+                                    }
+                                },
                                 "calculator": {
                                     "sum": {
                                         "header": {
@@ -4812,6 +5008,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "": "Translate",
+                                    "authenticated": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "": "Translation",
+                                "authenticated": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -5247,6 +5457,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -5564,6 +5788,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -5899,6 +6137,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -6284,6 +6536,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -6617,6 +6883,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -6962,6 +7242,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -7307,6 +7601,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -7640,6 +7948,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -7973,6 +8295,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -8306,6 +8642,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -8653,6 +9003,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -8998,6 +9362,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -9343,6 +9721,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -9678,6 +10070,20 @@
                 },
                 "menu": {
                     "types": {
+                        "translation": {
+                            "translate": {
+                                "header": {
+                                    "authenticated": "Translate",
+                                    "": "Translate",
+                                    "unauthenticated": "Translate"
+                                }
+                            },
+                            "header": {
+                                "authenticated": "Translation",
+                                "": "Translation",
+                                "unauthenticated": "Translation"
+                            }
+                        },
                         "calculator": {
                             "sum": {
                                 "header": {
@@ -10004,6 +10410,20 @@
         },
         "menu": {
             "types": {
+                "translation": {
+                    "translate": {
+                        "header": {
+                            "": "Translate",
+                            "authenticated": "Translate",
+                            "unauthenticated": "Translate"
+                        }
+                    },
+                    "header": {
+                        "": "Translation",
+                        "authenticated": "Translation",
+                        "unauthenticated": "Translation"
+                    }
+                },
                 "calculator": {
                     "sum": {
                         "header": {

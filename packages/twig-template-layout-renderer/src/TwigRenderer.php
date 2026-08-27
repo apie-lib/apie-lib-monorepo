@@ -21,7 +21,7 @@ final class TwigRenderer implements ComponentRendererInterface
         string $path,
         private AssetManager $assetManager,
         private string $namespacePrefix,
-        ?UXIconRuntime $uxIconRuntime = null,
+        UXIconRuntime $uxIconRuntime,
     ) {
         $loader = new FilesystemLoader([$path, self::getFallbackFixturesPath()]);
         $this->twigEnvironment = new Environment($loader, []);

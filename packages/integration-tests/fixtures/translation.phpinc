@@ -27,6 +27,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -439,6 +457,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -875,6 +911,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -1374,6 +1428,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -1807,6 +1879,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -2255,6 +2345,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -2703,6 +2811,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -3136,6 +3262,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -3569,6 +3713,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -4002,6 +4164,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -4453,6 +4633,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -4901,6 +5099,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -5349,6 +5565,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -5785,6 +6019,24 @@ return array (
             array (
               'types' => 
               array (
+                'translation' => 
+                array (
+                  'translate' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Translate',
+                      '' => 'Translate',
+                      'unauthenticated' => 'Translate',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Translation',
+                    '' => 'Translation',
+                    'unauthenticated' => 'Translation',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -6204,6 +6456,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  '' => 'Translate',
+                  'authenticated' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                '' => 'Translation',
+                'authenticated' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -6761,6 +7031,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -7168,6 +7456,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -7599,6 +7905,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -8093,6 +8417,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -8521,6 +8863,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -8964,6 +9324,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -9407,6 +9785,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -9835,6 +10231,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -10263,6 +10677,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -10691,6 +11123,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -11137,6 +11587,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -11580,6 +12048,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -12023,6 +12509,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -12454,6 +12958,24 @@ return array (
         array (
           'types' => 
           array (
+            'translation' => 
+            array (
+              'translate' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Translate',
+                  '' => 'Translate',
+                  'unauthenticated' => 'Translate',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Translation',
+                '' => 'Translation',
+                'unauthenticated' => 'Translation',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -12873,6 +13395,24 @@ return array (
     array (
       'types' => 
       array (
+        'translation' => 
+        array (
+          'translate' => 
+          array (
+            'header' => 
+            array (
+              '' => 'Translate',
+              'authenticated' => 'Translate',
+              'unauthenticated' => 'Translate',
+            ),
+          ),
+          'header' => 
+          array (
+            '' => 'Translation',
+            'authenticated' => 'Translation',
+            'unauthenticated' => 'Translation',
+          ),
+        ),
         'calculator' => 
         array (
           'sum' => 

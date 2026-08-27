@@ -661,6 +661,24 @@ trait CreatesApieBoundedContext
         ]);
     }
 
+    public function createTranslationTestHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Translation/translate',
+            new GetAndSetPrimitiveField(
+                '',
+                [
+                    'list' => ['apie', 'bounded', 'types', 'resource', 'example', 'name', 'plural']
+                ],
+                'Examples'
+            )
+        ))->withAdditionalHeaders([
+            'accept-language' => 'nl-NL',
+            'content-language' => 'en-US',
+        ]);
+    }
+
     /**
      * test POST /Authentication/dataLocale
      *

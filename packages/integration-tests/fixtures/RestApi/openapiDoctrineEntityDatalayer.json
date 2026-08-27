@@ -2579,6 +2579,75 @@
                 }
             }
         },
+        "/action/Translation/translate/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Translation"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.Translation-translate",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/action/Authentication/verifyAuthentication/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -11262,6 +11331,115 @@
                 }
             }
         },
+        "/Translation/translate": {
+            "post": {
+                "tags": [
+                    "Translation",
+                    "action"
+                ],
+                "description": "Calls method translate and returns return value.",
+                "operationId": "call-method-Translation-translate",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "list"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "list": {
+                                        "$ref": "#/components/schemas/StringList-post"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Translation-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/Authentication/verifyAuthentication": {
             "post": {
                 "tags": [
@@ -18049,11 +18227,6 @@
                 ],
                 "type": "string"
             },
-            "AuditLogEventMessage-get": {
-                "type": "string",
-                "format": "auditlogeventmessage",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?audit_log\\.(unknown_event|migration|created|replaced|method_called\\.[a-zA-Z0-9]+|migration|modified|read_list|read|removed)(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
             "AuditLogEventMessage-post": {
                 "type": "string",
                 "format": "auditlogeventmessage",
@@ -18285,6 +18458,11 @@
                 "format": "companyname",
                 "description": "Represents a company name.",
                 "pattern": "^\\w[\\w\\-\\s'`\"\u2018\u2019\u201c\u201d\u201f,]*$"
+            },
+            "CreateFormFieldProperty-post": {
+                "type": "string",
+                "format": "createformfieldproperty",
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?create\\.[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "DatabaseText-nullable-get": {
                 "maxLength": 65535,
@@ -18791,15 +18969,10 @@
                     }
                 }
             },
-            "FormFieldProperty-get": {
-                "type": "string",
-                "format": "formfieldproperty",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
             "FormFieldProperty-post": {
                 "type": "string",
                 "format": "formfieldproperty",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
+                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?properties\\.[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "GMP-nullable-get": {
                 "type": "string",
@@ -20000,13 +20173,6 @@
                 "format": "mediatype",
                 "nullable": true
             },
-            "MenuHeader-get": {
-                "type": "string",
-                "format": "menuheader",
-                "description": "Menu header translations. Keys reflect the tree structure of the menu",
-                "example": "apie.menu.header.root.test.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?(menu.header|(menu(\\.[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*))*\\.header)(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
             "MenuHeader-post": {
                 "type": "string",
                 "format": "menuheader",
@@ -20516,26 +20682,12 @@
                 "type": "object",
                 "properties": {}
             },
-            "ResourceAddResourceButtonLabel-get": {
-                "type": "string",
-                "format": "resourceaddresourcebuttonlabel",
-                "description": "Text shown on add resource button",
-                "example": "apie.bounded.test.resource.user.action.add.label.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.add\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
             "ResourceAddResourceButtonLabel-post": {
                 "type": "string",
                 "format": "resourceaddresourcebuttonlabel",
                 "description": "Text shown on add resource button",
                 "example": "apie.bounded.test.resource.user.action.add.label.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.add\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
-            "ResourceAddResourceHeader-get": {
-                "type": "string",
-                "format": "resourceaddresourceheader",
-                "description": "Header shown on add resource form",
-                "example": "apie.bounded.test.example.user.action.add.header.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.add\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "ResourceAddResourceHeader-post": {
                 "type": "string",
@@ -20544,26 +20696,12 @@
                 "example": "apie.bounded.test.example.user.action.add.header.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.add\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
-            "ResourceCustomActionResourceButtonLabel-get": {
-                "type": "string",
-                "format": "resourcecustomactionresourcebuttonlabel",
-                "description": "Label shown on button for a domain specific action",
-                "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.label.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
             "ResourceCustomActionResourceButtonLabel-post": {
                 "type": "string",
                 "format": "resourcecustomactionresourcebuttonlabel",
                 "description": "Label shown on button for a domain specific action",
                 "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.label.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
-            "ResourceCustomActionResourceHeader-get": {
-                "type": "string",
-                "format": "resourcecustomactionresourceheader",
-                "description": "Header shown on form for a domain specific action",
-                "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.header.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "ResourceCustomActionResourceHeader-post": {
                 "type": "string",
@@ -20572,26 +20710,12 @@
                 "example": "apie.bounded.test.example.user.action.custom.1234.deactivate.header.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.custom\\.[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
-            "ResourceCustomGlobalActionResourceButtonLabel-get": {
-                "type": "string",
-                "format": "resourcecustomglobalactionresourcebuttonlabel",
-                "description": "Label shown on button for a domain specific action",
-                "example": "apie.bounded.test.example.user.action.global.create_admin.label.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
             "ResourceCustomGlobalActionResourceButtonLabel-post": {
                 "type": "string",
                 "format": "resourcecustomglobalactionresourcebuttonlabel",
                 "description": "Label shown on button for a domain specific action",
                 "example": "apie.bounded.test.example.user.action.global.create_admin.label.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
-            "ResourceCustomGlobalActionResourceHeader-get": {
-                "type": "string",
-                "format": "resourcecustomglobalactionresourceheader",
-                "description": "Header shown on form for a domain specific action",
-                "example": "apie.bounded.test.example.user.action.global.create_admin.header.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "ResourceCustomGlobalActionResourceHeader-post": {
                 "type": "string",
@@ -20600,26 +20724,12 @@
                 "example": "apie.bounded.test.example.user.action.global.create_admin.header.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.global\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
-            "ResourceModifyResourceButtonLabel-get": {
-                "type": "string",
-                "format": "resourcemodifyresourcebuttonlabel",
-                "description": "Text shown on edit resource button",
-                "example": "apie.bounded.test.example.user.action.edit.:id.label.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
             "ResourceModifyResourceButtonLabel-post": {
                 "type": "string",
                 "format": "resourcemodifyresourcebuttonlabel",
                 "description": "Text shown on edit resource button",
                 "example": "apie.bounded.test.example.user.action.edit.:id.label.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.label(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
-            "ResourceModifyResourceHeader-get": {
-                "type": "string",
-                "format": "resourcemodifyresourceheader",
-                "description": "Header shown on edit resource button",
-                "example": "apie.bounded.test.example.user.action.edit.:id.header.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "ResourceModifyResourceHeader-post": {
                 "type": "string",
@@ -20628,26 +20738,12 @@
                 "example": "apie.bounded.test.example.user.action.edit.:id.header.authenticated",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action\\.edit\\.[a-zA-Z0-9]+\\.header(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
-            "ResourceName-get": {
-                "type": "string",
-                "format": "resourcename",
-                "description": "Name of resource",
-                "example": "apie.bounded.test.resource.user.name.singular",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?name(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
             "ResourceName-post": {
                 "type": "string",
                 "format": "resourcename",
                 "description": "Name of resource",
                 "example": "apie.bounded.test.resource.user.name.singular",
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?name(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
-            },
-            "ResourceOverviewHeader-get": {
-                "type": "string",
-                "format": "resourceoverviewheader",
-                "description": "Header shown on resource overview",
-                "example": "apie.bounded.test.resource.user.action.overview.authenticated",
-                "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?action.overview(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "ResourceOverviewHeader-post": {
                 "type": "string",
@@ -20964,6 +21060,12 @@
                 "pattern": "^[a-zA-Z0-9!#$&^_.+-]+/[a-zA-Z0-9!#$&^_.+-]+$",
                 "nullable": true
             },
+            "StringList-post": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
             "StringSet-get": {
                 "type": "array",
                 "items": {
@@ -21012,47 +21114,8 @@
                 "nullable": true
             },
             "Translation-get": {
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/MenuHeader-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/AuditLogEventMessage-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/FormFieldProperty-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceOverviewHeader-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceAddResourceButtonLabel-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceAddResourceHeader-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceCustomActionResourceButtonLabel-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceCustomActionResourceHeader-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceCustomGlobalActionResourceButtonLabel-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceCustomGlobalActionResourceHeader-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceModifyResourceButtonLabel-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceModifyResourceHeader-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/ResourceName-get"
-                    }
-                ],
+                "type": "string",
+                "example": "This is a translation",
                 "description": "A translation string for an Apie translation following a rigid, predictable structure."
             },
             "Translation-post": {
@@ -21062,6 +21125,9 @@
                     },
                     {
                         "$ref": "#/components/schemas/AuditLogEventMessage-post"
+                    },
+                    {
+                        "$ref": "#/components/schemas/CreateFormFieldProperty-post"
                     },
                     {
                         "$ref": "#/components/schemas/FormFieldProperty-post"
@@ -22502,6 +22568,10 @@
         {
             "name": "Indexer",
             "description": "All operations for Indexer"
+        },
+        {
+            "name": "Translation",
+            "description": "All operations for Translation"
         }
     ]
 }
