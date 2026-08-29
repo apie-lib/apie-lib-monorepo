@@ -37,28 +37,29 @@
 
 
                 <!-- CONTENT TREE -->
-
-                <ion-accordion-group>
+                {% if property('subcomponents')|length %}
+                <ion-accordion-group id="group_{{ property('id') }}"  onIonChange="console.log($event)">
                     {% for componentKey in property('subcomponents') %}
                         {{ component(componentKey) }}
                     {% endfor %}
                 </ion-accordion-group>
+                {% endif %}
             </ion-list>
         </ion-content>
     </ion-menu>
 {% else %}
-    <ion-accordion{% if not property('allowed') %} disabled{% endif %}{% if property('subcomponents')|length %} value="content"{% else %} toggleIcon=""{% endif %}>
+    <ion-accordion{% if not property('allowed') %} disabled{% endif %} value="{{ property('id') }}" {% if property('subcomponents')|length %}{% else %} class="no-toggle-icon"{% endif %}>
         <ion-item slot="header" class="submenu-level-{{ property('index') }}">
             {% if property('index') < 3 %}
                 {{ ux_icon(property('icon') ? : 'ion:document-text-outline', { slot: 'start'}) }}
             {% endif %}
-            <ion-label{% if url %} data-url="{{ url }}" onclick="location.href=this.dataset.url"{% endif %}>
+            <ion-label{% if url %} data-url="{{ url }}" onclick="location.href=this.dataset.url"{% endif %} style="cursor: pointer">
                 {{ translate(property('name')) }}
             </ion-label>
         </ion-item>
         {% if property('subcomponents')|length %}
             <div slot="content">
-                <ion-accordion-group>
+                <ion-accordion-group id="group_{{ property('id') }}"  onIonChange="console.log($event)">
                     {% for componentKey in property('subcomponents') %}
                         {{ component(componentKey) }}
                     {% endfor %}
@@ -66,4 +67,30 @@
             </div>
         {% endif %}
     </ion-accordion>
+{% endif %}
+{% if property('subcomponents')|length %}
+<script>
+    (async function (group) {
+        group.addEventListener('ionChange', (event) => {
+            if (event.target !== group) {
+                return;
+            }
+            const open = event.detail.value;
+            if (open !== undefined) {
+                localStorage.setItem(
+                        {{ ('accordion.' ~ property('id')) | safe_json_encode }},
+                    JSON.stringify(open)
+                );
+            } else {
+                localStorage.removeItem({{ ('accordion.' ~ property('id')) | safe_json_encode }});
+            }
+        });
+        await customElements.whenDefined('ion-accordion-group');
+        const saved = localStorage.getItem({{ ('accordion.' ~ property('id')) | safe_json_encode }});
+
+        if (saved && saved !== 'undefined') {
+            group.value = JSON.parse(saved);
+        }
+    }(document.querySelector({{ ('ion-accordion-group#group_' ~ property('id')) | safe_json_encode }})))
+</script>
 {% endif %}

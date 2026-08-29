@@ -258,3 +258,10 @@ body.dark .chart-placeholder {
     color:#aaa;
 
 }
+svg {
+    width: 16px;
+}
+
+ion-accordion.no-toggle-icon .ion-accordion-toggle-icon {
+    display: none;
+}

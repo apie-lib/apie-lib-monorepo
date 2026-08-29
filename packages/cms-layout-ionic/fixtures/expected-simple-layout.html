@@ -282,7 +282,13 @@ body.dark .chart-placeholder {
     color:#aaa;
 
 }
-</style>
+svg {
+    width: 16px;
+}
+
+ion-accordion.no-toggle-icon .ion-accordion-toggle-icon {
+    display: none;
+}</style>
     <script>function setInnerHtml(elm, html) {
     elm.innerHTML = html || '';
     Array.from(elm.querySelectorAll("script")).forEach( oldScript => {
@@ -353,39 +359,62 @@ const provideId = (function () {
 
 
                 <!-- CONTENT TREE -->
-
-                <ion-accordion-group>
-                                                <ion-accordion toggleIcon="">
+                                <ion-accordion-group id="group_menu_header"  onIonChange="console.log($event)">
+                                                <ion-accordion value="menu_test_header"  class="no-toggle-icon">
         <ion-item slot="header" class="submenu-level-1">
                             
-                        <ion-label data-url="/test" onclick="location.href=this.dataset.url">
+                        <ion-label data-url="/test" onclick="location.href=this.dataset.url" style="cursor: pointer">
                 apie.menu.test.header
             </ion-label>
         </ion-item>
             </ion-accordion>
 
-                                                <ion-accordion toggleIcon="">
+                                                <ion-accordion value="menu_test2_header"  class="no-toggle-icon">
         <ion-item slot="header" class="submenu-level-1">
                             
-                        <ion-label data-url="/test2" onclick="location.href=this.dataset.url">
+                        <ion-label data-url="/test2" onclick="location.href=this.dataset.url" style="cursor: pointer">
                 apie.menu.test2.header
             </ion-label>
         </ion-item>
             </ion-accordion>
 
-                                                <ion-accordion toggleIcon="">
+                                                <ion-accordion value="menu_test3_test4_header"  class="no-toggle-icon">
         <ion-item slot="header" class="submenu-level-1">
                             
-                        <ion-label data-url="/test3" onclick="location.href=this.dataset.url">
+                        <ion-label data-url="/test3" onclick="location.href=this.dataset.url" style="cursor: pointer">
                 apie.menu.test3.header
             </ion-label>
         </ion-item>
             </ion-accordion>
 
                                     </ion-accordion-group>
-            </ion-list>
+                            </ion-list>
         </ion-content>
     </ion-menu>
+<script>
+    (async function (group) {
+        group.addEventListener('ionChange', (event) => {
+            if (event.target !== group) {
+                return;
+            }
+            const open = event.detail.value;
+            if (open !== undefined) {
+                localStorage.setItem(
+                        "accordion.menu_header",
+                    JSON.stringify(open)
+                );
+            } else {
+                localStorage.removeItem("accordion.menu_header");
+            }
+        });
+        await customElements.whenDefined('ion-accordion-group');
+        const saved = localStorage.getItem("accordion.menu_header");
+
+        if (saved && saved !== 'undefined') {
+            group.value = JSON.parse(saved);
+        }
+    }(document.querySelector("ion-accordion-group#group_menu_header")))
+</script>
 
               <ion-page id="main-content">
 

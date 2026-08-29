@@ -41,7 +41,7 @@ class PlaygroundConfiguration
             $doSave = function () use (&$contents) {
                 file_put_contents(
                     self::LV_CONFIG_FILE,
-                    '<?php' . PHP_EOL . 'return ' . var_export($contents['apie'], true) . ';'
+                    '<?php' . PHP_EOL . 'use Apie\LaravelApie\Config\ValidateAndSanitizeConfig;' . PHP_EOL . 'return ValidateAndSanitizeConfig::process(' . var_export($contents['apie'], true) . ');'
                 );
             };
         }

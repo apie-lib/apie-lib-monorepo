@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(ComponentRendererInterface::class, function () {
              return IonicDesignSystemLayout::createRenderer(
-                 $this->app->make(ContainerRuntimeLoader::class),
+                 $this->app->make('apie.ux_icon.twig_runtime'),
                  $this->app->get(AssetManager::class)
              );
         });

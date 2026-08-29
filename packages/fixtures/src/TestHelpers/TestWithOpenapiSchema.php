@@ -42,7 +42,7 @@ trait TestWithOpenapiSchema
         if ($expected->example === true) {
             $expected->example = $actualSchema->example;
         }
-        $this->assertEquals($expected, $actualSchema);
+        $this->assertEquals($expected->getSerializableData(), $actualSchema->getSerializableData());
         $testCase($builder);
     }
 }

@@ -41,7 +41,7 @@
         "akrabat/ip-address-middleware": "^2.6.1",
         "apie/phpunit-matrix-data-provider": "^1.0.3",
         "apie/service-provider-generator": "0.14.0",
-        "apie/type-converter": "^1.6.2",
+        "apie/type-converter": "^1.6.3",
         "beste/clock": "^3.0",
         "chillerlan/php-qrcode": "^5.0.5",
         "composer-plugin-api": "^2.0",
