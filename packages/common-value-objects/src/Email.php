@@ -38,4 +38,18 @@ class Email implements StringValueObjectInterface
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(__CLASS__));
         }
     }
+
+    public function getLocalPart(): EmailLocalPart
+    {
+        [$localPart] = explode('@', $this->internal, 2);
+
+        return new EmailLocalPart($localPart);
+    }
+
+    public function getHostname(): Hostname
+    {
+        $parts = explode('@', $this->internal, 2);
+
+        return new Hostname($parts[1]);
+    }
 }

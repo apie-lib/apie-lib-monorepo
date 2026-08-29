@@ -1,22 +1,20 @@
 <?php
+namespace Apie\Tests\Common\Other;
 
-namespace Apie\Tests\Core\BoundedContext;
-
-use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Common\Other\AuditLogIdentifier;
 use Apie\Fixtures\TestHelpers\ValueObjectTestCase;
 
-class BoundedContextIdTest extends ValueObjectTestCase
+class AuditLogIdentifierTest extends ValueObjectTestCase
 {
-
     public static function className(): string
     {
-        return BoundedContextId::class;
+        return AuditLogIdentifier::class;
     }
 
     public static function provideFromNative(): array
     {
         return [
-            'regular case' => ['test', 'test'],
+            'simple' => ['123.000000.-.domain_resource_123', '123.-.domain_resource_123']
         ];
     }
 
@@ -24,7 +22,7 @@ class BoundedContextIdTest extends ValueObjectTestCase
     {
         return [
             'type' => 'string',
-            'format' => 'boundedcontextid',
+            'format' => 'auditlogidentifier',
             'pattern' => true,
         ];
     }

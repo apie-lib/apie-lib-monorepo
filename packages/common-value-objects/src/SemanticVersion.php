@@ -30,6 +30,30 @@ class SemanticVersion implements HasRegexValueObjectInterface
         return new ApplicationVersion($matches[1] . '.' . $matches[2] . '.' . $matches[3]);
     }
 
+    public function bumpPatch(): self
+    {
+        preg_match('/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(.*)$/', $this->internal, $matches);
+        assert(!empty($matches));
+
+        return new self(sprintf('%d.%d.%d%s', (int) $matches[1], (int) $matches[2], (int) $matches[3] + 1, $matches[4]));
+    }
+
+    public function bumpMinor(): self
+    {
+        preg_match('/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(.*)$/', $this->internal, $matches);
+        assert(!empty($matches));
+
+        return new self(sprintf('%d.%d.%d%s', (int) $matches[1], (int) $matches[2] + 1, 0, $matches[4]));
+    }
+
+    public function bumpMajor(): self
+    {
+        preg_match('/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(.*)$/', $this->internal, $matches);
+        assert(!empty($matches));
+
+        return new self(sprintf('%d.%d.%d%s', (int) $matches[1] + 1, 0, 0, $matches[4]));
+    }
+
     /**
      * @see https://semver.org/spec/v2.0.0.html
      */

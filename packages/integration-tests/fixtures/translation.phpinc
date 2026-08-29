@@ -90,42 +90,6 @@ return array (
                     'unauthenticated' => 'Profile',
                   ),
                 ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
-                  ),
-                ),
                 'authentication' => 
                 array (
                   'verify_authentication' => 
@@ -518,42 +482,6 @@ return array (
                     'authenticated' => 'Profile',
                     '' => 'Profile',
                     'unauthenticated' => 'Profile',
-                  ),
-                ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
                   ),
                 ),
                 'authentication' => 
@@ -972,42 +900,6 @@ return array (
                     'authenticated' => 'Profile',
                     '' => 'Profile',
                     'unauthenticated' => 'Profile',
-                  ),
-                ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
                   ),
                 ),
                 'authentication' => 
@@ -1491,42 +1383,6 @@ return array (
                     'unauthenticated' => 'Profile',
                   ),
                 ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
-                  ),
-                ),
                 'authentication' => 
                 array (
                   'verify_authentication' => 
@@ -1940,42 +1796,6 @@ return array (
                     'authenticated' => 'Profile',
                     '' => 'Profile',
                     'unauthenticated' => 'Profile',
-                  ),
-                ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
                   ),
                 ),
                 'authentication' => 
@@ -2408,42 +2228,6 @@ return array (
                     'unauthenticated' => 'Profile',
                   ),
                 ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
-                  ),
-                ),
                 'authentication' => 
                 array (
                   'verify_authentication' => 
@@ -2874,42 +2658,6 @@ return array (
                     'unauthenticated' => 'Profile',
                   ),
                 ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
-                  ),
-                ),
                 'authentication' => 
                 array (
                   'verify_authentication' => 
@@ -3323,42 +3071,6 @@ return array (
                     'authenticated' => 'Profile',
                     '' => 'Profile',
                     'unauthenticated' => 'Profile',
-                  ),
-                ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
                   ),
                 ),
                 'authentication' => 
@@ -3776,42 +3488,6 @@ return array (
                     'unauthenticated' => 'Profile',
                   ),
                 ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
-                  ),
-                ),
                 'authentication' => 
                 array (
                   'verify_authentication' => 
@@ -4225,42 +3901,6 @@ return array (
                     'authenticated' => 'Profile',
                     '' => 'Profile',
                     'unauthenticated' => 'Profile',
-                  ),
-                ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
                   ),
                 ),
                 'authentication' => 
@@ -4696,42 +4336,6 @@ return array (
                     'unauthenticated' => 'Profile',
                   ),
                 ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
-                  ),
-                ),
                 'authentication' => 
                 array (
                   'verify_authentication' => 
@@ -5160,42 +4764,6 @@ return array (
                     'authenticated' => 'Profile',
                     '' => 'Profile',
                     'unauthenticated' => 'Profile',
-                  ),
-                ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
                   ),
                 ),
                 'authentication' => 
@@ -5628,42 +5196,6 @@ return array (
                     'unauthenticated' => 'Profile',
                   ),
                 ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
-                  ),
-                ),
                 'authentication' => 
                 array (
                   'verify_authentication' => 
@@ -6082,42 +5614,6 @@ return array (
                     'unauthenticated' => 'Profile',
                   ),
                 ),
-                'calc' => 
-                array (
-                  'number_one' => 
-                  array (
-                    'times' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Times',
-                        '' => 'Times',
-                        'unauthenticated' => 'Times',
-                      ),
-                    ),
-                    'plus' => 
-                    array (
-                      'header' => 
-                      array (
-                        'authenticated' => 'Plus',
-                        '' => 'Plus',
-                        'unauthenticated' => 'Plus',
-                      ),
-                    ),
-                    'header' => 
-                    array (
-                      'authenticated' => 'Number one',
-                      '' => 'Number one',
-                      'unauthenticated' => 'Number one',
-                    ),
-                  ),
-                  'header' => 
-                  array (
-                    'authenticated' => 'Calc',
-                    '' => 'Calc',
-                    'unauthenticated' => 'Calc',
-                  ),
-                ),
                 'authentication' => 
                 array (
                   'verify_authentication' => 
@@ -6517,42 +6013,6 @@ return array (
                 '' => 'Profile',
                 'authenticated' => 'Profile',
                 'unauthenticated' => 'Profile',
-              ),
-            ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    '' => 'Times',
-                    'authenticated' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    '' => 'Plus',
-                    'authenticated' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  '' => 'Number one',
-                  'authenticated' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                '' => 'Calc',
-                'authenticated' => 'Calc',
-                'unauthenticated' => 'Calc',
               ),
             ),
             'authentication' => 
@@ -7094,42 +6554,6 @@ return array (
                 'unauthenticated' => 'Profile',
               ),
             ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
-              ),
-            ),
             'authentication' => 
             array (
               'verify_authentication' => 
@@ -7517,42 +6941,6 @@ return array (
                 'authenticated' => 'Profile',
                 '' => 'Profile',
                 'unauthenticated' => 'Profile',
-              ),
-            ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
               ),
             ),
             'authentication' => 
@@ -7966,42 +7354,6 @@ return array (
                 'authenticated' => 'Profile',
                 '' => 'Profile',
                 'unauthenticated' => 'Profile',
-              ),
-            ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
               ),
             ),
             'authentication' => 
@@ -8480,42 +7832,6 @@ return array (
                 'unauthenticated' => 'Profile',
               ),
             ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
-              ),
-            ),
             'authentication' => 
             array (
               'verify_authentication' => 
@@ -8924,42 +8240,6 @@ return array (
                 'authenticated' => 'Profile',
                 '' => 'Profile',
                 'unauthenticated' => 'Profile',
-              ),
-            ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
               ),
             ),
             'authentication' => 
@@ -9387,42 +8667,6 @@ return array (
                 'unauthenticated' => 'Profile',
               ),
             ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
-              ),
-            ),
             'authentication' => 
             array (
               'verify_authentication' => 
@@ -9848,42 +9092,6 @@ return array (
                 'unauthenticated' => 'Profile',
               ),
             ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
-              ),
-            ),
             'authentication' => 
             array (
               'verify_authentication' => 
@@ -10292,42 +9500,6 @@ return array (
                 'authenticated' => 'Profile',
                 '' => 'Profile',
                 'unauthenticated' => 'Profile',
-              ),
-            ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
               ),
             ),
             'authentication' => 
@@ -10740,42 +9912,6 @@ return array (
                 'unauthenticated' => 'Profile',
               ),
             ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
-              ),
-            ),
             'authentication' => 
             array (
               'verify_authentication' => 
@@ -11184,42 +10320,6 @@ return array (
                 'authenticated' => 'Profile',
                 '' => 'Profile',
                 'unauthenticated' => 'Profile',
-              ),
-            ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
               ),
             ),
             'authentication' => 
@@ -11650,42 +10750,6 @@ return array (
                 'unauthenticated' => 'Profile',
               ),
             ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
-              ),
-            ),
             'authentication' => 
             array (
               'verify_authentication' => 
@@ -12109,42 +11173,6 @@ return array (
                 'authenticated' => 'Profile',
                 '' => 'Profile',
                 'unauthenticated' => 'Profile',
-              ),
-            ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
               ),
             ),
             'authentication' => 
@@ -12572,42 +11600,6 @@ return array (
                 'unauthenticated' => 'Profile',
               ),
             ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
-              ),
-            ),
             'authentication' => 
             array (
               'verify_authentication' => 
@@ -13021,42 +12013,6 @@ return array (
                 'unauthenticated' => 'Profile',
               ),
             ),
-            'calc' => 
-            array (
-              'number_one' => 
-              array (
-                'times' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Times',
-                    '' => 'Times',
-                    'unauthenticated' => 'Times',
-                  ),
-                ),
-                'plus' => 
-                array (
-                  'header' => 
-                  array (
-                    'authenticated' => 'Plus',
-                    '' => 'Plus',
-                    'unauthenticated' => 'Plus',
-                  ),
-                ),
-                'header' => 
-                array (
-                  'authenticated' => 'Number one',
-                  '' => 'Number one',
-                  'unauthenticated' => 'Number one',
-                ),
-              ),
-              'header' => 
-              array (
-                'authenticated' => 'Calc',
-                '' => 'Calc',
-                'unauthenticated' => 'Calc',
-              ),
-            ),
             'authentication' => 
             array (
               'verify_authentication' => 
@@ -13456,42 +12412,6 @@ return array (
             '' => 'Profile',
             'authenticated' => 'Profile',
             'unauthenticated' => 'Profile',
-          ),
-        ),
-        'calc' => 
-        array (
-          'number_one' => 
-          array (
-            'times' => 
-            array (
-              'header' => 
-              array (
-                '' => 'Times',
-                'authenticated' => 'Times',
-                'unauthenticated' => 'Times',
-              ),
-            ),
-            'plus' => 
-            array (
-              'header' => 
-              array (
-                '' => 'Plus',
-                'authenticated' => 'Plus',
-                'unauthenticated' => 'Plus',
-              ),
-            ),
-            'header' => 
-            array (
-              '' => 'Number one',
-              'authenticated' => 'Number one',
-              'unauthenticated' => 'Number one',
-            ),
-          ),
-          'header' => 
-          array (
-            '' => 'Calc',
-            'authenticated' => 'Calc',
-            'unauthenticated' => 'Calc',
           ),
         ),
         'authentication' => 

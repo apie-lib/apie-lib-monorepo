@@ -20,8 +20,32 @@ class ApplicationVersion implements HasRegexValueObjectInterface
         return '/^[1-9]*[0-9]\.[1-9]*[0-9]\.[1-9]*[0-9]$/';
     }
 
-    public function toSemanticVersion(): SemanticVersion
+    public function bumpPatch(): self
     {
-        return new SemanticVersion($this->internal);
+        [$major, $minor, $patch] = explode('.', $this->internal);
+
+        return new self(sprintf('%d.%d.%d', $major, $minor, (int) $patch + 1));
+    }
+
+    public function bumpMinor(): self
+    {
+        [$major, $minor] = explode('.', $this->internal);
+
+        return new self(sprintf('%d.%d.%d', $major, (int) $minor + 1, 0));
+    }
+
+    public function bumpMajor(): self
+    {
+        [$major] = explode('.', $this->internal, 2);
+
+        return new self(sprintf('%d.%d.%d', (int) $major + 1, 0, 0));
+    }
+
+    public function toSemanticVersion(string $suffix = ''): SemanticVersion
+    {
+        if ($suffix && false !== strpos('0123456789', substr($suffix, 0, 1))) {
+            throw new \LogicException('Suffix can not start with a digit!');
+        }
+        return new SemanticVersion($this->internal . $suffix);
     }
 }

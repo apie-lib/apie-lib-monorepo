@@ -22,9 +22,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -101,9 +98,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -184,9 +178,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -274,9 +265,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -358,9 +346,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -451,9 +436,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -544,9 +526,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -628,9 +607,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -712,9 +688,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -796,9 +769,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -888,9 +858,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -981,9 +948,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -1074,9 +1038,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -1157,9 +1118,6 @@ apie:
                                 header: { authenticated: Calculator, '': Calculator, unauthenticated: Calculator }
                             profile:
                                 header: { authenticated: Profile, '': Profile, unauthenticated: Profile }
-                            calc:
-                                number_one: { times: { header: { authenticated: Times, '': Times, unauthenticated: Times } }, plus: { header: { authenticated: Plus, '': Plus, unauthenticated: Plus } }, header: { authenticated: 'Number one', '': 'Number one', unauthenticated: 'Number one' } }
-                                header: { authenticated: Calc, '': Calc, unauthenticated: Calc }
                             authentication:
                                 verify_authentication: { header: { authenticated: 'Verify authentication', '': 'Verify authentication', unauthenticated: 'Verify authentication' } }
                                 locale_object: { header: { authenticated: 'Locale object', '': 'Locale object', unauthenticated: 'Locale object' } }
@@ -1258,20 +1216,6 @@ apie:
                             '': Profile
                             authenticated: Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { '': Times, authenticated: Times, unauthenticated: Times }
-                            plus:
-                                header: { '': Plus, authenticated: Plus, unauthenticated: Plus }
-                            header:
-                                '': 'Number one'
-                                authenticated: 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            '': Calc
-                            authenticated: Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -1575,20 +1519,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -1806,20 +1736,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -2049,20 +1965,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -2329,20 +2231,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -2571,20 +2459,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -2822,20 +2696,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -3073,20 +2933,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -3315,20 +3161,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -3557,20 +3389,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -3799,20 +3617,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -4051,20 +3855,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -4302,20 +4092,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -4553,20 +4329,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -4796,20 +4558,6 @@ apie:
                             authenticated: Profile
                             '': Profile
                             unauthenticated: Profile
-                    calc:
-                        number_one:
-                            times:
-                                header: { authenticated: Times, '': Times, unauthenticated: Times }
-                            plus:
-                                header: { authenticated: Plus, '': Plus, unauthenticated: Plus }
-                            header:
-                                authenticated: 'Number one'
-                                '': 'Number one'
-                                unauthenticated: 'Number one'
-                        header:
-                            authenticated: Calc
-                            '': Calc
-                            unauthenticated: Calc
                     authentication:
                         verify_authentication:
                             header:
@@ -5031,26 +4779,6 @@ apie:
                     '': Profile
                     authenticated: Profile
                     unauthenticated: Profile
-            calc:
-                number_one:
-                    times:
-                        header:
-                            '': Times
-                            authenticated: Times
-                            unauthenticated: Times
-                    plus:
-                        header:
-                            '': Plus
-                            authenticated: Plus
-                            unauthenticated: Plus
-                    header:
-                        '': 'Number one'
-                        authenticated: 'Number one'
-                        unauthenticated: 'Number one'
-                header:
-                    '': Calc
-                    authenticated: Calc
-                    unauthenticated: Calc
             authentication:
                 verify_authentication:
                     header:

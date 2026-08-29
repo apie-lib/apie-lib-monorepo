@@ -1,22 +1,22 @@
 <?php
+namespace Apie\Tests\CommonValueObjects;
 
-namespace Apie\Tests\Common\ValueObjects;
-
-use Apie\Common\ValueObjects\EntityNamespace;
+use Apie\CommonValueObjects\Hostname;
 use Apie\Fixtures\TestHelpers\ValueObjectTestCase;
 
-class EntityNamespaceTest extends ValueObjectTestCase
+class HostnameTest extends ValueObjectTestCase
 {
     public static function className(): string
     {
-        return EntityNamespace::class;
+        return Hostname::class;
     }
 
     public static function provideFromNative(): array
     {
         return [
-            'regular namespace' => [__NAMESPACE__ . '\\', __NAMESPACE__],
-            'example value' => ["Symfony\Component\\", "Symfony\Component\\"],
+            'simple case' => ['test.nl', 'test.nl'],
+             'co.uk' => ['example.co.uk', 'example.co.uk'],
+            'hostname is case insensitive' => ['example.com', 'EXAMPLE.COM'],
         ];
     }
 
@@ -24,9 +24,8 @@ class EntityNamespaceTest extends ValueObjectTestCase
     {
         return [
             'type' => 'string',
-            'format' => 'entitynamespace',
+            'format' => 'hostname',
             'description' => true,
-            'pattern' => true,
             'example' => true,
         ];
     }
