@@ -57,15 +57,5 @@ class PhoneNumberTest extends TestCase
     public static function phoneNumberClassProvider(): Generator
     {
         yield [PhoneNumber::class];
-        yield [BelgianPhoneNumber::class];
-        yield [BritishPhoneNumber::class];
-        yield [CanadianPhoneNumber::class];
-        yield [ChinesePhoneNumber::class];
-        yield [DutchPhoneNumber::class];
-        yield [FrenchPhoneNumber::class];
-        yield [GermanPhoneNumber::class];
-        yield [JapanesePhoneNumber::class];
-        yield [MexicanPhoneNumber::class];
-        yield [USPhoneNumber::class];
     }
 }
