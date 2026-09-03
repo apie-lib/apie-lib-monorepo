@@ -1,10 +1,10 @@
-<?php
+<?php 
 /**
  * @codeCoverageIgnore
  */
-return array(
-  '1606nict' =>
-  array(
+return array (
+  '1606nict' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => '1606nict',
@@ -13,8 +13,8 @@ return array(
     'Prefix' => 'frm',
     'Comments' => '16th century French as in Jean Nicot, "Thresor de la langue',
   ),
-  '1694acad' =>
-  array(
+  '1694acad' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => '1694acad',
@@ -23,8 +23,8 @@ return array(
     'Prefix' => 'fr',
     'Comments' => '17th century French, as catalogued in the "Dictionnaire de',
   ),
-  1901 =>
-  array(
+  1901 => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => '1901',
@@ -32,8 +32,8 @@ return array(
     'Added' => '2005-10-16',
     'Prefix' => 'de',
   ),
-  '1959acad' =>
-  array(
+  '1959acad' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => '1959acad',
@@ -41,8 +41,8 @@ return array(
     'Added' => '2008-09-30',
     'Prefix' => 'be',
   ),
-  1994 =>
-  array(
+  1994 => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => '1994',
@@ -51,8 +51,8 @@ return array(
     'Prefix' => 'sl-rozaj',
     'Comments' => 'For standardized Resian an orthography was published in 1994.',
   ),
-  1996 =>
-  array(
+  1996 => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => '1996',
@@ -60,8 +60,8 @@ return array(
     'Added' => '2005-10-16',
     'Prefix' => 'de',
   ),
-  'abl1943' =>
-  array(
+  'abl1943' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'abl1943',
@@ -70,8 +70,8 @@ return array(
     'Prefix' => 'pt-BR',
     'Comments' => 'Denotes conventions established by the Academia Brasileira de',
   ),
-  'akhmimic' =>
-  array(
+  'akhmimic' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'akhmimic',
@@ -79,8 +79,8 @@ return array(
     'Added' => '2025-07-14',
     'Prefix' => 'cop',
   ),
-  'akuapem' =>
-  array(
+  'akuapem' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'akuapem',
@@ -88,8 +88,8 @@ return array(
     'Added' => '2017-06-05',
     'Prefix' => 'tw',
   ),
-  'alalc97' =>
-  array(
+  'alalc97' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'alalc97',
@@ -98,8 +98,8 @@ return array(
     'Comments' => 'Romanizations recommended by the American Library Association',
     'and the Library of Congress, in "ALA-LC Romanization Tables' => '',
   ),
-  'aluku' =>
-  array(
+  'aluku' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'aluku',
@@ -108,8 +108,8 @@ return array(
     'Prefix' => 'djk',
     'Comments' => 'Aluku dialect of the "Busi Nenge Tongo" English-based Creole',
   ),
-  'anpezo' =>
-  array(
+  'anpezo' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'anpezo',
@@ -118,8 +118,8 @@ return array(
     'Prefix' => 'lld',
     'Comments' => 'Represents the standard written form of Ladin in Anpezo',
   ),
-  'ao1990' =>
-  array(
+  'ao1990' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ao1990',
@@ -128,8 +128,8 @@ return array(
     'Prefix' => 'pt',
     'Comments' => 'Portuguese orthography conventions established in 1990 but',
   ),
-  'aranes' =>
-  array(
+  'aranes' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'aranes',
@@ -138,8 +138,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in the Val d\'Aran',
   ),
-  'arevela' =>
-  array(
+  'arevela' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'arevela',
@@ -149,8 +149,8 @@ return array(
     'Prefix' => 'hy',
     'Comments' => 'Preferred tag is hy',
   ),
-  'arevmda' =>
-  array(
+  'arevmda' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'arevmda',
@@ -160,8 +160,8 @@ return array(
     'Prefix' => 'hy',
     'Comments' => 'Preferred tag is hyw',
   ),
-  'arkaika' =>
-  array(
+  'arkaika' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'arkaika',
@@ -170,8 +170,8 @@ return array(
     'Prefix' => 'eo',
     'Comments' => 'Archaic Esperanto variant devised by Manuel Halvelik',
   ),
-  'asante' =>
-  array(
+  'asante' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'asante',
@@ -179,8 +179,8 @@ return array(
     'Added' => '2017-06-05',
     'Prefix' => 'tw',
   ),
-  'auvern' =>
-  array(
+  'auvern' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'auvern',
@@ -189,8 +189,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in Auvergne',
   ),
-  'baku1926' =>
-  array(
+  'baku1926' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'baku1926',
@@ -200,8 +200,8 @@ return array(
     'Comments' => 'Denotes alphabet used in Turkic republics/regions of the',
     'represent equivalent phonemes in a unified fashion. Also known as' => 'New',
   ),
-  'balanka' =>
-  array(
+  'balanka' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'balanka',
@@ -210,8 +210,8 @@ return array(
     'Prefix' => 'blo',
     'Comments' => 'Balanka is one of 19 Anii dialects.',
   ),
-  'barla' =>
-  array(
+  'barla' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'barla',
@@ -220,8 +220,8 @@ return array(
     'Comments' => 'Barlavento is one of the two main dialect groups of',
     'Added' => '2013-12-10',
   ),
-  'basiceng' =>
-  array(
+  'basiceng' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'basiceng',
@@ -229,8 +229,8 @@ return array(
     'Added' => '2015-12-29',
     'Prefix' => 'en',
   ),
-  'bauddha' =>
-  array(
+  'bauddha' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'bauddha',
@@ -238,8 +238,8 @@ return array(
     'Added' => '2010-07-28',
     'Prefix' => 'sa',
   ),
-  'bciav' =>
-  array(
+  'bciav' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'bciav',
@@ -248,8 +248,8 @@ return array(
     'Prefix' => 'zbl',
     'Comments' => 'Name given to a subset of the variety of Blissymbolics curated',
   ),
-  'bcizbl' =>
-  array(
+  'bcizbl' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'bcizbl',
@@ -258,8 +258,8 @@ return array(
     'Prefix' => 'zbl',
     'Comments' => 'Name given to the variety of Blissymbolics curated by',
   ),
-  'biscayan' =>
-  array(
+  'biscayan' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'biscayan',
@@ -267,8 +267,8 @@ return array(
     'Added' => '2010-04-13',
     'Prefix' => 'eu',
   ),
-  'biske' =>
-  array(
+  'biske' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'biske',
@@ -277,8 +277,8 @@ return array(
     'Prefix' => 'sl-rozaj',
     'Comments' => 'The dialect of San Giorgio/Bila is one of the four major local',
   ),
-  'blasl' =>
-  array(
+  'blasl' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'blasl',
@@ -287,8 +287,8 @@ return array(
     'Prefix' => 'ase',
     'Comments' => 'Black American Sign Language (BASL) or Black Sign Variation',
   ),
-  'bohairic' =>
-  array(
+  'bohairic' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'bohairic',
@@ -296,8 +296,8 @@ return array(
     'Added' => '2025-07-14',
     'Prefix' => 'cop',
   ),
-  'bohoric' =>
-  array(
+  'bohoric' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'bohoric',
@@ -306,8 +306,8 @@ return array(
     'Prefix' => 'sl',
     'Comments' => 'The subtag represents the alphabet codified by Adam Bohorič',
   ),
-  'boont' =>
-  array(
+  'boont' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'boont',
@@ -316,8 +316,8 @@ return array(
     'Prefix' => 'en',
     'Comments' => 'Jargon embedded in American English',
   ),
-  'bornholm' =>
-  array(
+  'bornholm' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'bornholm',
@@ -325,8 +325,8 @@ return array(
     'Added' => '2019-03-27',
     'Prefix' => 'da',
   ),
-  'cisaup' =>
-  array(
+  'cisaup' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'cisaup',
@@ -335,8 +335,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in northwestern Italy',
   ),
-  'colb1945' =>
-  array(
+  'colb1945' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'colb1945',
@@ -345,8 +345,8 @@ return array(
     'Prefix' => 'pt',
     'Comments' => 'Portuguese orthography conventions established in 1945,',
   ),
-  'cornu' =>
-  array(
+  'cornu' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'cornu',
@@ -354,8 +354,8 @@ return array(
     'Added' => '2015-12-07',
     'Prefix' => 'en',
   ),
-  'creiss' =>
-  array(
+  'creiss' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'creiss',
@@ -363,8 +363,8 @@ return array(
     'Added' => '2018-04-22',
     'Prefix' => 'oc',
   ),
-  'dajnko' =>
-  array(
+  'dajnko' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'dajnko',
@@ -373,8 +373,8 @@ return array(
     'Prefix' => 'sl',
     'Comments' => 'The subtag represents the alphabet codified by Peter Dajnko',
   ),
-  'ekavsk' =>
-  array(
+  'ekavsk' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ekavsk',
@@ -382,8 +382,8 @@ return array(
     'Prefix' => 'sr',
     'Added' => '2013-12-02',
   ),
-  'emodeng' =>
-  array(
+  'emodeng' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'emodeng',
@@ -391,8 +391,8 @@ return array(
     'Added' => '2012-02-05',
     'Prefix' => 'en',
   ),
-  'fascia' =>
-  array(
+  'fascia' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'fascia',
@@ -401,8 +401,8 @@ return array(
     'Prefix' => 'lld',
     'Comments' => 'Represents the standard written form of Ladin in Fascia which',
   ),
-  'fayyumic' =>
-  array(
+  'fayyumic' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'fayyumic',
@@ -410,8 +410,8 @@ return array(
     'Added' => '2025-07-14',
     'Prefix' => 'cop',
   ),
-  'fodom' =>
-  array(
+  'fodom' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'fodom',
@@ -420,40 +420,40 @@ return array(
     'Prefix' => 'lld',
     'Comments' => 'Represents the standard written form of Ladin in Livinallongo',
   ),
-  'fonipa' =>
-  array(
+  'fonipa' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'fonipa',
     'Description' => 'International Phonetic Alphabet',
     'Added' => '2006-12-11',
   ),
-  'fonkirsh' =>
-  array(
+  'fonkirsh' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'fonkirsh',
     'Description' => 'Kirshenbaum Phonetic Alphabet',
     'Added' => '2018-04-22',
   ),
-  'fonnapa' =>
-  array(
+  'fonnapa' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'fonnapa',
     'Description' => 'North American Phonetic Alphabet',
     'Added' => '2016-06-24',
   ),
-  'fonupa' =>
-  array(
+  'fonupa' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'fonupa',
     'Description' => 'Uralic Phonetic Alphabet',
     'Added' => '2006-12-11',
   ),
-  'fonxsamp' =>
-  array(
+  'fonxsamp' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'fonxsamp',
@@ -461,8 +461,8 @@ return array(
     'Added' => '2010-10-23',
     'Comments' => 'Indicates that the content is transcribed according to X-SAMPA',
   ),
-  'gallo' =>
-  array(
+  'gallo' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'gallo',
@@ -470,8 +470,8 @@ return array(
     'Added' => '2021-08-05',
     'Prefix' => 'fr',
   ),
-  'gascon' =>
-  array(
+  'gascon' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'gascon',
@@ -480,8 +480,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in Gascony',
   ),
-  'gherd' =>
-  array(
+  'gherd' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'gherd',
@@ -490,8 +490,8 @@ return array(
     'Prefix' => 'lld',
     'Comments' => 'Represents the standard written form of Ladin in Gherdëina',
   ),
-  'grclass' =>
-  array(
+  'grclass' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'grclass',
@@ -500,8 +500,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Classical written standard for Occitan developed in 1935 by',
   ),
-  'grital' =>
-  array(
+  'grital' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'grital',
@@ -509,8 +509,8 @@ return array(
     'Added' => '2018-04-22',
     'Prefix' => 'oc',
   ),
-  'grmistr' =>
-  array(
+  'grmistr' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'grmistr',
@@ -519,8 +519,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Written standard developed by Romanilha in 1853 and used by',
   ),
-  'hanoi' =>
-  array(
+  'hanoi' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'hanoi',
@@ -528,8 +528,8 @@ return array(
     'Added' => '2025-03-10',
     'Prefix' => 'vi',
   ),
-  'hepburn' =>
-  array(
+  'hepburn' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'hepburn',
@@ -537,8 +537,8 @@ return array(
     'Added' => '2009-10-01',
     'Prefix' => 'ja-Latn',
   ),
-  'heploc' =>
-  array(
+  'heploc' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'heploc',
@@ -549,8 +549,8 @@ return array(
     'Prefix' => 'ja-Latn-hepburn',
     'Comments' => 'Preferred tag is ja-Latn-alalc97',
   ),
-  'hognorsk' =>
-  array(
+  'hognorsk' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'hognorsk',
@@ -559,8 +559,8 @@ return array(
     'Prefix' => 'nn',
     'Comments' => 'Norwegian following Ivar Aasen\'s orthographical principles,',
   ),
-  'hsistemo' =>
-  array(
+  'hsistemo' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'hsistemo',
@@ -568,8 +568,8 @@ return array(
     'Added' => '2017-03-14',
     'Prefix' => 'eo',
   ),
-  'huett' =>
-  array(
+  'huett' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'huett',
@@ -577,8 +577,8 @@ return array(
     'Added' => '2025-03-10',
     'Prefix' => 'vi',
   ),
-  'ijekavsk' =>
-  array(
+  'ijekavsk' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ijekavsk',
@@ -586,8 +586,8 @@ return array(
     'Prefix' => 'sr',
     'Added' => '2013-12-02',
   ),
-  'itihasa' =>
-  array(
+  'itihasa' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'itihasa',
@@ -595,8 +595,8 @@ return array(
     'Added' => '2010-07-28',
     'Prefix' => 'sa',
   ),
-  'ivanchov' =>
-  array(
+  'ivanchov' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ivanchov',
@@ -605,8 +605,8 @@ return array(
     'Prefix' => 'bg',
     'Comments' => 'Bulgarian orthography introduced by Todor Ivanchov in 1899',
   ),
-  'jauer' =>
-  array(
+  'jauer' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'jauer',
@@ -615,8 +615,8 @@ return array(
     'Prefix' => 'rm',
     'Comments' => 'The spoken dialect of the Val Müstair, which has no written',
   ),
-  'jyutping' =>
-  array(
+  'jyutping' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'jyutping',
@@ -625,8 +625,8 @@ return array(
     'Prefix' => 'yue',
     'Comments' => 'Jyutping romanization of Cantonese',
   ),
-  'kkcor' =>
-  array(
+  'kkcor' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'kkcor',
@@ -634,8 +634,8 @@ return array(
     'Added' => '2008-10-14',
     'Prefix' => 'kw',
   ),
-  'kleinsch' =>
-  array(
+  'kleinsch' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'kleinsch',
@@ -644,8 +644,8 @@ return array(
     'Prefix' => 'kl',
     'Comments' => 'Orthography for Greenlandic designed by Samuel Kleinschmidt,',
   ),
-  'kociewie' =>
-  array(
+  'kociewie' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'kociewie',
@@ -654,8 +654,8 @@ return array(
     'Prefix' => 'pl',
     'Comments' => 'The dialect of Kociewie is spoken in the region around',
   ),
-  'kscor' =>
-  array(
+  'kscor' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'kscor',
@@ -663,8 +663,8 @@ return array(
     'Added' => '2012-06-27',
     'Prefix' => 'kw',
   ),
-  'laukika' =>
-  array(
+  'laukika' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'laukika',
@@ -674,8 +674,8 @@ return array(
     'Prefix' => 'sa',
     'Comments' => 'Preferred tag is cls',
   ),
-  'leidentr' =>
-  array(
+  'leidentr' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'leidentr',
@@ -684,8 +684,8 @@ return array(
     'Prefix' => 'egy',
     'Comments' => 'Recommended by the International Association of Egyptologists',
   ),
-  'lemosin' =>
-  array(
+  'lemosin' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'lemosin',
@@ -694,8 +694,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in Limousin',
   ),
-  'lengadoc' =>
-  array(
+  'lengadoc' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'lengadoc',
@@ -704,8 +704,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in Languedoc',
   ),
-  'lipaw' =>
-  array(
+  'lipaw' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'lipaw',
@@ -714,8 +714,8 @@ return array(
     'Prefix' => 'sl-rozaj',
     'Comments' => 'The dialect of Lipovaz/Lipovec is one of the minor local',
   ),
-  'ltg1929' =>
-  array(
+  'ltg1929' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ltg1929',
@@ -723,8 +723,8 @@ return array(
     'Added' => '2022-08-05',
     'Prefix' => 'ltg',
   ),
-  'ltg2007' =>
-  array(
+  'ltg2007' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ltg2007',
@@ -732,8 +732,8 @@ return array(
     'Added' => '2022-06-23',
     'Prefix' => 'ltg',
   ),
-  'luna1918' =>
-  array(
+  'luna1918' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'luna1918',
@@ -742,8 +742,8 @@ return array(
     'Prefix' => 'ru',
     'Comments' => 'Russian orthography as established by the 1917/1918',
   ),
-  'lycopol' =>
-  array(
+  'lycopol' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'lycopol',
@@ -751,8 +751,8 @@ return array(
     'Added' => '2025-07-14',
     'Prefix' => 'cop',
   ),
-  'mdcegyp' =>
-  array(
+  'mdcegyp' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'mdcegyp',
@@ -760,8 +760,8 @@ return array(
     'Added' => '2025-02-06',
     'Prefix' => 'egy',
   ),
-  'mdctrans' =>
-  array(
+  'mdctrans' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'mdctrans',
@@ -769,8 +769,8 @@ return array(
     'Added' => '2025-02-06',
     'Prefix' => 'egy',
   ),
-  'mesokem' =>
-  array(
+  'mesokem' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'mesokem',
@@ -778,8 +778,8 @@ return array(
     'Added' => '2025-07-14',
     'Prefix' => 'cop',
   ),
-  'metelko' =>
-  array(
+  'metelko' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'metelko',
@@ -788,8 +788,8 @@ return array(
     'Prefix' => 'sl',
     'Comments' => 'The subtag represents the alphabet codified by Franc Serafin',
   ),
-  'moderat' =>
-  array(
+  'moderat' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'moderat',
@@ -797,8 +797,8 @@ return array(
     'Added' => '2026-04-21',
     'Prefix' => 'nb',
   ),
-  'monoton' =>
-  array(
+  'monoton' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'monoton',
@@ -806,8 +806,8 @@ return array(
     'Added' => '2006-12-11',
     'Prefix' => 'el',
   ),
-  'ndyuka' =>
-  array(
+  'ndyuka' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ndyuka',
@@ -816,8 +816,8 @@ return array(
     'Prefix' => 'djk',
     'Comments' => 'Ndyuka dialect of the "Busi Nenge Tongo" English-based',
   ),
-  'nedis' =>
-  array(
+  'nedis' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'nedis',
@@ -825,8 +825,8 @@ return array(
     'Added' => '2005-10-16',
     'Prefix' => 'sl',
   ),
-  'newfound' =>
-  array(
+  'newfound' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'newfound',
@@ -834,8 +834,8 @@ return array(
     'Added' => '2015-11-25',
     'Prefix' => 'en-CA',
   ),
-  'nicard' =>
-  array(
+  'nicard' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'nicard',
@@ -844,8 +844,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in Nice',
   ),
-  'njiva' =>
-  array(
+  'njiva' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'njiva',
@@ -854,8 +854,8 @@ return array(
     'Prefix' => 'sl-rozaj',
     'Comments' => 'The dialect of Gniva/Njiva is one of the four major local',
   ),
-  'nulik' =>
-  array(
+  'nulik' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'nulik',
@@ -863,8 +863,8 @@ return array(
     'Added' => '2012-01-28',
     'Prefix' => 'vo',
   ),
-  'osojs' =>
-  array(
+  'osojs' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'osojs',
@@ -873,8 +873,8 @@ return array(
     'Prefix' => 'sl-rozaj',
     'Comments' => 'The dialect of Oseacco/Osojane is one of the four major local',
   ),
-  'oxendict' =>
-  array(
+  'oxendict' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'oxendict',
@@ -882,8 +882,8 @@ return array(
     'Added' => '2015-04-17',
     'Prefix' => 'en',
   ),
-  'pahawh2' =>
-  array(
+  'pahawh2' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'pahawh2',
@@ -891,8 +891,8 @@ return array(
     'Added' => '2017-01-13',
     'Prefix' => 'mww',
   ),
-  'pahawh3' =>
-  array(
+  'pahawh3' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'pahawh3',
@@ -900,8 +900,8 @@ return array(
     'Added' => '2017-01-13',
     'Prefix' => 'mww',
   ),
-  'pahawh4' =>
-  array(
+  'pahawh4' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'pahawh4',
@@ -909,8 +909,8 @@ return array(
     'Added' => '2017-01-13',
     'Prefix' => 'mww',
   ),
-  'pamaka' =>
-  array(
+  'pamaka' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'pamaka',
@@ -919,8 +919,8 @@ return array(
     'Prefix' => 'djk',
     'Comments' => 'Pamaka dialect of the "Busi Nenge Tongo" English-based',
   ),
-  'peano' =>
-  array(
+  'peano' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'peano',
@@ -929,8 +929,8 @@ return array(
     'Comments' => 'Peano’s Interlingua, created in 1903 by Giuseppe Peano as an',
     'Added' => '2020-03-12',
   ),
-  'pehoeji' =>
-  array(
+  'pehoeji' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'pehoeji',
@@ -939,8 +939,8 @@ return array(
     'Prefix' => 'nan-Latn',
     'Comments' => 'Modern Hokkien Vernacular Romanization System, evolved from',
   ),
-  'petr1708' =>
-  array(
+  'petr1708' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'petr1708',
@@ -949,8 +949,8 @@ return array(
     'Prefix' => 'ru',
     'Comments' => 'Russian orthography from the Petrine orthographic reforms of',
   ),
-  'pinyin' =>
-  array(
+  'pinyin' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'pinyin',
@@ -958,8 +958,8 @@ return array(
     'Added' => '2008-10-14',
     'Prefix' => 'zh-Latn',
   ),
-  'polyton' =>
-  array(
+  'polyton' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'polyton',
@@ -967,8 +967,8 @@ return array(
     'Added' => '2006-12-11',
     'Prefix' => 'el',
   ),
-  'provenc' =>
-  array(
+  'provenc' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'provenc',
@@ -977,8 +977,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in Provence',
   ),
-  'puter' =>
-  array(
+  'puter' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'puter',
@@ -987,8 +987,8 @@ return array(
     'Prefix' => 'rm',
     'Comments' => 'Puter is one of the five traditional written standards or',
   ),
-  'radikalt' =>
-  array(
+  'radikalt' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'radikalt',
@@ -996,8 +996,8 @@ return array(
     'Added' => '2026-04-21',
     'Prefix' => 'nb',
   ),
-  'rigik' =>
-  array(
+  'rigik' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'rigik',
@@ -1005,8 +1005,8 @@ return array(
     'Added' => '2012-01-28',
     'Prefix' => 'vo',
   ),
-  'rozaj' =>
-  array(
+  'rozaj' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'rozaj',
@@ -1014,8 +1014,8 @@ return array(
     'Added' => '2005-10-16',
     'Prefix' => 'sl',
   ),
-  'rumgr' =>
-  array(
+  'rumgr' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'rumgr',
@@ -1024,8 +1024,8 @@ return array(
     'Prefix' => 'rm',
     'Comments' => 'Supraregional Romansh written standard',
   ),
-  'sahidic' =>
-  array(
+  'sahidic' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'sahidic',
@@ -1033,8 +1033,8 @@ return array(
     'Added' => '2025-07-14',
     'Prefix' => 'cop',
   ),
-  'saigon' =>
-  array(
+  'saigon' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'saigon',
@@ -1042,8 +1042,8 @@ return array(
     'Added' => '2025-03-10',
     'Prefix' => 'vi',
   ),
-  'scotland' =>
-  array(
+  'scotland' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'scotland',
@@ -1051,8 +1051,8 @@ return array(
     'Added' => '2007-08-31',
     'Prefix' => 'en',
   ),
-  'scouse' =>
-  array(
+  'scouse' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'scouse',
@@ -1061,16 +1061,16 @@ return array(
     'Prefix' => 'en',
     'Comments' => 'English Liverpudlian dialect known as \'Scouse\'',
   ),
-  'simple' =>
-  array(
+  'simple' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'simple',
     'Description' => 'Simplified form',
     'Added' => '2015-12-29',
   ),
-  'slepe' =>
-  array(
+  'slepe' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'slepe',
@@ -1079,8 +1079,8 @@ return array(
     'Prefix' => 'dsb',
     'Comments' => 'Spoken in the Free State of Saxony in Germany',
   ),
-  'solba' =>
-  array(
+  'solba' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'solba',
@@ -1089,8 +1089,8 @@ return array(
     'Prefix' => 'sl-rozaj',
     'Comments' => 'The dialect of Stolvizza/Solbica is one of the four major',
   ),
-  'sotav' =>
-  array(
+  'sotav' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'sotav',
@@ -1099,8 +1099,8 @@ return array(
     'Comments' => 'Sotavento is one of the two main dialect groups of',
     'Added' => '2013-12-10',
   ),
-  'spanglis' =>
-  array(
+  'spanglis' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'spanglis',
@@ -1109,8 +1109,8 @@ return array(
     'Prefix' => 'en',
     'Comments' => 'A variety of contact dialects of English and Spanish',
   ),
-  'stadi' =>
-  array(
+  'stadi' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'stadi',
@@ -1119,8 +1119,8 @@ return array(
     'Prefix' => 'fi',
     'Comments' => '"Stadi" means the city of Helsinki in the dialect.',
   ),
-  'surmiran' =>
-  array(
+  'surmiran' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'surmiran',
@@ -1129,8 +1129,8 @@ return array(
     'Prefix' => 'rm',
     'Comments' => 'Surmiran is one of the five traditional written standards or',
   ),
-  'sursilv' =>
-  array(
+  'sursilv' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'sursilv',
@@ -1139,8 +1139,8 @@ return array(
     'Prefix' => 'rm',
     'Comments' => 'Sursilvan is one of the five traditional written standards or',
   ),
-  'sutsilv' =>
-  array(
+  'sutsilv' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'sutsilv',
@@ -1149,8 +1149,8 @@ return array(
     'Prefix' => 'rm',
     'Comments' => 'Sutsilvan is one of the five traditional written standards or',
   ),
-  'synnejyl' =>
-  array(
+  'synnejyl' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'synnejyl',
@@ -1158,8 +1158,8 @@ return array(
     'Added' => '2021-07-17',
     'Prefix' => 'da',
   ),
-  'taglish' =>
-  array(
+  'taglish' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'taglish',
@@ -1168,8 +1168,8 @@ return array(
     'Prefix' => 'en',
     'Comments' => 'This subtag represents Taglish, wherever it is different from',
   ),
-  'tailo' =>
-  array(
+  'tailo' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'tailo',
@@ -1178,8 +1178,8 @@ return array(
     'Prefix' => 'nan-Latn',
     'Comments' => 'Taiwanese Hokkien Romanization System (Tâi-lô) published in',
   ),
-  'tarask' =>
-  array(
+  'tarask' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'tarask',
@@ -1188,8 +1188,8 @@ return array(
     'Prefix' => 'be',
     'Comments' => 'The subtag represents Branislau Taraskievic\'s Belarusian',
   ),
-  'tongyong' =>
-  array(
+  'tongyong' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'tongyong',
@@ -1198,8 +1198,8 @@ return array(
     'Prefix' => 'zh-Latn',
     'Comments' => 'Former official transcription standard for Mandarin Chinese in',
   ),
-  'tunumiit' =>
-  array(
+  'tunumiit' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'tunumiit',
@@ -1208,8 +1208,8 @@ return array(
     'Prefix' => 'kl',
     'Comments' => 'Also known as Tunumiit oraasiat',
   ),
-  'uccor' =>
-  array(
+  'uccor' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'uccor',
@@ -1217,8 +1217,8 @@ return array(
     'Added' => '2008-10-14',
     'Prefix' => 'kw',
   ),
-  'ucrcor' =>
-  array(
+  'ucrcor' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ucrcor',
@@ -1226,8 +1226,8 @@ return array(
     'Added' => '2008-10-14',
     'Prefix' => 'kw',
   ),
-  'ulster' =>
-  array(
+  'ulster' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'ulster',
@@ -1235,8 +1235,8 @@ return array(
     'Added' => '2010-04-10',
     'Prefix' => 'sco',
   ),
-  'unifon' =>
-  array(
+  'unifon' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'unifon',
@@ -1244,8 +1244,8 @@ return array(
     'Added' => '2013-10-02',
     'Prefix' => 'en',
   ),
-  'vaidika' =>
-  array(
+  'vaidika' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'vaidika',
@@ -1255,8 +1255,8 @@ return array(
     'Prefix' => 'sa',
     'Comments' => 'The most ancient dialect of Sanskrit used in verse and prose',
   ),
-  'valbadia' =>
-  array(
+  'valbadia' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'valbadia',
@@ -1265,8 +1265,8 @@ return array(
     'Prefix' => 'lld',
     'Comments' => 'Represents the standard written form of Ladin in the Val',
   ),
-  'valencia' =>
-  array(
+  'valencia' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'valencia',
@@ -1275,8 +1275,8 @@ return array(
     'Prefix' => 'ca',
     'Comments' => 'Variety spoken in the "Comunidad Valenciana" region of Spain,',
   ),
-  'vallader' =>
-  array(
+  'vallader' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'vallader',
@@ -1285,8 +1285,8 @@ return array(
     'Prefix' => 'rm',
     'Comments' => 'Vallader is one of the five traditional written standards or',
   ),
-  'vecdruka' =>
-  array(
+  'vecdruka' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'vecdruka',
@@ -1295,8 +1295,8 @@ return array(
     'Prefix' => 'lv',
     'Comments' => 'The subtag represents the old orthography of the Latvian',
   ),
-  'viennese' =>
-  array(
+  'viennese' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'viennese',
@@ -1304,8 +1304,8 @@ return array(
     'Added' => '2025-06-22',
     'Prefix' => 'de',
   ),
-  'vivaraup' =>
-  array(
+  'vivaraup' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'vivaraup',
@@ -1314,8 +1314,8 @@ return array(
     'Prefix' => 'oc',
     'Comments' => 'Occitan variant spoken in northeastern Occitania',
   ),
-  'wadegile' =>
-  array(
+  'wadegile' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'wadegile',
@@ -1323,8 +1323,8 @@ return array(
     'Added' => '2008-10-03',
     'Prefix' => 'zh-Latn',
   ),
-  'xsistemo' =>
-  array(
+  'xsistemo' => 
+  array (
     'Active' => true,
     'Type' => 'variant',
     'Subtag' => 'xsistemo',

@@ -473,6 +473,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "connect-udp-bind",
+                            "description": "connect-udp-bind",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "connection",
                             "description": "connection",
                             "isDeprecated": false,
@@ -949,6 +955,12 @@
                         {
                             "name": "proxy-authorization",
                             "description": "proxy-authorization",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "proxy-public-address",
+                            "description": "proxy-public-address",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -75360,6 +75372,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "ars",
+                            "description": "ars",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "at",
                             "description": "at",
                             "isDeprecated": false,
@@ -76034,6 +76052,12 @@
                         {
                             "name": "info",
                             "description": "info",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "interaction",
+                            "description": "interaction",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -77564,6 +77588,12 @@
                         {
                             "name": "web+ap",
                             "description": "web+ap",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "web+interaction",
+                            "description": "web+interaction",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -79102,6 +79132,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "connect-udp-bind",
+                            "description": "connect-udp-bind",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "connection",
                             "description": "connection",
                             "isDeprecated": false,
@@ -79788,6 +79824,12 @@
                         {
                             "name": "proxy-instruction",
                             "description": "proxy-instruction",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "proxy-public-address",
+                            "description": "proxy-public-address",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -158130,6 +158172,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "ars",
+                            "description": "ars",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "at",
                             "description": "at",
                             "isDeprecated": false,
@@ -158834,6 +158882,12 @@
                         {
                             "name": "info",
                             "description": "info",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "interaction",
+                            "description": "interaction",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -160430,6 +160484,12 @@
                         {
                             "name": "web+ap",
                             "description": "web+ap",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "web+interaction",
+                            "description": "web+interaction",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },

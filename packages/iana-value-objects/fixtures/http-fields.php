@@ -1,10 +1,10 @@
-<?php
+<?php 
 /**
  * @codeCoverageIgnore
  */
-return array(
-  '*' =>
-  array(
+return array (
+  '*' => 
+  array (
     'Field Name' => '*',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -12,8 +12,8 @@ return array(
     'Comments' => '(reserved)',
     'Active' => true,
   ),
-  'a-im' =>
-  array(
+  'a-im' => 
+  array (
     'Field Name' => 'A-IM',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -21,8 +21,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept' =>
-  array(
+  'accept' => 
+  array (
     'Field Name' => 'Accept',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -30,8 +30,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-additions' =>
-  array(
+  'accept-additions' => 
+  array (
     'Field Name' => 'Accept-Additions',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -39,8 +39,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-ch' =>
-  array(
+  'accept-ch' => 
+  array (
     'Field Name' => 'Accept-CH',
     'Status' => 'permanent',
     'Structured Type' => 'List',
@@ -48,8 +48,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-charset' =>
-  array(
+  'accept-charset' => 
+  array (
     'Field Name' => 'Accept-Charset',
     'Status' => 'deprecated',
     'Structured Type' => '',
@@ -57,8 +57,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-datetime' =>
-  array(
+  'accept-datetime' => 
+  array (
     'Field Name' => 'Accept-Datetime',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -66,8 +66,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-encoding' =>
-  array(
+  'accept-encoding' => 
+  array (
     'Field Name' => 'Accept-Encoding',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -75,8 +75,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-features' =>
-  array(
+  'accept-features' => 
+  array (
     'Field Name' => 'Accept-Features',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -84,8 +84,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-language' =>
-  array(
+  'accept-language' => 
+  array (
     'Field Name' => 'Accept-Language',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -93,8 +93,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-patch' =>
-  array(
+  'accept-patch' => 
+  array (
     'Field Name' => 'Accept-Patch',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -102,8 +102,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-post' =>
-  array(
+  'accept-post' => 
+  array (
     'Field Name' => 'Accept-Post',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -111,8 +111,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-query' =>
-  array(
+  'accept-query' => 
+  array (
     'Field Name' => 'Accept-Query',
     'Status' => 'permanent',
     'Structured Type' => 'List',
@@ -120,8 +120,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-ranges' =>
-  array(
+  'accept-ranges' => 
+  array (
     'Field Name' => 'Accept-Ranges',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -129,8 +129,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'accept-signature' =>
-  array(
+  'accept-signature' => 
+  array (
     'Field Name' => 'Accept-Signature',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -138,8 +138,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control' =>
-  array(
+  'access-control' => 
+  array (
     'Field Name' => 'Access-Control',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -147,8 +147,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control-allow-credentials' =>
-  array(
+  'access-control-allow-credentials' => 
+  array (
     'Field Name' => 'Access-Control-Allow-Credentials',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -156,8 +156,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control-allow-headers' =>
-  array(
+  'access-control-allow-headers' => 
+  array (
     'Field Name' => 'Access-Control-Allow-Headers',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -165,8 +165,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control-allow-methods' =>
-  array(
+  'access-control-allow-methods' => 
+  array (
     'Field Name' => 'Access-Control-Allow-Methods',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -174,8 +174,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control-allow-origin' =>
-  array(
+  'access-control-allow-origin' => 
+  array (
     'Field Name' => 'Access-Control-Allow-Origin',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -183,8 +183,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control-expose-headers' =>
-  array(
+  'access-control-expose-headers' => 
+  array (
     'Field Name' => 'Access-Control-Expose-Headers',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -192,8 +192,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control-max-age' =>
-  array(
+  'access-control-max-age' => 
+  array (
     'Field Name' => 'Access-Control-Max-Age',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -201,8 +201,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control-request-headers' =>
-  array(
+  'access-control-request-headers' => 
+  array (
     'Field Name' => 'Access-Control-Request-Headers',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -210,8 +210,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'access-control-request-method' =>
-  array(
+  'access-control-request-method' => 
+  array (
     'Field Name' => 'Access-Control-Request-Method',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -219,8 +219,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'activate-storage-access' =>
-  array(
+  'activate-storage-access' => 
+  array (
     'Field Name' => 'Activate-Storage-Access',
     'Status' => 'provisional',
     'Structured Type' => 'Item',
@@ -228,8 +228,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'age' =>
-  array(
+  'age' => 
+  array (
     'Field Name' => 'Age',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -237,8 +237,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'allow' =>
-  array(
+  'allow' => 
+  array (
     'Field Name' => 'Allow',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -246,8 +246,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'alpn' =>
-  array(
+  'alpn' => 
+  array (
     'Field Name' => 'ALPN',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -255,8 +255,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'alt-svc' =>
-  array(
+  'alt-svc' => 
+  array (
     'Field Name' => 'Alt-Svc',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -264,8 +264,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'alt-used' =>
-  array(
+  'alt-used' => 
+  array (
     'Field Name' => 'Alt-Used',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -273,8 +273,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'alternates' =>
-  array(
+  'alternates' => 
+  array (
     'Field Name' => 'Alternates',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -282,8 +282,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'amp-cache-transform' =>
-  array(
+  'amp-cache-transform' => 
+  array (
     'Field Name' => 'AMP-Cache-Transform',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -291,8 +291,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'apply-to-redirect-ref' =>
-  array(
+  'apply-to-redirect-ref' => 
+  array (
     'Field Name' => 'Apply-To-Redirect-Ref',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -300,8 +300,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'authentication-control' =>
-  array(
+  'authentication-control' => 
+  array (
     'Field Name' => 'Authentication-Control',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -309,8 +309,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'authentication-info' =>
-  array(
+  'authentication-info' => 
+  array (
     'Field Name' => 'Authentication-Info',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -318,8 +318,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'authorization' =>
-  array(
+  'authorization' => 
+  array (
     'Field Name' => 'Authorization',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -327,8 +327,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'available-dictionary' =>
-  array(
+  'available-dictionary' => 
+  array (
     'Field Name' => 'Available-Dictionary',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -336,8 +336,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'c-ext' =>
-  array(
+  'c-ext' => 
+  array (
     'Field Name' => 'C-Ext',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -345,8 +345,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'c-man' =>
-  array(
+  'c-man' => 
+  array (
     'Field Name' => 'C-Man',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -354,8 +354,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'c-opt' =>
-  array(
+  'c-opt' => 
+  array (
     'Field Name' => 'C-Opt',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -363,8 +363,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'c-pep' =>
-  array(
+  'c-pep' => 
+  array (
     'Field Name' => 'C-PEP',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -372,8 +372,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'c-pep-info' =>
-  array(
+  'c-pep-info' => 
+  array (
     'Field Name' => 'C-PEP-Info',
     'Status' => 'deprecated',
     'Structured Type' => '',
@@ -381,8 +381,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'cache-control' =>
-  array(
+  'cache-control' => 
+  array (
     'Field Name' => 'Cache-Control',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -390,8 +390,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cache-group-invalidation' =>
-  array(
+  'cache-group-invalidation' => 
+  array (
     'Field Name' => 'Cache-Group-Invalidation',
     'Status' => 'permanent',
     'Structured Type' => 'List',
@@ -399,8 +399,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cache-groups' =>
-  array(
+  'cache-groups' => 
+  array (
     'Field Name' => 'Cache-Groups',
     'Status' => 'permanent',
     'Structured Type' => 'List',
@@ -408,8 +408,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cache-status' =>
-  array(
+  'cache-status' => 
+  array (
     'Field Name' => 'Cache-Status',
     'Status' => 'permanent',
     'Structured Type' => 'List',
@@ -417,8 +417,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cal-managed-id' =>
-  array(
+  'cal-managed-id' => 
+  array (
     'Field Name' => 'Cal-Managed-ID',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -426,8 +426,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'caldav-timezones' =>
-  array(
+  'caldav-timezones' => 
+  array (
     'Field Name' => 'CalDAV-Timezones',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -435,8 +435,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'capsule-protocol' =>
-  array(
+  'capsule-protocol' => 
+  array (
     'Field Name' => 'Capsule-Protocol',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -444,8 +444,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cdn-cache-control' =>
-  array(
+  'cdn-cache-control' => 
+  array (
     'Field Name' => 'CDN-Cache-Control',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -453,8 +453,8 @@ return array(
     'Comments' => 'Cache directives targeted at content delivery networks',
     'Active' => true,
   ),
-  'cdn-loop' =>
-  array(
+  'cdn-loop' => 
+  array (
     'Field Name' => 'CDN-Loop',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -462,8 +462,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cert-not-after' =>
-  array(
+  'cert-not-after' => 
+  array (
     'Field Name' => 'Cert-Not-After',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -471,8 +471,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cert-not-before' =>
-  array(
+  'cert-not-before' => 
+  array (
     'Field Name' => 'Cert-Not-Before',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -480,8 +480,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'clear-site-data' =>
-  array(
+  'clear-site-data' => 
+  array (
     'Field Name' => 'Clear-Site-Data',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -489,8 +489,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'client-cert' =>
-  array(
+  'client-cert' => 
+  array (
     'Field Name' => 'Client-Cert',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -498,8 +498,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'client-cert-chain' =>
-  array(
+  'client-cert-chain' => 
+  array (
     'Field Name' => 'Client-Cert-Chain',
     'Status' => 'permanent',
     'Structured Type' => 'List',
@@ -507,8 +507,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'close' =>
-  array(
+  'close' => 
+  array (
     'Field Name' => 'Close',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -516,8 +516,8 @@ return array(
     'Comments' => '(reserved)',
     'Active' => true,
   ),
-  'cmcd-object' =>
-  array(
+  'cmcd-object' => 
+  array (
     'Field Name' => 'CMCD-Object',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -525,8 +525,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cmcd-request' =>
-  array(
+  'cmcd-request' => 
+  array (
     'Field Name' => 'CMCD-Request',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -534,8 +534,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cmcd-session' =>
-  array(
+  'cmcd-session' => 
+  array (
     'Field Name' => 'CMCD-Session',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -543,8 +543,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cmcd-status' =>
-  array(
+  'cmcd-status' => 
+  array (
     'Field Name' => 'CMCD-Status',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -552,8 +552,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cmsd-dynamic' =>
-  array(
+  'cmsd-dynamic' => 
+  array (
     'Field Name' => 'CMSD-Dynamic',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -561,8 +561,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cmsd-static' =>
-  array(
+  'cmsd-static' => 
+  array (
     'Field Name' => 'CMSD-Static',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -570,8 +570,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'concealed-auth-export' =>
-  array(
+  'concealed-auth-export' => 
+  array (
     'Field Name' => 'Concealed-Auth-Export',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -579,8 +579,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'configuration-context' =>
-  array(
+  'configuration-context' => 
+  array (
     'Field Name' => 'Configuration-Context',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -588,8 +588,17 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'connection' =>
-  array(
+  'connect-udp-bind' => 
+  array (
+    'Field Name' => 'Connect-UDP-Bind',
+    'Status' => 'permanent',
+    'Structured Type' => 'Item',
+    'Reference' => '[RFC-ietf-masque-connect-udp-listen-16: Proxying Bound UDP in HTTP]',
+    'Comments' => '',
+    'Active' => true,
+  ),
+  'connection' => 
+  array (
     'Field Name' => 'Connection',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -597,8 +606,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-base' =>
-  array(
+  'content-base' => 
+  array (
     'Field Name' => 'Content-Base',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -606,8 +615,8 @@ return array(
     'Comments' => 'Obsoleted by [RFC 2616: Hypertext Transfer Protocol -- HTTP/1.1]',
     'Active' => true,
   ),
-  'content-digest' =>
-  array(
+  'content-digest' => 
+  array (
     'Field Name' => 'Content-Digest',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -615,8 +624,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-disposition' =>
-  array(
+  'content-disposition' => 
+  array (
     'Field Name' => 'Content-Disposition',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -624,8 +633,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-encoding' =>
-  array(
+  'content-encoding' => 
+  array (
     'Field Name' => 'Content-Encoding',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -633,8 +642,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-id' =>
-  array(
+  'content-id' => 
+  array (
     'Field Name' => 'Content-ID',
     'Status' => 'deprecated',
     'Structured Type' => '',
@@ -642,8 +651,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-language' =>
-  array(
+  'content-language' => 
+  array (
     'Field Name' => 'Content-Language',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -651,8 +660,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-length' =>
-  array(
+  'content-length' => 
+  array (
     'Field Name' => 'Content-Length',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -660,8 +669,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-location' =>
-  array(
+  'content-location' => 
+  array (
     'Field Name' => 'Content-Location',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -669,8 +678,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-md5' =>
-  array(
+  'content-md5' => 
+  array (
     'Field Name' => 'Content-MD5',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -678,8 +687,8 @@ return array(
     'Comments' => 'Obsoleted by [RFC 7231, Appendix B: Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content]',
     'Active' => true,
   ),
-  'content-range' =>
-  array(
+  'content-range' => 
+  array (
     'Field Name' => 'Content-Range',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -687,8 +696,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-script-type' =>
-  array(
+  'content-script-type' => 
+  array (
     'Field Name' => 'Content-Script-Type',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -696,8 +705,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-security-policy' =>
-  array(
+  'content-security-policy' => 
+  array (
     'Field Name' => 'Content-Security-Policy',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -705,8 +714,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-security-policy-report-only' =>
-  array(
+  'content-security-policy-report-only' => 
+  array (
     'Field Name' => 'Content-Security-Policy-Report-Only',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -714,8 +723,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-style-type' =>
-  array(
+  'content-style-type' => 
+  array (
     'Field Name' => 'Content-Style-Type',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -723,8 +732,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-type' =>
-  array(
+  'content-type' => 
+  array (
     'Field Name' => 'Content-Type',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -732,8 +741,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'content-version' =>
-  array(
+  'content-version' => 
+  array (
     'Field Name' => 'Content-Version',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -741,8 +750,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cookie' =>
-  array(
+  'cookie' => 
+  array (
     'Field Name' => 'Cookie',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -750,8 +759,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cookie2' =>
-  array(
+  'cookie2' => 
+  array (
     'Field Name' => 'Cookie2',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -759,8 +768,8 @@ return array(
     'Comments' => 'Obsoleted by [RFC 6265: HTTP State Management Mechanism]',
     'Active' => true,
   ),
-  'cross-origin-embedder-policy' =>
-  array(
+  'cross-origin-embedder-policy' => 
+  array (
     'Field Name' => 'Cross-Origin-Embedder-Policy',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -768,8 +777,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cross-origin-embedder-policy-report-only' =>
-  array(
+  'cross-origin-embedder-policy-report-only' => 
+  array (
     'Field Name' => 'Cross-Origin-Embedder-Policy-Report-Only',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -777,8 +786,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cross-origin-opener-policy' =>
-  array(
+  'cross-origin-opener-policy' => 
+  array (
     'Field Name' => 'Cross-Origin-Opener-Policy',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -786,8 +795,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cross-origin-opener-policy-report-only' =>
-  array(
+  'cross-origin-opener-policy-report-only' => 
+  array (
     'Field Name' => 'Cross-Origin-Opener-Policy-Report-Only',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -795,8 +804,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cross-origin-resource-policy' =>
-  array(
+  'cross-origin-resource-policy' => 
+  array (
     'Field Name' => 'Cross-Origin-Resource-Policy',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -804,8 +813,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'cta-common-access-token' =>
-  array(
+  'cta-common-access-token' => 
+  array (
     'Field Name' => 'CTA-Common-Access-Token',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -813,8 +822,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'dasl' =>
-  array(
+  'dasl' => 
+  array (
     'Field Name' => 'DASL',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -822,8 +831,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'date' =>
-  array(
+  'date' => 
+  array (
     'Field Name' => 'Date',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -831,8 +840,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'dav' =>
-  array(
+  'dav' => 
+  array (
     'Field Name' => 'DAV',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -840,8 +849,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'default-style' =>
-  array(
+  'default-style' => 
+  array (
     'Field Name' => 'Default-Style',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -849,8 +858,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'delta-base' =>
-  array(
+  'delta-base' => 
+  array (
     'Field Name' => 'Delta-Base',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -858,8 +867,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'deprecation' =>
-  array(
+  'deprecation' => 
+  array (
     'Field Name' => 'Deprecation',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -867,8 +876,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'depth' =>
-  array(
+  'depth' => 
+  array (
     'Field Name' => 'Depth',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -876,8 +885,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'derived-from' =>
-  array(
+  'derived-from' => 
+  array (
     'Field Name' => 'Derived-From',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -885,8 +894,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'destination' =>
-  array(
+  'destination' => 
+  array (
     'Field Name' => 'Destination',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -894,8 +903,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'detached-jws' =>
-  array(
+  'detached-jws' => 
+  array (
     'Field Name' => 'Detached-JWS',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -903,8 +912,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'dictionary-id' =>
-  array(
+  'dictionary-id' => 
+  array (
     'Field Name' => 'Dictionary-ID',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -912,8 +921,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'differential-id' =>
-  array(
+  'differential-id' => 
+  array (
     'Field Name' => 'Differential-ID',
     'Status' => 'deprecated',
     'Structured Type' => '',
@@ -921,8 +930,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'digest' =>
-  array(
+  'digest' => 
+  array (
     'Field Name' => 'Digest',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -930,8 +939,8 @@ return array(
     'Comments' => 'Obsoleted by [RFC 9530, Section 1.3: Digest Fields]',
     'Active' => true,
   ),
-  'dpop' =>
-  array(
+  'dpop' => 
+  array (
     'Field Name' => 'DPoP',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -939,8 +948,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'dpop-nonce' =>
-  array(
+  'dpop-nonce' => 
+  array (
     'Field Name' => 'DPoP-Nonce',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -948,8 +957,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'early-data' =>
-  array(
+  'early-data' => 
+  array (
     'Field Name' => 'Early-Data',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -957,8 +966,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'ediint-features' =>
-  array(
+  'ediint-features' => 
+  array (
     'Field Name' => 'EDIINT-Features',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -966,8 +975,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'etag' =>
-  array(
+  'etag' => 
+  array (
     'Field Name' => 'ETag',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -975,8 +984,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'expect' =>
-  array(
+  'expect' => 
+  array (
     'Field Name' => 'Expect',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -984,8 +993,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'expect-ct' =>
-  array(
+  'expect-ct' => 
+  array (
     'Field Name' => 'Expect-CT',
     'Status' => 'deprecated',
     'Structured Type' => '',
@@ -994,8 +1003,8 @@ return array(
         [HTTPBIS]',
     'Active' => true,
   ),
-  'expires' =>
-  array(
+  'expires' => 
+  array (
     'Field Name' => 'Expires',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1003,8 +1012,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'ext' =>
-  array(
+  'ext' => 
+  array (
     'Field Name' => 'Ext',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1012,8 +1021,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'forwarded' =>
-  array(
+  'forwarded' => 
+  array (
     'Field Name' => 'Forwarded',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1021,8 +1030,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'from' =>
-  array(
+  'from' => 
+  array (
     'Field Name' => 'From',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1030,8 +1039,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'getprofile' =>
-  array(
+  'getprofile' => 
+  array (
     'Field Name' => 'GetProfile',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1039,8 +1048,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'hobareg' =>
-  array(
+  'hobareg' => 
+  array (
     'Field Name' => 'Hobareg',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1048,8 +1057,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'host' =>
-  array(
+  'host' => 
+  array (
     'Field Name' => 'Host',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1057,8 +1066,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'http2-settings' =>
-  array(
+  'http2-settings' => 
+  array (
     'Field Name' => 'HTTP2-Settings',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1066,8 +1075,8 @@ return array(
     'Comments' => 'Obsolete; see Section 11.1 of [RFC9113]',
     'Active' => true,
   ),
-  'if' =>
-  array(
+  'if' => 
+  array (
     'Field Name' => 'If',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1075,8 +1084,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'if-match' =>
-  array(
+  'if-match' => 
+  array (
     'Field Name' => 'If-Match',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1084,8 +1093,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'if-modified-since' =>
-  array(
+  'if-modified-since' => 
+  array (
     'Field Name' => 'If-Modified-Since',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1093,8 +1102,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'if-none-match' =>
-  array(
+  'if-none-match' => 
+  array (
     'Field Name' => 'If-None-Match',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1102,8 +1111,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'if-range' =>
-  array(
+  'if-range' => 
+  array (
     'Field Name' => 'If-Range',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1111,8 +1120,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'if-schedule-tag-match' =>
-  array(
+  'if-schedule-tag-match' => 
+  array (
     'Field Name' => 'If-Schedule-Tag-Match',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1120,8 +1129,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'if-unmodified-since' =>
-  array(
+  'if-unmodified-since' => 
+  array (
     'Field Name' => 'If-Unmodified-Since',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1129,8 +1138,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'im' =>
-  array(
+  'im' => 
+  array (
     'Field Name' => 'IM',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1138,8 +1147,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'include-referred-token-binding-id' =>
-  array(
+  'include-referred-token-binding-id' => 
+  array (
     'Field Name' => 'Include-Referred-Token-Binding-ID',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1147,17 +1156,17 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'incremental' =>
-  array(
+  'incremental' => 
+  array (
     'Field Name' => 'Incremental',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
-    'Reference' => '[RFC-ietf-httpbis-incremental-04: Incremental Forwarding of HTTP Messages]',
+    'Reference' => '[RFC 10036: Incremental Forwarding of HTTP Messages]',
     'Comments' => '',
     'Active' => true,
   ),
-  'isolation' =>
-  array(
+  'isolation' => 
+  array (
     'Field Name' => 'Isolation',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -1165,8 +1174,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'keep-alive' =>
-  array(
+  'keep-alive' => 
+  array (
     'Field Name' => 'Keep-Alive',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1174,8 +1183,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'label' =>
-  array(
+  'label' => 
+  array (
     'Field Name' => 'Label',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1183,8 +1192,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'last-event-id' =>
-  array(
+  'last-event-id' => 
+  array (
     'Field Name' => 'Last-Event-ID',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1192,8 +1201,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'last-modified' =>
-  array(
+  'last-modified' => 
+  array (
     'Field Name' => 'Last-Modified',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1201,8 +1210,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'link' =>
-  array(
+  'link' => 
+  array (
     'Field Name' => 'Link',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1210,8 +1219,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'link-template' =>
-  array(
+  'link-template' => 
+  array (
     'Field Name' => 'Link-Template',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1219,8 +1228,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'location' =>
-  array(
+  'location' => 
+  array (
     'Field Name' => 'Location',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1228,8 +1237,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'lock-token' =>
-  array(
+  'lock-token' => 
+  array (
     'Field Name' => 'Lock-Token',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1237,8 +1246,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'man' =>
-  array(
+  'man' => 
+  array (
     'Field Name' => 'Man',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1246,8 +1255,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'max-forwards' =>
-  array(
+  'max-forwards' => 
+  array (
     'Field Name' => 'Max-Forwards',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1255,8 +1264,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'memento-datetime' =>
-  array(
+  'memento-datetime' => 
+  array (
     'Field Name' => 'Memento-Datetime',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1264,8 +1273,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'meter' =>
-  array(
+  'meter' => 
+  array (
     'Field Name' => 'Meter',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1273,8 +1282,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'method-check' =>
-  array(
+  'method-check' => 
+  array (
     'Field Name' => 'Method-Check',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1282,8 +1291,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'method-check-expires' =>
-  array(
+  'method-check-expires' => 
+  array (
     'Field Name' => 'Method-Check-Expires',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1291,8 +1300,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'mime-version' =>
-  array(
+  'mime-version' => 
+  array (
     'Field Name' => 'MIME-Version',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1300,8 +1309,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'negotiate' =>
-  array(
+  'negotiate' => 
+  array (
     'Field Name' => 'Negotiate',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1309,8 +1318,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'nel' =>
-  array(
+  'nel' => 
+  array (
     'Field Name' => 'NEL',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1318,8 +1327,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'odata-entityid' =>
-  array(
+  'odata-entityid' => 
+  array (
     'Field Name' => 'OData-EntityId',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1327,8 +1336,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'odata-isolation' =>
-  array(
+  'odata-isolation' => 
+  array (
     'Field Name' => 'OData-Isolation',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1336,8 +1345,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'odata-maxversion' =>
-  array(
+  'odata-maxversion' => 
+  array (
     'Field Name' => 'OData-MaxVersion',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1345,8 +1354,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'odata-version' =>
-  array(
+  'odata-version' => 
+  array (
     'Field Name' => 'OData-Version',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1354,8 +1363,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'opt' =>
-  array(
+  'opt' => 
+  array (
     'Field Name' => 'Opt',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1363,8 +1372,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'optional-www-authenticate' =>
-  array(
+  'optional-www-authenticate' => 
+  array (
     'Field Name' => 'Optional-WWW-Authenticate',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1372,8 +1381,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'ordering-type' =>
-  array(
+  'ordering-type' => 
+  array (
     'Field Name' => 'Ordering-Type',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1381,8 +1390,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'origin' =>
-  array(
+  'origin' => 
+  array (
     'Field Name' => 'Origin',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1390,8 +1399,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'origin-agent-cluster' =>
-  array(
+  'origin-agent-cluster' => 
+  array (
     'Field Name' => 'Origin-Agent-Cluster',
     'Status' => 'permanent',
     'Structured Type' => 'Item',
@@ -1399,8 +1408,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'oscore' =>
-  array(
+  'oscore' => 
+  array (
     'Field Name' => 'OSCORE',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1408,8 +1417,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'oslc-core-version' =>
-  array(
+  'oslc-core-version' => 
+  array (
     'Field Name' => 'OSLC-Core-Version',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1417,8 +1426,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'overwrite' =>
-  array(
+  'overwrite' => 
+  array (
     'Field Name' => 'Overwrite',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1426,8 +1435,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'p3p' =>
-  array(
+  'p3p' => 
+  array (
     'Field Name' => 'P3P',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1435,8 +1444,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'pep' =>
-  array(
+  'pep' => 
+  array (
     'Field Name' => 'PEP',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1444,8 +1453,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'pep-info' =>
-  array(
+  'pep-info' => 
+  array (
     'Field Name' => 'PEP-Info',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1453,8 +1462,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'permissions-policy' =>
-  array(
+  'permissions-policy' => 
+  array (
     'Field Name' => 'Permissions-Policy',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -1462,8 +1471,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'pics-label' =>
-  array(
+  'pics-label' => 
+  array (
     'Field Name' => 'PICS-Label',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1471,8 +1480,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'ping-from' =>
-  array(
+  'ping-from' => 
+  array (
     'Field Name' => 'Ping-From',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1480,8 +1489,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'ping-to' =>
-  array(
+  'ping-to' => 
+  array (
     'Field Name' => 'Ping-To',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1489,8 +1498,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'position' =>
-  array(
+  'position' => 
+  array (
     'Field Name' => 'Position',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1498,8 +1507,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'pragma' =>
-  array(
+  'pragma' => 
+  array (
     'Field Name' => 'Pragma',
     'Status' => 'deprecated',
     'Structured Type' => '',
@@ -1507,8 +1516,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'prefer' =>
-  array(
+  'prefer' => 
+  array (
     'Field Name' => 'Prefer',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1516,8 +1525,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'preference-applied' =>
-  array(
+  'preference-applied' => 
+  array (
     'Field Name' => 'Preference-Applied',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1525,8 +1534,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'priority' =>
-  array(
+  'priority' => 
+  array (
     'Field Name' => 'Priority',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -1534,8 +1543,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'profileobject' =>
-  array(
+  'profileobject' => 
+  array (
     'Field Name' => 'ProfileObject',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1543,8 +1552,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'protocol' =>
-  array(
+  'protocol' => 
+  array (
     'Field Name' => 'Protocol',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1552,8 +1561,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'protocol-info' =>
-  array(
+  'protocol-info' => 
+  array (
     'Field Name' => 'Protocol-Info',
     'Status' => 'deprecated',
     'Structured Type' => '',
@@ -1561,8 +1570,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'protocol-query' =>
-  array(
+  'protocol-query' => 
+  array (
     'Field Name' => 'Protocol-Query',
     'Status' => 'deprecated',
     'Structured Type' => '',
@@ -1570,8 +1579,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'protocol-request' =>
-  array(
+  'protocol-request' => 
+  array (
     'Field Name' => 'Protocol-Request',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1579,8 +1588,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'proxy-authenticate' =>
-  array(
+  'proxy-authenticate' => 
+  array (
     'Field Name' => 'Proxy-Authenticate',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1588,8 +1597,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'proxy-authentication-info' =>
-  array(
+  'proxy-authentication-info' => 
+  array (
     'Field Name' => 'Proxy-Authentication-Info',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1597,8 +1606,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'proxy-authorization' =>
-  array(
+  'proxy-authorization' => 
+  array (
     'Field Name' => 'Proxy-Authorization',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1606,8 +1615,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'proxy-features' =>
-  array(
+  'proxy-features' => 
+  array (
     'Field Name' => 'Proxy-Features',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1615,8 +1624,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'proxy-instruction' =>
-  array(
+  'proxy-instruction' => 
+  array (
     'Field Name' => 'Proxy-Instruction',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1624,8 +1633,17 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'proxy-status' =>
-  array(
+  'proxy-public-address' => 
+  array (
+    'Field Name' => 'Proxy-Public-Address',
+    'Status' => 'permanent',
+    'Structured Type' => 'List',
+    'Reference' => '[RFC-ietf-masque-connect-udp-listen-16: Proxying Bound UDP in HTTP]',
+    'Comments' => '',
+    'Active' => true,
+  ),
+  'proxy-status' => 
+  array (
     'Field Name' => 'Proxy-Status',
     'Status' => 'permanent',
     'Structured Type' => 'List',
@@ -1633,8 +1651,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'public' =>
-  array(
+  'public' => 
+  array (
     'Field Name' => 'Public',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1642,8 +1660,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'public-key-pins' =>
-  array(
+  'public-key-pins' => 
+  array (
     'Field Name' => 'Public-Key-Pins',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1651,8 +1669,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'public-key-pins-report-only' =>
-  array(
+  'public-key-pins-report-only' => 
+  array (
     'Field Name' => 'Public-Key-Pins-Report-Only',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1660,8 +1678,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'range' =>
-  array(
+  'range' => 
+  array (
     'Field Name' => 'Range',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1669,8 +1687,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'redirect-ref' =>
-  array(
+  'redirect-ref' => 
+  array (
     'Field Name' => 'Redirect-Ref',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1678,8 +1696,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'referer' =>
-  array(
+  'referer' => 
+  array (
     'Field Name' => 'Referer',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1687,8 +1705,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'referer-root' =>
-  array(
+  'referer-root' => 
+  array (
     'Field Name' => 'Referer-Root',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1696,8 +1714,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'referrer-policy' =>
-  array(
+  'referrer-policy' => 
+  array (
     'Field Name' => 'Referrer-Policy',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1705,8 +1723,8 @@ return array(
     'Comments' => 'The header name does not share the HTTP Referer header\'s misspelling.',
     'Active' => true,
   ),
-  'refresh' =>
-  array(
+  'refresh' => 
+  array (
     'Field Name' => 'Refresh',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1714,8 +1732,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'repeatability-client-id' =>
-  array(
+  'repeatability-client-id' => 
+  array (
     'Field Name' => 'Repeatability-Client-ID',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -1723,8 +1741,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'repeatability-first-sent' =>
-  array(
+  'repeatability-first-sent' => 
+  array (
     'Field Name' => 'Repeatability-First-Sent',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -1732,8 +1750,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'repeatability-request-id' =>
-  array(
+  'repeatability-request-id' => 
+  array (
     'Field Name' => 'Repeatability-Request-ID',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -1741,8 +1759,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'repeatability-result' =>
-  array(
+  'repeatability-result' => 
+  array (
     'Field Name' => 'Repeatability-Result',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -1750,8 +1768,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'replay-nonce' =>
-  array(
+  'replay-nonce' => 
+  array (
     'Field Name' => 'Replay-Nonce',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1759,8 +1777,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'reporting-endpoints' =>
-  array(
+  'reporting-endpoints' => 
+  array (
     'Field Name' => 'Reporting-Endpoints',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -1768,8 +1786,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'repr-digest' =>
-  array(
+  'repr-digest' => 
+  array (
     'Field Name' => 'Repr-Digest',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -1777,8 +1795,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'retry-after' =>
-  array(
+  'retry-after' => 
+  array (
     'Field Name' => 'Retry-After',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1786,8 +1804,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'safe' =>
-  array(
+  'safe' => 
+  array (
     'Field Name' => 'Safe',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1795,8 +1813,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'schedule-reply' =>
-  array(
+  'schedule-reply' => 
+  array (
     'Field Name' => 'Schedule-Reply',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1804,8 +1822,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'schedule-tag' =>
-  array(
+  'schedule-tag' => 
+  array (
     'Field Name' => 'Schedule-Tag',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1813,8 +1831,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-fetch-dest' =>
-  array(
+  'sec-fetch-dest' => 
+  array (
     'Field Name' => 'Sec-Fetch-Dest',
     'Status' => 'Permanent',
     'Structured Type' => 'Item',
@@ -1822,8 +1840,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-fetch-mode' =>
-  array(
+  'sec-fetch-mode' => 
+  array (
     'Field Name' => 'Sec-Fetch-Mode',
     'Status' => 'Permanent',
     'Structured Type' => 'Item',
@@ -1831,8 +1849,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-fetch-site' =>
-  array(
+  'sec-fetch-site' => 
+  array (
     'Field Name' => 'Sec-Fetch-Site',
     'Status' => 'Permanent',
     'Structured Type' => 'Item',
@@ -1840,8 +1858,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-fetch-storage-access' =>
-  array(
+  'sec-fetch-storage-access' => 
+  array (
     'Field Name' => 'Sec-Fetch-Storage-Access',
     'Status' => 'provisional',
     'Structured Type' => 'Token',
@@ -1849,8 +1867,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-fetch-user' =>
-  array(
+  'sec-fetch-user' => 
+  array (
     'Field Name' => 'Sec-Fetch-User',
     'Status' => 'Permanent',
     'Structured Type' => 'Item',
@@ -1858,8 +1876,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-gpc' =>
-  array(
+  'sec-gpc' => 
+  array (
     'Field Name' => 'Sec-GPC',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -1867,8 +1885,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-purpose' =>
-  array(
+  'sec-purpose' => 
+  array (
     'Field Name' => 'Sec-Purpose',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1876,8 +1894,8 @@ return array(
     'Comments' => 'Intended to replace the (not registered) Purpose and x-moz headers.',
     'Active' => true,
   ),
-  'sec-token-binding' =>
-  array(
+  'sec-token-binding' => 
+  array (
     'Field Name' => 'Sec-Token-Binding',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1885,8 +1903,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-websocket-accept' =>
-  array(
+  'sec-websocket-accept' => 
+  array (
     'Field Name' => 'Sec-WebSocket-Accept',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1894,8 +1912,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-websocket-extensions' =>
-  array(
+  'sec-websocket-extensions' => 
+  array (
     'Field Name' => 'Sec-WebSocket-Extensions',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1903,8 +1921,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-websocket-key' =>
-  array(
+  'sec-websocket-key' => 
+  array (
     'Field Name' => 'Sec-WebSocket-Key',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1912,8 +1930,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-websocket-protocol' =>
-  array(
+  'sec-websocket-protocol' => 
+  array (
     'Field Name' => 'Sec-WebSocket-Protocol',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1921,8 +1939,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sec-websocket-version' =>
-  array(
+  'sec-websocket-version' => 
+  array (
     'Field Name' => 'Sec-WebSocket-Version',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1930,8 +1948,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'security-scheme' =>
-  array(
+  'security-scheme' => 
+  array (
     'Field Name' => 'Security-Scheme',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1939,8 +1957,8 @@ return array(
     'Comments' => '[Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
-  'server' =>
-  array(
+  'server' => 
+  array (
     'Field Name' => 'Server',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1948,8 +1966,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'server-timing' =>
-  array(
+  'server-timing' => 
+  array (
     'Field Name' => 'Server-Timing',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1957,8 +1975,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'set-cookie' =>
-  array(
+  'set-cookie' => 
+  array (
     'Field Name' => 'Set-Cookie',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1966,8 +1984,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'set-cookie2' =>
-  array(
+  'set-cookie2' => 
+  array (
     'Field Name' => 'Set-Cookie2',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1975,8 +1993,8 @@ return array(
     'Comments' => 'Obsoleted by [RFC 6265: HTTP State Management Mechanism]',
     'Active' => true,
   ),
-  'set-txn' =>
-  array(
+  'set-txn' => 
+  array (
     'Field Name' => 'Set-Txn',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -1984,8 +2002,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'setprofile' =>
-  array(
+  'setprofile' => 
+  array (
     'Field Name' => 'SetProfile',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -1993,8 +2011,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'signature' =>
-  array(
+  'signature' => 
+  array (
     'Field Name' => 'Signature',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -2002,8 +2020,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'signature-input' =>
-  array(
+  'signature-input' => 
+  array (
     'Field Name' => 'Signature-Input',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -2011,8 +2029,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'slug' =>
-  array(
+  'slug' => 
+  array (
     'Field Name' => 'SLUG',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2020,8 +2038,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'soapaction' =>
-  array(
+  'soapaction' => 
+  array (
     'Field Name' => 'SoapAction',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2029,8 +2047,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'status-uri' =>
-  array(
+  'status-uri' => 
+  array (
     'Field Name' => 'Status-URI',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2038,8 +2056,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'strict-transport-security' =>
-  array(
+  'strict-transport-security' => 
+  array (
     'Field Name' => 'Strict-Transport-Security',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2047,8 +2065,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'sunset' =>
-  array(
+  'sunset' => 
+  array (
     'Field Name' => 'Sunset',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2056,8 +2074,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'surrogate-capability' =>
-  array(
+  'surrogate-capability' => 
+  array (
     'Field Name' => 'Surrogate-Capability',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -2065,8 +2083,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'surrogate-control' =>
-  array(
+  'surrogate-control' => 
+  array (
     'Field Name' => 'Surrogate-Control',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -2074,8 +2092,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'tcn' =>
-  array(
+  'tcn' => 
+  array (
     'Field Name' => 'TCN',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2083,8 +2101,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'te' =>
-  array(
+  'te' => 
+  array (
     'Field Name' => 'TE',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2092,8 +2110,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'timeout' =>
-  array(
+  'timeout' => 
+  array (
     'Field Name' => 'Timeout',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2101,8 +2119,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'timing-allow-origin' =>
-  array(
+  'timing-allow-origin' => 
+  array (
     'Field Name' => 'Timing-Allow-Origin',
     'Status' => 'provisional',
     'Structured Type' => '',
@@ -2110,8 +2128,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'topic' =>
-  array(
+  'topic' => 
+  array (
     'Field Name' => 'Topic',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2119,8 +2137,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'traceparent' =>
-  array(
+  'traceparent' => 
+  array (
     'Field Name' => 'Traceparent',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2128,8 +2146,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'tracestate' =>
-  array(
+  'tracestate' => 
+  array (
     'Field Name' => 'Tracestate',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2137,8 +2155,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'trailer' =>
-  array(
+  'trailer' => 
+  array (
     'Field Name' => 'Trailer',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2146,8 +2164,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'transfer-encoding' =>
-  array(
+  'transfer-encoding' => 
+  array (
     'Field Name' => 'Transfer-Encoding',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2155,8 +2173,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'ttl' =>
-  array(
+  'ttl' => 
+  array (
     'Field Name' => 'TTL',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2164,8 +2182,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'unencoded-digest' =>
-  array(
+  'unencoded-digest' => 
+  array (
     'Field Name' => 'Unencoded-Digest',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -2173,8 +2191,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'upgrade' =>
-  array(
+  'upgrade' => 
+  array (
     'Field Name' => 'Upgrade',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2182,8 +2200,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'urgency' =>
-  array(
+  'urgency' => 
+  array (
     'Field Name' => 'Urgency',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2191,8 +2209,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'uri' =>
-  array(
+  'uri' => 
+  array (
     'Field Name' => 'URI',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -2200,8 +2218,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'use-as-dictionary' =>
-  array(
+  'use-as-dictionary' => 
+  array (
     'Field Name' => 'Use-As-Dictionary',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -2209,8 +2227,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'user-agent' =>
-  array(
+  'user-agent' => 
+  array (
     'Field Name' => 'User-Agent',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2218,8 +2236,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'variant-vary' =>
-  array(
+  'variant-vary' => 
+  array (
     'Field Name' => 'Variant-Vary',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2227,8 +2245,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'vary' =>
-  array(
+  'vary' => 
+  array (
     'Field Name' => 'Vary',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2236,8 +2254,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'via' =>
-  array(
+  'via' => 
+  array (
     'Field Name' => 'Via',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2245,8 +2263,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'want-content-digest' =>
-  array(
+  'want-content-digest' => 
+  array (
     'Field Name' => 'Want-Content-Digest',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -2254,8 +2272,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'want-digest' =>
-  array(
+  'want-digest' => 
+  array (
     'Field Name' => 'Want-Digest',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -2263,8 +2281,8 @@ return array(
     'Comments' => 'Obsoleted by [RFC 9530, Section 1.3: Digest Fields]',
     'Active' => true,
   ),
-  'want-repr-digest' =>
-  array(
+  'want-repr-digest' => 
+  array (
     'Field Name' => 'Want-Repr-Digest',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -2272,8 +2290,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'want-unencoded-digest' =>
-  array(
+  'want-unencoded-digest' => 
+  array (
     'Field Name' => 'Want-Unencoded-Digest',
     'Status' => 'permanent',
     'Structured Type' => 'Dictionary',
@@ -2281,8 +2299,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'warning' =>
-  array(
+  'warning' => 
+  array (
     'Field Name' => 'Warning',
     'Status' => 'obsoleted',
     'Structured Type' => '',
@@ -2290,8 +2308,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'www-authenticate' =>
-  array(
+  'www-authenticate' => 
+  array (
     'Field Name' => 'WWW-Authenticate',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2299,8 +2317,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'x-content-type-options' =>
-  array(
+  'x-content-type-options' => 
+  array (
     'Field Name' => 'X-Content-Type-Options',
     'Status' => 'permanent',
     'Structured Type' => '',
@@ -2308,8 +2326,8 @@ return array(
     'Comments' => '',
     'Active' => true,
   ),
-  'x-frame-options' =>
-  array(
+  'x-frame-options' => 
+  array (
     'Field Name' => 'X-Frame-Options',
     'Status' => 'permanent',
     'Structured Type' => '',

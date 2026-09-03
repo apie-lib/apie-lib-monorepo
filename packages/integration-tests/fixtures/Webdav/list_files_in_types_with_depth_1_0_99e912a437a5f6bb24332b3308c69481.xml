@@ -53,6 +53,16 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/Animal.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/ExternalFile/</d:href>
     <d:propstat>
       <d:prop>
@@ -89,6 +99,16 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/ExternalFile.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -135,6 +155,16 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/IanaObject.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/ObjectWithRelation/</d:href>
     <d:propstat>
       <d:prop>
@@ -171,6 +201,16 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/ObjectWithRelation.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -217,6 +257,16 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/Order.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/PrimitiveOnly/</d:href>
     <d:propstat>
       <d:prop>
@@ -253,6 +303,16 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/PrimitiveOnly.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -299,6 +359,16 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/RestrictedEntity.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/SpecialTypeOnly/</d:href>
     <d:propstat>
       <d:prop>
@@ -335,6 +405,16 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/SpecialTypeOnly.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -381,6 +461,16 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/TranslationAware.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/UnionObject/</d:href>
     <d:propstat>
       <d:prop>
@@ -417,6 +507,16 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/UnionObject.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -463,6 +563,16 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/UploadedFile.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/User/</d:href>
     <d:propstat>
       <d:prop>
@@ -499,6 +609,16 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/User.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>
@@ -545,6 +665,16 @@
     </d:propstat>
   </d:response>
   <d:response>
+    <d:href>/webdav/types/resources/SequentialBackgroundProcess.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
     <d:href>/webdav/types/resources/AuditLog/</d:href>
     <d:propstat>
       <d:prop>
@@ -581,6 +711,16 @@
       <d:prop>
         <d:resourcetype/>
         <d:getcontenttype>application/zip</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+  <d:response>
+    <d:href>/webdav/types/resources/AuditLog.ods</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:resourcetype/>
+        <d:getcontenttype>application/vnd.oasis.opendocument.spreadsheet</d:getcontenttype>
       </d:prop>
       <d:status>HTTP/1.1 200 OK</d:status>
     </d:propstat>

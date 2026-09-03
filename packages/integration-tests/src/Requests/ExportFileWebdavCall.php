@@ -95,7 +95,7 @@ class ExportFileWebdavCall implements WebdavTestRequestInterface, BootstrapReque
             if (!$archive->open($tempfile)) {
                 throw new \LogicException('Could not open zip file');
             }
-            TestCase::assertEquals(6, $archive->count());
+            TestCase::assertEquals(12, $archive->count());
         } finally {
             @unlink($tempfile);
         }
