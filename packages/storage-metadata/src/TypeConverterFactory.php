@@ -19,6 +19,7 @@ use Apie\StorageMetadata\Converters\IntToAutoIncrementTable;
 use Apie\StorageMetadata\Converters\IntToValueObject;
 use Apie\StorageMetadata\Converters\MixedStorageToObject;
 use Apie\StorageMetadata\Converters\MixedToMixedStorage;
+use Apie\StorageMetadata\Converters\SimpleXmlToString;
 use Apie\StorageMetadata\Converters\StringToBcMath;
 use Apie\StorageMetadata\Converters\StringToDateTime;
 use Apie\StorageMetadata\Converters\StringToDom;
@@ -70,6 +71,7 @@ final class TypeConverterFactory
                 new DateTimeToDateTimeImmutable(),
                 new DateTimeToString(),
                 new DomToString(),
+                new SimpleXmlToString(),
                 new StringToDom(),
                 new StringToValueObject(),
                 new StringToEnum(),

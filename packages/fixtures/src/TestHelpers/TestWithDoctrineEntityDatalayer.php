@@ -17,6 +17,7 @@ use Apie\DoctrineEntityDatalayer\Factories\EntityQueryFilterFactory;
 use Apie\DoctrineEntityDatalayer\IndexStrategy\DirectIndexStrategy;
 use Apie\DoctrineEntityDatalayer\OrmBuilder;
 use Apie\Faker\ApieObjectFaker;
+use Apie\Fixtures\Attributes\DisableDatalayerTest;
 use Apie\StorageMetadata\DomainToStorageConverter;
 use Faker\Factory;
 use PHPUnit\Framework\Attributes\Test;
@@ -45,6 +46,11 @@ trait TestWithDoctrineEntityDatalayer
     #[Test]
     public function it_can_be_stored_in_a_property_with_doctrine_entity_datalayer()
     {
+        foreach ((new \ReflectionClass(static::class))->getAttributes() as $attribute) {
+            if ($attribute->getName() === DisableDatalayerTest::class) {
+                $this->markTestSkipped('DoctrineEntityDatalayer test disabled for this class');
+            }
+        }
         if (!class_exists(DoctrineEntityDatalayer::class)) {
             $this->markTestSkipped('DoctrineEntityDatalayer class not loaded');
         }

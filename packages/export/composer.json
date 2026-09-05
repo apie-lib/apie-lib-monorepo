@@ -37,6 +37,7 @@
 ]
   },
   "require-dev": {
+    "apie/fixtures": "self.version",
     "illuminate/support": "*",
     "phpunit/phpunit": "^11.5.2",
     "phpspec/prophecy-phpunit": "^2.5"
