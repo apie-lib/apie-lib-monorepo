@@ -1,5 +1,5 @@
 # start with the official Composer image and name it
-FROM composer:2.8.4 AS composer
+FROM composer:2.10.3 AS composer
 # start with the official Composer image and name it
 FROM php:PHP_VERSION
 
@@ -16,13 +16,14 @@ RUN apt-get install -y \
         unzip \
         libpng-dev \
         libssh2-1-dev \
+        libzip-dev \
         zlib1g-dev \
         zip
 
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-RUN docker-php-ext-install gd ftp
+RUN docker-php-ext-install gd ftp zip
 RUN pecl install pcov && docker-php-ext-enable pcov || true
 COPY ./packages/PACKAGE_NAME /app/packages/PACKAGE_NAME
 RUN echo "pcov.enabled=1" >> /usr/local/etc/php/conf.d/pcov.ini \

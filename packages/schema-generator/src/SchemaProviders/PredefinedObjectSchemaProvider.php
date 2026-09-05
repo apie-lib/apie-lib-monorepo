@@ -6,10 +6,13 @@ use Apie\SchemaGenerator\Interfaces\SchemaProvider;
 use BcMath\Number;
 use cebe\openapi\spec\Components;
 use cebe\openapi\spec\Schema;
+use DOMAttr;
+use DOMElement;
 use FFI\CData;
 use FFI\CType;
 use GMP;
 use ReflectionClass;
+use SimpleXMLElement;
 use StreamBucket;
 use Uri\Rfc3986\Uri;
 
@@ -29,6 +32,9 @@ class PredefinedObjectSchemaProvider implements SchemaProvider
                 StreamBucket::class,
                 CType::class,
                 CData::class,
+                SimpleXMLElement::class,
+                DOMAttr::class,
+                DOMElement::class,
             ]
         );
     }
