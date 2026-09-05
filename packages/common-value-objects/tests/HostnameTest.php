@@ -11,6 +11,12 @@ class HostnameTest extends ValueObjectTestCase
         return Hostname::class;
     }
 
+    
+    public static function createExampleObject(): object
+    {
+        return new Hostname('test.nl');
+    }
+
     public static function provideFromNative(): array
     {
         return [

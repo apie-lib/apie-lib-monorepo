@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Tests\CountryAndPhoneNumber;
 
-use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\CountryAndPhoneNumber\InternationalPhoneNumber;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;

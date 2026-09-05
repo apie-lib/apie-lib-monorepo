@@ -10,6 +10,7 @@ use Apie\Faker\Fakers\CompositeObjectFaker;
 use Apie\Faker\Fakers\DateValueObjectFaker;
 use Apie\Faker\Fakers\DurationFaker;
 use Apie\Faker\Fakers\EnumFaker;
+use Apie\Faker\Fakers\FfiFaker;
 use Apie\Faker\Fakers\GmpFaker;
 use Apie\Faker\Fakers\ItemHashmapFaker;
 use Apie\Faker\Fakers\ItemListFaker;
@@ -81,6 +82,7 @@ final class ApieObjectFaker extends Base
                 new BcMathFaker(),
                 new PhpDateTimeObjectFaker(),
                 new StringableFaker(),
+                new FfiFaker(),
                 new UseConstructorFaker(),
             ]
         );

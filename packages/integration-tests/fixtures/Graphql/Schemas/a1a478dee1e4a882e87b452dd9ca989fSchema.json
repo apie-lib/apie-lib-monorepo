@@ -58268,6 +58268,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.fiduswriter+zip",
+                            "description": "application\/vnd.fiduswriter+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.filmit.zfc",
                             "description": "application\/vnd.filmit.zfc",
                             "isDeprecated": false,
@@ -61600,6 +61606,12 @@
                         {
                             "name": "application\/vnd.prismatic",
                             "description": "application\/vnd.prismatic",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.prml+yaml",
+                            "description": "application\/vnd.prml+yaml",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -139571,6 +139583,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.fiduswriter+zip",
+                            "description": "application\/vnd.fiduswriter+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.filmit.zfc",
                             "description": "application\/vnd.filmit.zfc",
                             "isDeprecated": false,
@@ -142903,6 +142921,12 @@
                         {
                             "name": "application\/vnd.prismatic",
                             "description": "application\/vnd.prismatic",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.prml+yaml",
+                            "description": "application\/vnd.prml+yaml",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },

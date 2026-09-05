@@ -18985,19 +18985,19 @@
                 "pattern": "^apie\\.(bounded\\.([a-z][a-z0-9]*)\\.)?(resource\\.([a-z0-9]+(_[a-z0-9]+)*)\\.)?properties\\.[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*(\\.(singular|plural))?(\\.(authenticated|unauthenticated))?$"
             },
             "GMP-nullable-get": {
+                "pattern": "^[1-9][0-9]*$",
                 "type": "string",
                 "description": "Large integers written down as a string",
                 "format": "bigint",
                 "example": "1234547648759975",
-                "regex": "^[1-9][0-9]*$",
                 "nullable": true
             },
             "GMP-nullable-post": {
+                "pattern": "^[1-9][0-9]*$",
                 "type": "string",
                 "description": "Large integers written down as a string",
                 "format": "bigint",
                 "example": "1234547648759975",
-                "regex": "^[1-9][0-9]*$",
                 "nullable": true
             },
             "HttpHeader-nullable-get": {
@@ -20252,19 +20252,19 @@
                 }
             },
             "Number-nullable-get": {
+                "pattern": "^[1-9][0-9]*(\\.[0-9]*$",
                 "type": "string",
                 "description": "Large numbers with arbitrary precision written down as a string",
                 "format": "bcmath-number",
                 "example": "1234547648759975.1313",
-                "regex": "^[1-9][0-9]*(\\.[0-9]*$",
                 "nullable": true
             },
             "Number-nullable-post": {
+                "pattern": "^[1-9][0-9]*(\\.[0-9]*$",
                 "type": "string",
                 "description": "Large numbers with arbitrary precision written down as a string",
                 "format": "bcmath-number",
                 "example": "1234547648759975.1313",
-                "regex": "^[1-9][0-9]*(\\.[0-9]*$",
                 "nullable": true
             },
             "ObjectWithRelation-get": {

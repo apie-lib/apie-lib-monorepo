@@ -2734,12 +2734,14 @@
                                 "type": "string",
                                 "description": "Large numbers with arbitrary precision written down as a string",
                                 "nullable": true,
+                                "pattern": "^[1-9][0-9]*(\\.[0-9]*$",
                                 "example": "1234547648759975.1313"
                             },
                             "gmp": {
                                 "type": "string",
                                 "description": "Large integers written down as a string",
                                 "nullable": true,
+                                "pattern": "^[1-9][0-9]*$",
                                 "example": "1234547648759975"
                             }
                         }
@@ -6448,12 +6450,14 @@
                                 "type": "string",
                                 "description": "Large numbers with arbitrary precision written down as a string",
                                 "nullable": true,
+                                "pattern": "^[1-9][0-9]*(\\.[0-9]*$",
                                 "example": "1234547648759975.1313"
                             },
                             "gmp": {
                                 "type": "string",
                                 "description": "Large integers written down as a string",
                                 "nullable": true,
+                                "pattern": "^[1-9][0-9]*$",
                                 "example": "1234547648759975"
                             },
                             "id": {

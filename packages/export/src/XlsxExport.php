@@ -26,7 +26,7 @@ class XlsxExport implements ExportInterface
         $writer = new Writer(new Options(properties: new Properties(
             title: 'Apie ' . ucfirst(basename($outputFilename)),
             creator: 'Apie library',
-            lastModifiedBy: 'Apie library' 
+            lastModifiedBy: 'Apie library'
         )));
         $writer->openToFile($tempFile);
         try {

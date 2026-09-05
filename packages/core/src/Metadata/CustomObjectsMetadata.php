@@ -6,10 +6,13 @@ use Apie\Core\Context\MetadataFieldHashmap;
 use Apie\Core\Enums\ScalarType;
 use Apie\Core\Lists\StringList;
 use Apie\Core\Lists\ValueOptionList;
+use Apie\Core\Other\StreamBucketObject;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use BcMath\Number;
+use FFI\CType;
 use GMP;
 use ReflectionClass;
+use StreamBucket;
 use Uri\Rfc3986\Uri;
 
 class CustomObjectsMetadata implements MetadataInterface
@@ -21,6 +24,8 @@ class CustomObjectsMetadata implements MetadataInterface
         Uri::class => 'string',
         Number::class => 'string',
         GMP::class => 'string',
+        StreamBucket::class => StreamBucketObject::class,
+        CType::class => 'string|int|float|null|' . StringList::class,
     ];
 
     private MetadataInterface $internal;

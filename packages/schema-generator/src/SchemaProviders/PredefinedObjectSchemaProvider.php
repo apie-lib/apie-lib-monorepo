@@ -6,8 +6,11 @@ use Apie\SchemaGenerator\Interfaces\SchemaProvider;
 use BcMath\Number;
 use cebe\openapi\spec\Components;
 use cebe\openapi\spec\Schema;
+use FFI\CData;
+use FFI\CType;
 use GMP;
 use ReflectionClass;
+use StreamBucket;
 use Uri\Rfc3986\Uri;
 
 /**
@@ -23,6 +26,9 @@ class PredefinedObjectSchemaProvider implements SchemaProvider
                 Uri::class,
                 Number::class,
                 GMP::class,
+                StreamBucket::class,
+                CType::class,
+                CData::class,
             ]
         );
     }

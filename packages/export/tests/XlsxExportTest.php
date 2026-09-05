@@ -3,7 +3,6 @@ namespace Apie\Tests\Export;
 
 use Apie\Core\Lists\ItemList;
 use Apie\Core\ValueObjects\NonEmptyString;
-use Apie\Export\ExcelExport;
 use Apie\Export\XlsxExport;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

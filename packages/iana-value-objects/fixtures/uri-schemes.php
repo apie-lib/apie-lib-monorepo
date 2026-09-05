@@ -1,10 +1,10 @@
-<?php 
+<?php
 /**
  * @codeCoverageIgnore
  */
-return array (
-  'aaa' => 
-  array (
+return array(
+  'aaa' =>
+  array(
     'URI Scheme' => 'aaa',
     'Template' => '',
     'Description' => 'Diameter Protocol',
@@ -15,8 +15,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'aaas' => 
-  array (
+  'aaas' =>
+  array(
     'URI Scheme' => 'aaas',
     'Template' => '',
     'Description' => 'Diameter Protocol with Secure Transport',
@@ -27,8 +27,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'about' => 
-  array (
+  'about' =>
+  array(
     'URI Scheme' => 'about',
     'Template' => '',
     'Description' => 'about',
@@ -39,8 +39,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'acap' => 
-  array (
+  'acap' =>
+  array(
     'URI Scheme' => 'acap',
     'Template' => '',
     'Description' => 'application configuration access protocol',
@@ -51,8 +51,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'acct' => 
-  array (
+  'acct' =>
+  array(
     'URI Scheme' => 'acct',
     'Template' => '',
     'Description' => 'acct',
@@ -63,8 +63,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'acd' => 
-  array (
+  'acd' =>
+  array(
     'URI Scheme' => 'acd',
     'Template' => 'prov/acd',
     'Description' => 'acd',
@@ -75,8 +75,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'acr' => 
-  array (
+  'acr' =>
+  array(
     'URI Scheme' => 'acr',
     'Template' => 'prov/acr',
     'Description' => 'acr',
@@ -87,8 +87,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'adiumxtra' => 
-  array (
+  'adiumxtra' =>
+  array(
     'URI Scheme' => 'adiumxtra',
     'Template' => 'prov/adiumxtra',
     'Description' => 'adiumxtra',
@@ -99,8 +99,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'adt' => 
-  array (
+  'adt' =>
+  array(
     'URI Scheme' => 'adt',
     'Template' => 'prov/adt',
     'Description' => 'adt',
@@ -111,8 +111,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'aet' => 
-  array (
+  'aet' =>
+  array(
     'URI Scheme' => 'aet',
     'Template' => 'prov/aet',
     'Description' => 'aet',
@@ -123,8 +123,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'afp' => 
-  array (
+  'afp' =>
+  array(
     'URI Scheme' => 'afp',
     'Template' => 'prov/afp',
     'Description' => 'afp',
@@ -135,8 +135,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'afs' => 
-  array (
+  'afs' =>
+  array(
     'URI Scheme' => 'afs',
     'Template' => '',
     'Description' => 'Andrew File System global file names',
@@ -147,8 +147,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'agtp' => 
-  array (
+  'agtp' =>
+  array(
     'URI Scheme' => 'agtp',
     'Template' => 'prov/agtp',
     'Description' => 'agtp',
@@ -159,8 +159,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'aim' => 
-  array (
+  'aim' =>
+  array(
     'URI Scheme' => 'aim',
     'Template' => 'prov/aim',
     'Description' => 'aim',
@@ -171,8 +171,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'amss' => 
-  array (
+  'amss' =>
+  array(
     'URI Scheme' => 'amss',
     'Template' => 'prov/amss',
     'Description' => 'amss',
@@ -183,8 +183,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'android' => 
-  array (
+  'android' =>
+  array(
     'URI Scheme' => 'android',
     'Template' => 'prov/android',
     'Description' => 'android',
@@ -195,8 +195,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'appdata' => 
-  array (
+  'appdata' =>
+  array(
     'URI Scheme' => 'appdata',
     'Template' => 'prov/appdata',
     'Description' => 'appdata',
@@ -207,8 +207,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'apt' => 
-  array (
+  'apt' =>
+  array(
     'URI Scheme' => 'apt',
     'Template' => 'prov/apt',
     'Description' => 'apt',
@@ -219,8 +219,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ar' => 
-  array (
+  'ar' =>
+  array(
     'URI Scheme' => 'ar',
     'Template' => 'prov/ar',
     'Description' => 'ar',
@@ -231,8 +231,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ari' => 
-  array (
+  'ari' =>
+  array(
     'URI Scheme' => 'ari',
     'Template' => 'prov/ari',
     'Description' => 'ari',
@@ -243,8 +243,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ark' => 
-  array (
+  'ark' =>
+  array(
     'URI Scheme' => 'ark',
     'Template' => 'prov/ark',
     'Description' => 'ark',
@@ -255,8 +255,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ars' => 
-  array (
+  'ars' =>
+  array(
     'URI Scheme' => 'ars',
     'Template' => 'prov/ars',
     'Description' => 'ars',
@@ -267,8 +267,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'at' => 
-  array (
+  'at' =>
+  array(
     'URI Scheme' => 'at',
     'Template' => 'prov/at',
     'Description' => 'at (see [reviewer notes])',
@@ -279,8 +279,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'attachment' => 
-  array (
+  'attachment' =>
+  array(
     'URI Scheme' => 'attachment',
     'Template' => 'prov/attachment',
     'Description' => 'attachment',
@@ -291,8 +291,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'aw' => 
-  array (
+  'aw' =>
+  array(
     'URI Scheme' => 'aw',
     'Template' => 'prov/aw',
     'Description' => 'aw',
@@ -303,8 +303,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'barion' => 
-  array (
+  'barion' =>
+  array(
     'URI Scheme' => 'barion',
     'Template' => 'prov/barion',
     'Description' => 'barion',
@@ -315,8 +315,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'bb' => 
-  array (
+  'bb' =>
+  array(
     'URI Scheme' => 'bb',
     'Template' => 'historic/bb',
     'Description' => 'bb',
@@ -327,8 +327,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'beshare' => 
-  array (
+  'beshare' =>
+  array(
     'URI Scheme' => 'beshare',
     'Template' => 'prov/beshare',
     'Description' => 'beshare',
@@ -339,8 +339,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'bitcoin' => 
-  array (
+  'bitcoin' =>
+  array(
     'URI Scheme' => 'bitcoin',
     'Template' => 'prov/bitcoin',
     'Description' => 'bitcoin',
@@ -351,8 +351,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'bitcoincash' => 
-  array (
+  'bitcoincash' =>
+  array(
     'URI Scheme' => 'bitcoincash',
     'Template' => 'prov/bitcoincash',
     'Description' => 'bitcoincash',
@@ -363,8 +363,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'bl' => 
-  array (
+  'bl' =>
+  array(
     'URI Scheme' => 'bl',
     'Template' => 'prov/bl',
     'Description' => 'bluetooth (shortened)',
@@ -375,8 +375,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'blob' => 
-  array (
+  'blob' =>
+  array(
     'URI Scheme' => 'blob',
     'Template' => 'prov/blob',
     'Description' => 'blob',
@@ -387,8 +387,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'bluetooth' => 
-  array (
+  'bluetooth' =>
+  array(
     'URI Scheme' => 'bluetooth',
     'Template' => 'prov/bluetooth',
     'Description' => 'bluetooth',
@@ -399,8 +399,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'bolo' => 
-  array (
+  'bolo' =>
+  array(
     'URI Scheme' => 'bolo',
     'Template' => 'prov/bolo',
     'Description' => 'bolo',
@@ -411,8 +411,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'brid' => 
-  array (
+  'brid' =>
+  array(
     'URI Scheme' => 'brid',
     'Template' => 'prov/brid',
     'Description' => 'brid',
@@ -423,8 +423,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'browserext' => 
-  array (
+  'browserext' =>
+  array(
     'URI Scheme' => 'browserext',
     'Template' => 'prov/browserext',
     'Description' => 'browserext',
@@ -435,8 +435,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'cabal' => 
-  array (
+  'cabal' =>
+  array(
     'URI Scheme' => 'cabal',
     'Template' => 'prov/cabal',
     'Description' => 'cabal',
@@ -447,8 +447,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'caip' => 
-  array (
+  'caip' =>
+  array(
     'URI Scheme' => 'caip',
     'Template' => 'prov/caip',
     'Description' => 'caip',
@@ -459,8 +459,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'calculator' => 
-  array (
+  'calculator' =>
+  array(
     'URI Scheme' => 'calculator',
     'Template' => 'prov/calculator',
     'Description' => 'calculator',
@@ -471,8 +471,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'callto' => 
-  array (
+  'callto' =>
+  array(
     'URI Scheme' => 'callto',
     'Template' => 'prov/callto',
     'Description' => 'callto',
@@ -483,8 +483,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'cap' => 
-  array (
+  'cap' =>
+  array(
     'URI Scheme' => 'cap',
     'Template' => '',
     'Description' => 'Calendar Access Protocol',
@@ -495,8 +495,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'cast' => 
-  array (
+  'cast' =>
+  array(
     'URI Scheme' => 'cast',
     'Template' => 'prov/cast',
     'Description' => 'cast',
@@ -507,8 +507,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'casts' => 
-  array (
+  'casts' =>
+  array(
     'URI Scheme' => 'casts',
     'Template' => 'prov/casts',
     'Description' => 'casts',
@@ -519,8 +519,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'chrome' => 
-  array (
+  'chrome' =>
+  array(
     'URI Scheme' => 'chrome',
     'Template' => 'prov/chrome',
     'Description' => 'chrome',
@@ -531,8 +531,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'chrome-extension' => 
-  array (
+  'chrome-extension' =>
+  array(
     'URI Scheme' => 'chrome-extension',
     'Template' => 'prov/chrome-extension',
     'Description' => 'chrome-extension',
@@ -543,8 +543,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'cid' => 
-  array (
+  'cid' =>
+  array(
     'URI Scheme' => 'cid',
     'Template' => '',
     'Description' => 'content identifier',
@@ -555,8 +555,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'cm' => 
-  array (
+  'cm' =>
+  array(
     'URI Scheme' => 'cm',
     'Template' => 'prov/cm',
     'Description' => 'cm',
@@ -567,8 +567,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'coap' => 
-  array (
+  'coap' =>
+  array(
     'URI Scheme' => 'coap',
     'Template' => '',
     'Description' => 'coap',
@@ -579,8 +579,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'coap+tcp' => 
-  array (
+  'coap+tcp' =>
+  array(
     'URI Scheme' => 'coap+tcp',
     'Template' => '',
     'Description' => 'coap+tcp (see [reviewer notes])',
@@ -591,8 +591,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'coap+ws' => 
-  array (
+  'coap+ws' =>
+  array(
     'URI Scheme' => 'coap+ws',
     'Template' => '',
     'Description' => 'coap+ws (see [reviewer notes])',
@@ -603,8 +603,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'coaps' => 
-  array (
+  'coaps' =>
+  array(
     'URI Scheme' => 'coaps',
     'Template' => '',
     'Description' => 'coaps',
@@ -615,8 +615,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'coaps+tcp' => 
-  array (
+  'coaps+tcp' =>
+  array(
     'URI Scheme' => 'coaps+tcp',
     'Template' => '',
     'Description' => 'coaps+tcp (see [reviewer notes])',
@@ -627,8 +627,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'coaps+ws' => 
-  array (
+  'coaps+ws' =>
+  array(
     'URI Scheme' => 'coaps+ws',
     'Template' => '',
     'Description' => 'coaps+ws (see [reviewer notes])',
@@ -639,8 +639,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'com-eventbrite-attendee' => 
-  array (
+  'com-eventbrite-attendee' =>
+  array(
     'URI Scheme' => 'com-eventbrite-attendee',
     'Template' => 'prov/com-eventbrite-attendee',
     'Description' => 'com-eventbrite-attendee',
@@ -651,8 +651,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'content' => 
-  array (
+  'content' =>
+  array(
     'URI Scheme' => 'content',
     'Template' => 'prov/content',
     'Description' => 'content',
@@ -663,8 +663,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'content-type' => 
-  array (
+  'content-type' =>
+  array(
     'URI Scheme' => 'content-type',
     'Template' => 'prov/content-type',
     'Description' => 'content-type',
@@ -675,8 +675,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'crid' => 
-  array (
+  'crid' =>
+  array(
     'URI Scheme' => 'crid',
     'Template' => '',
     'Description' => 'TV-Anytime Content Reference Identifier',
@@ -687,8 +687,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'cstr' => 
-  array (
+  'cstr' =>
+  array(
     'URI Scheme' => 'cstr',
     'Template' => 'prov/cstr',
     'Description' => 'cstr',
@@ -699,8 +699,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'cttps' => 
-  array (
+  'cttps' =>
+  array(
     'URI Scheme' => 'cttps',
     'Template' => 'prov/cttps',
     'Description' => 'cttps',
@@ -711,8 +711,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'cvs' => 
-  array (
+  'cvs' =>
+  array(
     'URI Scheme' => 'cvs',
     'Template' => 'prov/cvs',
     'Description' => 'cvs',
@@ -723,8 +723,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dab' => 
-  array (
+  'dab' =>
+  array(
     'URI Scheme' => 'dab',
     'Template' => 'prov/dab',
     'Description' => 'dab',
@@ -735,8 +735,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dat' => 
-  array (
+  'dat' =>
+  array(
     'URI Scheme' => 'dat',
     'Template' => 'prov/dat',
     'Description' => 'dat',
@@ -747,8 +747,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'data' => 
-  array (
+  'data' =>
+  array(
     'URI Scheme' => 'data',
     'Template' => '',
     'Description' => 'data',
@@ -759,8 +759,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dav' => 
-  array (
+  'dav' =>
+  array(
     'URI Scheme' => 'dav',
     'Template' => '',
     'Description' => 'dav',
@@ -771,8 +771,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dhttp' => 
-  array (
+  'dhttp' =>
+  array(
     'URI Scheme' => 'dhttp',
     'Template' => 'prov/dhttp',
     'Description' => 'dhttp (see [reviewer notes])',
@@ -783,8 +783,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'diaspora' => 
-  array (
+  'diaspora' =>
+  array(
     'URI Scheme' => 'diaspora',
     'Template' => 'prov/diaspora',
     'Description' => 'diaspora',
@@ -795,8 +795,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dict' => 
-  array (
+  'dict' =>
+  array(
     'URI Scheme' => 'dict',
     'Template' => '',
     'Description' => 'dictionary service protocol',
@@ -807,8 +807,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'did' => 
-  array (
+  'did' =>
+  array(
     'URI Scheme' => 'did',
     'Template' => 'prov/did',
     'Description' => 'did',
@@ -819,8 +819,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dilithium3' => 
-  array (
+  'dilithium3' =>
+  array(
     'URI Scheme' => 'dilithium3',
     'Template' => 'prov/dilithium3',
     'Description' => 'dilithium3',
@@ -831,8 +831,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dis' => 
-  array (
+  'dis' =>
+  array(
     'URI Scheme' => 'dis',
     'Template' => 'prov/dis',
     'Description' => 'dis',
@@ -843,8 +843,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dlna-playcontainer' => 
-  array (
+  'dlna-playcontainer' =>
+  array(
     'URI Scheme' => 'dlna-playcontainer',
     'Template' => 'prov/dlna-playcontainer',
     'Description' => 'dlna-playcontainer',
@@ -855,8 +855,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dlna-playsingle' => 
-  array (
+  'dlna-playsingle' =>
+  array(
     'URI Scheme' => 'dlna-playsingle',
     'Template' => 'prov/dlna-playsingle',
     'Description' => 'dlna-playsingle',
@@ -867,8 +867,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dnp' => 
-  array (
+  'dnp' =>
+  array(
     'URI Scheme' => 'dnp',
     'Template' => 'prov/dnp',
     'Description' => 'dnp',
@@ -879,8 +879,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dns' => 
-  array (
+  'dns' =>
+  array(
     'URI Scheme' => 'dns',
     'Template' => '',
     'Description' => 'Domain Name System',
@@ -891,8 +891,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dntp' => 
-  array (
+  'dntp' =>
+  array(
     'URI Scheme' => 'dntp',
     'Template' => 'prov/dntp',
     'Description' => 'dntp',
@@ -903,8 +903,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'doi' => 
-  array (
+  'doi' =>
+  array(
     'URI Scheme' => 'doi',
     'Template' => '',
     'Description' => 'doi',
@@ -915,8 +915,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'donau' => 
-  array (
+  'donau' =>
+  array(
     'URI Scheme' => 'donau',
     'Template' => 'prov/donau',
     'Description' => 'donau',
@@ -927,8 +927,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dpp' => 
-  array (
+  'dpp' =>
+  array(
     'URI Scheme' => 'dpp',
     'Template' => 'prov/dpp',
     'Description' => 'dpp',
@@ -939,8 +939,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'drm' => 
-  array (
+  'drm' =>
+  array(
     'URI Scheme' => 'drm',
     'Template' => 'prov/drm',
     'Description' => 'drm',
@@ -951,8 +951,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'drop' => 
-  array (
+  'drop' =>
+  array(
     'URI Scheme' => 'drop',
     'Template' => 'historic/drop',
     'Description' => 'drop',
@@ -963,8 +963,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dtmi' => 
-  array (
+  'dtmi' =>
+  array(
     'URI Scheme' => 'dtmi',
     'Template' => 'prov/dtmi',
     'Description' => 'dtmi',
@@ -975,8 +975,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dtn' => 
-  array (
+  'dtn' =>
+  array(
     'URI Scheme' => 'dtn',
     'Template' => '',
     'Description' => 'DTNRG research and development',
@@ -987,8 +987,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dvb' => 
-  array (
+  'dvb' =>
+  array(
     'URI Scheme' => 'dvb',
     'Template' => '',
     'Description' => 'dvb',
@@ -999,8 +999,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dvx' => 
-  array (
+  'dvx' =>
+  array(
     'URI Scheme' => 'dvx',
     'Template' => 'prov/dvx',
     'Description' => 'dvx',
@@ -1011,8 +1011,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'dweb' => 
-  array (
+  'dweb' =>
+  array(
     'URI Scheme' => 'dweb',
     'Template' => 'prov/dweb',
     'Description' => 'dweb',
@@ -1023,8 +1023,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ed2k' => 
-  array (
+  'ed2k' =>
+  array(
     'URI Scheme' => 'ed2k',
     'Template' => 'prov/ed2k',
     'Description' => 'ed2k',
@@ -1035,8 +1035,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'eid' => 
-  array (
+  'eid' =>
+  array(
     'URI Scheme' => 'eid',
     'Template' => 'prov/eid',
     'Description' => 'eid',
@@ -1047,8 +1047,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'elsi' => 
-  array (
+  'elsi' =>
+  array(
     'URI Scheme' => 'elsi',
     'Template' => 'prov/elsi',
     'Description' => 'elsi',
@@ -1059,8 +1059,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'embedded' => 
-  array (
+  'embedded' =>
+  array(
     'URI Scheme' => 'embedded',
     'Template' => 'prov/embedded',
     'Description' => 'embedded',
@@ -1071,8 +1071,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ens' => 
-  array (
+  'ens' =>
+  array(
     'URI Scheme' => 'ens',
     'Template' => 'prov/ens',
     'Description' => 'ens',
@@ -1083,8 +1083,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'esim' => 
-  array (
+  'esim' =>
+  array(
     'URI Scheme' => 'esim',
     'Template' => 'prov/esim',
     'Description' => 'esim',
@@ -1095,8 +1095,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ethereum' => 
-  array (
+  'ethereum' =>
+  array(
     'URI Scheme' => 'ethereum',
     'Template' => 'prov/ethereum',
     'Description' => 'ethereum',
@@ -1107,8 +1107,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'example' => 
-  array (
+  'example' =>
+  array(
     'URI Scheme' => 'example',
     'Template' => '',
     'Description' => 'example',
@@ -1119,8 +1119,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ez' => 
-  array (
+  'ez' =>
+  array(
     'URI Scheme' => 'ez',
     'Template' => 'prov/ez',
     'Description' => 'ez',
@@ -1131,8 +1131,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'facetime' => 
-  array (
+  'facetime' =>
+  array(
     'URI Scheme' => 'facetime',
     'Template' => 'prov/facetime',
     'Description' => 'facetime',
@@ -1143,8 +1143,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'fax' => 
-  array (
+  'fax' =>
+  array(
     'URI Scheme' => 'fax',
     'Template' => '',
     'Description' => 'fax',
@@ -1155,8 +1155,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'feed' => 
-  array (
+  'feed' =>
+  array(
     'URI Scheme' => 'feed',
     'Template' => 'prov/feed',
     'Description' => 'feed',
@@ -1167,8 +1167,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'feedready' => 
-  array (
+  'feedready' =>
+  array(
     'URI Scheme' => 'feedready',
     'Template' => 'prov/feedready',
     'Description' => 'feedready',
@@ -1179,8 +1179,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'fido' => 
-  array (
+  'fido' =>
+  array(
     'URI Scheme' => 'fido',
     'Template' => 'prov/fido',
     'Description' => 'fido',
@@ -1191,8 +1191,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'file' => 
-  array (
+  'file' =>
+  array(
     'URI Scheme' => 'file',
     'Template' => '',
     'Description' => 'Host-specific file names',
@@ -1203,8 +1203,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'filesystem' => 
-  array (
+  'filesystem' =>
+  array(
     'URI Scheme' => 'filesystem',
     'Template' => 'historic/filesystem',
     'Description' => 'filesystem',
@@ -1215,8 +1215,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'finger' => 
-  array (
+  'finger' =>
+  array(
     'URI Scheme' => 'finger',
     'Template' => 'prov/finger',
     'Description' => 'finger',
@@ -1227,8 +1227,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'first-run-pen-experience' => 
-  array (
+  'first-run-pen-experience' =>
+  array(
     'URI Scheme' => 'first-run-pen-experience',
     'Template' => 'prov/first-run-pen-experience',
     'Description' => 'first-run-pen-experience',
@@ -1239,8 +1239,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'fish' => 
-  array (
+  'fish' =>
+  array(
     'URI Scheme' => 'fish',
     'Template' => 'prov/fish',
     'Description' => 'fish',
@@ -1251,8 +1251,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'fm' => 
-  array (
+  'fm' =>
+  array(
     'URI Scheme' => 'fm',
     'Template' => 'prov/fm',
     'Description' => 'fm',
@@ -1263,8 +1263,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ftp' => 
-  array (
+  'ftp' =>
+  array(
     'URI Scheme' => 'ftp',
     'Template' => '',
     'Description' => 'File Transfer Protocol',
@@ -1275,8 +1275,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'fuchsia-pkg' => 
-  array (
+  'fuchsia-pkg' =>
+  array(
     'URI Scheme' => 'fuchsia-pkg',
     'Template' => 'prov/fuchsia-pkg',
     'Description' => 'fuchsia-pkg',
@@ -1287,8 +1287,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'gcx' => 
-  array (
+  'gcx' =>
+  array(
     'URI Scheme' => 'gcx',
     'Template' => 'prov/gcx',
     'Description' => 'gcx',
@@ -1299,8 +1299,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'gdsi' => 
-  array (
+  'gdsi' =>
+  array(
     'URI Scheme' => 'gdsi',
     'Template' => 'prov/gdsi',
     'Description' => 'gdsi',
@@ -1311,8 +1311,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'geo' => 
-  array (
+  'geo' =>
+  array(
     'URI Scheme' => 'geo',
     'Template' => '',
     'Description' => 'Geographic Locations',
@@ -1323,8 +1323,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'gg' => 
-  array (
+  'gg' =>
+  array(
     'URI Scheme' => 'gg',
     'Template' => 'prov/gg',
     'Description' => 'gg',
@@ -1335,8 +1335,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'git' => 
-  array (
+  'git' =>
+  array(
     'URI Scheme' => 'git',
     'Template' => 'prov/git',
     'Description' => 'git',
@@ -1347,8 +1347,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'gitoid' => 
-  array (
+  'gitoid' =>
+  array(
     'URI Scheme' => 'gitoid',
     'Template' => 'prov/gitoid',
     'Description' => 'gitoid',
@@ -1359,8 +1359,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'gizmoproject' => 
-  array (
+  'gizmoproject' =>
+  array(
     'URI Scheme' => 'gizmoproject',
     'Template' => 'prov/gizmoproject',
     'Description' => 'gizmoproject',
@@ -1371,8 +1371,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'go' => 
-  array (
+  'go' =>
+  array(
     'URI Scheme' => 'go',
     'Template' => '',
     'Description' => 'go',
@@ -1383,8 +1383,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'gopher' => 
-  array (
+  'gopher' =>
+  array(
     'URI Scheme' => 'gopher',
     'Template' => '',
     'Description' => 'The Gopher Protocol',
@@ -1395,8 +1395,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'graph' => 
-  array (
+  'graph' =>
+  array(
     'URI Scheme' => 'graph',
     'Template' => 'prov/graph',
     'Description' => 'graph',
@@ -1407,8 +1407,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'grd' => 
-  array (
+  'grd' =>
+  array(
     'URI Scheme' => 'grd',
     'Template' => 'historic/grd',
     'Description' => 'grd',
@@ -1419,8 +1419,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'gtalk' => 
-  array (
+  'gtalk' =>
+  array(
     'URI Scheme' => 'gtalk',
     'Template' => 'prov/gtalk',
     'Description' => 'gtalk',
@@ -1431,8 +1431,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'h323' => 
-  array (
+  'h323' =>
+  array(
     'URI Scheme' => 'h323',
     'Template' => '',
     'Description' => 'H.323',
@@ -1443,8 +1443,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ham' => 
-  array (
+  'ham' =>
+  array(
     'URI Scheme' => 'ham',
     'Template' => '',
     'Description' => 'ham',
@@ -1455,8 +1455,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'hcap' => 
-  array (
+  'hcap' =>
+  array(
     'URI Scheme' => 'hcap',
     'Template' => 'prov/hcap',
     'Description' => 'hcap',
@@ -1467,8 +1467,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'hcp' => 
-  array (
+  'hcp' =>
+  array(
     'URI Scheme' => 'hcp',
     'Template' => 'prov/hcp',
     'Description' => 'hcp',
@@ -1479,8 +1479,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'hs20' => 
-  array (
+  'hs20' =>
+  array(
     'URI Scheme' => 'hs20',
     'Template' => 'prov/hs20',
     'Description' => 'hs20',
@@ -1491,8 +1491,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'http' => 
-  array (
+  'http' =>
+  array(
     'URI Scheme' => 'http',
     'Template' => '',
     'Description' => 'Hypertext Transfer Protocol',
@@ -1503,8 +1503,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'https' => 
-  array (
+  'https' =>
+  array(
     'URI Scheme' => 'https',
     'Template' => '',
     'Description' => 'Hypertext Transfer Protocol Secure',
@@ -1515,8 +1515,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'hxxp' => 
-  array (
+  'hxxp' =>
+  array(
     'URI Scheme' => 'hxxp',
     'Template' => 'prov/hxxp',
     'Description' => 'hxxp',
@@ -1527,8 +1527,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'hxxps' => 
-  array (
+  'hxxps' =>
+  array(
     'URI Scheme' => 'hxxps',
     'Template' => 'prov/hxxps',
     'Description' => 'hxxps',
@@ -1539,8 +1539,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'hydrazone' => 
-  array (
+  'hydrazone' =>
+  array(
     'URI Scheme' => 'hydrazone',
     'Template' => 'prov/hydrazone',
     'Description' => 'hydrazone',
@@ -1551,8 +1551,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'hyper' => 
-  array (
+  'hyper' =>
+  array(
     'URI Scheme' => 'hyper',
     'Template' => 'prov/hyper',
     'Description' => 'hyper',
@@ -1563,8 +1563,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'i0' => 
-  array (
+  'i0' =>
+  array(
     'URI Scheme' => 'i0',
     'Template' => 'prov/i0',
     'Description' => 'i0',
@@ -1575,8 +1575,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'iax' => 
-  array (
+  'iax' =>
+  array(
     'URI Scheme' => 'iax',
     'Template' => '',
     'Description' => 'Inter-Asterisk eXchange Version 2',
@@ -1587,8 +1587,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ibi' => 
-  array (
+  'ibi' =>
+  array(
     'URI Scheme' => 'ibi',
     'Template' => 'prov/ibi',
     'Description' => 'ibi',
@@ -1599,8 +1599,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ibi-' => 
-  array (
+  'ibi-' =>
+  array(
     'URI Scheme' => 'ibi-',
     'Template' => 'prov/ibi-',
     'Description' => 'ibi-',
@@ -1611,8 +1611,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'icap' => 
-  array (
+  'icap' =>
+  array(
     'URI Scheme' => 'icap',
     'Template' => '',
     'Description' => 'Internet Content Adaptation Protocol',
@@ -1623,8 +1623,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'icon' => 
-  array (
+  'icon' =>
+  array(
     'URI Scheme' => 'icon',
     'Template' => '',
     'Description' => 'icon',
@@ -1635,8 +1635,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ilstring' => 
-  array (
+  'ilstring' =>
+  array(
     'URI Scheme' => 'ilstring',
     'Template' => 'prov/ilstring',
     'Description' => 'ilstring',
@@ -1647,8 +1647,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'im' => 
-  array (
+  'im' =>
+  array(
     'URI Scheme' => 'im',
     'Template' => '',
     'Description' => 'Instant Messaging',
@@ -1659,8 +1659,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'imap' => 
-  array (
+  'imap' =>
+  array(
     'URI Scheme' => 'imap',
     'Template' => '',
     'Description' => 'internet message access protocol',
@@ -1671,8 +1671,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'info' => 
-  array (
+  'info' =>
+  array(
     'URI Scheme' => 'info',
     'Template' => '',
     'Description' => 'Information Assets with Identifiers in Public Namespaces. [RFC4452] (section 3) defines an "info" registry of public namespaces, which is maintained by NISO and can be accessed from [http://info-uri.info/].',
@@ -1683,8 +1683,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'interaction' => 
-  array (
+  'interaction' =>
+  array(
     'URI Scheme' => 'interaction',
     'Template' => 'prov/interaction',
     'Description' => 'interaction',
@@ -1695,8 +1695,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'iotdisco' => 
-  array (
+  'iotdisco' =>
+  array(
     'URI Scheme' => 'iotdisco',
     'Template' => 'prov/iotdisco',
     'Description' => 'iotdisco',
@@ -1707,8 +1707,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ipfs' => 
-  array (
+  'ipfs' =>
+  array(
     'URI Scheme' => 'ipfs',
     'Template' => 'prov/ipfs',
     'Description' => 'ipfs',
@@ -1719,8 +1719,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ipn' => 
-  array (
+  'ipn' =>
+  array(
     'URI Scheme' => 'ipn',
     'Template' => '',
     'Description' => 'ipn',
@@ -1731,8 +1731,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ipns' => 
-  array (
+  'ipns' =>
+  array(
     'URI Scheme' => 'ipns',
     'Template' => 'prov/ipns',
     'Description' => 'ipns',
@@ -1743,8 +1743,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ipp' => 
-  array (
+  'ipp' =>
+  array(
     'URI Scheme' => 'ipp',
     'Template' => '',
     'Description' => 'Internet Printing Protocol',
@@ -1755,8 +1755,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ipps' => 
-  array (
+  'ipps' =>
+  array(
     'URI Scheme' => 'ipps',
     'Template' => '',
     'Description' => 'Internet Printing Protocol over HTTPS',
@@ -1767,8 +1767,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'irc' => 
-  array (
+  'irc' =>
+  array(
     'URI Scheme' => 'irc',
     'Template' => 'prov/irc',
     'Description' => 'irc',
@@ -1779,8 +1779,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'irc6' => 
-  array (
+  'irc6' =>
+  array(
     'URI Scheme' => 'irc6',
     'Template' => 'prov/irc6',
     'Description' => 'irc6',
@@ -1791,8 +1791,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ircs' => 
-  array (
+  'ircs' =>
+  array(
     'URI Scheme' => 'ircs',
     'Template' => 'prov/ircs',
     'Description' => 'ircs',
@@ -1803,8 +1803,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'iris' => 
-  array (
+  'iris' =>
+  array(
     'URI Scheme' => 'iris',
     'Template' => '',
     'Description' => 'Internet Registry Information Service',
@@ -1815,8 +1815,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'iris.beep' => 
-  array (
+  'iris.beep' =>
+  array(
     'URI Scheme' => 'iris.beep',
     'Template' => '',
     'Description' => 'iris.beep',
@@ -1827,8 +1827,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'iris.lwz' => 
-  array (
+  'iris.lwz' =>
+  array(
     'URI Scheme' => 'iris.lwz',
     'Template' => '',
     'Description' => 'iris.lwz',
@@ -1839,8 +1839,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'iris.xpc' => 
-  array (
+  'iris.xpc' =>
+  array(
     'URI Scheme' => 'iris.xpc',
     'Template' => '',
     'Description' => 'iris.xpc',
@@ -1851,8 +1851,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'iris.xpcs' => 
-  array (
+  'iris.xpcs' =>
+  array(
     'URI Scheme' => 'iris.xpcs',
     'Template' => '',
     'Description' => 'iris.xpcs',
@@ -1863,8 +1863,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'isostore' => 
-  array (
+  'isostore' =>
+  array(
     'URI Scheme' => 'isostore',
     'Template' => 'prov/isostore',
     'Description' => 'isostore',
@@ -1875,8 +1875,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'itms' => 
-  array (
+  'itms' =>
+  array(
     'URI Scheme' => 'itms',
     'Template' => 'prov/itms',
     'Description' => 'itms',
@@ -1887,8 +1887,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'jabber' => 
-  array (
+  'jabber' =>
+  array(
     'URI Scheme' => 'jabber',
     'Template' => 'perm/jabber',
     'Description' => 'jabber',
@@ -1899,8 +1899,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'jar' => 
-  array (
+  'jar' =>
+  array(
     'URI Scheme' => 'jar',
     'Template' => 'prov/jar',
     'Description' => 'jar',
@@ -1911,8 +1911,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'jms' => 
-  array (
+  'jms' =>
+  array(
     'URI Scheme' => 'jms',
     'Template' => '',
     'Description' => 'Java Message Service',
@@ -1923,8 +1923,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'keyparc' => 
-  array (
+  'keyparc' =>
+  array(
     'URI Scheme' => 'keyparc',
     'Template' => 'prov/keyparc',
     'Description' => 'keyparc',
@@ -1935,8 +1935,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'lastfm' => 
-  array (
+  'lastfm' =>
+  array(
     'URI Scheme' => 'lastfm',
     'Template' => 'prov/lastfm',
     'Description' => 'lastfm',
@@ -1947,8 +1947,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'lbry' => 
-  array (
+  'lbry' =>
+  array(
     'URI Scheme' => 'lbry',
     'Template' => 'prov/lbry',
     'Description' => 'lbry',
@@ -1959,8 +1959,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ldap' => 
-  array (
+  'ldap' =>
+  array(
     'URI Scheme' => 'ldap',
     'Template' => '',
     'Description' => 'Lightweight Directory Access Protocol',
@@ -1971,8 +1971,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ldaps' => 
-  array (
+  'ldaps' =>
+  array(
     'URI Scheme' => 'ldaps',
     'Template' => 'prov/ldaps',
     'Description' => 'ldaps',
@@ -1983,8 +1983,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'leaptofrogans' => 
-  array (
+  'leaptofrogans' =>
+  array(
     'URI Scheme' => 'leaptofrogans',
     'Template' => '',
     'Description' => 'leaptofrogans',
@@ -1995,8 +1995,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'lid' => 
-  array (
+  'lid' =>
+  array(
     'URI Scheme' => 'lid',
     'Template' => 'prov/lid',
     'Description' => 'lid',
@@ -2007,8 +2007,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'linkid' => 
-  array (
+  'linkid' =>
+  array(
     'URI Scheme' => 'linkid',
     'Template' => 'prov/linkid',
     'Description' => 'linkid',
@@ -2019,8 +2019,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'lorawan' => 
-  array (
+  'lorawan' =>
+  array(
     'URI Scheme' => 'lorawan',
     'Template' => 'prov/lorawan',
     'Description' => 'lorawan',
@@ -2031,8 +2031,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'lpa' => 
-  array (
+  'lpa' =>
+  array(
     'URI Scheme' => 'lpa',
     'Template' => 'prov/lpa',
     'Description' => 'lpa',
@@ -2043,8 +2043,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'lvlt' => 
-  array (
+  'lvlt' =>
+  array(
     'URI Scheme' => 'lvlt',
     'Template' => 'prov/lvlt',
     'Description' => 'lvlt',
@@ -2055,8 +2055,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'machineprovisioningprogressreporter' => 
-  array (
+  'machineprovisioningprogressreporter' =>
+  array(
     'URI Scheme' => 'machineProvisioningProgressReporter',
     'Template' => 'prov/machineProvisioningProgressReporter',
     'Description' => 'Windows Autopilot Modern Device Management status updates',
@@ -2067,8 +2067,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'magnet' => 
-  array (
+  'magnet' =>
+  array(
     'URI Scheme' => 'magnet',
     'Template' => 'prov/magnet',
     'Description' => 'magnet',
@@ -2079,8 +2079,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mailserver' => 
-  array (
+  'mailserver' =>
+  array(
     'URI Scheme' => 'mailserver',
     'Template' => '',
     'Description' => 'Access to data available from mail servers',
@@ -2091,8 +2091,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mailto' => 
-  array (
+  'mailto' =>
+  array(
     'URI Scheme' => 'mailto',
     'Template' => '',
     'Description' => 'Electronic mail address',
@@ -2103,8 +2103,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'maps' => 
-  array (
+  'maps' =>
+  array(
     'URI Scheme' => 'maps',
     'Template' => 'prov/maps',
     'Description' => 'maps',
@@ -2115,8 +2115,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'market' => 
-  array (
+  'market' =>
+  array(
     'URI Scheme' => 'market',
     'Template' => 'prov/market',
     'Description' => 'market',
@@ -2127,8 +2127,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'matrix' => 
-  array (
+  'matrix' =>
+  array(
     'URI Scheme' => 'matrix',
     'Template' => 'prov/matrix',
     'Description' => 'matrix',
@@ -2139,8 +2139,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mdoc' => 
-  array (
+  'mdoc' =>
+  array(
     'URI Scheme' => 'mdoc',
     'Template' => 'prov/mdoc',
     'Description' => 'mdoc',
@@ -2151,8 +2151,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mdoc-openid4vp' => 
-  array (
+  'mdoc-openid4vp' =>
+  array(
     'URI Scheme' => 'mdoc-openid4vp',
     'Template' => 'prov/mdoc-openid4vp',
     'Description' => 'mdoc-openid4vp',
@@ -2163,8 +2163,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'message' => 
-  array (
+  'message' =>
+  array(
     'URI Scheme' => 'message',
     'Template' => 'prov/message',
     'Description' => 'message',
@@ -2175,8 +2175,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'microsoft.windows.camera' => 
-  array (
+  'microsoft.windows.camera' =>
+  array(
     'URI Scheme' => 'microsoft.windows.camera',
     'Template' => 'prov/microsoft.windows.camera',
     'Description' => 'microsoft.windows.camera',
@@ -2187,8 +2187,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'microsoft.windows.camera.multipicker' => 
-  array (
+  'microsoft.windows.camera.multipicker' =>
+  array(
     'URI Scheme' => 'microsoft.windows.camera.multipicker',
     'Template' => 'prov/microsoft.windows.camera.multipicker',
     'Description' => 'microsoft.windows.camera.multipicker',
@@ -2199,8 +2199,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'microsoft.windows.camera.picker' => 
-  array (
+  'microsoft.windows.camera.picker' =>
+  array(
     'URI Scheme' => 'microsoft.windows.camera.picker',
     'Template' => 'prov/microsoft.windows.camera.picker',
     'Description' => 'microsoft.windows.camera.picker',
@@ -2211,8 +2211,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mid' => 
-  array (
+  'mid' =>
+  array(
     'URI Scheme' => 'mid',
     'Template' => '',
     'Description' => 'message identifier',
@@ -2223,8 +2223,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mms' => 
-  array (
+  'mms' =>
+  array(
     'URI Scheme' => 'mms',
     'Template' => 'prov/mms',
     'Description' => 'mms',
@@ -2235,8 +2235,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'modem' => 
-  array (
+  'modem' =>
+  array(
     'URI Scheme' => 'modem',
     'Template' => '',
     'Description' => 'modem',
@@ -2247,8 +2247,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mongodb' => 
-  array (
+  'mongodb' =>
+  array(
     'URI Scheme' => 'mongodb',
     'Template' => 'prov/mongodb',
     'Description' => 'mongodb',
@@ -2259,8 +2259,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'moz' => 
-  array (
+  'moz' =>
+  array(
     'URI Scheme' => 'moz',
     'Template' => 'prov/moz',
     'Description' => 'moz',
@@ -2271,8 +2271,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mqtt' => 
-  array (
+  'mqtt' =>
+  array(
     'URI Scheme' => 'mqtt',
     'Template' => 'prov/mqtt',
     'Description' => 'mqtt',
@@ -2283,8 +2283,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mqtts' => 
-  array (
+  'mqtts' =>
+  array(
     'URI Scheme' => 'mqtts',
     'Template' => 'prov/mqtts',
     'Description' => 'mqtts',
@@ -2295,8 +2295,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-access' => 
-  array (
+  'ms-access' =>
+  array(
     'URI Scheme' => 'ms-access',
     'Template' => 'prov/ms-access',
     'Description' => 'ms-access',
@@ -2307,8 +2307,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-appinstaller' => 
-  array (
+  'ms-appinstaller' =>
+  array(
     'URI Scheme' => 'ms-appinstaller',
     'Template' => 'prov/ms-appinstaller',
     'Description' => 'ms-appinstaller',
@@ -2319,8 +2319,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-browser-extension' => 
-  array (
+  'ms-browser-extension' =>
+  array(
     'URI Scheme' => 'ms-browser-extension',
     'Template' => 'prov/ms-browser-extension',
     'Description' => 'ms-browser-extension',
@@ -2331,8 +2331,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-calculator' => 
-  array (
+  'ms-calculator' =>
+  array(
     'URI Scheme' => 'ms-calculator',
     'Template' => 'prov/ms-calculator',
     'Description' => 'ms-calculator',
@@ -2343,8 +2343,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-drive-to' => 
-  array (
+  'ms-drive-to' =>
+  array(
     'URI Scheme' => 'ms-drive-to',
     'Template' => 'prov/ms-drive-to',
     'Description' => 'ms-drive-to',
@@ -2355,8 +2355,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-enrollment' => 
-  array (
+  'ms-enrollment' =>
+  array(
     'URI Scheme' => 'ms-enrollment',
     'Template' => 'prov/ms-enrollment',
     'Description' => 'ms-enrollment',
@@ -2367,8 +2367,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-excel' => 
-  array (
+  'ms-excel' =>
+  array(
     'URI Scheme' => 'ms-excel',
     'Template' => 'prov/ms-excel',
     'Description' => 'ms-excel',
@@ -2379,8 +2379,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-eyecontrolspeech' => 
-  array (
+  'ms-eyecontrolspeech' =>
+  array(
     'URI Scheme' => 'ms-eyecontrolspeech',
     'Template' => 'prov/ms-eyecontrolspeech',
     'Description' => 'ms-eyecontrolspeech',
@@ -2391,8 +2391,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-gamebarservices' => 
-  array (
+  'ms-gamebarservices' =>
+  array(
     'URI Scheme' => 'ms-gamebarservices',
     'Template' => 'prov/ms-gamebarservices',
     'Description' => 'ms-gamebarservices',
@@ -2403,8 +2403,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-gamingoverlay' => 
-  array (
+  'ms-gamingoverlay' =>
+  array(
     'URI Scheme' => 'ms-gamingoverlay',
     'Template' => 'prov/ms-gamingoverlay',
     'Description' => 'ms-gamingoverlay',
@@ -2415,8 +2415,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-getoffice' => 
-  array (
+  'ms-getoffice' =>
+  array(
     'URI Scheme' => 'ms-getoffice',
     'Template' => 'prov/ms-getoffice',
     'Description' => 'ms-getoffice',
@@ -2427,8 +2427,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-help' => 
-  array (
+  'ms-help' =>
+  array(
     'URI Scheme' => 'ms-help',
     'Template' => 'prov/ms-help',
     'Description' => 'ms-help',
@@ -2439,8 +2439,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-infopath' => 
-  array (
+  'ms-infopath' =>
+  array(
     'URI Scheme' => 'ms-infopath',
     'Template' => 'prov/ms-infopath',
     'Description' => 'ms-infopath',
@@ -2451,8 +2451,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-inputapp' => 
-  array (
+  'ms-inputapp' =>
+  array(
     'URI Scheme' => 'ms-inputapp',
     'Template' => 'prov/ms-inputapp',
     'Description' => 'ms-inputapp',
@@ -2463,8 +2463,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-launchremotedesktop' => 
-  array (
+  'ms-launchremotedesktop' =>
+  array(
     'URI Scheme' => 'ms-launchremotedesktop',
     'Template' => 'prov/ms-launchremotedesktop',
     'Description' => 'ms-launchremotedesktop',
@@ -2475,8 +2475,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-lockscreencomponent-config' => 
-  array (
+  'ms-lockscreencomponent-config' =>
+  array(
     'URI Scheme' => 'ms-lockscreencomponent-config',
     'Template' => 'prov/ms-lockscreencomponent-config',
     'Description' => 'ms-lockscreencomponent-config',
@@ -2487,8 +2487,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-media-stream-id' => 
-  array (
+  'ms-media-stream-id' =>
+  array(
     'URI Scheme' => 'ms-media-stream-id',
     'Template' => 'prov/ms-media-stream-id',
     'Description' => 'ms-media-stream-id',
@@ -2499,8 +2499,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-meetnow' => 
-  array (
+  'ms-meetnow' =>
+  array(
     'URI Scheme' => 'ms-meetnow',
     'Template' => 'prov/ms-meetnow',
     'Description' => 'ms-meetnow',
@@ -2511,8 +2511,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-mixedrealitycapture' => 
-  array (
+  'ms-mixedrealitycapture' =>
+  array(
     'URI Scheme' => 'ms-mixedrealitycapture',
     'Template' => 'prov/ms-mixedrealitycapture',
     'Description' => 'ms-mixedrealitycapture',
@@ -2523,8 +2523,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-mobileplans' => 
-  array (
+  'ms-mobileplans' =>
+  array(
     'URI Scheme' => 'ms-mobileplans',
     'Template' => 'prov/ms-mobileplans',
     'Description' => 'ms-mobileplans',
@@ -2535,8 +2535,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-newsandinterests' => 
-  array (
+  'ms-newsandinterests' =>
+  array(
     'URI Scheme' => 'ms-newsandinterests',
     'Template' => 'prov/ms-newsandinterests',
     'Description' => 'ms-newsandinterests',
@@ -2547,8 +2547,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-officeapp' => 
-  array (
+  'ms-officeapp' =>
+  array(
     'URI Scheme' => 'ms-officeapp',
     'Template' => 'prov/ms-officeapp',
     'Description' => 'ms-officeapp',
@@ -2559,8 +2559,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-people' => 
-  array (
+  'ms-people' =>
+  array(
     'URI Scheme' => 'ms-people',
     'Template' => 'prov/ms-people',
     'Description' => 'ms-people',
@@ -2571,8 +2571,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-personacard' => 
-  array (
+  'ms-personacard' =>
+  array(
     'URI Scheme' => 'ms-personacard',
     'Template' => 'prov/ms-personacard',
     'Description' => 'ms-personacard',
@@ -2583,8 +2583,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-powerpoint' => 
-  array (
+  'ms-powerpoint' =>
+  array(
     'URI Scheme' => 'ms-powerpoint',
     'Template' => 'prov/ms-powerpoint',
     'Description' => 'ms-powerpoint',
@@ -2595,8 +2595,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-project' => 
-  array (
+  'ms-project' =>
+  array(
     'URI Scheme' => 'ms-project',
     'Template' => 'prov/ms-project',
     'Description' => 'ms-project',
@@ -2607,8 +2607,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-publisher' => 
-  array (
+  'ms-publisher' =>
+  array(
     'URI Scheme' => 'ms-publisher',
     'Template' => 'prov/ms-publisher',
     'Description' => 'ms-publisher',
@@ -2619,8 +2619,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-recall' => 
-  array (
+  'ms-recall' =>
+  array(
     'URI Scheme' => 'ms-recall',
     'Template' => 'prov/ms-recall',
     'Description' => 'ms-recall',
@@ -2631,8 +2631,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-remotedesktop' => 
-  array (
+  'ms-remotedesktop' =>
+  array(
     'URI Scheme' => 'ms-remotedesktop',
     'Template' => 'prov/ms-remotedesktop',
     'Description' => 'ms-remotedesktop',
@@ -2643,8 +2643,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-remotedesktop-launch' => 
-  array (
+  'ms-remotedesktop-launch' =>
+  array(
     'URI Scheme' => 'ms-remotedesktop-launch',
     'Template' => 'prov/ms-remotedesktop-launch',
     'Description' => 'ms-remotedesktop-launch',
@@ -2655,8 +2655,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-restoretabcompanion' => 
-  array (
+  'ms-restoretabcompanion' =>
+  array(
     'URI Scheme' => 'ms-restoretabcompanion',
     'Template' => 'prov/ms-restoretabcompanion',
     'Description' => 'ms-restoretabcompanion',
@@ -2667,8 +2667,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-screenclip' => 
-  array (
+  'ms-screenclip' =>
+  array(
     'URI Scheme' => 'ms-screenclip',
     'Template' => 'prov/ms-screenclip',
     'Description' => 'ms-screenclip',
@@ -2679,8 +2679,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-screensketch' => 
-  array (
+  'ms-screensketch' =>
+  array(
     'URI Scheme' => 'ms-screensketch',
     'Template' => 'prov/ms-screensketch',
     'Description' => 'ms-screensketch',
@@ -2691,8 +2691,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-search' => 
-  array (
+  'ms-search' =>
+  array(
     'URI Scheme' => 'ms-search',
     'Template' => 'prov/ms-search',
     'Description' => 'ms-search',
@@ -2703,8 +2703,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-search-repair' => 
-  array (
+  'ms-search-repair' =>
+  array(
     'URI Scheme' => 'ms-search-repair',
     'Template' => 'prov/ms-search-repair',
     'Description' => 'ms-search-repair',
@@ -2715,8 +2715,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-secondary-screen-controller' => 
-  array (
+  'ms-secondary-screen-controller' =>
+  array(
     'URI Scheme' => 'ms-secondary-screen-controller',
     'Template' => 'prov/ms-secondary-screen-controller',
     'Description' => 'ms-secondary-screen-controller',
@@ -2727,8 +2727,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-secondary-screen-setup' => 
-  array (
+  'ms-secondary-screen-setup' =>
+  array(
     'URI Scheme' => 'ms-secondary-screen-setup',
     'Template' => 'prov/ms-secondary-screen-setup',
     'Description' => 'ms-secondary-screen-setup',
@@ -2739,8 +2739,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings' => 
-  array (
+  'ms-settings' =>
+  array(
     'URI Scheme' => 'ms-settings',
     'Template' => 'prov/ms-settings',
     'Description' => 'ms-settings',
@@ -2751,8 +2751,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-airplanemode' => 
-  array (
+  'ms-settings-airplanemode' =>
+  array(
     'URI Scheme' => 'ms-settings-airplanemode',
     'Template' => 'prov/ms-settings-airplanemode',
     'Description' => 'ms-settings-airplanemode',
@@ -2763,8 +2763,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-bluetooth' => 
-  array (
+  'ms-settings-bluetooth' =>
+  array(
     'URI Scheme' => 'ms-settings-bluetooth',
     'Template' => 'prov/ms-settings-bluetooth',
     'Description' => 'ms-settings-bluetooth',
@@ -2775,8 +2775,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-camera' => 
-  array (
+  'ms-settings-camera' =>
+  array(
     'URI Scheme' => 'ms-settings-camera',
     'Template' => 'prov/ms-settings-camera',
     'Description' => 'ms-settings-camera',
@@ -2787,8 +2787,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-cellular' => 
-  array (
+  'ms-settings-cellular' =>
+  array(
     'URI Scheme' => 'ms-settings-cellular',
     'Template' => 'prov/ms-settings-cellular',
     'Description' => 'ms-settings-cellular',
@@ -2799,8 +2799,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-cloudstorage' => 
-  array (
+  'ms-settings-cloudstorage' =>
+  array(
     'URI Scheme' => 'ms-settings-cloudstorage',
     'Template' => 'prov/ms-settings-cloudstorage',
     'Description' => 'ms-settings-cloudstorage',
@@ -2811,8 +2811,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-connectabledevices' => 
-  array (
+  'ms-settings-connectabledevices' =>
+  array(
     'URI Scheme' => 'ms-settings-connectabledevices',
     'Template' => 'prov/ms-settings-connectabledevices',
     'Description' => 'ms-settings-connectabledevices',
@@ -2823,8 +2823,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-displays-topology' => 
-  array (
+  'ms-settings-displays-topology' =>
+  array(
     'URI Scheme' => 'ms-settings-displays-topology',
     'Template' => 'prov/ms-settings-displays-topology',
     'Description' => 'ms-settings-displays-topology',
@@ -2835,8 +2835,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-emailandaccounts' => 
-  array (
+  'ms-settings-emailandaccounts' =>
+  array(
     'URI Scheme' => 'ms-settings-emailandaccounts',
     'Template' => 'prov/ms-settings-emailandaccounts',
     'Description' => 'ms-settings-emailandaccounts',
@@ -2847,8 +2847,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-language' => 
-  array (
+  'ms-settings-language' =>
+  array(
     'URI Scheme' => 'ms-settings-language',
     'Template' => 'prov/ms-settings-language',
     'Description' => 'ms-settings-language',
@@ -2859,8 +2859,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-location' => 
-  array (
+  'ms-settings-location' =>
+  array(
     'URI Scheme' => 'ms-settings-location',
     'Template' => 'prov/ms-settings-location',
     'Description' => 'ms-settings-location',
@@ -2871,8 +2871,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-lock' => 
-  array (
+  'ms-settings-lock' =>
+  array(
     'URI Scheme' => 'ms-settings-lock',
     'Template' => 'prov/ms-settings-lock',
     'Description' => 'ms-settings-lock',
@@ -2883,8 +2883,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-nfctransactions' => 
-  array (
+  'ms-settings-nfctransactions' =>
+  array(
     'URI Scheme' => 'ms-settings-nfctransactions',
     'Template' => 'prov/ms-settings-nfctransactions',
     'Description' => 'ms-settings-nfctransactions',
@@ -2895,8 +2895,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-notifications' => 
-  array (
+  'ms-settings-notifications' =>
+  array(
     'URI Scheme' => 'ms-settings-notifications',
     'Template' => 'prov/ms-settings-notifications',
     'Description' => 'ms-settings-notifications',
@@ -2907,8 +2907,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-power' => 
-  array (
+  'ms-settings-power' =>
+  array(
     'URI Scheme' => 'ms-settings-power',
     'Template' => 'prov/ms-settings-power',
     'Description' => 'ms-settings-power',
@@ -2919,8 +2919,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-privacy' => 
-  array (
+  'ms-settings-privacy' =>
+  array(
     'URI Scheme' => 'ms-settings-privacy',
     'Template' => 'prov/ms-settings-privacy',
     'Description' => 'ms-settings-privacy',
@@ -2931,8 +2931,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-proximity' => 
-  array (
+  'ms-settings-proximity' =>
+  array(
     'URI Scheme' => 'ms-settings-proximity',
     'Template' => 'prov/ms-settings-proximity',
     'Description' => 'ms-settings-proximity',
@@ -2943,8 +2943,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-screenrotation' => 
-  array (
+  'ms-settings-screenrotation' =>
+  array(
     'URI Scheme' => 'ms-settings-screenrotation',
     'Template' => 'prov/ms-settings-screenrotation',
     'Description' => 'ms-settings-screenrotation',
@@ -2955,8 +2955,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-wifi' => 
-  array (
+  'ms-settings-wifi' =>
+  array(
     'URI Scheme' => 'ms-settings-wifi',
     'Template' => 'prov/ms-settings-wifi',
     'Description' => 'ms-settings-wifi',
@@ -2967,8 +2967,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-settings-workplace' => 
-  array (
+  'ms-settings-workplace' =>
+  array(
     'URI Scheme' => 'ms-settings-workplace',
     'Template' => 'prov/ms-settings-workplace',
     'Description' => 'ms-settings-workplace',
@@ -2979,8 +2979,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-spd' => 
-  array (
+  'ms-spd' =>
+  array(
     'URI Scheme' => 'ms-spd',
     'Template' => 'prov/ms-spd',
     'Description' => 'ms-spd',
@@ -2991,8 +2991,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-stickers' => 
-  array (
+  'ms-stickers' =>
+  array(
     'URI Scheme' => 'ms-stickers',
     'Template' => 'prov/ms-stickers',
     'Description' => 'ms-stickers',
@@ -3003,8 +3003,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-sttoverlay' => 
-  array (
+  'ms-sttoverlay' =>
+  array(
     'URI Scheme' => 'ms-sttoverlay',
     'Template' => 'prov/ms-sttoverlay',
     'Description' => 'ms-sttoverlay',
@@ -3015,8 +3015,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-transit-to' => 
-  array (
+  'ms-transit-to' =>
+  array(
     'URI Scheme' => 'ms-transit-to',
     'Template' => 'prov/ms-transit-to',
     'Description' => 'ms-transit-to',
@@ -3027,8 +3027,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-useractivityset' => 
-  array (
+  'ms-useractivityset' =>
+  array(
     'URI Scheme' => 'ms-useractivityset',
     'Template' => 'prov/ms-useractivityset',
     'Description' => 'ms-useractivityset',
@@ -3039,8 +3039,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-uup' => 
-  array (
+  'ms-uup' =>
+  array(
     'URI Scheme' => 'ms-uup',
     'Template' => 'prov/ms-uup',
     'Description' => 'ms-uup',
@@ -3051,8 +3051,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-virtualtouchpad' => 
-  array (
+  'ms-virtualtouchpad' =>
+  array(
     'URI Scheme' => 'ms-virtualtouchpad',
     'Template' => 'prov/ms-virtualtouchpad',
     'Description' => 'ms-virtualtouchpad',
@@ -3063,8 +3063,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-visio' => 
-  array (
+  'ms-visio' =>
+  array(
     'URI Scheme' => 'ms-visio',
     'Template' => 'prov/ms-visio',
     'Description' => 'ms-visio',
@@ -3075,8 +3075,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-walk-to' => 
-  array (
+  'ms-walk-to' =>
+  array(
     'URI Scheme' => 'ms-walk-to',
     'Template' => 'prov/ms-walk-to',
     'Description' => 'ms-walk-to',
@@ -3087,8 +3087,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-whiteboard' => 
-  array (
+  'ms-whiteboard' =>
+  array(
     'URI Scheme' => 'ms-whiteboard',
     'Template' => 'prov/ms-whiteboard',
     'Description' => 'ms-whiteboard',
@@ -3099,8 +3099,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-whiteboard-cmd' => 
-  array (
+  'ms-whiteboard-cmd' =>
+  array(
     'URI Scheme' => 'ms-whiteboard-cmd',
     'Template' => 'prov/ms-whiteboard-cmd',
     'Description' => 'ms-whiteboard-cmd',
@@ -3111,8 +3111,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-widgetboard' => 
-  array (
+  'ms-widgetboard' =>
+  array(
     'URI Scheme' => 'ms-widgetboard',
     'Template' => 'prov/ms-widgetboard',
     'Description' => 'ms-widgetboard',
@@ -3123,8 +3123,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-widgets' => 
-  array (
+  'ms-widgets' =>
+  array(
     'URI Scheme' => 'ms-widgets',
     'Template' => 'prov/ms-widgets',
     'Description' => 'ms-widgets',
@@ -3135,8 +3135,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ms-word' => 
-  array (
+  'ms-word' =>
+  array(
     'URI Scheme' => 'ms-word',
     'Template' => 'prov/ms-word',
     'Description' => 'ms-word',
@@ -3147,8 +3147,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'msnim' => 
-  array (
+  'msnim' =>
+  array(
     'URI Scheme' => 'msnim',
     'Template' => 'prov/msnim',
     'Description' => 'msnim',
@@ -3159,8 +3159,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'msrp' => 
-  array (
+  'msrp' =>
+  array(
     'URI Scheme' => 'msrp',
     'Template' => '',
     'Description' => 'Message Session Relay Protocol',
@@ -3171,8 +3171,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'msrps' => 
-  array (
+  'msrps' =>
+  array(
     'URI Scheme' => 'msrps',
     'Template' => '',
     'Description' => 'Message Session Relay Protocol Secure',
@@ -3183,8 +3183,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mss' => 
-  array (
+  'mss' =>
+  array(
     'URI Scheme' => 'mss',
     'Template' => 'prov/mss',
     'Description' => 'mss',
@@ -3195,8 +3195,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mt' => 
-  array (
+  'mt' =>
+  array(
     'URI Scheme' => 'mt',
     'Template' => 'perm/mt',
     'Description' => 'Matter protocol on-boarding payloads that are encoded for use in QR Codes and/or NFC Tags',
@@ -3207,8 +3207,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mtqp' => 
-  array (
+  'mtqp' =>
+  array(
     'URI Scheme' => 'mtqp',
     'Template' => '',
     'Description' => 'Message Tracking Query Protocol',
@@ -3219,8 +3219,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mtrust' => 
-  array (
+  'mtrust' =>
+  array(
     'URI Scheme' => 'mtrust',
     'Template' => 'prov/mtrust',
     'Description' => 'mtrust',
@@ -3231,8 +3231,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mumble' => 
-  array (
+  'mumble' =>
+  array(
     'URI Scheme' => 'mumble',
     'Template' => 'prov/mumble',
     'Description' => 'mumble',
@@ -3243,8 +3243,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mupdate' => 
-  array (
+  'mupdate' =>
+  array(
     'URI Scheme' => 'mupdate',
     'Template' => '',
     'Description' => 'Mailbox Update (MUPDATE) Protocol',
@@ -3255,8 +3255,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'musik' => 
-  array (
+  'musik' =>
+  array(
     'URI Scheme' => 'musik',
     'Template' => 'prov/musik',
     'Description' => 'musik',
@@ -3267,8 +3267,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mvn' => 
-  array (
+  'mvn' =>
+  array(
     'URI Scheme' => 'mvn',
     'Template' => 'prov/mvn',
     'Description' => 'mvn',
@@ -3279,8 +3279,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mvrp' => 
-  array (
+  'mvrp' =>
+  array(
     'URI Scheme' => 'mvrp',
     'Template' => 'prov/mvrp',
     'Description' => 'mvrp
@@ -3292,8 +3292,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'mvrps' => 
-  array (
+  'mvrps' =>
+  array(
     'URI Scheme' => 'mvrps',
     'Template' => 'prov/mvrps',
     'Description' => 'mvrps
@@ -3305,8 +3305,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'news' => 
-  array (
+  'news' =>
+  array(
     'URI Scheme' => 'news',
     'Template' => '',
     'Description' => 'USENET news',
@@ -3317,8 +3317,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'nfs' => 
-  array (
+  'nfs' =>
+  array(
     'URI Scheme' => 'nfs',
     'Template' => '',
     'Description' => 'network file system protocol',
@@ -3329,8 +3329,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ni' => 
-  array (
+  'ni' =>
+  array(
     'URI Scheme' => 'ni',
     'Template' => '',
     'Description' => 'ni',
@@ -3341,8 +3341,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'nih' => 
-  array (
+  'nih' =>
+  array(
     'URI Scheme' => 'nih',
     'Template' => '',
     'Description' => 'nih',
@@ -3353,8 +3353,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'nntp' => 
-  array (
+  'nntp' =>
+  array(
     'URI Scheme' => 'nntp',
     'Template' => '',
     'Description' => 'USENET news using NNTP access',
@@ -3365,8 +3365,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'nostr' => 
-  array (
+  'nostr' =>
+  array(
     'URI Scheme' => 'nostr',
     'Template' => 'prov/nostr',
     'Description' => 'nostr',
@@ -3377,8 +3377,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'notes' => 
-  array (
+  'notes' =>
+  array(
     'URI Scheme' => 'notes',
     'Template' => 'prov/notes',
     'Description' => 'notes',
@@ -3389,8 +3389,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'npamp' => 
-  array (
+  'npamp' =>
+  array(
     'URI Scheme' => 'npamp',
     'Template' => 'prov/npamp',
     'Description' => 'npamp',
@@ -3401,8 +3401,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'num' => 
-  array (
+  'num' =>
+  array(
     'URI Scheme' => 'num',
     'Template' => 'prov/num',
     'Description' => 'Namespace Utility Modules',
@@ -3413,8 +3413,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ocf' => 
-  array (
+  'ocf' =>
+  array(
     'URI Scheme' => 'ocf',
     'Template' => 'prov/ocf',
     'Description' => 'ocf',
@@ -3425,8 +3425,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'oid' => 
-  array (
+  'oid' =>
+  array(
     'URI Scheme' => 'oid',
     'Template' => 'prov/oid',
     'Description' => 'oid',
@@ -3437,8 +3437,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'onenote' => 
-  array (
+  'onenote' =>
+  array(
     'URI Scheme' => 'onenote',
     'Template' => 'prov/onenote',
     'Description' => 'onenote',
@@ -3449,8 +3449,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'onenote-cmd' => 
-  array (
+  'onenote-cmd' =>
+  array(
     'URI Scheme' => 'onenote-cmd',
     'Template' => 'prov/onenote-cmd',
     'Description' => 'onenote-cmd',
@@ -3461,8 +3461,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'opaquelocktoken' => 
-  array (
+  'opaquelocktoken' =>
+  array(
     'URI Scheme' => 'opaquelocktoken',
     'Template' => '',
     'Description' => 'opaquelocktokent',
@@ -3473,8 +3473,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'openid' => 
-  array (
+  'openid' =>
+  array(
     'URI Scheme' => 'openid',
     'Template' => 'prov/openid',
     'Description' => 'OpenID Connect',
@@ -3485,8 +3485,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'openpgp4fpr' => 
-  array (
+  'openpgp4fpr' =>
+  array(
     'URI Scheme' => 'openpgp4fpr',
     'Template' => 'prov/openpgp4fpr',
     'Description' => 'openpgp4fpr',
@@ -3497,8 +3497,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'otpauth' => 
-  array (
+  'otpauth' =>
+  array(
     'URI Scheme' => 'otpauth',
     'Template' => 'prov/otpauth',
     'Description' => 'otpauth',
@@ -3509,8 +3509,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'p1' => 
-  array (
+  'p1' =>
+  array(
     'URI Scheme' => 'p1',
     'Template' => 'historic/p1',
     'Description' => 'p1',
@@ -3521,8 +3521,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'pack' => 
-  array (
+  'pack' =>
+  array(
     'URI Scheme' => 'pack',
     'Template' => 'historic/pack',
     'Description' => 'pack',
@@ -3533,8 +3533,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'palm' => 
-  array (
+  'palm' =>
+  array(
     'URI Scheme' => 'palm',
     'Template' => 'prov/palm',
     'Description' => 'palm',
@@ -3545,8 +3545,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'paparazzi' => 
-  array (
+  'paparazzi' =>
+  array(
     'URI Scheme' => 'paparazzi',
     'Template' => 'prov/paparazzi',
     'Description' => 'paparazzi',
@@ -3557,8 +3557,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'payment' => 
-  array (
+  'payment' =>
+  array(
     'URI Scheme' => 'payment',
     'Template' => 'historic/payment',
     'Description' => 'payment',
@@ -3569,8 +3569,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'payto' => 
-  array (
+  'payto' =>
+  array(
     'URI Scheme' => 'payto',
     'Template' => 'prov/payto',
     'Description' => 'payto',
@@ -3581,8 +3581,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'pkcs11' => 
-  array (
+  'pkcs11' =>
+  array(
     'URI Scheme' => 'pkcs11',
     'Template' => '',
     'Description' => 'PKCS#11',
@@ -3593,8 +3593,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'pkg' => 
-  array (
+  'pkg' =>
+  array(
     'URI Scheme' => 'pkg',
     'Template' => 'prov/pkg',
     'Description' => 'pkg',
@@ -3605,8 +3605,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'platform' => 
-  array (
+  'platform' =>
+  array(
     'URI Scheme' => 'platform',
     'Template' => 'prov/platform',
     'Description' => 'platform',
@@ -3617,8 +3617,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'pop' => 
-  array (
+  'pop' =>
+  array(
     'URI Scheme' => 'pop',
     'Template' => '',
     'Description' => 'Post Office Protocol v3',
@@ -3629,8 +3629,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'pres' => 
-  array (
+  'pres' =>
+  array(
     'URI Scheme' => 'pres',
     'Template' => '',
     'Description' => 'Presence',
@@ -3641,8 +3641,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'prospero' => 
-  array (
+  'prospero' =>
+  array(
     'URI Scheme' => 'prospero',
     'Template' => '',
     'Description' => 'Prospero Directory Service',
@@ -3653,8 +3653,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'proxy' => 
-  array (
+  'proxy' =>
+  array(
     'URI Scheme' => 'proxy',
     'Template' => 'prov/proxy',
     'Description' => 'proxy',
@@ -3665,8 +3665,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'psyc' => 
-  array (
+  'psyc' =>
+  array(
     'URI Scheme' => 'psyc',
     'Template' => 'prov/psyc',
     'Description' => 'psyc',
@@ -3677,8 +3677,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'pttp' => 
-  array (
+  'pttp' =>
+  array(
     'URI Scheme' => 'pttp',
     'Template' => 'prov/pttp',
     'Description' => 'pttp',
@@ -3689,8 +3689,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'pwid' => 
-  array (
+  'pwid' =>
+  array(
     'URI Scheme' => 'pwid',
     'Template' => 'prov/pwid',
     'Description' => 'pwid',
@@ -3701,8 +3701,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'qb' => 
-  array (
+  'qb' =>
+  array(
     'URI Scheme' => 'qb',
     'Template' => 'prov/qb',
     'Description' => 'qb',
@@ -3713,8 +3713,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'query' => 
-  array (
+  'query' =>
+  array(
     'URI Scheme' => 'query',
     'Template' => 'prov/query',
     'Description' => 'query',
@@ -3725,8 +3725,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'quic-transport' => 
-  array (
+  'quic-transport' =>
+  array(
     'URI Scheme' => 'quic-transport',
     'Template' => 'prov/quic-transport',
     'Description' => 'quic-transport',
@@ -3737,8 +3737,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'redis' => 
-  array (
+  'redis' =>
+  array(
     'URI Scheme' => 'redis',
     'Template' => 'prov/redis',
     'Description' => 'redis',
@@ -3749,8 +3749,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'rediss' => 
-  array (
+  'rediss' =>
+  array(
     'URI Scheme' => 'rediss',
     'Template' => 'prov/rediss',
     'Description' => 'rediss',
@@ -3761,8 +3761,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'reload' => 
-  array (
+  'reload' =>
+  array(
     'URI Scheme' => 'reload',
     'Template' => '',
     'Description' => 'reload',
@@ -3773,8 +3773,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'res' => 
-  array (
+  'res' =>
+  array(
     'URI Scheme' => 'res',
     'Template' => 'prov/res',
     'Description' => 'res',
@@ -3785,8 +3785,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'resource' => 
-  array (
+  'resource' =>
+  array(
     'URI Scheme' => 'resource',
     'Template' => 'prov/resource',
     'Description' => 'resource',
@@ -3797,8 +3797,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'rmi' => 
-  array (
+  'rmi' =>
+  array(
     'URI Scheme' => 'rmi',
     'Template' => 'prov/rmi',
     'Description' => 'rmi',
@@ -3809,8 +3809,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'rsync' => 
-  array (
+  'rsync' =>
+  array(
     'URI Scheme' => 'rsync',
     'Template' => '',
     'Description' => 'rsync',
@@ -3821,8 +3821,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'rtmfp' => 
-  array (
+  'rtmfp' =>
+  array(
     'URI Scheme' => 'rtmfp',
     'Template' => 'prov/rtmfp',
     'Description' => 'rtmfp',
@@ -3833,8 +3833,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'rtmp' => 
-  array (
+  'rtmp' =>
+  array(
     'URI Scheme' => 'rtmp',
     'Template' => 'prov/rtmp',
     'Description' => 'rtmp',
@@ -3845,8 +3845,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'rtsp' => 
-  array (
+  'rtsp' =>
+  array(
     'URI Scheme' => 'rtsp',
     'Template' => '',
     'Description' => 'Real-Time Streaming Protocol (RTSP)',
@@ -3857,8 +3857,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'rtsps' => 
-  array (
+  'rtsps' =>
+  array(
     'URI Scheme' => 'rtsps',
     'Template' => '',
     'Description' => 'Real-Time Streaming Protocol (RTSP) over TLS',
@@ -3869,8 +3869,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'rtspu' => 
-  array (
+  'rtspu' =>
+  array(
     'URI Scheme' => 'rtspu',
     'Template' => '',
     'Description' => 'Real-Time Streaming Protocol (RTSP) over unreliable datagram transport',
@@ -3881,8 +3881,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'sarif' => 
-  array (
+  'sarif' =>
+  array(
     'URI Scheme' => 'sarif',
     'Template' => 'prov/sarif',
     'Description' => 'sarif',
@@ -3893,8 +3893,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'secondlife' => 
-  array (
+  'secondlife' =>
+  array(
     'URI Scheme' => 'secondlife',
     'Template' => 'prov/secondlife',
     'Description' => 'query',
@@ -3905,8 +3905,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'secret-token' => 
-  array (
+  'secret-token' =>
+  array(
     'URI Scheme' => 'secret-token',
     'Template' => 'prov/secret-token',
     'Description' => 'secret-token',
@@ -3917,8 +3917,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'service' => 
-  array (
+  'service' =>
+  array(
     'URI Scheme' => 'service',
     'Template' => '',
     'Description' => 'service location',
@@ -3929,8 +3929,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'session' => 
-  array (
+  'session' =>
+  array(
     'URI Scheme' => 'session',
     'Template' => '',
     'Description' => 'session',
@@ -3941,8 +3941,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'sftp' => 
-  array (
+  'sftp' =>
+  array(
     'URI Scheme' => 'sftp',
     'Template' => 'prov/sftp',
     'Description' => 'query',
@@ -3953,8 +3953,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'sgn' => 
-  array (
+  'sgn' =>
+  array(
     'URI Scheme' => 'sgn',
     'Template' => 'prov/sgn',
     'Description' => 'sgn',
@@ -3965,8 +3965,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'shc' => 
-  array (
+  'shc' =>
+  array(
     'URI Scheme' => 'shc',
     'Template' => 'prov/shc',
     'Description' => 'shc',
@@ -3977,8 +3977,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'shelter' => 
-  array (
+  'shelter' =>
+  array(
     'URI Scheme' => 'shelter',
     'Template' => 'prov/shelter',
     'Description' => 'shelter',
@@ -3989,8 +3989,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'shttp (obsolete)' => 
-  array (
+  'shttp (obsolete)' =>
+  array(
     'URI Scheme' => 'shttp (OBSOLETE)',
     'Template' => '',
     'Description' => 'Secure Hypertext Transfer Protocol',
@@ -4001,8 +4001,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'sieve' => 
-  array (
+  'sieve' =>
+  array(
     'URI Scheme' => 'sieve',
     'Template' => '',
     'Description' => 'ManageSieve Protocol',
@@ -4013,8 +4013,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'simpleledger' => 
-  array (
+  'simpleledger' =>
+  array(
     'URI Scheme' => 'simpleledger',
     'Template' => 'prov/simpleledger',
     'Description' => 'simpleledger',
@@ -4025,8 +4025,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'simplex' => 
-  array (
+  'simplex' =>
+  array(
     'URI Scheme' => 'simplex',
     'Template' => 'prov/simplex',
     'Description' => 'simplex',
@@ -4037,8 +4037,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'sip' => 
-  array (
+  'sip' =>
+  array(
     'URI Scheme' => 'sip',
     'Template' => '',
     'Description' => 'session initiation protocol',
@@ -4049,8 +4049,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'sips' => 
-  array (
+  'sips' =>
+  array(
     'URI Scheme' => 'sips',
     'Template' => '',
     'Description' => 'secure session initiation protocol',
@@ -4061,8 +4061,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'skype' => 
-  array (
+  'skype' =>
+  array(
     'URI Scheme' => 'skype',
     'Template' => 'prov/skype',
     'Description' => 'skype',
@@ -4073,8 +4073,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'smb' => 
-  array (
+  'smb' =>
+  array(
     'URI Scheme' => 'smb',
     'Template' => 'prov/smb',
     'Description' => 'smb',
@@ -4085,8 +4085,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'smp' => 
-  array (
+  'smp' =>
+  array(
     'URI Scheme' => 'smp',
     'Template' => 'prov/smp',
     'Description' => 'smp',
@@ -4097,8 +4097,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'sms' => 
-  array (
+  'sms' =>
+  array(
     'URI Scheme' => 'sms',
     'Template' => '',
     'Description' => 'Short Message Service',
@@ -4109,8 +4109,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'smtp' => 
-  array (
+  'smtp' =>
+  array(
     'URI Scheme' => 'smtp',
     'Template' => 'prov/smtp',
     'Description' => 'smtp',
@@ -4121,8 +4121,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'snews' => 
-  array (
+  'snews' =>
+  array(
     'URI Scheme' => 'snews',
     'Template' => '',
     'Description' => 'NNTP over SSL/TLS',
@@ -4133,8 +4133,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'snmp' => 
-  array (
+  'snmp' =>
+  array(
     'URI Scheme' => 'snmp',
     'Template' => '',
     'Description' => 'Simple Network Management Protocol',
@@ -4145,8 +4145,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'soap.beep' => 
-  array (
+  'soap.beep' =>
+  array(
     'URI Scheme' => 'soap.beep',
     'Template' => '',
     'Description' => 'soap.beep',
@@ -4157,8 +4157,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'soap.beeps' => 
-  array (
+  'soap.beeps' =>
+  array(
     'URI Scheme' => 'soap.beeps',
     'Template' => '',
     'Description' => 'soap.beeps',
@@ -4169,8 +4169,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'soldat' => 
-  array (
+  'soldat' =>
+  array(
     'URI Scheme' => 'soldat',
     'Template' => 'prov/soldat',
     'Description' => 'soldat',
@@ -4181,8 +4181,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'spacify' => 
-  array (
+  'spacify' =>
+  array(
     'URI Scheme' => 'spacify',
     'Template' => 'prov/spacify',
     'Description' => 'spacify',
@@ -4193,8 +4193,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'spiffe' => 
-  array (
+  'spiffe' =>
+  array(
     'URI Scheme' => 'spiffe',
     'Template' => 'prov/spiffe',
     'Description' => 'spiffe',
@@ -4205,8 +4205,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'spotify' => 
-  array (
+  'spotify' =>
+  array(
     'URI Scheme' => 'spotify',
     'Template' => 'prov/spotify',
     'Description' => 'spotify',
@@ -4217,8 +4217,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ssb' => 
-  array (
+  'ssb' =>
+  array(
     'URI Scheme' => 'ssb',
     'Template' => 'prov/ssb',
     'Description' => 'ssb',
@@ -4229,8 +4229,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'ssh' => 
-  array (
+  'ssh' =>
+  array(
     'URI Scheme' => 'ssh',
     'Template' => 'prov/ssh',
     'Description' => 'ssh',
@@ -4241,8 +4241,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'sss' => 
-  array (
+  'sss' =>
+  array(
     'URI Scheme' => 'sss',
     'Template' => 'prov/sss',
     'Description' => 'sss',
@@ -4253,8 +4253,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'starknet' => 
-  array (
+  'starknet' =>
+  array(
     'URI Scheme' => 'starknet',
     'Template' => 'prov/starknet',
     'Description' => 'starknet',
@@ -4265,8 +4265,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'steam' => 
-  array (
+  'steam' =>
+  array(
     'URI Scheme' => 'steam',
     'Template' => 'prov/steam',
     'Description' => 'steam',
@@ -4277,8 +4277,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'stun' => 
-  array (
+  'stun' =>
+  array(
     'URI Scheme' => 'stun',
     'Template' => '',
     'Description' => 'stun',
@@ -4289,8 +4289,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'stuns' => 
-  array (
+  'stuns' =>
+  array(
     'URI Scheme' => 'stuns',
     'Template' => '',
     'Description' => 'stuns',
@@ -4301,8 +4301,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'submit' => 
-  array (
+  'submit' =>
+  array(
     'URI Scheme' => 'submit',
     'Template' => 'prov/submit',
     'Description' => 'submit',
@@ -4313,8 +4313,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'svn' => 
-  array (
+  'svn' =>
+  array(
     'URI Scheme' => 'svn',
     'Template' => 'prov/svn',
     'Description' => 'svn',
@@ -4325,8 +4325,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'swh' => 
-  array (
+  'swh' =>
+  array(
     'URI Scheme' => 'swh',
     'Template' => 'prov/swh',
     'Description' => 'swh',
@@ -4337,8 +4337,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'swid' => 
-  array (
+  'swid' =>
+  array(
     'URI Scheme' => 'swid',
     'Template' => 'prov/swid',
     'Description' => 'swid (see [reviewer notes])',
@@ -4349,8 +4349,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'swidpath' => 
-  array (
+  'swidpath' =>
+  array(
     'URI Scheme' => 'swidpath',
     'Template' => 'prov/swidpath',
     'Description' => 'swidpath (see [reviewer notes])',
@@ -4361,8 +4361,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'tag' => 
-  array (
+  'tag' =>
+  array(
     'URI Scheme' => 'tag',
     'Template' => '',
     'Description' => 'tag',
@@ -4373,8 +4373,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'taler' => 
-  array (
+  'taler' =>
+  array(
     'URI Scheme' => 'taler',
     'Template' => 'prov/taler',
     'Description' => 'taler',
@@ -4385,8 +4385,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'teamspeak' => 
-  array (
+  'teamspeak' =>
+  array(
     'URI Scheme' => 'teamspeak',
     'Template' => 'prov/teamspeak',
     'Description' => 'teamspeak',
@@ -4397,8 +4397,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'teapot' => 
-  array (
+  'teapot' =>
+  array(
     'URI Scheme' => 'teapot',
     'Template' => 'prov/teapot',
     'Description' => 'teapot',
@@ -4409,8 +4409,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'teapots' => 
-  array (
+  'teapots' =>
+  array(
     'URI Scheme' => 'teapots',
     'Template' => 'prov/teapots',
     'Description' => 'teapots',
@@ -4421,8 +4421,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'tel' => 
-  array (
+  'tel' =>
+  array(
     'URI Scheme' => 'tel',
     'Template' => '',
     'Description' => 'telephone',
@@ -4433,8 +4433,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'teliaeid' => 
-  array (
+  'teliaeid' =>
+  array(
     'URI Scheme' => 'teliaeid',
     'Template' => 'prov/teliaeid',
     'Description' => 'teliaeid',
@@ -4445,8 +4445,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'telnet' => 
-  array (
+  'telnet' =>
+  array(
     'URI Scheme' => 'telnet',
     'Template' => '',
     'Description' => 'Reference to interactive sessions',
@@ -4457,8 +4457,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'tftp' => 
-  array (
+  'tftp' =>
+  array(
     'URI Scheme' => 'tftp',
     'Template' => '',
     'Description' => 'Trivial File Transfer Protocol',
@@ -4469,8 +4469,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'things' => 
-  array (
+  'things' =>
+  array(
     'URI Scheme' => 'things',
     'Template' => 'prov/things',
     'Description' => 'things',
@@ -4481,8 +4481,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'thismessage' => 
-  array (
+  'thismessage' =>
+  array(
     'URI Scheme' => 'thismessage',
     'Template' => 'perm/thismessage',
     'Description' => 'multipart/related relative reference resolution',
@@ -4493,8 +4493,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'thzp' => 
-  array (
+  'thzp' =>
+  array(
     'URI Scheme' => 'thzp',
     'Template' => 'historic/thzp',
     'Description' => 'thzp',
@@ -4505,8 +4505,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'tip' => 
-  array (
+  'tip' =>
+  array(
     'URI Scheme' => 'tip',
     'Template' => '',
     'Description' => 'Transaction Internet Protocol',
@@ -4517,8 +4517,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'tn3270' => 
-  array (
+  'tn3270' =>
+  array(
     'URI Scheme' => 'tn3270',
     'Template' => '',
     'Description' => 'Interactive 3270 emulation sessions',
@@ -4529,8 +4529,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'tool' => 
-  array (
+  'tool' =>
+  array(
     'URI Scheme' => 'tool',
     'Template' => 'prov/tool',
     'Description' => 'tool',
@@ -4541,8 +4541,8 @@ return array (
     'Notes' => '',
     'Active' => true,
   ),
-  'tttps' => 
-  array (
+  'tttps' =>
+  array(
     'URI Scheme' => 'tttps',
     'Template' => 'prov/tttps',
     'Description' => 'TLS TimeToken Secure Protocol (TTTPS). A cryptographic 
@@ -4554,8 +4554,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'turn' => 
-  array (
+  'turn' =>
+  array(
     'URI Scheme' => 'turn',
     'Template' => '',
     'Description' => 'turn',
@@ -4566,8 +4566,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'turns' => 
-  array (
+  'turns' =>
+  array(
     'URI Scheme' => 'turns',
     'Template' => '',
     'Description' => 'turns',
@@ -4578,8 +4578,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'tv' => 
-  array (
+  'tv' =>
+  array(
     'URI Scheme' => 'tv',
     'Template' => '',
     'Description' => 'TV Broadcasts',
@@ -4590,8 +4590,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'udp' => 
-  array (
+  'udp' =>
+  array(
     'URI Scheme' => 'udp',
     'Template' => 'prov/udp',
     'Description' => 'udp',
@@ -4602,8 +4602,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'unreal' => 
-  array (
+  'unreal' =>
+  array(
     'URI Scheme' => 'unreal',
     'Template' => 'prov/unreal',
     'Description' => 'unreal',
@@ -4614,8 +4614,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'upn' => 
-  array (
+  'upn' =>
+  array(
     'URI Scheme' => 'upn',
     'Template' => 'prov/upn',
     'Description' => 'upn',
@@ -4626,8 +4626,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'upt' => 
-  array (
+  'upt' =>
+  array(
     'URI Scheme' => 'upt',
     'Template' => 'historic/upt',
     'Description' => 'upt',
@@ -4638,8 +4638,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'urn' => 
-  array (
+  'urn' =>
+  array(
     'URI Scheme' => 'urn',
     'Template' => '',
     'Description' => 'Uniform Resource Names',
@@ -4650,8 +4650,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'ust' => 
-  array (
+  'ust' =>
+  array(
     'URI Scheme' => 'ust',
     'Template' => 'prov/ust',
     'Description' => 'ust',
@@ -4662,8 +4662,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'ut2004' => 
-  array (
+  'ut2004' =>
+  array(
     'URI Scheme' => 'ut2004',
     'Template' => 'prov/ut2004',
     'Description' => 'ut2004',
@@ -4674,8 +4674,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'uuaid' => 
-  array (
+  'uuaid' =>
+  array(
     'URI Scheme' => 'uuaid',
     'Template' => 'prov/uuaid',
     'Description' => 'uuaid',
@@ -4686,8 +4686,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'uuid-in-package' => 
-  array (
+  'uuid-in-package' =>
+  array(
     'URI Scheme' => 'uuid-in-package',
     'Template' => 'prov/uuid-in-package',
     'Description' => 'uuid-in-package',
@@ -4698,8 +4698,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'v-event' => 
-  array (
+  'v-event' =>
+  array(
     'URI Scheme' => 'v-event',
     'Template' => 'prov/v-event',
     'Description' => 'v-event',
@@ -4710,8 +4710,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'vemmi' => 
-  array (
+  'vemmi' =>
+  array(
     'URI Scheme' => 'vemmi',
     'Template' => '',
     'Description' => 'versatile multimedia interface',
@@ -4722,8 +4722,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'ventrilo' => 
-  array (
+  'ventrilo' =>
+  array(
     'URI Scheme' => 'ventrilo',
     'Template' => 'prov/ventrilo',
     'Description' => 'ventrilo',
@@ -4734,8 +4734,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'ves' => 
-  array (
+  'ves' =>
+  array(
     'URI Scheme' => 'ves',
     'Template' => 'prov/ves',
     'Description' => 'ves',
@@ -4746,8 +4746,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'videotex' => 
-  array (
+  'videotex' =>
+  array(
     'URI Scheme' => 'videotex',
     'Template' => 'historic/videotex',
     'Description' => 'videotex',
@@ -4758,8 +4758,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'view-source' => 
-  array (
+  'view-source' =>
+  array(
     'URI Scheme' => 'view-source',
     'Template' => 'prov/view-source',
     'Description' => 'view-source',
@@ -4770,8 +4770,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'vnc' => 
-  array (
+  'vnc' =>
+  array(
     'URI Scheme' => 'vnc',
     'Template' => '',
     'Description' => 'Remote Framebuffer Protocol',
@@ -4782,8 +4782,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'vscode' => 
-  array (
+  'vscode' =>
+  array(
     'URI Scheme' => 'vscode',
     'Template' => 'prov/vscode',
     'Description' => 'vscode',
@@ -4794,8 +4794,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'vscode-insiders' => 
-  array (
+  'vscode-insiders' =>
+  array(
     'URI Scheme' => 'vscode-insiders',
     'Template' => 'prov/vscode-insiders',
     'Description' => 'vscode-insiders',
@@ -4806,8 +4806,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'vsls' => 
-  array (
+  'vsls' =>
+  array(
     'URI Scheme' => 'vsls',
     'Template' => 'prov/vsls',
     'Description' => 'vsls',
@@ -4818,8 +4818,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'w3' => 
-  array (
+  'w3' =>
+  array(
     'URI Scheme' => 'w3',
     'Template' => 'prov/w3',
     'Description' => 'w3 (see [reviewer notes])',
@@ -4830,8 +4830,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wais' => 
-  array (
+  'wais' =>
+  array(
     'URI Scheme' => 'wais',
     'Template' => '',
     'Description' => 'Wide Area Information Servers',
@@ -4842,8 +4842,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wasm' => 
-  array (
+  'wasm' =>
+  array(
     'URI Scheme' => 'wasm',
     'Template' => 'prov/wasm',
     'Description' => 'wasm',
@@ -4854,8 +4854,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wasm-js' => 
-  array (
+  'wasm-js' =>
+  array(
     'URI Scheme' => 'wasm-js',
     'Template' => 'prov/wasm-js',
     'Description' => 'wasm-js',
@@ -4866,8 +4866,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wcr' => 
-  array (
+  'wcr' =>
+  array(
     'URI Scheme' => 'wcr',
     'Template' => 'prov/wcr',
     'Description' => 'wcr',
@@ -4878,8 +4878,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'web+ap' => 
-  array (
+  'web+ap' =>
+  array(
     'URI Scheme' => 'web+ap',
     'Template' => 'prov/web+ap',
     'Description' => 'web+ap',
@@ -4890,8 +4890,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'web+interaction' => 
-  array (
+  'web+interaction' =>
+  array(
     'URI Scheme' => 'web+interaction',
     'Template' => 'prov/web+interaction',
     'Description' => 'web+interaction',
@@ -4902,8 +4902,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'web3' => 
-  array (
+  'web3' =>
+  array(
     'URI Scheme' => 'web3',
     'Template' => 'prov/web3',
     'Description' => 'web3',
@@ -4914,8 +4914,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'webcal' => 
-  array (
+  'webcal' =>
+  array(
     'URI Scheme' => 'webcal',
     'Template' => 'prov/webcal',
     'Description' => 'webcal',
@@ -4926,8 +4926,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wifi' => 
-  array (
+  'wifi' =>
+  array(
     'URI Scheme' => 'wifi',
     'Template' => 'prov/wifi',
     'Description' => 'wifi',
@@ -4938,8 +4938,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wpid' => 
-  array (
+  'wpid' =>
+  array(
     'URI Scheme' => 'wpid',
     'Template' => 'prov/wpid',
     'Description' => 'wpid',
@@ -4950,8 +4950,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'ws' => 
-  array (
+  'ws' =>
+  array(
     'URI Scheme' => 'ws',
     'Template' => '',
     'Description' => 'WebSocket connections',
@@ -4962,8 +4962,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wss' => 
-  array (
+  'wss' =>
+  array(
     'URI Scheme' => 'wss',
     'Template' => '',
     'Description' => 'Encrypted WebSocket connections',
@@ -4974,8 +4974,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wtai' => 
-  array (
+  'wtai' =>
+  array(
     'URI Scheme' => 'wtai',
     'Template' => 'prov/wtai',
     'Description' => 'wtai',
@@ -4986,8 +4986,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'wyciwyg' => 
-  array (
+  'wyciwyg' =>
+  array(
     'URI Scheme' => 'wyciwyg',
     'Template' => 'prov/wyciwyg',
     'Description' => 'wyciwyg',
@@ -4998,8 +4998,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xcompute' => 
-  array (
+  'xcompute' =>
+  array(
     'URI Scheme' => 'xcompute',
     'Template' => 'prov/xcompute',
     'Description' => 'xcompute',
@@ -5010,8 +5010,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xcon' => 
-  array (
+  'xcon' =>
+  array(
     'URI Scheme' => 'xcon',
     'Template' => '',
     'Description' => 'xcon',
@@ -5022,8 +5022,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xcon-userid' => 
-  array (
+  'xcon-userid' =>
+  array(
     'URI Scheme' => 'xcon-userid',
     'Template' => '',
     'Description' => 'xcon-userid',
@@ -5034,8 +5034,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xfire' => 
-  array (
+  'xfire' =>
+  array(
     'URI Scheme' => 'xfire',
     'Template' => 'prov/xfire',
     'Description' => 'xfire',
@@ -5046,8 +5046,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xftp' => 
-  array (
+  'xftp' =>
+  array(
     'URI Scheme' => 'xftp',
     'Template' => 'prov/xftp',
     'Description' => 'xftp',
@@ -5058,8 +5058,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xmlrpc.beep' => 
-  array (
+  'xmlrpc.beep' =>
+  array(
     'URI Scheme' => 'xmlrpc.beep',
     'Template' => '',
     'Description' => 'xmlrpc.beep',
@@ -5070,8 +5070,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xmlrpc.beeps' => 
-  array (
+  'xmlrpc.beeps' =>
+  array(
     'URI Scheme' => 'xmlrpc.beeps',
     'Template' => '',
     'Description' => 'xmlrpc.beeps',
@@ -5082,8 +5082,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xmpp' => 
-  array (
+  'xmpp' =>
+  array(
     'URI Scheme' => 'xmpp',
     'Template' => '',
     'Description' => 'Extensible Messaging and Presence Protocol',
@@ -5094,8 +5094,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xrcp' => 
-  array (
+  'xrcp' =>
+  array(
     'URI Scheme' => 'xrcp',
     'Template' => 'prov/xrcp',
     'Description' => 'xrcp',
@@ -5106,8 +5106,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'xri' => 
-  array (
+  'xri' =>
+  array(
     'URI Scheme' => 'xri',
     'Template' => 'prov/xri',
     'Description' => 'xri',
@@ -5118,8 +5118,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'ymsgr' => 
-  array (
+  'ymsgr' =>
+  array(
     'URI Scheme' => 'ymsgr',
     'Template' => 'prov/ymsgr',
     'Description' => 'ymsgr',
@@ -5130,8 +5130,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'z39.50' => 
-  array (
+  'z39.50' =>
+  array(
     'URI Scheme' => 'z39.50',
     'Template' => '',
     'Description' => 'Z39.50 information access',
@@ -5142,8 +5142,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'z39.50r' => 
-  array (
+  'z39.50r' =>
+  array(
     'URI Scheme' => 'z39.50r',
     'Template' => '',
     'Description' => 'Z39.50 Retrieval',
@@ -5154,8 +5154,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'z39.50s' => 
-  array (
+  'z39.50s' =>
+  array(
     'URI Scheme' => 'z39.50s',
     'Template' => '',
     'Description' => 'Z39.50 Session',
@@ -5166,8 +5166,8 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'Notes' => '',
     'Active' => true,
   ),
-  'ztdnaid' => 
-  array (
+  'ztdnaid' =>
+  array(
     'URI Scheme' => 'ztdnaid',
     'Template' => 'prov/ztdnaid',
     'Description' => 'ztdnaid',

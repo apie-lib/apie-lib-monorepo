@@ -10,7 +10,11 @@ class EmailLocalPartTest extends ValueObjectTestCase
     {
         return EmailLocalPart::class;
     }
-
+    
+    public static function createExampleObject(): object
+    {
+        return EmailLocalPart::fromNative('test');
+    }
     public static function provideFromNative(): array
     {
         return [
