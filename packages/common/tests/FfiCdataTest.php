@@ -13,7 +13,6 @@ use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 use PHPUnit\Framework\Attributes\Test;
 
 #[RequiresPhpExtension('ffi')]
-#[DisableDatalayerTest]
 class FfiCdataTest extends ObjectTestCase
 {
     public static function className(): string
