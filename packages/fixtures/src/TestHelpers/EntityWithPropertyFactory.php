@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Fixtures\TestHelpers;
 
+use Apie\Core\Attributes\OverwriteAfterPersist;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Identifiers\Ulid;
@@ -29,6 +30,7 @@ namespace " . self::NAMESPACE . ";
 
 use " . EntityInterface::class . ";
 use " . IdentifierInterface::class . ";
+use " . OverwriteAfterPersist::class .";
 use " . Ulid::class . ";
 use ReflectionClass;
 
@@ -40,11 +42,11 @@ class " . $className . "Identifier extends Ulid implements IdentifierInterface
     }
 }
 
+#[OverwriteAfterPersist]
 class " . $className . " implements EntityInterface
 {
     private ". $className . "Identifier \$id;
-    public function __construct(
-        
+    public function __construct(       
         public \\" . $property . " \$property
     ) {
         \$this->id = " . $className . "Identifier::createRandom();

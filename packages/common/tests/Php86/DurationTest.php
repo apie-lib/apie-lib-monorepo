@@ -1,7 +1,8 @@
 <?php
-namespace Apie\Tests\Common;
+namespace Apie\Tests\Common\Php86;
 
 use Apie\Core\Context\ApieContext;
+use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use Apie\Serializer\Serializer;
@@ -12,46 +13,16 @@ use PHPUnit\Framework\TestCase;
 use Time\Duration;
 
 #[RequiresPhp('>=8.6')]
-class Php86Test extends TestCase
+class DurationTest extends ObjectTestCase
 {
-    use TestWithFaker;
-    use TestWithOpenapiSchema;
-
-    #[Test]
-    #[DataProvider('provideFromNative')]
-    public function it_can_denormalize_Duration(mixed $expected, mixed $input): void
+    public static function className(): string
     {
-        $serializer = Serializer::create();
-        $actual = $serializer->denormalizeNewObject($input, Duration::class, new ApieContext());
-        static::assertEquals($expected, $actual);
+        return Duration::class;
     }
 
-    public static function provideFromNative(): array
+    public static function getOpenApiSchemaForCreation(): array
     {
         return [
-            'positive integer' => [Duration::fromMilliseconds(20), 20],
-            'negative integer' => [Duration::fromMilliseconds(20)->negate(), -20],
-            'floating point' => [Duration::fromMilliseconds(20), 20.5],
-            'duration data structure' => [Duration::fromMilliseconds(20), [
-                'seconds' => 0,
-                'nanoseconds' => 20000000,
-                'negative' => false,
-            ]],
-            'duration data structure negative' => [Duration::fromMilliseconds(20)->negate(), [
-                'seconds' => 0,
-                'nanoseconds' => 20000000,
-                'negative' => true,
-            ]],
-        ];
-    }
-
-    #[Test]
-    public function it_works_with_schema_generator()
-    {
-        $this->runOpenapiSchemaTestForCreation(
-            Duration::class,
-            'Duration-post',
-            [
                 'oneOf' => [
                     [
                         'type' => 'object',
@@ -90,13 +61,34 @@ class Php86Test extends TestCase
                         'maximum' => min(PHP_INT_MAX, 9223372035999),
                     ],
                 ]
-            ]
-        );
+            ];
     }
 
     #[Test]
-    public function it_works_with_apie_faker()
+    #[DataProvider('provideDenormalize')]
+    public function it_can_denormalize_Duration(mixed $expected, mixed $input): void
     {
-        $this->runFakerTest(Duration::class);
+        $serializer = Serializer::create();
+        $actual = $serializer->denormalizeNewObject($input, Duration::class, new ApieContext());
+        static::assertEquals($expected, $actual);
+    }
+
+    public static function provideDenormalize(): array
+    {
+        return [
+            'positive integer' => [Duration::fromMilliseconds(20), 20],
+            'negative integer' => [Duration::fromMilliseconds(20)->negate(), -20],
+            'floating point' => [Duration::fromMilliseconds(20), 20.5],
+            'duration data structure' => [Duration::fromMilliseconds(20), [
+                'seconds' => 0,
+                'nanoseconds' => 20000000,
+                'negative' => false,
+            ]],
+            'duration data structure negative' => [Duration::fromMilliseconds(20)->negate(), [
+                'seconds' => 0,
+                'nanoseconds' => 20000000,
+                'negative' => true,
+            ]],
+        ];
     }
 }

@@ -1,7 +1,8 @@
 <?php
-namespace Apie\Tests\Common;
+namespace Apie\Tests\Common\Php84;
 
 use Apie\Core\Context\ApieContext;
+use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use Apie\Serializer\Serializer;
@@ -12,13 +13,25 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 #[RequiresPhpExtension('bcmath')]
-class BcMathTest extends TestCase
+class BcMathTest extends ObjectTestCase
 {
-    use TestWithFaker;
-    use TestWithOpenapiSchema;
+    public static function className(): string
+    {
+        return Number::class;
+    }
 
+    public static function getOpenApiSchemaForCreation(): array
+    {
+        return [
+            'type' => 'string',
+            'format' => 'bcmath-number',
+            'pattern' => true,
+            'example' => true,
+            'description' => true,
+        ];
+    }
     #[Test]
-    #[DataProvider('provideFromNative')]
+    #[DataProvider('provideDenormalize')]
     public function it_can_denormalize_bcmath_number(mixed $expected, mixed $input): void
     {
         $serializer = Serializer::create();
@@ -26,33 +39,11 @@ class BcMathTest extends TestCase
         static::assertEquals($expected, $actual);
     }
 
-    public static function provideFromNative(): array
+    public static function provideDenormalize(): array
     {
         return [
             'arbitrary number as string' => [new Number('42'), '42'],
             'arbitrary number as integer' => [new Number('42'), 42],
         ];
-    }
-
-    #[Test]
-    public function it_works_with_schema_generator()
-    {
-        $this->runOpenapiSchemaTestForCreation(
-            Number::class,
-            'Number-post',
-            [
-                'type' => 'string',
-                'format' => 'bcmath-number',
-                'pattern' => true,
-                'example' => true,
-                'description' => true,
-            ]
-        );
-    }
-
-    #[Test]
-    public function it_works_with_apie_faker()
-    {
-        $this->runFakerTest(Number::class);
     }
 }

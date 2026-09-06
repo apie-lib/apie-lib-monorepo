@@ -1,5 +1,5 @@
 <?php
-namespace Apie\Tests\Common;
+namespace Apie\Tests\Common\Php\Ffi;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Lists\ItemList;

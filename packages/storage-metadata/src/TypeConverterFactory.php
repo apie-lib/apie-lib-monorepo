@@ -26,6 +26,7 @@ use Apie\StorageMetadata\Converters\StringToDom;
 use Apie\StorageMetadata\Converters\StringToEnum;
 use Apie\StorageMetadata\Converters\StringToGMP;
 use Apie\StorageMetadata\Converters\StringToSearchIndex;
+use Apie\StorageMetadata\Converters\StringToSimpleXml;
 use Apie\StorageMetadata\Converters\StringToUploadedFileInterface;
 use Apie\StorageMetadata\Converters\StringToValueObject;
 use Apie\StorageMetadata\Converters\UploadedFileInterfaceToString;
@@ -73,6 +74,7 @@ final class TypeConverterFactory
                 new DomToString(),
                 new SimpleXmlToString(),
                 new StringToDom(),
+                new StringToSimpleXml(),
                 new StringToValueObject(),
                 new StringToEnum(),
                 new StringToGMP(),

@@ -6,6 +6,9 @@ use Apie\SchemaGenerator\Interfaces\SchemaProvider;
 use BcMath\Number;
 use cebe\openapi\spec\Components;
 use cebe\openapi\spec\Schema;
+use Closure;
+use DateInterval;
+use DatePeriod;
 use DOMAttr;
 use DOMElement;
 use FFI\CData;
@@ -35,6 +38,8 @@ class PredefinedObjectSchemaProvider implements SchemaProvider
                 SimpleXMLElement::class,
                 DOMAttr::class,
                 DOMElement::class,
+                DateInterval::class,
+                Closure::class,
             ]
         );
     }

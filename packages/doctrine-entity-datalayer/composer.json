@@ -29,6 +29,7 @@
     "apie/count-words": "self.version",
     "apie/core": "self.version",
     "apie/doctrine-entity-converter": "self.version",
+    "apie/serializer": "self.version",
     "doctrine/common": "^3.5.0",
     "doctrine/orm": "^3.6.8",
     "opis/closure": "^4.5.0",
