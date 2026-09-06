@@ -164,7 +164,7 @@ class OrmBuilder
         static $isRegistered = false;
         if (!$isRegistered) {
             $serializer = Serializer::create();
-            $serializeCallback = function (object $object) use ($serializer) : array  {
+            $serializeCallback = function (object $object) use ($serializer) : array {
                 return [
                     'type' => get_debug_type($object),
                     'serialized' => $serializer->normalize($object, new ApieContext()),

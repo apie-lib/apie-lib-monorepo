@@ -3,14 +3,11 @@ namespace Apie\Tests\Common\Php84;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
-use Apie\Fixtures\TestHelpers\TestWithFaker;
-use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use Apie\Serializer\Serializer;
 use BcMath\Number;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 
 #[RequiresPhpExtension('bcmath')]
 class BcMathTest extends ObjectTestCase

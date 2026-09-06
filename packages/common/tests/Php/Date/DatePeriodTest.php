@@ -16,13 +16,13 @@ class DatePeriodTest extends ObjectTestCase
         return [
             'type' => 'object',
             'required' => [
-                'startDate',   
+                'startDate',
                 'dateInterval',
             ],
             'properties' => [
                 'startDate' => [
                     '$ref' => '#/components/schemas/DateTime-nullable-post',
-                ],   
+                ],
                 'endDate' => [
                     '$ref' => '#/components/schemas/DateTime-nullable-post'
                 ],

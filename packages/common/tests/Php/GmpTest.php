@@ -3,14 +3,11 @@ namespace Apie\Tests\Common\Php;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
-use Apie\Fixtures\TestHelpers\TestWithFaker;
-use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use Apie\Serializer\Serializer;
 use GMP;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\RequiresPhpExtension;
 use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 
 #[RequiresPhpExtension('gmp')]
 class GmpTest extends ObjectTestCase

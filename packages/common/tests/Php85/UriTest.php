@@ -3,13 +3,10 @@ namespace Apie\Tests\Common;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
-use Apie\Fixtures\TestHelpers\TestWithFaker;
-use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use Apie\Serializer\Serializer;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 use Uri\Rfc3986\Uri;
 
 #[RequiresPhp('>=8.5')]

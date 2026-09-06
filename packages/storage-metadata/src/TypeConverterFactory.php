@@ -28,8 +28,10 @@ use Apie\StorageMetadata\Converters\StringToGMP;
 use Apie\StorageMetadata\Converters\StringToSearchIndex;
 use Apie\StorageMetadata\Converters\StringToSimpleXml;
 use Apie\StorageMetadata\Converters\StringToUploadedFileInterface;
+use Apie\StorageMetadata\Converters\StringToUrl;
 use Apie\StorageMetadata\Converters\StringToValueObject;
 use Apie\StorageMetadata\Converters\UploadedFileInterfaceToString;
+use Apie\StorageMetadata\Converters\UriToString;
 use Apie\StorageMetadata\Converters\ValueObjectToAutoIncrementTable;
 use Apie\StorageMetadata\Converters\ValueObjectToFloat;
 use Apie\StorageMetadata\Converters\ValueObjectToInt;
@@ -75,6 +77,8 @@ final class TypeConverterFactory
                 new SimpleXmlToString(),
                 new StringToDom(),
                 new StringToSimpleXml(),
+                new StringToUrl(),
+                new UriToString(),
                 new StringToValueObject(),
                 new StringToEnum(),
                 new StringToGMP(),

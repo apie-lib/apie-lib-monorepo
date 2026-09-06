@@ -8,7 +8,6 @@ use cebe\openapi\spec\Components;
 use cebe\openapi\spec\Schema;
 use Closure;
 use DateInterval;
-use DatePeriod;
 use DOMAttr;
 use DOMElement;
 use FFI\CData;

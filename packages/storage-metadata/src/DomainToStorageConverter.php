@@ -209,8 +209,7 @@ class DomainToStorageConverter
     public static function isReallyWritable(
         object $object,
         ReflectionProperty $property,
-    ): bool
-    {
+    ): bool {
         if ($object instanceof \DatePeriod && in_array($property->getName(), ['start', 'end', 'interval', 'include_end_date', 'include_start_date', 'recurrences', 'current'])) {
             return false;
         }

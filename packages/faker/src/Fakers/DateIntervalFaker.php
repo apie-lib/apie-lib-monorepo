@@ -1,7 +1,6 @@
 <?php
 namespace Apie\Faker\Fakers;
 
-use Apie\Core\ValueObjects\PhpDateIntervalString;
 use Apie\Faker\Interfaces\ApieClassFaker;
 use DateInterval;
 use Faker\Generator;

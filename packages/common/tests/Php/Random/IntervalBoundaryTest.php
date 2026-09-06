@@ -2,8 +2,8 @@
 namespace Apie\Tests\Php\Random;
 
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
-use Random\IntervalBoundary;
 use PHPUnit\Framework\Attributes\RequiresPhpExtension;
+use Random\IntervalBoundary;
 
 #[RequiresPhpExtension('random')]
 class IntervalBoundaryTest extends ObjectTestCase

@@ -15,6 +15,7 @@ class ClosureFaker implements ApieClassFaker
 
     public function fakeFor(Generator $generator, ReflectionClass $class): \Closure
     {
-        return function () {};
+        return function () {
+        };
     }
 }

@@ -3,9 +3,6 @@ namespace Apie\StorageMetadata\Converters;
 
 use Apie\Core\Utils\ConverterUtils;
 use Apie\TypeConverter\ConverterInterface;
-use DOMAttr;
-use DOMDocument;
-use DOMElement;
 use ReflectionType;
 
 /**

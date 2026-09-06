@@ -3,13 +3,10 @@ namespace Apie\Tests\Common\Php86;
 
 use Apie\Core\Context\ApieContext;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
-use Apie\Fixtures\TestHelpers\TestWithFaker;
-use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use Apie\Serializer\Serializer;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 use Time\Duration;
 
 #[RequiresPhp('>=8.6')]

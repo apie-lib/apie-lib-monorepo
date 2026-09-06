@@ -2,7 +2,6 @@
 namespace Apie\Faker\Fakers;
 
 use Apie\Faker\Interfaces\ApieClassFaker;
-use BcMath\Number;
 use DateInterval;
 use DatePeriod;
 use DateTimeImmutable;
@@ -26,10 +25,10 @@ class DatePeriodFaker implements ApieClassFaker
         $options = ($generator->boolean() ? DatePeriod::EXCLUDE_START_DATE : 0)
             | ($generator->boolean() ? DatePeriod::INCLUDE_END_DATE : 0);
         return new DatePeriod(
-                $generator->fakeClass(DateTimeImmutable::class),
-                $generator->fakeClass(DateInterval::class),
-                $generator->boolean() ? $generator->fakeClass(DateTimeImmutable::class) : $generator->numberBetween(1, 10),
-                $options
+            $generator->fakeClass(DateTimeImmutable::class),
+            $generator->fakeClass(DateInterval::class),
+            $generator->boolean() ? $generator->fakeClass(DateTimeImmutable::class) : $generator->numberBetween(1, 10),
+            $options
         );
     }
 }
