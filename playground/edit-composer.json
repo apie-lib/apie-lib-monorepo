@@ -12,6 +12,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/cms-layout-kids",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-layout-kids": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/twig-template-layout-renderer",
             "options": {
                 "symlink": true,

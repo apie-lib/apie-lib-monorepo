@@ -3,6 +3,7 @@ namespace App\ApiePlayground\Example\Enums;
 
 use Apie\CmsLayoutGraphite\GraphiteDesignSystemLayout;
 use Apie\CmsLayoutIonic\IonicDesignSystemLayout;
+use Apie\CmsLayoutKids\KidsDesignSystemLayout;
 use Apie\CmsLayoutUgly\UglyDesignSystemLayout;
 use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
@@ -11,6 +12,7 @@ enum SelectedLayout: string {
     case Graphite = GraphiteDesignSystemLayout::class;
     case Ionic = IonicDesignSystemLayout::class;
     case Ugly = UglyDesignSystemLayout::class;
+    case Kids = KidsDesignSystemLayout::class;
 
     public static function fromConfig(array $config): self
     {
