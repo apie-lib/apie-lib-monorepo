@@ -67,6 +67,7 @@ class FirstNameTest extends TestCase
             [
                 'type' => 'string',
                 'format' => 'firstname',
+                'description' => true,
                 'pattern' => true,
             ]
         );

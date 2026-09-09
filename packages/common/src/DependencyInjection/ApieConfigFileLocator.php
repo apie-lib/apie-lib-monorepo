@@ -3,20 +3,28 @@ namespace Apie\Common\DependencyInjection;
 
 use Apie\AiInstructor\AiInstructor;
 use Apie\ApieCommonPlugin\ApieCommonPlugin;
+use Apie\ApieFileSystem\ApieFilesystemFactory;
 use Apie\Cms\RouteDefinitions\AbstractCmsRouteDefinition;
 use Apie\CmsApiDropdownOption\Lists\DropdownOptionList;
 use Apie\Common\ApieFacade;
+use Apie\Common\BasicAuth\AddBasicAuthContextBuilder;
 use Apie\Console\ConsoleCommandFactory;
 use Apie\Core\Context\ApieContext;
 use Apie\DoctrineEntityConverter\Factories\PersistenceLayerFactory;
 use Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer;
+use Apie\Export\ExportInterface;
 use Apie\Faker\ApieObjectFaker;
+use Apie\FtpServer\FtpServerCommand;
+use Apie\Graphql\Factories\GraphqlSchemaFactory;
 use Apie\HtmlBuilders\FormBuildContext;
 use Apie\Maker\Utils;
+use Apie\McpServer\RunMcpServerCommand;
 use Apie\RestApi\OpenApi\OpenApiGenerator;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
 use Apie\Serializer\Serializer;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
+use Apie\TypescriptClientBuilder\RouteDefinitions\CodeRouteDefinitionProvider;
+use Apie\Webdav\Controller\WebdavController;
 use ReflectionClass;
 use ReflectionException;
 use Symfony\Component\Config\FileLocator;
@@ -27,8 +35,10 @@ class ApieConfigFileLocator extends FileLocator
      * @var array<string, array{class-string<object>, string, class-string<object>}>
      */
     private array $predefined = [
+        'add_basic_auth.yaml' => [AddBasicAuthContextBuilder::class, '../..', 'Apie\\Common\\AddBasicAuthServiceProvider'],
         'ai_instructor.yaml' => [AiInstructor::class, '..', 'Apie\\AiInstructor\\AiInstructorServiceProvider'],
         'apie_common_plugin.yaml' => [ApieCommonPlugin::class, '..', 'Apie\\ApieCommonPlugin\\GeneratedApieCommonPluginServiceProvider'],
+        'apie_file_system.yaml' => [ApieFilesystemFactory::class, '..', 'Apie\\ApieFileSystem\\ApieFileSystemServiceProvider'],
         'cms.yaml' => [AbstractCmsRouteDefinition::class, '../..', 'Apie\\Cms\\CmsServiceProvider'],
         'cms_dropdown.yaml' => [DropdownOptionList::class, '../..', 'Apie\\CmsApiDropdownOption\\CmsDropdownServiceProvider'],
         'common.yaml' => [ApieFacade::class, '..', 'Apie\\Common\\CommonServiceProvider'],
@@ -36,13 +46,19 @@ class ApieConfigFileLocator extends FileLocator
         'core.yaml' => [ApieContext::class, '../..', 'Apie\\Core\\CoreServiceProvider'],
         'doctrine_entity_converter.yaml' => [PersistenceLayerFactory::class, '../..', 'Apie\\DoctrineEntityConverter\\DoctrineEntityConverterProvider'],
         'doctrine_entity_datalayer.yaml' => [DoctrineEntityDatalayer::class, '..', 'Apie\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerServiceProvider'],
+        'export.yaml' => [ExportInterface::class, '..', 'Apie\\Export\\ExportServiceProvider'],
         'faker.yaml' => [ApieObjectFaker::class, '..', 'Apie\\Faker\\FakerServiceProvider'],
+        'ftp.yaml' => [FtpServerCommand::class, '..', 'Apie\\FtpServer\\FtpServerServiceProvider'],
         'html_builders.yaml' => [FormBuildContext::class, '..', 'Apie\\HtmlBuilders\\HtmlBuilderServiceProvider'],
+        'graphql.yaml' => [GraphqlSchemaFactory::class, '../..', 'Apie\\Graphql\\GraphqlServiceProvider'],
         'maker.yaml' => [Utils::class, '..', 'Apie\\Maker\\MakerServiceProvider'],
+        'mcp_server.yaml' => [RunMcpServerCommand::class, '..', 'Apie\\McpServer\\McpServerServiceProvider'],
         'rest_api.yaml' => [OpenApiGenerator::class, '../..', 'Apie\\RestApi\\RestApiServiceProvider'],
         'serializer.yaml' => [Serializer::class, '..', 'Apie\\Serializer\\SerializerServiceProvider'],
         'schema_generator.yaml' => [ComponentsBuilderFactory::class, '..', 'Apie\\SchemaGenerator\\SchemaGeneratorServiceProvider'],
         'twig_template_layout_renderer.yaml' => [TwigRenderer::class, '..', 'Apie\\TwigTemplateLayoutRenderer\\TwigTemplateLayoutRendererServiceProvider'],
+        'typescript_client_builder.yaml' => [CodeRouteDefinitionProvider::class, '../..', 'Apie\\TypescriptClientBuilder\\TypescriptClientBuilderServiceProvider'],
+        'webdav.yaml' => [WebdavController::class, '../..', 'Apie\\Webdav\\WebdavServiceProvider'],
     ];
 
     public function __construct(string|array $paths = [])

@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Core\ValueObjects\Fields;
 
+use Apie\Core\Attributes\Internal;
 use Apie\Core\Attributes\Optional;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
@@ -21,14 +22,13 @@ final class FromProperty implements FieldInterface
     public function __construct(ReflectionProperty $property)
     {
         $this->property = $property;
-        $property->setAccessible(true);
     }
 
     public function getTypehint(): string
     {
         $type = $this->property->getType();
         if ($type instanceof ReflectionNamedType) {
-            return ($type->allowsNull() ? $type->getName() : ($type->getName() . '|null'));
+            return ($type->allowsNull() ? ($type->getName() . '|null') : $type->getName());
         }
         return (string) $type;
     }
@@ -37,6 +37,7 @@ final class FromProperty implements FieldInterface
     {
         return $this->property->hasDefaultValue()
             || !empty($this->property->getAttributes(Optional::class))
+            || !empty($this->property->getAttributes(Internal::class))
             || $this->property->getType()->allowsNull();
     }
 

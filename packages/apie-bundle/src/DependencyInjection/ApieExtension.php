@@ -32,6 +32,9 @@ final class ApieExtension extends Extension
      * @var array<string, array<int, string>>
      */
     private array $dependencies = [
+        'enable_basic_auth' => [
+            'add_basic_auth.yaml',
+        ],
         'enable_ai_instructor' => [
             'ai_instructor.yaml'
         ],
@@ -68,6 +71,20 @@ final class ApieExtension extends Extension
             'doctrine_entity_datalayer.yaml',
             'sf_doctrine.yaml',
         ],
+        'enable_export' => [
+            'html_builders.yaml',
+            'serializer.yaml',
+            'export.yaml',
+        ],
+        'enable_ftp' => [
+            'apie_file_system.yaml',
+            'ftp.yaml',
+        ],
+        'enable_graphql' => [
+            'common.yaml',
+            'graphql.yaml',
+            'serializer.yaml',
+        ],
         'enable_console' => [
             'common.yaml',
             'console.yaml',
@@ -76,6 +93,15 @@ final class ApieExtension extends Extension
         'enable_maker' => [
             'maker.yaml',
             "sf_maker.yaml",
+        ],
+        'enable_mcp_server' => [
+            'common.yaml',
+            'mcp_server.yaml',
+            'schema_generator.yaml',
+            'serializer.yaml',
+        ],
+        'enable_messenger' => [
+            'sf_messenger.yaml',
         ],
         'enable_profiler' => [
             'sf_profiler.yaml',
@@ -96,6 +122,13 @@ final class ApieExtension extends Extension
         ],
         'enable_twig_template_layout_renderer' => [
             'twig_template_layout_renderer.yaml',
+        ],
+        'enable_typescript_client_builder' => [
+            'typescript_client_builder.yaml',
+        ],
+        'enable_webdav' => [
+            'apie_file_system.yaml',
+            'webdav.yaml',
         ],
     ];
 
@@ -124,6 +157,14 @@ final class ApieExtension extends Extension
         $container->setParameter('apie.doctrine.connection_params', $config['doctrine']['connection_params'] ?? []);
         $container->setParameter('apie.doctrine.run_migrations', $config['doctrine']['run_migrations'] ?? false);
         $container->setParameter('apie.rest_api.base_url', rtrim($config['rest_api']['base_url'] ?? '/api', '/'));
+        $container->setParameter('apie.remote_mcp_path', $config['remote_mcp_path'] ?? null);
+        $container->setParameter('apie.ftp_server.public_ip', $config['ftp_server']['public_ip'] ?? '127.0.0.1');
+        $container->setParameter('apie.ftp_server.passive_min_port', $config['ftp_server']['passive_min_port'] ?? '127.0.0.1');
+        $container->setParameter('apie.ftp_server.passive_max_port', $config['ftp_server']['passive_max_port'] ?? '127.0.0.1');
+        $container->setParameter('apie.graphql.base_url', rtrim($config['graphql']['base_url'] ?? 'graphql', '/'));
+        $container->setParameter('apie.open_api.max_enum_size', $config['open_api']['max_enum_size'] ?? 100);
+        $container->setParameter('apie.language_typehint', $config['language_typehint'] ?? null);
+
         if (($config['enable_maker'] ?? false) && is_array($config['maker'] ?? null)) {
             $container->setParameter('apie.maker', $config['maker']);
         } else {

@@ -6,7 +6,7 @@ use Apie\Common\ApieFacade;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\IntegrationTests\Applications\Laravel\LaravelTestApplication;
-use Apie\IntegrationTests\IntegrationTestHelper;
+use Apie\IntegrationTests\CmsTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\LaravelApie\Apie;
 use Apie\LaravelApie\ErrorHandler\ApieErrorRenderer;
@@ -27,7 +27,7 @@ class ServiceRegistrationTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_registers_an_apie_service'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 
@@ -46,7 +46,7 @@ class ServiceRegistrationTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_registers_an_error_render'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 
@@ -67,7 +67,7 @@ class ServiceRegistrationTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_registers_a_laravel_facade'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 

@@ -35,6 +35,7 @@ final class EntityQuery implements Stringable
             $name = is_callable([$filter, 'getFilterName']) ? $filter->getFilterName() : '';
             if ($filter instanceof TextSearchFilterInterface && $querySearch->getTextSearch()) {
             } elseif ($filter instanceof FieldSearchFilterInterface && !empty($searches[$name])) {
+            } elseif ($filter instanceof DefaultOptionFilter) {
             } elseif ($filter instanceof OrderByFilterInterface && !empty($orderBy[$name])) {
             } elseif ($filter instanceof RequiresPermissionFilter) {
             } else {
@@ -128,8 +129,7 @@ ORDER BY %s",
                 )
             )
         );
-        
-        return empty($query) ? 'entity.created_at DESC' : $query;
+        return empty($query) ? 'entity.created_at DESC, entity.id DESC' : $query;
     }
 
     private function generateOffset(): string

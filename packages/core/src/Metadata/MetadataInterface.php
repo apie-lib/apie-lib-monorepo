@@ -10,13 +10,14 @@ use ReflectionClass;
 
 interface MetadataInterface
 {
+    public function getDisplayName(): string;
     public function getHashmap(): MetadataFieldHashmap;
     public function getRequiredFields(): StringList;
     public function toScalarType(): ScalarType;
     public function getArrayItemType(): ?MetadataInterface;
     public function getValueOptions(ApieContext $context, bool $runtimeFilter = false): ?ValueOptionList;
     /**
-     * @return ReflectionClass<object>|null
+     * @return ReflectionClass<covariant object>|null
      */
     public function toClass(): ?ReflectionClass;
 }

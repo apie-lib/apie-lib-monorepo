@@ -12,6 +12,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/cms-layout-kids",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-layout-kids": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/twig-template-layout-renderer",
             "options": {
                 "symlink": true,
@@ -37,6 +47,16 @@
                 "symlink": true,
                 "versions": {
                     "apie/regex-tools": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/webdav",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/webdav": "1.0.0.x-dev"
                 }
             }
         },
@@ -72,6 +92,26 @@
         },
         {
             "type": "path",
+            "url": "/packages/ftp-server",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/ftp-server": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/mcp-server",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/mcp-server": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/doctrine-entity-converter",
             "options": {
                 "symlink": true,
@@ -87,6 +127,16 @@
                 "symlink": true,
                 "versions": {
                     "apie/meta-minimal": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/apie-file-system",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/apie-file-system": "1.0.0.x-dev"
                 }
             }
         },
@@ -147,6 +197,16 @@
                 "symlink": true,
                 "versions": {
                     "apie/faker": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/export",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/export": "1.0.0.x-dev"
                 }
             }
         },
@@ -262,6 +322,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/graphql",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/graphql": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/storage-metadata",
             "options": {
                 "symlink": true,
@@ -287,6 +357,16 @@
                 "symlink": true,
                 "versions": {
                     "apie/core": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/typescript-client-builder",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/typescript-client-builder": "1.0.0.x-dev"
                 }
             }
         },

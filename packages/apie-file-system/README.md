@@ -1,0 +1,17 @@
+<img src="https://raw.githubusercontent.com/apie-lib/apie-lib-monorepo/main/docs/apie-logo.svg" width="100px" align="left" />
+<h1>apie-file-system</h1>
+
+
+
+
+
+
+ [![Latest Stable Version](https://poser.pugx.org/apie/apie-file-system/v)](https://packagist.org/packages/apie/apie-file-system) [![Total Downloads](https://poser.pugx.org/apie/apie-file-system/downloads)](https://packagist.org/packages/apie/apie-file-system) [![Latest Unstable Version](https://poser.pugx.org/apie/apie-file-system/v/unstable)](https://packagist.org/packages/apie/apie-file-system) [![License](https://poser.pugx.org/apie/apie-file-system/license)](https://packagist.org/packages/apie/apie-file-system) [![PHP Composer](https://apie-lib.github.io/projectCoverage/coverage-apie-file-system.svg)](https://apie-lib.github.io/projectCoverage/apie-file-system/index.html)  
+
+[![PHP Composer](https://github.com/apie-lib/apie-file-system/actions/workflows/php.yml/badge.svg?event=push)](https://github.com/apie-lib/apie-file-system/actions/workflows/php.yml)
+
+This package is part of the [Apie](https://github.com/apie-lib) library.
+The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
+
+## Documentation
+This package is used internally in Apie or no documentation is available right now

@@ -1,7 +1,10 @@
 <?php
 namespace Apie\Common\Config;
 
+use Apie\Common\ValueObjects\EntityNamespace;
 use Apie\DoctrineEntityDatalayer\IndexStrategy\DirectIndexStrategy;
+use Apie\IanaValueObjects\LanguageAndRegion;
+use PrinsFrank\Standards\Language\LanguageAlpha2;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -12,17 +15,24 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 abstract class Configuration implements ConfigurationInterface
 {
     private const ENABLE_CONFIGS = [
+        'enable_basic_auth' => 'Apie\Common\BasicAuth\AddBasicAuthContextBuilder',
         'enable_ai_instructor' => 'Apie\AiInstructor\AiInstructor',
         'enable_common_plugin' => 'Apie\ApieCommonPlugin\ApieCommonPlugin',
         'enable_cms' => 'Apie\Cms\RouteDefinitions\CmsRouteDefinitionProvider',
         'enable_cms_dropdown' => 'Apie\CmsApiDropdownOption\RouteDefinitions\DropdownOptionsForExistingObjectRouteDefinition',
         'enable_doctrine_entity_converter' => 'Apie\DoctrineEntityConverter\OrmBuilder',
         'enable_doctrine_entity_datalayer' => 'Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayer',
+        'enable_export' => 'Apie\Export\EntityExport',
         'enable_faker' => 'Apie\Faker\ApieObjectFaker',
+        'enable_ftp' => 'Apie\FtpServer\FtpServerCommand',
+        'enable_graphql' => 'Apie\Graphql\Factories\GraphqlSchemaFactory',
         'enable_maker' => 'Apie\Maker\Utils',
+        'enable_mcp_server' => 'Apie\McpServer\RunMcpServerCommand',
         'enable_rest_api' => 'Apie\RestApi\OpenApi\OpenApiGenerator',
         'enable_console' => 'Apie\Console\ConsoleCommandFactory',
         'enable_twig_template_layout_renderer' => 'Apie\TwigTemplateLayoutRenderer\TwigRenderer',
+        'enable_typescript_client_builder' => 'Apie\TypescriptClientBuilder\RouteDefinitions\CodeRouteDefinitionProvider',
+        'enable_webdav' => 'Apie\Webdav\Controller\WebdavController',
     ];
 
     abstract protected function addCmsOptions(ArrayNodeDefinition $arrayNode): void;
@@ -48,11 +58,30 @@ abstract class Configuration implements ConfigurationInterface
         ->end();
         $this->addApiOptions($apiConfig);
 
-        $aiConfig = $children->arrayNode('ai');
+        $openApiConfig = $children->arrayNode('open_api');
+        $openApiConfig->children()
+            ->integerNode('max_enum_size')->defaultValue(100)->end()
+        ->end();
+
+        $ftpConfig = $children->arrayNode('ftp_server');
+        $ftpConfig->children()
+          ->scalarNode('public_ip')->defaultValue('127.0.0.1')->end()
+          ->scalarNode('passive_min_port')->defaultValue('49152')->end()
+          ->scalarNode('passive_max_port')->defaultValue('65534')->end()
+        ->end();
+
+        $ftpConfig = $children->arrayNode('graphql');
+        $ftpConfig->children()
+          ->scalarNode('base_url')->defaultValue('graphql')->end()
+        ->end();
+
+        $aiConfig = $children->arrayNode('ai')
+          ->addDefaultsIfNotSet();
         $aiConfig->children()
             ->scalarNode('base_url')->defaultValue('https://api.openai.com/v1')->end()
             ->scalarNode('api_key')->defaultValue('no-value')->end()
         ->end();
+
         $children->arrayNode('datalayers')
                 ->children()
                     ->scalarNode('default_datalayer')->isRequired()->end()
@@ -107,14 +136,32 @@ abstract class Configuration implements ConfigurationInterface
                   ->scalarNode('target_namespace')->defaultValue('App\Apie')->end()
                 ->end()
             ->end()
+            ->scalarNode('language_typehint')->defaultValue(self::getDefaultLanguageTypehint())->end()
             ->arrayNode('bounded_contexts')
                 ->useAttributeAsKey('name')
                 ->arrayPrototype()
+                ->beforeNormalization()
+                    ->always(
+                        function (array $v) {
+                            if (empty($v['policies_folder']) && !empty($v['entities_folder'])) {
+                                $v['policies_folder'] = rtrim($v['entities_folder'], '/\\') . '/../Policies';
+                            }
+
+                            if (empty($v['policies_namespace']) && !empty($v['entities_namespace'])) {
+                                $entityNamespace = EntityNamespace::fromNative($v['entities_namespace']);
+                                $v['policies_namespace'] = $entityNamespace->getParentNamespace()->getChildNamespace('Policies')->toNative();
+                            }
+
+                            return $v;
+                        }
+                    )->end()
                     ->children()
                         ->scalarNode('entities_folder')->isRequired()->end()
                         ->scalarNode('entities_namespace')->isRequired()->end()
                         ->scalarNode('actions_folder')->isRequired()->end()
                         ->scalarNode('actions_namespace')->isRequired()->end()
+                        ->scalarNode('policies_folder')->defaultNull()->end()
+                        ->scalarNode('policies_namespace')->defaultNull()->end()
                     ->end()
                 ->end()
             ->end()
@@ -128,6 +175,19 @@ abstract class Configuration implements ConfigurationInterface
         foreach (self::ENABLE_CONFIGS as $configKey => $classNameToExist) {
             $childNode->booleanNode($configKey)->defaultValue(class_exists($classNameToExist));
         }
+        $childNode->scalarNode('remote_mcp_path')->defaultValue(null)->end();
         return $treeBuilder;
+    }
+
+    public static function getDefaultLanguageTypehint(): ?string
+    {
+        $languageTypehint = null;
+        if (class_exists(LanguageAlpha2::class)) {
+            $languageTypehint = LanguageAlpha2::class;
+        }
+        if (class_exists(LanguageAndRegion::class)) {
+            $languageTypehint = LanguageAndRegion::class;
+        }
+        return $languageTypehint;
     }
 }

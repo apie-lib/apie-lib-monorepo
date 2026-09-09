@@ -4,6 +4,7 @@ namespace Apie\Tests\TwigTemplateLayoutRenderer;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\HtmlBuilders\Assets\AssetManager;
+use Apie\HtmlBuilders\TestHelpers\AbstractRenderTestCase;
 use Apie\Tests\TwigTemplateLayoutRenderer\Fixtures\Dummy;
 use Apie\Tests\TwigTemplateLayoutRenderer\Fixtures\MissingTemplate;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
@@ -18,7 +19,8 @@ class TwigRendererTest extends TestCase
         return new TwigRenderer(
             __DIR__ . '/../fixtures',
             new AssetManager(__DIR__ . '/../fixtures/assets'),
-            'Apie\Tests\TwigTemplateLayoutRenderer\Fixtures\\'
+            'Apie\Tests\TwigTemplateLayoutRenderer\Fixtures\\',
+            AbstractRenderTestCase::createTwigRuntimeForTests()
         );
     }
     #[\PHPUnit\Framework\Attributes\Test]
@@ -38,7 +40,8 @@ class TwigRendererTest extends TestCase
         $testItem = new TwigRenderer(
             __DIR__,
             new AssetManager(),
-            'Poop\\'
+            'Poop\\',
+            AbstractRenderTestCase::createTwigRuntimeForTests()
         );
         $this->expectException(InvalidTypeException::class);
         $this->expectExceptionMessage('class in Poop\\ namespace');

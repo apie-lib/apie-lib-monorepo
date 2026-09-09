@@ -1,0 +1,84 @@
+<?php
+namespace Apie\FtpServer;
+
+use Apie\Core\Context\ApieContext;
+use Apie\FtpServer\Commands\CdupCommand;
+use Apie\FtpServer\Commands\CwdCommand;
+use Apie\FtpServer\Commands\EprtCommand;
+use Apie\FtpServer\Commands\EpsvCommand;
+use Apie\FtpServer\Commands\FtpFeatureCommand;
+use Apie\FtpServer\Commands\ListCommand;
+use Apie\FtpServer\Commands\NlstCommand;
+use Apie\FtpServer\Commands\PassCommand;
+use Apie\FtpServer\Commands\PasvCommand;
+use Apie\FtpServer\Commands\PbszCommand;
+use Apie\FtpServer\Commands\PortCommand;
+use Apie\FtpServer\Commands\ProtCommand;
+use Apie\FtpServer\Commands\PwdCommand;
+use Apie\FtpServer\Commands\QuitCommand;
+use Apie\FtpServer\Commands\RetrCommand;
+use Apie\FtpServer\Commands\SiteCommand;
+use Apie\FtpServer\Commands\SystCommand;
+use Apie\FtpServer\Commands\TypeCommand;
+use Apie\FtpServer\Commands\UserCommand;
+use Apie\FtpServer\Lists\CommandHashmap;
+use Apie\FtpServer\SiteCommands\SiteCommandInterface;
+use React\Socket\ConnectionInterface;
+
+class FtpServerRunner
+{
+    public function __construct(
+        private readonly CommandHashmap $commands
+    ) {
+    }
+
+    public static function create(SiteCommandInterface... $siteCommands): self
+    {
+        return new self(
+            new CommandHashmap([
+                'CDUP' => new CdupCommand(),
+                'CWD'  => new CwdCommand(),
+                'EPRT' => new EprtCommand(),
+                'EPSV' => new EpsvCommand(),
+                'LIST' => new ListCommand(),
+                'NLST' => new NlstCommand(),
+                'PASS' => new PassCommand(),
+                'PASV' => new PasvCommand(),
+                'PBSZ' => new PbszCommand(),
+                'PORT' => new PortCommand(),
+                'PROT' => new ProtCommand(),
+                'PWD'  => new PwdCommand(),
+                'QUIT' => new QuitCommand(),
+                'RETR' => new RetrCommand(),
+                'SITE' => SiteCommand::create(...$siteCommands),
+                'SYST' => new SystCommand(),
+                'TYPE' => new TypeCommand(),
+                'USER' => new UserCommand(),
+            ])
+        );
+    }
+
+    public function run(ApieContext $apieContext, string $command, string $arguments = ''): ApieContext
+    {
+        if ($command === 'FEAT') {
+            $apieContext->getContext(ConnectionInterface::class)->write("211-Features:\r\n");
+            foreach ($this->commands as $commandName => $commandExecutable) {
+                if ($commandExecutable instanceof FtpFeatureCommand) {
+                    $helpText = implode(' ', $commandExecutable->getFeatures()->toArray());
+                    $apieContext->getContext(ConnectionInterface::class)->write("211-$commandName $helpText\r\n");
+                } else {
+                    $apieContext->getContext(ConnectionInterface::class)->write("211-$commandName\r\n");
+                }
+            }
+            $apieContext->getContext(ConnectionInterface::class)->write("211 End\r\n");
+            return $apieContext;
+        }
+        if (!isset($this->commands[$command])) {
+            $apieContext->getContext(ConnectionInterface::class)->write("502 Command not implemented\r\n");
+            error_log("Unknown command " . $command);
+            return $apieContext;
+        }
+        $commandExecutable = $this->commands[$command];
+        return $commandExecutable->run($apieContext, $arguments);
+    }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "apie/ftp-server",
+  "description": "Composer package of the apie library: ftp server",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\FtpServer\\": "src/"
+    }
+  },
+  "extra": {
+    "apie-objects":[
+    "Apie\\FtpServer\\Enums\\PortStatus"
+]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\FtpServer\\": "tests/"
+    }
+  },
+  "conflict": {
+    "react/promise": "<3.0"
+  },
+  "require": {
+    "php": ">=8.4",
+    "apie/core": "self.version",
+    "apie/apie-file-system": "self.version",
+    "phpunit/php-code-coverage": "^11.0.8",
+    "react/socket": "^1.17"
+  },
+  "require-dev": {
+    "apie/export": "self.version",
+    "apie/fixtures":"self.version",
+    "evenement/evenement": "^3.0",
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.5",
+    "symfony/console": "^7.2",
+    "symfony/finder": "^7.2",
+    "symfony/process": "^7.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

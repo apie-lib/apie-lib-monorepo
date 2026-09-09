@@ -17,23 +17,50 @@ abstract class SnowflakeIdentifier implements ValueObjectInterface, HasRegexValu
 
     abstract protected static function getSeparator(): string;
 
+    final protected static function getMinimumNumberOfSegments(): int
+    {
+        $refl = new ReflectionClass(static::class);
+        $parameters = $refl->getConstructor()->getParameters();
+        $parameters = array_reverse($parameters);
+        $count = count($parameters) - 1;
+        foreach ($parameters as $parameter) {
+            if (!$parameter->isOptional() || !$parameter->getType()?->allowsNull()) {
+                return $count;
+            }
+            $count--;
+        }
+
+        return 0;
+    }
+
     final public function toNative(): string
     {
         if (!isset($this->calculated)) {
+            $prefix = '';
+            if (is_callable([static::class, 'getPrefix'])) {
+                $prefix = static::getPrefix() . static::getSeparator();
+            }
             $refl = new ReflectionClass($this);
             $separator = static::getSeparator();
             $result = [];
+            $minCount = static::getMinimumNumberOfSegments();
+            $count = 0;
             foreach ($refl->getConstructor()->getParameters() as $parameter) {
                 $propertyName = $parameter->getName();
                 $propertyValue = $refl->getProperty($propertyName)->getValue($this);
-                $stringPropertyValue = Utils::toString($propertyValue);
+                $stringPropertyValue = get_debug_type($propertyValue) === 'float'
+                    ? number_format($propertyValue, 6, '.', '')
+                    : Utils::toString($propertyValue);
                 if (strpos($stringPropertyValue, $separator) !== false) {
                     throw new InvalidStringForValueObjectException($stringPropertyValue, $propertyValue);
                 }
-                $result[] = $stringPropertyValue;
+                if ($propertyValue !== null || $count < $minCount) {
+                    $result[] = $stringPropertyValue;
+                }
+                $count++;
             }
 
-            $this->calculated = implode($separator, $result);
+            $this->calculated = $prefix . implode($separator, $result);
         }
         return $this->calculated;
     }
@@ -51,23 +78,36 @@ abstract class SnowflakeIdentifier implements ValueObjectInterface, HasRegexValu
     public static function fromNative(mixed $input): self
     {
         $input = Utils::toString($input);
+        $prefix = '';
+        if (is_callable([static::class, 'getPrefix'])) {
+            $prefix = static::getPrefix() . static::getSeparator();
+        }
+        if (strpos($input, $prefix) === 0) {
+            $input = substr($input, strlen($prefix));
+        } else {
+            throw new InvalidStringForValueObjectException($input, new ReflectionClass(static::class));
+        }
         $refl = new ReflectionClass(static::class);
         $parameters = $refl->getConstructor()->getParameters();
         $separator = static::getSeparator();
         $split = explode($separator, $input, count($parameters));
-        if (count($split) !== count($parameters)) {
+        $minCount = static::getMinimumNumberOfSegments();
+        $maxCount = count($parameters);
+        if (count($split) < $minCount || count($split) > $maxCount) {
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(static::class));
         }
         $constructorArguments = [];
+    
         foreach ($parameters as $key => $parameter) {
             $parameterType = $parameter->getType();
             if (!($parameterType instanceof ReflectionNamedType)) {
                 throw new InvalidTypeException($parameterType, 'ReflectionNamedType');
             }
-            if ($parameterType->allowsNull() && $split[$key] === '') {
+            $splitValue = $split[$key] ?? null;
+            if ($parameterType->allowsNull() && ($splitValue === '' || $splitValue === null)) {
                 $constructorArguments[] = null;
             } else {
-                $constructorArguments[] = Utils::toTypehint($parameterType, $split[$key]);
+                $constructorArguments[] = Utils::toTypehint($parameterType, $splitValue ?? '');
             }
         }
         return $refl->newInstanceArgs($constructorArguments);
@@ -80,10 +120,24 @@ abstract class SnowflakeIdentifier implements ValueObjectInterface, HasRegexValu
         $separator = preg_quote(static::getSeparator());
 
         $expressions = [];
+        $optionalExpressions = [];
+        $prefix = '';
+        if (is_callable([static::class, 'getPrefix'])) {
+            $prefix = static::getPrefix() . static::getSeparator();
+        }
+        if ($prefix !== '') {
+            $expressions[] = preg_quote($prefix, static::getSeparator());
+        }
+        $addedOptionalMarker = false;
+        $addedSeparator = false;
+        $addedOptionalSeparator = false;
         foreach ($parameters as $parameter) {
             $parameterType = $parameter->getType();
             if (!($parameterType instanceof ReflectionNamedType)) {
                 throw new InvalidTypeException($parameterType, 'ReflectionNamedType');
+            }
+            if ($parameter->isOptional()) {
+                $addedOptionalMarker = true;
             }
             $regex = '[^' . $separator . ']+';
             $class = ConverterUtils::toReflectionClass($parameterType);
@@ -102,11 +156,51 @@ abstract class SnowflakeIdentifier implements ValueObjectInterface, HasRegexValu
                         break;
                 }
             }
-            $expressions[] = $regex;
-            $expressions[] = $separator;
+            if ($addedOptionalMarker) {
+                $optionalExpressions[] = $regex;
+                $optionalExpressions[] = $separator;
+                $addedOptionalSeparator = true;
+            } else {
+                $expressions[] = $regex;
+                $expressions[] = $separator;
+                $addedSeparator = true;
+            }
         }
-        array_pop($expressions);
+        if ($addedSeparator) {
+            $last = array_pop($expressions);
+            if (!empty($optionalExpressions)) {
+                array_unshift($optionalExpressions, $last);
+            }
+        }
+        if ($addedOptionalSeparator) {
+            array_pop($optionalExpressions);
+        }
 
+        $requiredExpression = self::createRegex($expressions);
+        $optionalExpression = self::createRegex($optionalExpressions);
+        if ($optionalExpressions) {
+            $optionalExpression = '(' . $optionalExpression . ')?';
+        }
+
+        $tmp = CompiledRegularExpression::createFromRegexWithoutDelimiters('');
+        $expressions = array_map(
+            function (string $expression) {
+                return CompiledRegularExpression::createFromRegexWithoutDelimiters($expression)
+                            ->removeStartAndEndMarkers();
+            },
+            [$requiredExpression, $optionalExpression]
+        );
+        array_unshift($expressions, CompiledRegularExpression::createFromRegexWithoutDelimiters('^'));
+        array_push($expressions, CompiledRegularExpression::createFromRegexWithoutDelimiters('$'));
+
+        return $tmp->merge(...$expressions)->__toString();
+    }
+
+    /**
+     * @param array<int, string> $expressions
+     */
+    private static function createRegex(array $expressions): string
+    {
         $expressions = array_map(
             function (string $expression) {
                 return CompiledRegularExpression::createFromRegexWithoutDelimiters($expression)
@@ -117,8 +211,6 @@ abstract class SnowflakeIdentifier implements ValueObjectInterface, HasRegexValu
         array_unshift($expressions, CompiledRegularExpression::createFromRegexWithoutDelimiters('^'));
         array_push($expressions, CompiledRegularExpression::createFromRegexWithoutDelimiters('$'));
 
-        $tmp = CompiledRegularExpression::createFromRegexWithoutDelimiters('');
-
-        return $tmp->merge(...$expressions)->__toString();
+        return implode('', $expressions);
     }
 }

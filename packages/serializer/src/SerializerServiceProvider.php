@@ -14,7 +14,7 @@ class SerializerServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\Serializer\Serializer::class,
             function ($app) {
                 return \Apie\Serializer\Serializer::create(
@@ -34,7 +34,26 @@ class SerializerServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\Serializer\Serializer::class], 'apie.context');
-        $this->app->singleton(
+        $this->registerSingleton(
+            \Apie\Serializer\PropertySerializer\PropertySerializer::class,
+            function ($app) {
+                return new \Apie\Serializer\PropertySerializer\PropertySerializer(
+                
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Serializer\PropertySerializer\PropertySerializer::class,
+            array(
+              0 =>
+              array(
+                'name' => 'apie.context',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\Serializer\PropertySerializer\PropertySerializer::class], 'apie.context');
+        $this->registerSingleton(
             \Apie\Serializer\EncoderHashmap::class,
             function ($app) {
                 return \Apie\Serializer\EncoderHashmap::create(
@@ -43,7 +62,7 @@ class SerializerServiceProvider extends ServiceProvider
                 
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\Serializer\DecoderHashmap::class,
             function ($app) {
                 return \Apie\Serializer\DecoderHashmap::create(

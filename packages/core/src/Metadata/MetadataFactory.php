@@ -10,9 +10,12 @@ use Apie\Core\Metadata\Fields\ConstructorParameter;
 use Apie\Core\Metadata\Strategy\AliasStrategy;
 use Apie\Core\Metadata\Strategy\BuiltInPhpClassStrategy;
 use Apie\Core\Metadata\Strategy\CompositeValueObjectStrategy;
+use Apie\Core\Metadata\Strategy\CustomObjectStrategy;
+use Apie\Core\Metadata\Strategy\DatePeriodStrategy;
 use Apie\Core\Metadata\Strategy\DtoStrategy;
 use Apie\Core\Metadata\Strategy\EnumStrategy;
 use Apie\Core\Metadata\Strategy\ExceptionStrategy;
+use Apie\Core\Metadata\Strategy\FileUriStrategy;
 use Apie\Core\Metadata\Strategy\ItemHashmapStrategy;
 use Apie\Core\Metadata\Strategy\ItemListObjectStrategy;
 use Apie\Core\Metadata\Strategy\PolymorphicEntityStrategy;
@@ -32,12 +35,15 @@ use ReflectionUnionType;
 
 final class MetadataFactory
 {
+    /**
+     * @codeCoverageIgnore
+     */
     private function __construct()
     {
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getMetadataStrategy(ReflectionClass $class): StrategyInterface
     {
@@ -46,6 +52,9 @@ final class MetadataFactory
         }
         if (BuiltInPhpClassStrategy::supports($class)) {
             return new BuiltInPhpClassStrategy($class);
+        }
+        if (FileUriStrategy::supports($class)) {
+            return new FileUriStrategy($class);
         }
         if (ScalarStrategy::supports($class)) {
             return new ScalarStrategy(ScalarType::STDCLASS);
@@ -71,11 +80,17 @@ final class MetadataFactory
         if (ValueObjectStrategy::supports($class)) {
             return new ValueObjectStrategy($class);
         }
+        if (CustomObjectStrategy::supports($class)) {
+            return new CustomObjectStrategy($class);
+        }
         if (ExceptionStrategy::supports($class)) {
             return new ExceptionStrategy($class);
         }
         if (UploadedFileStrategy::supports($class)) {
             return new UploadedFileStrategy($class);
+        }
+        if (DatePeriodStrategy::supports($class)) {
+            return new DatePeriodStrategy($class);
         }
         if (RegularObjectStrategy::supports($class)) {
             return new RegularObjectStrategy($class);
@@ -153,11 +168,11 @@ final class MetadataFactory
         foreach ($method->getParameters() as $parameter) {
             $fields[$parameter->name] = new ConstructorParameter($parameter);
         }
-        return new CompositeMetadata(new MetadataFieldHashmap($fields));
+        return new CompositeMetadata(new MetadataFieldHashmap($fields), $method->getDeclaringClass());
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionType $typehint
+     * @param ReflectionClass<covariant object>|ReflectionType $typehint
      */
     public static function getCreationMetadata(ReflectionClass|ReflectionType $typehint, ApieContext $context): MetadataInterface
     {
@@ -168,7 +183,7 @@ final class MetadataFactory
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionType $typehint
+     * @param ReflectionClass<covariant object>|ReflectionType $typehint
      */
     public static function getModificationMetadata(ReflectionClass|ReflectionType $typehint, ApieContext $context): MetadataInterface
     {
@@ -179,7 +194,7 @@ final class MetadataFactory
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionType $typehint
+     * @param ReflectionClass<covariant object>|ReflectionType $typehint
      */
     public static function getResultMetadata(ReflectionClass|ReflectionType $typehint, ApieContext $context): MetadataInterface
     {

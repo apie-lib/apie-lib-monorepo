@@ -3,6 +3,7 @@
 namespace Apie\IntegrationTests\Requests;
 
 use Apie\Common\Interfaces\ApieFacadeInterface;
+use Apie\Common\Other\AuditLog;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Faker\Datalayers\FakerDatalayer;
@@ -17,6 +18,8 @@ use ReflectionClass;
 class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterface
 {
     protected bool $faked = false;
+
+    private ?ApieFacadeInterface $apieFacade = null;
     /**
      * @param class-string<EntityInterface> $resourceName
      * @param array<int, EntityInterface> $entities
@@ -28,6 +31,7 @@ class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterf
         private readonly array $entities,
         private readonly JsonSetFieldInterface $inputOutput,
         private readonly bool $discardValidationOnFaker = false,
+        protected readonly ?int $expectedAuditLogsAdded = null,
     ) {
     }
 
@@ -39,15 +43,13 @@ class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterf
     public function shouldDoResponseValidation(): bool
     {
         return !$this->discardValidationOnFaker || !$this->faked;
-        ;
     }
 
     public function bootstrap(TestApplicationInterface $testApplication): void
     {
-        /** @var ApieFacadeInterface $apieFacade */
-        $apieFacade = $testApplication->getServiceContainer()->get('apie');
+        $this->apieFacade = $testApplication->getServiceContainer()->get('apie');
         foreach ($this->entities as $entity) {
-            $apieFacade->persistNew($entity, $this->boundedContextId);
+            $this->apieFacade->persistNew($entity, $this->boundedContextId);
         }
         $this->faked = $testApplication->getApplicationConfig()->getDatalayerImplementation()->name === FakerDatalayer::class;
     }
@@ -75,5 +77,10 @@ class GetResourceApiCall implements TestRequestInterface, BootstrapRequestInterf
             $this->inputOutput->assertResponseValue($data);
         }
         TestCase::assertEquals('application/json', $response->getHeaderLine('content-type'));
+
+        if (null !== $this->expectedAuditLogsAdded && !$this->faked) {
+            $auditLogs = $this->apieFacade->all(new ReflectionClass(AuditLog::class), $this->boundedContextId);
+            TestCase::assertEquals($this->expectedAuditLogsAdded, $auditLogs->getTotalCount(), 'Expected ' . $this->expectedAuditLogsAdded . ' audit logs to be added, but got: ' . $auditLogs->getTotalCount());
+        }
     }
 }

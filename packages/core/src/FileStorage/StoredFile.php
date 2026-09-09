@@ -130,7 +130,7 @@ class StoredFile implements UploadedFileInterface
             );
         }
         return new static(
-            UploadedFileStatus::FromRequest,
+            $storagePath === null ? UploadedFileStatus::FromRequest : UploadedFileStatus::StoredInStorage,
             storagePath: $storagePath,
             internalFile: $uploadedFile
         );
@@ -203,7 +203,7 @@ class StoredFile implements UploadedFileInterface
         }
         if ($this->internalFile instanceof StoredFile) {
             return $this->indexing = $this->internalFile->getIndexing();
-        } elseif ($this->internalFile instanceof UploadedFileInterface && !is_resource($this->resource)) {
+        } elseif ($this->internalFile instanceof UploadedFileInterface && !is_resource($this->resource) && $this->internalFile->getStream()->isReadable()) {
             $this->resource = $this->makeRewindable($this->internalFile->getStream()->detach());
         }
         $extension = null;
@@ -284,6 +284,7 @@ class StoredFile implements UploadedFileInterface
         }
         throw new \LogicException("I have no idea how to make a stream for this uploaded file");
     }
+
     public function moveTo(string $targetPath): void
     {
         if ($this->movedPath !== null) {
@@ -311,6 +312,9 @@ class StoredFile implements UploadedFileInterface
     {
         if ($this->fileSize !== null) {
             return $this->fileSize;
+        }
+        if (isset($this->resource) || $this->storage instanceof ChainedFileStorage) {
+            return $this->fileSize = $this->getStream()->getSize();
         }
         if ($this->content !== null) {
             return $this->fileSize = strlen($this->content);
@@ -387,12 +391,19 @@ class StoredFile implements UploadedFileInterface
                 $finfo = new finfo();
                 return $this->serverMimeType = $finfo->buffer($this->content, FILEINFO_MIME_TYPE);
             }
-            if (null !== $this->internalFile) {
+            if ($this->storage instanceof PsrAwareStorageInterface && $this->storagePath && !$this->internalFile) {
+                $file = $this->storage->pathToPsr($this->storagePath);
+                if ($file instanceof StoredFile) {
+                    return $this->serverMimeType = $file->getServerMimeType();
+                }
+                $this->internalFile = $file;
+            }
+            if (null !== $this->internalFile || isset($this->resource)) {
                 $content = $this->getContent();
                 $finfo = new finfo();
                 return $this->serverMimeType = $finfo->buffer($content, FILEINFO_MIME_TYPE);
             }
-            $this->serverMimeType = 'application/octet-stream';
+            return 'application/octet-stream';
         }
 
         return $this->serverMimeType;

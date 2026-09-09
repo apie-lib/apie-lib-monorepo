@@ -1,10 +1,9 @@
 <?php
 namespace Apie\StorageMetadata\Interfaces;
 
-use Apie\Core\Dto\DtoInterface;
 use Apie\StorageMetadata\Mediators\DomainToStorageContext;
 
-interface PropertyConverterInterface extends DtoInterface
+interface PropertyConverterInterface
 {
     public function applyToDomain(
         DomainToStorageContext $domainToStorageContext

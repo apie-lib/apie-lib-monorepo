@@ -1,6 +1,7 @@
 <?php
 namespace Apie\RegexValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringValueObject;
@@ -9,6 +10,7 @@ use Apie\RegexValueObjects\Exceptions\ExpressionContainsRepeatsInRepeats;
 use Apie\RegexValueObjects\Exceptions\InvalidPhpRegularExpression;
 
 #[FakeMethod("createRandom")]
+#[Description('Any regular expression that can be parsed with PHP preg_match method that contains no DDOS-vulnerable patterns.')]
 final class PhpSafeRegularExpression implements StringValueObjectInterface
 {
     use IsStringValueObject;

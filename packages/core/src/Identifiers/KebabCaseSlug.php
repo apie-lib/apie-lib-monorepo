@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Core\Identifiers;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
@@ -13,23 +14,39 @@ use ReflectionProperty;
  * Indicate an identifier written with dashes (kebab-case).
  */
 #[FakeMethod('createRandom')]
+#[Description('lowercase text written in kebab case, for example "example-object"')]
 class KebabCaseSlug implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
 
     /**
-     * @param ReflectionClass<object>|ReflectionMethod|ReflectionProperty|string $class
+     * @param ReflectionClass<covariant object>|ReflectionMethod|ReflectionProperty|string $class
      */
     public static function fromClass(ReflectionClass|ReflectionMethod|ReflectionProperty|string $class): self
     {
         if (is_object($class)) {
             $shortName = $class instanceof ReflectionClass ? $class->getShortName() : $class->name;
             $shortName = preg_replace('/^__/', 'magicMethod', $shortName);
-            $short = preg_replace('/([a-z])([A-Z])/', '$1-$2', $shortName);
+            $short = str_replace('_', '-', preg_replace('/([a-z])([A-Z])/', '$1-$2', $shortName));
         } else {
             $short = $class;
         }
         return static::fromNative(strtolower($short));
+    }
+
+    public static function fromText(string $text): self
+    {
+        // Replace camelCase with kebab-case
+        $text = preg_replace('/([a-z])([A-Z])/', '$1-$2', $text);
+        // Replace any non-alphanumeric character with dash
+        $text = preg_replace('/[^a-zA-Z0-9]+/', '-', $text);
+        // Convert to lowercase
+        $text = strtolower($text);
+        // Remove leading/trailing dashes
+        $text = trim($text, '-');
+        // Collapse multiple dashes into one
+        $text = preg_replace('/-+/', '-', $text);
+        return static::fromNative($text);
     }
 
     public function humanize(): string

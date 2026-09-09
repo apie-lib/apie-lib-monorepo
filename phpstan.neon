@@ -1,8 +1,10 @@
 includes:
     - packages/apie-phpstan-rules/apie-phpstan-rules.neon
 parameters:
-    phpVersion: 80400
+    phpVersion: 80500
     level: 6
+    bootstrapFiles:
+        - resources/phpstan/php86-duration.stub
     paths:
         - packages/apie-bundle/src
         - packages/apie-phpstan-rules/src
@@ -30,18 +32,37 @@ parameters:
         - packages/storage-metadata/src
         - packages/text-value-objects/src
     ignoreErrors:
-        - '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children#'
-        - '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::scalarNode#'
+        - path: packages/common/src/Other/AuditOrigin.php
+          identifier: return.unusedType
+          reportUnmatched: false
+        - path: packages/common/src/Other/AuditLog.php
+          identifier: property.uninitializedReadonly
+          count: 6
+        - path: packages/laravel-apie/src/Wrappers/Cache/LaravelCacheItem.php
+          message: '#is not covariant with r#'
+          reportUnmatched: false
+        - path: packages/common/src/Wrappers/UxIconFactory.php
+          identifier: arguments.count
+          count: 1
+        - 
+            reportUnmatched: false
+            message: '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeDefinition::children#'
+        -
+            reportUnmatched: false
+            message: '#undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::scalarNode#'
         - '#isInitialized\(\) on a separate line has no effect#'
         - '#ReflectionException is never thrown in the try block#'
         - '#Call to an undefined method Faker\\Generator#'
         - '#Access to an undefined property UnitEnum::\$value#'
-        - '#template type T in call to method static method Apie\\Core\\Actions\\ActionInterface::getInputType#'
+        - '#template type T in call to static method Apie\\Core\\Actions\\ActionInterface::getInputType#'
         - '#::getInputType|getRouteAttributes\(\) invoked with 2 parameters, 1 required#'
-        - '#template type T in call to method static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'
+        - '#template type T in call to static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'
         - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
         - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
         - '#ReflectionEnumUnitCase::getBackingValue#'
+        - 
+            message: '#Call to function class_exists\(\) with .* will always evaluate to false#'
+            reportUnmatched: false
         - '/Parameter #4 \$prototype of class Apie\\HtmlBuilders\\Components\\Forms\\FormPrototype(Hashmap|List) constructor expects Apie\\HtmlBuilders\\Components\\BaseComponent, Apie\\HtmlBuilders\\Interfaces\\ComponentInterface given\./'
         -
             message: '#is assigned outside of its declaring class|Assign to protected#'
@@ -90,11 +111,12 @@ parameters:
         -
             message: '#array<string, Apie\\TypeConverter\\Exceptions\\Throwable>#'
             reportUnmatched: false
-        - '#Unable to resolve the template type T in call to method static method Apie\\Core\\Utils\\ConverterUtils::toReflectionClass\(\)#'
+        - '#Unable to resolve the template type T in call to static method Apie\\Core\\Utils\\ConverterUtils::toReflectionClass\(\)#'
         -
             message: '#NodeDefinition::children#'
             path: packages/apie-bundle/src/DependencyInjection/Configuration.php
             count: 1
+            reportUnmatched: false
         -
             message: '#Instantiated class Apie\\CountryAndPhoneNumber\\PhoneNumber is abstract#'
             path: packages/core/src/ValueObjects/IsStringValueObject.php
@@ -117,16 +139,11 @@ parameters:
             count: 1
 
         -
-            message: '#PathItem::\$connect#'
-            path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
-            count: 1
-
-        -
             message: '#Operation::\$responses#'
             path: packages/rest-api/src/OpenApi\OpenApiGenerator.php
             count: 1
 
-        -   '#Unable to resolve the template type T in call to method static method Apie\\Core\\Utils\\EntityUtils::findClass#'
+        -   '#Unable to resolve the template type T in call to static method Apie\\Core\\Utils\\EntityUtils::findClass#'
 
         -
             message: '#Call to an undefined static method Apie\\Core\\ValueObjects\\Interfaces\\ValueObjectInterface::#'

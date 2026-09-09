@@ -506,6 +506,69 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+    delete:
+      tags:
+        - UserWithAddress
+        - resource
+      description: 'Removes an instance of UserWithAddress'
+      operationId: remove-single-UserWithAddress
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of UserWithAddress'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UserWithAddressIdentifier-post'
+      responses:
+        '204':
+          description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
   '/UserWithAutoincrementKey/{id}':
     get:
       tags:
@@ -685,6 +748,69 @@ paths:
               schema:
                 $ref: '#/components/schemas/WrongTokenException-get'
         '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    delete:
+      tags:
+        - Order
+        - resource
+      description: 'Removes an instance of Order'
+      operationId: remove-single-Order
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of Order'
+          required: true
+          schema:
+            $ref: '#/components/schemas/OrderIdentifier-post'
+      responses:
+        '204':
+          description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
           description: 'Resource not found'
           content:
             application/json:
@@ -1060,6 +1186,7 @@ components:
           $ref: '#/components/schemas/DatabaseText-get'
         city:
           $ref: '#/components/schemas/DatabaseText-get'
+      description: 'Represents an address which can verify if the zipcode is correct with some API call'
     AddressWithZipcodeCheck-post:
       type: object
       required:
@@ -1076,16 +1203,19 @@ components:
           $ref: '#/components/schemas/DatabaseText-post'
         city:
           $ref: '#/components/schemas/DatabaseText-post'
+      description: 'Represents an address which can verify if the zipcode is correct with some API call'
     DatabaseText-get:
       maxLength: 65535
       minLength: 0
       type: string
       example: 'Lorem Ipsum'
+      description: 'Any text with a maximum length of 65535 characters that fit in a TEXT field in a database'
     DatabaseText-post:
       maxLength: 65535
       minLength: 0
       type: string
       example: 'Lorem Ipsum'
+      description: 'Any text with a maximum length of 65535 characters that fit in a TEXT field in a database'
     ImmutableStringOrIntList-get:
       type: array
       items:
@@ -1097,6 +1227,7 @@ components:
     NonEmptyString-post:
       type: string
       format: nonemptystring
+      description: 'Any text, except the empty string.'
       pattern: ^.+$
     NotAcceptedException-get:
       type: object
@@ -1120,6 +1251,8 @@ components:
           $ref: '#/components/schemas/OrderIdentifier-get'
         orderStatus:
           $ref: '#/components/schemas/OrderStatus-get'
+        optionalTags:
+          $ref: '#/components/schemas/StringSet-nullable-get'
         orderLines:
           $ref: '#/components/schemas/OrderLineList-get'
     Order-post:
@@ -1130,6 +1263,8 @@ components:
       properties:
         id:
           $ref: '#/components/schemas/OrderIdentifier-post'
+        optionalTags:
+          $ref: '#/components/schemas/StringSet-nullable-post'
         orderLines:
           $ref: '#/components/schemas/OrderLineList-post'
     OrderIdentifier-get:
@@ -1144,16 +1279,22 @@ components:
       type: object
       required:
         - id
+        - price
       properties:
         id:
           $ref: '#/components/schemas/OrderLineIdentifier-get'
+        price:
+          $ref: '#/components/schemas/Price-get'
     OrderLine-post:
       type: object
       required:
         - id
+        - price
       properties:
         id:
           $ref: '#/components/schemas/OrderLineIdentifier-post'
+        price:
+          $ref: '#/components/schemas/Price-post'
     OrderLineIdentifier-get:
       type: string
       format: orderlineidentifier
@@ -1185,10 +1326,30 @@ components:
       type: string
       format: password
       pattern: '^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\!@#\$%\^&\*\-_\+\.]){1,})[a-zA-Z0-9\!@#\$%\^&\*\-_\+\.]{6,42}$'
+    Price-get:
+      type: string
+      format: price
+      pattern: '^-?([0-9]|[1-9][0-9]*)\.[0-9]{2}$'
+    Price-post:
+      type: string
+      format: price
+      pattern: '^-?([0-9]|[1-9][0-9]*)\.[0-9]{2}$'
     StringList-get:
       type: array
       items:
         type: string
+    StringSet-nullable-get:
+      type: array
+      items:
+        type: string
+      nullable: true
+      uniqueItems: true
+    StringSet-nullable-post:
+      type: array
+      items:
+        type: string
+      nullable: true
+      uniqueItems: true
     Throwable-get:
       type: object
       required:

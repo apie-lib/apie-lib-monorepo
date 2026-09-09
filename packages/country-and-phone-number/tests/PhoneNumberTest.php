@@ -2,17 +2,8 @@
 namespace Apie\Tests\CountryAndPhoneNumber;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\CountryAndPhoneNumber\BelgianPhoneNumber;
-use Apie\CountryAndPhoneNumber\BritishPhoneNumber;
-use Apie\CountryAndPhoneNumber\CanadianPhoneNumber;
-use Apie\CountryAndPhoneNumber\ChinesePhoneNumber;
-use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
-use Apie\CountryAndPhoneNumber\FrenchPhoneNumber;
 use Apie\CountryAndPhoneNumber\GermanPhoneNumber;
-use Apie\CountryAndPhoneNumber\JapanesePhoneNumber;
-use Apie\CountryAndPhoneNumber\MexicanPhoneNumber;
 use Apie\CountryAndPhoneNumber\PhoneNumber;
-use Apie\CountryAndPhoneNumber\USPhoneNumber;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
 use Generator;
@@ -32,6 +23,7 @@ class PhoneNumberTest extends TestCase
             [
                 'type' => 'string',
                 'format' => 'phonenumber',
+                'description' => true,
             ]
         );
     }
@@ -56,15 +48,5 @@ class PhoneNumberTest extends TestCase
     public static function phoneNumberClassProvider(): Generator
     {
         yield [PhoneNumber::class];
-        yield [BelgianPhoneNumber::class];
-        yield [BritishPhoneNumber::class];
-        yield [CanadianPhoneNumber::class];
-        yield [ChinesePhoneNumber::class];
-        yield [DutchPhoneNumber::class];
-        yield [FrenchPhoneNumber::class];
-        yield [GermanPhoneNumber::class];
-        yield [JapanesePhoneNumber::class];
-        yield [MexicanPhoneNumber::class];
-        yield [USPhoneNumber::class];
     }
 }

@@ -1,18 +1,4 @@
-{% if property('boundedContextHashmap').count() > 1 %}
-<gr-select class="unhandled-bounded-select" label="{{ translate('apie.cms.bounded_context') }}" value="{{ property('selectedBoundedContextId') }}">
-    {% for boundedContext in property('boundedContextHashmap') %}
-        <gr-menu-item value="{{ boundedContext.getId() }}">{{ boundedContext.getId() }}</gr-menu-item>
-    {% endfor %}
-</gr-select>
-<script>
-(function (element) {
-    element.addEventListener('gr-select', function (event) {
-        const elm = event.target || element;
-        location.href = {{ property('path') | safe_json_encode }} + elm.value + '/';
-    })
-    element.classList.remove('unhandled-bounded-select');
-}(document.querySelector('.unhandled-bounded-select')));
-</script>
-{% else %}
-&nbsp;
-{% endif %}
+<img style="max-width: none;height: 60px;" src="{{ assetUrl('logo.png') }}" height="60" border="0">
+<h1 class="hidden text-xl font-semibold sm:block">
+    {{ property('selectedBoundedContextId') }}
+</h1>

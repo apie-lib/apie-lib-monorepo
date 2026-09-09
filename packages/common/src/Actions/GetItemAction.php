@@ -1,11 +1,14 @@
 <?php
 namespace Apie\Common\Actions;
 
+use Apie\Common\Events\ApieResourceRead;
+use Apie\Common\Other\LockUtil;
 use Apie\Core\Actions\ActionInterface;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
+use Apie\Core\Attributes\Description;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
@@ -59,12 +62,21 @@ final class GetItemAction implements ActionInterface
         if (!$resourceClass->implementsInterface(EntityInterface::class)) {
             throw new InvalidTypeException($resourceClass->name, 'EntityInterface');
         }
-        $result = $this->apieFacade->find(
-            IdentifierUtils::idStringToIdentifier($id, $context),
-            new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
+        $lock = LockUtil::createLock(
+            $context,
+            [ContextConstants::BOUNDED_CONTEXT_ID, ContextConstants::RESOURCE_NAME, ContextConstants::RESOURCE_ID]
         );
-        $context = $context->withContext(ContextConstants::RESOURCE, $result);
-        $context->withContext(ContextConstants::APIE_ACTION, __CLASS__)->checkAuthorization();
+        try {
+            $result = $this->apieFacade->find(
+                IdentifierUtils::idStringToIdentifier($id, $context),
+                new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
+            );
+            $context = $context->withContext(ContextConstants::RESOURCE, $result);
+            $context->withContext(ContextConstants::APIE_ACTION, __CLASS__)->checkAuthorization();
+        } finally {
+            $lock->release();
+        }
+        $context->dispatchEvent(new ApieResourceRead($result, $context));
         return ActionResponse::createRunSuccess($this->apieFacade, $context, $result, $result);
     }
 
@@ -95,7 +107,12 @@ final class GetItemAction implements ActionInterface
 
     public static function getDescription(ReflectionClass $class): string
     {
-        return 'Gets a resource of ' . $class->getShortName() . ' with a specific id';
+        $description = 'Gets a resource of ' . $class->getShortName() . ' with a specific id';
+        foreach ($class->getAttributes(Description::class) as $attribute) {
+            $description .= '. ' . $attribute->newInstance()->description;
+        }
+
+        return $description;
     }
     
     public static function getTags(ReflectionClass $class): StringList

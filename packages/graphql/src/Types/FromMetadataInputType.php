@@ -1,0 +1,48 @@
+<?php
+namespace Apie\Graphql\Types;
+
+use Apie\Core\Attributes\Description;
+use Apie\Core\Metadata\MetadataInterface;
+use Apie\Core\ValueObjects\Utils;
+use Apie\Graphql\Concerns\CreatesFromMeta;
+use GraphQL\Type\Definition\InputObjectType;
+use GraphQL\Type\Definition\Type;
+use ReflectionAttribute;
+
+class FromMetadataInputType extends InputObjectType
+{
+    use CreatesFromMeta;
+
+    public function __construct(MetadataInterface $metadata, string $suffix = '')
+    {
+        $class = $metadata->toClass();
+        $name = $class ? Utils::getDisplayNameForValueObject($class) : $metadata->toScalarType()->value;
+        $config = [
+            'name' => $name . $suffix,
+            'fields' => [
+            ],
+        ];
+        
+        foreach ($metadata->toClass()?->getAttributes(Description::class, ReflectionAttribute::IS_INSTANCEOF) ?? [] as $descriptionAttribute) {
+            $description = $descriptionAttribute->newInstance();
+            $config['description'] = $description->description;
+        }
+        foreach ($metadata->getHashmap() as $name => $field) {
+            if ($field->isField()) {
+                $config['fields'][$name] = [
+                    'type' => self::createFromField($field),
+                ];
+                foreach ($field->getAttributes(Description::class) as $description) {
+                    $config['fields'][$name]['description'] = $description->description;
+                }
+            }
+        }
+        if (empty($config['fields'])) {
+            $config['fields']['_'] = [
+                'type' => Type::string(),
+                'description' => 'This is a dummy field, because GraphQL does not allow empty input types.',
+            ];
+        }
+        parent::__construct($config);
+    }
+}

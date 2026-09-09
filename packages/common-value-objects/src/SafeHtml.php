@@ -4,6 +4,7 @@ namespace Apie\CommonValueObjects;
 use Apie\CommonValueObjects\Bridge\Symfony\AllowedCssInSpanSanitizer;
 use Apie\CommonValueObjects\Bridge\Symfony\YoutubeNoCookieSanitizer;
 use Apie\Core\Attributes\CmsSingleInput;
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
@@ -19,6 +20,7 @@ use Symfony\Component\HtmlSanitizer\HtmlSanitizerConfig;
 #[FakeMethod('createRandom')]
 #[ProvideIndex('provideIndexes')]
 #[CmsSingleInput(['html'])]
+#[Description('a html input that removes unsafe HTML.')]
 final class SafeHtml implements StringValueObjectInterface, LengthConstraintStringValueObjectInterface
 {
     use IsStringValueObject;

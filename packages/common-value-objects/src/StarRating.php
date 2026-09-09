@@ -2,6 +2,7 @@
 
 namespace Apie\CommonValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\SchemaMethod;
 use Apie\Core\Exceptions\InvalidTypeException;
@@ -11,6 +12,7 @@ use Faker\Generator;
 
 #[FakeMethod('createRandom')]
 #[SchemaMethod('provideSchema')]
+#[Description('A rating on a scale of 0-5, 0 being bad, 5 being best')]
 final class StarRating implements ValueObjectInterface
 {
     public function __construct(

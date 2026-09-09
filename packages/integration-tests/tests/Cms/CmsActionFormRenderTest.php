@@ -1,7 +1,7 @@
 <?php
 namespace Apie\Tests\IntegrationTests\Cms;
 
-use Apie\IntegrationTests\IntegrationTestHelper;
+use Apie\IntegrationTests\CmsTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Generator;
@@ -16,7 +16,7 @@ class CmsActionFormRenderTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_renders_an_action_form_page'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 

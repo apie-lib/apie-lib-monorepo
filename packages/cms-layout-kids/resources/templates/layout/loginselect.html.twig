@@ -1,0 +1,62 @@
+{% set hasDropdown = property('loginOptions')|length or property('profileUrl') or property('logoutUrl') %}
+<div class="relative">
+    {% if property('authenticated') %}
+        {{ component('profile') }}
+    {% else %}
+        <button{% if hasDropdown %} onclick="toggleUserMenu()"{% endif %} class="wiggle flex items-center gap-3 rounded-2xl
+                               border-3 border-pink-400 bg-pink-200 px-3 py-2
+                               font-black shadow-md">
+
+            <div class="flex h-10 w-10 items-center justify-center
+                                    rounded-full border-2 border-white bg-yellow-300 text-xl">
+                👩‍🚀
+            </div>
+
+            <div class="hidden text-left sm:block">
+                <div class="flex items-center gap-1 text-xs text-green-700">
+                    <span class="h-2 w-2 rounded-full bg-green-500"></span>
+                    Not logged in
+                </div>
+            </div>
+
+            <span>{% if hasDropdown %}▼{% else %}&nbsp;{% endif %}</span>
+        </button>
+    {% endif %}
+
+
+    <!-- Dropdown -->
+    <div id="userMenu" class="absolute right-0 mt-3 hidden w-56 overflow-hidden rounded-3xl border-4 border-pink-400 bg-white shadow-2xl">
+
+        {{ component('profileDetails') }}
+        {% if hasDropdown %}
+            <div class="p-2">
+                {% if property('profileUrl') %}
+                <button data-url="{{ property('profileUrl') }}" onClick="location.href=this.dataset.url"
+                        class="flex w-full items-center gap-3 rounded-xl
+                                       px-3 py-3 text-left font-bold
+                                       hover:bg-yellow-200">
+                    👤 Show Profile
+                </button>
+                {% endif %}
+                {% set colors = ['hover:bg-blue-200', 'hover:bg-red-100', 'hover:bg-yellow-200'] %}
+                {% for loginOption in property('loginOptions') %}
+                    <button data-url="{{ loginOption.value }}" onClick="location.href=this.dataset.url"
+                            class="flex w-full items-center gap-3 rounded-xl
+                                               px-3 py-3 text-left font-bold
+                                               {{ colors[loop.index0 % colors|length] }}">
+                        👤 {{ loginOption.name }}
+                    </button>
+                {% endfor %}
+                {% if property('logoutUrl') %}
+                    <button data-url="{{ property('logoutUrl') }}" onClick="location.href=this.dataset.url"
+                            class="flex w-full items-center gap-3 rounded-xl
+                                       px-3 py-3 text-left font-black text-red-600
+                                       hover:bg-red-100">
+                        🚪 Logout
+                    </button>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+</div>

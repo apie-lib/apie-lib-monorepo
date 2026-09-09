@@ -14,16 +14,17 @@ class SchemaGeneratorServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\SchemaGenerator\ComponentsBuilderFactory::class,
             function ($app) {
                 return call_user_func(
-                    'Apie\\SchemaGenerator\\ComponentsBuilderFactory::createComponentsBuilderFactory'
+                    'Apie\\SchemaGenerator\\ComponentsBuilderFactory::createComponentsBuilderFactory',
+                    $this->parseArgument('%apie.open_api.max_enum_size%')
                 );
                 
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\SchemaGenerator\SchemaGenerator::class,
             function ($app) {
                 return new \Apie\SchemaGenerator\SchemaGenerator(

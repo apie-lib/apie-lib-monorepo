@@ -2,7 +2,10 @@
 namespace Apie\Core\Enums;
 
 use Apie\TypeConverter\ReflectionTypeFactory;
+use ReflectionIntersectionType;
+use ReflectionNamedType;
 use ReflectionType;
+use ReflectionUnionType;
 use stdClass;
 
 enum ScalarType: string
@@ -18,6 +21,34 @@ enum ScalarType: string
 
     public const PRIMITIVES = [self::STRING, self::FLOAT, self::INTEGER, self::BOOLEAN];
 
+    public static function createFromReflectionType(?ReflectionType $type, bool $ignoreNull): ScalarType
+    {
+        if ($type === null) {
+            return self::MIXED;
+        }
+        if ($type instanceof ReflectionIntersectionType) {
+            return self::STDCLASS;
+        }
+        if ($type instanceof ReflectionUnionType) {
+            $current = null;
+            foreach ($type->getTypes() as $subType) {
+                $subScalar = self::createFromReflectionType($subType, $ignoreNull);
+                if ($current === null) {
+                    if ($subScalar === self::NULLVALUE && $ignoreNull) {
+                        continue;
+                    }
+                    $current = $subScalar;
+                } elseif ($current !== $subScalar) {
+                    return self::MIXED;
+                }
+            }
+            return $current ?? self::NULLVALUE;
+        }
+        assert($type instanceof ReflectionNamedType);
+
+        return self::tryFrom($type->getName()) ?? self::MIXED;
+    }
+
     public function toReflectionType(): ReflectionType
     {
         return ReflectionTypeFactory::createReflectionType($this->value);
@@ -27,6 +58,9 @@ enum ScalarType: string
     {
         if ($this === self::INTEGER) {
             return 'integer';
+        }
+        if ($this === self::STDCLASS) {
+            return 'json';
         }
         return $this->value;
     }

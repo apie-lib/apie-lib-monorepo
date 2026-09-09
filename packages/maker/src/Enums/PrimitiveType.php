@@ -7,5 +7,7 @@ enum PrimitiveType: string
     case Integer = 'int';
     case FloatingPoint = 'float';
     case Array = 'array';
-    case null = 'null';
+    case Boolean = 'bool';
+    case Null = 'null';
+    case Mixed = 'mixed';
 }

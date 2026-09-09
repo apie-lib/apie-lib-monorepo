@@ -4,6 +4,7 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 use Apie\Core\ApieLib;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Entities\RequiresRecalculatingInterface;
+use Apie\IntegrationTests\Apie\TypeDemo\Enums\ExpireStatus;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\ObjectWithRelationIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\OrderIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
@@ -24,6 +25,11 @@ class ObjectWithRelation implements EntityInterface, RequiresRecalculatingInterf
     public function getId(): ObjectWithRelationIdentifier
     {
         return $this->id;
+    }
+
+    public function getStatus(): ExpireStatus
+    {
+        return $this->isExpired() ? ExpireStatus::EXPIRED : ExpireStatus::ACTIVE;
     }
 
     public function isExpired(): bool

@@ -3,6 +3,7 @@ namespace Apie\StorageMetadata\PropertyConverters;
 
 use Apie\Core\ValueObjects\Utils;
 use Apie\StorageMetadata\Attributes\OneToManyAttribute;
+use Apie\StorageMetadata\DomainToStorageConverter;
 use Apie\StorageMetadata\Interfaces\PropertyConverterInterface;
 use Apie\StorageMetadata\Interfaces\StorageDtoInterface;
 use Apie\StorageMetadata\Mediators\DomainToStorageContext;
@@ -19,12 +20,21 @@ class OneToManyAttributeConverter implements PropertyConverterInterface
         DomainToStorageContext $context
     ): void {
         foreach ($context->storageProperty->getAttributes(OneToManyAttribute::class) as $oneToManyAttribute) {
-            $domainProperty = $oneToManyAttribute->newInstance()->getReflectionProperty($context->domainClass, $context->domainObject);
+            $oneToManyInfo = $oneToManyAttribute->newInstance();
+            $domainProperty = $oneToManyInfo->getReflectionProperty($context->domainClass, $context->domainObject);
             if ($domainProperty) {
-                $storagePropertyValue = Utils::toArray($context->getStoragePropertyValue());
+                $storagePropertyValue = $context->getStoragePropertyValue();
+                if ($oneToManyInfo->nullableField) {
+                    $fieldName = $oneToManyInfo->nullableField;
+                    if ($context->storageObject->{$fieldName}) {
+                        $domainProperty->setValue($context->domainObject, null);
+                        return;
+                    }
+                }
+                $storagePropertyValue = Utils::toArray($storagePropertyValue);
                 $domainPropertyType = $domainProperty->getType();
                 $domainProperties = $domainProperty->isInitialized($context->domainObject)
-                    ? Utils::toArray($domainProperty->getValue($context->domainObject))
+                    ? Utils::toArray($domainProperty->getValue($context->domainObject) ?? [])
                     : [];
                 foreach ($storagePropertyValue as $arrayKey => $arrayValue) {
                     if ($arrayValue instanceof MixedStorageInterface) {
@@ -41,7 +51,9 @@ class OneToManyAttributeConverter implements PropertyConverterInterface
                             : $context->dynamicCast($arrayValue, ReflectionTypeFactory::createReflectionType($oneToManyAttribute->newInstance()->declaredClass));
                     }
                 }
-                $domainProperty->setValue($context->domainObject, $context->dynamicCast($domainProperties, $domainPropertyType));
+                if (DomainToStorageConverter::isReallyWritable($context->domainObject, $domainProperty)) {
+                    $domainProperty->setValue($context->domainObject, $context->dynamicCast($domainProperties, $domainPropertyType));
+                }
             }
         }
     }
@@ -55,6 +67,7 @@ class OneToManyAttributeConverter implements PropertyConverterInterface
     {
         if (str_starts_with($className, 'apie_') && is_object($contextStorageObject)) {
             $refl = new ReflectionClass($contextStorageObject);
+            // @phpstan-ignore-next-line return.type
             return new ReflectionClass($refl->getNamespaceName() . '\\' . $className);
         }
         return new ReflectionClass($className);
@@ -64,9 +77,15 @@ class OneToManyAttributeConverter implements PropertyConverterInterface
         DomainToStorageContext $context
     ): void {
         foreach ($context->storageProperty->getAttributes(OneToManyAttribute::class) as $oneToManyAttribute) {
-            $domainProperty = $oneToManyAttribute->newInstance()->getReflectionProperty($context->domainClass, $context->domainObject);
+            $oneToManyInfo = $oneToManyAttribute->newInstance();
+            $domainProperty = $oneToManyInfo->getReflectionProperty($context->domainClass, $context->domainObject);
             if ($domainProperty) {
-                $domainPropertyValue = Utils::toArray($domainProperty->getValue($context->domainObject));
+                $domainPropertyValue = $domainProperty->getValue($context->domainObject);
+                if ($oneToManyInfo->nullableField) {
+                    $fieldName = $oneToManyInfo->nullableField;
+                    $context->storageObject->{$fieldName} = $domainPropertyValue === null;
+                }
+                $domainPropertyValue = Utils::toArray($domainPropertyValue ?? []);
                 $storageShouldBeReplaced = !$context->storageProperty->isInitialized($context->storageObject);
                 $storageProperties = $storageShouldBeReplaced
                     ? []
@@ -78,7 +97,7 @@ class OneToManyAttributeConverter implements PropertyConverterInterface
                 try {
                     foreach ($keysToRemove as $keyToRemove) {
                         unset($storageProperties[$keyToRemove]);
-                        // this is an edge case where we have some item list that can not unset values
+                        // this is an edge case where we have some immutable item list object.
                         if (isset($storageProperties[$keyToRemove])) {
                             $storageProperties = $context->dynamicCast([], $context->storageProperty->getType());
                             $storageShouldBeReplaced = true;
@@ -112,14 +131,16 @@ class OneToManyAttributeConverter implements PropertyConverterInterface
                         if ($storageProperties instanceof PersistentCollection) {
                             $storageProperties = new ArrayCollection(
                                 $storageProperties
-                                    ->map(function ($t) { return clone $t; })
+                                    ->map(function ($t) {
+                                        return clone $t;
+                                    })
                                     ->toArray()
                             );
                             $storageShouldBeReplaced = true;
                         }
                         $storageProperties[$arrayKey] = $storageClassRefl->newInstance(Utils::toString($arrayValue));
                         // @phpstan-ignore-next-line
-                        $storageProperties[$arrayKey]->listOrder = $arrayKey;
+                        $storageProperties[$arrayKey]->listOrder = $context->dynamicCast($arrayKey, $storageClassRefl->getProperty('listOrder')->getType());
                         // @phpstan-ignore-next-line
                         $storageProperties[$arrayKey]->parent = $context->storageObject;
                     }

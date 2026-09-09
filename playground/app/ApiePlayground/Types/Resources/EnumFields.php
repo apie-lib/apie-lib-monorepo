@@ -4,6 +4,8 @@ namespace App\ApiePlayground\Types\Resources;
 
 use Apie\CommonValueObjects\Gender;
 use Apie\CommonValueObjects\Stars;
+use Apie\Core\Attributes\Auditable;
+use Apie\Core\Attributes\CmsIcon;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Entities\EntityInterface;
 use App\ApiePlayground\Types\Identifiers\EnumFieldsIdentifier;
@@ -11,6 +13,8 @@ use App\ApiePlayground\Types\Lists\StarsList;
 use App\ApiePlayground\Types\Lists\StarsSet;
 
 #[FakeCount(25)]
+#[Auditable()]
+#[CmsIcon('codicon:symbol-enum')]
 class EnumFields implements EntityInterface
 {
     private EnumFieldsIdentifier $id;

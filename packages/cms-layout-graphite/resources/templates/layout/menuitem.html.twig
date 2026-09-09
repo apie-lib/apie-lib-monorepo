@@ -1,0 +1,103 @@
+{% set url = property('allowed') ? property('route') : null %}
+{% if (property('index') == 0) %}
+<!-- Left Sidebar -->
+<aside id="leftSidebar"
+       class="fixed inset-y-0 left-0 z-40 w-64 bg-slate-900 text-slate-200 transition-all duration-300 overflow-y-auto -translate-x-full lg:static lg:translate-x-0 lg:w-64 lg:h-full lg:flex-shrink-0">
+
+    <nav class="p-4">
+
+        <div class="mb-4 flex items-center justify-between lg:hidden">
+            <h2 class="uppercase text-xs text-slate-500">
+                Navigation
+            </h2>
+            <button id="closeLeftSidebar" class="rounded p-2 text-slate-400 hover:bg-slate-800 hover:text-white">
+                ✕
+            </button>
+        </div>
+
+        <h2 class="hidden uppercase text-xs text-slate-500 mb-3 lg:block">
+            Navigation
+        </h2>
+
+        <ul class="space-y-1">
+            <li>
+                <a href="#" class="menu-item block rounded px-3 py-2 hover:bg-slate-800 flex items-center" data-id="dashboard">
+                    {{ ux_icon('la:home', { class: 'w-5 h-5 text-slate-300 mr-3'}) }}
+                    <span class="menu-label">Dashboard</span>
+                </a>
+            </li>
+            {% for componentKey in property('subcomponents') %}
+                {{ component(componentKey) }}
+            {% endfor %}
+        </ul>
+
+    </nav>
+
+</aside>
+{% elseif (property('index') == 1) %}
+    <li>
+        <button {% if property('subcomponents')|length %}data-toggle="menu"{% endif%} data-id="{{ property('id') }}" data-url="{{ url }}" class="menu-item w-full text-left flex items-center justify-between rounded px-3 py-2 hover:bg-slate-800" data-id-main="{{ property('id') }}">
+            <span class="flex items-center">
+                {{ ux_icon(property('icon') ? : 'mdi:file', { class: 'w-5 h-5 text-slate-300 mr-3'}) }}
+                <span class="menu-label">{{ translate(property('name')) }}</span>
+                {% if not property('allowed') %}
+                    {{ ux_icon('mi:lock', {
+                        class: 'w-4 h-4 text-slate-400 ml-2',
+                        title: 'Insufficient permissions'
+                    }) }}
+                {% endif %}
+            </span>
+            {% if property('subcomponents')|length %}
+            <span class="arrow transform transition-transform duration-150">▸</span>
+            {% endif %}
+        </button>
+
+        {% if property('subcomponents')|length %}
+        <ul data-menu="{{ property('id') }}" class="ml-3 mt-1 submenu space-y-1">
+            {% for componentKey in property('subcomponents') %}
+                {{ component(componentKey) }}
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+    </li>
+{% elseif (property('index') == 2) %}
+    <li>
+        <button {% if property('subcomponents')|length %}data-toggle="menu"{% endif %} data-url="{{ url }}" data-id="{{ property('id') }}" class="menu-item w-full text-left flex items-center justify-between rounded px-3 py-2 hover:bg-slate-800">
+            <span class="flex items-center">
+                {{ ux_icon(property('icon') ? : 'mdi:file', { class: 'w-5 h-5 text-slate-300 mr-3'}) }}
+                <span class="menu-label">{{ translate(property('name')) }}</span>
+                {% if not property('allowed') %}
+                    {{ ux_icon('mi:lock', {
+                        class: 'w-4 h-4 text-slate-400 ml-2',
+                        title: 'Insufficient permissions'
+                    }) }}
+                {% endif %}
+            </span>
+            {% if property('subcomponents')|length %}
+            <span class="arrow transform transition-transform duration-150">▸</span>
+            {% endif %}
+        </button>
+
+        {% if property('subcomponents')|length %}
+            <ul data-menu="{{ property('id') }}" class="ml-3 mt-1 submenu space-y-1">
+                {% for componentKey in property('subcomponents') %}
+                    {{ component(componentKey) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{%  else %}
+    <li>
+        <a href="{{ url }}" class="block rounded px-3 py-2 hover:bg-slate-800 flex items-center">
+            {{ ux_icon(property('icon') ? : 'mdi:file', { class: 'w-5 h-5 text-slate-300 mr-3'}) }}
+            <span>{{ translate(property('name')) }}</span>
+            {% if not property('allowed') %}
+                {{ ux_icon('mi:lock', {
+                    class: 'w-4 h-4 text-slate-400 ml-2',
+                    title: 'Insufficient permissions'
+                }) }}
+            {% endif %}
+        </a>
+    </li>
+{% endif %}

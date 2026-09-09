@@ -1,12 +1,17 @@
 <?php
 namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
+use Apie\Core\Attributes\Auditable;
+use Apie\Core\Attributes\ClassStoreOptions;
 use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Enums\SortingOrder;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\PrimitiveOnlyIdentifier;
 
+#[Auditable(readAllEvents: true)]
 #[RemovalCheck(new StaticCheck())]
+#[ClassStoreOptions(defaultSortingOrder: SortingOrder::Ascending)]
 final class PrimitiveOnly implements EntityInterface
 {
     public ?string $stringField = null;
