@@ -2,17 +2,38 @@
 namespace Apie\Tests\TextValueObjects;
 
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
-use Apie\Fixtures\TestHelpers\TestWithFaker;
-use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
+use Apie\Fixtures\TestHelpers\ValueObjectTestCase;
 use Apie\TextValueObjects\EncryptedPassword;
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 
-class EncryptedPasswordTest extends TestCase
+class EncryptedPasswordTest extends ValueObjectTestCase
 {
-    use TestWithFaker;
-    use TestWithOpenapiSchema;
+    public static function className(): string
+    {
+        return EncryptedPassword::class;
+    }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    public static function getOpenApiSchemaForCreation(): array
+    {
+        return [
+            'type' => 'string',
+            'format' => 'encryptedpassword',
+            'description' => true,
+            'pattern' => true,
+        ];
+    }
+
+    public static function provideFromNative(): array
+    {
+        return [
+            'an encrypted password' => [
+                '$2y$10$zL2UWxcQ9.lYpoI.yTjl9eYdO4hv.jb/iwCpathPmgpV38hkGzBAW',
+                '$2y$10$zL2UWxcQ9.lYpoI.yTjl9eYdO4hv.jb/iwCpathPmgpV38hkGzBAW'
+            ]
+        ];
+    }
+    #[Test]
     public function it_can_hash_and_verify_passwords()
     {
         $unencrypted = 'This is a string';
@@ -20,40 +41,24 @@ class EncryptedPasswordTest extends TestCase
         $this->assertTrue($testItem->verifyUnencryptedPassword($unencrypted));
     }
 
-    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
-    #[\PHPUnit\Framework\Attributes\Test]
-    public function fromNative_allows_many_names(string $expected, string $input)
-    {
-        $testItem = EncryptedPassword::fromNative($input);
-        $this->assertEquals($expected, $testItem->toNative());
-    }
-
-    #[\PHPUnit\Framework\Attributes\DataProvider('inputProvider')]
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[DataProvider('provideFromNative')]
+    #[Test]
     public function it_allows_many_names(string $expected, string $input)
     {
         $testItem = new EncryptedPassword($input);
         $this->assertEquals($expected, $testItem->toNative());
     }
 
-    public static function inputProvider()
-    {
-        yield [
-            '$2y$10$zL2UWxcQ9.lYpoI.yTjl9eYdO4hv.jb/iwCpathPmgpV38hkGzBAW',
-            '$2y$10$zL2UWxcQ9.lYpoI.yTjl9eYdO4hv.jb/iwCpathPmgpV38hkGzBAW'
-        ];
-    }
-
-    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[DataProvider('invalidProvider')]
+    #[Test]
     public function it_refuses_random_strings(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
         new EncryptedPassword($input);
     }
 
-    #[\PHPUnit\Framework\Attributes\DataProvider('invalidProvider')]
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[DataProvider('invalidProvider')]
+    #[Test]
     public function it_refuses_random_strings_with_fromNative(string $input)
     {
         $this->expectException(InvalidStringForValueObjectException::class);
@@ -66,25 +71,5 @@ class EncryptedPasswordTest extends TestCase
         yield [' '];
         yield ["          \t\n\r\n"];
         yield ['   $2y$10$zL2UWxcQ9.lYpoI.yTjl9eYdO4hv.jb/iwCpathPmgpV38hkGzBAW   '];
-    }
-
-    #[\PHPUnit\Framework\Attributes\Test]
-    public function it_works_with_schema_generator()
-    {
-        $this->runOpenapiSchemaTestForCreation(
-            EncryptedPassword::class,
-            'EncryptedPassword-post',
-            [
-                'type' => 'string',
-                'format' => 'encryptedpassword',
-                'description' => true,
-            ]
-        );
-    }
-
-    #[\PHPUnit\Framework\Attributes\Test]
-    public function it_works_with_apie_faker()
-    {
-        $this->runFakerTest(EncryptedPassword::class, interval: 15);
     }
 }

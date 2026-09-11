@@ -1,9 +1,10 @@
 {% set hasDropdown = property('loginOptions')|length or property('profileUrl') or property('logoutUrl') %}
 <div class="relative">
-    {% if property('authenticated') %}
-        {{ component('profile') }}
-    {% else %}
-        <button{% if hasDropdown %} onclick="toggleUserMenu()"{% endif %} class="wiggle flex items-center gap-3 rounded-2xl
+    <ion-button{% if hasDropdown %} id="account"{% endif %} fill="clear">
+        {% if property('authenticated') %}
+            {{ component('profile') }}
+        {% else %}
+        <button onclick="toggleUserMenu()" class="wiggle flex items-center gap-3 rounded-2xl
                                border-3 border-pink-400 bg-pink-200 px-3 py-2
                                font-black shadow-md">
 
@@ -21,8 +22,8 @@
 
             <span>{% if hasDropdown %}▼{% else %}&nbsp;{% endif %}</span>
         </button>
-    {% endif %}
-
+        {% endif %}
+    </ion-button>
 
     <!-- Dropdown -->
     <div id="userMenu" class="absolute right-0 mt-3 hidden w-56 overflow-hidden rounded-3xl border-4 border-pink-400 bg-white shadow-2xl">
