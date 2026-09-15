@@ -58274,6 +58274,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.fiduswriter.book+zip",
+                            "description": "application\/vnd.fiduswriter.book+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.fiduswriter.template+zip",
+                            "description": "application\/vnd.fiduswriter.template+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.filmit.zfc",
                             "description": "application\/vnd.filmit.zfc",
                             "isDeprecated": false,
@@ -139585,6 +139597,18 @@
                         {
                             "name": "application\/vnd.fiduswriter+zip",
                             "description": "application\/vnd.fiduswriter+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.fiduswriter.book+zip",
+                            "description": "application\/vnd.fiduswriter.book+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.fiduswriter.template+zip",
+                            "description": "application\/vnd.fiduswriter.template+zip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },

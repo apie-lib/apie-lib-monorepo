@@ -180,6 +180,7 @@
             "Apie\\Tools\\": "tools/",
             "Apie\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/src/",
             "Apie\\TypescriptClientBuilder\\": "packages/typescript-client-builder/src/",
+            "Apie\\TypescriptCodeBuilder\\": "packages/typescript-code-builder/src/",
             "Apie\\Webdav\\": "packages/webdav/src/"
         }
     },
@@ -230,6 +231,7 @@
             "Apie\\Tests\\TextValueObjects\\": "packages/text-value-objects/tests/",
             "Apie\\Tests\\TwigTemplateLayoutRenderer\\": "packages/twig-template-layout-renderer/tests/",
             "Apie\\Tests\\TypescriptClientBuilder\\": "packages/typescript-client-builder/tests/",
+            "Apie\\Tests\\TypescriptCodeBuilder\\": "packages/typescript-code-builder/tests/",
             "Apie\\Tests\\Webdav\\": "packages/webdav/tests/"
         }
     },
@@ -520,6 +522,7 @@
         "apie/text-value-objects": "self.version",
         "apie/twig-template-layout-renderer": "self.version",
         "apie/typescript-client-builder": "self.version",
+        "apie/typescript-code-builder": "self.version",
         "apie/webdav": "self.version"
     },
     "minimum-stability": "dev",

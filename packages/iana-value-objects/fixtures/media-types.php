@@ -6216,7 +6216,7 @@ return array(
   array(
     'Name' => 'vnd.edulith.edux+json (OBSOLETED by request)',
     'Template' => 'application/vnd.edulith.edux+json',
-    'Reference' => '[Heike_Håland_Østensen]',
+    'Reference' => '[IESG (original contact/change controller removed by request)]',
     'Active' => true,
   ),
   'application/vnd.efi.img' =>
@@ -6636,6 +6636,20 @@ return array(
   array(
     'Name' => 'vnd.fiduswriter+zip',
     'Template' => 'application/vnd.fiduswriter+zip',
+    'Reference' => '[Johannes_Wilm]',
+    'Active' => true,
+  ),
+  'application/vnd.fiduswriter.book+zip' =>
+  array(
+    'Name' => 'vnd.fiduswriter.book+zip',
+    'Template' => 'application/vnd.fiduswriter.book+zip',
+    'Reference' => '[Johannes_Wilm]',
+    'Active' => true,
+  ),
+  'application/vnd.fiduswriter.template+zip' =>
+  array(
+    'Name' => 'vnd.fiduswriter.template+zip',
+    'Template' => 'application/vnd.fiduswriter.template+zip',
     'Reference' => '[Johannes_Wilm]',
     'Active' => true,
   ),
