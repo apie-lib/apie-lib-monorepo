@@ -1,9 +1,14 @@
 <?php
 namespace Apie\LaravelApie;
 
+use Apie\AiInstructor\AiInstructorServiceProvider;
 use Apie\ApieCommonPlugin\ApieCommonPluginServiceProvider;
+use Apie\ApieFileSystem\ApieFileSystemServiceProvider;
 use Apie\CmsApiDropdownOption\CmsDropdownServiceProvider;
+use Apie\Common\AddBasicAuthServiceProvider;
 use Apie\Common\CommonServiceProvider;
+use Apie\Common\ContextBuilders\FrameworkContextBuilder;
+use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\Interfaces\BoundedContextSelection;
 use Apie\Common\Interfaces\DashboardContentFactoryInterface;
 use Apie\Common\Wrappers\BoundedContextHashmapFactory;
@@ -19,11 +24,17 @@ use Apie\DoctrineEntityDatalayer\IndexStrategy\BackgroundIndexStrategy;
 use Apie\DoctrineEntityDatalayer\IndexStrategy\DirectIndexStrategy;
 use Apie\DoctrineEntityDatalayer\IndexStrategy\IndexAfterResponseIsSentStrategy;
 use Apie\DoctrineEntityDatalayer\IndexStrategy\IndexStrategyInterface;
+use Apie\Export\ExportServiceProvider;
 use Apie\Faker\FakerServiceProvider;
+use Apie\FtpServer\FtpServerServiceProvider;
+use Apie\Graphql\GraphqlServiceProvider;
 use Apie\HtmlBuilders\ErrorHandler\CmsErrorRenderer;
 use Apie\HtmlBuilders\HtmlBuilderServiceProvider;
-use Apie\LaravelApie\Config\LaravelConfiguration;
+use Apie\LaravelApie\Config\ValidateAndSanitizeConfig;
+use Apie\LaravelApie\ContextBuilders\ApieCurrentUserContextBuilder;
 use Apie\LaravelApie\ContextBuilders\CsrfTokenContextBuilder;
+use Apie\LaravelApie\ContextBuilders\LaravelLocaleContextBuilder;
+use Apie\LaravelApie\ContextBuilders\LogoutUrlContextBuilder;
 use Apie\LaravelApie\ContextBuilders\RegisterBoundedContextActionContextBuilder;
 use Apie\LaravelApie\ContextBuilders\SessionContextBuilder;
 use Apie\LaravelApie\ErrorHandler\ApieErrorRenderer;
@@ -32,29 +43,42 @@ use Apie\LaravelApie\Providers\CmsServiceProvider;
 use Apie\LaravelApie\Providers\SecurityServiceProvider;
 use Apie\LaravelApie\Wrappers\Cms\DashboardContentFactory;
 use Apie\LaravelApie\Wrappers\Core\BoundedContextSelected;
+use Apie\LaravelApie\Wrappers\Queue\BackgroundProcessPersistListener;
 use Apie\Maker\MakerServiceProvider;
+use Apie\McpServer\McpServerServiceProvider;
 use Apie\RestApi\RestApiServiceProvider;
 use Apie\SchemaGenerator\SchemaGeneratorServiceProvider;
 use Apie\Serializer\SerializerServiceProvider;
 use Apie\ServiceProviderGenerator\TagMap;
+use Apie\TypescriptClientBuilder\TypescriptClientBuilderServiceProvider;
+use Apie\Webdav\WebdavServiceProvider;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Support\ServiceProvider;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Symfony\Component\Config\ConfigCache;
-use Symfony\Component\Config\Definition\Processor;
-use Symfony\Component\Config\Resource\ReflectionClassResource;
 use Symfony\Component\Console\Application;
 use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\Lock\LockFactory;
 
 class ApieServiceProvider extends ServiceProvider
 {
     /**
+     * @var array<string, class-string<ServiceProvider>> $alreadyRegistered
+     */
+    private array $alreadyRegistered = [];
+    /**
      * @var array<string, array<int, class-string<ServiceProvider>>> $dependencies
      */
     private array $dependencies = [
+        'enable_ai_instructor' => [
+            AiInstructorServiceProvider::class,
+        ],
+        'enable_basic_auth' => [
+            AddBasicAuthServiceProvider::class,
+        ],
         'enable_common_plugin' => [
             ApieCommonPluginServiceProvider::class,
         ],
@@ -73,7 +97,7 @@ class ApieServiceProvider extends ServiceProvider
         ],
         'enable_console' => [
             CommonServiceProvider::class,
-            ConsoleServiceProvider::class,
+            ConsoleServiceProvider::class, // it's important that this loads after CommonServiceProvider!!!
             SerializerServiceProvider::class,
         ],
         'enable_doctrine_entity_converter' => [
@@ -84,6 +108,10 @@ class ApieServiceProvider extends ServiceProvider
             CoreServiceProvider::class,
             DoctrineEntityConverterProvider::class,
             DoctrineEntityDatalayerServiceProvider::class,
+        ],
+        'enable_export' => [
+            SerializerServiceProvider::class,
+            ExportServiceProvider::class,
         ],
         'enable_security' => [
             CommonServiceProvider::class,
@@ -99,9 +127,30 @@ class ApieServiceProvider extends ServiceProvider
         'enable_faker' => [
             FakerServiceProvider::class,
         ],
+        'enable_ftp' => [
+            ApieFileSystemServiceProvider::class,
+            FtpServerServiceProvider::class,
+        ],
+        'enable_graphql' => [
+            CommonServiceProvider::class,
+            SerializerServiceProvider::class,
+            GraphqlServiceProvider::class,
+        ],
         'enable_maker' => [
             MakerServiceProvider::class,
         ],
+        'enable_mcp_server' => [
+            CommonServiceProvider::class,
+            SerializerServiceProvider::class,
+            McpServerServiceProvider::class,
+        ],
+        'enable_typescript_client_builder' => [
+            TypescriptClientBuilderServiceProvider::class,
+        ],
+        'enable_webdav' => [
+            ApieFileSystemServiceProvider::class,
+            WebdavServiceProvider::class,
+        ]
     ];
 
     private function autoTagHashmapActions(): void
@@ -135,7 +184,6 @@ class ApieServiceProvider extends ServiceProvider
         $this->autoTagHashmapActions();
         $this->loadViewsFrom(__DIR__ . '/../templates', 'apie');
         $this->loadRoutesFrom(__DIR__.'/../resources/routes.php');
-        TagMap::registerEvents($this->app);
 
         if ($this->app->runningInConsole()) {
             $commands = [];
@@ -157,11 +205,26 @@ class ApieServiceProvider extends ServiceProvider
             }
             $this->commands($commands);
         }
+
+        $this->app->booted(function () {
+            TagMap::markBooted($this->app);
+            TagMap::registerEvents($this->app);
+        });
     }
 
     public function register()
     {
+        EncryptCookies::except(AddAuthenticationCookie::COOKIE_NAME);
         $this->mergeConfigFrom(__DIR__ . '/../resources/apie.php', 'apie');
+
+        $this->app->bind(FrameworkContextBuilder::class, function () {
+            return new FrameworkContextBuilder('laravel');
+        });
+        TagMap::register($this->app, FrameworkContextBuilder::class, ['apie.core.context_builder']);
+
+        $this->app->bind(\Symfony\Contracts\Cache\CacheInterface::class, function () {
+            return new Wrappers\Cache\LaravelCache($this->app->make('cache.store'));
+        });
 
         // add PSR-14 support if needed:
         if (!$this->app->bound(EventDispatcherInterface::class)) {
@@ -221,21 +284,31 @@ class ApieServiceProvider extends ServiceProvider
         $this->app->extend(ExceptionHandler::class, function (ExceptionHandler $service) {
             return new Handler($this->app, $service);
         });
+
+        $this->app->bind(LockFactory::class, function () {
+            $config = config('apie.lock_store');
+            return new LockFactory($this->app->get($config));
+        });
         
         $this->app->bind(DashboardContentFactoryInterface::class, DashboardContentFactory::class);
         $this->app->bind(BoundedContextSelection::class, BoundedContextSelected::class);
 
-        $alreadyRegistered = [];
+        $this->alreadyRegistered = [];
+        $parsedConfig = ValidateAndSanitizeConfig::process(config('apie'));
         foreach ($this->dependencies as $configKey => $dependencies) {
-            if (config('apie.' . $configKey, false)) {
+            if ($parsedConfig[$configKey] ?? false) {
                 foreach ($dependencies as $dependency) {
-                    if (!isset($alreadyRegistered[$dependency])) {
-                        $alreadyRegistered[$dependency] = $dependency;
+                    if (!isset($this->alreadyRegistered[$dependency])) {
+                        $this->alreadyRegistered[$dependency] = $dependency;
                         $this->app->register($dependency);
                     }
                 }
             }
         }
+
+        TagMap::register($this->app, LaravelLocaleContextBuilder::class, ['apie.core.context_builder']);
+        $this->app->tag(LaravelLocaleContextBuilder::class, ['apie.core.context_builder']);
+
         //$this->app->bind(CsrfTokenProvider::class, CsrfTokenContextBuilder::class);
         TagMap::register($this->app, CsrfTokenContextBuilder::class, ['apie.core.context_builder']);
         $this->app->tag(CsrfTokenContextBuilder::class, ['apie.core.context_builder']);
@@ -245,41 +318,41 @@ class ApieServiceProvider extends ServiceProvider
         TagMap::register($this->app, SessionContextBuilder::class, ['apie.core.context_builder']);
         $this->app->tag(SessionContextBuilder::class, ['apie.core.context_builder']);
 
+        $this->app->bind(ApieCurrentUserContextBuilder::class);
+        TagMap::register($this->app, ApieCurrentUserContextBuilder::class, ['apie.core.context_builder', 'kernel.event_subscriber']);
+        $this->app->tag(ApieCurrentUserContextBuilder::class, ['apie.core.context_builder', 'kernel.event_subscriber']);
+
+        $this->app->bind(LogoutUrlContextBuilder::class, function () {
+            return new LogoutUrlContextBuilder(config('apie.logout_url'));
+        });
+        TagMap::register($this->app, LogoutUrlContextBuilder::class, ['apie.core.context_builder']);
+        $this->app->tag(LogoutUrlContextBuilder::class, ['apie.core.context_builder']);
+
         TagMap::register($this->app, RegisterBoundedContextActionContextBuilder::class, ['apie.core.context_builder']);
         $this->app->tag(RegisterBoundedContextActionContextBuilder::class, ['apie.core.context_builder']);
-        $this->app->extend('config', function (Repository $config) {
+        $this->app->resolving('config', function (Repository $config) {
             $this->sanitizeConfig($config);
+            $newParsedConfig = $config->get('apie');
+            foreach ($this->dependencies as $configKey => $dependencies) {
+                if ($newParsedConfig[$configKey] ?? false) {
+                    foreach ($dependencies as $dependency) {
+                        if (!isset($this->alreadyRegistered[$dependency])) {
+                            $this->alreadyRegistered[$dependency] = $dependency;
+                            $this->app->register($dependency);
+                        }
+                    }
+                }
+            }
             return $config;
         });
+
+        TagMap::register($this->app, BackgroundProcessPersistListener::class, ['kernel.event_subscriber']);
     }
 
     private function sanitizeConfig(Repository $config): void
     {
         $rawConfig = $config->get('apie');
-        $path = storage_path('framework/cache/apie-config' . md5(json_encode($rawConfig)) . '.php');
-        $resources = [
-            new ReflectionClassResource(new \ReflectionClass(LaravelConfiguration::class)),
-            new ReflectionClassResource(new \ReflectionClass(static::class)),
-        ];
-        $configCache = new ConfigCache($path, true);
-        if ($configCache->isFresh()) {
-            $processedConfig = require $path;
-        } else {
-            $configuration = new LaravelConfiguration();
-
-            $processor = new Processor();
-
-            $processedConfig = $processor->processConfiguration($configuration, ['apie' => $rawConfig]);
-
-            if (!isset($processedConfig['scan_bounded_contexts'])) {
-                $processedConfig['scan_bounded_contexts'] = [];
-            }
-            if (empty($processedConfig['storage'])) {
-                $processedConfig['storage'] = null;
-            }
-            $code = '<?php' . PHP_EOL . 'return ' . var_export($processedConfig, true) . ';';
-            $configCache->write($code, $resources);
-        }
+        $processedConfig = ValidateAndSanitizeConfig::process($rawConfig);
 
         $config->set('apie', $processedConfig);
     }

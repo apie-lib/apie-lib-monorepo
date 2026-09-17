@@ -2,6 +2,8 @@
 namespace Apie\SchemaGenerator\Builders;
 
 use Apie\Core\Attributes\Context;
+use Apie\Core\Attributes\Description;
+use Apie\Core\Attributes\ExampleValue;
 use Apie\Core\Exceptions\DuplicateIdentifierException;
 use Apie\Core\ValueObjects\Utils;
 use Apie\SchemaGenerator\Exceptions\ICanNotExtractASchemaFromClassException;
@@ -141,7 +143,7 @@ class ComponentsBuilder
         if ($type instanceof ReflectionIntersectionType) {
             $allOfs = [];
             foreach ($type->getTypes() as $allOfType) {
-                $allOfs[] = $this->$methodName((string) $allOfType, nullable: $nullable || $allOfType->allowsNull());
+                $allOfs[] = $this->$methodName((string) $allOfType, nullable: $allOfType->allowsNull());
             }
             $result = new Schema([
                 'allOf' => $allOfs,
@@ -149,13 +151,13 @@ class ComponentsBuilder
         } elseif ($type instanceof ReflectionUnionType) {
             $oneOfs = [];
             foreach ($type->getTypes() as $oneOfType) {
-                $oneOfs[] = $this->$methodName((string) $oneOfType, nullable: $nullable || $oneOfType->allowsNull());
+                $oneOfs[] = $this->$methodName((string) $oneOfType, nullable: $oneOfType->allowsNull());
             }
             $result = new Schema([
                 'oneOf' => $oneOfs,
             ] + $map);
         } elseif ($type instanceof ReflectionNamedType) {
-            $result = $this->$methodName($type->getName(), nullable: $nullable || $type->allowsNull());
+            $result = $this->$methodName($type->getName(), nullable: $type->allowsNull());
         }
         if ($array) {
             return new Schema([
@@ -259,5 +261,27 @@ class ComponentsBuilder
             }
         }
         throw new ICanNotExtractASchemaFromClassException($refl->name);
+    }
+
+    /**
+     * @param ReflectionClass<covariant object> $class
+     */
+    public static function addDescriptionOfObject(Schema $schema, ReflectionClass $class): void
+    {
+        if (!$schema->description) {
+            foreach ($class->getAttributes(Description::class) as $attribute) {
+                $schema->description = $attribute->newInstance()->description;
+            }
+        }
+        if (!$schema->example) {
+            $examples = [];
+            foreach ($class->getAttributes(ExampleValue::class) as $attribute) {
+                $exampleValue = $attribute->newInstance();
+                $examples[$exampleValue->name] = $exampleValue->example;
+            }
+            if (count($examples) > 0) {
+                $schema->example = reset($examples);
+            }
+        }
     }
 }

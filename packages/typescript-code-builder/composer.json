@@ -1,0 +1,54 @@
+{
+  "name": "apie/typescript-code-builder",
+  "description": "Composer package of the apie library: typescript code builder",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\TypescriptCodeBuilder\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\TypescriptCodeBuilder\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "apie/core": "self.version"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.5"
+  },
+  "extra": {
+    "apie-objects": [
+    "Apie\\TypescriptCodeBuilder\\Lists\\CodeList",
+    "Apie\\TypescriptCodeBuilder\\Lists\\JavascriptIdentifierList",
+    "Apie\\TypescriptCodeBuilder\\Dto\\TypescriptDeclaration",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ImportStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\VariableAssignment",
+    "Apie\\TypescriptCodeBuilder\\Dto\\RawJavascript",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\ArrayTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\CallbackTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\IntersectionTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\LiteralTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\ObjectTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\UndefinedTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\UnionTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\File",
+    "Apie\\TypescriptCodeBuilder\\Dto\\IIFE",
+    "Apie\\TypescriptCodeBuilder\\Enums\\TypescriptType",
+    "Apie\\TypescriptCodeBuilder\\Enums\\VariableDeclarationKind",
+    "Apie\\TypescriptCodeBuilder\\ValueObjects\\JavascriptIdentifier"
+]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

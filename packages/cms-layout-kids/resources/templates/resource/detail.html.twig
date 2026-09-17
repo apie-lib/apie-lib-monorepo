@@ -1,0 +1,5 @@
+<h1>Details of {{ property('entity').getId() }}</h1>
+{# list of actions you can do on this entity (with permission checks done) #}
+{{ component('resourceActionList') }}
+{# display all entity data in a nice table display #}
+{{ component('table') }}

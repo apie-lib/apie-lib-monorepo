@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Core\Indexing;
 
+use Apie\Core\Attributes\SearchFilterOption;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Dto\DtoInterface;
 use Apie\Core\Entities\EntityInterface;
@@ -8,6 +9,7 @@ use Apie\Core\Metadata\Fields\FieldInterface;
 use Apie\Core\Metadata\GetterInterface;
 use Apie\Core\Metadata\MetadataFactory;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
+use LogicException;
 use ReflectionClass;
 use ReflectionNamedType;
 
@@ -29,12 +31,22 @@ class FromGetters implements IndexingStrategyInterface
             if (!$fieldMetadata->isField() || !$fieldMetadata instanceof GetterInterface) {
                 continue;
             }
+            assert($fieldMetadata instanceof FieldInterface);
+            foreach ($fieldMetadata->getAttributes(SearchFilterOption::class) as $searchFilterOption) {
+                if (!$searchFilterOption->enabled) {
+                    continue 2;
+                }
+            }
             /** @var GetterInterface&FieldInterface $fieldMetadata */
             $typehint = $fieldMetadata->getTypehint();
             if (!$typehint instanceof ReflectionNamedType) {
                 continue;
             }
-            $value = $fieldMetadata->getValue($object, $context);
+            try {
+                $value = $fieldMetadata->getValue($object, $context);
+            } catch (LogicException) { // see GetterMethod::getValue
+                $value = null;
+            }
             if (is_object($value)) {
                 $embeddedObjectResult = $indexer->getIndexesForObject($value, $context);
                 $result = Indexer::merge($result, $embeddedObjectResult);

@@ -1,21 +1,18 @@
 
 {% if property('loginOptions') %}
-    <gr-select label="Login" placeholder="Login" class="login-select">
-        <slot>{{ component('profile') }}</slot>
+    <button id="loginButton"
+            class="whitespace-nowrap rounded bg-slate-700 px-2.5 py-2 text-sm hover:bg-slate-600 sm:px-4">
+        Login ▼
+    </button>
+
+    <div id="loginMenu"
+         class="hidden absolute right-0 top-full mt-2 w-[min(14rem,calc(100vw-1rem))] max-w-[calc(100vw-1rem)] rounded border bg-white text-slate-800 shadow-xl z-[60] overflow-hidden">
         {% for loginOption in property('loginOptions') %}
-            <gr-menu-item value="{{ loginOption['value'] }}">{{ loginOption['name'] }}</gr-menu-item>
+            <a href="{{ loginOption['value'] }}" class="block px-4 py-3 hover:bg-slate-100">
+                {{ loginOption['name'] }}
+            </a>
         {% endfor %}
-    </gr-select>
-    <script>
-        (function (select) {
-            [...select.querySelectorAll('gr-menu-item')].map((item) => {
-                item.addEventListener('click', () => {
-                    location.href = item.value;
-                });
-            });
-            select.classList.remove('login-select');
-        })(document.querySelector('gr-select.login-select'));
-    </script>
+    </div>
 {% else %}
     {{ component('profile') }}
 {% endif %}

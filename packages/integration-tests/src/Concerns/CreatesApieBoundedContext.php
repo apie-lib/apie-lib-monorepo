@@ -1,18 +1,32 @@
 <?php
 namespace Apie\IntegrationTests\Concerns;
 
+use Apie\Common\Other\Audit\AuditCreate;
+use Apie\Common\Other\AuditLog;
+use Apie\Common\Other\AuditOrigin;
 use Apie\Common\ValueObjects\EntityNamespace;
+use Apie\Core\ApieLib;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Identifiers\Ulid;
+use Apie\Core\IdentifierUtils;
+use Apie\Core\ValueObjects\IdFriendlyEntityReference;
+use Apie\Core\ValueObjects\NonEmptyString;
+use Apie\CountryAndPhoneNumber\BelgianPhoneNumber;
 use Apie\CountryAndPhoneNumber\DutchPhoneNumber;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Human;
 use Apie\IntegrationTests\Apie\TypeDemo\Entities\Ostrich;
+use Apie\IntegrationTests\Apie\TypeDemo\Enums\OrderStatus;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\AnimalIdentifier;
+use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\OrderIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\RestrictedEntityIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
+use Apie\IntegrationTests\Apie\TypeDemo\Lists\OrderLineList;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Animal;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Order;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\PrimitiveOnly;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\RestrictedEntity;
+use Apie\IntegrationTests\Apie\TypeDemo\Resources\UnionObject;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\UploadedFile;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
@@ -28,10 +42,16 @@ use Apie\IntegrationTests\Requests\JsonFields\GetAndSetUploadedFileField;
 use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
 use Apie\IntegrationTests\Requests\JsonFields\GetUuidField;
 use Apie\IntegrationTests\Requests\JsonFields\SetPrimitiveField;
+use Apie\IntegrationTests\Requests\RemoveResourceApiCall;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\IntegrationTests\Requests\ValidCreateResourceApiCall;
+use Apie\Serializer\ValueObjects\SerializedPhpObject;
 use Apie\TextValueObjects\CompanyName;
 use Apie\TextValueObjects\FirstName;
+use Beste\Clock\FrozenClock;
+use Beste\Clock\SystemClock;
+use DateTimeImmutable;
+use ReflectionClass;
 
 /**
  * @codeCoverageIgnore
@@ -117,7 +137,8 @@ trait CreatesApieBoundedContext
                 new GetAndSetPrimitiveField('floatingPoint', 1.5, 1.5),
                 new GetPrimitiveField('booleanField', null),
             ),
-            discardRequestValidation: true //casting string to int is not documented in OpenAPI spec.
+            discardRequestValidation: true, //casting string to int is not documented in OpenAPI spec.
+            expectedAuditLogsAdded: 1
         );
     }
 
@@ -180,6 +201,7 @@ trait CreatesApieBoundedContext
             new GetAndSetObjectField(
                 '',
                 new GetPrimitiveField('id', 1),
+                new GetPrimitiveField('orderStatus', OrderStatus::DRAFT->value),
                 new GetAndSetObjectField(
                     'orderLineList',
                     new GetAndSetObjectField(
@@ -194,6 +216,7 @@ trait CreatesApieBoundedContext
                     )
                 ),
             ),
+            expectedAuditLogsAdded: 1, // 1: created
         );
     }
 
@@ -219,6 +242,50 @@ trait CreatesApieBoundedContext
             ),
             entities: [$user],
             discardValidationOnFaker: true
+        );
+    }
+
+    /**
+     * Test for hydrating EntityReference on method call.
+     *
+     * Url POST /indexes/User/{userId}
+     */
+    public function createEntityReferenceTest(): TestRequestInterface
+    {
+        $user = new User(UserIdentifier::fromNative('test@example.com'));
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'indexes/User/test@example.com',
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('0', 'test@example.com'),
+            ),
+            entities: [$user],
+            discardValidationOnFaker: true
+        );
+    }
+
+    /**
+     * Test for entity with union object
+     *
+     * POST /UnionObject
+     */
+    public function createUnionObjectTestRequest(): TestRequestInterface
+    {
+        ApieLib::registerValueObject(DutchPhoneNumber::class);
+        ApieLib::registerValueObject(BelgianPhoneNumber::class);
+        return new ValidCreateResourceApiCall(
+            new BoundedContextId('types'),
+            UnionObject::class,
+            new GetAndSetObjectField(
+                '',
+                new GetAndSetPrimitiveField('id', Ulid::createRandom()->toNative()),
+                new GetAndSetPrimitiveField('value', 'string'),
+                new GetAndSetPrimitiveField('otherValue', true),
+                new GetAndSetPrimitiveField('phoneNumber', ' 0611223344 ', '+31611223344'),
+            ),
+            discardRequestValidation: true,
+            discardResponseValidation: true // Somehow gives a false positive.
         );
     }
 
@@ -271,6 +338,42 @@ trait CreatesApieBoundedContext
     }
 
     /**
+     * Test for entity with audit log for reading.
+     *
+     * GET /Order/{id}
+     */
+    public function getObjectWithReadAuditLogRequest(): TestRequestInterface
+    {
+        $object = new Order(new OrderLineList());
+        return new GetResourceApiCall(
+            new BoundedContextId('types'),
+            Order::class,
+            '1',
+            [$object],
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('id', '1'),
+                new GetPrimitiveField('orderStatus', OrderStatus::DRAFT->value),
+                new GetPrimitiveField('orderLineList', [])
+            ),
+            discardValidationOnFaker: true,
+            expectedAuditLogsAdded: 1
+        );
+    }
+
+    public function removeOrderTestRequest(): TestRequestInterface
+    {
+        $order = new Order(new OrderLineList());
+        return new RemoveResourceApiCall(
+            new BoundedContextId('types'),
+            'Order/1',
+            new GetAndSetObjectField(''),
+            entities: [$order],
+            expectedAuditLogsAdded: 2 // 1: created, 1: removed
+        );
+    }
+
+    /**
      * Test for entity with permission restrictions.
      *
      * GET /RestrictedEntity/{id}
@@ -300,6 +403,110 @@ trait CreatesApieBoundedContext
         );
     }
 
+    private function createAuditLogFor(BoundedContextId $boundedContextId, EntityInterface $entity, ?object $createdBy = null): AuditLog
+    {
+        return new AuditLog(
+            new IdFriendlyEntityReference(
+                $boundedContextId,
+                NonEmptyString::fromNative(
+                    IdentifierUtils::entityClassToIdentifier($entity)
+                        ->getMethod('getReferenceFor')
+                        ->invoke(null)
+                        ->name
+                ),
+                NonEmptyString::fromNative($entity->getId())
+            ),
+            SerializedPhpObject::createFromPhpObject($entity),
+            new AuditCreate(false),
+            new AuditOrigin('1.2.3.4', 'Apienternet Explorer', 'testserver', 'phpunit'),
+            SerializedPhpObject::createFromPhpObject($createdBy)
+        );
+    }
+
+    /**
+     * Test for reading audit logs.
+     *
+     * GET /AuditLog/
+     */
+    public function getAuditLogTestRequest(): TestRequestInterface
+    {
+        $userId = UserIdentifier::fromNative('user@example.com');
+        $user = new User($userId);
+        $boundedContextId = new BoundedContextId('types');
+        ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-01')));
+
+        $object = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440000'),
+            new CompanyName('Company NV'),
+            $user
+        );
+        $auditLog1 = $this->createAuditLogFor(
+            $boundedContextId,
+            $object,
+            $userId
+        );
+        ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-02')));
+        $object2 = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440001'),
+            new CompanyName('Company NV 2'),
+            null
+        );
+        $auditLog2 = $this->createAuditLogFor(
+            $boundedContextId,
+            $object2,
+            $userId
+        );
+        ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-03')));
+        $object3 = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440002'),
+            new CompanyName('Company NV 3'),
+            null
+        );
+        $auditLog3 = $this->createAuditLogFor(
+            $boundedContextId,
+            $object3
+        );
+
+        ApieLib::setPsrClock(FrozenClock::at(new DateTimeImmutable('1970-01-04')));
+        $object4 = new Order(new OrderLineList());
+        $refl = new ReflectionClass($object4);
+        $refl->getProperty('id')->setValue($object4, new OrderIdentifier(1));
+        $auditLog4 = $this->createAuditLogFor(
+            $boundedContextId,
+            $object4
+        );
+
+
+        return new GetResourceListApiCall(
+            new BoundedContextId('types'),
+            AuditLog::class,
+            [$object, $auditLog1, $object2, $auditLog2, $object3, $auditLog3, $object4, $auditLog4, $user],
+            new GetAndSetObjectField(
+                '',
+                new GetPrimitiveField('totalCount', 3),
+                new GetPrimitiveField('filteredCount', 3),
+                new GetPrimitiveField('first', '/types/AuditLog'),
+                new GetPrimitiveField('last', '/types/AuditLog'),
+                new GetAndSetObjectField(
+                    'list',
+                    new GetAndSetObjectField(
+                        '0',
+                        new GetAndSetPrimitiveField('id', $auditLog4->getId()->toNative()),
+                    ),
+                    new GetAndSetObjectField(
+                        '1',
+                        new GetAndSetPrimitiveField('id', $auditLog3->getId()->toNative()),
+                    ),
+                    new GetAndSetObjectField(
+                        '2',
+                        new GetAndSetPrimitiveField('id', $auditLog2->getId()->toNative()),
+                    ),
+                ),
+            ),
+            discardValidationOnFaker: true,
+        );
+    }
+
     /**
      * Test for entity list with permission restrictions.
      *
@@ -309,6 +516,7 @@ trait CreatesApieBoundedContext
     {
         $userId = UserIdentifier::fromNative('user@example.com');
         $user = new User($userId);
+        ApieLib::setPsrClock(SystemClock::create());
         $object = new RestrictedEntity(
             RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440000'),
             new CompanyName('Company NV'),
@@ -319,28 +527,41 @@ trait CreatesApieBoundedContext
             new CompanyName('Company NV 2'),
             null
         );
+        $object3 = new RestrictedEntity(
+            RestrictedEntityIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440002'),
+            new CompanyName('Company NV 3'),
+            null
+        );
         return new GetResourceListApiCall(
             new BoundedContextId('types'),
             RestrictedEntity::class,
-            [$object, $object2, $user],
+            [$object, $object2, $object3, $user],
             new GetAndSetObjectField(
                 '',
-                new GetPrimitiveField('totalCount', 1),
-                new GetPrimitiveField('filteredCount', 1),
+                new GetPrimitiveField('totalCount', 2),
+                new GetPrimitiveField('filteredCount', 2),
                 new GetPrimitiveField('first', '/types/RestrictedEntity'),
                 new GetPrimitiveField('last', '/types/RestrictedEntity'),
                 new GetAndSetObjectField(
                     'list',
+                    new GetAndSetObjectField(
+                        '1',
+                        new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440002'),
+                        new GetAndSetPrimitiveField('companyName', 'Company NV 3'),
+                        new GetPrimitiveField('requiredPermissions', []),
+                        new GetPrimitiveField('userId', null),
+                    ),
                     new GetAndSetObjectField(
                         '0',
                         new GetAndSetPrimitiveField('id', '550e8400-e29b-41d4-a716-446655440001'),
                         new GetAndSetPrimitiveField('companyName', 'Company NV 2'),
                         new GetPrimitiveField('requiredPermissions', []),
                         new GetPrimitiveField('userId', null),
-                    )
+                    ),
                 ),
             ),
-            discardValidationOnFaker: true
+            discardValidationOnFaker: true,
+            expectedAuditLogsAdded: 2 // 2: created for object2 + 3, object1 is not returned because of permissions
         );
     }
 
@@ -364,6 +585,8 @@ trait CreatesApieBoundedContext
 
     /**
      * Test for dropdown action for comboboxes on action method call.
+     *
+     * Url POST /Authentication/isThisMe/dropdown-options/userId
      */
     public function createMethodArgumentOptionsTestRequest(): TestRequestInterface
     {
@@ -383,6 +606,131 @@ trait CreatesApieBoundedContext
             entities: [$user],
             discardValidationOnFaker: true
         );
+    }
+
+    /**
+     * test POST /Authentication/acceptLocale
+     *
+     * Only works if application default locale is 'en'.
+     */
+    public function createAcceptLocaleRequestWithoutLanguageHeader(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/acceptLocale',
+            new GetPrimitiveField('', 'en')
+        );
+    }
+
+    public function createAcceptLocaleRequestWithLanguageHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/acceptLocale',
+            new GetPrimitiveField('', 'nl-NL')
+        ))
+        ->withAdditionalHeaders([
+            'accept-language' => 'nl-NL',
+            'content-language' => 'en-US',
+        ]);
+    }
+
+    /**
+     * test POST /Authentication/locale
+     *
+     * Only works if application default locale is 'en'.
+     */
+    public function createLocaleRequestWithoutLanguageHeader(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/locale',
+            new GetPrimitiveField('', 'en')
+        );
+    }
+
+    public function createLocaleRequestWithLanguageHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/locale',
+            new GetPrimitiveField('', 'en-US')
+        ))->withAdditionalHeaders([
+            'accept-language' => 'nl-NL',
+            'content-language' => 'en-US',
+        ]);
+    }
+
+    public function createTranslationTestHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Translation/translate',
+            new GetAndSetPrimitiveField(
+                '',
+                [
+                    'list' => ['apie', 'bounded', 'types', 'resource', 'example', 'name', 'plural']
+                ],
+                'Examples'
+            )
+        ))->withAdditionalHeaders([
+            'accept-language' => 'nl-NL',
+            'content-language' => 'en-US',
+        ]);
+    }
+
+    /**
+     * test POST /Authentication/dataLocale
+     *
+     * Only works if application default locale is 'en'.
+     */
+    public function createDataLocaleRequestWithoutLanguageHeader(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/dataLocale',
+            new GetPrimitiveField('', 'en')
+        );
+    }
+
+    public function createDataLocaleRequestWithLanguageHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/dataLocale',
+            new GetPrimitiveField('', 'en-US')
+        ))->withAdditionalHeaders([
+            'accept-language' => 'nl-NL',
+            'content-language' => 'en-US',
+        ]);
+    }
+
+    /**
+     * test POST /Authentication/localeObject
+     *
+     * Only works if application default locale is 'en'.
+     *
+     * It still results in null as the picked locale object class does not allow 'en' as a proper value.
+     */
+    public function createLocaleObjectRequestWithoutLanguageHeader(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/localeObject',
+            new GetPrimitiveField('', null)
+        );
+    }
+
+    public function createLocaleObjectRequestWithLanguageHeader(): TestRequestInterface
+    {
+        return (new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Authentication/localeObject',
+            new GetPrimitiveField('', 'en-US')
+        ))->withAdditionalHeaders([
+            'accept-language' => 'nl-nl',
+            'content-language' => 'en-us',
+        ]);
     }
 
     /**
@@ -415,6 +763,23 @@ trait CreatesApieBoundedContext
             new BoundedContextId('types'),
             'calc/1/plus/12',
             new GetPrimitiveField('', 13)
+        );
+    }
+
+    /**
+     * For testing /UploadedFile/createRandomFile (static method on resource)
+     */
+    public function createResourceStaticMethodRequest(): TestRequestInterface
+    {
+        return new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'UploadedFile/createRandomFile?fields=id,imageFile',
+            new GetAndSetObjectField(
+                '',
+                new GetUuidField('id'),
+                new GetPrimitiveField('imageFile', null),
+            ),
+            discardResponseValidation: true, // disabled because of fields request parameter not following required fields logic
         );
     }
 

@@ -17,13 +17,15 @@ class OneToManyAttribute
     public function __construct(
         public readonly ?string $propertyName,
         public readonly string $storageClass,
-        public readonly ?string $declaredClass = null
+        public readonly ?string $declaredClass = null,
+        public readonly ?string $nullableField = null,
+        public readonly ?string $mutableListField = null,
     ) {
     }
 
     /**
      * @template T of object
-     * @param ReflectionClass<T> $targetClass
+     * @param ReflectionClass<covariant T> $targetClass
      * @param T $instance
      */
     public function getReflectionProperty(ReflectionClass $targetClass, object $instance): ?ReflectionProperty

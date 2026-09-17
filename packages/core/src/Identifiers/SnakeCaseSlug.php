@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Core\Identifiers;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
@@ -13,6 +14,7 @@ use ReflectionProperty;
  * Indicate an identifier written with underscores and lowercase only(pascal_case).
  */
 #[FakeMethod('createRandom')]
+#[Description('Lowercase text written with underscores for separate words, for example "example_object"')]
 class SnakeCaseSlug implements HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
@@ -23,7 +25,7 @@ class SnakeCaseSlug implements HasRegexValueObjectInterface
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionMethod|ReflectionProperty|string $class
+     * @param ReflectionClass<covariant object>|ReflectionMethod|ReflectionProperty|string $class
      */
     public static function fromClass(ReflectionClass|ReflectionMethod|ReflectionProperty|string $class): self
     {
@@ -34,6 +36,21 @@ class SnakeCaseSlug implements HasRegexValueObjectInterface
             $short = $class;
         }
         return static::fromNative(strtolower($short));
+    }
+
+    public static function fromText(string $text): self
+    {
+        // Replace camelCase with snake_case
+        $text = preg_replace('/([a-z])([A-Z])/', '$1_$2', $text);
+        // Replace any non-alphanumeric character with underscore
+        $text = preg_replace('/[^a-zA-Z0-9]+/', '_', $text);
+        // Convert to lowercase
+        $text = strtolower($text);
+        // Remove leading/trailing underscores
+        $text = trim($text, '_');
+        // Collapse multiple underscores into one
+        $text = preg_replace('/_+/', '_', $text);
+        return static::fromNative($text);
     }
 
     public function humanize(): string

@@ -1,11 +1,13 @@
 <?php
 namespace Apie\Common\Actions;
 
+use Apie\Common\Events\ApieResourceReadList;
 use Apie\Core\Actions\ActionInterface;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
+use Apie\Core\Attributes\Description;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
@@ -28,7 +30,15 @@ final class GetListAction implements ActionInterface
 
     public static function isAuthorized(ApieContext $context, bool $runtimeChecks, bool $throwError = false): bool
     {
-        $refl = new ReflectionClass($context->getContext(ContextConstants::RESOURCE_NAME, $throwError));
+        $resourceName = $context->getContext(ContextConstants::RESOURCE_NAME, $throwError);
+        if (!$resourceName) {
+            return false;
+        }
+        try {
+            $refl = new ReflectionClass($resourceName);
+        } catch (\ReflectionException) {
+            return false;
+        }
         return $context->appliesToContext($refl, $runtimeChecks, $throwError ? new LogicException("Class can not be accessed") : null);
     }
 
@@ -47,6 +57,10 @@ final class GetListAction implements ActionInterface
             new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
         );
         $result = $resource->toPaginatedResult(QuerySearch::fromArray($rawContents, $context));
+        $context->dispatchEvent(new ApieResourceReadList(
+            $result,
+            $context
+        ));
         return ActionResponse::createRunSuccess($this->apieFacade, $context, $result, $resource);
     }
 
@@ -69,7 +83,13 @@ final class GetListAction implements ActionInterface
 
     public static function getDescription(ReflectionClass $class): string
     {
-        return 'Gets a list of resource that are an instance of ' . $class->getShortName();
+        $description = 'Gets a list of resource that are an instance of ' . $class->getShortName();
+
+        foreach ($class->getAttributes(Description::class) as $attribute) {
+            $description .= '. ' . $attribute->newInstance()->description;
+        }
+
+        return $description;
     }
     
     public static function getTags(ReflectionClass $class): StringList

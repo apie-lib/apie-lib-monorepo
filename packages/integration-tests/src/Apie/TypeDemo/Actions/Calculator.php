@@ -2,6 +2,7 @@
 namespace Apie\IntegrationTests\Apie\TypeDemo\Actions;
 
 use Apie\Core\Attributes\Context;
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\Route;
 use Apie\Core\BackgroundProcess\SequentialBackgroundProcess;
 use Apie\Core\Lists\ItemHashmap;
@@ -31,6 +32,7 @@ final class Calculator
         return sqrt($numberOne);
     }
 
+    #[Description('Runs an expensive background calculation')]
     public function expensiveBackgroundCalculation(int $payload): SequentialBackgroundProcess
     {
         return new SequentialBackgroundProcess(

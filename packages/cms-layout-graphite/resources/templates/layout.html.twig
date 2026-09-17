@@ -1,13 +1,17 @@
 <html>
-    <head>
-        <title>{{ property('title') }}</title>
-        <style>
-            {{ assetContent('main.css') }}
-        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ property('title') }}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>{{ assetContent('main.css') }}</style>
         <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/apie-graphite-layout@0.4.0/dist/apie-graphite-layout/apie-graphite-layout.css"
 />
+<script src="https://cdn.jsdelivr.net/npm/show-open-file-picker/polyfill.js"></script>
 <script
   type="module"
   src="https://cdn.jsdelivr.net/npm/@graphiteds/core@1.9.20/dist/core/core.esm.js"
@@ -19,36 +23,424 @@
 <script type="module" src="https://cdn.jsdelivr.net/npm/apie-graphite-layout@0.5.0/dist/apie-graphite-layout/apie-graphite-layout.esm.js" crossorigin></script>
 <script>{{ assetContent('main.js') }}</script>
     </head>
-    <body>
-      <div class="layout">
-        <nav>
-          {{ component('top') }}
-        </nav>
-        <aside style="background-color: white; z-index: 30; position: fixed; left: 0; top: 0;bottom: 0; width: 20%">
-          {{ component('menu') }}
+<body class="min-h-screen overflow-x-hidden bg-slate-100">
+
+<div class="flex h-screen flex-col overflow-hidden">
+    {{ component('top') }}
+
+
+    <div id="sidebarOverlay" class="fixed inset-0 z-10 hidden bg-slate-950/50 lg:hidden"></div>
+
+    <!-- Main Layout -->
+    <div class="flex flex-1 min-h-0 overflow-hidden">
+        {{ component('menu') }}
+
+
+        <!-- Content -->
+        <main class="flex-1 min-w-0 overflow-y-auto">
+
+            <div class="max-w-5xl mx-auto p-8">
+
+                <div class="bg-white rounded-lg shadow p-8">
+
+                    {{ component('content') }}
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside id="rightSidebar"
+               class="fixed inset-y-0 right-0 z-20 w-80 max-w-[90vw] bg-white border-l transition-all duration-300 overflow-y-auto translate-x-full lg:static lg:translate-x-0 lg:w-80 lg:h-full lg:flex-shrink-0">
+
+            <div class="flex justify-between items-center p-4 border-b">
+
+                <h2 class="font-semibold">
+                    Utility Panel
+                </h2>
+
+                <button id="rightToggle"
+                        class="text-xl hover:text-blue-600">
+                    ✕
+                </button>
+
+            </div>
+
+            <div class="p-4 space-y-6">
+
+                <div>
+
+                    <h3 class="font-semibold mb-2">
+                        Quick Form
+                    </h3>
+
+                    <input
+                            type="text"
+                            placeholder="Title"
+                            class="w-full border rounded px-3 py-2 mb-2">
+
+                    <textarea
+                            placeholder="Description"
+                            class="w-full border rounded px-3 py-2 h-24"></textarea>
+
+                    <button
+                            class="mt-3 w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700">
+                        Save
+                    </button>
+
+                </div>
+
+                <div class="rounded border border-amber-300 bg-amber-50 p-3">
+
+                    <h3 class="font-semibold mb-2">
+                        Confirmation
+                    </h3>
+
+                    <p class="text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+
+                    <div class="flex gap-2 mt-3">
+
+                        <button class="flex-1 bg-red-600 text-white rounded py-2">
+                            Delete
+                        </button>
+
+                        <button class="flex-1 bg-slate-300 rounded py-2">
+                            Cancel
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </aside>
-        <div style="padding-left: 21%; width: 79%;">
-          {{ component('content') }}
-        </div>
-      </div>
-      <div class="apie-sidebar">
-      </div>
-      <script type="text/javascript">
-(function (sidebar) {
-  document.addEventListener('click', (e) => {
-    if (sidebar.classList.contains('active')) {
-      let elm = e.target;
-      while (elm) {
-        if (elm === sidebar) {
-          return;
-        }
-        elm = elm.parentNode
-      }
-      sidebar.classList.remove('active');
-      sidebar.innerHTML = '';
+
+    </div>
+
+</div>
+
+<!-- Floating button when right sidebar is hidden -->
+<button id="showRight"
+        class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-700 hidden">
+    Panel
+</button>
+
+<script>
+
+    const leftSidebar = document.getElementById('leftSidebar');
+    const rightSidebar = document.getElementById('rightSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const leftToggle = document.getElementById('leftToggle');
+    const rightToggle = document.getElementById('rightToggle');
+    const showRight = document.getElementById('showRight');
+    const closeLeftButton = document.getElementById('closeLeftSidebar');
+    const loginButton = document.getElementById('loginButton');
+    const loginMenu = document.getElementById('loginMenu');
+    const collapseBtn = document.getElementById('collapseIcons');
+
+    function isDesktop() {
+        return window.innerWidth >= 1024;
     }
-  });
-}(document.querySelector('.apie-sidebar')));
-      </script>
-    </body>
+
+    function setDesktopSidebarWidth(widthClass, responsiveClass) {
+        leftSidebar.classList.remove('w-0', 'w-20', 'w-64', 'lg:w-0', 'lg:w-20', 'lg:w-64');
+        leftSidebar.classList.add(widthClass, responsiveClass);
+    }
+
+    function isSidebarHidden() {
+        return leftSidebar.classList.contains('w-0') || leftSidebar.classList.contains('lg:w-0');
+    }
+
+    function closeOverlay() {
+        overlay.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    function openOverlay() {
+        overlay.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function closeLeftSidebar() {
+        if (!isDesktop()) {
+            leftSidebar.classList.add('-translate-x-full');
+            leftSidebar.classList.remove('translate-x-0');
+            if (!rightSidebar.classList.contains('translate-x-0')) {
+                closeOverlay();
+            }
+        }
+    }
+
+    function openLeftSidebar() {
+        if (!isDesktop()) {
+            closeRightSidebar();
+            leftSidebar.classList.remove('-translate-x-full');
+            leftSidebar.classList.add('translate-x-0');
+            openOverlay();
+        }
+    }
+
+    function closeRightSidebar() {
+        if (!isDesktop()) {
+            rightSidebar.classList.add('translate-x-full');
+            rightSidebar.classList.remove('translate-x-0');
+            showRight.classList.remove('hidden');
+            if (!leftSidebar.classList.contains('translate-x-0')) {
+                closeOverlay();
+            }
+        }
+    }
+
+    function openRightSidebar() {
+        if (!isDesktop()) {
+            closeLeftSidebar();
+            rightSidebar.classList.remove('translate-x-full');
+            rightSidebar.classList.add('translate-x-0');
+            showRight.classList.add('hidden');
+            openOverlay();
+        }
+    }
+
+    function resetMobileSidebars() {
+        if (isDesktop()) {
+            leftSidebar.classList.remove('-translate-x-full', 'translate-x-0');
+            rightSidebar.classList.remove('translate-x-full', 'translate-x-0');
+            setDesktopSidebarWidth('w-64', 'lg:w-64');
+            closeOverlay();
+            showRight.classList.add('hidden');
+        } else {
+            leftSidebar.classList.remove('w-0', 'w-20', 'w-64', 'lg:w-0', 'lg:w-20', 'lg:w-64');
+            leftSidebar.classList.add('w-64');
+            rightSidebar.classList.remove('w-0', 'w-80', 'lg:w-0', 'lg:w-80');
+            rightSidebar.classList.add('w-80');
+            if (rightSidebar.classList.contains('translate-x-0')) {
+                showRight.classList.add('hidden');
+            } else {
+                showRight.classList.remove('hidden');
+            }
+        }
+    }
+
+    resetMobileSidebars();
+
+    leftToggle.onclick = (e) => {
+        e.stopPropagation();
+
+        if (!isDesktop()) {
+            if (leftSidebar.classList.contains('translate-x-0')) {
+                closeLeftSidebar();
+            } else {
+                openLeftSidebar();
+            }
+            return;
+        }
+
+        // Desktop: full-width toggle
+        if (isSidebarHidden()) {
+            setDesktopSidebarWidth('w-64', 'lg:w-64');
+        } else {
+            setDesktopSidebarWidth('w-0', 'lg:w-0');
+        }
+    };
+
+    rightToggle.onclick = (e) => {
+        e.stopPropagation();
+        if (!isDesktop()) {
+            closeRightSidebar();
+            return;
+        }
+
+        rightSidebar.classList.remove('w-80');
+        rightSidebar.classList.add('w-0');
+        showRight.classList.remove('hidden');
+    };
+
+    showRight.onclick = (e) => {
+        e.stopPropagation();
+        if (!isDesktop()) {
+            openRightSidebar();
+            return;
+        }
+
+        rightSidebar.classList.remove('w-0');
+        rightSidebar.classList.add('w-80');
+        showRight.classList.add('hidden');
+    };
+
+    if(loginButton) {
+        loginButton.onclick = (e) => {
+            e.stopPropagation();
+            loginMenu.classList.toggle('hidden');
+        };
+    }
+
+    if (loginMenu) {
+        document.addEventListener('click', () => {
+            loginMenu.classList.add('hidden');
+        });
+    }
+
+    overlay.addEventListener('click', () => {
+        closeLeftSidebar();
+        closeRightSidebar();
+    });
+
+    closeLeftButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeLeftSidebar();
+    });
+
+    window.addEventListener('resize', () => {
+        resetMobileSidebars();
+    });
+
+    // Sidebar compact toggle (icons-only)
+    function setSidebarCollapsed(collapsed) {
+        if (!isDesktop()) {
+            return;
+        }
+
+        if (collapsed) {
+            setDesktopSidebarWidth('w-20', 'lg:w-20');
+            leftSidebar.dataset.collapsed = 'true';
+            document.querySelectorAll('#leftSidebar .menu-label').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('#leftSidebar .arrow').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('#leftSidebar .menu-item').forEach(el => {
+                el.classList.remove('justify-between');
+                el.classList.add('justify-center');
+            });
+            document.querySelectorAll('#leftSidebar [data-menu]').forEach(ul => ul.classList.remove('open'));
+            document.querySelectorAll('#leftSidebar .arrow').forEach(a => a.classList.remove('rotate-90'));
+        } else {
+            setDesktopSidebarWidth('w-64', 'lg:w-64');
+            delete leftSidebar.dataset.collapsed;
+            document.querySelectorAll('#leftSidebar .menu-label').forEach(el => el.classList.remove('hidden'));
+            document.querySelectorAll('#leftSidebar .arrow').forEach(el => el.classList.remove('hidden'));
+            document.querySelectorAll('#leftSidebar .menu-item').forEach(el => {
+                el.classList.remove('justify-center');
+                el.classList.add('justify-between');
+            });
+        }
+    }
+
+    collapseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!isDesktop()) {
+            closeLeftSidebar();
+            return;
+        }
+
+        const collapsed = leftSidebar.dataset.collapsed === 'true';
+        setSidebarCollapsed(!collapsed);
+    });
+
+    // Updated nested sidebar menu toggles and selection behavior
+    function clearMainSelection() {
+        document.querySelectorAll('#leftSidebar .menu-item').forEach(el => el.classList.remove('bg-slate-800'));
+    }
+
+    function closeSubmenus() {
+        document.querySelectorAll('[data-menu]').forEach(ul => ul.classList.remove('open'));
+        document.querySelectorAll('.arrow').forEach(a => a.classList.remove('rotate-90'));
+    }
+
+    document.querySelectorAll('#leftSidebar .menu-item').forEach(item => {
+        const prevId = item.parentNode.parentNode.dataset.menu ?? null;
+
+        if (prevId) {
+            item.dataset.idMain = prevId;
+        }
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const idMain = item.dataset.idMain || item.dataset.id;
+            const id = item.dataset.id;
+            const submenuMain = id ? document.querySelector('[data-menu="' + idMain + '"]') : null;
+            const submenu = id ? document.querySelector('[data-menu="' + id + '"]') : null;
+            const collapsed = leftSidebar.dataset.collapsed === 'true';
+            const url = item.dataset.url;
+            console.log(id, idMain, submenu, submenuMain, collapsed, url, prevId);
+
+                clearMainSelection();
+                item.classList.add('bg-slate-800');
+                if (submenuMain && !submenuMain.classList.contains('open')) {
+                    closeSubmenus();
+                    submenuMain.classList.add('open');
+                    const arrow = item.querySelector('.arrow');
+                    if (arrow) {
+                        arrow.classList.add('rotate-90');
+                    }
+                } else if (submenu) {
+                    if (submenu.classList.contains('open')) {
+                        if (url) {
+                            location.href = url;
+                        }
+                    } else {
+                        submenu.classList.add('open');
+                        const arrow = item.querySelector('.arrow');
+                        if (arrow) {
+                            arrow.classList.add('rotate-90');
+                        }
+                    }
+                }
+            //    return;
+            /*
+
+            if (collapsed) {
+                if (submenu) {
+                    if (item.classList.contains('bg-slate-800')) {
+                        setSidebarCollapsed(false);
+                        setTimeout(() => {
+                            if (submenu) submenu.classList.add('open');
+                            const arrow = item.querySelector('.arrow'); if (arrow) arrow.classList.add('rotate-90');
+                        }, 320);
+                    } else {
+                        clearMainSelection();
+                        item.classList.add('bg-slate-800');
+                        closeSubmenus();
+                    }
+                } else {
+                    clearMainSelection();
+                    item.classList.add('bg-slate-800');
+                }
+                return;
+            }
+
+            clearMainSelection();
+            item.classList.add('bg-slate-800');
+
+            if (submenu) {
+                if (submenu.classList.contains('open')) {
+                    submenu.classList.remove('open');
+                    const arrow = item.querySelector('.arrow'); if (arrow) arrow.classList.remove('rotate-90');
+                } else {
+                    closeSubmenus();
+                    submenu.classList.add('open');
+                    const arrow = item.querySelector('.arrow'); if (arrow) arrow.classList.add('rotate-90');
+                }
+            } else {
+                closeSubmenus();
+            }*/
+        });
+    });
+
+    // Clicking outside the sidebars closes open submenus and mobile drawers
+    document.addEventListener('click', (e) => {
+        if (!leftSidebar.contains(e.target) && !rightSidebar.contains(e.target) && !overlay.contains(e.target)) {
+            if (!isDesktop()) {
+                closeLeftSidebar();
+                closeRightSidebar();
+            }
+            closeSubmenus();
+            clearMainSelection();
+        }
+    });
+
+</script>
+
+</body>
 </html>

@@ -2,6 +2,7 @@
 namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
 use Apie\Core\Attributes\Internal;
+use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\UuidV4;
 use Apie\Core\Lists\PermissionList;
@@ -13,6 +14,7 @@ use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\TextValueObjects\StrongPassword;
 use LogicException;
 
+#[ProvideIndex('indexProvider')]
 final class User implements EntityInterface, PermissionInterface
 {
     private ?EncryptedPassword $password = null;
@@ -97,6 +99,17 @@ final class User implements EntityInterface, PermissionInterface
             throw new LogicException('User is blocked');
         }
         return $this->password->verifyUnencryptedPassword($password);
+    }
+
+    /**
+     * @return array<string, int>
+     */
+    #[Internal]
+    public function indexProvider(): array
+    {
+        return [
+            $this->id->toNative() => 1,
+        ];
     }
 
     #[Internal]

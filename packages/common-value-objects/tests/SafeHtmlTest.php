@@ -1,6 +1,7 @@
 <?php
-namespace Apie\CommonValueObjects;
+namespace Apie\Tests\CommonValueObjects;
 
+use Apie\CommonValueObjects\SafeHtml;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Fixtures\TestHelpers\TestWithFaker;
 use Apie\Fixtures\TestHelpers\TestWithOpenapiSchema;
@@ -21,6 +22,7 @@ class SafeHtmlTest extends TestCase
             [
                 'type' => 'string',
                 'format' => 'safehtml',
+                'description' => true,
             ]
         );
     }
@@ -83,7 +85,7 @@ class SafeHtmlTest extends TestCase
             '<div>&nbsp;</div>'
         ];
         yield 'Exploitable wrong html' => [
-            '<div></div>',
+            '',
             '<div onload="xss()"></div>',
         ];
         yield 'Youtube movie' => [

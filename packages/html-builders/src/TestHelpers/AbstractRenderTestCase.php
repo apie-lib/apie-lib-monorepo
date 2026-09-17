@@ -2,6 +2,8 @@
 namespace Apie\HtmlBuilders\TestHelpers;
 
 use Apie\Common\ActionDefinitions\CreateResourceActionDefinition;
+use Apie\Common\MenuStructure\MenuBuilder;
+use Apie\Common\MenuStructure\MenuNode;
 use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
@@ -11,7 +13,8 @@ use Apie\Core\Lists\StringSet;
 use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ApieTranslatorInterface;
 use Apie\Core\Translator\Lists\TranslationStringSet;
-use Apie\Core\Translator\ValueObjects\TranslationString;
+use Apie\Core\Translator\ValueObjects\DummyTranslation;
+use Apie\Core\Translator\ValueObjects\MenuHeader;
 use Apie\Core\ValueObjects\DatabaseText;
 use Apie\Fixtures\BoundedContextFactory;
 use Apie\Fixtures\Entities\Order;
@@ -36,6 +39,7 @@ use Apie\HtmlBuilders\Components\Layout;
 use Apie\HtmlBuilders\Components\Layout\BoundedContextSelect;
 use Apie\HtmlBuilders\Components\Layout\LoginSelect;
 use Apie\HtmlBuilders\Components\Layout\Logo;
+use Apie\HtmlBuilders\Components\Layout\MenuItem;
 use Apie\HtmlBuilders\Components\Layout\ShowProfile;
 use Apie\HtmlBuilders\Components\Resource\Detail;
 use Apie\HtmlBuilders\Components\Resource\FieldDisplay\BooleanDisplay;
@@ -58,6 +62,9 @@ use Apie\TypeConverter\ReflectionTypeFactory;
 use Generator;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
+use Symfony\UX\Icons\IconRenderer;
+use Symfony\UX\Icons\Registry\ChainIconRegistry;
+use Symfony\UX\Icons\Twig\UXIconRuntime;
 
 /**
  * @codeCoverageIgnore
@@ -67,6 +74,17 @@ abstract class AbstractRenderTestCase extends TestCase
     abstract public function getRenderer(): ComponentRendererInterface;
 
     abstract public function getFixturesPath(): string;
+
+    public static function createTwigRuntimeForTests(): UXIconRuntime
+    {
+        return new UXIconRuntime(
+            new IconRenderer(
+                new ChainIconRegistry([]),
+            ),
+            true,
+            new \Psr\Log\NullLogger()
+        );
+    }
 
     /**
      * Overwriting this method to return true means the fixtures will be overwritten to ease big refactorings.
@@ -96,16 +114,35 @@ abstract class AbstractRenderTestCase extends TestCase
     {
         $rawContents = new RawContents('<marquee>Hello world</marquee>');
         $defaultConfiguration = new CurrentConfiguration([], new ApieContext(), BoundedContextFactory::createHashmap(), new BoundedContextId('default'));
+        $menuBuilder = new MenuBuilder();
+        $menuBuilder->addLeaf('test', new MenuNode(MenuHeader::fromNative('apie.menu.test.header'), '/test'));
+        $menuBuilder->addLeaf('test2', new MenuNode(MenuHeader::fromNative('apie.menu.test2.header'), '/test2'));
+        $menuBuilder->addLeaf('test3/test4', new MenuNode(MenuHeader::fromNative('apie.menu.test3.header'), '/test3'));
+       
+        
         yield 'Raw HTML concents' => [
             'expected-raw-contents.html',
             $rawContents,
         ];
+
+        
         yield 'Simple layout' => [
             'expected-simple-layout.html',
             new Layout(
                 'Title',
                 $defaultConfiguration,
-                $rawContents
+                $rawContents,
+                new MenuItem($menuBuilder->getRoot())
+            )
+        ];
+         
+        yield 'Simple layout, new menu' => [
+            'expected-with-menu.html',
+            new Layout(
+                'Title',
+                $defaultConfiguration,
+                $rawContents,
+                new MenuItem($menuBuilder->getRoot()),
             )
         ];
         yield 'Bounded context select => nothing selected' => [
@@ -161,7 +198,7 @@ abstract class AbstractRenderTestCase extends TestCase
 
         yield 'Simple Menu' => [
             'expected-menu.html',
-            new Layout\Menu($defaultConfiguration),
+            new Layout\MenuItem($menuBuilder->getRoot()),
         ];
 
         yield 'Resource overview filters' => [
@@ -272,7 +309,7 @@ abstract class AbstractRenderTestCase extends TestCase
             new SingleInput(
                 new FormName('name'),
                 42,
-                new TranslationStringSet([new TranslationString('test')]),
+                new TranslationStringSet([DummyTranslation::fromNative('apie.mid-section.parent')]),
                 false,
                 ReflectionTypeFactory::createReflectionType('string'),
                 new CmsSingleInput(['datetimetz', 'text'], new CmsInputOption())

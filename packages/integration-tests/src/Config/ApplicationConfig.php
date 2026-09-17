@@ -8,7 +8,7 @@ use ReflectionClass;
 final class ApplicationConfig
 {
     /**
-     * @param ReflectionClass<ApieDataLayer>|DatalayerImplementation $datalayerImplementation
+     * @param ReflectionClass<covariant ApieDataLayer>|DatalayerImplementation $datalayerImplementation
      */
     public function __construct(
         private bool $includeTemplating,
@@ -18,7 +18,7 @@ final class ApplicationConfig
     }
 
     /**
-     * @return ReflectionClass<ApieDataLayer>
+     * @return ReflectionClass<covariant ApieDataLayer>
      */
     public function getDatalayerImplementation(): ReflectionClass
     {
