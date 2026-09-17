@@ -21,6 +21,7 @@ class TypescriptTypeTest extends ObjectTestCase
                 'boolean',
                 'any',
                 'unknown',
+                'void'
             ],
         ];
     }

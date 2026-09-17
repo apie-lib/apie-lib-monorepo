@@ -3,18 +3,18 @@ namespace Apie\TypescriptCodeBuilder\Dto;
 
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\Optional;
-use Apie\Core\Lists\IdentifierList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]
 class RawJavascript implements TypescriptFileExpressionInterface
 {
-     #[Optional]
-    public IdentifierList $providesDefinition;
+    #[Optional]
+    public JavascriptIdentifierList $providesDefinition;
 
-     #[Optional]
-    public IdentifierList $needsDefinition;
+    #[Optional]
+    public JavascriptIdentifierList $needsDefinition;
 
     public function __construct(
         public string $javascriptCode,
@@ -22,8 +22,8 @@ class RawJavascript implements TypescriptFileExpressionInterface
         array $providesDefinition = [],
         array $needsDefinition = [],
     ) {
-        $this->providesDefinition = new IdentifierList($providesDefinition);
-        $this->needsDefinition = new IdentifierList($needsDefinition);
+        $this->providesDefinition = new JavascriptIdentifierList($providesDefinition);
+        $this->needsDefinition = new JavascriptIdentifierList($needsDefinition);
     }
 
     public static function createRandom(Generator $faker): self
@@ -39,11 +39,11 @@ class RawJavascript implements TypescriptFileExpressionInterface
     {
         return $this->javascriptCode;
     }
-    public function providesDefinitions(): IdentifierList
+    public function providesDefinitions(): JavascriptIdentifierList
     {
         return $this->providesDefinition;
     }
-    public function needsDefinitions(): IdentifierList
+    public function needsDefinitions(): JavascriptIdentifierList
     {
         return $this->needsDefinition;
     }

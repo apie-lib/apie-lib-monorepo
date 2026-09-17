@@ -1,15 +1,15 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Dto;
 
-use Apie\Core\Identifiers\Identifier;
-use Apie\Core\Lists\IdentifierList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 
 class TypescriptDeclaration implements TypescriptFileExpressionInterface
 {
     public function __construct(
-        public Identifier $name,
+        public JavascriptIdentifier $name,
         public TypescriptTypeDeclarationInterface $typehint
     ) {
     }
@@ -22,11 +22,11 @@ class TypescriptDeclaration implements TypescriptFileExpressionInterface
     {
         return '';
     }
-    public function providesDefinitions(): IdentifierList
+    public function providesDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList([$this->name]);
+        return new JavascriptIdentifierList([$this->name]);
     }
-    public function needsDefinitions(): IdentifierList
+    public function needsDefinitions(): JavascriptIdentifierList
     {
         return $this->typehint->needsDefinitions();
     }

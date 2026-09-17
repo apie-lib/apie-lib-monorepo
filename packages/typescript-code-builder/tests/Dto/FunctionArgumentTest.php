@@ -1,10 +1,10 @@
 <?php
 namespace Apie\Tests\TypescriptCodeBuilder\Dto;
 
-use Apie\Core\Identifiers\Identifier;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 
@@ -23,7 +23,7 @@ class FunctionArgumentTest extends ObjectTestCase
                 'name',
             ],
             'properties' => [
-                'name' => ['$ref' => '#/components/schemas/Identifier-post'],
+                'name' => ['$ref' => '#/components/schemas/JavascriptIdentifier-post'],
                 'typehint' => ['$ref' => '#/components/schemas/TypescriptTypeDeclaration-nullable-post'],
                 'optional' => ['type' => 'boolean', 'nullable' => false],
             ],
@@ -51,7 +51,7 @@ class FunctionArgumentTest extends ObjectTestCase
             'argument',
             'argument',
             new FunctionArgument(
-                new Identifier('argument')
+                new JavascriptIdentifier('argument')
             )
         ];
         yield 'optional function argument without typehint' => [
@@ -59,7 +59,7 @@ class FunctionArgumentTest extends ObjectTestCase
             'argument',
             'argument?: unknown',
             new FunctionArgument(
-                new Identifier('argument'),
+                new JavascriptIdentifier('argument'),
                 optional: true
             )
         ];
@@ -68,7 +68,7 @@ class FunctionArgumentTest extends ObjectTestCase
             'argument',
             'argument: number',
             new FunctionArgument(
-                new Identifier('argument'),
+                new JavascriptIdentifier('argument'),
                 TypescriptType::Number
             )
         ];
@@ -77,7 +77,7 @@ class FunctionArgumentTest extends ObjectTestCase
             'argument',
             'argument?: number',
             new FunctionArgument(
-                new Identifier('argument'),
+                new JavascriptIdentifier('argument'),
                 TypescriptType::Number,
                 true
             )

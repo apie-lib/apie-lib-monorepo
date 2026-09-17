@@ -1,19 +1,31 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Dto;
 
-use Apie\Core\Identifiers\Identifier;
-use Apie\Core\Lists\IdentifierList;
+use Apie\Core\Attributes\FakeMethod;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
+use Faker\Generator;
 
+#[FakeMethod('createRandom')]
 class FunctionArgument implements TypescriptFileExpressionInterface
 {
     public function __construct(
-        public Identifier $name,
+        public JavascriptIdentifier $name,
         public ?TypescriptTypeDeclarationInterface $typehint = null,
         public bool $optional = false,
     ) {
+    }
+
+    public static function createRandom(Generator $faker): self
+    {
+        return new self(
+            $faker->fakeClass(JavascriptIdentifier::class),
+            $faker->boolean(95) ? $faker->fakeClass(TypescriptType::class) : null,
+            $faker->boolean(5)
+        );
     }
 
     public function toTypescript(): string
@@ -27,12 +39,12 @@ class FunctionArgument implements TypescriptFileExpressionInterface
     {
         return $this->name->toNative();
     }
-    public function providesDefinitions(): IdentifierList
+    public function providesDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList();
+        return new JavascriptIdentifierList();
     }
-    public function needsDefinitions(): IdentifierList
+    public function needsDefinitions(): JavascriptIdentifierList
     {
-        return $this->typehint ? $this->typehint->needsDefinitions() : new IdentifierList();
+        return $this->typehint ? $this->typehint->needsDefinitions() : new JavascriptIdentifierList();
     }
 }

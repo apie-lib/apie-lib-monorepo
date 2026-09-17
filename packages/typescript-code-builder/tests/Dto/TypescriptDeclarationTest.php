@@ -17,7 +17,7 @@ class TypescriptDeclarationTest extends ObjectTestCase
             'type' => 'object',
             'properties' => [
                 'name' => [
-                    '$ref' => '#/components/schemas/Identifier-post'
+                    '$ref' => '#/components/schemas/JavascriptIdentifier-post'
                 ],
                 'typehint' => [
                     '$ref' => '#/components/schemas/TypescriptTypeDeclaration-post'

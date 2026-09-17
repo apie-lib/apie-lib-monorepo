@@ -1,7 +1,7 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Enums;
 
-use Apie\Core\Lists\IdentifierList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
 
 enum TypescriptType: string implements TypescriptTypeDeclarationInterface
@@ -11,6 +11,7 @@ enum TypescriptType: string implements TypescriptTypeDeclarationInterface
     case Boolean = 'boolean';
     case Any = 'any';
     case Unknown = 'unknown';
+    case Void = 'void';
 
     public function toTypescript(): string
     {
@@ -22,13 +23,13 @@ enum TypescriptType: string implements TypescriptTypeDeclarationInterface
         return '';
     }
 
-    public function needsDefinitions(): IdentifierList
+    public function needsDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList();
+        return new JavascriptIdentifierList();
     }
 
-    public function providesDefinitions(): IdentifierList
+    public function providesDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList();
+        return new JavascriptIdentifierList();
     }
 }

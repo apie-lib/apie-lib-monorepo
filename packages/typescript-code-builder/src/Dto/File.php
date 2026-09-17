@@ -1,8 +1,8 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Dto;
 
-use Apie\Core\Lists\IdentifierList;
 use Apie\TypescriptCodeBuilder\Lists\CodeList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 
 /**
@@ -32,12 +32,12 @@ class File implements TypescriptFileExpressionInterface
 
         return implode(PHP_EOL, $list);
     }
-    public function providesDefinitions(): IdentifierList
+    public function providesDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList();
+        return new JavascriptIdentifierList();
     }
-    public function needsDefinitions(): IdentifierList
+    public function needsDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList();
+        return new JavascriptIdentifierList();
     }
 }

@@ -1,7 +1,7 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Dto;
 
-use Apie\Core\Lists\IdentifierList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\Lists\CodeList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 
@@ -41,11 +41,11 @@ class IIFE implements TypescriptFileExpressionInterface
 
         return '(function(){' . PHP_EOL . $firstPrefix . implode(PHP_EOL . '    ', $list) . PHP_EOL . '}());';
     }
-    public function providesDefinitions(): IdentifierList
+    public function providesDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList();
+        return new JavascriptIdentifierList();
     }
-    public function needsDefinitions(): IdentifierList
+    public function needsDefinitions(): JavascriptIdentifierList
     {
         $provides = [];
         foreach ($this->codeList as $code) {
@@ -62,6 +62,6 @@ class IIFE implements TypescriptFileExpressionInterface
                 }
             }
         }
-        return new IdentifierList($list);
+        return new JavascriptIdentifierList($list);
     }
 }

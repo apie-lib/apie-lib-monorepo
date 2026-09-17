@@ -3,17 +3,19 @@ namespace Apie\TypescriptCodeBuilder;
 
 use Apie\Core\Attributes\ConcreteClasses;
 use Apie\Core\Dto\DtoInterface;
-use Apie\Core\Lists\IdentifierList;
 use Apie\TypescriptCodeBuilder\Dto\IIFE;
+use Apie\TypescriptCodeBuilder\Dto\ImportStatement;
 use Apie\TypescriptCodeBuilder\Dto\NamedFunction;
 use Apie\TypescriptCodeBuilder\Dto\RawJavascript;
 use Apie\TypescriptCodeBuilder\Dto\TypescriptDeclaration;
+use Apie\TypescriptCodeBuilder\Dto\VariableAssignment;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 
-#[ConcreteClasses(IIFE::class, TypescriptDeclaration::class, RawJavascript::class, NamedFunction::class)]
+#[ConcreteClasses(IIFE::class, ImportStatement::class, TypescriptDeclaration::class, RawJavascript::class, NamedFunction::class, VariableAssignment::class)]
 interface TypescriptFileExpressionInterface extends DtoInterface
 {
     public function toTypescript(): string;
     public function toJavascript(): string;
-    public function providesDefinitions(): IdentifierList;
-    public function needsDefinitions(): IdentifierList;
+    public function providesDefinitions(): JavascriptIdentifierList;
+    public function needsDefinitions(): JavascriptIdentifierList;
 }

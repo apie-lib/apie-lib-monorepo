@@ -26,10 +26,10 @@ class RawJavascriptTest extends ObjectTestCase
                     'nullable' => true,
                 ],
                 'providesDefinition' => [
-                    '$ref' => '#/components/schemas/IdentifierList-post'
+                    '$ref' => '#/components/schemas/JavascriptIdentifierList-post'
                 ],
                 'needsDefinition' => [
-                    '$ref' => '#/components/schemas/IdentifierList-post'
+                    '$ref' => '#/components/schemas/JavascriptIdentifierList-post'
                 ],
             ]
         ];

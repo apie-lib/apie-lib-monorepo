@@ -1,16 +1,16 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Dto;
 
-use Apie\Core\Identifiers\Identifier;
-use Apie\Core\Lists\IdentifierList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
 use Apie\TypescriptCodeBuilder\Lists\CodeList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 
 class NamedFunction implements TypescriptFileExpressionInterface
 {
     public function __construct(
-        public Identifier $name,
+        public JavascriptIdentifier $name,
         public ArgumentList $arguments,
         public CodeList $codeList
     ) {
@@ -41,11 +41,11 @@ class NamedFunction implements TypescriptFileExpressionInterface
         return 'function ' . $this->name . '(' . $this->arguments->toJavascript() . ') {' . PHP_EOL . $firstPrefix . implode(PHP_EOL . '    ', $list) . PHP_EOL . '}';
     }
     
-    public function providesDefinitions(): IdentifierList
+    public function providesDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList([$this->name]);
+        return new JavascriptIdentifierList([$this->name]);
     }
-    public function needsDefinitions(): IdentifierList
+    public function needsDefinitions(): JavascriptIdentifierList
     {
         $provides = [];
         foreach ($this->codeList as $code) {
@@ -62,11 +62,11 @@ class NamedFunction implements TypescriptFileExpressionInterface
                 }
             }
         }
-        foreach($this->arguments as $argument) {
+        foreach ($this->arguments as $argument) {
             foreach ($argument->needsDefinitions() as $definition) {
                 $list[$definition->toNative()] = $definition;
             }
         }
-        return new IdentifierList($list);
+        return new JavascriptIdentifierList($list);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 namespace Apie\Tests\TypescriptCodeBuilder\Dto;
 
-use Apie\Core\Identifiers\Identifier;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\TypescriptCodeBuilder\Dto\IIFE;
 use Apie\TypescriptCodeBuilder\Dto\TypescriptDeclaration;
@@ -34,7 +34,7 @@ class IIFEtest extends ObjectTestCase
     {
         $testItem = new IIFE(
             new CodeList([
-                new TypescriptDeclaration(Identifier::fromNative('example'), TypescriptType::Boolean)
+                new TypescriptDeclaration(JavascriptIdentifier::fromNative('example'), TypescriptType::Boolean)
             ])
         );
         $this->assertEquals('(function(){

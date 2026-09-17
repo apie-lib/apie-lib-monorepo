@@ -1,9 +1,9 @@
 <?php
 namespace Apie\Tests\TypescriptCodeBuilder\Dto\Typehints;
 
-use Apie\Core\Identifiers\Identifier;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\TypescriptCodeBuilder\Dto\Typehints\IdentifierTypeDefinition;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use PHPUnit\Framework\Attributes\Test;
 
 class IdentifierTypeDefinitionTest extends ObjectTestCase
@@ -19,7 +19,7 @@ class IdentifierTypeDefinitionTest extends ObjectTestCase
             'type' => 'object',
             'properties' => [
                 'name' => [
-                    '$ref' => '#/components/schemas/Identifier-post'
+                    '$ref' => '#/components/schemas/JavascriptIdentifier-post'
                 ],
             ],
             'required' => ['name'],
@@ -29,8 +29,8 @@ class IdentifierTypeDefinitionTest extends ObjectTestCase
     #[Test]
     public function type_definitions_render_no_javascript_but_render_typescript()
     {
-        $testItem = new IdentifierTypeDefinition(new Identifier('User'));
+        $testItem = new IdentifierTypeDefinition(new JavascriptIdentifier('user'));
         $this->assertEquals('', $testItem->toJavascript());
-        $this->assertEquals('User', $testItem->toTypescript());
+        $this->assertEquals('user', $testItem->toTypescript());
     }
 }

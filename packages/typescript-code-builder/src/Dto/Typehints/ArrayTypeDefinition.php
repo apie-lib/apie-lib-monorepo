@@ -2,7 +2,7 @@
 namespace Apie\TypescriptCodeBuilder\Dto\Typehints;
 
 use Apie\Core\Attributes\FakeMethod;
-use Apie\Core\Lists\IdentifierList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
 use Faker\Generator;
@@ -26,11 +26,11 @@ class ArrayTypeDefinition implements TypescriptTypeDeclarationInterface
     {
         return '';
     }
-    public function providesDefinitions(): IdentifierList
+    public function providesDefinitions(): JavascriptIdentifierList
     {
-        return new IdentifierList();
+        return new JavascriptIdentifierList();
     }
-    public function needsDefinitions(): IdentifierList
+    public function needsDefinitions(): JavascriptIdentifierList
     {
         return $this->typehint->needsDefinitions();
     }
