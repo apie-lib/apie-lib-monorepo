@@ -1,9 +1,9 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Dto;
 
-use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
 use Apie\TypescriptCodeBuilder\Lists\CodeList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 

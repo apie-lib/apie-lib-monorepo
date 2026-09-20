@@ -1,12 +1,22 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Dto;
 
+use Apie\Core\Attributes\FakeMethod;
+use Apie\TypescriptCodeBuilder\Dto\Expressions\ArrayAccessExpression;
+use Apie\TypescriptCodeBuilder\Dto\Expressions\IdentifierExpression;
+use Apie\TypescriptCodeBuilder\Dto\Expressions\NumberLiteralExpression;
+use Apie\TypescriptCodeBuilder\Dto\Expressions\ObjectExpression;
+use Apie\TypescriptCodeBuilder\Dto\Expressions\StringLiteralExpression;
+use Apie\TypescriptCodeBuilder\Dto\Expressions\TernaryExpression;
+use Apie\TypescriptCodeBuilder\Dto\Expressions\UnaryOperationExpression;
 use Apie\TypescriptCodeBuilder\Enums\VariableDeclarationKind;
 use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
 use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
+use Faker\Generator;
 
+#[FakeMethod('createRandom')]
 class VariableAssignment implements TypescriptFileExpressionInterface
 {
     public function __construct(
@@ -40,5 +50,24 @@ class VariableAssignment implements TypescriptFileExpressionInterface
             $definitions->append($definition);
         }
         return $definitions;
+    }
+
+    public static function createRandom(Generator $faker): self
+    {
+        return new VariableAssignment(
+            $faker->fakeClass(VariableDeclarationKind::class),
+            $faker->fakeClass(JavascriptIdentifier::class),
+            $faker->fakeClass(
+                $faker->randomElement([
+                    ArrayAccessExpression::class,
+                    IdentifierExpression::class,
+                    NumberLiteralExpression::class,
+                    StringLiteralExpression::class,
+                    ObjectExpression::class,
+                    TernaryExpression::class,
+                    UnaryOperationExpression::class,
+                ])
+            )
+        );
     }
 }

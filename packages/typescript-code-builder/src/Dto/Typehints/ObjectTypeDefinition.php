@@ -1,9 +1,9 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Dto\Typehints;
 
-use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
 
 /**

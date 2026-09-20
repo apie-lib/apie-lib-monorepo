@@ -1,12 +1,12 @@
 <?php
 namespace Apie\Tests\TypescriptCodeBuilder\Dto;
 
-use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\TypescriptCodeBuilder\Dto\File;
 use Apie\TypescriptCodeBuilder\Dto\TypescriptDeclaration;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
 use Apie\TypescriptCodeBuilder\Lists\CodeList;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use PHPUnit\Framework\Attributes\Test;
 
 class Filetest extends ObjectTestCase

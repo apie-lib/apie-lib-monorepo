@@ -31,7 +31,7 @@ trait TestWithOpenapiSchema
         $components = $builder->getComponents();
         $schemas = $components->schemas;
         $this->assertNotEmpty($schemas);
-        $this->assertArrayHasKey($expectedKey, $schemas);
+        $this->assertArrayHasKey($expectedKey, $schemas, 'Found keys: ' . implode(', ', array_keys($schemas)));
         $actualSchema = $schemas[$expectedKey];
         if ($expected->pattern === true) {
             $expected->pattern = $actualSchema->pattern;

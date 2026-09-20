@@ -2,10 +2,10 @@
 namespace Apie\TypescriptCodeBuilder\Dto\Typehints;
 
 use Apie\Core\Attributes\FakeMethod;
-use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
 use Faker\Generator;
 
@@ -21,7 +21,7 @@ class CallbackTypeDefinition implements TypescriptTypeDeclarationInterface
     ) {
     }
 
-    public static function createRandom(Generator $faker) 
+    public static function createRandom(Generator $faker)
     {
         return new self(
             $faker->fakeClass(ArgumentList::class),

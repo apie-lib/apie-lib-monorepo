@@ -12013,6 +12013,7 @@ components:
         - acap
         - acct
         - acd
+        - ace
         - acr
         - adiumxtra
         - adt
@@ -12322,6 +12323,7 @@ components:
         - sarif
         - secondlife
         - secret-token
+        - seki
         - service
         - session
         - sftp
@@ -12369,6 +12371,7 @@ components:
         - tftp
         - things
         - thismessage
+        - tii
         - tip
         - tn3270
         - tool
@@ -12431,6 +12434,7 @@ components:
         - acap
         - acct
         - acd
+        - ace
         - acr
         - adiumxtra
         - adt
@@ -12740,6 +12744,7 @@ components:
         - sarif
         - secondlife
         - secret-token
+        - seki
         - service
         - session
         - sftp
@@ -12787,6 +12792,7 @@ components:
         - tftp
         - things
         - thismessage
+        - tii
         - tip
         - tn3270
         - tool
@@ -15444,6 +15450,7 @@ components:
         - acap
         - acct
         - acd
+        - ace
         - acr
         - adiumxtra
         - adt
@@ -15764,6 +15771,7 @@ components:
         - sarif
         - secondlife
         - secret-token
+        - seki
         - service
         - session
         - sftp
@@ -15813,6 +15821,7 @@ components:
         - things
         - thismessage
         - thzp
+        - tii
         - tip
         - tn3270
         - tool
@@ -15880,6 +15889,7 @@ components:
         - acap
         - acct
         - acd
+        - ace
         - acr
         - adiumxtra
         - adt
@@ -16200,6 +16210,7 @@ components:
         - sarif
         - secondlife
         - secret-token
+        - seki
         - service
         - session
         - sftp
@@ -16249,6 +16260,7 @@ components:
         - things
         - thismessage
         - thzp
+        - tii
         - tip
         - tn3270
         - tool

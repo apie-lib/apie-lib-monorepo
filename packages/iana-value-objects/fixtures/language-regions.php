@@ -1725,7 +1725,7 @@ return array(
     'Active' => true,
     'Type' => 'region',
     'Subtag' => 'NR',
-    'Description' => 'Nauru',
+    'Description' => 'Naoero',
     'Added' => '2005-10-16',
   ),
   'nt' =>

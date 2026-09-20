@@ -2,6 +2,7 @@
 namespace Apie\Fixtures\TestHelpers;
 
 use Apie\Core\Attributes\FakeCount;
+use Apie\Core\ValueObjects\Utils;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -31,9 +32,10 @@ abstract class ObjectTestCase extends TestCase
     #[Test]
     public function it_works_with_schema_generator()
     {
+        $name = Utils::getDisplayNameForValueObject((new \ReflectionClass(static::className())));
         $this->runOpenapiSchemaTestForCreation(
             static::className(),
-            (new \ReflectionClass(static::className()))->getShortName() . '-post',
+            $name . '-post',
             static::getOpenApiSchemaForCreation()
         );
     }

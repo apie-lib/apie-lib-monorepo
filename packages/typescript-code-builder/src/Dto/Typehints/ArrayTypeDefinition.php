@@ -2,8 +2,8 @@
 namespace Apie\TypescriptCodeBuilder\Dto\Typehints;
 
 use Apie\Core\Attributes\FakeMethod;
-use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
+use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
 use Faker\Generator;
 

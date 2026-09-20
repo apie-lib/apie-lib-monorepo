@@ -5,8 +5,8 @@ use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
 use Apie\TypescriptCodeBuilder\Dto\Typehints\ObjectTypeDefinition;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
-use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use PHPUnit\Framework\Attributes\Test;
 
 class ObjectTypeDefinitionTest extends ObjectTestCase

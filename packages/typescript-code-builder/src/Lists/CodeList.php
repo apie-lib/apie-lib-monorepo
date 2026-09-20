@@ -20,7 +20,7 @@ class CodeList extends ItemList
         $items = [];
         $count = $faker->numberBetween(0, 6);
         for ($i = 0; $i < $count; $i++) {
-            $items[] = $faker->fakeClass(TypescriptDeclaration::class);
+            $items[] = $faker->fakeClass($faker->randomElement([TypescriptDeclaration::class]));
         }
         return new self($items);
     }

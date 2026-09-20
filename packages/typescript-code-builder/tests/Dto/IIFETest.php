@@ -1,12 +1,12 @@
 <?php
 namespace Apie\Tests\TypescriptCodeBuilder\Dto;
 
-use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\TypescriptCodeBuilder\Dto\IIFE;
 use Apie\TypescriptCodeBuilder\Dto\TypescriptDeclaration;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
 use Apie\TypescriptCodeBuilder\Lists\CodeList;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use PHPUnit\Framework\Attributes\Test;
 
 class IIFEtest extends ObjectTestCase

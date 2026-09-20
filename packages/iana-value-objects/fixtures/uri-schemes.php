@@ -75,6 +75,18 @@ return array(
     'Notes' => '',
     'Active' => true,
   ),
+  'ace' =>
+  array(
+    'URI Scheme' => 'ace',
+    'Template' => 'prov/ace',
+    'Description' => 'ace',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '26',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[Frank_Bryan]',
+    'Notes' => '',
+    'Active' => true,
+  ),
   'acr' =>
   array(
     'URI Scheme' => 'acr',
@@ -3917,6 +3929,18 @@ return array(
     'Notes' => '',
     'Active' => true,
   ),
+  'seki' =>
+  array(
+    'URI Scheme' => 'seki',
+    'Template' => 'prov/seki',
+    'Description' => 'seki',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1026',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[Jim_Jeang]',
+    'Notes' => '',
+    'Active' => true,
+  ),
   'service' =>
   array(
     'URI Scheme' => 'service',
@@ -4502,6 +4526,18 @@ return array(
     'CRI Scheme Number' => '11820',
     'Well-Known URI Support' => '-',
     'Reference' => '[IESG]',
+    'Notes' => '',
+    'Active' => true,
+  ),
+  'tii' =>
+  array(
+    'URI Scheme' => 'tii',
+    'Template' => 'prov/tii',
+    'Description' => 'tii',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1027',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[Naoto_Fujie]',
     'Notes' => '',
     'Active' => true,
   ),
