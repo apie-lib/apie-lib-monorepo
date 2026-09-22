@@ -372,6 +372,16 @@
         },
         {
             "type": "path",
+            "url": "/packages/typescript-code-builder",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/typescript-code-builder": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
             "url": "/packages/console",
             "options": {
                 "symlink": true,
