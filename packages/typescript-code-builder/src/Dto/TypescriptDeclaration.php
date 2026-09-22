@@ -31,7 +31,7 @@ class TypescriptDeclaration implements TypescriptFileExpressionInterface
     {
         return '';
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList([$this->name]);
     }

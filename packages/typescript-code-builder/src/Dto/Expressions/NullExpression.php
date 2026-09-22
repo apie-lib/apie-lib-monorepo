@@ -14,7 +14,7 @@ class NullExpression implements TypescriptFileExpressionInterface
     {
         return 'null';
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

@@ -43,7 +43,7 @@ class IIFEtest extends ObjectTestCase
         $this->assertEquals('(function(){
     type example = boolean;
 }());', $testItem->toTypescript());
-        $this->assertEquals([], $testItem->providesDefinitions()->toArray());
+        $this->assertEquals([], $testItem->providesDefinitions(false)->toArray());
         $this->assertEquals([], $testItem->needsDefinitions()->toArray());
     }
 }

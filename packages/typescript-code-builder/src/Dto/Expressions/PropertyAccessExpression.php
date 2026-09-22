@@ -24,7 +24,7 @@ class PropertyAccessExpression implements TypescriptFileExpressionInterface
     {
         return $this->object->toJavascript() . '.' . $this->property->toNative();
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

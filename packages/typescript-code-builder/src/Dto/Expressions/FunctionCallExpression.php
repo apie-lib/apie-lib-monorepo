@@ -24,7 +24,7 @@ class FunctionCallExpression implements TypescriptFileExpressionInterface
     {
         return $this->function->toJavascript() . '(' . $this->arguments->toJavascript() . ')';
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

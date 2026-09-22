@@ -23,7 +23,7 @@ class NumberLiteralExpression implements TypescriptFileExpressionInterface, HasR
     {
         return $this->toNative();
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

@@ -38,8 +38,11 @@ class VariableAssignment implements TypescriptFileExpressionInterface
         return $this->kind->value . ' ' . $this->name->toNative() . ' = ' . $this->expression->toJavascript() . ';';
     }
 
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
+        if ($applyBlockScope && $this->kind !== VariableDeclarationKind::Var) {
+            return new JavascriptIdentifierList();
+        }
         return new JavascriptIdentifierList([$this->name]);
     }
 
@@ -47,7 +50,7 @@ class VariableAssignment implements TypescriptFileExpressionInterface
     {
         $definitions = $this->typehint?->needsDefinitions() ?? new JavascriptIdentifierList();
         foreach ($this->expression->needsDefinitions() as $definition) {
-            $definitions->append($definition);
+            $definitions = $definitions->append($definition);
         }
         return $definitions;
     }

@@ -34,7 +34,7 @@ class Filetest extends ObjectTestCase
         );
         $this->assertEquals('', $testItem->toJavascript());
         $this->assertEquals('type example = bool', $testItem->toTypescript());
-        $this->assertEquals([], $testItem->providesDefinitions()->toArray());
+        $this->assertEquals([], $testItem->providesDefinitions(false)->toArray());
         $this->assertEquals([], $testItem->needsDefinitions()->toArray());
     }
 }

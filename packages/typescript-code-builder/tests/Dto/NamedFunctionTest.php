@@ -60,7 +60,7 @@ class NamedFunctionTest extends ObjectTestCase
         $this->assertEquals('function add(a: number, b?: number) {
     return a + (b ?? 0)
 }', $testItem->toTypescript());
-        $this->assertEquals([new JavascriptIdentifier('add')], $testItem->providesDefinitions()->toArray());
+        $this->assertEquals([new JavascriptIdentifier('add')], $testItem->providesDefinitions(false)->toArray());
         $this->assertEquals([], $testItem->needsDefinitions()->toArray());
     }
 }

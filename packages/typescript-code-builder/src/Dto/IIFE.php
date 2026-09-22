@@ -41,7 +41,7 @@ class IIFE implements TypescriptFileExpressionInterface
 
         return '(function(){' . PHP_EOL . $firstPrefix . implode(PHP_EOL . '    ', $list) . PHP_EOL . '}());';
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }
@@ -49,7 +49,7 @@ class IIFE implements TypescriptFileExpressionInterface
     {
         $provides = [];
         foreach ($this->codeList as $code) {
-            foreach ($code->providesDefinitions() as $definition) {
+            foreach ($code->providesDefinitions(true) as $definition) {
                 $provides[$definition->toNative()] = true;
             }
         }

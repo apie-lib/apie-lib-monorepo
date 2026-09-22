@@ -32,7 +32,7 @@ class ObjectTypeDefinition implements TypescriptTypeDeclarationInterface
         return '';
     }
 
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

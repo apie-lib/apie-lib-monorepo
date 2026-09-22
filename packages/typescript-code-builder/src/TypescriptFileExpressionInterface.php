@@ -3,6 +3,18 @@ namespace Apie\TypescriptCodeBuilder;
 
 use Apie\Core\Attributes\ConcreteClasses;
 use Apie\Core\Dto\DtoInterface;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\BlockStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\BreakStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\ContinueStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\DoWhileStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\ForInStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\ForOfStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\ForStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\GotoStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\IfStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\LabelStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\SwitchStatement;
+use Apie\TypescriptCodeBuilder\Dto\ControlFlow\WhileStatement;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\ArrayAccessExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\AsExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\BinaryOperationExpression;
@@ -50,11 +62,23 @@ use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
     UndefinedExpression::class,
     UnaryOperationExpression::class,
     TernaryExpression::class,
+    BreakStatement::class,
+    BlockStatement::class,
+    ContinueStatement::class,
+    DoWhileStatement::class,
+    ForInStatement::class,
+    ForOfStatement::class,
+    ForStatement::class,
+    GotoStatement::class,
+    IfStatement::class,
+    LabelStatement::class,
+    SwitchStatement::class,
+    WhileStatement::class,
 )]
 interface TypescriptFileExpressionInterface extends DtoInterface
 {
     public function toTypescript(): string;
     public function toJavascript(): string;
-    public function providesDefinitions(): JavascriptIdentifierList;
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList;
     public function needsDefinitions(): JavascriptIdentifierList;
 }

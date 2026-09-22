@@ -38,7 +38,7 @@ class ImportStatementTest extends ObjectTestCase
         $this->assertSame('import { createapi } from "./contents/es6/index";', $type->toJavascript());
         $this->assertSame(['createapi'], array_map(
             static fn (JavascriptIdentifier $identifier): string => $identifier->toNative(),
-            $type->providesDefinitions()->toArray(),
+            $type->providesDefinitions(false)->toArray(),
         ));
     }
 

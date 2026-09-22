@@ -25,7 +25,7 @@ class BinaryOperationExpression implements TypescriptFileExpressionInterface
     {
         return $this->left->toJavascript() . ' ' . $this->operator->value . ' ' . $this->right->toJavascript();
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

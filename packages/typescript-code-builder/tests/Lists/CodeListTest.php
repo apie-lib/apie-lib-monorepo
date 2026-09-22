@@ -16,7 +16,10 @@ class CodeListTest extends ObjectTestCase
         return [
             'type' => 'array',
             'items' => [
-                '$ref' => '#/components/schemas/TypescriptFileExpression-post'
+                'oneOf' => [
+                    ['$ref' => '#/components/schemas/TypescriptFileExpression-post'],
+                    ['$ref' => '#/components/schemas/TypescriptTypeDeclaration-post'],
+                ],
             ],
         ];
     }

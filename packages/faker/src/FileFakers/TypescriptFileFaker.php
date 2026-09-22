@@ -26,7 +26,6 @@ final class TypescriptFileFaker implements ApieFileFaker
     public function createResource(Generator $faker, string $originalFilename, string $mimeType): mixed
     {
         $file = $faker->fakeClass(\Apie\TypescriptCodeBuilder\Dto\File::class);
-
         return Stream::create($file->toTypescript())->detach();
     }
 }

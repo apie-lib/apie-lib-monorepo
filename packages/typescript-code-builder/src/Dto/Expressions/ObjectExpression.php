@@ -28,7 +28,7 @@ class ObjectExpression implements TypescriptFileExpressionInterface
         }
         return '{ ' . implode(', ', $properties) . ' }';
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

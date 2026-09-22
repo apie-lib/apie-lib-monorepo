@@ -14,7 +14,7 @@ class UndefinedExpression implements TypescriptFileExpressionInterface
     {
         return 'undefined';
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

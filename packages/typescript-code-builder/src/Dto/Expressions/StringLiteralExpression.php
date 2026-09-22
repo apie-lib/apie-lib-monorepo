@@ -18,7 +18,7 @@ class StringLiteralExpression implements TypescriptFileExpressionInterface
     {
         return $this->toTypescript();
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

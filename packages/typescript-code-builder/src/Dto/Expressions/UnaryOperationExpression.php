@@ -22,7 +22,7 @@ class UnaryOperationExpression implements TypescriptFileExpressionInterface
     {
         return $this->operator->value . ' ' . $this->expression->toJavascript();
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

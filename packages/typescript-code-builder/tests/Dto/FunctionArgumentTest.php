@@ -40,7 +40,7 @@ class FunctionArgumentTest extends ObjectTestCase
     ) {
         $this->assertEquals($expectedJavascript, $testItem->toJavascript());
         $this->assertEquals($expectedTypescript, $testItem->toTypescript());
-        $this->assertEquals([], $testItem->providesDefinitions()->toArray());
+        $this->assertEquals([], $testItem->providesDefinitions(false)->toArray());
         $this->assertEquals($expectedNeededDefinitions, $testItem->needsDefinitions()->toStringArray());
     }
 

@@ -29,7 +29,7 @@ class ImportStatement implements TypescriptFileExpressionInterface
         return $this->typeOnly ? '' : $this->toTypescript();
     }
 
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return $this->imports;
     }

@@ -27,7 +27,7 @@ class TernaryExpression implements TypescriptFileExpressionInterface
         return $this->condition->toJavascript() . ' ? ' . $this->whenTrue->toJavascript() . ' : ' . $this->whenFalse->toJavascript();
     }
 
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

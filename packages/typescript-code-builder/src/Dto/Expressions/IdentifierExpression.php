@@ -19,7 +19,7 @@ class IdentifierExpression implements TypescriptFileExpressionInterface
     {
         return $this->name->toNative();
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

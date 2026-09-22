@@ -32,7 +32,7 @@ class File implements TypescriptFileExpressionInterface
 
         return implode(PHP_EOL, $list);
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

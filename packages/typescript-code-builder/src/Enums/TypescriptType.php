@@ -30,7 +30,7 @@ enum TypescriptType: string implements TypescriptTypeDeclarationInterface
         return new JavascriptIdentifierList();
     }
 
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }

@@ -41,6 +41,6 @@ class InterfaceDefinitionTest extends ObjectTestCase
 
         $this->assertSame('interface User { name: string; age?: number; }', $type->toTypescript());
         $this->assertSame('', $type->toJavascript());
-        $this->assertSame(['User'], $type->providesDefinitions()->toStringArray());
+        $this->assertSame(['User'], $type->providesDefinitions(false)->toStringArray());
     }
 }

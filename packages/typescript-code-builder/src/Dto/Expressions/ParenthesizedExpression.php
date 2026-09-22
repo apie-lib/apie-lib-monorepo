@@ -21,7 +21,7 @@ class ParenthesizedExpression implements TypescriptFileExpressionInterface
     {
         return '(' . $this->expression->toJavascript() . ')';
     }
-    public function providesDefinitions(): JavascriptIdentifierList
+    public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {
         return new JavascriptIdentifierList();
     }
