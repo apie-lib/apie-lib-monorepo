@@ -5,6 +5,7 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\Dto\DtoInterface;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Metadata\Fields\DiscriminatorColumn;
+use Apie\Core\Metadata\Fields\StaticDiscriminatorColumn;
 use Apie\Core\Metadata\MetadataFactory;
 use ReflectionClass;
 
@@ -35,11 +36,11 @@ class InteractiveConsoleCommand implements DtoInterface
         }
         $handled = [];
         foreach ($metadata->getHashmap() as $key => $mapping) {
-            if ($mapping instanceof DiscriminatorColumn) {
+            if ($mapping instanceof DiscriminatorColumn || $mapping instanceof StaticDiscriminatorColumn) {
                 continue;
             }
             $handled[] = $key;
-            $inputs = [...$inputs, ...$this->inputPerField[$key]];
+            $inputs = [...$inputs, ...($this->inputPerField[$key] ?? [])];
         }
         $diff = array_diff($handled, array_keys($this->inputPerField));
         if (!empty($diff)) {

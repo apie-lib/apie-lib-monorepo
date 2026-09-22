@@ -1,7 +1,9 @@
 <?php
 namespace Apie\SchemaGenerator\SchemaProviders;
 
+use Apie\Core\Context\ApieContext;
 use Apie\Core\Entities\PolymorphicEntityInterface;
+use Apie\Core\Metadata\MetadataFactory;
 use Apie\Core\Other\DiscriminatorMapping;
 use Apie\SchemaGenerator\Builders\ComponentsBuilder;
 use Apie\SchemaGenerator\Interfaces\SchemaProvider;
@@ -18,7 +20,7 @@ class PolymorphicEntitySchemaProvider implements SchemaProvider
 {
     public function supports(ReflectionClass $class): bool
     {
-        if (!$class->implementsInterface(PolymorphicEntityInterface::class)) {
+        if (!in_array(PolymorphicEntityInterface::class, $class->getInterfaceNames())) {
             return false;
         }
         $method = $class->getMethod('getDiscriminatorMapping');
@@ -47,11 +49,13 @@ class PolymorphicEntitySchemaProvider implements SchemaProvider
         /** @var DiscriminatorMapping */
         $discriminatorMapping = $method->invoke(null);
 
+        $mapping = [];
         foreach ($discriminatorMapping->getConfigs() as $config) {
             $key = $config->getDiscriminator();
             $value = $componentsBuilder->addDisplaySchemaFor($config->getClassName(), $discriminatorMapping->getPropertyName(), nullable: $nullable);
             assert($value instanceof Reference);
             $relations[$key] = $value;
+            $mapping[] = $config->getDiscriminator();
             $schema = $componentsBuilder->getSchemaForReference($value);
             if ($schema) {
                 $this->fillInDiscriminator($schema, $discriminatorMapping->getPropertyName(), $config->getDiscriminator());
@@ -70,9 +74,22 @@ class PolymorphicEntitySchemaProvider implements SchemaProvider
                 ),
             ]),
         ]);
-        if ($nullable) {
-            $schema->nullable = true;
-        }
+        ComponentsBuilder::addDescriptionOfObject($schema, $class);
+        MetadataSchemaProvider::applyPropertiesToSchema(
+            $schema,
+            $componentsBuilder,
+            MetadataFactory::getResultMetadata($class, new ApieContext()),
+            true,
+            $nullable
+        );
+        $properties = $schema->properties ?? [];
+        $properties[$discriminatorMapping->getPropertyName()] = new Schema([
+            'type' => 'string',
+            'enum' => $mapping,
+            'nullable' => false,
+        ]);
+        $schema->properties = $properties;
+        $schema->required = [$discriminatorMapping->getPropertyName()];
 
         $componentsBuilder->setSchema($componentIdentifier, $schema);
         return $componentsBuilder->getComponents();
@@ -84,15 +101,18 @@ class PolymorphicEntitySchemaProvider implements SchemaProvider
         ReflectionClass $class,
         bool $nullable = false
     ): Components {
+        
         $relations = [];
         $method = $class->getMethod('getDiscriminatorMapping');
         /** @var DiscriminatorMapping */
         $discriminatorMapping = $method->invoke(null);
+        $mapping = [];
         foreach ($discriminatorMapping->getConfigs() as $config) {
             $key = $config->getDiscriminator();
             $value = $componentsBuilder->addCreationSchemaFor($config->getClassName(), $discriminatorMapping->getPropertyName());
             assert($value instanceof Reference);
             $relations[$key] = $value;
+            $mapping[] = $config->getDiscriminator();
             $schema = $componentsBuilder->getSchemaForReference($value);
             if ($schema) {
                 $this->fillInDiscriminator($schema, $discriminatorMapping->getPropertyName(), $config->getDiscriminator());
@@ -111,9 +131,22 @@ class PolymorphicEntitySchemaProvider implements SchemaProvider
                 ),
             ]),
         ]);
-        if ($nullable) {
-            $schema->nullable = true;
-        }
+        ComponentsBuilder::addDescriptionOfObject($schema, $class);
+        MetadataSchemaProvider::applyPropertiesToSchema(
+            $schema,
+            $componentsBuilder,
+            MetadataFactory::getCreationMetadata($class, new ApieContext()),
+            false,
+            $nullable
+        );
+        $properties = $schema->properties ?? [];
+        $properties[$discriminatorMapping->getPropertyName()] = new Schema([
+            'type' => 'string',
+            'enum' => $mapping,
+            'nullable' => false,
+        ]);
+        $schema->properties = $properties;
+        $schema->required = [$discriminatorMapping->getPropertyName()];
 
         $componentsBuilder->setSchema($componentIdentifier, $schema);
         return $componentsBuilder->getComponents();

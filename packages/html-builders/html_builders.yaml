@@ -6,6 +6,7 @@ services:
       - '@Apie\HtmlBuilders\Factories\FormComponentFactory'
       - '@Apie\HtmlBuilders\Factories\FieldDisplayComponentFactory'
       - '@Apie\HtmlBuilders\Factories\ResourceActionFactory'
+      - '@?Apie\Cms\MenuStructure\MainMenuBuilder'
 
   Apie\HtmlBuilders\Factories\FieldDisplayComponentFactory:
     factory: ['Apie\HtmlBuilders\Factories\FieldDisplayComponentFactory', 'create']
@@ -51,5 +52,6 @@ services:
       - 'Apie\Common\Wrappers\CmsRendererFactory'
       - createRenderer
     arguments:
+      - '@apie.ux_icon.twig_runtime'
       - '@Apie\HtmlBuilders\Assets\AssetManager'
 

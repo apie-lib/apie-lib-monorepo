@@ -2,35 +2,13 @@
 namespace Apie\StorageMetadata;
 
 use Apie\Core\FileStorage\ChainedFileStorage;
+use Apie\Core\FileStorage\StoredFile;
 use Apie\Core\Indexing\Indexer;
-use Apie\Core\TypeConverters\ArrayToDoctrineCollection;
-use Apie\Core\TypeConverters\DoctrineCollectionToArray;
 use Apie\StorageMetadata\ClassInstantiators\ChainedClassInstantiator;
+use Apie\StorageMetadata\ClassInstantiators\FromMixedStorage;
 use Apie\StorageMetadata\ClassInstantiators\FromReflection;
 use Apie\StorageMetadata\ClassInstantiators\FromStorage;
 use Apie\StorageMetadata\ClassInstantiators\FromStoredFile;
-use Apie\StorageMetadata\Converters\ApieListToArray;
-use Apie\StorageMetadata\Converters\ArrayToItemHashmap;
-use Apie\StorageMetadata\Converters\ArrayToItemList;
-use Apie\StorageMetadata\Converters\ArrayToItemSet;
-use Apie\StorageMetadata\Converters\AutoIncrementTableToInt;
-use Apie\StorageMetadata\Converters\AutoIncrementTableToValueObject;
-use Apie\StorageMetadata\Converters\DateTimeToString;
-use Apie\StorageMetadata\Converters\EnumToString;
-use Apie\StorageMetadata\Converters\IntToAutoIncrementTable;
-use Apie\StorageMetadata\Converters\IntToValueObject;
-use Apie\StorageMetadata\Converters\MixedStorageToObject;
-use Apie\StorageMetadata\Converters\MixedToMixedStorage;
-use Apie\StorageMetadata\Converters\StringToDateTime;
-use Apie\StorageMetadata\Converters\StringToEnum;
-use Apie\StorageMetadata\Converters\StringToSearchIndex;
-use Apie\StorageMetadata\Converters\StringToUploadedFileInterface;
-use Apie\StorageMetadata\Converters\StringToValueObject;
-use Apie\StorageMetadata\Converters\UploadedFileInterfaceToString;
-use Apie\StorageMetadata\Converters\ValueObjectToAutoIncrementTable;
-use Apie\StorageMetadata\Converters\ValueObjectToFloat;
-use Apie\StorageMetadata\Converters\ValueObjectToInt;
-use Apie\StorageMetadata\Converters\ValueObjectToString;
 use Apie\StorageMetadata\Interfaces\ClassInstantiatorInterface;
 use Apie\StorageMetadata\Interfaces\PropertyConverterInterface;
 use Apie\StorageMetadata\Interfaces\StorageDtoInterface;
@@ -47,9 +25,8 @@ use Apie\StorageMetadata\PropertyConverters\OrderAttributeConverter;
 use Apie\StorageMetadata\PropertyConverters\ParentAttributeConverter;
 use Apie\StorageMetadata\PropertyConverters\PropertyAttributeConverter;
 use Apie\StorageMetadata\PropertyConverters\StorageMappingAttributeConverter;
-use Apie\TypeConverter\Converters\ObjectToObjectConverter;
-use Apie\TypeConverter\DefaultConvertersFactory;
 use Apie\TypeConverter\TypeConverter;
+use Psr\Http\Message\UploadedFileInterface;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -68,35 +45,7 @@ class DomainToStorageConverter
 
     private function createTypeConverter(): TypeConverter
     {
-        return new TypeConverter(
-            new ObjectToObjectConverter(),
-            ...DefaultConvertersFactory::create(
-                new StringToUploadedFileInterface($this->fileStorage),
-                new UploadedFileInterfaceToString($this->fileStorage),
-                new ArrayToDoctrineCollection(),
-                new StringToSearchIndex(),
-                new DoctrineCollectionToArray(),
-                new ApieListToArray(),
-                new AutoIncrementTableToInt(),
-                new AutoIncrementTableToValueObject(),
-                new IntToAutoIncrementTable(),
-                new ValueObjectToAutoIncrementTable(),
-                new ValueObjectToInt(),
-                new IntToValueObject(),
-                new ValueObjectToFloat(),
-                new MixedStorageToObject(),
-                new MixedToMixedStorage(),
-                new ValueObjectToString(),
-                new EnumToString(),
-                new StringToDateTime(),
-                new DateTimeToString(),
-                new StringToValueObject(),
-                new StringToEnum(),
-                new ArrayToItemHashmap(),
-                new ArrayToItemList(),
-                new ArrayToItemSet(),
-            )
-        );
+        return TypeConverterFactory::create($this->fileStorage);
     }
 
     /**
@@ -153,7 +102,7 @@ class DomainToStorageConverter
 
     /**
      * @template T of StorageDtoInterface
-     * @param ReflectionClass<T> $targetClass
+     * @param ReflectionClass<covariant T> $targetClass
      * @return T
      */
     public function createStorageObject(
@@ -166,6 +115,30 @@ class DomainToStorageConverter
             $this->classInstantiator->create($targetClass),
             $context
         );
+    }
+
+    /**
+     * @template T of object
+     * @param T $domainObject
+     * @param ReflectionClass<T> $reflectionClass
+     */
+
+    private function fixFileUploads(object $domainObject, ReflectionClass $reflectionClass): void
+    {
+        foreach ($reflectionClass->getProperties() as $property) {
+            if ($property->isStatic()) {
+                continue;
+            }
+            $value = $property->getValue($domainObject);
+            if ($value instanceof UploadedFileInterface && !($value instanceof StoredFile)) {
+                $storedFile = StoredFile::createFromUploadedFile($value);
+                $property->setValue($domainObject, $storedFile);
+            }
+        }
+        $parentClass = $reflectionClass->getParentClass();
+        if ($parentClass) {
+            $this->fixFileUploads($domainObject, $parentClass);
+        }
     }
 
     public function injectExistingStorageObject(
@@ -186,6 +159,7 @@ class DomainToStorageConverter
             $domainClass,
             $context
         );
+        $this->fixFileUploads($domainObject, new ReflectionClass($domainObject));
         while ($ptr) {
             foreach ($ptr->getProperties($filters) as $storageProperty) {
                 if ($storageProperty->isStatic()) {
@@ -210,6 +184,7 @@ class DomainToStorageConverter
                 new FromStoredFile(),
                 new FromStorage(),
                 new FromReflection(),
+                new FromMixedStorage(),
             ),
             $fileStorage,
             new DiscriminatorMappingAttributeConverter(),
@@ -225,5 +200,19 @@ class DomainToStorageConverter
             new ParentAttributeConverter(),
             new DefaultValueAttributeConverter(),
         );
+    }
+
+    /**
+     * Some native PHP classes claim a property not to be readonly, but throw an error
+     * when you do try to set it. This method is a workaround for that.
+     */
+    public static function isReallyWritable(
+        object $object,
+        ReflectionProperty $property,
+    ): bool {
+        if ($object instanceof \DatePeriod && in_array($property->getName(), ['start', 'end', 'interval', 'include_end_date', 'include_start_date', 'recurrences', 'current'])) {
+            return false;
+        }
+        return true;
     }
 }

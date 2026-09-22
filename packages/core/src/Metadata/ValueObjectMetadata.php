@@ -28,14 +28,19 @@ class ValueObjectMetadata implements NullableMetadataInterface
         return null;
     }
     /**
-     * @param ReflectionClass<ValueObjectInterface> $class
+     * @param ReflectionClass<covariant ValueObjectInterface> $class
      */
     public function __construct(private ReflectionClass $class)
     {
     }
 
+    public function getDisplayName(): string
+    {
+        return $this->class->getShortName();
+    }
+
     /**
-     * @return ReflectionClass<ValueObjectInterface>
+     * @return ReflectionClass<covariant ValueObjectInterface>
      */
     public function toClass(): ReflectionClass
     {
@@ -66,5 +71,14 @@ class ValueObjectMetadata implements NullableMetadataInterface
     public function getArrayItemType(): ?MetadataInterface
     {
         return $this->getNativeType()->getArrayItemType();
+    }
+
+    public function allowsNull(): bool
+    {
+        $nativeType = $this->getNativeType();
+        if ($nativeType instanceof NullableMetadataInterface) {
+            return $nativeType->allowsNull();
+        }
+        return $nativeType->toScalarType() === ScalarType::NULLVALUE;
     }
 }

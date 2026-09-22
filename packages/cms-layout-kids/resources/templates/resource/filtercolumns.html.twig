@@ -1,0 +1,16 @@
+<form>
+<input name="search" type="search" value="{{ property('textSearch') }}" />
+{% if property('filters')|length %}
+  <apie-filter-overview class="unprocessed-filter"></apie-filter-overview>
+  <script>
+  (function (elm) {
+    elm.classList.remove('unprocessed-filter');
+    elm.filterNames = {{ property('filters') | safe_json_encode }};
+    elm.filters = {{ property('currentFilter') | safe_json_encode }};
+  }(document.querySelector('apie-filter-overview.unprocessed-filter')));
+  </script>
+{% endif %}
+  <button class="w-full rounded-2xl border-3 border-green-600 bg-green-400 px-4 py-3 font-black text-green-950 shadow-md hover:bg-green-300">
+    🔎&nbsp;Search
+  </button>
+</form>

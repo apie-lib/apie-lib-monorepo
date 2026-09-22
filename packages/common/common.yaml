@@ -1,5 +1,7 @@
 services:
   Apie\Common\ActionDefinitionProvider:
+    arguments:
+      - !tagged_locator { tag: 'apie.context' }
 
   Apie\Common\ContextBuilders\AddEventDispatcherContextBuilder:
     arguments:
@@ -9,6 +11,7 @@ services:
   Apie\Common\ContextBuilders\AddTextEncrypterContextBuilder:
     arguments:
       - '@Psr\Cache\CacheItemPoolInterface'
+      - '@Psr\Log\LoggerInterface'
       - '%apie.encryption_key%'
     tags: ['apie.core.context_builder']
 
@@ -20,6 +23,21 @@ services:
     tags:
       - 'console.command'
 
+  Apie\Common\Command\ApieAuditLogForMigrationCommand:
+    arguments:
+      - '@Apie\Core\BoundedContext\BoundedContextHashmap'
+      - '@Apie\Core\Datalayers\ApieDatalayer'
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+    tags:
+      - 'console.command'
+
+  Apie\Common\Command\ApieMakeTranslationFileCommand:
+    arguments:
+      - '@Apie\Common\Translator\TranslationCollector'
+      - '@Apie\Core\Other\FileWriterInterface'
+    tags:
+      - 'console.command'
+
   Apie\Common\ApieFacade:
     arguments:
       - '@apie.route_definitions.provider'
@@ -27,6 +45,30 @@ services:
       - '@Apie\Serializer\Serializer'
       - '@Apie\Core\Datalayers\ApieDatalayer'
     tags: [apie.context]
+
+  Apie\Common\LoginService:
+    arguments:
+      - '@Apie\Core\BoundedContext\BoundedContextHashmap'
+      - '@Apie\Common\ActionDefinitionProvider'
+      - '@Apie\Serializer\Serializer'
+    tags: [apie.context]
+
+  Apie\Common\Translator\TranslationCollector:
+    factory: ['Apie\Common\Translator\TranslationCollector', 'create']
+    arguments:
+      - '@Apie\Core\ContextBuilders\ContextBuilderFactory'
+      - !tagged_iterator apie.translation_collector
+
+  Apie\Common\Translator\ResourceNameTranslationProvider:
+    tags: [apie.translation_collector]
+
+  Apie\Common\Translator\ReadAttributeTranslationProvider:
+    tags: [ apie.translation_collector ]
+
+  Apie\Common\Translator\ResourceActionTranslationProvider:
+    arguments:
+      -  '@Apie\Common\ActionDefinitionProvider'
+    tags: [apie.translation_collector]
 
   Apie\Common\Events\ResponseDispatcher:
     arguments:
@@ -41,12 +83,28 @@ services:
     arguments:
       - '@Apie\Serializer\DecoderHashmap'
 
+  Apie\Common\Events\AddAuditLog:
+    arguments:
+      - '@Apie\Core\Datalayers\ApieDatalayer'
+    tags: ['kernel.event_subscriber']
+
   apie.bounded_context.hashmap_factory:
-      class: Apie\Common\Wrappers\BoundedContextHashmapFactory
-      arguments:
-        - "%apie.bounded_contexts%"
-        - "%apie.scan_bounded_contexts%"
-        - '@Psr\EventDispatcher\EventDispatcherInterface'
+    class: Apie\Common\Wrappers\BoundedContextHashmapFactory
+    arguments:
+      - "%apie.bounded_contexts%"
+      - "%apie.scan_bounded_contexts%"
+      - '@Psr\EventDispatcher\EventDispatcherInterface'
+
+  Apie\Common\Wrappers\PolicyManagerFactory:
+    arguments:
+      - "%apie.bounded_contexts%"
+      - "%apie.scan_bounded_contexts%"
+      - false
+      - "@service_container"
+
+  Apie\Core\Policies\PolicyManager:
+    factory: ['@Apie\Common\Wrappers\PolicyManagerFactory', 'create']
+    tags: ['apie.context']
 
   Apie\Common\Interfaces\RouteDefinitionProviderInterface:
     alias: apie.route_definitions.provider
@@ -73,8 +131,15 @@ services:
   Apie\Common\Events\AddAuthenticationCookie:
     tags: ['kernel.event_subscriber']
 
-  Apie\Common\Events\AddSharedResources:
-    tags: ['kernel.event_subscriber']
+  Apie\Common\ContextBuilders\AddLockManagerContextBuilder:
+    arguments:
+      - '@Symfony\Component\Lock\LockFactory'
+    tags: ['apie.core.context_builder']
+
+  Apie\Common\ContextBuilders\LocaleContextBuilder:
+    arguments:
+      - '%apie.language_typehint%'
+    tags: ['apie.core.context_builder']
 
   Apie\Common\Wrappers\RequestAwareInMemoryDatalayer:
     arguments:
@@ -82,6 +147,32 @@ services:
       - '@Apie\Core\Datalayers\Search\LazyLoadedListFilterer'
     tags:
       - apie.datalayer
+      - always-singleton
+
+  Apie\Common\Wrappers\UxIconFactory:
+    arguments:
+      - '@Psr\Log\LoggerInterface'
+      - '@Symfony\Contracts\Cache\CacheInterface'
+
+  apie.ux_icon.twig_runtime:
+    class: Symfony\UX\Icons\Twig\UXIconRuntime
+    factory: ['@Apie\Common\Wrappers\UxIconFactory', 'create']
+    arguments:
+      - '@?Symfony\UX\Icons\Twig\UXIconRuntime'
+      - '@apie.ux_icon.icon_renderer'
+
+  apie.ux_icon.icon_renderer:
+    class: Symfony\UX\Icons\IconRenderer
+    factory: ['@Apie\Common\Wrappers\UxIconFactory', 'createIconRenderer']
+    arguments:
+      - '@?Symfony\UX\Icons\IconRendererInterface'
+      - '@apie.ux_icon.icon_registry'
+
+  apie.ux_icon.icon_registry:
+    class: Symfony\UX\Icons\IconRegistryInterface
+    factory: ['@Apie\Common\Wrappers\UxIconFactory', 'createIconRegistry']
+    arguments:
+      - '@?Symfony\UX\Icons\IconRegistryInterface'
 
   apie:
     alias: Apie\Common\ApieFacade

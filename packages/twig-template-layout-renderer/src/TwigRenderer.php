@@ -7,6 +7,7 @@ use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
 use Apie\TwigTemplateLayoutRenderer\Extension\ComponentHelperExtension;
+use Symfony\UX\Icons\Twig\UXIconRuntime;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -19,12 +20,13 @@ final class TwigRenderer implements ComponentRendererInterface
     public function __construct(
         string $path,
         private AssetManager $assetManager,
-        private string $namespacePrefix
+        private string $namespacePrefix,
+        UXIconRuntime $uxIconRuntime,
     ) {
         $loader = new FilesystemLoader([$path, self::getFallbackFixturesPath()]);
         $this->twigEnvironment = new Environment($loader, []);
         if (!isset(self::$extension)) {
-            self::$extension = new ComponentHelperExtension();
+            self::$extension = new ComponentHelperExtension($uxIconRuntime);
         }
         $this->twigEnvironment->addExtension(self::$extension);
     }

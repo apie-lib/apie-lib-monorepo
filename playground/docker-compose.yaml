@@ -63,6 +63,20 @@ services:
       traefik.http.routers.playground-db.entrypoints: "web"
       traefik.http.routers.playground-db.tls: false
 
+  redis:
+    image: redis:7-alpine
+    container_name: apie_playground_redis
+    ports:
+      - "6379:6379"
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: redis_commander
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: apie_playground_phpmyadmin
@@ -79,15 +93,15 @@ services:
     ports:
       - "81:80"
 
-  web:
+  web-symfony:
     build:
       context: ../
-      dockerfile: ./playground/.docker/Dockerfile
-    container_name: apie_playground_web
+      dockerfile: ./playground/.docker/Dockerfile-symfony
+    container_name: apie_playground_symfony
     volumes:
-      - ./app/apie.yaml:/var/www/html/apie.yaml
-      - ./app/Controller/DisplayDashboardController.php:/var/www/html/src/Controller/DisplayDashboardController.php
-      - ./app/templates/apie:/var/www/html/templates/apie
+      - ./symfony-app/apie.yaml:/var/www/html/apie.yaml
+      - ./symfony-app/Controller/DisplayDashboardController.php:/var/www/html/src/Controller/DisplayDashboardController.php
+      - ./symfony-app/templates/apie:/var/www/html/templates/apie
       - ./app/ApiePlayground:/var/www/html/src/ApiePlayground
       - ../packages:/packages
       - ./.docker/virtualhost.conf:/etc/apache2/sites-available/000-default.conf
@@ -107,6 +121,37 @@ services:
       - APIE_STARTER_FRAMEWORK=Symfony
       - APIE_STARTER_ENABLE_USER=0
       - DATABASE_URL=mysql://project:project@mysql:3306/project
+    depends_on:
+      - mysql
+
+  web-laravel:
+    build:
+      context: ../
+      dockerfile: ./playground/.docker/Dockerfile-laravel
+    container_name: apie_playground_laravel
+    volumes:
+      - ./laravel-app/AppServiceProvider.php:/var/www/html/app/Providers/AppServiceProvider.php
+      - ./laravel-app/apie.php:/var/www/html/apie.php
+      - ./laravel-app/templates:/var/www/html/resources/views/apie
+      - ./app/ApiePlayground:/var/www/html/app/ApiePlayground
+      - ../packages:/packages
+      - ./.docker/virtualhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./.docker/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+      - ./.docker/php.ini:/usr/local/etc/php/conf.d/local.ini
+    ports:
+      - "83:80"
+    labels:
+      traefik.enable: true
+      traefik.http.routers.playground.priority: 1
+      traefik.http.routers.playground.rule: HostRegexp(`apie-laravel.localtest.me`)
+      traefik.http.routers.playground.entrypoints: "web"
+      traefik.http.routers.playground.tls: false
+    environment:
+      - APIE_STARTER_SETUP=maximum
+      - APIE_STARTER_ENABLE_CMS=1
+      - APIE_STARTER_FRAMEWORK=Laravel
+      - APIE_STARTER_ENABLE_USER=0
+      - DATABASE_URL=mysql://project:project@mysql:3306/project-laravel
     depends_on:
       - mysql
 

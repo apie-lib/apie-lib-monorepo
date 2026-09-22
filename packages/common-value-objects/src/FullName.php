@@ -1,6 +1,7 @@
 <?php
 namespace Apie\CommonValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\CompositeValueObject;
@@ -16,6 +17,7 @@ use Stringable;
  */
 #[FakeMethod('createRandom')]
 #[ProvideIndex('getIndexes')]
+#[Description('Represents a full name: gender + first name + last name.')]
 class FullName implements ValueObjectInterface, Stringable
 {
     use CompositeValueObject;

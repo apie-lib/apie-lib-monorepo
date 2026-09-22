@@ -20,8 +20,18 @@ class EmailTest extends TestCase
             [
                 'type' => 'string',
                 'format' =>  'email',
+                'description' => true,
             ]
         );
+    }
+
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function it_can_split_an_email_into_its_local_part_and_hostname()
+    {
+        $email = new Email('Mail+Alias@example.com');
+
+        $this->assertEquals('Mail+Alias', $email->getLocalPart()->toNative());
+        $this->assertEquals('example.com', $email->getHostname()->toNative());
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

@@ -1,12 +1,15 @@
 <?php
 namespace Apie\Common\Actions;
 
+use Apie\Common\Events\ApieResourceMethodCalled;
 use Apie\Common\IntegrationTestLogger;
+use Apie\Common\Other\LockUtil;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
 use Apie\Core\Actions\MethodActionInterface;
+use Apie\Core\Attributes\Description;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
@@ -73,49 +76,70 @@ final class RunItemMethodAction implements MethodActionInterface
             $context->getContext(ContextConstants::METHOD_CLASS),
             $context->getContext(ContextConstants::METHOD_NAME)
         );
-        if ($method->isStatic()) {
-            $resource = null;
-        } else {
-            $id = $context->getContext(ContextConstants::RESOURCE_ID);
-            try {
-                $resource = $this->apieFacade->find(
-                    IdentifierUtils::idStringToIdentifier($id, $context),
-                    new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
-                );
-            } catch (InvalidStringForValueObjectException|EntityNotFoundException $error) {
-                IntegrationTestLogger::logException($error);
-                return ActionResponse::createClientError($this->apieFacade, $context, $error);
-            }
-            $context = $context->withContext(ContextConstants::RESOURCE, $resource);
-            // polymorphic relation, so could be the incorrect declared method
-            if (!$method->getDeclaringClass()->isInstance($resource)) {
+        $lock = LockUtil::createLock(
+            $context,
+            [ContextConstants::BOUNDED_CONTEXT_ID, ContextConstants::RESOURCE_NAME, ContextConstants::RESOURCE_ID],
+            write: true
+        );
+        try {
+            if ($method->isStatic()) {
+                $resource = null;
+            } else {
+                $id = $context->getContext(ContextConstants::RESOURCE_ID);
                 try {
-                    $method = (new ReflectionClass($resource))->getMethod($method->name);
-                } catch (ReflectionException $methodError) {
-                    $error = new Exception(
-                        sprintf('Resource "%s" does not support "%s"!', $id, $method->name),
-                        0,
-                        $methodError
+                    $resource = $this->apieFacade->find(
+                        IdentifierUtils::idStringToIdentifier($id, $context),
+                        new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
                     );
-                    throw ValidationException::createFromArray(['' => $error]);
+                } catch (InvalidStringForValueObjectException|EntityNotFoundException $error) {
+                    IntegrationTestLogger::logException($error);
+                    return ActionResponse::createClientError($this->apieFacade, $context, $error);
+                }
+                $context = $context->withContext(ContextConstants::RESOURCE, $resource);
+                // polymorphic relation, so could be the incorrect declared method
+                if (!$method->getDeclaringClass()->isInstance($resource)) {
+                    try {
+                        $method = (new ReflectionClass($resource))->getMethod($method->name);
+                    } catch (ReflectionException $methodError) {
+                        $error = new Exception(
+                            sprintf('Resource "%s" does not support "%s"!', $id, $method->name),
+                            0,
+                            $methodError
+                        );
+                        throw ValidationException::createFromArray(['' => $error]);
+                    }
                 }
             }
-        }
 
-        $result = $this->apieFacade->denormalizeOnMethodCall(
-            $rawContents,
-            $resource,
-            $method,
-            $context
-        );
-        if ($resource !== null) {
-            $resource = $this->apieFacade->persistExisting(
+            $result = $this->apieFacade->denormalizeOnMethodCall(
+                $rawContents,
                 $resource,
-                new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
+                $method,
+                $context
             );
+            if ($resource !== null) {
+                if (!$lock->isAcquired()) {
+                    throw new \LogicException('Lock was released before modification was finished!');
+                }
+                $resource = $this->apieFacade->persistExisting(
+                    $resource,
+                    new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
+                );
+            }
+        } finally {
+            $lock->release();
         }
         if (self::shouldReturnResource($method)) {
             $result = $resource;
+        }
+        if ($resource !== null) {
+            $context->dispatchEvent(
+                new ApieResourceMethodCalled(
+                    $resource,
+                    $method->name,
+                    $context
+                )
+            );
         }
         return ActionResponse::createRunSuccess($this->apieFacade, $context, $result, $resource);
     }
@@ -158,14 +182,14 @@ final class RunItemMethodAction implements MethodActionInterface
         return $method->name;
     }
 
-    /** @param ReflectionClass<object> $class */
+    /** @param ReflectionClass<covariant object> $class */
     public static function getInputType(ReflectionClass $class, ?ReflectionMethod $method = null): ReflectionMethod
     {
         assert($method instanceof ReflectionMethod);
         return $method;
     }
 
-    /** @param ReflectionClass<object> $class */
+    /** @param ReflectionClass<covariant object> $class */
     public static function getOutputType(ReflectionClass $class, ?ReflectionMethod $method = null): ReflectionMethod|ReflectionClass
     {
         assert($method instanceof ReflectionMethod);
@@ -190,11 +214,14 @@ final class RunItemMethodAction implements MethodActionInterface
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getDescription(ReflectionClass $class, ?ReflectionMethod $method = null): string
     {
         assert($method instanceof ReflectionMethod);
+        foreach ($method->getAttributes(Description::class) as $attribute) {
+            return $attribute->newInstance()->description;
+        }
         $name = self::getDisplayNameForMethod($method);
         if (str_starts_with($method->name, 'add')) {
             return 'Adds ' . $name . ' to ' . $class->getShortName();
@@ -206,7 +233,7 @@ final class RunItemMethodAction implements MethodActionInterface
     }
     
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getTags(ReflectionClass $class, ?ReflectionMethod $method = null): StringList
     {
@@ -219,7 +246,7 @@ final class RunItemMethodAction implements MethodActionInterface
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getRouteAttributes(ReflectionClass $class, ?ReflectionMethod $method = null): array
     {

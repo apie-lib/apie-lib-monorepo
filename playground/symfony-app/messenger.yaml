@@ -1,0 +1,8 @@
+framework:
+    messenger:
+        default_bus: messenger.bus.default
+
+        transports:
+            async: 'redis://redis:6379/messages'
+        routing:
+          Apie\ApieBundle\Messenger\RunSequentialProcessMessage: async

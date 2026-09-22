@@ -75,12 +75,14 @@ apie:
 ```
 
 It is recommended to use environment variables for the api key:
+
 Symfony:
 ```yaml
 apie:
   ai:
     api_key: '%env(AI_API_KEY)%'
 ```
+
 Laravel:
 ```php
 // config/apie.php

@@ -7,13 +7,14 @@ use Apie\Common\Interfaces\HasRouteDefinition;
 use Apie\Common\Lists\UrlPrefixList;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextConstants;
+use Apie\Core\ValueObjects\UrlRouteDefinition;
 use ReflectionClass;
 use ReflectionMethod;
 
 abstract class AbstractCmsRouteDefinition implements HasRouteDefinition, HasActionDefinition
 {
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public function __construct(
         protected readonly ReflectionClass $class,
@@ -21,6 +22,8 @@ abstract class AbstractCmsRouteDefinition implements HasRouteDefinition, HasActi
         protected readonly ?ReflectionMethod $method = null
     ) {
     }
+
+    abstract public function getMainMenuUri(): ?UrlRouteDefinition;
 
     final public function getRouteAttributes(): array
     {

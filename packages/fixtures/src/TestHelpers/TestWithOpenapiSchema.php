@@ -7,8 +7,13 @@ use cebe\openapi\spec\Schema;
 /** @codeCoverageIgnore */
 trait TestWithOpenapiSchema
 {
-    public function runOpenapiSchemaTestForCreation(string $classToTest, string $expectedKey, array|Schema $expected, ?callable $testCase = null, ?ComponentsBuilderFactory $factory = null)
-    {
+    public function runOpenapiSchemaTestForCreation(
+        string $classToTest,
+        string $expectedKey,
+        array|Schema $expected,
+        ?callable $testCase = null,
+        ?ComponentsBuilderFactory $factory = null
+    ) {
         if (!class_exists(ComponentsBuilderFactory::class)) {
             $this->markTestIncomplete('Schema generator library not loaded, so skipping test');
             return;
@@ -19,19 +24,25 @@ trait TestWithOpenapiSchema
             $expected = new Schema($expected);
         }
         if (!$factory) {
-            $factory = ComponentsBuilderFactory::createComponentsBuilderFactory();
+            $factory = ComponentsBuilderFactory::createComponentsBuilderFactory(1);
         }
         $builder = $factory->createComponentsBuilder();
         $builder->addCreationSchemaFor($classToTest);
         $components = $builder->getComponents();
         $schemas = $components->schemas;
         $this->assertNotEmpty($schemas);
-        $this->assertArrayHasKey($expectedKey, $schemas);
+        $this->assertArrayHasKey($expectedKey, $schemas, 'Found keys: ' . implode(', ', array_keys($schemas)));
         $actualSchema = $schemas[$expectedKey];
-        if ($expected->pattern) {
+        if ($expected->pattern === true) {
             $expected->pattern = $actualSchema->pattern;
         }
-        $this->assertEquals($expected, $actualSchema);
+        if ($expected->description === true) {
+            $expected->description = $actualSchema->description;
+        }
+        if ($expected->example === true) {
+            $expected->example = $actualSchema->example;
+        }
+        $this->assertEquals($expected->getSerializableData(), $actualSchema->getSerializableData());
         $testCase($builder);
     }
 }

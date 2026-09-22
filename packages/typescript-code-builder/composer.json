@@ -1,0 +1,96 @@
+{
+  "name": "apie/typescript-code-builder",
+  "description": "Composer package of the apie library: typescript code builder",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\TypescriptCodeBuilder\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\TypescriptCodeBuilder\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "apie/core": "self.version"
+  },
+  "require-dev": {
+    "apie/fixtures": "self.version",
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.5"
+  },
+  "extra": {
+    "apie-objects": [
+    "Apie\\TypescriptCodeBuilder\\Lists\\CodeList",
+    "Apie\\TypescriptCodeBuilder\\Lists\\TypescriptDeclarationList",
+    "Apie\\TypescriptCodeBuilder\\Lists\\ExpressionList",
+    "Apie\\TypescriptCodeBuilder\\Lists\\JavascriptIdentifierList",
+    "Apie\\TypescriptCodeBuilder\\Lists\\TypescriptExpressionHashmap",
+    "Apie\\TypescriptCodeBuilder\\Lists\\ArgumentList",
+    "Apie\\TypescriptCodeBuilder\\Dto\\TypescriptDeclaration",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\ForOfStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\SwitchStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\ForStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\ContinueStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\GotoStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\DoWhileStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\BlockStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\BreakStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\WhileStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\LabelStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\ForInStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\IfStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ImportStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\RawJavascript",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\IdentifierTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\IntersectionTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\GenericTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\UndefinedTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\CallbackTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\UnionTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\LiteralTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\InterfaceDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\ArrayTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\TypeGuardDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\ObjectTypeDefinition",
+    "Apie\\TypescriptCodeBuilder\\Dto\\VariableAssignment",
+    "Apie\\TypescriptCodeBuilder\\Dto\\FunctionArgument",
+    "Apie\\TypescriptCodeBuilder\\Dto\\File",
+    "Apie\\TypescriptCodeBuilder\\Dto\\NamedFunction",
+    "Apie\\TypescriptCodeBuilder\\Dto\\IIFE",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\ArrayAccessExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\TypeCastExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\FunctionCallExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\NumberLiteralExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\ObjectExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\PropertyAccessExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\StringLiteralExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\NullExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\UndefinedExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\UnaryOperationExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\IdentifierExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\ParenthesizedExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\AsExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\JsonLiteralExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\BinaryOperationExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\BooleanLiteralExpression",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Expressions\\TernaryExpression",
+    "Apie\\TypescriptCodeBuilder\\Enums\\BinaryOperator",
+    "Apie\\TypescriptCodeBuilder\\Enums\\VariableDeclarationKind",
+    "Apie\\TypescriptCodeBuilder\\Enums\\UnaryOperator",
+    "Apie\\TypescriptCodeBuilder\\Enums\\TypescriptType",
+    "Apie\\TypescriptCodeBuilder\\ValueObjects\\JavascriptIdentifier"
+]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

@@ -1,0 +1,84 @@
+<?php
+
+namespace Time;
+
+/**
+ * Represents a “stop-watch” or “egg-timer” duration as an abstraction over a number
+ * of (fractional) seconds with nanosecond precision.
+ *
+ * The maximum representable range is 9223372035999999999 nanoseconds (roughly 292 years).
+ * Any operation that will overflow, will throw a Time\TimeException.
+ *
+ * @strict-properties
+ */
+final class Duration
+{
+    /**
+     * Will be limited to 9_223_372_035 even on 64-bit platforms to allow for a possible
+     * future scope ->getTotalNanoseconds(): int.
+     */
+    public readonly int $seconds;
+
+    public readonly int $nanoseconds;
+
+    /**
+     * Will be normalized to false if both $seconds and $nanoseconds are 0.
+     */
+    public readonly bool $negative;
+
+    public static function fromSeconds(int $seconds, int $nanoseconds = 0): self
+    {
+    }
+
+    public static function fromNanoseconds(int $nanoseconds): self
+    {
+    }
+
+    public static function fromMicroseconds(int $microseconds): self
+    {
+    }
+
+    public static function fromMilliseconds(int $milliseconds): self
+    {
+    }
+
+    public static function fromMinutes(int $minutes): self
+    {
+    }
+
+    public static function fromHours(int $hours): self
+    {
+    }
+
+    public static function fromIso8601DurationString(string $specification): self
+    {
+    }
+
+    public function negate(): self
+    {
+    }
+
+    public function absolute(): self
+    {
+    }
+
+    public function add(self $duration): self
+    {
+    }
+
+    public function sub(self $duration): self
+    {
+    }
+
+    public function multiplyBy(int $factor): self
+    {
+    }
+
+    public function divideBy(int $divisor): self
+    {
+    }
+
+    public static function compare(self $a, self $b): int
+    {
+    }
+}

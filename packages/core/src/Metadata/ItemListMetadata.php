@@ -5,6 +5,7 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\Context\MetadataFieldHashmap;
 use Apie\Core\Enums\ScalarType;
 use Apie\Core\Lists\ItemList;
+use Apie\Core\Lists\ItemSet;
 use Apie\Core\Lists\StringList;
 use Apie\Core\Metadata\Concerns\NoValueOptions;
 use ReflectionClass;
@@ -14,14 +15,19 @@ final class ItemListMetadata implements MetadataInterface
     use NoValueOptions;
 
     /**
-     * @param ReflectionClass<ItemList> $class
+     * @param ReflectionClass<covariant ItemList>|ReflectionClass<covariant ItemSet> $class
      */
     public function __construct(private readonly ReflectionClass $class, private readonly bool $creation = true)
     {
     }
 
+    public function getDisplayName(): string
+    {
+        return $this->class->getShortName();
+    }
+
     /**
-     * @return ReflectionClass<ItemList>
+     * @return ReflectionClass<covariant ItemList>|ReflectionClass<covariant ItemSet>
      */
     public function toClass(): ReflectionClass
     {

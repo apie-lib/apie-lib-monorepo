@@ -1,6 +1,7 @@
 <?php
 namespace Apie\StorageMetadataBuilder\CodeGenerators;
 
+use Apie\Core\Attributes\StoreOptions;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Enums\ScalarType;
 use Apie\Core\Identifiers\KebabCaseSlug;
@@ -11,6 +12,7 @@ use Apie\Core\Utils\ConverterUtils;
 use Apie\Core\ValueObjects\Interfaces\AllowsLargeStringsInterface;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\Interfaces\LengthConstraintStringValueObjectInterface;
+use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
 use Apie\Core\ValueObjects\IsPasswordValueObject;
 use Apie\StorageMetadata\Attributes\OneToOneAttribute;
 use Apie\StorageMetadata\Attributes\PropertyAttribute;
@@ -47,7 +49,7 @@ final class SimplePropertiesCodeGenerator implements RunGeneratedCodeContextInte
             ->setBody(
                 '$this->unserializedObject = $input;'
                 . PHP_EOL
-                . '$this->serializedString = serialize($input);'
+                . '$this->serializedString = \Opis\Closure\serialize($input);'
                 . PHP_EOL
                 . '$this->originalType = get_debug_type($input);'
             );
@@ -55,7 +57,7 @@ final class SimplePropertiesCodeGenerator implements RunGeneratedCodeContextInte
             ->setReturnType('mixed')
             ->setBody(
                 'if (!isset($this->unserializedObject)) {
-    $this->unserializedObject = unserialize($this->serializedString);
+    $this->unserializedObject = \Opis\Closure\unserialize($this->serializedString);
     if (get_debug_type($this->unserializedObject) !== $this->originalType) {
         throw new \LogicException("Could not unserialize object again");
     }
@@ -81,11 +83,18 @@ return $this->unserializedObject;'
             $property->getType() ?? ReflectionTypeFactory::createReflectionType('mixed')
         )->getResultMetadata(new ApieContext());
         $scalar = $metadata->toScalarType(true);
+    
         if ($table->hasProperty($propertyName)) {
             return;
         }
         $nullable = (($metadata instanceof FieldInterface ? $metadata->allowsNull() : false) ? '?' : '');
         $nullable = '?';
+        foreach ($property->getAttributes(StoreOptions::class) as $attribute) {
+            $options = $attribute->newInstance();
+            if ($options->alwaysMixedData) {
+                $scalar = ScalarType::MIXED;
+            }
+        }
         $declaredProperty = $table->addProperty($propertyName)
             ->setType($nullable . $scalar->value);
         if ($scalar === ScalarType::STRING && in_array((string) $property->getType(), [DateTimeInterface::class, DateTimeImmutable::class, DateTime::class])) {
@@ -148,6 +157,14 @@ return $this->unserializedObject;'
             $regex = $class->getMethod('getRegularExpression')->invoke(null);
             $maxLength = RegexUtils::getMaximumAcceptedStringLengthOfRegularExpression($regex, true);
             return $maxLength > 127 || $maxLength === null;
+        }
+        if (in_array(LimitedOptionsInterface::class, $interfaceNames)) {
+            $options = $class->getMethod('getOptions')->invoke(null);
+            foreach ($options as $option) {
+                if (strlen($option) > 127) {
+                    return true;
+                }
+            }
         }
         return false;
     }

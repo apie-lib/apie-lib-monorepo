@@ -1,13 +1,18 @@
 <?php
 namespace Apie\Core\ValueObjects;
 
+use Apie\Core\Attributes\Description;
+use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\Optional;
 use Apie\Core\Attributes\SchemaMethod;
 use Apie\Core\FileStorage\StoredFile;
 use Apie\SchemaGenerator\Builders\ComponentsBuilder;
 use Apie\SchemaGenerator\Enums\SchemaUsages;
+use Faker\Generator;
 
 #[SchemaMethod('createSchema')]
+#[FakeMethod('createRandom')]
+#[Description('Uploads a file with JSON.')]
 final class JsonFileUpload implements CompositeWithOwnValidation
 {
     use CompositeValueObject;
@@ -23,12 +28,36 @@ final class JsonFileUpload implements CompositeWithOwnValidation
     ) {
     }
 
+    public static function createRandom(Generator $generator): JsonFileUpload
+    {
+        $file = Filename::createRandom($generator)->toNative();
+        $contents = null;
+        $base64 = null;
+        $mime = null;
+        if ($generator->boolean()) {
+            $contents = $generator->text();
+        } else {
+            $base64 = Base64Stream::createRandom($generator)->toNative();
+        }
+        if ($generator->boolean()) {
+            $mime = StrictMimeType::createRandom($generator)->toNative();
+        }
+        return JsonFileUpload::fromNative(array_filter([
+            'originalFilename' => $file,
+            'contents' => $contents,
+            'base64' => $base64,
+            'mime' => $mime,
+        ]));
+    }
+
     protected function validateState(): void
     {
+        // @phpstan-ignore-next-line isset.initializedProperty
         if (isset($this->contents) xor isset($this->base64)) {
             return;
         }
         throw new \LogicException(
+            // @phpstan-ignore-next-line isset.initializedProperty
             isset($this->contents)
             ? 'You should only provide contents or base64'
             : 'I need either a "contents" or a "base64" property'
@@ -42,6 +71,7 @@ final class JsonFileUpload implements CompositeWithOwnValidation
      */
     public function toUploadedFile(string $className = StoredFile::class): StoredFile
     {
+        // @phpstan-ignore-next-line isset.initializedProperty
         $contents = isset($this->contents) ? $this->contents->toNative() : $this->base64->decode()->toNative();
         return $className::createFromString(
             $contents,

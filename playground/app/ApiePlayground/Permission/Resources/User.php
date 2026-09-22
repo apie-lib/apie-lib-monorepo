@@ -9,6 +9,7 @@ use Apie\Core\Lists\PermissionList;
 use Apie\Core\Permissions\AllPermission;
 use Apie\CommonValueObjects\Email;
 use Apie\CommonValueObjects\FullName;
+use Apie\Core\Attributes\Auditable;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\HasRole;
@@ -27,6 +28,7 @@ use App\ApiePlayground\Permission\Identifiers\UserIdentifier;
 use LogicException;
 
 #[FakeCount(5)]
+#[Auditable()]
 class User implements EntityInterface, CheckLoginStatusInterface, HasRolesInterface, PermissionInterface
 {
     private UserIdentifier $id;
