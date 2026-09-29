@@ -5,6 +5,7 @@ use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
 use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
+use Apie\TypescriptCodeBuilder\Utils\ControlFlowUtils;
 
 /**
  * Typescript definition for an object type.
@@ -24,7 +25,7 @@ class ObjectTypeDefinition implements TypescriptTypeDeclarationInterface
         foreach ($this->properties as $property) {
             $properties[] = $property->toTypescript() . ';';
         }
-        return '{ ' . implode(' ', $properties) . ' }';
+        return '{' . PHP_EOL . ControlFlowUtils::indent(implode(PHP_EOL, $properties)) . PHP_EOL . '}';
     }
 
     public function toJavascript(): string

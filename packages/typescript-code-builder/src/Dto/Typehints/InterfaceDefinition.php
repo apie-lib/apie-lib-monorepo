@@ -5,6 +5,7 @@ use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
 use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
+use Apie\TypescriptCodeBuilder\Utils\ControlFlowUtils;
 use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 
 /**
@@ -15,6 +16,7 @@ class InterfaceDefinition implements TypescriptTypeDeclarationInterface
     public function __construct(
         public JavascriptIdentifier $name,
         public ArgumentList $properties,
+        public ?JavascriptIdentifierList $extends = null
     ) {
     }
 
@@ -24,7 +26,11 @@ class InterfaceDefinition implements TypescriptTypeDeclarationInterface
         foreach ($this->properties as $property) {
             $properties[] = $property->toTypescript() . ';';
         }
-        return 'interface ' . $this->name->toNative() . ' { ' . implode(' ', $properties) . ' }';
+        $extends = '';
+        if ($this->extends && $this->extends->count()) {
+            $extends = ' extends ' . implode(', ', $this->extends->toStringArray());
+        }
+        return 'interface ' . $this->name->toNative() . $extends . ' {' . PHP_EOL . ControlFlowUtils::indent(implode(PHP_EOL, $properties)) . PHP_EOL . '}';
     }
 
     public function toJavascript(): string
@@ -44,6 +50,11 @@ class InterfaceDefinition implements TypescriptTypeDeclarationInterface
             /** @var FunctionArgument $property */
             foreach ($property->needsDefinitions() as $definition) {
                 $definitions = $definitions->append($definition);
+            }
+        }
+        if ($this->extends) {
+            foreach ($this->extends as $implement) {
+                $definitions = $definitions->append($implement);
             }
         }
         return $definitions;

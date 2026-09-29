@@ -6,14 +6,14 @@ use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
 use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
-use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifierKey;
 use Faker\Generator;
 
 #[FakeMethod('createRandom')]
 class FunctionArgument implements TypescriptFileExpressionInterface
 {
     public function __construct(
-        public JavascriptIdentifier $name,
+        public JavascriptIdentifierKey $name,
         public ?TypescriptTypeDeclarationInterface $typehint = null,
         public bool $optional = false,
     ) {
@@ -22,7 +22,7 @@ class FunctionArgument implements TypescriptFileExpressionInterface
     public static function createRandom(Generator $faker): self
     {
         return new self(
-            $faker->fakeClass(JavascriptIdentifier::class),
+            $faker->fakeClass(JavascriptIdentifierKey::class),
             $faker->boolean(95) ? $faker->fakeClass(TypescriptType::class) : null,
             $faker->boolean(5)
         );
@@ -31,13 +31,13 @@ class FunctionArgument implements TypescriptFileExpressionInterface
     public function toTypescript(): string
     {
         if ($this->typehint === null) {
-            return $this->name->toNative() . ($this->optional ? '?: unknown' : '');
+            return $this->name->toCode() . ($this->optional ? '?: unknown' : ': any');
         }
-        return $this->name->toNative() . ($this->optional ? '?: ' : ': ') . $this->typehint->toTypescript();
+        return $this->name->toCode() . ($this->optional ? '?: ' : ': ') . $this->typehint->toTypescript();
     }
     public function toJavascript(): string
     {
-        return $this->name->toNative();
+        return $this->name->toCode();
     }
     public function providesDefinitions(bool $applyBlockScope): JavascriptIdentifierList
     {

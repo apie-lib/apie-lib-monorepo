@@ -23,7 +23,8 @@ class TypescriptTypeTest extends ObjectTestCase
                 'unknown',
                 'void',
                 'bigint',
-                'symbol'
+                'symbol',
+                'null'
             ],
         ];
     }

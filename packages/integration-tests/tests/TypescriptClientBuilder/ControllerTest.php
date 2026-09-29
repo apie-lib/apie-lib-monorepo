@@ -43,7 +43,7 @@ class ControllerTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
         $expectedApiUrl = 'http://localhost/api';
         $this->assertStringContainsString("const apiUrl = " . json_encode($expectedApiUrl, JSON_UNESCAPED_SLASHES) . ";", $response->getBody());
-        $this->assertStringContainsString('export const ApieLayer = createForApi(apiUrl, resourceDefinition);', $response->getBody());
+        $this->assertStringContainsString('export { ApieLayer }', $response->getBody());
         $this->assertEquals('application/javascript', $response->getHeaderLine('Content-Type'));
         $testApplication->cleanApplication();
     }

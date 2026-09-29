@@ -1,7 +1,6 @@
 <?php
 namespace Apie\TypescriptCodeBuilder\Lists;
 
-use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
 use Apie\TypescriptCodeBuilder\Dto\ControlFlow\SwitchCase;
 

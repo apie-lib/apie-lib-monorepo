@@ -18,7 +18,10 @@ class File implements TypescriptFileExpressionInterface
     {
         $list = [];
         foreach ($this->codeList as $code) {
-            $list[] = $code->toTypescript();
+            $script = $code->toTypescript();
+            if ($script !== '') {
+                $list[] = $script;
+            }
         }
 
         return implode(PHP_EOL, $list);
@@ -27,7 +30,10 @@ class File implements TypescriptFileExpressionInterface
     {
         $list = [];
         foreach ($this->codeList as $code) {
-            $list[] = $code->toJavascript();
+            $script = $code->toJavascript();
+            if ($script !== '') {
+                $list[] = $script;
+            }
         }
 
         return implode(PHP_EOL, $list);

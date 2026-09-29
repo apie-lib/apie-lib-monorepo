@@ -3,6 +3,7 @@ namespace Apie\TypescriptCodeBuilder\ValueObjects;
 
 use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
+use Apie\Core\Identifiers\KebabCaseSlug;
 use Apie\Core\Utils\IdentifierConstants;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
@@ -26,6 +27,10 @@ class JavascriptIdentifier implements HasRegexValueObjectInterface
         'enum', 'eval', 'arguments', 'abstract', 'boolean', 'byte', 'char', 'double', 'final',
         'float', 'goto', 'int', 'long', 'native', 'short', 'synchronized', 'throws',
         'transient', 'volatile',
+        // typescript only reserved words
+        'any', 'bigint', 'never', 'number', 'object', 'string', 'symbol', 'unknown', 'void',
+        'abstract', 'asserts', 'declare', 'infer', 'is', 'keyof', 'namespace', 'module', 'readonly', 'satisifies',
+        'type', 'unique', 'undefined'
     ];
 
     public static function getRegularExpression(): string
@@ -38,6 +43,18 @@ class JavascriptIdentifier implements HasRegexValueObjectInterface
         if (!preg_match(static::getRegularExpression(), $input) || in_array($input, self::RESERVED_WORDS, true)) {
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(self::class));
         }
+    }
+
+    public static function createFromText(string $input): static
+    {
+        if (!preg_match(static::getRegularExpression(), $input)) {
+            $input = KebabCaseSlug::fromText($input)->toCamelCaseSlug()->toNative();
+        }
+        if (in_array($input, self::RESERVED_WORDS, true)) {
+            $input = '__' . $input;
+        }
+
+        return new self($input);
     }
 
     public static function createRandom(Generator $faker): static

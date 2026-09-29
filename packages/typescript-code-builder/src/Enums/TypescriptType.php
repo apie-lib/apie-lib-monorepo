@@ -14,6 +14,7 @@ enum TypescriptType: string implements TypescriptTypeDeclarationInterface
     case Void = 'void';
     case BigInt = 'bigint';
     case Symbol = 'symbol';
+    case NullValue = 'null';
 
     public function toTypescript(): string
     {

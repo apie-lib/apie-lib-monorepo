@@ -9,6 +9,7 @@ use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
 use Apie\TypescriptCodeBuilder\Lists\CodeList;
 use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifierKey;
 use PHPUnit\Framework\Attributes\Test;
 
 class NamedFunctionTest extends ObjectTestCase
@@ -47,8 +48,8 @@ class NamedFunctionTest extends ObjectTestCase
         $testItem = new NamedFunction(
             new JavascriptIdentifier('add'),
             new ArgumentList([
-                new FunctionArgument(new JavascriptIdentifier('a'), TypescriptType::Number),
-                new FunctionArgument(new JavascriptIdentifier('b'), TypescriptType::Number, true)
+                new FunctionArgument(new JavascriptIdentifierKey('a'), TypescriptType::Number),
+                new FunctionArgument(new JavascriptIdentifierKey('b'), TypescriptType::Number, true)
             ]),
             new CodeList([
                 new RawJavascript('return a + (b ?? 0)')

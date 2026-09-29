@@ -4,7 +4,7 @@ namespace Apie\Tests\TypescriptCodeBuilder\Dto;
 use Apie\Fixtures\TestHelpers\ObjectTestCase;
 use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
-use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifierKey;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 
@@ -23,7 +23,7 @@ class FunctionArgumentTest extends ObjectTestCase
                 'name',
             ],
             'properties' => [
-                'name' => ['$ref' => '#/components/schemas/JavascriptIdentifier-post'],
+                'name' => ['$ref' => '#/components/schemas/JavascriptIdentifierKey-post'],
                 'typehint' => ['$ref' => '#/components/schemas/TypescriptTypeDeclaration-nullable-post'],
                 'optional' => ['type' => 'boolean', 'nullable' => false],
             ],
@@ -49,9 +49,9 @@ class FunctionArgumentTest extends ObjectTestCase
         yield 'required function argument without typehint' => [
             [],
             'argument',
-            'argument',
+            'argument: any',
             new FunctionArgument(
-                new JavascriptIdentifier('argument')
+                new JavascriptIdentifierKey('argument')
             )
         ];
         yield 'optional function argument without typehint' => [
@@ -59,7 +59,7 @@ class FunctionArgumentTest extends ObjectTestCase
             'argument',
             'argument?: unknown',
             new FunctionArgument(
-                new JavascriptIdentifier('argument'),
+                new JavascriptIdentifierKey('argument'),
                 optional: true
             )
         ];
@@ -68,7 +68,7 @@ class FunctionArgumentTest extends ObjectTestCase
             'argument',
             'argument: number',
             new FunctionArgument(
-                new JavascriptIdentifier('argument'),
+                new JavascriptIdentifierKey('argument'),
                 TypescriptType::Number
             )
         ];
@@ -77,7 +77,7 @@ class FunctionArgumentTest extends ObjectTestCase
             'argument',
             'argument?: number',
             new FunctionArgument(
-                new JavascriptIdentifier('argument'),
+                new JavascriptIdentifierKey('argument'),
                 TypescriptType::Number,
                 true
             )

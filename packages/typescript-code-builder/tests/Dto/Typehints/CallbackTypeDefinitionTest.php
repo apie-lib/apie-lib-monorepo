@@ -8,6 +8,7 @@ use Apie\TypescriptCodeBuilder\Dto\Typehints\IdentifierTypeDefinition;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
 use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
+use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifierKey;
 use PHPUnit\Framework\Attributes\Test;
 
 class CallbackTypeDefinitionTest extends ObjectTestCase
@@ -35,7 +36,7 @@ class CallbackTypeDefinitionTest extends ObjectTestCase
         $user = new JavascriptIdentifier('user');
         $type = new CallbackTypeDefinition(
             new ArgumentList([
-                new FunctionArgument(new JavascriptIdentifier('u'), new IdentifierTypeDefinition($user)),
+                new FunctionArgument(new JavascriptIdentifierKey('u'), new IdentifierTypeDefinition($user)),
             ]),
             TypescriptType::Boolean,
         );

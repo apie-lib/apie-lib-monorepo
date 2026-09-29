@@ -12,6 +12,8 @@ use Faker\Generator;
 #[FakeMethod('createRandom')]
 class TypescriptDeclarationList extends ItemList
 {
+    protected bool $mutable = false;
+
     public function offsetGet(mixed $offset): TypescriptTypeDeclarationInterface
     {
         return parent::offsetGet($offset);

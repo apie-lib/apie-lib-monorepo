@@ -51,6 +51,7 @@
     "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\IfStatement",
     "Apie\\TypescriptCodeBuilder\\Dto\\ImportStatement",
     "Apie\\TypescriptCodeBuilder\\Dto\\RawJavascript",
+    "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\RawTypeDefinition",
     "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\IdentifierTypeDefinition",
     "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\IntersectionTypeDefinition",
     "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\GenericTypeDefinition",
@@ -88,7 +89,8 @@
     "Apie\\TypescriptCodeBuilder\\Enums\\VariableDeclarationKind",
     "Apie\\TypescriptCodeBuilder\\Enums\\UnaryOperator",
     "Apie\\TypescriptCodeBuilder\\Enums\\TypescriptType",
-    "Apie\\TypescriptCodeBuilder\\ValueObjects\\JavascriptIdentifier"
+    "Apie\\TypescriptCodeBuilder\\ValueObjects\\JavascriptIdentifier",
+    "Apie\\TypescriptCodeBuilder\\ValueObjects\\JavascriptIdentifierKey"
 ]
   },
   "minimum-stability": "dev",
