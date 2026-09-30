@@ -14,4 +14,21 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+Value objects backed by IANA registries, including language tags, HTTP statuses, ports,
+and transport types.
+
+Install it with:
+```bash
+composer require apie/iana-value-objects
+```
+
+```php
+use Apie\IanaValueObjects\LanguageAndRegion;
+use Apie\IanaValueObjects\LanguageTag\Language;
+
+$value = new LanguageAndRegion(Language::fromValue('en'));
+echo $value->toPreferredValue();
+```
+
+The objects validate registry values during construction and have no framework
+dependency.

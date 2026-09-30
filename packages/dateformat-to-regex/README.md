@@ -17,7 +17,12 @@ The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](
 This package converts PHP date format strings into regular expressions. Right now it will create
 the 'simple' regular expression. So it will validate 30 february as a valid date.
 
-### Usage
+### Standalone usage
+Install it with:
+```bash
+composer require apie/dateformat-to-regex
+```
+
 ```php
 <?php
 

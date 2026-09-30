@@ -6,7 +6,6 @@ use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
 use Apie\TypescriptCodeBuilder\Dto\Typehints\ObjectTypeDefinition;
 use Apie\TypescriptCodeBuilder\Enums\TypescriptType;
 use Apie\TypescriptCodeBuilder\Lists\ArgumentList;
-use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifier;
 use Apie\TypescriptCodeBuilder\ValueObjects\JavascriptIdentifierKey;
 use PHPUnit\Framework\Attributes\Test;
 

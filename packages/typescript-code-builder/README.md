@@ -14,4 +14,19 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+Low-level, framework-agnostic building blocks for generating TypeScript/JavaScript source code
+safely (identifiers, declarations, expressions, control flow, files). It has no knowledge of
+Apie APIs itself and is used by `apie/typescript-client-builder` to render the generated client.
+
+### Standalone usage
+Install it with:
+```bash
+composer require apie/typescript-code-builder
+```
+
+Use the DTOs in `Apie\TypescriptCodeBuilder\Dto` (such as `File`, `NamedFunction`,
+`VariableAssignment`, `ImportStatement` and the expression classes) together with the enums in
+`Apie\TypescriptCodeBuilder\Enums` (e.g. `TypescriptType`, `VariableDeclarationKind`) to compose
+declarations and files, then render the resulting code with each object's `toTypescript()` or
+`toJavascript()` method (both defined on `TypescriptFileExpressionInterface`). The package has no
+framework dependency and is useful for any custom code generator.

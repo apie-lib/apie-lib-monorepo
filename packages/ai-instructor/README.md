@@ -14,7 +14,9 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-Instructor is a library for Python that works with LLM's to force a specific structure. Wouldn't it be nice if we have the same functionality in PHP? That's what apie/ai-instructor does. Like you have some class in PHP and ask AI to fill it in for you from a chat prompt given by the user:
+`apie/ai-instructor` is a PHP take on Python's Instructor library: it asks an LLM (OpenAI or a local Ollama
+instance) to fill in a plain PHP class from a natural-language prompt, using the OpenAPI schema generated from
+the class as the structure the LLM must follow.
 
 ```php
 class MovieReview {
@@ -27,68 +29,55 @@ class MovieReview {
 }
 ```
 
-### Requirements
-You need a OpenAI key or a valid ollama service running (in Docker or locally).
+### Standalone usage
+Install with:
 
-### Setup
-The simplest standalone setup is using any of the static methods in ```AiInstructor```:
+```bash
+composer require apie/ai-instructor
+```
+
+Use one of the static factory methods on `Apie\AiInstructor\AiInstructor` to build a client without any framework:
 
 ```php
 use Apie\AiInstructor\AiInstructor;
-// ollama
+
+// ollama (default http://localhost:11434)
 $instructor = AiInstructor::createForOllama('http://localhost:11434');
 // openAI
 $instructor = AiInstructor::createForOpenAi('api-key');
-// custom:
-$instructor = AiInstructor::createForCustomConfig(
-    'api-key',
-    'http://localhost:11434/'
-);
+// any OpenAI-compatible endpoint
+$instructor = AiInstructor::createForCustomConfig('api-key', 'http://localhost:11434/');
+
 $result = $instructor->instruct(
     MovieReview::class,
     'tinyllama',
-    'You are an AI bot that comes up with a movie review for a movie made from the description given by the user. It should follow the format given. If you can not come up with a movie review of the description given by the user, then make a review of a random Hollywood movie.',
-    'I think the Lord of the Rings movie has dated terrible'
+    'You are an AI bot that writes a movie review following the given format.',
+    'I think the Lord of the Rings movie has dated terribly'
 );
-var_dump($result); // dumps a MovieReview instance.
-```
-It would give a response like this:
-```
-object(MovieReview)#160 (3) {
-  ["name"]=>
-  string(21) "The Lord of the Rings"
-  ["description"]=>
-  string(472) "Once a groundbreaking epic, The Lord of the Rings now feels surprisingly outdated. The ambitious scope and Howard Shore’s majestic score still impress, but the early-2000s CGI and practical-effects limitations often pull you out of Middle-earth. Pacing issues and theatrical dialogue that once felt grand now come across as heavy-handed. While die-hard fans may forgive its age, newcomers might struggle to stay immersed in a story weighed down by its own technical era."
-  ["rating"]=>
-  int(4)
-}
+// $result is a MovieReview instance
 ```
 
+### Symfony integration
+Through `apie/apie-bundle`, `Apie\AiInstructor\AiInstructor` and its `AiClient` are registered automatically and
+the `apie:ai-playground` console command becomes available. Configure the endpoint and key in `apie.yaml`:
 
-### Setup with Apie
-You can also set it up with the [Apie library](https://github.com/apie-lib/apie-lib-monorepo). In This case you would need to require apie/apie-bundle for Symfony or apie/laravel-apie for Laravel to setup the key and url in the Laravel/Symfony configuration:
 ```yaml
 apie:
   ai:
     base_url: http://localhost:11434
-    api_key: 'ignored-for-ollama'
-```
-
-It is recommended to use environment variables for the api key:
-
-Symfony:
-```yaml
-apie:
-  ai:
     api_key: '%env(AI_API_KEY)%'
 ```
 
-Laravel:
+### Laravel integration
+`apie/laravel-apie` registers the generated `Apie\AiInstructor\AiInstructorServiceProvider`, wiring up the same
+`AiInstructor`/`AiClient` services and the `apie:ai-playground` command. Configure the endpoint and key in
+`config/apie.php`:
+
 ```php
-// config/apie.php
 return [
     'ai' => [
+        'base_url' => env('AI_BASE_URL', 'http://localhost:11434'),
         'api_key' => env('AI_API_KEY'),
-    ]
+    ],
 ];
 ```

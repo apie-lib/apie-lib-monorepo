@@ -14,4 +14,14 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+An intentionally plain Apie CMS layout for applications that need a minimal UI.
+
+### Standalone usage
+Install it with:
+```bash
+composer require apie/cms-layout-ugly
+```
+
+Register `Apie\CmsLayoutUgly\UglyDesignSystemLayout` as the selected CMS layout. It is
+a presentation package and can be used with a custom Twig application instead of a
+full-stack framework.

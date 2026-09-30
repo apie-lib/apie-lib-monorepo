@@ -57674,6 +57674,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.drawoble.drawing+zip",
+                            "description": "application\/vnd.drawoble.drawing+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.dreamfactory",
                             "description": "application\/vnd.dreamfactory",
                             "isDeprecated": false,
@@ -58208,6 +58214,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.fabylon.book",
+                            "description": "application\/vnd.fabylon.book",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.faf+yaml",
                             "description": "application\/vnd.faf+yaml",
                             "isDeprecated": false,
@@ -58648,6 +58660,30 @@
                         {
                             "name": "application\/vnd.gnu.taler.merchant+json",
                             "description": "application\/vnd.gnu.taler.merchant+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.godot.project.binary",
+                            "description": "application\/vnd.godot.project.binary",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.godot.project.text",
+                            "description": "application\/vnd.godot.project.text",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.godot.resource.binary",
+                            "description": "application\/vnd.godot.resource.binary",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.godot.resource.text",
+                            "description": "application\/vnd.godot.resource.text",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -60202,6 +60238,12 @@
                         {
                             "name": "application\/vnd.nitf",
                             "description": "application\/vnd.nitf",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.nnu.profile+json",
+                            "description": "application\/vnd.nnu.profile+json",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -65204,6 +65246,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "model\/vnd.godot.scene.binary",
+                            "description": "model\/vnd.godot.scene.binary",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "model\/vnd.godot.scene.text",
+                            "description": "model\/vnd.godot.scene.text",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "model\/vnd.gs-gdl",
                             "description": "model\/vnd.gs-gdl",
                             "isDeprecated": false,
@@ -65854,6 +65908,18 @@
                         {
                             "name": "text\/vnd.gml",
                             "description": "text\/vnd.gml",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "text\/vnd.godot.gdscript",
+                            "description": "text\/vnd.godot.gdscript",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "text\/vnd.godot.gdshader",
+                            "description": "text\/vnd.godot.gdshader",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -139031,6 +139097,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.drawoble.drawing+zip",
+                            "description": "application\/vnd.drawoble.drawing+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.dreamfactory",
                             "description": "application\/vnd.dreamfactory",
                             "isDeprecated": false,
@@ -139565,6 +139637,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.fabylon.book",
+                            "description": "application\/vnd.fabylon.book",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.faf+yaml",
                             "description": "application\/vnd.faf+yaml",
                             "isDeprecated": false,
@@ -140005,6 +140083,30 @@
                         {
                             "name": "application\/vnd.gnu.taler.merchant+json",
                             "description": "application\/vnd.gnu.taler.merchant+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.godot.project.binary",
+                            "description": "application\/vnd.godot.project.binary",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.godot.project.text",
+                            "description": "application\/vnd.godot.project.text",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.godot.resource.binary",
+                            "description": "application\/vnd.godot.resource.binary",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.godot.resource.text",
+                            "description": "application\/vnd.godot.resource.text",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -141559,6 +141661,12 @@
                         {
                             "name": "application\/vnd.nitf",
                             "description": "application\/vnd.nitf",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.nnu.profile+json",
+                            "description": "application\/vnd.nnu.profile+json",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -146561,6 +146669,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "model\/vnd.godot.scene.binary",
+                            "description": "model\/vnd.godot.scene.binary",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "model\/vnd.godot.scene.text",
+                            "description": "model\/vnd.godot.scene.text",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "model\/vnd.gs-gdl",
                             "description": "model\/vnd.gs-gdl",
                             "isDeprecated": false,
@@ -147211,6 +147331,18 @@
                         {
                             "name": "text\/vnd.gml",
                             "description": "text\/vnd.gml",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "text\/vnd.godot.gdscript",
+                            "description": "text\/vnd.godot.gdscript",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "text\/vnd.godot.gdshader",
+                            "description": "text\/vnd.godot.gdshader",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -160076,6 +160208,12 @@
                         {
                             "name": "rtspu",
                             "description": "rtspu",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "rttp",
+                            "description": "rttp",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },

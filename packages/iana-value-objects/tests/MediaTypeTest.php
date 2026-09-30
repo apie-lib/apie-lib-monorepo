@@ -19,7 +19,7 @@ class MediaTypeTest extends TestCase
         $this->assertEquals('application/json', $testItem->toNative());
         $this->assertEquals('json', $testItem->getName());
         $this->assertEquals('application/json', $testItem->getTemplate());
-        $this->assertEquals('[RFC8259]', $testItem->getReference());
+        $this->assertEquals('[RFC 8259]', $testItem->getReference());
         $this->assertTrue($testItem->isActive());
     }
 

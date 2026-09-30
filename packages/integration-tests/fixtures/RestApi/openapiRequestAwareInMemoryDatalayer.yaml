@@ -14404,8 +14404,8 @@ components:
       format: primitiveonlyidentifier
       pattern: '^[a-f0-9]{8}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{4}\-[a-f0-9]{12}$'
     ReflectionClass-post:
-      type: object
-      properties: {  }
+      type: string
+      example: App\Domain\Example
     ResourceAddResourceButtonLabel-post:
       type: string
       format: resourceaddresourcebuttonlabel
@@ -15282,6 +15282,7 @@ components:
         - rtsp
         - rtsps
         - rtspu
+        - rttp
         - sarif
         - secondlife
         - secret-token
@@ -15721,6 +15722,7 @@ components:
         - rtsp
         - rtsps
         - rtspu
+        - rttp
         - sarif
         - secondlife
         - secret-token

@@ -7,7 +7,7 @@ return array(
   array(
     'Name' => '1d-interleaved-parityfec',
     'Template' => 'application/1d-interleaved-parityfec',
-    'Reference' => '[RFC6015]',
+    'Reference' => '[RFC 6015]',
     'Active' => true,
   ),
   'application/3gpdash-qoe-report+xml' =>
@@ -77,28 +77,28 @@ return array(
   array(
     'Name' => 'ace+cbor',
     'Template' => 'application/ace+cbor',
-    'Reference' => '[RFC9200]',
+    'Reference' => '[RFC 9200]',
     'Active' => true,
   ),
   'application/ace+json' =>
   array(
     'Name' => 'ace+json',
     'Template' => 'application/ace+json',
-    'Reference' => '[RFC9431]',
+    'Reference' => '[RFC 9431]',
     'Active' => true,
   ),
   'application/ace-groupcomm+cbor' =>
   array(
     'Name' => 'ace-groupcomm+cbor',
     'Template' => 'application/ace-groupcomm+cbor',
-    'Reference' => '[RFC9594]',
+    'Reference' => '[RFC 9594]',
     'Active' => true,
   ),
   'application/ace-trl+cbor' =>
   array(
     'Name' => 'ace-trl+cbor',
     'Template' => 'application/ace-trl+cbor',
-    'Reference' => '[RFC9770]',
+    'Reference' => '[RFC 9770]',
     'Active' => true,
   ),
   'application/activemessage' =>
@@ -119,140 +119,140 @@ return array(
   array(
     'Name' => 'aif+cbor',
     'Template' => 'application/aif+cbor',
-    'Reference' => '[RFC9237]',
+    'Reference' => '[RFC 9237]',
     'Active' => true,
   ),
   'application/aif+json' =>
   array(
     'Name' => 'aif+json',
     'Template' => 'application/aif+json',
-    'Reference' => '[RFC9237]',
+    'Reference' => '[RFC 9237]',
     'Active' => true,
   ),
   'application/alto-cdni+json' =>
   array(
     'Name' => 'alto-cdni+json',
     'Template' => 'application/alto-cdni+json',
-    'Reference' => '[RFC9241]',
+    'Reference' => '[RFC 9241]',
     'Active' => true,
   ),
   'application/alto-cdnifilter+json' =>
   array(
     'Name' => 'alto-cdnifilter+json',
     'Template' => 'application/alto-cdnifilter+json',
-    'Reference' => '[RFC9241]',
+    'Reference' => '[RFC 9241]',
     'Active' => true,
   ),
   'application/alto-costmap+json' =>
   array(
     'Name' => 'alto-costmap+json',
     'Template' => 'application/alto-costmap+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-costmapfilter+json' =>
   array(
     'Name' => 'alto-costmapfilter+json',
     'Template' => 'application/alto-costmapfilter+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-directory+json' =>
   array(
     'Name' => 'alto-directory+json',
     'Template' => 'application/alto-directory+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-endpointcost+json' =>
   array(
     'Name' => 'alto-endpointcost+json',
     'Template' => 'application/alto-endpointcost+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-endpointcostparams+json' =>
   array(
     'Name' => 'alto-endpointcostparams+json',
     'Template' => 'application/alto-endpointcostparams+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-endpointprop+json' =>
   array(
     'Name' => 'alto-endpointprop+json',
     'Template' => 'application/alto-endpointprop+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-endpointpropparams+json' =>
   array(
     'Name' => 'alto-endpointpropparams+json',
     'Template' => 'application/alto-endpointpropparams+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-error+json' =>
   array(
     'Name' => 'alto-error+json',
     'Template' => 'application/alto-error+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-networkmap+json' =>
   array(
     'Name' => 'alto-networkmap+json',
     'Template' => 'application/alto-networkmap+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-networkmapfilter+json' =>
   array(
     'Name' => 'alto-networkmapfilter+json',
     'Template' => 'application/alto-networkmapfilter+json',
-    'Reference' => '[RFC7285]',
+    'Reference' => '[RFC 7285]',
     'Active' => true,
   ),
   'application/alto-propmap+json' =>
   array(
     'Name' => 'alto-propmap+json',
     'Template' => 'application/alto-propmap+json',
-    'Reference' => '[RFC9240]',
+    'Reference' => '[RFC 9240]',
     'Active' => true,
   ),
   'application/alto-propmapparams+json' =>
   array(
     'Name' => 'alto-propmapparams+json',
     'Template' => 'application/alto-propmapparams+json',
-    'Reference' => '[RFC9240]',
+    'Reference' => '[RFC 9240]',
     'Active' => true,
   ),
   'application/alto-tips+json' =>
   array(
     'Name' => 'alto-tips+json',
     'Template' => 'application/alto-tips+json',
-    'Reference' => '[RFC9569]',
+    'Reference' => '[RFC 9569]',
     'Active' => true,
   ),
   'application/alto-tipsparams+json' =>
   array(
     'Name' => 'alto-tipsparams+json',
     'Template' => 'application/alto-tipsparams+json',
-    'Reference' => '[RFC9569]',
+    'Reference' => '[RFC 9569]',
     'Active' => true,
   ),
   'application/alto-updatestreamcontrol+json' =>
   array(
     'Name' => 'alto-updatestreamcontrol+json',
     'Template' => 'application/alto-updatestreamcontrol+json',
-    'Reference' => '[RFC8895]',
+    'Reference' => '[RFC 8895]',
     'Active' => true,
   ),
   'application/alto-updatestreamparams+json' =>
   array(
     'Name' => 'alto-updatestreamparams+json',
     'Template' => 'application/alto-updatestreamparams+json',
-    'Reference' => '[RFC8895]',
+    'Reference' => '[RFC 8895]',
     'Active' => true,
   ),
   'application/aml' =>
@@ -294,7 +294,7 @@ return array(
   array(
     'Name' => 'at+jwt',
     'Template' => 'application/at+jwt',
-    'Reference' => '[RFC9068]',
+    'Reference' => '[RFC 9068]',
     'Active' => true,
   ),
   'application/atf' =>
@@ -315,21 +315,21 @@ return array(
   array(
     'Name' => 'atom+xml',
     'Template' => 'application/atom+xml',
-    'Reference' => '[RFC4287][RFC5023]',
+    'Reference' => '[RFC 4287][RFC 5023]',
     'Active' => true,
   ),
   'application/atomcat+xml' =>
   array(
     'Name' => 'atomcat+xml',
     'Template' => 'application/atomcat+xml',
-    'Reference' => '[RFC5023]',
+    'Reference' => '[RFC 5023]',
     'Active' => true,
   ),
   'application/atomdeleted+xml' =>
   array(
     'Name' => 'atomdeleted+xml',
     'Template' => 'application/atomdeleted+xml',
-    'Reference' => '[RFC6721]',
+    'Reference' => '[RFC 6721]',
     'Active' => true,
   ),
   'application/atomicmail' =>
@@ -343,7 +343,7 @@ return array(
   array(
     'Name' => 'atomsvc+xml',
     'Template' => 'application/atomsvc+xml',
-    'Reference' => '[RFC5023]',
+    'Reference' => '[RFC 5023]',
     'Active' => true,
   ),
   'application/atsc-dwd+xml' =>
@@ -392,7 +392,7 @@ return array(
   array(
     'Name' => 'auth-policy+xml',
     'Template' => 'application/auth-policy+xml',
-    'Reference' => '[RFC4745]',
+    'Reference' => '[RFC 4745]',
     'Active' => true,
   ),
   'application/automationml-aml+xml' =>
@@ -420,14 +420,14 @@ return array(
   array(
     'Name' => 'batch-SMTP',
     'Template' => 'application/batch-SMTP',
-    'Reference' => '[RFC2442]',
+    'Reference' => '[RFC 2442]',
     'Active' => true,
   ),
   'application/beep+xml' =>
   array(
     'Name' => 'beep+xml',
     'Template' => 'application/beep+xml',
-    'Reference' => '[RFC3080]',
+    'Reference' => '[RFC 3080]',
     'Active' => true,
   ),
   'application/bufr' =>
@@ -448,49 +448,49 @@ return array(
   array(
     'Name' => 'calendar+json',
     'Template' => 'application/calendar+json',
-    'Reference' => '[RFC7265]',
+    'Reference' => '[RFC 7265]',
     'Active' => true,
   ),
   'application/calendar+xml' =>
   array(
     'Name' => 'calendar+xml',
     'Template' => 'application/calendar+xml',
-    'Reference' => '[RFC6321]',
+    'Reference' => '[RFC 6321]',
     'Active' => true,
   ),
   'application/call-completion' =>
   array(
     'Name' => 'call-completion',
     'Template' => 'application/call-completion',
-    'Reference' => '[RFC6910]',
+    'Reference' => '[RFC 6910]',
     'Active' => true,
   ),
   'application/cals-1840' =>
   array(
     'Name' => 'CALS-1840',
     'Template' => 'application/CALS-1840',
-    'Reference' => '[RFC1895]',
+    'Reference' => '[RFC 1895]',
     'Active' => true,
   ),
   'application/captive+json' =>
   array(
     'Name' => 'captive+json',
     'Template' => 'application/captive+json',
-    'Reference' => '[RFC8908]',
+    'Reference' => '[RFC 8908]',
     'Active' => true,
   ),
   'application/cbor' =>
   array(
     'Name' => 'cbor',
     'Template' => 'application/cbor',
-    'Reference' => '[RFC8949]',
+    'Reference' => '[RFC 8949]',
     'Active' => true,
   ),
   'application/cbor-seq' =>
   array(
     'Name' => 'cbor-seq',
     'Template' => 'application/cbor-seq',
-    'Reference' => '[RFC8742]',
+    'Reference' => '[RFC 8742]',
     'Active' => true,
   ),
   'application/cccex' =>
@@ -504,14 +504,14 @@ return array(
   array(
     'Name' => 'ccmp+xml',
     'Template' => 'application/ccmp+xml',
-    'Reference' => '[RFC6503]',
+    'Reference' => '[RFC 6503]',
     'Active' => true,
   ),
   'application/ccxml+xml' =>
   array(
     'Name' => 'ccxml+xml',
     'Template' => 'application/ccxml+xml',
-    'Reference' => '[RFC4267]',
+    'Reference' => '[RFC 4267]',
     'Active' => true,
   ),
   'application/cda+xml' =>
@@ -532,42 +532,42 @@ return array(
   array(
     'Name' => 'cdmi-capability',
     'Template' => 'application/cdmi-capability',
-    'Reference' => '[RFC6208]',
+    'Reference' => '[RFC 6208]',
     'Active' => true,
   ),
   'application/cdmi-container' =>
   array(
     'Name' => 'cdmi-container',
     'Template' => 'application/cdmi-container',
-    'Reference' => '[RFC6208]',
+    'Reference' => '[RFC 6208]',
     'Active' => true,
   ),
   'application/cdmi-domain' =>
   array(
     'Name' => 'cdmi-domain',
     'Template' => 'application/cdmi-domain',
-    'Reference' => '[RFC6208]',
+    'Reference' => '[RFC 6208]',
     'Active' => true,
   ),
   'application/cdmi-object' =>
   array(
     'Name' => 'cdmi-object',
     'Template' => 'application/cdmi-object',
-    'Reference' => '[RFC6208]',
+    'Reference' => '[RFC 6208]',
     'Active' => true,
   ),
   'application/cdmi-queue' =>
   array(
     'Name' => 'cdmi-queue',
     'Template' => 'application/cdmi-queue',
-    'Reference' => '[RFC6208]',
+    'Reference' => '[RFC 6208]',
     'Active' => true,
   ),
   'application/cdni' =>
   array(
     'Name' => 'cdni',
     'Template' => 'application/cdni',
-    'Reference' => '[RFC7736]',
+    'Reference' => '[RFC 7736]',
     'Active' => true,
   ),
   'application/ce+cbor' =>
@@ -595,14 +595,14 @@ return array(
   array(
     'Name' => 'cellml+xml',
     'Template' => 'application/cellml+xml',
-    'Reference' => '[RFC4708]',
+    'Reference' => '[RFC 4708]',
     'Active' => true,
   ),
   'application/cfw' =>
   array(
     'Name' => 'cfw',
     'Template' => 'application/cfw',
-    'Reference' => '[RFC6230]',
+    'Reference' => '[RFC 6230]',
     'Active' => true,
   ),
   'application/cid' =>
@@ -616,7 +616,7 @@ return array(
   array(
     'Name' => 'cid-edhoc+cbor-seq',
     'Template' => 'application/cid-edhoc+cbor-seq',
-    'Reference' => '[RFC9528]',
+    'Reference' => '[RFC 9528]',
     'Active' => true,
   ),
   'application/city+json' =>
@@ -665,14 +665,14 @@ return array(
   array(
     'Name' => 'clue+xml',
     'Template' => 'application/clue+xml',
-    'Reference' => '[RFC8847]',
+    'Reference' => '[RFC 8847]',
     'Active' => true,
   ),
   'application/clue_info+xml' =>
   array(
     'Name' => 'clue_info+xml',
     'Template' => 'application/clue_info+xml',
-    'Reference' => '[RFC8846]',
+    'Reference' => '[RFC 8846]',
     'Active' => true,
   ),
   'application/cmcd' =>
@@ -686,7 +686,7 @@ return array(
   array(
     'Name' => 'cms',
     'Template' => 'application/cms',
-    'Reference' => '[RFC7193]',
+    'Reference' => '[RFC 7193]',
     'Active' => true,
   ),
   'application/cmw+cbor' =>
@@ -700,7 +700,7 @@ return array(
   array(
     'Name' => 'cmw+cose',
     'Template' => 'application/cmw+cose',
-    'Reference' => '[RFC9999, Section 4.1]',
+    'Reference' => '[RFC 9999, Section 4.1]',
     'Active' => true,
   ),
   'application/cmw+json' =>
@@ -714,35 +714,35 @@ return array(
   array(
     'Name' => 'cmw+jws',
     'Template' => 'application/cmw+jws',
-    'Reference' => '[RFC9999, Section 4.2]',
+    'Reference' => '[RFC 9999, Section 4.2]',
     'Active' => true,
   ),
   'application/cnrp+xml' =>
   array(
     'Name' => 'cnrp+xml',
     'Template' => 'application/cnrp+xml',
-    'Reference' => '[RFC3367]',
+    'Reference' => '[RFC 3367]',
     'Active' => true,
   ),
   'application/coap-eap' =>
   array(
     'Name' => 'coap-eap',
     'Template' => 'application/coap-eap',
-    'Reference' => '[RFC9820]',
+    'Reference' => '[RFC 9820]',
     'Active' => true,
   ),
   'application/coap-group+json' =>
   array(
     'Name' => 'coap-group+json',
     'Template' => 'application/coap-group+json',
-    'Reference' => '[RFC7390]',
+    'Reference' => '[RFC 7390]',
     'Active' => true,
   ),
   'application/coap-payload' =>
   array(
     'Name' => 'coap-payload',
     'Template' => 'application/coap-payload',
-    'Reference' => '[RFC8075]',
+    'Reference' => '[RFC 8075]',
     'Active' => true,
   ),
   'application/commonground' =>
@@ -763,14 +763,14 @@ return array(
   array(
     'Name' => 'conference-info+xml',
     'Template' => 'application/conference-info+xml',
-    'Reference' => '[RFC4575]',
+    'Reference' => '[RFC 4575]',
     'Active' => true,
   ),
   'application/cose' =>
   array(
     'Name' => 'cose',
     'Template' => 'application/cose',
-    'Reference' => '[RFC9052]',
+    'Reference' => '[RFC 9052]',
     'Active' => true,
   ),
   'application/cose-c509+cbor' =>
@@ -826,35 +826,35 @@ return array(
   array(
     'Name' => 'cose-key',
     'Template' => 'application/cose-key',
-    'Reference' => '[RFC9052]',
+    'Reference' => '[RFC 9052]',
     'Active' => true,
   ),
   'application/cose-key-set' =>
   array(
     'Name' => 'cose-key-set',
     'Template' => 'application/cose-key-set',
-    'Reference' => '[RFC9052]',
+    'Reference' => '[RFC 9052]',
     'Active' => true,
   ),
   'application/cose-x509' =>
   array(
     'Name' => 'cose-x509',
     'Template' => 'application/cose-x509',
-    'Reference' => '[RFC9360]',
+    'Reference' => '[RFC 9360]',
     'Active' => true,
   ),
   'application/cpl+xml' =>
   array(
     'Name' => 'cpl+xml',
     'Template' => 'application/cpl+xml',
-    'Reference' => '[RFC3880]',
+    'Reference' => '[RFC 3880]',
     'Active' => true,
   ),
   'application/csrattrs' =>
   array(
     'Name' => 'csrattrs',
     'Template' => 'application/csrattrs',
-    'Reference' => '[RFC7030]',
+    'Reference' => '[RFC 7030]',
     'Active' => true,
   ),
   'application/csta+xml' =>
@@ -903,7 +903,7 @@ return array(
   array(
     'Name' => 'cwt',
     'Template' => 'application/cwt',
-    'Reference' => '[RFC8392]',
+    'Reference' => '[RFC 8392]',
     'Active' => true,
   ),
   'application/cybercash' =>
@@ -938,7 +938,7 @@ return array(
   array(
     'Name' => 'davmount+xml',
     'Template' => 'application/davmount+xml',
-    'Reference' => '[RFC4709]',
+    'Reference' => '[RFC 4709]',
     'Active' => true,
   ),
   'application/dca-rft' =>
@@ -966,14 +966,14 @@ return array(
   array(
     'Name' => 'dialog-info+xml',
     'Template' => 'application/dialog-info+xml',
-    'Reference' => '[RFC4235]',
+    'Reference' => '[RFC 4235]',
     'Active' => true,
   ),
   'application/dicom' =>
   array(
     'Name' => 'dicom',
     'Template' => 'application/dicom',
-    'Reference' => '[RFC3240]',
+    'Reference' => '[RFC 3240]',
     'Active' => true,
   ),
   'application/dicom+json' =>
@@ -1015,140 +1015,140 @@ return array(
   array(
     'Name' => 'dns',
     'Template' => 'application/dns',
-    'Reference' => '[RFC4027]',
+    'Reference' => '[RFC 4027]',
     'Active' => true,
   ),
   'application/dns+json' =>
   array(
     'Name' => 'dns+json',
     'Template' => 'application/dns+json',
-    'Reference' => '[RFC8427]',
+    'Reference' => '[RFC 8427]',
     'Active' => true,
   ),
   'application/dns-message' =>
   array(
     'Name' => 'dns-message',
     'Template' => 'application/dns-message',
-    'Reference' => '[RFC8484]',
+    'Reference' => '[RFC 8484]',
     'Active' => true,
   ),
   'application/dots+cbor' =>
   array(
     'Name' => 'dots+cbor',
     'Template' => 'application/dots+cbor',
-    'Reference' => '[RFC9132]',
+    'Reference' => '[RFC 9132]',
     'Active' => true,
   ),
   'application/dpop+jwt' =>
   array(
     'Name' => 'dpop+jwt',
     'Template' => 'application/dpop+jwt',
-    'Reference' => '[RFC9449]',
+    'Reference' => '[RFC 9449]',
     'Active' => true,
   ),
   'application/dskpp+xml' =>
   array(
     'Name' => 'dskpp+xml',
     'Template' => 'application/dskpp+xml',
-    'Reference' => '[RFC6063]',
+    'Reference' => '[RFC 6063]',
     'Active' => true,
   ),
   'application/dssc+der' =>
   array(
     'Name' => 'dssc+der',
     'Template' => 'application/dssc+der',
-    'Reference' => '[RFC5698]',
+    'Reference' => '[RFC 5698]',
     'Active' => true,
   ),
   'application/dssc+xml' =>
   array(
     'Name' => 'dssc+xml',
     'Template' => 'application/dssc+xml',
-    'Reference' => '[RFC5698]',
+    'Reference' => '[RFC 5698]',
     'Active' => true,
   ),
   'application/dvcs' =>
   array(
     'Name' => 'dvcs',
     'Template' => 'application/dvcs',
-    'Reference' => '[RFC3029]',
+    'Reference' => '[RFC 3029]',
     'Active' => true,
   ),
   'application/eat+cwt' =>
   array(
     'Name' => 'eat+cwt',
     'Template' => 'application/eat+cwt',
-    'Reference' => '[RFC9782]',
+    'Reference' => '[RFC 9782]',
     'Active' => true,
   ),
   'application/eat+jwt' =>
   array(
     'Name' => 'eat+jwt',
     'Template' => 'application/eat+jwt',
-    'Reference' => '[RFC9782]',
+    'Reference' => '[RFC 9782]',
     'Active' => true,
   ),
   'application/eat-bun+cbor' =>
   array(
     'Name' => 'eat-bun+cbor',
     'Template' => 'application/eat-bun+cbor',
-    'Reference' => '[RFC9782]',
+    'Reference' => '[RFC 9782]',
     'Active' => true,
   ),
   'application/eat-bun+json' =>
   array(
     'Name' => 'eat-bun+json',
     'Template' => 'application/eat-bun+json',
-    'Reference' => '[RFC9782]',
+    'Reference' => '[RFC 9782]',
     'Active' => true,
   ),
   'application/eat-ucs+cbor' =>
   array(
     'Name' => 'eat-ucs+cbor',
     'Template' => 'application/eat-ucs+cbor',
-    'Reference' => '[RFC9782]',
+    'Reference' => '[RFC 9782]',
     'Active' => true,
   ),
   'application/eat-ucs+json' =>
   array(
     'Name' => 'eat-ucs+json',
     'Template' => 'application/eat-ucs+json',
-    'Reference' => '[RFC9782]',
+    'Reference' => '[RFC 9782]',
     'Active' => true,
   ),
   'application/ecmascript' =>
   array(
     'Name' => 'ecmascript (OBSOLETED in favor of text/javascript)',
     'Template' => 'application/ecmascript',
-    'Reference' => '[RFC4329][RFC9239]',
+    'Reference' => '[RFC 4329][RFC 9239]',
     'Active' => true,
   ),
   'application/edhoc+cbor-seq' =>
   array(
     'Name' => 'edhoc+cbor-seq',
     'Template' => 'application/edhoc+cbor-seq',
-    'Reference' => '[RFC9528]',
+    'Reference' => '[RFC 9528]',
     'Active' => true,
   ),
   'application/edi-consent' =>
   array(
     'Name' => 'EDI-consent',
     'Template' => 'application/EDI-consent',
-    'Reference' => '[RFC1767]',
+    'Reference' => '[RFC 1767]',
     'Active' => true,
   ),
   'application/edi-x12' =>
   array(
     'Name' => 'EDI-X12',
     'Template' => 'application/EDI-X12',
-    'Reference' => '[RFC1767]',
+    'Reference' => '[RFC 1767]',
     'Active' => true,
   ),
   'application/edifact' =>
   array(
     'Name' => 'EDIFACT',
     'Template' => 'application/EDIFACT',
-    'Reference' => '[RFC1767]',
+    'Reference' => '[RFC 1767]',
     'Active' => true,
   ),
   'application/efi' =>
@@ -1176,35 +1176,35 @@ return array(
   array(
     'Name' => 'EmergencyCallData.cap+xml',
     'Template' => 'application/EmergencyCallData.cap+xml',
-    'Reference' => '[RFC8876]',
+    'Reference' => '[RFC 8876]',
     'Active' => true,
   ),
   'application/emergencycalldata.comment+xml' =>
   array(
     'Name' => 'EmergencyCallData.Comment+xml',
     'Template' => 'application/EmergencyCallData.Comment+xml',
-    'Reference' => '[RFC7852]',
+    'Reference' => '[RFC 7852]',
     'Active' => true,
   ),
   'application/emergencycalldata.control+xml' =>
   array(
     'Name' => 'EmergencyCallData.Control+xml',
     'Template' => 'application/EmergencyCallData.Control+xml',
-    'Reference' => '[RFC8147]',
+    'Reference' => '[RFC 8147]',
     'Active' => true,
   ),
   'application/emergencycalldata.deviceinfo+xml' =>
   array(
     'Name' => 'EmergencyCallData.DeviceInfo+xml',
     'Template' => 'application/EmergencyCallData.DeviceInfo+xml',
-    'Reference' => '[RFC7852]',
+    'Reference' => '[RFC 7852]',
     'Active' => true,
   ),
   'application/emergencycalldata.ecall.msd' =>
   array(
     'Name' => 'EmergencyCallData.eCall.MSD',
     'Template' => 'application/EmergencyCallData.eCall.MSD',
-    'Reference' => '[RFC8147]',
+    'Reference' => '[RFC 8147]',
     'Active' => true,
   ),
   'application/emergencycalldata.legacyesn+json' =>
@@ -1218,28 +1218,28 @@ return array(
   array(
     'Name' => 'EmergencyCallData.ProviderInfo+xml',
     'Template' => 'application/EmergencyCallData.ProviderInfo+xml',
-    'Reference' => '[RFC7852]',
+    'Reference' => '[RFC 7852]',
     'Active' => true,
   ),
   'application/emergencycalldata.serviceinfo+xml' =>
   array(
     'Name' => 'EmergencyCallData.ServiceInfo+xml',
     'Template' => 'application/EmergencyCallData.ServiceInfo+xml',
-    'Reference' => '[RFC7852]',
+    'Reference' => '[RFC 7852]',
     'Active' => true,
   ),
   'application/emergencycalldata.subscriberinfo+xml' =>
   array(
     'Name' => 'EmergencyCallData.SubscriberInfo+xml',
     'Template' => 'application/EmergencyCallData.SubscriberInfo+xml',
-    'Reference' => '[RFC7852]',
+    'Reference' => '[RFC 7852]',
     'Active' => true,
   ),
   'application/emergencycalldata.veds+xml' =>
   array(
     'Name' => 'EmergencyCallData.VEDS+xml',
     'Template' => 'application/EmergencyCallData.VEDS+xml',
-    'Reference' => '[RFC8148][RFC Errata 6500]',
+    'Reference' => '[RFC 8148][RFC Errata 6500]',
     'Active' => true,
   ),
   'application/emma+xml' =>
@@ -1260,7 +1260,7 @@ return array(
   array(
     'Name' => 'encaprtp',
     'Template' => 'application/encaprtp',
-    'Reference' => '[RFC6849]',
+    'Reference' => '[RFC 6849]',
     'Active' => true,
   ),
   'application/entity-statement+jwt' =>
@@ -1274,7 +1274,7 @@ return array(
   array(
     'Name' => 'epp+xml',
     'Template' => 'application/epp+xml',
-    'Reference' => '[RFC5730]',
+    'Reference' => '[RFC 5730]',
     'Active' => true,
   ),
   'application/epub+zip' =>
@@ -1295,7 +1295,7 @@ return array(
   array(
     'Name' => 'example',
     'Template' => 'application/example',
-    'Reference' => '[RFC4735]',
+    'Reference' => '[RFC 4735]',
     'Active' => true,
   ),
   'application/exi' =>
@@ -1309,7 +1309,7 @@ return array(
   array(
     'Name' => 'expect-ct-report+json',
     'Template' => 'application/expect-ct-report+json',
-    'Reference' => '[RFC9163]',
+    'Reference' => '[RFC 9163]',
     'Active' => true,
   ),
   'application/explicit-registration-response+jwt' =>
@@ -1351,7 +1351,7 @@ return array(
   array(
     'Name' => 'fdt+xml',
     'Template' => 'application/fdt+xml',
-    'Reference' => '[RFC6726]',
+    'Reference' => '[RFC 6726]',
     'Active' => true,
   ),
   'application/fhir+json' =>
@@ -1372,63 +1372,63 @@ return array(
   array(
     'Name' => 'fits',
     'Template' => 'application/fits',
-    'Reference' => '[RFC4047]',
+    'Reference' => '[RFC 4047]',
     'Active' => true,
   ),
   'application/flexfec' =>
   array(
     'Name' => 'flexfec',
     'Template' => 'application/flexfec',
-    'Reference' => '[RFC8627]',
+    'Reference' => '[RFC 8627]',
     'Active' => true,
   ),
   'application/font-sfnt' =>
   array(
     'Name' => 'font-sfnt - DEPRECATED in favor of font/sfnt',
     'Template' => 'application/font-sfnt',
-    'Reference' => '[Levantovsky][ISO-IEC_JTC_1][RFC8081]',
+    'Reference' => '[Levantovsky][ISO-IEC_JTC_1][RFC 8081]',
     'Active' => true,
   ),
   'application/font-tdpfr' =>
   array(
     'Name' => 'font-tdpfr',
     'Template' => 'application/font-tdpfr',
-    'Reference' => '[RFC3073]',
+    'Reference' => '[RFC 3073]',
     'Active' => true,
   ),
   'application/font-woff' =>
   array(
     'Name' => 'font-woff - DEPRECATED in favor of font/woff',
     'Template' => 'application/font-woff',
-    'Reference' => '[W3C][RFC8081]',
+    'Reference' => '[W3C][RFC 8081]',
     'Active' => true,
   ),
   'application/framework-attributes+xml' =>
   array(
     'Name' => 'framework-attributes+xml',
     'Template' => 'application/framework-attributes+xml',
-    'Reference' => '[RFC6230]',
+    'Reference' => '[RFC 6230]',
     'Active' => true,
   ),
   'application/geo+json' =>
   array(
     'Name' => 'geo+json',
     'Template' => 'application/geo+json',
-    'Reference' => '[RFC7946]',
+    'Reference' => '[RFC 7946]',
     'Active' => true,
   ),
   'application/geo+json-seq' =>
   array(
     'Name' => 'geo+json-seq',
     'Template' => 'application/geo+json-seq',
-    'Reference' => '[RFC8142]',
+    'Reference' => '[RFC 8142]',
     'Active' => true,
   ),
   'application/geofeed+csv' =>
   array(
     'Name' => 'geofeed+csv',
     'Template' => 'application/geofeed+csv',
-    'Reference' => '[RFC9877]',
+    'Reference' => '[RFC 9877]',
     'Active' => true,
   ),
   'application/geopackage+sqlite3' =>
@@ -1477,28 +1477,28 @@ return array(
   array(
     'Name' => 'gnap-binding-jws',
     'Template' => 'application/gnap-binding-jws',
-    'Reference' => '[RFC9635]',
+    'Reference' => '[RFC 9635]',
     'Active' => true,
   ),
   'application/gnap-binding-jwsd' =>
   array(
     'Name' => 'gnap-binding-jwsd',
     'Template' => 'application/gnap-binding-jwsd',
-    'Reference' => '[RFC9635]',
+    'Reference' => '[RFC 9635]',
     'Active' => true,
   ),
   'application/gnap-binding-rotation-jws' =>
   array(
     'Name' => 'gnap-binding-rotation-jws',
     'Template' => 'application/gnap-binding-rotation-jws',
-    'Reference' => '[RFC9635]',
+    'Reference' => '[RFC 9635]',
     'Active' => true,
   ),
   'application/gnap-binding-rotation-jwsd' =>
   array(
     'Name' => 'gnap-binding-rotation-jwsd',
     'Template' => 'application/gnap-binding-rotation-jwsd',
-    'Reference' => '[RFC9635]',
+    'Reference' => '[RFC 9635]',
     'Active' => true,
   ),
   'application/grib' =>
@@ -1512,21 +1512,21 @@ return array(
   array(
     'Name' => 'gzip',
     'Template' => 'application/gzip',
-    'Reference' => '[RFC6713]',
+    'Reference' => '[RFC 6713]',
     'Active' => true,
   ),
   'application/h224' =>
   array(
     'Name' => 'H224',
     'Template' => 'application/H224',
-    'Reference' => '[RFC4573]',
+    'Reference' => '[RFC 4573]',
     'Active' => true,
   ),
   'application/held+xml' =>
   array(
     'Name' => 'held+xml',
     'Template' => 'application/held+xml',
-    'Reference' => '[RFC5985]',
+    'Reference' => '[RFC 5985]',
     'Active' => true,
   ),
   'application/hl7v2+xml' =>
@@ -1540,7 +1540,7 @@ return array(
   array(
     'Name' => 'http',
     'Template' => 'application/http',
-    'Reference' => '[RFC9112]',
+    'Reference' => '[RFC 9112]',
     'Active' => true,
   ),
   'application/hyperstudio' =>
@@ -1554,21 +1554,21 @@ return array(
   array(
     'Name' => 'ibe-key-request+xml',
     'Template' => 'application/ibe-key-request+xml',
-    'Reference' => '[RFC5408]',
+    'Reference' => '[RFC 5408]',
     'Active' => true,
   ),
   'application/ibe-pkg-reply+xml' =>
   array(
     'Name' => 'ibe-pkg-reply+xml',
     'Template' => 'application/ibe-pkg-reply+xml',
-    'Reference' => '[RFC5408]',
+    'Reference' => '[RFC 5408]',
     'Active' => true,
   ),
   'application/ibe-pp-data' =>
   array(
     'Name' => 'ibe-pp-data',
     'Template' => 'application/ibe-pp-data',
-    'Reference' => '[RFC5408]',
+    'Reference' => '[RFC 5408]',
     'Active' => true,
   ),
   'application/iges' =>
@@ -1582,42 +1582,42 @@ return array(
   array(
     'Name' => 'im-iscomposing+xml',
     'Template' => 'application/im-iscomposing+xml',
-    'Reference' => '[RFC3994]',
+    'Reference' => '[RFC 3994]',
     'Active' => true,
   ),
   'application/index' =>
   array(
     'Name' => 'index',
     'Template' => 'application/index',
-    'Reference' => '[RFC2652]',
+    'Reference' => '[RFC 2652]',
     'Active' => true,
   ),
   'application/index.cmd' =>
   array(
     'Name' => 'index.cmd',
     'Template' => 'application/index.cmd',
-    'Reference' => '[RFC2652]',
+    'Reference' => '[RFC 2652]',
     'Active' => true,
   ),
   'application/index.obj' =>
   array(
     'Name' => 'index.obj',
     'Template' => 'application/index.obj',
-    'Reference' => '[RFC2652]',
+    'Reference' => '[RFC 2652]',
     'Active' => true,
   ),
   'application/index.response' =>
   array(
     'Name' => 'index.response',
     'Template' => 'application/index.response',
-    'Reference' => '[RFC2652]',
+    'Reference' => '[RFC 2652]',
     'Active' => true,
   ),
   'application/index.vnd' =>
   array(
     'Name' => 'index.vnd',
     'Template' => 'application/index.vnd',
-    'Reference' => '[RFC2652]',
+    'Reference' => '[RFC 2652]',
     'Active' => true,
   ),
   'application/inkml+xml' =>
@@ -1631,28 +1631,28 @@ return array(
   array(
     'Name' => 'IOTP',
     'Template' => 'application/IOTP',
-    'Reference' => '[RFC2935]',
+    'Reference' => '[RFC 2935]',
     'Active' => true,
   ),
   'application/ipfix' =>
   array(
     'Name' => 'ipfix',
     'Template' => 'application/ipfix',
-    'Reference' => '[RFC5655]',
+    'Reference' => '[RFC 5655]',
     'Active' => true,
   ),
   'application/ipp' =>
   array(
     'Name' => 'ipp',
     'Template' => 'application/ipp',
-    'Reference' => '[RFC8010]',
+    'Reference' => '[RFC 8010]',
     'Active' => true,
   ),
   'application/isup' =>
   array(
     'Name' => 'ISUP',
     'Template' => 'application/ISUP',
-    'Reference' => '[RFC3204]',
+    'Reference' => '[RFC 3204]',
     'Active' => true,
   ),
   'application/its+xml' =>
@@ -1673,7 +1673,7 @@ return array(
   array(
     'Name' => 'javascript (OBSOLETED in favor of text/javascript)',
     'Template' => 'application/javascript',
-    'Reference' => '[RFC4329][RFC9239]',
+    'Reference' => '[RFC 4329][RFC 9239]',
     'Active' => true,
   ),
   'application/jf2feed+json' =>
@@ -1687,49 +1687,49 @@ return array(
   array(
     'Name' => 'jose',
     'Template' => 'application/jose',
-    'Reference' => '[RFC7515]',
+    'Reference' => '[RFC 7515]',
     'Active' => true,
   ),
   'application/jose+json' =>
   array(
     'Name' => 'jose+json',
     'Template' => 'application/jose+json',
-    'Reference' => '[RFC7515]',
+    'Reference' => '[RFC 7515]',
     'Active' => true,
   ),
   'application/jrd+json' =>
   array(
     'Name' => 'jrd+json',
     'Template' => 'application/jrd+json',
-    'Reference' => '[RFC7033]',
+    'Reference' => '[RFC 7033]',
     'Active' => true,
   ),
   'application/jscalendar+json' =>
   array(
     'Name' => 'jscalendar+json',
     'Template' => 'application/jscalendar+json',
-    'Reference' => '[RFC8984]',
+    'Reference' => '[RFC 8984]',
     'Active' => true,
   ),
   'application/jscontact+json' =>
   array(
     'Name' => 'jscontact+json',
     'Template' => 'application/jscontact+json',
-    'Reference' => '[RFC9553]',
+    'Reference' => '[RFC 9553]',
     'Active' => true,
   ),
   'application/json' =>
   array(
     'Name' => 'json',
     'Template' => 'application/json',
-    'Reference' => '[RFC8259]',
+    'Reference' => '[RFC 8259]',
     'Active' => true,
   ),
   'application/json-patch+json' =>
   array(
     'Name' => 'json-patch+json',
     'Template' => 'application/json-patch+json',
-    'Reference' => '[RFC6902]',
+    'Reference' => '[RFC 6902]',
     'Active' => true,
   ),
   'application/json-patch-query+json' =>
@@ -1743,14 +1743,14 @@ return array(
   array(
     'Name' => 'json-seq',
     'Template' => 'application/json-seq',
-    'Reference' => '[RFC7464]',
+    'Reference' => '[RFC 7464]',
     'Active' => true,
   ),
   'application/jsonpath' =>
   array(
     'Name' => 'jsonpath',
     'Template' => 'application/jsonpath',
-    'Reference' => '[RFC9535]',
+    'Reference' => '[RFC 9535]',
     'Active' => true,
   ),
   'application/jumbf' =>
@@ -1764,14 +1764,14 @@ return array(
   array(
     'Name' => 'jwk+json',
     'Template' => 'application/jwk+json',
-    'Reference' => '[RFC7517]',
+    'Reference' => '[RFC 7517]',
     'Active' => true,
   ),
   'application/jwk-set+json' =>
   array(
     'Name' => 'jwk-set+json',
     'Template' => 'application/jwk-set+json',
-    'Reference' => '[RFC7517]',
+    'Reference' => '[RFC 7517]',
     'Active' => true,
   ),
   'application/jwk-set+jwt' =>
@@ -1785,14 +1785,14 @@ return array(
   array(
     'Name' => 'jwt',
     'Template' => 'application/jwt',
-    'Reference' => '[RFC7519]',
+    'Reference' => '[RFC 7519]',
     'Active' => true,
   ),
   'application/kb+jwt' =>
   array(
     'Name' => 'kb+jwt',
     'Template' => 'application/kb+jwt',
-    'Reference' => '[RFC9901]',
+    'Reference' => '[RFC 9901]',
     'Active' => true,
   ),
   'application/kbl+xml' =>
@@ -1806,14 +1806,14 @@ return array(
   array(
     'Name' => 'kpml-request+xml',
     'Template' => 'application/kpml-request+xml',
-    'Reference' => '[RFC4730]',
+    'Reference' => '[RFC 4730]',
     'Active' => true,
   ),
   'application/kpml-response+xml' =>
   array(
     'Name' => 'kpml-response+xml',
     'Template' => 'application/kpml-response+xml',
-    'Reference' => '[RFC4730]',
+    'Reference' => '[RFC 4730]',
     'Active' => true,
   ),
   'application/ld+json' =>
@@ -1827,35 +1827,35 @@ return array(
   array(
     'Name' => 'lgr+xml',
     'Template' => 'application/lgr+xml',
-    'Reference' => '[RFC7940]',
+    'Reference' => '[RFC 7940]',
     'Active' => true,
   ),
   'application/link-format' =>
   array(
     'Name' => 'link-format',
     'Template' => 'application/link-format',
-    'Reference' => '[RFC6690]',
+    'Reference' => '[RFC 6690]',
     'Active' => true,
   ),
   'application/linkset' =>
   array(
     'Name' => 'linkset',
     'Template' => 'application/linkset',
-    'Reference' => '[RFC9264]',
+    'Reference' => '[RFC 9264]',
     'Active' => true,
   ),
   'application/linkset+json' =>
   array(
     'Name' => 'linkset+json',
     'Template' => 'application/linkset+json',
-    'Reference' => '[RFC9264]',
+    'Reference' => '[RFC 9264]',
     'Active' => true,
   ),
   'application/load-control+xml' =>
   array(
     'Name' => 'load-control+xml',
     'Template' => 'application/load-control+xml',
-    'Reference' => '[RFC7200]',
+    'Reference' => '[RFC 7200]',
     'Active' => true,
   ),
   'application/logout+jwt' =>
@@ -1869,14 +1869,14 @@ return array(
   array(
     'Name' => 'lost+xml',
     'Template' => 'application/lost+xml',
-    'Reference' => '[RFC5222]',
+    'Reference' => '[RFC 5222]',
     'Active' => true,
   ),
   'application/lostsync+xml' =>
   array(
     'Name' => 'lostsync+xml',
     'Template' => 'application/lostsync+xml',
-    'Reference' => '[RFC6739]',
+    'Reference' => '[RFC 6739]',
     'Active' => true,
   ),
   'application/lpf+zip' =>
@@ -1911,7 +1911,7 @@ return array(
   array(
     'Name' => 'mads+xml',
     'Template' => 'application/mads+xml',
-    'Reference' => '[RFC6207]',
+    'Reference' => '[RFC 6207]',
     'Active' => true,
   ),
   'application/manifest+json' =>
@@ -1925,14 +1925,14 @@ return array(
   array(
     'Name' => 'marc',
     'Template' => 'application/marc',
-    'Reference' => '[RFC2220]',
+    'Reference' => '[RFC 2220]',
     'Active' => true,
   ),
   'application/marcxml+xml' =>
   array(
     'Name' => 'marcxml+xml',
     'Template' => 'application/marcxml+xml',
-    'Reference' => '[RFC6207]',
+    'Reference' => '[RFC 6207]',
     'Active' => true,
   ),
   'application/mathematica' =>
@@ -2044,63 +2044,63 @@ return array(
   array(
     'Name' => 'mbox',
     'Template' => 'application/mbox',
-    'Reference' => '[RFC4155]',
+    'Reference' => '[RFC 4155]',
     'Active' => true,
   ),
   'application/measured-component+cbor' =>
   array(
     'Name' => 'measured-component+cbor',
     'Template' => 'application/measured-component+cbor',
-    'Reference' => '[RFC10013]',
+    'Reference' => '[RFC 10013]',
     'Active' => true,
   ),
   'application/measured-component+json' =>
   array(
     'Name' => 'measured-component+json',
     'Template' => 'application/measured-component+json',
-    'Reference' => '[RFC10013]',
+    'Reference' => '[RFC 10013]',
     'Active' => true,
   ),
   'application/media-policy-dataset+xml' =>
   array(
     'Name' => 'media-policy-dataset+xml',
     'Template' => 'application/media-policy-dataset+xml',
-    'Reference' => '[RFC6796]',
+    'Reference' => '[RFC 6796]',
     'Active' => true,
   ),
   'application/media_control+xml' =>
   array(
     'Name' => 'media_control+xml',
     'Template' => 'application/media_control+xml',
-    'Reference' => '[RFC5168]',
+    'Reference' => '[RFC 5168]',
     'Active' => true,
   ),
   'application/mediaservercontrol+xml' =>
   array(
     'Name' => 'mediaservercontrol+xml',
     'Template' => 'application/mediaservercontrol+xml',
-    'Reference' => '[RFC5022]',
+    'Reference' => '[RFC 5022]',
     'Active' => true,
   ),
   'application/merge-patch+json' =>
   array(
     'Name' => 'merge-patch+json',
     'Template' => 'application/merge-patch+json',
-    'Reference' => '[RFC7396]',
+    'Reference' => '[RFC 7396]',
     'Active' => true,
   ),
   'application/metalink4+xml' =>
   array(
     'Name' => 'metalink4+xml',
     'Template' => 'application/metalink4+xml',
-    'Reference' => '[RFC5854]',
+    'Reference' => '[RFC 5854]',
     'Active' => true,
   ),
   'application/mets+xml' =>
   array(
     'Name' => 'mets+xml',
     'Template' => 'application/mets+xml',
-    'Reference' => '[RFC6207]',
+    'Reference' => '[RFC 6207]',
     'Active' => true,
   ),
   'application/mf4' =>
@@ -2114,7 +2114,7 @@ return array(
   array(
     'Name' => 'mikey',
     'Template' => 'application/mikey',
-    'Reference' => '[RFC3830]',
+    'Reference' => '[RFC 3830]',
     'Active' => true,
   ),
   'application/mipc' =>
@@ -2128,7 +2128,7 @@ return array(
   array(
     'Name' => 'missing-blocks+cbor-seq',
     'Template' => 'application/missing-blocks+cbor-seq',
-    'Reference' => '[RFC9177]',
+    'Reference' => '[RFC 9177]',
     'Active' => true,
   ),
   'application/mmt-aei+xml' =>
@@ -2149,98 +2149,98 @@ return array(
   array(
     'Name' => 'mods+xml',
     'Template' => 'application/mods+xml',
-    'Reference' => '[RFC6207]',
+    'Reference' => '[RFC 6207]',
     'Active' => true,
   ),
   'application/moss-keys' =>
   array(
     'Name' => 'moss-keys',
     'Template' => 'application/moss-keys',
-    'Reference' => '[RFC1848]',
+    'Reference' => '[RFC 1848]',
     'Active' => true,
   ),
   'application/moss-signature' =>
   array(
     'Name' => 'moss-signature',
     'Template' => 'application/moss-signature',
-    'Reference' => '[RFC1848]',
+    'Reference' => '[RFC 1848]',
     'Active' => true,
   ),
   'application/mosskey-data' =>
   array(
     'Name' => 'mosskey-data',
     'Template' => 'application/mosskey-data',
-    'Reference' => '[RFC1848]',
+    'Reference' => '[RFC 1848]',
     'Active' => true,
   ),
   'application/mosskey-request' =>
   array(
     'Name' => 'mosskey-request',
     'Template' => 'application/mosskey-request',
-    'Reference' => '[RFC1848]',
+    'Reference' => '[RFC 1848]',
     'Active' => true,
   ),
   'application/mp21' =>
   array(
     'Name' => 'mp21',
     'Template' => 'application/mp21',
-    'Reference' => '[RFC6381][David_Singer]',
+    'Reference' => '[RFC 6381][David_Singer]',
     'Active' => true,
   ),
   'application/mp4' =>
   array(
     'Name' => 'mp4',
     'Template' => 'application/mp4',
-    'Reference' => '[RFC4337][RFC6381]',
+    'Reference' => '[RFC 4337][RFC 6381]',
     'Active' => true,
   ),
   'application/mpeg4-generic' =>
   array(
     'Name' => 'mpeg4-generic',
     'Template' => 'application/mpeg4-generic',
-    'Reference' => '[RFC3640]',
+    'Reference' => '[RFC 3640]',
     'Active' => true,
   ),
   'application/mpeg4-iod' =>
   array(
     'Name' => 'mpeg4-iod',
     'Template' => 'application/mpeg4-iod',
-    'Reference' => '[RFC4337]',
+    'Reference' => '[RFC 4337]',
     'Active' => true,
   ),
   'application/mpeg4-iod-xmt' =>
   array(
     'Name' => 'mpeg4-iod-xmt',
     'Template' => 'application/mpeg4-iod-xmt',
-    'Reference' => '[RFC4337]',
+    'Reference' => '[RFC 4337]',
     'Active' => true,
   ),
   'application/mrb-consumer+xml' =>
   array(
     'Name' => 'mrb-consumer+xml',
     'Template' => 'application/mrb-consumer+xml',
-    'Reference' => '[RFC6917]',
+    'Reference' => '[RFC 6917]',
     'Active' => true,
   ),
   'application/mrb-publish+xml' =>
   array(
     'Name' => 'mrb-publish+xml',
     'Template' => 'application/mrb-publish+xml',
-    'Reference' => '[RFC6917]',
+    'Reference' => '[RFC 6917]',
     'Active' => true,
   ),
   'application/msc-ivr+xml' =>
   array(
     'Name' => 'msc-ivr+xml',
     'Template' => 'application/msc-ivr+xml',
-    'Reference' => '[RFC6231]',
+    'Reference' => '[RFC 6231]',
     'Active' => true,
   ),
   'application/msc-mixer+xml' =>
   array(
     'Name' => 'msc-mixer+xml',
     'Template' => 'application/msc-mixer+xml',
-    'Reference' => '[RFC6505]',
+    'Reference' => '[RFC 6505]',
     'Active' => true,
   ),
   'application/msword' =>
@@ -2254,21 +2254,21 @@ return array(
   array(
     'Name' => 'mud+json',
     'Template' => 'application/mud+json',
-    'Reference' => '[RFC8520]',
+    'Reference' => '[RFC 8520]',
     'Active' => true,
   ),
   'application/multipart-core' =>
   array(
     'Name' => 'multipart-core',
     'Template' => 'application/multipart-core',
-    'Reference' => '[RFC8710]',
+    'Reference' => '[RFC 8710]',
     'Active' => true,
   ),
   'application/mxf' =>
   array(
     'Name' => 'mxf',
     'Template' => 'application/mxf',
-    'Reference' => '[RFC4539]',
+    'Reference' => '[RFC 4539]',
     'Active' => true,
   ),
   'application/n-quads' =>
@@ -2289,35 +2289,35 @@ return array(
   array(
     'Name' => 'nasdata',
     'Template' => 'application/nasdata',
-    'Reference' => '[RFC4707]',
+    'Reference' => '[RFC 4707]',
     'Active' => true,
   ),
   'application/news-checkgroups' =>
   array(
     'Name' => 'news-checkgroups',
     'Template' => 'application/news-checkgroups',
-    'Reference' => '[RFC5537]',
+    'Reference' => '[RFC 5537]',
     'Active' => true,
   ),
   'application/news-groupinfo' =>
   array(
     'Name' => 'news-groupinfo',
     'Template' => 'application/news-groupinfo',
-    'Reference' => '[RFC5537]',
+    'Reference' => '[RFC 5537]',
     'Active' => true,
   ),
   'application/news-transmission' =>
   array(
     'Name' => 'news-transmission',
     'Template' => 'application/news-transmission',
-    'Reference' => '[RFC5537]',
+    'Reference' => '[RFC 5537]',
     'Active' => true,
   ),
   'application/nlsml+xml' =>
   array(
     'Name' => 'nlsml+xml',
     'Template' => 'application/nlsml+xml',
-    'Reference' => '[RFC6787]',
+    'Reference' => '[RFC 6787]',
     'Active' => true,
   ),
   'application/node' =>
@@ -2338,42 +2338,42 @@ return array(
   array(
     'Name' => 'oauth-authz-req+jwt',
     'Template' => 'application/oauth-authz-req+jwt',
-    'Reference' => '[RFC9101]',
+    'Reference' => '[RFC 9101]',
     'Active' => true,
   ),
   'application/oblivious-dns-message' =>
   array(
     'Name' => 'oblivious-dns-message',
     'Template' => 'application/oblivious-dns-message',
-    'Reference' => '[RFC9230]',
+    'Reference' => '[RFC 9230]',
     'Active' => true,
   ),
   'application/ocsp-request' =>
   array(
     'Name' => 'ocsp-request',
     'Template' => 'application/ocsp-request',
-    'Reference' => '[RFC6960]',
+    'Reference' => '[RFC 6960]',
     'Active' => true,
   ),
   'application/ocsp-response' =>
   array(
     'Name' => 'ocsp-response',
     'Template' => 'application/ocsp-response',
-    'Reference' => '[RFC6960]',
+    'Reference' => '[RFC 6960]',
     'Active' => true,
   ),
   'application/octet-stream' =>
   array(
     'Name' => 'octet-stream',
     'Template' => 'application/octet-stream',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'application/oda' =>
   array(
     'Name' => 'ODA',
     'Template' => 'application/ODA',
-    'Reference' => '[RFC1494]',
+    'Reference' => '[RFC 1494]',
     'Active' => true,
   ),
   'application/odm+xml' =>
@@ -2401,14 +2401,14 @@ return array(
   array(
     'Name' => 'ogg',
     'Template' => 'application/ogg',
-    'Reference' => '[RFC5334][RFC7845]',
+    'Reference' => '[RFC 5334][RFC 7845]',
     'Active' => true,
   ),
   'application/ohttp-keys' =>
   array(
     'Name' => 'ohttp-keys',
     'Template' => 'application/ohttp-keys',
-    'Reference' => '[RFC9458]',
+    'Reference' => '[RFC 9458]',
     'Active' => true,
   ),
   'application/opc-nodeset+xml' =>
@@ -2422,7 +2422,7 @@ return array(
   array(
     'Name' => 'oscore',
     'Template' => 'application/oscore',
-    'Reference' => '[RFC8613]',
+    'Reference' => '[RFC 8613]',
     'Active' => true,
   ),
   'application/oxps' =>
@@ -2450,35 +2450,35 @@ return array(
   array(
     'Name' => 'p2p-overlay+xml',
     'Template' => 'application/p2p-overlay+xml',
-    'Reference' => '[RFC6940]',
+    'Reference' => '[RFC 6940]',
     'Active' => true,
   ),
   'application/parityfec' =>
   array(
     'Name' => 'parityfec',
     'Template' => 'application/parityfec',
-    'Reference' => '[RFC3009]',
+    'Reference' => '[RFC 3009]',
     'Active' => true,
   ),
   'application/passport' =>
   array(
     'Name' => 'passport',
     'Template' => 'application/passport',
-    'Reference' => '[RFC8225]',
+    'Reference' => '[RFC 8225]',
     'Active' => true,
   ),
   'application/patch-ops-error+xml' =>
   array(
     'Name' => 'patch-ops-error+xml',
     'Template' => 'application/patch-ops-error+xml',
-    'Reference' => '[RFC5261]',
+    'Reference' => '[RFC 5261]',
     'Active' => true,
   ),
   'application/pdf' =>
   array(
     'Name' => 'pdf',
     'Template' => 'application/pdf',
-    'Reference' => '[RFC8118]',
+    'Reference' => '[RFC 8118]',
     'Active' => true,
   ),
   'application/pdx' =>
@@ -2492,49 +2492,49 @@ return array(
   array(
     'Name' => 'pem-certificate-chain',
     'Template' => 'application/pem-certificate-chain',
-    'Reference' => '[RFC8555]',
+    'Reference' => '[RFC 8555]',
     'Active' => true,
   ),
   'application/pgp-encrypted' =>
   array(
     'Name' => 'pgp-encrypted',
     'Template' => 'application/pgp-encrypted',
-    'Reference' => '[RFC3156]',
+    'Reference' => '[RFC 3156]',
     'Active' => true,
   ),
   'application/pgp-keys' =>
   array(
     'Name' => 'pgp-keys',
     'Template' => 'application/pgp-keys',
-    'Reference' => '[RFC3156]',
+    'Reference' => '[RFC 3156]',
     'Active' => true,
   ),
   'application/pgp-signature' =>
   array(
     'Name' => 'pgp-signature',
     'Template' => 'application/pgp-signature',
-    'Reference' => '[RFC3156]',
+    'Reference' => '[RFC 3156]',
     'Active' => true,
   ),
   'application/pidf+xml' =>
   array(
     'Name' => 'pidf+xml',
     'Template' => 'application/pidf+xml',
-    'Reference' => '[RFC3863]',
+    'Reference' => '[RFC 3863]',
     'Active' => true,
   ),
   'application/pidf-diff+xml' =>
   array(
     'Name' => 'pidf-diff+xml',
     'Template' => 'application/pidf-diff+xml',
-    'Reference' => '[RFC5262]',
+    'Reference' => '[RFC 5262]',
     'Active' => true,
   ),
   'application/pkcs10' =>
   array(
     'Name' => 'pkcs10',
     'Template' => 'application/pkcs10',
-    'Reference' => '[RFC5967]',
+    'Reference' => '[RFC 5967]',
     'Active' => true,
   ),
   'application/pkcs12' =>
@@ -2548,140 +2548,140 @@ return array(
   array(
     'Name' => 'pkcs7-mime',
     'Template' => 'application/pkcs7-mime',
-    'Reference' => '[RFC8551][RFC7114]',
+    'Reference' => '[RFC 8551][RFC 7114]',
     'Active' => true,
   ),
   'application/pkcs7-signature' =>
   array(
     'Name' => 'pkcs7-signature',
     'Template' => 'application/pkcs7-signature',
-    'Reference' => '[RFC8551]',
+    'Reference' => '[RFC 8551]',
     'Active' => true,
   ),
   'application/pkcs8' =>
   array(
     'Name' => 'pkcs8',
     'Template' => 'application/pkcs8',
-    'Reference' => '[RFC5958]',
+    'Reference' => '[RFC 5958]',
     'Active' => true,
   ),
   'application/pkcs8-encrypted' =>
   array(
     'Name' => 'pkcs8-encrypted',
     'Template' => 'application/pkcs8-encrypted',
-    'Reference' => '[RFC8351]',
+    'Reference' => '[RFC 8351]',
     'Active' => true,
   ),
   'application/pkix-attr-cert' =>
   array(
     'Name' => 'pkix-attr-cert',
     'Template' => 'application/pkix-attr-cert',
-    'Reference' => '[RFC5877]',
+    'Reference' => '[RFC 5877]',
     'Active' => true,
   ),
   'application/pkix-cert' =>
   array(
     'Name' => 'pkix-cert',
     'Template' => 'application/pkix-cert',
-    'Reference' => '[RFC2585]',
+    'Reference' => '[RFC 2585]',
     'Active' => true,
   ),
   'application/pkix-crl' =>
   array(
     'Name' => 'pkix-crl',
     'Template' => 'application/pkix-crl',
-    'Reference' => '[RFC2585]',
+    'Reference' => '[RFC 2585]',
     'Active' => true,
   ),
   'application/pkix-pkipath' =>
   array(
     'Name' => 'pkix-pkipath',
     'Template' => 'application/pkix-pkipath',
-    'Reference' => '[RFC6066]',
+    'Reference' => '[RFC 6066]',
     'Active' => true,
   ),
   'application/pkixcmp' =>
   array(
     'Name' => 'pkixcmp',
     'Template' => 'application/pkixcmp',
-    'Reference' => '[RFC9811]',
+    'Reference' => '[RFC 9811]',
     'Active' => true,
   ),
   'application/pls+xml' =>
   array(
     'Name' => 'pls+xml',
     'Template' => 'application/pls+xml',
-    'Reference' => '[RFC4267]',
+    'Reference' => '[RFC 4267]',
     'Active' => true,
   ),
   'application/poc-settings+xml' =>
   array(
     'Name' => 'poc-settings+xml',
     'Template' => 'application/poc-settings+xml',
-    'Reference' => '[RFC4354]',
+    'Reference' => '[RFC 4354]',
     'Active' => true,
   ),
   'application/postscript' =>
   array(
     'Name' => 'postscript',
     'Template' => 'application/postscript',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'application/ppsp-tracker+json' =>
   array(
     'Name' => 'ppsp-tracker+json',
     'Template' => 'application/ppsp-tracker+json',
-    'Reference' => '[RFC7846]',
+    'Reference' => '[RFC 7846]',
     'Active' => true,
   ),
   'application/private-token-issuer-directory' =>
   array(
     'Name' => 'private-token-issuer-directory',
     'Template' => 'application/private-token-issuer-directory',
-    'Reference' => '[RFC9578]',
+    'Reference' => '[RFC 9578]',
     'Active' => true,
   ),
   'application/private-token-request' =>
   array(
     'Name' => 'private-token-request',
     'Template' => 'application/private-token-request',
-    'Reference' => '[RFC9578]',
+    'Reference' => '[RFC 9578]',
     'Active' => true,
   ),
   'application/private-token-response' =>
   array(
     'Name' => 'private-token-response',
     'Template' => 'application/private-token-response',
-    'Reference' => '[RFC9578]',
+    'Reference' => '[RFC 9578]',
     'Active' => true,
   ),
   'application/problem+json' =>
   array(
     'Name' => 'problem+json',
     'Template' => 'application/problem+json',
-    'Reference' => '[RFC9457]',
+    'Reference' => '[RFC 9457]',
     'Active' => true,
   ),
   'application/problem+xml' =>
   array(
     'Name' => 'problem+xml',
     'Template' => 'application/problem+xml',
-    'Reference' => '[RFC9457]',
+    'Reference' => '[RFC 9457]',
     'Active' => true,
   ),
   'application/protobuf' =>
   array(
     'Name' => 'protobuf',
     'Template' => 'application/protobuf',
-    'Reference' => '[RFC9996]',
+    'Reference' => '[RFC 9996]',
     'Active' => true,
   ),
   'application/protobuf+json' =>
   array(
     'Name' => 'protobuf+json',
     'Template' => 'application/protobuf+json',
-    'Reference' => '[RFC9996]',
+    'Reference' => '[RFC 9996]',
     'Active' => true,
   ),
   'application/provenance+xml' =>
@@ -2835,49 +2835,49 @@ return array(
   array(
     'Name' => 'pskc+xml',
     'Template' => 'application/pskc+xml',
-    'Reference' => '[RFC6030]',
+    'Reference' => '[RFC 6030]',
     'Active' => true,
   ),
   'application/pvd+json' =>
   array(
     'Name' => 'pvd+json',
     'Template' => 'application/pvd+json',
-    'Reference' => '[RFC8801]',
+    'Reference' => '[RFC 8801]',
     'Active' => true,
   ),
   'application/qsig' =>
   array(
     'Name' => 'QSIG',
     'Template' => 'application/QSIG',
-    'Reference' => '[RFC3204]',
+    'Reference' => '[RFC 3204]',
     'Active' => true,
   ),
   'application/raptorfec' =>
   array(
     'Name' => 'raptorfec',
     'Template' => 'application/raptorfec',
-    'Reference' => '[RFC6682]',
+    'Reference' => '[RFC 6682]',
     'Active' => true,
   ),
   'application/rdap+json' =>
   array(
     'Name' => 'rdap+json',
     'Template' => 'application/rdap+json',
-    'Reference' => '[RFC9083]',
+    'Reference' => '[RFC 9083]',
     'Active' => true,
   ),
   'application/rdf+xml' =>
   array(
     'Name' => 'rdf+xml',
     'Template' => 'application/rdf+xml',
-    'Reference' => '[RFC3870]',
+    'Reference' => '[RFC 3870]',
     'Active' => true,
   ),
   'application/reginfo+xml' =>
   array(
     'Name' => 'reginfo+xml',
     'Template' => 'application/reginfo+xml',
-    'Reference' => '[RFC3680]',
+    'Reference' => '[RFC 3680]',
     'Active' => true,
   ),
   'application/relax-ng-compact-syntax' =>
@@ -2891,14 +2891,14 @@ return array(
   array(
     'Name' => 'remote-printing (OBSOLETE)',
     'Template' => 'application/remote-printing',
-    'Reference' => '[RFC1486][Marshall_Rose][Moving TPC.INT and NSAP.INT infrastructure domains to historic]',
+    'Reference' => '[RFC 1486][Marshall_Rose][Moving TPC.INT and NSAP.INT infrastructure domains to historic]',
     'Active' => true,
   ),
   'application/reputon+json' =>
   array(
     'Name' => 'reputon+json',
     'Template' => 'application/reputon+json',
-    'Reference' => '[RFC7071]',
+    'Reference' => '[RFC 7071]',
     'Active' => true,
   ),
   'application/resolve-response+jwt' =>
@@ -2912,21 +2912,21 @@ return array(
   array(
     'Name' => 'resource-lists+xml',
     'Template' => 'application/resource-lists+xml',
-    'Reference' => '[RFC4826]',
+    'Reference' => '[RFC 4826]',
     'Active' => true,
   ),
   'application/resource-lists-diff+xml' =>
   array(
     'Name' => 'resource-lists-diff+xml',
     'Template' => 'application/resource-lists-diff+xml',
-    'Reference' => '[RFC5362]',
+    'Reference' => '[RFC 5362]',
     'Active' => true,
   ),
   'application/rfc+xml' =>
   array(
     'Name' => 'rfc+xml',
     'Template' => 'application/rfc+xml',
-    'Reference' => '[RFC7991]',
+    'Reference' => '[RFC 7991]',
     'Active' => true,
   ),
   'application/riscos' =>
@@ -2940,14 +2940,14 @@ return array(
   array(
     'Name' => 'rlmi+xml',
     'Template' => 'application/rlmi+xml',
-    'Reference' => '[RFC4662]',
+    'Reference' => '[RFC 4662]',
     'Active' => true,
   ),
   'application/rls-services+xml' =>
   array(
     'Name' => 'rls-services+xml',
     'Template' => 'application/rls-services+xml',
-    'Reference' => '[RFC4826]',
+    'Reference' => '[RFC 4826]',
     'Active' => true,
   ),
   'application/roughtime-malfeasance+json' =>
@@ -3003,56 +3003,56 @@ return array(
   array(
     'Name' => 'rpki-checklist',
     'Template' => 'application/rpki-checklist',
-    'Reference' => '[RFC9323]',
+    'Reference' => '[RFC 9323]',
     'Active' => true,
   ),
   'application/rpki-ghostbusters' =>
   array(
     'Name' => 'rpki-ghostbusters (DEPRECATED)',
     'Template' => 'application/rpki-ghostbusters',
-    'Reference' => '[RFC6493][Moving RFC 6493 to Historic]',
+    'Reference' => '[RFC 6493][Moving RFC 6493 to Historic]',
     'Active' => true,
   ),
   'application/rpki-manifest' =>
   array(
     'Name' => 'rpki-manifest',
     'Template' => 'application/rpki-manifest',
-    'Reference' => '[RFC6481]',
+    'Reference' => '[RFC 6481]',
     'Active' => true,
   ),
   'application/rpki-publication' =>
   array(
     'Name' => 'rpki-publication',
     'Template' => 'application/rpki-publication',
-    'Reference' => '[RFC8181]',
+    'Reference' => '[RFC 8181]',
     'Active' => true,
   ),
   'application/rpki-roa' =>
   array(
     'Name' => 'rpki-roa',
     'Template' => 'application/rpki-roa',
-    'Reference' => '[RFC9582]',
+    'Reference' => '[RFC 9582]',
     'Active' => true,
   ),
   'application/rpki-signed-tal' =>
   array(
     'Name' => 'rpki-signed-tal',
     'Template' => 'application/rpki-signed-tal',
-    'Reference' => '[RFC9691]',
+    'Reference' => '[RFC 9691]',
     'Active' => true,
   ),
   'application/rpki-updown' =>
   array(
     'Name' => 'rpki-updown',
     'Template' => 'application/rpki-updown',
-    'Reference' => '[RFC6492]',
+    'Reference' => '[RFC 6492]',
     'Active' => true,
   ),
   'application/rs-metadata+xml' =>
   array(
     'Name' => 'rs-metadata+xml',
     'Template' => 'application/rs-metadata+xml',
-    'Reference' => '[RFC7865][RFC9806]',
+    'Reference' => '[RFC 7865][RFC 9806]',
     'Active' => true,
   ),
   'application/rtf' =>
@@ -3066,14 +3066,14 @@ return array(
   array(
     'Name' => 'rtploopback',
     'Template' => 'application/rtploopback',
-    'Reference' => '[RFC6849]',
+    'Reference' => '[RFC 6849]',
     'Active' => true,
   ),
   'application/rtx' =>
   array(
     'Name' => 'rtx',
     'Template' => 'application/rtx',
-    'Reference' => '[RFC4588]',
+    'Reference' => '[RFC 4588]',
     'Active' => true,
   ),
   'application/samlassertion+xml' =>
@@ -3115,7 +3115,7 @@ return array(
   array(
     'Name' => 'sbml+xml',
     'Template' => 'application/sbml+xml',
-    'Reference' => '[RFC3823]',
+    'Reference' => '[RFC 3823]',
     'Active' => true,
   ),
   'application/scaip+xml' =>
@@ -3129,154 +3129,154 @@ return array(
   array(
     'Name' => 'scim+json',
     'Template' => 'application/scim+json',
-    'Reference' => '[RFC7644]',
+    'Reference' => '[RFC 7644]',
     'Active' => true,
   ),
   'application/scitt-receipt+cose' =>
   array(
     'Name' => 'scitt-receipt+cose',
     'Template' => 'application/scitt-receipt+cose',
-    'Reference' => '[RFC9943]',
+    'Reference' => '[RFC 9943]',
     'Active' => true,
   ),
   'application/scitt-statement+cose' =>
   array(
     'Name' => 'scitt-statement+cose',
     'Template' => 'application/scitt-statement+cose',
-    'Reference' => '[RFC9943]',
+    'Reference' => '[RFC 9943]',
     'Active' => true,
   ),
   'application/scvp-cv-request' =>
   array(
     'Name' => 'scvp-cv-request',
     'Template' => 'application/scvp-cv-request',
-    'Reference' => '[RFC5055]',
+    'Reference' => '[RFC 5055]',
     'Active' => true,
   ),
   'application/scvp-cv-response' =>
   array(
     'Name' => 'scvp-cv-response',
     'Template' => 'application/scvp-cv-response',
-    'Reference' => '[RFC5055]',
+    'Reference' => '[RFC 5055]',
     'Active' => true,
   ),
   'application/scvp-vp-request' =>
   array(
     'Name' => 'scvp-vp-request',
     'Template' => 'application/scvp-vp-request',
-    'Reference' => '[RFC5055]',
+    'Reference' => '[RFC 5055]',
     'Active' => true,
   ),
   'application/scvp-vp-response' =>
   array(
     'Name' => 'scvp-vp-response',
     'Template' => 'application/scvp-vp-response',
-    'Reference' => '[RFC5055]',
+    'Reference' => '[RFC 5055]',
     'Active' => true,
   ),
   'application/sd-jwt' =>
   array(
     'Name' => 'sd-jwt',
     'Template' => 'application/sd-jwt',
-    'Reference' => '[RFC9901]',
+    'Reference' => '[RFC 9901]',
     'Active' => true,
   ),
   'application/sd-jwt+json' =>
   array(
     'Name' => 'sd-jwt+json',
     'Template' => 'application/sd-jwt+json',
-    'Reference' => '[RFC9901]',
+    'Reference' => '[RFC 9901]',
     'Active' => true,
   ),
   'application/sdf+json' =>
   array(
     'Name' => 'sdf+json',
     'Template' => 'application/sdf+json',
-    'Reference' => '[RFC9880]',
+    'Reference' => '[RFC 9880]',
     'Active' => true,
   ),
   'application/sdp' =>
   array(
     'Name' => 'sdp',
     'Template' => 'application/sdp',
-    'Reference' => '[RFC8866]',
+    'Reference' => '[RFC 8866]',
     'Active' => true,
   ),
   'application/secevent+jwt' =>
   array(
     'Name' => 'secevent+jwt',
     'Template' => 'application/secevent+jwt',
-    'Reference' => '[RFC8417]',
+    'Reference' => '[RFC 8417]',
     'Active' => true,
   ),
   'application/senml+cbor' =>
   array(
     'Name' => 'senml+cbor',
     'Template' => 'application/senml+cbor',
-    'Reference' => '[RFC8428]',
+    'Reference' => '[RFC 8428]',
     'Active' => true,
   ),
   'application/senml+json' =>
   array(
     'Name' => 'senml+json',
     'Template' => 'application/senml+json',
-    'Reference' => '[RFC8428]',
+    'Reference' => '[RFC 8428]',
     'Active' => true,
   ),
   'application/senml+xml' =>
   array(
     'Name' => 'senml+xml',
     'Template' => 'application/senml+xml',
-    'Reference' => '[RFC8428]',
+    'Reference' => '[RFC 8428]',
     'Active' => true,
   ),
   'application/senml-etch+cbor' =>
   array(
     'Name' => 'senml-etch+cbor',
     'Template' => 'application/senml-etch+cbor',
-    'Reference' => '[RFC8790]',
+    'Reference' => '[RFC 8790]',
     'Active' => true,
   ),
   'application/senml-etch+json' =>
   array(
     'Name' => 'senml-etch+json',
     'Template' => 'application/senml-etch+json',
-    'Reference' => '[RFC8790]',
+    'Reference' => '[RFC 8790]',
     'Active' => true,
   ),
   'application/senml-exi' =>
   array(
     'Name' => 'senml-exi',
     'Template' => 'application/senml-exi',
-    'Reference' => '[RFC8428]',
+    'Reference' => '[RFC 8428]',
     'Active' => true,
   ),
   'application/sensml+cbor' =>
   array(
     'Name' => 'sensml+cbor',
     'Template' => 'application/sensml+cbor',
-    'Reference' => '[RFC8428]',
+    'Reference' => '[RFC 8428]',
     'Active' => true,
   ),
   'application/sensml+json' =>
   array(
     'Name' => 'sensml+json',
     'Template' => 'application/sensml+json',
-    'Reference' => '[RFC8428]',
+    'Reference' => '[RFC 8428]',
     'Active' => true,
   ),
   'application/sensml+xml' =>
   array(
     'Name' => 'sensml+xml',
     'Template' => 'application/sensml+xml',
-    'Reference' => '[RFC8428]',
+    'Reference' => '[RFC 8428]',
     'Active' => true,
   ),
   'application/sensml-exi' =>
   array(
     'Name' => 'sensml-exi',
     'Template' => 'application/sensml-exi',
-    'Reference' => '[RFC8428]',
+    'Reference' => '[RFC 8428]',
     'Active' => true,
   ),
   'application/sep+xml' =>
@@ -3332,7 +3332,7 @@ return array(
   array(
     'Name' => 'SGML',
     'Template' => 'application/SGML',
-    'Reference' => '[RFC1874]',
+    'Reference' => '[RFC 1874]',
     'Active' => true,
   ),
   'application/sgml-open-catalog' =>
@@ -3346,28 +3346,28 @@ return array(
   array(
     'Name' => 'shf+xml',
     'Template' => 'application/shf+xml',
-    'Reference' => '[RFC4194]',
+    'Reference' => '[RFC 4194]',
     'Active' => true,
   ),
   'application/sieve' =>
   array(
     'Name' => 'sieve',
     'Template' => 'application/sieve',
-    'Reference' => '[RFC5228]',
+    'Reference' => '[RFC 5228]',
     'Active' => true,
   ),
   'application/simple-filter+xml' =>
   array(
     'Name' => 'simple-filter+xml',
     'Template' => 'application/simple-filter+xml',
-    'Reference' => '[RFC4661]',
+    'Reference' => '[RFC 4661]',
     'Active' => true,
   ),
   'application/simple-message-summary' =>
   array(
     'Name' => 'simple-message-summary',
     'Template' => 'application/simple-message-summary',
-    'Reference' => '[RFC3842]',
+    'Reference' => '[RFC 3842]',
     'Active' => true,
   ),
   'application/simplesymbolcontainer' =>
@@ -3395,21 +3395,21 @@ return array(
   array(
     'Name' => 'smil (OBSOLETED in favor of application/smil+xml)',
     'Template' => 'application/smil',
-    'Reference' => '[RFC4536]',
+    'Reference' => '[RFC 4536]',
     'Active' => true,
   ),
   'application/smil+xml' =>
   array(
     'Name' => 'smil+xml',
     'Template' => 'application/smil+xml',
-    'Reference' => '[RFC4536]',
+    'Reference' => '[RFC 4536]',
     'Active' => true,
   ),
   'application/smpte336m' =>
   array(
     'Name' => 'smpte336m',
     'Template' => 'application/smpte336m',
-    'Reference' => '[RFC6597]',
+    'Reference' => '[RFC 6597]',
     'Active' => true,
   ),
   'application/soap+fastinfoset' =>
@@ -3423,7 +3423,7 @@ return array(
   array(
     'Name' => 'soap+xml',
     'Template' => 'application/soap+xml',
-    'Reference' => '[RFC3902]',
+    'Reference' => '[RFC 3902]',
     'Active' => true,
   ),
   'application/sparql-query' =>
@@ -3458,49 +3458,49 @@ return array(
   array(
     'Name' => 'spirits-event+xml',
     'Template' => 'application/spirits-event+xml',
-    'Reference' => '[RFC3910]',
+    'Reference' => '[RFC 3910]',
     'Active' => true,
   ),
   'application/sql' =>
   array(
     'Name' => 'sql',
     'Template' => 'application/sql',
-    'Reference' => '[RFC6922]',
+    'Reference' => '[RFC 6922]',
     'Active' => true,
   ),
   'application/srgs' =>
   array(
     'Name' => 'srgs',
     'Template' => 'application/srgs',
-    'Reference' => '[RFC4267]',
+    'Reference' => '[RFC 4267]',
     'Active' => true,
   ),
   'application/srgs+xml' =>
   array(
     'Name' => 'srgs+xml',
     'Template' => 'application/srgs+xml',
-    'Reference' => '[RFC4267]',
+    'Reference' => '[RFC 4267]',
     'Active' => true,
   ),
   'application/sru+xml' =>
   array(
     'Name' => 'sru+xml',
     'Template' => 'application/sru+xml',
-    'Reference' => '[RFC6207]',
+    'Reference' => '[RFC 6207]',
     'Active' => true,
   ),
   'application/sslkeylogfile' =>
   array(
     'Name' => 'sslkeylogfile',
     'Template' => 'application/sslkeylogfile',
-    'Reference' => '[RFC9850]',
+    'Reference' => '[RFC 9850]',
     'Active' => true,
   ),
   'application/ssml+xml' =>
   array(
     'Name' => 'ssml+xml',
     'Template' => 'application/ssml+xml',
-    'Reference' => '[RFC4267]',
+    'Reference' => '[RFC 4267]',
     'Active' => true,
   ),
   'application/st2110-41' =>
@@ -3556,7 +3556,7 @@ return array(
   array(
     'Name' => 'swid+cbor',
     'Template' => 'application/swid+cbor',
-    'Reference' => '[RFC9393]',
+    'Reference' => '[RFC 9393]',
     'Active' => true,
   ),
   'application/swid+xml' =>
@@ -3577,77 +3577,77 @@ return array(
   array(
     'Name' => 'tamp-apex-update',
     'Template' => 'application/tamp-apex-update',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-apex-update-confirm' =>
   array(
     'Name' => 'tamp-apex-update-confirm',
     'Template' => 'application/tamp-apex-update-confirm',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-community-update' =>
   array(
     'Name' => 'tamp-community-update',
     'Template' => 'application/tamp-community-update',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-community-update-confirm' =>
   array(
     'Name' => 'tamp-community-update-confirm',
     'Template' => 'application/tamp-community-update-confirm',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-error' =>
   array(
     'Name' => 'tamp-error',
     'Template' => 'application/tamp-error',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-sequence-adjust' =>
   array(
     'Name' => 'tamp-sequence-adjust',
     'Template' => 'application/tamp-sequence-adjust',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-sequence-adjust-confirm' =>
   array(
     'Name' => 'tamp-sequence-adjust-confirm',
     'Template' => 'application/tamp-sequence-adjust-confirm',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-status-query' =>
   array(
     'Name' => 'tamp-status-query',
     'Template' => 'application/tamp-status-query',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-status-response' =>
   array(
     'Name' => 'tamp-status-response',
     'Template' => 'application/tamp-status-response',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-update' =>
   array(
     'Name' => 'tamp-update',
     'Template' => 'application/tamp-update',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/tamp-update-confirm' =>
   array(
     'Name' => 'tamp-update-confirm',
     'Template' => 'application/tamp-update-confirm',
-    'Reference' => '[RFC5934]',
+    'Reference' => '[RFC 5934]',
     'Active' => true,
   ),
   'application/taxii+json' =>
@@ -3675,7 +3675,7 @@ return array(
   array(
     'Name' => 'tei+xml',
     'Template' => 'application/tei+xml',
-    'Reference' => '[RFC6129]',
+    'Reference' => '[RFC 6129]',
     'Active' => true,
   ),
   'application/tetra_isi' =>
@@ -3696,42 +3696,42 @@ return array(
   array(
     'Name' => 'thraud+xml',
     'Template' => 'application/thraud+xml',
-    'Reference' => '[RFC5941]',
+    'Reference' => '[RFC 5941]',
     'Active' => true,
   ),
   'application/timestamp-query' =>
   array(
     'Name' => 'timestamp-query',
     'Template' => 'application/timestamp-query',
-    'Reference' => '[RFC3161]',
+    'Reference' => '[RFC 3161]',
     'Active' => true,
   ),
   'application/timestamp-reply' =>
   array(
     'Name' => 'timestamp-reply',
     'Template' => 'application/timestamp-reply',
-    'Reference' => '[RFC3161]',
+    'Reference' => '[RFC 3161]',
     'Active' => true,
   ),
   'application/timestamped-data' =>
   array(
     'Name' => 'timestamped-data',
     'Template' => 'application/timestamped-data',
-    'Reference' => '[RFC5955]',
+    'Reference' => '[RFC 5955]',
     'Active' => true,
   ),
   'application/tlsrpt+gzip' =>
   array(
     'Name' => 'tlsrpt+gzip',
     'Template' => 'application/tlsrpt+gzip',
-    'Reference' => '[RFC8460]',
+    'Reference' => '[RFC 8460]',
     'Active' => true,
   ),
   'application/tlsrpt+json' =>
   array(
     'Name' => 'tlsrpt+json',
     'Template' => 'application/tlsrpt+json',
-    'Reference' => '[RFC8460]',
+    'Reference' => '[RFC 8460]',
     'Active' => true,
   ),
   'application/tm+json' =>
@@ -3745,7 +3745,7 @@ return array(
   array(
     'Name' => 'tnauthlist',
     'Template' => 'application/tnauthlist',
-    'Reference' => '[RFC8226]',
+    'Reference' => '[RFC 8226]',
     'Active' => true,
   ),
   'application/toc+cbor' =>
@@ -3759,7 +3759,7 @@ return array(
   array(
     'Name' => 'token-introspection+jwt',
     'Template' => 'application/token-introspection+jwt',
-    'Reference' => '[RFC9701]',
+    'Reference' => '[RFC 9701]',
     'Active' => true,
   ),
   'application/toml' =>
@@ -3773,7 +3773,7 @@ return array(
   array(
     'Name' => 'trickle-ice-sdpfrag',
     'Template' => 'application/trickle-ice-sdpfrag',
-    'Reference' => '[RFC8840]',
+    'Reference' => '[RFC 8840]',
     'Active' => true,
   ),
   'application/trig' =>
@@ -3829,35 +3829,35 @@ return array(
   array(
     'Name' => 'tzif',
     'Template' => 'application/tzif',
-    'Reference' => '[RFC9636]',
+    'Reference' => '[RFC 9636]',
     'Active' => true,
   ),
   'application/tzif-leap' =>
   array(
     'Name' => 'tzif-leap',
     'Template' => 'application/tzif-leap',
-    'Reference' => '[RFC9636][RFC Errata 9028]',
+    'Reference' => '[RFC 9636][RFC Errata 9028]',
     'Active' => true,
   ),
   'application/uccs+cbor' =>
   array(
     'Name' => 'uccs+cbor',
     'Template' => 'application/uccs+cbor',
-    'Reference' => '[RFC9781]',
+    'Reference' => '[RFC 9781]',
     'Active' => true,
   ),
   'application/ujcs+json' =>
   array(
     'Name' => 'ujcs+json',
     'Template' => 'application/ujcs+json',
-    'Reference' => '[RFC9781]',
+    'Reference' => '[RFC 9781]',
     'Active' => true,
   ),
   'application/ulpfec' =>
   array(
     'Name' => 'ulpfec',
     'Template' => 'application/ulpfec',
-    'Reference' => '[RFC5109]',
+    'Reference' => '[RFC 5109]',
     'Active' => true,
   ),
   'application/urc-grpsheet+xml' =>
@@ -3892,7 +3892,7 @@ return array(
   array(
     'Name' => 'v3c',
     'Template' => 'application/v3c',
-    'Reference' => '[RFC10034]',
+    'Reference' => '[RFC 10034]',
     'Active' => true,
   ),
   'application/vc' =>
@@ -3927,14 +3927,14 @@ return array(
   array(
     'Name' => 'vcard+json',
     'Template' => 'application/vcard+json',
-    'Reference' => '[RFC7095]',
+    'Reference' => '[RFC 7095]',
     'Active' => true,
   ),
   'application/vcard+xml' =>
   array(
     'Name' => 'vcard+xml',
     'Template' => 'application/vcard+xml',
-    'Reference' => '[RFC6351]',
+    'Reference' => '[RFC 6351]',
     'Active' => true,
   ),
   'application/vec+xml' =>
@@ -3962,7 +3962,7 @@ return array(
   array(
     'Name' => 'vemmi',
     'Template' => 'application/vemmi',
-    'Reference' => '[RFC2122]',
+    'Reference' => '[RFC 2122]',
     'Active' => true,
   ),
   'application/vnd.1000minds.decision-model+xml' =>
@@ -5939,6 +5939,13 @@ return array(
     'Reference' => '[David_Parker]',
     'Active' => true,
   ),
+  'application/vnd.drawoble.drawing+zip' =>
+  array(
+    'Name' => 'vnd.drawoble.drawing+zip',
+    'Template' => 'application/vnd.drawoble.drawing+zip',
+    'Reference' => '[Drawoble]',
+    'Active' => true,
+  ),
   'application/vnd.dreamfactory' =>
   array(
     'Name' => 'vnd.dreamfactory',
@@ -6562,6 +6569,13 @@ return array(
     'Reference' => '[Samu_Sarivaara]',
     'Active' => true,
   ),
+  'application/vnd.fabylon.book' =>
+  array(
+    'Name' => 'vnd.fabylon.book',
+    'Template' => 'application/vnd.fabylon.book',
+    'Reference' => '[MHH_Benders]',
+    'Active' => true,
+  ),
   'application/vnd.faf+yaml' =>
   array(
     'Name' => 'vnd.faf+yaml',
@@ -6970,7 +6984,7 @@ return array(
   ),
   'application/vnd.geo+json' =>
   array(
-    'Name' => 'vnd.geo+json (OBSOLETED by [RFC7946] in favor of application/geo+json)',
+    'Name' => 'vnd.geo+json (OBSOLETED by [RFC 7946] in favor of application/geo+json)',
     'Template' => 'application/vnd.geo+json',
     'Reference' => '[Sean_Gillies]',
     'Active' => true,
@@ -7078,6 +7092,34 @@ return array(
     'Name' => 'vnd.gnu.taler.merchant+json',
     'Template' => 'application/vnd.gnu.taler.merchant+json',
     'Reference' => '[Christian_Grothoff]',
+    'Active' => true,
+  ),
+  'application/vnd.godot.project.binary' =>
+  array(
+    'Name' => 'vnd.godot.project.binary',
+    'Template' => 'application/vnd.godot.project.binary',
+    'Reference' => '[Godot_Foundation]',
+    'Active' => true,
+  ),
+  'application/vnd.godot.project.text' =>
+  array(
+    'Name' => 'vnd.godot.project.text',
+    'Template' => 'application/vnd.godot.project.text',
+    'Reference' => '[Godot_Foundation]',
+    'Active' => true,
+  ),
+  'application/vnd.godot.resource.binary' =>
+  array(
+    'Name' => 'vnd.godot.resource.binary',
+    'Template' => 'application/vnd.godot.resource.binary',
+    'Reference' => '[Godot_Foundation]',
+    'Active' => true,
+  ),
+  'application/vnd.godot.resource.text' =>
+  array(
+    'Name' => 'vnd.godot.resource.text',
+    'Template' => 'application/vnd.godot.resource.text',
+    'Reference' => '[Godot_Foundation]',
     'Active' => true,
   ),
   'application/vnd.google-earth.kml+xml' =>
@@ -8893,6 +8935,13 @@ return array(
     'Reference' => '[Steve_Rogan]',
     'Active' => true,
   ),
+  'application/vnd.nnu.profile+json' =>
+  array(
+    'Name' => 'vnd.nnu.profile+json',
+    'Template' => 'application/vnd.nnu.profile+json',
+    'Reference' => '[Grid_Heap]',
+    'Active' => true,
+  ),
   'application/vnd.noblenet-directory' =>
   array(
     'Name' => 'vnd.noblenet-directory',
@@ -10605,7 +10654,7 @@ return array(
   array(
     'Name' => 'vnd.pwg-multiplexed',
     'Template' => 'application/vnd.pwg-multiplexed',
-    'Reference' => '[RFC3391]',
+    'Reference' => '[RFC 3391]',
     'Active' => true,
   ),
   'application/vnd.pwg-xhtml-print+xml' =>
@@ -10661,105 +10710,105 @@ return array(
   array(
     'Name' => 'vnd.radisys.moml+xml',
     'Template' => 'application/vnd.radisys.moml+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml+xml' =>
   array(
     'Name' => 'vnd.radisys.msml+xml',
     'Template' => 'application/vnd.radisys.msml+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-audit+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-audit+xml',
     'Template' => 'application/vnd.radisys.msml-audit+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-audit-conf+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-audit-conf+xml',
     'Template' => 'application/vnd.radisys.msml-audit-conf+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-audit-conn+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-audit-conn+xml',
     'Template' => 'application/vnd.radisys.msml-audit-conn+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-audit-dialog+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-audit-dialog+xml',
     'Template' => 'application/vnd.radisys.msml-audit-dialog+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-audit-stream+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-audit-stream+xml',
     'Template' => 'application/vnd.radisys.msml-audit-stream+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-conf+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-conf+xml',
     'Template' => 'application/vnd.radisys.msml-conf+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-dialog+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-dialog+xml',
     'Template' => 'application/vnd.radisys.msml-dialog+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-dialog-base+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-dialog-base+xml',
     'Template' => 'application/vnd.radisys.msml-dialog-base+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-dialog-fax-detect+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-dialog-fax-detect+xml',
     'Template' => 'application/vnd.radisys.msml-dialog-fax-detect+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-dialog-fax-sendrecv+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-dialog-fax-sendrecv+xml',
     'Template' => 'application/vnd.radisys.msml-dialog-fax-sendrecv+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-dialog-group+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-dialog-group+xml',
     'Template' => 'application/vnd.radisys.msml-dialog-group+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-dialog-speech+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-dialog-speech+xml',
     'Template' => 'application/vnd.radisys.msml-dialog-speech+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.radisys.msml-dialog-transform+xml' =>
   array(
     'Name' => 'vnd.radisys.msml-dialog-transform+xml',
     'Template' => 'application/vnd.radisys.msml-dialog-transform+xml',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'application/vnd.rainstor.data' =>
@@ -12208,14 +12257,14 @@ return array(
   array(
     'Name' => 'voicexml+xml',
     'Template' => 'application/voicexml+xml',
-    'Reference' => '[RFC4267]',
+    'Reference' => '[RFC 4267]',
     'Active' => true,
   ),
   'application/voucher-cms+json' =>
   array(
     'Name' => 'voucher-cms+json',
     'Template' => 'application/voucher-cms+json',
-    'Reference' => '[RFC8366]',
+    'Reference' => '[RFC 8366]',
     'Active' => true,
   ),
   'application/voucher-jws+json' =>
@@ -12257,7 +12306,7 @@ return array(
   array(
     'Name' => 'vq-rtcpxr',
     'Template' => 'application/vq-rtcpxr',
-    'Reference' => '[RFC6035]',
+    'Reference' => '[RFC 6035]',
     'Active' => true,
   ),
   'application/wasm' =>
@@ -12271,28 +12320,28 @@ return array(
   array(
     'Name' => 'watcherinfo+xml',
     'Template' => 'application/watcherinfo+xml',
-    'Reference' => '[RFC3858]',
+    'Reference' => '[RFC 3858]',
     'Active' => true,
   ),
   'application/webpush-options+json' =>
   array(
     'Name' => 'webpush-options+json',
     'Template' => 'application/webpush-options+json',
-    'Reference' => '[RFC8292]',
+    'Reference' => '[RFC 8292]',
     'Active' => true,
   ),
   'application/whoispp-query' =>
   array(
     'Name' => 'whoispp-query',
     'Template' => 'application/whoispp-query',
-    'Reference' => '[RFC2957]',
+    'Reference' => '[RFC 2957]',
     'Active' => true,
   ),
   'application/whoispp-response' =>
   array(
     'Name' => 'whoispp-response',
     'Template' => 'application/whoispp-response',
-    'Reference' => '[RFC2958]',
+    'Reference' => '[RFC 2958]',
     'Active' => true,
   ),
   'application/widget' =>
@@ -12334,7 +12383,7 @@ return array(
   array(
     'Name' => 'x-pki-message',
     'Template' => 'application/x-pki-message',
-    'Reference' => '[RFC8894]',
+    'Reference' => '[RFC 8894]',
     'Active' => true,
   ),
   'application/x-www-form-urlencoded' =>
@@ -12348,91 +12397,91 @@ return array(
   array(
     'Name' => 'x-x509-ca-cert',
     'Template' => 'application/x-x509-ca-cert',
-    'Reference' => '[RFC8894]',
+    'Reference' => '[RFC 8894]',
     'Active' => true,
   ),
   'application/x-x509-ca-ra-cert' =>
   array(
     'Name' => 'x-x509-ca-ra-cert',
     'Template' => 'application/x-x509-ca-ra-cert',
-    'Reference' => '[RFC8894]',
+    'Reference' => '[RFC 8894]',
     'Active' => true,
   ),
   'application/x-x509-next-ca-cert' =>
   array(
     'Name' => 'x-x509-next-ca-cert',
     'Template' => 'application/x-x509-next-ca-cert',
-    'Reference' => '[RFC8894]',
+    'Reference' => '[RFC 8894]',
     'Active' => true,
   ),
   'application/x400-bp' =>
   array(
     'Name' => 'x400-bp',
     'Template' => 'application/x400-bp',
-    'Reference' => '[RFC1494]',
+    'Reference' => '[RFC 1494]',
     'Active' => true,
   ),
   'application/xacml+xml' =>
   array(
     'Name' => 'xacml+xml',
     'Template' => 'application/xacml+xml',
-    'Reference' => '[RFC7061]',
+    'Reference' => '[RFC 7061]',
     'Active' => true,
   ),
   'application/xcap-att+xml' =>
   array(
     'Name' => 'xcap-att+xml',
     'Template' => 'application/xcap-att+xml',
-    'Reference' => '[RFC4825]',
+    'Reference' => '[RFC 4825]',
     'Active' => true,
   ),
   'application/xcap-caps+xml' =>
   array(
     'Name' => 'xcap-caps+xml',
     'Template' => 'application/xcap-caps+xml',
-    'Reference' => '[RFC4825]',
+    'Reference' => '[RFC 4825]',
     'Active' => true,
   ),
   'application/xcap-diff+xml' =>
   array(
     'Name' => 'xcap-diff+xml',
     'Template' => 'application/xcap-diff+xml',
-    'Reference' => '[RFC5874]',
+    'Reference' => '[RFC 5874]',
     'Active' => true,
   ),
   'application/xcap-el+xml' =>
   array(
     'Name' => 'xcap-el+xml',
     'Template' => 'application/xcap-el+xml',
-    'Reference' => '[RFC4825]',
+    'Reference' => '[RFC 4825]',
     'Active' => true,
   ),
   'application/xcap-error+xml' =>
   array(
     'Name' => 'xcap-error+xml',
     'Template' => 'application/xcap-error+xml',
-    'Reference' => '[RFC4825]',
+    'Reference' => '[RFC 4825]',
     'Active' => true,
   ),
   'application/xcap-ns+xml' =>
   array(
     'Name' => 'xcap-ns+xml',
     'Template' => 'application/xcap-ns+xml',
-    'Reference' => '[RFC4825]',
+    'Reference' => '[RFC 4825]',
     'Active' => true,
   ),
   'application/xcon-conference-info+xml' =>
   array(
     'Name' => 'xcon-conference-info+xml',
     'Template' => 'application/xcon-conference-info+xml',
-    'Reference' => '[RFC6502]',
+    'Reference' => '[RFC 6502]',
     'Active' => true,
   ),
   'application/xcon-conference-info-diff+xml' =>
   array(
     'Name' => 'xcon-conference-info-diff+xml',
     'Template' => 'application/xcon-conference-info-diff+xml',
-    'Reference' => '[RFC6502]',
+    'Reference' => '[RFC 6502]',
     'Active' => true,
   ),
   'application/xenc+xml' =>
@@ -12467,35 +12516,35 @@ return array(
   array(
     'Name' => 'xml',
     'Template' => 'application/xml',
-    'Reference' => '[RFC7303]',
+    'Reference' => '[RFC 7303]',
     'Active' => true,
   ),
   'application/xml-dtd' =>
   array(
     'Name' => 'xml-dtd',
     'Template' => 'application/xml-dtd',
-    'Reference' => '[RFC7303]',
+    'Reference' => '[RFC 7303]',
     'Active' => true,
   ),
   'application/xml-external-parsed-entity' =>
   array(
     'Name' => 'xml-external-parsed-entity',
     'Template' => 'application/xml-external-parsed-entity',
-    'Reference' => '[RFC7303]',
+    'Reference' => '[RFC 7303]',
     'Active' => true,
   ),
   'application/xml-patch+xml' =>
   array(
     'Name' => 'xml-patch+xml',
     'Template' => 'application/xml-patch+xml',
-    'Reference' => '[RFC7351]',
+    'Reference' => '[RFC 7351]',
     'Active' => true,
   ),
   'application/xmpp+xml' =>
   array(
     'Name' => 'xmpp+xml',
     'Template' => 'application/xmpp+xml',
-    'Reference' => '[RFC3923]',
+    'Reference' => '[RFC 3923]',
     'Active' => true,
   ),
   'application/xop+xml' =>
@@ -12516,70 +12565,70 @@ return array(
   array(
     'Name' => 'xv+xml',
     'Template' => 'application/xv+xml',
-    'Reference' => '[RFC4374]',
+    'Reference' => '[RFC 4374]',
     'Active' => true,
   ),
   'application/yaml' =>
   array(
     'Name' => 'yaml',
     'Template' => 'application/yaml',
-    'Reference' => '[YAML][RFC9512]',
+    'Reference' => '[YAML][RFC 9512]',
     'Active' => true,
   ),
   'application/yang' =>
   array(
     'Name' => 'yang',
     'Template' => 'application/yang',
-    'Reference' => '[RFC6020]',
+    'Reference' => '[RFC 6020]',
     'Active' => true,
   ),
   'application/yang-data+cbor' =>
   array(
     'Name' => 'yang-data+cbor',
     'Template' => 'application/yang-data+cbor',
-    'Reference' => '[RFC9254]',
+    'Reference' => '[RFC 9254]',
     'Active' => true,
   ),
   'application/yang-data+json' =>
   array(
     'Name' => 'yang-data+json',
     'Template' => 'application/yang-data+json',
-    'Reference' => '[RFC8040]',
+    'Reference' => '[RFC 8040]',
     'Active' => true,
   ),
   'application/yang-data+xml' =>
   array(
     'Name' => 'yang-data+xml',
     'Template' => 'application/yang-data+xml',
-    'Reference' => '[RFC8040]',
+    'Reference' => '[RFC 8040]',
     'Active' => true,
   ),
   'application/yang-patch+json' =>
   array(
     'Name' => 'yang-patch+json',
     'Template' => 'application/yang-patch+json',
-    'Reference' => '[RFC8072]',
+    'Reference' => '[RFC 8072]',
     'Active' => true,
   ),
   'application/yang-patch+xml' =>
   array(
     'Name' => 'yang-patch+xml',
     'Template' => 'application/yang-patch+xml',
-    'Reference' => '[RFC8072]',
+    'Reference' => '[RFC 8072]',
     'Active' => true,
   ),
   'application/yang-sid+json' =>
   array(
     'Name' => 'yang-sid+json',
     'Template' => 'application/yang-sid+json',
-    'Reference' => '[RFC9595]',
+    'Reference' => '[RFC 9595]',
     'Active' => true,
   ),
   'application/yin+xml' =>
   array(
     'Name' => 'yin+xml',
     'Template' => 'application/yin+xml',
-    'Reference' => '[RFC6020]',
+    'Reference' => '[RFC 6020]',
     'Active' => true,
   ),
   'application/zip' =>
@@ -12593,42 +12642,42 @@ return array(
   array(
     'Name' => 'zlib',
     'Template' => 'application/zlib',
-    'Reference' => '[RFC6713]',
+    'Reference' => '[RFC 6713]',
     'Active' => true,
   ),
   'application/zstd' =>
   array(
     'Name' => 'zstd',
     'Template' => 'application/zstd',
-    'Reference' => '[RFC8878]',
+    'Reference' => '[RFC 8878]',
     'Active' => true,
   ),
   'audio/1d-interleaved-parityfec' =>
   array(
     'Name' => '1d-interleaved-parityfec',
     'Template' => 'audio/1d-interleaved-parityfec',
-    'Reference' => '[RFC6015]',
+    'Reference' => '[RFC 6015]',
     'Active' => true,
   ),
   'audio/32kadpcm' =>
   array(
     'Name' => '32kadpcm',
     'Template' => 'audio/32kadpcm',
-    'Reference' => '[RFC3802][RFC2421]',
+    'Reference' => '[RFC 3802][RFC 2421]',
     'Active' => true,
   ),
   'audio/3gpp' =>
   array(
     'Name' => '3gpp',
     'Template' => 'audio/3gpp',
-    'Reference' => '[RFC3839][RFC6381]',
+    'Reference' => '[RFC 3839][RFC 6381]',
     'Active' => true,
   ),
   'audio/3gpp2' =>
   array(
     'Name' => '3gpp2',
     'Template' => 'audio/3gpp2',
-    'Reference' => '[RFC4393][RFC6381]',
+    'Reference' => '[RFC 4393][RFC 6381]',
     'Active' => true,
   ),
   'audio/aac' =>
@@ -12642,259 +12691,259 @@ return array(
   array(
     'Name' => 'ac3',
     'Template' => 'audio/ac3',
-    'Reference' => '[RFC4184]',
+    'Reference' => '[RFC 4184]',
     'Active' => true,
   ),
   'audio/amr' =>
   array(
     'Name' => 'AMR',
     'Template' => 'audio/AMR',
-    'Reference' => '[RFC4867]',
+    'Reference' => '[RFC 4867]',
     'Active' => true,
   ),
   'audio/amr-wb' =>
   array(
     'Name' => 'AMR-WB',
     'Template' => 'audio/AMR-WB',
-    'Reference' => '[RFC4867]',
+    'Reference' => '[RFC 4867]',
     'Active' => true,
   ),
   'audio/amr-wb+' =>
   array(
     'Name' => 'amr-wb+',
     'Template' => 'audio/amr-wb+',
-    'Reference' => '[RFC4352]',
+    'Reference' => '[RFC 4352]',
     'Active' => true,
   ),
   'audio/aptx' =>
   array(
     'Name' => 'aptx',
     'Template' => 'audio/aptx',
-    'Reference' => '[RFC7310]',
+    'Reference' => '[RFC 7310]',
     'Active' => true,
   ),
   'audio/asc' =>
   array(
     'Name' => 'asc',
     'Template' => 'audio/asc',
-    'Reference' => '[RFC6295]',
+    'Reference' => '[RFC 6295]',
     'Active' => true,
   ),
   'audio/atrac-advanced-lossless' =>
   array(
     'Name' => 'ATRAC-ADVANCED-LOSSLESS',
     'Template' => 'audio/ATRAC-ADVANCED-LOSSLESS',
-    'Reference' => '[RFC5584]',
+    'Reference' => '[RFC 5584]',
     'Active' => true,
   ),
   'audio/atrac-x' =>
   array(
     'Name' => 'ATRAC-X',
     'Template' => 'audio/ATRAC-X',
-    'Reference' => '[RFC5584]',
+    'Reference' => '[RFC 5584]',
     'Active' => true,
   ),
   'audio/atrac3' =>
   array(
     'Name' => 'ATRAC3',
     'Template' => 'audio/ATRAC3',
-    'Reference' => '[RFC5584]',
+    'Reference' => '[RFC 5584]',
     'Active' => true,
   ),
   'audio/basic' =>
   array(
     'Name' => 'basic',
     'Template' => 'audio/basic',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'audio/bv16' =>
   array(
     'Name' => 'BV16',
     'Template' => 'audio/BV16',
-    'Reference' => '[RFC4298]',
+    'Reference' => '[RFC 4298]',
     'Active' => true,
   ),
   'audio/bv32' =>
   array(
     'Name' => 'BV32',
     'Template' => 'audio/BV32',
-    'Reference' => '[RFC4298]',
+    'Reference' => '[RFC 4298]',
     'Active' => true,
   ),
   'audio/clearmode' =>
   array(
     'Name' => 'clearmode',
     'Template' => 'audio/clearmode',
-    'Reference' => '[RFC4040]',
+    'Reference' => '[RFC 4040]',
     'Active' => true,
   ),
   'audio/cn' =>
   array(
     'Name' => 'CN',
     'Template' => 'audio/CN',
-    'Reference' => '[RFC3389]',
+    'Reference' => '[RFC 3389]',
     'Active' => true,
   ),
   'audio/dat12' =>
   array(
     'Name' => 'DAT12',
     'Template' => 'audio/DAT12',
-    'Reference' => '[RFC3190]',
+    'Reference' => '[RFC 3190]',
     'Active' => true,
   ),
   'audio/dls' =>
   array(
     'Name' => 'dls',
     'Template' => 'audio/dls',
-    'Reference' => '[RFC4613]',
+    'Reference' => '[RFC 4613]',
     'Active' => true,
   ),
   'audio/dsr-es201108' =>
   array(
     'Name' => 'dsr-es201108',
     'Template' => 'audio/dsr-es201108',
-    'Reference' => '[RFC3557]',
+    'Reference' => '[RFC 3557]',
     'Active' => true,
   ),
   'audio/dsr-es202050' =>
   array(
     'Name' => 'dsr-es202050',
     'Template' => 'audio/dsr-es202050',
-    'Reference' => '[RFC4060]',
+    'Reference' => '[RFC 4060]',
     'Active' => true,
   ),
   'audio/dsr-es202211' =>
   array(
     'Name' => 'dsr-es202211',
     'Template' => 'audio/dsr-es202211',
-    'Reference' => '[RFC4060]',
+    'Reference' => '[RFC 4060]',
     'Active' => true,
   ),
   'audio/dsr-es202212' =>
   array(
     'Name' => 'dsr-es202212',
     'Template' => 'audio/dsr-es202212',
-    'Reference' => '[RFC4060]',
+    'Reference' => '[RFC 4060]',
     'Active' => true,
   ),
   'audio/dv' =>
   array(
     'Name' => 'DV',
     'Template' => 'audio/DV',
-    'Reference' => '[RFC6469]',
+    'Reference' => '[RFC 6469]',
     'Active' => true,
   ),
   'audio/dvi4' =>
   array(
     'Name' => 'DVI4',
     'Template' => 'audio/DVI4',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/eac3' =>
   array(
     'Name' => 'eac3',
     'Template' => 'audio/eac3',
-    'Reference' => '[RFC4598]',
+    'Reference' => '[RFC 4598]',
     'Active' => true,
   ),
   'audio/encaprtp' =>
   array(
     'Name' => 'encaprtp',
     'Template' => 'audio/encaprtp',
-    'Reference' => '[RFC6849]',
+    'Reference' => '[RFC 6849]',
     'Active' => true,
   ),
   'audio/evrc' =>
   array(
     'Name' => 'EVRC',
     'Template' => 'audio/EVRC',
-    'Reference' => '[RFC4788]',
+    'Reference' => '[RFC 4788]',
     'Active' => true,
   ),
   'audio/evrc-qcp' =>
   array(
     'Name' => 'EVRC-QCP',
     'Template' => 'audio/EVRC-QCP',
-    'Reference' => '[RFC3625]',
+    'Reference' => '[RFC 3625]',
     'Active' => true,
   ),
   'audio/evrc0' =>
   array(
     'Name' => 'EVRC0',
     'Template' => 'audio/EVRC0',
-    'Reference' => '[RFC4788]',
+    'Reference' => '[RFC 4788]',
     'Active' => true,
   ),
   'audio/evrc1' =>
   array(
     'Name' => 'EVRC1',
     'Template' => 'audio/EVRC1',
-    'Reference' => '[RFC4788]',
+    'Reference' => '[RFC 4788]',
     'Active' => true,
   ),
   'audio/evrcb' =>
   array(
     'Name' => 'EVRCB',
     'Template' => 'audio/EVRCB',
-    'Reference' => '[RFC5188]',
+    'Reference' => '[RFC 5188]',
     'Active' => true,
   ),
   'audio/evrcb0' =>
   array(
     'Name' => 'EVRCB0',
     'Template' => 'audio/EVRCB0',
-    'Reference' => '[RFC5188]',
+    'Reference' => '[RFC 5188]',
     'Active' => true,
   ),
   'audio/evrcb1' =>
   array(
     'Name' => 'EVRCB1',
     'Template' => 'audio/EVRCB1',
-    'Reference' => '[RFC4788]',
+    'Reference' => '[RFC 4788]',
     'Active' => true,
   ),
   'audio/evrcnw' =>
   array(
     'Name' => 'EVRCNW',
     'Template' => 'audio/EVRCNW',
-    'Reference' => '[RFC6884]',
+    'Reference' => '[RFC 6884]',
     'Active' => true,
   ),
   'audio/evrcnw0' =>
   array(
     'Name' => 'EVRCNW0',
     'Template' => 'audio/EVRCNW0',
-    'Reference' => '[RFC6884]',
+    'Reference' => '[RFC 6884]',
     'Active' => true,
   ),
   'audio/evrcnw1' =>
   array(
     'Name' => 'EVRCNW1',
     'Template' => 'audio/EVRCNW1',
-    'Reference' => '[RFC6884]',
+    'Reference' => '[RFC 6884]',
     'Active' => true,
   ),
   'audio/evrcwb' =>
   array(
     'Name' => 'EVRCWB',
     'Template' => 'audio/EVRCWB',
-    'Reference' => '[RFC5188]',
+    'Reference' => '[RFC 5188]',
     'Active' => true,
   ),
   'audio/evrcwb0' =>
   array(
     'Name' => 'EVRCWB0',
     'Template' => 'audio/EVRCWB0',
-    'Reference' => '[RFC5188]',
+    'Reference' => '[RFC 5188]',
     'Active' => true,
   ),
   'audio/evrcwb1' =>
   array(
     'Name' => 'EVRCWB1',
     'Template' => 'audio/EVRCWB1',
-    'Reference' => '[RFC5188]',
+    'Reference' => '[RFC 5188]',
     'Active' => true,
   ),
   'audio/evs' =>
@@ -12908,231 +12957,231 @@ return array(
   array(
     'Name' => 'example',
     'Template' => 'audio/example',
-    'Reference' => '[RFC4735]',
+    'Reference' => '[RFC 4735]',
     'Active' => true,
   ),
   'audio/flac' =>
   array(
     'Name' => 'flac',
     'Template' => 'audio/flac',
-    'Reference' => '[RFC9639]',
+    'Reference' => '[RFC 9639]',
     'Active' => true,
   ),
   'audio/flexfec' =>
   array(
     'Name' => 'flexfec',
     'Template' => 'audio/flexfec',
-    'Reference' => '[RFC8627]',
+    'Reference' => '[RFC 8627]',
     'Active' => true,
   ),
   'audio/fwdred' =>
   array(
     'Name' => 'fwdred',
     'Template' => 'audio/fwdred',
-    'Reference' => '[RFC6354]',
+    'Reference' => '[RFC 6354]',
     'Active' => true,
   ),
   'audio/g711-0' =>
   array(
     'Name' => 'G711-0',
     'Template' => 'audio/G711-0',
-    'Reference' => '[RFC7655]',
+    'Reference' => '[RFC 7655]',
     'Active' => true,
   ),
   'audio/g719' =>
   array(
     'Name' => 'G719',
     'Template' => 'audio/G719',
-    'Reference' => '[RFC5404][RFC Errata 3245]',
+    'Reference' => '[RFC 5404][RFC Errata 3245]',
     'Active' => true,
   ),
   'audio/g722' =>
   array(
     'Name' => 'G722',
     'Template' => 'audio/G722',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g7221' =>
   array(
     'Name' => 'G7221',
     'Template' => 'audio/G7221',
-    'Reference' => '[RFC5577]',
+    'Reference' => '[RFC 5577]',
     'Active' => true,
   ),
   'audio/g723' =>
   array(
     'Name' => 'G723',
     'Template' => 'audio/G723',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g726-16' =>
   array(
     'Name' => 'G726-16',
     'Template' => 'audio/G726-16',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g726-24' =>
   array(
     'Name' => 'G726-24',
     'Template' => 'audio/G726-24',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g726-32' =>
   array(
     'Name' => 'G726-32',
     'Template' => 'audio/G726-32',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g726-40' =>
   array(
     'Name' => 'G726-40',
     'Template' => 'audio/G726-40',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g728' =>
   array(
     'Name' => 'G728',
     'Template' => 'audio/G728',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g729' =>
   array(
     'Name' => 'G729',
     'Template' => 'audio/G729',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g7291' =>
   array(
     'Name' => 'G7291',
     'Template' => 'audio/G7291',
-    'Reference' => '[RFC4749][RFC5459]',
+    'Reference' => '[RFC 4749][RFC 5459]',
     'Active' => true,
   ),
   'audio/g729d' =>
   array(
     'Name' => 'G729D',
     'Template' => 'audio/G729D',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/g729e' =>
   array(
     'Name' => 'G729E',
     'Template' => 'audio/G729E',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/gsm' =>
   array(
     'Name' => 'GSM',
     'Template' => 'audio/GSM',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/gsm-efr' =>
   array(
     'Name' => 'GSM-EFR',
     'Template' => 'audio/GSM-EFR',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/gsm-hr-08' =>
   array(
     'Name' => 'GSM-HR-08',
     'Template' => 'audio/GSM-HR-08',
-    'Reference' => '[RFC5993]',
+    'Reference' => '[RFC 5993]',
     'Active' => true,
   ),
   'audio/ilbc' =>
   array(
     'Name' => 'iLBC',
     'Template' => 'audio/iLBC',
-    'Reference' => '[RFC3952]',
+    'Reference' => '[RFC 3952]',
     'Active' => true,
   ),
   'audio/ip-mr_v2.5' =>
   array(
     'Name' => 'ip-mr_v2.5',
     'Template' => 'audio/ip-mr_v2.5',
-    'Reference' => '[RFC6262]',
+    'Reference' => '[RFC 6262]',
     'Active' => true,
   ),
   'audio/l16' =>
   array(
     'Name' => 'L16',
     'Template' => 'audio/L16',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/l20' =>
   array(
     'Name' => 'L20',
     'Template' => 'audio/L20',
-    'Reference' => '[RFC3190]',
+    'Reference' => '[RFC 3190]',
     'Active' => true,
   ),
   'audio/l24' =>
   array(
     'Name' => 'L24',
     'Template' => 'audio/L24',
-    'Reference' => '[RFC3190]',
+    'Reference' => '[RFC 3190]',
     'Active' => true,
   ),
   'audio/l8' =>
   array(
     'Name' => 'L8',
     'Template' => 'audio/L8',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/lpc' =>
   array(
     'Name' => 'LPC',
     'Template' => 'audio/LPC',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/matroska' =>
   array(
     'Name' => 'matroska',
     'Template' => 'audio/matroska',
-    'Reference' => '[RFC9559]',
+    'Reference' => '[RFC 9559]',
     'Active' => true,
   ),
   'audio/melp' =>
   array(
     'Name' => 'MELP',
     'Template' => 'audio/MELP',
-    'Reference' => '[RFC8130]',
+    'Reference' => '[RFC 8130]',
     'Active' => true,
   ),
   'audio/melp1200' =>
   array(
     'Name' => 'MELP1200',
     'Template' => 'audio/MELP1200',
-    'Reference' => '[RFC8130]',
+    'Reference' => '[RFC 8130]',
     'Active' => true,
   ),
   'audio/melp2400' =>
   array(
     'Name' => 'MELP2400',
     'Template' => 'audio/MELP2400',
-    'Reference' => '[RFC8130]',
+    'Reference' => '[RFC 8130]',
     'Active' => true,
   ),
   'audio/melp600' =>
   array(
     'Name' => 'MELP600',
     'Template' => 'audio/MELP600',
-    'Reference' => '[RFC8130]',
+    'Reference' => '[RFC 8130]',
     'Active' => true,
   ),
   'audio/mhas' =>
@@ -13153,98 +13202,98 @@ return array(
   array(
     'Name' => 'mobile-xmf',
     'Template' => 'audio/mobile-xmf',
-    'Reference' => '[RFC4723]',
+    'Reference' => '[RFC 4723]',
     'Active' => true,
   ),
   'audio/mp4' =>
   array(
     'Name' => 'mp4',
     'Template' => 'audio/mp4',
-    'Reference' => '[RFC4337][RFC6381]',
+    'Reference' => '[RFC 4337][RFC 6381]',
     'Active' => true,
   ),
   'audio/mp4a-latm' =>
   array(
     'Name' => 'MP4A-LATM',
     'Template' => 'audio/MP4A-LATM',
-    'Reference' => '[RFC6416]',
+    'Reference' => '[RFC 6416]',
     'Active' => true,
   ),
   'audio/mpa' =>
   array(
     'Name' => 'MPA',
     'Template' => 'audio/MPA',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'audio/mpa-robust' =>
   array(
     'Name' => 'mpa-robust',
     'Template' => 'audio/mpa-robust',
-    'Reference' => '[RFC5219]',
+    'Reference' => '[RFC 5219]',
     'Active' => true,
   ),
   'audio/mpeg' =>
   array(
     'Name' => 'mpeg',
     'Template' => 'audio/mpeg',
-    'Reference' => '[RFC3003]',
+    'Reference' => '[RFC 3003]',
     'Active' => true,
   ),
   'audio/mpeg4-generic' =>
   array(
     'Name' => 'mpeg4-generic',
     'Template' => 'audio/mpeg4-generic',
-    'Reference' => '[RFC3640][RFC5691][RFC6295]',
+    'Reference' => '[RFC 3640][RFC 5691][RFC 6295]',
     'Active' => true,
   ),
   'audio/ogg' =>
   array(
     'Name' => 'ogg',
     'Template' => 'audio/ogg',
-    'Reference' => '[RFC5334][RFC7845]',
+    'Reference' => '[RFC 5334][RFC 7845]',
     'Active' => true,
   ),
   'audio/opus' =>
   array(
     'Name' => 'opus',
     'Template' => 'audio/opus',
-    'Reference' => '[RFC7587]',
+    'Reference' => '[RFC 7587]',
     'Active' => true,
   ),
   'audio/parityfec' =>
   array(
     'Name' => 'parityfec',
     'Template' => 'audio/parityfec',
-    'Reference' => '[RFC3009]',
+    'Reference' => '[RFC 3009]',
     'Active' => true,
   ),
   'audio/pcma' =>
   array(
     'Name' => 'PCMA',
     'Template' => 'audio/PCMA',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/pcma-wb' =>
   array(
     'Name' => 'PCMA-WB',
     'Template' => 'audio/PCMA-WB',
-    'Reference' => '[RFC5391]',
+    'Reference' => '[RFC 5391]',
     'Active' => true,
   ),
   'audio/pcmu' =>
   array(
     'Name' => 'PCMU',
     'Template' => 'audio/PCMU',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/pcmu-wb' =>
   array(
     'Name' => 'PCMU-WB',
     'Template' => 'audio/PCMU-WB',
-    'Reference' => '[RFC5391]',
+    'Reference' => '[RFC 5391]',
     'Active' => true,
   ),
   'audio/prs.aaud' =>
@@ -13265,21 +13314,21 @@ return array(
   array(
     'Name' => 'QCELP',
     'Template' => 'audio/QCELP',
-    'Reference' => '[RFC3555][RFC3625]',
+    'Reference' => '[RFC 3555][RFC 3625]',
     'Active' => true,
   ),
   'audio/raptorfec' =>
   array(
     'Name' => 'raptorfec',
     'Template' => 'audio/raptorfec',
-    'Reference' => '[RFC6682]',
+    'Reference' => '[RFC 6682]',
     'Active' => true,
   ),
   'audio/red' =>
   array(
     'Name' => 'RED',
     'Template' => 'audio/RED',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'audio/rtp-enc-aescm128' =>
@@ -13293,49 +13342,49 @@ return array(
   array(
     'Name' => 'rtp-midi',
     'Template' => 'audio/rtp-midi',
-    'Reference' => '[RFC6295]',
+    'Reference' => '[RFC 6295]',
     'Active' => true,
   ),
   'audio/rtploopback' =>
   array(
     'Name' => 'rtploopback',
     'Template' => 'audio/rtploopback',
-    'Reference' => '[RFC6849]',
+    'Reference' => '[RFC 6849]',
     'Active' => true,
   ),
   'audio/rtx' =>
   array(
     'Name' => 'rtx',
     'Template' => 'audio/rtx',
-    'Reference' => '[RFC4588]',
+    'Reference' => '[RFC 4588]',
     'Active' => true,
   ),
   'audio/scip' =>
   array(
     'Name' => 'scip',
     'Template' => 'audio/scip',
-    'Reference' => '[RFC9607]',
+    'Reference' => '[RFC 9607]',
     'Active' => true,
   ),
   'audio/smv' =>
   array(
     'Name' => 'SMV',
     'Template' => 'audio/SMV',
-    'Reference' => '[RFC3558]',
+    'Reference' => '[RFC 3558]',
     'Active' => true,
   ),
   'audio/smv-qcp' =>
   array(
     'Name' => 'SMV-QCP',
     'Template' => 'audio/SMV-QCP',
-    'Reference' => '[RFC3625]',
+    'Reference' => '[RFC 3625]',
     'Active' => true,
   ),
   'audio/smv0' =>
   array(
     'Name' => 'SMV0',
     'Template' => 'audio/SMV0',
-    'Reference' => '[RFC3558]',
+    'Reference' => '[RFC 3558]',
     'Active' => true,
   ),
   'audio/sofa' =>
@@ -13363,28 +13412,28 @@ return array(
   array(
     'Name' => 'speex',
     'Template' => 'audio/speex',
-    'Reference' => '[RFC5574]',
+    'Reference' => '[RFC 5574]',
     'Active' => true,
   ),
   'audio/t140c' =>
   array(
     'Name' => 't140c',
     'Template' => 'audio/t140c',
-    'Reference' => '[RFC4351]',
+    'Reference' => '[RFC 4351]',
     'Active' => true,
   ),
   'audio/t38' =>
   array(
     'Name' => 't38',
     'Template' => 'audio/t38',
-    'Reference' => '[RFC4612]',
+    'Reference' => '[RFC 4612]',
     'Active' => true,
   ),
   'audio/telephone-event' =>
   array(
     'Name' => 'telephone-event',
     'Template' => 'audio/telephone-event',
-    'Reference' => '[RFC4733]',
+    'Reference' => '[RFC 4733]',
     'Active' => true,
   ),
   'audio/tetra_acelp' =>
@@ -13405,28 +13454,28 @@ return array(
   array(
     'Name' => 'tone',
     'Template' => 'audio/tone',
-    'Reference' => '[RFC4733]',
+    'Reference' => '[RFC 4733]',
     'Active' => true,
   ),
   'audio/tsvcis' =>
   array(
     'Name' => 'TSVCIS',
     'Template' => 'audio/TSVCIS',
-    'Reference' => '[RFC8817]',
+    'Reference' => '[RFC 8817]',
     'Active' => true,
   ),
   'audio/uemclip' =>
   array(
     'Name' => 'UEMCLIP',
     'Template' => 'audio/UEMCLIP',
-    'Reference' => '[RFC5686]',
+    'Reference' => '[RFC 5686]',
     'Active' => true,
   ),
   'audio/ulpfec' =>
   array(
     'Name' => 'ulpfec',
     'Template' => 'audio/ulpfec',
-    'Reference' => '[RFC5109]',
+    'Reference' => '[RFC 5109]',
     'Active' => true,
   ),
   'audio/usac' =>
@@ -13440,14 +13489,14 @@ return array(
   array(
     'Name' => 'VDVI',
     'Template' => 'audio/VDVI',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'audio/vmr-wb' =>
   array(
     'Name' => 'VMR-WB',
     'Template' => 'audio/VMR-WB',
-    'Reference' => '[RFC4348][RFC4424]',
+    'Reference' => '[RFC 4348][RFC 4424]',
     'Active' => true,
   ),
   'audio/vnd.3gpp.iufp' =>
@@ -13713,7 +13762,7 @@ return array(
   array(
     'Name' => 'vnd.qcelp - DEPRECATED in favor of audio/qcelp',
     'Template' => 'audio/vnd.qcelp',
-    'Reference' => '[RFC3625]',
+    'Reference' => '[RFC 3625]',
     'Active' => true,
   ),
   'audio/vnd.rhetorex.32kadpcm' =>
@@ -13748,14 +13797,14 @@ return array(
   array(
     'Name' => 'vorbis',
     'Template' => 'audio/vorbis',
-    'Reference' => '[RFC5215]',
+    'Reference' => '[RFC 5215]',
     'Active' => true,
   ),
   'audio/vorbis-config' =>
   array(
     'Name' => 'vorbis-config',
     'Template' => 'audio/vorbis-config',
-    'Reference' => '[RFC5215]',
+    'Reference' => '[RFC 5215]',
     'Active' => true,
   ),
   'image/aces' =>
@@ -13797,7 +13846,7 @@ return array(
   array(
     'Name' => 'bmp',
     'Template' => 'image/bmp',
-    'Reference' => '[RFC7903]',
+    'Reference' => '[RFC 7903]',
     'Active' => true,
   ),
   'image/cgm' =>
@@ -13825,35 +13874,35 @@ return array(
   array(
     'Name' => 'emf',
     'Template' => 'image/emf',
-    'Reference' => '[RFC7903]',
+    'Reference' => '[RFC 7903]',
     'Active' => true,
   ),
   'image/example' =>
   array(
     'Name' => 'example',
     'Template' => 'image/example',
-    'Reference' => '[RFC4735]',
+    'Reference' => '[RFC 4735]',
     'Active' => true,
   ),
   'image/fits' =>
   array(
     'Name' => 'fits',
     'Template' => 'image/fits',
-    'Reference' => '[RFC4047]',
+    'Reference' => '[RFC 4047]',
     'Active' => true,
   ),
   'image/g3fax' =>
   array(
     'Name' => 'g3fax',
     'Template' => 'image/g3fax',
-    'Reference' => '[RFC1494]',
+    'Reference' => '[RFC 1494]',
     'Active' => true,
   ),
   'image/gif' =>
   array(
     'Name' => 'gif',
     'Template' => 'image/gif',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'image/heic' =>
@@ -13902,7 +13951,7 @@ return array(
   array(
     'Name' => 'ief',
     'Template' => 'image/ief',
-    'Reference' => '[RFC1314]',
+    'Reference' => '[RFC 1314]',
     'Active' => true,
   ),
   'image/j2c' =>
@@ -13937,14 +13986,14 @@ return array(
   array(
     'Name' => 'jp2',
     'Template' => 'image/jp2',
-    'Reference' => '[RFC3745]',
+    'Reference' => '[RFC 3745]',
     'Active' => true,
   ),
   'image/jpeg' =>
   array(
     'Name' => 'jpeg',
     'Template' => 'image/jpeg',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'image/jph' =>
@@ -13965,14 +14014,14 @@ return array(
   array(
     'Name' => 'jpm',
     'Template' => 'image/jpm',
-    'Reference' => '[RFC3745]',
+    'Reference' => '[RFC 3745]',
     'Active' => true,
   ),
   'image/jpx' =>
   array(
     'Name' => 'jpx',
     'Template' => 'image/jpx',
-    'Reference' => '[RFC3745][ISO-IEC_JTC_1_SC_29_WG_1]',
+    'Reference' => '[RFC 3745][ISO-IEC_JTC_1_SC_29_WG_1]',
     'Active' => true,
   ),
   'image/jxl' =>
@@ -14098,21 +14147,21 @@ return array(
   array(
     'Name' => 't38',
     'Template' => 'image/t38',
-    'Reference' => '[RFC3362]',
+    'Reference' => '[RFC 3362]',
     'Active' => true,
   ),
   'image/tiff' =>
   array(
     'Name' => 'tiff',
     'Template' => 'image/tiff',
-    'Reference' => '[RFC3302]',
+    'Reference' => '[RFC 3302]',
     'Active' => true,
   ),
   'image/tiff-fx' =>
   array(
     'Name' => 'tiff-fx',
     'Template' => 'image/tiff-fx',
-    'Reference' => '[RFC3950]',
+    'Reference' => '[RFC 3950]',
     'Active' => true,
   ),
   'image/vnd.adobe.photoshop' =>
@@ -14350,133 +14399,133 @@ return array(
   array(
     'Name' => 'webp',
     'Template' => 'image/webp',
-    'Reference' => '[RFC9649]',
+    'Reference' => '[RFC 9649]',
     'Active' => true,
   ),
   'image/wmf' =>
   array(
     'Name' => 'wmf',
     'Template' => 'image/wmf',
-    'Reference' => '[RFC7903]',
+    'Reference' => '[RFC 7903]',
     'Active' => true,
   ),
   'image/x-emf' =>
   array(
     'Name' => 'x-emf - DEPRECATED in favor of image/emf',
     'Template' => 'image/x-emf',
-    'Reference' => '[RFC7903]',
+    'Reference' => '[RFC 7903]',
     'Active' => true,
   ),
   'image/x-wmf' =>
   array(
     'Name' => 'x-wmf - DEPRECATED in favor of image/wmf',
     'Template' => 'image/x-wmf',
-    'Reference' => '[RFC7903]',
+    'Reference' => '[RFC 7903]',
     'Active' => true,
   ),
   'message/bhttp' =>
   array(
     'Name' => 'bhttp',
     'Template' => 'message/bhttp',
-    'Reference' => '[RFC9292]',
+    'Reference' => '[RFC 9292]',
     'Active' => true,
   ),
   'message/cpim' =>
   array(
     'Name' => 'CPIM',
     'Template' => 'message/CPIM',
-    'Reference' => '[RFC3862]',
+    'Reference' => '[RFC 3862]',
     'Active' => true,
   ),
   'message/delivery-status' =>
   array(
     'Name' => 'delivery-status',
     'Template' => 'message/delivery-status',
-    'Reference' => '[RFC1894]',
+    'Reference' => '[RFC 1894]',
     'Active' => true,
   ),
   'message/disposition-notification' =>
   array(
     'Name' => 'disposition-notification',
     'Template' => 'message/disposition-notification',
-    'Reference' => '[RFC8098]',
+    'Reference' => '[RFC 8098]',
     'Active' => true,
   ),
   'message/example' =>
   array(
     'Name' => 'example',
     'Template' => 'message/example',
-    'Reference' => '[RFC4735]',
+    'Reference' => '[RFC 4735]',
     'Active' => true,
   ),
   'message/external-body' =>
   array(
     'Name' => 'external-body',
     'Template' => 'message/external-body',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'message/feedback-report' =>
   array(
     'Name' => 'feedback-report',
     'Template' => 'message/feedback-report',
-    'Reference' => '[RFC5965]',
+    'Reference' => '[RFC 5965]',
     'Active' => true,
   ),
   'message/global' =>
   array(
     'Name' => 'global',
     'Template' => 'message/global',
-    'Reference' => '[RFC6532]',
+    'Reference' => '[RFC 6532]',
     'Active' => true,
   ),
   'message/global-delivery-status' =>
   array(
     'Name' => 'global-delivery-status',
     'Template' => 'message/global-delivery-status',
-    'Reference' => '[RFC6533]',
+    'Reference' => '[RFC 6533]',
     'Active' => true,
   ),
   'message/global-disposition-notification' =>
   array(
     'Name' => 'global-disposition-notification',
     'Template' => 'message/global-disposition-notification',
-    'Reference' => '[RFC6533]',
+    'Reference' => '[RFC 6533]',
     'Active' => true,
   ),
   'message/global-headers' =>
   array(
     'Name' => 'global-headers',
     'Template' => 'message/global-headers',
-    'Reference' => '[RFC6533]',
+    'Reference' => '[RFC 6533]',
     'Active' => true,
   ),
   'message/http' =>
   array(
     'Name' => 'http',
     'Template' => 'message/http',
-    'Reference' => '[RFC9112]',
+    'Reference' => '[RFC 9112]',
     'Active' => true,
   ),
   'message/imdn+xml' =>
   array(
     'Name' => 'imdn+xml',
     'Template' => 'message/imdn+xml',
-    'Reference' => '[RFC5438]',
+    'Reference' => '[RFC 5438]',
     'Active' => true,
   ),
   'message/mls' =>
   array(
     'Name' => 'mls',
     'Template' => 'message/mls',
-    'Reference' => '[RFC9420]',
+    'Reference' => '[RFC 9420]',
     'Active' => true,
   ),
   'message/news' =>
   array(
-    'Name' => 'news (OBSOLETED by [RFC5537])',
+    'Name' => 'news (OBSOLETED by [RFC 5537])',
     'Template' => 'message/news',
-    'Reference' => '[RFC5537][Henry_Spencer]',
+    'Reference' => '[RFC 5537][Henry_Spencer]',
     'Active' => true,
   ),
   'message/ohttp-chunked-req' =>
@@ -14497,56 +14546,56 @@ return array(
   array(
     'Name' => 'ohttp-req',
     'Template' => 'message/ohttp-req',
-    'Reference' => '[RFC9458]',
+    'Reference' => '[RFC 9458]',
     'Active' => true,
   ),
   'message/ohttp-res' =>
   array(
     'Name' => 'ohttp-res',
     'Template' => 'message/ohttp-res',
-    'Reference' => '[RFC9458]',
+    'Reference' => '[RFC 9458]',
     'Active' => true,
   ),
   'message/partial' =>
   array(
     'Name' => 'partial',
     'Template' => 'message/partial',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'message/rfc822' =>
   array(
     'Name' => 'rfc822',
     'Template' => 'message/rfc822',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'message/s-http' =>
   array(
     'Name' => 's-http (OBSOLETE)',
     'Template' => 'message/s-http',
-    'Reference' => '[RFC2660][Status change of HTTP experiments to Historic]',
+    'Reference' => '[RFC 2660][Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
   'message/sip' =>
   array(
     'Name' => 'sip',
     'Template' => 'message/sip',
-    'Reference' => '[RFC3261]',
+    'Reference' => '[RFC 3261]',
     'Active' => true,
   ),
   'message/sipfrag' =>
   array(
     'Name' => 'sipfrag',
     'Template' => 'message/sipfrag',
-    'Reference' => '[RFC3420]',
+    'Reference' => '[RFC 3420]',
     'Active' => true,
   ),
   'message/tracking-status' =>
   array(
     'Name' => 'tracking-status',
     'Template' => 'message/tracking-status',
-    'Reference' => '[RFC3886]',
+    'Reference' => '[RFC 3886]',
     'Active' => true,
   ),
   'message/vnd.si.simp' =>
@@ -14581,7 +14630,7 @@ return array(
   array(
     'Name' => 'example',
     'Template' => 'model/example',
-    'Reference' => '[RFC4735]',
+    'Reference' => '[RFC 4735]',
     'Active' => true,
   ),
   'model/gltf+json' =>
@@ -14616,7 +14665,7 @@ return array(
   array(
     'Name' => 'mesh',
     'Template' => 'model/mesh',
-    'Reference' => '[RFC2077]',
+    'Reference' => '[RFC 2077]',
     'Active' => true,
   ),
   'model/mtl' =>
@@ -14722,6 +14771,20 @@ return array(
     'Name' => 'vnd.gdl',
     'Template' => 'model/vnd.gdl',
     'Reference' => '[Attila_Babits]',
+    'Active' => true,
+  ),
+  'model/vnd.godot.scene.binary' =>
+  array(
+    'Name' => 'vnd.godot.scene.binary',
+    'Template' => 'model/vnd.godot.scene.binary',
+    'Reference' => '[Godot_Foundation]',
+    'Active' => true,
+  ),
+  'model/vnd.godot.scene.text' =>
+  array(
+    'Name' => 'vnd.godot.scene.text',
+    'Template' => 'model/vnd.godot.scene.text',
+    'Reference' => '[Godot_Foundation]',
     'Active' => true,
   ),
   'model/vnd.gs-gdl' =>
@@ -14833,7 +14896,7 @@ return array(
   array(
     'Name' => 'vrml',
     'Template' => 'model/vrml',
-    'Reference' => '[RFC2077]',
+    'Reference' => '[RFC 2077]',
     'Active' => true,
   ),
   'model/x3d+fastinfoset' =>
@@ -14861,7 +14924,7 @@ return array(
   array(
     'Name' => 'alternative',
     'Template' => 'multipart/alternative',
-    'Reference' => '[RFC2046][RFC2045]',
+    'Reference' => '[RFC 2046][RFC 2045]',
     'Active' => true,
   ),
   'multipart/appledouble' =>
@@ -14875,35 +14938,35 @@ return array(
   array(
     'Name' => 'byteranges',
     'Template' => 'multipart/byteranges',
-    'Reference' => '[RFC9110]',
+    'Reference' => '[RFC 9110]',
     'Active' => true,
   ),
   'multipart/digest' =>
   array(
     'Name' => 'digest',
     'Template' => 'multipart/digest',
-    'Reference' => '[RFC2046][RFC2045]',
+    'Reference' => '[RFC 2046][RFC 2045]',
     'Active' => true,
   ),
   'multipart/encrypted' =>
   array(
     'Name' => 'encrypted',
     'Template' => 'multipart/encrypted',
-    'Reference' => '[RFC1847]',
+    'Reference' => '[RFC 1847]',
     'Active' => true,
   ),
   'multipart/example' =>
   array(
     'Name' => 'example',
     'Template' => 'multipart/example',
-    'Reference' => '[RFC4735]',
+    'Reference' => '[RFC 4735]',
     'Active' => true,
   ),
   'multipart/form-data' =>
   array(
     'Name' => 'form-data',
     'Template' => 'multipart/form-data',
-    'Reference' => '[RFC7578]',
+    'Reference' => '[RFC 7578]',
     'Active' => true,
   ),
   'multipart/header-set' =>
@@ -14917,42 +14980,42 @@ return array(
   array(
     'Name' => 'mixed',
     'Template' => 'multipart/mixed',
-    'Reference' => '[RFC2046][RFC2045]',
+    'Reference' => '[RFC 2046][RFC 2045]',
     'Active' => true,
   ),
   'multipart/multilingual' =>
   array(
     'Name' => 'multilingual',
     'Template' => 'multipart/multilingual',
-    'Reference' => '[RFC8255]',
+    'Reference' => '[RFC 8255]',
     'Active' => true,
   ),
   'multipart/parallel' =>
   array(
     'Name' => 'parallel',
     'Template' => 'multipart/parallel',
-    'Reference' => '[RFC2046][RFC2045]',
+    'Reference' => '[RFC 2046][RFC 2045]',
     'Active' => true,
   ),
   'multipart/related' =>
   array(
     'Name' => 'related',
     'Template' => 'multipart/related',
-    'Reference' => '[RFC2387]',
+    'Reference' => '[RFC 2387]',
     'Active' => true,
   ),
   'multipart/report' =>
   array(
     'Name' => 'report',
     'Template' => 'multipart/report',
-    'Reference' => '[RFC6522]',
+    'Reference' => '[RFC 6522]',
     'Active' => true,
   ),
   'multipart/signed' =>
   array(
     'Name' => 'signed',
     'Template' => 'multipart/signed',
-    'Reference' => '[RFC1847]',
+    'Reference' => '[RFC 1847]',
     'Active' => true,
   ),
   'multipart/vnd.bint.med-plus' =>
@@ -14966,7 +15029,7 @@ return array(
   array(
     'Name' => 'voice-message',
     'Template' => 'multipart/voice-message',
-    'Reference' => '[RFC3801]',
+    'Reference' => '[RFC 3801]',
     'Active' => true,
   ),
   'multipart/x-mixed-replace' =>
@@ -14980,7 +15043,7 @@ return array(
   array(
     'Name' => '1d-interleaved-parityfec',
     'Template' => 'text/1d-interleaved-parityfec',
-    'Reference' => '[RFC6015]',
+    'Reference' => '[RFC 6015]',
     'Active' => true,
   ),
   'text/cache-manifest' =>
@@ -14994,7 +15057,7 @@ return array(
   array(
     'Name' => 'calendar',
     'Template' => 'text/calendar',
-    'Reference' => '[RFC5545]',
+    'Reference' => '[RFC 5545]',
     'Active' => true,
   ),
   'text/cql' =>
@@ -15029,7 +15092,7 @@ return array(
   array(
     'Name' => 'csv',
     'Template' => 'text/csv',
-    'Reference' => '[RFC4180][RFC7111]',
+    'Reference' => '[RFC 4180][RFC 7111]',
     'Active' => true,
   ),
   'text/csv-schema' =>
@@ -15043,42 +15106,42 @@ return array(
   array(
     'Name' => 'directory - DEPRECATED by RFC6350',
     'Template' => 'text/directory',
-    'Reference' => '[RFC2425][RFC6350]',
+    'Reference' => '[RFC 2425][RFC 6350]',
     'Active' => true,
   ),
   'text/dns' =>
   array(
     'Name' => 'dns',
     'Template' => 'text/dns',
-    'Reference' => '[RFC4027]',
+    'Reference' => '[RFC 4027]',
     'Active' => true,
   ),
   'text/ecmascript' =>
   array(
     'Name' => 'ecmascript (OBSOLETED in favor of text/javascript)',
     'Template' => 'text/ecmascript',
-    'Reference' => '[RFC9239]',
+    'Reference' => '[RFC 9239]',
     'Active' => true,
   ),
   'text/encaprtp' =>
   array(
     'Name' => 'encaprtp',
     'Template' => 'text/encaprtp',
-    'Reference' => '[RFC6849]',
+    'Reference' => '[RFC 6849]',
     'Active' => true,
   ),
   'text/enriched' =>
   array(
     'Name' => 'enriched',
     'Template' => 'text/enriched',
-    'Reference' => '[RFC1896]',
+    'Reference' => '[RFC 1896]',
     'Active' => true,
   ),
   'text/example' =>
   array(
     'Name' => 'example',
     'Template' => 'text/example',
-    'Reference' => '[RFC4735]',
+    'Reference' => '[RFC 4735]',
     'Active' => true,
   ),
   'text/fhirpath' =>
@@ -15092,14 +15155,14 @@ return array(
   array(
     'Name' => 'flexfec',
     'Template' => 'text/flexfec',
-    'Reference' => '[RFC8627]',
+    'Reference' => '[RFC 8627]',
     'Active' => true,
   ),
   'text/fwdred' =>
   array(
     'Name' => 'fwdred',
     'Template' => 'text/fwdred',
-    'Reference' => '[RFC6354]',
+    'Reference' => '[RFC 6354]',
     'Active' => true,
   ),
   'text/gff3' =>
@@ -15113,7 +15176,7 @@ return array(
   array(
     'Name' => 'grammar-ref-list',
     'Template' => 'text/grammar-ref-list',
-    'Reference' => '[RFC6787]',
+    'Reference' => '[RFC 6787]',
     'Active' => true,
   ),
   'text/hl7v2' =>
@@ -15134,7 +15197,7 @@ return array(
   array(
     'Name' => 'javascript',
     'Template' => 'text/javascript',
-    'Reference' => '[RFC9239]',
+    'Reference' => '[RFC 9239]',
     'Active' => true,
   ),
   'text/jcr-cnd' =>
@@ -15148,7 +15211,7 @@ return array(
   array(
     'Name' => 'markdown',
     'Template' => 'text/markdown',
-    'Reference' => '[RFC7763]',
+    'Reference' => '[RFC 7763]',
     'Active' => true,
   ),
   'text/mizar' =>
@@ -15176,21 +15239,21 @@ return array(
   array(
     'Name' => 'parameters',
     'Template' => 'text/parameters',
-    'Reference' => '[RFC7826]',
+    'Reference' => '[RFC 7826]',
     'Active' => true,
   ),
   'text/parityfec' =>
   array(
     'Name' => 'parityfec',
     'Template' => 'text/parityfec',
-    'Reference' => '[RFC3009]',
+    'Reference' => '[RFC 3009]',
     'Active' => true,
   ),
   'text/plain' =>
   array(
     'Name' => 'plain',
     'Template' => 'text/plain',
-    'Reference' => '[RFC2046][RFC3676][RFC5147]',
+    'Reference' => '[RFC 2046][RFC 3676][RFC 5147]',
     'Active' => true,
   ),
   'text/provenance-notation' =>
@@ -15239,28 +15302,28 @@ return array(
   array(
     'Name' => 'raptorfec',
     'Template' => 'text/raptorfec',
-    'Reference' => '[RFC6682]',
+    'Reference' => '[RFC 6682]',
     'Active' => true,
   ),
   'text/red' =>
   array(
     'Name' => 'RED',
     'Template' => 'text/RED',
-    'Reference' => '[RFC4102]',
+    'Reference' => '[RFC 4102]',
     'Active' => true,
   ),
   'text/rfc822-headers' =>
   array(
     'Name' => 'rfc822-headers',
     'Template' => 'text/rfc822-headers',
-    'Reference' => '[RFC6522]',
+    'Reference' => '[RFC 6522]',
     'Active' => true,
   ),
   'text/richtext' =>
   array(
     'Name' => 'richtext',
     'Template' => 'text/richtext',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'text/rtf' =>
@@ -15281,21 +15344,21 @@ return array(
   array(
     'Name' => 'rtploopback',
     'Template' => 'text/rtploopback',
-    'Reference' => '[RFC6849]',
+    'Reference' => '[RFC 6849]',
     'Active' => true,
   ),
   'text/rtx' =>
   array(
     'Name' => 'rtx',
     'Template' => 'text/rtx',
-    'Reference' => '[RFC4588]',
+    'Reference' => '[RFC 4588]',
     'Active' => true,
   ),
   'text/sgml' =>
   array(
     'Name' => 'SGML',
     'Template' => 'text/SGML',
-    'Reference' => '[RFC1874]',
+    'Reference' => '[RFC 1874]',
     'Active' => true,
   ),
   'text/shaclc' =>
@@ -15330,7 +15393,7 @@ return array(
   array(
     'Name' => 't140',
     'Template' => 'text/t140',
-    'Reference' => '[RFC4103]',
+    'Reference' => '[RFC 4103]',
     'Active' => true,
   ),
   'text/tab-separated-values' =>
@@ -15344,7 +15407,7 @@ return array(
   array(
     'Name' => 'troff',
     'Template' => 'text/troff',
-    'Reference' => '[RFC4263]',
+    'Reference' => '[RFC 4263]',
     'Active' => true,
   ),
   'text/turtle' =>
@@ -15358,21 +15421,21 @@ return array(
   array(
     'Name' => 'ulpfec',
     'Template' => 'text/ulpfec',
-    'Reference' => '[RFC5109]',
+    'Reference' => '[RFC 5109]',
     'Active' => true,
   ),
   'text/uri-list' =>
   array(
     'Name' => 'uri-list',
     'Template' => 'text/uri-list',
-    'Reference' => '[RFC2483]',
+    'Reference' => '[RFC 2483]',
     'Active' => true,
   ),
   'text/vcard' =>
   array(
     'Name' => 'vcard',
     'Template' => 'text/vcard',
-    'Reference' => '[RFC6350]',
+    'Reference' => '[RFC 6350]',
     'Active' => true,
   ),
   'text/vnd.a' =>
@@ -15487,6 +15550,20 @@ return array(
     'Reference' => '[Mi_Tar]',
     'Active' => true,
   ),
+  'text/vnd.godot.gdscript' =>
+  array(
+    'Name' => 'vnd.godot.gdscript',
+    'Template' => 'text/vnd.godot.gdscript',
+    'Reference' => '[Godot_Foundation]',
+    'Active' => true,
+  ),
+  'text/vnd.godot.gdshader' =>
+  array(
+    'Name' => 'vnd.godot.gdshader',
+    'Template' => 'text/vnd.godot.gdshader',
+    'Reference' => '[Godot_Foundation]',
+    'Active' => true,
+  ),
   'text/vnd.graphviz' =>
   array(
     'Name' => 'vnd.graphviz',
@@ -15582,7 +15659,7 @@ return array(
   array(
     'Name' => 'vnd.radisys.msml-basic-layout',
     'Template' => 'text/vnd.radisys.msml-basic-layout',
-    'Reference' => '[RFC5707]',
+    'Reference' => '[RFC 5707]',
     'Active' => true,
   ),
   'text/vnd.senx.warpscript' =>
@@ -15701,42 +15778,42 @@ return array(
   array(
     'Name' => 'xml',
     'Template' => 'text/xml',
-    'Reference' => '[RFC7303]',
+    'Reference' => '[RFC 7303]',
     'Active' => true,
   ),
   'text/xml-external-parsed-entity' =>
   array(
     'Name' => 'xml-external-parsed-entity',
     'Template' => 'text/xml-external-parsed-entity',
-    'Reference' => '[RFC7303]',
+    'Reference' => '[RFC 7303]',
     'Active' => true,
   ),
   'video/1d-interleaved-parityfec' =>
   array(
     'Name' => '1d-interleaved-parityfec',
     'Template' => 'video/1d-interleaved-parityfec',
-    'Reference' => '[RFC6015]',
+    'Reference' => '[RFC 6015]',
     'Active' => true,
   ),
   'video/3gpp' =>
   array(
     'Name' => '3gpp',
     'Template' => 'video/3gpp',
-    'Reference' => '[RFC3839][RFC6381]',
+    'Reference' => '[RFC 3839][RFC 6381]',
     'Active' => true,
   ),
   'video/3gpp-tt' =>
   array(
     'Name' => '3gpp-tt',
     'Template' => 'video/3gpp-tt',
-    'Reference' => '[RFC4396]',
+    'Reference' => '[RFC 4396]',
     'Active' => true,
   ),
   'video/3gpp2' =>
   array(
     'Name' => '3gpp2',
     'Template' => 'video/3gpp2',
-    'Reference' => '[RFC4393][RFC6381]',
+    'Reference' => '[RFC 4393][RFC 6381]',
     'Active' => true,
   ),
   'video/av1' =>
@@ -15750,126 +15827,126 @@ return array(
   array(
     'Name' => 'BMPEG',
     'Template' => 'video/BMPEG',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/bt656' =>
   array(
     'Name' => 'BT656',
     'Template' => 'video/BT656',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/celb' =>
   array(
     'Name' => 'CelB',
     'Template' => 'video/CelB',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/dv' =>
   array(
     'Name' => 'DV',
     'Template' => 'video/DV',
-    'Reference' => '[RFC6469]',
+    'Reference' => '[RFC 6469]',
     'Active' => true,
   ),
   'video/encaprtp' =>
   array(
     'Name' => 'encaprtp',
     'Template' => 'video/encaprtp',
-    'Reference' => '[RFC6849]',
+    'Reference' => '[RFC 6849]',
     'Active' => true,
   ),
   'video/evc' =>
   array(
     'Name' => 'evc',
     'Template' => 'video/evc',
-    'Reference' => '[RFC9584]',
+    'Reference' => '[RFC 9584]',
     'Active' => true,
   ),
   'video/example' =>
   array(
     'Name' => 'example',
     'Template' => 'video/example',
-    'Reference' => '[RFC4735]',
+    'Reference' => '[RFC 4735]',
     'Active' => true,
   ),
   'video/ffv1' =>
   array(
     'Name' => 'FFV1',
     'Template' => 'video/FFV1',
-    'Reference' => '[RFC9043]',
+    'Reference' => '[RFC 9043]',
     'Active' => true,
   ),
   'video/flexfec' =>
   array(
     'Name' => 'flexfec',
     'Template' => 'video/flexfec',
-    'Reference' => '[RFC8627]',
+    'Reference' => '[RFC 8627]',
     'Active' => true,
   ),
   'video/h261' =>
   array(
     'Name' => 'H261',
     'Template' => 'video/H261',
-    'Reference' => '[RFC4587]',
+    'Reference' => '[RFC 4587]',
     'Active' => true,
   ),
   'video/h263' =>
   array(
     'Name' => 'H263',
     'Template' => 'video/H263',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/h263-1998' =>
   array(
     'Name' => 'H263-1998',
     'Template' => 'video/H263-1998',
-    'Reference' => '[RFC4629]',
+    'Reference' => '[RFC 4629]',
     'Active' => true,
   ),
   'video/h263-2000' =>
   array(
     'Name' => 'H263-2000',
     'Template' => 'video/H263-2000',
-    'Reference' => '[RFC4629]',
+    'Reference' => '[RFC 4629]',
     'Active' => true,
   ),
   'video/h264' =>
   array(
     'Name' => 'H264',
     'Template' => 'video/H264',
-    'Reference' => '[RFC6184]',
+    'Reference' => '[RFC 6184]',
     'Active' => true,
   ),
   'video/h264-rcdo' =>
   array(
     'Name' => 'H264-RCDO',
     'Template' => 'video/H264-RCDO',
-    'Reference' => '[RFC6185]',
+    'Reference' => '[RFC 6185]',
     'Active' => true,
   ),
   'video/h264-svc' =>
   array(
     'Name' => 'H264-SVC',
     'Template' => 'video/H264-SVC',
-    'Reference' => '[RFC6190]',
+    'Reference' => '[RFC 6190]',
     'Active' => true,
   ),
   'video/h265' =>
   array(
     'Name' => 'H265',
     'Template' => 'video/H265',
-    'Reference' => '[RFC7798]',
+    'Reference' => '[RFC 7798]',
     'Active' => true,
   ),
   'video/h266' =>
   array(
     'Name' => 'H266',
     'Template' => 'video/H266',
-    'Reference' => '[RFC9328]',
+    'Reference' => '[RFC 9328]',
     'Active' => true,
   ),
   'video/iso.segment' =>
@@ -15883,28 +15960,28 @@ return array(
   array(
     'Name' => 'JPEG',
     'Template' => 'video/JPEG',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/jpeg2000' =>
   array(
     'Name' => 'jpeg2000',
     'Template' => 'video/jpeg2000',
-    'Reference' => '[RFC5371][RFC5372]',
+    'Reference' => '[RFC 5371][RFC 5372]',
     'Active' => true,
   ),
   'video/jpeg2000-scl' =>
   array(
     'Name' => 'jpeg2000-scl',
     'Template' => 'video/jpeg2000-scl',
-    'Reference' => '[RFC9828]',
+    'Reference' => '[RFC 9828]',
     'Active' => true,
   ),
   'video/jxsv' =>
   array(
     'Name' => 'jxsv',
     'Template' => 'video/jxsv',
-    'Reference' => '[RFC9134]',
+    'Reference' => '[RFC-ietf-avtcore-rtp-jpegxs-3ed-08]',
     'Active' => true,
   ),
   'video/lottie+json' =>
@@ -15918,105 +15995,105 @@ return array(
   array(
     'Name' => 'matroska',
     'Template' => 'video/matroska',
-    'Reference' => '[RFC9559]',
+    'Reference' => '[RFC 9559]',
     'Active' => true,
   ),
   'video/matroska-3d' =>
   array(
     'Name' => 'matroska-3d',
     'Template' => 'video/matroska-3d',
-    'Reference' => '[RFC9559]',
+    'Reference' => '[RFC 9559]',
     'Active' => true,
   ),
   'video/mj2' =>
   array(
     'Name' => 'mj2',
     'Template' => 'video/mj2',
-    'Reference' => '[RFC3745]',
+    'Reference' => '[RFC 3745]',
     'Active' => true,
   ),
   'video/mp1s' =>
   array(
     'Name' => 'MP1S',
     'Template' => 'video/MP1S',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/mp2p' =>
   array(
     'Name' => 'MP2P',
     'Template' => 'video/MP2P',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/mp2t' =>
   array(
     'Name' => 'MP2T',
     'Template' => 'video/MP2T',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/mp4' =>
   array(
     'Name' => 'mp4',
     'Template' => 'video/mp4',
-    'Reference' => '[RFC4337][RFC6381]',
+    'Reference' => '[RFC 4337][RFC 6381]',
     'Active' => true,
   ),
   'video/mp4v-es' =>
   array(
     'Name' => 'MP4V-ES',
     'Template' => 'video/MP4V-ES',
-    'Reference' => '[RFC6416]',
+    'Reference' => '[RFC 6416]',
     'Active' => true,
   ),
   'video/mpeg' =>
   array(
     'Name' => 'mpeg',
     'Template' => 'video/mpeg',
-    'Reference' => '[RFC2045][RFC2046]',
+    'Reference' => '[RFC 2045][RFC 2046]',
     'Active' => true,
   ),
   'video/mpeg4-generic' =>
   array(
     'Name' => 'mpeg4-generic',
     'Template' => 'video/mpeg4-generic',
-    'Reference' => '[RFC3640]',
+    'Reference' => '[RFC 3640]',
     'Active' => true,
   ),
   'video/mpv' =>
   array(
     'Name' => 'MPV',
     'Template' => 'video/MPV',
-    'Reference' => '[RFC3555]',
+    'Reference' => '[RFC 3555]',
     'Active' => true,
   ),
   'video/nv' =>
   array(
     'Name' => 'nv',
     'Template' => 'video/nv',
-    'Reference' => '[RFC4856]',
+    'Reference' => '[RFC 4856]',
     'Active' => true,
   ),
   'video/ogg' =>
   array(
     'Name' => 'ogg',
     'Template' => 'video/ogg',
-    'Reference' => '[RFC5334][RFC7845]',
+    'Reference' => '[RFC 5334][RFC 7845]',
     'Active' => true,
   ),
   'video/parityfec' =>
   array(
     'Name' => 'parityfec',
     'Template' => 'video/parityfec',
-    'Reference' => '[RFC3009]',
+    'Reference' => '[RFC 3009]',
     'Active' => true,
   ),
   'video/pointer' =>
   array(
     'Name' => 'pointer',
     'Template' => 'video/pointer',
-    'Reference' => '[RFC2862]',
+    'Reference' => '[RFC 2862]',
     'Active' => true,
   ),
   'video/prs.avid' =>
@@ -16030,21 +16107,21 @@ return array(
   array(
     'Name' => 'quicktime',
     'Template' => 'video/quicktime',
-    'Reference' => '[RFC6381][Paul_Lindner]',
+    'Reference' => '[RFC 6381][Paul_Lindner]',
     'Active' => true,
   ),
   'video/raptorfec' =>
   array(
     'Name' => 'raptorfec',
     'Template' => 'video/raptorfec',
-    'Reference' => '[RFC6682]',
+    'Reference' => '[RFC 6682]',
     'Active' => true,
   ),
   'video/raw' =>
   array(
     'Name' => 'raw',
     'Template' => 'video/raw',
-    'Reference' => '[RFC4175]',
+    'Reference' => '[RFC 4175]',
     'Active' => true,
   ),
   'video/rtp-enc-aescm128' =>
@@ -16058,56 +16135,56 @@ return array(
   array(
     'Name' => 'rtploopback',
     'Template' => 'video/rtploopback',
-    'Reference' => '[RFC6849]',
+    'Reference' => '[RFC 6849]',
     'Active' => true,
   ),
   'video/rtx' =>
   array(
     'Name' => 'rtx',
     'Template' => 'video/rtx',
-    'Reference' => '[RFC4588]',
+    'Reference' => '[RFC 4588]',
     'Active' => true,
   ),
   'video/scip' =>
   array(
     'Name' => 'scip',
     'Template' => 'video/scip',
-    'Reference' => '[RFC9607]',
+    'Reference' => '[RFC 9607]',
     'Active' => true,
   ),
   'video/smpte291' =>
   array(
     'Name' => 'smpte291',
     'Template' => 'video/smpte291',
-    'Reference' => '[RFC8331]',
+    'Reference' => '[RFC 8331]',
     'Active' => true,
   ),
   'video/smpte292m' =>
   array(
     'Name' => 'SMPTE292M',
     'Template' => 'video/SMPTE292M',
-    'Reference' => '[RFC3497]',
+    'Reference' => '[RFC 3497]',
     'Active' => true,
   ),
   'video/ulpfec' =>
   array(
     'Name' => 'ulpfec',
     'Template' => 'video/ulpfec',
-    'Reference' => '[RFC5109]',
+    'Reference' => '[RFC 5109]',
     'Active' => true,
   ),
   'video/vc1' =>
   array(
     'Name' => 'vc1',
     'Template' => 'video/vc1',
-    'Reference' => '[RFC4425]',
+    'Reference' => '[RFC 4425]',
     'Active' => true,
   ),
   'video/vc2' =>
   array(
     'Name' => 'vc2',
     'Template' => 'video/vc2',
-    'Reference' => '[RFC8450]',
+    'Reference' => '[RFC 8450]',
     'Active' => true,
   ),
   'video/vnd.blockfact.factv' =>
@@ -16380,14 +16457,14 @@ return array(
   array(
     'Name' => 'VP8',
     'Template' => 'video/VP8',
-    'Reference' => '[RFC7741]',
+    'Reference' => '[RFC 7741]',
     'Active' => true,
   ),
   'video/vp9' =>
   array(
     'Name' => 'VP9',
     'Template' => 'video/VP9',
-    'Reference' => '[RFC9628]',
+    'Reference' => '[RFC 9628]',
     'Active' => true,
   ),
 );

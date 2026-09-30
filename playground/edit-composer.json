@@ -2,61 +2,11 @@
     "repositories": [
         {
             "type": "path",
-            "url": "/packages/laravel-apie",
+            "url": "/packages/cms-layout-ionic",
             "options": {
                 "symlink": true,
                 "versions": {
-                    "apie/laravel-apie": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/cms-layout-kids",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/cms-layout-kids": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/twig-template-layout-renderer",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/twig-template-layout-renderer": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/doctrine-entity-datalayer",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/doctrine-entity-datalayer": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/regex-tools",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/regex-tools": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/webdav",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/webdav": "1.0.0.x-dev"
+                    "apie/cms-layout-ionic": "1.0.0.x-dev"
                 }
             }
         },
@@ -72,11 +22,51 @@
         },
         {
             "type": "path",
-            "url": "/packages/date-value-objects",
+            "url": "/packages/graphql",
             "options": {
                 "symlink": true,
                 "versions": {
-                    "apie/date-value-objects": "1.0.0.x-dev"
+                    "apie/graphql": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/schema-generator",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/schema-generator": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/typescript-client-builder",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/typescript-client-builder": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/regex-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/regex-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/typescript-code-builder",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/typescript-code-builder": "1.0.0.x-dev"
                 }
             }
         },
@@ -92,11 +82,111 @@
         },
         {
             "type": "path",
-            "url": "/packages/ftp-server",
+            "url": "/packages/apie-bundle",
             "options": {
                 "symlink": true,
                 "versions": {
-                    "apie/ftp-server": "1.0.0.x-dev"
+                    "apie/apie-bundle": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/dateformat-to-regex",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/dateformat-to-regex": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/serializer",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/serializer": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/export",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/export": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/country-and-phone-number",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/country-and-phone-number": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/cms",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/core",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/core": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/laravel-apie",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/laravel-apie": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/exchange-rate",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/exchange-rate": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/cms-layout-kids",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-layout-kids": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/cms-layout-graphite",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-layout-graphite": "1.0.0.x-dev"
                 }
             }
         },
@@ -122,171 +212,11 @@
         },
         {
             "type": "path",
-            "url": "/packages/meta-minimal",
+            "url": "/packages/date-value-objects",
             "options": {
                 "symlink": true,
                 "versions": {
-                    "apie/meta-minimal": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/apie-file-system",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/apie-file-system": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/regex-value-objects",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/regex-value-objects": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/serializer",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/serializer": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/fixtures",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/fixtures": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/ai-instructor",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/ai-instructor": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/dateformat-to-regex",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/dateformat-to-regex": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/faker",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/faker": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/export",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/export": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/maker",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/maker": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/country-and-phone-number",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/country-and-phone-number": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/schema-generator",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/schema-generator": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/text-value-objects",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/text-value-objects": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/cms-layout-ugly",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/cms-layout-ugly": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/cms-api-dropdown-option",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/cms-api-dropdown-option": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/otp-value-objects",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/otp-value-objects": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/apie-phpstan-rules",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/apie-phpstan-rules": "1.0.0.x-dev"
+                    "apie/date-value-objects": "1.0.0.x-dev"
                 }
             }
         },
@@ -302,131 +232,21 @@
         },
         {
             "type": "path",
-            "url": "/packages/integration-tests",
+            "url": "/packages/regex-tools",
             "options": {
                 "symlink": true,
                 "versions": {
-                    "apie/integration-tests": "1.0.0.x-dev"
+                    "apie/regex-tools": "1.0.0.x-dev"
                 }
             }
         },
         {
             "type": "path",
-            "url": "/packages/cms-layout-graphite",
+            "url": "/packages/faker",
             "options": {
                 "symlink": true,
                 "versions": {
-                    "apie/cms-layout-graphite": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/graphql",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/graphql": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/storage-metadata",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/storage-metadata": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/common",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/common": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/core",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/core": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/typescript-client-builder",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/typescript-client-builder": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/typescript-code-builder",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/typescript-code-builder": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/console",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/console": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/apie-common-plugin",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/apie-common-plugin": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/apie-bundle",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/apie-bundle": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/count-words",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/count-words": "1.0.0.x-dev"
-                }
-            }
-        },
-        {
-            "type": "path",
-            "url": "/packages/meta-maximum",
-            "options": {
-                "symlink": true,
-                "versions": {
-                    "apie/meta-maximum": "1.0.0.x-dev"
+                    "apie/faker": "1.0.0.x-dev"
                 }
             }
         },
@@ -442,11 +262,91 @@
         },
         {
             "type": "path",
-            "url": "/packages/cms",
+            "url": "/packages/cms-api-dropdown-option",
             "options": {
                 "symlink": true,
                 "versions": {
-                    "apie/cms": "1.0.0.x-dev"
+                    "apie/cms-api-dropdown-option": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/common",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/common": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/dataset",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/dataset": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/ai-instructor",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/ai-instructor": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/text-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/text-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/count-words",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/count-words": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/twig-template-layout-renderer",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/twig-template-layout-renderer": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/fixtures",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/fixtures": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/meta-maximum",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/meta-maximum": "1.0.0.x-dev"
                 }
             }
         },
@@ -462,11 +362,141 @@
         },
         {
             "type": "path",
-            "url": "/packages/cms-layout-ionic",
+            "url": "/packages/apie-common-plugin",
             "options": {
                 "symlink": true,
                 "versions": {
-                    "apie/cms-layout-ionic": "1.0.0.x-dev"
+                    "apie/apie-common-plugin": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/webdav",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/webdav": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/apie-file-system",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/apie-file-system": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/console",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/console": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/meta-minimal",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/meta-minimal": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/integration-tests",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/integration-tests": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/ftp-server",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/ftp-server": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/apie-phpstan-rules",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/apie-phpstan-rules": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/otp-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/otp-value-objects": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/doctrine-entity-datalayer",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/doctrine-entity-datalayer": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/storage-metadata",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/storage-metadata": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/maker",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/maker": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/cms-layout-ugly",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/cms-layout-ugly": "1.0.0.x-dev"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "/packages/iana-value-objects",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apie/iana-value-objects": "1.0.0.x-dev"
                 }
             }
         }

@@ -10,25 +10,27 @@ use Apie\TwigTemplateLayoutRenderer\Extension\ComponentHelperExtension;
 use Symfony\UX\Icons\Twig\UXIconRuntime;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
+use WeakMap;
 
 final class TwigRenderer implements ComponentRendererInterface
 {
     private Environment $twigEnvironment;
 
-    private static ComponentHelperExtension $extension;
+    /** @var WeakMap<UXIconRuntime, ComponentHelperExtension> */
+    private static WeakMap $extensions;
 
     public function __construct(
         string $path,
         private AssetManager $assetManager,
         private string $namespacePrefix,
-        UXIconRuntime $uxIconRuntime,
+        private UXIconRuntime $uxIconRuntime,
     ) {
         $loader = new FilesystemLoader([$path, self::getFallbackFixturesPath()]);
         $this->twigEnvironment = new Environment($loader, []);
-        if (!isset(self::$extension)) {
-            self::$extension = new ComponentHelperExtension($uxIconRuntime);
-        }
-        $this->twigEnvironment->addExtension(self::$extension);
+        self::$extensions ??= new WeakMap();
+        $this->twigEnvironment->addExtension(
+            self::$extensions[$uxIconRuntime] ??= new ComponentHelperExtension($uxIconRuntime)
+        );
     }
 
     public function getAssetContents(string $filename): string
@@ -47,12 +49,13 @@ final class TwigRenderer implements ComponentRendererInterface
         if (!str_starts_with($className, $this->namespacePrefix)) {
             throw new InvalidTypeException($component, 'class in ' . $this->namespacePrefix . ' namespace');
         }
-        self::$extension->selectComponent($this, $component, $apieContext);
+        $extension = self::$extensions[$this->uxIconRuntime];
+        $extension->selectComponent($this, $component, $apieContext);
         try {
             $templatePath = str_replace('\\', '/', strtolower(substr($className, strlen($this->namespacePrefix)))) . '.html.twig';
             return $this->twigEnvironment->render($templatePath);
         } finally {
-            self::$extension->deselectComponent($component);
+            $extension->deselectComponent($component);
         }
     }
 
