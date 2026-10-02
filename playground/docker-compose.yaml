@@ -100,6 +100,7 @@ services:
     container_name: apie_playground_symfony
     volumes:
       - ./symfony-app/apie.yaml:/var/www/html/apie.yaml
+      - ./symfony-app/security.yaml:/var/www/html/config/packages/security.yaml
       - ./symfony-app/Controller/DisplayDashboardController.php:/var/www/html/src/Controller/DisplayDashboardController.php
       - ./symfony-app/templates/apie:/var/www/html/templates/apie
       - ./app/ApiePlayground:/var/www/html/src/ApiePlayground
@@ -132,6 +133,7 @@ services:
     volumes:
       - ./laravel-app/AppServiceProvider.php:/var/www/html/app/Providers/AppServiceProvider.php
       - ./laravel-app/apie.php:/var/www/html/apie.php
+      - ./laravel-app/web.php:/var/www/html/routes/web.php
       - ./laravel-app/templates:/var/www/html/resources/views/apie
       - ./app/ApiePlayground:/var/www/html/app/ApiePlayground
       - ../packages:/packages

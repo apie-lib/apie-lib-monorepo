@@ -2441,6 +2441,75 @@
                 }
             }
         },
+        "/action/Authentication/restrictedToLoggedInUsers/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.Authentication-restrictedToLoggedInUsers",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/action/Calculator/squareRoot/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -11103,6 +11172,55 @@
                             "application/json": {
                                 "schema": {
                                     "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Authentication/restrictedToLoggedInUsers": {
+            "get": {
+                "tags": [
+                    "Authentication",
+                    "action"
+                ],
+                "description": "Only accessible to logged in users, used to verify authorization errors return the correct HTTP status code",
+                "operationId": "call-method-Authentication-restrictedToLoggedInUsers",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }

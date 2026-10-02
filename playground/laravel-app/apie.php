@@ -3,6 +3,10 @@
 use Apie\LaravelApie\Config\ValidateAndSanitizeConfig;
 
 return ValidateAndSanitizeConfig::process([
+        // Laravel has no equivalent of symfony's LogoutEvent, so this route must be hit
+        // directly to log a user out and clear the authentication cookie apie set (see
+        // routes/web.php and Apie\LaravelApie\Apie::logout()).
+        'logout_url' => '/logout',
         'cms' => [
            'dashboard_template' => 'apie/dashboard',
         ],

@@ -4,6 +4,7 @@ namespace Apie\IntegrationTests\Apie\TypeDemo\Actions;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\Route;
+use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
@@ -12,6 +13,7 @@ use Apie\Core\Entities\EntityInterface;
 use Apie\IanaValueObjects\LanguageAndRegion;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
+use Apie\IntegrationTests\Apie\TypeDemo\Rules\RequiresAuthenticatedUser;
 use Exception;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -68,6 +70,13 @@ class Authentication
     public function localeObject(#[Context] ?LanguageAndRegion $locale = null): ?LanguageAndRegion
     {
         return $locale;
+    }
+
+    #[Description('Only accessible to logged in users, used to verify authorization errors return the correct HTTP status code')]
+    #[RuntimeCheck(new RequiresAuthenticatedUser())]
+    public function restrictedToLoggedInUsers(): string
+    {
+        return 'secret';
     }
 
     public function isThisMe(#[Context] ApieContext $apieContext, UserIdentifier $userId): bool
