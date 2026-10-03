@@ -1,17 +1,31 @@
 <?php
 namespace Apie\Core;
 
+use Apie\Common\Other\Audit\AuditEvent;
 use Apie\Core\Exceptions\IndexNotFoundException;
-use Apie\Core\FileStorage\StoredFile;
 use Apie\Core\Permissions\PermissionInterface;
 use Apie\Core\Permissions\SerializedPermission;
+use Apie\Core\Translator\ValueObjects\AbstractTranslation;
+use Apie\Core\Translator\ValueObjects\AuditLogEventMessage;
+use Apie\Core\Translator\ValueObjects\CreateFormFieldProperty;
+use Apie\Core\Translator\ValueObjects\FormFieldProperty;
+use Apie\Core\Translator\ValueObjects\MenuHeader;
+use Apie\Core\Translator\ValueObjects\ResourceAddResourceButtonLabel;
+use Apie\Core\Translator\ValueObjects\ResourceAddResourceHeader;
+use Apie\Core\Translator\ValueObjects\ResourceCustomActionResourceButtonLabel;
+use Apie\Core\Translator\ValueObjects\ResourceCustomActionResourceHeader;
+use Apie\Core\Translator\ValueObjects\ResourceCustomGlobalActionResourceButtonLabel;
+use Apie\Core\Translator\ValueObjects\ResourceCustomGlobalActionResourceHeader;
+use Apie\Core\Translator\ValueObjects\ResourceModifyResourceButtonLabel;
+use Apie\Core\Translator\ValueObjects\ResourceModifyResourceHeader;
+use Apie\Core\Translator\ValueObjects\ResourceName;
+use Apie\Core\Translator\ValueObjects\ResourceOverviewHeader;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 use Apie\Core\ValueObjects\Utils;
 use Apie\SchemaGenerator\Other\JsonSchemaFormatValidator;
 use Beste\Clock\SystemClock;
 use League\OpenAPIValidation\Schema\TypeFormats\FormatsContainer;
 use Psr\Clock\ClockInterface;
-use Psr\Http\Message\UploadedFileInterface;
 use ReflectionClass;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
@@ -22,8 +36,22 @@ final class ApieLib
      * @var array<class-string<object>, string|class-string<object>> $aliases
      */
     private static $aliases = [
-        UploadedFileInterface::class => StoredFile::class,
+        AbstractTranslation::class => MenuHeader::class
+            . '|' . AuditLogEventMessage::class
+            . '|' . CreateFormFieldProperty::class
+            . '|' . FormFieldProperty::class
+            . '|' . ResourceOverviewHeader::class
+            . '|' . ResourceAddResourceButtonLabel::class
+            . '|' . ResourceAddResourceHeader::class
+            . '|' . ResourceCustomActionResourceButtonLabel::class
+            . '|' . ResourceCustomActionResourceHeader::class
+            . '|' . ResourceCustomGlobalActionResourceButtonLabel::class
+            . '|' . ResourceCustomGlobalActionResourceHeader::class
+            . '|' . ResourceModifyResourceButtonLabel::class
+            . '|' . ResourceModifyResourceHeader::class
+            . '|' . ResourceName::class,
         PermissionInterface::class => SerializedPermission::class,
+        AuditEvent::class => 'Apie\Common\Other\Audit\AuditCreate|Apie\Common\Other\Audit\AuditModified|Apie\Common\Other\Audit\AuditRemoved|Apie\Common\Other\Audit\AuditRead|Apie\Common\Other\Audit\AuditMethodCalled'
     ];
 
     public static function resetAliases(): void
@@ -69,7 +97,7 @@ final class ApieLib
     {
     }
 
-    public const VERSION = '1.0.0-RC2';
+    public const VERSION = '1.0.0-RC3';
 
     public const APIE_FORM_ELEMENTS = '0.7.0';
 

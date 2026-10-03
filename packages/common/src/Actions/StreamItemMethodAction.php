@@ -3,11 +3,13 @@ namespace Apie\Common\Actions;
 
 use Apie\Common\IntegrationTestLogger;
 use Apie\Common\Other\DownloadFile;
+use Apie\Common\Other\LockUtil;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
 use Apie\Core\Actions\MethodActionInterface;
+use Apie\Core\Attributes\Description;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
@@ -54,19 +56,27 @@ final class StreamItemMethodAction implements MethodActionInterface
             throw new InvalidTypeException($resourceClass->name, 'EntityInterface');
         }
         $properties = explode('/', $context->getContext('properties'));
-        $id = $context->getContext(ContextConstants::RESOURCE_ID);
+        $lock = LockUtil::createLock(
+            $context,
+            [ContextConstants::BOUNDED_CONTEXT_ID, ContextConstants::RESOURCE_NAME, ContextConstants::RESOURCE_ID]
+        );
         try {
-            $resource = $this->apieFacade->find(
-                IdentifierUtils::idStringToIdentifier($id, $context),
-                new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
-            );
-        } catch (InvalidStringForValueObjectException|EntityNotFoundException $error) {
-            IntegrationTestLogger::logException($error);
-            return ActionResponse::createClientError($this->apieFacade, $context, $error);
+            $id = $context->getContext(ContextConstants::RESOURCE_ID);
+            try {
+                $resource = $this->apieFacade->find(
+                    IdentifierUtils::idStringToIdentifier($id, $context),
+                    new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID))
+                );
+            } catch (InvalidStringForValueObjectException|EntityNotFoundException $error) {
+                IntegrationTestLogger::logException($error);
+                return ActionResponse::createClientError($this->apieFacade, $context, $error);
+            }
+            $context = $context->withContext(ContextConstants::RESOURCE, $resource);
+            $result = PropertyAccess::getPropertyValue($resource, $properties, $context, false);
+            $result = $this->toDownload($result);
+        } finally {
+            $lock->release();
         }
-        $context = $context->withContext(ContextConstants::RESOURCE, $resource);
-        $result = PropertyAccess::getPropertyValue($resource, $properties, $context, false);
-        $result = $this->toDownload($result);
 
         return ActionResponse::createRunSuccess($this->apieFacade, $context, $result, $resource);
     }
@@ -93,13 +103,13 @@ final class StreamItemMethodAction implements MethodActionInterface
         throw ValidationException::createFromArray(['' => new LogicException('There is nothing to stream')]);
     }
 
-    /** @param ReflectionClass<object> $class */
+    /** @param ReflectionClass<covariant object> $class */
     public static function getInputType(ReflectionClass $class, ?ReflectionMethod $method = null): ReflectionMethod
     {
         return $class->getConstructor() ?? new ReflectionMethod(DownloadFile::class, '__construct');
     }
 
-    /** @param ReflectionClass<object> $class */
+    /** @param ReflectionClass<covariant object> $class */
     public static function getOutputType(ReflectionClass $class, ?ReflectionMethod $method = null): ReflectionMethod
     {
         return new ReflectionMethod(DownloadFile::class, 'download');
@@ -115,15 +125,18 @@ final class StreamItemMethodAction implements MethodActionInterface
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getDescription(ReflectionClass $class, ?ReflectionMethod $method = null): string
     {
+        foreach ($method?->getAttributes(Description::class) ?? [] as $attribute) {
+            return $attribute->newInstance()->description;
+        }
         return 'Streams a file on a ' . $class->getShortName() . ' with a specific id';
     }
     
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getTags(ReflectionClass $class, ?ReflectionMethod $method = null): StringList
     {
@@ -136,7 +149,7 @@ final class StreamItemMethodAction implements MethodActionInterface
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getRouteAttributes(ReflectionClass $class, ?ReflectionMethod $method = null): array
     {

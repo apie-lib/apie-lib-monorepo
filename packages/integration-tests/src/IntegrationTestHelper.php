@@ -11,7 +11,7 @@ use Apie\IntegrationTests\Config\Enums\DatalayerImplementation;
 /**
  * @codeCoverageIgnore
  */
-final class IntegrationTestHelper
+class IntegrationTestHelper
 {
     use CreatesApplications;
     use CreatesApieBoundedContext;
@@ -37,15 +37,6 @@ final class IntegrationTestHelper
             true,
             true,
             $datalayerImplementation
-        );
-    }
-
-    public function createMinimalFrameworkConfig(): ApplicationConfig
-    {
-        return new ApplicationConfig(
-            false,
-            false,
-            DatalayerImplementation::IN_MEMORY
         );
     }
 

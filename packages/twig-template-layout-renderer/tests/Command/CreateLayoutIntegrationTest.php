@@ -41,7 +41,7 @@ class CreateLayoutIntegrationTest extends AbstractRenderTestCase
                 require_once(self::$path . '/backend/src/UsednameDesignSystemLayout.php');
             }
             self::assertTrue(class_exists(self::CLASSNAME));
-            return self::$renderer = self::CLASSNAME::createRenderer();
+            return self::$renderer = self::CLASSNAME::createRenderer(self::createTwigRuntimeForTests());
         }
         return self::$renderer;
     }

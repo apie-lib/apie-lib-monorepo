@@ -14,4 +14,24 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+Value objects for HOTP and TOTP one-time passwords, wrapping `spomky-labs/otphp` for
+the OTP algorithms and `chillerlan/php-qrcode` for enrollment QR codes.
+
+### Standalone usage
+```bash
+composer require apie/otp-value-objects
+```
+
+`OTP` validates a submitted one-time password string:
+```php
+use Apie\OtpValueObjects\OTP;
+
+$otp = new OTP('123456');
+```
+
+`TOTPSecret::createRandom()` generates a new TOTP secret and `createOTP()` computes the
+current code for it; `HOTPSecret::createRandom()` does the same for counter-based OTP.
+Extend the abstract `VerifyOTP` class to add a two-factor-authentication action that
+references an entity's OTP secret property and label. These are ordinary PHP value
+objects and work without a framework, though the QR code helpers on `TOTPSecret` /
+`HOTPSecret` are handy when building an enrollment screen in any Apie CMS/REST app.

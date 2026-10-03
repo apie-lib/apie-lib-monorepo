@@ -1,0 +1,36 @@
+{
+  "name": "apie/apie-file-system",
+  "description": "Composer package of the apie library: apie file system",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\ApieFileSystem\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\ApieFileSystem\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "apie/common": "self.version",
+    "apie/core": "self.version"
+  },
+  "require-dev": {
+    "apie/export": "self.version",
+    "apie/fixtures": "self.version",
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.5",
+    "symfony/mime":  "^7.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

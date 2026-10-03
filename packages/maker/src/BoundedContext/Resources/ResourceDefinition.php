@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Maker\BoundedContext\Resources;
 
+use Apie\Core\Attributes\CmsIcon;
 use Apie\Core\Attributes\HideIdOnOverview;
 use Apie\Core\Attributes\Not;
 use Apie\Core\Attributes\RemovalCheck;
@@ -18,6 +19,7 @@ use Apie\Maker\Enums\IdType;
 
 #[HideIdOnOverview]
 #[RemovalCheck(new StaticCheck())]
+#[CmsIcon('carbon:software-resource-cluster')]
 class ResourceDefinition implements EntityInterface
 {
     public function __construct(

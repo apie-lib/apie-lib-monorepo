@@ -2,10 +2,14 @@
 namespace Apie\Core\Metadata\Fields;
 
 use Apie\Core\Attributes\ColumnPriority;
+use Apie\Core\Attributes\Optional;
+use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Metadata\Concerns\UseContextKey;
 use Apie\Core\Metadata\GetterInterface;
 use Apie\Core\Utils\ConverterUtils;
+use Apie\TypeConverter\Exceptions\CanNotConvertObjectException;
+use ReflectionException;
 use ReflectionMethod;
 use ReflectionType;
 
@@ -30,7 +34,7 @@ final class GetterMethod implements FieldInterface, GetterInterface
 
     public function isRequired(): bool
     {
-        return true;
+        return empty($this->method->getAttributes(Optional::class)) && empty($this->method->getAttributes(RuntimeCheck::class));
     }
 
     public function isField(): bool
@@ -59,7 +63,19 @@ final class GetterMethod implements FieldInterface, GetterInterface
         foreach ($this->method->getParameters() as $parameter) {
             $contextKey = $this->getContextKey($apieContext, $parameter);
             if ($contextKey === null || !$apieContext->hasContext($contextKey)) {
-                $arguments[] = $parameter->getDefaultValue();
+                try {
+                    $arguments[] = $parameter->getDefaultValue();
+                } catch (ReflectionException $previous) {
+                    throw new \LogicException(
+                        sprintf(
+                            'Trouble with "%s" for parameter "%s" in method "%s"',
+                            $contextKey,
+                            $parameter->getName(),
+                            $this->method->getName()
+                        ),
+                        previous: $previous
+                    );
+                }
             } else {
                 $arguments[] = $apieContext->getContext($contextKey);
             }
@@ -92,7 +108,11 @@ final class GetterMethod implements FieldInterface, GetterInterface
                 $list[] = $attribute->newInstance();
             }
         }
-        $class = ConverterUtils::toReflectionClass($this->method);
+        try {
+            $class = ConverterUtils::toReflectionClass($this->method);
+        } catch (CanNotConvertObjectException) {
+            return $list;
+        }
         if ($class && $classDocBlock) {
             foreach ($class->getAttributes($attributeClass, \ReflectionAttribute::IS_INSTANCEOF) as $attribute) {
                 $list[] = $attribute->newInstance();

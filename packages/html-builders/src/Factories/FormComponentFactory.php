@@ -10,9 +10,11 @@ use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Metadata\CompositeMetadata;
 use Apie\Core\Metadata\Fields\DiscriminatorColumn;
 use Apie\Core\Metadata\Fields\SetterMethod;
+use Apie\Core\Metadata\Fields\StaticDiscriminatorColumn;
 use Apie\Core\Metadata\MetadataFactory;
 use Apie\Core\Metadata\MetadataInterface;
 use Apie\Core\ValueObjects\Utils;
+use Apie\HtmlBuilders\Components\BaseComponent;
 use Apie\HtmlBuilders\Components\Forms\FormGroup;
 use Apie\HtmlBuilders\Components\Forms\FormPrototypeList;
 use Apie\HtmlBuilders\Components\Forms\SingleInput;
@@ -40,10 +42,13 @@ use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\Interfaces\FormComponentProviderInterface;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use ReflectionClass;
+use ReflectionNamedType;
 use ReflectionParameter;
+use ReflectionProperty;
 use ReflectionType;
 use SensitiveParameter;
 use Throwable;
+use Time\Duration;
 
 final class FormComponentFactory
 {
@@ -126,13 +131,20 @@ final class FormComponentFactory
             $value = Utils::toString($context->getFilledInValue($allowsNull ? null : '', true));
         } catch (Throwable) {
         }
+        $input = new CmsSingleInput($context->isSensitive() ? ['password'] : ['text']);
+        if ($typehint instanceof ReflectionNamedType && $typehint->getName() === Duration::class) {
+            $input = new CmsSingleInput(
+                ['integer', 'number', 'text']
+            );
+        }
+
         return new SingleInput(
             $context->getFormName(),
             $context->getFilledInValue(),
             $context->createTranslationLabel(),
             $allowsNull,
             $typehint,
-            new CmsSingleInput($context->isSensitive() ? ['password'] : ['text']),
+            $input,
         );
     }
 
@@ -160,7 +172,7 @@ final class FormComponentFactory
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public function createFromClass(ReflectionClass $class, FormBuildContext $context, ?FormComponentProviderInterface $skipProvider = null): ComponentInterface
     {
@@ -173,6 +185,15 @@ final class FormComponentFactory
 
         $metadata = MetadataFactory::getCreationMetadata($class, $context->getApieContext());
         return $this->createFromMetadata($metadata, $context);
+    }
+
+    private function makeOptional(BaseComponent $component): BaseComponent
+    {
+        $attr = new ReflectionProperty(BaseComponent::class, 'attributes');
+        $attributes = $attr->getValue($component);
+        $attributes['optional'] = true;
+        $attr->setValue($component, $attributes);
+        return $component;
     }
 
     public function createFromMetadata(MetadataInterface $metadata, FormBuildContext $context): ComponentInterface
@@ -191,11 +212,13 @@ final class FormComponentFactory
                 case SetterMethod::class:
                     foreach ($reflectionData->getMethod()->getParameters() as $parameter) {
                         if ($parameter->name === $fieldName) {
-                            $components[$fieldName] = $this->createFromParameter($parameter, $context);
+                            $component = $this->createFromParameter($parameter, $context);
+                            $components[$fieldName] = $component instanceof BaseComponent ? $this->makeOptional($component) : $component;
                             break;
                         }
                     }
                     break;
+                case StaticDiscriminatorColumn::class:
                 case DiscriminatorColumn::class:
                     $components[$fieldName] = new SingleInput(
                         $childContext->getFormName(),

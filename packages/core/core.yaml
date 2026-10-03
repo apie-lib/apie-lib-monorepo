@@ -11,6 +11,14 @@ services:
     tags:
       - apie.context
 
+  Apie\Core\ContextBuilders\CreateEntityReferenceContextBuilder:
+    tags:
+      - apie.core.context_builder
+
+  Apie\Core\ContextBuilders\CreateEntityListContextBuilder:
+    tags:
+      - apie.core.context_builder
+
   Apie\Core\ContextBuilders\ContextBuilderFactory:
     factory: ['Apie\Common\Wrappers\GeneralServiceFactory', 'createContextBuilderFactory']
     arguments:
@@ -32,6 +40,7 @@ services:
   Apie\Core\Datalayers\GroupedDataLayer:
     arguments:
       - '@Apie\Core\Datalayers\Grouped\DataLayerByBoundedContext'
+      - '@Psr\EventDispatcher\EventDispatcherInterface'
     tags:
       - apie.context
 

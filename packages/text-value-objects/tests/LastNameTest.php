@@ -70,6 +70,7 @@ class LastNameTest extends TestCase
                 'type' => 'string',
                 'format' => 'lastname',
                 'pattern' => true,
+                'description' => true,
             ]
         );
     }

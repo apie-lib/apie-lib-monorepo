@@ -1,11 +1,13 @@
 <?php
 namespace Apie\Fixtures\ValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\Internal;
 use Apie\Core\ValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\DatabaseText;
 use Apie\Core\ValueObjects\Interfaces\ValueObjectInterface;
 
+#[Description('Represents an address which can verify if the zipcode is correct with some API call')]
 class AddressWithZipcodeCheck implements ValueObjectInterface
 {
     use CompositeValueObject;

@@ -60,7 +60,8 @@ class PhpRegularExpressionTest extends TestCase
             'PhpRegularExpression-post',
             [
                 'type' => 'string',
-                'format' => 'phpregularexpression'
+                'format' => 'phpregularexpression',
+                'description' => true,
             ]
         );
     }

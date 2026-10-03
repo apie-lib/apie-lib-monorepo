@@ -6,12 +6,13 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\Translator\ApieTranslator;
 use Apie\Core\Translator\ApieTranslatorInterface;
 use Apie\Core\Translator\Lists\TranslationStringSet;
-use Apie\Core\Translator\ValueObjects\TranslationString;
+use Apie\Core\Translator\ValueObjects\AbstractTranslation;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
 use LogicException;
 use ReflectionClass;
+use Symfony\UX\Icons\Twig\UXIconRuntime;
 use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\Runtime\EscaperRuntime;
@@ -20,6 +21,7 @@ use Twig\TwigFunction;
 
 class ComponentHelperExtension extends AbstractExtension
 {
+
     /** @var ComponentInterface[] */
     private array $componentsHandled = [];
 
@@ -28,6 +30,11 @@ class ComponentHelperExtension extends AbstractExtension
 
     /** @var ApieContext[] */
     private array $contexts = [];
+
+    public function __construct(
+        private readonly UXIconRuntime $uxIconExtension
+    ) {
+    }
 
     public function selectComponent(
         TwigRenderer $renderer,
@@ -55,7 +62,7 @@ class ComponentHelperExtension extends AbstractExtension
         return $refl->getConstant($constantName);
     }
 
-    public function translate(string|TranslationString|TranslationStringSet $translation): string
+    public function translate(string|AbstractTranslation|TranslationStringSet $translation): string
     {
         $apieContext = $this->getCurrentContext();
         $translator = $apieContext->getContext(ApieTranslatorInterface::class, false) ?? ApieTranslator::create();
@@ -63,7 +70,7 @@ class ComponentHelperExtension extends AbstractExtension
             return $translator->getGeneralTranslation(
                 $apieContext,
                 is_string($translation)
-                    ? new TranslationString($translation)
+                    ? AbstractTranslation::fromNative($translation)
                     : $translation
             ) ?? $translation;
         } catch (InvalidStringForValueObjectException) {
@@ -89,6 +96,9 @@ class ComponentHelperExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
+            ...($this->uxIconExtension
+            ? [new TwigFunction('ux_icon', [$this->uxIconExtension, 'renderIcon'], ['is_safe' => ['html']])]
+            : []),
             new TwigFunction('component', [$this, 'component'], ['is_safe' => ['all']]),
             new TwigFunction('isPrototyped', [$this, 'isPrototyped']),
             new TwigFunction('apieConstant', [$this, 'apieConstant']),
@@ -191,6 +201,6 @@ class ComponentHelperExtension extends AbstractExtension
     public function isPrototyped(): bool
     {
         $attrs = $this->getCurrentComponent()->getAttribute('additionalAttributes');
-        return is_array($attrs) ? ((bool) $attrs['prototyped'] ?? false) : false;
+        return is_array($attrs) ? ((bool) ($attrs['prototyped'] ?? false)) : false;
     }
 }

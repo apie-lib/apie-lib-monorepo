@@ -1,0 +1,117 @@
+<?php
+namespace Apie\McpServer\Tool;
+
+use Apie\Common\ApieFacade;
+use Apie\Console\ConsoleCliStorage;
+use Apie\Core\Actions\ActionResponse;
+use Apie\Core\Actions\ActionResponseStatus;
+use Apie\Core\ContextBuilders\ContextBuilderFactory;
+use Apie\Core\ContextConstants;
+use Apie\Core\ValueObjects\Utils;
+use Mcp\Types\CallToolResult;
+use Mcp\Types\TextContent;
+use Mcp\Types\Tool;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerInterface;
+use ReflectionClass;
+
+class ToolRunner
+{
+    public function __construct(
+        private readonly ContextBuilderFactory $contextBuilder,
+        private readonly ApieFacade $apieFacade,
+        private readonly LoggerInterface $logger,
+        private readonly ?ConsoleCliStorage $consoleCliStorage = null
+    ) {
+    }
+
+    public function run(Tool $tool, array $params, ?ServerRequestInterface $request = null): CallToolResult
+    {
+        try {
+            $meta = Utils::toArray($tool->_meta);
+            $action = new ReflectionClass($meta["x-definition"]);
+            $fields = Utils::toArray($meta["x-fields"]);
+            if (isset($meta['x-bounded-context-id'])) {
+                $fields[ContextConstants::BOUNDED_CONTEXT_ID] = $meta['x-bounded-context-id'];
+            }
+            if ($this->consoleCliStorage) {
+                $fields[ConsoleCliStorage::class] = $this->consoleCliStorage;
+            }
+            $fields[ContextConstants::MCP_SERVER] = true;
+            $fields[Tool::class] = true;
+            $fields[ContextConstants::RAW_CONTENTS] = $params;
+            if (isset($params['id'])) {
+                $fields[ContextConstants::RESOURCE_ID] = $params['id'];
+            }
+            $context = $request
+                ? $this->contextBuilder->createFromRequest($request, $fields)
+                : $this->contextBuilder->createGeneralContext($fields);
+            $action = $this->apieFacade->createAction($context);
+            /** @var ActionResponse $data */
+            $data = ($action)($context, $params);
+            return $this->actionResponseToToolResult($data);
+        } catch (\Throwable $e) {
+            $this->logger->error('Error while executing tool: "' . $e->getMessage() . '"', [
+                'tool' => $tool,
+                'params' => $params,
+                'exception' => $e,
+            ]);
+            return new CallToolResult(
+                [
+                    new TextContent(json_encode([
+                        'status' => 'error',
+                        'message' => $e->getMessage(),
+                        'exception' => get_class($e),
+                        'trace' => $e->getTraceAsString(),
+                    ])),
+                ],
+                true
+            );
+        }
+    }
+
+    private function actionResponseToToolResult(ActionResponse $input): CallToolResult
+    {
+        switch ($input->status) {
+            case ActionResponseStatus::CLIENT_ERROR:
+            case ActionResponseStatus::AUTHORIZATION_ERROR:
+            case ActionResponseStatus::OUTPUT_ERROR:
+            case ActionResponseStatus::PERISTENCE_ERROR:
+            case ActionResponseStatus::SERVER_ERROR:
+                return new CallToolResult(
+                    [
+                        new TextContent(json_encode($input->getResultAsNativeData())),
+                    ],
+                    true
+                );
+
+            case ActionResponseStatus::DELETED:
+                return new CallToolResult(
+                    [
+                        new TextContent(json_encode("Resource was deleted correctly.")),
+                    ],
+                    false
+                );
+            case ActionResponseStatus::NOT_FOUND:
+                return new CallToolResult(
+                    [
+                        new TextContent(json_encode("Resource was not found.")),
+                    ],
+                    true
+                );
+            
+            case ActionResponseStatus::CREATED:
+            case ActionResponseStatus::SUCCESS:
+                if (isset($input->error)) {
+                    throw $input->error;
+                }
+                return new CallToolResult(
+                    [
+                        new TextContent(json_encode($input->getResultAsNativeData())),
+                    ],
+                    false
+                );
+        }
+        throw new \LogicException('Unknown status ' . $input->status->value);
+    }
+}

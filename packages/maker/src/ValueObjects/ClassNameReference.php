@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Maker\ValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\FileStorage\StoredFile;
 use Apie\Core\Lists\StringList;
@@ -19,6 +20,7 @@ use Psr\Http\Message\UploadedFileInterface;
 use ReflectionClass;
 
 #[FakeMethod('createRandom')]
+#[Description('Any existing PHP class name with fully qualified namespace')]
 class ClassNameReference implements HasRegexValueObjectInterface, LimitedOptionsInterface
 {
     use IsClassNameReference;

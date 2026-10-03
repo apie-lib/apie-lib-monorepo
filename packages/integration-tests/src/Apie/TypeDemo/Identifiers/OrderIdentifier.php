@@ -2,6 +2,7 @@
 
 namespace Apie\IntegrationTests\Apie\TypeDemo\Identifiers;
 
+use Apie\Core\Attributes\ExampleValue;
 use Apie\Core\Identifiers\AutoIncrementInteger;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\Order;
@@ -10,6 +11,7 @@ use ReflectionClass;
 /**
  * @implements IdentifierInterface<Order>
  */
+#[ExampleValue(42)]
 class OrderIdentifier extends AutoIncrementInteger implements IdentifierInterface
 {
     public static function getReferenceFor(): ReflectionClass

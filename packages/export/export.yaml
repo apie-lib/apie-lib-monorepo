@@ -1,0 +1,33 @@
+services:
+  Apie\Export\XlsxExport:
+    tags:
+      - { name: Apie\Export\ExportInterface }
+
+  Apie\Export\CsvExport:
+    tags:
+      - { name: Apie\Export\ExportInterface }
+
+  Apie\Export\ZippedCsvExport:
+    tags:
+      - { name: Apie\Export\ExportInterface }
+
+  Apie\Export\OdsExport:
+    tags:
+      - { name: Apie\Export\ExportInterface }
+
+  Apie\Export\ChainedExport:
+    arguments:
+      - !tagged_iterator Apie\Export\ExportInterface
+    tags:
+      - { name: 'apie.context' }
+
+  Apie\Export\ExportInterface:
+    alias: 'Apie\Export\ChainedExport'
+
+  Apie\Export\EntityExport:
+    arguments:
+      - '@Apie\HtmlBuilders\Columns\ColumnSelector'
+      - '@Apie\Export\ExportInterface'
+      - '@Apie\Serializer\Serializer'
+    tags:
+      - { name: 'apie.context' }

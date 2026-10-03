@@ -1,12 +1,15 @@
 <?php
 namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
+use Apie\Core\Attributes\Auditable;
+use Apie\Core\Attributes\ClassStoreOptions;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\LoggedIn;
 use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\StaticCheck;
 use Apie\Core\ContextConstants;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Enums\SortingOrder;
 use Apie\Core\Lists\PermissionList;
 use Apie\Core\Permissions\RequiresPermissionsInterface;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\RestrictedEntityIdentifier;
@@ -14,6 +17,8 @@ use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\TextValueObjects\CompanyName;
 
 #[RemovalCheck(new StaticCheck(new LoggedIn()))]
+#[Auditable(readEvents: true, readAllEvents: true)]
+#[ClassStoreOptions(defaultSortingOrder: SortingOrder::Ascending)]
 final class RestrictedEntity implements EntityInterface, RequiresPermissionsInterface
 {
     private ?UserIdentifier $userId = null;

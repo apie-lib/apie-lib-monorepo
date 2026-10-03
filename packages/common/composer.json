@@ -21,29 +21,41 @@
   },
   "extra": {
     "apie-objects": [
-      "Apie\\Common\\Enums\\UrlPrefix",
-      "Apie\\Common\\ValueObjects\\EntityNamespace",
-      "Apie\\Common\\ValueObjects\\PossibleRoutePrefixes"
-    ]
+    "Apie\\Common\\MenuStructure\\MenuNode",
+    "Apie\\Common\\MenuStructure\\MenuNodeChildren",
+    "Apie\\Common\\Lists\\UrlPrefixList",
+    "Apie\\Common\\Enums\\AuditLogEvent",
+    "Apie\\Common\\Enums\\AccessDenied",
+    "Apie\\Common\\Enums\\UrlPrefix",
+    "Apie\\Common\\Enums\\HiddenField",
+    "Apie\\Common\\ValueObjects\\PossibleRoutePrefixes",
+    "Apie\\Common\\ValueObjects\\EntityNamespace",
+    "Apie\\Common\\ValueObjects\\DecryptedAuthenticatedUser",
+    "Apie\\Common\\Other\\AuditLogIdentifier",
+    "Apie\\Common\\Other\\AuditOrigin"
+]
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "apie/core": "self.version",
     "apie/serializer": "self.version",
     "defuse/php-encryption": "^2.4",
     "httpsoft/http-cookie": "^1.1.0",
-    "psr/http-message": "^1.1",
-    "symfony/cache": "^7.2",
+    "akrabat/ip-address-middleware": "^2.6.1",
+    "psr/http-message": "^2.0",
+    "symfony/cache": "^7.4",
     "symfony/config": "^7.2",
-    "symfony/finder": "^7.2"
+    "symfony/finder": "^7.2",
+    "symfony/dependency-injection": "^7.2",
+    "symfony/lock": "^7.2"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "apie/service-provider-generator": "0.11.3",
+    "apie/service-provider-generator": "0.14.0",
     "apie/text-value-objects": "self.version",
     "illuminate/support": "*",
     "phpunit/phpunit": "^11.5.2",
-    "phpspec/prophecy-phpunit": "^2.2",
+    "phpspec/prophecy-phpunit": "^2.5",
     "symfony/event-dispatcher": "^7.2"
   },
   "minimum-stability": "dev",

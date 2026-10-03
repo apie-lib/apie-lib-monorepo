@@ -1,0 +1,37 @@
+{
+  "name": "apie/graphql",
+  "description": "Composer package of the apie library: graphql",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\Graphql\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\Graphql\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "apie/core": "self.version",
+    "ecodev/graphql-upload": "^8.0.1",
+    "mll-lab/graphql-php-scalars": "^6.4.1",
+    "nyholm/psr7": "^1.8.2",
+    "webonyx/graphql-php": "^15.37.2"
+  },
+  "require-dev": {
+    "apie/fixtures": "self.version",
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.5"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

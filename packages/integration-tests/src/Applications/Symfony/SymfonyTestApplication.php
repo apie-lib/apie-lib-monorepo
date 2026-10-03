@@ -63,6 +63,8 @@ class SymfonyTestApplication implements TestApplicationInterface
                     'default_datalayer' => $this->applicationConfig->getDatalayerImplementation()->name,
                 ],
                 'encryption_key' => 'test',
+                'enable_mcp_server' => true,
+                'remote_mcp_path' => '/mcp',
                 'enable_doctrine_bundle_connection' => true,
                 'enable_security' => $this->applicationConfig->doesIncludeSecurity(),
                 'doctrine' => [
@@ -70,6 +72,9 @@ class SymfonyTestApplication implements TestApplicationInterface
                     'connection_params' => [
                         'driver' => 'pdo_sqlite'
                     ]
+                ],
+                'open_api' => [
+                    'max_enum_size' => 500,
                 ],
             ],
             $this->applicationConfig->doesIncludeTemplating(),

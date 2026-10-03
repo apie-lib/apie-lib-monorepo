@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "es2018"],
+    "module": "ES6",
+    "moduleResolution": "Node",
+    "rootDir": "resources",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["resources/**/*"]
+}

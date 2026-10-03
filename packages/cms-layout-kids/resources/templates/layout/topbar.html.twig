@@ -1,0 +1,21 @@
+<div class="flex w-full items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+        <div class="min-w-0">
+            <h2 class="text-2xl font-black text-purple-600">🌈 Dashboard</h2>
+            <p class="text-sm font-bold text-slate-500">Welcome back!</p>
+        </div>
+    </div>
+
+    <div class="ml-auto flex items-center gap-3">
+        <button onclick="toggleRightPanel()" class="wiggle rounded-2xl border-3 border-blue-500 bg-blue-300 px-4 py-2 font-black text-blue-900 shadow-md hover:bg-blue-200">
+            🛠️ Tools
+        </button>
+
+        <button class="wiggle relative rounded-2xl border-3 border-yellow-400 bg-yellow-200 p-3 text-xl shadow-md">
+            🔔
+            <span class="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs font-black text-white">3</span>
+        </button>
+
+        {{ component('login') }}
+    </div>
+</div>

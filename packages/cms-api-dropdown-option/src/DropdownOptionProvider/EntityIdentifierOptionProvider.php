@@ -37,6 +37,7 @@ final class EntityIdentifierOptionProvider extends BaseDropdownOptionProvider
         if (!$typehint instanceof ReflectionNamedType || $typehint->isBuiltin()) {
             return null;
         }
+        /**  @var ReflectionClass<IdentifierInterface<EntityInterface>> $class */
         $class = new ReflectionClass($typehint->getName());
         if (!in_array(IdentifierInterface::class, $class->getInterfaceNames())) {
             return null;

@@ -2,15 +2,16 @@
 namespace Apie\Core\Lists;
 
 use Apie\Core\Context\ApieContext;
+use Apie\Core\ContextConstants;
 use ReflectionClass;
 
 /**
- * @extends ItemList<ReflectionClass<object>>
+ * @extends ItemList<ReflectionClass<covariant object>>
  */
 final class ReflectionClassList extends ItemList
 {
     /**
-     * @return ReflectionClass<object>
+     * @return ReflectionClass<covariant object>
      */
     public function offsetGet(mixed $offset): ReflectionClass
     {
@@ -36,7 +37,7 @@ final class ReflectionClassList extends ItemList
         $clone->internal = array_values(array_filter(
             $this->internal,
             function (ReflectionClass $item) use ($apieContext, $runtimeChecks) {
-                return $apieContext->appliesToContext($item, $runtimeChecks);
+                return $apieContext->withContext(ContextConstants::RESOURCE_NAME, $item->name)->appliesToContext($item, $runtimeChecks);
             }
         ));
         return $clone;

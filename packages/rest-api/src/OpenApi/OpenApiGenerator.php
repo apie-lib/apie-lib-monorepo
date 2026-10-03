@@ -7,14 +7,18 @@ use Apie\Common\Interfaces\RestApiRouteDefinition;
 use Apie\Common\Interfaces\RouteDefinitionProviderInterface;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Attributes\AllowMultipart;
+use Apie\Core\Attributes\ExampleValue;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextBuilders\ContextBuilderFactory;
+use Apie\Core\ContextConstants;
 use Apie\Core\Dto\ListOf;
 use Apie\Core\Enums\RequestMethod;
+use Apie\Core\Identifiers\SnakeCaseSlug;
 use Apie\Core\Utils\ConverterUtils;
 use Apie\Core\ValueObjects\NonEmptyString;
 use Apie\RestApi\Events\OpenApiOperationAddedEvent;
+use Apie\RestApi\Events\OpenApiSchemaGeneratedEvent;
 use Apie\SchemaGenerator\Builders\ComponentsBuilder;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
 use Apie\Serializer\Exceptions\NotAcceptedException;
@@ -23,6 +27,7 @@ use Apie\Serializer\Serializer;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use cebe\openapi\Reader;
 use cebe\openapi\ReferenceContext;
+use cebe\openapi\spec\Example;
 use cebe\openapi\spec\MediaType;
 use cebe\openapi\spec\OpenApi;
 use cebe\openapi\spec\Operation;
@@ -81,6 +86,7 @@ class OpenApiGenerator
         $context = $this->contextBuilder->createGeneralContext(
             [
                 OpenApiGenerator::class => $this,
+                ContextConstants::REST_API => true,
                 Serializer::class => $this->serializer,
                 BoundedContextId::class => $boundedContext->getId(),
                 BoundedContext::class => $boundedContext,
@@ -103,8 +109,38 @@ class OpenApiGenerator
         }
 
         $spec->components = $componentsBuilder->getComponents();
-
+        $this->dispatcher->dispatch(
+            new OpenApiSchemaGeneratedEvent(
+                $spec,
+                $boundedContext
+            )
+        );
         return $spec;
+    }
+
+    /**
+     * @return array<string, Example>
+     */
+    private function createExamplesForInput(ComponentsBuilder $componentsBuilder, RestApiRouteDefinition $routeDefinition): array
+    {
+        $input = $routeDefinition->getInputType();
+        $class = ConverterUtils::toReflectionClass($input);
+        if ($class !== null) {
+            $input = $class;
+        }
+        if ($input instanceof ReflectionClass || $input instanceof ReflectionMethod) {
+            $examples = [];
+            foreach ($input->getAttributes(ExampleValue::class) as $attribute) {
+                $exampleValue = $attribute->newInstance();
+                $id = SnakeCaseSlug::fromText($exampleValue->name)->toNative();
+                $examples[$id] = new Example([
+                    'summary' => $exampleValue->name,
+                    'value' => $exampleValue->toExample(),
+                ]);
+            }
+            return $examples;
+        }
+        return [];
     }
 
     private function createSchemaForInput(ComponentsBuilder $componentsBuilder, RestApiRouteDefinition $routeDefinition, bool $forUpload = false): Schema|Reference
@@ -175,7 +211,7 @@ class OpenApiGenerator
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionMethod|ReflectionType $input
+     * @param ReflectionClass<covariant object>|ReflectionMethod|ReflectionType $input
      */
     private function doSchemaForInput(ReflectionClass|ReflectionMethod|ReflectionType $input, ComponentsBuilder $componentsBuilder, RequestMethod $method = RequestMethod::GET): Schema|Reference
     {
@@ -198,7 +234,7 @@ class OpenApiGenerator
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionMethod|ReflectionType $output
+     * @param ReflectionClass<covariant object>|ReflectionMethod|ReflectionType $output
      */
     private function doSchemaForOutput(ReflectionClass|ReflectionMethod|ReflectionType $output, ComponentsBuilder $componentsBuilder): Schema|Reference
     {
@@ -206,8 +242,13 @@ class OpenApiGenerator
             return $componentsBuilder->addDisplaySchemaFor($output->name);
         }
         if ($output instanceof ReflectionMethod) {
-            $output = $output->getReturnType();
+            if (ConverterUtils::isStaticOrSelf($output->getReturnType())) {
+                $output = $output->getDeclaringClass();
+            } else {
+                $output = $output->getReturnType();
+            }
         }
+
         return $componentsBuilder->getSchemaForType($output, false, true, $output ? $output->allowsNull() : true);
     }
 
@@ -239,6 +280,57 @@ class OpenApiGenerator
             ]);
         }
         return $this->doSchemaForOutput($input, $componentsBuilder);
+    }
+
+    /**
+     * @return array<string, Example>
+     */
+    private function createExamplesForParameter(
+        RestApiRouteDefinition $routeDefinition,
+        string $placeholderName
+    ): array {
+        $input = $routeDefinition->getInputType();
+        $examples = [];
+        if ($input instanceof ReflectionMethod) {
+            foreach ($input->getParameters() as $parameter) {
+                if ($parameter->name === $placeholderName) {
+                    foreach ($parameter->getAttributes(ExampleValue::class) as $attribute) {
+                        $exampleValue = $attribute->newInstance();
+                        $id = SnakeCaseSlug::fromText($exampleValue->name)->toNative();
+                        $examples[$id] = new Example([
+                            'summary' => $exampleValue->name,
+                            'value' => $exampleValue->toExample()
+                        ]);
+                    }
+                    break;
+                }
+            }
+        }
+        if ($input instanceof ReflectionClass) {
+            $methodNames = [
+                ['get' . ucfirst($placeholderName), 'hasMethod', 'getMethod'],
+                ['has' . ucfirst($placeholderName), 'hasMethod', 'getMethod'],
+                ['is' . ucfirst($placeholderName), 'hasMethod', 'getMethod'],
+                [$placeholderName, 'hasProperty', 'getProperty'],
+            ];
+
+            foreach ($methodNames as $optionToCheck) {
+                list($propertyName, $has, $get) = $optionToCheck;
+                if ($input->$has($propertyName)) {
+                    $option = $input->$get($propertyName);
+                    foreach ($option->getAttributes(ExampleValue::class) as $attribute) {
+                        $exampleValue = $attribute->newInstance();
+                        $id = SnakeCaseSlug::fromText($exampleValue->name)->toNative();
+                        $examples[$id] = new Example([
+                            'summary' => $exampleValue->name,
+                            'value' => $exampleValue->toExample()
+                        ]);
+                    }
+                }
+            }
+        }
+
+        return $examples;
     }
 
     private function createSchemaForParameter(
@@ -285,17 +377,19 @@ class OpenApiGenerator
         RestApiRouteDefinition $routeDefinition,
         string $placeholderName
     ): Parameter {
-        return new Parameter([
+        $examples = $this->createExamplesForParameter($routeDefinition, $placeholderName);
+        return new Parameter(array_filter([
             'in' => 'path',
             'name' => $placeholderName,
             'required' => true,
             'description' => $placeholderName . ' of instance of ' . $this->getDisplayValue($routeDefinition->getInputType(), $placeholderName),
             'schema' => $this->createSchemaForParameter($componentsBuilder, $routeDefinition, $placeholderName),
-        ]);
+            'examples' => $examples,
+        ]));
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionMethod|ReflectionType $type
+     * @param ReflectionClass<covariant object>|ReflectionMethod|ReflectionType $type
      */
     private function getDisplayValue(ReflectionClass|ReflectionMethod|ReflectionType $type, string $placeholderName): string
     {
@@ -333,10 +427,11 @@ class OpenApiGenerator
     private function addAction(PathItem $pathItem, ComponentsBuilder $componentsBuilder, RestApiRouteDefinition $routeDefinition): void
     {
         $method = $routeDefinition->getMethod();
-        if ($method === RequestMethod::CONNECT) {
+        if (!in_array($method, RequestMethod::allowedInOpenApi())) {
             return;
         }
         $inputSchema = $this->createSchemaForInput($componentsBuilder, $routeDefinition);
+        $examples = $this->createExamplesForInput($componentsBuilder, $routeDefinition);
         $outputSchema = $this->createSchemaForOutput($componentsBuilder, $routeDefinition);
         $operation = new Operation([
             'tags' => $routeDefinition->getTags()->toArray(),
@@ -375,7 +470,10 @@ class OpenApiGenerator
 
         if ($method !== RequestMethod::GET && $method !== RequestMethod::DELETE) {
             $content = [
-                'application/json' => new MediaType(['schema' => $inputSchema]),
+                'application/json' => new MediaType(array_filter([
+                    'schema' => $inputSchema,
+                    'examples' => $examples,
+                ])),
             ];
             if ($this->supportsMultipart($routeDefinition)) {
                 $uploadSchema = $componentsBuilder->runInContentType(
@@ -384,9 +482,10 @@ class OpenApiGenerator
                         return $this->createSchemaForInput($componentsBuilder, $routeDefinition, true);
                     }
                 );
-                $content['multipart/form-data'] = new MediaType([
-                    'schema' => $uploadSchema
-                ]);
+                $content['multipart/form-data'] = new MediaType(array_filter([
+                    'schema' => $uploadSchema,
+                    'examples' => $examples,
+                ]));
                 $parameters = $operation->parameters;
                 $parameters[] = new Parameter([
                     'name' => 'x-no-crsf',
@@ -394,7 +493,7 @@ class OpenApiGenerator
                     'description' => 'Disable csrf',
                     'schema' => [
                         'type' => 'string',
-                        'enum' => [1]
+                        'enum' => ['1']
                     ],
                 ]);
                 $operation->parameters = $parameters;
@@ -479,12 +578,14 @@ class OpenApiGenerator
         }
         $operation->responses = $responses;
         $prop = strtolower($method->value);
+        // @phpstan-ignore-next-line
         $pathItem->{$prop} = $operation;
         $this->dispatcher->dispatch(
             new OpenApiOperationAddedEvent(
                 $componentsBuilder,
                 $operation,
-                $routeDefinition
+                $routeDefinition,
+                $method
             )
         );
     }

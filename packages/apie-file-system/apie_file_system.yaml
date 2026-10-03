@@ -1,0 +1,5 @@
+services:
+    Apie\ApieFileSystem\ApieFilesystemFactory:
+        arguments:
+            $actionDefinitionProvider: '@Apie\Common\ActionDefinitionProvider'
+            $boundedContextHashmap: '@Apie\Core\BoundedContext\BoundedContextHashmap'

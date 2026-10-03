@@ -19,6 +19,10 @@ class OrderStorage implements StorageDtoInterface
         return new ReflectionClass(Order::class);
     }
 
+    public bool $optionalTagsNull = false;
+
+    public bool $orderLinesMutable = true;
+
     public function __construct(
         #[GetMethodAttribute('getId')]
         private string $id,
@@ -26,8 +30,14 @@ class OrderStorage implements StorageDtoInterface
         public ?string $apieId,
         #[PropertyAttribute('orderStatus')]
         public ?string $apieOrderStatus,
-        #[OneToManyAttribute(propertyName: 'orderLines', storageClass: OrderLineStorage::class)]
+        #[OneToManyAttribute(propertyName: 'orderLines', storageClass: OrderLineStorage::class, mutableListField: 'orderLinesMutable')]
         public array $apieOrderLines,
+        #[OneToManyAttribute(
+            propertyName: 'optionalTags',
+            storageClass: OrderLineStorage::class,
+            nullableField: 'optionalTagsNull'
+        )]
+        public array $apieOptionalTags,
     ) {
         foreach ($apieOrderLines as $apieOrderLine) {
             $apieOrderLine->parent = $this;

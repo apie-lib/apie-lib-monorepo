@@ -54,6 +54,18 @@ final class ApieContext
         return $instance;
     }
 
+    /**
+     * @param array<string, mixed> $keyValuePairs
+     */
+    public function withMultipleContext(array $keyValuePairs): self
+    {
+        $instance = clone $this;
+        foreach ($keyValuePairs as $key => $value) {
+            $instance->context[$key] = $value;
+        }
+        return $instance;
+    }
+
     public function hasContext(string $key): bool
     {
         return array_key_exists($key, $this->context) || isset($this->predefined[$key]);
@@ -105,7 +117,7 @@ final class ApieContext
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public function getApplicableGetters(ReflectionClass $class, bool $runtimeChecks = true): ReflectionHashmap
     {
@@ -128,7 +140,7 @@ final class ApieContext
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public function getApplicableSetters(ReflectionClass $class, bool $runtimeChecks = true): ReflectionHashmap
     {
@@ -150,7 +162,7 @@ final class ApieContext
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public function getApplicableMethods(ReflectionClass $class, bool $runtimeChecks = true): ReflectionHashmap
     {
@@ -177,7 +189,7 @@ final class ApieContext
     }
 
     /**
-     * @param ReflectionClass<object>|ReflectionMethod|ReflectionProperty|ReflectionType|ReflectionEnumUnitCase $method
+     * @param ReflectionClass<covariant object>|ReflectionMethod|ReflectionProperty|ReflectionType|ReflectionEnumUnitCase $method
      */
     public function appliesToContext(ReflectionClass|ReflectionMethod|ReflectionProperty|ReflectionType|ReflectionEnumUnitCase $method, bool $runtimeChecks = true, ?Throwable $errorToThrow = null): bool
     {
@@ -228,8 +240,6 @@ final class ApieContext
             if (!$this->isAuthorized(runtimeChecks: true, throwError: true)) {
                 throw new ActionNotAllowedException();
             }
-        } catch (ActionNotAllowedException) {
-            throw new ActionNotAllowedException();
         } catch (Throwable $error) {
             throw new ActionNotAllowedException($error);
         }

@@ -14,7 +14,7 @@ class RestApiServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\RestApi\RouteDefinitions\RestApiRouteDefinitionProvider::class,
             function ($app) {
                 return new \Apie\RestApi\RouteDefinitions\RestApiRouteDefinitionProvider(
@@ -34,7 +34,7 @@ class RestApiServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\RestApi\RouteDefinitions\RestApiRouteDefinitionProvider::class], 'apie.common.route_definition');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\RestApi\OpenApi\OpenApiGenerator::class,
             function ($app) {
                 return new \Apie\RestApi\OpenApi\OpenApiGenerator(
@@ -43,12 +43,12 @@ class RestApiServiceProvider extends ServiceProvider
                     $app->make('apie.route_definitions.provider'),
                     $app->make(\Apie\Serializer\Serializer::class),
                     $app->make(\Psr\EventDispatcher\EventDispatcherInterface::class),
-                    $this->parseArgument('%apie.rest_api.base_url%'),
+                    $this->parseArgument('%apie.rest_api.base_url%', \Apie\RestApi\OpenApi\OpenApiGenerator::class, 5),
                     $app->bound(\cebe\openapi\spec\OpenApi::class) ? $app->make(\cebe\openapi\spec\OpenApi::class) : null
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\RestApi\Controllers\OpenApiDocumentationController::class,
             function ($app) {
                 return new \Apie\RestApi\Controllers\OpenApiDocumentationController(
@@ -65,7 +65,7 @@ class RestApiServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\RestApi\Controllers\OpenApiDocumentationController::class], 'controller.service_arguments');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\RestApi\Controllers\RestApiController::class,
             function ($app) {
                 return new \Apie\RestApi\Controllers\RestApiController(
@@ -84,11 +84,11 @@ class RestApiServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\RestApi\Controllers\RestApiController::class], 'controller.service_arguments');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\RestApi\Controllers\SwaggerUIController::class,
             function ($app) {
                 return new \Apie\RestApi\Controllers\SwaggerUIController(
-                    $this->parseArgument('%apie.rest_api.base_url%'),
+                    $this->parseArgument('%apie.rest_api.base_url%', \Apie\RestApi\Controllers\SwaggerUIController::class, 0),
                     $app->make(\Apie\Core\BoundedContext\BoundedContextHashmap::class)
                 );
             }
@@ -101,7 +101,7 @@ class RestApiServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\RestApi\Controllers\SwaggerUIController::class], 'controller.service_arguments');
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\RestApi\EventListeners\OpenApiOperationAddedEventSubscriber::class,
             function ($app) {
                 return new \Apie\RestApi\EventListeners\OpenApiOperationAddedEventSubscriber(
@@ -117,6 +117,55 @@ class RestApiServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\RestApi\EventListeners\OpenApiOperationAddedEventSubscriber::class], 'kernel.event_subscriber');
+        $this->registerSingleton(
+            \Apie\RestApi\EventListeners\OpenApiTagsNormalizerSubscriber::class,
+            function ($app) {
+                return new \Apie\RestApi\EventListeners\OpenApiTagsNormalizerSubscriber(
+                    $app->make(\Apie\Core\BoundedContext\BoundedContextHashmap::class)
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\RestApi\EventListeners\OpenApiTagsNormalizerSubscriber::class,
+            array(
+              0 => 'kernel.event_subscriber',
+            )
+        );
+        $this->app->tag([\Apie\RestApi\EventListeners\OpenApiTagsNormalizerSubscriber::class], 'kernel.event_subscriber');
+        $this->registerSingleton(
+            \Apie\RestApi\EventListeners\AddAcceptLanguageEventSubscriber::class,
+            function ($app) {
+                return new \Apie\RestApi\EventListeners\AddAcceptLanguageEventSubscriber(
+                    $this->parseArgument('%apie.language_typehint%', \Apie\RestApi\EventListeners\AddAcceptLanguageEventSubscriber::class, 0),
+                    $app->make(\Apie\SchemaGenerator\SchemaGenerator::class)
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\RestApi\EventListeners\AddAcceptLanguageEventSubscriber::class,
+            array(
+              0 => 'kernel.event_subscriber',
+            )
+        );
+        $this->app->tag([\Apie\RestApi\EventListeners\AddAcceptLanguageEventSubscriber::class], 'kernel.event_subscriber');
+        $this->registerSingleton(
+            \Apie\RestApi\EventListeners\PruneUnusedComponentsSubscriber::class,
+            function ($app) {
+                return new \Apie\RestApi\EventListeners\PruneUnusedComponentsSubscriber(
+                
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\RestApi\EventListeners\PruneUnusedComponentsSubscriber::class,
+            array(
+              0 => 'kernel.event_subscriber',
+            )
+        );
+        $this->app->tag([\Apie\RestApi\EventListeners\PruneUnusedComponentsSubscriber::class], 'kernel.event_subscriber');
         
     }
 }

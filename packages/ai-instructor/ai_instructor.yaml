@@ -4,6 +4,7 @@ services:
       - '@Apie\SchemaGenerator\SchemaGenerator'
       - '@Apie\Serializer\Serializer'
       - '@Apie\AiInstructor\AiClient'
+    tags: [apie.context]
 
   Apie\AiInstructor\AiClient:
     factory: ['Apie\AiInstructor\AiClient', 'create']

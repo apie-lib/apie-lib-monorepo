@@ -7,7 +7,7 @@ use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
-use Apie\IntegrationTests\IntegrationTestHelper;
+use Apie\IntegrationTests\CmsTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\ActionMethodApiCall;
 use Apie\IntegrationTests\Requests\EditRequestDecorator;
@@ -33,7 +33,7 @@ class CmsLoginTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_can_login_by_convention'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 
@@ -69,7 +69,7 @@ class CmsLoginTest extends TestCase
             $loginRequest->bootstrap($testApplication);
             $response = $testApplication->httpRequest($loginRequest);
             if ($loginRequest->isFakeDatalayer()) {
-                $this->assertEquals(500, $response->getStatusCode());
+                $this->assertEquals(301, $response->getStatusCode());
                 $this->assertEquals('User is not activated yet', IntegrationTestLogger::getLoggedException()?->getMessage());
                 return;
             }
@@ -98,7 +98,7 @@ class CmsLoginTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_can_read_the_authorization_cookie'),
-            new IntegrationTestHelper()
+            new CmsTestHelper()
         );
     }
 
@@ -141,7 +141,7 @@ class CmsLoginTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_display_401_if_auth_cookie_contains_garbage'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 

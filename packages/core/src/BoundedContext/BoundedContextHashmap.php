@@ -14,6 +14,27 @@ final class BoundedContextHashmap extends ItemHashmap
 {
     protected bool $mutable = false;
 
+    private string $calculatedHash;
+
+    public function getUniqueHash(): string
+    {
+        if (isset($this->calculatedHash)) {
+            return $this->calculatedHash;
+        }
+        $hash = '';
+        foreach ($this as $value) {
+            $list = [];
+            foreach ($value->resources as $resource) {
+                $list[] = $resource->name;
+            }
+            foreach ($value->actions as $action) {
+                $list[] = $action->getDeclaringClass()->name . '::' . $action->getName();
+            }
+            $hash .= ';;' . $value->getId()->toNative() . ',' . implode(',', $list);
+        }
+
+        return $this->calculatedHash = md5($hash);
+    }
     public function offsetGet(mixed $offset): BoundedContext
     {
         return parent::offsetGet($offset);
@@ -25,11 +46,11 @@ final class BoundedContextHashmap extends ItemHashmap
     }
 
     /**
-     * @param ReflectionClass<EntityInterface|IdentifierInterface<EntityInterface>> $class
+     * @param ReflectionClass<EntityInterface>|ReflectionClass<IdentifierInterface<EntityInterface>> $class
      */
     public function getBoundedContextFromClassName(ReflectionClass $class, ?BoundedContextId $prio = null): ?BoundedContext
     {
-        if ($class->implementsInterface(IdentifierInterface::class)) {
+        if (in_array(IdentifierInterface::class, $class->getInterfaceNames())) {
             $class = $class->getMethod('getReferenceFor')->invoke(null);
         }
         if ($prio && isset($this[$prio->toNative()])) {

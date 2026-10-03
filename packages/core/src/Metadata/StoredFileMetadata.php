@@ -16,7 +16,7 @@ use ReflectionParameter;
 final class StoredFileMetadata implements MetadataInterface
 {
     /**
-     * @param ReflectionClass<StoredFile> $class
+     * @param ReflectionClass<covariant StoredFile> $class
      */
     public function __construct(
         private readonly ReflectionClass $class,
@@ -30,8 +30,13 @@ final class StoredFileMetadata implements MetadataInterface
         return null;
     }
 
+    public function getDisplayName(): string
+    {
+        return $this->class->getShortName();
+    }
+
     /**
-     * @return ReflectionClass<StoredFile>
+     * @return ReflectionClass<covariant StoredFile>
      */
     public function toClass(): ReflectionClass
     {

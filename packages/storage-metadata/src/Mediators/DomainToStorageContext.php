@@ -18,7 +18,7 @@ use Throwable;
 final class DomainToStorageContext
 {
     /**
-     * @var ReflectionClass<object>
+     * @var ReflectionClass<covariant object>
      */
     public readonly ?ReflectionClass $domainClass;
 
@@ -31,7 +31,7 @@ final class DomainToStorageContext
     /**
      * @template T of object
      * @param T $domainObject
-     * @param ReflectionClass<T>|null $domainClass
+     * @param ReflectionClass<covariant T>|null $domainClass
      */
     public function __construct(
         public readonly DomainToStorageConverter $domainToStorageConverter,
@@ -47,7 +47,7 @@ final class DomainToStorageContext
     /**
      * @template T of object
      * @param T $domainObject
-     * @param ReflectionClass<T>|null $domainClass
+     * @param ReflectionClass<covariant T>|null $domainClass
      */
     public static function createFromContext(
         DomainToStorageConverter $domainToStorageConverter,
@@ -145,7 +145,7 @@ final class DomainToStorageContext
      */
     private function clone(array $altered): self
     {
-        $properties = get_object_vars($this) + $altered;
+        $properties = $altered + get_object_vars($this);
         if (!isset($properties['parentContext'])) {
             $properties['parentContext'] = $this;
         }

@@ -4,18 +4,33 @@ namespace Apie\Faker;
 use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Faker\Exceptions\ClassCanNotBeFakedException;
+use Apie\Faker\Fakers\BcMathFaker;
 use Apie\Faker\Fakers\CheckBaseClassFaker;
+use Apie\Faker\Fakers\ClosureFaker;
+use Apie\Faker\Fakers\CompositeObjectFaker;
+use Apie\Faker\Fakers\DateIntervalFaker;
+use Apie\Faker\Fakers\DatePeriodFaker;
+use Apie\Faker\Fakers\DateTimeZoneFaker;
 use Apie\Faker\Fakers\DateValueObjectFaker;
+use Apie\Faker\Fakers\DomFaker;
+use Apie\Faker\Fakers\DurationFaker;
 use Apie\Faker\Fakers\EnumFaker;
+use Apie\Faker\Fakers\FfiFaker;
+use Apie\Faker\Fakers\GmpFaker;
+use Apie\Faker\Fakers\InterfaceFaker;
 use Apie\Faker\Fakers\ItemHashmapFaker;
 use Apie\Faker\Fakers\ItemListFaker;
 use Apie\Faker\Fakers\ItemSetFaker;
+use Apie\Faker\Fakers\LimitedOptionsFaker;
 use Apie\Faker\Fakers\PasswordValueObjectFaker;
 use Apie\Faker\Fakers\PhpDateTimeObjectFaker;
 use Apie\Faker\Fakers\PolymorphicEntityFaker;
+use Apie\Faker\Fakers\ReflectionFaker;
+use Apie\Faker\Fakers\SimpleXmlFaker;
 use Apie\Faker\Fakers\StringableFaker;
 use Apie\Faker\Fakers\StringValueObjectWithRegexFaker;
 use Apie\Faker\Fakers\UploadedFileFaker;
+use Apie\Faker\Fakers\UriFaker;
 use Apie\Faker\Fakers\UseConstructorFaker;
 use Apie\Faker\Fakers\UseFakeMethodFaker;
 use Apie\Faker\Interfaces\ApieClassFaker;
@@ -27,6 +42,7 @@ use ReflectionIntersectionType;
 use ReflectionMethod;
 use ReflectionType;
 use ReflectionUnionType;
+use stdClass;
 
 /**
  * This is a stub class
@@ -67,8 +83,23 @@ final class ApieObjectFaker extends Base
                 new DateValueObjectFaker(),
                 new StringValueObjectWithRegexFaker(),
                 new EnumFaker(),
+                new LimitedOptionsFaker(),
+                new CompositeObjectFaker(),
+                new DurationFaker(),
+                new DomFaker(),
+                new UriFaker(),
+                new GmpFaker(),
+                new BcMathFaker(),
                 new PhpDateTimeObjectFaker(),
+                new DatePeriodFaker(),
+                new DateTimeZoneFaker(),
+                new DateIntervalFaker(),
+                new ReflectionFaker(),
                 new StringableFaker(),
+                new FfiFaker(),
+                new SimpleXmlFaker(),
+                new ClosureFaker(),
+                new InterfaceFaker(),
                 new UseConstructorFaker(),
             ]
         );
@@ -81,6 +112,9 @@ final class ApieObjectFaker extends Base
      */
     public function fakeClass(string $className): object
     {
+        if ($className === 'object') {
+            return new stdClass();
+        }
         $refl = new ReflectionClass($className);
         foreach ($this->fakers as $faker) {
             if ($faker->supports($refl)) {

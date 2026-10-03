@@ -6,6 +6,7 @@ use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\SnowflakeIdentifier;
 use Apie\Fixtures\ValueObjects\Password;
 use Apie\Fixtures\ValueObjects\SnowflakeExample;
+use Apie\Fixtures\ValueObjects\SnowflakeWithPrefixExample;
 use Generator;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
@@ -69,16 +70,36 @@ class SnowflakeIdentifierTest extends TestCase
     }
 
     #[Test]
-    #[DataProvider('regularExpressionProvider')]
-    public function it_provides_regular_expression_for_specific_typehints(string $expected, string $separator, array $typehints)
+    public function it_support_snowflake_identifiers_with_a_prefix()
     {
-        $className = 'A' . md5(json_encode($typehints) . $separator);
+        $testItem = new SnowflakeWithPrefixExample(
+            new DatabaseText("test\ntest"),
+            new Password('a!A1AA'),
+        );
+        $this->assertEquals("snowflake-test\ntest-a!A1AA", $testItem->toNative());
+        $expected = '^snowflake\-(.{0,65535})\-[^\-]+$';
+        $this->assertEquals($expected, SnowflakeWithPrefixExample::getRegularExpression());
+        $this->expectException(InvalidStringForValueObjectException::class);
+        SnowflakeWithPrefixExample::fromNative('test-a!A1AA');
+    }
+
+    #[Test]
+    #[DataProvider('regularExpressionProvider')]
+    public function it_provides_regular_expression_for_specific_typehints(
+        string $expected,
+        string $separator,
+        array $typehints,
+        array $defaultValues = [],
+    ) {
+        $className = 'A' . md5(json_encode($typehints) . json_encode($defaultValues) . $separator);
         if (class_exists($className)) {
             $this->markTestSkipped($className . ' already exists, that should not be possible');
         }
         $arguments = [];
         foreach ($typehints as $name => $type) {
-            $arguments[] = 'private ' . $type . ' $' . $name;
+            $defaultValue = array_key_exists($name, $defaultValues) ? ' =  ' . var_export($defaultValues[$name], true) : '';
+            
+            $arguments[] = 'private ' . $type . ' $' . $name . $defaultValue;
         }
 
         $code = "class " . $className . ' extends \\' . SnowflakeIdentifier::class . "
@@ -103,7 +124,14 @@ class SnowflakeIdentifierTest extends TestCase
         yield 'no arguments' => ['^$', '|', []];
         yield 'string' => ['^[^\|]+$', '|', ['name' => 'string']];
         yield 'nullable string' => ['^[^\|]+$', '|', ['name' => '?string']];
+        yield 'string with default' => [
+            '^[^\-]+(\-[^\-]+)?$',
+            '-',
+            ['name' => 'string', 'value' => '?string'],
+            ['value' => null],
+        ];
         yield 'integer' => ['^-?(0|[1-9]\d*)$', ',', ['name' => 'int']];
         yield 'nullable integer' => ['^-?(0|[1-9]\d*)$', ',', ['name' => '?int']];
+        
     }
 }

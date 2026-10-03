@@ -1,0 +1,63 @@
+<?php
+namespace Apie\FtpServer;
+
+use Apie\ServiceProviderGenerator\UseGeneratedMethods;
+use Illuminate\Support\ServiceProvider;
+
+/**
+ * This file is generated with apie/service-provider-generator from file: ftp.yaml
+ * @codeCoverageIgnore
+ */
+class FtpServerServiceProvider extends ServiceProvider
+{
+    use UseGeneratedMethods;
+
+    public function register()
+    {
+        $this->registerSingleton(
+            \Apie\FtpServer\FtpServerCommand::class,
+            function ($app) {
+                return new \Apie\FtpServer\FtpServerCommand(
+                    $app->make(\Apie\FtpServer\FtpServerRunner::class),
+                    $app->make(\Apie\ApieFileSystem\ApieFilesystemFactory::class),
+                    $app->make(\Apie\Core\ContextBuilders\ContextBuilderFactory::class),
+                    $app->make(\Apie\FtpServer\Factories\ServerFactoryInterface::class),
+                    $this->parseArgument('%apie.ftp_server.public_ip%', \Apie\FtpServer\FtpServerCommand::class, 4),
+                    $this->parseArgument('%apie.ftp_server.passive_min_port%', \Apie\FtpServer\FtpServerCommand::class, 5),
+                    $this->parseArgument('%apie.ftp_server.passive_max_port%', \Apie\FtpServer\FtpServerCommand::class, 6)
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\FtpServer\FtpServerCommand::class,
+            array(
+              0 =>
+              array(
+                'name' => 'console.command',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\FtpServer\FtpServerCommand::class], 'console.command');
+        $this->app->bind(\Apie\FtpServer\Factories\ServerFactoryInterface::class, \Apie\FtpServer\Factories\SimpleFtpServerFactory::class);
+        
+        $this->registerSingleton(
+            \Apie\FtpServer\Factories\SimpleFtpServerFactory::class,
+            function ($app) {
+                return new \Apie\FtpServer\Factories\SimpleFtpServerFactory(
+                
+                );
+            }
+        );
+        $this->registerSingleton(
+            \Apie\FtpServer\FtpServerRunner::class,
+            function ($app) {
+                return \Apie\FtpServer\FtpServerRunner::create(
+                
+                );
+                
+            }
+        );
+        
+    }
+}
