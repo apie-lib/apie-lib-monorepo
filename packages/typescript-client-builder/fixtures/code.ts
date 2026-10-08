@@ -1,5 +1,5 @@
-import { createForApi } from "./contents/es6/index";
-import type { BoundedContext, Entity } from "./contents/es6/build-script";
+import { createForApi } from "./index";
+import type { BoundedContext, Entity } from "./build-script";
 type apieFixturesIdentifiersUserWithAddressIdentifier = string;
 type apieFixturesValueObjectsPassword = string;
 type apieFixturesIdentifiersUserWithAddressIdentifierResult = string;

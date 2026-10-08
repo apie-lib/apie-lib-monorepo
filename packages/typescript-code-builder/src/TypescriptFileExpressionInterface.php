@@ -31,6 +31,7 @@ use Apie\TypescriptCodeBuilder\Dto\Expressions\TernaryExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\TypeCastExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\UnaryOperationExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\UndefinedExpression;
+use Apie\TypescriptCodeBuilder\Dto\ExportStatement;
 use Apie\TypescriptCodeBuilder\Dto\IIFE;
 use Apie\TypescriptCodeBuilder\Dto\ImportStatement;
 use Apie\TypescriptCodeBuilder\Dto\NamedFunction;
@@ -41,6 +42,7 @@ use Apie\TypescriptCodeBuilder\Lists\JavascriptIdentifierList;
 
 #[ConcreteClasses(
     IIFE::class,
+    ExportStatement::class,
     ImportStatement::class,
     TypescriptDeclaration::class,
     RawJavascript::class,

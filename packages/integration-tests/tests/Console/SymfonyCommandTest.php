@@ -19,7 +19,7 @@ class SymfonyCommandTest extends TestCase
         'external MCP setting (GET)'  => 'GET  /mcp',
         'WebDAV'                      => 'ANY  /webdav/{path}',
         'GraphQL endpoint'            => 'POST  /types/graphql',
-        'javascript code generated'   => 'GET  /js/Apie.es6.js',
+        'javascript code generated'   => 'GET  /js/contents/es6/Apie.js',
         'OpenAPI spec yaml'           => 'GET  /api/types/openapi.yaml',
         'OpenAPI spec JSON'           => 'GET  /api/types/openapi.json',
         'Delete endpoint'             => 'DELETE  /api/types/Order/{id}',

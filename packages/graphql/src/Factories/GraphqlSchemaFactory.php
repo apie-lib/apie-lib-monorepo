@@ -113,7 +113,7 @@ class GraphqlSchemaFactory
                     ),
                 ];
             }
-            if ($actionDefinition instanceof RunResourceMethodDefinition) {
+            if ($actionDefinition instanceof RunResourceMethodDefinition && empty($actionDefinition->getActionOptions())) {
                 $method = $actionDefinition->getMethod();
                 $typeInput = Types::methodCallMeta($method);
                 $type = Types::displayMeta($actionDefinition->getResourceName());

@@ -49,6 +49,7 @@
     "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\LabelStatement",
     "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\ForInStatement",
     "Apie\\TypescriptCodeBuilder\\Dto\\ControlFlow\\IfStatement",
+    "Apie\\TypescriptCodeBuilder\\Dto\\ExportStatement",
     "Apie\\TypescriptCodeBuilder\\Dto\\ImportStatement",
     "Apie\\TypescriptCodeBuilder\\Dto\\RawJavascript",
     "Apie\\TypescriptCodeBuilder\\Dto\\Typehints\\RawTypeDefinition",

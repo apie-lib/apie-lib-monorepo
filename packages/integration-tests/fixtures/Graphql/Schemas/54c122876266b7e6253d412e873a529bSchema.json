@@ -70429,12 +70429,6 @@
                             "deprecationReason": null
                         },
                         {
-                            "name": "juniper",
-                            "description": "juniper",
-                            "isDeprecated": false,
-                            "deprecationReason": null
-                        },
-                        {
                             "name": "kaufen",
                             "description": "kaufen",
                             "isDeprecated": false,

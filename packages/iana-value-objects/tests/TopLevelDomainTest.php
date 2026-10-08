@@ -41,9 +41,9 @@ class TopLevelDomainTest extends TestCase
     }
 
     #[Test]
-    public function it_can_provide_all_options()
+    public function it_can_provide_all_options_and_contains_inactive_tlds()
     {
-        $this->assertEquals(
+        $this->assertNotEquals(
             TopLevelDomain::getOptions()->toArray(),
             ActiveTopLevelDomain::getOptions()->toArray()
         );

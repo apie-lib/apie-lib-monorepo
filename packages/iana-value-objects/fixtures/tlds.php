@@ -3105,7 +3105,7 @@ return array(
   ),
   'juniper' =>
   array(
-    'Active' => true,
+    'Active' => false,
     'Subtag' => 'JUNIPER',
   ),
   'kaufen' =>

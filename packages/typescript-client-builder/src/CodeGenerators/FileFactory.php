@@ -18,8 +18,8 @@ use Apie\TypescriptCodeBuilder\Dto\Expressions\JsonLiteralExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\StringLiteralExpression;
 use Apie\TypescriptCodeBuilder\Dto\File;
 use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
+use Apie\TypescriptCodeBuilder\Dto\ExportStatement;
 use Apie\TypescriptCodeBuilder\Dto\ImportStatement;
-use Apie\TypescriptCodeBuilder\Dto\RawJavascript;
 use Apie\TypescriptCodeBuilder\Dto\Typehints\ArrayTypeDefinition;
 use Apie\TypescriptCodeBuilder\Dto\Typehints\IdentifierTypeDefinition;
 use Apie\TypescriptCodeBuilder\Dto\Typehints\InterfaceDefinition;
@@ -303,11 +303,11 @@ class FileFactory
 
         $codeList = (new CodeList([
                 new ImportStatement(
-                    './contents/es6/index',
+                    './index',
                     new JavascriptIdentifierList(['createForApi'])
                 ),
                 new ImportStatement(
-                    './contents/es6/build-script',
+                    './build-script',
                     new JavascriptIdentifierList(['BoundedContext', 'Entity']),
                     true
                 ),
@@ -340,8 +340,12 @@ class FileFactory
                     ),
                     new IdentifierTypeDefinition($hashmapDeclaration->name)
                 ),
-                new RawJavascript('export { ApieLayer }', needsDefinition: ['ApieLayer'])
-            ]))->sort();
+                new ExportStatement(new JavascriptIdentifierList(['ApieLayer']))
+            ]))->sort()
+            /*->makeImportsInline(
+                __DIR__ . '/../../resources',
+                __DIR__ . '/../../dist/es5'
+            )*/;
 
         return new File(
             $codeList

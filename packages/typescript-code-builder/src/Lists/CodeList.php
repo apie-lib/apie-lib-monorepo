@@ -7,6 +7,9 @@ use Apie\TypescriptCodeBuilder\Dto\TypescriptDeclaration;
 use Apie\TypescriptCodeBuilder\Dto\VariableAssignment;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
+use Apie\TypescriptCodeBuilder\Dto\ImportStatement;
+use Apie\TypescriptCodeBuilder\Dto\IIFE;
+use Apie\TypescriptCodeBuilder\Dto\RawJavascript;
 use Faker\Generator;
 use LogicException;
 
@@ -51,6 +54,33 @@ class CodeList extends ItemList
         }
 
         return new self($sortedItems);
+    }
+
+    public function makeImportsInline(string $tsImportPath, string $jsImportPath): self
+    {
+        $mappedItems = [];
+        foreach ($this as $item) {
+            if ($item instanceof ImportStatement) {
+                // TODO: typescript imports will be built in the future
+                if ($item->typeOnly) {
+                    continue;
+                }
+                $fullTsPath = $tsImportPath . '/' . $item->source . '.ts';
+                $fullJsPath = $jsImportPath . '/' . $item->source . '.js';
+                if (!file_exists($fullTsPath)) {
+                    $fullTsPath = $fullJsPath;
+                }
+                $mappedItems[] = new IIFE(new CodeList([
+                    new RawJavascript(
+                        file_get_contents($fullJsPath) ?: '',
+                        file_get_contents($fullTsPath) ?: '',
+                    )
+                ]));
+            } else {
+                $mappedItems[] = $item;
+            }
+        }
+        return new self($mappedItems);
     }
 
     public function offsetGet(mixed $offset): TypescriptFileExpressionInterface|TypescriptTypeDeclarationInterface
