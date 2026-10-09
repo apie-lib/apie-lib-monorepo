@@ -8,7 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { createBoundedContext } from "./build-script";
-import { FetchTransportLayer, InMemoryTransportLayer } from "./transport-layer";
+import { FetchTransportLayer, InMemoryTransportLayer, OfflineTransportLayer } from "./transport-layer";
+export { OfflineTransportLayer };
 function applyDefinition(context, definition) {
     switch (definition.type) {
         case 'createEntity':
@@ -19,44 +20,88 @@ function applyDefinition(context, definition) {
             break;
     }
 }
-export function createForApi(apiUrl, definition) {
-    const transportLayer = new FetchTransportLayer(apiUrl);
+export function createForTransport(definition, transportLayer) {
     const result = {};
     for (let [key, data] of Object.entries(definition)) {
-        const definition = createBoundedContext(key, transportLayer);
+        const boundedContext = createBoundedContext(key, transportLayer);
         for (let methodDefinition of data) {
-            applyDefinition(definition, methodDefinition);
+            applyDefinition(boundedContext, methodDefinition);
         }
-        result[key] = definition.toBoundedContext();
+        result[key] = boundedContext.toBoundedContext();
     }
     return result;
 }
-export function createForTest(definition) {
-    const transportLayer = new InMemoryTransportLayer();
-    const result = {};
-    for (let [key, data] of Object.entries(definition)) {
-        const definition = createBoundedContext(key, transportLayer);
-        for (let methodDefinition of data) {
-            applyDefinition(definition, methodDefinition);
-        }
-        result[key] = definition.toBoundedContext();
-    }
-    return result;
+function wrapOffline(layer, offline) {
+    return offline ? new OfflineTransportLayer(layer, offline === true ? {} : offline) : layer;
 }
+export function createForApi(apiUrl, definition, offline) {
+    return createForTransport(definition, wrapOffline(new FetchTransportLayer(apiUrl), offline));
+}
+export function createForTest(definition, offline) {
+    return createForTransport(definition, wrapOffline(new InMemoryTransportLayer(), offline));
+}
+const SETTINGS_KEY = 'apie-playground-settings';
 export class BrowserPlayground {
-    constructor(definition, api) {
+    constructor(definition, apiUrl) {
         var _a, _b;
         this.definition = definition;
-        this.api = api;
+        this.apiUrl = apiUrl;
         this.root = null;
         this.selectedContext = '';
         this.selectedEntity = '';
         this.activeEntity = null;
         this.activeEntityContext = null;
+        this.lastSearchId = '';
         this.activeForm = null;
         this.logs = [];
+        this.api = {};
+        this.transport = null;
+        this.settings = { backend: 'memory', offline: true };
+        this.settings = this.loadSettings();
+        this.applySettings();
         this.selectedContext = (_a = Object.keys(definition)[0]) !== null && _a !== void 0 ? _a : '';
         this.selectedEntity = (_b = this.entities(this.selectedContext)[0]) !== null && _b !== void 0 ? _b : '';
+    }
+    loadSettings() {
+        var _a;
+        const defaults = { backend: 'memory', offline: true };
+        try {
+            const parsed = JSON.parse((_a = localStorage.getItem(SETTINGS_KEY)) !== null && _a !== void 0 ? _a : 'null');
+            if (parsed && (parsed.backend === 'memory' || parsed.backend === 'api')) {
+                return { backend: parsed.backend, offline: parsed.offline !== false };
+            }
+        }
+        catch (_b) {
+            // localStorage unavailable or corrupt: use defaults
+        }
+        return defaults;
+    }
+    applySettings() {
+        if (this.transport instanceof OfflineTransportLayer) {
+            this.transport.dispose();
+        }
+        if (this.settings.backend === 'api' && !this.apiUrl) {
+            this.settings.backend = 'memory';
+        }
+        const base = this.settings.backend === 'api'
+            ? new FetchTransportLayer(this.apiUrl)
+            : new InMemoryTransportLayer();
+        this.transport = wrapOffline(base, this.settings.offline
+            ? { storageKey: `apie-playground-offline-queue-${this.settings.backend}` }
+            : false);
+        this.api = createForTransport(this.definition, this.transport);
+    }
+    changeSettings(settings) {
+        this.settings = settings;
+        try {
+            localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+        }
+        catch (_a) {
+            // settings just will not be remembered
+        }
+        this.applySettings();
+        this.reset();
+        this.log(`Using ${settings.backend === 'api' ? 'real API' : 'in-memory'} transport ${settings.offline ? 'with' : 'without'} offline support`);
     }
     start(id) {
         const element = document.getElementById(id);
@@ -109,6 +154,10 @@ export class BrowserPlayground {
         });
         this.renderLog();
     }
+    pendingLabel() {
+        const count = this.transport instanceof OfflineTransportLayer ? this.transport.pendingCount() : 0;
+        return count > 0 ? ` (${count} pending)` : '';
+    }
     errorMessage(error) {
         return error instanceof Error ? error.message : String(error);
     }
@@ -147,9 +196,22 @@ export class BrowserPlayground {
       <header>
         <div>
           <h1>Apie Test Playground</h1>
-          <p>Deterministic in-memory CRUD and state-transition tester.</p>
+          <p>CRUD and state-transition tester.</p>
         </div>
-        <button id="reset" class="primary">Reset</button>
+        <div class="flags">
+          <label>
+            Backend
+            <select id="setting-backend">
+              <option value="memory" ${this.settings.backend === 'memory' ? 'selected' : ''}>In-memory</option>
+              <option value="api" ${this.settings.backend === 'api' ? 'selected' : ''} ${this.apiUrl ? '' : 'disabled'}>Real API</option>
+            </select>
+          </label>
+          <label>
+            <input type="checkbox" id="setting-offline" ${this.settings.offline ? 'checked' : ''}>
+            Offline support${this.pendingLabel()}
+          </label>
+          <button id="reset" class="primary">Reset</button>
+        </div>
       </header>
 
       <div class="layout">
@@ -210,6 +272,15 @@ export class BrowserPlayground {
               </div>
 
               <div>
+                <h3>Find by id</h3>
+
+                <div class="flags">
+                  <input id="find-id" placeholder="id" value="${this.esc(this.lastSearchId)}">
+                  <button id="find">Find</button>
+                </div>
+              </div>
+
+              <div>
                 <h3>Active entity</h3>
                 ${this.entityPanel()}
               </div>
@@ -247,6 +318,17 @@ export class BrowserPlayground {
     bindEvents() {
         var _a, _b, _c, _d, _e, _f;
         const root = this.rootElement();
+        const backendSelect = root.querySelector("#setting-backend");
+        const offlineCheckbox = root.querySelector("#setting-offline");
+        const settingChanged = () => {
+            var _a;
+            return this.changeSettings({
+                backend: (backendSelect === null || backendSelect === void 0 ? void 0 : backendSelect.value) === 'api' ? 'api' : 'memory',
+                offline: (_a = offlineCheckbox === null || offlineCheckbox === void 0 ? void 0 : offlineCheckbox.checked) !== null && _a !== void 0 ? _a : true,
+            });
+        };
+        backendSelect === null || backendSelect === void 0 ? void 0 : backendSelect.addEventListener("change", settingChanged);
+        offlineCheckbox === null || offlineCheckbox === void 0 ? void 0 : offlineCheckbox.addEventListener("change", settingChanged);
         (_a = root
             .querySelector("#reset")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
             this.reset();
@@ -413,7 +495,7 @@ export class BrowserPlayground {
     `;
     }
     bindEntityActions() {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _e, _f;
         const root = this.rootElement();
         (_a = root
             .querySelector("#form")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
@@ -428,8 +510,43 @@ export class BrowserPlayground {
                 this.log("Create form failed", this.errorMessage(error));
             }
         });
-        (_b = root
-            .querySelector("#persist")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", () => __awaiter(this, void 0, void 0, function* () {
+        const findEntity = () => __awaiter(this, void 0, void 0, function* () {
+            var _a;
+            const input = root.querySelector("#find-id");
+            const searched = ((_a = input === null || input === void 0 ? void 0 : input.value) !== null && _a !== void 0 ? _a : "").trim();
+            this.lastSearchId = searched;
+            if (searched === "") {
+                this.log("Find failed", "Please enter an id");
+                return;
+            }
+            const candidates = /^-?\d+$/.test(searched)
+                ? [Number(searched), searched]
+                : [searched];
+            let lastError = null;
+            for (const id of candidates) {
+                try {
+                    const entity = yield this.context().find(this.selectedEntity, id);
+                    this.activeEntity = entity;
+                    this.activeEntityContext = this.context();
+                    this.activeForm = null;
+                    this.render();
+                    this.log(`Found ${this.selectedEntity} ${searched}`, this.snapshot(entity));
+                    return;
+                }
+                catch (error) {
+                    lastError = error;
+                }
+            }
+            this.log("Find failed", this.errorMessage(lastError));
+        });
+        (_b = root.querySelector("#find")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", findEntity);
+        (_c = root.querySelector("#find-id")) === null || _c === void 0 ? void 0 : _c.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                void findEntity();
+            }
+        });
+        (_d = root
+            .querySelector("#persist")) === null || _d === void 0 ? void 0 : _d.addEventListener("click", () => __awaiter(this, void 0, void 0, function* () {
             try {
                 if (!this.activeEntity)
                     return;
@@ -442,8 +559,8 @@ export class BrowserPlayground {
                 this.log("Persist failed", this.errorMessage(error));
             }
         }));
-        (_c = root
-            .querySelector("#delete")) === null || _c === void 0 ? void 0 : _c.addEventListener("click", () => __awaiter(this, void 0, void 0, function* () {
+        (_e = root
+            .querySelector("#delete")) === null || _e === void 0 ? void 0 : _e.addEventListener("click", () => __awaiter(this, void 0, void 0, function* () {
             try {
                 if (!this.activeEntity)
                     return;
@@ -457,8 +574,8 @@ export class BrowserPlayground {
                 this.log("Delete failed", this.errorMessage(error));
             }
         }));
-        (_d = root
-            .querySelector("#save-form")) === null || _d === void 0 ? void 0 : _d.addEventListener("click", () => __awaiter(this, void 0, void 0, function* () {
+        (_f = root
+            .querySelector("#save-form")) === null || _f === void 0 ? void 0 : _f.addEventListener("click", () => __awaiter(this, void 0, void 0, function* () {
             for (const d of this.defs(this.selectedContext, this.selectedEntity)) {
                 const selector = `[data-form="${CSS.escape(d.propertyName)}"]`;
                 const element = root.querySelector(selector);
@@ -674,7 +791,6 @@ export class BrowserPlayground {
             .join("\n\n");
     }
 }
-export function createBrowserPlayground(definition) {
-    const api = createForTest(definition);
-    return new BrowserPlayground(definition, api);
+export function createBrowserPlayground(definition, apiUrl) {
+    return new BrowserPlayground(definition, apiUrl);
 }

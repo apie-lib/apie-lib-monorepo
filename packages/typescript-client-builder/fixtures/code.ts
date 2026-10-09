@@ -261,4 +261,4 @@ interface ApieDefinitionBoundedContextHashmap {
     other: ApieDefinitionBoundedContextOther;
 }
 const ApieLayer: ApieDefinitionBoundedContextHashmap = createForApi(apiUrl, resourceDefinition);
-export { ApieLayer }
+export { ApieLayer, apiUrl, resourceDefinition }

@@ -43,8 +43,26 @@ class ControllerTest extends TestCase
         //$this->assertEquals(200, $response->getStatusCode());
         $expectedApiUrl = 'http://localhost/api';
         $this->assertStringContainsString("const apiUrl = " . json_encode($expectedApiUrl, JSON_UNESCAPED_SLASHES) . ";", $response->getBody());
-        $this->assertStringContainsString('export { ApieLayer }', $response->getBody());
+        $this->assertStringContainsString('export { ApieLayer, apiUrl, resourceDefinition }', $response->getBody());
         $this->assertEquals('application/javascript', $response->getHeaderLine('Content-Type'));
+        $testApplication->cleanApplication();
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_can_display_static_content_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function it_can_display_the_generated_playground_page(TestApplicationInterface $testApplication)
+    {
+        $testApplication->bootApplication();
+        $response = $testApplication->httpRequestGet('/js/contents/playground');
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertEquals('text/html; charset=utf-8', $response->getHeaderLine('Content-Type'));
+        $body = (string) $response->getBody();
+        $this->assertStringContainsString('<title>Apie Test Playground</title>', $body);
+        $this->assertStringContainsString('<div id="playground"></div>', $body);
+        $this->assertStringContainsString('/js/contents/es6/Apie.js', $body);
+        $this->assertStringContainsString('/js/contents/es6/index.js', $body);
+        $this->assertStringContainsString('createBrowserPlayground(resourceDefinition, apiUrl).start', $body);
         $testApplication->cleanApplication();
     }
 

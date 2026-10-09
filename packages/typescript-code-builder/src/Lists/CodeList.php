@@ -3,13 +3,13 @@ namespace Apie\TypescriptCodeBuilder\Lists;
 
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Lists\ItemList;
+use Apie\TypescriptCodeBuilder\Dto\IIFE;
+use Apie\TypescriptCodeBuilder\Dto\ImportStatement;
+use Apie\TypescriptCodeBuilder\Dto\RawJavascript;
 use Apie\TypescriptCodeBuilder\Dto\TypescriptDeclaration;
 use Apie\TypescriptCodeBuilder\Dto\VariableAssignment;
 use Apie\TypescriptCodeBuilder\TypescriptFileExpressionInterface;
 use Apie\TypescriptCodeBuilder\TypescriptTypeDeclarationInterface;
-use Apie\TypescriptCodeBuilder\Dto\ImportStatement;
-use Apie\TypescriptCodeBuilder\Dto\IIFE;
-use Apie\TypescriptCodeBuilder\Dto\RawJavascript;
 use Faker\Generator;
 use LogicException;
 

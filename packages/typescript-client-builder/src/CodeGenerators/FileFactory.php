@@ -12,13 +12,13 @@ use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Utils;
 use Apie\TypeConverter\ReflectionTypeFactory;
 use Apie\TypescriptClientBuilder\Dto\TypeDeclarationResult;
+use Apie\TypescriptCodeBuilder\Dto\ExportStatement;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\FunctionCallExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\IdentifierExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\JsonLiteralExpression;
 use Apie\TypescriptCodeBuilder\Dto\Expressions\StringLiteralExpression;
 use Apie\TypescriptCodeBuilder\Dto\File;
 use Apie\TypescriptCodeBuilder\Dto\FunctionArgument;
-use Apie\TypescriptCodeBuilder\Dto\ExportStatement;
 use Apie\TypescriptCodeBuilder\Dto\ImportStatement;
 use Apie\TypescriptCodeBuilder\Dto\Typehints\ArrayTypeDefinition;
 use Apie\TypescriptCodeBuilder\Dto\Typehints\IdentifierTypeDefinition;
@@ -340,7 +340,7 @@ class FileFactory
                     ),
                     new IdentifierTypeDefinition($hashmapDeclaration->name)
                 ),
-                new ExportStatement(new JavascriptIdentifierList(['ApieLayer']))
+                new ExportStatement(new JavascriptIdentifierList(['ApieLayer', 'apiUrl', 'resourceDefinition']))
             ]))->sort()
             /*->makeImportsInline(
                 __DIR__ . '/../../resources',

@@ -13,6 +13,8 @@ class CodeRouteDefinitionProvider implements GlobalRouteDefinitionProviderInterf
         $routes = [];
         $definition = new Es6ModuleRoute();
         $routes[$definition->getOperationId()] = $definition;
+        $definition = new PlaygroundRoute();
+        $routes[$definition->getOperationId()] = $definition;
         $definition = new StaticContentRoute(
             __DIR__ . '/../../resources',
             '/js/contents/ts'
