@@ -12,18 +12,22 @@ import { TransportLayer } from "./transport-layer";
  * - Deleting: object is being deleted
  * - Deleted: object is deleted
  */
-type EntityState = 'Draft'|'Creating'|'Creating+'|'Persisted'|'Pending'|'Updating+'|'Updating'|'Unverified'|'Deleting'|'Deleted';
-interface Entity {
+export type EntityState = 'Draft'|'Creating'|'Creating+'|'Persisted'|'Pending'|'Updating+'|'Updating'|'Unverified'|'Deleting'|'Deleted';
+export interface Entity {
     get id(): string|number;
+    [propertyName: string]: any;
+    createForm(): EntityForm;
 }
-interface EntityForm {
+export interface EntityForm {
+    readonly id: string|number;
+    [propertyName: string]: any;
 }
 
-type EntityConstructor = {
+export type EntityConstructor = {
   new (initialData: Record<string|number, any>|null): Entity;
 };
-type EntityFormConstructor = {
-  new (id: string|number): Entity;
+export type EntityFormConstructor = {
+    new (id: string|number): EntityForm;
 };
 
 interface BaseBoundedContext {
@@ -32,7 +36,7 @@ interface BaseBoundedContext {
 
 export interface BoundedContext extends BaseBoundedContext {
     entities: Record<string, EntityConstructor>;
-    persist: (entity: Entity) => Promise<Entity>;
+    persist: (entity: Entity | EntityForm) => Promise<Entity | EntityForm>;
     delete: (entity: Entity) => Promise<Entity>;
 }
 
@@ -117,7 +121,7 @@ export function createBoundedContext(contextName: string, transportLayer: Transp
         const context: BoundedContext = {
             name: contextName,
             entities: {},
-            persist: async function (entity: Entity): Promise<Entity> {
+            persist: async function (entity: Entity | EntityForm): Promise<Entity | EntityForm> {
                 const state = metadata.get(entity);
                 if (!state) {
                     throw new Error('Unknown entity');
