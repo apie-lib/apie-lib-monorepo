@@ -1072,7 +1072,7 @@ return array(
     'Status' => 'obsoleted',
     'Structured Type' => '',
     'Reference' => '[RFC 7540, Section 3.2.1: Hypertext Transfer Protocol Version 2 (HTTP/2)]',
-    'Comments' => 'Obsolete; see Section 11.1 of [RFC9113]',
+    'Comments' => 'Obsolete; see Section 11.1 of [RFC 9113]',
     'Active' => true,
   ),
   'if' =>
@@ -1324,6 +1324,15 @@ return array(
     'Status' => 'permanent',
     'Structured Type' => '',
     'Reference' => '[Network Error Logging]',
+    'Comments' => '',
+    'Active' => true,
+  ),
+  'no-vary-search' =>
+  array(
+    'Field Name' => 'No-Vary-Search',
+    'Status' => 'permanent',
+    'Structured Type' => 'Dictionary',
+    'Reference' => '[RFC-ietf-httpbis-no-vary-search-10: The No-Vary-Search HTTP Caching Extension]',
     'Comments' => '',
     'Active' => true,
   ),

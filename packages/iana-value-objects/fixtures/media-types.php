@@ -2954,14 +2954,14 @@ return array(
   array(
     'Name' => 'roughtime-malfeasance+json',
     'Template' => 'application/roughtime-malfeasance+json',
-    'Reference' => '[RFC-ietf-ntp-roughtime-19]',
+    'Reference' => '[RFC 10049]',
     'Active' => true,
   ),
   'application/roughtime-server+json' =>
   array(
     'Name' => 'roughtime-server+json',
     'Template' => 'application/roughtime-server+json',
-    'Reference' => '[RFC-ietf-ntp-roughtime-19]',
+    'Reference' => '[RFC 10049]',
     'Active' => true,
   ),
   'application/route-apd+xml' =>
@@ -4679,6 +4679,13 @@ return array(
     'Reference' => '[Anton_Sokolov]',
     'Active' => true,
   ),
+  'application/vnd.aethel.package' =>
+  array(
+    'Name' => 'vnd.aethel.package',
+    'Template' => 'application/vnd.aethel.package',
+    'Reference' => '[Ewerson_Silva]',
+    'Active' => true,
+  ),
   'application/vnd.aether.imp' =>
   array(
     'Name' => 'vnd.aether.imp',
@@ -5757,6 +5764,13 @@ return array(
     'Reference' => '[Mi_Tar]',
     'Active' => true,
   ),
+  'application/vnd.dai' =>
+  array(
+    'Name' => 'vnd.dai',
+    'Template' => 'application/vnd.dai',
+    'Reference' => '[Christopher_Whitlow]',
+    'Active' => true,
+  ),
   'application/vnd.dart' =>
   array(
     'Name' => 'vnd.dart',
@@ -6252,6 +6266,13 @@ return array(
     'Name' => 'vnd.emclient.accessrequest+xml',
     'Template' => 'application/vnd.emclient.accessrequest+xml',
     'Reference' => '[Filip_Navara]',
+    'Active' => true,
+  ),
+  'application/vnd.emilia.authorization-evidence-challenge+json' =>
+  array(
+    'Name' => 'vnd.emilia.authorization-evidence-challenge+json',
+    'Template' => 'application/vnd.emilia.authorization-evidence-challenge+json',
+    'Reference' => '[Iman_Schrock]',
     'Active' => true,
   ),
   'application/vnd.enliven' =>
@@ -8137,6 +8158,13 @@ return array(
     'Reference' => '[Josef_Elijah_Fabian]',
     'Active' => true,
   ),
+  'application/vnd.majikah.mjksmap' =>
+  array(
+    'Name' => 'vnd.majikah.mjksmap',
+    'Template' => 'application/vnd.majikah.mjksmap',
+    'Reference' => '[Josef_Elijah_Fabian]',
+    'Active' => true,
+  ),
   'application/vnd.maml' =>
   array(
     'Name' => 'vnd.maml',
@@ -8821,6 +8849,13 @@ return array(
     'Name' => 'vnd.nacamar.ybrid+json',
     'Template' => 'application/vnd.nacamar.ybrid+json',
     'Reference' => '[Sebastian_A._Weiss]',
+    'Active' => true,
+  ),
+  'application/vnd.nanorix.auditproof+json' =>
+  array(
+    'Name' => 'vnd.nanorix.auditproof+json',
+    'Template' => 'application/vnd.nanorix.auditproof+json',
+    'Reference' => '[Chaitanya_Kumar_Arra]',
     'Active' => true,
   ),
   'application/vnd.nato.bindingdataobject+cbor' =>
