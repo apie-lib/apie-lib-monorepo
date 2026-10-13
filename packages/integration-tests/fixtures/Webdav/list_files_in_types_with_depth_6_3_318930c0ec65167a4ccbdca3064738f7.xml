@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns">
+  <d:response>
+    <d:href>/webdav/types/resources/Animal/0/00000000-0000-0000-0000-000000000000.json</d:href>
+    <d:propstat>
+      <d:prop>
+        <d:getcontentlength>150</d:getcontentlength>
+        <d:resourcetype/>
+        <d:getetag>8a30a938a9c64bd2d71b17632b2e6913</d:getetag>
+        <d:getcontenttype>application/json</d:getcontenttype>
+      </d:prop>
+      <d:status>HTTP/1.1 200 OK</d:status>
+    </d:propstat>
+  </d:response>
+</d:multistatus>

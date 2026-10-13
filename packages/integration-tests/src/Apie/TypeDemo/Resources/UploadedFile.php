@@ -2,12 +2,16 @@
 namespace Apie\IntegrationTests\Apie\TypeDemo\Resources;
 
 use Apie\Core\Attributes\AllowMultipart;
+use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\RemovalCheck;
 use Apie\Core\Attributes\ResourceName;
 use Apie\Core\Attributes\StaticCheck;
+use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\FileStorage\ImageFile;
+use Apie\Core\FileStorage\StoredFile;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UploadedFileIdentifier;
 use Psr\Http\Message\UploadedFileInterface;
 
@@ -22,6 +26,18 @@ final class UploadedFile implements EntityInterface
         private UploadedFileInterface $file,
         public ?ImageFile $imageFile = null
     ) {
+    }
+    
+    public static function createRandomFile(
+        #[Context]
+        ApieDatalayer $apieDatalayer
+    ): UploadedFile {
+        $file = new UploadedFile(
+            UploadedFileIdentifier::createRandom(),
+            StoredFile::createFromString('file contents', clientOriginalFile: 'example.txt')
+        );
+        $apieDatalayer->persistNew($file, new BoundedContextId('types'));
+        return $file;
     }
 
     public function getId(): UploadedFileIdentifier

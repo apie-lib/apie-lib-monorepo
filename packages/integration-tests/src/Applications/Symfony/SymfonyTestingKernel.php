@@ -1,11 +1,13 @@
 <?php
 namespace Apie\IntegrationTests\Applications\Symfony;
 
+use Apie\AiInstructor\AiClient;
 use Apie\ApieBundle\ApieBundle;
 use Apie\ApieBundle\Security\ApieUserAuthenticator;
 use Apie\ApieBundle\Security\ApieUserProvider;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
+use Apie\IntegrationTests\Applications\MockFactory;
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\MonologBundle\MonologBundle;
@@ -85,6 +87,9 @@ class SymfonyTestingKernel extends Kernel
             $container->addDefinitions([
                 InMemoryPersistentSessionStorageFactory::class => new Definition(InMemoryPersistentSessionStorageFactory::class),
                 FileWriterInterface::class => (new Definition(MockFileWriter::class))->setPublic(true),
+                AiClient::class => (new Definition(AiClient::class))
+                    ->setFactory([MockFactory::class, 'createMockAiClient'])
+                    ->setPublic(true),
             ]);
             $container->loadFromExtension('apie', $this->apieConfig);
             $container->loadFromExtension('doctrine', ['orm' => ['auto_mapping' => true], 'dbal' => []]);

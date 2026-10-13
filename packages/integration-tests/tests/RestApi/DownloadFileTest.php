@@ -43,7 +43,7 @@ class DownloadFileTest extends TestCase
             $this->assertEquals(200, $response->getStatusCode());
             if ($testApplication->getApplicationConfig()->getDatalayerImplementation()->name !== FakerDatalayer::class) {
                 $this->assertEquals('Lorem ipsum', $response->getBody()->__toString());
-                $this->assertEquals('text/plain; charset=UTF-8', $response->getHeaderLine('content-type'));
+                $this->assertEquals('text/plain; charset=utf-8', strtolower($response->getHeaderLine('content-type')));
             }
             
         });

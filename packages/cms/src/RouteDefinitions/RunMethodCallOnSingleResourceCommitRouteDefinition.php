@@ -15,7 +15,7 @@ class RunMethodCallOnSingleResourceCommitRouteDefinition extends AbstractCmsRout
 {
     public static function createFrom(ActionDefinitionInterface $actionDefinition): ?AbstractCmsRouteDefinition
     {
-        if ($actionDefinition instanceof RunResourceMethodDefinition) {
+        if ($actionDefinition instanceof RunResourceMethodDefinition && empty($actionDefinition->getActionOptions())) {
             return new self($actionDefinition->getResourceName(), $actionDefinition->getMethod(), $actionDefinition->getBoundedContextId());
         }
         return null;
@@ -55,5 +55,10 @@ class RunMethodCallOnSingleResourceCommitRouteDefinition extends AbstractCmsRout
         $methodName = $this->method->getName();
         $suffix = $methodName === '__invoke' ? '' : ('-' . $methodName);
         return 'call-resource-commit-' . $this->class->getShortName() . $suffix;
+    }
+
+    public function getMainMenuUri(): ?UrlRouteDefinition
+    {
+        return null;
     }
 }

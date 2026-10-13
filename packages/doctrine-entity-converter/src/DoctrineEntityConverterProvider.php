@@ -14,17 +14,17 @@ class DoctrineEntityConverterProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\DoctrineEntityConverter\OrmBuilder::class,
             function ($app) {
                 return new \Apie\DoctrineEntityConverter\OrmBuilder(
                     $app->make(\Apie\DoctrineEntityConverter\Factories\PersistenceLayerFactory::class),
                     $app->make(\Apie\Core\BoundedContext\BoundedContextHashmap::class),
-                    $this->parseArgument('%kernel.debug%')
+                    $this->parseArgument('%kernel.debug%', \Apie\DoctrineEntityConverter\OrmBuilder::class, 2)
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\DoctrineEntityConverter\Factories\PersistenceLayerFactory::class,
             function ($app) {
                 return new \Apie\DoctrineEntityConverter\Factories\PersistenceLayerFactory(

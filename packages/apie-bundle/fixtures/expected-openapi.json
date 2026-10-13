@@ -43,6 +43,12 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -106,6 +112,12 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -178,6 +190,12 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -241,6 +259,12 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -304,6 +328,12 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -367,6 +397,12 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -430,6 +466,12 @@
                         "schema": {
                             "$ref": "#/components/schemas/NonEmptyString-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -485,6 +527,12 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -609,7 +657,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -645,32 +693,28 @@
                         "name": "query[nullableStringValue]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[nullableIntValue]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[nullableBooleanValue]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[nullableFloatValue]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -684,8 +728,7 @@
                         "name": "query[nullableStringList]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -699,16 +742,14 @@
                         "name": "query[nullableStringListHashmap]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[conflictingTypes]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -722,8 +763,7 @@
                         "name": "query[nullableAnimalList]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -737,8 +777,7 @@
                         "name": "query[nullableCompositeObject]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -752,24 +791,21 @@
                         "name": "query[nullablePasswordList]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[userIdentifier]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
                         "name": "query[mixedType]",
                         "in": "query",
                         "schema": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                         }
                     },
                     {
@@ -785,6 +821,9 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -870,6 +909,12 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -994,7 +1039,7 @@
                         "name": "search",
                         "in": "query",
                         "schema": {
-                            "minimum": 1,
+                            "minLength": 1,
                             "type": "string"
                         }
                     },
@@ -1004,6 +1049,9 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -1098,6 +1146,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/ManyColumnsIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -1181,6 +1232,12 @@
                         "schema": {
                             "$ref": "#/components/schemas/ManyColumnsIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1295,6 +1352,9 @@
                         "schema": {
                             "$ref": "#/components/schemas/UserIdentifier-post"
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -1371,6 +1431,9 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
                 "responses": {
@@ -1417,6 +1480,12 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1557,6 +1626,12 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1660,6 +1735,12 @@
                                 "type": "string"
                             }
                         }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
                     }
                 ],
                 "requestBody": {
@@ -1768,53 +1849,36 @@
                         "elephant": "#/components/schemas/Elephant-get",
                         "fish": "#/components/schemas/Fish-get"
                     }
+                },
+                "required": [
+                    "animalType"
+                ],
+                "properties": {
+                    "animalType": {
+                        "enum": [
+                            "cow",
+                            "elephant",
+                            "fish"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-get"
+                    },
+                    "hasMilk": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "starving": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "poisonous": {
+                        "type": "boolean",
+                        "nullable": false
+                    }
                 }
-            },
-            "Animal-nullable-get": {
-                "type": "object",
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/Cow-nullable-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Elephant-nullable-get"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Fish-nullable-get"
-                    }
-                ],
-                "discriminator": {
-                    "propertyName": "animalType",
-                    "mapping": {
-                        "cow": "#/components/schemas/Cow-nullable-get",
-                        "elephant": "#/components/schemas/Elephant-nullable-get",
-                        "fish": "#/components/schemas/Fish-nullable-get"
-                    }
-                },
-                "nullable": true
-            },
-            "Animal-nullable-post": {
-                "type": "object",
-                "oneOf": [
-                    {
-                        "$ref": "#/components/schemas/Cow-post"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Elephant-post"
-                    },
-                    {
-                        "$ref": "#/components/schemas/Fish-post"
-                    }
-                ],
-                "discriminator": {
-                    "propertyName": "animalType",
-                    "mapping": {
-                        "cow": "#/components/schemas/Cow-post",
-                        "elephant": "#/components/schemas/Elephant-post",
-                        "fish": "#/components/schemas/Fish-post"
-                    }
-                },
-                "nullable": true
             },
             "Animal-post": {
                 "type": "object",
@@ -1835,6 +1899,35 @@
                         "cow": "#/components/schemas/Cow-post",
                         "elephant": "#/components/schemas/Elephant-post",
                         "fish": "#/components/schemas/Fish-post"
+                    }
+                },
+                "required": [
+                    "animalType"
+                ],
+                "properties": {
+                    "animalType": {
+                        "enum": [
+                            "cow",
+                            "elephant",
+                            "fish"
+                        ],
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "id": {
+                        "$ref": "#/components/schemas/AnimalIdentifier-nullable-post"
+                    },
+                    "hasMilk": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "starving": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "poisonous": {
+                        "type": "boolean",
+                        "nullable": false
                     }
                 }
             },
@@ -1858,14 +1951,14 @@
             "AnimalList-nullable-get": {
                 "type": "array",
                 "items": {
-                    "$ref": "#/components/schemas/Animal-nullable-get"
+                    "$ref": "#/components/schemas/Animal-get"
                 },
                 "nullable": true
             },
             "AnimalList-nullable-post": {
                 "type": "array",
                 "items": {
-                    "$ref": "#/components/schemas/Animal-nullable-post"
+                    "$ref": "#/components/schemas/Animal-post"
                 },
                 "nullable": true
             },
@@ -1916,15 +2009,18 @@
             },
             "BelgianPhoneNumber-get": {
                 "type": "string",
-                "format": "belgianphonenumber"
+                "format": "belgianphonenumber",
+                "description": "A phone number valid in Belgium in national format or E164 format"
             },
             "BelgianPhoneNumber-post": {
                 "type": "string",
-                "format": "belgianphonenumber"
+                "format": "belgianphonenumber",
+                "description": "A phone number valid in Belgium in national format or E164 format"
             },
             "BritishPhoneNumber-post": {
                 "type": "string",
-                "format": "britishphonenumber"
+                "format": "britishphonenumber",
+                "description": "A phone number valid in the UK in national format or E164 format"
             },
             "ColorEnum-post": {
                 "enum": [
@@ -1963,7 +2059,6 @@
                     "value2",
                     "value3"
                 ],
-                "nullable": true,
                 "properties": {
                     "value1": {
                         "type": "string",
@@ -1977,7 +2072,8 @@
                         "type": "integer",
                         "nullable": false
                     }
-                }
+                },
+                "nullable": true
             },
             "CompositeObjectExample-nullable-post": {
                 "type": "object",
@@ -1986,7 +2082,6 @@
                     "value2",
                     "value3"
                 ],
-                "nullable": true,
                 "properties": {
                     "value1": {
                         "type": "string",
@@ -2000,7 +2095,8 @@
                         "type": "integer",
                         "nullable": false
                     }
-                }
+                },
+                "nullable": true
             },
             "CompositeObjectExample-post": {
                 "type": "object",
@@ -2030,30 +2126,6 @@
                     "animalType",
                     "id"
                 ],
-                "properties": {
-                    "animalType": {
-                        "enum": [
-                            "cow"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
-                    },
-                    "hasMilk": {
-                        "type": "boolean",
-                        "nullable": false
-                    }
-                }
-            },
-            "Cow-nullable-get": {
-                "type": "object",
-                "required": [
-                    "animalType",
-                    "id"
-                ],
-                "nullable": true,
                 "properties": {
                     "animalType": {
                         "enum": [
@@ -2123,11 +2195,15 @@
             },
             "DutchPhoneNumber-get": {
                 "type": "string",
-                "format": "dutchphonenumber"
+                "format": "dutchphonenumber",
+                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                "example": "0612345678"
             },
             "DutchPhoneNumber-post": {
                 "type": "string",
-                "format": "dutchphonenumber"
+                "format": "dutchphonenumber",
+                "description": "A phone number valid in the Netherlands in national format or E164 format",
+                "example": "0612345678"
             },
             "Elephant-get": {
                 "type": "object",
@@ -2135,30 +2211,6 @@
                     "animalType",
                     "id"
                 ],
-                "properties": {
-                    "animalType": {
-                        "enum": [
-                            "elephant"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
-                    },
-                    "starving": {
-                        "type": "boolean",
-                        "nullable": false
-                    }
-                }
-            },
-            "Elephant-nullable-get": {
-                "type": "object",
-                "required": [
-                    "animalType",
-                    "id"
-                ],
-                "nullable": true,
                 "properties": {
                     "animalType": {
                         "enum": [
@@ -2204,30 +2256,6 @@
                     "animalType",
                     "id"
                 ],
-                "properties": {
-                    "animalType": {
-                        "enum": [
-                            "fish"
-                        ],
-                        "type": "string",
-                        "nullable": false
-                    },
-                    "id": {
-                        "$ref": "#/components/schemas/AnimalIdentifier-get"
-                    },
-                    "poisonous": {
-                        "type": "boolean",
-                        "nullable": false
-                    }
-                }
-            },
-            "Fish-nullable-get": {
-                "type": "object",
-                "required": [
-                    "animalType",
-                    "id"
-                ],
-                "nullable": true,
                 "properties": {
                     "animalType": {
                         "enum": [
@@ -2397,6 +2425,7 @@
                                 "$ref": "#/components/schemas/BelgianPhoneNumber-get"
                             }
                         ],
+                        "description": "A phone number valid in the Netherlands in national format or E164 format",
                         "nullable": false
                     }
                 }
@@ -2499,6 +2528,7 @@
                                 "$ref": "#/components/schemas/BelgianPhoneNumber-post"
                             }
                         ],
+                        "description": "A phone number valid in the Netherlands in national format or E164 format",
                         "nullable": false
                     }
                 }
@@ -2617,6 +2647,7 @@
                                 "$ref": "#/components/schemas/BelgianPhoneNumber-post"
                             }
                         ],
+                        "description": "A phone number valid in the Netherlands in national format or E164 format",
                         "nullable": false
                     }
                 }
@@ -2644,6 +2675,7 @@
             "NonEmptyString-post": {
                 "type": "string",
                 "format": "nonemptystring",
+                "description": "Any text, except the empty string.",
                 "pattern": "^.+$"
             },
             "NotAcceptedException-get": {
@@ -2688,16 +2720,14 @@
             "StringList-nullable-get": {
                 "type": "array",
                 "items": {
-                    "type": "string",
-                    "nullable": true
+                    "type": "string"
                 },
                 "nullable": true
             },
             "StringList-nullable-post": {
                 "type": "array",
                 "items": {
-                    "type": "string",
-                    "nullable": true
+                    "type": "string"
                 },
                 "nullable": true
             },
@@ -2716,14 +2746,14 @@
             "StringListHashmap-nullable-get": {
                 "type": "object",
                 "additionalProperties": {
-                    "$ref": "#/components/schemas/StringList-nullable-get"
+                    "$ref": "#/components/schemas/StringList-get"
                 },
                 "nullable": true
             },
             "StringListHashmap-nullable-post": {
                 "type": "object",
                 "additionalProperties": {
-                    "$ref": "#/components/schemas/StringList-nullable-post"
+                    "$ref": "#/components/schemas/StringList-post"
                 },
                 "nullable": true
             },
@@ -2737,18 +2767,6 @@
                 "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
                 "type": "string",
                 "format": "password"
-            },
-            "StrongPassword-nullable-get": {
-                "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
-                "type": "string",
-                "format": "password",
-                "nullable": true
-            },
-            "StrongPassword-nullable-post": {
-                "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
-                "type": "string",
-                "format": "password",
-                "nullable": true
             },
             "StrongPassword-post": {
                 "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\(\\)\\-_\\+\\.]{6,42}$",
@@ -2764,14 +2782,14 @@
             "StrongPasswordList-nullable-get": {
                 "type": "array",
                 "items": {
-                    "$ref": "#/components/schemas/StrongPassword-nullable-get"
+                    "$ref": "#/components/schemas/StrongPassword-get"
                 },
                 "nullable": true
             },
             "StrongPasswordList-nullable-post": {
                 "type": "array",
                 "items": {
-                    "$ref": "#/components/schemas/StrongPassword-nullable-post"
+                    "$ref": "#/components/schemas/StrongPassword-post"
                 },
                 "nullable": true
             },
@@ -2813,12 +2831,12 @@
                 "required": [
                     "id"
                 ],
-                "nullable": true,
                 "properties": {
                     "id": {
                         "$ref": "#/components/schemas/UserIdentifier-get"
                     }
-                }
+                },
+                "nullable": true
             },
             "User-post": {
                 "type": "object",
@@ -2842,6 +2860,7 @@
                                 "$ref": "#/components/schemas/BritishPhoneNumber-post"
                             }
                         ],
+                        "description": "A phone number valid in the Netherlands in national format or E164 format",
                         "nullable": false
                     }
                 }
@@ -2905,6 +2924,82 @@
             "mixed": {
                 "nullable": true
             }
+        },
+        "securitySchemes": {
+            "BasicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            }
+        },
+        "parameters": {
+            "AcceptLanguage": {
+                "name": "Accept-Language",
+                "in": "header",
+                "description": "Preferred language for the response.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "format": "languageandregion",
+                    "example": "nl",
+                    "pattern": "[^\\-]+(\\-[^\\-]+)?$"
+                },
+                "examples": {
+                    "language_only": {
+                        "summary": "Language only",
+                        "value": "nl"
+                    },
+                    "language_and_region": {
+                        "summary": "Language and region",
+                        "value": "en-US"
+                    }
+                }
+            },
+            "ContentLanguage": {
+                "name": "Content-Language",
+                "in": "header",
+                "description": "Language of content body.",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "format": "languageandregion",
+                    "example": "nl",
+                    "pattern": "[^\\-]+(\\-[^\\-]+)?$"
+                },
+                "examples": {
+                    "language_only": {
+                        "summary": "Language only",
+                        "value": "nl"
+                    },
+                    "language_and_region": {
+                        "summary": "Language and region",
+                        "value": "en-US"
+                    }
+                }
+            }
         }
-    }
+    },
+    "security": [
+        {
+            "BasicAuth": []
+        },
+        []
+    ],
+    "tags": [
+        {
+            "name": "ManyColumns",
+            "description": "All operations for ManyColumns"
+        },
+        {
+            "name": "User",
+            "description": "All operations for User"
+        },
+        {
+            "name": "ApplicationInfo",
+            "description": "All operations for ApplicationInfo"
+        },
+        {
+            "name": "Login",
+            "description": "All operations for Login"
+        }
+    ]
 }

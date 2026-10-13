@@ -3,6 +3,7 @@ namespace Apie\Core\Metadata\Fields;
 
 use Apie\Core\Attributes\ColumnPriority;
 use Apie\Core\Attributes\Optional;
+use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Enums\DoNotChangeUploadedFile;
 use Apie\Core\Metadata\GetterInterface;
@@ -43,6 +44,7 @@ final class PublicProperty implements FieldWithPossibleDefaultValue, GetterInter
 
         $this->required = !$optional
             && empty($property->getAttributes(Optional::class))
+            && empty($property->getAttributes(RuntimeCheck::class))
             && !$hasDefaultValue
             && $this->field;
     }
@@ -50,11 +52,11 @@ final class PublicProperty implements FieldWithPossibleDefaultValue, GetterInter
     /**
      * ReflectionProperty::hasDefaultValue() returns false for promoted public properties,
      * so we look up the constructors to find ReflectionParameter and return this.
-     * @param \ReflectionClass<object> $class
+     * @param \ReflectionClass<covariant object> $class
      */
     private function findPromotedProperty(\ReflectionClass $class): ?\ReflectionParameter
     {
-        foreach ($class->getConstructor()->getParameters() as $parameter) {
+        foreach ($class->getConstructor()?->getParameters() ?? [] as $parameter) {
             if ($parameter->isPromoted()
                 && $parameter->isDefaultValueAvailable()
                 && $parameter->name === $this->property->name
@@ -63,7 +65,7 @@ final class PublicProperty implements FieldWithPossibleDefaultValue, GetterInter
             }
         }
         if (!$this->property->isPrivate()) {
-            $parentClass = $class->getConstructor()->getDeclaringClass()->getParentClass();
+            $parentClass = $class->getConstructor()?->getDeclaringClass()->getParentClass();
             if ($parentClass && $parentClass->name !== $class->name) {
                 return $this->findPromotedProperty($parentClass);
             }

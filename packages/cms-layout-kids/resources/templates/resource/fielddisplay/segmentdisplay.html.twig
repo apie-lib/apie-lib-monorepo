@@ -1,0 +1,14 @@
+{% if property('componentNames')|length %}
+    <table class="detail-table">
+    {% for componentName in property('componentNames') %}
+        <tr>{% if property('showKeys') %}
+            <th>{{ componentName }}</th>{% endif %}
+            <td>
+                {{ component(componentName) }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    no details found.
+{% endif %}

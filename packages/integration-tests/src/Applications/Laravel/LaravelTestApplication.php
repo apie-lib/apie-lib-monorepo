@@ -1,18 +1,21 @@
 <?php
 namespace Apie\IntegrationTests\Applications\Laravel;
 
+use Apie\AiInstructor\AiClient;
 use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\IntegrationTestLogger;
 use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
 use Apie\Common\Wrappers\TextEncrypter;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
+use Apie\IntegrationTests\Applications\MockFactory;
 use Apie\IntegrationTests\Concerns\ItRunsApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\LaravelApie\ApieServiceProvider;
+use Apie\LaravelApie\Config\ValidateAndSanitizeConfig;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
@@ -71,6 +74,18 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                 'apie.scan_bounded_contexts',
                 []
             );
+            // this has to be explicit because of some code execution order issues
+            $config->set('apie.enable_ai_instructor', true);
+            $config->set('apie.enable_mcp_server', true);
+            $config->set('apie.enable_webdav', true);
+            $config->set(
+                'apie.ai',
+                [
+                    'base_url' => 'http://localbost:11434',
+                    'api_key' => 'test',
+                ]
+            );
+            $config->set('apie.graphql.base_url', 'graphql');
             $config->set(
                 'apie.datalayers',
                 [
@@ -87,6 +102,12 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                     ]
                 ]
             );
+            $config->set('apie.remote_mcp_path', '/mcp');
+            $config->set('apie.enable_graphql', true);
+            $config->set('apie.open_api.max_enum_size', 500);
+            $rawConfig = $config->get('apie');
+            $processedConfig = ValidateAndSanitizeConfig::process($rawConfig);
+            $config->set('apie', $processedConfig);
         });
     }
 
@@ -104,7 +125,12 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             ]);
         }
         $this->app->instance(FileWriterInterface::class, new MockFileWriter());
+        $this->app->instance(
+            AiClient::class,
+            MockFactory::createMockAiClient()
+        );
         unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+        $this->app->boot();
     }
 
     /**

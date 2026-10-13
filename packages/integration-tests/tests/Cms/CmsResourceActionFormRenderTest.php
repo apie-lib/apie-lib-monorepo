@@ -5,7 +5,7 @@ use Apie\Common\ApieFacade;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
-use Apie\IntegrationTests\IntegrationTestHelper;
+use Apie\IntegrationTests\CmsTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\CmsFormSubmitRequest;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
@@ -21,7 +21,7 @@ class CmsResourceActionFormRenderTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_renders_a_resource_action_form_page'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 
@@ -48,7 +48,7 @@ class CmsResourceActionFormRenderTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_can_execute_a_resource_action'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 

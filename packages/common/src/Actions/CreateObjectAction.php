@@ -8,6 +8,7 @@ use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
+use Apie\Core\Attributes\Description;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
@@ -76,7 +77,7 @@ final class CreateObjectAction implements ActionInterface
             $resource = $this->apieFacade->persistNew($resource, new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID)));
         }
         $context = $context->withContext(ContextConstants::RESOURCE, $resource);
-        $context->dispatchEvent(new ApieResourceCreated($resource));
+        $context->dispatchEvent(new ApieResourceCreated($resource, $context));
         return ActionResponse::createCreationSuccess($this->apieFacade, $context, $resource, $resource);
     }
 
@@ -106,15 +107,20 @@ final class CreateObjectAction implements ActionInterface
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getDescription(ReflectionClass $class): string
     {
-        return 'Creates an instance of ' . $class->getShortName();
+        $description = 'Creates an instance of ' . $class->getShortName();
+        foreach ($class->getAttributes(Description::class) as $attribute) {
+            $description .= '. ' . $attribute->newInstance()->description;
+        }
+
+        return $description;
     }
     
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getTags(ReflectionClass $class): StringList
     {
@@ -122,7 +128,7 @@ final class CreateObjectAction implements ActionInterface
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getRouteAttributes(ReflectionClass $class): array
     {

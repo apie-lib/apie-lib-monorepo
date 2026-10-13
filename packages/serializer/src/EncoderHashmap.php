@@ -23,9 +23,9 @@ final class EncoderHashmap extends ItemHashmap
         return new self(['application/json' => new JsonEncoder()]);
     }
 
-    public function getAcceptedContentTypeForRequest(RequestInterface $request): string
+    public function getAcceptedContentTypeForRequest(RequestInterface $request, ?string $fallback = null): string
     {
-        if (empty($this->internalArray)) {
+        if (empty($this->internalArray) && $fallback === null) {
             throw new LogicException('I am an encoder hashmap with no encoders?');
         }
     
@@ -35,16 +35,19 @@ final class EncoderHashmap extends ItemHashmap
         }
         $acceptString = $request->getHeaderLine('Accept');
         $acceptHeaders = AcceptHeader::fromString($acceptString);
-        foreach ($acceptHeaders->all() as $acceptHeaderItem) {
-            $acceptHeaderValue = $acceptHeaderItem->getValue();
-            if (isset($this->internalArray[$acceptHeaderValue])) {
-                return $acceptHeaderValue;
+        foreach ($this as $mimeType => $_encoder) {
+            if ($item = $acceptHeaders->get($mimeType)) {
+                return $mimeType;
             }
         }
         if (strtolower($request->getMethod()) === 'delete') {
             reset($this->internalArray);
             return key($this->internalArray) ? : 'application/json';
         }
-        throw new NotAcceptedException($acceptString);
+
+        if ($fallback === null) {
+            throw new NotAcceptedException($acceptString);
+        }
+        return $fallback;
     }
 }
