@@ -752,6 +752,7 @@
                                     "mime-version",
                                     "negotiate",
                                     "nel",
+                                    "no-vary-search",
                                     "odata-entityid",
                                     "odata-isolation",
                                     "odata-maxversion",
@@ -981,6 +982,7 @@
                                     "mime-version",
                                     "negotiate",
                                     "nel",
+                                    "no-vary-search",
                                     "odata-entityid",
                                     "odata-isolation",
                                     "odata-maxversion",
@@ -1112,6 +1114,7 @@
                                     "afs",
                                     "agtp",
                                     "aim",
+                                    "alter",
                                     "amss",
                                     "android",
                                     "appdata",
@@ -1120,6 +1123,7 @@
                                     "ari",
                                     "ark",
                                     "ars",
+                                    "arv",
                                     "at",
                                     "attachment",
                                     "aw",
@@ -1138,6 +1142,7 @@
                                     "caip",
                                     "calculator",
                                     "callto",
+                                    "canactid",
                                     "cap",
                                     "cast",
                                     "casts",
@@ -1216,6 +1221,7 @@
                                     "gopher",
                                     "graph",
                                     "grd",
+                                    "gsos",
                                     "gtalk",
                                     "h323",
                                     "ham",
@@ -1266,6 +1272,7 @@
                                     "leaptofrogans",
                                     "lid",
                                     "linkid",
+                                    "locus",
                                     "lorawan",
                                     "lpa",
                                     "lvlt",
@@ -1465,6 +1472,7 @@
                                     "swidpath",
                                     "tag",
                                     "taler",
+                                    "tcxp",
                                     "teamspeak",
                                     "teapot",
                                     "teapots",
@@ -1554,6 +1562,7 @@
                                     "afs",
                                     "agtp",
                                     "aim",
+                                    "alter",
                                     "amss",
                                     "android",
                                     "appdata",
@@ -1562,6 +1571,7 @@
                                     "ari",
                                     "ark",
                                     "ars",
+                                    "arv",
                                     "at",
                                     "attachment",
                                     "aw",
@@ -1579,6 +1589,7 @@
                                     "caip",
                                     "calculator",
                                     "callto",
+                                    "canactid",
                                     "cap",
                                     "cast",
                                     "casts",
@@ -1653,6 +1664,7 @@
                                     "go",
                                     "gopher",
                                     "graph",
+                                    "gsos",
                                     "gtalk",
                                     "h323",
                                     "ham",
@@ -1703,6 +1715,7 @@
                                     "leaptofrogans",
                                     "lid",
                                     "linkid",
+                                    "locus",
                                     "lorawan",
                                     "lpa",
                                     "lvlt",
@@ -1894,6 +1907,7 @@
                                     "swidpath",
                                     "tag",
                                     "taler",
+                                    "tcxp",
                                     "teamspeak",
                                     "teapot",
                                     "teapots",
@@ -2741,7 +2755,7 @@
                                 "type": "string",
                                 "description": "Large numbers with arbitrary precision written down as a string",
                                 "nullable": true,
-                                "pattern": "^[1-9][0-9]*(\\.[0-9]*$",
+                                "pattern": "^[1-9][0-9]*(\\.[0-9]*)$",
                                 "example": "1234547648759975.1313"
                             },
                             "gmp": {
@@ -5126,6 +5140,7 @@
                                     "mime-version",
                                     "negotiate",
                                     "nel",
+                                    "no-vary-search",
                                     "odata-entityid",
                                     "odata-isolation",
                                     "odata-maxversion",
@@ -5355,6 +5370,7 @@
                                     "mime-version",
                                     "negotiate",
                                     "nel",
+                                    "no-vary-search",
                                     "odata-entityid",
                                     "odata-isolation",
                                     "odata-maxversion",
@@ -5486,6 +5502,7 @@
                                     "afs",
                                     "agtp",
                                     "aim",
+                                    "alter",
                                     "amss",
                                     "android",
                                     "appdata",
@@ -5494,6 +5511,7 @@
                                     "ari",
                                     "ark",
                                     "ars",
+                                    "arv",
                                     "at",
                                     "attachment",
                                     "aw",
@@ -5512,6 +5530,7 @@
                                     "caip",
                                     "calculator",
                                     "callto",
+                                    "canactid",
                                     "cap",
                                     "cast",
                                     "casts",
@@ -5590,6 +5609,7 @@
                                     "gopher",
                                     "graph",
                                     "grd",
+                                    "gsos",
                                     "gtalk",
                                     "h323",
                                     "ham",
@@ -5640,6 +5660,7 @@
                                     "leaptofrogans",
                                     "lid",
                                     "linkid",
+                                    "locus",
                                     "lorawan",
                                     "lpa",
                                     "lvlt",
@@ -5839,6 +5860,7 @@
                                     "swidpath",
                                     "tag",
                                     "taler",
+                                    "tcxp",
                                     "teamspeak",
                                     "teapot",
                                     "teapots",
@@ -5928,6 +5950,7 @@
                                     "afs",
                                     "agtp",
                                     "aim",
+                                    "alter",
                                     "amss",
                                     "android",
                                     "appdata",
@@ -5936,6 +5959,7 @@
                                     "ari",
                                     "ark",
                                     "ars",
+                                    "arv",
                                     "at",
                                     "attachment",
                                     "aw",
@@ -5953,6 +5977,7 @@
                                     "caip",
                                     "calculator",
                                     "callto",
+                                    "canactid",
                                     "cap",
                                     "cast",
                                     "casts",
@@ -6027,6 +6052,7 @@
                                     "go",
                                     "gopher",
                                     "graph",
+                                    "gsos",
                                     "gtalk",
                                     "h323",
                                     "ham",
@@ -6077,6 +6103,7 @@
                                     "leaptofrogans",
                                     "lid",
                                     "linkid",
+                                    "locus",
                                     "lorawan",
                                     "lpa",
                                     "lvlt",
@@ -6268,6 +6295,7 @@
                                     "swidpath",
                                     "tag",
                                     "taler",
+                                    "tcxp",
                                     "teamspeak",
                                     "teapot",
                                     "teapots",
@@ -6464,7 +6492,7 @@
                                 "type": "string",
                                 "description": "Large numbers with arbitrary precision written down as a string",
                                 "nullable": true,
-                                "pattern": "^[1-9][0-9]*(\\.[0-9]*$",
+                                "pattern": "^[1-9][0-9]*(\\.[0-9]*)$",
                                 "example": "1234547648759975.1313"
                             },
                             "gmp": {
@@ -6925,6 +6953,34 @@
                     }
                 },
                 {
+                    "name": "run-global-types-streamer-method-empty-response",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "ignored"
+                        ],
+                        "properties": {
+                            "ignored": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "description": "Calls method emptyResponse and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Streamer",
+                        "x-method": "emptyResponse",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Streamer",
+                            "methodName": "emptyResponse",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
                     "name": "run-global-types-calculator-method-expensive-background-calculation",
                     "inputSchema": {
                         "type": "object",
@@ -6946,6 +7002,62 @@
                             "method-call": true,
                             "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\Calculator",
                             "methodName": "expensiveBackgroundCalculation",
+                            "display-form": true,
+                            "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                        },
+                        "x-bounded-context-id": "types"
+                    }
+                },
+                {
+                    "name": "run-global-types-faker-test-method-fake",
+                    "inputSchema": {
+                        "type": "object",
+                        "required": [
+                            "className"
+                        ],
+                        "properties": {
+                            "className": {
+                                "type": "object",
+                                "anyOf": [
+                                    {
+                                        "type": "string",
+                                        "description": "A PHP class name loaded in from a vendor library (probably Composer).",
+                                        "pattern": "^[A-Z][a-zA-Z0-9]*(\\\\[A-Z][a-zA-Z0-9]*)*$",
+                                        "enum": [
+                                            "Apie\\Maker\\ValueObjects\\VendorValueObject"
+                                        ],
+                                        "format": "enum"
+                                    },
+                                    {
+                                        "type": "string",
+                                        "description": "Any existing PHP class name with fully qualified namespace",
+                                        "pattern": "^[A-Z][a-zA-Z0-9]*(\\\\[A-Z][a-zA-Z0-9]*)*$",
+                                        "enum": [
+                                            "Apie\\Core\\Lists\\StringList",
+                                            "Apie\\Maker\\ValueObjects\\ClassNameReference",
+                                            "Apie\\Maker\\ValueObjects\\VendorValueObject",
+                                            "Psr\\Http\\Message\\UploadedFileInterface",
+                                            "Apie\\Core\\FileStorage\\StoredFile",
+                                            "DateTimeInterface",
+                                            "DateTimeImmutable",
+                                            "DateTime",
+                                            "DateTimeZone"
+                                        ],
+                                        "format": "enum"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "description": "Calls method fake and returns return value.",
+                    "_meta": {
+                        "x-definition": "Apie\\Common\\Actions\\RunAction",
+                        "x-method-class": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\FakerTest",
+                        "x-method": "fake",
+                        "x-fields": {
+                            "method-call": true,
+                            "serviceClass": "Apie\\IntegrationTests\\Apie\\TypeDemo\\Actions\\FakerTest",
+                            "methodName": "fake",
                             "display-form": true,
                             "_apie_action": "Apie\\Common\\Actions\\RunAction"
                         },

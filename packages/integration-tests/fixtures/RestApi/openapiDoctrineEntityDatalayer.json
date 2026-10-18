@@ -1958,6 +1958,68 @@
                 }
             }
         },
+        "/action/Streamer/emptyResponse/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "Streamer"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.Streamer-emptyResponse",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Resource was deleted"
+                    }
+                }
+            }
+        },
         "/action/Calculator/expensiveBackgroundCalculation/dropdown-options/{property}": {
             "post": {
                 "tags": [
@@ -2034,6 +2096,75 @@
                 ],
                 "description": "Returns dropdown options for a specific input",
                 "operationId": "cms.dropdown_options.method-call.ExportAll-export",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "property",
+                        "in": "path",
+                        "description": "property of instance of PartialInput",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/NonEmptyString-post"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PartialInput-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/action/FakerTest/fake/dropdown-options/{property}": {
+            "post": {
+                "tags": [
+                    "FakerTest"
+                ],
+                "description": "Returns dropdown options for a specific input",
+                "operationId": "cms.dropdown_options.method-call.FakerTest-fake",
                 "parameters": [
                     {
                         "name": "fields",
@@ -10371,6 +10502,68 @@
                 }
             }
         },
+        "/Streamer/emptyResponse": {
+            "post": {
+                "tags": [
+                    "Streamer",
+                    "action"
+                ],
+                "description": "Calls method emptyResponse and returns return value.",
+                "operationId": "call-method-Streamer-emptyResponse",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "ignored"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "ignored": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Resource was deleted"
+                    }
+                }
+            }
+        },
         "/Calculator/expensiveBackgroundCalculation": {
             "post": {
                 "tags": [
@@ -10604,6 +10797,122 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UploadedFile-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/FakerTest/fake": {
+            "post": {
+                "tags": [
+                    "FakerTest",
+                    "action"
+                ],
+                "description": "Calls method fake and returns return value.",
+                "operationId": "call-method-FakerTest-fake",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "className"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "className": {
+                                        "oneOf": [
+                                            {
+                                                "$ref": "#/components/schemas/VendorValueObject-post"
+                                            },
+                                            {
+                                                "$ref": "#/components/schemas/ClassNameReference-post"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/mixed"
                                 }
                             }
                         }
@@ -16009,6 +16318,7 @@
                     "mime-version",
                     "negotiate",
                     "nel",
+                    "no-vary-search",
                     "odata-entityid",
                     "odata-isolation",
                     "odata-maxversion",
@@ -16201,6 +16511,7 @@
                     "mime-version",
                     "negotiate",
                     "nel",
+                    "no-vary-search",
                     "odata-entityid",
                     "odata-isolation",
                     "odata-maxversion",
@@ -17354,6 +17665,7 @@
                     "afs",
                     "agtp",
                     "aim",
+                    "alter",
                     "amss",
                     "android",
                     "appdata",
@@ -17362,6 +17674,7 @@
                     "ari",
                     "ark",
                     "ars",
+                    "arv",
                     "at",
                     "attachment",
                     "aw",
@@ -17379,6 +17692,7 @@
                     "caip",
                     "calculator",
                     "callto",
+                    "canactid",
                     "cap",
                     "cast",
                     "casts",
@@ -17453,6 +17767,7 @@
                     "go",
                     "gopher",
                     "graph",
+                    "gsos",
                     "gtalk",
                     "h323",
                     "ham",
@@ -17503,6 +17818,7 @@
                     "leaptofrogans",
                     "lid",
                     "linkid",
+                    "locus",
                     "lorawan",
                     "lpa",
                     "lvlt",
@@ -17694,6 +18010,7 @@
                     "swidpath",
                     "tag",
                     "taler",
+                    "tcxp",
                     "teamspeak",
                     "teapot",
                     "teapots",
@@ -17777,6 +18094,7 @@
                     "afs",
                     "agtp",
                     "aim",
+                    "alter",
                     "amss",
                     "android",
                     "appdata",
@@ -17785,6 +18103,7 @@
                     "ari",
                     "ark",
                     "ars",
+                    "arv",
                     "at",
                     "attachment",
                     "aw",
@@ -17802,6 +18121,7 @@
                     "caip",
                     "calculator",
                     "callto",
+                    "canactid",
                     "cap",
                     "cast",
                     "casts",
@@ -17876,6 +18196,7 @@
                     "go",
                     "gopher",
                     "graph",
+                    "gsos",
                     "gtalk",
                     "h323",
                     "ham",
@@ -17926,6 +18247,7 @@
                     "leaptofrogans",
                     "lid",
                     "linkid",
+                    "locus",
                     "lorawan",
                     "lpa",
                     "lvlt",
@@ -18117,6 +18439,7 @@
                     "swidpath",
                     "tag",
                     "taler",
+                    "tcxp",
                     "teamspeak",
                     "teapot",
                     "teapots",
@@ -18579,6 +18902,23 @@
                     "koi8-r",
                     "shift_jis",
                     "us-ascii"
+                ]
+            },
+            "ClassNameReference-post": {
+                "type": "string",
+                "format": "classnamereference",
+                "description": "Any existing PHP class name with fully qualified namespace",
+                "pattern": "^[A-Z][a-zA-Z0-9]*(\\\\[A-Z][a-zA-Z0-9]*)*$",
+                "enum": [
+                    "Apie\\Core\\Lists\\StringList",
+                    "Apie\\Maker\\ValueObjects\\ClassNameReference",
+                    "Apie\\Maker\\ValueObjects\\VendorValueObject",
+                    "Psr\\Http\\Message\\UploadedFileInterface",
+                    "Apie\\Core\\FileStorage\\StoredFile",
+                    "DateTimeInterface",
+                    "DateTimeImmutable",
+                    "DateTime",
+                    "DateTimeZone"
                 ]
             },
             "CompanyName-get": {
@@ -19276,6 +19616,7 @@
                     "mime-version",
                     "negotiate",
                     "nel",
+                    "no-vary-search",
                     "odata-entityid",
                     "odata-isolation",
                     "odata-maxversion",
@@ -19542,6 +19883,7 @@
                     "mime-version",
                     "negotiate",
                     "nel",
+                    "no-vary-search",
                     "odata-entityid",
                     "odata-isolation",
                     "odata-maxversion",
@@ -20376,7 +20718,7 @@
                 }
             },
             "Number-nullable-get": {
-                "pattern": "^[1-9][0-9]*(\\.[0-9]*$",
+                "pattern": "^[1-9][0-9]*(\\.[0-9]*)$",
                 "type": "string",
                 "description": "Large numbers with arbitrary precision written down as a string",
                 "format": "bcmath-number",
@@ -20384,7 +20726,7 @@
                 "nullable": true
             },
             "Number-nullable-post": {
-                "pattern": "^[1-9][0-9]*(\\.[0-9]*$",
+                "pattern": "^[1-9][0-9]*(\\.[0-9]*)$",
                 "type": "string",
                 "description": "Large numbers with arbitrary precision written down as a string",
                 "format": "bcmath-number",
@@ -21603,6 +21945,7 @@
                     "afs",
                     "agtp",
                     "aim",
+                    "alter",
                     "amss",
                     "android",
                     "appdata",
@@ -21611,6 +21954,7 @@
                     "ari",
                     "ark",
                     "ars",
+                    "arv",
                     "at",
                     "attachment",
                     "aw",
@@ -21629,6 +21973,7 @@
                     "caip",
                     "calculator",
                     "callto",
+                    "canactid",
                     "cap",
                     "cast",
                     "casts",
@@ -21707,6 +22052,7 @@
                     "gopher",
                     "graph",
                     "grd",
+                    "gsos",
                     "gtalk",
                     "h323",
                     "ham",
@@ -21757,6 +22103,7 @@
                     "leaptofrogans",
                     "lid",
                     "linkid",
+                    "locus",
                     "lorawan",
                     "lpa",
                     "lvlt",
@@ -21956,6 +22303,7 @@
                     "swidpath",
                     "tag",
                     "taler",
+                    "tcxp",
                     "teamspeak",
                     "teapot",
                     "teapots",
@@ -22045,6 +22393,7 @@
                     "afs",
                     "agtp",
                     "aim",
+                    "alter",
                     "amss",
                     "android",
                     "appdata",
@@ -22053,6 +22402,7 @@
                     "ari",
                     "ark",
                     "ars",
+                    "arv",
                     "at",
                     "attachment",
                     "aw",
@@ -22071,6 +22421,7 @@
                     "caip",
                     "calculator",
                     "callto",
+                    "canactid",
                     "cap",
                     "cast",
                     "casts",
@@ -22149,6 +22500,7 @@
                     "gopher",
                     "graph",
                     "grd",
+                    "gsos",
                     "gtalk",
                     "h323",
                     "ham",
@@ -22199,6 +22551,7 @@
                     "leaptofrogans",
                     "lid",
                     "linkid",
+                    "locus",
                     "lorawan",
                     "lpa",
                     "lvlt",
@@ -22398,6 +22751,7 @@
                     "swidpath",
                     "tag",
                     "taler",
+                    "tcxp",
                     "teamspeak",
                     "teapot",
                     "teapots",
@@ -22569,6 +22923,15 @@
                     }
                 }
             },
+            "VendorValueObject-post": {
+                "type": "string",
+                "format": "vendorvalueobject",
+                "description": "A PHP class name loaded in from a vendor library (probably Composer).",
+                "pattern": "^[A-Z][a-zA-Z0-9]*(\\\\[A-Z][a-zA-Z0-9]*)*$",
+                "enum": [
+                    "Apie\\Maker\\ValueObjects\\VendorValueObject"
+                ]
+            },
             "WrongTokenException-get": {
                 "type": "object",
                 "required": [
@@ -22718,8 +23081,16 @@
             "description": "All operations for ExportAll"
         },
         {
+            "name": "FakerTest",
+            "description": "All operations for FakerTest"
+        },
+        {
             "name": "Indexer",
             "description": "All operations for Indexer"
+        },
+        {
+            "name": "Streamer",
+            "description": "All operations for Streamer"
         },
         {
             "name": "Translation",

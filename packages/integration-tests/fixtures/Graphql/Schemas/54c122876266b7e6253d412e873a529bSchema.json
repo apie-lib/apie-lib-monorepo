@@ -839,6 +839,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "no-vary-search",
+                            "description": "no-vary-search",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "odata-entityid",
                             "description": "odata-entityid",
                             "isDeprecated": false,
@@ -56594,6 +56600,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.aethel.package",
+                            "description": "application\/vnd.aethel.package",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.aether.imp",
                             "description": "application\/vnd.aether.imp",
                             "isDeprecated": false,
@@ -57518,6 +57530,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.dai",
+                            "description": "application\/vnd.dai",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.dart",
                             "description": "application\/vnd.dart",
                             "isDeprecated": false,
@@ -57940,6 +57958,12 @@
                         {
                             "name": "application\/vnd.emclient.accessrequest+xml",
                             "description": "application\/vnd.emclient.accessrequest+xml",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.emilia.authorization-evidence-challenge+json",
+                            "description": "application\/vnd.emilia.authorization-evidence-challenge+json",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -59558,6 +59582,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.majikah.mjksmap",
+                            "description": "application\/vnd.majikah.mjksmap",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.maml",
                             "description": "application\/vnd.maml",
                             "isDeprecated": false,
@@ -60142,6 +60172,12 @@
                         {
                             "name": "application\/vnd.nacamar.ybrid+json",
                             "description": "application\/vnd.nacamar.ybrid+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.nanorix.auditproof+json",
+                            "description": "application\/vnd.nanorix.auditproof+json",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -75432,6 +75468,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "alter",
+                            "description": "alter",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "amss",
                             "description": "amss",
                             "isDeprecated": false,
@@ -75476,6 +75518,12 @@
                         {
                             "name": "ars",
                             "description": "ars",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "arv",
+                            "description": "arv",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -75578,6 +75626,12 @@
                         {
                             "name": "callto",
                             "description": "callto",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "canactid",
+                            "description": "canactid",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -76026,6 +76080,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "gsos",
+                            "description": "gsos",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "gtalk",
                             "description": "gtalk",
                             "isDeprecated": false,
@@ -76322,6 +76382,12 @@
                         {
                             "name": "linkid",
                             "description": "linkid",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "locus",
+                            "description": "locus",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -77468,6 +77534,12 @@
                         {
                             "name": "taler",
                             "description": "taler",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "tcxp",
+                            "description": "tcxp",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -79734,6 +79806,12 @@
                         {
                             "name": "nel",
                             "description": "nel",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "no-vary-search",
+                            "description": "no-vary-search",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -138011,6 +138089,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.aethel.package",
+                            "description": "application\/vnd.aethel.package",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.aether.imp",
                             "description": "application\/vnd.aether.imp",
                             "isDeprecated": false,
@@ -138935,6 +139019,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.dai",
+                            "description": "application\/vnd.dai",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.dart",
                             "description": "application\/vnd.dart",
                             "isDeprecated": false,
@@ -139357,6 +139447,12 @@
                         {
                             "name": "application\/vnd.emclient.accessrequest+xml",
                             "description": "application\/vnd.emclient.accessrequest+xml",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.emilia.authorization-evidence-challenge+json",
+                            "description": "application\/vnd.emilia.authorization-evidence-challenge+json",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -140975,6 +141071,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.majikah.mjksmap",
+                            "description": "application\/vnd.majikah.mjksmap",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.maml",
                             "description": "application\/vnd.maml",
                             "isDeprecated": false,
@@ -141559,6 +141661,12 @@
                         {
                             "name": "application\/vnd.nacamar.ybrid+json",
                             "description": "application\/vnd.nacamar.ybrid+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.nanorix.auditproof+json",
+                            "description": "application\/vnd.nanorix.auditproof+json",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -158352,6 +158460,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "alter",
+                            "description": "alter",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "amss",
                             "description": "amss",
                             "isDeprecated": false,
@@ -158396,6 +158510,12 @@
                         {
                             "name": "ars",
                             "description": "ars",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "arv",
+                            "description": "arv",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -158504,6 +158624,12 @@
                         {
                             "name": "callto",
                             "description": "callto",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "canactid",
+                            "description": "canactid",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -158976,6 +159102,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "gsos",
+                            "description": "gsos",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "gtalk",
                             "description": "gtalk",
                             "isDeprecated": false,
@@ -159272,6 +159404,12 @@
                         {
                             "name": "linkid",
                             "description": "linkid",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "locus",
+                            "description": "locus",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -160466,6 +160604,12 @@
                         {
                             "name": "taler",
                             "description": "taler",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "tcxp",
+                            "description": "tcxp",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },

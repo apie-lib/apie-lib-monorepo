@@ -45,6 +45,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -79,6 +97,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -439,6 +475,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -473,6 +527,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -857,6 +929,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -891,6 +981,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -1338,6 +1446,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -1372,6 +1498,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -1753,6 +1897,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -1787,6 +1949,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -2183,6 +2363,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -2217,6 +2415,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -2613,6 +2829,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -2647,6 +2881,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -3028,6 +3280,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -3062,6 +3332,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -3443,6 +3731,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -3477,6 +3783,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -3858,6 +4182,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -3892,6 +4234,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -4291,6 +4651,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -4325,6 +4703,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -4721,6 +5117,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -4755,6 +5169,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -5151,6 +5583,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -5185,6 +5635,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -5569,6 +6037,24 @@ return array (
                     'unauthenticated' => 'Translation',
                   ),
                 ),
+                'faker_test' => 
+                array (
+                  'fake' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Fake',
+                      '' => 'Fake',
+                      'unauthenticated' => 'Fake',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Faker test',
+                    '' => 'Faker test',
+                    'unauthenticated' => 'Faker test',
+                  ),
+                ),
                 'calculator' => 
                 array (
                   'sum' => 
@@ -5603,6 +6089,24 @@ return array (
                     'authenticated' => 'Calculator',
                     '' => 'Calculator',
                     'unauthenticated' => 'Calculator',
+                  ),
+                ),
+                'streamer' => 
+                array (
+                  'empty_response' => 
+                  array (
+                    'header' => 
+                    array (
+                      'authenticated' => 'Empty response',
+                      '' => 'Empty response',
+                      'unauthenticated' => 'Empty response',
+                    ),
+                  ),
+                  'header' => 
+                  array (
+                    'authenticated' => 'Streamer',
+                    '' => 'Streamer',
+                    'unauthenticated' => 'Streamer',
                   ),
                 ),
                 'profile' => 
@@ -5970,6 +6474,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  '' => 'Fake',
+                  'authenticated' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                '' => 'Faker test',
+                'authenticated' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -6004,6 +6526,24 @@ return array (
                 '' => 'Calculator',
                 'authenticated' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  '' => 'Empty response',
+                  'authenticated' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                '' => 'Streamer',
+                'authenticated' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -6509,6 +7049,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -6543,6 +7101,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -6898,6 +7474,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -6932,6 +7526,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -7311,6 +7923,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -7345,6 +7975,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -7787,6 +8435,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -7821,6 +8487,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -8197,6 +8881,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -8231,6 +8933,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -8622,6 +9342,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -8656,6 +9394,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -9047,6 +9803,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -9081,6 +9855,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -9457,6 +10249,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -9491,6 +10301,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -9867,6 +10695,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -9901,6 +10747,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -10277,6 +11141,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -10311,6 +11193,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -10705,6 +11605,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -10739,6 +11657,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -11130,6 +12066,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -11164,6 +12118,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -11555,6 +12527,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -11589,6 +12579,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -11968,6 +12976,24 @@ return array (
                 'unauthenticated' => 'Translation',
               ),
             ),
+            'faker_test' => 
+            array (
+              'fake' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Fake',
+                  '' => 'Fake',
+                  'unauthenticated' => 'Fake',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Faker test',
+                '' => 'Faker test',
+                'unauthenticated' => 'Faker test',
+              ),
+            ),
             'calculator' => 
             array (
               'sum' => 
@@ -12002,6 +13028,24 @@ return array (
                 'authenticated' => 'Calculator',
                 '' => 'Calculator',
                 'unauthenticated' => 'Calculator',
+              ),
+            ),
+            'streamer' => 
+            array (
+              'empty_response' => 
+              array (
+                'header' => 
+                array (
+                  'authenticated' => 'Empty response',
+                  '' => 'Empty response',
+                  'unauthenticated' => 'Empty response',
+                ),
+              ),
+              'header' => 
+              array (
+                'authenticated' => 'Streamer',
+                '' => 'Streamer',
+                'unauthenticated' => 'Streamer',
               ),
             ),
             'profile' => 
@@ -12369,6 +13413,24 @@ return array (
             'unauthenticated' => 'Translation',
           ),
         ),
+        'faker_test' => 
+        array (
+          'fake' => 
+          array (
+            'header' => 
+            array (
+              '' => 'Fake',
+              'authenticated' => 'Fake',
+              'unauthenticated' => 'Fake',
+            ),
+          ),
+          'header' => 
+          array (
+            '' => 'Faker test',
+            'authenticated' => 'Faker test',
+            'unauthenticated' => 'Faker test',
+          ),
+        ),
         'calculator' => 
         array (
           'sum' => 
@@ -12403,6 +13465,24 @@ return array (
             '' => 'Calculator',
             'authenticated' => 'Calculator',
             'unauthenticated' => 'Calculator',
+          ),
+        ),
+        'streamer' => 
+        array (
+          'empty_response' => 
+          array (
+            'header' => 
+            array (
+              '' => 'Empty response',
+              'authenticated' => 'Empty response',
+              'unauthenticated' => 'Empty response',
+            ),
+          ),
+          'header' => 
+          array (
+            '' => 'Streamer',
+            'authenticated' => 'Streamer',
+            'unauthenticated' => 'Streamer',
           ),
         ),
         'profile' => 

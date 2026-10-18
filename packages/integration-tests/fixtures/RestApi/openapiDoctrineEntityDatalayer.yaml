@@ -1315,6 +1315,48 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/Streamer/emptyResponse/dropdown-options/{property}':
+    post:
+      tags:
+        - Streamer
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.Streamer-emptyResponse
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '204':
+          description: 'Resource was deleted'
   '/action/Calculator/expensiveBackgroundCalculation/dropdown-options/{property}':
     post:
       tags:
@@ -1367,6 +1409,52 @@ paths:
         - ExportAll
       description: 'Returns dropdown options for a specific input'
       operationId: cms.dropdown_options.method-call.ExportAll-export
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: property
+          in: path
+          description: 'property of instance of PartialInput'
+          required: true
+          schema:
+            $ref: '#/components/schemas/NonEmptyString-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialInput-post'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DropdownOptionList-get'
+  '/action/FakerTest/fake/dropdown-options/{property}':
+    post:
+      tags:
+        - FakerTest
+      description: 'Returns dropdown options for a specific input'
+      operationId: cms.dropdown_options.method-call.FakerTest-fake
       parameters:
         -
           name: fields
@@ -7026,6 +7114,47 @@ paths:
               schema:
                 type: string
                 nullable: true
+  /Streamer/emptyResponse:
+    post:
+      tags:
+        - Streamer
+        - action
+      description: 'Calls method emptyResponse and returns return value.'
+      operationId: call-method-Streamer-emptyResponse
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - ignored
+              type: object
+              properties:
+                ignored:
+                  type: string
+      responses:
+        '204':
+          description: 'Resource was deleted'
   /Calculator/expensiveBackgroundCalculation:
     post:
       tags:
@@ -7187,6 +7316,79 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadedFile-get'
+  /FakerTest/fake:
+    post:
+      tags:
+        - FakerTest
+        - action
+      description: 'Calls method fake and returns return value.'
+      operationId: call-method-FakerTest-fake
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - className
+              type: object
+              properties:
+                className:
+                  oneOf:
+                    -
+                      $ref: '#/components/schemas/VendorValueObject-post'
+                    -
+                      $ref: '#/components/schemas/ClassNameReference-post'
+      responses:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mixed'
   '/indexes/{resourceName}/{id}':
     post:
       tags:
@@ -10772,6 +10974,7 @@ components:
         - mime-version
         - negotiate
         - nel
+        - no-vary-search
         - odata-entityid
         - odata-isolation
         - odata-maxversion
@@ -10962,6 +11165,7 @@ components:
         - mime-version
         - negotiate
         - nel
+        - no-vary-search
         - odata-entityid
         - odata-isolation
         - odata-maxversion
@@ -12101,6 +12305,7 @@ components:
         - afs
         - agtp
         - aim
+        - alter
         - amss
         - android
         - appdata
@@ -12109,6 +12314,7 @@ components:
         - ari
         - ark
         - ars
+        - arv
         - at
         - attachment
         - aw
@@ -12126,6 +12332,7 @@ components:
         - caip
         - calculator
         - callto
+        - canactid
         - cap
         - cast
         - casts
@@ -12200,6 +12407,7 @@ components:
         - go
         - gopher
         - graph
+        - gsos
         - gtalk
         - h323
         - ham
@@ -12250,6 +12458,7 @@ components:
         - leaptofrogans
         - lid
         - linkid
+        - locus
         - lorawan
         - lpa
         - lvlt
@@ -12441,6 +12650,7 @@ components:
         - swidpath
         - tag
         - taler
+        - tcxp
         - teamspeak
         - teapot
         - teapots
@@ -12522,6 +12732,7 @@ components:
         - afs
         - agtp
         - aim
+        - alter
         - amss
         - android
         - appdata
@@ -12530,6 +12741,7 @@ components:
         - ari
         - ark
         - ars
+        - arv
         - at
         - attachment
         - aw
@@ -12547,6 +12759,7 @@ components:
         - caip
         - calculator
         - callto
+        - canactid
         - cap
         - cast
         - casts
@@ -12621,6 +12834,7 @@ components:
         - go
         - gopher
         - graph
+        - gsos
         - gtalk
         - h323
         - ham
@@ -12671,6 +12885,7 @@ components:
         - leaptofrogans
         - lid
         - linkid
+        - locus
         - lorawan
         - lpa
         - lvlt
@@ -12862,6 +13077,7 @@ components:
         - swidpath
         - tag
         - taler
+        - tcxp
         - teamspeak
         - teapot
         - teapots
@@ -13215,6 +13431,21 @@ components:
         - koi8-r
         - shift_jis
         - us-ascii
+    ClassNameReference-post:
+      type: string
+      format: classnamereference
+      description: 'Any existing PHP class name with fully qualified namespace'
+      pattern: '^[A-Z][a-zA-Z0-9]*(\\[A-Z][a-zA-Z0-9]*)*$'
+      enum:
+        - Apie\Core\Lists\StringList
+        - Apie\Maker\ValueObjects\ClassNameReference
+        - Apie\Maker\ValueObjects\VendorValueObject
+        - Psr\Http\Message\UploadedFileInterface
+        - Apie\Core\FileStorage\StoredFile
+        - DateTimeInterface
+        - DateTimeImmutable
+        - DateTime
+        - DateTimeZone
     CompanyName-get:
       type: string
       format: companyname
@@ -13758,6 +13989,7 @@ components:
         - mime-version
         - negotiate
         - nel
+        - no-vary-search
         - odata-entityid
         - odata-isolation
         - odata-maxversion
@@ -14022,6 +14254,7 @@ components:
         - mime-version
         - negotiate
         - nel
+        - no-vary-search
         - odata-entityid
         - odata-isolation
         - odata-maxversion
@@ -14654,14 +14887,14 @@ components:
         code:
           $ref: '#/components/schemas/mixed'
     Number-nullable-get:
-      pattern: '^[1-9][0-9]*(\.[0-9]*$'
+      pattern: '^[1-9][0-9]*(\.[0-9]*)$'
       type: string
       description: 'Large numbers with arbitrary precision written down as a string'
       format: bcmath-number
       example: '1234547648759975.1313'
       nullable: true
     Number-nullable-post:
-      pattern: '^[1-9][0-9]*(\.[0-9]*$'
+      pattern: '^[1-9][0-9]*(\.[0-9]*)$'
       type: string
       description: 'Large numbers with arbitrary precision written down as a string'
       format: bcmath-number
@@ -15538,6 +15771,7 @@ components:
         - afs
         - agtp
         - aim
+        - alter
         - amss
         - android
         - appdata
@@ -15546,6 +15780,7 @@ components:
         - ari
         - ark
         - ars
+        - arv
         - at
         - attachment
         - aw
@@ -15564,6 +15799,7 @@ components:
         - caip
         - calculator
         - callto
+        - canactid
         - cap
         - cast
         - casts
@@ -15642,6 +15878,7 @@ components:
         - gopher
         - graph
         - grd
+        - gsos
         - gtalk
         - h323
         - ham
@@ -15692,6 +15929,7 @@ components:
         - leaptofrogans
         - lid
         - linkid
+        - locus
         - lorawan
         - lpa
         - lvlt
@@ -15891,6 +16129,7 @@ components:
         - swidpath
         - tag
         - taler
+        - tcxp
         - teamspeak
         - teapot
         - teapots
@@ -15978,6 +16217,7 @@ components:
         - afs
         - agtp
         - aim
+        - alter
         - amss
         - android
         - appdata
@@ -15986,6 +16226,7 @@ components:
         - ari
         - ark
         - ars
+        - arv
         - at
         - attachment
         - aw
@@ -16004,6 +16245,7 @@ components:
         - caip
         - calculator
         - callto
+        - canactid
         - cap
         - cast
         - casts
@@ -16082,6 +16324,7 @@ components:
         - gopher
         - graph
         - grd
+        - gsos
         - gtalk
         - h323
         - ham
@@ -16132,6 +16375,7 @@ components:
         - leaptofrogans
         - lid
         - linkid
+        - locus
         - lorawan
         - lpa
         - lvlt
@@ -16331,6 +16575,7 @@ components:
         - swidpath
         - tag
         - taler
+        - tcxp
         - teamspeak
         - teapot
         - teapots
@@ -16469,6 +16714,13 @@ components:
           type: object
           additionalProperties:
             type: string
+    VendorValueObject-post:
+      type: string
+      format: vendorvalueobject
+      description: 'A PHP class name loaded in from a vendor library (probably Composer).'
+      pattern: '^[A-Z][a-zA-Z0-9]*(\\[A-Z][a-zA-Z0-9]*)*$'
+      enum:
+        - Apie\Maker\ValueObjects\VendorValueObject
     WrongTokenException-get:
       type: object
       required:
@@ -16578,8 +16830,14 @@ tags:
     name: ExportAll
     description: 'All operations for ExportAll'
   -
+    name: FakerTest
+    description: 'All operations for FakerTest'
+  -
     name: Indexer
     description: 'All operations for Indexer'
+  -
+    name: Streamer
+    description: 'All operations for Streamer'
   -
     name: Translation
     description: 'All operations for Translation'

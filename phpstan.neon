@@ -79,7 +79,7 @@ parameters:
         - 
             message: '#ActionInterface::#'
             path: packages/common/src/RouteDefinitions/AbstractRestApiRouteDefinition.php
-            count: 8
+            count: 9
         -
             message: '#Unable to resolve the template type T in call to method.*createNewUpload#'
             path: packages/storage-metadata/src/PropertyConverters/MethodAttributeConverter.php
