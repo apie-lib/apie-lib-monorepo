@@ -38,6 +38,10 @@ class FakerDatalayerTest extends TestCase
         $actual = $testItem->find(new UserAutoincrementIdentifier(12));
         $this->assertInstanceOf(UserWithAutoincrementKey::class, $actual);
         $this->assertEquals(12, $actual->getId()->toNative());
+        $metadata = $testItem->getMetadata(new UserAutoincrementIdentifier(12));
+        $this->assertLessThanOrEqual($metadata->updatedAt, $metadata->createdAt);
+        $this->assertMatchesRegularExpression('/^\d+\.\d+\.\d+$/', $metadata->createdInApieVersion);
+        $this->assertMatchesRegularExpression('/^\d+\.\d+\.\d+$/', $metadata->updatedInApieVersion);
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

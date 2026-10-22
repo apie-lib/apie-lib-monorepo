@@ -21,7 +21,7 @@ class UriSchemeTest extends TestCase
         $this->assertEquals('Permanent', $testItem->getStatus());
         $this->assertEquals(2, $testItem->getCriSchemeNumber());
         $this->assertEquals('[RFC 8615]', $testItem->getWellKnownUriSupport());
-        $this->assertEquals('[RFC9110, Section 4.2.1]', $testItem->getReference()->toNative());
+        $this->assertEquals('[RFC 9110, Section 4.2.1]', $testItem->getReference()->toNative());
         $this->assertNull($testItem->getNotes());
         $this->assertTrue($testItem->isActive());
     }

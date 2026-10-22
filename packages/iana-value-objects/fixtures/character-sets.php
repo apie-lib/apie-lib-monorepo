@@ -8,7 +8,7 @@ return array(
     'Preferred MIME Name' => '',
     'Name' => 'CP50220',
     'MIBenum' => '2260',
-    'Source' => 'See [https://www.iana.org/assignments/charset-reg/CP50220]                  [Yui_Naruse]',
+    'Source' => 'See [https://www.iana.org/assignments/charset-reg/CP50220];                   [Yui_Naruse]',
     'Reference' => '',
     'Aliases' => 'csCP50220',
     'Note' => '',
@@ -53,7 +53,7 @@ EUC-JP',
     'Name' => 'EUC-KR',
     'MIBenum' => '38',
     'Source' => '[RFC 1557] (see also KS_C_5861-1992)',
-    'Reference' => '[RFC 1557][Woohyong_Choi]',
+    'Reference' => '[RFC 1557]; [Woohyong_Choi]',
     'Aliases' => 'csEUCKR',
     'Note' => '',
     'Active' => true,
@@ -80,7 +80,7 @@ PCL Symbol Set Id: 18C',
     'Name' => 'ISO-2022-JP',
     'MIBenum' => '39',
     'Source' => '[RFC 1468] (see also [RFC 2237])',
-    'Reference' => '[RFC 1468][Jun_Murai]',
+    'Reference' => '[RFC 1468]; [Jun_Murai]',
     'Aliases' => 'csISO2022JP',
     'Note' => '',
     'Active' => true,
@@ -91,7 +91,7 @@ PCL Symbol Set Id: 18C',
     'Name' => 'ISO-2022-JP-2',
     'MIBenum' => '40',
     'Source' => '[RFC 1554]',
-    'Reference' => '[RFC 1554][Masataka_Ohta]',
+    'Reference' => '[RFC 1554]; [Masataka_Ohta]',
     'Aliases' => 'csISO2022JP2',
     'Note' => '',
     'Active' => true,
@@ -102,7 +102,7 @@ PCL Symbol Set Id: 18C',
     'Name' => 'ISO-2022-KR',
     'MIBenum' => '37',
     'Source' => '[RFC 1557] (see also KS_C_5601-1987)',
-    'Reference' => '[RFC 1557][Woohyong_Choi]',
+    'Reference' => '[RFC 1557]; [Woohyong_Choi]',
     'Aliases' => 'csISO2022KR',
     'Note' => '',
     'Active' => true,
@@ -113,8 +113,8 @@ PCL Symbol Set Id: 18C',
     'Name' => 'ISO_8859-1:1987',
     'MIBenum' => '4',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-100
 ISO_8859-1
 ISO-8859-1
@@ -132,8 +132,8 @@ csISOLatin1',
     'Name' => 'ISO-8859-10',
     'MIBenum' => '13',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-157
 l6
 ISO_8859-10:1992
@@ -148,8 +148,8 @@ latin6',
     'Name' => 'ISO_8859-2:1987',
     'MIBenum' => '5',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-101
 ISO_8859-2
 ISO-8859-2
@@ -165,8 +165,8 @@ csISOLatin2',
     'Name' => 'ISO_8859-3:1988',
     'MIBenum' => '6',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-109
 ISO_8859-3
 ISO-8859-3
@@ -182,8 +182,8 @@ csISOLatin3',
     'Name' => 'ISO_8859-4:1988',
     'MIBenum' => '7',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-110
 ISO_8859-4
 ISO-8859-4
@@ -199,8 +199,8 @@ csISOLatin4',
     'Name' => 'ISO_8859-5:1988',
     'MIBenum' => '8',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-144
 ISO_8859-5
 ISO-8859-5
@@ -215,8 +215,8 @@ csISOLatinCyrillic',
     'Name' => 'ISO_8859-6:1987',
     'MIBenum' => '9',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-127
 ISO_8859-6
 ISO-8859-6
@@ -233,7 +233,7 @@ csISOLatinArabic',
     'Name' => 'ISO_8859-6-E',
     'MIBenum' => '81',
     'Source' => '[RFC 1556]',
-    'Reference' => '[RFC 1556][IANA]',
+    'Reference' => '[RFC 1556]; [IANA]',
     'Aliases' => 'csISO88596E
 ISO-8859-6-E',
     'Note' => '',
@@ -245,7 +245,7 @@ ISO-8859-6-E',
     'Name' => 'ISO_8859-6-I',
     'MIBenum' => '82',
     'Source' => '[RFC 1556]',
-    'Reference' => '[RFC 1556][IANA]',
+    'Reference' => '[RFC 1556]; [IANA]',
     'Aliases' => 'csISO88596I
 ISO-8859-6-I',
     'Note' => '',
@@ -257,8 +257,8 @@ ISO-8859-6-I',
     'Name' => 'ISO_8859-7:1987',
     'MIBenum' => '10',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1947][RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1947]; [RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-126
 ISO_8859-7
 ISO-8859-7
@@ -276,8 +276,8 @@ csISOLatinGreek',
     'Name' => 'ISO_8859-8:1988',
     'MIBenum' => '11',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-138
 ISO_8859-8
 ISO-8859-8
@@ -292,7 +292,7 @@ csISOLatinHebrew',
     'Name' => 'ISO_8859-8-E',
     'MIBenum' => '84',
     'Source' => '[RFC 1556]',
-    'Reference' => '[RFC 1556][Hank_Nussbacher]',
+    'Reference' => '[RFC 1556]; [Hank_Nussbacher]',
     'Aliases' => 'csISO88598E
 ISO-8859-8-E',
     'Note' => '',
@@ -304,7 +304,7 @@ ISO-8859-8-E',
     'Name' => 'ISO_8859-8-I',
     'MIBenum' => '85',
     'Source' => '[RFC 1556]',
-    'Reference' => '[RFC 1556][Hank_Nussbacher]',
+    'Reference' => '[RFC 1556]; [Hank_Nussbacher]',
     'Aliases' => 'csISO88598I
 ISO-8859-8-I',
     'Note' => '',
@@ -316,8 +316,8 @@ ISO-8859-8-I',
     'Name' => 'ISO_8859-9:1989',
     'MIBenum' => '12',
     'Source' => '[ISO-IR: International Register of Escape Sequences]
-        Note: The current registration authority is IPSJ/ITSCJ, Japan.',
-    'Reference' => '[RFC 1345][Keld_Simonsen]',
+Note: The current registration authority is IPSJ/ITSCJ, Japan.',
+    'Reference' => '[RFC 1345]; [Keld_Simonsen]',
     'Aliases' => 'iso-ir-148
 ISO_8859-9
 ISO-8859-9

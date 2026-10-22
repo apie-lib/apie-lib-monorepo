@@ -14,63 +14,63 @@ return array(
   array(
     'Name' => '3gpdash-qoe-report+xml',
     'Template' => 'application/3gpdash-qoe-report+xml',
-    'Reference' => '[_3GPP][Ozgur_Oyman]',
+    'Reference' => '[_3GPP]; [Ozgur_Oyman]',
     'Active' => true,
   ),
   'application/3gpp-ims+xml' =>
   array(
     'Name' => '3gpp-ims+xml',
     'Template' => 'application/3gpp-ims+xml',
-    'Reference' => '[_3GPP][Dongwook_Kim]',
+    'Reference' => '[_3GPP]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/3gpp-mbs-object-manifest+json' =>
   array(
     'Name' => '3gpp-mbs-object-manifest+json',
     'Template' => 'application/3gpp-mbs-object-manifest+json',
-    'Reference' => '[_3GPP_TSG_SA_WG4][Dongwook_Kim]',
+    'Reference' => '[_3GPP_TSG_SA_WG4]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/3gpp-mbs-user-service-descriptions+json' =>
   array(
     'Name' => '3gpp-mbs-user-service-descriptions+json',
     'Template' => 'application/3gpp-mbs-user-service-descriptions+json',
-    'Reference' => '[_3GPP_TSG_SA_WG4][Dongwook_Kim]',
+    'Reference' => '[_3GPP_TSG_SA_WG4]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/3gpp-media-delivery-metrics-report+json' =>
   array(
     'Name' => '3gpp-media-delivery-metrics-report+json',
     'Template' => 'application/3gpp-media-delivery-metrics-report+json',
-    'Reference' => '[_3GPP_TSG_SA_WG4][Dongwook_Kim]',
+    'Reference' => '[_3GPP_TSG_SA_WG4]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/3gpphal+json' =>
   array(
     'Name' => '3gppHal+json',
     'Template' => 'application/3gppHal+json',
-    'Reference' => '[_3GPP][Ulrich_Wiehe]',
+    'Reference' => '[_3GPP]; [Ulrich_Wiehe]',
     'Active' => true,
   ),
   'application/3gpphalforms+json' =>
   array(
     'Name' => '3gppHalForms+json',
     'Template' => 'application/3gppHalForms+json',
-    'Reference' => '[_3GPP][Ulrich_Wiehe]',
+    'Reference' => '[_3GPP]; [Ulrich_Wiehe]',
     'Active' => true,
   ),
   'application/a2l' =>
   array(
     'Name' => 'A2L',
     'Template' => 'application/A2L',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/aas+zip' =>
   array(
     'Name' => 'aas+zip',
     'Template' => 'application/aas+zip',
-    'Reference' => '[Industrial_Digital_Twin_Association][Sandeep_Rudra]',
+    'Reference' => '[Industrial_Digital_Twin_Association]; [Sandeep_Rudra]',
     'Active' => true,
   ),
   'application/ace+cbor' =>
@@ -112,7 +112,7 @@ return array(
   array(
     'Name' => 'activity+json',
     'Template' => 'application/activity+json',
-    'Reference' => '[W3C][Benjamin_Goering]',
+    'Reference' => '[W3C]; [Benjamin_Goering]',
     'Active' => true,
   ),
   'application/aif+cbor' =>
@@ -259,7 +259,7 @@ return array(
   array(
     'Name' => 'AML',
     'Template' => 'application/AML',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/andrew-inset' =>
@@ -280,14 +280,14 @@ return array(
   array(
     'Name' => 'asyncapi+json',
     'Template' => 'application/asyncapi+json',
-    'Reference' => '[Linux_Foundation][AsyncAPI_Initiative]',
+    'Reference' => '[Linux_Foundation]; [AsyncAPI_Initiative]',
     'Active' => true,
   ),
   'application/asyncapi+yaml' =>
   array(
     'Name' => 'asyncapi+yaml',
     'Template' => 'application/asyncapi+yaml',
-    'Reference' => '[Linux_Foundation][AsyncAPI_Initiative]',
+    'Reference' => '[Linux_Foundation]; [AsyncAPI_Initiative]',
     'Active' => true,
   ),
   'application/at+jwt' =>
@@ -301,21 +301,21 @@ return array(
   array(
     'Name' => 'ATF',
     'Template' => 'application/ATF',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/atfx' =>
   array(
     'Name' => 'ATFX',
     'Template' => 'application/ATFX',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/atom+xml' =>
   array(
     'Name' => 'atom+xml',
     'Template' => 'application/atom+xml',
-    'Reference' => '[RFC 4287][RFC 5023]',
+    'Reference' => '[RFC 4287]; [RFC 5023]',
     'Active' => true,
   ),
   'application/atomcat+xml' =>
@@ -385,7 +385,7 @@ return array(
   array(
     'Name' => 'ATXML',
     'Template' => 'application/ATXML',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/auth-policy+xml' =>
@@ -413,7 +413,7 @@ return array(
   array(
     'Name' => 'bacnet-xdd+zip',
     'Template' => 'application/bacnet-xdd+zip',
-    'Reference' => '[ASHRAE][Dave_Robin]',
+    'Reference' => '[ASHRAE]; [Dave_Robin]',
     'Active' => true,
   ),
   'application/batch-smtp' =>
@@ -434,14 +434,14 @@ return array(
   array(
     'Name' => 'bufr',
     'Template' => 'application/bufr',
-    'Reference' => '[World_Meterological_Organization][Anna_Milan]',
+    'Reference' => '[World_Meterological_Organization]; [Anna_Milan]',
     'Active' => true,
   ),
   'application/c2pa' =>
   array(
     'Name' => 'c2pa',
     'Template' => 'application/c2pa',
-    'Reference' => '[C2PA][Leonard_Rosenthol]',
+    'Reference' => '[C2PA]; [Leonard_Rosenthol]',
     'Active' => true,
   ),
   'application/calendar+json' =>
@@ -518,14 +518,14 @@ return array(
   array(
     'Name' => 'cda+xml',
     'Template' => 'application/cda+xml',
-    'Reference' => '[HL7][Marc_Duteau]',
+    'Reference' => '[HL7]; [Marc_Duteau]',
     'Active' => true,
   ),
   'application/cdfx+xml' =>
   array(
     'Name' => 'CDFX+XML',
     'Template' => 'application/CDFX+XML',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/cdmi-capability' =>
@@ -574,14 +574,14 @@ return array(
   array(
     'Name' => 'ce+cbor',
     'Template' => 'application/ce+cbor',
-    'Reference' => '[TCG DICE][TCG_DICE_WG][Ned_M._Smith]',
+    'Reference' => '[TCG DICE]; [TCG_DICE_WG]; [Ned_M._Smith]',
     'Active' => true,
   ),
   'application/cea' =>
   array(
     'Name' => 'CEA',
     'Template' => 'application/CEA',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/cea-2018+xml' =>
@@ -609,7 +609,7 @@ return array(
   array(
     'Name' => 'cid',
     'Template' => 'application/cid',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Michael_B_Jones]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Michael_B_Jones]',
     'Active' => true,
   ),
   'application/cid-edhoc+cbor-seq' =>
@@ -623,14 +623,14 @@ return array(
   array(
     'Name' => 'city+json',
     'Template' => 'application/city+json',
-    'Reference' => '[OGC][Scott_Simmons]',
+    'Reference' => '[OGC]; [Scott_Simmons]',
     'Active' => true,
   ),
   'application/city+json-seq' =>
   array(
     'Name' => 'city+json-seq',
     'Template' => 'application/city+json-seq',
-    'Reference' => '[OGC][Scott_Simmons]',
+    'Reference' => '[OGC]; [Scott_Simmons]',
     'Active' => true,
   ),
   'application/client-authentication+jwt' =>
@@ -644,21 +644,21 @@ return array(
   array(
     'Name' => 'cloudevents+json',
     'Template' => 'application/cloudevents+json',
-    'Reference' => '[Linux_Foundation][CloudEvents_Maintainers]',
+    'Reference' => '[Linux_Foundation]; [CloudEvents_Maintainers]',
     'Active' => true,
   ),
   'application/cloudevents-batch+json' =>
   array(
     'Name' => 'cloudevents-batch+json',
     'Template' => 'application/cloudevents-batch+json',
-    'Reference' => '[Linux_Foundation][CloudEvents_Maintainers]',
+    'Reference' => '[Linux_Foundation]; [CloudEvents_Maintainers]',
     'Active' => true,
   ),
   'application/clr' =>
   array(
     'Name' => 'clr',
     'Template' => 'application/clr',
-    'Reference' => '[IMS_Global][Andy_Miller]',
+    'Reference' => '[IMS_Global]; [Andy_Miller]',
     'Active' => true,
   ),
   'application/clue+xml' =>
@@ -679,7 +679,7 @@ return array(
   array(
     'Name' => 'cmcd',
     'Template' => 'application/cmcd',
-    'Reference' => '[CTA][Alexandra_Blasgen]',
+    'Reference' => '[CTA]; [Alexandra_Blasgen]',
     'Active' => true,
   ),
   'application/cms' =>
@@ -693,7 +693,7 @@ return array(
   array(
     'Name' => 'cmw+cbor',
     'Template' => 'application/cmw+cbor',
-    'Reference' => '[RFC9999, Sections 3.1, 3.2, 3.3]',
+    'Reference' => '[RFC 9999, Section 3.1, 3.2, 3.3]',
     'Active' => true,
   ),
   'application/cmw+cose' =>
@@ -707,7 +707,7 @@ return array(
   array(
     'Name' => 'cmw+json',
     'Template' => 'application/cmw+json',
-    'Reference' => '[RFC9999, Sections 3.1, 3.2]',
+    'Reference' => '[RFC 9999, Section 3.1, 3.2]',
     'Active' => true,
   ),
   'application/cmw+jws' =>
@@ -756,7 +756,7 @@ return array(
   array(
     'Name' => 'concise-problem-details+cbor',
     'Template' => 'application/concise-problem-details+cbor',
-    'Reference' => '[RFC9290, Section 6.3]',
+    'Reference' => '[RFC 9290, Section 6.3]',
     'Active' => true,
   ),
   'application/conference-info+xml' =>
@@ -875,28 +875,28 @@ return array(
   array(
     'Name' => 'csvm+json',
     'Template' => 'application/csvm+json',
-    'Reference' => '[W3C][Ivan_Herman]',
+    'Reference' => '[W3C]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/cwl' =>
   array(
     'Name' => 'cwl',
     'Template' => 'application/cwl',
-    'Reference' => '[CWL_Project][Michael_R._Crusoe]',
+    'Reference' => '[CWL_Project]; [Michael_R._Crusoe]',
     'Active' => true,
   ),
   'application/cwl+json' =>
   array(
     'Name' => 'cwl+json',
     'Template' => 'application/cwl+json',
-    'Reference' => '[CWL_Project][Michael_R._Crusoe]',
+    'Reference' => '[CWL_Project]; [Michael_R._Crusoe]',
     'Active' => true,
   ),
   'application/cwl+yaml' =>
   array(
     'Name' => 'cwl+yaml',
     'Template' => 'application/cwl+yaml',
-    'Reference' => '[CWL_Project][Michael_R._Crusoe]',
+    'Reference' => '[CWL_Project]; [Michael_R._Crusoe]',
     'Active' => true,
   ),
   'application/cwt' =>
@@ -917,7 +917,7 @@ return array(
   array(
     'Name' => 'dash+xml',
     'Template' => 'application/dash+xml',
-    'Reference' => '[ISO-IEC_JTC_1][Thomas_Stockhammer]',
+    'Reference' => '[ISO-IEC_JTC_1]; [Thomas_Stockhammer]',
     'Active' => true,
   ),
   'application/dash-patch+xml' =>
@@ -952,7 +952,7 @@ return array(
   array(
     'Name' => 'DCD',
     'Template' => 'application/DCD',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/dec-dx' =>
@@ -980,14 +980,14 @@ return array(
   array(
     'Name' => 'dicom+json',
     'Template' => 'application/dicom+json',
-    'Reference' => '[DICOM_Standard_Committee][David_Clunie]',
+    'Reference' => '[DICOM_Standard_Committee]; [David_Clunie]',
     'Active' => true,
   ),
   'application/dicom+xml' =>
   array(
     'Name' => 'dicom+xml',
     'Template' => 'application/dicom+xml',
-    'Reference' => '[DICOM_Standard_Committee][David_Clunie]',
+    'Reference' => '[DICOM_Standard_Committee]; [David_Clunie]',
     'Active' => true,
   ),
   'application/did' =>
@@ -1001,14 +1001,14 @@ return array(
   array(
     'Name' => 'DII',
     'Template' => 'application/DII',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/dit' =>
   array(
     'Name' => 'DIT',
     'Template' => 'application/DIT',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/dns' =>
@@ -1120,7 +1120,7 @@ return array(
   array(
     'Name' => 'ecmascript (OBSOLETED in favor of text/javascript)',
     'Template' => 'application/ecmascript',
-    'Reference' => '[RFC 4329][RFC 9239]',
+    'Reference' => '[RFC 4329]; [RFC 9239]',
     'Active' => true,
   ),
   'application/edhoc+cbor-seq' =>
@@ -1155,21 +1155,21 @@ return array(
   array(
     'Name' => 'efi',
     'Template' => 'application/efi',
-    'Reference' => '[UEFI_Forum][Samer_El-Haj-Mahmoud]',
+    'Reference' => '[UEFI_Forum]; [Samer_El-Haj-Mahmoud]',
     'Active' => true,
   ),
   'application/elm+json' =>
   array(
     'Name' => 'elm+json',
     'Template' => 'application/elm+json',
-    'Reference' => '[HL7][Bryn_Rhodes]',
+    'Reference' => '[HL7]; [Bryn_Rhodes]',
     'Active' => true,
   ),
   'application/elm+xml' =>
   array(
     'Name' => 'elm+xml',
     'Template' => 'application/elm+xml',
-    'Reference' => '[HL7][Bryn_Rhodes]',
+    'Reference' => '[HL7]; [Bryn_Rhodes]',
     'Active' => true,
   ),
   'application/emergencycalldata.cap+xml' =>
@@ -1211,7 +1211,7 @@ return array(
   array(
     'Name' => 'EmergencyCallData.LegacyESN+json',
     'Template' => 'application/EmergencyCallData.LegacyESN+json',
-    'Reference' => '[NENA][Randall_Gellens]',
+    'Reference' => '[NENA]; [Randall_Gellens]',
     'Active' => true,
   ),
   'application/emergencycalldata.providerinfo+xml' =>
@@ -1239,21 +1239,21 @@ return array(
   array(
     'Name' => 'EmergencyCallData.VEDS+xml',
     'Template' => 'application/EmergencyCallData.VEDS+xml',
-    'Reference' => '[RFC 8148][RFC Errata 6500]',
+    'Reference' => '[RFC 8148]; [RFC Errata 6500]',
     'Active' => true,
   ),
   'application/emma+xml' =>
   array(
     'Name' => 'emma+xml',
     'Template' => 'application/emma+xml',
-    'Reference' => '[W3C][http://www.w3.org/TR/2007/CR-emma-20071211/#media-type-registration][ISO-IEC_JTC_1]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/2007/CR-emma-20071211/#media-type-registration]; [ISO-IEC_JTC_1]',
     'Active' => true,
   ),
   'application/emotionml+xml' =>
   array(
     'Name' => 'emotionml+xml',
     'Template' => 'application/emotionml+xml',
-    'Reference' => '[W3C][Kazuyuki_Ashimura]',
+    'Reference' => '[W3C]; [Kazuyuki_Ashimura]',
     'Active' => true,
   ),
   'application/encaprtp' =>
@@ -1281,7 +1281,7 @@ return array(
   array(
     'Name' => 'epub+zip',
     'Template' => 'application/epub+zip',
-    'Reference' => '[W3C][EPUB_3_WG]',
+    'Reference' => '[W3C]; [EPUB_3_WG]',
     'Active' => true,
   ),
   'application/eshop' =>
@@ -1302,7 +1302,7 @@ return array(
   array(
     'Name' => 'exi',
     'Template' => 'application/exi',
-    'Reference' => '[W3C][http://www.w3.org/TR/2009/CR-exi-20091208/#mediaTypeRegistration]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/2009/CR-exi-20091208/#mediaTypeRegistration]',
     'Active' => true,
   ),
   'application/expect-ct-report+json' =>
@@ -1316,35 +1316,35 @@ return array(
   array(
     'Name' => 'explicit-registration-response+jwt',
     'Template' => 'application/explicit-registration-response+jwt',
-    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG][Michael_B_Jones]',
+    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG]; [Michael_B_Jones]',
     'Active' => true,
   ),
   'application/express' =>
   array(
     'Name' => 'express',
     'Template' => 'application/express',
-    'Reference' => '[ISO-TC_184-SC_4][Dana_Tripp]',
+    'Reference' => '[ISO-TC_184-SC_4]; [Dana_Tripp]',
     'Active' => true,
   ),
   'application/fastinfoset' =>
   array(
     'Name' => 'fastinfoset',
     'Template' => 'application/fastinfoset',
-    'Reference' => '[ITU-T_ASN.1_Rapporteur][ISO-IEC_JTC_1_SC_6_ASN.1_Rapporteur]',
+    'Reference' => '[ITU-T_ASN.1_Rapporteur]; [ISO-IEC_JTC_1_SC_6_ASN.1_Rapporteur]',
     'Active' => true,
   ),
   'application/fastsoap' =>
   array(
     'Name' => 'fastsoap',
     'Template' => 'application/fastsoap',
-    'Reference' => '[ITU-T_ASN.1_Rapporteur][ISO-IEC_JTC_1_SC_6_ASN.1_Rapporteur]',
+    'Reference' => '[ITU-T_ASN.1_Rapporteur]; [ISO-IEC_JTC_1_SC_6_ASN.1_Rapporteur]',
     'Active' => true,
   ),
   'application/fdf' =>
   array(
     'Name' => 'fdf',
     'Template' => 'application/fdf',
-    'Reference' => '[ISO-TC_171-SC_2][Betsy_Fanning]',
+    'Reference' => '[ISO-TC_171-SC_2]; [Betsy_Fanning]',
     'Active' => true,
   ),
   'application/fdt+xml' =>
@@ -1358,14 +1358,14 @@ return array(
   array(
     'Name' => 'fhir+json',
     'Template' => 'application/fhir+json',
-    'Reference' => '[HL7][Grahame_Grieve]',
+    'Reference' => '[HL7]; [Grahame_Grieve]',
     'Active' => true,
   ),
   'application/fhir+xml' =>
   array(
     'Name' => 'fhir+xml',
     'Template' => 'application/fhir+xml',
-    'Reference' => '[HL7][Grahame_Grieve]',
+    'Reference' => '[HL7]; [Grahame_Grieve]',
     'Active' => true,
   ),
   'application/fits' =>
@@ -1386,7 +1386,7 @@ return array(
   array(
     'Name' => 'font-sfnt - DEPRECATED in favor of font/sfnt',
     'Template' => 'application/font-sfnt',
-    'Reference' => '[Levantovsky][ISO-IEC_JTC_1][RFC 8081]',
+    'Reference' => '[Levantovsky]; [ISO-IEC_JTC_1]; [RFC 8081]',
     'Active' => true,
   ),
   'application/font-tdpfr' =>
@@ -1400,7 +1400,7 @@ return array(
   array(
     'Name' => 'font-woff - DEPRECATED in favor of font/woff',
     'Template' => 'application/font-woff',
-    'Reference' => '[W3C][RFC 8081]',
+    'Reference' => '[W3C]; [RFC 8081]',
     'Active' => true,
   ),
   'application/framework-attributes+xml' =>
@@ -1435,42 +1435,42 @@ return array(
   array(
     'Name' => 'geopackage+sqlite3',
     'Template' => 'application/geopackage+sqlite3',
-    'Reference' => '[OGC][Scott_Simmons]',
+    'Reference' => '[OGC]; [Scott_Simmons]',
     'Active' => true,
   ),
   'application/geopose+json' =>
   array(
     'Name' => 'geopose+json',
     'Template' => 'application/geopose+json',
-    'Reference' => '[OGC][Scott_Simmons]',
+    'Reference' => '[OGC]; [Scott_Simmons]',
     'Active' => true,
   ),
   'application/geoxacml+json' =>
   array(
     'Name' => 'geoxacml+json',
     'Template' => 'application/geoxacml+json',
-    'Reference' => '[OGC][Scott_Simmons]',
+    'Reference' => '[OGC]; [Scott_Simmons]',
     'Active' => true,
   ),
   'application/geoxacml+xml' =>
   array(
     'Name' => 'geoxacml+xml',
     'Template' => 'application/geoxacml+xml',
-    'Reference' => '[OGC][Scott_Simmons]',
+    'Reference' => '[OGC]; [Scott_Simmons]',
     'Active' => true,
   ),
   'application/gltf-buffer' =>
   array(
     'Name' => 'gltf-buffer',
     'Template' => 'application/gltf-buffer',
-    'Reference' => '[Khronos][Saurabh_Bhatia]',
+    'Reference' => '[Khronos]; [Saurabh_Bhatia]',
     'Active' => true,
   ),
   'application/gml+xml' =>
   array(
     'Name' => 'gml+xml',
     'Template' => 'application/gml+xml',
-    'Reference' => '[OGC][Clemens_Portele]',
+    'Reference' => '[OGC]; [Clemens_Portele]',
     'Active' => true,
   ),
   'application/gnap-binding-jws' =>
@@ -1505,7 +1505,7 @@ return array(
   array(
     'Name' => 'grib',
     'Template' => 'application/grib',
-    'Reference' => '[World_Meterological_Organization][Anna_Milan]',
+    'Reference' => '[World_Meterological_Organization]; [Anna_Milan]',
     'Active' => true,
   ),
   'application/gzip' =>
@@ -1533,7 +1533,7 @@ return array(
   array(
     'Name' => 'hl7v2+xml',
     'Template' => 'application/hl7v2+xml',
-    'Reference' => '[HL7][Marc_Duteau]',
+    'Reference' => '[HL7]; [Marc_Duteau]',
     'Active' => true,
   ),
   'application/http' =>
@@ -1659,28 +1659,28 @@ return array(
   array(
     'Name' => 'its+xml',
     'Template' => 'application/its+xml',
-    'Reference' => '[W3C][ITS-IG-W3C]',
+    'Reference' => '[W3C]; [ITS-IG-W3C]',
     'Active' => true,
   ),
   'application/java-archive' =>
   array(
     'Name' => 'java-archive',
     'Template' => 'application/java-archive',
-    'Reference' => '[JCP][Iris_Clark]',
+    'Reference' => '[JCP]; [Iris_Clark]',
     'Active' => true,
   ),
   'application/javascript' =>
   array(
     'Name' => 'javascript (OBSOLETED in favor of text/javascript)',
     'Template' => 'application/javascript',
-    'Reference' => '[RFC 4329][RFC 9239]',
+    'Reference' => '[RFC 4329]; [RFC 9239]',
     'Active' => true,
   ),
   'application/jf2feed+json' =>
   array(
     'Name' => 'jf2feed+json',
     'Template' => 'application/jf2feed+json',
-    'Reference' => '[W3C][Ivan_Herman]',
+    'Reference' => '[W3C]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/jose' =>
@@ -1736,7 +1736,7 @@ return array(
   array(
     'Name' => 'json-patch-query+json',
     'Template' => 'application/json-patch-query+json',
-    'Reference' => '[TM_Forum][Lorna_Mitchell]',
+    'Reference' => '[TM_Forum]; [Lorna_Mitchell]',
     'Active' => true,
   ),
   'application/json-seq' =>
@@ -1757,7 +1757,7 @@ return array(
   array(
     'Name' => 'jumbf',
     'Template' => 'application/jumbf',
-    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1][Leonard_Rosenthol][Frederik_Temmermans]',
+    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1]; [Leonard_Rosenthol]; [Frederik_Temmermans]',
     'Active' => true,
   ),
   'application/jwk+json' =>
@@ -1799,7 +1799,7 @@ return array(
   array(
     'Name' => 'kbl+xml',
     'Template' => 'application/kbl+xml',
-    'Reference' => '[prostep_ivip][Nora_Tazir]',
+    'Reference' => '[prostep_ivip]; [Nora_Tazir]',
     'Active' => true,
   ),
   'application/kpml-request+xml' =>
@@ -1820,7 +1820,7 @@ return array(
   array(
     'Name' => 'ld+json',
     'Template' => 'application/ld+json',
-    'Reference' => '[W3C][Ivan_Herman]',
+    'Reference' => '[W3C]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/lgr+xml' =>
@@ -1883,14 +1883,14 @@ return array(
   array(
     'Name' => 'lpf+zip',
     'Template' => 'application/lpf+zip',
-    'Reference' => '[W3C][Ivan_Herman]',
+    'Reference' => '[W3C]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/lxf' =>
   array(
     'Name' => 'LXF',
     'Template' => 'application/LXF',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/mac-binhex40' =>
@@ -1918,7 +1918,7 @@ return array(
   array(
     'Name' => 'manifest+json',
     'Template' => 'application/manifest+json',
-    'Reference' => '[W3C][Marcos_Caceres]',
+    'Reference' => '[W3C]; [Marcos_Caceres]',
     'Active' => true,
   ),
   'application/marc' =>
@@ -1946,21 +1946,21 @@ return array(
   array(
     'Name' => 'mathml+xml',
     'Template' => 'application/mathml+xml',
-    'Reference' => '[W3C][http://www.w3.org/TR/MathML3/appendixb.html]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/MathML3/appendixb.html]',
     'Active' => true,
   ),
   'application/mathml-content+xml' =>
   array(
     'Name' => 'mathml-content+xml',
     'Template' => 'application/mathml-content+xml',
-    'Reference' => '[W3C][http://www.w3.org/TR/MathML3/appendixb.html]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/MathML3/appendixb.html]',
     'Active' => true,
   ),
   'application/mathml-presentation+xml' =>
   array(
     'Name' => 'mathml-presentation+xml',
     'Template' => 'application/mathml-presentation+xml',
-    'Reference' => '[W3C][http://www.w3.org/TR/MathML3/appendixb.html]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/MathML3/appendixb.html]',
     'Active' => true,
   ),
   'application/mbms-associated-procedure-description+xml' =>
@@ -2030,7 +2030,7 @@ return array(
   array(
     'Name' => 'mbms-schedule+xml',
     'Template' => 'application/mbms-schedule+xml',
-    'Reference' => '[_3GPP][Eric_Turcotte]',
+    'Reference' => '[_3GPP]; [Eric_Turcotte]',
     'Active' => true,
   ),
   'application/mbms-user-service-description+xml' =>
@@ -2107,7 +2107,7 @@ return array(
   array(
     'Name' => 'MF4',
     'Template' => 'application/MF4',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/mikey' =>
@@ -2121,7 +2121,7 @@ return array(
   array(
     'Name' => 'mipc',
     'Template' => 'application/mipc',
-    'Reference' => '[NCGIS][Bryan_Blank]',
+    'Reference' => '[NCGIS]; [Bryan_Blank]',
     'Active' => true,
   ),
   'application/missing-blocks+cbor-seq' =>
@@ -2184,14 +2184,14 @@ return array(
   array(
     'Name' => 'mp21',
     'Template' => 'application/mp21',
-    'Reference' => '[RFC 6381][David_Singer]',
+    'Reference' => '[RFC 6381]; [David_Singer]',
     'Active' => true,
   ),
   'application/mp4' =>
   array(
     'Name' => 'mp4',
     'Template' => 'application/mp4',
-    'Reference' => '[RFC 4337][RFC 6381]',
+    'Reference' => '[RFC 4337]; [RFC 6381]',
     'Active' => true,
   ),
   'application/mpeg4-generic' =>
@@ -2275,14 +2275,14 @@ return array(
   array(
     'Name' => 'n-quads',
     'Template' => 'application/n-quads',
-    'Reference' => '[W3C][Eric_Prudhommeaux]',
+    'Reference' => '[W3C]; [Eric_Prudhommeaux]',
     'Active' => true,
   ),
   'application/n-triples' =>
   array(
     'Name' => 'n-triples',
     'Template' => 'application/n-triples',
-    'Reference' => '[W3C][Eric_Prudhommeaux]',
+    'Reference' => '[W3C]; [Eric_Prudhommeaux]',
     'Active' => true,
   ),
   'application/nasdata' =>
@@ -2366,7 +2366,7 @@ return array(
   array(
     'Name' => 'octet-stream',
     'Template' => 'application/octet-stream',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'application/oda' =>
@@ -2380,28 +2380,28 @@ return array(
   array(
     'Name' => 'odm+xml',
     'Template' => 'application/odm+xml',
-    'Reference' => '[CDISC][Sam_Hume]',
+    'Reference' => '[CDISC]; [Sam_Hume]',
     'Active' => true,
   ),
   'application/odx' =>
   array(
     'Name' => 'ODX',
     'Template' => 'application/ODX',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/oebps-package+xml' =>
   array(
     'Name' => 'oebps-package+xml',
     'Template' => 'application/oebps-package+xml',
-    'Reference' => '[W3C][EPUB_3_WG]',
+    'Reference' => '[W3C]; [EPUB_3_WG]',
     'Active' => true,
   ),
   'application/ogg' =>
   array(
     'Name' => 'ogg',
     'Template' => 'application/ogg',
-    'Reference' => '[RFC 5334][RFC 7845]',
+    'Reference' => '[RFC 5334]; [RFC 7845]',
     'Active' => true,
   ),
   'application/ohttp-keys' =>
@@ -2436,14 +2436,14 @@ return array(
   array(
     'Name' => 'p21',
     'Template' => 'application/p21',
-    'Reference' => '[ISO-TC_184-SC_4][Dana_Tripp]',
+    'Reference' => '[ISO-TC_184-SC_4]; [Dana_Tripp]',
     'Active' => true,
   ),
   'application/p21+zip' =>
   array(
     'Name' => 'p21+zip',
     'Template' => 'application/p21+zip',
-    'Reference' => '[ISO-TC_184-SC_4][Dana_Tripp]',
+    'Reference' => '[ISO-TC_184-SC_4]; [Dana_Tripp]',
     'Active' => true,
   ),
   'application/p2p-overlay+xml' =>
@@ -2485,7 +2485,7 @@ return array(
   array(
     'Name' => 'PDX',
     'Template' => 'application/PDX',
-    'Reference' => '[ASAM][Bernd_Wenzel]',
+    'Reference' => '[ASAM]; [Bernd_Wenzel]',
     'Active' => true,
   ),
   'application/pem-certificate-chain' =>
@@ -2548,7 +2548,7 @@ return array(
   array(
     'Name' => 'pkcs7-mime',
     'Template' => 'application/pkcs7-mime',
-    'Reference' => '[RFC 8551][RFC 7114]',
+    'Reference' => '[RFC 8551]; [RFC 7114]',
     'Active' => true,
   ),
   'application/pkcs7-signature' =>
@@ -2625,7 +2625,7 @@ return array(
   array(
     'Name' => 'postscript',
     'Template' => 'application/postscript',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'application/ppsp-tracker+json' =>
@@ -2688,14 +2688,14 @@ return array(
   array(
     'Name' => 'provenance+xml',
     'Template' => 'application/provenance+xml',
-    'Reference' => '[W3C][Ivan_Herman]',
+    'Reference' => '[W3C]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/provided-claims+jwt' =>
   array(
     'Name' => 'provided-claims+jwt',
     'Template' => 'application/provided-claims+jwt',
-    'Reference' => '[OpenID_Foundation_eKYC_and_IDA_WG][Daniel_Fett]',
+    'Reference' => '[OpenID_Foundation_eKYC_and_IDA_WG]; [Daniel_Fett]',
     'Active' => true,
   ),
   'application/prs.alvestrand.titrax-sheet' =>
@@ -2891,7 +2891,7 @@ return array(
   array(
     'Name' => 'remote-printing (OBSOLETE)',
     'Template' => 'application/remote-printing',
-    'Reference' => '[RFC 1486][Marshall_Rose][Moving TPC.INT and NSAP.INT infrastructure domains to historic]',
+    'Reference' => '[RFC 1486]; [Marshall_Rose]; [Moving TPC.INT and NSAP.INT infrastructure domains to historic]',
     'Active' => true,
   ),
   'application/reputon+json' =>
@@ -3010,7 +3010,7 @@ return array(
   array(
     'Name' => 'rpki-ghostbusters (DEPRECATED)',
     'Template' => 'application/rpki-ghostbusters',
-    'Reference' => '[RFC 6493][Moving RFC 6493 to Historic]',
+    'Reference' => '[RFC 6493]; [Moving RFC 6493 to Historic]',
     'Active' => true,
   ),
   'application/rpki-manifest' =>
@@ -3052,7 +3052,7 @@ return array(
   array(
     'Name' => 'rs-metadata+xml',
     'Template' => 'application/rs-metadata+xml',
-    'Reference' => '[RFC 7865][RFC 9806]',
+    'Reference' => '[RFC 7865]; [RFC 9806]',
     'Active' => true,
   ),
   'application/rtf' =>
@@ -3094,21 +3094,21 @@ return array(
   array(
     'Name' => 'sarif+json',
     'Template' => 'application/sarif+json',
-    'Reference' => '[OASIS][Michael_C._Fanning][Laurence_J._Golding]',
+    'Reference' => '[OASIS]; [Michael_C._Fanning]; [Laurence_J._Golding]',
     'Active' => true,
   ),
   'application/sarif-external-properties+json' =>
   array(
     'Name' => 'sarif-external-properties+json',
     'Template' => 'application/sarif-external-properties+json',
-    'Reference' => '[OASIS][David_Keaton][Michael_C._Fanning]',
+    'Reference' => '[OASIS]; [David_Keaton]; [Michael_C._Fanning]',
     'Active' => true,
   ),
   'application/sbe' =>
   array(
     'Name' => 'sbe',
     'Template' => 'application/sbe',
-    'Reference' => '[FIX_Trading_Community][Donald_L._Mendelson]',
+    'Reference' => '[FIX_Trading_Community]; [Donald_L._Mendelson]',
     'Active' => true,
   ),
   'application/sbml+xml' =>
@@ -3122,7 +3122,7 @@ return array(
   array(
     'Name' => 'scaip+xml',
     'Template' => 'application/scaip+xml',
-    'Reference' => '[SIS][Oskar_Jonsson]',
+    'Reference' => '[SIS]; [Oskar_Jonsson]',
     'Active' => true,
   ),
   'application/scim+json' =>
@@ -3283,21 +3283,21 @@ return array(
   array(
     'Name' => 'sep+xml',
     'Template' => 'application/sep+xml',
-    'Reference' => '[Robby_Simpson][IEEE]',
+    'Reference' => '[Robby_Simpson]; [IEEE]',
     'Active' => true,
   ),
   'application/sep-exi' =>
   array(
     'Name' => 'sep-exi',
     'Template' => 'application/sep-exi',
-    'Reference' => '[Robby_Simpson][IEEE]',
+    'Reference' => '[Robby_Simpson]; [IEEE]',
     'Active' => true,
   ),
   'application/session-info' =>
   array(
     'Name' => 'session-info',
     'Template' => 'application/session-info',
-    'Reference' => '[_3GPP][Dongwook_Kim]',
+    'Reference' => '[_3GPP]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/set-payment' =>
@@ -3381,7 +3381,7 @@ return array(
   array(
     'Name' => 'sipc',
     'Template' => 'application/sipc',
-    'Reference' => '[NCGIS][Bryan_Blank]',
+    'Reference' => '[NCGIS]; [Bryan_Blank]',
     'Active' => true,
   ),
   'application/slate' =>
@@ -3416,7 +3416,7 @@ return array(
   array(
     'Name' => 'soap+fastinfoset',
     'Template' => 'application/soap+fastinfoset',
-    'Reference' => '[ITU-T_ASN.1_Rapporteur][ISO-IEC_JTC_1_SC_6_ASN.1_Rapporteur]',
+    'Reference' => '[ITU-T_ASN.1_Rapporteur]; [ISO-IEC_JTC_1_SC_6_ASN.1_Rapporteur]',
     'Active' => true,
   ),
   'application/soap+xml' =>
@@ -3430,28 +3430,28 @@ return array(
   array(
     'Name' => 'sparql-query',
     'Template' => 'application/sparql-query',
-    'Reference' => '[W3C][http://www.w3.org/TR/2007/CR-rdf-sparql-query-20070614/#mediaType]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/2007/CR-rdf-sparql-query-20070614/#mediaType]',
     'Active' => true,
   ),
   'application/sparql-results+xml' =>
   array(
     'Name' => 'sparql-results+xml',
     'Template' => 'application/sparql-results+xml',
-    'Reference' => '[W3C][http://www.w3.org/TR/2007/CR-rdf-sparql-XMLres-20070925/#mime]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/2007/CR-rdf-sparql-XMLres-20070925/#mime]',
     'Active' => true,
   ),
   'application/spdx+json' =>
   array(
     'Name' => 'spdx+json',
     'Template' => 'application/spdx+json',
-    'Reference' => '[Linux_Foundation][Rose_Judge]',
+    'Reference' => '[Linux_Foundation]; [Rose_Judge]',
     'Active' => true,
   ),
   'application/spdx3+json' =>
   array(
     'Name' => 'spdx3+json',
     'Template' => 'application/spdx3+json',
-    'Reference' => '[Linux_Foundation][Arthit_Suriyawongkul]',
+    'Reference' => '[Linux_Foundation]; [Arthit_Suriyawongkul]',
     'Active' => true,
   ),
   'application/spirits-event+xml' =>
@@ -3507,7 +3507,7 @@ return array(
   array(
     'Name' => 'ST2110-41',
     'Template' => 'application/ST2110-41',
-    'Reference' => '[SMPTE][SMPTE_Director_of_Standards_Development]',
+    'Reference' => '[SMPTE]; [SMPTE_Director_of_Standards_Development]',
     'Active' => true,
   ),
   'application/statuslist+cwt' =>
@@ -3528,7 +3528,7 @@ return array(
   array(
     'Name' => 'stix+json',
     'Template' => 'application/stix+json',
-    'Reference' => '[OASIS][Chet_Ensign]',
+    'Reference' => '[OASIS]; [Chet_Ensign]',
     'Active' => true,
   ),
   'application/stratum' =>
@@ -3563,7 +3563,7 @@ return array(
   array(
     'Name' => 'swid+xml',
     'Template' => 'application/swid+xml',
-    'Reference' => '[ISO-IEC_JTC_1][David_Waltermire][Ron_Brill]',
+    'Reference' => '[ISO-IEC_JTC_1]; [David_Waltermire]; [Ron_Brill]',
     'Active' => true,
   ),
   'application/syslog-msg' =>
@@ -3654,14 +3654,14 @@ return array(
   array(
     'Name' => 'taxii+json',
     'Template' => 'application/taxii+json',
-    'Reference' => '[OASIS][Chet_Ensign]',
+    'Reference' => '[OASIS]; [Chet_Ensign]',
     'Active' => true,
   ),
   'application/td+json' =>
   array(
     'Name' => 'td+json',
     'Template' => 'application/td+json',
-    'Reference' => '[W3C][Matthias_Kovatsch]',
+    'Reference' => '[W3C]; [Matthias_Kovatsch]',
     'Active' => true,
   ),
   'application/teep+cbor' =>
@@ -3682,7 +3682,7 @@ return array(
   array(
     'Name' => 'TETRA_ISI',
     'Template' => 'application/TETRA_ISI',
-    'Reference' => '[ETSI][Miguel_Angel_Reina_Ortega]',
+    'Reference' => '[ETSI]; [Miguel_Angel_Reina_Ortega]',
     'Active' => true,
   ),
   'application/texinfo' =>
@@ -3738,7 +3738,7 @@ return array(
   array(
     'Name' => 'tm+json',
     'Template' => 'application/tm+json',
-    'Reference' => '[W3C][Sebastian_Kaebisch]',
+    'Reference' => '[W3C]; [Sebastian_Kaebisch]',
     'Active' => true,
   ),
   'application/tnauthlist' =>
@@ -3752,7 +3752,7 @@ return array(
   array(
     'Name' => 'toc+cbor',
     'Template' => 'application/toc+cbor',
-    'Reference' => '[TCG DICE][TCG_DICE_WG][Ned_M._Smith]',
+    'Reference' => '[TCG DICE]; [TCG_DICE_WG]; [Ned_M._Smith]',
     'Active' => true,
   ),
   'application/token-introspection+jwt' =>
@@ -3766,7 +3766,7 @@ return array(
   array(
     'Name' => 'toml',
     'Template' => 'application/toml',
-    'Reference' => '[Ben_van_Hartingsveldt][https://github.com/toml-lang/toml/issues/870][2]',
+    'Reference' => '[Ben_van_Hartingsveldt]; [https://github.com/toml-lang/toml/issues/870][2]',
     'Active' => true,
   ),
   'application/trickle-ice-sdpfrag' =>
@@ -3780,42 +3780,42 @@ return array(
   array(
     'Name' => 'trig',
     'Template' => 'application/trig',
-    'Reference' => '[W3C][W3C_RDF_WG]',
+    'Reference' => '[W3C]; [W3C_RDF_WG]',
     'Active' => true,
   ),
   'application/trust-chain+json' =>
   array(
     'Name' => 'trust-chain+json',
     'Template' => 'application/trust-chain+json',
-    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG][Michael_B_Jones]',
+    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG]; [Michael_B_Jones]',
     'Active' => true,
   ),
   'application/trust-mark+jwt' =>
   array(
     'Name' => 'trust-mark+jwt',
     'Template' => 'application/trust-mark+jwt',
-    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG][Michael_B_Jones]',
+    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG]; [Michael_B_Jones]',
     'Active' => true,
   ),
   'application/trust-mark-delegation+jwt' =>
   array(
     'Name' => 'trust-mark-delegation+jwt',
     'Template' => 'application/trust-mark-delegation+jwt',
-    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG][Roland_Hedberg]',
+    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG]; [Roland_Hedberg]',
     'Active' => true,
   ),
   'application/trust-mark-status-response+jwt' =>
   array(
     'Name' => 'trust-mark-status-response+jwt',
     'Template' => 'application/trust-mark-status-response+jwt',
-    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG][Michael_B_Jones]',
+    'Reference' => '[OpenID_Foundation_Artifact_Binding_WG]; [Michael_B_Jones]',
     'Active' => true,
   ),
   'application/ttml+xml' =>
   array(
     'Name' => 'ttml+xml',
     'Template' => 'application/ttml+xml',
-    'Reference' => '[W3C][W3C_Timed_Text_WG]',
+    'Reference' => '[W3C]; [W3C_Timed_Text_WG]',
     'Active' => true,
   ),
   'application/tve-trigger' =>
@@ -3836,7 +3836,7 @@ return array(
   array(
     'Name' => 'tzif-leap',
     'Template' => 'application/tzif-leap',
-    'Reference' => '[RFC 9636][RFC Errata 9028]',
+    'Reference' => '[RFC 9636]; [RFC Errata 9028]',
     'Active' => true,
   ),
   'application/uccs+cbor' =>
@@ -3864,21 +3864,21 @@ return array(
   array(
     'Name' => 'urc-grpsheet+xml',
     'Template' => 'application/urc-grpsheet+xml',
-    'Reference' => '[Gottfried_Zimmermann][ISO-IEC_JTC_1]',
+    'Reference' => '[Gottfried_Zimmermann]; [ISO-IEC_JTC_1]',
     'Active' => true,
   ),
   'application/urc-ressheet+xml' =>
   array(
     'Name' => 'urc-ressheet+xml',
     'Template' => 'application/urc-ressheet+xml',
-    'Reference' => '[Gottfried_Zimmermann][ISO-IEC_JTC_1]',
+    'Reference' => '[Gottfried_Zimmermann]; [ISO-IEC_JTC_1]',
     'Active' => true,
   ),
   'application/urc-targetdesc+xml' =>
   array(
     'Name' => 'urc-targetdesc+xml',
     'Template' => 'application/urc-targetdesc+xml',
-    'Reference' => '[Gottfried_Zimmermann][ISO-IEC_JTC_1]',
+    'Reference' => '[Gottfried_Zimmermann]; [ISO-IEC_JTC_1]',
     'Active' => true,
   ),
   'application/urc-uisocketdesc+xml' =>
@@ -3899,28 +3899,28 @@ return array(
   array(
     'Name' => 'vc',
     'Template' => 'application/vc',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Ivan_Herman]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/vc+cose' =>
   array(
     'Name' => 'vc+cose',
     'Template' => 'application/vc+cose',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Ivan_Herman]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/vc+jwt' =>
   array(
     'Name' => 'vc+jwt',
     'Template' => 'application/vc+jwt',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Ivan_Herman]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/vc+sd-jwt' =>
   array(
     'Name' => 'vc+sd-jwt',
     'Template' => 'application/vc+sd-jwt',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Ivan_Herman]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/vcard+json' =>
@@ -3941,21 +3941,21 @@ return array(
   array(
     'Name' => 'vec+xml',
     'Template' => 'application/vec+xml',
-    'Reference' => '[prostep_ivip][Nora_Tazir]',
+    'Reference' => '[prostep_ivip]; [Nora_Tazir]',
     'Active' => true,
   ),
   'application/vec-package+gzip' =>
   array(
     'Name' => 'vec-package+gzip',
     'Template' => 'application/vec-package+gzip',
-    'Reference' => '[prostep_ivip][Nora_Tazir]',
+    'Reference' => '[prostep_ivip]; [Nora_Tazir]',
     'Active' => true,
   ),
   'application/vec-package+zip' =>
   array(
     'Name' => 'vec-package+zip',
     'Template' => 'application/vec-package+zip',
-    'Reference' => '[prostep_ivip][Nora_Tazir]',
+    'Reference' => '[prostep_ivip]; [Nora_Tazir]',
     'Active' => true,
   ),
   'application/vemmi' =>
@@ -4025,35 +4025,35 @@ return array(
   array(
     'Name' => 'vnd.3gpp.5gnas',
     'Template' => 'application/vnd.3gpp.5gnas',
-    'Reference' => '[_3GPP][Jones_Lu_Yunjie]',
+    'Reference' => '[_3GPP]; [Jones_Lu_Yunjie]',
     'Active' => true,
   ),
   'application/vnd.3gpp.5gsa2x' =>
   array(
     'Name' => 'vnd.3gpp.5gsa2x',
     'Template' => 'application/vnd.3gpp.5gsa2x',
-    'Reference' => '[_3GPP_CT1][Dongwook_Kim]',
+    'Reference' => '[_3GPP_CT1]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.5gsa2x-local-service-information' =>
   array(
     'Name' => 'vnd.3gpp.5gsa2x-local-service-information',
     'Template' => 'application/vnd.3gpp.5gsa2x-local-service-information',
-    'Reference' => '[_3GPP_CT1][Dongwook_Kim]',
+    'Reference' => '[_3GPP_CT1]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.5gsv2x' =>
   array(
     'Name' => 'vnd.3gpp.5gsv2x',
     'Template' => 'application/vnd.3gpp.5gsv2x',
-    'Reference' => '[_3GPP_CT1][Dongwook_Kim]',
+    'Reference' => '[_3GPP_CT1]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.5gsv2x-local-service-information' =>
   array(
     'Name' => 'vnd.3gpp.5gsv2x-local-service-information',
     'Template' => 'application/vnd.3gpp.5gsv2x-local-service-information',
-    'Reference' => '[_3GPP_CT1][Dongwook_Kim]',
+    'Reference' => '[_3GPP_CT1]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.access-transfer-events+xml' =>
@@ -4095,7 +4095,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.gtpc',
     'Template' => 'application/vnd.3gpp.gtpc',
-    'Reference' => '[_3GPP][Yang_Yong]',
+    'Reference' => '[_3GPP]; [Yang_Yong]',
     'Active' => true,
   ),
   'application/vnd.3gpp.interworking-data' =>
@@ -4109,7 +4109,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.lpp',
     'Template' => 'application/vnd.3gpp.lpp',
-    'Reference' => '[_3GPP][Jones_Lu_Yunjie]',
+    'Reference' => '[_3GPP]; [Jones_Lu_Yunjie]',
     'Active' => true,
   ),
   'application/vnd.3gpp.mc-signalling-ear' =>
@@ -4347,14 +4347,14 @@ return array(
   array(
     'Name' => 'vnd.3gpp.ngap',
     'Template' => 'application/vnd.3gpp.ngap',
-    'Reference' => '[_3GPP][Yang_Yong]',
+    'Reference' => '[_3GPP]; [Yang_Yong]',
     'Active' => true,
   ),
   'application/vnd.3gpp.pfcp' =>
   array(
     'Name' => 'vnd.3gpp.pfcp',
     'Template' => 'application/vnd.3gpp.pfcp',
-    'Reference' => '[_3GPP][Bruno_Landais]',
+    'Reference' => '[_3GPP]; [Bruno_Landais]',
     'Active' => true,
   ),
   'application/vnd.3gpp.pic-bw-large' =>
@@ -4382,14 +4382,14 @@ return array(
   array(
     'Name' => 'vnd.3gpp.pinapp-info+xml',
     'Template' => 'application/vnd.3gpp.pinapp-info+xml',
-    'Reference' => '[_3GPP_CT1][Dongwook_Kim]',
+    'Reference' => '[_3GPP_CT1]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.s1ap' =>
   array(
     'Name' => 'vnd.3gpp.s1ap',
     'Template' => 'application/vnd.3gpp.s1ap',
-    'Reference' => '[_3GPP][Yang_Yong]',
+    'Reference' => '[_3GPP]; [Yang_Yong]',
     'Active' => true,
   ),
   'application/vnd.3gpp.seal-app-comm-requirements-info+xml' =>
@@ -4424,7 +4424,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.seal-info+xml',
     'Template' => 'application/vnd.3gpp.seal-info+xml',
-    'Reference' => '[_3GPP][Christian_Herrero-Veron]',
+    'Reference' => '[_3GPP]; [Christian_Herrero-Veron]',
     'Active' => true,
   ),
   'application/vnd.3gpp.seal-location-info+cbor' =>
@@ -4438,14 +4438,14 @@ return array(
   array(
     'Name' => 'vnd.3gpp.seal-location-info+xml',
     'Template' => 'application/vnd.3gpp.seal-location-info+xml',
-    'Reference' => '[_3GPP][Christian_Herrero-Veron]',
+    'Reference' => '[_3GPP]; [Christian_Herrero-Veron]',
     'Active' => true,
   ),
   'application/vnd.3gpp.seal-mbms-usage-info+xml' =>
   array(
     'Name' => 'vnd.3gpp.seal-mbms-usage-info+xml',
     'Template' => 'application/vnd.3gpp.seal-mbms-usage-info+xml',
-    'Reference' => '[_3GPP][Christian_Herrero-Veron]',
+    'Reference' => '[_3GPP]; [Christian_Herrero-Veron]',
     'Active' => true,
   ),
   'application/vnd.3gpp.seal-mbs-usage-info+xml' =>
@@ -4459,7 +4459,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.seal-network-QoS-management-info+xml',
     'Template' => 'application/vnd.3gpp.seal-network-QoS-management-info+xml',
-    'Reference' => '[_3GPP][Christian_Herrero-Veron]',
+    'Reference' => '[_3GPP]; [Christian_Herrero-Veron]',
     'Active' => true,
   ),
   'application/vnd.3gpp.seal-network-resource-info+cbor' =>
@@ -4487,7 +4487,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.seal-unicast-info+xml',
     'Template' => 'application/vnd.3gpp.seal-unicast-info+xml',
-    'Reference' => '[_3GPP][Christian_Herrero-Veron]',
+    'Reference' => '[_3GPP]; [Christian_Herrero-Veron]',
     'Active' => true,
   ),
   'application/vnd.3gpp.seal-user-profile-info+xml' =>
@@ -4550,7 +4550,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.vae-info+xml',
     'Template' => 'application/vnd.3gpp.vae-info+xml',
-    'Reference' => '[_3GPP][Christian_Herrero-Veron]',
+    'Reference' => '[_3GPP]; [Christian_Herrero-Veron]',
     'Active' => true,
   ),
   'application/vnd.3gpp2.bcmcsinfo+xml' =>
@@ -4837,14 +4837,14 @@ return array(
   array(
     'Name' => 'vnd.airzip.filesecure.azf',
     'Template' => 'application/vnd.airzip.filesecure.azf',
-    'Reference' => '[Daniel_Mould][Gary_Clueit]',
+    'Reference' => '[Daniel_Mould]; [Gary_Clueit]',
     'Active' => true,
   ),
   'application/vnd.airzip.filesecure.azs' =>
   array(
     'Name' => 'vnd.airzip.filesecure.azs',
     'Template' => 'application/vnd.airzip.filesecure.azs',
-    'Reference' => '[Daniel_Mould][Gary_Clueit]',
+    'Reference' => '[Daniel_Mould]; [Gary_Clueit]',
     'Active' => true,
   ),
   'application/vnd.amadeus+json' =>
@@ -5243,14 +5243,14 @@ return array(
   array(
     'Name' => 'vnd.bpf',
     'Template' => 'application/vnd.bpf',
-    'Reference' => '[NCGIS][Bryan_Blank]',
+    'Reference' => '[NCGIS]; [Bryan_Blank]',
     'Active' => true,
   ),
   'application/vnd.bpf3' =>
   array(
     'Name' => 'vnd.bpf3',
     'Template' => 'application/vnd.bpf3',
-    'Reference' => '[NCGIS][Bryan_Blank]',
+    'Reference' => '[NCGIS]; [Bryan_Blank]',
     'Active' => true,
   ),
   'application/vnd.businessobjects' =>
@@ -5999,7 +5999,7 @@ return array(
   array(
     'Name' => 'vnd.dvb.ait',
     'Template' => 'application/vnd.dvb.ait',
-    'Reference' => '[Peter_Siebert][Michael_Lagally]',
+    'Reference' => '[Peter_Siebert]; [Michael_Lagally]',
     'Active' => true,
   ),
   'application/vnd.dvb.dash-playlist+xml' =>
@@ -6020,7 +6020,7 @@ return array(
   array(
     'Name' => 'vnd.dvb.dvbj',
     'Template' => 'application/vnd.dvb.dvbj',
-    'Reference' => '[Peter_Siebert][Michael_Lagally]',
+    'Reference' => '[Peter_Siebert]; [Michael_Lagally]',
     'Active' => true,
   ),
   'application/vnd.dvb.esgcontainer' =>
@@ -6132,14 +6132,14 @@ return array(
   array(
     'Name' => 'vnd.dvb.pfr',
     'Template' => 'application/vnd.dvb.pfr',
-    'Reference' => '[Peter_Siebert][Michael_Lagally]',
+    'Reference' => '[Peter_Siebert]; [Michael_Lagally]',
     'Active' => true,
   ),
   'application/vnd.dvb.service' =>
   array(
     'Name' => 'vnd.dvb.service',
     'Template' => 'application/vnd.dvb.service',
-    'Reference' => '[Peter_Siebert][Michael_Lagally]',
+    'Reference' => '[Peter_Siebert]; [Michael_Lagally]',
     'Active' => true,
   ),
   'application/vnd.dxr' =>
@@ -6244,14 +6244,14 @@ return array(
   array(
     'Name' => 'vnd.efi.img',
     'Template' => 'application/vnd.efi.img',
-    'Reference' => '[UEFI_Forum][Fu_Siyuan]',
+    'Reference' => '[UEFI_Forum]; [Fu_Siyuan]',
     'Active' => true,
   ),
   'application/vnd.efi.iso' =>
   array(
     'Name' => 'vnd.efi.iso',
     'Template' => 'application/vnd.efi.iso',
-    'Reference' => '[UEFI_Forum][Fu_Siyuan]',
+    'Reference' => '[UEFI_Forum]; [Fu_Siyuan]',
     'Active' => true,
   ),
   'application/vnd.eln+zip' =>
@@ -6461,7 +6461,7 @@ return array(
   array(
     'Name' => 'vnd.etsi.mheg5',
     'Template' => 'application/vnd.etsi.mheg5',
-    'Reference' => '[Miguel_Angel_Reina_Ortega][Ian_Medland]',
+    'Reference' => '[Miguel_Angel_Reina_Ortega]; [Ian_Medland]',
     'Active' => true,
   ),
   'application/vnd.etsi.overload-control-policy-dataset+xml' =>
@@ -6475,7 +6475,7 @@ return array(
   array(
     'Name' => 'vnd.etsi.pstn+xml',
     'Template' => 'application/vnd.etsi.pstn+xml',
-    'Reference' => '[Jiwan_Han][Thomas_Belling]',
+    'Reference' => '[Jiwan_Han]; [Thomas_Belling]',
     'Active' => true,
   ),
   'application/vnd.etsi.sci+xml' =>
@@ -6762,14 +6762,14 @@ return array(
   array(
     'Name' => 'vnd.frogans.fnc (OBSOLETE)',
     'Template' => 'application/vnd.frogans.fnc',
-    'Reference' => '[OP3FT][Alexis_Tamas]',
+    'Reference' => '[OP3FT]; [Alexis_Tamas]',
     'Active' => true,
   ),
   'application/vnd.frogans.ltf' =>
   array(
     'Name' => 'vnd.frogans.ltf (OBSOLETE)',
     'Template' => 'application/vnd.frogans.ltf',
-    'Reference' => '[OP3FT][Alexis_Tamas]',
+    'Reference' => '[OP3FT]; [Alexis_Tamas]',
     'Active' => true,
   ),
   'application/vnd.fsc.weblaunch' =>
@@ -7021,28 +7021,28 @@ return array(
   array(
     'Name' => 'vnd.geogebra.file',
     'Template' => 'application/vnd.geogebra.file',
-    'Reference' => '[GeoGebra][Yves_Kreis]',
+    'Reference' => '[GeoGebra]; [Yves_Kreis]',
     'Active' => true,
   ),
   'application/vnd.geogebra.pinboard' =>
   array(
     'Name' => 'vnd.geogebra.pinboard',
     'Template' => 'application/vnd.geogebra.pinboard',
-    'Reference' => '[GeoGebra][Michael_Borcherds]',
+    'Reference' => '[GeoGebra]; [Michael_Borcherds]',
     'Active' => true,
   ),
   'application/vnd.geogebra.slides' =>
   array(
     'Name' => 'vnd.geogebra.slides',
     'Template' => 'application/vnd.geogebra.slides',
-    'Reference' => '[GeoGebra][Michael_Borcherds][Markus_Hohenwarter]',
+    'Reference' => '[GeoGebra]; [Michael_Borcherds]; [Markus_Hohenwarter]',
     'Active' => true,
   ),
   'application/vnd.geogebra.tool' =>
   array(
     'Name' => 'vnd.geogebra.tool',
     'Template' => 'application/vnd.geogebra.tool',
-    'Reference' => '[GeoGebra][Yves_Kreis]',
+    'Reference' => '[GeoGebra]; [Yves_Kreis]',
     'Active' => true,
   ),
   'application/vnd.geometry-explorer' =>
@@ -8008,7 +8008,7 @@ return array(
   array(
     'Name' => 'vnd.las',
     'Template' => 'application/vnd.las',
-    'Reference' => '[NCGIS][Bryan_Blank]',
+    'Reference' => '[NCGIS]; [Bryan_Blank]',
     'Active' => true,
   ),
   'application/vnd.las.las+json' =>
@@ -8029,7 +8029,7 @@ return array(
   array(
     'Name' => 'vnd.laszip',
     'Template' => 'application/vnd.laszip',
-    'Reference' => '[NCGIS][Bryan_Blank]',
+    'Reference' => '[NCGIS]; [Bryan_Blank]',
     'Active' => true,
   ),
   'application/vnd.ldev.productlicensing' =>
@@ -9205,133 +9205,133 @@ return array(
   array(
     'Name' => 'vnd.oasis.opendocument.base',
     'Template' => 'application/vnd.oasis.opendocument.base',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.chart' =>
   array(
     'Name' => 'vnd.oasis.opendocument.chart',
     'Template' => 'application/vnd.oasis.opendocument.chart',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.chart-template' =>
   array(
     'Name' => 'vnd.oasis.opendocument.chart-template',
     'Template' => 'application/vnd.oasis.opendocument.chart-template',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.database' =>
   array(
     'Name' => 'vnd.oasis.opendocument.database (OBSOLETED in favor of application/vnd.oasis.opendocument.base)',
     'Template' => 'application/vnd.oasis.opendocument.database',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.formula' =>
   array(
     'Name' => 'vnd.oasis.opendocument.formula',
     'Template' => 'application/vnd.oasis.opendocument.formula',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.formula-template' =>
   array(
     'Name' => 'vnd.oasis.opendocument.formula-template',
     'Template' => 'application/vnd.oasis.opendocument.formula-template',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.graphics' =>
   array(
     'Name' => 'vnd.oasis.opendocument.graphics',
     'Template' => 'application/vnd.oasis.opendocument.graphics',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.graphics-template' =>
   array(
     'Name' => 'vnd.oasis.opendocument.graphics-template',
     'Template' => 'application/vnd.oasis.opendocument.graphics-template',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.image' =>
   array(
     'Name' => 'vnd.oasis.opendocument.image',
     'Template' => 'application/vnd.oasis.opendocument.image',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.image-template' =>
   array(
     'Name' => 'vnd.oasis.opendocument.image-template',
     'Template' => 'application/vnd.oasis.opendocument.image-template',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.presentation' =>
   array(
     'Name' => 'vnd.oasis.opendocument.presentation',
     'Template' => 'application/vnd.oasis.opendocument.presentation',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.presentation-template' =>
   array(
     'Name' => 'vnd.oasis.opendocument.presentation-template',
     'Template' => 'application/vnd.oasis.opendocument.presentation-template',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.spreadsheet' =>
   array(
     'Name' => 'vnd.oasis.opendocument.spreadsheet',
     'Template' => 'application/vnd.oasis.opendocument.spreadsheet',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.spreadsheet-template' =>
   array(
     'Name' => 'vnd.oasis.opendocument.spreadsheet-template',
     'Template' => 'application/vnd.oasis.opendocument.spreadsheet-template',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.text' =>
   array(
     'Name' => 'vnd.oasis.opendocument.text',
     'Template' => 'application/vnd.oasis.opendocument.text',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.text-master' =>
   array(
     'Name' => 'vnd.oasis.opendocument.text-master',
     'Template' => 'application/vnd.oasis.opendocument.text-master',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.text-master-template' =>
   array(
     'Name' => 'vnd.oasis.opendocument.text-master-template',
     'Template' => 'application/vnd.oasis.opendocument.text-master-template',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.text-template' =>
   array(
     'Name' => 'vnd.oasis.opendocument.text-template',
     'Template' => 'application/vnd.oasis.opendocument.text-template',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.oasis.opendocument.text-web' =>
   array(
     'Name' => 'vnd.oasis.opendocument.text-web',
     'Template' => 'application/vnd.oasis.opendocument.text-web',
-    'Reference' => '[OASIS_TC_Admin][OASIS]',
+    'Reference' => '[OASIS_TC_Admin]; [OASIS]',
     'Active' => true,
   ),
   'application/vnd.obn' =>
@@ -9471,189 +9471,189 @@ return array(
   array(
     'Name' => 'vnd.oma.bcast.associated-procedure-parameter+xml',
     'Template' => 'application/vnd.oma.bcast.associated-procedure-parameter+xml',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.drm-trigger+xml' =>
   array(
     'Name' => 'vnd.oma.bcast.drm-trigger+xml',
     'Template' => 'application/vnd.oma.bcast.drm-trigger+xml',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.imd+xml' =>
   array(
     'Name' => 'vnd.oma.bcast.imd+xml',
     'Template' => 'application/vnd.oma.bcast.imd+xml',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.ltkm' =>
   array(
     'Name' => 'vnd.oma.bcast.ltkm',
     'Template' => 'application/vnd.oma.bcast.ltkm',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.notification+xml' =>
   array(
     'Name' => 'vnd.oma.bcast.notification+xml',
     'Template' => 'application/vnd.oma.bcast.notification+xml',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.provisioningtrigger' =>
   array(
     'Name' => 'vnd.oma.bcast.provisioningtrigger',
     'Template' => 'application/vnd.oma.bcast.provisioningtrigger',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.sgboot' =>
   array(
     'Name' => 'vnd.oma.bcast.sgboot',
     'Template' => 'application/vnd.oma.bcast.sgboot',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.sgdd+xml' =>
   array(
     'Name' => 'vnd.oma.bcast.sgdd+xml',
     'Template' => 'application/vnd.oma.bcast.sgdd+xml',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.sgdu' =>
   array(
     'Name' => 'vnd.oma.bcast.sgdu',
     'Template' => 'application/vnd.oma.bcast.sgdu',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.simple-symbol-container' =>
   array(
     'Name' => 'vnd.oma.bcast.simple-symbol-container',
     'Template' => 'application/vnd.oma.bcast.simple-symbol-container',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.smartcard-trigger+xml' =>
   array(
     'Name' => 'vnd.oma.bcast.smartcard-trigger+xml',
     'Template' => 'application/vnd.oma.bcast.smartcard-trigger+xml',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.sprov+xml' =>
   array(
     'Name' => 'vnd.oma.bcast.sprov+xml',
     'Template' => 'application/vnd.oma.bcast.sprov+xml',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.bcast.stkm' =>
   array(
     'Name' => 'vnd.oma.bcast.stkm',
     'Template' => 'application/vnd.oma.bcast.stkm',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.cab-address-book+xml' =>
   array(
     'Name' => 'vnd.oma.cab-address-book+xml',
     'Template' => 'application/vnd.oma.cab-address-book+xml',
-    'Reference' => '[Hao_Wang][OMA]',
+    'Reference' => '[Hao_Wang]; [OMA]',
     'Active' => true,
   ),
   'application/vnd.oma.cab-feature-handler+xml' =>
   array(
     'Name' => 'vnd.oma.cab-feature-handler+xml',
     'Template' => 'application/vnd.oma.cab-feature-handler+xml',
-    'Reference' => '[Hao_Wang][OMA]',
+    'Reference' => '[Hao_Wang]; [OMA]',
     'Active' => true,
   ),
   'application/vnd.oma.cab-pcc+xml' =>
   array(
     'Name' => 'vnd.oma.cab-pcc+xml',
     'Template' => 'application/vnd.oma.cab-pcc+xml',
-    'Reference' => '[Hao_Wang][OMA]',
+    'Reference' => '[Hao_Wang]; [OMA]',
     'Active' => true,
   ),
   'application/vnd.oma.cab-subs-invite+xml' =>
   array(
     'Name' => 'vnd.oma.cab-subs-invite+xml',
     'Template' => 'application/vnd.oma.cab-subs-invite+xml',
-    'Reference' => '[Hao_Wang][OMA]',
+    'Reference' => '[Hao_Wang]; [OMA]',
     'Active' => true,
   ),
   'application/vnd.oma.cab-user-prefs+xml' =>
   array(
     'Name' => 'vnd.oma.cab-user-prefs+xml',
     'Template' => 'application/vnd.oma.cab-user-prefs+xml',
-    'Reference' => '[Hao_Wang][OMA]',
+    'Reference' => '[Hao_Wang]; [OMA]',
     'Active' => true,
   ),
   'application/vnd.oma.dcd' =>
   array(
     'Name' => 'vnd.oma.dcd',
     'Template' => 'application/vnd.oma.dcd',
-    'Reference' => '[Avi_Primo][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Avi_Primo]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.dcdc' =>
   array(
     'Name' => 'vnd.oma.dcdc',
     'Template' => 'application/vnd.oma.dcdc',
-    'Reference' => '[Avi_Primo][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Avi_Primo]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.dd2+xml' =>
   array(
     'Name' => 'vnd.oma.dd2+xml',
     'Template' => 'application/vnd.oma.dd2+xml',
-    'Reference' => '[Jun_Sato][Open_Mobile_Alliance_BAC_DLDRM_WG]',
+    'Reference' => '[Jun_Sato]; [Open_Mobile_Alliance_BAC_DLDRM_WG]',
     'Active' => true,
   ),
   'application/vnd.oma.drm.risd+xml' =>
   array(
     'Name' => 'vnd.oma.drm.risd+xml',
     'Template' => 'application/vnd.oma.drm.risd+xml',
-    'Reference' => '[Uwe_Rauschenbach][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Uwe_Rauschenbach]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.group-usage-list+xml' =>
   array(
     'Name' => 'vnd.oma.group-usage-list+xml',
     'Template' => 'application/vnd.oma.group-usage-list+xml',
-    'Reference' => '[Sean_Kelley][OMA_Presence_and_Availability_PAG_WG]',
+    'Reference' => '[Sean_Kelley]; [OMA_Presence_and_Availability_PAG_WG]',
     'Active' => true,
   ),
   'application/vnd.oma.lwm2m+cbor' =>
   array(
     'Name' => 'vnd.oma.lwm2m+cbor',
     'Template' => 'application/vnd.oma.lwm2m+cbor',
-    'Reference' => '[Open_Mobile_Naming_Authority][John_Mudge]',
+    'Reference' => '[Open_Mobile_Naming_Authority]; [John_Mudge]',
     'Active' => true,
   ),
   'application/vnd.oma.lwm2m+json' =>
   array(
     'Name' => 'vnd.oma.lwm2m+json',
     'Template' => 'application/vnd.oma.lwm2m+json',
-    'Reference' => '[Open_Mobile_Naming_Authority][John_Mudge]',
+    'Reference' => '[Open_Mobile_Naming_Authority]; [John_Mudge]',
     'Active' => true,
   ),
   'application/vnd.oma.lwm2m+tlv' =>
   array(
     'Name' => 'vnd.oma.lwm2m+tlv',
     'Template' => 'application/vnd.oma.lwm2m+tlv',
-    'Reference' => '[Open_Mobile_Naming_Authority][John_Mudge]',
+    'Reference' => '[Open_Mobile_Naming_Authority]; [John_Mudge]',
     'Active' => true,
   ),
   'application/vnd.oma.pal+xml' =>
   array(
     'Name' => 'vnd.oma.pal+xml',
     'Template' => 'application/vnd.oma.pal+xml',
-    'Reference' => '[Brian_McColgan][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Brian_McColgan]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.poc.detailed-progress-report+xml' =>
@@ -9674,7 +9674,7 @@ return array(
   array(
     'Name' => 'vnd.oma.poc.groups+xml',
     'Template' => 'application/vnd.oma.poc.groups+xml',
-    'Reference' => '[Sean_Kelley][OMA_Push_to_Talk_over_Cellular_POC_WG]',
+    'Reference' => '[Sean_Kelley]; [OMA_Push_to_Talk_over_Cellular_POC_WG]',
     'Active' => true,
   ),
   'application/vnd.oma.poc.invocation-descriptor+xml' =>
@@ -9695,21 +9695,21 @@ return array(
   array(
     'Name' => 'vnd.oma.push',
     'Template' => 'application/vnd.oma.push',
-    'Reference' => '[Bryan_Sullivan][OMA]',
+    'Reference' => '[Bryan_Sullivan]; [OMA]',
     'Active' => true,
   ),
   'application/vnd.oma.scidm.messages+xml' =>
   array(
     'Name' => 'vnd.oma.scidm.messages+xml',
     'Template' => 'application/vnd.oma.scidm.messages+xml',
-    'Reference' => '[Wenjun_Zeng][Open_Mobile_Naming_Authority]',
+    'Reference' => '[Wenjun_Zeng]; [Open_Mobile_Naming_Authority]',
     'Active' => true,
   ),
   'application/vnd.oma.xcap-directory+xml' =>
   array(
     'Name' => 'vnd.oma.xcap-directory+xml',
     'Template' => 'application/vnd.oma.xcap-directory+xml',
-    'Reference' => '[Sean_Kelley][OMA_Presence_and_Availability_PAG_WG]',
+    'Reference' => '[Sean_Kelley]; [OMA_Presence_and_Availability_PAG_WG]',
     'Active' => true,
   ),
   'application/vnd.omads-email+xml' =>
@@ -9744,7 +9744,7 @@ return array(
   array(
     'Name' => 'vnd.oms.cellular-cose-content+cbor',
     'Template' => 'application/vnd.oms.cellular-cose-content+cbor',
-    'Reference' => '[Torben_Markussen][OMS-Group_e._V.]',
+    'Reference' => '[Torben_Markussen]; [OMS-Group_e._V.]',
     'Active' => true,
   ),
   'application/vnd.onepager' =>
@@ -10549,7 +10549,7 @@ return array(
   array(
     'Name' => 'vnd.poc.group-advertisement+xml',
     'Template' => 'application/vnd.poc.group-advertisement+xml',
-    'Reference' => '[Sean_Kelley][OMA_Push_to_Talk_over_Cellular_POC_WG]',
+    'Reference' => '[Sean_Kelley]; [OMA_Push_to_Talk_over_Cellular_POC_WG]',
     'Active' => true,
   ),
   'application/vnd.pocketlearn' =>
@@ -11053,7 +11053,7 @@ return array(
   array(
     'Name' => 'vnd.sealed.tiff',
     'Template' => 'application/vnd.sealed.tiff',
-    'Reference' => '[John_Kwan][Martin_Lambert]',
+    'Reference' => '[John_Kwan]; [Martin_Lambert]',
     'Active' => true,
   ),
   'application/vnd.sealed.xls' =>
@@ -11256,14 +11256,14 @@ return array(
   array(
     'Name' => 'vnd.software602.filler.form+xml',
     'Template' => 'application/vnd.software602.filler.form+xml',
-    'Reference' => '[Jakub_Hytka][Martin_Vondrous]',
+    'Reference' => '[Jakub_Hytka]; [Martin_Vondrous]',
     'Active' => true,
   ),
   'application/vnd.software602.filler.form-xml-zip' =>
   array(
     'Name' => 'vnd.software602.filler.form-xml-zip',
     'Template' => 'application/vnd.software602.filler.form-xml-zip',
-    'Reference' => '[Jakub_Hytka][Martin_Vondrous]',
+    'Reference' => '[Jakub_Hytka]; [Martin_Vondrous]',
     'Active' => true,
   ),
   'application/vnd.solent.sdkm+xml' =>
@@ -11431,14 +11431,14 @@ return array(
   array(
     'Name' => 'vnd.syncml.dm+xml',
     'Template' => 'application/vnd.syncml.dm+xml',
-    'Reference' => '[Bindu_Rama_Rao][OMA-DM_Work_Group]',
+    'Reference' => '[Bindu_Rama_Rao]; [OMA-DM_Work_Group]',
     'Active' => true,
   ),
   'application/vnd.syncml.dm.notification' =>
   array(
     'Name' => 'vnd.syncml.dm.notification',
     'Template' => 'application/vnd.syncml.dm.notification',
-    'Reference' => '[Peter_Thompson][OMA-DM_Work_Group]',
+    'Reference' => '[Peter_Thompson]; [OMA-DM_Work_Group]',
     'Active' => true,
   ),
   'application/vnd.syncml.dmddf+wbxml' =>
@@ -11501,7 +11501,7 @@ return array(
   array(
     'Name' => 'vnd.tcpdump.pcap',
     'Template' => 'application/vnd.tcpdump.pcap',
-    'Reference' => '[Guy_Harris][Glen_Turner]',
+    'Reference' => '[Guy_Harris]; [Glen_Turner]',
     'Active' => true,
   ),
   'application/vnd.think-cell.ppttc+json' =>
@@ -11760,7 +11760,7 @@ return array(
   array(
     'Name' => 'vnd.vectorworks',
     'Template' => 'application/vnd.vectorworks',
-    'Reference' => '[Lyndsey_Ferguson][Biplab_Sarkar]',
+    'Reference' => '[Lyndsey_Ferguson]; [Biplab_Sarkar]',
     'Active' => true,
   ),
   'application/vnd.vel+json' =>
@@ -11795,7 +11795,7 @@ return array(
   array(
     'Name' => 'vnd.verifier-attestation+jwt',
     'Template' => 'application/vnd.verifier-attestation+jwt',
-    'Reference' => '[OpenID_Foundation_Digital_Credentials_Protocols_WG][Oliver_Terbu]',
+    'Reference' => '[OpenID_Foundation_Digital_Credentials_Protocols_WG]; [Oliver_Terbu]',
     'Active' => true,
   ),
   'application/vnd.verimatrix.vcas' =>
@@ -11949,7 +11949,7 @@ return array(
   array(
     'Name' => 'vnd.wfa.dpp',
     'Template' => 'application/vnd.wfa.dpp',
-    'Reference' => '[Wi-Fi_Alliance][Dr._Jun_Tian]',
+    'Reference' => '[Wi-Fi_Alliance]; [Dr._Jun_Tian]',
     'Active' => true,
   ),
   'application/vnd.wfa.p2p' =>
@@ -11991,7 +11991,7 @@ return array(
   array(
     'Name' => 'vnd.wmf.bootstrap',
     'Template' => 'application/vnd.wmf.bootstrap',
-    'Reference' => '[Thinh_Nguyenphu][Prakash_Iyer]',
+    'Reference' => '[Thinh_Nguyenphu]; [Prakash_Iyer]',
     'Active' => true,
   ),
   'application/vnd.wolfram.mathematica' =>
@@ -12313,28 +12313,28 @@ return array(
   array(
     'Name' => 'vp',
     'Template' => 'application/vp',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Ivan_Herman]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/vp+cose' =>
   array(
     'Name' => 'vp+cose',
     'Template' => 'application/vp+cose',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Ivan_Herman]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/vp+jwt' =>
   array(
     'Name' => 'vp+jwt',
     'Template' => 'application/vp+jwt',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Ivan_Herman]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/vp+sd-jwt' =>
   array(
     'Name' => 'vp+sd-jwt',
     'Template' => 'application/vp+sd-jwt',
-    'Reference' => '[W3C_Verifiable_Credentials_WG][Ivan_Herman]',
+    'Reference' => '[W3C_Verifiable_Credentials_WG]; [Ivan_Herman]',
     'Active' => true,
   ),
   'application/vq-rtcpxr' =>
@@ -12348,7 +12348,7 @@ return array(
   array(
     'Name' => 'wasm',
     'Template' => 'application/wasm',
-    'Reference' => '[W3C][Eric_Prudhommeaux]',
+    'Reference' => '[W3C]; [Eric_Prudhommeaux]',
     'Active' => true,
   ),
   'application/watcherinfo+xml' =>
@@ -12383,7 +12383,7 @@ return array(
   array(
     'Name' => 'widget',
     'Template' => 'application/widget',
-    'Reference' => '[W3C][Steven_Pemberton][W3C-Widgets-2012]',
+    'Reference' => '[W3C]; [Steven_Pemberton]; [W3C-Widgets-2012]',
     'Active' => true,
   ),
   'application/wita' =>
@@ -12425,7 +12425,7 @@ return array(
   array(
     'Name' => 'x-www-form-urlencoded',
     'Template' => 'application/x-www-form-urlencoded',
-    'Reference' => '[WHATWG][Anne_van_Kesteren]',
+    'Reference' => '[WHATWG]; [Anne_van_Kesteren]',
     'Active' => true,
   ),
   'application/x-x509-ca-cert' =>
@@ -12523,28 +12523,28 @@ return array(
   array(
     'Name' => 'xenc+xml',
     'Template' => 'application/xenc+xml',
-    'Reference' => '[Joseph_Reagle][XENC_WG]',
+    'Reference' => '[Joseph_Reagle]; [XENC_WG]',
     'Active' => true,
   ),
   'application/xfdf' =>
   array(
     'Name' => 'xfdf',
     'Template' => 'application/xfdf',
-    'Reference' => '[ISO-TC_171-SC_2][Betsy_Fanning]',
+    'Reference' => '[ISO-TC_171-SC_2]; [Betsy_Fanning]',
     'Active' => true,
   ),
   'application/xhtml+xml' =>
   array(
     'Name' => 'xhtml+xml',
     'Template' => 'application/xhtml+xml',
-    'Reference' => '[W3C][Robin_Berjon]',
+    'Reference' => '[W3C]; [Robin_Berjon]',
     'Active' => true,
   ),
   'application/xliff+xml' =>
   array(
     'Name' => 'xliff+xml',
     'Template' => 'application/xliff+xml',
-    'Reference' => '[OASIS][Chet_Ensign]',
+    'Reference' => '[OASIS]; [Chet_Ensign]',
     'Active' => true,
   ),
   'application/xml' =>
@@ -12593,7 +12593,7 @@ return array(
   array(
     'Name' => 'xslt+xml',
     'Template' => 'application/xslt+xml',
-    'Reference' => '[W3C][http://www.w3.org/TR/2007/REC-xslt20-20070123/#media-type-registration]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/2007/REC-xslt20-20070123/#media-type-registration]',
     'Active' => true,
   ),
   'application/xv+xml' =>
@@ -12607,7 +12607,7 @@ return array(
   array(
     'Name' => 'yaml',
     'Template' => 'application/yaml',
-    'Reference' => '[YAML][RFC 9512]',
+    'Reference' => '[YAML]; [RFC 9512]',
     'Active' => true,
   ),
   'application/yang' =>
@@ -12698,28 +12698,28 @@ return array(
   array(
     'Name' => '32kadpcm',
     'Template' => 'audio/32kadpcm',
-    'Reference' => '[RFC 3802][RFC 2421]',
+    'Reference' => '[RFC 3802]; [RFC 2421]',
     'Active' => true,
   ),
   'audio/3gpp' =>
   array(
     'Name' => '3gpp',
     'Template' => 'audio/3gpp',
-    'Reference' => '[RFC 3839][RFC 6381]',
+    'Reference' => '[RFC 3839]; [RFC 6381]',
     'Active' => true,
   ),
   'audio/3gpp2' =>
   array(
     'Name' => '3gpp2',
     'Template' => 'audio/3gpp2',
-    'Reference' => '[RFC 4393][RFC 6381]',
+    'Reference' => '[RFC 4393]; [RFC 6381]',
     'Active' => true,
   ),
   'audio/aac' =>
   array(
     'Name' => 'aac',
     'Template' => 'audio/aac',
-    'Reference' => '[ISO-IEC_JTC_1][Max_Neuendorf]',
+    'Reference' => '[ISO-IEC_JTC_1]; [Max_Neuendorf]',
     'Active' => true,
   ),
   'audio/ac3' =>
@@ -12789,7 +12789,7 @@ return array(
   array(
     'Name' => 'basic',
     'Template' => 'audio/basic',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'audio/bv16' =>
@@ -12985,7 +12985,7 @@ return array(
   array(
     'Name' => 'EVS',
     'Template' => 'audio/EVS',
-    'Reference' => '[_3GPP][Kyunghun_Jung]',
+    'Reference' => '[_3GPP]; [Kyunghun_Jung]',
     'Active' => true,
   ),
   'audio/example' =>
@@ -13027,7 +13027,7 @@ return array(
   array(
     'Name' => 'G719',
     'Template' => 'audio/G719',
-    'Reference' => '[RFC 5404][RFC Errata 3245]',
+    'Reference' => '[RFC 5404]; [RFC Errata 3245]',
     'Active' => true,
   ),
   'audio/g722' =>
@@ -13097,7 +13097,7 @@ return array(
   array(
     'Name' => 'G7291',
     'Template' => 'audio/G7291',
-    'Reference' => '[RFC 4749][RFC 5459]',
+    'Reference' => '[RFC 4749]; [RFC 5459]',
     'Active' => true,
   ),
   'audio/g729d' =>
@@ -13223,14 +13223,14 @@ return array(
   array(
     'Name' => 'mhas',
     'Template' => 'audio/mhas',
-    'Reference' => '[ISO-IEC_JTC_1][Nils_Peters][Ingo_Hofmann]',
+    'Reference' => '[ISO-IEC_JTC_1]; [Nils_Peters]; [Ingo_Hofmann]',
     'Active' => true,
   ),
   'audio/midi-clip' =>
   array(
     'Name' => 'midi-clip',
     'Template' => 'audio/midi-clip',
-    'Reference' => '[MIDI_Association][Benjamin_Israel]',
+    'Reference' => '[MIDI_Association]; [Benjamin_Israel]',
     'Active' => true,
   ),
   'audio/mobile-xmf' =>
@@ -13244,7 +13244,7 @@ return array(
   array(
     'Name' => 'mp4',
     'Template' => 'audio/mp4',
-    'Reference' => '[RFC 4337][RFC 6381]',
+    'Reference' => '[RFC 4337]; [RFC 6381]',
     'Active' => true,
   ),
   'audio/mp4a-latm' =>
@@ -13279,14 +13279,14 @@ return array(
   array(
     'Name' => 'mpeg4-generic',
     'Template' => 'audio/mpeg4-generic',
-    'Reference' => '[RFC 3640][RFC 5691][RFC 6295]',
+    'Reference' => '[RFC 3640]; [RFC 5691]; [RFC 6295]',
     'Active' => true,
   ),
   'audio/ogg' =>
   array(
     'Name' => 'ogg',
     'Template' => 'audio/ogg',
-    'Reference' => '[RFC 5334][RFC 7845]',
+    'Reference' => '[RFC 5334]; [RFC 7845]',
     'Active' => true,
   ),
   'audio/opus' =>
@@ -13349,7 +13349,7 @@ return array(
   array(
     'Name' => 'QCELP',
     'Template' => 'audio/QCELP',
-    'Reference' => '[RFC 3555][RFC 3625]',
+    'Reference' => '[RFC 3555]; [RFC 3625]',
     'Active' => true,
   ),
   'audio/raptorfec' =>
@@ -13426,7 +13426,7 @@ return array(
   array(
     'Name' => 'sofa',
     'Template' => 'audio/sofa',
-    'Reference' => '[AES][Piotr_Majdak]',
+    'Reference' => '[AES]; [Piotr_Majdak]',
     'Active' => true,
   ),
   'audio/soundfont' =>
@@ -13440,7 +13440,7 @@ return array(
   array(
     'Name' => 'sp-midi',
     'Template' => 'audio/sp-midi',
-    'Reference' => '[Athan_Billias][MIDI_Association]',
+    'Reference' => '[Athan_Billias]; [MIDI_Association]',
     'Active' => true,
   ),
   'audio/speex' =>
@@ -13475,14 +13475,14 @@ return array(
   array(
     'Name' => 'TETRA_ACELP',
     'Template' => 'audio/TETRA_ACELP',
-    'Reference' => '[ETSI][Miguel_Angel_Reina_Ortega]',
+    'Reference' => '[ETSI]; [Miguel_Angel_Reina_Ortega]',
     'Active' => true,
   ),
   'audio/tetra_acelp_bb' =>
   array(
     'Name' => 'TETRA_ACELP_BB',
     'Template' => 'audio/TETRA_ACELP_BB',
-    'Reference' => '[ETSI][Miguel_Angel_Reina_Ortega]',
+    'Reference' => '[ETSI]; [Miguel_Angel_Reina_Ortega]',
     'Active' => true,
   ),
   'audio/tone' =>
@@ -13517,7 +13517,7 @@ return array(
   array(
     'Name' => 'usac',
     'Template' => 'audio/usac',
-    'Reference' => '[ISO-IEC_JTC_1][Max_Neuendorf]',
+    'Reference' => '[ISO-IEC_JTC_1]; [Max_Neuendorf]',
     'Active' => true,
   ),
   'audio/vdvi' =>
@@ -13531,7 +13531,7 @@ return array(
   array(
     'Name' => 'VMR-WB',
     'Template' => 'audio/VMR-WB',
-    'Reference' => '[RFC 4348][RFC 4424]',
+    'Reference' => '[RFC 4348]; [RFC 4424]',
     'Active' => true,
   ),
   'audio/vnd.3gpp.iufp' =>
@@ -13846,35 +13846,35 @@ return array(
   array(
     'Name' => 'aces',
     'Template' => 'image/aces',
-    'Reference' => '[SMPTE][Howard_Lukk]',
+    'Reference' => '[SMPTE]; [Howard_Lukk]',
     'Active' => true,
   ),
   'image/apng' =>
   array(
     'Name' => 'apng',
     'Template' => 'image/apng',
-    'Reference' => '[W3C][W3C_PNG_WG]',
+    'Reference' => '[W3C]; [W3C_PNG_WG]',
     'Active' => true,
   ),
   'image/avci' =>
   array(
     'Name' => 'avci',
     'Template' => 'image/avci',
-    'Reference' => '[ISO-IEC_JTC_1][David_Singer]',
+    'Reference' => '[ISO-IEC_JTC_1]; [David_Singer]',
     'Active' => true,
   ),
   'image/avcs' =>
   array(
     'Name' => 'avcs',
     'Template' => 'image/avcs',
-    'Reference' => '[ISO-IEC_JTC_1][David_Singer]',
+    'Reference' => '[ISO-IEC_JTC_1]; [David_Singer]',
     'Active' => true,
   ),
   'image/avif' =>
   array(
     'Name' => 'avif',
     'Template' => 'image/avif',
-    'Reference' => '[Alliance_for_Open_Media][Cyril_Concolato]',
+    'Reference' => '[Alliance_for_Open_Media]; [Cyril_Concolato]',
     'Active' => true,
   ),
   'image/bmp' =>
@@ -13895,14 +13895,14 @@ return array(
   array(
     'Name' => 'dicom-rle',
     'Template' => 'image/dicom-rle',
-    'Reference' => '[DICOM_Standard_Committee][David_Clunie]',
+    'Reference' => '[DICOM_Standard_Committee]; [David_Clunie]',
     'Active' => true,
   ),
   'image/dpx' =>
   array(
     'Name' => 'dpx',
     'Template' => 'image/dpx',
-    'Reference' => '[SMPTE][SMPTE_Director_of_Standards_Development]',
+    'Reference' => '[SMPTE]; [SMPTE_Director_of_Standards_Development]',
     'Active' => true,
   ),
   'image/emf' =>
@@ -13937,49 +13937,49 @@ return array(
   array(
     'Name' => 'gif',
     'Template' => 'image/gif',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'image/heic' =>
   array(
     'Name' => 'heic',
     'Template' => 'image/heic',
-    'Reference' => '[ISO-IEC_JTC_1][David_Singer]',
+    'Reference' => '[ISO-IEC_JTC_1]; [David_Singer]',
     'Active' => true,
   ),
   'image/heic-sequence' =>
   array(
     'Name' => 'heic-sequence',
     'Template' => 'image/heic-sequence',
-    'Reference' => '[ISO-IEC_JTC_1][David_Singer]',
+    'Reference' => '[ISO-IEC_JTC_1]; [David_Singer]',
     'Active' => true,
   ),
   'image/heif' =>
   array(
     'Name' => 'heif',
     'Template' => 'image/heif',
-    'Reference' => '[ISO-IEC_JTC_1][David_Singer]',
+    'Reference' => '[ISO-IEC_JTC_1]; [David_Singer]',
     'Active' => true,
   ),
   'image/heif-sequence' =>
   array(
     'Name' => 'heif-sequence',
     'Template' => 'image/heif-sequence',
-    'Reference' => '[ISO-IEC_JTC_1][David_Singer]',
+    'Reference' => '[ISO-IEC_JTC_1]; [David_Singer]',
     'Active' => true,
   ),
   'image/hej2k' =>
   array(
     'Name' => 'hej2k',
     'Template' => 'image/hej2k',
-    'Reference' => '[ISO-IEC_JTC_1][ITU-T]',
+    'Reference' => '[ISO-IEC_JTC_1]; [ITU-T]',
     'Active' => true,
   ),
   'image/hsj2' =>
   array(
     'Name' => 'hsj2 (OBSOLETE)',
     'Template' => 'image/hsj2',
-    'Reference' => '[ISO-IEC_JTC_1][ITU-T]',
+    'Reference' => '[ISO-IEC_JTC_1]; [ITU-T]',
     'Active' => true,
   ),
   'image/ief' =>
@@ -13993,28 +13993,28 @@ return array(
   array(
     'Name' => 'j2c',
     'Template' => 'image/j2c',
-    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1][ISO-IEC_JTC_1][ITU-T]',
+    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1]; [ISO-IEC_JTC_1]; [ITU-T]',
     'Active' => true,
   ),
   'image/jaii' =>
   array(
     'Name' => 'jaii',
     'Template' => 'image/jaii',
-    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1][Ye-Kui_Wang]',
+    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1]; [Ye-Kui_Wang]',
     'Active' => true,
   ),
   'image/jais' =>
   array(
     'Name' => 'jais',
     'Template' => 'image/jais',
-    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1][Ye-Kui_Wang]',
+    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1]; [Ye-Kui_Wang]',
     'Active' => true,
   ),
   'image/jls' =>
   array(
     'Name' => 'jls',
     'Template' => 'image/jls',
-    'Reference' => '[DICOM_Standard_Committee][David_Clunie]',
+    'Reference' => '[DICOM_Standard_Committee]; [David_Clunie]',
     'Active' => true,
   ),
   'image/jp2' =>
@@ -14028,21 +14028,21 @@ return array(
   array(
     'Name' => 'jpeg',
     'Template' => 'image/jpeg',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'image/jph' =>
   array(
     'Name' => 'jph',
     'Template' => 'image/jph',
-    'Reference' => '[ISO-IEC_JTC_1][ITU-T]',
+    'Reference' => '[ISO-IEC_JTC_1]; [ITU-T]',
     'Active' => true,
   ),
   'image/jphc' =>
   array(
     'Name' => 'jphc',
     'Template' => 'image/jphc',
-    'Reference' => '[ISO-IEC_JTC_1][ITU-T]',
+    'Reference' => '[ISO-IEC_JTC_1]; [ITU-T]',
     'Active' => true,
   ),
   'image/jpm' =>
@@ -14056,35 +14056,35 @@ return array(
   array(
     'Name' => 'jpx',
     'Template' => 'image/jpx',
-    'Reference' => '[RFC 3745][ISO-IEC_JTC_1_SC_29_WG_1]',
+    'Reference' => '[RFC 3745]; [ISO-IEC_JTC_1_SC_29_WG_1]',
     'Active' => true,
   ),
   'image/jxl' =>
   array(
     'Name' => 'jxl',
     'Template' => 'image/jxl',
-    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1][ISO-IEC_JTC_1]',
+    'Reference' => '[ISO-IEC_JTC_1_SC_29_WG_1]; [ISO-IEC_JTC_1]',
     'Active' => true,
   ),
   'image/jxr' =>
   array(
     'Name' => 'jxr',
     'Template' => 'image/jxr',
-    'Reference' => '[ISO-IEC_JTC_1][ITU-T]',
+    'Reference' => '[ISO-IEC_JTC_1]; [ITU-T]',
     'Active' => true,
   ),
   'image/jxra' =>
   array(
     'Name' => 'jxrA',
     'Template' => 'image/jxrA',
-    'Reference' => '[ISO-IEC_JTC_1][ITU-T]',
+    'Reference' => '[ISO-IEC_JTC_1]; [ITU-T]',
     'Active' => true,
   ),
   'image/jxrs' =>
   array(
     'Name' => 'jxrS',
     'Template' => 'image/jxrS',
-    'Reference' => '[ISO-IEC_JTC_1][ITU-T]',
+    'Reference' => '[ISO-IEC_JTC_1]; [ITU-T]',
     'Active' => true,
   ),
   'image/jxs' =>
@@ -14119,14 +14119,14 @@ return array(
   array(
     'Name' => 'ktx',
     'Template' => 'image/ktx',
-    'Reference' => '[Khronos][Mark_Callow]',
+    'Reference' => '[Khronos]; [Mark_Callow]',
     'Active' => true,
   ),
   'image/ktx2' =>
   array(
     'Name' => 'ktx2',
     'Template' => 'image/ktx2',
-    'Reference' => '[Khronos][Mark_Callow]',
+    'Reference' => '[Khronos]; [Mark_Callow]',
     'Active' => true,
   ),
   'image/naplps' =>
@@ -14140,7 +14140,7 @@ return array(
   array(
     'Name' => 'png',
     'Template' => 'image/png',
-    'Reference' => '[W3C][PNG_WG][PNG]',
+    'Reference' => '[W3C]; [PNG_WG]; [PNG]',
     'Active' => true,
   ),
   'image/prs.aimg' =>
@@ -14175,7 +14175,7 @@ return array(
   array(
     'Name' => 'svg+xml',
     'Template' => 'image/svg+xml',
-    'Reference' => '[W3C][http://www.w3.org/TR/SVG/mimereg.html]',
+    'Reference' => '[W3C]; [http://www.w3.org/TR/SVG/mimereg.html]',
     'Active' => true,
   ),
   'image/t38' =>
@@ -14252,7 +14252,7 @@ return array(
   array(
     'Name' => 'vnd.dvb.subtitle',
     'Template' => 'image/vnd.dvb.subtitle',
-    'Reference' => '[Peter_Siebert][Michael_Lagally]',
+    'Reference' => '[Peter_Siebert]; [Michael_Lagally]',
     'Active' => true,
   ),
   'image/vnd.dwg' =>
@@ -14350,14 +14350,14 @@ return array(
   array(
     'Name' => 'vnd.pco.b16',
     'Template' => 'image/vnd.pco.b16',
-    'Reference' => '[PCO_AG][Jan_Zeman]',
+    'Reference' => '[PCO_AG]; [Jan_Zeman]',
     'Active' => true,
   ),
   'image/vnd.radiance' =>
   array(
     'Name' => 'vnd.radiance',
     'Template' => 'image/vnd.radiance',
-    'Reference' => '[Randolph_Fritz][Greg_Ward]',
+    'Reference' => '[Randolph_Fritz]; [Greg_Ward]',
     'Active' => true,
   ),
   'image/vnd.sealed.png' =>
@@ -14497,7 +14497,7 @@ return array(
   array(
     'Name' => 'external-body',
     'Template' => 'message/external-body',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'message/feedback-report' =>
@@ -14560,7 +14560,7 @@ return array(
   array(
     'Name' => 'news (OBSOLETED by [RFC 5537])',
     'Template' => 'message/news',
-    'Reference' => '[RFC 5537][Henry_Spencer]',
+    'Reference' => '[RFC 5537]; [Henry_Spencer]',
     'Active' => true,
   ),
   'message/ohttp-chunked-req' =>
@@ -14595,21 +14595,21 @@ return array(
   array(
     'Name' => 'partial',
     'Template' => 'message/partial',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'message/rfc822' =>
   array(
     'Name' => 'rfc822',
     'Template' => 'message/rfc822',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'message/s-http' =>
   array(
     'Name' => 's-http (OBSOLETE)',
     'Template' => 'message/s-http',
-    'Reference' => '[RFC 2660][Status change of HTTP experiments to Historic]',
+    'Reference' => '[RFC 2660]; [Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
   'message/sip' =>
@@ -14651,7 +14651,7 @@ return array(
   array(
     'Name' => '3mf',
     'Template' => 'model/3mf',
-    'Reference' => '[http://www.3mf.io/specification][_3MF][Michael_Sweet]',
+    'Reference' => '[http://www.3mf.io/specification]; [_3MF]; [Michael_Sweet]',
     'Active' => true,
   ),
   'model/e57' =>
@@ -14672,14 +14672,14 @@ return array(
   array(
     'Name' => 'gltf+json',
     'Template' => 'model/gltf+json',
-    'Reference' => '[Khronos][Uli_Klumpp]',
+    'Reference' => '[Khronos]; [Uli_Klumpp]',
     'Active' => true,
   ),
   'model/gltf-binary' =>
   array(
     'Name' => 'gltf-binary',
     'Template' => 'model/gltf-binary',
-    'Reference' => '[Khronos][Saurabh_Bhatia]',
+    'Reference' => '[Khronos]; [Saurabh_Bhatia]',
     'Active' => true,
   ),
   'model/iges' =>
@@ -14693,7 +14693,7 @@ return array(
   array(
     'Name' => 'JT',
     'Template' => 'model/JT',
-    'Reference' => '[ISO-TC_184-SC_4][Michael_Zink]',
+    'Reference' => '[ISO-TC_184-SC_4]; [Michael_Zink]',
     'Active' => true,
   ),
   'model/mesh' =>
@@ -14707,63 +14707,63 @@ return array(
   array(
     'Name' => 'mtl',
     'Template' => 'model/mtl',
-    'Reference' => '[DICOM_Standard_Committee][DICOM_WG_17][Carolyn_Hull]',
+    'Reference' => '[DICOM_Standard_Committee]; [DICOM_WG_17]; [Carolyn_Hull]',
     'Active' => true,
   ),
   'model/obj' =>
   array(
     'Name' => 'obj',
     'Template' => 'model/obj',
-    'Reference' => '[DICOM_Standard_Committee][DICOM_WG_17][Carolyn_Hull]',
+    'Reference' => '[DICOM_Standard_Committee]; [DICOM_WG_17]; [Carolyn_Hull]',
     'Active' => true,
   ),
   'model/prc' =>
   array(
     'Name' => 'prc',
     'Template' => 'model/prc',
-    'Reference' => '[ISO-TC_171-SC_2][Betsy_Fanning]',
+    'Reference' => '[ISO-TC_171-SC_2]; [Betsy_Fanning]',
     'Active' => true,
   ),
   'model/step' =>
   array(
     'Name' => 'step',
     'Template' => 'model/step',
-    'Reference' => '[ISO-TC_184-SC_4][Dana_Tripp]',
+    'Reference' => '[ISO-TC_184-SC_4]; [Dana_Tripp]',
     'Active' => true,
   ),
   'model/step+xml' =>
   array(
     'Name' => 'step+xml',
     'Template' => 'model/step+xml',
-    'Reference' => '[ISO-TC_184-SC_4][Dana_Tripp]',
+    'Reference' => '[ISO-TC_184-SC_4]; [Dana_Tripp]',
     'Active' => true,
   ),
   'model/step+zip' =>
   array(
     'Name' => 'step+zip',
     'Template' => 'model/step+zip',
-    'Reference' => '[ISO-TC_184-SC_4][Dana_Tripp]',
+    'Reference' => '[ISO-TC_184-SC_4]; [Dana_Tripp]',
     'Active' => true,
   ),
   'model/step-xml+zip' =>
   array(
     'Name' => 'step-xml+zip',
     'Template' => 'model/step-xml+zip',
-    'Reference' => '[ISO-TC_184-SC_4][Dana_Tripp]',
+    'Reference' => '[ISO-TC_184-SC_4]; [Dana_Tripp]',
     'Active' => true,
   ),
   'model/stl' =>
   array(
     'Name' => 'stl',
     'Template' => 'model/stl',
-    'Reference' => '[DICOM_Standard_Committee][DICOM_WG_17][Carolyn_Hull]',
+    'Reference' => '[DICOM_Standard_Committee]; [DICOM_WG_17]; [Carolyn_Hull]',
     'Active' => true,
   ),
   'model/u3d' =>
   array(
     'Name' => 'u3d',
     'Template' => 'model/u3d',
-    'Reference' => '[PDF_Association][Peter_Wyatt]',
+    'Reference' => '[PDF_Association]; [Peter_Wyatt]',
     'Active' => true,
   ),
   'model/vnd.bary' =>
@@ -14889,7 +14889,7 @@ return array(
   array(
     'Name' => 'vnd.sap.vds',
     'Template' => 'model/vnd.sap.vds',
-    'Reference' => '[SAP_SE][Igor_Afanasyev]',
+    'Reference' => '[SAP_SE]; [Igor_Afanasyev]',
     'Active' => true,
   ),
   'model/vnd.sdf3d.s3d' =>
@@ -14945,21 +14945,21 @@ return array(
   array(
     'Name' => 'x3d+xml',
     'Template' => 'model/x3d+xml',
-    'Reference' => '[Web3D][Web3D_X3D]',
+    'Reference' => '[Web3D]; [Web3D_X3D]',
     'Active' => true,
   ),
   'model/x3d-vrml' =>
   array(
     'Name' => 'x3d-vrml',
     'Template' => 'model/x3d-vrml',
-    'Reference' => '[Web3D][Web3D_X3D]',
+    'Reference' => '[Web3D]; [Web3D_X3D]',
     'Active' => true,
   ),
   'multipart/alternative' =>
   array(
     'Name' => 'alternative',
     'Template' => 'multipart/alternative',
-    'Reference' => '[RFC 2046][RFC 2045]',
+    'Reference' => '[RFC 2046]; [RFC 2045]',
     'Active' => true,
   ),
   'multipart/appledouble' =>
@@ -14980,7 +14980,7 @@ return array(
   array(
     'Name' => 'digest',
     'Template' => 'multipart/digest',
-    'Reference' => '[RFC 2046][RFC 2045]',
+    'Reference' => '[RFC 2046]; [RFC 2045]',
     'Active' => true,
   ),
   'multipart/encrypted' =>
@@ -15015,7 +15015,7 @@ return array(
   array(
     'Name' => 'mixed',
     'Template' => 'multipart/mixed',
-    'Reference' => '[RFC 2046][RFC 2045]',
+    'Reference' => '[RFC 2046]; [RFC 2045]',
     'Active' => true,
   ),
   'multipart/multilingual' =>
@@ -15029,7 +15029,7 @@ return array(
   array(
     'Name' => 'parallel',
     'Template' => 'multipart/parallel',
-    'Reference' => '[RFC 2046][RFC 2045]',
+    'Reference' => '[RFC 2046]; [RFC 2045]',
     'Active' => true,
   ),
   'multipart/related' =>
@@ -15071,7 +15071,7 @@ return array(
   array(
     'Name' => 'x-mixed-replace',
     'Template' => 'multipart/x-mixed-replace',
-    'Reference' => '[W3C][Robin_Berjon]',
+    'Reference' => '[W3C]; [Robin_Berjon]',
     'Active' => true,
   ),
   'text/1d-interleaved-parityfec' =>
@@ -15085,7 +15085,7 @@ return array(
   array(
     'Name' => 'cache-manifest',
     'Template' => 'text/cache-manifest',
-    'Reference' => '[W3C][Robin_Berjon]',
+    'Reference' => '[W3C]; [Robin_Berjon]',
     'Active' => true,
   ),
   'text/calendar' =>
@@ -15099,49 +15099,49 @@ return array(
   array(
     'Name' => 'cql',
     'Template' => 'text/cql',
-    'Reference' => '[HL7][Bryn_Rhodes]',
+    'Reference' => '[HL7]; [Bryn_Rhodes]',
     'Active' => true,
   ),
   'text/cql-expression' =>
   array(
     'Name' => 'cql-expression',
     'Template' => 'text/cql-expression',
-    'Reference' => '[HL7][Bryn_Rhodes]',
+    'Reference' => '[HL7]; [Bryn_Rhodes]',
     'Active' => true,
   ),
   'text/cql-identifier' =>
   array(
     'Name' => 'cql-identifier',
     'Template' => 'text/cql-identifier',
-    'Reference' => '[HL7][Bryn_Rhodes]',
+    'Reference' => '[HL7]; [Bryn_Rhodes]',
     'Active' => true,
   ),
   'text/css' =>
   array(
     'Name' => 'css',
     'Template' => 'text/css',
-    'Reference' => '[W3C][https://www.w3.org/TR/css]',
+    'Reference' => '[W3C]; [https://www.w3.org/TR/css]',
     'Active' => true,
   ),
   'text/csv' =>
   array(
     'Name' => 'csv',
     'Template' => 'text/csv',
-    'Reference' => '[RFC 4180][RFC 7111]',
+    'Reference' => '[RFC 4180]; [RFC 7111]',
     'Active' => true,
   ),
   'text/csv-schema' =>
   array(
     'Name' => 'csv-schema',
     'Template' => 'text/csv-schema',
-    'Reference' => '[National_Archives_UK][David_Underdown]',
+    'Reference' => '[National_Archives_UK]; [David_Underdown]',
     'Active' => true,
   ),
   'text/directory' =>
   array(
     'Name' => 'directory - DEPRECATED by RFC6350',
     'Template' => 'text/directory',
-    'Reference' => '[RFC 2425][RFC 6350]',
+    'Reference' => '[RFC 2425]; [RFC 6350]',
     'Active' => true,
   ),
   'text/dns' =>
@@ -15183,7 +15183,7 @@ return array(
   array(
     'Name' => 'fhirpath',
     'Template' => 'text/fhirpath',
-    'Reference' => '[HL7][Bryn_Rhodes]',
+    'Reference' => '[HL7]; [Bryn_Rhodes]',
     'Active' => true,
   ),
   'text/flexfec' =>
@@ -15218,14 +15218,14 @@ return array(
   array(
     'Name' => 'hl7v2',
     'Template' => 'text/hl7v2',
-    'Reference' => '[HL7][Marc_Duteau]',
+    'Reference' => '[HL7]; [Marc_Duteau]',
     'Active' => true,
   ),
   'text/html' =>
   array(
     'Name' => 'html',
     'Template' => 'text/html',
-    'Reference' => '[W3C][Robin_Berjon]',
+    'Reference' => '[W3C]; [Robin_Berjon]',
     'Active' => true,
   ),
   'text/javascript' =>
@@ -15260,14 +15260,14 @@ return array(
   array(
     'Name' => 'n3',
     'Template' => 'text/n3',
-    'Reference' => '[W3C][Eric_Prudhommeaux]',
+    'Reference' => '[W3C]; [Eric_Prudhommeaux]',
     'Active' => true,
   ),
   'text/org' =>
   array(
     'Name' => 'org',
     'Template' => 'text/org',
-    'Reference' => '[Org_Mode][Jeffrey_Gipson][4]',
+    'Reference' => '[Org_Mode]; [Jeffrey_Gipson][4]',
     'Active' => true,
   ),
   'text/parameters' =>
@@ -15288,14 +15288,14 @@ return array(
   array(
     'Name' => 'plain',
     'Template' => 'text/plain',
-    'Reference' => '[RFC 2046][RFC 3676][RFC 5147]',
+    'Reference' => '[RFC 2046]; [RFC 3676]; [RFC 5147]',
     'Active' => true,
   ),
   'text/provenance-notation' =>
   array(
     'Name' => 'provenance-notation',
     'Template' => 'text/provenance-notation',
-    'Reference' => '[W3C][Ivan_Herman]',
+    'Reference' => '[W3C]; [Ivan_Herman]',
     'Active' => true,
   ),
   'text/prs.fallenstein.rst' =>
@@ -15358,7 +15358,7 @@ return array(
   array(
     'Name' => 'richtext',
     'Template' => 'text/richtext',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'text/rtf' =>
@@ -15400,21 +15400,21 @@ return array(
   array(
     'Name' => 'shaclc',
     'Template' => 'text/shaclc',
-    'Reference' => '[W3C_SHACL_Community_Group][Vladimir_Alexiev]',
+    'Reference' => '[W3C_SHACL_Community_Group]; [Vladimir_Alexiev]',
     'Active' => true,
   ),
   'text/shex' =>
   array(
     'Name' => 'shex',
     'Template' => 'text/shex',
-    'Reference' => '[W3C][Eric_Prudhommeaux]',
+    'Reference' => '[W3C]; [Eric_Prudhommeaux]',
     'Active' => true,
   ),
   'text/spdx' =>
   array(
     'Name' => 'spdx',
     'Template' => 'text/spdx',
-    'Reference' => '[Linux_Foundation][Rose_Judge]',
+    'Reference' => '[Linux_Foundation]; [Rose_Judge]',
     'Active' => true,
   ),
   'text/strings' =>
@@ -15449,7 +15449,7 @@ return array(
   array(
     'Name' => 'turtle',
     'Template' => 'text/turtle',
-    'Reference' => '[W3C][Eric_Prudhommeaux]',
+    'Reference' => '[W3C]; [Eric_Prudhommeaux]',
     'Active' => true,
   ),
   'text/ulpfec' =>
@@ -15526,7 +15526,7 @@ return array(
   array(
     'Name' => 'vnd.dvb.subtitle',
     'Template' => 'text/vnd.dvb.subtitle',
-    'Reference' => '[Peter_Siebert][Michael_Lagally]',
+    'Reference' => '[Peter_Siebert]; [Michael_Lagally]',
     'Active' => true,
   ),
   'text/vnd.esmertec.theme-descriptor' =>
@@ -15799,14 +15799,14 @@ return array(
   array(
     'Name' => 'vtt',
     'Template' => 'text/vtt',
-    'Reference' => '[W3C][Silvia_Pfeiffer]',
+    'Reference' => '[W3C]; [Silvia_Pfeiffer]',
     'Active' => true,
   ),
   'text/wgsl' =>
   array(
     'Name' => 'wgsl',
     'Template' => 'text/wgsl',
-    'Reference' => '[W3C][David_Neto]',
+    'Reference' => '[W3C]; [David_Neto]',
     'Active' => true,
   ),
   'text/xml' =>
@@ -15834,7 +15834,7 @@ return array(
   array(
     'Name' => '3gpp',
     'Template' => 'video/3gpp',
-    'Reference' => '[RFC 3839][RFC 6381]',
+    'Reference' => '[RFC 3839]; [RFC 6381]',
     'Active' => true,
   ),
   'video/3gpp-tt' =>
@@ -15848,7 +15848,7 @@ return array(
   array(
     'Name' => '3gpp2',
     'Template' => 'video/3gpp2',
-    'Reference' => '[RFC 4393][RFC 6381]',
+    'Reference' => '[RFC 4393]; [RFC 6381]',
     'Active' => true,
   ),
   'video/av1' =>
@@ -15988,7 +15988,7 @@ return array(
   array(
     'Name' => 'iso.segment',
     'Template' => 'video/iso.segment',
-    'Reference' => '[David_Singer][ISO-IEC_JTC_1]',
+    'Reference' => '[David_Singer]; [ISO-IEC_JTC_1]',
     'Active' => true,
   ),
   'video/jpeg' =>
@@ -16002,7 +16002,7 @@ return array(
   array(
     'Name' => 'jpeg2000',
     'Template' => 'video/jpeg2000',
-    'Reference' => '[RFC 5371][RFC 5372]',
+    'Reference' => '[RFC 5371]; [RFC 5372]',
     'Active' => true,
   ),
   'video/jpeg2000-scl' =>
@@ -16072,7 +16072,7 @@ return array(
   array(
     'Name' => 'mp4',
     'Template' => 'video/mp4',
-    'Reference' => '[RFC 4337][RFC 6381]',
+    'Reference' => '[RFC 4337]; [RFC 6381]',
     'Active' => true,
   ),
   'video/mp4v-es' =>
@@ -16086,7 +16086,7 @@ return array(
   array(
     'Name' => 'mpeg',
     'Template' => 'video/mpeg',
-    'Reference' => '[RFC 2045][RFC 2046]',
+    'Reference' => '[RFC 2045]; [RFC 2046]',
     'Active' => true,
   ),
   'video/mpeg4-generic' =>
@@ -16114,7 +16114,7 @@ return array(
   array(
     'Name' => 'ogg',
     'Template' => 'video/ogg',
-    'Reference' => '[RFC 5334][RFC 7845]',
+    'Reference' => '[RFC 5334]; [RFC 7845]',
     'Active' => true,
   ),
   'video/parityfec' =>
@@ -16142,7 +16142,7 @@ return array(
   array(
     'Name' => 'quicktime',
     'Template' => 'video/quicktime',
-    'Reference' => '[RFC 6381][Paul_Lindner]',
+    'Reference' => '[RFC 6381]; [Paul_Lindner]',
     'Active' => true,
   ),
   'video/raptorfec' =>
@@ -16303,7 +16303,7 @@ return array(
   array(
     'Name' => 'vnd.dvb.file',
     'Template' => 'video/vnd.dvb.file',
-    'Reference' => '[Peter_Siebert][Kevin_Murray]',
+    'Reference' => '[Peter_Siebert]; [Kevin_Murray]',
     'Active' => true,
   ),
   'video/vnd.fvt' =>

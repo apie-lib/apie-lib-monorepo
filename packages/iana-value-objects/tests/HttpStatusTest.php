@@ -18,7 +18,7 @@ class HttpStatusTest extends TestCase
         $this->assertEquals('200', $testItem->toNative());
         $this->assertEquals('200', $testItem->getValue());
         $this->assertEquals('OK', $testItem->getDescription());
-        $this->assertEquals('[RFC9110, Section 15.3.1]', $testItem->getReference());
+        $this->assertEquals('[RFC 9110, Section 15.3.1]', $testItem->getReference());
         $this->assertTrue($testItem->isActive());
     }
 

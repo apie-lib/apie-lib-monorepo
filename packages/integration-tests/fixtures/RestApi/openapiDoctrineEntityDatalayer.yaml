@@ -608,6 +608,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/IanaObject/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -661,6 +668,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/ObjectWithRelation/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -714,6 +728,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/PrimitiveOnly/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -767,6 +788,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/RestrictedEntity/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -820,6 +848,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/SpecialTypeOnly/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -873,6 +908,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/TranslationAware/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -926,6 +968,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/UnionObject/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -979,6 +1028,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/UploadedFile/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -1032,6 +1088,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/User/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -1085,6 +1148,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/action/Authentication/acceptLocale/dropdown-options/{property}':
     post:
       tags:
@@ -2041,6 +2111,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IanaObject-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -2415,6 +2492,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjectWithRelation-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -2625,6 +2709,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -2806,6 +2897,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TranslationAware-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -2985,6 +3083,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnionObject-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -3196,6 +3301,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Animal-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -3386,6 +3498,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExternalFile-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -3570,6 +3689,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrimitiveOnly-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -3773,6 +3899,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -3965,6 +4098,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpecialTypeOnly-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -4179,6 +4319,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -4365,6 +4512,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -4555,6 +4709,15 @@ paths:
           schema:
             $ref: '#/components/schemas/AnimalIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -4563,6 +4726,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Animal-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -4581,6 +4751,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - Animal
@@ -4611,6 +4790,15 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/AnimalIdentifier-post'
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
         -
@@ -4649,6 +4837,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Animal-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -4711,6 +4906,15 @@ paths:
           schema:
             $ref: '#/components/schemas/ExternalFileIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -4719,6 +4923,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExternalFile-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -4737,6 +4948,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     delete:
       tags:
         - ExternalFile
@@ -4834,6 +5054,15 @@ paths:
           schema:
             $ref: '#/components/schemas/IanaObjectIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -4842,6 +5071,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IanaObject-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -4860,6 +5096,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - IanaObject
@@ -4891,6 +5136,15 @@ paths:
           schema:
             $ref: '#/components/schemas/IanaObjectIdentifier-post'
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -4906,6 +5160,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IanaObject-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -4968,6 +5229,15 @@ paths:
           schema:
             $ref: '#/components/schemas/ObjectWithRelationIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -4976,6 +5246,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjectWithRelation-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -4994,6 +5271,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - ObjectWithRelation
@@ -5025,6 +5311,15 @@ paths:
           schema:
             $ref: '#/components/schemas/ObjectWithRelationIdentifier-post'
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -5040,6 +5335,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjectWithRelation-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5102,6 +5404,15 @@ paths:
           schema:
             $ref: '#/components/schemas/OrderIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -5110,6 +5421,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5128,6 +5446,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     delete:
       tags:
         - Order
@@ -5225,6 +5552,15 @@ paths:
           schema:
             $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -5233,6 +5569,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrimitiveOnly-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5251,6 +5594,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - PrimitiveOnly
@@ -5282,6 +5634,15 @@ paths:
           schema:
             $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -5297,6 +5658,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrimitiveOnly-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5424,6 +5792,15 @@ paths:
           schema:
             $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -5432,6 +5809,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5450,6 +5834,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - RestrictedEntity
@@ -5481,6 +5874,15 @@ paths:
           schema:
             $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -5496,6 +5898,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5558,6 +5967,15 @@ paths:
           schema:
             $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -5566,6 +5984,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpecialTypeOnly-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5584,6 +6009,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - SpecialTypeOnly
@@ -5615,6 +6049,15 @@ paths:
           schema:
             $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -5630,6 +6073,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpecialTypeOnly-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5757,6 +6207,15 @@ paths:
           schema:
             $ref: '#/components/schemas/TranslationAwareIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -5765,6 +6224,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TranslationAware-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5783,6 +6249,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - TranslationAware
@@ -5814,6 +6289,15 @@ paths:
           schema:
             $ref: '#/components/schemas/TranslationAwareIdentifier-post'
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -5829,6 +6313,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TranslationAware-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5891,6 +6382,15 @@ paths:
           schema:
             $ref: '#/components/schemas/UnionObjectId-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -5899,6 +6399,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnionObject-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5917,6 +6424,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - UnionObject
@@ -5948,6 +6464,15 @@ paths:
           schema:
             $ref: '#/components/schemas/UnionObjectId-post'
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -5963,6 +6488,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnionObject-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -6025,6 +6557,15 @@ paths:
           schema:
             $ref: '#/components/schemas/UploadedFileIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -6033,6 +6574,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6051,6 +6599,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - UploadedFile
@@ -6090,6 +6647,15 @@ paths:
               - '1'
             type: string
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -6115,6 +6681,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -6242,6 +6815,15 @@ paths:
           schema:
             $ref: '#/components/schemas/UserIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -6250,6 +6832,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6268,6 +6857,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - User
@@ -6299,6 +6897,15 @@ paths:
           schema:
             $ref: '#/components/schemas/UserIdentifier-post'
         -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -6314,6 +6921,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -6376,6 +6990,15 @@ paths:
           schema:
             $ref: '#/components/schemas/SequentialBackgroundProcessIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -6384,6 +7007,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SequentialBackgroundProcess-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6402,6 +7032,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/AuditLog/{id}':
     get:
       tags:
@@ -6434,6 +7073,15 @@ paths:
           schema:
             $ref: '#/components/schemas/AuditLogIdentifier-post'
         -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
       responses:
         '200':
@@ -6442,6 +7090,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AuditLog-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6460,6 +7115,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   /SequentialBackgroundProcess:
     get:
       tags:
@@ -7482,6 +8146,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   /Authentication/isThisMe:
     post:
       tags:
@@ -8180,6 +8851,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExternalFile-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '404':
           description: 'Resource not found'
           content:
@@ -8238,6 +8916,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8320,6 +9005,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8390,6 +9082,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '404':
           description: 'Resource not found'
           content:
@@ -8454,6 +9153,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8536,6 +9242,13 @@ paths:
             application/json:
               schema:
                 type: boolean
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8606,6 +9319,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SequentialBackgroundProcess-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '404':
           description: 'Resource not found'
           content:
@@ -8660,6 +9380,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadedFile-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8738,6 +9465,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadedFile-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8816,6 +9550,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadedFile-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -9895,6 +10636,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/ExternalFile/{id}':
     post:
       tags:
@@ -9964,6 +10712,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/IanaObject/{id}':
     post:
       tags:
@@ -10033,6 +10788,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/ObjectWithRelation/{id}':
     post:
       tags:
@@ -10102,6 +10864,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/Order/{id}':
     post:
       tags:
@@ -10171,6 +10940,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/PrimitiveOnly/{id}':
     post:
       tags:
@@ -10240,6 +11016,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/RestrictedEntity/{id}':
     post:
       tags:
@@ -10309,6 +11092,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/SpecialTypeOnly/{id}':
     post:
       tags:
@@ -10378,6 +11168,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/TranslationAware/{id}':
     post:
       tags:
@@ -10447,6 +11244,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/UnionObject/{id}':
     post:
       tags:
@@ -10516,6 +11320,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/UploadedFile/{id}':
     post:
       tags:
@@ -10585,6 +11396,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/User/{id}':
     post:
       tags:
@@ -10654,6 +11472,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/SequentialBackgroundProcess/{id}':
     post:
       tags:
@@ -10723,6 +11548,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
   '/indexes/AuditLog/{id}':
     post:
       tags:
@@ -10792,6 +11624,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
 servers:
   -
     url: /api/types
@@ -12297,6 +13136,11 @@ components:
         - acct
         - acd
         - ace
+        - aceap
+        - acedp
+        - aceep
+        - acelp
+        - aceup
         - acr
         - adiumxtra
         - adt
@@ -12437,6 +13281,7 @@ components:
         - ipns
         - ipp
         - ipps
+        - iqa
         - irc
         - irc6
         - ircs
@@ -12580,6 +13425,9 @@ components:
         - opaquelocktoken
         - openid
         - openpgp4fpr
+        - opns
+        - ord
+        - ordmail
         - otpauth
         - palm
         - paparazzi
@@ -12608,6 +13456,7 @@ components:
         - rtsp
         - rtsps
         - rtspu
+        - rttp
         - sarif
         - secondlife
         - secret-token
@@ -12630,6 +13479,7 @@ components:
         - sms
         - smtp
         - snmp
+        - sns
         - soap.beep
         - soap.beeps
         - soldat
@@ -12724,6 +13574,11 @@ components:
         - acct
         - acd
         - ace
+        - aceap
+        - acedp
+        - aceep
+        - acelp
+        - aceup
         - acr
         - adiumxtra
         - adt
@@ -12864,6 +13719,7 @@ components:
         - ipns
         - ipp
         - ipps
+        - iqa
         - irc
         - irc6
         - ircs
@@ -13007,6 +13863,9 @@ components:
         - opaquelocktoken
         - openid
         - openpgp4fpr
+        - opns
+        - ord
+        - ordmail
         - otpauth
         - palm
         - paparazzi
@@ -13035,6 +13894,7 @@ components:
         - rtsp
         - rtsps
         - rtspu
+        - rttp
         - sarif
         - secondlife
         - secret-token
@@ -13057,6 +13917,7 @@ components:
         - sms
         - smtp
         - snmp
+        - sns
         - soap.beep
         - soap.beeps
         - soldat
@@ -15763,6 +16624,11 @@ components:
         - acct
         - acd
         - ace
+        - aceap
+        - acedp
+        - aceep
+        - acelp
+        - aceup
         - acr
         - adiumxtra
         - adt
@@ -15908,6 +16774,7 @@ components:
         - ipns
         - ipp
         - ipps
+        - iqa
         - irc
         - irc6
         - ircs
@@ -16053,6 +16920,9 @@ components:
         - opaquelocktoken
         - openid
         - openpgp4fpr
+        - opns
+        - ord
+        - ordmail
         - otpauth
         - p1
         - pack
@@ -16109,6 +16979,7 @@ components:
         - smtp
         - snews
         - snmp
+        - sns
         - soap.beep
         - soap.beeps
         - soldat
@@ -16209,6 +17080,11 @@ components:
         - acct
         - acd
         - ace
+        - aceap
+        - acedp
+        - aceep
+        - acelp
+        - aceup
         - acr
         - adiumxtra
         - adt
@@ -16354,6 +17230,7 @@ components:
         - ipns
         - ipp
         - ipps
+        - iqa
         - irc
         - irc6
         - ircs
@@ -16499,6 +17376,9 @@ components:
         - opaquelocktoken
         - openid
         - openpgp4fpr
+        - opns
+        - ord
+        - ordmail
         - otpauth
         - p1
         - pack
@@ -16555,6 +17435,7 @@ components:
         - smtp
         - snews
         - snmp
+        - sns
         - soap.beep
         - soap.beeps
         - soldat

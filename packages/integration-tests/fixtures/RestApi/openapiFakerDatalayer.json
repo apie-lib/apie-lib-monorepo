@@ -906,6 +906,18 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -982,6 +994,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1062,6 +1086,18 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -1138,6 +1174,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1218,6 +1266,18 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -1294,6 +1354,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1374,6 +1446,18 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -1450,6 +1534,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -1530,6 +1626,18 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -1606,6 +1714,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -3042,6 +3162,18 @@
                                     "$ref": "#/components/schemas/IanaObject-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -3382,6 +3514,18 @@
                                     "$ref": "#/components/schemas/ObjectWithRelation-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -3631,6 +3775,18 @@
                                     "$ref": "#/components/schemas/Order-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -3873,6 +4029,18 @@
                                     "$ref": "#/components/schemas/TranslationAware-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -4106,6 +4274,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UnionObject-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -4386,6 +4566,18 @@
                                     "$ref": "#/components/schemas/Animal-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -4648,6 +4840,18 @@
                                     "$ref": "#/components/schemas/ExternalFile-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -4888,6 +5092,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PrimitiveOnly-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -5146,6 +5362,18 @@
                                     "$ref": "#/components/schemas/RestrictedEntity-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -5386,6 +5614,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/SpecialTypeOnly-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -5668,6 +5908,18 @@
                                     "$ref": "#/components/schemas/File-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -5910,6 +6162,18 @@
                                     "$ref": "#/components/schemas/User-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -6137,6 +6401,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -6147,6 +6423,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Animal-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6177,6 +6465,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6220,6 +6523,18 @@
                         "required": true,
                         "schema": {
                             "$ref": "#/components/schemas/AnimalIdentifier-post"
+                        }
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
                         }
                     },
                     {
@@ -6274,6 +6589,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Animal-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6372,6 +6699,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -6382,6 +6721,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ExternalFile-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6412,6 +6763,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6559,6 +6925,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -6569,6 +6947,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/IanaObject-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6599,6 +6989,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6645,6 +7050,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -6667,6 +7084,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/IanaObject-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6765,6 +7194,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -6775,6 +7216,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ObjectWithRelation-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6805,6 +7258,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6851,6 +7319,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -6873,6 +7353,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ObjectWithRelation-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -6971,6 +7463,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -6981,6 +7485,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Order-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7011,6 +7527,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7158,6 +7689,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -7168,6 +7711,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PrimitiveOnly-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7198,6 +7753,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7244,6 +7814,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -7266,6 +7848,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PrimitiveOnly-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7463,6 +8057,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -7473,6 +8079,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/RestrictedEntity-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7503,6 +8121,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7549,6 +8182,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -7571,6 +8216,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/RestrictedEntity-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7669,6 +8326,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -7679,6 +8348,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/SpecialTypeOnly-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7709,6 +8390,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7755,6 +8451,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -7777,6 +8485,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/SpecialTypeOnly-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -7974,6 +8694,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -7984,6 +8716,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/TranslationAware-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8014,6 +8758,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8060,6 +8819,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -8082,6 +8853,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/TranslationAware-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8180,6 +8963,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -8190,6 +8985,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UnionObject-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8220,6 +9027,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8266,6 +9088,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -8288,6 +9122,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UnionObject-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8386,6 +9232,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -8396,6 +9254,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/File-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8426,6 +9296,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8483,6 +9368,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -8521,6 +9418,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/File-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8718,6 +9627,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -8728,6 +9649,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8758,6 +9691,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8804,6 +9752,18 @@
                         }
                     },
                     {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     },
                     {
@@ -8826,6 +9786,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8924,6 +9896,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -8934,6 +9918,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -8964,6 +9960,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -9012,6 +10023,18 @@
                         }
                     },
                     {
+                        "name": "If-None-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
                         "$ref": "#/components/parameters/AcceptLanguage"
                     }
                 ],
@@ -9022,6 +10045,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/AuditLog-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -9052,6 +10087,21 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "Not Modified",
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -10463,6 +11513,18 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -11549,6 +12611,18 @@
                                     "$ref": "#/components/schemas/ExternalFile-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "404": {
@@ -11635,6 +12709,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Order-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -11765,6 +12851,18 @@
                                     "$ref": "#/components/schemas/User-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -11873,6 +12971,18 @@
                                     "$ref": "#/components/schemas/User-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "404": {
@@ -11967,6 +13077,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -12097,6 +13219,18 @@
                                     "type": "boolean"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -12205,6 +13339,18 @@
                                     "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "404": {
@@ -12281,6 +13427,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UploadedFile-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -12401,6 +13559,18 @@
                                     "$ref": "#/components/schemas/UploadedFile-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     },
                     "400": {
@@ -12517,6 +13687,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UploadedFile-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -14159,6 +15341,18 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -14263,6 +15457,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -14371,6 +15577,18 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -14475,6 +15693,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -14583,6 +15813,18 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -14687,6 +15929,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -14795,6 +16049,18 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -14899,6 +16165,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -15007,6 +16285,18 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -15111,6 +16401,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -15219,6 +16521,18 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -15323,6 +16637,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -15431,6 +16757,18 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -15535,6 +16873,18 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "Cache-Control": {
+                                "schema": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -17071,6 +18421,11 @@
                     "acct",
                     "acd",
                     "ace",
+                    "aceap",
+                    "acedp",
+                    "aceep",
+                    "acelp",
+                    "aceup",
                     "acr",
                     "adiumxtra",
                     "adt",
@@ -17211,6 +18566,7 @@
                     "ipns",
                     "ipp",
                     "ipps",
+                    "iqa",
                     "irc",
                     "irc6",
                     "ircs",
@@ -17354,6 +18710,9 @@
                     "opaquelocktoken",
                     "openid",
                     "openpgp4fpr",
+                    "opns",
+                    "ord",
+                    "ordmail",
                     "otpauth",
                     "palm",
                     "paparazzi",
@@ -17382,6 +18741,7 @@
                     "rtsp",
                     "rtsps",
                     "rtspu",
+                    "rttp",
                     "sarif",
                     "secondlife",
                     "secret-token",
@@ -17404,6 +18764,7 @@
                     "sms",
                     "smtp",
                     "snmp",
+                    "sns",
                     "soap.beep",
                     "soap.beeps",
                     "soldat",
@@ -17500,6 +18861,11 @@
                     "acct",
                     "acd",
                     "ace",
+                    "aceap",
+                    "acedp",
+                    "aceep",
+                    "acelp",
+                    "aceup",
                     "acr",
                     "adiumxtra",
                     "adt",
@@ -17640,6 +19006,7 @@
                     "ipns",
                     "ipp",
                     "ipps",
+                    "iqa",
                     "irc",
                     "irc6",
                     "ircs",
@@ -17783,6 +19150,9 @@
                     "opaquelocktoken",
                     "openid",
                     "openpgp4fpr",
+                    "opns",
+                    "ord",
+                    "ordmail",
                     "otpauth",
                     "palm",
                     "paparazzi",
@@ -17811,6 +19181,7 @@
                     "rtsp",
                     "rtsps",
                     "rtspu",
+                    "rttp",
                     "sarif",
                     "secondlife",
                     "secret-token",
@@ -17833,6 +19204,7 @@
                     "sms",
                     "smtp",
                     "snmp",
+                    "sns",
                     "soap.beep",
                     "soap.beeps",
                     "soldat",
@@ -21351,6 +22723,11 @@
                     "acct",
                     "acd",
                     "ace",
+                    "aceap",
+                    "acedp",
+                    "aceep",
+                    "acelp",
+                    "aceup",
                     "acr",
                     "adiumxtra",
                     "adt",
@@ -21496,6 +22873,7 @@
                     "ipns",
                     "ipp",
                     "ipps",
+                    "iqa",
                     "irc",
                     "irc6",
                     "ircs",
@@ -21641,6 +23019,9 @@
                     "opaquelocktoken",
                     "openid",
                     "openpgp4fpr",
+                    "opns",
+                    "ord",
+                    "ordmail",
                     "otpauth",
                     "p1",
                     "pack",
@@ -21697,6 +23078,7 @@
                     "smtp",
                     "snews",
                     "snmp",
+                    "sns",
                     "soap.beep",
                     "soap.beeps",
                     "soldat",
@@ -21799,6 +23181,11 @@
                     "acct",
                     "acd",
                     "ace",
+                    "aceap",
+                    "acedp",
+                    "aceep",
+                    "acelp",
+                    "aceup",
                     "acr",
                     "adiumxtra",
                     "adt",
@@ -21944,6 +23331,7 @@
                     "ipns",
                     "ipp",
                     "ipps",
+                    "iqa",
                     "irc",
                     "irc6",
                     "ircs",
@@ -22089,6 +23477,9 @@
                     "opaquelocktoken",
                     "openid",
                     "openpgp4fpr",
+                    "opns",
+                    "ord",
+                    "ordmail",
                     "otpauth",
                     "p1",
                     "pack",
@@ -22145,6 +23536,7 @@
                     "smtp",
                     "snews",
                     "snmp",
+                    "sns",
                     "soap.beep",
                     "soap.beeps",
                     "soldat",

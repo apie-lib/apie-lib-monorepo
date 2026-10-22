@@ -39,6 +39,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAddress-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -164,6 +171,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAutoincrementKey-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -289,6 +303,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -409,6 +430,15 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/UserWithAddressIdentifier-post'
+        -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -416,6 +446,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAddress-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -434,6 +471,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - UserWithAddress
@@ -464,6 +510,15 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/UserWithAddressIdentifier-post'
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -476,6 +531,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAddress-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -600,6 +662,15 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/UserAutoincrementIdentifier-post'
+        -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -607,6 +678,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAutoincrementKey-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -625,6 +703,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     patch:
       tags:
         - UserWithAutoincrementKey
@@ -655,6 +742,15 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/UserAutoincrementIdentifier-post'
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       requestBody:
         content:
           application/json:
@@ -667,6 +763,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAutoincrementKey-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -728,6 +831,15 @@ paths:
           required: true
           schema:
             $ref: '#/components/schemas/OrderIdentifier-post'
+        -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -735,6 +847,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -753,6 +872,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
     delete:
       tags:
         - Order
@@ -898,6 +1026,13 @@ paths:
             application/json:
               schema:
                 type: boolean
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -978,6 +1113,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -1045,6 +1187,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -1113,6 +1262,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringList-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '404':
           description: 'Resource not found'
           content:
@@ -1157,6 +1313,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
         '404':
           description: 'Resource not found'
           content:

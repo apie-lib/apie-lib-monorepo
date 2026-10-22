@@ -7,28 +7,28 @@ return array(
   array(
     'Value' => '100',
     'Description' => 'Continue',
-    'Reference' => '[RFC9110, Section 15.2.1]',
+    'Reference' => '[RFC 9110, Section 15.2.1]',
     'Active' => true,
   ),
   101 =>
   array(
     'Value' => '101',
     'Description' => 'Switching Protocols',
-    'Reference' => '[RFC9110, Section 15.2.2]',
+    'Reference' => '[RFC 9110, Section 15.2.2]',
     'Active' => true,
   ),
   102 =>
   array(
     'Value' => '102',
     'Description' => 'Processing',
-    'Reference' => '[RFC2518]',
+    'Reference' => '[RFC 2518]',
     'Active' => true,
   ),
   103 =>
   array(
     'Value' => '103',
     'Description' => 'Early Hints',
-    'Reference' => '[RFC8297]',
+    'Reference' => '[RFC 8297]',
     'Active' => true,
   ),
   104 =>
@@ -714,63 +714,63 @@ return array(
   array(
     'Value' => '200',
     'Description' => 'OK',
-    'Reference' => '[RFC9110, Section 15.3.1]',
+    'Reference' => '[RFC 9110, Section 15.3.1]',
     'Active' => true,
   ),
   201 =>
   array(
     'Value' => '201',
     'Description' => 'Created',
-    'Reference' => '[RFC9110, Section 15.3.2]',
+    'Reference' => '[RFC 9110, Section 15.3.2]',
     'Active' => true,
   ),
   202 =>
   array(
     'Value' => '202',
     'Description' => 'Accepted',
-    'Reference' => '[RFC9110, Section 15.3.3]',
+    'Reference' => '[RFC 9110, Section 15.3.3]',
     'Active' => true,
   ),
   203 =>
   array(
     'Value' => '203',
     'Description' => 'Non-Authoritative Information',
-    'Reference' => '[RFC9110, Section 15.3.4]',
+    'Reference' => '[RFC 9110, Section 15.3.4]',
     'Active' => true,
   ),
   204 =>
   array(
     'Value' => '204',
     'Description' => 'No Content',
-    'Reference' => '[RFC9110, Section 15.3.5]',
+    'Reference' => '[RFC 9110, Section 15.3.5]',
     'Active' => true,
   ),
   205 =>
   array(
     'Value' => '205',
     'Description' => 'Reset Content',
-    'Reference' => '[RFC9110, Section 15.3.6]',
+    'Reference' => '[RFC 9110, Section 15.3.6]',
     'Active' => true,
   ),
   206 =>
   array(
     'Value' => '206',
     'Description' => 'Partial Content',
-    'Reference' => '[RFC9110, Section 15.3.7]',
+    'Reference' => '[RFC 9110, Section 15.3.7]',
     'Active' => true,
   ),
   207 =>
   array(
     'Value' => '207',
     'Description' => 'Multi-Status',
-    'Reference' => '[RFC4918]',
+    'Reference' => '[RFC 4918]',
     'Active' => true,
   ),
   208 =>
   array(
     'Value' => '208',
     'Description' => 'Already Reported',
-    'Reference' => '[RFC5842]',
+    'Reference' => '[RFC 5842]',
     'Active' => true,
   ),
   209 =>
@@ -903,7 +903,7 @@ return array(
   array(
     'Value' => '226',
     'Description' => 'IM Used',
-    'Reference' => '[RFC3229]',
+    'Reference' => '[RFC 3229]',
     'Active' => true,
   ),
   227 =>
@@ -1428,63 +1428,63 @@ return array(
   array(
     'Value' => '300',
     'Description' => 'Multiple Choices',
-    'Reference' => '[RFC9110, Section 15.4.1]',
+    'Reference' => '[RFC 9110, Section 15.4.1]',
     'Active' => true,
   ),
   301 =>
   array(
     'Value' => '301',
     'Description' => 'Moved Permanently',
-    'Reference' => '[RFC9110, Section 15.4.2]',
+    'Reference' => '[RFC 9110, Section 15.4.2]',
     'Active' => true,
   ),
   302 =>
   array(
     'Value' => '302',
     'Description' => 'Found',
-    'Reference' => '[RFC9110, Section 15.4.3]',
+    'Reference' => '[RFC 9110, Section 15.4.3]',
     'Active' => true,
   ),
   303 =>
   array(
     'Value' => '303',
     'Description' => 'See Other',
-    'Reference' => '[RFC9110, Section 15.4.4]',
+    'Reference' => '[RFC 9110, Section 15.4.4]',
     'Active' => true,
   ),
   304 =>
   array(
     'Value' => '304',
     'Description' => 'Not Modified',
-    'Reference' => '[RFC9110, Section 15.4.5]',
+    'Reference' => '[RFC 9110, Section 15.4.5]',
     'Active' => true,
   ),
   305 =>
   array(
     'Value' => '305',
     'Description' => 'Use Proxy',
-    'Reference' => '[RFC9110, Section 15.4.6]',
+    'Reference' => '[RFC 9110, Section 15.4.6]',
     'Active' => true,
   ),
   306 =>
   array(
     'Value' => '306',
     'Description' => '(Unused)',
-    'Reference' => '[RFC9110, Section 15.4.7]',
+    'Reference' => '[RFC 9110, Section 15.4.7]',
     'Active' => true,
   ),
   307 =>
   array(
     'Value' => '307',
     'Description' => 'Temporary Redirect',
-    'Reference' => '[RFC9110, Section 15.4.8]',
+    'Reference' => '[RFC 9110, Section 15.4.8]',
     'Active' => true,
   ),
   308 =>
   array(
     'Value' => '308',
     'Description' => 'Permanent Redirect',
-    'Reference' => '[RFC9110, Section 15.4.9]',
+    'Reference' => '[RFC 9110, Section 15.4.9]',
     'Active' => true,
   ),
   309 =>
@@ -2135,133 +2135,133 @@ return array(
   array(
     'Value' => '400',
     'Description' => 'Bad Request',
-    'Reference' => '[RFC9110, Section 15.5.1]',
+    'Reference' => '[RFC 9110, Section 15.5.1]',
     'Active' => true,
   ),
   401 =>
   array(
     'Value' => '401',
     'Description' => 'Unauthorized',
-    'Reference' => '[RFC9110, Section 15.5.2]',
+    'Reference' => '[RFC 9110, Section 15.5.2]',
     'Active' => true,
   ),
   402 =>
   array(
     'Value' => '402',
     'Description' => 'Payment Required',
-    'Reference' => '[RFC9110, Section 15.5.3]',
+    'Reference' => '[RFC 9110, Section 15.5.3]',
     'Active' => true,
   ),
   403 =>
   array(
     'Value' => '403',
     'Description' => 'Forbidden',
-    'Reference' => '[RFC9110, Section 15.5.4]',
+    'Reference' => '[RFC 9110, Section 15.5.4]',
     'Active' => true,
   ),
   404 =>
   array(
     'Value' => '404',
     'Description' => 'Not Found',
-    'Reference' => '[RFC9110, Section 15.5.5]',
+    'Reference' => '[RFC 9110, Section 15.5.5]',
     'Active' => true,
   ),
   405 =>
   array(
     'Value' => '405',
     'Description' => 'Method Not Allowed',
-    'Reference' => '[RFC9110, Section 15.5.6]',
+    'Reference' => '[RFC 9110, Section 15.5.6]',
     'Active' => true,
   ),
   406 =>
   array(
     'Value' => '406',
     'Description' => 'Not Acceptable',
-    'Reference' => '[RFC9110, Section 15.5.7]',
+    'Reference' => '[RFC 9110, Section 15.5.7]',
     'Active' => true,
   ),
   407 =>
   array(
     'Value' => '407',
     'Description' => 'Proxy Authentication Required',
-    'Reference' => '[RFC9110, Section 15.5.8]',
+    'Reference' => '[RFC 9110, Section 15.5.8]',
     'Active' => true,
   ),
   408 =>
   array(
     'Value' => '408',
     'Description' => 'Request Timeout',
-    'Reference' => '[RFC9110, Section 15.5.9]',
+    'Reference' => '[RFC 9110, Section 15.5.9]',
     'Active' => true,
   ),
   409 =>
   array(
     'Value' => '409',
     'Description' => 'Conflict',
-    'Reference' => '[RFC9110, Section 15.5.10]',
+    'Reference' => '[RFC 9110, Section 15.5.10]',
     'Active' => true,
   ),
   410 =>
   array(
     'Value' => '410',
     'Description' => 'Gone',
-    'Reference' => '[RFC9110, Section 15.5.11]',
+    'Reference' => '[RFC 9110, Section 15.5.11]',
     'Active' => true,
   ),
   411 =>
   array(
     'Value' => '411',
     'Description' => 'Length Required',
-    'Reference' => '[RFC9110, Section 15.5.12]',
+    'Reference' => '[RFC 9110, Section 15.5.12]',
     'Active' => true,
   ),
   412 =>
   array(
     'Value' => '412',
     'Description' => 'Precondition Failed',
-    'Reference' => '[RFC9110, Section 15.5.13]',
+    'Reference' => '[RFC 9110, Section 15.5.13]',
     'Active' => true,
   ),
   413 =>
   array(
     'Value' => '413',
     'Description' => 'Content Too Large',
-    'Reference' => '[RFC9110, Section 15.5.14]',
+    'Reference' => '[RFC 9110, Section 15.5.14]',
     'Active' => true,
   ),
   414 =>
   array(
     'Value' => '414',
     'Description' => 'URI Too Long',
-    'Reference' => '[RFC9110, Section 15.5.15]',
+    'Reference' => '[RFC 9110, Section 15.5.15]',
     'Active' => true,
   ),
   415 =>
   array(
     'Value' => '415',
     'Description' => 'Unsupported Media Type',
-    'Reference' => '[RFC9110, Section 15.5.16]',
+    'Reference' => '[RFC 9110, Section 15.5.16]',
     'Active' => true,
   ),
   416 =>
   array(
     'Value' => '416',
     'Description' => 'Range Not Satisfiable',
-    'Reference' => '[RFC9110, Section 15.5.17]',
+    'Reference' => '[RFC 9110, Section 15.5.17]',
     'Active' => true,
   ),
   417 =>
   array(
     'Value' => '417',
     'Description' => 'Expectation Failed',
-    'Reference' => '[RFC9110, Section 15.5.18]',
+    'Reference' => '[RFC 9110, Section 15.5.18]',
     'Active' => true,
   ),
   418 =>
   array(
     'Value' => '418',
     'Description' => '(Unused)',
-    'Reference' => '[RFC9110, Section 15.5.19]',
+    'Reference' => '[RFC 9110, Section 15.5.19]',
     'Active' => true,
   ),
   419 =>
@@ -2289,42 +2289,42 @@ return array(
   array(
     'Value' => '421',
     'Description' => 'Misdirected Request',
-    'Reference' => '[RFC9110, Section 15.5.20]',
+    'Reference' => '[RFC 9110, Section 15.5.20]',
     'Active' => true,
   ),
   422 =>
   array(
     'Value' => '422',
     'Description' => 'Unprocessable Content',
-    'Reference' => '[RFC9110, Section 15.5.21]',
+    'Reference' => '[RFC 9110, Section 15.5.21]',
     'Active' => true,
   ),
   423 =>
   array(
     'Value' => '423',
     'Description' => 'Locked',
-    'Reference' => '[RFC4918]',
+    'Reference' => '[RFC 4918]',
     'Active' => true,
   ),
   424 =>
   array(
     'Value' => '424',
     'Description' => 'Failed Dependency',
-    'Reference' => '[RFC4918]',
+    'Reference' => '[RFC 4918]',
     'Active' => true,
   ),
   425 =>
   array(
     'Value' => '425',
     'Description' => 'Too Early',
-    'Reference' => '[RFC8470]',
+    'Reference' => '[RFC 8470]',
     'Active' => true,
   ),
   426 =>
   array(
     'Value' => '426',
     'Description' => 'Upgrade Required',
-    'Reference' => '[RFC9110, Section 15.5.22]',
+    'Reference' => '[RFC 9110, Section 15.5.22]',
     'Active' => true,
   ),
   427 =>
@@ -2338,14 +2338,14 @@ return array(
   array(
     'Value' => '428',
     'Description' => 'Precondition Required',
-    'Reference' => '[RFC6585]',
+    'Reference' => '[RFC 6585]',
     'Active' => true,
   ),
   429 =>
   array(
     'Value' => '429',
     'Description' => 'Too Many Requests',
-    'Reference' => '[RFC6585]',
+    'Reference' => '[RFC 6585]',
     'Active' => true,
   ),
   430 =>
@@ -2359,7 +2359,7 @@ return array(
   array(
     'Value' => '431',
     'Description' => 'Request Header Fields Too Large',
-    'Reference' => '[RFC6585]',
+    'Reference' => '[RFC 6585]',
     'Active' => true,
   ),
   432 =>
@@ -2506,7 +2506,7 @@ return array(
   array(
     'Value' => '451',
     'Description' => 'Unavailable For Legal Reasons',
-    'Reference' => '[RFC7725]',
+    'Reference' => '[RFC 7725]',
     'Active' => true,
   ),
   452 =>
@@ -2856,63 +2856,63 @@ return array(
   array(
     'Value' => '500',
     'Description' => 'Internal Server Error',
-    'Reference' => '[RFC9110, Section 15.6.1]',
+    'Reference' => '[RFC 9110, Section 15.6.1]',
     'Active' => true,
   ),
   501 =>
   array(
     'Value' => '501',
     'Description' => 'Not Implemented',
-    'Reference' => '[RFC9110, Section 15.6.2]',
+    'Reference' => '[RFC 9110, Section 15.6.2]',
     'Active' => true,
   ),
   502 =>
   array(
     'Value' => '502',
     'Description' => 'Bad Gateway',
-    'Reference' => '[RFC9110, Section 15.6.3]',
+    'Reference' => '[RFC 9110, Section 15.6.3]',
     'Active' => true,
   ),
   503 =>
   array(
     'Value' => '503',
     'Description' => 'Service Unavailable',
-    'Reference' => '[RFC9110, Section 15.6.4]',
+    'Reference' => '[RFC 9110, Section 15.6.4]',
     'Active' => true,
   ),
   504 =>
   array(
     'Value' => '504',
     'Description' => 'Gateway Timeout',
-    'Reference' => '[RFC9110, Section 15.6.5]',
+    'Reference' => '[RFC 9110, Section 15.6.5]',
     'Active' => true,
   ),
   505 =>
   array(
     'Value' => '505',
     'Description' => 'HTTP Version Not Supported',
-    'Reference' => '[RFC9110, Section 15.6.6]',
+    'Reference' => '[RFC 9110, Section 15.6.6]',
     'Active' => true,
   ),
   506 =>
   array(
     'Value' => '506',
     'Description' => 'Variant Also Negotiates',
-    'Reference' => '[RFC2295]',
+    'Reference' => '[RFC 2295]',
     'Active' => true,
   ),
   507 =>
   array(
     'Value' => '507',
     'Description' => 'Insufficient Storage',
-    'Reference' => '[RFC4918]',
+    'Reference' => '[RFC 4918]',
     'Active' => true,
   ),
   508 =>
   array(
     'Value' => '508',
     'Description' => 'Loop Detected',
-    'Reference' => '[RFC5842]',
+    'Reference' => '[RFC 5842]',
     'Active' => true,
   ),
   509 =>
@@ -2926,14 +2926,14 @@ return array(
   array(
     'Value' => '510',
     'Description' => 'Not Extended (OBSOLETED)',
-    'Reference' => '[RFC2774][Status change of HTTP experiments to Historic]',
+    'Reference' => '[RFC 2774]; [Status change of HTTP experiments to Historic]',
     'Active' => true,
   ),
   511 =>
   array(
     'Value' => '511',
     'Description' => 'Network Authentication Required',
-    'Reference' => '[RFC6585]',
+    'Reference' => '[RFC 6585]',
     'Active' => true,
   ),
   512 =>
