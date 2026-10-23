@@ -61,7 +61,7 @@ class LoginTest extends TestCase
             $loginRequest->bootstrap($testApplication);
             $response = $testApplication->httpRequest($loginRequest);
             if ($loginRequest->isFakeDatalayer()) {
-                $this->assertEquals(500, $response->getStatusCode());
+                $this->assertEquals(400, $response->getStatusCode());
                 $this->assertEquals('User is not activated yet', IntegrationTestLogger::getLoggedException()?->getMessage());
                 return;
             }

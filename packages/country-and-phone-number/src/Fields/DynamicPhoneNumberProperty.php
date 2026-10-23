@@ -23,8 +23,6 @@ final class DynamicPhoneNumberProperty implements FieldInterface
     {
         $this->property = new ReflectionProperty(CountryAndPhoneNumber::class, 'phoneNumber');
         $this->countryProperty = new ReflectionProperty(CountryAndPhoneNumber::class, 'country');
-        $this->property->setAccessible(true);
-        $this->countryProperty->setAccessible(true);
     }
 
     public function getTypehint(): string

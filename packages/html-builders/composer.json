@@ -21,24 +21,27 @@
   },
   "extra": {
     "apie-objects": [
-      "Apie\\HtmlBuilders\\Enums\\ActionDefinitionVariant",
-      "Apie\\HtmlBuilders\\Enums\\LayoutEnum",
-      "Apie\\HtmlBuilders\\ValueObjects\\FormName"
-    ]
+    "Apie\\HtmlBuilders\\Enums\\LayoutEnum",
+    "Apie\\HtmlBuilders\\Enums\\ActionDefinitionVariant",
+    "Apie\\HtmlBuilders\\ValueObjects\\FormName",
+    "Apie\\HtmlBuilders\\ErrorHandler\\WrappedErrorTrace",
+    "Apie\\HtmlBuilders\\ErrorHandler\\WrappedErrorTraceList"
+]
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "apie/common": "self.version",
     "apie/core": "self.version",
-    "ramsey/uuid": "^4.7.6",
+    "ramsey/uuid": "^4.9.3",
     "symfony/mime":  "^7.2"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "apie/service-provider-generator": "0.11.3",
+    "apie/service-provider-generator": "0.14.0",
+    "devizzent/cebe-php-openapi": "^1.1.5",
     "illuminate/support": "*",
     "phpunit/phpunit": "^11.5.2",
-    "phpspec/prophecy-phpunit": "^2.2"
+    "phpspec/prophecy-phpunit": "^2.5"
   },
   "conflict": {
     "phpstan/phpdoc-parser": "2.*"

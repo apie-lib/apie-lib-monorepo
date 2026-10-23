@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ property('title') }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/apie-graphite-layout@0.4.0/dist/apie-graphite-layout/apie-graphite-layout.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/show-open-file-picker/polyfill.js"></script>
+    <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@graphiteds/core@1.9.20/dist/core/core.esm.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@revolist/revogrid@3.7.0/dist/revo-grid/revo-grid.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/apie-stacktrace@{{ apieConstant('APIE_STACKTRACE') }}/dist/apie-stacktrace/apie-stacktrace.esm.js" crossorigin></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/apie-graphite-layout@0.5.0/dist/apie-graphite-layout/apie-graphite-layout.esm.js" crossorigin></script>
+    <script>{{ assetContent('main.js') }}</script>
+
+    <style>
+        * {
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 10% 20%, #fde68a 0 35px, transparent 36px),
+                radial-gradient(circle at 90% 15%, #f9a8d4 0 45px, transparent 46px),
+                radial-gradient(circle at 80% 90%, #93c5fd 0 50px, transparent 51px),
+                #fefce8;
+        }
+
+        .wiggle:hover {
+            animation: wiggle 0.35s ease-in-out;
+        }
+
+        @keyframes wiggle {
+            0%   { transform: rotate(0deg); }
+            25%  { transform: rotate(-2deg); }
+            50%  { transform: rotate(2deg); }
+            75%  { transform: rotate(-1deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .dots {
+            background-image: radial-gradient(#ffffff 2px, transparent 2px);
+            background-size: 14px 14px;
+        }
+
+        .sidebar-transition {
+            transition: width 0.25s ease, transform 0.25s ease;
+        }
+
+        .right-panel {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .right-panel.hidden-panel {
+            transform: translateX(110%);
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800">
+<div class="flex min-h-screen">
+    <aside class="sidebar-transition fixed inset-y-0 left-0 z-40 flex w-64 flex-col border-r-4 border-purple-500 bg-purple-400 shadow-xl">
+        <div class="dots flex items-center justify-center border-b-4 border-purple-500 bg-pink-400 px-4 py-5">
+            <div class="wiggle flex h-14 w-14 items-center overflow-hidden justify-center rounded-full border-4 border-white bg-yellow-300 text-3xl shadow-md">
+                <img src="{{ assetUrl('logo.png') }}" height="48" width="48" border="0">
+            </div>
+            <div class="ml-3">
+                <h1 class="text-2xl font-black text-white drop-shadow">KidCMS</h1>
+                <p class="text-sm font-bold text-purple-900">CMS</p>
+            </div>
+        </div>
+
+        <nav class="flex-1 space-y-2 overflow-y-auto p-4">
+            <div class="kids-menu">
+                {{ component('menu') }}
+            </div>
+        </nav>
+
+        <div class="border-t-4 border-purple-500 bg-purple-500 p-4">
+            <button onclick="openRightPanel()" class="wiggle flex w-full items-center justify-center gap-3 rounded-2xl bg-green-300 px-4 py-3 font-black text-green-900 shadow-md hover:bg-green-200">
+                ➕ <span>New Thing!</span>
+            </button>
+        </div>
+    </aside>
+
+    <div class="ml-64 flex min-w-0 flex-1 flex-col">
+        <header class="sticky top-0 z-30 border-b-4 border-yellow-400 bg-white/95 px-4 py-3 shadow-md backdrop-blur">
+            <div class="kids-topbar flex items-center justify-between gap-3">
+                {{ component('top') }}
+            </div>
+        </header>
+
+        <main class="flex-1 overflow-y-auto p-6">
+            <section class="mt-6 rounded-3xl border-4 border-purple-400 bg-white p-5 shadow-lg">
+                {{ component('content') }}
+            </section>
+        </main>
+    </div>
+
+    <aside id="rightPanel" class="right-panel fixed right-0 top-0 z-50 flex h-screen w-full max-w-md flex-col border-l-4 border-blue-500 bg-white shadow-2xl hidden-panel">
+        <div class="flex items-center justify-between border-b-4 border-blue-400 bg-blue-300 p-5">
+            <div>
+                <h2 class="text-2xl font-black text-blue-950">🛠️ Toolbox</h2>
+                <p class="text-sm font-bold text-blue-800">Handy things live here!</p>
+            </div>
+            <button onclick="closeRightPanel()" class="wiggle flex h-10 w-10 items-center justify-center rounded-full border-3 border-blue-600 bg-white text-xl font-black text-blue-700">×</button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-5">
+            <div class="rounded-3xl border-4 border-yellow-400 bg-yellow-100 p-5 shadow-md">
+                <div class="mb-4 text-4xl">⚠️</div>
+                <h3 class="text-xl font-black text-yellow-900">Are you sure?</h3>
+                <p class="mt-2 font-bold text-yellow-800">This is an example confirmation form. You could use this area for deleting a page, publishing content, or another action requiring confirmation.</p>
+
+                <form onsubmit="handleConfirmation(event)" class="mt-5 space-y-4">
+                    <label class="block">
+                        <span class="mb-1 block font-black text-yellow-900">Type YES to confirm</span>
+                        <input id="confirmationInput" type="text" placeholder="YES" class="w-full rounded-2xl border-4 border-yellow-300 bg-white px-4 py-3 font-black outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-200">
+                    </label>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" onclick="closeRightPanel()" class="rounded-2xl border-3 border-slate-300 bg-white px-4 py-3 font-black hover:bg-slate-100">Nope 😅</button>
+                        <button type="submit" class="rounded-2xl border-3 border-red-500 bg-red-400 px-4 py-3 font-black text-white shadow-md hover:bg-red-500">Yes! 💥</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-t-4 border-blue-400 bg-blue-100 p-4 text-center">
+            <p class="font-black text-blue-800">💡 Tip: This panel can contain any CMS form.</p>
+        </div>
+    </aside>
+</div>
+
+<script>
+    function toggleUserMenu() {
+        const menu = document.getElementById("userMenu");
+        menu.classList.toggle("hidden");
+    }
+
+    document.addEventListener("click", function(event) {
+        const menu = document.getElementById("userMenu");
+        if (!event.target.closest("#userMenu") && !event.target.closest("[onclick='toggleUserMenu()']")) {
+            menu.classList.add("hidden");
+        }
+    });
+
+    function openRightPanel() {
+        document.getElementById("rightPanel").classList.remove("hidden-panel");
+    }
+
+    function closeRightPanel() {
+        document.getElementById("rightPanel").classList.add("hidden-panel");
+    }
+
+    function toggleRightPanel() {
+        document.getElementById("rightPanel").classList.toggle("hidden-panel");
+    }
+
+    function handleConfirmation(event) {
+        event.preventDefault();
+
+        const value = document.getElementById("confirmationInput").value.trim().toUpperCase();
+
+        if (value === "YES") {
+            alert("🎉 Confirmed!");
+            document.getElementById("confirmationInput").value = "";
+            closeRightPanel();
+        } else {
+            alert("😅 Please type YES to confirm.");
+        }
+    }
+</script>
+</body>
+</html>

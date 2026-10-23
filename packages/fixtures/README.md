@@ -14,4 +14,14 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie and contains many value objects or classes used in unit tests.
+Reusable value objects, entities, enums, and application fixtures for Apie tests and
+examples.
+
+Install it only in development projects:
+```bash
+composer require --dev apie/fixtures
+```
+
+The package is not intended for production domain models. Import a fixture class in a
+test when you need a ready-made Apie object, or use its factories as examples for your
+own framework-free tests.

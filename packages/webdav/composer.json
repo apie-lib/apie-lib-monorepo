@@ -1,0 +1,34 @@
+{
+  "name": "apie/webdav",
+  "description": "Composer package of the apie library: webdav",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\Webdav\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\Webdav\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "apie/core": "self.version",
+    "apie/apie-file-system": "self.version",
+    "sabre/dav": "^4.7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.5"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

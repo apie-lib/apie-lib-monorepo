@@ -6,6 +6,7 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Datalayers\ApieDatalayerWithFilters;
 use Apie\Core\Datalayers\ApieDatalayerWithSupport;
 use Apie\Core\Datalayers\Concerns\FiltersOnAllFields;
+use Apie\Core\Datalayers\DataLayerMetadata;
 use Apie\Core\Datalayers\InMemory\InMemoryDatalayer;
 use Apie\Core\Datalayers\Lists\EntityListInterface;
 use Apie\Core\Datalayers\Search\LazyLoadedListFilterer;
@@ -54,6 +55,18 @@ final class RequestAwareInMemoryDatalayer implements ApieDatalayerWithFilters, A
 
     /**
      * @template T of EntityInterface
+     * @param IdentifierInterface<T> $identifier
+     */
+    public function getMetadata(
+        IdentifierInterface $identifier,
+        ?BoundedContextId $boundedContextId = null
+    ): DataLayerMetadata {
+        return $this->getRepository($identifier::getReferenceFor(), $boundedContextId)
+            ->getMetadata($identifier, $boundedContextId);
+    }
+
+    /**
+     * @template T of EntityInterface
      * @param T $entity
      * @return T
      */
@@ -75,7 +88,7 @@ final class RequestAwareInMemoryDatalayer implements ApieDatalayerWithFilters, A
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     private function getRepository(ReflectionClass $class, ?BoundedContextId $boundedContextId = null): InMemoryDatalayer
     {
