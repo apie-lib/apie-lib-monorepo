@@ -6,6 +6,7 @@ use Apie\Common\Actions\GetItemAction;
 use Apie\Common\Actions\ModifyObjectAction;
 use Apie\Common\Actions\RunItemMethodAction;
 use Apie\Common\Events\ApieResponseCreated;
+use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
@@ -35,7 +36,7 @@ class AddEntityCacheHeadersEventSubscriberTest extends TestCase
             ->method('getMetadata')
             ->with(
                 $this->callback(static fn (UserAutoincrementIdentifier $identifier): bool => $identifier->toNative() === 42),
-                $this->callback(static fn ($boundedContextId): bool => $boundedContextId->toNative() === 'default')
+                $this->callback(static fn (BoundedContextId $boundedContextId): bool => $boundedContextId->toNative() === 'default')
             )
             ->willReturn($metadata);
         $context = new ApieContext([

@@ -906,18 +906,6 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -994,18 +982,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -1086,18 +1062,6 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -1174,18 +1138,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -1266,18 +1218,6 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -1354,18 +1294,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -1446,18 +1374,6 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -1534,18 +1450,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -1626,18 +1530,6 @@
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -1714,18 +1606,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/DropdownOptionList-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -3162,18 +3042,6 @@
                                     "$ref": "#/components/schemas/IanaObject-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "400": {
@@ -3688,18 +3556,6 @@
                                     "$ref": "#/components/schemas/ObjectWithRelation-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "400": {
@@ -4000,18 +3856,6 @@
                                     "$ref": "#/components/schemas/Order-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "400": {
@@ -4275,18 +4119,6 @@
                                     "$ref": "#/components/schemas/TranslationAware-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "400": {
@@ -4546,18 +4378,6 @@
                                     "$ref": "#/components/schemas/UnionObject-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "400": {
@@ -4782,7 +4602,7 @@
                     "resource"
                 ],
                 "description": "Creates an instance of Animal",
-                "operationId": "put-Animal",
+                "operationId": "post-Animal",
                 "parameters": [
                     {
                         "name": "fields",
@@ -4860,16 +4680,154 @@
                                     "$ref": "#/components/schemas/Animal-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
                                 }
-                            },
-                            "Cache-Control": {
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Animal",
+                    "resource"
+                ],
+                "description": "Creates an instance of Animal",
+                "operationId": "put-Animal",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Animal-post"
+                            },
+                            "examples": {
+                                "example_elephant": {
+                                    "summary": "Example elephant",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174000",
+                                        "animalName": "Charlie",
+                                        "name": "elephant",
+                                        "type": "mammal"
+                                    }
+                                },
+                                "example_ostrich": {
+                                    "summary": "Example ostrich",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174001",
+                                        "animalName": "Polly",
+                                        "name": "ostrich",
+                                        "type": "bird"
+                                    }
+                                },
+                                "example_fish": {
+                                    "summary": "Example fish",
+                                    "value": {
+                                        "id": "123e4567-e89b-12d3-a456-426614174002",
+                                        "animalName": "Nemo",
+                                        "name": "shark",
+                                        "type": "fish"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Animal-get"
                                 }
                             }
                         }
@@ -5071,7 +5029,7 @@
                     "resource"
                 ],
                 "description": "Creates an instance of ExternalFile",
-                "operationId": "put-ExternalFile",
+                "operationId": "post-ExternalFile",
                 "parameters": [
                     {
                         "name": "fields",
@@ -5147,16 +5105,152 @@
                                     "$ref": "#/components/schemas/ExternalFile-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
                                 }
-                            },
-                            "Cache-Control": {
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "ExternalFile",
+                    "resource"
+                ],
+                "description": "Creates an instance of ExternalFile",
+                "operationId": "put-ExternalFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "x-no-crsf",
+                        "in": "header",
+                        "description": "Disable csrf",
+                        "schema": {
+                            "enum": [
+                                "1"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ExternalFile-post"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "form"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "form": {
+                                        "$ref": "#/components/schemas/ExternalFile-post-multipart-form-data"
+                                    },
+                                    "_csrf": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExternalFile-get"
                                 }
                             }
                         }
@@ -5376,7 +5470,7 @@
                     "resource"
                 ],
                 "description": "Creates an instance of PrimitiveOnly",
-                "operationId": "put-PrimitiveOnly",
+                "operationId": "post-PrimitiveOnly",
                 "parameters": [
                     {
                         "name": "fields",
@@ -5425,16 +5519,125 @@
                                     "$ref": "#/components/schemas/PrimitiveOnly-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
                                 }
-                            },
-                            "Cache-Control": {
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "PrimitiveOnly",
+                    "resource"
+                ],
+                "description": "Creates an instance of PrimitiveOnly",
+                "operationId": "put-PrimitiveOnly",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PrimitiveOnly-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PrimitiveOnly-get"
                                 }
                             }
                         }
@@ -5677,7 +5880,7 @@
                     "resource"
                 ],
                 "description": "Creates an instance of RestrictedEntity",
-                "operationId": "put-RestrictedEntity",
+                "operationId": "post-RestrictedEntity",
                 "parameters": [
                     {
                         "name": "fields",
@@ -5726,16 +5929,125 @@
                                     "$ref": "#/components/schemas/RestrictedEntity-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
                                 }
-                            },
-                            "Cache-Control": {
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "RestrictedEntity",
+                    "resource"
+                ],
+                "description": "Creates an instance of RestrictedEntity",
+                "operationId": "put-RestrictedEntity",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RestrictedEntity-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RestrictedEntity-get"
                                 }
                             }
                         }
@@ -5965,7 +6277,7 @@
                     "resource"
                 ],
                 "description": "Creates an instance of SpecialTypeOnly",
-                "operationId": "put-SpecialTypeOnly",
+                "operationId": "post-SpecialTypeOnly",
                 "parameters": [
                     {
                         "name": "fields",
@@ -6014,16 +6326,125 @@
                                     "$ref": "#/components/schemas/SpecialTypeOnly-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
                                 }
-                            },
-                            "Cache-Control": {
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "SpecialTypeOnly",
+                    "resource"
+                ],
+                "description": "Creates an instance of SpecialTypeOnly",
+                "operationId": "put-SpecialTypeOnly",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SpecialTypeOnly-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SpecialTypeOnly-get"
                                 }
                             }
                         }
@@ -6246,7 +6667,7 @@
                     "resource"
                 ],
                 "description": "Creates an instance of UploadedFile",
-                "operationId": "put-UploadedFile",
+                "operationId": "post-UploadedFile",
                 "parameters": [
                     {
                         "name": "fields",
@@ -6333,16 +6754,163 @@
                                     "$ref": "#/components/schemas/File-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
                                 }
-                            },
-                            "Cache-Control": {
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "UploadedFile",
+                    "resource"
+                ],
+                "description": "Creates an instance of UploadedFile",
+                "operationId": "put-UploadedFile",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "x-no-crsf",
+                        "in": "header",
+                        "description": "Disable csrf",
+                        "schema": {
+                            "enum": [
+                                "1"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/File-post"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "form",
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "form": {
+                                        "$ref": "#/components/schemas/File-post-multipart-form-data"
+                                    },
+                                    "_csrf": {
+                                        "type": "string"
+                                    },
+                                    "imageFile": {
+                                        "type": "string",
+                                        "format": "binary",
+                                        "nullable": true
+                                    },
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary",
+                                        "nullable": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/File-get"
                                 }
                             }
                         }
@@ -6566,7 +7134,7 @@
                     "resource"
                 ],
                 "description": "Creates an instance of User",
-                "operationId": "put-User",
+                "operationId": "post-User",
                 "parameters": [
                     {
                         "name": "fields",
@@ -6615,16 +7183,125 @@
                                     "$ref": "#/components/schemas/User-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
                                 }
-                            },
-                            "Cache-Control": {
+                            }
+                        }
+                    },
+                    "405": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "406": {
+                        "description": "Invalid request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotAcceptedException-get"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "A validation error occurred",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ValidationException-get"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Resource not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Throwable-get"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "User",
+                    "resource"
+                ],
+                "description": "Creates an instance of User",
+                "operationId": "put-User",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "relations",
+                        "in": "query",
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "required": false,
+                        "explode": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/AcceptLanguage"
+                    },
+                    {
+                        "$ref": "#/components/parameters/ContentLanguage"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/User-post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Resource was created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User-get"
                                 }
                             }
                         }
@@ -6918,18 +7595,6 @@
                                     "$ref": "#/components/schemas/Animal-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -6963,19 +7628,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -7082,18 +7735,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Animal-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -7216,18 +7857,6 @@
                                     "$ref": "#/components/schemas/ExternalFile-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -7261,19 +7890,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -7442,18 +8059,6 @@
                                     "$ref": "#/components/schemas/IanaObject-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -7487,19 +8092,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -7577,18 +8170,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/IanaObject-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -7711,18 +8292,6 @@
                                     "$ref": "#/components/schemas/ObjectWithRelation-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -7756,19 +8325,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -7846,18 +8403,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ObjectWithRelation-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -7980,18 +8525,6 @@
                                     "$ref": "#/components/schemas/Order-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -8025,19 +8558,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -8206,18 +8727,6 @@
                                     "$ref": "#/components/schemas/PrimitiveOnly-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -8251,19 +8760,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -8341,18 +8838,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/PrimitiveOnly-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -8574,18 +9059,6 @@
                                     "$ref": "#/components/schemas/RestrictedEntity-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -8619,19 +9092,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -8709,18 +9170,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/RestrictedEntity-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -8843,18 +9292,6 @@
                                     "$ref": "#/components/schemas/SpecialTypeOnly-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -8888,19 +9325,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -8978,18 +9403,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/SpecialTypeOnly-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -9211,18 +9624,6 @@
                                     "$ref": "#/components/schemas/TranslationAware-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -9256,19 +9657,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -9346,18 +9735,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/TranslationAware-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -9480,18 +9857,6 @@
                                     "$ref": "#/components/schemas/UnionObject-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -9525,19 +9890,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -9615,18 +9968,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UnionObject-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -9749,18 +10090,6 @@
                                     "$ref": "#/components/schemas/File-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -9794,19 +10123,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -9911,18 +10228,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/File-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -10144,18 +10449,6 @@
                                     "$ref": "#/components/schemas/User-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -10189,19 +10482,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             },
@@ -10279,18 +10560,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -10413,18 +10682,6 @@
                                     "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -10458,19 +10715,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             }
@@ -10540,18 +10785,6 @@
                                     "$ref": "#/components/schemas/AuditLog-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "401": {
@@ -10585,19 +10818,7 @@
                         }
                     },
                     "304": {
-                        "description": "Not Modified",
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                        "description": "Not Modified"
                     }
                 }
             }
@@ -12099,18 +12320,6 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -13197,18 +13406,6 @@
                                     "$ref": "#/components/schemas/ExternalFile-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "404": {
@@ -13295,18 +13492,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/Order-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -13437,18 +13622,6 @@
                                     "$ref": "#/components/schemas/User-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "400": {
@@ -13557,18 +13730,6 @@
                                     "$ref": "#/components/schemas/User-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "404": {
@@ -13663,18 +13824,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/User-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -13805,18 +13954,6 @@
                                     "type": "boolean"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "400": {
@@ -13925,18 +14062,6 @@
                                     "$ref": "#/components/schemas/SequentialBackgroundProcess-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "404": {
@@ -14013,18 +14138,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UploadedFile-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -14145,18 +14258,6 @@
                                     "$ref": "#/components/schemas/UploadedFile-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     },
                     "400": {
@@ -14273,18 +14374,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/UploadedFile-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -15927,18 +16016,6 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -16043,18 +16120,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -16163,18 +16228,6 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -16279,18 +16332,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -16399,18 +16440,6 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -16515,18 +16544,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -16635,18 +16652,6 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -16751,18 +16756,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -16871,18 +16864,6 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -16987,18 +16968,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -17107,18 +17076,6 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -17223,18 +17180,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }
@@ -17343,18 +17288,6 @@
                                     "$ref": "#/components/schemas/StringSet-get"
                                 }
                             }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
                         }
                     }
                 }
@@ -17459,18 +17392,6 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/StringSet-get"
-                                }
-                            }
-                        },
-                        "headers": {
-                            "ETag": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            },
-                            "Cache-Control": {
-                                "schema": {
-                                    "type": "string"
                                 }
                             }
                         }

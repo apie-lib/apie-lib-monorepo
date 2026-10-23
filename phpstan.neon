@@ -1,6 +1,8 @@
 includes:
     - packages/apie-phpstan-rules/apie-phpstan-rules.neon
 parameters:
+    parallel:
+        maximumNumberOfProcesses: 4
     phpVersion: 80500
     level: 6
     bootstrapFiles:
@@ -57,7 +59,6 @@ parameters:
         - '#template type T in call to static method Apie\\Core\\Actions\\ActionInterface::getInputType#'
         - '#::getInputType|getRouteAttributes\(\) invoked with 2 parameters, 1 required#'
         - '#template type T in call to static method Apie\\Core\\IdentifierUtils::entityClassToIdentifier#'
-        - '#template type T in call to method Apie\\Core\\Actions\\ApieFacadeInterface::persistNew#'
         - '#toScalarType\(\) invoked with 1 parameter, 0 required#'
         - '#ReflectionEnumUnitCase::getBackingValue#'
         - 

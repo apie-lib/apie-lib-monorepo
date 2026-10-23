@@ -39,13 +39,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAddress-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -171,13 +164,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAutoincrementKey-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -273,7 +259,7 @@ paths:
         - Order
         - resource
       description: 'Creates an instance of Order'
-      operationId: put-Order
+      operationId: post-Order
       parameters:
         -
           name: fields
@@ -303,13 +289,80 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
-          headers:
-            ETag:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
-            Cache-Control:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    put:
+      tags:
+        - Order
+        - resource
+      description: 'Creates an instance of Order'
+      operationId: put-Order
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order-get'
         '400':
           description: 'Invalid request'
           content:
@@ -446,13 +499,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAddress-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -473,13 +519,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - UserWithAddress
@@ -531,13 +570,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAddress-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -678,13 +710,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAutoincrementKey-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -705,13 +730,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - UserWithAutoincrementKey
@@ -763,13 +781,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserWithAutoincrementKey-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -847,13 +858,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -874,13 +878,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     delete:
       tags:
         - Order
@@ -1026,13 +1023,6 @@ paths:
             application/json:
               schema:
                 type: boolean
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -1113,13 +1103,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -1187,13 +1170,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -1262,13 +1238,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '404':
           description: 'Resource not found'
           content:
@@ -1313,13 +1282,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '404':
           description: 'Resource not found'
           content:

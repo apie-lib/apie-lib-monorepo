@@ -608,13 +608,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/IanaObject/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -668,13 +661,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/ObjectWithRelation/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -728,13 +714,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/PrimitiveOnly/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -788,13 +767,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/RestrictedEntity/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -848,13 +820,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/SpecialTypeOnly/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -908,13 +873,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/TranslationAware/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -968,13 +926,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/UnionObject/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -1028,13 +979,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/UploadedFile/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -1088,13 +1032,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/User/{id}/dropdown-options/{property}':
     post:
       tags:
@@ -1148,13 +1085,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DropdownOptionList-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/action/Authentication/acceptLocale/dropdown-options/{property}':
     post:
       tags:
@@ -2111,13 +2041,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IanaObject-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -2352,13 +2275,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjectWithRelation-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -2528,13 +2444,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -2699,13 +2608,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TranslationAware-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -2865,13 +2767,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnionObject-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -3007,7 +2902,7 @@ paths:
         - Animal
         - resource
       description: 'Creates an instance of Animal'
-      operationId: put-Animal
+      operationId: post-Animal
       parameters:
         -
           name: fields
@@ -3063,13 +2958,106 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Animal-get'
-          headers:
-            ETag:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
-            Cache-Control:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    put:
+      tags:
+        - Animal
+        - resource
+      description: 'Creates an instance of Animal'
+      operationId: put-Animal
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal-post'
+            examples:
+              example_elephant:
+                summary: 'Example elephant'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174000
+                  animalName: Charlie
+                  name: elephant
+                  type: mammal
+              example_ostrich:
+                summary: 'Example ostrich'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174001
+                  animalName: Polly
+                  name: ostrich
+                  type: bird
+              example_fish:
+                summary: 'Example fish'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174002
+                  animalName: Nemo
+                  name: shark
+                  type: fish
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal-get'
         '400':
           description: 'Invalid request'
           content:
@@ -3195,7 +3183,7 @@ paths:
         - ExternalFile
         - resource
       description: 'Creates an instance of ExternalFile'
-      operationId: put-ExternalFile
+      operationId: post-ExternalFile
       parameters:
         -
           name: fields
@@ -3247,13 +3235,102 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExternalFile-get'
-          headers:
-            ETag:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
-            Cache-Control:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    put:
+      tags:
+        - ExternalFile
+        - resource
+      description: 'Creates an instance of ExternalFile'
+      operationId: put-ExternalFile
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: x-no-crsf
+          in: header
+          description: 'Disable csrf'
+          schema:
+            enum:
+              - '1'
+            type: string
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalFile-post'
+          multipart/form-data:
+            schema:
+              required:
+                - form
+              type: object
+              properties:
+                form:
+                  $ref: '#/components/schemas/ExternalFile-post-multipart-form-data'
+                _csrf:
+                  type: string
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExternalFile-get'
         '400':
           description: 'Invalid request'
           content:
@@ -3384,7 +3461,7 @@ paths:
         - PrimitiveOnly
         - resource
       description: 'Creates an instance of PrimitiveOnly'
-      operationId: put-PrimitiveOnly
+      operationId: post-PrimitiveOnly
       parameters:
         -
           name: fields
@@ -3418,13 +3495,84 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrimitiveOnly-get'
-          headers:
-            ETag:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
-            Cache-Control:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    put:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Creates an instance of PrimitiveOnly'
+      operationId: put-PrimitiveOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrimitiveOnly-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrimitiveOnly-get'
         '400':
           description: 'Invalid request'
           content:
@@ -3565,7 +3713,7 @@ paths:
         - RestrictedEntity
         - resource
       description: 'Creates an instance of RestrictedEntity'
-      operationId: put-RestrictedEntity
+      operationId: post-RestrictedEntity
       parameters:
         -
           name: fields
@@ -3599,13 +3747,84 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
-          headers:
-            ETag:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
-            Cache-Control:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    put:
+      tags:
+        - RestrictedEntity
+        - resource
+      description: 'Creates an instance of RestrictedEntity'
+      operationId: put-RestrictedEntity
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestrictedEntity-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestrictedEntity-get'
         '400':
           description: 'Invalid request'
           content:
@@ -3736,7 +3955,7 @@ paths:
         - SpecialTypeOnly
         - resource
       description: 'Creates an instance of SpecialTypeOnly'
-      operationId: put-SpecialTypeOnly
+      operationId: post-SpecialTypeOnly
       parameters:
         -
           name: fields
@@ -3770,13 +3989,84 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpecialTypeOnly-get'
-          headers:
-            ETag:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
-            Cache-Control:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    put:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Creates an instance of SpecialTypeOnly'
+      operationId: put-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpecialTypeOnly-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpecialTypeOnly-get'
         '400':
           description: 'Invalid request'
           content:
@@ -3907,7 +4197,7 @@ paths:
         - UploadedFile
         - resource
       description: 'Creates an instance of UploadedFile'
-      operationId: put-UploadedFile
+      operationId: post-UploadedFile
       parameters:
         -
           name: fields
@@ -3968,13 +4258,111 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File-get'
-          headers:
-            ETag:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
-            Cache-Control:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    put:
+      tags:
+        - UploadedFile
+        - resource
+      description: 'Creates an instance of UploadedFile'
+      operationId: put-UploadedFile
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: x-no-crsf
+          in: header
+          description: 'Disable csrf'
+          schema:
+            enum:
+              - '1'
+            type: string
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/File-post'
+          multipart/form-data:
+            schema:
+              required:
+                - form
+                - file
+              type: object
+              properties:
+                form:
+                  $ref: '#/components/schemas/File-post-multipart-form-data'
+                _csrf:
+                  type: string
+                imageFile:
+                  type: string
+                  format: binary
+                  nullable: true
+                file:
+                  type: string
+                  format: binary
+                  nullable: false
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File-get'
         '400':
           description: 'Invalid request'
           content:
@@ -4105,7 +4493,7 @@ paths:
         - User
         - resource
       description: 'Creates an instance of User'
-      operationId: put-User
+      operationId: post-User
       parameters:
         -
           name: fields
@@ -4139,13 +4527,84 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
-          headers:
-            ETag:
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
-            Cache-Control:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
               schema:
-                type: string
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    put:
+      tags:
+        - User
+        - resource
+      description: 'Creates an instance of User'
+      operationId: put-User
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User-post'
+      responses:
+        '201':
+          description: 'Resource was created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User-get'
         '400':
           description: 'Invalid request'
           content:
@@ -4319,13 +4778,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Animal-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -4346,13 +4798,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - Animal
@@ -4430,13 +4875,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Animal-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -4516,13 +4954,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExternalFile-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -4543,13 +4974,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     delete:
       tags:
         - ExternalFile
@@ -4664,13 +5088,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IanaObject-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -4691,13 +5108,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - IanaObject
@@ -4753,13 +5163,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/IanaObject-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -4839,13 +5242,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjectWithRelation-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -4866,13 +5262,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - ObjectWithRelation
@@ -4928,13 +5317,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ObjectWithRelation-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5014,13 +5396,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5041,13 +5416,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     delete:
       tags:
         - Order
@@ -5162,13 +5530,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrimitiveOnly-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5189,13 +5550,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - PrimitiveOnly
@@ -5251,13 +5605,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PrimitiveOnly-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5402,13 +5749,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5429,13 +5769,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - RestrictedEntity
@@ -5491,13 +5824,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RestrictedEntity-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5577,13 +5903,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpecialTypeOnly-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5604,13 +5923,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - SpecialTypeOnly
@@ -5666,13 +5978,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpecialTypeOnly-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5817,13 +6122,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TranslationAware-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -5844,13 +6142,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - TranslationAware
@@ -5906,13 +6197,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TranslationAware-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -5992,13 +6276,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnionObject-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6019,13 +6296,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - UnionObject
@@ -6081,13 +6351,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnionObject-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -6167,13 +6430,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6194,13 +6450,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - UploadedFile
@@ -6274,13 +6523,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/File-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -6425,13 +6667,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6452,13 +6687,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
     patch:
       tags:
         - User
@@ -6514,13 +6742,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -6600,13 +6821,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SequentialBackgroundProcess-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6627,13 +6841,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/AuditLog/{id}':
     get:
       tags:
@@ -6683,13 +6890,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AuditLog-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '401':
           description: 'Requires authorization'
           content:
@@ -6710,13 +6910,6 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   /SequentialBackgroundProcess:
     get:
       tags:
@@ -7660,13 +7853,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   /Authentication/isThisMe:
     post:
       tags:
@@ -8365,13 +8551,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExternalFile-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '404':
           description: 'Resource not found'
           content:
@@ -8430,13 +8609,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Order-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8519,13 +8691,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8596,13 +8761,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '404':
           description: 'Resource not found'
           content:
@@ -8667,13 +8825,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8756,13 +8907,6 @@ paths:
             application/json:
               schema:
                 type: boolean
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8833,13 +8977,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SequentialBackgroundProcess-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '404':
           description: 'Resource not found'
           content:
@@ -8894,13 +9031,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadedFile-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -8979,13 +9109,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadedFile-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -9064,13 +9187,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UploadedFile-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
         '400':
           description: 'Invalid request'
           content:
@@ -10150,13 +10266,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/ExternalFile/{id}':
     post:
       tags:
@@ -10226,13 +10335,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/IanaObject/{id}':
     post:
       tags:
@@ -10302,13 +10404,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/ObjectWithRelation/{id}':
     post:
       tags:
@@ -10378,13 +10473,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/Order/{id}':
     post:
       tags:
@@ -10454,13 +10542,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/PrimitiveOnly/{id}':
     post:
       tags:
@@ -10530,13 +10611,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/RestrictedEntity/{id}':
     post:
       tags:
@@ -10606,13 +10680,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/SpecialTypeOnly/{id}':
     post:
       tags:
@@ -10682,13 +10749,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/TranslationAware/{id}':
     post:
       tags:
@@ -10758,13 +10818,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/UnionObject/{id}':
     post:
       tags:
@@ -10834,13 +10887,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/UploadedFile/{id}':
     post:
       tags:
@@ -10910,13 +10956,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/User/{id}':
     post:
       tags:
@@ -10986,13 +11025,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/SequentialBackgroundProcess/{id}':
     post:
       tags:
@@ -11062,13 +11094,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
   '/indexes/AuditLog/{id}':
     post:
       tags:
@@ -11138,13 +11163,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/StringSet-get'
-          headers:
-            ETag:
-              schema:
-                type: string
-            Cache-Control:
-              schema:
-                type: string
 servers:
   -
     url: /api/types

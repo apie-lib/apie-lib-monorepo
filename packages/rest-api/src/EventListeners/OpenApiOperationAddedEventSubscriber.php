@@ -1,6 +1,7 @@
 <?php
 namespace Apie\RestApi\EventListeners;
 
+use Apie\Common\Actions\CreateObjectAction;
 use Apie\Common\Actions\GetItemAction;
 use Apie\Common\Actions\GetListAction;
 use Apie\Common\Actions\ModifyObjectAction;
@@ -9,6 +10,7 @@ use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Datalayers\ApieDatalayerWithFilters;
+use Apie\Core\Enums\RequestMethod;
 use Apie\Core\Metadata\MetadataFactory;
 use Apie\RestApi\Events\OpenApiOperationAddedEvent;
 use Apie\TypeConverter\ReflectionTypeFactory;
@@ -60,6 +62,27 @@ class OpenApiOperationAddedEventSubscriber implements EventSubscriberInterface
         }
 
         if ($event->routeDefinition->getAction() === ModifyObjectAction::class) {
+            $parameters = $event->operation->parameters ?? [];
+            $parameters[] = new Parameter([
+                'name' => 'If-Match',
+                'in' => 'header',
+                'required' => false,
+                'explode' => false,
+                'schema' => new Schema([
+                    'type' => 'array',
+                    'items' => new Schema([
+                        'type' => 'string',
+                    ]),
+                ]),
+            ]);
+            $event->operation->parameters = $parameters;
+            return;
+        }
+
+        if (
+            $event->routeDefinition->getAction() === CreateObjectAction::class
+            && $event->method === RequestMethod::PUT
+        ) {
             $parameters = $event->operation->parameters ?? [];
             $parameters[] = new Parameter([
                 'name' => 'If-Match',

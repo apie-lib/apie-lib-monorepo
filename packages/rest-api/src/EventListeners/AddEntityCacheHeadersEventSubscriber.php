@@ -50,12 +50,16 @@ class AddEntityCacheHeadersEventSubscriber implements EventSubscriberInterface
             || !$context->getContext(ContextConstants::REST_API, false)
             || $event->response->getStatusCode() >= 300
             || $event->response->getStatusCode() === 204
-            || $event->response->hasHeader('ETag')
         ) {
             $this->resource = null;
             return;
         }
-        
+        if ($event->response->hasHeader('ETag')) {
+            $event->response = $event->response->withHeader('Cache-Control', 'no-cache');
+            $this->resource = null;
+            return;
+        }
+
         $resource = $context->getContext(ContextConstants::RESOURCE, false);
         if ($resource instanceof EntityInterface) {
             $identifier = $resource->getId();
