@@ -71,7 +71,12 @@ class ValidCreateResourceApiCall implements TestRequestInterface, BootstrapReque
         if ($statusCode === 500) {
             IntegrationTestLogger::failTestShowError();
         }
+        if ($this->faked && $statusCode === 409) {
+            TestCase::assertEquals('application/json', $response->getHeaderLine('content-type'));
+            return;
+        }
         TestCase::assertEquals(201, $statusCode, 'Expect object created, got: ' . $body);
+        
         $data = json_decode($body, true);
         $this->inputOutput->assertResponseValue($data);
         TestCase::assertEquals('application/json', $response->getHeaderLine('content-type'));

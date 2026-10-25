@@ -3140,97 +3140,6 @@ paths:
         - Animal
         - resource
       description: 'Creates an instance of Animal'
-      operationId: post-Animal
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-        -
-          $ref: '#/components/parameters/ContentLanguage'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Animal-post'
-            examples:
-              example_elephant:
-                summary: 'Example elephant'
-                value:
-                  id: 123e4567-e89b-12d3-a456-426614174000
-                  animalName: Charlie
-                  name: elephant
-                  type: mammal
-              example_ostrich:
-                summary: 'Example ostrich'
-                value:
-                  id: 123e4567-e89b-12d3-a456-426614174001
-                  animalName: Polly
-                  name: ostrich
-                  type: bird
-              example_fish:
-                summary: 'Example fish'
-                value:
-                  id: 123e4567-e89b-12d3-a456-426614174002
-                  animalName: Nemo
-                  name: shark
-                  type: fish
-      responses:
-        '201':
-          description: 'Resource was created'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Animal-get'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-    put:
-      tags:
-        - Animal
-        - resource
-      description: 'Creates an instance of Animal'
       operationId: put-Animal
       parameters:
         -
@@ -3244,15 +3153,6 @@ paths:
         -
           name: relations
           in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: If-Match
-          in: header
-          required: false
           explode: false
           schema:
             type: array
@@ -3428,13 +3328,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Animal-get'
-  /ExternalFile:
-    post:
+  '/Animal/{id}':
+    put:
       tags:
-        - ExternalFile
+        - Animal
         - resource
-      description: 'Creates an instance of ExternalFile'
-      operationId: post-ExternalFile
+      description: 'Creates an instance of Animal'
+      operationId: replace-Animal
       parameters:
         -
           name: fields
@@ -3453,13 +3353,12 @@ paths:
             items:
               type: string
         -
-          name: x-no-crsf
-          in: header
-          description: 'Disable csrf'
+          name: id
+          in: path
+          description: 'id of instance of Animal'
+          required: true
           schema:
-            enum:
-              - '1'
-            type: string
+            $ref: '#/components/schemas/AnimalIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
         -
@@ -3468,24 +3367,36 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ExternalFile-post'
-          multipart/form-data:
-            schema:
-              required:
-                - form
-              type: object
-              properties:
-                form:
-                  $ref: '#/components/schemas/ExternalFile-post-multipart-form-data'
-                _csrf:
-                  type: string
+              $ref: '#/components/schemas/Animal-post'
+            examples:
+              example_elephant:
+                summary: 'Example elephant'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174000
+                  animalName: Charlie
+                  name: elephant
+                  type: mammal
+              example_ostrich:
+                summary: 'Example ostrich'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174001
+                  animalName: Polly
+                  name: ostrich
+                  type: bird
+              example_fish:
+                summary: 'Example fish'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174002
+                  animalName: Nemo
+                  name: shark
+                  type: fish
       responses:
         '201':
           description: 'Resource was created'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ExternalFile-get'
+                $ref: '#/components/schemas/Animal-get'
         '400':
           description: 'Invalid request'
           content:
@@ -3516,7 +3427,183 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-    put:
+    get:
+      tags:
+        - Animal
+        - resource
+      description: 'Gets a resource of Animal with a specific id'
+      operationId: get-single-Animal
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of Animal'
+          required: true
+          schema:
+            $ref: '#/components/schemas/AnimalIdentifier-post'
+        -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+    patch:
+      tags:
+        - Animal
+        - resource
+      description: 'Modifies an instance of Animal'
+      operationId: patch-single-Animal
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of Animal'
+          required: true
+          schema:
+            $ref: '#/components/schemas/AnimalIdentifier-post'
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Animal-patch'
+            examples:
+              example_elephant:
+                summary: 'Example elephant'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174000
+                  animalName: Charlie
+                  name: elephant
+                  type: mammal
+              example_ostrich:
+                summary: 'Example ostrich'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174001
+                  animalName: Polly
+                  name: ostrich
+                  type: bird
+              example_fish:
+                summary: 'Example fish'
+                value:
+                  id: 123e4567-e89b-12d3-a456-426614174002
+                  animalName: Nemo
+                  name: shark
+                  type: fish
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  /ExternalFile:
+    post:
       tags:
         - ExternalFile
         - resource
@@ -3547,15 +3634,6 @@ paths:
             enum:
               - '1'
             type: string
-        -
-          name: If-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
         -
@@ -3726,13 +3804,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/ExternalFile-get'
-  /PrimitiveOnly:
-    post:
+  '/ExternalFile/{id}':
+    put:
       tags:
-        - PrimitiveOnly
+        - ExternalFile
         - resource
-      description: 'Creates an instance of PrimitiveOnly'
-      operationId: post-PrimitiveOnly
+      description: 'Creates an instance of ExternalFile'
+      operationId: replace-ExternalFile
       parameters:
         -
           name: fields
@@ -3751,6 +3829,21 @@ paths:
             items:
               type: string
         -
+          name: id
+          in: path
+          description: 'id of instance of ExternalFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/ExternalFileIdentifier-post'
+        -
+          name: x-no-crsf
+          in: header
+          description: 'Disable csrf'
+          schema:
+            enum:
+              - '1'
+            type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -3758,14 +3851,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PrimitiveOnly-post'
+              $ref: '#/components/schemas/ExternalFile-post'
+          multipart/form-data:
+            schema:
+              required:
+                - form
+              type: object
+              properties:
+                form:
+                  $ref: '#/components/schemas/ExternalFile-post-multipart-form-data'
+                _csrf:
+                  type: string
       responses:
         '201':
           description: 'Resource was created'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PrimitiveOnly-get'
+                $ref: '#/components/schemas/ExternalFile-get'
         '400':
           description: 'Invalid request'
           content:
@@ -3796,12 +3899,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-    put:
+    get:
       tags:
-        - PrimitiveOnly
+        - ExternalFile
         - resource
-      description: 'Creates an instance of PrimitiveOnly'
-      operationId: put-PrimitiveOnly
+      description: 'Gets a resource of ExternalFile with a specific id'
+      operationId: get-single-ExternalFile
       parameters:
         -
           name: fields
@@ -3820,9 +3923,134 @@ paths:
             items:
               type: string
         -
-          name: If-Match
+          name: id
+          in: path
+          description: 'id of instance of ExternalFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/ExternalFileIdentifier-post'
+        -
+          name: If-None-Match
           in: header
           required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExternalFile-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+    delete:
+      tags:
+        - ExternalFile
+        - resource
+      description: 'Removes an instance of ExternalFile'
+      operationId: remove-single-ExternalFile
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of ExternalFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/ExternalFileIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '204':
+          description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  /PrimitiveOnly:
+    post:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Creates an instance of PrimitiveOnly'
+      operationId: put-PrimitiveOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
           explode: false
           schema:
             type: array
@@ -4007,13 +4235,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/PrimitiveOnly-get'
-  /RestrictedEntity:
-    post:
+  '/PrimitiveOnly/{id}':
+    put:
       tags:
-        - RestrictedEntity
+        - PrimitiveOnly
         - resource
-      description: 'Creates an instance of RestrictedEntity'
-      operationId: post-RestrictedEntity
+      description: 'Creates an instance of PrimitiveOnly'
+      operationId: replace-PrimitiveOnly
       parameters:
         -
           name: fields
@@ -4032,6 +4260,13 @@ paths:
             items:
               type: string
         -
+          name: id
+          in: path
+          description: 'id of instance of PrimitiveOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -4039,14 +4274,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RestrictedEntity-post'
+              $ref: '#/components/schemas/PrimitiveOnly-post'
       responses:
         '201':
           description: 'Resource was created'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RestrictedEntity-get'
+                $ref: '#/components/schemas/PrimitiveOnly-get'
         '400':
           description: 'Invalid request'
           content:
@@ -4077,12 +4312,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-    put:
+    get:
       tags:
-        - RestrictedEntity
+        - PrimitiveOnly
         - resource
-      description: 'Creates an instance of RestrictedEntity'
-      operationId: put-RestrictedEntity
+      description: 'Gets a resource of PrimitiveOnly with a specific id'
+      operationId: get-single-PrimitiveOnly
       parameters:
         -
           name: fields
@@ -4101,9 +4336,219 @@ paths:
             items:
               type: string
         -
+          name: id
+          in: path
+          description: 'id of instance of PrimitiveOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+        -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrimitiveOnly-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+    patch:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Modifies an instance of PrimitiveOnly'
+      operationId: patch-single-PrimitiveOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of PrimitiveOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+        -
           name: If-Match
           in: header
           required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrimitiveOnly-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrimitiveOnly-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    delete:
+      tags:
+        - PrimitiveOnly
+        - resource
+      description: 'Removes an instance of PrimitiveOnly'
+      operationId: remove-single-PrimitiveOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of PrimitiveOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '204':
+          description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  /RestrictedEntity:
+    post:
+      tags:
+        - RestrictedEntity
+        - resource
+      description: 'Creates an instance of RestrictedEntity'
+      operationId: put-RestrictedEntity
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
           explode: false
           schema:
             type: array
@@ -4277,13 +4722,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/RestrictedEntity-get'
-  /SpecialTypeOnly:
-    post:
+  '/RestrictedEntity/{id}':
+    put:
       tags:
-        - SpecialTypeOnly
+        - RestrictedEntity
         - resource
-      description: 'Creates an instance of SpecialTypeOnly'
-      operationId: post-SpecialTypeOnly
+      description: 'Creates an instance of RestrictedEntity'
+      operationId: replace-RestrictedEntity
       parameters:
         -
           name: fields
@@ -4302,6 +4747,13 @@ paths:
             items:
               type: string
         -
+          name: id
+          in: path
+          description: 'id of instance of RestrictedEntity'
+          required: true
+          schema:
+            $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -4309,14 +4761,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SpecialTypeOnly-post'
+              $ref: '#/components/schemas/RestrictedEntity-post'
       responses:
         '201':
           description: 'Resource was created'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SpecialTypeOnly-get'
+                $ref: '#/components/schemas/RestrictedEntity-get'
         '400':
           description: 'Invalid request'
           content:
@@ -4347,12 +4799,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-    put:
+    get:
       tags:
-        - SpecialTypeOnly
+        - RestrictedEntity
         - resource
-      description: 'Creates an instance of SpecialTypeOnly'
-      operationId: put-SpecialTypeOnly
+      description: 'Gets a resource of RestrictedEntity with a specific id'
+      operationId: get-single-RestrictedEntity
       parameters:
         -
           name: fields
@@ -4371,9 +4823,154 @@ paths:
             items:
               type: string
         -
+          name: id
+          in: path
+          description: 'id of instance of RestrictedEntity'
+          required: true
+          schema:
+            $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
+        -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestrictedEntity-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+    patch:
+      tags:
+        - RestrictedEntity
+        - resource
+      description: 'Modifies an instance of RestrictedEntity'
+      operationId: patch-single-RestrictedEntity
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of RestrictedEntity'
+          required: true
+          schema:
+            $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
+        -
           name: If-Match
           in: header
           required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestrictedEntity-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestrictedEntity-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  /SpecialTypeOnly:
+    post:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Creates an instance of SpecialTypeOnly'
+      operationId: put-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
           explode: false
           schema:
             type: array
@@ -4542,13 +5139,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/SpecialTypeOnly-get'
-  /UploadedFile:
-    post:
+  '/SpecialTypeOnly/{id}':
+    put:
       tags:
-        - UploadedFile
+        - SpecialTypeOnly
         - resource
-      description: 'Creates an instance of UploadedFile'
-      operationId: post-UploadedFile
+      description: 'Creates an instance of SpecialTypeOnly'
+      operationId: replace-SpecialTypeOnly
       parameters:
         -
           name: fields
@@ -4567,13 +5164,12 @@ paths:
             items:
               type: string
         -
-          name: x-no-crsf
-          in: header
-          description: 'Disable csrf'
+          name: id
+          in: path
+          description: 'id of instance of SpecialTypeOnly'
+          required: true
           schema:
-            enum:
-              - '1'
-            type: string
+            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
         -
@@ -4582,33 +5178,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/File-post'
-          multipart/form-data:
-            schema:
-              required:
-                - form
-                - file
-              type: object
-              properties:
-                form:
-                  $ref: '#/components/schemas/File-post-multipart-form-data'
-                _csrf:
-                  type: string
-                imageFile:
-                  type: string
-                  format: binary
-                  nullable: true
-                file:
-                  type: string
-                  format: binary
-                  nullable: false
+              $ref: '#/components/schemas/SpecialTypeOnly-post'
       responses:
         '201':
           description: 'Resource was created'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/File-get'
+                $ref: '#/components/schemas/SpecialTypeOnly-get'
         '400':
           description: 'Invalid request'
           content:
@@ -4639,7 +5216,226 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-    put:
+    get:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Gets a resource of SpecialTypeOnly with a specific id'
+      operationId: get-single-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SpecialTypeOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
+        -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpecialTypeOnly-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+    patch:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Modifies an instance of SpecialTypeOnly'
+      operationId: patch-single-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SpecialTypeOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SpecialTypeOnly-patch'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpecialTypeOnly-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    delete:
+      tags:
+        - SpecialTypeOnly
+        - resource
+      description: 'Removes an instance of SpecialTypeOnly'
+      operationId: remove-single-SpecialTypeOnly
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of SpecialTypeOnly'
+          required: true
+          schema:
+            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '204':
+          description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  /UploadedFile:
+    post:
       tags:
         - UploadedFile
         - resource
@@ -4670,15 +5466,6 @@ paths:
             enum:
               - '1'
             type: string
-        -
-          name: If-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
         -
@@ -4860,13 +5647,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/File-get'
-  /User:
-    post:
+  '/UploadedFile/{id}':
+    put:
       tags:
-        - User
+        - UploadedFile
         - resource
-      description: 'Creates an instance of User'
-      operationId: post-User
+      description: 'Creates an instance of UploadedFile'
+      operationId: replace-UploadedFile
       parameters:
         -
           name: fields
@@ -4885,6 +5672,21 @@ paths:
             items:
               type: string
         -
+          name: id
+          in: path
+          description: 'id of instance of UploadedFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UploadedFileIdentifier-post'
+        -
+          name: x-no-crsf
+          in: header
+          description: 'Disable csrf'
+          schema:
+            enum:
+              - '1'
+            type: string
+        -
           $ref: '#/components/parameters/AcceptLanguage'
         -
           $ref: '#/components/parameters/ContentLanguage'
@@ -4892,14 +5694,33 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User-post'
+              $ref: '#/components/schemas/File-post'
+          multipart/form-data:
+            schema:
+              required:
+                - form
+                - file
+              type: object
+              properties:
+                form:
+                  $ref: '#/components/schemas/File-post-multipart-form-data'
+                _csrf:
+                  type: string
+                imageFile:
+                  type: string
+                  format: binary
+                  nullable: true
+                file:
+                  type: string
+                  format: binary
+                  nullable: false
       responses:
         '201':
           description: 'Resource was created'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User-get'
+                $ref: '#/components/schemas/File-get'
         '400':
           description: 'Invalid request'
           content:
@@ -4930,12 +5751,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-    put:
+    get:
       tags:
-        - User
+        - UploadedFile
         - resource
-      description: 'Creates an instance of User'
-      operationId: put-User
+      description: 'Gets a resource of UploadedFile with a specific id'
+      operationId: get-single-UploadedFile
       parameters:
         -
           name: fields
@@ -4954,9 +5775,237 @@ paths:
             items:
               type: string
         -
+          name: id
+          in: path
+          description: 'id of instance of UploadedFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UploadedFileIdentifier-post'
+        -
+          name: If-None-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File-get'
+        '401':
+          description: 'Requires authorization'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '403':
+          description: 'Access denied'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WrongTokenException-get'
+        '404':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+        '304':
+          description: 'Not Modified'
+    patch:
+      tags:
+        - UploadedFile
+        - resource
+      description: 'Modifies an instance of UploadedFile'
+      operationId: patch-single-UploadedFile
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of UploadedFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UploadedFileIdentifier-post'
+        -
+          name: x-no-crsf
+          in: header
+          description: 'Disable csrf'
+          schema:
+            enum:
+              - '1'
+            type: string
+        -
           name: If-Match
           in: header
           required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/File-patch'
+          multipart/form-data:
+            schema:
+              required:
+                - form
+              type: object
+              properties:
+                form:
+                  $ref: '#/components/schemas/File-patch'
+                _csrf:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/File-get'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+    delete:
+      tags:
+        - UploadedFile
+        - resource
+      description: 'Removes an instance of UploadedFile'
+      operationId: remove-single-UploadedFile
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: id
+          in: path
+          description: 'id of instance of UploadedFile'
+          required: true
+          schema:
+            $ref: '#/components/schemas/UploadedFileIdentifier-post'
+        -
+          $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '204':
+          description: 'Resource was deleted'
+        '400':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '405':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '406':
+          description: 'Invalid request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotAcceptedException-get'
+        '422':
+          description: 'A validation error occurred'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException-get'
+        '409':
+          description: 'Resource not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Throwable-get'
+  /User:
+    post:
+      tags:
+        - User
+        - resource
+      description: 'Creates an instance of User'
+      operationId: put-User
+      parameters:
+        -
+          name: fields
+          in: query
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+        -
+          name: relations
+          in: query
           explode: false
           schema:
             type: array
@@ -5136,13 +6185,13 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/User-get'
-  '/Animal/{id}':
-    get:
+  '/User/{id}':
+    put:
       tags:
-        - Animal
+        - User
         - resource
-      description: 'Gets a resource of Animal with a specific id'
-      operationId: get-single-Animal
+      description: 'Creates an instance of User'
+      operationId: replace-User
       parameters:
         -
           name: fields
@@ -5163,87 +6212,10 @@ paths:
         -
           name: id
           in: path
-          description: 'id of instance of Animal'
+          description: 'id of instance of User'
           required: true
           schema:
-            $ref: '#/components/schemas/AnimalIdentifier-post'
-        -
-          name: If-None-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Animal-get'
-        '401':
-          description: 'Requires authorization'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '403':
-          description: 'Access denied'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '404':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-        '304':
-          description: 'Not Modified'
-    patch:
-      tags:
-        - Animal
-        - resource
-      description: 'Modifies an instance of Animal'
-      operationId: patch-single-Animal
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of Animal'
-          required: true
-          schema:
-            $ref: '#/components/schemas/AnimalIdentifier-post'
-        -
-          name: If-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
+            $ref: '#/components/schemas/UserIdentifier-post'
         -
           $ref: '#/components/parameters/AcceptLanguage'
         -
@@ -5252,36 +6224,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Animal-patch'
-            examples:
-              example_elephant:
-                summary: 'Example elephant'
-                value:
-                  id: 123e4567-e89b-12d3-a456-426614174000
-                  animalName: Charlie
-                  name: elephant
-                  type: mammal
-              example_ostrich:
-                summary: 'Example ostrich'
-                value:
-                  id: 123e4567-e89b-12d3-a456-426614174001
-                  animalName: Polly
-                  name: ostrich
-                  type: bird
-              example_fish:
-                summary: 'Example fish'
-                value:
-                  id: 123e4567-e89b-12d3-a456-426614174002
-                  animalName: Nemo
-                  name: shark
-                  type: fish
+              $ref: '#/components/schemas/User-post'
       responses:
-        '200':
-          description: OK
+        '201':
+          description: 'Resource was created'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Animal-get'
+                $ref: '#/components/schemas/User-get'
         '400':
           description: 'Invalid request'
           content:
@@ -5312,13 +6262,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-  '/ExternalFile/{id}':
     get:
       tags:
-        - ExternalFile
+        - User
         - resource
-      description: 'Gets a resource of ExternalFile with a specific id'
-      operationId: get-single-ExternalFile
+      description: 'Gets a resource of User with a specific id'
+      operationId: get-single-User
       parameters:
         -
           name: fields
@@ -5339,10 +6288,10 @@ paths:
         -
           name: id
           in: path
-          description: 'id of instance of ExternalFile'
+          description: 'id of instance of User'
           required: true
           schema:
-            $ref: '#/components/schemas/ExternalFileIdentifier-post'
+            $ref: '#/components/schemas/UserIdentifier-post'
         -
           name: If-None-Match
           in: header
@@ -5360,7 +6309,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ExternalFile-get'
+                $ref: '#/components/schemas/User-get'
         '401':
           description: 'Requires authorization'
           content:
@@ -5381,12 +6330,12 @@ paths:
                 $ref: '#/components/schemas/Throwable-get'
         '304':
           description: 'Not Modified'
-    delete:
+    patch:
       tags:
-        - ExternalFile
+        - User
         - resource
-      description: 'Removes an instance of ExternalFile'
-      operationId: remove-single-ExternalFile
+      description: 'Modifies an instance of User'
+      operationId: patch-single-User
       parameters:
         -
           name: fields
@@ -5407,15 +6356,35 @@ paths:
         -
           name: id
           in: path
-          description: 'id of instance of ExternalFile'
+          description: 'id of instance of User'
           required: true
           schema:
-            $ref: '#/components/schemas/ExternalFileIdentifier-post'
+            $ref: '#/components/schemas/UserIdentifier-post'
+        -
+          name: If-Match
+          in: header
+          required: false
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
         -
           $ref: '#/components/parameters/AcceptLanguage'
+        -
+          $ref: '#/components/parameters/ContentLanguage'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User-patch'
       responses:
-        '204':
-          description: 'Resource was deleted'
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User-get'
         '400':
           description: 'Invalid request'
           content:
@@ -5888,598 +6857,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Throwable-get'
-  '/PrimitiveOnly/{id}':
-    get:
-      tags:
-        - PrimitiveOnly
-        - resource
-      description: 'Gets a resource of PrimitiveOnly with a specific id'
-      operationId: get-single-PrimitiveOnly
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of PrimitiveOnly'
-          required: true
-          schema:
-            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
-        -
-          name: If-None-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PrimitiveOnly-get'
-        '401':
-          description: 'Requires authorization'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '403':
-          description: 'Access denied'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '404':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-        '304':
-          description: 'Not Modified'
-    patch:
-      tags:
-        - PrimitiveOnly
-        - resource
-      description: 'Modifies an instance of PrimitiveOnly'
-      operationId: patch-single-PrimitiveOnly
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of PrimitiveOnly'
-          required: true
-          schema:
-            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
-        -
-          name: If-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-        -
-          $ref: '#/components/parameters/ContentLanguage'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PrimitiveOnly-patch'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PrimitiveOnly-get'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-    delete:
-      tags:
-        - PrimitiveOnly
-        - resource
-      description: 'Removes an instance of PrimitiveOnly'
-      operationId: remove-single-PrimitiveOnly
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of PrimitiveOnly'
-          required: true
-          schema:
-            $ref: '#/components/schemas/PrimitiveOnlyIdentifier-post'
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '204':
-          description: 'Resource was deleted'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-  '/RestrictedEntity/{id}':
-    get:
-      tags:
-        - RestrictedEntity
-        - resource
-      description: 'Gets a resource of RestrictedEntity with a specific id'
-      operationId: get-single-RestrictedEntity
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of RestrictedEntity'
-          required: true
-          schema:
-            $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
-        -
-          name: If-None-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RestrictedEntity-get'
-        '401':
-          description: 'Requires authorization'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '403':
-          description: 'Access denied'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '404':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-        '304':
-          description: 'Not Modified'
-    patch:
-      tags:
-        - RestrictedEntity
-        - resource
-      description: 'Modifies an instance of RestrictedEntity'
-      operationId: patch-single-RestrictedEntity
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of RestrictedEntity'
-          required: true
-          schema:
-            $ref: '#/components/schemas/RestrictedEntityIdentifier-post'
-        -
-          name: If-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-        -
-          $ref: '#/components/parameters/ContentLanguage'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RestrictedEntity-patch'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RestrictedEntity-get'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-  '/SpecialTypeOnly/{id}':
-    get:
-      tags:
-        - SpecialTypeOnly
-        - resource
-      description: 'Gets a resource of SpecialTypeOnly with a specific id'
-      operationId: get-single-SpecialTypeOnly
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of SpecialTypeOnly'
-          required: true
-          schema:
-            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
-        -
-          name: If-None-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SpecialTypeOnly-get'
-        '401':
-          description: 'Requires authorization'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '403':
-          description: 'Access denied'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '404':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-        '304':
-          description: 'Not Modified'
-    patch:
-      tags:
-        - SpecialTypeOnly
-        - resource
-      description: 'Modifies an instance of SpecialTypeOnly'
-      operationId: patch-single-SpecialTypeOnly
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of SpecialTypeOnly'
-          required: true
-          schema:
-            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
-        -
-          name: If-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-        -
-          $ref: '#/components/parameters/ContentLanguage'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SpecialTypeOnly-patch'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SpecialTypeOnly-get'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-    delete:
-      tags:
-        - SpecialTypeOnly
-        - resource
-      description: 'Removes an instance of SpecialTypeOnly'
-      operationId: remove-single-SpecialTypeOnly
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of SpecialTypeOnly'
-          required: true
-          schema:
-            $ref: '#/components/schemas/SpecialTypeOnlyIdentifier-post'
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '204':
-          description: 'Resource was deleted'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
   '/TranslationAware/{id}':
     get:
       tags:
@@ -6758,397 +7135,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UnionObject-get'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-  '/UploadedFile/{id}':
-    get:
-      tags:
-        - UploadedFile
-        - resource
-      description: 'Gets a resource of UploadedFile with a specific id'
-      operationId: get-single-UploadedFile
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of UploadedFile'
-          required: true
-          schema:
-            $ref: '#/components/schemas/UploadedFileIdentifier-post'
-        -
-          name: If-None-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/File-get'
-        '401':
-          description: 'Requires authorization'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '403':
-          description: 'Access denied'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '404':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-        '304':
-          description: 'Not Modified'
-    patch:
-      tags:
-        - UploadedFile
-        - resource
-      description: 'Modifies an instance of UploadedFile'
-      operationId: patch-single-UploadedFile
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of UploadedFile'
-          required: true
-          schema:
-            $ref: '#/components/schemas/UploadedFileIdentifier-post'
-        -
-          name: x-no-crsf
-          in: header
-          description: 'Disable csrf'
-          schema:
-            enum:
-              - '1'
-            type: string
-        -
-          name: If-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-        -
-          $ref: '#/components/parameters/ContentLanguage'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/File-patch'
-          multipart/form-data:
-            schema:
-              required:
-                - form
-              type: object
-              properties:
-                form:
-                  $ref: '#/components/schemas/File-patch'
-                _csrf:
-                  type: string
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/File-get'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-    delete:
-      tags:
-        - UploadedFile
-        - resource
-      description: 'Removes an instance of UploadedFile'
-      operationId: remove-single-UploadedFile
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of UploadedFile'
-          required: true
-          schema:
-            $ref: '#/components/schemas/UploadedFileIdentifier-post'
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '204':
-          description: 'Resource was deleted'
-        '400':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '405':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '406':
-          description: 'Invalid request'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotAcceptedException-get'
-        '422':
-          description: 'A validation error occurred'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ValidationException-get'
-        '409':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-  '/User/{id}':
-    get:
-      tags:
-        - User
-        - resource
-      description: 'Gets a resource of User with a specific id'
-      operationId: get-single-User
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of User'
-          required: true
-          schema:
-            $ref: '#/components/schemas/UserIdentifier-post'
-        -
-          name: If-None-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User-get'
-        '401':
-          description: 'Requires authorization'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '403':
-          description: 'Access denied'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WrongTokenException-get'
-        '404':
-          description: 'Resource not found'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Throwable-get'
-        '304':
-          description: 'Not Modified'
-    patch:
-      tags:
-        - User
-        - resource
-      description: 'Modifies an instance of User'
-      operationId: patch-single-User
-      parameters:
-        -
-          name: fields
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: relations
-          in: query
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          name: id
-          in: path
-          description: 'id of instance of User'
-          required: true
-          schema:
-            $ref: '#/components/schemas/UserIdentifier-post'
-        -
-          name: If-Match
-          in: header
-          required: false
-          explode: false
-          schema:
-            type: array
-            items:
-              type: string
-        -
-          $ref: '#/components/parameters/AcceptLanguage'
-        -
-          $ref: '#/components/parameters/ContentLanguage'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User-patch'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User-get'
         '400':
           description: 'Invalid request'
           content:
