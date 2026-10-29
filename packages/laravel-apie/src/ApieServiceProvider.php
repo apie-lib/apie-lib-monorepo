@@ -198,8 +198,8 @@ class ApieServiceProvider extends ServiceProvider
                 });
                 $commands[] = $serviceId;
             }
-            /** @var CommonConsoleCommandFactory $factory */
             if ($this->app->bound('apie.console.factory')) {
+                /** @var CommonConsoleCommandFactory $factory */
                 $factory = $this->app->get('apie.console.factory');
                 foreach ($factory->create($this->app->get(Application::class)) as $command) {
                     $serviceId = 'apie.console.registered.' . $command->getName();
