@@ -66,6 +66,7 @@ class SmallDatabaseTextTest extends TestCase
                 'type' => 'string',
                 'format' => 'smalldatabasetext',
                 'pattern' => true,
+                'description' => true,
             ]
         );
     }

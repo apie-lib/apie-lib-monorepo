@@ -14,4 +14,20 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is a meta package that installs almost all apie packages.
+Pure Composer meta-package with no code of its own. It bundles every optional Apie
+integration for applications that want most of what Apie offers in one requirement:
+
+```bash
+composer require apie/meta-maximum
+```
+
+It requires: `apie/core`, `apie/meta-recommended` (which itself pulls in
+`apie/meta-minimal` and the recommended value-object/datalayer/Faker packages),
+`apie/cms-api-dropdown-option`, `apie/cms-layout-graphite`, `apie/console`,
+`apie/graphql`, `apie/mcp-server`, `apie/regex-value-objects`, and
+`apie/typescript-client-builder`.
+
+It has no runtime API of its own — use it only as a Composer convenience bundle. Prefer
+`apie/meta-minimal` or `apie/meta-recommended`, or requiring individual packages
+directly, when you don't need CMS layouts, GraphQL, the MCP server, or the TypeScript
+client generator.

@@ -1,0 +1,29 @@
+<div>
+  {{ component('resourceActionList') }}
+{% if property('list')|length %}
+<table>
+  <thead>
+    <tr>
+      {% for column in property('columns') %}
+        <th>{{ column }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in property('list') %}
+      <tr>
+        {% for column in property('columns') %}
+          <td>
+            {% set value = row[column]|default(null) %}
+            {% include "valuedisplay.html.twig" with {  value: value } only %}
+          </td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+List is empty
+{% endif %}
+  {{ component('pagination') }}
+</div>

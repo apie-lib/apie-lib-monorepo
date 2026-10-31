@@ -2,6 +2,7 @@
 namespace Apie\CountryAndPhoneNumber\Factories;
 
 use Apie\Core\Exceptions\InvalidTypeException;
+use Apie\CountryAndPhoneNumber\BelgianPhoneNumber;
 use Apie\CountryAndPhoneNumber\BritishPhoneNumber;
 use Apie\CountryAndPhoneNumber\CanadianPhoneNumber;
 use Apie\CountryAndPhoneNumber\ChinesePhoneNumber;
@@ -21,6 +22,7 @@ final class PhoneNumberFactory
      * @var array<string, class-string<PhoneNumber>>
      */
     private static array $instantiatedClasses = [
+        'BE' => BelgianPhoneNumber::class,
         'CA' => CanadianPhoneNumber::class,
         'CN' => ChinesePhoneNumber::class,
         'DE' => GermanPhoneNumber::class,

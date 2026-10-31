@@ -1,0 +1,4 @@
+services:
+  Apie\ExchangeRate\ExchangeRateService:
+    arguments:
+      - '@?http_client'

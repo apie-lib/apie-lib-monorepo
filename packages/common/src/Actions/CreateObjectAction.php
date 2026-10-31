@@ -2,23 +2,31 @@
 namespace Apie\Common\Actions;
 
 use Apie\Common\Events\ApieResourceCreated;
+use Apie\Common\Exceptions\EntityEtagConflictException;
 use Apie\Common\IntegrationTestLogger;
+use Apie\Common\Other\LockUtil;
 use Apie\Core\Actions\ActionInterface;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
+use Apie\Core\Attributes\Description;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
+use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Enums\RequestMethod;
+use Apie\Core\Exceptions\EntityAlreadyPersisted;
+use Apie\Core\Exceptions\EntityNotFoundException;
 use Apie\Core\Exceptions\IndexNotFoundException;
+use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Lists\StringList;
 use Apie\Core\Utils\EntityUtils;
 use Apie\Core\ValueObjects\Utils;
 use Exception;
 use LogicException;
+use Psr\Http\Message\ServerRequestInterface;
 use ReflectionClass;
 
 /**
@@ -68,15 +76,32 @@ final class CreateObjectAction implements ActionInterface
             IntegrationTestLogger::logException($error);
             return ActionResponse::createClientError($this->apieFacade, $context, $error);
         }
-        $context = $context->withContext(ContextConstants::RESOURCE, $resource);
-        if ($context->getContext(RequestMethod::class, false) === RequestMethod::PUT) {
-            /** @phpstan-ignore argument.templateType */
-            $resource = $this->apieFacade->upsert($resource, new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID)));
-        } else {
-            $resource = $this->apieFacade->persistNew($resource, new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID)));
+        if (!$resource instanceof EntityInterface) {
+            throw new InvalidTypeException($resource, EntityInterface::class);
         }
         $context = $context->withContext(ContextConstants::RESOURCE, $resource);
-        $context->dispatchEvent(new ApieResourceCreated($resource));
+        $boundedContextId = new BoundedContextId($context->getContext(ContextConstants::BOUNDED_CONTEXT_ID));
+
+        // only autoincrement integers should do this, but this means we can not make a lock
+        if ($resource->getId()->toNative() === null) {
+            $resource = $this->apieFacade->persistNew($resource, $boundedContextId);
+        } else {
+            $lock = LockUtil::createLock(
+                $context,
+                [ContextConstants::BOUNDED_CONTEXT_ID, ContextConstants::RESOURCE_NAME, ContextConstants::RESOURCE_ID],
+                write: true
+            );
+            try {
+                $resource = $this->apieFacade->persistNew($resource, $boundedContextId);
+            } catch (Exception $error) {
+                IntegrationTestLogger::logException($error);
+                return ActionResponse::createClientError($this->apieFacade, $context, $error);
+            } finally {
+                $lock->release();
+            }
+        }
+        $context = $context->withContext(ContextConstants::RESOURCE, $resource);
+        $context->dispatchEvent(new ApieResourceCreated($resource, $context));
         return ActionResponse::createCreationSuccess($this->apieFacade, $context, $resource, $resource);
     }
 
@@ -106,15 +131,20 @@ final class CreateObjectAction implements ActionInterface
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getDescription(ReflectionClass $class): string
     {
-        return 'Creates an instance of ' . $class->getShortName();
+        $description = 'Creates an instance of ' . $class->getShortName();
+        foreach ($class->getAttributes(Description::class) as $attribute) {
+            $description .= '. ' . $attribute->newInstance()->description;
+        }
+
+        return $description;
     }
     
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getTags(ReflectionClass $class): StringList
     {
@@ -122,7 +152,7 @@ final class CreateObjectAction implements ActionInterface
     }
 
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public static function getRouteAttributes(ReflectionClass $class): array
     {

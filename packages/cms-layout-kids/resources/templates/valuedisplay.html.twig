@@ -1,0 +1,13 @@
+{% if value is same as(null) %}
+  -
+{% elseif value is same as(true) %}
+  ✅
+{% elseif value is same as(false) %}
+  ❌
+{% elseif value is iterable %}
+  {% for val in value %}
+    {% include "valuedisplay.html.twig" with {  value: val } only %}{{ loop.last ? '' : ', ' }}
+  {% endfor %}
+{% else %}
+  {{ value }}
+{% endif %}

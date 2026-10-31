@@ -16,16 +16,17 @@ trait TestWithFaker
             $this->markTestIncomplete('Faker library not loaded, so skipping test');
             return;
         }
+        $unchangedInterval = $interval === 1000;
         $testCase ??= function () {
         };
         if (!$generator) {
             $generator = Factory::create();
             $generator->addProvider(ApieObjectFaker::createWithDefaultFakers($generator));
         }
-        if (EntityUtils::isEntity($classToTest) || ValueObjectUtils::isCompositeValueObject($classToTest)) {
+        if ($unchangedInterval && EntityUtils::isEntity($classToTest) || ValueObjectUtils::isCompositeValueObject($classToTest)) {
             $interval = 100;
         }
-        if (preg_match('/File$/', $classToTest)) {
+        if ($unchangedInterval && preg_match('/File$/', $classToTest)) {
             $interval = 10;
         }
         for ($i = 0; $i < $interval; $i++) {

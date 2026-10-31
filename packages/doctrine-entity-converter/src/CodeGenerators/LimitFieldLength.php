@@ -5,13 +5,15 @@ use Apie\StorageMetadataBuilder\Interfaces\PostRunGeneratedCodeContextInterface;
 use Apie\StorageMetadataBuilder\Mediators\GeneratedCodeContext;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\Table;
 use Generator;
 use Nette\PhpGenerator\Attribute;
 use Nette\PhpGenerator\ClassType;
+use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PromotedParameter;
 use Nette\PhpGenerator\Property;
-use ReflectionProperty;
 
 /**
  * Find all doctrine column attributes set by AddDoctrineFields and checks if the generated column name
@@ -39,23 +41,26 @@ class LimitFieldLength implements PostRunGeneratedCodeContextInterface
         if (strlen($classType->getName()) > 60) {
             $found = false;
             $suggestedTableName = substr($classType->getName(), 0, 30) . '_' . md5($classType->getName());
-            foreach ($classType->getAttributes() as $attribute) {
+            $this->modifyAttributes(function (Attribute $attribute) use ($suggestedTableName, &$found) {
                 if ($attribute->getName() === Table::class) {
                     $found = true;
-                    $this->setNameArgument($attribute, $suggestedTableName);
+                    return $this->setNameArgument($attribute, $suggestedTableName);
                 }
-            }
+                return $attribute;
+            }, $classType);
             if (!$found) {
                 $classType->addAttribute(Table::class, ['name' => $suggestedTableName]);
             }
         }
         $alreadyDefined = [];
         foreach ($this->iterateProperties($classType) as $property) {
-            foreach ($property->getAttributes() as $attribute) {
+            $this->limitJoinTable($classType, $property);
+            $this->modifyAttributes(function (Attribute $attribute) {
                 if (in_array($attribute->getName(), [Column::class])) {
-                    $this->fillInMissingStringLength($attribute);
+                    return $this->fillInMissingStringLength($attribute);
                 }
-            }
+                return $attribute;
+            }, $property);
             $propertyName = $property->getName();
             if (strlen($property->getName()) < 57 && !isset($alreadyDefined[$propertyName])) {
                 $alreadyDefined[$propertyName] = true;
@@ -65,15 +70,80 @@ class LimitFieldLength implements PostRunGeneratedCodeContextInterface
             for ($i = 0; !empty($alreadyDefined[$suggestedName]); $i++) {
                 $suggestedName = sprintf("%s%03u", substr($property->getName(), 0, 57), $i);
             }
-            foreach ($property->getAttributes() as $attribute) {
+            $this->modifyAttributes(function (Attribute $attribute) use ($suggestedName) {
                 if (in_array($attribute->getName(), [Column::class, JoinColumn::class])) {
-                    $this->setNameArgument($attribute, $suggestedName);
+                    return $this->setNameArgument($attribute, $suggestedName);
                 }
-            }
+                return $attribute;
+            }, $property);
+            $alreadyDefined[$suggestedName] = true;
         }
     }
 
-    private function fillInMissingStringLength(Attribute $attribute): void
+    /**
+     * Doctrine generates the name of a join table of a ManyToMany as "<source table>_<target table>" and the
+     * join columns as "<table>_id", so these can exceed the database limit while the tables themselves do not.
+     */
+    private function limitJoinTable(ClassType $classType, PromotedParameter|Property $property): void
+    {
+        $manyToMany = null;
+        $joinTable = null;
+        foreach ($property->getAttributes() as $attribute) {
+            if ($attribute->getName() === ManyToMany::class) {
+                $manyToMany = $attribute;
+            }
+            if ($attribute->getName() === JoinTable::class) {
+                $joinTable = $attribute;
+            }
+        }
+        $targetEntity = $manyToMany?->getArguments()['targetEntity'] ?? null;
+        if (!is_string($targetEntity) || isset($joinTable?->getArguments()['name'])) {
+            return;
+        }
+        $source = $classType->getName();
+        $target = ltrim(strrchr('\\' . $targetEntity, '\\'), '\\');
+
+        $arguments = $joinTable?->getArguments() ?? [];
+        $tableName = strtolower($source . '_' . $target);
+        if (strlen($tableName) > 60) {
+            $arguments['name'] = substr($tableName, 0, 30) . '_' . md5($tableName);
+        }
+        // Doctrine uses source_id and target_id for self referencing relations, so we leave those alone.
+        if ($source !== $target) {
+            foreach (['joinColumns' => $source, 'inverseJoinColumns' => $target] as $key => $entityName) {
+                $columnName = strtolower($entityName . '_id');
+                if (!isset($arguments[$key]) && strlen($columnName) > 57) {
+                    $shortName = substr($columnName, 0, 30) . '_' . md5($columnName);
+                    $arguments[$key] = [new Literal(
+                        'new \\' . JoinColumn::class . '(name: ?, referencedColumnName: \'id\', onDelete: \'CASCADE\')',
+                        [$shortName]
+                    )];
+                }
+            }
+        }
+        if (!$arguments) {
+            return;
+        }
+        $attributes = [];
+        foreach ($property->getAttributes() as $attribute) {
+            if ($attribute !== $joinTable) {
+                $attributes[] = $attribute;
+            }
+        }
+        $attributes[] = new Attribute(JoinTable::class, $arguments);
+        $property->setAttributes($attributes);
+    }
+
+    private function modifyAttributes(callable $callback, ClassType|PromotedParameter|Property $property): void
+    {
+        $attributes = [];
+        foreach ($property->getAttributes() as $attribute) {
+            $attributes[] = $callback($attribute);
+        }
+        $property->setAttributes($attributes);
+    }
+
+    private function fillInMissingStringLength(Attribute $attribute): Attribute
     {
         $arguments = $attribute->getArguments();
         if (($arguments['type'] ?? 'string')=== 'string' || !isset($arguments['type'])) {
@@ -81,16 +151,14 @@ class LimitFieldLength implements PostRunGeneratedCodeContextInterface
                 $arguments['length'] = 255;
             }
         }
-        $refl = new ReflectionProperty(Attribute::class, 'args');
-        $refl->setValue($attribute, $arguments);
+        return new Attribute($attribute->getName(), $arguments);
     }
 
-    private function setNameArgument(Attribute $attribute, string $suggestedName): void
+    private function setNameArgument(Attribute $attribute, string $suggestedName): Attribute
     {
         $arguments = $attribute->getArguments();
         $arguments['name'] = $suggestedName;
-        $refl = new ReflectionProperty(Attribute::class, 'args');
-        $refl->setValue($attribute, $arguments);
+        return new Attribute($attribute->getName(), $arguments);
     }
 
     /**

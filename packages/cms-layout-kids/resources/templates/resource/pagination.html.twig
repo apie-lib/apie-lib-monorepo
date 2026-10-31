@@ -1,0 +1,10 @@
+<div>
+    <div>
+        Shown {{ property('shownCount') }} of {{ property('totalCount') }}
+    </div>
+    <div>
+        {% for i in range(1, (property('totalCount') / property('pageSize'))|round(0, 'ceil')) %}
+            <button onclick="location.href = location.protocol + '//' + location.host + location.pathname + {{ property('querySearch').withPageIndex(i - 1).toHttpQuery() | safe_json_encode | replace({'"': "'"}) }};" size="small">{{ i }}</button>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,69 @@
+{
+  "name": "apie/iana-value-objects",
+  "description": "Composer package of the apie library: iana value objects",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pieter Jordaan",
+      "email": "pieter_jordaan@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Apie\\IanaValueObjects\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Apie\\Tests\\IanaValueObjects\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.4",
+    "apie/core": "self.version"
+  },
+  "require-dev": {
+    "apie/fixtures": "self.version",
+    "phpunit/phpunit": "^11.5.2",
+    "phpspec/prophecy-phpunit": "^2.5"
+  },
+  "extra": {
+    "apie-objects": [
+    "Apie\\IanaValueObjects\\HttpStatus\\ActiveHttpStatus",
+    "Apie\\IanaValueObjects\\HttpStatus\\HttpStatus",
+    "Apie\\IanaValueObjects\\CharacterSet\\ActiveCharacterSet",
+    "Apie\\IanaValueObjects\\CharacterSet\\CharacterSet",
+    "Apie\\IanaValueObjects\\TopLevelDomain\\TopLevelDomain",
+    "Apie\\IanaValueObjects\\TopLevelDomain\\ActiveTopLevelDomain",
+    "Apie\\IanaValueObjects\\LanguageTag\\LanguageScript",
+    "Apie\\IanaValueObjects\\LanguageTag\\LanguageRegion",
+    "Apie\\IanaValueObjects\\LanguageTag\\LanguageExtension",
+    "Apie\\IanaValueObjects\\LanguageTag\\ActiveLanguageVariant",
+    "Apie\\IanaValueObjects\\LanguageTag\\ActiveLanguageExtlang",
+    "Apie\\IanaValueObjects\\LanguageTag\\ActiveLanguage",
+    "Apie\\IanaValueObjects\\LanguageTag\\LanguageVariant",
+    "Apie\\IanaValueObjects\\LanguageTag\\ActiveLanguageScript",
+    "Apie\\IanaValueObjects\\LanguageTag\\LanguageTag",
+    "Apie\\IanaValueObjects\\LanguageTag\\LanguageExtlang",
+    "Apie\\IanaValueObjects\\LanguageTag\\Language",
+    "Apie\\IanaValueObjects\\LanguageTag\\ActiveLanguageRegion",
+    "Apie\\IanaValueObjects\\LanguageAndRegion",
+    "Apie\\IanaValueObjects\\HttpHeader\\HttpHeader",
+    "Apie\\IanaValueObjects\\HttpHeader\\ActiveHttpHeader",
+    "Apie\\IanaValueObjects\\HttpHeader\\HttpHeaderStatus",
+    "Apie\\IanaValueObjects\\HttpHeader\\StructuredType",
+    "Apie\\IanaValueObjects\\PortNumber\\PortNumberAndTransport",
+    "Apie\\IanaValueObjects\\PortNumber\\ActivePortNumberAndTransport",
+    "Apie\\IanaValueObjects\\PortNumber\\TransportType",
+    "Apie\\IanaValueObjects\\PortNumber\\ActivePortNumber",
+    "Apie\\IanaValueObjects\\PortNumber\\PortNumber",
+    "Apie\\IanaValueObjects\\MediaType\\ActiveMediaType",
+    "Apie\\IanaValueObjects\\MediaType\\MediaType",
+    "Apie\\IanaValueObjects\\UriScheme\\ActiveUriScheme",
+    "Apie\\IanaValueObjects\\UriScheme\\UriScheme"
+]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

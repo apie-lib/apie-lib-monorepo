@@ -13,6 +13,7 @@ use DateTimeImmutable;
 use DateTimeInterface;
 use ReflectionClass;
 use ReflectionNamedType;
+use ReflectionType;
 use ReflectionUnionType;
 use stdClass;
 use Stringable;
@@ -23,6 +24,9 @@ use UnitEnum;
  */
 final class Utils
 {
+    /**
+     * @codeCoverageIgnore
+     */
     private function __construct()
     {
     }
@@ -49,6 +53,9 @@ final class Utils
         if ($input instanceof ValueObjectInterface) {
             $input = $input instanceof Stringable ? $input->__toString() : $input->toNative();
         }
+        if ($input instanceof ReflectionClass) {
+            return $input->name;
+        }
         if (is_array($input)) {
             throw new InvalidTypeException($input, 'string');
         }
@@ -60,6 +67,15 @@ final class Utils
         }
         if ($input instanceof DateTimeInterface) {
             return $input->format(DateTimeInterface::ATOM);
+        }
+        if (is_resource($input)) {
+            $offset = ftell($input);
+            @rewind($input);
+            $result = stream_get_contents($input);
+            @fseek($input, $offset);
+            if ($result !== false) {
+                return $result;
+            }
         }
         return (string) $input;
     }
@@ -122,7 +138,11 @@ final class Utils
         if ($input instanceof TimeRelatedValueObjectInterface) {
             return $input->toDate();
         }
-        return $class::createFromFormat(DateTime::ATOM, self::toString($input));
+        $result = $class::createFromFormat(DateTime::ATOM, self::toString($input));
+        if (!$result) {
+            throw new InvalidTypeException($input, $class);
+        }
+        return $result;
     }
 
     /**
@@ -282,12 +302,15 @@ final class Utils
         if (is_string($input) || is_numeric($input)) {
             return (string) '"' . $input . '"';
         }
+        if (is_resource($input)) {
+            return get_debug_type($input);
+        }
 
         return gettype($input);
     }
 
     /**
-     * @param ValueObjectInterface|ReflectionClass<object> $class
+     * @param ValueObjectInterface|ReflectionClass<covariant object> $class
      */
     public static function getDisplayNameForValueObject(ValueObjectInterface|ReflectionClass $class): string
     {

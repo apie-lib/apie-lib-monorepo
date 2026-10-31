@@ -1,12 +1,16 @@
 <?php
 namespace Apie\Core\Datalayers\InMemory;
 
+use Apie\Core\ApieLib;
+use Apie\Core\Attributes\ClassStoreOptions;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Datalayers\ApieDatalayer;
+use Apie\Core\Datalayers\DataLayerMetadata;
 use Apie\Core\Datalayers\Lists\EntityListInterface;
 use Apie\Core\Datalayers\Lists\InMemoryEntityList;
 use Apie\Core\Datalayers\Search\LazyLoadedListFilterer;
 use Apie\Core\Entities\EntityInterface;
+use Apie\Core\Enums\SortingOrder;
 use Apie\Core\Exceptions\EntityAlreadyPersisted;
 use Apie\Core\Exceptions\EntityNotFoundException;
 use Apie\Core\Exceptions\UnknownExistingEntityError;
@@ -16,6 +20,7 @@ use Faker\Factory;
 use Faker\Generator;
 use ReflectionClass;
 use ReflectionProperty;
+use WeakMap;
 
 class InMemoryDatalayer implements ApieDatalayer
 {
@@ -31,9 +36,29 @@ class InMemoryDatalayer implements ApieDatalayer
 
     private Generator $generator;
 
+    /** @var WeakMap<EntityInterface, DataLayerMetadata> */
+    private WeakMap $metadata;
+
     public function __construct(private BoundedContextId $boundedContextId, private LazyLoadedListFilterer $filterer)
     {
         $this->generator = Factory::create();
+        $this->metadata = new WeakMap();
+        $this->stored = $this->restore();
+    }
+
+    /**
+     * @return array<string, array<int, EntityInterface>>
+     */
+    protected function restore(): array
+    {
+        return [];
+    }
+
+    /**
+     * @param array<string, array<int, EntityInterface>> $list
+     */
+    protected function store(array $list): void
+    {
     }
 
     public function all(ReflectionClass $class, ?BoundedContextId $boundedContextId = null): EntityListInterface
@@ -64,14 +89,29 @@ class InMemoryDatalayer implements ApieDatalayer
             $reflProperty = new ReflectionProperty($entity, 'id');
             $reflProperty->setValue($entity, $id);
         }
-        $className = $id::getReferenceFor()->name;
+        $refl = $id::getReferenceFor();
+        $className = $refl->name;
         $id = $entity->getId()->toNative();
-        foreach ($this->stored[$className] ?? [] as $entityInList) {
+        $this->stored[$className] ??= [];
+        foreach ($this->stored[$className] as $entityInList) {
             if ($entityInList->getId()->toNative() === $id) {
                 throw new EntityAlreadyPersisted($entity);
             }
         }
-        $this->stored[$className][] = $entity;
+        $sortOrder = SortingOrder::Descending;
+        foreach ($refl->getAttributes(ClassStoreOptions::class) as $classStoreOptionsAttribute) {
+            $classStoreOptions = $classStoreOptionsAttribute->newInstance();
+            if ($classStoreOptions->defaultSortingOrder === SortingOrder::Ascending) {
+                $sortOrder = SortingOrder::Ascending;
+            }
+        }
+        if ($sortOrder === SortingOrder::Ascending) {
+            $this->stored[$className][] = $entity;
+        } else {
+            array_unshift($this->stored[$className], $entity);
+        }
+        $now = ApieLib::getPsrClock()->now();
+        $this->metadata[$entity] = new DataLayerMetadata($now, $now, ApieLib::VERSION, ApieLib::VERSION);
         return $entity;
     }
 
@@ -86,7 +126,17 @@ class InMemoryDatalayer implements ApieDatalayer
         $className = $entity->getId()::getReferenceFor()->name;
         foreach ($this->stored[$className] ?? [] as $key => $entityInList) {
             if ($entityInList->getId()->toNative() === $id) {
+                $metadata = $this->metadata[$entityInList] ?? new DataLayerMetadata(
+                    ApieLib::getPsrClock()->now(),
+                    ApieLib::getPsrClock()->now(),
+                    ApieLib::VERSION,
+                    ApieLib::VERSION
+                );
                 $this->stored[$className][$key] = $entity;
+                $this->metadata[$entity] = $metadata->withUpdatedMetadata(
+                    ApieLib::getPsrClock()->now(),
+                    ApieLib::VERSION
+                );
                 return $entity;
             }
         }
@@ -105,6 +155,18 @@ class InMemoryDatalayer implements ApieDatalayer
         throw new EntityNotFoundException($identifier);
     }
 
+    /**
+     * @template T of EntityInterface
+     * @param IdentifierInterface<T> $identifier
+     */
+    public function getMetadata(
+        IdentifierInterface $identifier,
+        ?BoundedContextId $boundedContextId = null
+    ): DataLayerMetadata {
+        $entity = $this->find($identifier, $boundedContextId);
+        return $this->metadata[$entity] ?? throw new \LogicException('Metadata is not available for this entity.');
+    }
+
     public function removeExisting(EntityInterface $entity, ?BoundedContextId $boundedContextId = null): void
     {
         $identifier = $entity->getId();
@@ -114,6 +176,8 @@ class InMemoryDatalayer implements ApieDatalayer
         foreach ($this->stored[$className] ?? [] as $entityInList) {
             if ($entityInList->getId()->toNative() !== $id) {
                 $newList[] = $entityInList;
+            } else {
+                unset($this->metadata[$entityInList]);
             }
         }
         $this->stored[$className] = $newList;

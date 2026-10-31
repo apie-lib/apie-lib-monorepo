@@ -43,6 +43,7 @@ class ApieUpdateRecalculatingCommand extends Command
         $apieContext = $this->contextBuilderFactory->createGeneralContext([
             ConsoleCommand::class => ConsoleCommand::CONSOLE_COMMAND,
             ConsoleCommand::CONSOLE_COMMAND->value => true,
+            Command::class => $this,
             ContextConstants::DISABLE_CONTEXT_FILTER => true,
         ]);
         /** @var BoundedContext $boundedContext */
@@ -77,7 +78,7 @@ class ApieUpdateRecalculatingCommand extends Command
                             $this->apieDatalayer->persistExisting($item, $boundedContextId);
                             $output->writeln(' Done');
                         }
-                    } while ($stop || $limit !== null);
+                    } while (!$stop || $limit !== null);
                 }
             }
         }

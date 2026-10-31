@@ -1,6 +1,7 @@
 <?php
 namespace Apie\StorageMetadataBuilder\CodeGenerators;
 
+use Apie\Core\Attributes\StoreOptions;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Identifiers\KebabCaseSlug;
 use Apie\Core\Metadata\CompositeMetadata;
@@ -28,6 +29,12 @@ final class SubObjectCodeGenerator implements RunGeneratedCodeContextInterface
         if (null === $class || null === $currentTable || in_array((string) $property->getType(), [UploadedFileInterface::class])) {
             return;
         }
+        foreach ($property->getAttributes(StoreOptions::class) as $attribute) {
+            $options = $attribute->newInstance();
+            if ($options->alwaysMixedData) { // this case is already handled by SimplePropertiesCodeGenerator
+                return;
+            }
+        }
         $metadata = MetadataFactory::getMetadataStrategyForType($property->getType())
             ->getResultMetadata(new ApieContext());
         $propertyName = 'apie_'
@@ -45,7 +52,7 @@ final class SubObjectCodeGenerator implements RunGeneratedCodeContextInterface
             $generatedCodeContext->withCurrentObject($class)->iterateOverTable($table);
             $currentTable->addProperty($propertyName)
                 ->setType(($property->getType()->allowsNull() ? '?' : '') . $tableName)
-                ->addAttribute(OneToOneAttribute::class, [$property->name, null, $property->getDeclaringClass()->name]);
+                ->addAttribute(OneToOneAttribute::class, [$property->name, $property->getDeclaringClass()->name]);
         }
     }
 }
