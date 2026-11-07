@@ -65,10 +65,6 @@ trait TestWithDoctrineEntityDatalayer
             if (!@mkdir($entityPath)) {
                 $this->markTestSkipped('Can not create entity folder ' . $entityPath);
             }
-            $proxyPath = $tempFolder . DIRECTORY_SEPARATOR . 'proxies';
-            if (!@mkdir($proxyPath)) {
-                $this->markTestSkipped('Can not create proxy folder ' . $proxyPath);
-            }
             $ormBuilder = new DoctrineEntityConverterOrmBuilder(
                 new PersistenceLayerFactory(),
                 new BoundedContextHashmap([
@@ -85,7 +81,6 @@ trait TestWithDoctrineEntityDatalayer
                 buildOnce: false,
                 runMigrations: true,
                 devMode: true,
-                proxyDir: $proxyPath,
                 cache: null,
                 path: $entityPath,
                 connectionConfig: [

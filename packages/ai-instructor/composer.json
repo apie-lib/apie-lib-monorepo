@@ -25,7 +25,7 @@
     "apie/serializer": "self.version",
     "apie/schema-generator": "self.version",
     "devizzent/cebe-php-openapi": "^1.1.5",
-    "symfony/http-client": "^7.2"
+    "symfony/http-client": "^7.2|^8.0"
   },
   "require-dev": {
     "illuminate/support": "*",

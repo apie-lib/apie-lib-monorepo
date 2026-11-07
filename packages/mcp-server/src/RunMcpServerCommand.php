@@ -10,7 +10,7 @@ use Mcp\Types\CallToolRequestParams;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;
 
-class RunMcpServerCommand extends \Symfony\Component\Console\Command\Command
+class RunMcpServerCommand extends Command
 {
     public function __construct(
         private readonly RunnerFactoryInterface $runnerFactory,
@@ -21,7 +21,7 @@ class RunMcpServerCommand extends \Symfony\Component\Console\Command\Command
         parent::__construct('apie:mcp-server');
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDescription('Runs the MCP server to link with Apie')

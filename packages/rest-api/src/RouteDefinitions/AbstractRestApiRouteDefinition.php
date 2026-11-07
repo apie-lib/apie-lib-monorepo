@@ -9,7 +9,7 @@ use Apie\RestApi\Controllers\RestApiController;
 abstract class AbstractRestApiRouteDefinition extends CommonRestApiRouteDefinition
 {
     /**
-     * @return class-string<covariant RestApiController>
+     * @return class-string<covariant object>
      */
     public function getController(): string
     {

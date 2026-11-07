@@ -23,8 +23,8 @@
     "php": ">=8.4",
     "apie/core": "self.version",
     "apie/html-builders": "self.version",
-    "symfony/console": "^7.2",
-    "symfony/http-client": "^7.2",
+    "symfony/console": "^7.2|^8.0",
+    "symfony/http-client": "^7.2|^8.0",
     "twig/twig": "^3.28.0",
     "symfony/ux-icons": "^2.36|^v3.4.0"
   },

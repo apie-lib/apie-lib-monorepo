@@ -29,7 +29,7 @@
     "apie/fixtures": "self.version",
     "phpunit/phpunit": "^11.5.2",
     "phpspec/prophecy-phpunit": "^2.5",
-    "symfony/mime":  "^7.2"
+    "symfony/mime":  "^7.2|^8.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

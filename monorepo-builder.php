@@ -28,10 +28,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             "phpstan/phpstan" => "2.2.8",
             "phpunit/phpcov" => "^10.0.1",
             'friendsofphp/php-cs-fixer' =>  "3.95.19",
-            "symfony/doctrine-bridge" => "^7.2",
+            "symfony/doctrine-bridge" => "^7.2|^8.0",
             "symfony/monolog-bundle" => "^3.10",
-            'symfony/phpunit-bridge' =>  "^7.2",
-            'symfony/finder' =>  "^7.2",
+            'symfony/phpunit-bridge' =>  "^7.2|^8.0",
+            'symfony/finder' =>  "^7.2|^8.0",
             'symplify/monorepo-builder' =>  '10.2.7',
         ],
     ]);

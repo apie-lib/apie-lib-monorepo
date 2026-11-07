@@ -92,7 +92,7 @@ class SymfonyTestingKernel extends Kernel
                     ->setPublic(true),
             ]);
             $container->loadFromExtension('apie', $this->apieConfig);
-            $container->loadFromExtension('doctrine', ['orm' => ['auto_mapping' => true], 'dbal' => []]);
+            $container->loadFromExtension('doctrine', ['orm' => ['auto_mapping' => true, 'enable_native_lazy_objects' => true], 'dbal' => []]);
             $container->loadFromExtension('monolog', [
                 'handlers' => [
                     'file_log' => [
