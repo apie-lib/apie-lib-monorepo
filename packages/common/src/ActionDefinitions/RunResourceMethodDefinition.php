@@ -1,6 +1,7 @@
 <?php
 namespace Apie\Common\ActionDefinitions;
 
+use Apie\Core\Attributes\ActionOptions;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
@@ -17,17 +18,18 @@ use ReflectionMethod;
 final class RunResourceMethodDefinition implements ActionDefinitionInterface
 {
     /**
-     * @param ReflectionClass<EntityInterface> $resourceName
+     * @param ReflectionClass<covariant EntityInterface> $resourceName
      */
     public function __construct(
         private readonly ReflectionClass $resourceName,
         private readonly ReflectionMethod $method,
-        private readonly BoundedContextId $boundedContextId
+        private readonly BoundedContextId $boundedContextId,
+        private readonly ?ActionOptions $actionOptions = null
     ) {
     }
 
     /**
-     * @return ReflectionClass<EntityInterface>
+     * @return ReflectionClass<covariant EntityInterface>
      */
     public function getResourceName(): ReflectionClass
     {
@@ -44,6 +46,11 @@ final class RunResourceMethodDefinition implements ActionDefinitionInterface
         return $this->method;
     }
 
+    public function getActionOptions(): ?ActionOptions
+    {
+        return $this->actionOptions;
+    }
+
     /**
      * Business logic:
      * - Check apie context with ContextConstants::RESOURCE_METHOD
@@ -56,21 +63,35 @@ final class RunResourceMethodDefinition implements ActionDefinitionInterface
             $resourceList = [$resource];
             if (in_array(PolymorphicEntityInterface::class, $resource->getInterfaceNames())) {
                 if ($runtimeChecks) {
-                    if ($apieContext->hasContext(ContextConstants::RESOURCE)) {
-                        $resourceList = [new ReflectionClass($apieContext->getContext(ContextConstants::RESOURCE))];
+                    if ($resourceActionContext->hasContext(ContextConstants::RESOURCE)) {
+                        $resourceList = [new ReflectionClass($resourceActionContext->getContext(ContextConstants::RESOURCE))];
                     }
                 } else {
                     $resourceList = EntityUtils::getDiscriminatorClasses($resource);
                 }
             }
             foreach ($resourceList as $actualClass) {
-                foreach ($resourceActionContext->getApplicableMethods($actualClass, $runtimeChecks) as $method) {
-                    $definition = new RunResourceMethodDefinition(
-                        $resource,
-                        $method,
-                        $boundedContext->getId()
-                    );
-                    $actionDefinitions[] = $definition;
+                foreach ($resourceActionContext->withContext(ContextConstants::RESOURCE_NAME, $actualClass->name)->getApplicableMethods($actualClass, $runtimeChecks) as $method) {
+                    $attributes = $method->getAttributes(ActionOptions::class);
+                    if (empty($attributes)) {
+                        $definition = new RunResourceMethodDefinition(
+                            $resource,
+                            $method,
+                            $boundedContext->getId()
+                        );
+                        $actionDefinitions[] = $definition;
+                    } else {
+                        foreach ($attributes as $attribute) {
+                            $actionOptions = $attribute->newInstance();
+                            $definition = new RunResourceMethodDefinition(
+                                $resource,
+                                $method,
+                                $boundedContext->getId(),
+                                $actionOptions
+                            );
+                            $actionDefinitions[] = $definition;
+                        }
+                    }
                 }
             }
         }

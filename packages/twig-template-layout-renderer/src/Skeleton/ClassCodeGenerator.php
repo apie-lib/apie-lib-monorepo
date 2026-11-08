@@ -30,7 +30,7 @@ final class ClassCodeGenerator
                 ]
             ],
             "require" => [
-                "php" => ">=8.3",
+                "php" => ">=8.4",
                 "apie/core" => $apieVersion,
                 "apie/html-builders" => $apieVersion,
                 "apie/twig-template-layout-renderer" => $apieVersion,
@@ -56,6 +56,7 @@ final class ClassCodeGenerator
         $contents .= '        
 use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
+use Symfony\UX\Icons\Twig\UXIconRuntime;
 
 ';
         $contents .= 'class ' . $name->toPascalCaseSlug()-> toNative() . 'DesignSystemLayout
@@ -67,13 +68,16 @@ use Apie\TwigTemplateLayoutRenderer\TwigRenderer;
     {
     }
 
-    public static function createRenderer(?AssetManager $assetManager = null): TwigRenderer
-    {
+    public static function createRenderer(
+        UXIconRuntime $uxIconRuntime,
+        ?AssetManager $assetManager = null
+    ): TwigRenderer {
         $assetManager ??= new AssetManager();
         return new TwigRenderer(
             __DIR__ . \'/../resources/templates\',
             $assetManager->withAddedPath(__DIR__ . \'/../resources/assets\'),
-            "Apie\HtmlBuilders\Components\\\\"
+            "Apie\HtmlBuilders\Components\\\\",
+            $uxIconRuntime
         );
     }
 }
@@ -97,7 +101,7 @@ use Apie\HtmlBuilders\TestHelpers\AbstractRenderTestCase;
 { 
     public function getRenderer(): ComponentRendererInterface
     {
-        return ' . $name->toPascalCaseSlug()-> toNative() . 'DesignSystemLayout::createRenderer();
+        return ' . $name->toPascalCaseSlug()-> toNative() . 'DesignSystemLayout::createRenderer(self::createTwigRuntimeForTests());
     }
 
     public function getFixturesPath(): string

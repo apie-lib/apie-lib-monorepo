@@ -3,6 +3,7 @@ namespace Apie\CommonValueObjects;
 
 use Apie\Core\Attributes\CmsSingleInput;
 use Apie\Core\Attributes\CmsValidationCheck;
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
@@ -15,6 +16,7 @@ use ReflectionClass;
 #[FakeMethod('createRandom')]
 #[CmsSingleInput(['email', 'text'])]
 #[CmsValidationCheck(pattern: '^[^@]+@[^@]+$')]
+#[Description('Represents an e-mail address')]
 class Email implements StringValueObjectInterface
 {
     use IsStringValueObject;
@@ -35,5 +37,19 @@ class Email implements StringValueObjectInterface
         if (!$validator->isValid($input, new RFCValidation())) {
             throw new InvalidStringForValueObjectException($input, new ReflectionClass(__CLASS__));
         }
+    }
+
+    public function getLocalPart(): EmailLocalPart
+    {
+        [$localPart] = explode('@', $this->internal, 2);
+
+        return new EmailLocalPart($localPart);
+    }
+
+    public function getHostname(): Hostname
+    {
+        $parts = explode('@', $this->internal, 2);
+
+        return new Hostname($parts[1]);
     }
 }

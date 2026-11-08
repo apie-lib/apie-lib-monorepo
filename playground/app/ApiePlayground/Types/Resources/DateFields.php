@@ -2,6 +2,8 @@
 
 namespace App\ApiePlayground\Types\Resources;
 
+use Apie\Core\Attributes\Auditable;
+use Apie\Core\Attributes\CmsIcon;
 use Apie\Core\Attributes\FakeCount;
 use Apie\DateValueObjects\Ranges\DateTimeRange;
 use App\ApiePlayground\Types\Identifiers\DateFieldsIdentifier;
@@ -10,6 +12,8 @@ use DateTimeImmutable;
 use DateTimeInterface;
 
 #[FakeCount(25)]
+#[Auditable()]
+#[CmsIcon('bi:calendar-date')]
 class DateFields implements \Apie\Core\Entities\EntityInterface
 {
     private DateFieldsIdentifier $id;

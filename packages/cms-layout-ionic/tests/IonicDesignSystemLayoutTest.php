@@ -9,7 +9,7 @@ class IonicDesignSystemLayoutTest extends AbstractRenderTestCase
 {
     public function getRenderer(): ComponentRendererInterface
     {
-        return IonicDesignSystemLayout::createRenderer();
+        return IonicDesignSystemLayout::createRenderer(self::createTwigRuntimeForTests());
     }
 
     public function getFixturesPath(): string

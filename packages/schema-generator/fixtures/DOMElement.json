@@ -1,0 +1,5 @@
+{
+    "type": "string",
+    "format": "xml",
+    "description": "A string containing well-formed XML."
+}

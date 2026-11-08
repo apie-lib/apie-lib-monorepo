@@ -1,11 +1,15 @@
 <?php
 namespace Apie\Common\ValueObjects;
 
+use Apie\Core\Attributes\Description;
+use Apie\Core\Attributes\ExampleValue;
+use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Lists\ReflectionClassList;
 use Apie\Core\Lists\ReflectionMethodList;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
+use Faker\Generator;
 use ReflectionClass;
 use ReflectionMethod;
 use Symfony\Component\Finder\Finder;
@@ -17,10 +21,14 @@ use Symfony\Component\Finder\Finder;
  * "Apie\Common\"
  * "Symfony\Component\"
  */
+#[Description('A PHP class namespace with trailing slash, for example: "Symfony\Component\\"')]
+#[ExampleValue("Symfony\Component\\")]
+#[FakeMethod('createRandom')]
 final class EntityNamespace implements StringValueObjectInterface, HasRegexValueObjectInterface
 {
     use IsStringWithRegexValueObject;
-
+    /** @var array<int, string> */
+    private static array $list;
     public static function getRegularExpression(): string
     {
         return '/^([A-Z][a-zA-Z0-9]*\\\\)+$/';
@@ -32,7 +40,7 @@ final class EntityNamespace implements StringValueObjectInterface, HasRegexValue
     }
 
     /**
-     * @return ReflectionClass<object>
+     * @return ReflectionClass<covariant object>
      */
     public function toClass(string $className): ReflectionClass
     {
@@ -94,5 +102,27 @@ final class EntityNamespace implements StringValueObjectInterface, HasRegexValue
         }
         sort($methods);
         return new ReflectionMethodList($methods);
+    }
+
+    public static function createRandom(Generator $generator): self
+    {
+        if (!isset(self::$list)) {
+            self::$list = array_filter(
+                array_map(
+                    function (string $class) {
+                        return (new ReflectionClass($class))->getNamespaceName();
+                    },
+                    get_declared_classes()
+                ),
+                function (string $namespace) {
+                    return preg_match(
+                        EntityNamespace::getRegularExpression(),
+                        $namespace . '\\'
+                    );
+                }
+            );
+            self::$list[] = 'Symfony\Component';
+        }
+        return self::fromNative($generator->randomElement(self::$list));
     }
 }

@@ -7,11 +7,13 @@ use Apie\IntegrationTests\Concerns\CreatesApieBoundedContext;
 use Apie\IntegrationTests\Concerns\CreatesApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\Enums\DatalayerImplementation;
+use Apie\IntegrationTests\Requests\QueryRequestDecorator;
+use Apie\IntegrationTests\Requests\TestRequestInterface;
 
 /**
  * @codeCoverageIgnore
  */
-final class IntegrationTestHelper
+class IntegrationTestHelper
 {
     use CreatesApplications;
     use CreatesApieBoundedContext;
@@ -40,15 +42,6 @@ final class IntegrationTestHelper
         );
     }
 
-    public function createMinimalFrameworkConfig(): ApplicationConfig
-    {
-        return new ApplicationConfig(
-            false,
-            false,
-            DatalayerImplementation::IN_MEMORY
-        );
-    }
-
     public function createEmptySearch(): SearchTerm
     {
         return new SearchTerm('');
@@ -67,5 +60,10 @@ final class IntegrationTestHelper
     public function createLikeSearch(): SearchTerm
     {
         return new SearchTerm('%');
+    }
+
+    public function createQueryResourceListRequest(): TestRequestInterface
+    {
+        return new QueryRequestDecorator($this->getObjectWithRestrictionListTestRequest());
     }
 }

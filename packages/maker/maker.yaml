@@ -2,6 +2,7 @@ services:
     Apie\Maker\CodeGenerators\CreateDomainObject:
       arguments:
         - '%apie.bounded_contexts%'
+        - '%apie.scan_bounded_contexts%'
     Apie\Maker\Command\ApieCreateDomainCommand:
       arguments:
         - '@Apie\Core\BoundedContext\BoundedContextHashmap'

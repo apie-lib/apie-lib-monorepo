@@ -1,0 +1,137 @@
+<?php
+namespace Apie\Export;
+
+use Apie\ServiceProviderGenerator\UseGeneratedMethods;
+use Illuminate\Support\ServiceProvider;
+
+/**
+ * This file is generated with apie/service-provider-generator from file: export.yaml
+ * @codeCoverageIgnore
+ */
+class ExportServiceProvider extends ServiceProvider
+{
+    use UseGeneratedMethods;
+
+    public function register()
+    {
+        $this->registerSingleton(
+            \Apie\Export\XlsxExport::class,
+            function ($app) {
+                return new \Apie\Export\XlsxExport(
+                
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Export\XlsxExport::class,
+            array(
+              0 =>
+              array(
+                'name' => 'Apie\\Export\\ExportInterface',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\Export\XlsxExport::class], \Apie\Export\ExportInterface::class);
+        $this->registerSingleton(
+            \Apie\Export\CsvExport::class,
+            function ($app) {
+                return new \Apie\Export\CsvExport(
+                
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Export\CsvExport::class,
+            array(
+              0 =>
+              array(
+                'name' => 'Apie\\Export\\ExportInterface',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\Export\CsvExport::class], \Apie\Export\ExportInterface::class);
+        $this->registerSingleton(
+            \Apie\Export\ZippedCsvExport::class,
+            function ($app) {
+                return new \Apie\Export\ZippedCsvExport(
+                
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Export\ZippedCsvExport::class,
+            array(
+              0 =>
+              array(
+                'name' => 'Apie\\Export\\ExportInterface',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\Export\ZippedCsvExport::class], \Apie\Export\ExportInterface::class);
+        $this->registerSingleton(
+            \Apie\Export\OdsExport::class,
+            function ($app) {
+                return new \Apie\Export\OdsExport(
+                
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Export\OdsExport::class,
+            array(
+              0 =>
+              array(
+                'name' => 'Apie\\Export\\ExportInterface',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\Export\OdsExport::class], \Apie\Export\ExportInterface::class);
+        $this->registerSingleton(
+            \Apie\Export\ChainedExport::class,
+            function ($app) {
+                return new \Apie\Export\ChainedExport(
+                    $this->getTaggedServicesIterator(\Apie\Export\ExportInterface::class)
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Export\ChainedExport::class,
+            array(
+              0 =>
+              array(
+                'name' => 'apie.context',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\Export\ChainedExport::class], 'apie.context');
+        $this->app->bind(\Apie\Export\ExportInterface::class, \Apie\Export\ChainedExport::class);
+        
+        $this->registerSingleton(
+            \Apie\Export\EntityExport::class,
+            function ($app) {
+                return new \Apie\Export\EntityExport(
+                    $app->make(\Apie\HtmlBuilders\Columns\ColumnSelector::class),
+                    $app->make(\Apie\Export\ExportInterface::class),
+                    $app->make(\Apie\Serializer\Serializer::class)
+                );
+            }
+        );
+        \Apie\ServiceProviderGenerator\TagMap::register(
+            $this->app,
+            \Apie\Export\EntityExport::class,
+            array(
+              0 =>
+              array(
+                'name' => 'apie.context',
+              ),
+            )
+        );
+        $this->app->tag([\Apie\Export\EntityExport::class], 'apie.context');
+        
+    }
+}

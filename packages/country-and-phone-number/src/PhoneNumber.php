@@ -1,6 +1,7 @@
 <?php
 namespace Apie\CountryAndPhoneNumber;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
 use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
@@ -15,6 +16,7 @@ use PrinsFrank\Standards\Country\CountryAlpha2;
 use ReflectionClass;
 
 #[FakeMethod('createRandom')]
+#[Description('Represents a phone number in proper formatting')]
 abstract class PhoneNumber implements StringValueObjectInterface
 {
     use IsStringValueObject;

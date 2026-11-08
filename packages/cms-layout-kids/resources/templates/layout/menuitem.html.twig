@@ -1,0 +1,50 @@
+{% set currentDepth = property('index') is defined ? property('index') : 0 %}
+
+{% if currentDepth >= 3 %}
+    {# Limit nesting to two levels beneath the root menu. #}
+{% elseif currentDepth == 0 %}
+    <div class="space-y-2">
+        {% for componentKey in property('subcomponents') %}
+            {{ component(componentKey) }}
+        {% endfor %}
+    </div>
+{% else %}
+    {% set count = property('counterInMenu') %}
+    {% set menuColours = ['hover:bg-pink-400', 'hover:bg-blue-400', 'hover:bg-green-400', 'hover:bg-orange-400', 'hover:bg-red-400'] %}
+    {% set linkClasses = 'wiggle flex items-center gap-3 rounded-2xl px-4 py-3 font-bold text-white transition-colors duration-150 ' ~ menuColours[count % menuColours|length] %}
+    {% set itemLabel = translate(property('name')) %}
+
+    {% if property('subcomponents')|length %}
+        <div class="space-y-1">
+            {% if property('route') %}
+                <a href="{{ property('route') }}" class="{{ linkClasses }} {{ property('allowed') ? '' : 'opacity-60' }}">
+                    {{ ux_icon(property('icon') ? : 'mdi:file', { class: 'h-5 w-5 shrink-0' }) }}
+                    <span>{{ itemLabel }}</span>
+                </a>
+            {% else %}
+                <div class="{{ linkClasses }} {{ property('allowed') ? '' : 'opacity-60' }}">
+                    {{ ux_icon(property('icon') ? : 'mdi:file', { class: 'h-5 w-5 shrink-0' }) }}
+                    <span>{{ itemLabel }}</span>
+                </div>
+            {% endif %}
+
+            <ul class="ml-4 space-y-1">
+                {% for componentKey in property('subcomponents') %}
+                    <li>{{ component(componentKey) }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        {% if property('route') %}
+            <a href="{{ property('route') }}" class="{{ linkClasses }} {{ property('allowed') ? '' : 'opacity-60' }}">
+                {{ ux_icon(property('icon') ? : 'mdi:file', { class: 'h-5 w-5 shrink-0' }) }}
+                <span>{{ itemLabel }}</span>
+            </a>
+        {% else %}
+            <div class="{{ linkClasses }} {{ property('allowed') ? '' : 'opacity-60' }}">
+                {{ ux_icon(property('icon') ? : 'mdi:file', { class: 'h-5 w-5 shrink-0' }) }}
+                <span>{{ itemLabel }}</span>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endif %}

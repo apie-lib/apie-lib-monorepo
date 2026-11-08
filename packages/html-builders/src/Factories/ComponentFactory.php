@@ -1,6 +1,7 @@
 <?php
 namespace Apie\HtmlBuilders\Factories;
 
+use Apie\Cms\MenuStructure\MainMenuBuilder;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Attributes\Context;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
@@ -22,6 +23,7 @@ use Apie\HtmlBuilders\Components\Forms\Form;
 use Apie\HtmlBuilders\Components\Forms\PolymorphicForm;
 use Apie\HtmlBuilders\Components\Forms\RemoveConfirm;
 use Apie\HtmlBuilders\Components\Layout;
+use Apie\HtmlBuilders\Components\Layout\MenuItem;
 use Apie\HtmlBuilders\Components\Resource\Detail;
 use Apie\HtmlBuilders\Components\Resource\FilterColumns;
 use Apie\HtmlBuilders\Components\Resource\Overview;
@@ -47,6 +49,7 @@ class ComponentFactory
         private readonly FormComponentFactory $formComponentFactory,
         private readonly FieldDisplayComponentFactory $fieldDisplayComponentFactory,
         private readonly ResourceActionFactory $resourceActionFactory,
+        private readonly ?MainMenuBuilder $mainMenuFactory = null,
         ?ColumnSelector $columnSelector = null
     ) {
         $this->columnSelector = $columnSelector ?? new ColumnSelector();
@@ -58,7 +61,7 @@ class ComponentFactory
     }
 
     /**
-     * @param ReflectionClass<EntityInterface> $className
+     * @param ReflectionClass<covariant EntityInterface> $className
      */
     public function createResource(
         ActionResponse $actionResponse,
@@ -95,7 +98,7 @@ class ComponentFactory
     }
 
     /**
-     * @param ReflectionClass<EntityInterface> $className
+     * @param ReflectionClass<covariant EntityInterface> $className
      */
     public function createResourceOverview(
         ActionResponse $actionResponse,
@@ -130,7 +133,7 @@ class ComponentFactory
     }
 
     /**
-     * @param ReflectionClass<EntityInterface> $className
+     * @param ReflectionClass<covariant EntityInterface> $className
      */
     public function createFilterColumns(ReflectionClass $className, ApieContext $apieContext): ComponentInterface
     {
@@ -162,10 +165,16 @@ class ComponentFactory
             return $contents;
         }
         $configuration = $this->applicationConfiguration->createConfiguration($context, $this->boundedContextHashmap, $boundedContextId);
+        $menu = $this->mainMenuFactory?->buildMenu(
+            $context,
+            $boundedContextId,
+        );
+
         return new Layout(
             $pageTitle,
             $configuration,
-            $contents
+            $contents,
+            $menu ? new MenuItem($menu) : new RawContents('No menu?'),
         );
     }
 
@@ -207,7 +216,7 @@ class ComponentFactory
     }
 
     /**
-     * @param ReflectionClass<EntityInterface> $class
+     * @param ReflectionClass<covariant EntityInterface> $class
      */
     public function createFormForResourceRemoval(
         string $pageTitle,
@@ -242,7 +251,7 @@ class ComponentFactory
     }
 
     /**
-     * @param ReflectionClass<EntityInterface> $class
+     * @param ReflectionClass<covariant EntityInterface> $class
      */
     public function createFormForResourceCreation(
         string $pageTitle,
@@ -303,7 +312,7 @@ class ComponentFactory
     }
 
     /**
-     * @param ReflectionClass<EntityInterface> $class
+     * @param ReflectionClass<covariant EntityInterface> $class
      */
     public function createFormForResourceModification(
         string $pageTitle,

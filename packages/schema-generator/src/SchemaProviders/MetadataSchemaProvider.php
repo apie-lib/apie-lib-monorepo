@@ -1,6 +1,7 @@
 <?php
 namespace Apie\SchemaGenerator\SchemaProviders;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Enums\DoNotChangeUploadedFile;
 use Apie\Core\Enums\ScalarType;
@@ -50,7 +51,7 @@ class MetadataSchemaProvider implements ModifySchemaProvider
     {
         $oneOfs = [];
         foreach ($metadata->getTypes() as $type) {
-            $oneOfs[] = $this->createSchemaForMetadata($componentsBuilder, $metadata, $display, false);
+            $oneOfs[] = $this->createSchemaForMetadata($componentsBuilder, $type, $display, false);
         }
         return new Schema([
             'oneOf' => $oneOfs,
@@ -77,7 +78,7 @@ class MetadataSchemaProvider implements ModifySchemaProvider
         ]);
     }
 
-    private function uploadedFileCheck(?ReflectionType $type): ?ReflectionType
+    private static function uploadedFileCheck(?ReflectionType $type): ?ReflectionType
     {
         if ($type === null) {
             return null;
@@ -98,6 +99,43 @@ class MetadataSchemaProvider implements ModifySchemaProvider
         return $type;
     }
 
+    public static function applyPropertiesToSchema(Schema $schema, ComponentsBuilder $componentsBuilder, MetadataInterface $metadata, bool $display, bool $nullable): void
+    {
+        $properties = [];
+        foreach ($metadata->getHashmap() as $fieldName => $field) {
+            if (!$field->isField()) {
+                continue;
+            }
+            $type = $field->getTypehint();
+            if (!$display && ($field instanceof PublicProperty || $field instanceof SetterMethod)) {
+                $type = self::uploadedFileCheck($type);
+            }
+            $properties[$fieldName] = $type ? $componentsBuilder->getSchemaForType($type, false, $display, $nullable) : $componentsBuilder->getMixedReference();
+            if ($properties[$fieldName] instanceof Schema) {
+                foreach ($field->getAttributes(Description::class) as $descriptionAttribute) {
+                    $properties[$fieldName]->description = $descriptionAttribute->description;
+                }
+                $properties[$fieldName]->nullable = $field->allowsNull();
+            }
+            if ($properties[$fieldName] instanceof Reference && $properties[$fieldName]->getReference() !=='#/components/schemas/mixed') {
+                foreach ($field->getAttributes(Description::class) as $descriptionAttribute) {
+                    $refSchema = $componentsBuilder->getSchemaForReference($properties[$fieldName]);
+                    if ($refSchema) {
+                        $refSchema->description = $descriptionAttribute->description;
+                    }
+                    break;
+                }
+            }
+        }
+        $required = $metadata->getRequiredFields()->toArray();
+        if (!empty($required)) {
+            $schema->required = $required;
+        }
+        if (!empty($properties) || $schema->type === 'object') {
+            $schema->properties = $properties;
+        }
+    }
+
     private function createSchemaForMetadata(ComponentsBuilder $componentsBuilder, MetadataInterface $metadata, bool $display, bool $nullable): Schema|Reference
     {
         $className = get_class($metadata);
@@ -106,28 +144,10 @@ class MetadataSchemaProvider implements ModifySchemaProvider
         }
 
         $schema = new Schema(['type' => 'object']);
-        $properties = [];
-        foreach ($metadata->getHashmap() as $fieldName => $field) {
-            if (!$field->isField()) {
-                continue;
-            }
-            $type = $field->getTypehint();
-            if (!$display && ($field instanceof PublicProperty || $field instanceof SetterMethod)) {
-                $type = $this->uploadedFileCheck($type);
-            }
-            $properties[$fieldName] = $type ? $componentsBuilder->getSchemaForType($type, false, $display) : $componentsBuilder->getMixedReference();
-            if ($properties[$fieldName] instanceof Schema) {
-                $properties[$fieldName]->nullable = $field->allowsNull();
-            }
-        }
-        $required = $metadata->getRequiredFields()->toArray();
-        if (!empty($required)) {
-            $schema->required = $required;
-        }
+        self::applyPropertiesToSchema($schema, $componentsBuilder, $metadata, $display, $nullable);
         if ($nullable) {
             $schema->nullable = true;
         }
-        $schema->properties = $properties;
         return $schema;
     }
 

@@ -3,10 +3,12 @@
 namespace Apie\Maker\BoundedContext\Resources;
 
 use Apie\Core\ApieLib;
+use Apie\Core\Attributes\CmsIcon;
 use Apie\Core\Attributes\Context;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\HideIdOnOverview;
+use Apie\Core\Attributes\Internal;
 use Apie\Core\Attributes\Not;
 use Apie\Core\Attributes\Requires;
 use Apie\Core\Attributes\RuntimeCheck;
@@ -27,6 +29,7 @@ use Throwable;
 
 #[FakeCount(0)]
 #[HideIdOnOverview]
+#[CmsIcon('lineicons:code-s')]
 #[FakeMethod('createRandom')]
 class CodeGeneratedLog implements EntityInterface, CodeWriterConfigurationInterface
 {
@@ -104,6 +107,7 @@ class CodeGeneratedLog implements EntityInterface, CodeWriterConfigurationInterf
         return rtrim($this->makerConfig['target_namespace'], '\\') . '\\' . ltrim($sub, '\\');
     }
 
+    #[Internal]
     public static function createRandom(Generator $faker): self
     {
         $res = (new ReflectionClass(__CLASS__))->newInstanceWithoutConstructor();

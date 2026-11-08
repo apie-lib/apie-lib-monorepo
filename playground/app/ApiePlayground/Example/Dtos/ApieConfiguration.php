@@ -21,7 +21,7 @@ final class ApieConfiguration implements DtoInterface
 
     public static function createFromConfig(): self
     {
-        $contents = Yaml::parseFile(PlaygroundConfiguration::CONFIG_FILE);
+        $contents = PlaygroundConfiguration::readRawConfiguration();
         return new ApieConfiguration(
             DatalayerImplementation::fromClass(
                 $contents['apie']['datalayers']['default_datalayer'] ?? DoctrineEntityDatalayer::class

@@ -43,7 +43,23 @@ class ItemHashmap implements HashmapInterface
         }
         $this->mutable = $oldMutable;
     }
+    
+    final public function toImmutable(): static
+    {
+        $copy = clone $this;
+        $copy->internal = clone $copy->internal;
+        $copy->mutable = false;
+        return $copy;
+    }
 
+    final public function toMutable(): static
+    {
+        $copy = clone $this;
+        $copy->internal = clone $copy->internal;
+        $copy->mutable = true;
+        return $copy;
+    }
+    
     /**
      * @return T
      */
@@ -86,11 +102,13 @@ class ItemHashmap implements HashmapInterface
 
     public function offsetExists(mixed $offset): bool
     {
+        $offset = Utils::toString($offset);
         return array_key_exists($offset, $this->internalArray);
     }
 
     public function offsetGet(mixed $offset): mixed
     {
+        $offset = Utils::toString($offset);
         if (!array_key_exists($offset, $this->internalArray)) {
             throw new IndexNotFoundException($offset);
         }

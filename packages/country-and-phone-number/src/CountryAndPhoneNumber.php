@@ -1,6 +1,7 @@
 <?php
 namespace Apie\CountryAndPhoneNumber;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\ValueObjects\CompositeValueObject;
 use Apie\Core\ValueObjects\CompositeWithOwnValidation;
@@ -17,6 +18,7 @@ use PrinsFrank\Standards\Country\CountryAlpha2;
 use ReflectionProperty;
 
 #[FakeMethod('createRandom')]
+#[Description('Represents a country selection and a phone field that should match the same country.')]
 final class CountryAndPhoneNumber implements CompositeWithOwnValidation
 {
     use CompositeValueObject;

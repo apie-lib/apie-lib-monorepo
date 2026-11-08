@@ -1,0 +1,5 @@
+{% for action in property('actions') %}
+  <a href="{{ action.getUrl(property('config')) }}">
+    {{ action.name }} variant: {{ action.getVariant().value }} small action: {{ action.isSmallPage() | json_encode }}
+  </a>
+{% endfor %}

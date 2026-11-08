@@ -4,12 +4,14 @@ namespace Apie\Faker\Datalayers;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Datalayers\ApieDatalayerWithFilters;
 use Apie\Core\Datalayers\Concerns\FiltersOnAllFields;
+use Apie\Core\Datalayers\DataLayerMetadata;
 use Apie\Core\Datalayers\Lists\EntityListInterface;
 use Apie\Core\Datalayers\Search\LazyLoadedListFilterer;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Identifiers\AutoIncrementInteger;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\IdentifierUtils;
+use DateTimeImmutable;
 use Faker\Generator;
 use ReflectionClass;
 
@@ -37,6 +39,29 @@ class FakerDatalayer implements ApieDatalayerWithFilters
         $object = $this->faker->fakeClass($class->name);
         IdentifierUtils::injectIdentifier($object, $identifier);
         return $object;
+    }
+
+    /**
+     * @template T of EntityInterface
+     * @param IdentifierInterface<T> $identifier
+     */
+    public function getMetadata(
+        IdentifierInterface $identifier,
+        ?BoundedContextId $boundedContextId = null
+    ): DataLayerMetadata {
+        $createdAt = DateTimeImmutable::createFromMutable(
+            $this->faker->dateTimeBetween('-5 years', 'now')
+        );
+        $updatedAt = DateTimeImmutable::createFromMutable(
+            $this->faker->dateTimeBetween($createdAt->format('Y-m-d H:i:s'), 'now')
+        );
+
+        return new DataLayerMetadata(
+            $createdAt,
+            $updatedAt,
+            $this->faker->numerify('#.#.#'),
+            $this->faker->numerify('#.#.#')
+        );
     }
 
     public function persistNew(EntityInterface $entity, ?BoundedContextId $boundedContextId = null): EntityInterface

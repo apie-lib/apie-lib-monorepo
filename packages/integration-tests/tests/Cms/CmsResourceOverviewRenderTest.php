@@ -6,7 +6,7 @@ use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Faker\Datalayers\FakerDatalayer;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
-use Apie\IntegrationTests\IntegrationTestHelper;
+use Apie\IntegrationTests\CmsTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\SearchTerm;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
@@ -23,7 +23,7 @@ class CmsResourceOverviewRenderTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_renders_a_resource_overview_page'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 
@@ -55,7 +55,7 @@ class CmsResourceOverviewRenderTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_renders_a_resource_overview_page_with_text_search_filter'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 

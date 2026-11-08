@@ -1,4 +1,7 @@
 services:
+    Apie\ApieBundle\EventListeners\ClearAuthenticationCookieOnLogoutListener:
+        tags: ['kernel.event_subscriber']
+
     Apie\ApieBundle\Security\ContextBuilders\UserAuthenticationContextBuilder:
         arguments:
             - '@security.helper'
@@ -7,6 +10,13 @@ services:
             - apie.core.context_builder
 
     Apie\ApieBundle\Wrappers\SymfonyUserDecoratorFactory: ~
+
+    Apie\ApieBundle\ContextBuilders\LogoutUrlContextBuilder:
+        arguments:
+            - '@security.helper'
+            - '@security.logout_url_generator'
+            - '@request_stack'
+        tags: [apie.core.context_builder]
 
     Apie\ApieBundle\Security\ApieUserAuthenticator:
         arguments:

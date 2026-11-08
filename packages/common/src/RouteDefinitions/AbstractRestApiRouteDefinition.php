@@ -3,10 +3,13 @@ namespace Apie\Common\RouteDefinitions;
 
 use Apie\Common\Interfaces\RestApiRouteDefinition;
 use Apie\Core\Actions\ActionResponseStatusList;
+use Apie\Core\Attributes\ActionOptions;
+use Apie\Core\Attributes\ActionResponseList;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\ContextConstants;
 use Apie\Core\Dto\ListOf;
 use Apie\Core\Lists\StringList;
+use Apie\Core\Utils\ConverterUtils;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionType;
@@ -14,7 +17,7 @@ use ReflectionType;
 abstract class AbstractRestApiRouteDefinition implements RestApiRouteDefinition
 {
     /**
-     * @param ReflectionClass<object> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public function __construct(
         protected readonly ReflectionClass $class,
@@ -24,7 +27,7 @@ abstract class AbstractRestApiRouteDefinition implements RestApiRouteDefinition
     }
 
     /**
-     * @return ReflectionClass<object>|ReflectionMethod|ReflectionType
+     * @return ReflectionClass<covariant object>|ReflectionMethod|ReflectionType
      */
     final public function getInputType(): ReflectionClass|ReflectionMethod|ReflectionType
     {
@@ -33,7 +36,7 @@ abstract class AbstractRestApiRouteDefinition implements RestApiRouteDefinition
     }
 
     /**
-     * @return ReflectionClass<object>|ReflectionMethod|ReflectionType|ListOf
+     * @return ReflectionClass<covariant object>|ReflectionMethod|ReflectionType|ListOf
      */
     final public function getOutputType(): ReflectionClass|ReflectionMethod|ReflectionType|ListOf
     {
@@ -44,11 +47,20 @@ abstract class AbstractRestApiRouteDefinition implements RestApiRouteDefinition
     final public function getPossibleActionResponseStatuses(): ActionResponseStatusList
     {
         $actionClass = $this->getAction();
+        $output = $actionClass::getOutputType($this->class, $this->method);
+        $target = $this->method ?? ConverterUtils::toReflectionClass(
+            $output instanceof ListOf ? $output->type : $output
+        );
+        if ($target) {
+            foreach ($target->getAttributes(ActionResponseList::class) as $attribute) {
+                return new ActionResponseStatusList($attribute->newInstance()->statuses);
+            }
+        }
         return $actionClass::getPossibleActionResponseStatuses($this->method);
     }
 
     /**
-     * @return class-string<object>
+     * @return class-string<covariant object>
      */
     abstract public function getController(): string;
 
@@ -61,13 +73,25 @@ abstract class AbstractRestApiRouteDefinition implements RestApiRouteDefinition
     final public function getTags(): StringList
     {
         $actionClass = $this->getAction();
+        // @phpstan-ignore-next-line arguments.count
         return $actionClass::getTags($this->class, $this->method);
+    }
+
+    public function getActionOptions(): ?ActionOptions
+    {
+        return null;
     }
 
     final public function getRouteAttributes(): array
     {
         $actionClass = $this->getAction();
         $attributes = $actionClass::getRouteAttributes($this->class, $this->method);
+        $actionOptions = $this->getActionOptions();
+        if ($actionOptions) {
+            foreach ($actionOptions->placeholders as $key => $value) {
+                $attributes[$key] = $value;
+            }
+        }
         $attributes[ContextConstants::APIE_ACTION] = $this->getAction();
         $attributes[ContextConstants::OPERATION_ID] = $this->getOperationId();
         $attributes[ContextConstants::BOUNDED_CONTEXT_ID] = $this->boundedContextId->toNative();

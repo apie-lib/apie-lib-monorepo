@@ -1,2 +1,31 @@
+<ion-button id="quick-form">
 
+    <ion-icon
+            slot="start"
+            name="create-outline">
+    </ion-icon>
+
+    Form
+
+</ion-button>
+
+
+<script type="module">
+    import {
+        menuController,
+        popoverController
+    }
+        from
+            "https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/index.esm.js";
+
+
+
+    document
+        .querySelector("#quick-form")
+        .addEventListener(
+            "click",
+            ()=>menuController.open("right-panel")
+        );
     
+
+</script>

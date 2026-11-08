@@ -1,0 +1,7 @@
+services:
+  Apie\Common\BasicAuth\AddBasicAuthContextBuilder:
+    tags: ['apie.core.context_builder']
+
+  Apie\Common\BasicAuth\AddBasicAuthToOpenApiSubscriber:
+    tags: ['kernel.event_subscriber']
+    

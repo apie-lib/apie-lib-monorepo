@@ -21,31 +21,31 @@
   },
   "extra": {
     "apie-objects": [
-      "Apie\\CountryAndPhoneNumber\\BelgianPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\BritishPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\CanadianPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\ChinesePhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\CountryAndPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\DutchPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\FrenchPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\GermanPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\InternationalPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\JapanesePhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\MexicanPhoneNumber",
-      "Apie\\CountryAndPhoneNumber\\USPhoneNumber"
-    ]
+    "Apie\\CountryAndPhoneNumber\\FrenchPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\BritishPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\DutchPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\USPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\InternationalPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\JapanesePhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\CountryAndPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\BelgianPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\GermanPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\CanadianPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\MexicanPhoneNumber",
+    "Apie\\CountryAndPhoneNumber\\ChinesePhoneNumber"
+]
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "apie/core": "self.version",
     "giggsey/libphonenumber-for-php": "^8.13.37",
-    "prinsfrank/standards": "^3.3.0"
+    "prinsfrank/standards": "^3.0.0"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
-    "devizzent/cebe-php-openapi": "^1.1.2",
+    "devizzent/cebe-php-openapi": "^1.1.5",
     "phpunit/phpunit": "^11.5.2",
-    "phpspec/prophecy-phpunit": "^2.2"
+    "phpspec/prophecy-phpunit": "^2.5"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

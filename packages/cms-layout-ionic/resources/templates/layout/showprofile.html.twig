@@ -1,10 +1,17 @@
-<div class="user-profile">
-  <a href="{{ property('profileUrl') }}" title="{{ property('email') }}">
-    <img src="{{ property('gravatarUrl') }}?s=80&amp;d=mp" align="right" border="0"/>
-  </a>
-  <span class="user-info">
-    {% for fieldName in property('fieldNames') %}
-      <strong>{{ fieldName }}:</strong>&nbsp;&nbsp;{{ property('fields')[fieldName] }}
-    {% endfor %}
-  </span>
-</div>
+{% set fields = property('fields') %}
+{% set username = fields.username ?? fields.fullName ?? fields.name ?? fields.lastName ?? fields.firstName ?? fields.email ?? 'user'  %}
+
+<ion-avatar class="account-avatar" {% if not property('simple') %} slot="start"{% endif %}>
+    <img src="{{ property('gravatarUrl') }}?s=34&amp;d=mp">
+
+  </ion-avatar>
+  {% if property('simple') %}
+      {{  username }}
+  {% else %}
+      <ion-label>
+          <h2>{{ username }}</h2>
+          <p>Logged in</p>
+      </ion-label>
+  {% endif %}
+
+

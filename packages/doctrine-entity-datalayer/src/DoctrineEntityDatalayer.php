@@ -1,9 +1,11 @@
 <?php
 namespace Apie\DoctrineEntityDatalayer;
 
+use Apie\Core\Attributes\OverwriteAfterPersist;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\Datalayers\ApieDatalayerWithFilters;
+use Apie\Core\Datalayers\DataLayerMetadata;
 use Apie\Core\Datalayers\Lists\EntityListInterface;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Entities\RequiresRecalculatingInterface;
@@ -12,6 +14,7 @@ use Apie\Core\Exceptions\EntityNotFoundException;
 use Apie\Core\Identifiers\IdentifierInterface;
 use Apie\Core\Lists\StringSet;
 use Apie\Core\Metadata\MetadataFactory;
+use Apie\Core\TypeUtils;
 use Apie\DoctrineEntityDatalayer\Exceptions\InsertConflict;
 use Apie\DoctrineEntityDatalayer\Factories\DoctrineListFactory;
 use Apie\DoctrineEntityDatalayer\Factories\EntityQueryFilterFactory;
@@ -23,9 +26,11 @@ use Apie\StorageMetadata\Interfaces\StorageDtoInterface;
 use Apie\StorageMetadataBuilder\Interfaces\HasIndexInterface;
 use Apie\StorageMetadataBuilder\Interfaces\RootObjectInterface;
 use Apie\TypeConverter\ReflectionTypeFactory;
+use DateTimeImmutable;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Exception\EntityIdentityCollisionException;
+use ReflectionAttribute;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -57,8 +62,8 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
     }
 
     /**
-     * @param ReflectionClass<EntityInterface> $class
-     * @return ReflectionClass<StorageDtoInterface>
+     * @param ReflectionClass<covariant EntityInterface> $class
+     * @return ReflectionClass<covariant StorageDtoInterface>
      */
     public function toDoctrineClass(ReflectionClass $class, ?BoundedContextId $boundedContextId = null): ReflectionClass
     {
@@ -86,7 +91,7 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
         $list[] = 'createdAt';
         $list[] = 'updatedAt';
         foreach ($doctrineEntityClass->getProperties(ReflectionProperty::IS_PUBLIC) as $publicProperty) {
-            foreach ($publicProperty->getAttributes(PropertyAttribute::class) as $publicPropertyAttribute) {
+            foreach ($publicProperty->getAttributes(PropertyAttribute::class, ReflectionAttribute::IS_INSTANCEOF) as $publicPropertyAttribute) {
                 $metadata = MetadataFactory::getModificationMetadata(
                     $publicProperty->getType() ?? ReflectionTypeFactory::createReflectionType('mixed'),
                     new ApieContext()
@@ -137,6 +142,56 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
         DoctrineUtils::loadAllProxies($doctrineEntity);
         return $this->domainToStorageConverter->createDomainObject($doctrineEntity);
     }
+
+    /**
+     * @template T of EntityInterface
+     * @param IdentifierInterface<T> $identifier
+     */
+    public function getMetadata(
+        IdentifierInterface $identifier,
+        ?BoundedContextId $boundedContextId = null
+    ): DataLayerMetadata {
+        $entityManager = $this->getEntityManager();
+        $doctrineEntityClass = $this->toDoctrineClass($identifier->getReferenceFor(), $boundedContextId);
+        $doctrineEntity = $entityManager->find($doctrineEntityClass->name, $identifier->toNative());
+        if (!($doctrineEntity instanceof StorageDtoInterface)) {
+            throw new EntityNotFoundException($identifier);
+        }
+
+        $createdAt = $this->getDoctrineProperty($doctrineEntity, 'createdAt');
+        $updatedAt = $this->getDoctrineProperty($doctrineEntity, 'updatedAt');
+        $createdVersion = $this->getDoctrineProperty($doctrineEntity, 'internalApieVersion');
+        $updatedVersion = $this->getDoctrineProperty($doctrineEntity, 'lastUpdateApieVersion');
+        if (!is_string($createdAt) || !is_string($updatedAt) || !is_string($createdVersion) || !is_string($updatedVersion)) {
+            throw new \UnexpectedValueException('Stored entity metadata has an unexpected type.');
+        }
+
+        return new DataLayerMetadata(
+            $this->parseTimestamp($createdAt),
+            $this->parseTimestamp($updatedAt),
+            $createdVersion,
+            $updatedVersion
+        );
+    }
+
+    private function getDoctrineProperty(StorageDtoInterface $entity, string $property): mixed
+    {
+        if (!property_exists($entity, $property)) {
+            throw new \UnexpectedValueException(sprintf('Stored entity is missing the "%s" metadata field.', $property));
+        }
+
+        return (new ReflectionProperty($entity, $property))->getValue($entity);
+    }
+
+    private function parseTimestamp(string $timestamp): DateTimeImmutable
+    {
+        $result = DateTimeImmutable::createFromFormat('U.u', $timestamp);
+        if (!$result) {
+            throw new \UnexpectedValueException('Stored entity metadata contains an invalid timestamp.');
+        }
+
+        return $result;
+    }
     
     public function persistNew(EntityInterface $entity, ?BoundedContextId $boundedContextId = null): EntityInterface
     {
@@ -156,11 +211,12 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
         } catch (UniqueConstraintViolationException|EntityIdentityCollisionException $uniqueConstraintViolation) {
             throw new InsertConflict($uniqueConstraintViolation);
         }
-        // TODO: only do for entities with Auto-increment id's
-        $this->domainToStorageConverter->injectExistingDomainObject(
-            $entity,
-            $doctrineEntity
-        );
+        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {
+            $this->domainToStorageConverter->injectExistingDomainObject(
+                $entity,
+                $doctrineEntity
+            );
+        }
         if ($doctrineEntity instanceof HasIndexInterface) {
             $this->entityReindexer->updateIndex($doctrineEntity, $entity);
         }
@@ -185,7 +241,12 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
         );
         $entityManager->persist($doctrineEntity);
         $entityManager->flush();
-
+        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {
+            $this->domainToStorageConverter->injectExistingDomainObject(
+                $entity,
+                $doctrineEntity
+            );
+        }
         if ($doctrineEntity instanceof HasIndexInterface) {
             $this->entityReindexer->updateIndex($doctrineEntity, $entity);
         }
@@ -228,7 +289,12 @@ class DoctrineEntityDatalayer implements ApieDatalayerWithFilters
         }
         $entityManager->persist($doctrineEntity);
         $entityManager->flush();
-
+        if (TypeUtils::findAttributes(new ReflectionClass($entity), OverwriteAfterPersist::class)) {
+            $this->domainToStorageConverter->injectExistingDomainObject(
+                $entity,
+                $doctrineEntity
+            );
+        }
         if ($doctrineEntity instanceof HasIndexInterface) {
             $this->entityReindexer->updateIndex($doctrineEntity, $entity);
         }

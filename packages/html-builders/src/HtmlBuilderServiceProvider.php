@@ -14,7 +14,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Factories\ComponentFactory::class,
             function ($app) {
                 return new \Apie\HtmlBuilders\Factories\ComponentFactory(
@@ -22,11 +22,12 @@ class HtmlBuilderServiceProvider extends ServiceProvider
                     $app->make(\Apie\Core\BoundedContext\BoundedContextHashmap::class),
                     $app->make(\Apie\HtmlBuilders\Factories\FormComponentFactory::class),
                     $app->make(\Apie\HtmlBuilders\Factories\FieldDisplayComponentFactory::class),
-                    $app->make(\Apie\HtmlBuilders\Factories\ResourceActionFactory::class)
+                    $app->make(\Apie\HtmlBuilders\Factories\ResourceActionFactory::class),
+                    $app->bound(\Apie\Cms\MenuStructure\MainMenuBuilder::class) ? $app->make(\Apie\Cms\MenuStructure\MainMenuBuilder::class) : null
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Factories\FieldDisplayComponentFactory::class,
             function ($app) {
                 return \Apie\HtmlBuilders\Factories\FieldDisplayComponentFactory::create(
@@ -36,7 +37,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
                 
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Columns\ColumnSelector::class,
             function ($app) {
                 return new \Apie\HtmlBuilders\Columns\ColumnSelector(
@@ -44,7 +45,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Factories\ResourceActionFactory::class,
             function ($app) {
                 return new \Apie\HtmlBuilders\Factories\ResourceActionFactory(
@@ -52,7 +53,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Factories\FormComponentFactory::class,
             function ($app) {
                 return \Apie\HtmlBuilders\Factories\FormComponentFactory::create(
@@ -61,7 +62,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
                 
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Factories\Concrete\DropdownOptionsComponentProvider::class,
             function ($app) {
                 return new \Apie\HtmlBuilders\Factories\Concrete\DropdownOptionsComponentProvider(
@@ -77,7 +78,7 @@ class HtmlBuilderServiceProvider extends ServiceProvider
             )
         );
         $this->app->tag([\Apie\HtmlBuilders\Factories\Concrete\DropdownOptionsComponentProvider::class], \Apie\HtmlBuilders\Interfaces\FormComponentProviderInterface::class);
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Configuration\ApplicationConfiguration::class,
             function ($app) {
                 return new \Apie\HtmlBuilders\Configuration\ApplicationConfiguration(
@@ -87,19 +88,19 @@ class HtmlBuilderServiceProvider extends ServiceProvider
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\ErrorHandler\CmsErrorRenderer::class,
             function ($app) {
                 return new \Apie\HtmlBuilders\ErrorHandler\CmsErrorRenderer(
                     $app->make(\Apie\HtmlBuilders\Factories\ComponentFactory::class),
                     $app->make(\Apie\HtmlBuilders\Interfaces\ComponentRendererInterface::class),
                     $app->make(\Apie\Common\Interfaces\DashboardContentFactoryInterface::class),
-                    $this->parseArgument('%apie.cms.error_template%'),
-                    $this->parseArgument('%kernel.debug%')
+                    $this->parseArgument('%apie.cms.error_template%', \Apie\HtmlBuilders\ErrorHandler\CmsErrorRenderer::class, 3),
+                    $this->parseArgument('%kernel.debug%', \Apie\HtmlBuilders\ErrorHandler\CmsErrorRenderer::class, 4)
                 );
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Assets\AssetManager::class,
             function ($app) {
                 return \Apie\HtmlBuilders\Assets\AssetManager::create(
@@ -108,10 +109,11 @@ class HtmlBuilderServiceProvider extends ServiceProvider
                 
             }
         );
-        $this->app->singleton(
+        $this->registerSingleton(
             \Apie\HtmlBuilders\Interfaces\ComponentRendererInterface::class,
             function ($app) {
                 return \Apie\Common\Wrappers\CmsRendererFactory::createRenderer(
+                    $app->make('apie.ux_icon.twig_runtime'),
                     $app->make(\Apie\HtmlBuilders\Assets\AssetManager::class)
                 );
                 

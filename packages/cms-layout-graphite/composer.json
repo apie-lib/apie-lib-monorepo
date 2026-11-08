@@ -20,17 +20,17 @@
     }
   },
   "require": {
-    "php": ">=8.3",
+    "php": ">=8.4",
     "apie/core": "self.version",
     "apie/html-builders": "self.version",
     "apie/twig-template-layout-renderer": "self.version",
-    "twig/twig": "^3.10.2"
+    "twig/twig": "^3.28.0"
   },
   "require-dev": {
     "apie/fixtures": "self.version",
     "illuminate/support": "*",
     "phpunit/phpunit": "^11.5.2",
-    "phpspec/prophecy-phpunit": "^2.2"
+    "phpspec/prophecy-phpunit": "^2.5"
   },
   "minimum-stability": "dev",
   "prefer-stable": true

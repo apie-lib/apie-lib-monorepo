@@ -9,7 +9,7 @@ class GraphiteDesignSystemLayoutTest extends AbstractRenderTestCase
 {
     public function getRenderer(): ComponentRendererInterface
     {
-        return GraphiteDesignSystemLayout::createRenderer();
+        return GraphiteDesignSystemLayout::createRenderer(self::createTwigRuntimeForTests());
     }
 
     public function getFixturesPath(): string

@@ -1,6 +1,7 @@
 <?php
 namespace Apie\TextValueObjects;
 
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Attributes\ProvideIndex;
 use Apie\Core\ValueObjects\Concerns\IndexesWords;
@@ -10,6 +11,7 @@ use Faker\Generator;
 
 #[FakeMethod('createRandom')]
 #[ProvideIndex('getIndexes')]
+#[Description('Represents a first name of a person')]
 class FirstName implements HasRegexValueObjectInterface
 {
     use IndexesWords;

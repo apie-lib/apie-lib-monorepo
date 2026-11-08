@@ -3,12 +3,15 @@
 namespace Apie\Tests\IntegrationTests\RestApi;
 
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\FileStorage\SqliteFile;
 use Apie\IntegrationTests\FixtureUtils;
 use Apie\IntegrationTests\IntegrationTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\ActionMethodApiCall;
 use Apie\IntegrationTests\Requests\BootstrapRequestInterface;
+use Apie\IntegrationTests\Requests\JsonFields\GetAndSetObjectField;
 use Apie\IntegrationTests\Requests\JsonFields\GetPrimitiveField;
+use Apie\IntegrationTests\Requests\JsonFields\SetPrimitiveField;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Generator;
@@ -112,5 +115,60 @@ class DoApiCallTest extends TestCase
             $testRequest->shouldDoResponseValidation()
         );
         $testApplication->cleanApplication();
+    }
+
+    public static function it_returns_file_contents_if_actions_return_files_provider(): Generator
+    {
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_returns_file_contents_if_actions_return_files'),
+            new IntegrationTestHelper()
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_returns_file_contents_if_actions_return_files_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function it_returns_file_contents_if_actions_return_files(
+        TestApplicationInterface $testApplication
+    ) {
+        $testRequest = new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'FakerTest/fake',
+            new GetAndSetObjectField(
+                '',
+                new SetPrimitiveField('className', SqliteFile::class),
+            )
+        );
+        $testApplication->bootApplication();
+        $response = $testApplication->httpRequest($testRequest);
+        $this->assertEquals('application/vnd.sqlite3', $response->getHeaderLine('Content-Type'));
+    }
+
+    public static function it_returns_response_if_actions_returns_response_provider(): Generator
+    {
+        yield from self::createDataProviderFrom(
+            new ReflectionMethod(__CLASS__, 'it_returns_response_if_actions_returns_response'),
+            new IntegrationTestHelper()
+        );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('it_returns_response_if_actions_returns_response_provider')]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function it_returns_response_if_actions_returns_response(
+        TestApplicationInterface $testApplication
+    ) {
+        $testRequest = new ActionMethodApiCall(
+            new BoundedContextId('types'),
+            'Streamer/emptyResponse',
+            new GetAndSetObjectField(
+                '',
+                new SetPrimitiveField('ignored', 'I should be empty'),
+            )
+        );
+        $testApplication->bootApplication();
+        $response = $testApplication->httpRequest($testRequest);
+        $this->assertEquals(204, $response->getStatusCode());
+        $this->assertEquals('', $response->getBody());
     }
 }

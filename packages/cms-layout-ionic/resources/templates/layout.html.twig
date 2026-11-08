@@ -1,53 +1,136 @@
-<html>
-    <head>
-        <title>{{ property('title') }}</title>
-        <style>
-            {{ assetContent('main.css') }}
-        </style>
-       
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-<script src="https://cdn.jsdelivr.net/npm/@revolist/revogrid@3.7.0/dist/revo-grid/revo-grid.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/apie-stacktrace@{{ apieConstant('APIE_STACKTRACE') }}/dist/apie-stacktrace/apie-stacktrace.esm.js" crossorigin></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/apie-ionic-layout@0.4.0/dist/apie-ionic-layout/apie-ionic-layout.esm.js" crossorigin></script>
-<script>{{ assetContent('main.js') }}</script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ property('title') }}</title>
+
+    <script type="module"
+            src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"></script>
+
+    <script nomodule
+            src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"></script>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@ionic/core@latest/css/ionic.bundle.css">
+    <script src="https://cdn.jsdelivr.net/npm/show-open-file-picker/polyfill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@revolist/revogrid@3.7.0/dist/revo-grid/revo-grid.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/apie-stacktrace@{{ apieConstant('APIE_STACKTRACE') }}/dist/apie-stacktrace/apie-stacktrace.esm.js" crossorigin></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/apie-ionic-layout@0.4.0/dist/apie-ionic-layout/apie-ionic-layout.esm.js" crossorigin></script>
+
+
+    <style>{{ assetContent('main.css') }}</style>
+    <script>{{ assetContent('main.js') }}</script>
+
+</head>
     <body>
       <ion-app>
-        <ion-header>
-          <ion-toolbar>
-            {{ component('top') }}
-          </ion-toolbar>
-        </ion-header>
-        <ion-menu side="start" content-id="main-content">
-          {{ component('menu') }}
-        </ion-menu>
-        <ion-content id="main-content">
-          {{ component('content') }}
-        </ion-content>
-        <ion-footer>
-          <ion-toolbar>
-            <ion-title>Footer Toolbar</ion-title>
-          </ion-toolbar>
-        </ion-footer>
+          <ion-split-pane content-id="main-content">
+              {{ component('menu') }}
+              <ion-page id="main-content">
+
+
+                  <ion-header>
+                      {{ component('top') }}
+                  </ion-header>
+                  <ion-content
+                          class="ion-padding">
+
+
+                      <ion-grid style="height: 100vh;display: grid;">
+                          <ion-row>
+                              <ion-col size="12">
+                                  {{ component('content') }}
+                              </ion-col>
+                          </ion-row>
+                      </ion-grid>
+                  </ion-content>
+
+
+              </ion-page>
+
+
+          </ion-split-pane>
+
+
+
+
+          <!-- ================= RIGHT DRAWER ================= -->
+
+
+          <ion-menu
+                  side="end"
+                  menu-id="right-panel"
+                  content-id="main-content"
+                  class="right-drawer">
+
+
+              <ion-header>
+
+                  <ion-toolbar color="secondary">
+
+                      <ion-title>
+                          Quick Action
+                      </ion-title>
+
+                  </ion-toolbar>
+
+              </ion-header>
+
+
+              <ion-content
+                      class="ion-padding">
+
+
+                  <ion-item>
+
+                      <ion-input
+                              label="Title"
+                              label-placement="stacked"
+                              placeholder="Confirmation title">
+                      </ion-input>
+
+                  </ion-item>
+
+
+                  <ion-item>
+
+                      <ion-textarea
+                              label="Description"
+                              label-placement="stacked">
+                      </ion-textarea>
+
+                  </ion-item>
+
+
+
+                  <ion-button
+                          expand="block">
+
+                      Confirm
+
+                  </ion-button>
+
+
+                  <ion-button
+                          expand="block"
+                          fill="outline">
+
+                      Cancel
+
+                  </ion-button>
+
+
+              </ion-content>
+
+
+          </ion-menu>
+
+
+
       </ion-app>
-      <div class="apie-sidebar">
-      </div>
-      <script type="text/javascript">
-(function (sidebar) {
-  document.addEventListener('click', (e) => {
-    if (sidebar.classList.contains('active')) {
-      let elm = e.target;
-      while (elm) {
-        if (elm === sidebar) {
-          return;
-        }
-        elm = elm.parentNode
-      }
-      sidebar.classList.remove('active');
-      sidebar.innerHTML = '';
-    }
-  });
-}(document.querySelector('.apie-sidebar')));
-      </script>
     </body>
 </html>

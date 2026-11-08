@@ -13,4 +13,9 @@ class FixtureUtils
             . $testApplication->getApplicationConfig()->getDatalayerImplementation()->getShortName()
             . ($json ? '.json' : '.yaml');
     }
+
+    public static function shouldOverwriteWebdavFixtures(): bool
+    {
+        return true;
+    }
 }

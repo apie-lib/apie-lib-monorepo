@@ -5,9 +5,12 @@ use Apie\Common\Actions\CreateObjectAction;
 use Apie\Common\Tests\Concerns\ProvidesApieFacade;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
+use Apie\Core\Enums\RequestMethod;
 use Apie\Core\Lists\ItemHashmap;
 use Apie\Fixtures\Entities\UserWithAddress;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\Lock\LockFactory;
+use Symfony\Component\Lock\Store\NullStore;
 
 class CreateObjectActionTest extends TestCase
 {
@@ -19,6 +22,7 @@ class CreateObjectActionTest extends TestCase
         $context = new ApieContext([
             ContextConstants::RESOURCE_NAME => UserWithAddress::class,
             ContextConstants::BOUNDED_CONTEXT_ID => 'default',
+            LockFactory::class => new LockFactory(new NullStore()),
         ]);
         /** @var CreateObjectAction $action */
         $action = $testItem->getAction('default', 'test', $context);
@@ -49,4 +53,35 @@ class CreateObjectActionTest extends TestCase
             $response->getResultAsNativeData()->toArray()
         );
     }
+
+    #[\PHPUnit\Framework\Attributes\Test]
+    public function it_can_create_a_new_object_with_put(): void
+    {
+        $testItem = $this->givenAnApieFacade(CreateObjectAction::class);
+        $context = new ApieContext([
+            ContextConstants::RESOURCE_NAME => UserWithAddress::class,
+            ContextConstants::BOUNDED_CONTEXT_ID => 'default',
+            ContextConstants::REST_API => true,
+            RequestMethod::class => RequestMethod::PUT,
+            LockFactory::class => new LockFactory(new NullStore()),
+        ]);
+        /** @var CreateObjectAction $action */
+        $action = $testItem->getAction('default', 'test', $context);
+        $response = $action($context, [
+            'address' => [
+                'street' => 'Evergreen Terrace',
+                'streetNumber' => 742,
+                'zipcode' => '11111',
+                'city' => 'Springfield',
+            ],
+            'id' => '123e4567-e89b-12d3-a456-426614174000',
+        ]);
+
+        $this->assertSame(201, $response->getStatusCode());
+        $this->assertSame(
+            '123e4567-e89b-12d3-a456-426614174000',
+            $response->getResultAsNativeData()['id']
+        );
+    }
+
 }

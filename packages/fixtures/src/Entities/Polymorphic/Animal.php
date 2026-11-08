@@ -1,10 +1,13 @@
 <?php
 namespace Apie\Fixtures\Entities\Polymorphic;
 
+use Apie\Core\Attributes\ClassStoreOptions;
 use Apie\Core\Entities\PolymorphicEntityInterface;
+use Apie\Core\Enums\SortingOrder;
 use Apie\Core\Other\DiscriminatorConfig;
 use Apie\Core\Other\DiscriminatorMapping;
 
+#[ClassStoreOptions(defaultSortingOrder: SortingOrder::Ascending)]
 abstract class Animal implements PolymorphicEntityInterface
 {
     private AnimalIdentifier $id;

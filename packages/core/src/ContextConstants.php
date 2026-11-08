@@ -21,6 +21,11 @@ final class ContextConstants
     }
 
     /**
+     * Get the underlying framework in lowercase: 'symfony', 'laravel'
+     */
+    public const FRAMEWORK = 'framework';
+
+    /**
      * ID of the selected bounded context.
      */
     public const BOUNDED_CONTEXT_ID = 'boundedContextId';
@@ -87,6 +92,16 @@ final class ContextConstants
     public const OPENAPI = 'openapi';
 
     /**
+     * Added if MCP Server list is being created.
+     */
+    public const MCP_SERVER = 'mcp-server';
+
+    /**
+     * Added if a GraphQL request is done.
+     */
+    public const GRAPHQL = 'graphql';
+
+    /**
      * Added if a REST API call is done.
      */
     public const REST_API='rest';
@@ -95,6 +110,12 @@ final class ContextConstants
      * Added if CMS request is done.
      */
     public const CMS='cms';
+
+    /***
+     * User when building the main menu for apie/cms. The value's type is not relevant for now and could change
+     * in the near future.
+     */
+    public const MAIN_MENU_BUILDER = 'main-menu-builder';
 
     /**
      * Added if serializing the profile fields in apie/cms
@@ -139,6 +160,12 @@ final class ContextConstants
 
     public const LOCALE = 'locale';
 
+    public const ACCEPTED_LOCALES = 'accepted_locales';
+
+    public const ACCEPT_LOCALE = 'accept_locale';
+
+    public const DATA_LOCALE = 'data_locale';
+
     /**
      * Used for workarounds with frameworks using middleware or events for authentication and redoing the controller
      * again.
@@ -148,4 +175,12 @@ final class ContextConstants
     public const ALREADY_CALCULATED = 'already_calculated';
 
     public const BACKGROUND_PROCESS = 'background_process';
+
+    public const WEBDAV = 'webdav';
+
+    /**
+     * Configured log out url. It depends on the framework how this is setup. For example Symfony has a logout
+     * url generator, but for Laravel the only way to do this is adding a config to the apie library.
+     */
+    public const LOGOUT_URL = 'logout_url';
 }

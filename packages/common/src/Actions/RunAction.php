@@ -1,18 +1,22 @@
 <?php
 namespace Apie\Common\Actions;
 
+use Apie\Common\IntegrationTestLogger;
 use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
 use Apie\Core\Actions\ActionResponse;
 use Apie\Core\Actions\ActionResponseStatus;
 use Apie\Core\Actions\ActionResponseStatusList;
 use Apie\Core\Actions\ApieFacadeInterface;
 use Apie\Core\Actions\MethodActionInterface;
+use Apie\Core\Attributes\Description;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
+use Apie\Core\Datalayers\Lists\EntityListInterface;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Lists\StringList;
-use Apie\Serializer\Exceptions\ValidationException;
+use Apie\Core\ValueObjects\EntityReference;
+use Exception;
 use LogicException;
 use ReflectionClass;
 use ReflectionMethod;
@@ -52,15 +56,16 @@ final class RunAction implements MethodActionInterface
         if ($alreadyCalculated instanceof ActionResponse) {
             return $alreadyCalculated;
         }
-        $context->withContext(ContextConstants::APIE_ACTION, __CLASS__)->checkAuthorization();
-        $method = new ReflectionMethod(
-            $context->getContext(ContextConstants::SERVICE_CLASS),
-            $context->getContext(ContextConstants::METHOD_NAME)
-        );
-        $object = $method->isStatic()
-            ? null
-            : $context->getContext($context->getContext(ContextConstants::SERVICE_CLASS));
+        
         try {
+            $context->withContext(ContextConstants::APIE_ACTION, __CLASS__)->checkAuthorization();
+            $method = new ReflectionMethod(
+                $context->getContext(ContextConstants::SERVICE_CLASS),
+                $context->getContext(ContextConstants::METHOD_NAME)
+            );
+            $object = $method->isStatic()
+                ? null
+                : $context->getContext($context->getContext(ContextConstants::SERVICE_CLASS));
             $returnValue = $this->apieFacade->denormalizeOnMethodCall($rawContents, $object, $method, $context);
             if ($context->getContext(ContextConstants::METHOD_NAME) === 'verifyAuthentication') {
                 if ($returnValue instanceof EntityInterface) {
@@ -74,7 +79,8 @@ final class RunAction implements MethodActionInterface
                 }
                 $context = $context->withContext(DecryptedAuthenticatedUser::class, $userValue);
             }
-        } catch (ValidationException $error) {
+        } catch (Exception $error) {
+            IntegrationTestLogger::logException($error);
             return ActionResponse::createClientError($this->apieFacade, $context, $error);
         }
         return ActionResponse::createRunSuccess($this->apieFacade, $context, $returnValue, $object);
@@ -106,13 +112,36 @@ final class RunAction implements MethodActionInterface
 
     public static function getDescription(ReflectionClass $class, ?ReflectionMethod $method = null): string
     {
+        foreach ($method?->getAttributes(Description::class) ?? [] as $attribute) {
+            return $attribute->newInstance()->description;
+        }
+
         return 'Calls method ' . self::getNameToDisplay($method) . ' and returns return value.';
     }
 
     public static function getTags(ReflectionClass $class, ?ReflectionMethod $method = null): StringList
     {
         $class = $method ? $method->getDeclaringClass() : $class;
-        return new StringList([$class->getShortName(), 'action']);
+        $list = [$class->getShortName(), 'action'];
+        if ($method) {
+            foreach ($method->getParameters() as $parameter) {
+                if (in_array(
+                    (string) $parameter->getType(),
+                    [
+                        EntityInterface::class,
+                        '?' . EntityInterface::class,
+                        EntityReference::class,
+                        '?' . EntityReference::class,
+                        EntityListInterface::class,
+                        '?' . EntityListInterface::class,
+                    ],
+                    true
+                )) {
+                    $list[] = 'all';
+                }
+            }
+        }
+        return new StringList($list);
     }
 
     public static function getInputType(ReflectionClass $class, ?ReflectionMethod $method = null): ReflectionMethod

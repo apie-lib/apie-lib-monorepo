@@ -17,7 +17,7 @@ use ReflectionClass;
 class StreamMethodCallOnSingleResourceRouteDefinition extends AbstractCmsRouteDefinition
 {
     /**
-     * @param ReflectionClass<EntityInterface> $className
+     * @param ReflectionClass<covariant EntityInterface> $className
      */
     public function __construct(ReflectionClass $className, BoundedContextId $boundedContextId)
     {
@@ -37,6 +37,11 @@ class StreamMethodCallOnSingleResourceRouteDefinition extends AbstractCmsRouteDe
     public function getUrl(): UrlRouteDefinition
     {
         return new UrlRouteDefinition('/resource/action/' . $this->class->getShortName() . '/{id}/download/{properties}');
+    }
+
+    public function getMainMenuUri(): ?UrlRouteDefinition
+    {
+        return null;
     }
 
     public function getController(): string

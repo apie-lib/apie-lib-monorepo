@@ -14,4 +14,17 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This is a meta package that installs the minimal number of dependencies to start working with Apie.
+Pure Composer meta-package with no code of its own. It requires the smallest set of
+Apie packages needed for a working REST API:
+
+```bash
+composer require apie/meta-minimal
+```
+
+It requires: `apie/apie-common-plugin` (the shared Composer plugin used by Apie
+packages), `apie/core` (domain-object primitives and attributes), and `apie/rest-api`
+(the REST API layer built on top of the core).
+
+It has no runtime API of its own — require the individual Apie packages you use in
+application code and add a framework adapter (`apie/apie-bundle` or
+`apie/laravel-apie`) plus a datalayer package to get a running REST API.

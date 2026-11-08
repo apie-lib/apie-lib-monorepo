@@ -2,8 +2,10 @@
 
 namespace Apie\Maker\BoundedContext\Resources;
 
+use Apie\Core\Attributes\CmsIcon;
 use Apie\Core\Attributes\FakeCount;
 use Apie\Core\Attributes\FakeMethod;
+use Apie\Core\Attributes\Internal;
 use Apie\Core\Identifiers\Identifier;
 use Apie\Core\Identifiers\Ulid;
 use Apie\Maker\BoundedContext\Identifiers\BoundedContextDefinitionIdentifier;
@@ -11,6 +13,7 @@ use Faker\Generator;
 
 #[FakeCount(2)]
 #[FakeMethod('createRandom')]
+#[CmsIcon('fluent-mdl2:build-definition')]
 class BoundedContextDefinition implements \Apie\Core\Entities\EntityInterface
 {
     private const EXAMPLE_NAMES = [
@@ -122,6 +125,7 @@ class BoundedContextDefinition implements \Apie\Core\Entities\EntityInterface
         return $this->id;
     }
 
+    #[Internal]
     public static function createRandom(Generator $faker): static
     {
         return new static(new Identifier($faker->randomElement(self::EXAMPLE_NAMES)));

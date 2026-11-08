@@ -32,8 +32,9 @@ class ValueObjectNormalizer implements NormalizerInterface, DenormalizerInterfac
     {
         if (is_a($desiredType, ValueObjectInterface::class, true)) {
             $class = new ReflectionClass($desiredType);
-            return $class->implementsInterface(CompositeWithOwnValidation::class)
-                ||!in_array(CompositeValueObject::class, $class->getTraitNames());
+
+            return in_array(CompositeWithOwnValidation::class, $class->getInterfaceNames())
+                || !in_array(CompositeValueObject::class, $class->getTraitNames());
         }
         return false;
     }
@@ -42,6 +43,9 @@ class ValueObjectNormalizer implements NormalizerInterface, DenormalizerInterfac
         try {
             return $desiredType::fromNative($object);
         } catch (Exception $exception) {
+            if ($object === null || $object === '') {
+                $exception = new \LogicException('Value is required.', previous: $exception);
+            }
             throw ValidationException::createFromArray(['' => $exception]);
         }
     }

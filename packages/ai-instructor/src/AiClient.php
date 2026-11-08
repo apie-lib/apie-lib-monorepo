@@ -10,16 +10,16 @@ abstract class AiClient
     
     public static function create(
         ?HttpClientInterface $client = null,
-        string $baseUrl = 'http://localhost:11434',
-        string $apiKey = 'ignored'
+        ?string $baseUrl = 'http://localhost:11434',
+        ?string $apiKey = 'ignored'
     ): AiClient {
         if (str_starts_with($baseUrl, 'https://api.openai.com/v1')) {
             return new OpenAiClient(
                 $client,
-                $apiKey
+                $apiKey ?? 'ignored'
             );
         }
 
-        return new OllamaClient($client, $baseUrl);
+        return new OllamaClient($client, $baseUrl ?? 'http://localhost:11434');
     }
 }
