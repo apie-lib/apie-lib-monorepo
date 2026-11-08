@@ -23,7 +23,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ],
         ComposerJsonSection::REQUIRE_DEV => [
             "ajgl/csv-rfc" => "0.4.0",
-            "apie/service-provider-generator" => "0.14.0",
+            "apie/service-provider-generator" => "0.15.0",
             "phpspec/prophecy-phpunit" => "^2.5",
             "phpstan/phpstan" => "2.2.8",
             "phpunit/phpcov" => "^10.0.1",
