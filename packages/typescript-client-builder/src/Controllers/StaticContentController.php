@@ -27,6 +27,10 @@ class StaticContentController
         if ($mimeType === false) {
             $mimeType = 'application/octet-stream';
         }
+        // RFC 9239: text/javascript is the official JavaScript media type.
+        if ($mimeType === 'application/javascript') {
+            $mimeType = 'text/javascript';
+        }
         return new Response(
             200,
             ['Content-Type' => $mimeType],

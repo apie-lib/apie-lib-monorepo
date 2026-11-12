@@ -288,7 +288,33 @@ svg {
 
 ion-accordion.no-toggle-icon .ion-accordion-toggle-icon {
     display: none;
-}</style>
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-grid {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-grid > ion-row {
+    flex: 1;
+}
+
+.content-grid > ion-row > ion-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.overview-grid {
+    flex: 1 1 auto;
+    min-height: 200px;
+}
+</style>
     <script>function setInnerHtml(elm, html) {
     elm.innerHTML = html || '';
     Array.from(elm.querySelectorAll("script")).forEach( oldScript => {
@@ -434,21 +460,9 @@ const provideId = (function () {
 
 
   <ion-buttons slot="end">
-    <ion-button id="quick-form">
-
-    <ion-icon
-            slot="start"
-            name="create-outline">
-    </ion-icon>
-
-    Form
-
-</ion-button>
-
-
+    
 <script type="module">
     import {
-        menuController,
         popoverController
     }
         from
@@ -456,12 +470,6 @@ const provideId = (function () {
 
 
 
-    document
-        .querySelector("#quick-form")
-        .addEventListener(
-            "click",
-            ()=>menuController.open("right-panel")
-        );
     
 
 </script>
@@ -475,7 +483,7 @@ const provideId = (function () {
                           class="ion-padding">
 
 
-                      <ion-grid style="height: 100vh;display: grid;">
+                      <ion-grid class="content-grid">
                           <ion-row>
                               <ion-col size="12">
                                   <marquee>Hello world</marquee>
@@ -497,6 +505,7 @@ const provideId = (function () {
 
 
           <ion-menu
+                  id="rightPanel"
                   side="end"
                   menu-id="right-panel"
                   content-id="main-content"
@@ -516,49 +525,8 @@ const provideId = (function () {
               </ion-header>
 
 
-              <ion-content
-                      class="ion-padding">
-
-
-                  <ion-item>
-
-                      <ion-input
-                              label="Title"
-                              label-placement="stacked"
-                              placeholder="Confirmation title">
-                      </ion-input>
-
-                  </ion-item>
-
-
-                  <ion-item>
-
-                      <ion-textarea
-                              label="Description"
-                              label-placement="stacked">
-                      </ion-textarea>
-
-                  </ion-item>
-
-
-
-                  <ion-button
-                          expand="block">
-
-                      Confirm
-
-                  </ion-button>
-
-
-                  <ion-button
-                          expand="block"
-                          fill="outline">
-
-                      Cancel
-
-                  </ion-button>
-
-
+              <ion-content class="ion-padding">
+                  <div id="rightPanelContent"></div>
               </ion-content>
 
 

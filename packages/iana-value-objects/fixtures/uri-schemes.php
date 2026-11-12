@@ -1563,6 +1563,18 @@ return array(
     'Notes' => '',
     'Active' => true,
   ),
+  'haie' =>
+  array(
+    'URI Scheme' => 'haie',
+    'Template' => 'prov/haie',
+    'Description' => 'haie',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1039',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[FUTURO_ITALIA_GARD]',
+    'Notes' => '',
+    'Active' => true,
+  ),
   'ham' =>
   array(
     'URI Scheme' => 'ham',
@@ -1895,7 +1907,7 @@ return array(
     'Status' => 'Provisional',
     'CRI Scheme Number' => '28',
     'Well-Known URI Support' => '-',
-    'Reference' => '[draft-li-rttp-iqa-addressing-00]',
+    'Reference' => '[draft-li-rttp-iqa-addressing-02]; [https://iqa.org/URI/]',
     'Notes' => '',
     'Active' => true,
   ),
@@ -3605,6 +3617,18 @@ return array(
     'Notes' => '',
     'Active' => true,
   ),
+  'op' =>
+  array(
+    'URI Scheme' => 'op',
+    'Template' => 'prov/op',
+    'Description' => 'op',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1040',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[Shigeya_Suzuki]',
+    'Notes' => '',
+    'Active' => true,
+  ),
   'opaquelocktoken' =>
   array(
     'URI Scheme' => 'opaquelocktoken',
@@ -4069,7 +4093,7 @@ return array(
     'Status' => 'Provisional',
     'CRI Scheme Number' => '27',
     'Well-Known URI Support' => '-',
-    'Reference' => '[draft-li-rttp-iqa-addressing-00]',
+    'Reference' => '[draft-li-rttp-iqa-addressing-02]; [https://rttp.com/URI/]',
     'Notes' => '',
     'Active' => true,
   ),
@@ -5355,6 +5379,18 @@ temporal ordering proof protocol augmenting TLS 1.3 with Proof-of-Time records.'
     'CRI Scheme Number' => '11255',
     'Well-Known URI Support' => '-',
     'Reference' => '[Dave_Thaler]',
+    'Notes' => '',
+    'Active' => true,
+  ),
+  'xudanu' =>
+  array(
+    'URI Scheme' => 'xudanu',
+    'Template' => 'prov/xudanu',
+    'Description' => 'xudanu',
+    'Status' => 'Provisional',
+    'CRI Scheme Number' => '1041',
+    'Well-Known URI Support' => '-',
+    'Reference' => '[David_Jones]',
     'Notes' => '',
     'Active' => true,
   ),

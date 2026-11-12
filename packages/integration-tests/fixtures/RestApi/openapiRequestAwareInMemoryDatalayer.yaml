@@ -7164,7 +7164,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -7244,7 +7244,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -7309,7 +7309,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -7373,7 +7373,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -7438,7 +7438,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -7807,7 +7807,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -7941,7 +7941,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -8007,7 +8007,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -8086,7 +8086,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -8465,7 +8465,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10220,7 +10220,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10289,7 +10289,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10358,7 +10358,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10427,7 +10427,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10496,7 +10496,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10565,7 +10565,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10634,7 +10634,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10703,7 +10703,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10772,7 +10772,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10841,7 +10841,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10910,7 +10910,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -10979,7 +10979,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -11048,7 +11048,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -11117,7 +11117,7 @@ paths:
           application/json:
             schema:
               type: object
-              properties: {  }
+              properties: {}
       responses:
         '400':
           description: 'Invalid request'
@@ -12772,6 +12772,7 @@ components:
         - gsos
         - gtalk
         - h323
+        - haie
         - ham
         - hcap
         - hcp
@@ -12940,6 +12941,7 @@ components:
         - oid
         - onenote
         - onenote-cmd
+        - op
         - opaquelocktoken
         - openid
         - openpgp4fpr
@@ -13076,6 +13078,7 @@ components:
         - xmpp
         - xrcp
         - xri
+        - xudanu
         - ymsgr
         - z39.50r
         - z39.50s
@@ -13210,6 +13213,7 @@ components:
         - gsos
         - gtalk
         - h323
+        - haie
         - ham
         - hcap
         - hcp
@@ -13378,6 +13382,7 @@ components:
         - oid
         - onenote
         - onenote-cmd
+        - op
         - opaquelocktoken
         - openid
         - openpgp4fpr
@@ -13514,6 +13519,7 @@ components:
         - xmpp
         - xrcp
         - xri
+        - xudanu
         - ymsgr
         - z39.50r
         - z39.50s
@@ -14008,7 +14014,7 @@ components:
           $ref: '#/components/schemas/User-get'
     EntitySnapshotInstance-get:
       type: object
-      properties: {  }
+      properties: {}
     ExpireStatus-get:
       enum:
         - active
@@ -16265,6 +16271,7 @@ components:
         - gsos
         - gtalk
         - h323
+        - haie
         - ham
         - hcap
         - hcp
@@ -16435,6 +16442,7 @@ components:
         - oid
         - onenote
         - onenote-cmd
+        - op
         - opaquelocktoken
         - openid
         - openpgp4fpr
@@ -16581,6 +16589,7 @@ components:
         - xmpp
         - xrcp
         - xri
+        - xudanu
         - ymsgr
         - z39.50
         - z39.50r
@@ -16721,6 +16730,7 @@ components:
         - gsos
         - gtalk
         - h323
+        - haie
         - ham
         - hcap
         - hcp
@@ -16891,6 +16901,7 @@ components:
         - oid
         - onenote
         - onenote-cmd
+        - op
         - opaquelocktoken
         - openid
         - openpgp4fpr
@@ -17037,6 +17048,7 @@ components:
         - xmpp
         - xrcp
         - xri
+        - xudanu
         - ymsgr
         - z39.50
         - z39.50r

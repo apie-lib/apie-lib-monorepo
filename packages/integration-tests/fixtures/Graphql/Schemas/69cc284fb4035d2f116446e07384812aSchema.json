@@ -57014,6 +57014,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.bcg.trustdeclaration",
+                            "description": "application\/vnd.bcg.trustdeclaration",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.bekitzur-stech+json",
                             "description": "application\/vnd.bekitzur-stech+json",
                             "isDeprecated": false,
@@ -58652,6 +58658,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.geovirtuallis.geov+zip",
+                            "description": "application\/vnd.geovirtuallis.geov+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.gerber",
                             "description": "application\/vnd.gerber",
                             "isDeprecated": false,
@@ -58988,8 +59000,20 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.ibus+json",
+                            "description": "application\/vnd.ibus+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.iccprofile",
                             "description": "application\/vnd.iccprofile",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.idop+zip",
+                            "description": "application\/vnd.idop+zip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -59336,6 +59360,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.jupiter.jdx+json",
+                            "description": "application\/vnd.jupiter.jdx+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.jupyter",
                             "description": "application\/vnd.jupyter",
                             "isDeprecated": false,
@@ -59638,6 +59668,12 @@
                         {
                             "name": "application\/vnd.maxmind.maxmind-db",
                             "description": "application\/vnd.maxmind.maxmind-db",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.mcap",
+                            "description": "application\/vnd.mcap",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -60244,6 +60280,18 @@
                         {
                             "name": "application\/vnd.neurolanguage.nlu",
                             "description": "application\/vnd.neurolanguage.nlu",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.ngdtuanh.abook+zip",
+                            "description": "application\/vnd.ngdtuanh.abook+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.ngdtuanh.abookproj+zip",
+                            "description": "application\/vnd.ngdtuanh.abookproj+zip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -61586,6 +61634,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.pebblestream.psosf+zip",
+                            "description": "application\/vnd.pebblestream.psosf+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.penguin-pn.theuip",
+                            "description": "application\/vnd.penguin-pn.theuip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.pg.format",
                             "description": "application\/vnd.pg.format",
                             "isDeprecated": false,
@@ -61768,6 +61828,12 @@
                         {
                             "name": "application\/vnd.qualcomm.brew-app-res",
                             "description": "application\/vnd.qualcomm.brew-app-res",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.quantumsequrity.qnsqy",
+                            "description": "application\/vnd.quantumsequrity.qnsqy",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -64022,6 +64088,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "audio\/prs.elupon-eua",
+                            "description": "audio\/prs.elupon-eua",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "audio\/prs.sid",
                             "description": "audio\/prs.sid",
                             "isDeprecated": false,
@@ -64856,6 +64928,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "image\/vnd.imgformats.ssimf",
+                            "description": "image\/vnd.imgformats.ssimf",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "image\/vnd.microsoft.icon",
                             "description": "image\/vnd.microsoft.icon",
                             "isDeprecated": false,
@@ -65336,6 +65414,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "model\/vnd.pygrassreal.py3s",
+                            "description": "model\/vnd.pygrassreal.py3s",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "model\/vnd.pytha.pyox",
                             "description": "model\/vnd.pytha.pyox",
                             "isDeprecated": false,
@@ -65714,8 +65798,20 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "text\/prs.mtsv",
+                            "description": "text\/prs.mtsv",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "text\/prs.prop.logic",
                             "description": "text\/prs.prop.logic",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "text\/prs.rowih",
+                            "description": "text\/prs.rowih",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -65932,6 +66028,12 @@
                         {
                             "name": "text\/vnd.fmi.flexstor",
                             "description": "text\/vnd.fmi.flexstor",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "text\/vnd.geml",
+                            "description": "text\/vnd.geml",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -69879,12 +69981,6 @@
                         {
                             "name": "help",
                             "description": "help",
-                            "isDeprecated": false,
-                            "deprecationReason": null
-                        },
-                        {
-                            "name": "helsinki",
-                            "description": "helsinki",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -76128,6 +76224,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "haie",
+                            "description": "haie",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "ham",
                             "description": "ham",
                             "isDeprecated": false,
@@ -77136,6 +77238,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "op",
+                            "description": "op",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "opaquelocktoken",
                             "description": "opaquelocktoken",
                             "isDeprecated": false,
@@ -77948,6 +78056,12 @@
                         {
                             "name": "xri",
                             "description": "xri",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "xudanu",
+                            "description": "xudanu",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -138569,6 +138683,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.bcg.trustdeclaration",
+                            "description": "application\/vnd.bcg.trustdeclaration",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.bekitzur-stech+json",
                             "description": "application\/vnd.bekitzur-stech+json",
                             "isDeprecated": false,
@@ -140207,6 +140327,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.geovirtuallis.geov+zip",
+                            "description": "application\/vnd.geovirtuallis.geov+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.gerber",
                             "description": "application\/vnd.gerber",
                             "isDeprecated": false,
@@ -140543,8 +140669,20 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.ibus+json",
+                            "description": "application\/vnd.ibus+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.iccprofile",
                             "description": "application\/vnd.iccprofile",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.idop+zip",
+                            "description": "application\/vnd.idop+zip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -140891,6 +141029,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.jupiter.jdx+json",
+                            "description": "application\/vnd.jupiter.jdx+json",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.jupyter",
                             "description": "application\/vnd.jupyter",
                             "isDeprecated": false,
@@ -141193,6 +141337,12 @@
                         {
                             "name": "application\/vnd.maxmind.maxmind-db",
                             "description": "application\/vnd.maxmind.maxmind-db",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.mcap",
+                            "description": "application\/vnd.mcap",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -141799,6 +141949,18 @@
                         {
                             "name": "application\/vnd.neurolanguage.nlu",
                             "description": "application\/vnd.neurolanguage.nlu",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.ngdtuanh.abook+zip",
+                            "description": "application\/vnd.ngdtuanh.abook+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.ngdtuanh.abookproj+zip",
+                            "description": "application\/vnd.ngdtuanh.abookproj+zip",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -143141,6 +143303,18 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "application\/vnd.pebblestream.psosf+zip",
+                            "description": "application\/vnd.pebblestream.psosf+zip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.penguin-pn.theuip",
+                            "description": "application\/vnd.penguin-pn.theuip",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "application\/vnd.pg.format",
                             "description": "application\/vnd.pg.format",
                             "isDeprecated": false,
@@ -143323,6 +143497,12 @@
                         {
                             "name": "application\/vnd.qualcomm.brew-app-res",
                             "description": "application\/vnd.qualcomm.brew-app-res",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "application\/vnd.quantumsequrity.qnsqy",
+                            "description": "application\/vnd.quantumsequrity.qnsqy",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -145577,6 +145757,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "audio\/prs.elupon-eua",
+                            "description": "audio\/prs.elupon-eua",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "audio\/prs.sid",
                             "description": "audio\/prs.sid",
                             "isDeprecated": false,
@@ -146411,6 +146597,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "image\/vnd.imgformats.ssimf",
+                            "description": "image\/vnd.imgformats.ssimf",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "image\/vnd.microsoft.icon",
                             "description": "image\/vnd.microsoft.icon",
                             "isDeprecated": false,
@@ -146891,6 +147083,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "model\/vnd.pygrassreal.py3s",
+                            "description": "model\/vnd.pygrassreal.py3s",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "model\/vnd.pytha.pyox",
                             "description": "model\/vnd.pytha.pyox",
                             "isDeprecated": false,
@@ -147269,8 +147467,20 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "text\/prs.mtsv",
+                            "description": "text\/prs.mtsv",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "text\/prs.prop.logic",
                             "description": "text\/prs.prop.logic",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "text\/prs.rowih",
+                            "description": "text\/prs.rowih",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -147487,6 +147697,12 @@
                         {
                             "name": "text\/vnd.fmi.flexstor",
                             "description": "text\/vnd.fmi.flexstor",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "text\/vnd.geml",
+                            "description": "text\/vnd.geml",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },
@@ -159216,6 +159432,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "haie",
+                            "description": "haie",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "ham",
                             "description": "ham",
                             "isDeprecated": false,
@@ -160236,6 +160458,12 @@
                             "deprecationReason": null
                         },
                         {
+                            "name": "op",
+                            "description": "op",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
                             "name": "opaquelocktoken",
                             "description": "opaquelocktoken",
                             "isDeprecated": false,
@@ -161108,6 +161336,12 @@
                         {
                             "name": "xri",
                             "description": "xri",
+                            "isDeprecated": false,
+                            "deprecationReason": null
+                        },
+                        {
+                            "name": "xudanu",
+                            "description": "xudanu",
                             "isDeprecated": false,
                             "deprecationReason": null
                         },

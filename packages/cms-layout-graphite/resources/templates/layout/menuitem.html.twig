@@ -21,7 +21,7 @@
 
         <ul class="space-y-1">
             <li>
-                <a href="#" class="menu-item block rounded px-3 py-2 hover:bg-slate-800 flex items-center" data-id="dashboard">
+                <a href="{{ property('dashboardUrl') ?? '#' }}" class="menu-item block rounded px-3 py-2 hover:bg-slate-800 flex items-center" data-id="dashboard">
                     {{ ux_icon('la:home', { class: 'w-5 h-5 text-slate-300 mr-3'}) }}
                     <span class="menu-label">Dashboard</span>
                 </a>

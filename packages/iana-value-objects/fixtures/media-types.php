@@ -49,14 +49,14 @@ return array(
   array(
     'Name' => '3gppHal+json',
     'Template' => 'application/3gppHal+json',
-    'Reference' => '[_3GPP]; [Ulrich_Wiehe]',
+    'Reference' => '[_3GPP]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/3gpphalforms+json' =>
   array(
     'Name' => '3gppHalForms+json',
     'Template' => 'application/3gppHalForms+json',
-    'Reference' => '[_3GPP]; [Ulrich_Wiehe]',
+    'Reference' => '[_3GPP]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/a2l' =>
@@ -637,7 +637,7 @@ return array(
   array(
     'Name' => 'client-authentication+jwt',
     'Template' => 'application/client-authentication+jwt',
-    'Reference' => '[RFC-ietf-oauth-rfc7523bis-11]',
+    'Reference' => '[RFC 10070]',
     'Active' => true,
   ),
   'application/cloudevents+json' =>
@@ -3990,14 +3990,14 @@ return array(
   array(
     'Name' => 'vnd.3gpp-prose-pc3a+xml',
     'Template' => 'application/vnd.3gpp-prose-pc3a+xml',
-    'Reference' => '[Haorui_Yang]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp-prose-pc3ach+xml' =>
   array(
     'Name' => 'vnd.3gpp-prose-pc3ach+xml',
     'Template' => 'application/vnd.3gpp-prose-pc3ach+xml',
-    'Reference' => '[Haorui_Yang]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp-prose-pc3ch+xml' =>
@@ -4011,7 +4011,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp-prose-pc8+xml',
     'Template' => 'application/vnd.3gpp-prose-pc8+xml',
-    'Reference' => '[Haorui_Yang]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp-v2x-local-service-information' =>
@@ -4116,7 +4116,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.mc-signalling-ear',
     'Template' => 'application/vnd.3gpp.mc-signalling-ear',
-    'Reference' => '[Tim_Woodward]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.mcdata-affiliation-command+xml' =>
@@ -4137,7 +4137,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.mcdata-msgstore-ctrl-request+xml',
     'Template' => 'application/vnd.3gpp.mcdata-msgstore-ctrl-request+xml',
-    'Reference' => '[Kiran_Kapale]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.mcdata-payload' =>
@@ -4151,7 +4151,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.mcdata-regroup+xml',
     'Template' => 'application/vnd.3gpp.mcdata-regroup+xml',
-    'Reference' => '[Kiran_Kapale]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.mcdata-service-config+xml' =>
@@ -4221,7 +4221,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.mcptt-regroup+xml',
     'Template' => 'application/vnd.3gpp.mcptt-regroup+xml',
-    'Reference' => '[Kiran_Kapale]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.mcptt-service-config+xml' =>
@@ -4305,7 +4305,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.mcvideo-regroup+xml',
     'Template' => 'application/vnd.3gpp.mcvideo-regroup+xml',
-    'Reference' => '[Kiran_Kapale]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.mcvideo-service-config+xml' =>
@@ -4354,7 +4354,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.pfcp',
     'Template' => 'application/vnd.3gpp.pfcp',
-    'Reference' => '[_3GPP]; [Bruno_Landais]',
+    'Reference' => '[_3GPP]; [Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.pic-bw-large' =>
@@ -4417,7 +4417,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.seal-group-doc+xml',
     'Template' => 'application/vnd.3gpp.seal-group-doc+xml',
-    'Reference' => '[Sapan_Shah]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.seal-info+xml' =>
@@ -4480,7 +4480,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.seal-ue-config-info+xml',
     'Template' => 'application/vnd.3gpp.seal-ue-config-info+xml',
-    'Reference' => '[Sapan_Shah]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.seal-unicast-info+xml' =>
@@ -4494,7 +4494,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.seal-user-profile-info+xml',
     'Template' => 'application/vnd.3gpp.seal-user-profile-info+xml',
-    'Reference' => '[Sapan_Shah]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'application/vnd.3gpp.sms' =>
@@ -5160,6 +5160,13 @@ return array(
     'Name' => 'vnd.bbf.usp.msg+json',
     'Template' => 'application/vnd.bbf.usp.msg+json',
     'Reference' => '[Broadband_Forum]',
+    'Active' => true,
+  ),
+  'application/vnd.bcg.trustdeclaration' =>
+  array(
+    'Name' => 'vnd.BCG.TrustDeclaration',
+    'Template' => 'application/vnd.BCG.TrustDeclaration',
+    'Reference' => '[Dick_Brooks]',
     'Active' => true,
   ),
   'application/vnd.bekitzur-stech+json' =>
@@ -7073,6 +7080,13 @@ return array(
     'Reference' => '[Christian_Mercat]',
     'Active' => true,
   ),
+  'application/vnd.geovirtuallis.geov+zip' =>
+  array(
+    'Name' => 'vnd.geovirtuallis.geov+zip',
+    'Template' => 'application/vnd.geovirtuallis.geov+zip',
+    'Reference' => '[Lyes_Mokraoui]',
+    'Active' => true,
+  ),
   'application/vnd.gerber' =>
   array(
     'Name' => 'vnd.gerber',
@@ -7465,11 +7479,25 @@ return array(
     'Reference' => '[Bruce_Tantlinger]',
     'Active' => true,
   ),
+  'application/vnd.ibus+json' =>
+  array(
+    'Name' => 'vnd.ibus+json',
+    'Template' => 'application/vnd.ibus+json',
+    'Reference' => '[Boris_Opalic]',
+    'Active' => true,
+  ),
   'application/vnd.iccprofile' =>
   array(
     'Name' => 'vnd.iccprofile',
     'Template' => 'application/vnd.iccprofile',
     'Reference' => '[Phil_Green]',
+    'Active' => true,
+  ),
+  'application/vnd.idop+zip' =>
+  array(
+    'Name' => 'vnd.idop+zip',
+    'Template' => 'application/vnd.idop+zip',
+    'Reference' => '[Kacper_Gościniak]',
     'Active' => true,
   ),
   'application/vnd.ieee.1905' =>
@@ -7871,6 +7899,13 @@ return array(
     'Reference' => '[Yokoyama_Kiyonobu]',
     'Active' => true,
   ),
+  'application/vnd.jupiter.jdx+json' =>
+  array(
+    'Name' => 'vnd.jupiter.jdx+json',
+    'Template' => 'application/vnd.jupiter.jdx+json',
+    'Reference' => '[Fernando_Daniel_Garcia]',
+    'Active' => true,
+  ),
   'application/vnd.jupyter' =>
   array(
     'Name' => 'vnd.jupyter',
@@ -8226,6 +8261,13 @@ return array(
     'Name' => 'vnd.maxmind.maxmind-db',
     'Template' => 'application/vnd.maxmind.maxmind-db',
     'Reference' => '[William_Stevenson]',
+    'Active' => true,
+  ),
+  'application/vnd.mcap' =>
+  array(
+    'Name' => 'vnd.mcap',
+    'Template' => 'application/vnd.mcap',
+    'Reference' => '[Mat_Sadowski]',
     'Active' => true,
   ),
   'application/vnd.mcd' =>
@@ -8933,6 +8975,20 @@ return array(
     'Name' => 'vnd.neurolanguage.nlu',
     'Template' => 'application/vnd.neurolanguage.nlu',
     'Reference' => '[Dan_DuFeu]',
+    'Active' => true,
+  ),
+  'application/vnd.ngdtuanh.abook+zip' =>
+  array(
+    'Name' => 'vnd.ngdtuanh.abook+zip',
+    'Template' => 'application/vnd.ngdtuanh.abook+zip',
+    'Reference' => '[Nguyễn_Duy_Tuấn_Anh]',
+    'Active' => true,
+  ),
+  'application/vnd.ngdtuanh.abookproj+zip' =>
+  array(
+    'Name' => 'vnd.ngdtuanh.abookproj+zip',
+    'Template' => 'application/vnd.ngdtuanh.abookproj+zip',
+    'Reference' => '[Nguyễn_Duy_Tuấn_Anh]',
     'Active' => true,
   ),
   'application/vnd.nila.protobuf-bundle+zip' =>
@@ -10496,6 +10552,20 @@ return array(
     'Reference' => '[Slawomir_Lisznianski]',
     'Active' => true,
   ),
+  'application/vnd.pebblestream.psosf+zip' =>
+  array(
+    'Name' => 'vnd.pebblestream.psosf+zip',
+    'Template' => 'application/vnd.pebblestream.psosf+zip',
+    'Reference' => '[Bediako_George]',
+    'Active' => true,
+  ),
+  'application/vnd.penguin-pn.theuip' =>
+  array(
+    'Name' => 'vnd.penguin-pn.theuip',
+    'Template' => 'application/vnd.penguin-pn.theuip',
+    'Reference' => '[Penguin_Web_Messaging_Maintainer]',
+    'Active' => true,
+  ),
   'application/vnd.pg.format' =>
   array(
     'Name' => 'vnd.pg.format',
@@ -10711,6 +10781,13 @@ return array(
     'Name' => 'vnd.qualcomm.brew-app-res',
     'Template' => 'application/vnd.qualcomm.brew-app-res',
     'Reference' => '[Glenn_Forrester]',
+    'Active' => true,
+  ),
+  'application/vnd.quantumsequrity.qnsqy' =>
+  array(
+    'Name' => 'vnd.quantumsequrity.qnsqy',
+    'Template' => 'application/vnd.quantumsequrity.qnsqy',
+    'Reference' => '[Quantum_Sequrity]',
     'Active' => true,
   ),
   'application/vnd.quarantainenet' =>
@@ -12299,7 +12376,7 @@ return array(
   array(
     'Name' => 'voucher-cms+json',
     'Template' => 'application/voucher-cms+json',
-    'Reference' => '[RFC 8366]',
+    'Reference' => '[RFC-ietf-anima-rfc8366bis-39]',
     'Active' => true,
   ),
   'application/voucher-jws+json' =>
@@ -13338,6 +13415,13 @@ return array(
     'Reference' => '[Ai_Media_Format]',
     'Active' => true,
   ),
+  'audio/prs.elupon-eua' =>
+  array(
+    'Name' => 'prs.elupon-eua',
+    'Template' => 'audio/prs.elupon-eua',
+    'Reference' => '[Artem_Sladkih]',
+    'Active' => true,
+  ),
   'audio/prs.sid' =>
   array(
     'Name' => 'prs.sid',
@@ -13538,7 +13622,7 @@ return array(
   array(
     'Name' => 'vnd.3gpp.iufp',
     'Template' => 'audio/vnd.3gpp.iufp',
-    'Reference' => '[Thomas_Belling]',
+    'Reference' => '[Dongwook_Kim]',
     'Active' => true,
   ),
   'audio/vnd.4sb' =>
@@ -14311,6 +14395,13 @@ return array(
     'Reference' => '[Martin_Bailey]',
     'Active' => true,
   ),
+  'image/vnd.imgformats.ssimf' =>
+  array(
+    'Name' => 'vnd.imgformats.ssimf',
+    'Template' => 'image/vnd.imgformats.ssimf',
+    'Reference' => '[Ahmad_NoorMohammed_Athania]',
+    'Active' => true,
+  ),
   'image/vnd.microsoft.icon' =>
   array(
     'Name' => 'vnd.microsoft.icon',
@@ -14871,6 +14962,13 @@ return array(
     'Reference' => '[Parasolid]',
     'Active' => true,
   ),
+  'model/vnd.pygrassreal.py3s' =>
+  array(
+    'Name' => 'vnd.pygrassreal.py3s',
+    'Template' => 'model/vnd.pygrassreal.py3s',
+    'Reference' => '[Prachaya_Buapad]',
+    'Active' => true,
+  ),
   'model/vnd.pytha.pyox' =>
   array(
     'Name' => 'vnd.pytha.pyox',
@@ -15312,11 +15410,25 @@ return array(
     'Reference' => '[John_Lines]',
     'Active' => true,
   ),
+  'text/prs.mtsv' =>
+  array(
+    'Name' => 'prs.mtsv',
+    'Template' => 'text/prs.mtsv',
+    'Reference' => '[draft-demosra-mtsv-01]',
+    'Active' => true,
+  ),
   'text/prs.prop.logic' =>
   array(
     'Name' => 'prs.prop.logic',
     'Template' => 'text/prs.prop.logic',
     'Reference' => '[Hans-Dieter_A._Hiep]',
+    'Active' => true,
+  ),
+  'text/prs.rowih' =>
+  array(
+    'Name' => 'prs.rowih',
+    'Template' => 'text/prs.rowih',
+    'Reference' => '[William_Short]',
     'Active' => true,
   ),
   'text/prs.texi' =>
@@ -15569,6 +15681,13 @@ return array(
     'Name' => 'vnd.fmi.flexstor',
     'Template' => 'text/vnd.fmi.flexstor',
     'Reference' => '[Kari_E._Hurtta]',
+    'Active' => true,
+  ),
+  'text/vnd.geml' =>
+  array(
+    'Name' => 'vnd.geml',
+    'Template' => 'text/vnd.geml',
+    'Reference' => '[Jieying_Xiong]',
     'Active' => true,
   ),
   'text/vnd.gist.mx' =>

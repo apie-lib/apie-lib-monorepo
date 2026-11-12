@@ -11,11 +11,13 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libonig-dev \
     libzip-dev \
+    zlib1g-dev \
+    libgmp-dev \
     git \
  && git clone --depth=1 https://github.com/php/php-src.git /usr/src/php \
  && cd /usr/src/php \
  && ./buildconf \
- && ./configure --enable-mbstring --with-openssl \
+ && ./configure --enable-mbstring --enable-bcmath --with-gmp --with-openssl --with-zip --with-zlib \
  && make -j"$(nproc)" \
  && make install
 

@@ -88,7 +88,7 @@ const provideId = (function () {
 
     </div>
 
-    <div class="relative flex-shrink-0">
+    <div class="relative flex flex-shrink-0 items-center gap-3">
         
     
 
@@ -186,12 +186,12 @@ const provideId = (function () {
 
         <!-- Right Sidebar -->
         <aside id="rightSidebar"
-               class="fixed inset-y-0 right-0 z-20 w-80 max-w-[90vw] bg-white border-l transition-all duration-300 overflow-y-auto translate-x-full lg:static lg:translate-x-0 lg:w-80 lg:h-full lg:flex-shrink-0">
+               class="hidden fixed inset-y-0 right-0 z-20 w-80 max-w-[90vw] bg-white border-l transition-all duration-300 overflow-y-auto translate-x-full lg:static lg:translate-x-0 lg:w-80 lg:h-full lg:flex-shrink-0">
 
             <div class="flex justify-between items-center p-4 border-b">
 
                 <h2 class="font-semibold">
-                    Utility Panel
+                    Quick Action
                 </h2>
 
                 <button id="rightToggle"
@@ -201,55 +201,7 @@ const provideId = (function () {
 
             </div>
 
-            <div class="p-4 space-y-6">
-
-                <div>
-
-                    <h3 class="font-semibold mb-2">
-                        Quick Form
-                    </h3>
-
-                    <input
-                            type="text"
-                            placeholder="Title"
-                            class="w-full border rounded px-3 py-2 mb-2">
-
-                    <textarea
-                            placeholder="Description"
-                            class="w-full border rounded px-3 py-2 h-24"></textarea>
-
-                    <button
-                            class="mt-3 w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700">
-                        Save
-                    </button>
-
-                </div>
-
-                <div class="rounded border border-amber-300 bg-amber-50 p-3">
-
-                    <h3 class="font-semibold mb-2">
-                        Confirmation
-                    </h3>
-
-                    <p class="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-
-                    <div class="flex gap-2 mt-3">
-
-                        <button class="flex-1 bg-red-600 text-white rounded py-2">
-                            Delete
-                        </button>
-
-                        <button class="flex-1 bg-slate-300 rounded py-2">
-                            Cancel
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
+            <div id="rightSidebarContent" class="p-4"></div>
 
         </aside>
 
@@ -260,7 +212,7 @@ const provideId = (function () {
 <!-- Floating button when right sidebar is hidden -->
 <button id="showRight"
         class="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-700 hidden">
-    Panel
+    Quick Action
 </button>
 
 <script>
@@ -318,11 +270,43 @@ const provideId = (function () {
         }
     }
 
+    function revealShowRight() {
+        if (!rightSidebar.classList.contains('hidden')) {
+            showRight.classList.remove('hidden');
+        }
+    }
+
+    async function openSmallPage(url) {
+        const ajaxUrl = new URL(url, window.location.href);
+        ajaxUrl.searchParams.set('layout', 'sidebar');
+        const response = await fetch(ajaxUrl.toString(), {headers: {'X-Requested-With': 'XMLHttpRequest'}, credentials: 'same-origin'});
+        if (!response.ok) {
+            throw new Error('HTTP ' + response.status);
+        }
+        const container = document.getElementById('rightSidebarContent');
+        container.innerHTML = await response.text();
+        container.querySelectorAll('apie-graphite-form').forEach((form) => form.setAttribute('action', url));
+        container.querySelectorAll('script').forEach((oldScript) => {
+            const script = document.createElement('script');
+            Array.from(oldScript.attributes).forEach((attr) => script.setAttribute(attr.name, attr.value));
+            script.textContent = oldScript.textContent;
+            oldScript.replaceWith(script);
+        });
+        rightSidebar.classList.remove('hidden');
+        if (isDesktop()) {
+            rightSidebar.classList.remove('w-0');
+            rightSidebar.classList.add('w-80');
+            showRight.classList.add('hidden');
+        } else {
+            openRightSidebar();
+        }
+    }
+
     function closeRightSidebar() {
         if (!isDesktop()) {
             rightSidebar.classList.add('translate-x-full');
             rightSidebar.classList.remove('translate-x-0');
-            showRight.classList.remove('hidden');
+            revealShowRight();
             if (!leftSidebar.classList.contains('translate-x-0')) {
                 closeOverlay();
             }
@@ -354,7 +338,7 @@ const provideId = (function () {
             if (rightSidebar.classList.contains('translate-x-0')) {
                 showRight.classList.add('hidden');
             } else {
-                showRight.classList.remove('hidden');
+                revealShowRight();
             }
         }
     }
@@ -390,7 +374,7 @@ const provideId = (function () {
 
         rightSidebar.classList.remove('w-80');
         rightSidebar.classList.add('w-0');
-        showRight.classList.remove('hidden');
+        revealShowRight();
     };
 
     showRight.onclick = (e) => {

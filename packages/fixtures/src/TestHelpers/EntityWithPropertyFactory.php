@@ -9,7 +9,7 @@ use ReflectionClass;
 
 class EntityWithPropertyFactory
 {
-    private const NAMESPACE = 'FixtureTest';
+    private const ENTITY_NAMESPACE = 'FixtureTest';
 
     /**
      * @codeCoverageIgnore
@@ -26,7 +26,7 @@ class EntityWithPropertyFactory
         if (!class_exists($className)) {
             $code = (
                 "<?php
-namespace " . self::NAMESPACE . ";
+namespace " . self::ENTITY_NAMESPACE . ";
 
 use " . EntityInterface::class . ";
 use " . IdentifierInterface::class . ";
@@ -66,6 +66,6 @@ class " . $className . " implements EntityInterface
             require_once($tmpPath);
         }
 
-        return new \ReflectionClass(self::NAMESPACE . '\\' . $className);
+        return new \ReflectionClass(self::ENTITY_NAMESPACE . '\\' . $className);
     }
 }

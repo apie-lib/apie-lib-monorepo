@@ -82,7 +82,9 @@ final class ApieResourceSeeder implements ApieClassFaker
                         )
                     );
                 }
-                $this->idsCreated[$id] = true;
+                if ($id !== null) {
+                    $this->idsCreated[$id] = true;
+                }
                 $this->createdResources[$index] = $fakedResource;
             } finally {
                 $this->building = false;

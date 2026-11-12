@@ -265,3 +265,28 @@ svg {
 ion-accordion.no-toggle-icon .ion-accordion-toggle-icon {
     display: none;
 }
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-grid {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-grid > ion-row {
+    flex: 1;
+}
+
+.content-grid > ion-row > ion-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.overview-grid {
+    flex: 1 1 auto;
+    min-height: 200px;
+}

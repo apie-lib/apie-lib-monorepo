@@ -32,25 +32,20 @@
             const dataSmallPage = button.dataset.smallPage;
             if (dataSmallPage === 'true') {
                 try {
-                    const ajaxUrl = dataUrl + '?layout=sidebar';
-                    const response = await fetch(ajaxUrl);
+                    const ajaxUrl = new URL(dataUrl, window.location.href);
+                    ajaxUrl.searchParams.set('layout', 'sidebar');
+                    const response = await fetch(ajaxUrl.toString(), {headers: {'X-Requested-With': 'XMLHttpRequest'}, credentials: 'same-origin'});
                     if (response.ok) {
-                        const html = await response.text();
-                        const dom = stringToHTML(html);
-                        const form = dom.querySelector('form');
-                        form.action = dataUrl;
-                        const sidebar = document.querySelector('.apie-sidebar');
-                        sidebar.classList.add('active');
-                        sidebar.appendChild(form);
-                        const scriptTags = form.querySelectorAll('script');
-                        for (const script of scriptTags) {
-                            const newScript = document.createElement('script');
-                            if (script.src) {
-                                newScript.src = script.src;
-                            }
-                            newScript.textContent = script.textContent;
-                            document.body.appendChild(newScript);
-                        }
+                        const container = document.getElementById('rightPanelContent');
+                        container.innerHTML = await response.text();
+                        container.querySelectorAll('apie-ionic-form').forEach((form) => form.setAttribute('action', dataUrl));
+                        container.querySelectorAll('script').forEach((oldScript) => {
+                            const script = document.createElement('script');
+                            Array.from(oldScript.attributes).forEach((attr) => script.setAttribute(attr.name, attr.value));
+                            script.textContent = oldScript.textContent;
+                            oldScript.replaceWith(script);
+                        });
+                        await document.getElementById('rightPanel').open();
                         return;
                     }
                 } catch (err) {
@@ -62,7 +57,7 @@
     resourceActionListElm.classList.remove('resource-actions-unprocessed');
 }(document.querySelector('.resource-actions-unprocessed')));</script>
 </div>
-    <revo-grid style="max-height: 80%"></revo-grid>
+    <revo-grid class="overview-grid"></revo-grid>
   <script>
   (function(grid) {
     const importantNameColumns = ['displayName', 'name', 'internalName', 'shortDescription', 'description', 'productDescription', 'id'];

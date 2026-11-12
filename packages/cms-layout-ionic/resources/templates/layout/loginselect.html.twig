@@ -1,15 +1,4 @@
 {% set hasDropdown = property('loginOptions')|length or property('profileUrl') or property('logoutUrl') %}
-<ion-button id="quick-form">
-
-    <ion-icon
-            slot="start"
-            name="create-outline">
-    </ion-icon>
-
-    Form
-
-</ion-button>
-
 {% if hasDropdown or property('authenticated') %}
 <ion-button{% if hasDropdown %} id="account"{% endif %} fill="clear">
     {% if (property('authenticated')) %}
@@ -28,7 +17,6 @@
 
 <script type="module">
     import {
-        menuController,
         popoverController
     }
         from
@@ -36,12 +24,6 @@
 
 
 
-    document
-        .querySelector("#quick-form")
-        .addEventListener(
-            "click",
-            ()=>menuController.open("right-panel")
-        );
     {% if hasDropdown %}
     class AccountPopover extends HTMLElement {
 

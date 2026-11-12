@@ -25035,6 +25035,12 @@ return array(
     'Service Name' => 'k3software-cli',
     'Active' => true,
   ),
+  26264 =>
+  array(
+    'Description' => 'De-registered',
+    'Service Name' => '',
+    'Active' => true,
+  ),
   '2626tcp' =>
   array(
     'Description' => 'gbjd816',
@@ -25818,12 +25824,6 @@ return array(
   2682 =>
   array(
     'Description' => 'Removed',
-    'Service Name' => '',
-    'Active' => true,
-  ),
-  26264 =>
-  array(
-    'Description' => 'De-registered',
     'Service Name' => '',
     'Active' => true,
   ),
@@ -66255,6 +66255,12 @@ return array(
     'Service Name' => 'mdbs_daemon',
     'Active' => true,
   ),
+  '8011udp' =>
+  array(
+    'Description' => 'The UDP destination port number for the IP/UDP encapsulated BIER Echo Reply message.',
+    'Service Name' => 'bier-echo',
+    'Active' => true,
+  ),
   '8015tcp' =>
   array(
     'Description' => 'Configuration Cloud Service',
@@ -66343,6 +66349,12 @@ return array(
   array(
     'Description' => 'ARCATrust vault API',
     'Service Name' => 'arca-api',
+    'Active' => true,
+  ),
+  '8024udp' =>
+  array(
+    'Description' => 'GAAP Control Packets',
+    'Service Name' => 'gaap',
     'Active' => true,
   ),
   '8025tcp' =>

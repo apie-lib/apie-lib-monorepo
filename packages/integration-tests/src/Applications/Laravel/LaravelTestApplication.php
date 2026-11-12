@@ -43,7 +43,8 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         private readonly ApplicationConfig $applicationConfig,
         private readonly BoundedContextConfig $boundedContextConfig
     ) {
-        parent::__construct('Laravel application');
+        // PHPUnit resolves this object as the current test when a deprecation/warning is triggered, so the name must be a real method.
+        parent::__construct('bootApplication');
     }
 
     public function getConsoleApplication(): Application

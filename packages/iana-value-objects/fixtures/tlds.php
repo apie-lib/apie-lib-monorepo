@@ -2620,7 +2620,7 @@ return array(
   ),
   'helsinki' =>
   array(
-    'Active' => true,
+    'Active' => false,
     'Subtag' => 'HELSINKI',
   ),
   'here' =>

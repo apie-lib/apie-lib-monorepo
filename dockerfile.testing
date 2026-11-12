@@ -14,6 +14,7 @@ RUN apt-get install -y \
         unzip \
         libssh2-1-dev \
         libgmp-dev \
+        libonig-dev \
         libzip-dev \
         zlib1g-dev \
         zip
@@ -21,8 +22,10 @@ RUN apt-get install -y \
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 RUN docker-php-ext-install zip gmp bcmath
-RUN pecl install pcov \
-    && docker-php-ext-enable pcov
+# php 8.6 images no longer ship mbstring by default
+RUN php -m | grep -qi mbstring || docker-php-ext-install mbstring
+# pecl is not available in php 8.6 images, so pcov is optional
+RUN (pecl install pcov && docker-php-ext-enable pcov) || true
 RUN git config --global --add safe.directory /app
 # show that both Composer and PHP run as expected
 RUN composer --version && php -v && php -m
