@@ -33,6 +33,11 @@ class IntegrationTestHelper
         return DatalayerImplementation::IN_MEMORY;
     }
 
+    public function createSessionLayerImplementation(): DatalayerImplementation
+    {
+        return DatalayerImplementation::SESSION;
+    }
+
     public function createFullFrameworkConfig(DatalayerImplementation $datalayerImplementation): ApplicationConfig
     {
         return new ApplicationConfig(

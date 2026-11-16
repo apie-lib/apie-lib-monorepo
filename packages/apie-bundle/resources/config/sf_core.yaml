@@ -1,4 +1,10 @@
 services:
+  Apie\Core\Session\SessionFactoryInterface:
+    class: Apie\ApieBundle\Session\SymfonySessionFactory
+    arguments:
+      - '@request_stack'
+      - '@kernel'
+
   Apie\Common\ContextBuilders\FrameworkContextBuilder:
     arguments:
       - 'symfony'

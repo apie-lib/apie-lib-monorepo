@@ -16,6 +16,7 @@ use Apie\Common\Wrappers\ConsoleCommandFactory as CommonConsoleCommandFactory;
 use Apie\Console\ConsoleServiceProvider;
 use Apie\Core\CoreServiceProvider;
 use Apie\Core\Session\CsrfTokenProvider;
+use Apie\Core\Session\SessionFactoryInterface;
 use Apie\DoctrineEntityConverter\DoctrineEntityConverterProvider;
 use Apie\DoctrineEntityDatalayer\Commands\ApieUpdateIdfCommand;
 use Apie\DoctrineEntityDatalayer\DoctrineEntityDatalayerServiceProvider;
@@ -41,6 +42,7 @@ use Apie\LaravelApie\ErrorHandler\ApieErrorRenderer;
 use Apie\LaravelApie\ErrorHandler\Handler;
 use Apie\LaravelApie\Providers\CmsServiceProvider;
 use Apie\LaravelApie\Providers\SecurityServiceProvider;
+use Apie\LaravelApie\Session\LaravelSessionFactory;
 use Apie\LaravelApie\Wrappers\Cms\DashboardContentFactory;
 use Apie\LaravelApie\Wrappers\Core\BoundedContextSelected;
 use Apie\LaravelApie\Wrappers\Queue\BackgroundProcessPersistListener;
@@ -220,6 +222,8 @@ class ApieServiceProvider extends ServiceProvider
     {
         EncryptCookies::except(AddAuthenticationCookie::COOKIE_NAME);
         $this->mergeConfigFrom(__DIR__ . '/../resources/apie.php', 'apie');
+
+        $this->app->bind(SessionFactoryInterface::class, LaravelSessionFactory::class);
 
         $this->app->bind(FrameworkContextBuilder::class, function () {
             return new FrameworkContextBuilder('laravel');

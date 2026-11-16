@@ -27,7 +27,6 @@ use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Component\Console\Application;
-use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -166,16 +165,20 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
 
     private function handleResponse(HttpFoundationResponse $laravelResponse): ResponseInterface
     {
-        $cookie = $laravelResponse->headers->getCookies(
-            ResponseHeaderBag::COOKIES_ARRAY
-        )[""]["/"][AddAuthenticationCookie::COOKIE_NAME] ?? null;
-        if ($cookie !== null) {
-            $cookie = Cookie::fromString($cookie)->getValue();
-        }
-        if ($cookie) {
-            $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME] = $cookie;
-        } else {
-            unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+        foreach ($laravelResponse->headers->getCookies(ResponseHeaderBag::COOKIES_FLAT) as $cookie) {
+            if ($cookie->getName() === AddAuthenticationCookie::COOKIE_NAME) {
+                if ($cookie->isCleared()) {
+                    unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+                } else {
+                    $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME] = $cookie->getValue();
+                }
+                continue;
+            }
+            if ($cookie->isCleared()) {
+                unset($this->defaultCookies[$cookie->getName()]);
+            } else {
+                $this->defaultCookies[$cookie->getName()] = $cookie->getValue();
+            }
         }
 
         $psrFactory = new NyholmPsr17Factory();
@@ -194,9 +197,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         $factory = new HttpFoundationFactory();
         $sfRequest = $factory->createRequest($psrRequest);
         $laravelRequest = Request::createFromBase($sfRequest);
-        if (isset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME])) {
-            $laravelRequest->cookies->set(AddAuthenticationCookie::COOKIE_NAME, $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
-        }
+        $laravelRequest->cookies->add($this->defaultCookies);
         $laravelResponse = $this->app->make(HttpKernel::class)->handle($laravelRequest);
         return $this->handleResponse($laravelResponse);
     }

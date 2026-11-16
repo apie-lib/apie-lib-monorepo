@@ -3,11 +3,18 @@ namespace Apie\Tests\LaravelApie;
 
 use Apie\Common\ApieFacade;
 use Apie\Common\Events\AddAuthenticationCookie;
+use Apie\Core\Session\SessionFactoryInterface;
 use Apie\LaravelApie\ApieServiceProvider;
 use Apie\LaravelApie\Config\ValidateAndSanitizeConfig;
+use Apie\LaravelApie\Session\LaravelSessionFactory;
 use Apie\LaravelApie\Wrappers\Security\ApieUserDecorator;
 use Illuminate\Contracts\Config\Repository;
+use Illuminate\Http\Request;
+use Illuminate\Session\ArraySessionHandler;
+use Illuminate\Session\Store;
+use Illuminate\Session\SymfonySessionDecorator;
 use Orchestra\Testbench\TestCase;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 final class LaravelApieTest extends TestCase
 {
@@ -107,5 +114,40 @@ final class LaravelApieTest extends TestCase
         $response = $this->get('/api/default/openapi.yaml');
         $response->assertOk();
         $response->assertSeeText('cms.dropdown_options');
+    }
+
+    #[\PHPUnit\Framework\Attributes\Test]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    public function the_session_factory_uses_a_mock_session_without_a_request_session(): void
+    {
+        $this->app->instance('request', Request::create('/'));
+
+        $session = $this->app->make(SessionFactoryInterface::class)->create();
+        $this->assertInstanceOf(Session::class, $session);
+        $this->assertSame($session, (new LaravelSessionFactory($this->app))->create());
+
+        $request = Request::create('/');
+        $store = new Store('test', new ArraySessionHandler(120));
+        $request->setLaravelSession($store);
+        $this->app->instance('request', $request);
+
+        $requestSession = (new LaravelSessionFactory($this->app))->create();
+        $this->assertInstanceOf(SymfonySessionDecorator::class, $requestSession);
+        $this->assertNotSame($session, $requestSession);
+    }
+
+    #[\PHPUnit\Framework\Attributes\Test]
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    public function the_session_factory_uses_the_laravel_request_session(): void
+    {
+        $request = Request::create('/');
+        $store = new Store('test', new ArraySessionHandler(120));
+        $request->setLaravelSession($store);
+        $this->app->instance('request', $request);
+
+        $session = $this->app->make(SessionFactoryInterface::class)->create();
+        $this->assertInstanceOf(SymfonySessionDecorator::class, $session);
+        $session->set('session_factory_test', 'value');
+        $this->assertSame('value', $store->get('session_factory_test'));
     }
 }
