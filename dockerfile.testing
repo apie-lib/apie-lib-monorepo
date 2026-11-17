@@ -13,6 +13,7 @@ RUN apt-get install -y \
         wget \
         unzip \
         libssh2-1-dev \
+        libffi-dev \
         libgmp-dev \
         libonig-dev \
         libzip-dev \
@@ -21,7 +22,8 @@ RUN apt-get install -y \
 
 # copy the Composer PHAR from the Composer image into the PHP image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-RUN docker-php-ext-install zip gmp bcmath
+RUN docker-php-ext-configure ffi --with-ffi \
+ && docker-php-ext-install ffi zip gmp bcmath
 # php 8.6 images no longer ship mbstring by default
 RUN php -m | grep -qi mbstring || docker-php-ext-install mbstring
 # pecl is not available in php 8.6 images, so pcov is optional
