@@ -26,6 +26,6 @@ final class Typehint
         if ($object instanceof ItemList || $object instanceof ItemSet) {
             return new self(TypeDefinition::Array, $properties);
         }
-        return new self(TypeDefinition::ObjectReference, spl_object_hash($object));
+        return new self(TypeDefinition::ObjectReference, (string) spl_object_id($object));
     }
 }

@@ -63,7 +63,7 @@ final class SerializedProperties implements JsonSerializable
             $clone->root = Typehint::createFromObject($object, $result);
         }
         $clone->registeredObjectsMap[$object] = $result;
-        $clone->registeredObjects[spl_object_hash($object)] = $object;
+        $clone->registeredObjects[spl_object_id($object)] = $object;
         return $clone;
     }
 
