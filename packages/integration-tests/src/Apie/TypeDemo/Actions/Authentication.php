@@ -2,19 +2,24 @@
 namespace Apie\IntegrationTests\Apie\TypeDemo\Actions;
 
 use Apie\Core\Attributes\Context;
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\Route;
+use Apie\Core\Attributes\RuntimeCheck;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\Context\ApieContext;
 use Apie\Core\ContextConstants;
 use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Entities\EntityInterface;
+use Apie\IanaValueObjects\LanguageAndRegion;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
+use Apie\IntegrationTests\Apie\TypeDemo\Rules\RequiresAuthenticatedUser;
 use Exception;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class Authentication
 {
+    #[Description('Login as user with username and password, returns null if authentication fails')]
     public function verifyAuthentication(
         #[Context()] ApieDatalayer $apieDatalayer,
         #[Context()] BoundedContext $boundedContext,
@@ -31,6 +36,7 @@ class Authentication
         return $user->verify($password) ? $user : null;
     }
 
+    #[Description('Display the current logged in user, returns null if not logged in')]
     #[Route('/me')]
     #[Route('/profile', target: Route::CMS)]
     public function currentUser(#[Context('authenticated')] ?EntityInterface $currentUser = null): ?EntityInterface
@@ -44,6 +50,33 @@ class Authentication
     public function currentSession(#[Context] SessionInterface $sessionInterface): array
     {
         return $sessionInterface->all();
+    }
+
+    public function acceptLocale(#[Context(ContextConstants::ACCEPT_LOCALE)] ?string $locale = null): ?string
+    {
+        return $locale;
+    }
+
+    public function locale(#[Context(ContextConstants::LOCALE)] ?string $locale = null): ?string
+    {
+        return $locale;
+    }
+
+    public function dataLocale(#[Context(ContextConstants::DATA_LOCALE)] ?string $locale = null): ?string
+    {
+        return $locale;
+    }
+
+    public function localeObject(#[Context] ?LanguageAndRegion $locale = null): ?LanguageAndRegion
+    {
+        return $locale;
+    }
+
+    #[Description('Only accessible to logged in users, used to verify authorization errors return the correct HTTP status code')]
+    #[RuntimeCheck(new RequiresAuthenticatedUser())]
+    public function restrictedToLoggedInUsers(): string
+    {
+        return 'secret';
     }
 
     public function isThisMe(#[Context] ApieContext $apieContext, UserIdentifier $userId): bool

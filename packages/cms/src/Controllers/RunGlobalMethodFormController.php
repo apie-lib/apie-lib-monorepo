@@ -46,6 +46,9 @@ class RunGlobalMethodFormController
             $context,
             $layout
         );
-        return $this->responseFactory->createComponentPageRender($component, $context);
+        return $this->responseFactory->createComponentPageRender($component, $context)
+            ->withHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
+            ->withHeader('Pragma', 'no-cache');
+        ;
     }
 }

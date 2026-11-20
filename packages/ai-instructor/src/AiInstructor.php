@@ -21,6 +21,11 @@ final class AiInstructor
     ) {
     }
 
+    public function getAiClient(): AiClient
+    {
+        return $this->aiClient;
+    }
+
     public function instruct(
         ReflectionNamedType|ReflectionUnionType|string $type,
         NonEmptyString|string $model,

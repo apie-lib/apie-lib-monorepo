@@ -30,27 +30,8 @@
             const dataSmallPage = button.dataset.smallPage;
             if (dataSmallPage === 'true') {
                 try {
-                    const ajaxUrl = dataUrl + '?layout=sidebar';
-                    const response = await fetch(ajaxUrl);
-                    if (response.ok) {
-                        const html = await response.text();
-                        const dom = stringToHTML(html);
-                        const form = dom.querySelector('form');
-                        form.action = dataUrl;
-                        const sidebar = document.querySelector('.apie-sidebar');
-                        sidebar.classList.add('active');
-                        sidebar.appendChild(form);
-                        const scriptTags = form.querySelectorAll('script');
-                        for (const script of scriptTags) {
-                            const newScript = document.createElement('script');
-                            if (script.src) {
-                                newScript.src = script.src;
-                            }
-                            newScript.textContent = script.textContent;
-                            document.body.appendChild(newScript);
-                        }
-                        return;
-                    }
+                    await openSmallPage(dataUrl);
+                    return;
                 } catch (err) {
                 }
             }

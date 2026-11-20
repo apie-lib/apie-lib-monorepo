@@ -1,0 +1,24 @@
+FROM debian:trixie
+
+RUN apt-get update && apt-get install -y \
+    autoconf \
+    build-essential \
+    bison \
+    pkg-config \
+    re2c \
+    libxml2-dev \
+    libsqlite3-dev \
+    libcurl4-openssl-dev \
+    libonig-dev \
+    libzip-dev \
+    zlib1g-dev \
+    libgmp-dev \
+    git \
+ && git clone --depth=1 https://github.com/php/php-src.git /usr/src/php \
+ && cd /usr/src/php \
+ && ./buildconf \
+ && ./configure --enable-mbstring --enable-bcmath --with-gmp --with-openssl --with-zip --with-zlib \
+ && make -j"$(nproc)" \
+ && make install
+
+CMD ["php", "-v"]

@@ -14,4 +14,24 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+Value objects wrapping a full PHP regular expression (with delimiters), used by Apie to
+validate patterns used elsewhere (e.g. as a constraint on other regex-based value
+objects). Uses `apie/regex-tools` and `apie/core`'s string value object traits.
+
+### Standalone usage
+```bash
+composer require apie/regex-value-objects
+```
+
+`PhpRegularExpression` accepts any pattern `preg_match` can compile and rejects invalid
+ones during construction:
+```php
+use Apie\RegexValueObjects\PhpRegularExpression;
+
+$pattern = new PhpRegularExpression('/^[A-Z]+$/');
+```
+
+`PhpSafeRegularExpression` additionally rejects patterns containing lookaheads/
+lookbehinds or nested repetitions (e.g. `(a+)+`), which can cause catastrophic
+backtracking, so it is the safer choice when the pattern comes from user input. Both
+classes are ordinary PHP value objects and work without a framework.

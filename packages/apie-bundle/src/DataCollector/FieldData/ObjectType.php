@@ -7,7 +7,7 @@ class ObjectType extends AbstractFieldData
     public function __construct(
         object $value
     ) {
-        $this->data = spl_object_hash($value);
+        $this->data = (string) spl_object_id($value);
         $this->typehint = get_debug_type($value);
     }
 

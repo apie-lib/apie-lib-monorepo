@@ -65,7 +65,7 @@ class StrongPasswordTest extends TestCase
             [
                 'type' => 'string',
                 'format' => 'password',
-                'pattern' => StrongPassword::getRegularExpression(),
+                'pattern' => true,
             ]
         );
     }

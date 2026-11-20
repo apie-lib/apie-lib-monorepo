@@ -4,9 +4,22 @@ namespace Apie\LaravelApie\Config;
 
 use Apie\Common\Config\Configuration;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Lock\Store\FlockStore;
 
 class LaravelConfiguration extends Configuration
 {
+    public function getConfigTreeBuilder(): TreeBuilder
+    {
+        $res = parent::getConfigTreeBuilder();
+        $res->getRootNode()
+            ->children()
+            ->scalarNode('enable_security')->defaultTrue()->end()
+            ->scalarNode('lock_store')->defaultValue(FlockStore::class)->end()
+            ->scalarNode('logout_url')->defaultNull()->end();
+        return $res;
+    }
+
     protected function addCmsOptions(ArrayNodeDefinition $arrayNode): void
     {
         $arrayNode->children()

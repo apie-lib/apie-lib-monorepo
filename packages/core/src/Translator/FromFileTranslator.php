@@ -2,9 +2,13 @@
 namespace Apie\Core\Translator;
 
 use Apie\Core\Context\ApieContext;
-use Apie\Core\Translator\Enums\FromFileLanguage;
+use Apie\Core\ContextConstants;
+use Apie\Core\Identifiers\KebabCaseSlug;
+use Apie\Core\Identifiers\SnakeCaseSlug;
 use Apie\Core\Translator\Lists\TranslationStringSet;
-use Apie\Core\Translator\ValueObjects\TranslationString;
+use Apie\Core\Translator\ValueObjects\AbstractTranslation;
+use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
+use Apie\Core\ValueObjects\Utils;
 
 class FromFileTranslator implements ApieTranslatorInterface
 {
@@ -17,16 +21,33 @@ class FromFileTranslator implements ApieTranslatorInterface
         return new self(__DIR__ . '/../../lang/');
     }
 
-    public function getGeneralTranslation(ApieContext $context, TranslationString|TranslationStringSet $translations): ?string
+    public function getGeneralTranslation(ApieContext $context, AbstractTranslation|TranslationStringSet $translations): ?string
     {
-        if ($translations instanceof TranslationString) {
-            $translations = new TranslationStringSet([$translations]);
+        if ($translations instanceof AbstractTranslation) {
+            $translations = [$translations, ...$translations->getSimplifications()];
         }
-        $language = FromFileLanguage::fromContext($context);
+        $language = Utils::toString($context->getContext(ContextConstants::LOCALE, false) ?? 'en');
+        try {
+            SnakeCaseSlug::validate($language);
+        } catch (InvalidStringForValueObjectException) {
+            try {
+                KebabCaseSlug::validate($language);
+            } catch (InvalidStringForValueObjectException) {
+                $language = 'en';
+            }
+        }
+
+        $languages = [$language];
+        if (str_contains($language, '_')) {
+            $languages[] = strstr($language, '_', true);
+        }
+        
         foreach ($translations as $translation) {
-            $fullPath = $translation->toPath(rtrim($this->translationPath, '/') . '/' . $language->value) . '.php';
-            if (file_exists($fullPath)) {
-                return include $fullPath;
+            foreach ($languages as $language) {
+                $fullPath = $translation->toPath(rtrim($this->translationPath, '/') . '/' . $language) . '.php';
+                if (file_exists($fullPath)) {
+                    return include $fullPath;
+                }
             }
         }
         return null;

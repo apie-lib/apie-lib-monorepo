@@ -31,10 +31,6 @@ class DoctrineEntityDatalayerTest extends TestCase
             if (!@mkdir($entityPath)) {
                 $this->markTestSkipped('Can not create entity folder ' . $entityPath);
             }
-            $proxyPath = $tempFolder . DIRECTORY_SEPARATOR . 'proxies';
-            if (!@mkdir($proxyPath)) {
-                $this->markTestSkipped('Can not create proxy folder ' . $proxyPath);
-            }
             $ormBuilder = new DoctrineEntityConverterOrmBuilder(
                 new PersistenceLayerFactory(),
                 BoundedContextFactory::createHashmap(),
@@ -45,7 +41,6 @@ class DoctrineEntityDatalayerTest extends TestCase
                 buildOnce: true,
                 runMigrations: true,
                 devMode: true,
-                proxyDir: $proxyPath,
                 cache: null,
                 path: $entityPath,
                 connectionConfig: [
@@ -76,6 +71,10 @@ class DoctrineEntityDatalayerTest extends TestCase
             $idBeforePersist = $entity->getId()->toNative();
             $actual = $testItem->persistNew($entity);
             $this->assertEquals($idBeforePersist, $actual->getId()->toNative());
+            $metadata = $testItem->getMetadata($entity->getId());
+            $this->assertSame('1.0.0-RC3', $metadata->createdInApieVersion);
+            $this->assertSame('1.0.0-RC3', $metadata->updatedInApieVersion);
+            $this->assertEquals($metadata->createdAt, $metadata->updatedAt);
         } finally {
             system('rm -rf '  . escapeshellarg($tempFolder));
         }

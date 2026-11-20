@@ -15,7 +15,7 @@ class RunMethodCallOnSingleResourceFormRouteDefinition extends AbstractCmsRouteD
 {
     public static function createFrom(ActionDefinitionInterface $actionDefinition): ?AbstractCmsRouteDefinition
     {
-        if ($actionDefinition instanceof RunResourceMethodDefinition) {
+        if ($actionDefinition instanceof RunResourceMethodDefinition && empty($actionDefinition->getActionOptions())) {
             return new self($actionDefinition->getResourceName(), $actionDefinition->getMethod(), $actionDefinition->getBoundedContextId());
         }
         return null;
@@ -38,6 +38,11 @@ class RunMethodCallOnSingleResourceFormRouteDefinition extends AbstractCmsRouteD
             return new UrlRouteDefinition('/resource/action/' . $this->class->getShortName() . '/{id}');
         }
         return new UrlRouteDefinition('/resource/action/' . $this->class->getShortName() . '/{id}/' . $methodName);
+    }
+
+    public function getMainMenuUri(): ?UrlRouteDefinition
+    {
+        return null;
     }
 
     public function getController(): string

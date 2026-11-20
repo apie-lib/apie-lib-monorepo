@@ -2,6 +2,7 @@
 namespace Apie\Maker\ValueObjects;
 
 use Apie\ApieCommonPlugin\ObjectProviderFactory;
+use Apie\Core\Attributes\Description;
 use Apie\Core\Attributes\FakeMethod;
 use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Exceptions\InvalidStringForValueObjectException;
@@ -13,6 +14,7 @@ use Faker\Generator;
 use ReflectionClass;
 
 #[FakeMethod('createRandom')]
+#[Description('A PHP class name loaded in from a vendor library (probably Composer).')]
 final class VendorValueObject implements HasRegexValueObjectInterface, LimitedOptionsInterface
 {
     use IsClassNameReference;

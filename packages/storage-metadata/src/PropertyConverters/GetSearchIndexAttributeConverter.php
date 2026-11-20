@@ -32,6 +32,7 @@ class GetSearchIndexAttributeConverter implements PropertyConverterInterface
             if ($arrayValueType && str_starts_with($arrayValueType, 'apie_')) {
                 $arrayValueType = (new ReflectionClass($context->storageObject))->getNamespaceName() . '\\' . $arrayValueType;
             }
+            // @phpstan-ignore-next-line argument.type
             $domainPropertyValue = $propertyAttribute->newInstance()->getValue($context->domainClass, $context->domainObject);
             $storagePropertyType = $storageProperty->getType();
             if ($domainPropertyValue === null) {
@@ -42,6 +43,8 @@ class GetSearchIndexAttributeConverter implements PropertyConverterInterface
                 $indexes = array_keys($this->indexer->getIndexesForObject($domainPropertyValue, new ApieContext()));
             } elseif (is_resource($domainPropertyValue)) {
                 $indexes = [];
+            } elseif (is_array($domainPropertyValue)) {
+                $indexes = array_keys($this->indexer->getIndexesFor($domainPropertyValue, new ApieContext()));
             } elseif (get_debug_type($domainPropertyValue) === 'resource (closed)') {
                 $indexes = [];
             } else {

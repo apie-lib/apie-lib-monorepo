@@ -82,6 +82,19 @@ class OpenapiDocumentationTest extends TestCase
         }
         $this->assertEquals(200, $response->getStatusCode());
         $body = (string) $response->getBody();
+        $openApiSpec = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
+        $resourceListPaths = [];
+        foreach ($openApiSpec['paths'] as $path => $pathItem) {
+            if (isset($pathItem['get']['operationId'])
+                && str_starts_with($pathItem['get']['operationId'], 'get-all-')
+            ) {
+                $resourceListPaths[$path] = $pathItem;
+            }
+        }
+        $this->assertNotEmpty($resourceListPaths, 'Expected resource-list GET operations in the OpenAPI spec.');
+        foreach ($resourceListPaths as $pathItem) {
+            $this->assertArrayNotHasKey('query', $pathItem);
+        }
         $fixtureFile = FixtureUtils::getOpenapiFixtureFile($testApplication);
 
         file_put_contents($fixtureFile, $body);

@@ -5,6 +5,7 @@ use Apie\Core\Entities\EntityInterface;
 use Apie\Core\FileStorage\FileStorageFactory;
 use Apie\Core\FileStorage\StoredFile;
 use Apie\Core\ValueObjects\DatabaseText;
+use Apie\Core\ValueObjects\Price;
 use Apie\Fixtures\Entities\ImageFile;
 use Apie\Fixtures\Entities\Order;
 use Apie\Fixtures\Entities\OrderLine;
@@ -41,13 +42,13 @@ class DomainToStorageConverterTest extends TestCase
         $domainObject = $this->createUserForDomainObject();
         $domainObject->setPassword(new Password('Aa1234!'));
         $this->assertTrue($domainObject->hasPassword(), 'hasPassword() should return true if it has a password');
-        $addressHash = spl_object_hash($domainObject->getAddress());
+        $addressHash = spl_object_id($domainObject->getAddress());
         $testItem = DomainToStorageConverter::create(FileStorageFactory::create());
         $testItem->injectExistingDomainObject(
             $domainObject,
             $this->createUserForStorage()
         );
-        $this->assertSame($addressHash, spl_object_hash($domainObject->getAddress()), 'I expect to have the same pointer');
+        $this->assertSame($addressHash, spl_object_id($domainObject->getAddress()), 'I expect to have the same pointer');
         $this->assertFalse($domainObject->hasPassword(), 'hasPassword() should return false after update from storage object');
     }
 
@@ -141,13 +142,17 @@ class DomainToStorageConverterTest extends TestCase
             '550e8400-e29b-41d4-a716-446655440000',
             OrderStatus::DRAFT->value,
             [
-                new OrderLineStorage('550e8400-e29b-41d4-a716-446655440001', 0),
-                new OrderLineStorage('550e8400-e29b-41d4-a716-446655430001', 1),
-            ]
+                new OrderLineStorage('550e8400-e29b-41d4-a716-446655440001', "10.00", 0),
+                new OrderLineStorage('550e8400-e29b-41d4-a716-446655430001', "11.00", 1),
+            ],
+            []
         );
+        $res->optionalTagsNull = true;
         $res->searchOrderLines = [
             '550e8400-e29b-41d4-a716-446655440001',
-            '550e8400-e29b-41d4-a716-446655430001'
+            '10.00',
+            '550e8400-e29b-41d4-a716-446655430001',
+            '11.00',
         ];
         return $res;
     }
@@ -157,8 +162,14 @@ class DomainToStorageConverterTest extends TestCase
         return new Order(
             OrderIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440000'),
             new OrderLineList([
-                new OrderLine(OrderLineIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440001')),
-                new OrderLine(OrderLineIdentifier::fromNative('550e8400-e29b-41d4-a716-446655430001'))
+                new OrderLine(
+                    OrderLineIdentifier::fromNative('550e8400-e29b-41d4-a716-446655440001'),
+                    Price::fromNative('10.00')
+                ),
+                new OrderLine(
+                    OrderLineIdentifier::fromNative('550e8400-e29b-41d4-a716-446655430001'),
+                    Price::fromNative('11.00')
+                )
             ])
         );
     }

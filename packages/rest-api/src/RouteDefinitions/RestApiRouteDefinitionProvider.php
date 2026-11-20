@@ -12,8 +12,10 @@ final class RestApiRouteDefinitionProvider implements RouteDefinitionProviderInt
 {
     private const CLASSES = [
         CreateResourceRouteDefinition::class,
+        PutResourceRouteDefinition::class,
         RemoveSingleResourceRouteDefinition::class,
         GetResourceListRouteDefinition::class,
+        QueryResourceListRouteDefinition::class,
         GetSingleResourceRouteDefinition::class,
         PatchSingleResourceRouteDefinition::class,
         RunGlobalMethodRouteDefinition::class,

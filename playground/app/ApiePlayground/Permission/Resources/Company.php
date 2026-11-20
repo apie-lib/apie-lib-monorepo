@@ -4,6 +4,7 @@ namespace App\ApiePlayground\Permission\Resources;
 
 use Apie\Core\ApieLib;
 use Apie\Core\Attributes\AnyApplies;
+use Apie\Core\Attributes\Auditable;
 use Apie\Core\Attributes\HasRole;
 use Apie\Core\Attributes\Internal;
 use Apie\Core\Attributes\LoggedIn;
@@ -23,6 +24,7 @@ use DateTimeImmutable;
 use DateTimeInterface;
 
 #[RuntimeCheck(new AnyApplies(new LoggedIn(), new Requires(ConsoleCommand::CONSOLE_COMMAND->value)))]
+#[Auditable]
 class Company implements EntityInterface, RequiresPermissionsInterface, RequiresRecalculatingInterface
 {
     private CompanyIdentifier $id;

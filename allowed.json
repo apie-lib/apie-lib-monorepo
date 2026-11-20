@@ -1,132 +1,577 @@
 [
     {
-        "location": "Apie\\IntegrationTests\\Applications\\Laravel\\LaravelTestApplication",
-        "message": "The \"PHPUnit\\Framework\\TestCase::__construct()\" method is considered internal This method is not covered by the backward compatibility promise for PHPUnit. It may change without further notice. You should not extend it from \"Apie\\IntegrationTests\\Applications\\Laravel\\LaravelTestApplication\".",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyAccess\\PropertyAccessor::__construct(): Implicitly marking parameter $cacheItemPool as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Cms\\CmsRemoveResourceActionFormRenderTest::it_renders_a_remove_resource_form_page",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyAccess\\PropertyAccessor::__construct(): Implicitly marking parameter $readInfoExtractor as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Cms\\CmsResourceActionFormRenderTest::it_renders_a_resource_action_form_page",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyAccess\\PropertyAccessor::__construct(): Implicitly marking parameter $writeInfoExtractor as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Cms\\CmsResourceActionFormRenderTest::it_can_execute_a_resource_action",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyAccess\\PropertyAccessor::throwInvalidArgumentException(): Implicitly marking parameter $previous as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Cms\\CmsResourceOverviewRenderTest::it_renders_a_resource_overview_page",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyAccess\\PropertyAccessor::createCache(): Implicitly marking parameter $logger as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Cms\\CmsResourceOverviewRenderTest::it_renders_a_resource_overview_page_with_text_search_filter",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
-        "count": 4
-    },
-    {
-        "location": "Apie\\Tests\\IntegrationTests\\Cms\\CmsResourceRenderTest::it_renders_a_resource_detail_page",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyInfo\\Extractor\\ReflectionExtractor::__construct(): Implicitly marking parameter $mutatorPrefixes as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieCreateResourceCommandTest::it_can_create_a_resource",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyInfo\\Extractor\\ReflectionExtractor::__construct(): Implicitly marking parameter $accessorPrefixes as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieCreateResourceCommandTest::it_can_create_a_resource_with_interaction",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyInfo\\Extractor\\ReflectionExtractor::__construct(): Implicitly marking parameter $arrayMutatorPrefixes as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieModifyResourceCommandTest::it_can_modify_a_resource",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyInfo\\Extractor\\ReflectionExtractor::__construct(): Implicitly marking parameter $inflector as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieModifyResourceCommandTest::it_returns_an_error_on_invalid_id",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyInfo\\Type::__construct(): Implicitly marking parameter $class as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieModifyResourceCommandTest::it_can_modify_a_resource_with_interaction",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyInfo\\Type::__construct(): Implicitly marking parameter $collectionKeyType as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieRemoveResourceCommandTest::it_can_remove_a_resource",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\HtmlBuilders\\TestHelpers\\AbstractRenderTestCase::provideComponents",
+        "message": "Symfony\\Component\\PropertyInfo\\Type::__construct(): Implicitly marking parameter $collectionValueType as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieRemoveResourceCommandTest::it_returns_an_error_on_invalid_id",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\CountryAndPhoneNumber\\CountryAndPhoneNumberTest::correctProvider",
+        "message": "libphonenumber\\PhoneNumberUtil::getInstance(): Implicitly marking parameter $countryCallingCodeToRegionCodeMap as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieRemoveResourceCommandTest::it_can_remove_a_resource_with_interaction",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\CountryAndPhoneNumber\\CountryAndPhoneNumberTest::correctProvider",
+        "message": "libphonenumber\\PhoneNumberUtil::getInstance(): Implicitly marking parameter $metadataLoader as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieRunResourceMethodCommandTest::it_can_run_a_resource_method",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\CountryAndPhoneNumber\\CountryAndPhoneNumberTest::correctProvider",
+        "message": "libphonenumber\\PhoneNumberUtil::getInstance(): Implicitly marking parameter $metadataSource as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieRunResourceMethodCommandTest::it_returns_an_error_on_invalid_id",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\CountryAndPhoneNumber\\CountryAndPhoneNumberTest::correctProvider",
+        "message": "libphonenumber\\PhoneNumberUtil::parseAndKeepRawInput(): Implicitly marking parameter $phoneNumber as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\Console\\ApieRunResourceMethodCommandTest::it_can_run_a_resource_method_with_interaction",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\CountryAndPhoneNumber\\CountryAndPhoneNumberTest::correctProvider",
+        "message": "libphonenumber\\PhoneNumberUtil::findNumbers(): Implicitly marking parameter $leniency as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\DoctrineEntityDatalayer\\DoctrineConsoleCommandTest::it_can_run_doctrine_schema_update_commands_on_apie_connection",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
-        "count": 4
-    },
-    {
-        "location": "Apie\\Tests\\IntegrationTests\\DoctrineEntityDatalayer\\DoctrineConsoleCommandTest::it_can_run_doctrine_schema_update_commands_on_apie_connection",
-        "message": "Doctrine\\DBAL\\Schema\\SchemaDiff::toSaveSql is deprecated. (SchemaDiff.php:222 called by SchemaTool.php:992, https://github.com/doctrine/dbal/pull/5766, package doctrine/dbal)",
-        "count": 4
-    },
-    {
-        "location": "Apie\\Tests\\IntegrationTests\\DoctrineEntityDatalayer\\DoctrineConsoleCommandTest::it_can_run_doctrine_schema_validate_commands_on_apie_connection",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
-        "count": 4
-    },
-    {
-        "location": "Apie\\Tests\\IntegrationTests\\DoctrineEntityDatalayer\\DoctrineConsoleCommandTest::it_can_run_doctrine_schema_validate_commands_on_apie_connection",
-        "message": "Doctrine\\DBAL\\Schema\\SchemaDiff::toSaveSql is deprecated. (SchemaDiff.php:222 called by SchemaTool.php:992, https://github.com/doctrine/dbal/pull/5766, package doctrine/dbal)",
-        "count": 4
-    },
-    {
-        "location": "Apie\\Tests\\IntegrationTests\\Faker\\ApieSeedCommandTest::it_can_seed_apie_resources",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\CountryAndPhoneNumber\\CountryAndPhoneNumberTest::correctProvider",
+        "message": "libphonenumber\\PhoneNumberUtil::maybeExtractCountryCode(): Implicitly marking parameter $defaultRegionMetadata as nullable is deprecated, the explicit nullable type must be used instead",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\RestApi\\DoApiCallTest::it_can_run_a_documented_api_call",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\CountryAndPhoneNumber\\CountryAndPhoneNumberTest::correctProvider",
+        "message": "libphonenumber\\PhoneNumberUtil::parse(): Implicitly marking parameter $phoneNumber as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Contracts\\EventDispatcher\\EventDispatcherInterface::dispatch(): Implicitly marking parameter $eventName as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\Stopwatch\\Stopwatch::openSection(): Implicitly marking parameter $id as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\Stopwatch\\Stopwatch::start(): Implicitly marking parameter $category as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\Stopwatch\\Section::__construct(): Implicitly marking parameter $origin as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\Stopwatch\\StopwatchEvent::__construct(): Implicitly marking parameter $category as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\Stopwatch\\StopwatchEvent::__construct(): Implicitly marking parameter $name as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\String\\Slugger\\AsciiSlugger::__construct(): Implicitly marking parameter $defaultLocale as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\String\\Slugger\\AsciiSlugger::__construct(): Implicitly marking parameter $symbolsMap as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\String\\Slugger\\AsciiSlugger::slug(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\String\\Slugger\\SluggerInterface::slug(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Contracts\\Translation\\TranslatorInterface::trans(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Contracts\\Translation\\TranslatorInterface::trans(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Contracts\\Translation\\TranslatorTrait::trans(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Contracts\\Translation\\TranslatorTrait::trans(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\Clock\\DatePoint::__construct(): Implicitly marking parameter $timezone as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\Clock\\DatePoint::__construct(): Implicitly marking parameter $reference as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsCreateResourceCommitTest::it_requires_a_proper_csrf_creating_a_resource",
+        "message": "Symfony\\Component\\Clock\\DatePoint::createFromFormat(): Implicitly marking parameter $timezone as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\AppVariable::getFlashes(): Implicitly marking parameter $types as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension::__construct(): Implicitly marking parameter $stopwatch as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\TranslationExtension::__construct(): Implicitly marking parameter $translator as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\TranslationExtension::__construct(): Implicitly marking parameter $translationNodeVisitor as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\TranslationExtension::trans(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\TranslationExtension::trans(): Implicitly marking parameter $locale as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\TranslationExtension::trans(): Implicitly marking parameter $count as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\TranslationExtension::createTranslatable(): Implicitly marking parameter $domain as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\StopwatchExtension::__construct(): Implicitly marking parameter $stopwatch as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\HtmlSanitizerExtension::sanitize(): Implicitly marking parameter $sanitizer as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\LogoutUrlExtension::getLogoutPath(): Implicitly marking parameter $key as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\LogoutUrlExtension::getLogoutUrl(): Implicitly marking parameter $key as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\SecurityExtension::__construct(): Implicitly marking parameter $securityChecker as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\SecurityExtension::__construct(): Implicitly marking parameter $impersonateUrlGenerator as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\SecurityExtension::isGranted(): Implicitly marking parameter $field as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\SecurityExtension::getImpersonateExitUrl(): Implicitly marking parameter $exitTo as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Cms\\CmsDashboardTest::it_can_display_a_dashboard_with_twig",
+        "message": "Symfony\\Bridge\\Twig\\Extension\\SecurityExtension::getImpersonateExitPath(): Implicitly marking parameter $exitTo as nullable is deprecated, the explicit nullable type must be used instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::setUp",
+        "message": "Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfig(), and will be removed in 4.0. (ORMSetup.php:41 called by MergedRegistryTest.php:28, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
         "count": 6
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\RestApi\\OpenapiDocumentationTest::it_can_display_openapi_spec_in_json",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::setUp",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyDir is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:85 called by EntityManager.php:142, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 6
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::setUp",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyNamespace is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:140 called by EntityManager.php:143, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 6
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::setUp",
+        "message": "Calling Doctrine\\ORM\\Configuration::getAutoGenerateProxyClasses is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:104 called by EntityManager.php:144, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 6
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::setUp",
+        "message": "Not enabling native lazy objects is deprecated and will be impossible in Doctrine ORM 4.0. (ProxyFactory.php:158 called by EntityManager.php:140, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 6
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testResetManager",
+        "message": "Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfig(), and will be removed in 4.0. (ORMSetup.php:41 called by OrmBuilder.php:166, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
         "count": 1
     },
     {
-        "location": "Apie\\Tests\\IntegrationTests\\RestApi\\OpenapiDocumentationTest::it_can_display_openapi_spec_in_yaml",
-        "message": "Doctrine\\DBAL\\Connection::getEventManager is deprecated. (Connection.php:302 called by EntityManager.php:167, https://github.com/doctrine/dbal/issues/5784, package doctrine/dbal)",
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testResetManager",
+        "message": "Doctrine\\ORM\\ORMSetup::createConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createConfig(), and will be removed in 4.0. (ORMSetup.php:132 called by ORMSetup.php:50, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testResetManager",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyDir is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:85 called by EntityManager.php:142, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testResetManager",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyNamespace is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:140 called by EntityManager.php:143, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testResetManager",
+        "message": "Calling Doctrine\\ORM\\Configuration::getAutoGenerateProxyClasses is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:104 called by EntityManager.php:144, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testResetManager",
+        "message": "Not enabling native lazy objects is deprecated and will be impossible in Doctrine ORM 4.0. (ProxyFactory.php:158 called by EntityManager.php:140, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetConnection",
+        "message": "Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfig(), and will be removed in 4.0. (ORMSetup.php:41 called by OrmBuilder.php:166, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetConnection",
+        "message": "Doctrine\\ORM\\ORMSetup::createConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createConfig(), and will be removed in 4.0. (ORMSetup.php:132 called by ORMSetup.php:50, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetConnection",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyDir is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:85 called by EntityManager.php:142, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetConnection",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyNamespace is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:140 called by EntityManager.php:143, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetConnection",
+        "message": "Calling Doctrine\\ORM\\Configuration::getAutoGenerateProxyClasses is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:104 called by EntityManager.php:144, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetConnection",
+        "message": "Not enabling native lazy objects is deprecated and will be impossible in Doctrine ORM 4.0. (ProxyFactory.php:158 called by EntityManager.php:140, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManager",
+        "message": "Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfig(), and will be removed in 4.0. (ORMSetup.php:41 called by OrmBuilder.php:166, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManager",
+        "message": "Doctrine\\ORM\\ORMSetup::createConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createConfig(), and will be removed in 4.0. (ORMSetup.php:132 called by ORMSetup.php:50, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManager",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyDir is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:85 called by EntityManager.php:142, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManager",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyNamespace is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:140 called by EntityManager.php:143, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManager",
+        "message": "Calling Doctrine\\ORM\\Configuration::getAutoGenerateProxyClasses is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:104 called by EntityManager.php:144, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManager",
+        "message": "Not enabling native lazy objects is deprecated and will be impossible in Doctrine ORM 4.0. (ProxyFactory.php:158 called by EntityManager.php:140, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetRepository",
+        "message": "Class \"Doctrine\\ORM\\Proxy\\DefaultProxyClassNameResolver\" is deprecated. Use native lazy objects instead. (DefaultProxyClassNameResolver.php:25 called by AbstractClassMetadataFactory.php:472, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManagers",
+        "message": "Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfig(), and will be removed in 4.0. (ORMSetup.php:41 called by OrmBuilder.php:166, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManagers",
+        "message": "Doctrine\\ORM\\ORMSetup::createConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createConfig(), and will be removed in 4.0. (ORMSetup.php:132 called by ORMSetup.php:50, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManagers",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyDir is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:85 called by EntityManager.php:142, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManagers",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyNamespace is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:140 called by EntityManager.php:143, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManagers",
+        "message": "Calling Doctrine\\ORM\\Configuration::getAutoGenerateProxyClasses is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:104 called by EntityManager.php:144, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\ApieBundle\\Doctrine\\MergedRegistryTest::testGetManagers",
+        "message": "Not enabling native lazy objects is deprecated and will be impossible in Doctrine ORM 4.0. (ProxyFactory.php:158 called by EntityManager.php:140, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\CommonValueObjects\\ApplicationVersionTest::it_works_with_apie_faker",
+        "message": "Return type of RegRev\\ExpressionContainer::current() should either be compatible with Iterator::current(): mixed, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\CommonValueObjects\\ApplicationVersionTest::it_works_with_apie_faker",
+        "message": "Return type of RegRev\\ExpressionContainer::next() should either be compatible with Iterator::next(): void, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\CommonValueObjects\\ApplicationVersionTest::it_works_with_apie_faker",
+        "message": "Return type of RegRev\\ExpressionContainer::key() should either be compatible with Iterator::key(): mixed, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\CommonValueObjects\\ApplicationVersionTest::it_works_with_apie_faker",
+        "message": "Return type of RegRev\\ExpressionContainer::valid() should either be compatible with Iterator::valid(): bool, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\CommonValueObjects\\ApplicationVersionTest::it_works_with_apie_faker",
+        "message": "Return type of RegRev\\ExpressionContainer::rewind() should either be compatible with Iterator::rewind(): void, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\Core\\Metadata\\MetadataFactoryTest::it_can_show_php8_attributes",
+        "message": "Method ReflectionParameter::getClass() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\Core\\Metadata\\MetadataFactoryTest::it_can_show_php8_attributes",
+        "message": "Method ReflectionParameter::isArray() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\Core\\Metadata\\MetadataFactoryTest::it_can_show_php8_attributes",
+        "message": "Method ReflectionParameter::isCallable() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createAttributeMetadataConfig(), and will be removed in 4.0. (ORMSetup.php:41 called by OrmBuilder.php:166, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 7
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Doctrine\\ORM\\ORMSetup::createConfiguration is deprecated in favor of Doctrine\\ORM\\ORMSetup::createConfig(), and will be removed in 4.0. (ORMSetup.php:132 called by ORMSetup.php:50, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 7
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyDir is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:85 called by EntityManager.php:142, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Calling Doctrine\\ORM\\Configuration::getProxyNamespace is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:140 called by EntityManager.php:143, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Calling Doctrine\\ORM\\Configuration::getAutoGenerateProxyClasses is deprecated and will not be possible in Doctrine ORM 4.0. (Configuration.php:104 called by EntityManager.php:144, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Not enabling native lazy objects is deprecated and will be impossible in Doctrine ORM 4.0. (ProxyFactory.php:158 called by EntityManager.php:140, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Class \"Doctrine\\ORM\\Proxy\\DefaultProxyClassNameResolver\" is deprecated. Use native lazy objects instead. (DefaultProxyClassNameResolver.php:25 called by AbstractClassMetadataFactory.php:472, https://github.com/doctrine/orm/pull/12005, package doctrine/orm)",
+        "count": 15
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Using nullable columns (apie_resource__core_generated_code_timestamp.id) in a primary key index is deprecated. (Table.php:183 called by Table.php:200, https://github.com/doctrine/dbal/pull/6787, package doctrine/dbal)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Using nullable columns (apie_resource__default_user_with_address.id) in a primary key index is deprecated. (Table.php:183 called by Table.php:200, https://github.com/doctrine/dbal/pull/6787, package doctrine/dbal)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Using nullable columns (apie_resource__default_order.id) in a primary key index is deprecated. (Table.php:183 called by Table.php:200, https://github.com/doctrine/dbal/pull/6787, package doctrine/dbal)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\DoctrineEntityDatalayerTest::it_can_store_a_domain_object_with_auto_migration",
+        "message": "Using nullable columns (apie_resource__default_order__order_lines.id) in a primary key index is deprecated. (Table.php:183 called by Table.php:200, https://github.com/doctrine/dbal/pull/6787, package doctrine/dbal)",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\DoctrineEntityDatalayer\\Query\\EntityQueryTest::it_can_create_sql_with_text_search",
+        "message": "Use of \"static\" in callables is deprecated",
+        "count": 5
+    },
+    {
+        "location": "Apie\\Tests\\McpServer\\Tool\\ToolFactoryTest::it_can_create_object_tool",
+        "message": "Method ReflectionParameter::getClass() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\McpServer\\Tool\\ToolFactoryTest::it_can_create_object_tool",
+        "message": "Method ReflectionParameter::isArray() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\McpServer\\Tool\\ToolFactoryTest::it_can_create_object_tool",
+        "message": "Method ReflectionParameter::isCallable() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\McpServer\\Tool\\ToolFactoryTest::it_can_list_tools",
+        "message": "Method ReflectionParameter::getClass() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\McpServer\\Tool\\ToolFactoryTest::it_can_list_tools",
+        "message": "Method ReflectionParameter::isArray() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\McpServer\\Tool\\ToolFactoryTest::it_can_list_tools",
+        "message": "Method ReflectionParameter::isCallable() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\RestApi\\Controllers\\OpenApiDocumentationControllerTest::it_can_create_an_openapi_schema",
+        "message": "Method ReflectionParameter::getClass() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\RestApi\\Controllers\\OpenApiDocumentationControllerTest::it_can_create_an_openapi_schema",
+        "message": "Method ReflectionParameter::isArray() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\RestApi\\Controllers\\OpenApiDocumentationControllerTest::it_can_create_an_openapi_schema",
+        "message": "Method ReflectionParameter::isCallable() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 4
+    },
+    {
+        "location": "Apie\\Tests\\SchemaGenerator\\ComponentsBuilderFactoryTest::i_can_have_a_schema_of_value_object",
+        "message": "Method ReflectionParameter::getClass() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\SchemaGenerator\\ComponentsBuilderFactoryTest::i_can_have_a_schema_of_value_object",
+        "message": "Method ReflectionParameter::isArray() is deprecated since 8.0, use ReflectionParameter::getType() instead",
+        "count": 1
+    },
+    {
+        "location": "Apie\\Tests\\SchemaGenerator\\ComponentsBuilderFactoryTest::i_can_have_a_schema_of_value_object",
+        "message": "Method ReflectionParameter::isCallable() is deprecated since 8.0, use ReflectionParameter::getType() instead",
         "count": 1
     }
 ]

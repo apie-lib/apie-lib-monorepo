@@ -54,7 +54,7 @@ class ItemSet implements ItemListInterface
     public function first(): mixed
     {
         if (empty($this->internal)) {
-            throw ObjectIsEmpty::createForList();
+            throw ObjectIsEmpty::createForSet();
         }
         return reset($this->internal);
     }
@@ -72,7 +72,7 @@ class ItemSet implements ItemListInterface
      */
     public function getIterator(): Iterator
     {
-        return new ArrayIterator(array_values($this->internal));
+        return new ArrayIterator($this->toArray());
     }
 
     /**
@@ -80,7 +80,7 @@ class ItemSet implements ItemListInterface
      */
     public function jsonSerialize(): array
     {
-        return array_values($this->internal);
+        return $this->toArray();
     }
 
     public function offsetExists(mixed $offset): bool
@@ -122,7 +122,7 @@ class ItemSet implements ItemListInterface
             if ($value instanceof EntityInterface) {
                 return get_debug_type($value) . ',' . $value->getId()->toNative();
             }
-            return get_debug_type($value) . ',' . spl_object_hash($value);
+            return get_debug_type($value) . ',' . spl_object_id($value);
         }
     }
 

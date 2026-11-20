@@ -5,6 +5,7 @@ use Apie\Common\ActionDefinitions\ActionDefinitionInterface;
 use Apie\Common\ActionDefinitions\CreateResourceActionDefinition;
 use Apie\Common\ActionDefinitions\ReplaceResourceActionDefinition;
 use Apie\Common\Actions\CreateObjectAction;
+use Apie\Common\Actions\ReplaceObjectAction;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\Core\Entities\EntityInterface;
 use Apie\Core\Enums\RequestMethod;
@@ -21,15 +22,16 @@ class CreateResourceRouteDefinition extends AbstractRestApiRouteDefinition
         if ($actionDefinition instanceof CreateResourceActionDefinition) {
             return new self($actionDefinition->getResourceName(), $actionDefinition->getBoundedContextId());
         }
-        // TODO: should become PUT
+
         if ($actionDefinition instanceof ReplaceResourceActionDefinition) {
             return new self($actionDefinition->getResourceName(), $actionDefinition->getBoundedContextId(), true);
         }
+
         return null;
     }
 
     /**
-     * @param ReflectionClass<EntityInterface> $className
+     * @param ReflectionClass<covariant EntityInterface> $className
      */
     public function __construct(ReflectionClass $className, BoundedContextId $boundedContextId, private bool $put = false)
     {
@@ -38,7 +40,7 @@ class CreateResourceRouteDefinition extends AbstractRestApiRouteDefinition
 
     public function getMethod(): RequestMethod
     {
-        return RequestMethod::POST;
+        return /*$this->put ? RequestMethod::PUT : */RequestMethod::POST;
     }
 
     public function getOperationId(): string
@@ -53,6 +55,6 @@ class CreateResourceRouteDefinition extends AbstractRestApiRouteDefinition
 
     public function getAction(): string
     {
-        return CreateObjectAction::class;
+        return $this->put ? ReplaceObjectAction::class : CreateObjectAction::class;
     }
 }

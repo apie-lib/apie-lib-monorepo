@@ -14,4 +14,22 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+Common constrained text value objects: `FirstName`, `LastName`, `CompanyName` and
+`SmallDatabaseText` (any trimmed text up to 255 characters, indexed for search), plus
+`StrongPassword` and `EncryptedPassword` for password handling.
+
+### Standalone usage
+Install it with:
+```bash
+composer require apie/text-value-objects
+```
+
+```php
+use Apie\TextValueObjects\FirstName;
+
+$firstName = new FirstName('Ada');
+echo $firstName->toString();
+```
+
+Each value object validates its constraints during construction (e.g. `StrongPassword` enforces
+minimum length and character variety via a regular expression) and is usable without a framework.

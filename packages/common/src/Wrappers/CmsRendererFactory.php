@@ -8,6 +8,7 @@ use Apie\Core\Context\ApieContext;
 use Apie\HtmlBuilders\Assets\AssetManager;
 use Apie\HtmlBuilders\Interfaces\ComponentInterface;
 use Apie\HtmlBuilders\Interfaces\ComponentRendererInterface;
+use Symfony\UX\Icons\Twig\UXIconRuntime;
 
 final class CmsRendererFactory
 {
@@ -15,16 +16,27 @@ final class CmsRendererFactory
     {
     }
 
-    public static function createRenderer(?AssetManager $assetManager): ComponentRendererInterface
-    {
+    public static function createRenderer(
+        UXIconRuntime $runtimeLoader,
+        ?AssetManager $assetManager,
+    ): ComponentRendererInterface {
         if (class_exists(IonicDesignSystemLayout::class)) {
-            return IonicDesignSystemLayout::createRenderer($assetManager);
+            return IonicDesignSystemLayout::createRenderer(
+                $runtimeLoader,
+                $assetManager,
+            );
         }
         if (class_exists(GraphiteDesignSystemLayout::class)) {
-            return GraphiteDesignSystemLayout::createRenderer($assetManager);
+            return GraphiteDesignSystemLayout::createRenderer(
+                $runtimeLoader,
+                $assetManager,
+            );
         }
         if (class_exists(UglyDesignSystemLayout::class)) {
-            return UglyDesignSystemLayout::createRenderer($assetManager);
+            return UglyDesignSystemLayout::createRenderer(
+                $runtimeLoader,
+                $assetManager,
+            );
         }
         // fallback is just a message displaying you need to install a cms renderer package.
         $contents = file_get_contents(__DIR__ . '/../../resources/html/install-instructions-cms-renderer.html');

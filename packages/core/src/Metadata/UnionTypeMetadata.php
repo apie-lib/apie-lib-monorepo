@@ -21,6 +21,17 @@ class UnionTypeMetadata implements NullableMetadataInterface
         $this->metadata = $metadata;
     }
 
+    public function getDisplayName(): string
+    {
+        return implode(
+            '|',
+            array_map(
+                fn (MetadataInterface $meta) => $meta->getDisplayName(),
+                $this->metadata
+            )
+        );
+    }
+
     public function toClass(): ?ReflectionClass
     {
         $first = true;
@@ -39,6 +50,21 @@ class UnionTypeMetadata implements NullableMetadataInterface
             }
         }
         return null;
+    }
+
+    public function toSkipNull(): MetadataInterface
+    {
+        $metadata = [];
+        foreach ($this->metadata as $submetadata) {
+            if ($submetadata instanceof ScalarMetadata && $submetadata->toScalarType() === ScalarType::NULLVALUE) {
+                continue;
+            }
+            $metadata[] = $submetadata;
+        }
+        if (count($metadata) === 1) {
+            return $metadata[0];
+        }
+        return new UnionTypeMetadata(...$metadata);
     }
 
     /**
@@ -71,6 +97,16 @@ class UnionTypeMetadata implements NullableMetadataInterface
             $requiredFields[] = array_combine($required, $required);
         }
         return new StringList($requiredFields ? array_intersect_key(...$requiredFields) : []);
+    }
+
+    public function allowsNull(): bool
+    {
+        foreach ($this->metadata as $objectData) {
+            if ($objectData->toScalarType() === ScalarType::NULLVALUE) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function toScalarType(bool $ignoreNull = false): ScalarType

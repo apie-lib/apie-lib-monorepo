@@ -7,7 +7,6 @@ use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Datalayers\Lists\PaginatedResult;
 use Apie\Core\Datalayers\Search\QuerySearch;
 use Apie\Core\Datalayers\ValueObjects\LazyLoadedListIdentifier;
-use Apie\Core\Exceptions\InvalidTypeException;
 use Apie\Core\Lists\ItemHashmap;
 use Apie\Core\Lists\ItemList;
 use Apie\Core\Permissions\PermissionInterface;
@@ -58,7 +57,7 @@ class SerializerTest extends TestCase
 
     #[\PHPUnit\Framework\Attributes\DataProvider('denormalizeProvider')]
     #[\PHPUnit\Framework\Attributes\Test]
-    public function it_can_denormalize_objects(object $expected, mixed $input, string $desiredType, ApieContext $apieContext)
+    public function it_can_denormalize_objects(mixed $expected, mixed $input, string $desiredType, ApieContext $apieContext)
     {
         $serializer = $this->givenASerializer();
         $this->assertEquals($expected, $serializer->denormalizeNewObject($input, $desiredType, $apieContext));
@@ -213,6 +212,20 @@ class SerializerTest extends TestCase
             new SerializedPermission('test'),
             'test',
             PermissionInterface::class,
+            new ApieContext()
+        ];
+
+        yield 'Union type' => [
+            42,
+            42,
+            'int|string',
+            new ApieContext()
+        ];
+
+        yield 'Union type (reversed order)' => [
+            42,
+            42,
+            'string|int',
             new ApieContext()
         ];
 
@@ -388,7 +401,7 @@ class SerializerTest extends TestCase
     public function empty_enums_always_fail()
     {
         $serializer = $this->givenASerializer();
-        $this->expectException(InvalidTypeException::class);
+        $this->expectException(\LogicException::class);
         $serializer->denormalizeNewObject(null, EmptyEnum::class, new ApieContext());
     }
 

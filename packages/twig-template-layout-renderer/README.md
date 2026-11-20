@@ -14,4 +14,26 @@ This package is part of the [Apie](https://github.com/apie-lib) library.
 The code is maintained in a monorepo, so PR's need to be sent to the [monorepo](https://github.com/apie-lib/apie-lib-monorepo/pulls)
 
 ## Documentation
-This package is used internally in Apie or no documentation is available right now
+Renders Apie layouts and components with Twig.
+
+### Standalone usage
+Install it with:
+```bash
+composer require apie/twig-template-layout-renderer
+```
+
+Create a `Twig\Environment`, register the Apie Twig extension, and use
+`Apie\TwigTemplateLayoutRenderer\TwigRenderer` to render the selected layout. Custom layouts can
+be scaffolded with `Apie\TwigTemplateLayoutRenderer\Skeleton\ClassCodeGenerator`. The
+renderer can be used from a standalone Twig application; the console command and
+service provider are optional conveniences.
+
+### Symfony integration
+Via `apie/apie-bundle`, `twig_template_layout_renderer.yaml` registers
+`Apie\TwigTemplateLayoutRenderer\Command\CreateCustomLayoutRendererCommand` as a
+`bin/console` command (backed by `ClassCodeGenerator`) to scaffold a new custom layout class.
+
+### Laravel integration
+Via `apie/laravel-apie`, the generated
+`Apie\TwigTemplateLayoutRenderer\TwigTemplateLayoutRendererServiceProvider` registers the same
+`ClassCodeGenerator` and exposes the layout-scaffolding command as an Artisan command.

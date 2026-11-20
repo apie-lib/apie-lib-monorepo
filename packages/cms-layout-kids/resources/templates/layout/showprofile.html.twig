@@ -1,0 +1,37 @@
+{% set fields = property('fields') %}
+{% set username = fields.username ?? fields.fullName ?? fields.name ?? fields.lastName ?? fields.firstName ?? fields.email ?? 'user'  %}
+{% if property('simple') %}
+<button onclick="toggleUserMenu()" class="wiggle flex items-center gap-3 rounded-2xl
+                               border-3 border-pink-400 bg-pink-200 px-3 py-2
+                               font-black shadow-md">
+
+    <div class="flex h-10 w-10 items-center justify-center
+                                    rounded-full border-2 border-white bg-yellow-300 text-xl">
+        <img src="{{ property('gravatarUrl') }}?s=80&amp;d=mp" align="right" border="0"/>
+    </div>
+
+    <div class="hidden text-left sm:block">
+
+        <div class="text-sm font-black">
+            {{ username }}
+        </div>
+        <div class="flex items-center gap-1 text-xs text-green-700">
+            <span class="h-2 w-2 rounded-full bg-green-500"></span>
+            Logged in
+        </div>
+    </div>
+
+    <span>▼</span>
+</button>
+{% else %}
+    <div class="bg-pink-300 p-4 text-center">
+        <div class="text-4xl"><img src="{{ property('gravatarUrl') }}?s=80&amp;d=mp" align="right" border="0"/></div>
+        <p class="font-black">{{ username }}</p>
+        {% if fields.email %}
+        <p class="text-xs font-bold text-pink-900">
+            {{ fields.email }}
+        </p>
+        {% endif %}
+    </div>
+{% endif %}
+

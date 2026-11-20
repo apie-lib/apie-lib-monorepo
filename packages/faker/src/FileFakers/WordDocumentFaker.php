@@ -30,9 +30,14 @@ final class WordDocumentFaker implements ApieFileFaker
             sendHttpHeaders: false,
             outputName: $originalFilename,
             contentType: $mimeType,
-            defaultEnableZeroHeader: true,
+            defaultEnableZeroHeader: false,
+            enableZip64: false,
         );
-        foreach (Finder::create()->files()->ignoreDotFiles(false)->in(__DIR__ . '/../../fixtures/docx') as $file) {
+        // Word expects [Content_Types].xml to be the first entry.
+        $finder = Finder::create()->files()->ignoreDotFiles(false)->in(__DIR__ . '/../../fixtures/docx')
+            ->sort(fn (\SplFileInfo $a, \SplFileInfo $b) => [$a->getFilename() !== '[Content_Types].xml', $a->getPathname()]
+                <=> [$b->getFilename() !== '[Content_Types].xml', $b->getPathname()]);
+        foreach ($finder as $file) {
             $zipstream->addFileFromPath($file->getRelativePathname(), $file->getRealPath());
         }
         $documentXML = file_get_contents(__DIR__ . '/../../fixtures/document.xml');

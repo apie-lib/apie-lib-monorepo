@@ -18,28 +18,43 @@ use Apie\Serializer\Interfaces\DenormalizerInterface;
 use Apie\Serializer\Interfaces\NormalizerInterface;
 use Apie\Serializer\Lists\NormalizerList;
 use Apie\Serializer\Normalizers\AliasDenormalizer;
+use Apie\Serializer\Normalizers\BcMathNormalizer;
 use Apie\Serializer\Normalizers\BooleanNormalizer;
 use Apie\Serializer\Normalizers\DateTimeNormalizer;
 use Apie\Serializer\Normalizers\DateTimeZoneNormalizer;
+use Apie\Serializer\Normalizers\DomNormalizer;
 use Apie\Serializer\Normalizers\DoNotChangeFileNormalizer;
+use Apie\Serializer\Normalizers\DurationNormalizer;
 use Apie\Serializer\Normalizers\EnumNormalizer;
+use Apie\Serializer\Normalizers\FfiCdataNormalizer;
+use Apie\Serializer\Normalizers\FfiCtypeNormalizer;
 use Apie\Serializer\Normalizers\FloatNormalizer;
+use Apie\Serializer\Normalizers\GmpNormalizer;
 use Apie\Serializer\Normalizers\IdentifierNormalizer;
 use Apie\Serializer\Normalizers\IntegerNormalizer;
 use Apie\Serializer\Normalizers\ItemListNormalizer;
 use Apie\Serializer\Normalizers\PaginatedResultNormalizer;
 use Apie\Serializer\Normalizers\PermissionListNormalizer;
 use Apie\Serializer\Normalizers\PolymorphicObjectNormalizer;
+use Apie\Serializer\Normalizers\ReflectionClassNormalizer;
+use Apie\Serializer\Normalizers\ReflectionMethodNormalizer;
 use Apie\Serializer\Normalizers\ReflectionTypeNormalizer;
 use Apie\Serializer\Normalizers\RelationNormalizer;
 use Apie\Serializer\Normalizers\ResourceNormalizer;
+use Apie\Serializer\Normalizers\SelfNormalizer;
+use Apie\Serializer\Normalizers\SimpleXMLElementNormalizer;
+use Apie\Serializer\Normalizers\StreamBucketNormalizer;
 use Apie\Serializer\Normalizers\StringableCompositeValueObjectNormalizer;
 use Apie\Serializer\Normalizers\StringNormalizer;
+use Apie\Serializer\Normalizers\TranslationNormalizer;
+use Apie\Serializer\Normalizers\UnionDenormalizer;
 use Apie\Serializer\Normalizers\UploadedFileNormalizer;
+use Apie\Serializer\Normalizers\UriNormalizer;
 use Apie\Serializer\Normalizers\ValueObjectNormalizer;
 use Apie\Serializer\Relations\EmbedRelationInterface;
 use Apie\Serializer\Relations\NoRelationEmbedded;
 use Exception;
+use LogicException;
 use Psr\Http\Message\UploadedFileInterface;
 use ReflectionClass;
 use ReflectionMethod;
@@ -59,9 +74,14 @@ class Serializer
     {
         return new self(new NormalizerList([
             ...$additionalNormalizers,
+
             new AliasDenormalizer(),
             new PaginatedResultNormalizer(),
             new DoNotChangeFileNormalizer(),
+            new DomNormalizer(),
+            new SelfNormalizer(),
+
+            new TranslationNormalizer(),
             new PermissionListNormalizer(),
             new RelationNormalizer(),
             new UploadedFileNormalizer(),
@@ -69,7 +89,15 @@ class Serializer
             new StringableCompositeValueObjectNormalizer(),
             new PolymorphicObjectNormalizer(),
             new DateTimeNormalizer(),
+            new DurationNormalizer(),
+            new UriNormalizer(),
+            new FfiCdataNormalizer(),
+            new FfiCtypeNormalizer(),
+            new SimpleXMLElementNormalizer(),
+            new GmpNormalizer(),
+            new BcMathNormalizer(),
             new DateTimeZoneNormalizer(),
+            new StreamBucketNormalizer(),
             new ResourceNormalizer(),
             new EnumNormalizer(),
             new ValueObjectNormalizer(),
@@ -78,7 +106,10 @@ class Serializer
             new FloatNormalizer(),
             new BooleanNormalizer(),
             new ItemListNormalizer(),
+            new ReflectionClassNormalizer(),
             new ReflectionTypeNormalizer(),
+            new ReflectionMethodNormalizer(),
+            new UnionDenormalizer(),
         ]));
     }
 
@@ -112,14 +143,14 @@ class Serializer
             return $isList ? new ItemList($returnValue) : new ItemHashmap($returnValue);
         }
         if (!is_object($object)) {
-            if (in_array(get_debug_type($object), ['resource', 'resource (closed)'])) {
+            $type = get_debug_type($object);
+            if ($type === 'resource' || str_starts_with($type, 'resource ')) {
                 throw new InvalidTypeException($object, 'primitive');
             }
             return $object;
         }
         $metadata = MetadataFactory::getResultMetadata(new ReflectionClass($object), $apieContext);
         $returnValue = [];
-
         foreach ($metadata->getHashmap()->filterOnContext($apieContext, getters: true) as $fieldName => $metadata) {
             if ($metadata->isField() && $fieldFilter->isFiltered($fieldName)) {
                 $returnValue[$fieldName] = $serializerContext->normalizeChildElement(
@@ -143,6 +174,18 @@ class Serializer
     }
 
     public function denormalizeNewObject(string|int|float|bool|ItemList|ItemHashmap|array|null|UploadedFileInterface $object, string $desiredType, ApieContext $apieContext): mixed
+    {
+        try {
+            return $this->doDenormalizeNewObject($object, $desiredType, $apieContext);
+        } catch (Exception $error) {
+            if ($object === null) {
+                throw new LogicException('Value is required.', 0, $error);
+            }
+            throw $error;
+        }
+    }
+
+    private function doDenormalizeNewObject(string|int|float|bool|ItemList|ItemHashmap|array|null|UploadedFileInterface $object, string $desiredType, ApieContext $apieContext): mixed
     {
         if (is_array($object)) {
             $isList = false;

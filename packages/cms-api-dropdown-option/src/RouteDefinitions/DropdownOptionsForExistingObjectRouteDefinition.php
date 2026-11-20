@@ -21,6 +21,11 @@ class DropdownOptionsForExistingObjectRouteDefinition extends AbstractRestApiRou
         return new UrlRouteDefinition($this->class->getShortName() . '/{id}/dropdown-options/{property}');
     }
 
+    public function getMainMenuUri(): ?UrlRouteDefinition
+    {
+        return null;
+    }
+
     public function getController(): string
     {
         return DropdownOptionController::class;

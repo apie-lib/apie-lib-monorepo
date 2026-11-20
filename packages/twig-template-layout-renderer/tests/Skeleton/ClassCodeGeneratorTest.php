@@ -28,8 +28,7 @@ class ClassCodeGeneratorTest extends TestCase
         $testItem = new ClassCodeGenerator();
         $actual = $testItem->generateLayoutClass(
             new Identifier('test'),
-            new EntityNamespace('Example\\Namespace'),
-            '1.2.3'
+            new EntityNamespace('Example\\Namespace')
         );
         $expectedFile = __DIR__ . '/../../fixtures/expected-layout.phpinc';
         // file_put_contents($expectedFile, $actual);
@@ -42,8 +41,7 @@ class ClassCodeGeneratorTest extends TestCase
         $testItem = new ClassCodeGenerator();
         $actual = $testItem->generateLayoutTestClass(
             new Identifier('test'),
-            new EntityNamespace('Example\\Namespace'),
-            '1.2.3'
+            new EntityNamespace('Example\\Namespace')
         );
         $expectedFile = __DIR__ . '/../../fixtures/expected-layout-test.phpinc';
         // file_put_contents($expectedFile, $actual);

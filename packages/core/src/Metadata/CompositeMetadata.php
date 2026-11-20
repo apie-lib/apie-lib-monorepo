@@ -21,14 +21,19 @@ final class CompositeMetadata implements MetadataInterface
     private ?StringList $requiredFields = null;
 
     /**
-     * @param ReflectionClass<ValueObjectInterface> $class
+     * @param ReflectionClass<covariant object> $class
      */
     public function __construct(private readonly MetadataFieldHashmap $hashmap, private ?ReflectionClass $class = null)
     {
     }
 
+    public function getDisplayName(): string
+    {
+        return $this->class?->getShortName() ?? 'stdClass';
+    }
+
     /**
-     * @return ReflectionClass<ValueObjectInterface>
+     * @return ReflectionClass<covariant object>
      */
     public function toClass(): ?ReflectionClass
     {

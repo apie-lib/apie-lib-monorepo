@@ -1,18 +1,21 @@
 <?php
 namespace Apie\IntegrationTests\Applications\Laravel;
 
+use Apie\AiInstructor\AiClient;
 use Apie\Common\Events\AddAuthenticationCookie;
 use Apie\Common\IntegrationTestLogger;
 use Apie\Common\ValueObjects\DecryptedAuthenticatedUser;
 use Apie\Common\Wrappers\TextEncrypter;
 use Apie\Core\Other\FileWriterInterface;
 use Apie\Core\Other\MockFileWriter;
+use Apie\IntegrationTests\Applications\MockFactory;
 use Apie\IntegrationTests\Concerns\ItRunsApplications;
 use Apie\IntegrationTests\Config\ApplicationConfig;
 use Apie\IntegrationTests\Config\BoundedContextConfig;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\IntegrationTests\Requests\TestRequestInterface;
 use Apie\LaravelApie\ApieServiceProvider;
+use Apie\LaravelApie\Config\ValidateAndSanitizeConfig;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
@@ -24,7 +27,6 @@ use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Component\Console\Application;
-use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -40,7 +42,8 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         private readonly ApplicationConfig $applicationConfig,
         private readonly BoundedContextConfig $boundedContextConfig
     ) {
-        parent::__construct('Laravel application');
+        // PHPUnit resolves this object as the current test when a deprecation/warning is triggered, so the name must be a real method.
+        parent::__construct('bootApplication');
     }
 
     public function getConsoleApplication(): Application
@@ -71,6 +74,18 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                 'apie.scan_bounded_contexts',
                 []
             );
+            // this has to be explicit because of some code execution order issues
+            $config->set('apie.enable_ai_instructor', true);
+            $config->set('apie.enable_mcp_server', true);
+            $config->set('apie.enable_webdav', true);
+            $config->set(
+                'apie.ai',
+                [
+                    'base_url' => 'http://localbost:11434',
+                    'api_key' => 'test',
+                ]
+            );
+            $config->set('apie.graphql.base_url', 'graphql');
             $config->set(
                 'apie.datalayers',
                 [
@@ -87,6 +102,12 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
                     ]
                 ]
             );
+            $config->set('apie.remote_mcp_path', '/mcp');
+            $config->set('apie.enable_graphql', true);
+            $config->set('apie.open_api.max_enum_size', 500);
+            $rawConfig = $config->get('apie');
+            $processedConfig = ValidateAndSanitizeConfig::process($rawConfig);
+            $config->set('apie', $processedConfig);
         });
     }
 
@@ -104,7 +125,12 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
             ]);
         }
         $this->app->instance(FileWriterInterface::class, new MockFileWriter());
+        $this->app->instance(
+            AiClient::class,
+            MockFactory::createMockAiClient()
+        );
         unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+        $this->app->boot();
     }
 
     /**
@@ -139,16 +165,20 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
 
     private function handleResponse(HttpFoundationResponse $laravelResponse): ResponseInterface
     {
-        $cookie = $laravelResponse->headers->getCookies(
-            ResponseHeaderBag::COOKIES_ARRAY
-        )[""]["/"][AddAuthenticationCookie::COOKIE_NAME] ?? null;
-        if ($cookie !== null) {
-            $cookie = Cookie::fromString($cookie)->getValue();
-        }
-        if ($cookie) {
-            $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME] = $cookie;
-        } else {
-            unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+        foreach ($laravelResponse->headers->getCookies(ResponseHeaderBag::COOKIES_FLAT) as $cookie) {
+            if ($cookie->getName() === AddAuthenticationCookie::COOKIE_NAME) {
+                if ($cookie->isCleared()) {
+                    unset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
+                } else {
+                    $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME] = $cookie->getValue();
+                }
+                continue;
+            }
+            if ($cookie->isCleared()) {
+                unset($this->defaultCookies[$cookie->getName()]);
+            } else {
+                $this->defaultCookies[$cookie->getName()] = $cookie->getValue();
+            }
         }
 
         $psrFactory = new NyholmPsr17Factory();
@@ -167,9 +197,7 @@ class LaravelTestApplication extends TestCase implements TestApplicationInterfac
         $factory = new HttpFoundationFactory();
         $sfRequest = $factory->createRequest($psrRequest);
         $laravelRequest = Request::createFromBase($sfRequest);
-        if (isset($this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME])) {
-            $laravelRequest->cookies->set(AddAuthenticationCookie::COOKIE_NAME, $this->defaultCookies[AddAuthenticationCookie::COOKIE_NAME]);
-        }
+        $laravelRequest->cookies->add($this->defaultCookies);
         $laravelResponse = $this->app->make(HttpKernel::class)->handle($laravelRequest);
         return $this->handleResponse($laravelResponse);
     }

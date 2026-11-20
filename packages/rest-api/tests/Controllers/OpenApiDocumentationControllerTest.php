@@ -6,6 +6,7 @@ use Apie\Common\ContextBuilderFactory;
 use Apie\Core\BoundedContext\BoundedContext;
 use Apie\Core\BoundedContext\BoundedContextHashmap;
 use Apie\Core\BoundedContext\BoundedContextId;
+use Apie\Core\Datalayers\ApieDatalayer;
 use Apie\Core\Lists\ReflectionClassList;
 use Apie\Core\Lists\ReflectionMethodList;
 use Apie\Fixtures\Actions\StaticActionExample;
@@ -13,6 +14,7 @@ use Apie\Fixtures\Entities\Order;
 use Apie\Fixtures\Entities\UserWithAddress;
 use Apie\Fixtures\Entities\UserWithAutoincrementKey;
 use Apie\RestApi\Controllers\OpenApiDocumentationController;
+use Apie\RestApi\EventListeners\OpenApiOperationAddedEventSubscriber;
 use Apie\RestApi\OpenApi\OpenApiGenerator;
 use Apie\RestApi\RouteDefinitions\RestApiRouteDefinitionProvider;
 use Apie\SchemaGenerator\ComponentsBuilderFactory;
@@ -24,6 +26,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\NullLogger;
 use ReflectionClass;
 use ReflectionMethod;
+use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class OpenApiDocumentationControllerTest extends TestCase
@@ -35,14 +38,18 @@ class OpenApiDocumentationControllerTest extends TestCase
             $boundedContextHashmap,
             DecoderHashmap::create()
         );
+        $eventDispatcher = new EventDispatcher();
+        $eventDispatcher->addSubscriber(
+            new OpenApiOperationAddedEventSubscriber($this->createMock(ApieDatalayer::class))
+        );
         return new OpenApiDocumentationController(
             $boundedContextHashmap,
             new OpenApiGenerator(
                 $contextBuilder,
                 ComponentsBuilderFactory::createComponentsBuilderFactory(),
-                new RestApiRouteDefinitionProvider(new ActionDefinitionProvider(), new NullLogger()),
+                new RestApiRouteDefinitionProvider(new ActionDefinitionProvider(new ServiceLocator([])), new NullLogger()),
                 Serializer::create(),
-                new EventDispatcher(),
+                $eventDispatcher,
             )
         );
     }

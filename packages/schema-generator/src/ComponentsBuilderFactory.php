@@ -7,11 +7,13 @@ use Apie\SchemaGenerator\SchemaProviders\AliasSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\DateTimeSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\DateTimeZoneSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\DateValueObjectSchemaProvider;
+use Apie\SchemaGenerator\SchemaProviders\DurationSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\ItemHashmapSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\ItemListSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\ItemSetSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\MetadataSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\PolymorphicEntitySchemaProvider;
+use Apie\SchemaGenerator\SchemaProviders\PredefinedObjectSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\SchemaAttributeProvider;
 use Apie\SchemaGenerator\SchemaProviders\StringValueObjectSchemaProvider;
 use Apie\SchemaGenerator\SchemaProviders\UploadedFileSchemaProvider;
@@ -33,7 +35,7 @@ class ComponentsBuilderFactory
         $this->schemaProviders = $schemaProviders;
     }
 
-    public static function createComponentsBuilderFactory(): self
+    public static function createComponentsBuilderFactory(?int $maxEnumSize = 100): self
     {
         return new self(
             new SchemaAttributeProvider(),
@@ -46,8 +48,10 @@ class ComponentsBuilderFactory
             new DateTimeSchemaProvider(),
             new DateTimeZoneSchemaProvider(),
             new DateValueObjectSchemaProvider(),
-            new StringValueObjectSchemaProvider(),
+            new StringValueObjectSchemaProvider($maxEnumSize ?? 100),
             new ValueObjectSchemaProvider(),
+            new DurationSchemaProvider(),
+            new PredefinedObjectSchemaProvider(),
             new MetadataSchemaProvider(),
         );
     }

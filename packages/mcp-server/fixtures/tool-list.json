@@ -1,0 +1,989 @@
+{
+    "tools": [
+        {
+            "name": "create-object-default-user-with-address",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "address"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "nullable": true,
+                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                    },
+                    "password": {
+                        "type": "string",
+                        "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\-_\\+\\.]{6,42}$"
+                    },
+                    "address": {
+                        "type": "object",
+                        "required": [
+                            "street",
+                            "streetNumber",
+                            "zipcode",
+                            "city"
+                        ],
+                        "description": "Represents an address which can verify if the zipcode is correct with some API call",
+                        "properties": {
+                            "street": {
+                                "type": "string",
+                                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            },
+                            "streetNumber": {
+                                "type": "string",
+                                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            },
+                            "zipcode": {
+                                "type": "string",
+                                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            },
+                            "city": {
+                                "type": "string",
+                                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            }
+                        }
+                    }
+                }
+            },
+            "description": "Creates an instance of UserWithAddress",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                "x-fields": {
+                    "create": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAddress",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "replace-object-default-order",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "orderLines"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                    },
+                    "optionalTags": {
+                        "type": "array",
+                        "nullable": true,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "orderLines": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "id",
+                                "price"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                },
+                                "price": {
+                                    "type": "string",
+                                    "pattern": "^-?([0-9]|[1-9][0-9]*)\\.[0-9]{2}$"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "description": "Creates an instance of Order",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                "x-fields": {
+                    "create": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "get-object-default-user-with-address",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Gets a resource of UserWithAddress with a specific id",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                "x-fields": {
+                    "get": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAddress",
+                    "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "get-object-default-order",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Gets a resource of Order with a specific id",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                "x-fields": {
+                    "get": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "all-object-default-user-with-address",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            },
+            "description": "Gets a list of resource that are an instance of UserWithAddress",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                "x-fields": {
+                    "all": true,
+                    "get": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAddress",
+                    "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "all-object-default-order",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            },
+            "description": "Gets a list of resource that are an instance of Order",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                "x-fields": {
+                    "all": true,
+                    "get": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "modify-object-default-user-with-address",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "password": {
+                        "type": "string",
+                        "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\-_\\+\\.]{6,42}$"
+                    },
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Modifies an instance of UserWithAddress",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                "x-fields": {
+                    "edit": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAddress",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "modify-object-default-order",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "optionalTags": {
+                        "type": "array",
+                        "nullable": true,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Modifies an instance of Order",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                "x-fields": {
+                    "edit": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "remove-object-default-user-with-address",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Removes an instance of UserWithAddress",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RemoveObjectAction",
+                "x-fields": {
+                    "edit": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAddress",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RemoveObjectAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "remove-object-default-order",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Removes an instance of Order",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RemoveObjectAction",
+                "x-fields": {
+                    "edit": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RemoveObjectAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "run-global-default-static-action-example-method-secret-code",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            },
+            "description": "Calls method secretCode and returns return value.",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RunAction",
+                "x-method-class": "Apie\\Fixtures\\Actions\\StaticActionExample",
+                "x-method": "secretCode",
+                "x-fields": {
+                    "method-call": true,
+                    "serviceClass": "Apie\\Fixtures\\Actions\\StaticActionExample",
+                    "methodName": "secretCode",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "run-global-default-background-process-example-method-create-background-process",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "payload"
+                ],
+                "properties": {
+                    "payload": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "description": "Calls method createBackgroundProcess and returns return value.",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RunAction",
+                "x-method-class": "Apie\\Fixtures\\Actions\\BackgroundProcessExample",
+                "x-method": "createBackgroundProcess",
+                "x-fields": {
+                    "method-call": true,
+                    "serviceClass": "Apie\\Fixtures\\Actions\\BackgroundProcessExample",
+                    "methodName": "createBackgroundProcess",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "run-global-default-fake-login-method-verify-authentication",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "username",
+                    "password"
+                ],
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Calls method verifyAuthentication and returns return value.",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RunAction",
+                "x-method-class": "Apie\\Fixtures\\Actions\\FakeLogin",
+                "x-method": "verifyAuthentication",
+                "x-fields": {
+                    "method-call": true,
+                    "serviceClass": "Apie\\Fixtures\\Actions\\FakeLogin",
+                    "methodName": "verifyAuthentication",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RunAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "run-object-default-user-with-address-method-verify-authentication",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "username",
+                    "password"
+                ],
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Runs method verifyAuthentication on a UserWithAddress with a specific id",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                "x-method-class": "Apie\\Fixtures\\Entities\\UserWithAddress",
+                "x-method": "verifyAuthentication",
+                "x-fields": {
+                    "get": true,
+                    "resource-call": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAddress",
+                    "methodClass": "Apie\\Fixtures\\Entities\\UserWithAddress",
+                    "methodName": "verifyAuthentication",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "run-object-default-order-method-add-order-line",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "orderLines"
+                ],
+                "properties": {
+                    "orderLines": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "id",
+                                "price"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                                },
+                                "price": {
+                                    "type": "string",
+                                    "pattern": "^-?([0-9]|[1-9][0-9]*)\\.[0-9]{2}$"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "description": "Adds orderLine to Order",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                "x-method-class": "Apie\\Fixtures\\Entities\\Order",
+                "x-method": "addOrderLine",
+                "x-fields": {
+                    "get": true,
+                    "resource-call": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "methodClass": "Apie\\Fixtures\\Entities\\Order",
+                    "methodName": "addOrderLine",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "run-object-default-order-method-remove-order-line",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                    }
+                }
+            },
+            "description": "Removes orderLine from Order",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                "x-method-class": "Apie\\Fixtures\\Entities\\Order",
+                "x-method": "removeOrderLine",
+                "x-fields": {
+                    "get": true,
+                    "resource-call": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "methodClass": "Apie\\Fixtures\\Entities\\Order",
+                    "methodName": "removeOrderLine",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "run-object-default-order-method-provide-allowed-methods",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            },
+            "description": "Runs method provideAllowedMethods on a Order with a specific id",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                "x-method-class": "Apie\\Fixtures\\Entities\\Order",
+                "x-method": "provideAllowedMethods",
+                "x-fields": {
+                    "get": true,
+                    "resource-call": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "methodClass": "Apie\\Fixtures\\Entities\\Order",
+                    "methodName": "provideAllowedMethods",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "run-object-default-order-method-accept-order",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            },
+            "description": "Runs method acceptOrder on a Order with a specific id",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\RunItemMethodAction",
+                "x-method-class": "Apie\\Fixtures\\Entities\\Order",
+                "x-method": "acceptOrder",
+                "x-fields": {
+                    "get": true,
+                    "resource-call": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Order",
+                    "methodClass": "Apie\\Fixtures\\Entities\\Order",
+                    "methodName": "acceptOrder",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\RunItemMethodAction"
+                },
+                "x-bounded-context-id": "default"
+            }
+        },
+        {
+            "name": "create-object-other-user-with-autoincrement-key",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "address"
+                ],
+                "properties": {
+                    "password": {
+                        "type": "string",
+                        "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\-_\\+\\.]{6,42}$"
+                    },
+                    "address": {
+                        "type": "object",
+                        "required": [
+                            "street",
+                            "streetNumber",
+                            "zipcode",
+                            "city"
+                        ],
+                        "description": "Represents an address which can verify if the zipcode is correct with some API call",
+                        "properties": {
+                            "street": {
+                                "type": "string",
+                                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            },
+                            "streetNumber": {
+                                "type": "string",
+                                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            },
+                            "zipcode": {
+                                "type": "string",
+                                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            },
+                            "city": {
+                                "type": "string",
+                                "description": "Any text with a maximum length of 65535 characters that fit in a TEXT field in a database",
+                                "minLength": 0,
+                                "maxLength": 65535,
+                                "example": "Lorem Ipsum"
+                            }
+                        }
+                    }
+                }
+            },
+            "description": "Creates an instance of UserWithAutoincrementKey",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                "x-fields": {
+                    "create": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAutoincrementKey",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                },
+                "x-bounded-context-id": "other"
+            }
+        },
+        {
+            "name": "create-object-other-animal",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "animalType"
+                ],
+                "properties": {
+                    "animalType": {
+                        "type": "string",
+                        "nullable": false,
+                        "enum": [
+                            "cow",
+                            "elephant",
+                            "fish"
+                        ],
+                        "format": "enum"
+                    },
+                    "id": {
+                        "type": "string",
+                        "nullable": true,
+                        "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                    },
+                    "hasMilk": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "starving": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "poisonous": {
+                        "type": "boolean",
+                        "nullable": false
+                    }
+                },
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "required": [
+                            "animalType"
+                        ],
+                        "properties": {
+                            "animalType": {
+                                "type": "string",
+                                "nullable": false,
+                                "enum": [
+                                    "cow"
+                                ],
+                                "format": "enum"
+                            },
+                            "id": {
+                                "type": "string",
+                                "nullable": true,
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "hasMilk": {
+                                "type": "boolean",
+                                "nullable": false
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "animalType"
+                        ],
+                        "properties": {
+                            "animalType": {
+                                "type": "string",
+                                "nullable": false,
+                                "enum": [
+                                    "elephant"
+                                ],
+                                "format": "enum"
+                            },
+                            "id": {
+                                "type": "string",
+                                "nullable": true,
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "starving": {
+                                "type": "boolean",
+                                "nullable": false
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "animalType"
+                        ],
+                        "properties": {
+                            "animalType": {
+                                "type": "string",
+                                "nullable": false,
+                                "enum": [
+                                    "fish"
+                                ],
+                                "format": "enum"
+                            },
+                            "id": {
+                                "type": "string",
+                                "nullable": true,
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "poisonous": {
+                                "type": "boolean",
+                                "nullable": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "description": "Creates an instance of Animal",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\CreateObjectAction",
+                "x-fields": {
+                    "create": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Polymorphic\\Animal",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\CreateObjectAction"
+                },
+                "x-bounded-context-id": "other"
+            }
+        },
+        {
+            "name": "get-object-other-user-with-autoincrement-key",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Gets a resource of UserWithAutoincrementKey with a specific id",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                "x-fields": {
+                    "get": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAutoincrementKey",
+                    "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                },
+                "x-bounded-context-id": "other"
+            }
+        },
+        {
+            "name": "get-object-other-animal",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Gets a resource of Animal with a specific id",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\GetItemAction",
+                "x-fields": {
+                    "get": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Polymorphic\\Animal",
+                    "_apie_action": "Apie\\Common\\Actions\\GetItemAction"
+                },
+                "x-bounded-context-id": "other"
+            }
+        },
+        {
+            "name": "all-object-other-user-with-autoincrement-key",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            },
+            "description": "Gets a list of resource that are an instance of UserWithAutoincrementKey",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                "x-fields": {
+                    "all": true,
+                    "get": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAutoincrementKey",
+                    "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                },
+                "x-bounded-context-id": "other"
+            }
+        },
+        {
+            "name": "all-object-other-animal",
+            "inputSchema": {
+                "type": "object",
+                "required": [],
+                "properties": {}
+            },
+            "description": "Gets a list of resource that are an instance of Animal",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\GetListAction",
+                "x-fields": {
+                    "all": true,
+                    "get": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Polymorphic\\Animal",
+                    "_apie_action": "Apie\\Common\\Actions\\GetListAction"
+                },
+                "x-bounded-context-id": "other"
+            }
+        },
+        {
+            "name": "modify-object-other-user-with-autoincrement-key",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "password": {
+                        "type": "string",
+                        "pattern": "^(?=(.*[a-z]){1,})(?=(.*[A-Z]){1,})(?=(.*[0-9]){1,})(?=(.*[\\!@#\\$%\\^&\\*\\-_\\+\\.]){1,})[a-zA-Z0-9\\!@#\\$%\\^&\\*\\-_\\+\\.]{6,42}$"
+                    },
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "description": "Modifies an instance of UserWithAutoincrementKey",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                "x-fields": {
+                    "edit": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\UserWithAutoincrementKey",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                },
+                "x-bounded-context-id": "other"
+            }
+        },
+        {
+            "name": "modify-object-other-animal",
+            "inputSchema": {
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "hasMilk": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "starving": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "poisonous": {
+                        "type": "boolean",
+                        "nullable": false
+                    },
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "required": [
+                            "animalType"
+                        ],
+                        "properties": {
+                            "animalType": {
+                                "type": "string",
+                                "nullable": false,
+                                "enum": [
+                                    "cow"
+                                ],
+                                "format": "enum"
+                            },
+                            "id": {
+                                "type": "string",
+                                "nullable": true,
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "hasMilk": {
+                                "type": "boolean",
+                                "nullable": false
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "animalType"
+                        ],
+                        "properties": {
+                            "animalType": {
+                                "type": "string",
+                                "nullable": false,
+                                "enum": [
+                                    "elephant"
+                                ],
+                                "format": "enum"
+                            },
+                            "id": {
+                                "type": "string",
+                                "nullable": true,
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "starving": {
+                                "type": "boolean",
+                                "nullable": false
+                            }
+                        }
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "animalType"
+                        ],
+                        "properties": {
+                            "animalType": {
+                                "type": "string",
+                                "nullable": false,
+                                "enum": [
+                                    "fish"
+                                ],
+                                "format": "enum"
+                            },
+                            "id": {
+                                "type": "string",
+                                "nullable": true,
+                                "pattern": "^[a-f0-9]{8}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{4}\\-[a-f0-9]{12}$"
+                            },
+                            "poisonous": {
+                                "type": "boolean",
+                                "nullable": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "description": "Modifies an instance of Animal",
+            "_meta": {
+                "x-definition": "Apie\\Common\\Actions\\ModifyObjectAction",
+                "x-fields": {
+                    "edit": true,
+                    "resourceName": "Apie\\Fixtures\\Entities\\Polymorphic\\Animal",
+                    "display-form": true,
+                    "_apie_action": "Apie\\Common\\Actions\\ModifyObjectAction"
+                },
+                "x-bounded-context-id": "other"
+            }
+        }
+    ]
+}

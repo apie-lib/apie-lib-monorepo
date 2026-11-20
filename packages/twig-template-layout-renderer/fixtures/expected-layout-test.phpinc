@@ -9,7 +9,7 @@ class TestDesignSystemLayoutTest extends AbstractRenderTestCase
 { 
     public function getRenderer(): ComponentRendererInterface
     {
-        return TestDesignSystemLayout::createRenderer();
+        return TestDesignSystemLayout::createRenderer(self::createTwigRuntimeForTests());
     }
 
     public function getFixturesPath(): string

@@ -19,10 +19,12 @@ jobs:
     steps:
       -
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           coverage: pcov
           ini-values: pcov.directory=packages
       - uses: "ramsey/composer-install@v3"
@@ -40,16 +42,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php_version: ['8.3']
+        php_version: ['8.4']
         composer:
           - '--prefer-lowest'
           - ''
         include:
-          - php_version: 8.4
+          - php_version: 8.5
             composer: ''
     steps:
       -
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -80,10 +84,12 @@ jobs:
     steps:
       -
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: '8.4'
           coverage: pcov
       - uses: "ramsey/composer-install@v3"
         with:
@@ -100,10 +106,12 @@ jobs:
     steps:
       -
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.3
+          php-version: 8.4
           coverage: pcov
 
       - uses: "ramsey/composer-install@v3"
@@ -130,15 +138,17 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php_version: ['8.3', '8.4']
+        php_version: ['8.4', '8.5']
         package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
     steps:
       -
         id: coverage
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.3
+          php-version: 8.4
       - uses: actions/cache/restore@v3
         id: restore-cache
         with:
@@ -151,9 +161,10 @@ jobs:
           COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
       -
         name: Run tests for ${{ matrix.package }} in php ${{ matrix.php_version }}
-        run: bin/run-package-test ${{ matrix.php_version }} ${{ matrix.package }}
+        run: bin/run-package-test ${{ matrix.php_version }} ${MATRIX_PACKAGE}
         env:
           COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+          MATRIX_PACKAGE: ${{ matrix.package }}
       - name: Upload reports' artifacts 
         if: success() || failure()
         uses: actions/upload-artifact@v4
@@ -177,10 +188,12 @@ jobs:
     steps:
       -   uses: shivammathur/setup-php@v2
           with:
-            php-version: 8.3
+            php-version: 8.4
             coverage: pcov
       -
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Download reports' artifacts
         uses: actions/download-artifact@v4
         with:
@@ -226,6 +239,8 @@ jobs:
     steps:
       -
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       # no tag
       - name: Pushes to apie-lib/${{ matrix.package }}, branch '${{ github.ref_name }}'

@@ -68,6 +68,7 @@ class CompanyNameTest extends TestCase
                 'type' => 'string',
                 'format' => 'companyname',
                 'pattern' => true,
+                'description' => true,
             ]
         );
     }

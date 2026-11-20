@@ -5,7 +5,7 @@ use Apie\Common\ApieFacade;
 use Apie\Core\BoundedContext\BoundedContextId;
 use Apie\IntegrationTests\Apie\TypeDemo\Identifiers\UserIdentifier;
 use Apie\IntegrationTests\Apie\TypeDemo\Resources\User;
-use Apie\IntegrationTests\IntegrationTestHelper;
+use Apie\IntegrationTests\CmsTestHelper;
 use Apie\IntegrationTests\Interfaces\TestApplicationInterface;
 use Apie\PhpunitMatrixDataProvider\MakeDataProviderMatrix;
 use Generator;
@@ -20,7 +20,7 @@ class CmsResourceRenderTest extends TestCase
     {
         yield from self::createDataProviderFrom(
             new ReflectionMethod(__CLASS__, 'it_renders_a_resource_detail_page'),
-            new IntegrationTestHelper()
+            new CmsTestHelper(),
         );
     }
 

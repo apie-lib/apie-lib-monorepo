@@ -17,7 +17,6 @@ use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Bundle\FrameworkBundle\Console\Application as ConsoleApplication;
 use Symfony\Component\Console\Application;
-use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -29,6 +28,11 @@ class SymfonyTestApplication implements TestApplicationInterface
     private ?SymfonyTestingKernel $kernel = null;
 
     private ?string $authenticationCookie = null;
+
+    /**
+     * @var array<string, string>
+     */
+    private array $cookies = [];
 
     public function __construct(
         private readonly ApplicationConfig $applicationConfig,
@@ -56,6 +60,7 @@ class SymfonyTestApplication implements TestApplicationInterface
         }
         $boundedContexts = $this->boundedContextConfig->toArray();
         $this->authenticationCookie = null;
+        $this->cookies = [];
         $this->kernel = new SymfonyTestingKernel(
             [
                 'bounded_contexts' => $boundedContexts,
@@ -63,6 +68,8 @@ class SymfonyTestApplication implements TestApplicationInterface
                     'default_datalayer' => $this->applicationConfig->getDatalayerImplementation()->name,
                 ],
                 'encryption_key' => 'test',
+                'enable_mcp_server' => true,
+                'remote_mcp_path' => '/mcp',
                 'enable_doctrine_bundle_connection' => true,
                 'enable_security' => $this->applicationConfig->doesIncludeSecurity(),
                 'doctrine' => [
@@ -70,6 +77,9 @@ class SymfonyTestApplication implements TestApplicationInterface
                     'connection_params' => [
                         'driver' => 'pdo_sqlite'
                     ]
+                ],
+                'open_api' => [
+                    'max_enum_size' => 500,
                 ],
             ],
             $this->applicationConfig->doesIncludeTemplating(),
@@ -97,6 +107,7 @@ class SymfonyTestApplication implements TestApplicationInterface
         }
         $uri = parse_url($uri, PHP_URL_PATH);
         $sfRequest = Request::create($uri, parameters: $parameters);
+        $sfRequest->cookies->add($this->cookies);
         if ($this->authenticationCookie) {
             $sfRequest->cookies->set(
                 AddAuthenticationCookie::COOKIE_NAME,
@@ -112,6 +123,7 @@ class SymfonyTestApplication implements TestApplicationInterface
         $psrRequest = $testRequest->getRequest();
         $factory = new HttpFoundationFactory();
         $sfRequest = $factory->createRequest($psrRequest);
+        $sfRequest->cookies->add($this->cookies);
         if ($this->authenticationCookie) {
             $sfRequest->cookies->set(
                 AddAuthenticationCookie::COOKIE_NAME,
@@ -125,13 +137,19 @@ class SymfonyTestApplication implements TestApplicationInterface
 
     private function handleResponse(Response $sfResponse): ResponseInterface
     {
-        $cookie = $sfResponse->headers->getCookies(
-            ResponseHeaderBag::COOKIES_ARRAY
-        )[""]["/"][AddAuthenticationCookie::COOKIE_NAME] ?? null;
-        if ($cookie !== null) {
-            $cookie = Cookie::fromString($cookie)->getValue();
+        $authenticationCookie = null;
+        foreach ($sfResponse->headers->getCookies(ResponseHeaderBag::COOKIES_FLAT) as $cookie) {
+            if ($cookie->getName() === AddAuthenticationCookie::COOKIE_NAME) {
+                $authenticationCookie = $cookie->isCleared() ? null : $cookie->getValue();
+                continue;
+            }
+            if ($cookie->isCleared()) {
+                unset($this->cookies[$cookie->getName()]);
+            } else {
+                $this->cookies[$cookie->getName()] = $cookie->getValue();
+            }
         }
-        $this->authenticationCookie = $cookie;
+        $this->authenticationCookie = $authenticationCookie;
         
         $psrFactory = new NyholmPsr17Factory();
         $factory = new PsrHttpFactory($psrFactory, $psrFactory, $psrFactory, $psrFactory);

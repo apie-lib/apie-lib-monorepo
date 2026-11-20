@@ -30,7 +30,7 @@ final class DoctrineUtils
 
     private function loadAll(object $entity): void
     {
-        $hash = spl_object_hash($entity);
+        $hash = spl_object_id($entity);
         if (isset($this->visited[$hash])) {
             return;
         }
