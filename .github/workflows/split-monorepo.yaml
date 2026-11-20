@@ -49,6 +49,8 @@ jobs:
         include:
           - php_version: 8.5
             composer: ''
+          - php_version: 8.6
+            composer: '--ignore-platform-reqs'
     steps:
       -
         uses: actions/checkout@v4
@@ -138,7 +140,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php_version: ['8.4', '8.5']
+        php_version: ['8.4', '8.5', '8.6']
         package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
     steps:
       -
