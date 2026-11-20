@@ -21,6 +21,7 @@
   },
   "require": {
     "php": ">=8.4",
+    "apie/common": "self.version",
     "apie/core": "self.version",
     "fakerphp/faker": "^1.24.1",
     "guzzlehttp/psr7": "^2.13",
