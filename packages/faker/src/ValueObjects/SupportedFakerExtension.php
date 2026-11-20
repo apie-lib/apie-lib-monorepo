@@ -5,18 +5,20 @@ namespace Apie\Faker\ValueObjects;
 use Apie\Core\Attributes\Description;
 use Apie\Core\Lists\StringSet;
 use Apie\Core\ValueObjects\Interfaces\HasRegexValueObjectInterface;
-use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\Interfaces\LimitedOptionsInterface;
+use Apie\Core\ValueObjects\Interfaces\StringValueObjectInterface;
 use Apie\Core\ValueObjects\IsStringWithRegexValueObject;
-    use Apie\Faker\ApieObjectFaker;
-    use Faker\Factory;
-
+use Apie\Faker\ApieObjectFaker;
 use Apie\Faker\FileFakerFactory;
+
+use Faker\Factory;
 use Faker\Generator;
 
 #[Description('A file extension that is supported by the faker library')]
 class SupportedFakerExtension implements LimitedOptionsInterface, StringValueObjectInterface, HasRegexValueObjectInterface
 {
+    use IsStringWithRegexValueObject;
+
 
     private static function createFaker(): Generator
     {
@@ -24,8 +26,6 @@ class SupportedFakerExtension implements LimitedOptionsInterface, StringValueObj
         $faker->addProvider(ApieObjectFaker::createWithDefaultFakers($faker));
         return $faker;
     }
-
-    use IsStringWithRegexValueObject;
 
     /**
      * @return list<string>
